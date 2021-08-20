@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("Check if a person is followed by the authenticated user")
+GET "https://{{baseUrl}}/user/following/:username"
+
+
+// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+// 
+// Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+
+@name("Follow a user")
+PUT "https://{{baseUrl}}/user/following/:username"
+
+
+// Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+
+@name("Unfollow a user")
+DELETE "https://{{baseUrl}}/user/following/:username"
+
+
+

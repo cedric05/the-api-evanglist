@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f6803d-cd9d-44a5-aa66-33a5315babb5.postman_collection.json
+
+// Returns account information of an address.
+
+@name("Accounts")
+GET "https://{{baseUrl}}/api/accounts"
+? "address"= "<get>"
+
+
+// Get the balance of an account.
+
+@name("Accounts Get Balance")
+GET "https://{{baseUrl}}/api/accounts/getBalance"
+? "address"= "<get>"
+
+
+// Get the public key of an account.
+
+@name("Accounts Get Publickey")
+GET "https://{{baseUrl}}/api/accounts/getPublickey"
+? "address"= "<get>"
+
+
+// Get a list of accounts.
+
+@name("Accounts Get All Accounts")
+GET "https://{{baseUrl}}/api/accounts/getAllAccounts"
+
+
+// Get a list of top accounts.
+
+@name("Accounts Top")
+GET "https://{{baseUrl}}/api/accounts/top"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Get the count of accounts.
+
+@name("Accounts Count")
+GET "https://{{baseUrl}}/api/accounts/count"
+
+
+

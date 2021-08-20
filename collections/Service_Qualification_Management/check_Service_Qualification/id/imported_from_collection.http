@@ -1,0 +1,561 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1043b4ca-f2c2-4c64-b745-e8b635a6640c.postman_collection.json
+
+// This operation retrieves a CheckServiceQualification entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a CheckServiceQualification by ID")
+GET "https://{{baseUrl}}/checkServiceQualification/:id"
+? "fields"= "deserunt ipsum culpa ea quis"
+
+
+// This operation updates partially a CheckServiceQualification entity.
+
+@name("Updates partially a CheckServiceQualification")
+PATCH "https://{{baseUrl}}/checkServiceQualification/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "dolore veniam voluptate",
+    "effectiveQualificationDate": "1998-06-01T04:00:33.902Z",
+    "estimatedResponseDate": "2003-03-29T13:08:09.796Z",
+    "expectedQualificationDate": "1976-09-17T07:26:09.585Z",
+    "expirationDate": "1957-06-02T06:29:50.421Z",
+    "externalId": "sit consequat in",
+    "instantSyncQualification": true,
+    "provideAlternative": false,
+    "provideUnavailabilityReason": false,
+    "qualificationResult": "aliquip enim ullamco elit exercitation",
+    "relatedParty": [
+        {
+            "@referredType": "in deserunt",
+            "id": "in quis exercitation ea",
+            "href": "https://ycQgbaSs.jlxPz3mEnJaQ52QCYHYNhbsJOVyueJZcXQl2n0QYFWPG5mW0zd++rouP-VwZ6ZpqsT",
+            "name": "est aliqua consequ",
+            "role": "eu reprehenderit Ut v",
+            "@baseType": "ResourceSpecification",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+            "@type": "LogicalResourceSpecification"
+        },
+        {
+            "@referredType": "commodo sint ad adipisicing proident",
+            "id": "anim Lorem tempor",
+            "href": "http://NAIxZdXtitqLAJdqcy.rgidmP4ZldMY4p4+Et,cqDh6Nvp,-u1xFraYVbIRmT-tCVVQ5ie6BRVPBbakuTmq",
+            "name": "cillum commodo officia ad",
+            "role": "nostrud nulla dolore mini",
+            "@baseType": "ResourceSpecification",
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+            "@type": "LogicalResourceSpecification"
+        }
+    ],
+    "serviceQualificationItem": [
+        {
+            "id": "ex",
+            "expectedActivationDate": "1956-01-10T23:37:01.116Z",
+            "expectedServiceAvailabilityDate": "1996-11-01T20:56:34.632Z",
+            "expirationDate": "2011-12-04T13:13:07.686Z",
+            "qualificationResult": "ad id",
+            "state": "est cupidatat aute",
+            "alternateServiceProposal": [
+                {
+                    "id": "eu consectetur sed",
+                    "alternateServiceAvailabilityDate": "2007-07-21T10:37:22.747Z",
+                    "alternateService": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": "consectetur tempor sunt reprehenderit",
+                    "@schemaLocation": "http://GmYVxskE.lqcF",
+                    "@type": "labore enim deserunt culpa"
+                },
+                {
+                    "id": "labore commodo cillum dolor",
+                    "alternateServiceAvailabilityDate": "1997-08-16T00:23:59.505Z",
+                    "alternateService": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": "aliquip consequat amet est",
+                    "@schemaLocation": "https://jaUsAMkfZEeDnaGIhSkJJQLXEnMFr.gkuky,hcQ-nBUYRqNLOYXUzbVxOnUExW2Jq",
+                    "@type": "cillum est"
+                }
+            ],
+            "category": {
+                "id": "sunt irure",
+                "href": "https://JkfVgIlsiVr.rytcezOwph8fn.5lQgidTjOKU2LY,bF",
+                "name": "minim aliqua exerci",
+                "version": "cil",
+                "@baseType": "ResourceSpecification",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                "@type": "LogicalResourceSpecification",
+                "@referredType": "dolore eiusmod"
+            },
+            "eligibilityUnavailabilityReason": [
+                {
+                    "code": "est sunt sint enim",
+                    "label": "consequat aliqua dolor voluptate anim",
+                    "@baseType": "nostrud veniam reprehenderit proident",
+                    "@schemaLocation": "http://xRukhTrZJPHNmhKCtYvqWkHOQILqNaJ.holsCIJi8b34KoHvNOFjhzNP0Yy9",
+                    "@type": "sed sit eu commodo dolore"
+                },
+                {
+                    "code": "amet proiden",
+                    "label": "dolor dolore veniam",
+                    "@baseType": "ad laborum",
+                    "@schemaLocation": "https://reShYXDRACFQWF.prahhthXDHvtv",
+                    "@type": "su"
+                }
+            ],
+            "qualificationItemRelationship": [
+                {
+                    "id": "sint cillum exercitation id",
+                    "relationshipType": "commodo deserunt sit",
+                    "@baseType": "ullamco qui ut",
+                    "@schemaLocation": "http://zWWYdrKIGseCgqbVxGayRqlCO.pxBK7JNVvugv2hUAzElMIj8ss4bWoO-+Fubrt+FU6eTIcH6CoHU.fAD4CClfTPDIPwmS",
+                    "@type": "eiusmod laboris in Excepteur anim"
+                },
+                {
+                    "id": "ex",
+                    "relationshipType": "incididunt aliquip sed pariatur",
+                    "@baseType": "do est veniam",
+                    "@schemaLocation": "http://aGngAlTNWG.wtcYFjBg-hzMKcIDWvziI1ZuNtulX-mBe06NvgDfHHJXO5tRxHsHSWTPa09H",
+                    "@type": "nostrud tempor"
+                }
+            ],
+            "qualificationRelationship": [
+                {
+                    "id": "ea cillum laborum deserunt",
+                    "relationshipType": "aute sint",
+                    "@baseType": "nisi dolor",
+                    "@schemaLocation": "http://vVrIRQ.vpMCV-ipspRcG+ny3qvya5Dg9Qa3Zx3oa2Lyh61-N9mjElf9",
+                    "@type": "Lorem Duis veniam"
+                },
+                {
+                    "id": "ullamco dolore",
+                    "relationshipType": "velit ut",
+                    "@baseType": "cillum non",
+                    "@schemaLocation": "http://hKVXsxqCNHYHwPaXr.zxHHekxgo1fZsJEOVYwRVYmfD13Cij+J5uRTV71uocW",
+                    "@type": "do"
+                }
+            ],
+            "service": {
+                "id": "irure mollit in sed",
+                "href": "Excepteur tempor ullam",
+                "category": "ullamco incididunt proident voluptate",
+                "description": "eu ex sunt aute",
+                "endDate": "2002-07-13T05:17:16.519Z",
+                "hasStarted": false,
+                "isBundle": true,
+                "isServiceEnabled": true,
+                "isStateful": true,
+                "name": "exercitation laboris adipisicing",
+                "serviceDate": "cupidatat laborum velit",
+                "serviceType": "nostrud dolor",
+                "startDate": "1989-09-25T01:31:41.407Z",
+                "startMode": "dolore laboris",
+                "feature": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "note": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "place": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "relatedEntity": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "relatedParty": [
+                    {
+                        "@referredType": "deserunt labore sed adipisicing dolor",
+                        "id": "dolore in",
+                        "href": "http://echYlJuOZhz.wjJNYhqPZ21SK-Fwd4f4DW9tsbiBkpCQaNW+CAT+2hMohN,iNa",
+                        "name": "elit est",
+                        "role": "adipisicing",
+                        "@baseType": "ResourceSpecification",
+                        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                        "@type": "LogicalResourceSpecification"
+                    },
+                    {
+                        "@referredType": "consequat",
+                        "id": "in velit dol",
+                        "href": "http://crUbHZwRWhQjiTNodVFwlYpDAq.vtxu8R",
+                        "name": "minim",
+                        "role": "exercitation labore",
+                        "@baseType": "ResourceSpecification",
+                        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                        "@type": "LogicalResourceSpecification"
+                    }
+                ],
+                "serviceCharacteristic": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "serviceOrderItem": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "serviceRelationship": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "serviceSpecification": {
+                    "id": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "version": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@schemaLocation": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@referredType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "state": "designed",
+                "supportingResource": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "supportingService": [
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                    },
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                    }
+                ],
+                "@baseType": "ResourceSpecification",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                "@type": "LogicalResourceSpecification",
+                "@referredType": "et laboris ea reprehenderit"
+            },
+            "terminationError": [
+                {
+                    "id": "id quis",
+                    "value": "in ut amet cillum enim",
+                    "@baseType": "officia occaecat",
+                    "@schemaLocation": "http://PGtRUFVKciNYdwcALjKCTIjLfpxDWVssT.qioaKlfhPrchIV3hDe2CrkdOavsbhO-4jNy.Z,U2Fjuujsb7vDgFgO688S",
+                    "@type": "non reprehenderit nisi dolore"
+                },
+                {
+                    "id": "elit magna sint",
+                    "value": "nisi Duis pariatur",
+                    "@baseType": "Ut elit in dolore enim",
+                    "@schemaLocation": "http://NoWdXgvBzmBQUtedxgOlZTPEnqv.fjsmhD5usgszQzDiBZqkoSnMdP6ild..V.DFk4Z-eUiIwRTHQZ",
+                    "@type": "ea aliqua nostrud ex sint"
+                }
+            ],
+            "@baseType": "minim enim",
+            "@schemaLocation": "http://HEUoExumRdgQseMkVlRuYdTQjIbEJrqjB.hriMy154XtlO",
+            "@type": "dolore amet"
+        },
+        {
+            "id": "eu ea nisi",
+            "expectedActivationDate": "1975-11-26T20:41:24.118Z",
+            "expectedServiceAvailabilityDate": "1944-09-18T19:31:48.301Z",
+            "expirationDate": "1963-12-14T00:04:56.228Z",
+            "qualificationResult": "elit quis cupidatat",
+            "state": "Lorem non",
+            "alternateServiceProposal": [
+                {
+                    "id": "occaecat Duis exercitation",
+                    "alternateServiceAvailabilityDate": "1993-05-05T10:13:23.173Z",
+                    "alternateService": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": "elit et velit culpa",
+                    "@schemaLocation": "http://CZmHfEIEJfditoKfJCu.ycbAtNGwzkscZdeoxU",
+                    "@type": "voluptate occaecat dolore"
+                },
+                {
+                    "id": "tempor nulla sit do adipisicing",
+                    "alternateServiceAvailabilityDate": "2002-12-27T17:32:46.826Z",
+                    "alternateService": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": "elit aliqu",
+                    "@schemaLocation": "http://GsPeRlaRUhinBNxHignNKWHdUhuOp.kosseI-ZB9DQHNFvSm4xs0jjgcwv7b1Oe30id-HgzLwRmQsH+ARQDZqY+fy",
+                    "@type": "incididunt Lorem ipsum amet"
+                }
+            ],
+            "category": {
+                "id": "commodo ut tempor laborum",
+                "href": "http://GdMEHhYOAVXllqxLAzVHbZEnBr.cbez.K3-NRkJRpiAwqEuh7ymDqzz6lHsNcly",
+                "name": "nostrud e",
+                "version": "aliquip dolore in",
+                "@baseType": "ResourceSpecification",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                "@type": "LogicalResourceSpecification",
+                "@referredType": "deserunt id ipsum consectetur"
+            },
+            "eligibilityUnavailabilityReason": [
+                {
+                    "code": "o",
+                    "label": "occaecat",
+                    "@baseType": "do Lorem esse consectetur",
+                    "@schemaLocation": "https://jxdiDOcNcOGpqQCwfFNiPKInxvnVUjrxb.bwdW+LyyLI-4bJuq58djt",
+                    "@type": "sint ut veniam eiusmod fugiat"
+                },
+                {
+                    "code": "do id",
+                    "label": "amet eiusmod in et sit",
+                    "@baseType": "voluptate Duis",
+                    "@schemaLocation": "https://hoXy.niptZRoPVcB",
+                    "@type": "Lorem amet"
+                }
+            ],
+            "qualificationItemRelationship": [
+                {
+                    "id": "consectetur elit proident deserunt labore",
+                    "relationshipType": "quis pariatur Excepteur",
+                    "@baseType": "sunt anim",
+                    "@schemaLocation": "http://ofVqQvslZHCkwsdveyNZWZYhIUb.kykQlcGBA1tqHd-.E,.VvfHcC9ZayIKogGtB3DtBjU",
+                    "@type": "ullamco aliquip in est incididunt"
+                },
+                {
+                    "id": "magna laboris cillum Lorem in",
+                    "relationshipType": "nostrud esse do in in",
+                    "@baseType": "veniam fugiat",
+                    "@schemaLocation": "http://znjNVmrTNlPdscokp.ydrjMLSdRjyNtdOiaAWByy4cko+YkAFpmfwtQjbaMfvNy45uHk4LIac7h592Klzl9oVixXfVofZlteJ,EjAnGakeB",
+                    "@type": "culpa"
+                }
+            ],
+            "qualificationRelationship": [
+                {
+                    "id": "quis sit nisi ut",
+                    "relationshipType": "ad minim Ut",
+                    "@baseType": "enim mollit laborum",
+                    "@schemaLocation": "https://w.xrfulUa",
+                    "@type": "in"
+                },
+                {
+                    "id": "dolore proident laboris consequat",
+                    "relationshipType": "in labore aliquip sunt adipisicing",
+                    "@baseType": "Duis",
+                    "@schemaLocation": "https://GiuRontlzSUAmBOWgtQnBfFDGnQREiUI.ldtxmFRX8TemDqSazMnTvu",
+                    "@type": "aliqua ut"
+                }
+            ],
+            "service": {
+                "id": "nulla et",
+                "href": "proident ex adipisicing laborum",
+                "category": "irure nostrud",
+                "description": "sunt officia aliquip",
+                "endDate": "1966-07-25T03:14:34.941Z",
+                "hasStarted": false,
+                "isBundle": false,
+                "isServiceEnabled": true,
+                "isStateful": true,
+                "name": "qui sunt laborum dolor adipisicing",
+                "serviceDate": "irure anim magna",
+                "serviceType": "ea consectetur",
+                "startDate": "2019-05-12T00:11:00.800Z",
+                "startMode": "mollit Ut e",
+                "feature": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "note": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "place": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "relatedEntity": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "relatedParty": [
+                    {
+                        "@referredType": "laborum et",
+                        "id": "dolor aute culpa officia amet",
+                        "href": "http://JGEmBJWnXsiETvGJW.mlcGpKyF20",
+                        "name": "sunt occaecat eu",
+                        "role": "Ut dolor Excepteur",
+                        "@baseType": "ResourceSpecification",
+                        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                        "@type": "LogicalResourceSpecification"
+                    },
+                    {
+                        "@referredType": "elit aliquip veniam",
+                        "id": "voluptate incididunt ut",
+                        "href": "https://UzUQzwSVVCTNUhKFsLddbeGpYUSmuNE.tewP430Ih.PVaSIB7rHqOqdiOGFHUBeYKomgNelMyBip+7",
+                        "name": "irure ut sint dolore",
+                        "role": "quis Excepteur reprehenderit occaecat",
+                        "@baseType": "ResourceSpecification",
+                        "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                        "@type": "LogicalResourceSpecification"
+                    }
+                ],
+                "serviceCharacteristic": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "serviceOrderItem": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "serviceRelationship": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "serviceSpecification": {
+                    "id": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "version": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@schemaLocation": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@referredType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "state": "feasibilityChecked",
+                "supportingResource": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "supportingService": [
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                    },
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                    }
+                ],
+                "@baseType": "ResourceSpecification",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                "@type": "LogicalResourceSpecification",
+                "@referredType": "reprehenderit Ut"
+            },
+            "terminationError": [
+                {
+                    "id": "ullamco ",
+                    "value": "voluptate sint",
+                    "@baseType": "enim fugiat dolor consectetur",
+                    "@schemaLocation": "http://jRSOLFAMeCQmJbD.szsxJbfYYBmQWkF+JNwBr.qyyh1DY4bYEbSJBWm2JdttM7Ahb8lcydeK9YKUO",
+                    "@type": "dolor fugiat mollit voluptate ad"
+                },
+                {
+                    "id": "cupidatat p",
+                    "value": "cillum ipsum sit eiusmod",
+                    "@baseType": "aliqua irure",
+                    "@schemaLocation": "http://tEYErEfo.lhbkO59Tr0yfHcSFJ1xviV2BScH.llPzFh",
+                    "@type": "ad aute"
+                }
+            ],
+            "@baseType": "occaecat Ut sunt anim",
+            "@schemaLocation": "https://aNBhKBbNGvYkACoKdiH.hnv4zB+z6hLlt6rWQj",
+            "@type": "fugiat"
+        }
+    ],
+    "state": "done",
+    "@baseType": "in ullamco",
+    "@schemaLocation": "https://NNJsmiAQLtbhtBIaLFgmVi.dvYbTX07jYyEMRJ8XKuhdAxPBQyHK",
+    "@type": "nulla"
+})
+
+
+// This operation deletes a CheckServiceQualification entity.
+
+@name("Deletes a CheckServiceQualification")
+DELETE "https://{{baseUrl}}/checkServiceQualification/:id"
+
+
+

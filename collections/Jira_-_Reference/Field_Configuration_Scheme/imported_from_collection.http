@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a [paginated](#pagination) list of field configuration schemes.
+// 
+// Only field configuration schemes used in classic projects are returned.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get All Field Configuration Schemes") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/fieldconfigurationscheme"
+? "startAt"= "0"
+? "maxResults"= "50"
+? "id"= "<long>"
+
+
+// Returns a [paginated](#pagination) list of field configuration issue type items.
+// 
+// Only items used in classic projects are returned.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get Field Configuration Issue Type Items") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/fieldconfigurationscheme/mapping"
+? "startAt"= "0"
+? "maxResults"= "50"
+? "fieldConfigurationSchemeId"= "<long>"
+
+
+

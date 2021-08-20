@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67b55203-a45b-4d5a-98e5-5ca5048f1134.postman_collection.json
+
+// The API performs a PAR query into the PAR Vault with the supplied PAN. When a PAR is returned from the PAR vault the API will encrypt it using the wrapped encryption method with the 
+// Mastercard Customer?s Encryption Public Key and include it in the API response.
+
+@name("Submit an encrypted PAN to obtain the PAR linked to the account.")
+POST "https://{{baseUrl}}/par/paymentaccountreference/1/0/getPaymentAccountReference"
+"Content-Type": "application/json"
+json({
+    "requestId": "<string>",
+    "encryptedPayload": {
+        "encryptedData": "<string>",
+        "encryptedKey": "<string>",
+        "iv": "<string>",
+        "oaepHashingAlgorithm": "<string>",
+        "publicKeyFingerprint": "<string>"
+    }
+})
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// Disable and delete a Railgun
+
+@name("Disable and delete a Railgun")
+DELETE "https://{{baseUrl}}/railguns/:identifier"
+
+
+// The zones that are currently using this Railgun
+
+@name("The zones that are currently using this Railgun")
+GET "https://{{baseUrl}}/railguns/:identifier/zones"
+
+
+

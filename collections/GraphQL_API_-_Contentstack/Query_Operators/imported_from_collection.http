@@ -1,0 +1,605 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3d32f4d3-5b9d-4d42-8b63-a468c27a2f9e.postman_collection.json
+
+// <p>Get data of entries containing the field values matching the specified condition.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#equals-operator>Equals Operator</a> API Reference document
+
+@name(" Equals Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries where the value of a field within a Group field matches the condition in the query. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#equals-operator>Equals Operator</a> API Reference document
+
+@name(" Equals Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries where the value of a field within a Modular Blocks field matches the condition in the query. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that lie within a particular block of a Modular Blocks field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#equals-operator>Equals Operator</a> API Reference document
+
+@name(" Equals Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>You can use <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that lie within a particular block of a Nested Modular Blocks field. Within the inline fragments section, you need to specify the content type UID, modular blocks UID, block UID, nested modular blocks UID, and the nested block UID.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#equals-operator>Equals Operator</a> API Reference document
+
+@name(" Equals Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get all the entries in which the value of a field does not match the value provided in the condition.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#not-equals-operator>Not-equals Operator</a> API Reference document
+
+@name(" Not Equals Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries where the value of a field does not match the value provided in the condition. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#not-equals-operator>Not-equals Operator</a> API Reference document
+
+@name(" Not Equals Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries where the value of a field within the Modular Blocks field matches the condition in the query. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that are part of any block within a Modular Block field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#not-equals-operator>Not-equals Operator</a> API Reference document
+
+@name(" Not Equals Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>Not-equals Operator within Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#not-equals-operator>Not-equals Operator</a> API Reference document
+
+@name(" Not Equals Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field matches any of the given values. This parameter will compare field values of entries to that of the values provided in the condition.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#in-operator>In Operator</a> API Reference document
+
+@name(" In Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries where the value of a field, within a Group field, matches any of the given values. This parameter will compare field values of entries to that of the values provided in the condition. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#in-operator>In Operator</a> API Reference document
+
+@name(" In Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries where the value of a field within Modular Blocks matches any of the given values. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that are part of any block within a Modular Blocks field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#in-operator>In Operator</a> API Reference document
+
+@name(" In Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>In Operator within </strong><strong>Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#in-operator>In Operator</a> API Reference document
+
+@name(" In Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get all entries in which the value of a field does not match any of the given values. This parameter will compare field values of entries to that of the values provided in the condition, and the query will retrieve entries that have field values that do not match any of the values provided.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#not-in-operator>Not In Operator</a> API Reference document
+
+@name(" Not In Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field does not match any of the values provided in the condition. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#not-in-operator>Not In Operator</a> API Reference document
+
+@name(" Not In Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries where the values of the fields within Modular Blocks match the condition in the query. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that are part of any block within a Modular Block field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#not-in-operator>Not In Operator</a> API Reference document
+
+@name(" Not In Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>Not In Operator within Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#not-in-operator>Not In Operator</a> API Reference document
+
+@name(" Not In Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries that satisfy all the conditions provided in the 'AND' query.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#and-operator>AND Operator</a> API Reference document
+
+@name(" AND Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries that satisfy all the conditions provided in the AND query. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#and-operator>AND Operator</a> API Reference document
+
+@name(" AND Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries that satisfy all the conditions provided in the AND query. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that lie within a particular block of a Modular Blocks field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#and-operator>AND Operator</a> API Reference document
+
+@name(" AND Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>AND Operator within Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#and-operator>AND Operator</a> API Reference document
+
+@name(" AND Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get all entries that satisfy at least one of the given conditions provided in the 'OR' query.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#or-operator>OR Operator</a> API Reference document
+
+@name(" OR Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get all entries that satisfy at least one of the given conditions provided in the OR query. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#or-operator>OR Operator</a> API Reference document
+
+@name(" OR Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get all entries that satisfy at least one of the given conditions provided in the OR query. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that are part of any block within a Modular Block field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#or-operator>OR Operator</a> API Reference document
+
+@name(" OR Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>OR Operator within Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#or-operator>OR Operator</a> API Reference document
+
+@name(" OR Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field is lesser than the value provided in the condition.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#less-than-operator>Less Than Operator</a> API Reference document
+
+@name(" Less Than Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field is lesser than the value provided in the condition. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#less-than-operator>Less Than Operator</a> API Reference document
+
+@name(" Less Than Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field is lesser than the value provided in the condition. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that are part of any block within a Modular Block field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#less-than-operator>Less Than Operator</a> API Reference document
+
+@name(" Less Than Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>Less Than Operator within Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#less-than-operator>Less Than Operator</a> API Reference document
+
+@name(" Less Than Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field is lesser than or equal to the value provided in the condition.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#less-than-or-equal-to-operator>Less Than Or Equal To Operator</a> API Reference document
+
+@name(" Less Than Or Equal To Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field is lesser than or equal to the value provided in the condition. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#less-than-or-equal-to-operator>Less Than Or Equal To Operator</a> API Reference document
+
+@name(" Less Than Or Equal To Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field is lesser than or equal to the value provided in the condition. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that are part of any block within a Modular Block field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#less-than-or-equal-to-operator>Less Than Or Equal To Operator</a> API Reference document
+
+@name(" Less Than Or Equal To Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>Less Than Or Equal To Operator within Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#less-than-or-equal-to-operator>Less Than Or Equal To Operator</a> API Reference document
+
+@name(" Less Than Or Equal To Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value for a field is greater than the value provided in the condition.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#greater-than-operator>Greater Than Operator</a> API Reference document
+
+@name(" Greater Than Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value for a field is greater than the value provided in the condition. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#greater-than-operator>Greater Than Operator</a> API Reference document
+
+@name(" Greater Than Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value for a field is greater than the value provided in the condition. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that are part of any block within a Modular Block field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#greater-than-operator>Greater Than Operator</a> API Reference document
+
+@name(" Greater Than Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>Greater Than Operator within Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#greater-than-operator>Greater Than Operator</a> API Reference document
+
+@name(" Greater Than Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field is greater than or equal to the value provided in the condition.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#greater-than-or-equal-to-operator>Greater Than Or Equal To Operator</a> API Reference document
+
+@name(" Greater Than Or Equal To Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field is greater than or equal to the value provided in the condition. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#greater-than-or-equal-to-operator>Greater Than Or Equal To Operator</a> API Reference document
+
+@name(" Greater Than Or Equal To Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries in which the value of a field is greater than or equal to the value provided in the condition. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that are part of any block within a Modular Blocks field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#greater-than-or-equal-to-operator>Greater Than Or Equal To Operator</a> API Reference document
+
+@name(" Greater Than Or Equal To Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>Greater Than Or Equal To Operator within Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#greater-than-or-equal-to-operator>Greater Than Or Equal To Operator</a> API Reference document
+
+@name(" Greater Than Or Equal To Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>The limit parameter will return a specific number of entries in the output. So for example, if the content type contains <strong>more than 100</strong> entries and you wish to fetch only the <strong>first 2</strong> entries, you need to specify '2' as the value in this parameter. Your query will look as follows:<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#limit-operator>Limit Operator</a> API Reference document
+
+@name(" Limit Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>The skip parameter will skip a specific number of entries in the output. So, for example, if the content type contains around <strong>12 entries</strong> and you want to skip the <strong>first 5</strong> entries to get only the last 7 in the response body, you need to specify ‘5’ here. Your query will look as follows:<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#skip-operator>Skip Operator</a> API Reference document
+
+@name(" Skip Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>When fetching entries, you can sort them in the ascending order with respect to the value of the following system-defined fields in the response body:<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#order-by-asc-operator>Order by Asc Operator</a> API Reference document
+
+@name(" Order by Asc Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>When fetching entries, you can sort them in the descending order with respect to the value of the following system-defined fields in the response body:<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#order-by-desc-operator>Order by Desc Operator</a> API Reference document
+
+@name(" Order by Desc Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries if the value of the field mentioned in the condition exists.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#exists-operator>Exists Operator</a> API Reference document
+
+@name(" Exists Operator")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries if the value of the field mentioned in the condition exists. This query is specifically for fields that are part of the Group field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#exists-operator>Exists Operator</a> API Reference document
+
+@name(" Exists Operator within Group")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries if value of the field mentioned in the condition exists. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve values of fields that are part of any block within a Modular Block field.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#exists-operator>Exists Operator</a> API Reference document
+
+@name(" Exists Operator within Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p><strong>Exists Operator within Nested Modular Blocks</strong><br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#exists-operator>Exists Operator</a> API Reference document
+
+@name(" Exists Operator within Nested Modular Blocks")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>The <strong>total</strong> field returns the number of entries for a specified content type.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#total>Total</a> API Reference document
+
+@name(" Total Function")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>When fetching all the entries of a particular content type, the GraphQL API allows you to provide arguments that paginate the response body.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#pagination>Pagination</a> API Reference document
+
+@name(" Pagination")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+

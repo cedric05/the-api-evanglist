@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// [Documentation](https://developers.arcgis.com/rest/packaging/api-reference/setup-map-area.htm)
+
+@name("Setup Map Area")
+POST "https://packaging.arcgis.com/arcgis/rest/services/OfflinePackaging/GPServer/SetupMapArea/submitJob"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "mapAreaItemId": [
+        "5a613dd6bcd44d239a66be346ba7b75b"
+    ],
+    "f": [
+        "json"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+// [Checking job status](https://developers.arcgis.com/rest/analysis/api-reference/checking-job-status.htm)
+
+@name("Checking Setup Map Area Job Status")
+GET "https://packaging.arcgis.com/arcgis/rest/services/OfflinePackaging/GPServer/SetupMapArea/jobs/{{jobId}}"
+? "f"= "json"
+? "token"= "{{token}}"
+
+
+// [Documentation](https://developers.arcgis.com/rest/packaging/api-reference/setup-map-area.htm#ESRI_SECTION2_F015B666B73C41F4AF11EB3A4133D5A6)
+
+@name("Retrieve results from Setup Map Area")
+POST "https://packaging.arcgis.com/arcgis/rest/services/OfflinePackaging/GPServer/SetupMapArea/jobs/{{jobId}}/results/packages"
+? "token"= "{{token}}"
+? "f"= "json"
+
+
+
+

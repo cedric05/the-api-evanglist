@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get the list of takeaway products.
+
+@name("Get takeaway products")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/product"
+? "type"= "esse"
+? "type"= "ipsum"
+
+
+// Get the list of gift vouchers.
+
+@name("Get gift vouchers")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/product/voucher"
+
+
+

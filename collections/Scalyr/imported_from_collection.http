@@ -1,0 +1,173 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d9e878a9-81a4-4b38-9a9f-b1070743f9a0.postman_collection.json
+
+// This method is used to insert events (log records). You can insert one or more events per request If you are generating many events per second, you should group them into batches and have each server upload a batch every few seconds.
+// 
+// To upload raw log text, it is usually easier to use the [uploadLogs](https://www.scalyr.com/help/api-uploadLogs) method.
+// 
+// 
+// ### Note:
+// Only recent events (**events with a timestamp in the last few minutes**) can be uploaded. Due to the way Scalyr Logs indexes events, older events will be discarded. If this is a problem for you, [e-mail us](support@scalyr.com) and we can make adjustments for your account.
+
+@name("/addEvents")
+POST "https://{{baseUrl}}/addEvents"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "BLABLA0RmUusVlr9/zBLABLAzur7hVjKL11w14-",
+    "session": "1b671a64-40d5-491e-99b0-da01ff1f3341",
+    "sesionInfo": {
+        "serverHost": "front-1",
+        "serverType": "frontend",
+        "region": "us-east-1"
+    },
+    "events": [
+        {
+            "thread": "1",
+            "ts": "1530912695846000000",
+            "type": 0,
+            "sev": 3,
+            "attrs": {
+                "message": "record retrieved",
+                "recordId": 39217,
+                "latency": 19.4,
+                "length": 39207
+            }
+        },
+        {
+            "thread": "1",
+            "ts": "1530912695846000000",
+            "type": 0,
+            "sev": 3,
+            "attrs": {
+                "message": "record retrieved",
+                "recordId": 39217,
+                "latency": 19.4,
+                "length": 39207
+            }
+        }
+    ],
+    "threads": [
+        {
+            "id": "quis",
+            "name": "ipsum"
+        },
+        {
+            "id": "in eu aute",
+            "name": "eu aute cillum Lorem"
+        }
+    ]
+})
+
+
+// 
+// ## GETFILE
+// This method is used to retrieve a configuration file. You can also use this method to block until the file is changed.
+// 
+// ### URL
+// 
+// ```
+// https://www.scalyr.com/getFile
+// ```
+// 
+// <br>
+// 
+// Example `POST`:
+// 
+// ```
+//   Input
+//   {
+//     "token":           "xxx",
+//     "path":            "/foo",
+//     "expectedVersion": 3,        // optional
+//     "prettyprint":     false     // optional
+//   }
+// ```
+
+@name("/getFile")
+POST "https://{{baseUrl}}/getFile"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "read-configuration-api-key",
+    "path": "/foo",
+    "expectedVersion": 3,
+    "prettyPrint": true
+})
+
+
+// 
+// ## PUTFILE
+//   This method is used to create, update, or delete a configuration file.
+// 
+// ### URL
+// 
+// ```
+//   https://www.scalyr.com/putFile
+// ```
+// 
+// ### Create or update
+// To create or update a file:
+// 
+// ```
+// {
+//   "token":           "xxx",
+//   "path":            "/foo",
+//   "content":         "...",
+//   "prettyprint":     false,   // optional
+//   "expectedVersion": 3        // optional
+// }
+// ```
+// 
+// <br>
+// ### Delete
+// To delete a configuration file:
+// 
+// ```
+// {
+//   "token":           "xxx",
+//   "path":            "/foo",
+//   "deleteFile":      true,
+//   "expectedVersion": 3        // optional
+// }
+// ```
+
+@name("/putFile")
+POST "https://{{baseUrl}}/putFile"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-configuration-api-key",
+    "path": "/foo",
+    "content": "This is file's content",
+    "prettyPrint": true,
+    "deleteFile": false,
+    "expectedVersion": 3
+})
+
+
+// ## LISTFILES
+// This method is used to list all configuration files.
+// 
+// ### URL
+// 
+// ```
+// https://www.scalyr.com/listFiles
+// ```
+// 
+// You should `POST` the following.
+// 
+// ```
+//   Input
+//   {
+//     "token": "xxx"
+//   }
+// ```
+
+@name("/listFiles")
+POST "https://{{baseUrl}}/listFiles"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "read-configuration-api-key"
+})
+
+
+

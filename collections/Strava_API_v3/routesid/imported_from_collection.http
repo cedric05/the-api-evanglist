@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Returns a route using its identifier. Requires read_all scope for private routes.
+
+@name("Get Route")
+GET "https://{{baseUrl}}/routes/:id"
+
+
+// Returns a GPX file of the route. Requires read_all scope for private routes.
+
+@name("Export Route GPX")
+GET "https://{{baseUrl}}/routes/:id/export_gpx"
+
+
+// Returns a TCX file of the route. Requires read_all scope for private routes.
+
+@name("Export Route TCX")
+GET "https://{{baseUrl}}/routes/:id/export_tcx"
+
+
+// Returns the given route's streams. Requires read_all scope for private routes.
+
+@name("Get Route Streams")
+GET "https://{{baseUrl}}/routes/:id/streams"
+
+
+

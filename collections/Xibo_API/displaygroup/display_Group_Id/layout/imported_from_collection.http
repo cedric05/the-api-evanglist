@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Adds the provided Layouts to the Display Group
+
+@name("Assign one or more Layouts items to a Display Group")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/layout/assign"
+
+
+// Removes the provided from the Display Group
+
+@name("Unassign one or more Layout items from a Display Group")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/layout/unassign"
+
+
+

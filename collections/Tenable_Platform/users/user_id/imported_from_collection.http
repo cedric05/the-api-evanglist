@@ -1,0 +1,71 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cf05d8c7-fffb-4a7c-923b-c06517c2b783.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns details for a specific user.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get user details") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users/:user_id"
+
+
+// Updates an existing user account.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Update user") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/users/:user_id"
+"Content-Type": "application/json"
+json({
+    "permissions": 85172072,
+    "name": "sint",
+    "email": "Ut ea tempor irure",
+    "enabled": false
+})
+
+
+// Deletes a user.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Delete user") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/users/:user_id"
+
+
+// Changes the password for a user. 
+// 
+// If you reset a user's password, Tenable.io automatically resets the user's `login_fail_count' and `lockout` attributes to `0`.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Change password") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/users/:user_id/chpasswd"
+"Content-Type": "application/json"
+json({
+    "current_password": "dolor sint aliqua",
+    "password": "culpa occaecat Excepteur"
+})
+
+
+// Enables or disables an existing user account.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Enable user account") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/users/:user_id/enabled"
+"Content-Type": "application/json"
+json({
+    "enabled": false
+})
+
+
+// Generates the API keys for a user.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Generate API keys") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/users/:user_id/keys"
+
+
+// Allows the current administrator to impersonate the given user.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Impersonate user") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users/:user_id/impersonate"
+
+
+

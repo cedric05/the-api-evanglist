@@ -1,0 +1,182 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c482753d-6677-4bf3-8016-18d78f3fecc5.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("U.S. Windstorm Loss Cost") : "base-inherit-auth"
+POST "https://{{baseUrl}}/us_ws_loss_cost/18.1"
+"Content-Type": "application/json"
+json({
+    "location": {
+        "address": {
+            "countryCode": "US",
+            "countryScheme": "ISO2A",
+            "id": 0,
+            "admin1Code": "CA",
+            "admin1Name": "CALIFORNIA",
+            "admin2Code": "001",
+            "admin2Name": "ALAMEDA COUNTY",
+            "admin3Code": "",
+            "admin3Name": "",
+            "admin4Code": "044230130",
+            "admin4Name": "044230130",
+            "cityName": "NEWARK",
+            "countryName": "United States",
+            "latitude": 37.54120000000001,
+            "longitude": -122.06061000000001,
+            "postalCode": "94560",
+            "streetAddress": "7575 GATEWAY BLVD",
+            "name": "",
+            "admin1GeoId": 99999106,
+            "admin2GeoId": 99999206001,
+            "admin3GeoId": 12695859,
+            "admin4GeoId": 62219571,
+            "admin5GeoId": 0,
+            "cityGeoId": 999993061080,
+            "countryFips": "US",
+            "countryGeoId": 840,
+            "countryRmsCode": "US",
+            "geoDataSourceId": 8,
+            "geoMatchCode": "T1-999993061080-T1A1-S0T100A100-S1A1-00-B-A-X",
+            "locationCode": "060014443.01",
+            "locationCodeGeoId": 0,
+            "parcelId": 0,
+            "postalCodeGeoId": 99999494560,
+            "rmsGeoModelResolutionCode": 2,
+            "rmsGeocodingResolutionCode": 31,
+            "ugid": "USS3121778167575",
+            "zone1Code": "A2",
+            "zone2Code": "",
+            "zone3Code": "",
+            "zone4Code": "",
+            "zone3Name": "",
+            "zone4Name": "",
+            "zone1GeoId": 999995062,
+            "zone2GeoId": 0,
+            "zone3GeoId": 22505979,
+            "zone4GeoId": 20235111,
+            "dataVersion": "xx.x.xxxx.x"
+        },
+        "characteristics": {
+            "construction": "ATC1",
+            "occupancy": "ATC1",
+            "yearBuilt": 1980,
+            "numOfStories": 1,
+            "foundationType": 0,
+            "firstFloorHeightAboveGround": 5,
+            "basement": "YES",
+            "floorArea": 1452
+        },
+        "coverageValues": {
+            "buildingValue": 0,
+            "contentsValue": 0,
+            "businessInterruptionValue": 0
+        }
+    },
+    "layerOptions": {
+        "deductibleType": 1,
+        "deductibleAmount": 0.1,
+        "deductibleAmount2": 0.05,
+        "deductibleAmount3": 0.02,
+        "constructionQualityCodeOption": 12,
+        "roofCoveringCodeOption": 3,
+        "roofAgeCodeOption": 2,
+        "roofGeometryCodeOption": 0,
+        "roofAnchorCodeOption": 3,
+        "claddingTypeCodeOption": 3,
+        "roofSheathingCodeOption": 2,
+        "openingProtectionCodeOption": 14
+    }
+})
+
+
+@name("U.S. Windstorm Loss Cost") : "base-inherit-auth"
+POST "https://{{baseUrl}}/us_ws_loss_cost/18.0"
+"Content-Type": "application/json"
+json({
+    "location": {
+        "address": {
+            "countryCode": "US",
+            "countryScheme": "ISO2A",
+            "id": 0,
+            "admin1Code": "CA",
+            "admin1Name": "CALIFORNIA",
+            "admin2Code": "001",
+            "admin2Name": "ALAMEDA COUNTY",
+            "admin3Code": "",
+            "admin3Name": "",
+            "admin4Code": "044230130",
+            "admin4Name": "044230130",
+            "cityName": "NEWARK",
+            "countryName": "United States",
+            "latitude": 37.54120000000001,
+            "longitude": -122.06061000000001,
+            "postalCode": "94560",
+            "streetAddress": "7575 GATEWAY BLVD",
+            "name": "",
+            "admin1GeoId": 99999106,
+            "admin2GeoId": 99999206001,
+            "admin3GeoId": 12695859,
+            "admin4GeoId": 62219571,
+            "admin5GeoId": 0,
+            "cityGeoId": 999993061080,
+            "countryFips": "US",
+            "countryGeoId": 840,
+            "countryRmsCode": "US",
+            "geoDataSourceId": 8,
+            "geoMatchCode": "T1-999993061080-T1A1-S0T100A100-S1A1-00-B-A-X",
+            "locationCode": "060014443.01",
+            "locationCodeGeoId": 0,
+            "parcelId": 0,
+            "postalCodeGeoId": 99999494560,
+            "rmsGeoModelResolutionCode": 2,
+            "rmsGeocodingResolutionCode": 31,
+            "ugid": "USS3121778167575",
+            "zone1Code": "A2",
+            "zone2Code": "",
+            "zone3Code": "",
+            "zone4Code": "",
+            "zone3Name": "",
+            "zone4Name": "",
+            "zone1GeoId": 999995062,
+            "zone2GeoId": 0,
+            "zone3GeoId": 22505979,
+            "zone4GeoId": 20235111,
+            "dataVersion": "xx.x.xxxx.x"
+        },
+        "characteristics": {
+            "construction": "ATC1",
+            "occupancy": "ATC1",
+            "yearBuilt": 1980,
+            "numOfStories": 1,
+            "foundationType": 0,
+            "firstFloorHeightAboveGround": 5,
+            "basement": "YES",
+            "floorArea": 1452
+        },
+        "coverageValues": {
+            "buildingValue": 0,
+            "contentsValue": 0,
+            "businessInterruptionValue": 0
+        }
+    },
+    "layerOptions": {
+        "constructionQualityCodeOption": 12,
+        "roofCoveringCodeOption": 3,
+        "roofAgeCodeOption": 2,
+        "roofGeometryCodeOption": 0,
+        "roofAnchorCodeOption": 3,
+        "claddingTypeCodeOption": 3,
+        "roofSheathingCodeOption": 2,
+        "openingProtectionCodeOption": 14
+    }
+})
+
+
+

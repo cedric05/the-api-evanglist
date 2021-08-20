@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d1c24152-c0ee-4a27-a9ce-a0e1ddc1f2e6.postman_collection.json
+
+// This operation list or find Monitor entities
+
+@name("List or find Monitor objects")
+GET "https://{{baseUrl}}/monitor"
+? "fields"= "minim mollit sit"
+? "offset"= "-5367809"
+? "limit"= "-5367809"
+
+
+// This operation retrieves a Monitor entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Monitor by ID")
+GET "https://{{baseUrl}}/monitor/:id"
+? "fields"= "minim mollit sit"
+
+
+

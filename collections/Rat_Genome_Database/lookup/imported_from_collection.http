@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c06f082c-7c18-4317-b196-8ad07101a2f4.postman_collection.json
+
+@name("Returns a list of gene types avialable in RGD")
+GET "https://{{baseUrl}}/lookup/geneTypes"
+
+
+@name("Return a list assembly maps for a species")
+GET "https://{{baseUrl}}/lookup/maps/:speciesTypeKey"
+
+
+@name("Return a Map of species type keys available in RGD")
+GET "https://{{baseUrl}}/lookup/speciesTypeKeys"
+
+
+

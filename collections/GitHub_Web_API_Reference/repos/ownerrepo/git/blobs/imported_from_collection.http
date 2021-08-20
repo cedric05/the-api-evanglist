@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("Create a blob")
+POST "https://{{baseUrl}}/repos/:owner/:repo/git/blobs"
+"Content-Type": "application/json"
+json({
+    "content": "<string>",
+    "encoding": "utf-8"
+})
+
+
+// The `content` in the response will always be Base64 encoded.
+// 
+// _Note_: This API supports blobs up to 100 megabytes in size.
+
+@name("Get a blob")
+GET "https://{{baseUrl}}/repos/:owner/:repo/git/blobs/:file_sha"
+
+
+

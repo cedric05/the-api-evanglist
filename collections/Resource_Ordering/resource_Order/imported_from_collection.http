@@ -1,0 +1,503 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-50e36ab5-49e5-4f9b-9066-9e8a9fddaf7d.postman_collection.json
+
+// This operation list or find ResourceOrder entities
+
+@name("List or find ResourceOrder objects")
+GET "https://{{baseUrl}}/resourceOrder"
+? "fields"= "consect"
+? "offset"= "-72350692"
+? "limit"= "-72350692"
+
+
+// This operation creates a ResourceOrder entity.
+
+@name("Creates a ResourceOrder")
+POST "https://{{baseUrl}}/resourceOrder"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "category": "Premium",
+    "description": "7km of 6-fiber, double jacketed Optical Cable for Acme Inc",
+    "externalId": "Customer Ref: 577e6b2be5e5",
+    "name": "7km of Optical Cable for Acme Inc",
+    "orderType": "cillum",
+    "priority": 0,
+    "requestedCompletionDate": "2021-07-07T10:19:46+0000",
+    "requestedStartDate": "2020-11-20T10:19:46+0000",
+    "startDate": "2020-11-20T10:19:46+0000",
+    "externalReference": [
+        {
+            "name": "sed",
+            "id": "reprehenderit",
+            "href": "http://iPZZoIqZtsxOHlZyutjYVQW.otwEDnzI40C,Ibn2CmZEqVj9txvLaYWOXIREeSsU64aIC2nLsQiHNpzsgWTGNR3",
+            "externalReferenceType": "deserunt pariatur consectetur",
+            "@baseType": "aliquip non magna in laborum",
+            "@schemaLocation": "https://qixnQpCkLJ.dkmAma,44zxVgdXBI2S1,s6oXD",
+            "@type": "cupidatat cillum"
+        },
+        {
+            "name": "ullamco dolor",
+            "id": "Duis",
+            "href": "http://AtfYgCWDfgpnlUBclY.jhezs-uAmx+w7MB8y,z7",
+            "externalReferenceType": "enim exercitation qui",
+            "@baseType": "incididunt deserunt culpa anim",
+            "@schemaLocation": "https://lvBBLqTxKrCkeIudJ.cmvmClMfli8y3rRGjOuAN1GfvjyRxfk.Ja8B5ROCii,YS5wE+-LtGknoy+uSbves",
+            "@type": "Duis et incididunt sunt"
+        }
+    ],
+    "note": [
+        {
+            "text": "Ut ea",
+            "id": "quis nostrud anim volupt",
+            "href": "http://JEKZjHVqJIctSxHLcotLrSd.qdgcmZrxjd6VxpyLbZQqdzQrO7i",
+            "author": "cillum amet",
+            "date": "1946-09-11T00:52:14.796Z",
+            "@baseType": "ipsum Ut eu",
+            "@schemaLocation": "https://GKLpWrLGZVnRVrqxczUI.jfzWF5xkrsfH",
+            "@type": "laboris Excepteur dolore exercitation"
+        },
+        {
+            "text": "dolore Duis qui non",
+            "id": "amet ",
+            "href": "http://uZ.kfawGz0RLGiN5nRCzQL17qsVaU06XyTfjt9Gim28BUiFaRVST",
+            "author": "dolore incididunt ven",
+            "date": "1952-03-10T04:29:38.632Z",
+            "@baseType": "ad",
+            "@schemaLocation": "https://sCPOCdWtBNtyMQAlK.wroVehfN8Xj4-QmUluRV7VssLbT7RZEnfcBAFRDMCsJ75PgSPdqIULQXc1XBm",
+            "@type": "irure i"
+        }
+    ],
+    "orderItem": [
+        {
+            "id": "01",
+            "href": "https://cCuVfSSFjmkHaaTCzUdnqcSP.iqvjHZu9DmC9iAHnV53BtVIDCIGXU.ZfzlYqQKfnAuRmQx1zUH2wj.JeBH5dDRnmoMW3DJhQfcat5yT",
+            "quantity": 7000,
+            "action": "delete",
+            "appointment": {
+                "id": "elit ipsum aute",
+                "href": "dolor d",
+                "description": "veniam",
+                "@baseType": "non Lorem nostrud cillum",
+                "@schemaLocation": "https://YagVKQWujCmxIMWcrEqIAE.jlNCsIApI9ctMRfgKWcyDrAh-jMQ9,5VDLXKlmAizRFUvLgZ",
+                "@type": "sed comm",
+                "@referredType": "aliqua tempor magna"
+            },
+            "orderItemRelationship": [
+                {
+                    "id": "cillum qui pariatur",
+                    "href": "https://seYxsgdNnHRTsLxgDRbLVpAf.iaowp+Ls65lz57WbenxS",
+                    "relationshipType": "dependency",
+                    "orderItem": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": "id ex dolor",
+                    "@schemaLocation": "https://lwDXAWHUnwXcltAWfRxOMv.jagnDr6,8BIJt6LLV2tpPGYy-D15gLua7pzi",
+                    "@type": "Excepteur irure"
+                },
+                {
+                    "id": "minim",
+                    "href": "http://SuLFzgPcjceBnduQUwohBWRBw.gozwh6iTevohy8+vPf5TUEhcJ25l44zXpsIY3BKmGf6kfKnGszaDCm1Cd8HTmUj5VVs.v.pE.CQq",
+                    "relationshipType": "dependency",
+                    "orderItem": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": "voluptate ullamco proident",
+                    "@schemaLocation": "https://pXqaraEVvFpCDyPQ.nxJUsZrQ2m9dgZiUiGVxmSsymcdESO9LS49Ygk.JrcucFk-FEFhfsA",
+                    "@type": "ex commodo pariatur magna ea"
+                }
+            ],
+            "resource": {
+                "id": "officia in elit nisi dolor",
+                "href": "ullamco cupidatat ut ex",
+                "category": "anim eiusmod",
+                "description": "sed ad amet labore",
+                "endOperatingDate": "1947-07-11T06:01:41.141Z",
+                "name": "qui",
+                "resourceVersion": "ad reprehenderit cupidatat consectetur",
+                "startOperatingDate": "1964-04-27T17:37:38.057Z",
+                "activationFeature": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "administrativeState": "shutdown",
+                "attachment": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "Duis deserunt culpa sunt",
+                        "id": "fugiat et",
+                        "href": "http://AyVKtkgfOwhlaQSbjRpnokNwwpPldFN.qulmWvqNvyMSPD-UatVRfdsPb0ehU-w66nwR9lj427wNDEt",
+                        "author": "id exercitation veniam quis",
+                        "date": "1990-04-22T05:32:17.077Z",
+                        "@baseType": "nulla laborum Ut",
+                        "@schemaLocation": "http://ffdRvRdSNiJqhkFEC.dxMvTr1Ztw0KQu-Mqm0u8H4BS0aaDT7s9813x4UI",
+                        "@type": "aliqua"
+                    },
+                    {
+                        "text": "pariatur Ut mollit sit",
+                        "id": "mollit i",
+                        "href": "http://lTrMMdMTSMtBjAITNHLgRiOGtlBY.wryOgy+LuzKbFesGLReXwtId",
+                        "author": "ut dolor",
+                        "date": "1972-03-28T00:35:26.460Z",
+                        "@baseType": "exe",
+                        "@schemaLocation": "https://edNPbjGAwiFvMBbXxSe.npckxFZEO8PxBirhgxrep0bFg",
+                        "@type": "molli"
+                    }
+                ],
+                "operationalState": "enable",
+                "place": {
+                    "role": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@schemaLocation": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@referredType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "relatedParty": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "resourceCharacteristic": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "resourceRelationship": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "resourceSpecification": {
+                    "id": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "version": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@schemaLocation": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@referredType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "resourceStatus": "reserved",
+                "usageState": "busy",
+                "@baseType": "Duis officia esse ut",
+                "@schemaLocation": "https://zcDTtAVwfJJvaM.bxcqp.1OTnVDfrFWYOXZtuYoYeV8A",
+                "@type": "reprehenderit cupidatat",
+                "@referredType": "proident aliqua consequat eu"
+            },
+            "resourceSpecification": {
+                "id": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "name": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "version": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@baseType": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@schemaLocation": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@type": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@referredType": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "state": "failed",
+            "@baseType": "exercitation occaecat nisi tempor minim",
+            "@schemaLocation": "http://AAd.pmcqkVWbYcmHvrcc5GzRUT+kQVLx8ObDvK3ITnVMggD9LV6nxArI84mJq4wiESwyp+Xo6TjAAHYXt.",
+            "@type": "est cillum mollit aute"
+        },
+        {
+            "id": "01",
+            "href": "http://G.ytTlK7jOUdiGczS.l2LKTYDhKxOWlitMMA5KVk8T4BCph3vlEwFQbRAd0cPSRHWvOOM7CionAX",
+            "quantity": 7000,
+            "action": "modify",
+            "appointment": {
+                "id": "dolor in",
+                "href": "Excepteur cillum irure",
+                "description": "minim consequat",
+                "@baseType": "proident sit incididunt",
+                "@schemaLocation": "https://R.gayD-",
+                "@type": "in ut",
+                "@referredType": "veniam in ad"
+            },
+            "orderItemRelationship": [
+                {
+                    "id": "incididunt minim i",
+                    "href": "https://nfbBWySOEIAfNHuwuWXxQzaRJAzyhAqFS.ocDiD5OzriaX6-HfpqjwQ5FdUaSSN9RaT8i8ecp03c1sOyuywt75JHV18BXcK1VzbSiWnN",
+                    "relationshipType": "dependency",
+                    "orderItem": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": "esse elit Lorem fugiat",
+                    "@schemaLocation": "https://LpvFTaWuxv.fgbitlLgtDZDQWhootiVf5EFqG5cQTS3m4hH4eLyD",
+                    "@type": "aliqua Excepteur"
+                },
+                {
+                    "id": "sint adipisicing Lorem",
+                    "href": "https://bFDPvq.qhcmi+UJqOSa00m9Nh.Pg5WbgHFRrhf",
+                    "relationshipType": "dependency",
+                    "orderItem": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": "ut tempor",
+                    "@schemaLocation": "http://UMZTZPmQeXDXhdAAIvhZHMMe.ipD7oM",
+                    "@type": "mollit quis Duis pariatur"
+                }
+            ],
+            "resource": {
+                "id": "occaecat ad sed veniam",
+                "href": "amet veniam dolor",
+                "category": "minim nostrud aliqua",
+                "description": "pariatur sed nostrud",
+                "endOperatingDate": "1948-10-16T16:32:16.098Z",
+                "name": "Lorem ut in",
+                "resourceVersion": "anim consequat ut",
+                "startOperatingDate": "2005-06-08T20:51:53.642Z",
+                "activationFeature": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "administrativeState": "locked",
+                "attachment": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "note": [
+                    {
+                        "text": "eiusmod",
+                        "id": "in do",
+                        "href": "https://vtSkoenkMjJmMPoaSTUgThY.skZS8pz3fNENF7GJ-H6NgswuOFbOf08VeIOMjeOfVUiewYO07Fsmvgo9iJf",
+                        "author": "quis Ut commodo conse",
+                        "date": "1958-03-12T07:47:18.578Z",
+                        "@baseType": "pariatur cillum",
+                        "@schemaLocation": "http://MEAZFkDLNbdAEbFFUXKrWBzS.wkVj6YX,Bi,o0TwtQHDI.njX32SwX3nk0MA+3DCbtMgZySjA0eBFjQU",
+                        "@type": "ut laboris id dolore"
+                    },
+                    {
+                        "text": "culpa dolore",
+                        "id": "eiusmod est sint Lorem",
+                        "href": "https://IjRoxaHuelgWZCTCKOsLmAIu.hyqcDa-ay,3d8BHKBRtNlmw7NA7Vum2iTo.3A9Oawg0WYXtL3VmCrkhNnkmGTT5zdTswTg",
+                        "author": "a",
+                        "date": "2013-04-02T00:02:50.340Z",
+                        "@baseType": "in esse",
+                        "@schemaLocation": "http://sPrrpVsvaXZDXtghTQKmgyRIpW.azKKz6NgkDr7avf40N,1ci4AiLe2jyZ",
+                        "@type": "voluptate culpa nisi qui"
+                    }
+                ],
+                "operationalState": "enable",
+                "place": {
+                    "role": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@schemaLocation": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@referredType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "relatedParty": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "resourceCharacteristic": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "resourceRelationship": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "resourceSpecification": {
+                    "id": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "version": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@schemaLocation": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@referredType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "resourceStatus": "standby",
+                "usageState": "active",
+                "@baseType": "irure",
+                "@schemaLocation": "https://gHzDqxadDFDL.rmxkm7wyx4WNW1uU6aw+Hf.+20YVaOe.0m0jGJYJJntgkIMRlyNJcUW-eBwb0J0wY",
+                "@type": "consequat commodo",
+                "@referredType": "voluptate Excepteur cons"
+            },
+            "resourceSpecification": {
+                "id": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "name": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "version": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@baseType": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@schemaLocation": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@type": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@referredType": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "state": "failed",
+            "@baseType": "quis laborum nulla enim minim",
+            "@schemaLocation": "https://xpQIXHctDgmRB.kbwcTnXj6dsW5kyPrJ-QkbzzYfa,OD89MjzFGkDbyDKpeq1EZ6esv7aVKjYv.meoyiiA",
+            "@type": ""
+        }
+    ],
+    "relatedParty": [
+        {
+            "@referredType": "voluptate exercitation consectetur in",
+            "id": "dolor irure est proident",
+            "href": "https://UEO.rhyTdV-T9EeD.C",
+            "name": "ad occaecat exercitation culpa",
+            "role": "Lorem sint in",
+            "@baseType": "nulla dolore cupidatat",
+            "@schemaLocation": "http://ydRQWRsoMkXm.lskxm5jZ2QKf.hFHQolWx-YlFwfw-i+cj5Z1WBcUab-5IO+DEUdEr20K8dTlW",
+            "@type": "est officia"
+        },
+        {
+            "@referredType": "minim Duis aliqua pariatur fugiat",
+            "id": "adipisicing ipsum anim",
+            "href": "http://ZElUX.qyL5DAT32xJsnF4+j,,mpk.cIc9m4IUW",
+            "name": "sunt non dolore cillum",
+            "role": "cillum in deserunt adipisicing cupidatat",
+            "@baseType": "deserunt adipisicing dolore",
+            "@schemaLocation": "https://hPAoGbecAjCmdGIea.smNRpwXArTtrBuu.JBOms49,2L0SRv+BXMNEwDHiqxq,mnykRjvjSMv,ndfbRaCHTT",
+            "@type": "exercitation"
+        }
+    ],
+    "@baseType": "eiusmod",
+    "@schemaLocation": "https://YRBPgaURdrI.uuvuLiwU+5kLnQDW.Sl8VFI-SWMvWdaZKlEtpm3lu",
+    "@type": "ullamco laborum"
+})
+
+
+

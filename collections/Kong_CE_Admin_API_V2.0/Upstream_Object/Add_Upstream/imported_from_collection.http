@@ -1,0 +1,315 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// # Create Upstream [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-upstream)
+// * The upstream object represents a virtual hostname and can be used to loadbalance incoming requests over multiple services (targets). So for example an upstream named service.v1.xyz for a Service object whose host is service.v1.xyz. Requests for this Service would be proxied to the targets defined within the upstream.
+// 
+// * An upstream also includes a health checker, which is able to enable and disable targets based on their ability or inability to serve requests. The configuration for the health checker is stored in the upstream object, and applies to all of its targets.
+// 
+// * Upstreams can be both tagged and filtered by tags.
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>body</td>
+//     <td>This is a hostname, which must be equal to the host of a Service.</td>
+//   </tr>
+//   <tr>
+//     <td>algorithm</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Which load balancing algorithm to use. Accepted values are: "consistent-hashing", "least-connections", "round-robin". Defaults to "round-robin".</td>
+//   </tr>
+//   <tr>
+//     <td>hash_on</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>What to use as hashing input. Using none results in a weighted-round-robin scheme with no hashing. Accepted values are: "none", "consumer", "ip", "header", "cookie". Defaults to "none".</td>
+//   </tr>
+//   <tr>
+//     <td>hash_fallback</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>What to use as hashing input if the primary hash_on does not return a hash (eg. header is missing, or no consumer identified). Not available if hash_on is set to cookie. Accepted values are: "none", "consumer", "ip", "header", "cookie". Defaults to "none".</td>
+//   </tr>
+//   <tr>
+//     <td>hash_on_header</td>
+//     <td>semi-optional</td>
+//     <td>body</td>
+//     <td>The header name to take the value from as hash input. Only required when hash_on is set to header.</td>
+//   </tr>
+//   <tr>
+//     <td>hash_fallback_header</td>
+//     <td>semi-optional</td>
+//     <td>body</td>
+//     <td>The header name to take the value from as hash input. Only required when hash_fallback is set to header.</td>
+//   </tr>
+//   <tr>
+//     <td>hash_on_cookie</td>
+//     <td>semi-optional</td>
+//     <td>body</td>
+//     <td>The cookie name to take the value from as hash input. Only required when hash_on or hash_fallback is set to cookie. If the specified cookie is not in the request, Kong will generate a value and set the cookie in the response.</td>
+//   </tr>
+//   <tr>
+//     <td>hash_on_cookie_path</td>
+//     <td>semi-optional</td>
+//     <td>body</td>
+//     <td>The cookie path to set in the response headers. Only required when hash_on or hash_fallback is set to cookie. Defaults to "/".</td>
+//   </tr>
+//   <tr>
+//     <td>slots</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>The number of slots in the loadbalancer algorithm (10-65536). Defaults to 10000.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.https_verify_certificate</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Whether to check the validity of the SSL certificate of the remote host when performing active health checks using HTTPS. Defaults to true.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.unhealthy.http_statuses</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>An array of HTTP statuses to consider a failure, indicating unhealthiness, when returned by a probe in active health checks. Defaults to [429, 404, 500, 501, 502, 503, 504, 505]. With form-encoded, the notation is http_statuses[]=429&http_statuses[]=404. With JSON, use an Array.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.unhealthy.tcp_failures</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Number of TCP failures in active probes to consider a target unhealthy. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.unhealthy.timeouts</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Number of timeouts in active probes to consider a target unhealthy. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.unhealthy.http_failures</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Number of HTTP failures in active probes (as defined by healthchecks.active.unhealthy.http_statuses) to consider a target unhealthy. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.unhealthy.interval</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Interval between active health checks for unhealthy targets (in seconds). A value of zero indicates that active probes for unhealthy targets should not be performed. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.http_path</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Path to use in GET HTTP request to run as a probe on active health checks. Defaults to "/".</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.timeout</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Socket timeout for active health checks (in seconds). Defaults to 1.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.healthy.http_statuses</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>An array of HTTP statuses to consider a success, indicating healthiness, when returned by a probe in active health checks. Defaults to [200, 302]. With form-encoded, the notation is http_statuses[]=200&http_statuses[]=302. With JSON, use an Array.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.healthy.interval</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Interval between active health checks for healthy targets (in seconds). A value of zero indicates that active probes for healthy targets should not be performed. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.healthy.successes</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Number of successes in active probes (as defined by healthchecks.active.healthy.http_statuses) to consider a target healthy. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.https_sni</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>The hostname to use as an SNI (Server Name Identification) when performing active health checks using HTTPS. This is particularly useful when Targets are configured using IPs, so that the target host’s certificate can be verified with the proper SNI.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.concurrency</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Number of targets to check concurrently in active health checks. Defaults to 10.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.active.type</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Whether to perform active health checks using HTTP or HTTPS, or just attempt a TCP connection. Accepted values are: "tcp", "http", "https", "grpc", "grpcs". Defaults to "http".</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.passive.unhealthy.http_failures</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Number of HTTP failures in proxied traffic (as defined by healthchecks.passive.unhealthy.http_statuses) to consider a target unhealthy, as observed by passive health checks. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.passive.unhealthy.http_statuses</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>An array of HTTP statuses which represent unhealthiness when produced by proxied traffic, as observed by passive health checks. Defaults to [429, 500, 503]. With form-encoded, the notation is http_statuses[]=429&http_statuses[]=500. With JSON, use an Array.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.passive.unhealthy.tcp_failures</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Number of TCP failures in proxied traffic to consider a target unhealthy, as observed by passive health checks. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.passive.unhealthy.timeouts</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Number of timeouts in proxied traffic to consider a target unhealthy, as observed by passive health checks. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.passive.type</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Whether to perform passive health checks interpreting HTTP/HTTPS statuses, or just check for TCP connection success. In passive checks, http and https options are equivalent. Accepted values are: "tcp", "http", "https", "grpc", "grpcs". Defaults to "http".</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.passive.healthy.successes</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>Number of successes in proxied traffic (as defined by healthchecks.passive.healthy.http_statuses) to consider a target healthy, as observed by passive health checks. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.passive.healthy.http_statuses</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>An array of HTTP statuses which represent healthiness when produced by proxied traffic, as observed by passive health checks. Defaults to [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308]. With form-encoded, the notation is http_statuses[]=200&http_statuses[]=201. With JSON, use an Array.</td>
+//   </tr>
+//   <tr>
+//     <td>healthchecks.threshold</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>The minimum percentage of the upstream’s targets’ weight that must be available for the whole upstream to be considered healthy. Defaults to 0.</td>
+//   </tr>
+//   <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>An optional set of strings associated with the Upstream, for grouping and filtering.</td>
+//   </tr>
+//   <tr>
+//     <td>host_header</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>The hostname to be used as Host header when proxying requests through Kong.</td>
+//   </tr>
+// </table>
+
+@name("Create Upstream")
+POST "https://{{gateway}}/upstreams"
+"Content-Type": "application/json"
+json({
+    "created_at": 1584044267,
+    "hash_on": "none",
+    "id": "f8d38987-1eb6-4cb2-a7c8-6b11a17de911",
+    "algorithm": "round-robin",
+    "name": "my-upstream",
+    "tags": [
+        "user-level",
+        "low-priority"
+    ],
+    "hash_fallback_header": null,
+    "hash_fallback": "none",
+    "hash_on_cookie": null,
+    "host_header": "example.com",
+    "hash_on_cookie_path": "/",
+    "healthchecks": {
+        "threshold": 0,
+        "active": {
+            "unhealthy": {
+                "http_statuses": [
+                    429,
+                    404,
+                    500,
+                    501,
+                    502,
+                    503,
+                    504,
+                    505
+                ],
+                "tcp_failures": 0,
+                "timeouts": 0,
+                "http_failures": 0,
+                "interval": 0
+            },
+            "type": "http",
+            "http_path": "/",
+            "timeout": 1,
+            "healthy": {
+                "successes": 0,
+                "interval": 0,
+                "http_statuses": [
+                    200,
+                    302
+                ]
+            },
+            "https_sni": "example.com",
+            "https_verify_certificate": true,
+            "concurrency": 10
+        },
+        "passive": {
+            "unhealthy": {
+                "http_failures": 0,
+                "http_statuses": [
+                    429,
+                    500,
+                    503
+                ],
+                "tcp_failures": 0,
+                "timeouts": 0
+            },
+            "healthy": {
+                "http_statuses": [
+                    200,
+                    201,
+                    202,
+                    203,
+                    204,
+                    205,
+                    206,
+                    207,
+                    208,
+                    226,
+                    300,
+                    301,
+                    302,
+                    303,
+                    304,
+                    305,
+                    306,
+                    307,
+                    308
+                ],
+                "successes": 0
+            },
+            "type": "http"
+        }
+    },
+    "hash_on_header": null,
+    "slots": 10000
+})
+
+
+

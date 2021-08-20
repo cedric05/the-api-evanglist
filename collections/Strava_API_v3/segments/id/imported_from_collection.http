@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Returns the specified segment. read_all scope required in order to retrieve athlete-specific segment information, or to retrieve private segments.
+
+@name("Get Segment")
+GET "https://{{baseUrl}}/segments/:id"
+
+
+// Stars/Unstars the given segment for the authenticated athlete. Requires profile:write scope.
+
+@name("Star Segment")
+PUT "https://{{baseUrl}}/segments/:id/starred"
+
+
+// Returns the specified segment leaderboard.
+
+@name("Get Segment Leaderboard")
+GET "https://{{baseUrl}}/segments/:id/leaderboard"
+? "gender"= "<string>"
+? "age_group"= "<string>"
+? "weight_class"= "<string>"
+? "following"= "<boolean>"
+? "club_id"= "<integer>"
+? "date_range"= "<string>"
+? "context_entries"= "<integer>"
+? "No Name"= "<string>"
+
+
+// Returns a set of the authenticated athlete's segment efforts for a given segment.
+
+@name("List Segment Efforts")
+GET "https://{{baseUrl}}/segments/:id/all_efforts"
+? "No Name"= "<string>"
+
+
+// Returns the given segment's streams. Requires read_all scope for private segments.
+
+@name("Get Segment Streams")
+GET "https://{{baseUrl}}/segments/:id/streams"
+? "keys"= "<array>"
+? "key_by_type"= "<boolean>"
+
+
+

@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Uploads archive for an extension.
+
+@name("Uploads the Extension") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/deployments/extensions/:extension_id"
+"Content-Type": "multipart/form-data"
+files(
+	("file", "fugiat minim")
+)
+
+
+// Updates an extension.
+
+@name("Update Extension") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/extensions/:extension_id"
+"Content-Type": "application/json"
+json({
+    "extension_type": "plugin",
+    "name": "ullamco id pariatur",
+    "version": "Duis pariatur irure do",
+    "download_url": "et sit",
+    "description": "anim"
+})
+
+
+// Deletes a Extension.
+
+@name("Delete Extension") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/deployments/extensions/:extension_id"
+
+
+// Retrieves an extension.
+
+@name("Get Extension") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/extensions/:extension_id"
+? "include_deployments"= "false"
+
+
+

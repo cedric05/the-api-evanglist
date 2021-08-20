@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Deletes an account. The ID of the account must be specified.
+
+@name("Delete an account")
+DELETE "https://{{baseUrl}}/rest/accounts/:accountId"
+
+
+// Lists contacts of the account. The ID of the account must be specified.
+
+@name("List contacts")
+GET "https://{{baseUrl}}/rest/accounts/:accountId/contacts"
+
+
+

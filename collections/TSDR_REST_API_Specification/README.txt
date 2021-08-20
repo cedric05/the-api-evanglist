@@ -1,0 +1,1 @@
+Beginning on October 2, 2020, you will need an API key to access the TSDR REST API. See our TSDR Data API webpage for more information on retrieving bulk data.

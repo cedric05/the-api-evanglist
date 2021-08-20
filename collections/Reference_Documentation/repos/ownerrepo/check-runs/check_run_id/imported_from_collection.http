@@ -1,0 +1,92 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+// 
+// Gets a single check run using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth Apps and authenticated users must have the `repo` scope to get check runs in a private repository.
+
+@name("Get a check run")
+GET "https://{{baseUrl}}/repos/:owner/:repo/check-runs/:check_run_id"
+
+
+// **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+// 
+// Updates a check run for a specific commit in a repository. Your GitHub App must have the `checks:write` permission to edit check runs.
+
+@name("Update a check run")
+PATCH "https://{{baseUrl}}/repos/:owner/:repo/check-runs/:check_run_id"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "details_url": "<string>",
+    "external_id": "<string>",
+    "started_at": "<string>",
+    "status": "<string>",
+    "conclusion": "<string>",
+    "completed_at": "<string>",
+    "output": {
+        "summary": "<string>",
+        "title": "<string>",
+        "text": "<string>",
+        "annotations": [
+            {
+                "path": "<string>",
+                "start_line": "<integer>",
+                "end_line": "<integer>",
+                "annotation_level": "<string>",
+                "message": "<string>",
+                "start_column": "<integer>",
+                "end_column": "<integer>",
+                "title": "<string>",
+                "raw_details": "<string>"
+            },
+            {
+                "path": "<string>",
+                "start_line": "<integer>",
+                "end_line": "<integer>",
+                "annotation_level": "<string>",
+                "message": "<string>",
+                "start_column": "<integer>",
+                "end_column": "<integer>",
+                "title": "<string>",
+                "raw_details": "<string>"
+            }
+        ],
+        "images": [
+            {
+                "alt": "<string>",
+                "image_url": "<string>",
+                "caption": "<string>"
+            },
+            {
+                "alt": "<string>",
+                "image_url": "<string>",
+                "caption": "<string>"
+            }
+        ]
+    },
+    "actions": [
+        {
+            "label": "<string>",
+            "description": "<string>",
+            "identifier": "<string>"
+        },
+        {
+            "label": "<string>",
+            "description": "<string>",
+            "identifier": "<string>"
+        }
+    ]
+})
+
+
+// Lists annotations for a check run using the annotation `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get annotations for a check run. OAuth Apps and authenticated users must have the `repo` scope to get annotations for a check run in a private repository.
+
+@name("List check run annotations")
+GET "https://{{baseUrl}}/repos/:owner/:repo/check-runs/:check_run_id/annotations"
+? "per_page"= "30"
+? "page"= "1"
+
+
+

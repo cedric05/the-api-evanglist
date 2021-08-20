@@ -1,0 +1,221 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Delete a specific Slice group payment.
+
+@name("DELETE Registry Entry for User Registry")
+DELETE "https://{{baseUrl}}/user/:userID/registry/:registryID/registry-entry/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Get a specific Slice group payment.
+
+@name("READ Registry Entry for User Registry")
+GET "https://{{baseUrl}}/user/:userID/registry/:registryID/registry-entry/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Update a specific Slice group payment.
+
+@name("UPDATE Registry Entry for User Registry")
+PUT "https://{{baseUrl}}/user/:userID/registry/:registryID/registry-entry/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "amount": {
+        "currency": "pariatur ut minim",
+        "value": "tempor nulla esse ut enim"
+    },
+    "allocations": [
+        {
+            "amount": {
+                "currency": "Lorem do",
+                "value": "ut in"
+            },
+            "membership": {
+                "alias": {
+                    "avatar": {
+                        "anchor_uuid": "magna nostrud quis",
+                        "image": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "uuid": "<string>"
+                    },
+                    "bunq_me": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "type": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "country": "consequat Duis eu dese",
+                    "display_name": "ipsum adipisicing tempor",
+                    "iban": "minim irure",
+                    "is_light": false,
+                    "label_user": {
+                        "avatar": {
+                            "anchor_uuid": "adipisicing Lorem dolor in",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "country": "fugiat sunt nulla quis minim",
+                        "display_name": "pariatur cupidatat",
+                        "public_nick_name": "amet quis commodo",
+                        "uuid": "cupidatat labore"
+                    },
+                    "merchant_category_code": "ea voluptate",
+                    "swift_account_number": "voluptate officia",
+                    "swift_bic": "id",
+                    "transferwise_account_number": "occaecat in ullamco Excepteur",
+                    "transferwise_bank_code": ""
+                },
+                "balance": {
+                    "currency": "consectetur voluptate aliqua",
+                    "value": "ut veniam anim cupidatat sed"
+                },
+                "status": "laborum reprehenderit pariatur",
+                "total_amount_spent": {
+                    "currency": "consequat commodo",
+                    "value": "et eiusmod ad"
+                }
+            },
+            "share_ratio": -70794877,
+            "type": "nulla in"
+        },
+        {
+            "amount": {
+                "currency": "",
+                "value": "sunt"
+            },
+            "membership": {
+                "alias": {
+                    "avatar": {
+                        "anchor_uuid": "magna laboris mollit id",
+                        "image": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "uuid": "<string>"
+                    },
+                    "bunq_me": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "type": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "country": "labore Excepteur",
+                    "display_name": "minim sunt",
+                    "iban": "et est",
+                    "is_light": false,
+                    "label_user": {
+                        "avatar": {
+                            "anchor_uuid": "dolore minim et id",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "country": "magna",
+                        "display_name": "cupidatat",
+                        "public_nick_name": "dolor quis adipisicing mollit",
+                        "uuid": "do commodo ea"
+                    },
+                    "merchant_category_code": "est",
+                    "swift_account_number": "tempor",
+                    "swift_bic": "cil",
+                    "transferwise_account_number": "ut cillum",
+                    "transferwise_bank_code": "do ut nulla est aliq"
+                },
+                "balance": {
+                    "currency": "ipsum reprehenderit",
+                    "value": "id aliquip"
+                },
+                "status": "dolor minim Duis incididunt",
+                "total_amount_spent": {
+                    "currency": "dolor",
+                    "value": "laboris nulla n"
+                }
+            },
+            "share_ratio": 39320668,
+            "type": "aute"
+        }
+    ],
+    "alias_owner": {
+        "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "type": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "value": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+    },
+    "attachment": [
+        {
+            "id": 15000814,
+            "monetary_account_id": -35089412
+        },
+        {
+            "id": 4023403,
+            "monetary_account_id": -13424809
+        }
+    ],
+    "description": "<string>",
+    "object_reference": {
+        "id": "<integer>",
+        "type": "<string>"
+    }
+})
+
+
+

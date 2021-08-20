@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Returns a list of all planetary colonies owned by a character.
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/planets/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/planets/`
+// 
+// Alternate route: `/v1/characters/{character_id}/planets/`
+// 
+// ---
+// This route is cached for up to 600 seconds
+
+@name("Get colonies")
+GET "https://{{baseUrl}}/characters/:character_id/planets/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Returns full details on the layout of a single planetary colony, including links, pins and routes. Note: Planetary information is only recalculated when the colony is viewed through the client. Information will not update until this criteria is met.
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/planets/{planet_id}/`
+// 
+// Alternate route: `/v3/characters/{character_id}/planets/{planet_id}/`
+
+@name("Get colony layout")
+GET "https://{{baseUrl}}/characters/:character_id/planets/:planet_id/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

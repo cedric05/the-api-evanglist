@@ -1,0 +1,125 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d7e889e2-45ea-4b46-badd-0b496c4a983f.postman_collection.json
+
+// Get a list of property IDs within a specific geography that have a specific number of beds. Use orderby to choose how you want your results sorted.
+
+@name("Returns a list of properties that fit a criteria.")
+GET "https://{{baseUrl}}/property/id"
+"apikey": "<>"
+"accept": "<>"
+? "geoid"= "<>"
+? "minBeds"= "<>"
+? "maxBeds"= "<>"
+? "orderby"= "<>"
+
+
+// Get property details based on its Onboard property ID.
+
+@name("Returns property details based on an ID.")
+GET "https://{{baseUrl}}/property/detail"
+"apikey": "<>"
+"accept": "<>"
+? "id"= "<>"
+? "address"= "<>"
+
+
+// Get a list of properties within a zip code. Use propertytype and order by to narrow down your results.
+
+@name("Returns properties within a zip code.")
+GET "https://{{baseUrl}}/property/address"
+"apikey": "<>"
+"accept": "<>"
+? "postalcode"= "<>"
+? "propertytype"= "<>"
+? "orderby"= "<>"
+? "page"= "<>"
+? "pagesize"= "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+? "radius"= "<>"
+
+
+// Get a list of property snapshots within a specific city that are within a desired size range and a specific property type.
+
+@name("Returns properties and their characteristics that fit a criteria.")
+GET "https://{{baseUrl}}/property/snapshot"
+"apikey": "<>"
+"accept": "<>"
+? "cityname"= "<>"
+? "minLotSize1"= "<>"
+? "maxLotSize1"= "<>"
+? "propertytype"= "<>"
+? "orderby"= "<>"
+? "latitude"= "<>"
+? "longitude"= "<>"
+? "radius"= "<>"
+? "mintaxamt"= "<>"
+? "maxtaxamt"= "<>"
+? "postalcode"= "<>"
+? "minavmvalue"= "<>"
+? "maxavmvalue"= "<>"
+
+
+// Get basic property information and most recent transaction and taxes for a specific attom id.
+
+@name("Returns basic property information and most recent transaction and taxes.")
+GET "https://{{baseUrl}}/property/basicprofile"
+"apikey": "<>"
+"accept": "<>"
+? "attomid"= "<>"
+
+
+// Get a detailed property information and most recent transaction and taxes for a specific address.
+
+@name("Returns detailed property information and most recent transaction and taxes.")
+GET "https://{{baseUrl}}/property/expandedprofile"
+"apikey": "<>"
+"accept": "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+
+
+// Search for a property to have the property details returned, along with the schools in the associated attendance zones.
+
+@name("Return schools within the attendance boundary of a property.")
+GET "https://{{baseUrl}}/property/detailwithschools"
+"apikey": "<>"
+"accept": "<>"
+? "id"= "<>"
+
+
+// Get property details mortgage based on its Onboard property ID.
+
+@name("Returns property details mortgage based on ID.")
+GET "https://{{baseUrl}}/property/detailmortgage"
+"apikey": "<>"
+"accept": "<>"
+? "id"= "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+
+
+// Get property details owner based on its Onboard property ID.
+
+@name("Returns property details owner based on an ID.")
+GET "https://{{baseUrl}}/property/detailowner"
+"apikey": "<>"
+"accept": "<>"
+? "id"= "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+
+
+// Get property details mortgageowner based on its Onboard property ID.
+
+@name("Returns property details mortgageowner based on an ID.")
+GET "https://{{baseUrl}}/property/detailmortgageowner"
+"apikey": "<>"
+"accept": "<>"
+? "id"= "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+
+
+

@@ -1,0 +1,258 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-abd8d735-33e3-4405-8b9d-d610d1373c60.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{USER}}", "{{PASSWORD}}")
+
+
+// This is an API to fetch current healthcheck information for the policy-pap component.
+
+@name("PAP healthcheck") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/healthcheck"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is an API to fetch current healthcheck information for all the policy framework components.
+
+@name("Policy Consolidated healthcheck") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/components/healthcheck"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is an API to fetch details of all PdpGroups currently available in Policy DB.
+
+@name("PdpGroup Query") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is an API to change the current state of a PdpGroup (example - "defaultGroup") resulting in changing state of all the PDP instances registered with the PdpGroup. As of now, the allowed states are ACTIVE and PASSIVE.
+
+@name("PdpGroup State Change") : "base-inherit-auth"
+PUT "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/groups/defaultGroup"
+"Content-Type": "application/json"
+"Accept": "application/json"
+? "state"= "ACTIVE"
+
+
+// This is an API to deploy one or more policies in all available & matching PdpGroups in Policy DB. The match is done based on supported policy types in the PdpSunGroup and the policy type referred by the given policy.
+
+@name("Simple Deploy Policy") : "base-inherit-auth"
+POST "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/policies"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "policies": [
+        {
+            "policy-id": "operational.modifyconfig",
+            "policy-version": "1.0.0"
+        }
+    ]
+})
+
+
+// This is an API to undeploy one or more policies from all PdpGroups in Policy DB.
+
+@name("Simple Undeploy Policy") : "base-inherit-auth"
+DELETE "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/policies/operational.modifyconfig"
+"Accept": "application/json"
+"Content-Type": "application/json"
+
+
+// This is a generic API to create/update PdpGroups in Policy DB. However, the supportedPolicyTypes field of PdpSubGroup cannot be changed once created.
+
+@name("Create/Update PdpGroup") : "base-inherit-auth"
+POST "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/groups/batch"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "groups": [
+        {
+            "name": "SampleGroup",
+            "pdpGroupState": "ACTIVE",
+            "properties": {},
+            "pdpSubgroups": [
+                {
+                    "pdpType": "apex",
+                    "desiredInstanceCount": 2,
+                    "properties": {},
+                    "supportedPolicyTypes": [
+                        {
+                            "name": "onap.policies.controlloop.operational.common.Apex",
+                            "version": "1.0.0"
+                        }
+                    ],
+                    "policies": []
+                },
+                {
+                    "pdpType": "xacml",
+                    "desiredInstanceCount": 1,
+                    "properties": {},
+                    "supportedPolicyTypes": [
+                        {
+                            "name": "onap.policies.monitoring.*",
+                            "version": "1.0.0"
+                        }
+                    ],
+                    "policies": []
+                }
+            ]
+        }
+    ]
+})
+
+
+// This is an API to deploy one or more policies to the specified PdpGroup, resulting in deployment of policies to all registered PDP instances of that specified PdpGroup.
+
+@name("PDPGroup Deploy Policy") : "base-inherit-auth"
+POST "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/deployments/batch"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "groups": [
+        {
+            "name": "defaultGroup",
+            "deploymentSubgroups": [
+                {
+                    "pdpType": "drools",
+                    "action": "POST",
+                    "policies": [
+                        {
+                            "name": "operational.modifyconfig",
+                            "version": "1.0.0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+})
+
+
+// This is an API to undeploy one or more policies from the specified PdpGroup, resulting in removal of policies from all registered PDP instances of that specified PdpGroup.
+
+@name("PDPGroup Undeploy Policy") : "base-inherit-auth"
+POST "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/deployments/batch"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "groups": [
+        {
+            "name": "defaultGroup",
+            "deploymentSubgroups": [
+                {
+                    "pdpType": "drools",
+                    "action": "DELETE",
+                    "policies": [
+                        {
+                            "name": "operational.modifyconfig",
+                            "version": "1.0.0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+})
+
+
+// This is a generic API to fetch status of all policies in the registered PDP instances.
+
+@name("Fetch All Policy Status") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/policies/status"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is a generic API to fetch status of all policies in the registered PDP instances in a PDP Group.
+
+@name("Fetch All Policy Status in a Group") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/policies/status/defaultGroup"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is a generic API to fetch status of all versions of a policy in the registered PDP instances in a PDP Group.
+
+@name("Fetch Policy Status in a Group") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/policies/status/defaultGroup/operational.modifyconfig"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is a generic API to fetch status of all deployed policies in the registered PDP instances.
+
+@name("Fetch All Policy deployment Status") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/policies/deployed"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is an API to fetch status of a specific deployed policy in the registered PDP instances.
+
+@name("Fetch Policy deployment Status") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/policies/deployed/operational.modifyconfig"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is an API to fetch current statistics information for the all registered PDP instances.
+
+@name("Fetch All PDPs Statistics") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/statistics"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is an API to fetch current statistics information for the all registered PDP instances of the specified PdpGroup (example - "defaultGroup").
+
+@name("Fetch PdpGroup Statistics") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/statistics/defaultGroup"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is an API to fetch current statistics information for the all registered PDP instances of the specified PdpGroup (example - "defaultGroup") & PdpSubgroup (example - "apex").
+
+@name("Fetch PdpSubGroup Statistics") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/statistics/defaultGroup/apex"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is an API to fetch current statistics information for the specified PDP instance (example - "dev-policy-apex-pdp-0") of the specified PdpGroup (example - "defaultGroup") & PdpSubgroup (example - "apex").
+
+@name("Fetch PDP Statistics") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/statistics/defaultGroup/apex/dev-policy-apex-pdp-0"
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+
+// This is an API to delete a specific PdpGroup (example - "SampleGroup") currently available in Policy DB, resulting in removing all the PDP instances registered with the group.
+
+@name("Delete PdpGroup") : "base-inherit-auth"
+DELETE "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/groups/SampleGroup"
+"Accept": "application/json"
+"Content-Type": "application/json"
+
+
+

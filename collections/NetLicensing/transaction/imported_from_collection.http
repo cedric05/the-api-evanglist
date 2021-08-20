@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2dd3b81c-4b11-4e46-b2e6-83bc9a4638dc.postman_collection.json
+
+// Return a list of all transactions for the current vendor
+
+@name("Transactions list")
+GET "https://{{baseUrl}}/transaction"
+
+
+// Return a transaction by transactionNumber
+
+@name("Get transaction ")
+GET "https://{{baseUrl}}/transaction/:transactionNumber"
+
+
+

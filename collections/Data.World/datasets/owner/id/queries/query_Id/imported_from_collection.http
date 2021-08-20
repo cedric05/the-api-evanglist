@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Delete a saved query in a specified dataset.
+
+@name("Delete a saved query in a specified dataset.") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/datasets/:owner/:id/queries/:queryId"
+
+
+// Update a saved query in a specified dataset.
+
+@name("Update a saved query in a specified dataset.") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/datasets/:owner/:id/queries/:queryId"
+"Content-Type": "application/json"
+json({
+    "content": "aliqua aliquip velit fugiat",
+    "name": "sunt est",
+    "published": false
+})
+
+
+

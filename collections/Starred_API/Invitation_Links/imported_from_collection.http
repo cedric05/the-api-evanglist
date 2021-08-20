@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e9c4a16e-bb34-4909-8b6c-2c0d1bb0d112.postman_collection.json
+
+// Generate a link to a Starred survey form of your choice. nGenerate from 1 up to, and including 100 anonymous links. (Anonymous is for when the recipient's email is not known)nn**Request Parameters**nn| Parameter | Required | Description |n| ------ | ------ | ------ |n| `form` | Required | ID of the form that will be sent out |n| `fromUserEmail` | Required | Email address of the sender |n| `amount` | Optional | Amount of invitation links desired. (Defaults to 1) |n| `tags` | Optional | Any number
+
+@name("Anonymous Invitation Link")
+POST "https://{{baseUrl}}/InvitationLinks/anonymous"
+
+
+// It is possible to generate a link to a Starred survey form of your choice. nn**Request Parameters**nn| Parameter | Required | Description |n| ------ | ------ | ------ |n| `form` | Required | ID of the form that will be sent out |n| `fromUserEmail` | Required | Email address of the sender |n| `recipient` | Required | Email address of the recipient |n| `firstName` | Optional | First name to address the recipient with |n| `lastName` | Optional | Surname to address the recipient with |n| `tags` | Op
+
+@name("Single Invitation Link")
+POST "https://{{baseUrl}}/InvitationLinks/single"
+
+
+// Generate links for users from a CSV file.nn**Request Parameters**nn| Parameter | Required | Description |n| ------ | ------ | ------ |n| `form` | Required | ID of the form that will be sent out |n| `fromUserEmail` | Required | Email address of the sender |n| `file` | Required | A CSV file formatted as a regular invitation CSV added as a HTTP POST file. |
+
+@name("Invitation Link CSV")
+POST "https://{{baseUrl}}/InvitationLinks/csv"
+
+
+

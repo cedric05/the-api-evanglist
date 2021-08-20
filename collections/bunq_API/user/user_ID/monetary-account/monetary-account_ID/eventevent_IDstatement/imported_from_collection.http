@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Used to create a statement export of a single payment.
+
+@name("CREATE Statement for User Monetary Account Event")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/event/:eventID/statement"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+data('"<object>"')
+
+
+// Used to create a statement export of a single payment.
+
+@name("READ Statement for User Monetary Account Event")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/event/:eventID/statement/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Fetch the raw content of a payment statement export.
+
+@name("List all Content for User Monetary Account Event Statement")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/event/:eventID/statement/:statementID/content"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+

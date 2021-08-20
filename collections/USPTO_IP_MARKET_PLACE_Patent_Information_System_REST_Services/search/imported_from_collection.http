@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-08203823-e568-4446-a419-2e06b4fad7fe.postman_collection.json
+
+// USPTO IP MARKET PLACE data
+
+@name("Provides USPTO IP MARKET PLACE patent information")
+POST "https://{{baseUrl}}/search/filters"
+"Content-Type": "application/json"
+json({
+    "dateRangeData": "<object>",
+    "facetData": "<object>",
+    "parameterData": "<object>",
+    "recordStartNumber": "<integer>",
+    "recordTotalQuantity": "<integer>",
+    "searchText": "<string>",
+    "sortDataBag": [
+        "<object>",
+        "<object>"
+    ]
+})
+
+
+// USPTO IP MARKET PLACE data
+
+@name("Provides USPTO IP MARKET PLACE patent information")
+GET "https://{{baseUrl}}/search/query"
+? "searchText"= "<string>"
+
+
+

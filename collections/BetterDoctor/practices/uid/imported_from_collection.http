@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17776046-ece2-4e9f-8598-d00e62122c30.postman_collection.json
+
+// Returns a practice object based on an uid or a slug
+
+@name("Retrieve a specific practice description")
+GET "https://{{baseUrl}}/practices/:uid"
+? "fields"= "<>"
+? "user_key"= "<>"
+
+
+// Returns a paginated list of doctors in the specified practice. This is a convenience endpoint, you may also use /doctors search for all doctors.
+
+@name("Retrieve a list of doctors in this practice.")
+GET "https://{{baseUrl}}/practices/:uid/doctors"
+? "fields"= "<>"
+? "skip"= "<get>"
+? "limit"= "<get>"
+? "user_key"= "<>"
+
+
+

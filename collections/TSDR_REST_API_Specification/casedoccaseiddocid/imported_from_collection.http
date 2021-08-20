@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93f02d77-d29c-4b5c-8f98-5e285995302f.postman_collection.json
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casedoc/sn78787878/NOA20070926100613/content.pdf
+
+@name("Returns the content of a Document in PDF format.")
+GET "https://{{baseUrl}}/casedoc/:caseid/:docid/content.pdf"
+
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casedoc/sn78787878/NOA20070926100613/content.zip
+
+@name("Returns the content of a Document in ZIP format.")
+GET "https://{{baseUrl}}/casedoc/:caseid/:docid/content.zip"
+
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casedoc/sn78787878/NOA20070926100613/download.pdf
+
+@name(" Returns the content of a Document in PDF format.")
+GET "https://{{baseUrl}}/casedoc/:caseid/:docid/download.pdf"
+
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casedoc/sn78787878/NOA20070926100613/download.zip
+
+@name(" Returns the content of a Document in ZIP format.")
+GET "https://{{baseUrl}}/casedoc/:caseid/:docid/download.zip"
+
+
+@name("Returns the metadata of a Document in XML for case identified by case ID")
+GET "https://{{baseUrl}}/casedoc/:caseid/:docid/info"
+
+
+@name("Returns the page content as a NATIVE format")
+GET "https://{{baseUrl}}/casedoc/:caseid/:docid/:pageid/media"
+
+
+

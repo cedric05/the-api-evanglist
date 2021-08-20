@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-712034b2-265e-4ffc-a7a7-e49d61c6660a.postman_collection.json
+
+// Returns information about a usern
+
+@name("User information")
+GET "https://{{baseUrl}}/users/:userid"
+
+
+// Returns a thumbnail picture of the user. This can either be a selected picture or an auto generated image. This method doesn't require a full sign in. The api key is sufficient.nThe image is square and is likely, but not necessary, to be in 128x128 PNG format. However the format will always be either PNG, JPEG or GIF.n
+
+@name("User profile picture")
+GET "https://{{baseUrl}}/users/:userid/pic"
+? "key"= "{{APIKEY}}"
+
+
+// Returns information about the projects the user is a participant in. Only the projects that the current token have access to will be listed.n
+
+@name("Returns information about the projects the user is a participant in.")
+GET "https://{{baseUrl}}/users/:userid/projectParticipations"
+
+
+

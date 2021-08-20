@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// List all active projects for the user
+
+@name("List all active projects for the user")
+GET "https://{{baseUrl}}/projects/:username"
+? "page"= "<integer>"
+? "size"= "<integer>"
+? "name"= "<string>"
+
+
+

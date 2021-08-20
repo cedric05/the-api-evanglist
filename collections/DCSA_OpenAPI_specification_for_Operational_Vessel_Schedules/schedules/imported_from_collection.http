@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2f41d21a-2d73-440c-b5a1-d622f612ff71.postman_collection.json
+
+// Returns all schedules filtered by the parameters.
+
+@name("Find schedules")
+GET "https://{{baseUrl}}/schedules"
+? "startDate"= "2004-03-28"
+? "dateRange"= "P4W"
+
+
+

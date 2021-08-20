@@ -1,0 +1,79 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete a server") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/"
+
+
+@name("Retrieve a server") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/"
+
+
+@name("Update a server") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "config": {
+        "command": "<string>",
+        "function": "<string>",
+        "script": "<string>",
+        "type": "<string>"
+    },
+    "connected": [
+        "<string>",
+        "<string>"
+    ],
+    "host": "<string>",
+    "image_name": "<string>",
+    "server_size": "<string>",
+    "startup_script": "<string>"
+})
+
+
+@name("Replace a server") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "config": {
+        "command": "<string>",
+        "function": "<string>",
+        "script": "<string>",
+        "type": "<string>"
+    },
+    "connected": [
+        "<string>",
+        "<string>"
+    ],
+    "host": "<string>",
+    "image_name": "<string>",
+    "server_size": "<string>",
+    "startup_script": "<string>"
+})
+
+
+@name("Get server API key") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/api-key/"
+
+
+@name("Server api key validation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/auth/"
+
+
+@name("Start a server") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/start/"
+
+
+@name("Stop a server") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/stop/"
+
+
+

@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// JSON Body:
+// {
+//   "permission_level": "read" || "comment" || "edit" || "create"
+// }
+
+@name("Add Guest to Folder") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/folder/folder_id/guest/guest_id"
+
+
+@name("Remove Guest from Folder") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/folder/folder_id/guest/guest_id"
+
+
+

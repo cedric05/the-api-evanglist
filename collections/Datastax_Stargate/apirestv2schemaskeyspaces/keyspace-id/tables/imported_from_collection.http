@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8f0ef5f1-d82f-47e1-8bde-ff3a9b29d3be.postman_collection.json
+
+@name("Create a table")
+POST "https://{{baseUrl}}/api/rest/v2/schemas/keyspaces/:keyspace-id/tables"
+"X-Cassandra-Token": "sint dolore"
+"Content-Type": "application/json"
+json({
+    "name": "ipsum aute consequat",
+    "columnDefinitions": [
+        {
+            "name": "emailaddress",
+            "typeDefinition": "text",
+            "static": false
+        },
+        {
+            "name": "emailaddress",
+            "typeDefinition": "text",
+            "static": false
+        }
+    ],
+    "primaryKey": {
+        "partitionKey": [
+            "in Excepteur"
+        ],
+        "clusteringKey": [
+            "commodo Excepteur cillum",
+            "Duis dolore"
+        ]
+    },
+    "ifNotExists": false,
+    "tableOptions": {
+        "defaultTimeToLive": 0,
+        "clusteringExpression": [
+            {
+                "column": "voluptate proident in",
+                "order": "ASC"
+            },
+            {
+                "column": "Lorem",
+                "order": "ASC"
+            }
+        ]
+    }
+})
+
+
+@name("Get all tables")
+GET "https://{{baseUrl}}/api/rest/v2/schemas/keyspaces/:keyspace-id/tables"
+"X-Cassandra-Token": "sint dolore"
+? "raw"= "false"
+
+
+

@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// ## Retrieve Node Status [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-all-tags)
+// 
+// 
+// * Returns a paginated list of all the tags in the system.
+// * The list of entities will not be restricted to a single entity type: all the entities tagged with tags will be present on this list.
+// * If an entity is tagged with more than one tag, the entity_id for that entity will appear more than once in the resulting list. Similarly, if several entities have been tagged with the same tag, the tag will appear in several items of this list.
+
+@name("List All Tags")
+GET "https://{{gateway}}/tags"
+
+
+// ## List Entity Ids by Tag [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-entity-ids-by-tag)
+// 
+// * Returns the entities that have been tagged with the specified tag.
+// * The list of entities will not be restricted to a single entity type: all the entities tagged with tags will be present on this list.
+
+@name("List Entity Ids by Tag")
+GET "https://{{gateway}}/tags/:tags"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04d7d258-a63d-4960-8bb7-da34acef80a9.postman_collection.json
+
+// Validate the EC API statusn
+
+@name("Validate the EC service status")
+GET "https://{{baseUrl}}/health/check"
+
+
+// Validate the EC gateway memory usagen
+
+@name("Validate the EC service memory usage")
+GET "https://{{baseUrl}}/health/memory"
+
+
+

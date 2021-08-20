@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnnRetrieves detailed information of certain entities in a multi-entity hierarchy.nnnYou can retrieve:nn - Provisioned entitiesn  n - Unprovisioned entitiesn  n - Both provisioned and unprovisioned entitiesnn## User Access PermissionnnYou can make the call as any entity user.n
+
+@name("Multi-entity: Get entities")
+GET "https://{{baseUrl}}/v1/entities"
+? "provisioned"= "<>"
+
+
+

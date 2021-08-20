@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c25d627-86e8-4072-b0fa-98946e646a2c.postman_collection.json
+
+// <p>The <code>Get all assets</code> request fetches the list of all the assets of a particular stack. It returns the content of each asset in JSON format. You can also specify the environment of which you want to get the assets.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#all-assets>All Assets</a> API Reference document
+
+@name("Get all assets")
+GET "https://{{base_url}}/v3/assets"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "include_fallback"= "true"
+? "relative_urls"= "false"
+? "include_dimension"= "true"
+
+
+// <p>The <code>Get a single asset</code> request fetches the latest version of a specific asset of a particular stack.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#single-asset>Single Asset</a> API Reference document
+
+@name("Get a single asset")
+GET "https://{{base_url}}/v3/assets/{{asset_uid}}"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "version"= "1"
+? "include_fallback"= "true"
+? "include_dimension"= "true"
+? "relative_urls"= "false"
+
+
+

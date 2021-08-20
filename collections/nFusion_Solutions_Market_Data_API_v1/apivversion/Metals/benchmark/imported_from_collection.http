@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-96f7548c-485b-4677-99ba-2d47911de0c8.postman_collection.json
+
+// Get list of symbols supported by the benchmark endpoints.
+
+@name("Get list of symbols supported by the benchmark endpoints")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/benchmark/supported"
+? "token"= "<>"
+? "format"= "<>"
+
+
+// Get latest benchmark prices for requested metals.
+
+@name("Get latest Benchmark prices for requested metals")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/benchmark/summary"
+? "token"= "<>"
+? "metals"= "<>"
+? "currency"= "<>"
+? "unitofmeasure"= "<>"
+? "format"= "<>"
+
+
+// Historical OHLC data for the specified period and interval size
+// 
+// The combination of the interval parameter and start and end dates can result in results
+// being truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.
+// 
+// The historicalfx flag is used to determine whether to apply today's fx rates to a historical period, or to apply the historical rates from that same time frame.
+
+@name("Get historical benchmark prices for requested metals")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/benchmark/history"
+? "token"= "<>"
+? "metals"= "<>"
+? "start"= "<get>"
+? "end"= "<get>"
+? "interval"= "<object>"
+? "historicalfx"= "<>"
+? "currency"= "<>"
+? "unitofmeasure"= "<>"
+? "format"= "<>"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b61ade0-60b3-4dcc-a6b1-7acb55b522a0.postman_collection.json
+
+// Requires Access Token granted from client credentials.
+
+@name("Retrieves the customer identified by customer_id")
+GET "https://{{baseUrl}}/v1/customers/:customer_id"
+"Authorization": "<>"
+
+
+// It is only possible to retrieve backup_instances for customers you are authorized to access. Records are returned in ascending order (by id), with a default of 20 per page. Links to the next, previous, first, and last pages can be found in the response headers.
+
+@name("Retrieves a list of backup_instances associated with the specified customer")
+GET "https://{{baseUrl}}/v1/customers/:customer_id/backup_instances"
+"Authorization": "<>"
+
+
+

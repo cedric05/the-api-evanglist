@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Service Required Document")
+GET "https://{{baseUrl}}/services/:service_id/required-document"
+
+
+@name("add Service Required Document")
+POST "https://{{baseUrl}}/services/:service_id/required-document"
+"Content-Type": "application/json"
+json({
+    "id": "irure aute",
+    "service_id": "sit adipisicing aute fugiat",
+    "document": "do aliquip sit"
+})
+
+
+@name("get Service Required Documents")
+GET "https://{{baseUrl}}/services/:service_id/required-document/:required_document_id"
+
+
+@name("update Service Required Document")
+PUT "https://{{baseUrl}}/services/:service_id/required-document/:required_document_id"
+"Content-Type": "application/json"
+json({
+    "id": "irure aute",
+    "service_id": "sit adipisicing aute fugiat",
+    "document": "do aliquip sit"
+})
+
+
+@name("delete Service Required Document")
+DELETE "https://{{baseUrl}}/services/:service_id/required-document/:required_document_id"
+
+
+

@@ -1,0 +1,96 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Bulk delete contacts
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/contacts/`
+// 
+// Alternate route: `/v2/characters/{character_id}/contacts/`
+
+@name("Delete contacts")
+DELETE "https://{{baseUrl}}/characters/:character_id/contacts/"
+? "contact_ids"= "11167953"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return contacts of a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/contacts/`
+// 
+// Alternate route: `/v2/characters/{character_id}/contacts/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("Get contacts")
+GET "https://{{baseUrl}}/characters/:character_id/contacts/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Bulk add contacts with same settings
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/contacts/`
+// 
+// Alternate route: `/v2/characters/{character_id}/contacts/`
+
+@name("Add contacts")
+POST "https://{{baseUrl}}/characters/:character_id/contacts/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "label_ids"= "47539780,-7838891"
+? "standing"= "1.4627435111047582"
+? "token"= "commodo irure"
+? "watched"= "false"
+json([
+    -53001783
+])
+
+
+// Bulk edit contacts with same settings
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/contacts/`
+// 
+// Alternate route: `/v2/characters/{character_id}/contacts/`
+
+@name("Edit contacts")
+PUT "https://{{baseUrl}}/characters/:character_id/contacts/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "label_ids"= "47539780,-7838891"
+? "standing"= "1.4627435111047582"
+? "token"= "commodo irure"
+? "watched"= "false"
+json([
+    -60225965
+])
+
+
+// Return custom labels for a character's contacts
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/contacts/labels/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/contacts/labels/`
+// 
+// Alternate route: `/v1/characters/{character_id}/contacts/labels/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("Get contact labels")
+GET "https://{{baseUrl}}/characters/:character_id/contacts/labels/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

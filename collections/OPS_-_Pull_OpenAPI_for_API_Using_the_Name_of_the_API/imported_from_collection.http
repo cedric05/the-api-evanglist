@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-55e13485-0280-46ad-b24e-19ae293af5f6.postman_collection.json
+
+// This pulls a list of all APIs using the Postman API. Then using a test script it loops through all APIs and finds the API by name, repeats for each version until it finds the version, ultimately pulling the individual schema and resulting OpenAPI so that it can be used in other requests.
+// 
+// **Notes**
+// 
+// - This script is pretty verbose
+// - this script is meant to abstract away 3 separate API calls.
+// - Ideally Postman provides an endpoint that pulls "latest" in the future.
+
+@name("Pull OpenAPI")
+GET "https://{{postman_base_url}}/apis/"
+"x-api-key": "{{postman_api_key}}"
+? "api_name"= "Hello World"
+? "api_version"= "v 0.1"
+
+
+

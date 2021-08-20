@@ -1,0 +1,100 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// # Delete Plugin [konghq](https://docs.konghq.com/2.0.x/admin-api/#delete-plugin-1)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>plugin  id</td>
+//     <td>required</td>
+//     <td>The unique identifier of the Plugin to delete.</td>
+//   </tr>
+// </table>
+
+@name("Delete Plugin")
+DELETE "https://{{gateway}}/plugins/:pluginId"
+
+
+
+// # Delete Plugin Associated to a Specific Route [konghq](https://docs.konghq.com/2.0.x/admin-api/#delete-plugin-associated-to-a-specific-route)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>route name or id</td>
+//     <td>required</td>
+//     <td>The unique identifier or the name of the Route to delete.</td>
+//   </tr>
+//   <tr>
+//     <td>plugin id</td>
+//     <td>required</td>
+//     <td>The unique identifier of the Plugin to delete.</td>
+//   </tr>
+// </table>
+
+@name("Delete Plugin Associated to a Specific Route")
+DELETE "https://{{gateway}}/routes/:routeNameOrId/plugins/:pluginId"
+
+
+
+// # Delete Plugin Associated to a Specific Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#delete-plugin-associated-to-a-specific-service)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>service name or id</td>
+//     <td>required</td>
+//     <td>The unique identifier or the name of the Service to delete.</td>
+//   </tr>
+//   <tr>
+//     <td>plugin id</td>
+//     <td>required</td>
+//     <td>The unique identifier of the Plugin to delete.</td>
+//   </tr>
+// </table>
+
+@name("Delete Plugin Associated to a Specific Service")
+DELETE "https://{{gateway}}/services/:serviceNameOrId/plugins/:pluginId"
+
+
+
+// # Delete Plugin Associated to a Specific Consumer [konghq](https://docs.konghq.com/2.0.x/admin-api/#delete-plugin-associated-to-a-specific-consumer)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>consumer username or id</td>
+//     <td>required</td>
+//     <td>The unique identifier or the username of the Consumer to delete.</td>
+//   </tr>
+//   <tr>
+//     <td>plugin  id</td>
+//     <td>required</td>
+//     <td>The unique identifier of the Plugin to delete.</td>
+//   </tr>
+// </table>
+
+@name("Delete Plugin Associated to a Specific Consumer")
+DELETE "https://{{gateway}}/consumers/:consumerUsernameOrd}/plugins/:pluginId"
+
+
+
+

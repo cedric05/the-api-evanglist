@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// Retrieve additional information of specified subscription
+
+@name("Retrieve information attached to a subscription")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/additionalinformation/"
+
+
+// Get additional information for a subscription by field key
+
+@name("Retrieve information attached to a subscription by key")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/additionalinformation/:Name/"
+
+
+

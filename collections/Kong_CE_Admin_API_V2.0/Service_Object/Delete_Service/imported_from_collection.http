@@ -1,0 +1,73 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// ## Delete Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#delete-service-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>Service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Service to delete</td>
+//   </tr>
+// </table>
+
+@name("Delete Service")
+DELETE "https://{{gateway}}/services/:ServiceNameOrID"
+
+
+// ## Delete Service Associated to a Specific Certificate [konghq](https://docs.konghq.com/2.0.x/admin-api/#delete-service-associated-to-a-specific-certificate)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>certificate id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Certificate to delete.</td>
+//   </tr>
+//   <tr>
+//     <td>service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Service to delete.</td>
+//   </tr>
+// </table>
+
+@name("Delete Service Associated to a Specific Certificate")
+DELETE "https://{{gateway}}/certificates/:certificateId/services/:serviceNameOrId"
+
+
+// ## Delete Service Associated to a Specific Route [konghq](https://docs.konghq.com/2.0.x/admin-api/#delete-service-associated-to-a-specific-route)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>route name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Route associated to the Service to be deleted</td>
+//   </tr>
+// </table>
+
+@name("Delete Service Associated to a Specific Route")
+DELETE "https://{{gateway}}/routes/:routeNameOrId/service"
+
+
+

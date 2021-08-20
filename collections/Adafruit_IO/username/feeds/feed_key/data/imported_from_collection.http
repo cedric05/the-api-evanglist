@@ -1,0 +1,69 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b982553e-8975-4962-bc9d-a464c11c5f3a.postman_collection.json
+
+@name("Get all data for the given feed")
+GET "https://{{baseUrl}}/:username/feeds/:feed_key/data"
+? "No Name"= "<string>"
+? "start_time"= "<string>"
+? "end_time"= "<string>"
+? "limit"= "<integer>"
+
+
+@name("Create multiple new Data records")
+POST "https://{{baseUrl}}/:username/feeds/:feed_key/data/batch"
+? "No Name"= "<string>"
+
+
+// The Chart API is what we use on io.adafruit.com to populate charts over varying timespans with a consistent number of data points. The maximum number of points returned is 480. This API works by aggregating slices of time into a single value by averaging.
+// 
+// All time-based parameters are optional, if none are given it will default to 1 hour at the finest-grained resolution possible.
+
+@name("Chart data for current feed")
+GET "https://{{baseUrl}}/:username/feeds/:feed_key/data/chart"
+? "No Name"= "<string>"
+? "resolution"= "<integer>"
+? "hours"= "<integer>"
+
+
+// Get the oldest data point in the feed. This request sets the queue pointer to the beginning of the feed.
+
+@name("First Data in Queue")
+GET "https://{{baseUrl}}/:username/feeds/:feed_key/data/first"
+? "No Name"= "<string>"
+
+
+// Get the most recent data point in the feed. This request sets the queue pointer to the end of the feed.
+
+@name("Last Data in Queue")
+GET "https://{{baseUrl}}/:username/feeds/:feed_key/data/last"
+? "No Name"= "<string>"
+
+
+// Get the next newest data point in the feed. If queue processing hasn't been started, the first data point in the feed will be returned.
+
+@name("Next Data in Queue")
+GET "https://{{baseUrl}}/:username/feeds/:feed_key/data/next"
+? "No Name"= "<string>"
+
+
+// Get the previously processed data point in the feed. NOTE: this method doesn't move the processing queue pointer.
+
+@name("Previous Data in Queue")
+GET "https://{{baseUrl}}/:username/feeds/:feed_key/data/previous"
+? "No Name"= "<string>"
+
+
+// Get the most recent data point in the feed in an MQTT compatible CSV format: `value,lat,lon,ele`
+
+@name("Last Data in MQTT CSV format")
+GET "https://{{baseUrl}}/:username/feeds/:feed_key/data/retain"
+? "No Name"= "<string>"
+
+
+@name("Delete existing Data")
+DELETE "https://{{baseUrl}}/:username/feeds/:feed_key/data/:id"
+? "No Name"= "<string>"
+
+
+

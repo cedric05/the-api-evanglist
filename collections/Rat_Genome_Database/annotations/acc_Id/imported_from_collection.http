@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c06f082c-7c18-4317-b196-8ad07101a2f4.postman_collection.json
+
+@name("Returns a list of annotations by RGD ID and ontology term accession ID")
+GET "https://{{baseUrl}}/annotations/:accId/:rgdId"
+
+
+@name("Returns a list annotations for an ontology term or a term and it's children")
+GET "https://{{baseUrl}}/annotations/:accId/:speciesTypeKey/:includeChildren"
+
+
+

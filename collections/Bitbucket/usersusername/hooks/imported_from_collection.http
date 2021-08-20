@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns a paginated list of webhooks installed on this user account.
+
+@name("/users/:username/hooks")
+GET "https://{{baseUrl}}/users/:username/hooks"
+
+
+// Creates a new webhook on the specified user account.
+// 
+// Account-level webhooks are fired for events from all repositories
+// belonging to that account.
+// 
+// Note that one can only register webhooks on one's own account, not that
+// of others.
+
+@name("/users/:username/hooks")
+POST "https://{{baseUrl}}/users/:username/hooks"
+
+
+

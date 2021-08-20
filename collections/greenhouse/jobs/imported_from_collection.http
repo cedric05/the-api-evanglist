@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Create a job")
+POST "https://{{baseUrl}}/jobs"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "user_id": -53456199,
+    "number_of_openings": -50234061,
+    "template_job_id": 64124516,
+    "department_id": 83568021,
+    "job_name": "nostrud mollit",
+    "job_post_name": "elit Excepteur officia ex",
+    "office_ids": [
+        56772508,
+        53556057
+    ],
+    "opening_ids": [
+        "cupidatat in magna",
+        "labore et consectetur minim in"
+    ],
+    "requisition_id": "sed culpa do"
+})
+
+
+@name("Search for jobs")
+GET "https://{{baseUrl}}/jobs"
+"Authorization": "ad cillum non laborum"
+? "where"= "ad cillum non laborum"
+? "pageSize"= "ad cillum non laborum"
+? "nextPage"= "ad cillum non laborum"
+? "fields"= "ad cillum non laborum"
+
+
+

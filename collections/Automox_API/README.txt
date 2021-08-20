@@ -1,0 +1,5 @@
+The Automox API is a powerful interface that allows you to integrate Automox reporting data into you applications and control the various settings of your account.nnAll endpoints are only accessible via https and are located atn`api.automox.com`. For instance: you can see events associated with your account by accessing the following URL with your ID:n(replace API-KEY with your own):n```n  https://console.automox.com/api/events?api_key=API-KEYn```n## LimitsnBe nice. If you're sending too many requests too quickly, we'll send back an`429` error code (Too Many Requests).nYou are limited to 5000 requests per hour per `api_key` overall. Practically, this means you should (when possible) authenticatenusers so that limits are well outside the reach of a given user.n
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// A paginated list of view only links created for this registration.n####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 view only links. Each resource in the array is a view only link object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nn####PermissionsnnView only links on a registration, public or private, are readable and writeable only by users that are administrators
+
+@name("List all view only links")
+GET "https://{{baseUrl}}/registrations/:registration_id/view_only_links/"
+
+
+// Retrieves the details of a view only link created from this registration.n####ReturnsnReturns a JSON object with a `data` key containing the representation of the requested view only link, if the request is successful.nnIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.n####PermissionsnnView only links on a registration, public or p
+
+@name("Retrieve a view only link")
+GET "https://{{baseUrl}}/registrations/:registration_id/view_only_links/:link_id/"
+
+
+

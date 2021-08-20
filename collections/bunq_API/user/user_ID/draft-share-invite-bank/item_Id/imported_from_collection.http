@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get the details of a specific draft of a share invite.
+
+@name("READ Draft Share Invite Bank for User")
+GET "https://{{baseUrl}}/user/:userID/draft-share-invite-bank/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Update a draft share invite. When sending status CANCELLED it is possible to cancel the draft share invite.
+
+@name("UPDATE Draft Share Invite Bank for User")
+PUT "https://{{baseUrl}}/user/:userID/draft-share-invite-bank/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "expiration": "<string>",
+    "draft_share_settings": {
+        "end_date": "sint est dolore Lorem proident",
+        "share_detail": {
+            "draft_payment": {
+                "make_draft_payments": true,
+                "view_balance": false,
+                "view_new_events": false,
+                "view_old_events": true
+            },
+            "payment": {
+                "budget": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "make_draft_payments": false,
+                "make_payments": false,
+                "view_balance": false,
+                "view_new_events": false,
+                "view_old_events": true
+            },
+            "read_only": {
+                "view_balance": false,
+                "view_new_events": false,
+                "view_old_events": true
+            }
+        },
+        "start_date": "Ut Lorem Duis"
+    },
+    "status": "<string>"
+})
+
+
+

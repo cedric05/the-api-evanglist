@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This reference describes how to get information about the result of a mass action through the REST API. n
+
+@name("Get mass action result")
+GET "https://{{baseUrl}}/v1/bulk/:bulk-key"
+
+
+// This reference describes how to stop a mass action through the REST API. You can stop a mass action when its status is Pending or Processing. After you have stopped a mass action, you can get the mass action result to see details of the mass action.nn- If you stop a mass action when its status is Pending, no response file is generated because no records have been processed.nn- If you stop a mass action when its status is Processing, a response file is generated. You can check the response file t
+
+@name("Stop mass action")
+PUT "https://{{baseUrl}}/v1/bulk/:bulk-key/stop"
+
+
+

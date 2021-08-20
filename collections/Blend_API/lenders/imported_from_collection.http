@@ -1,0 +1,106 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Bulk route used to create Lender Users in Blend
+
+@name("Create Lenders in Blend") : "base-inherit-auth"
+POST "https://{{baseUrl}}/lenders"
+"Content-Type": "application/json"
+json({
+    "lenders": [
+        {
+            "name": "Ashley Lender",
+            "email": "ashley.lender@blend.com",
+            "permittedSolutionSubTypes": [
+                "MORTGAGE"
+            ],
+            "requireTwoFactorAuth": false,
+            "loginMethod": "email",
+            "roleNames": [
+                "Loan Officer"
+            ],
+            "phone": {
+                "number": "1112223333",
+                "extension": "1234"
+            },
+            "nmlsId": "39179",
+            "losUsername": "ashleylender",
+            "employeeId": "12314",
+            "branchId": "west branch",
+            "creditInternalAccountIdentifiers": [
+                {
+                    "pullType": "Hard",
+                    "creditPullScenario": "MORTGAGE",
+                    "creditProvider": "INFORMATIVE_RESEARCH",
+                    "creditAccountIdentifier": "test"
+                }
+            ]
+        }
+    ]
+})
+
+
+// Get a paginated list of all Lender Users in the Blend account
+
+@name("List Lenders in Blend") : "base-inherit-auth"
+GET "https://{{baseUrl}}/lenders"
+? "ids"= "9250f84b-c2a1-4cab-b265-bd720685c361"
+? "cursor"= "biwxNTI0MTcwNDEwMTAwLDI2OTU0N2ZmLWY2NDMtNDA0ZC1hYTQzLTEzOGI2NTA2OTdjMg"
+? "limit"= "25"
+? "emails"= "lender@example.bank.com"
+
+
+// Bulk endpoint to update some information on an array of lender users
+
+@name("Update Lenders in Blend") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/lenders"
+"Content-Type": "application/json"
+json({
+    "lenders": [
+        {
+            "id": "9250f84b-c2a1-4cab-b265-bd720685c361",
+            "name": "Ashley Lender",
+            "email": "ashley.lender@blend.com",
+            "permittedSolutionSubTypes": [
+                "MORTGAGE"
+            ],
+            "requireTwoFactorAuth": false,
+            "loginMethod": "email",
+            "roleNames": [
+                "Loan Officer"
+            ],
+            "phone": {
+                "number": "1112223333",
+                "extension": "1234"
+            },
+            "nmlsId": "39179",
+            "losUsername": "ashleylender",
+            "employeeId": "12314",
+            "branchId": "west branch",
+            "creditInternalAccountIdentifiers": {
+                "pullType": "Hard",
+                "creditPullScenario": "MORTGAGE",
+                "creditProvider": "INFORMATIVE_RESEARCH",
+                "creditAccountIdentifier": "test"
+            }
+        }
+    ]
+})
+
+
+// Bulk endpoint to remove one or more lender users from the Blend account
+
+@name("Remove Lenders in Blend") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/lenders"
+? "ids"= "9250f84b-c2a1-4cab-b265-bd720685c361"
+
+
+

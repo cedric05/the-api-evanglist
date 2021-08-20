@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-74ee0bdc-7f44-44e7-8e08-a4d8d3d73e06.postman_collection.json
+
+@name("Remove from Image")
+POST "https://background-removal.p.rapidapi.com/remove"
+"x-rapidapi-key": "{{apiKey}}"
+"x-rapidapi-host": "background-removal.p.rapidapi.com"
+data({
+    "image_url": [
+        "https://kinlane-productions2.s3.amazonaws.com/algorotoscope-demo/mine/two-people.jpeg"
+    ]
+})
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns all the domains on the specified video's whitelist.
+
+@name("Get all the domains on a video's whitelist")
+GET "https://{{baseUrl}}/videos/:video_id/privacy/domains"
+? "page"= "<string>"
+? "per_page"= "<string>"
+
+
+// This method removes the specified domain from a video's whitelist.
+
+@name("Remove a domain from a video's whitelist")
+DELETE "https://{{baseUrl}}/videos/:video_id/privacy/domains/:domain"
+
+
+

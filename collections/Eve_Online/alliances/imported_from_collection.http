@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// List all active player alliances
+// 
+// ---
+// Alternate route: `/dev/alliances/`
+// 
+// Alternate route: `/legacy/alliances/`
+// 
+// Alternate route: `/v1/alliances/`
+// 
+// Alternate route: `/v2/alliances/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List all alliances")
+GET "https://{{baseUrl}}/alliances/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-50989257-8fa3-40de-a7b9-4f8f4960bb93.postman_collection.json
+
+// Get raw brand
+
+@name("Get raw brand")
+GET "https://{{baseUrl}}/v1/brands/:pid"
+
+
+// Get raw brand franchises
+
+@name("Get raw brand franchise")
+GET "https://{{baseUrl}}/v1/brands/:pid/franchises/"
+
+
+

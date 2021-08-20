@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Returns the given activity that is owned by the authenticated athlete. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
+
+@name("Get Activity")
+GET "https://{{baseUrl}}/activities/:id"
+? "include_all_efforts"= "<boolean>"
+? "include_all_efforts"= "<boolean>"
+
+
+// Returns the laps of an activity identified by an identifier. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
+
+@name("List Activity Laps")
+GET "https://{{baseUrl}}/activities/:id/laps"
+
+
+// Summit Feature. Returns the zones of a given activity. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
+
+@name("Get Activity Zones")
+GET "https://{{baseUrl}}/activities/:id/zones"
+
+
+// Returns the comments on the given activity. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
+
+@name("List Activity Comments")
+GET "https://{{baseUrl}}/activities/:id/comments"
+? "No Name"= "<string>"
+
+
+// Returns the athletes who kudoed an activity identified by an identifier. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
+
+@name("List Activity Kudoers")
+GET "https://{{baseUrl}}/activities/:id/kudos"
+? "No Name"= "<string>"
+
+
+// Returns the given activity's streams. Requires activity:read scope. Requires activity:read_all scope for Only Me activities.
+
+@name("Get Activity Streams")
+GET "https://{{baseUrl}}/activities/:id/streams"
+? "keys"= "<array>"
+? "key_by_type"= "<boolean>"
+
+
+

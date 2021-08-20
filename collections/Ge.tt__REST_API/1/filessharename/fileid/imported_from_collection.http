@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-37b08a1e-666d-477b-b7f8-ac0474a9fcb3.postman_collection.json
+
+// Get the state of a file. This returns the following data:
+
+@name("Files")
+GET "https://{{baseUrl}}/1/files/:sharename/:fileid"
+
+
+// Delete a file and the binary contents.
+
+@name("Files  Destroy")
+POST "https://{{baseUrl}}/1/files/:sharename/:fileid/destroy"
+? "accesstoken"= "<>"
+
+
+// Get upload urls to the file. This returns a new PUT and POST url for you to upload the file to.nOBS You can also choose to use the put- or posturl that you were previously given to override the file.
+
+@name("Files  Upload")
+GET "https://{{baseUrl}}/1/files/:sharename/:fileid/upload"
+? "accesstoken"= "<>"
+
+
+

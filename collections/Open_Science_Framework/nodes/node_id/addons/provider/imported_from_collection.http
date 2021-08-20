@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// Retrieve details of an individual addon connected to this node.n#### PermissionsnNodeSettings that are attached to public nodes will give read-only access to everyone. Private nodes require explicit read permission. Write and admin access are the same for public and private nodes. Administrators on a parent node have implicit read permissions for all child nodes.nAny users with write or admin access to the node are able to deauthorize an enabled addon, but only the addon authorizer is able to ch
+
+@name("Retrieve an addon")
+GET "https://{{baseUrl}}/nodes/:node_id/addons/:provider/"
+
+
+// nA paginated list of folders retrieved from the associated third-party (provider) service.n#### PermissionsnFolders are visible only to the user that authorized the addon.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of addon folder objects. Each resource in the array is a separate addon folder object and contains the full representation of the addon folder, meaning additional requests to a addon folder's detail view are not necessary.n
+
+@name("List all addon folders")
+GET "https://{{baseUrl}}/nodes/:node_id/addons/:provider/folders/"
+
+
+

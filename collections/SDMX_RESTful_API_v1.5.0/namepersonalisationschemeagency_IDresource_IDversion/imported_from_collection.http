@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4fd4d3a6-4065-4974-9d03-c508553bcb2b.postman_collection.json
+
+@name("Get name personalisation schemes")
+GET "https://{{baseUrl}}/namepersonalisationscheme/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get name personalisation schemes")
+GET "https://{{baseUrl}}/namepersonalisationscheme/:agencyID/:resourceID/:version/:itemID"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+

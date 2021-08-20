@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4727ff8b-21cd-41e7-b532-19284cb5abdf.postman_collection.json
+
+// Obtain new client secret for Paylocity-issued client id. See Setup section for details.
+
+@name("Obtain new client secret.")
+POST "https://{{baseUrl}}/v2/credentials/secrets"
+
+
+// Add new employee to Web Link will send partially completed or potentially erroneous new hire record to Web Link, where it can be corrected and competed by company administrator or authorized Paylocity Service Bureau employee.
+
+@name("Add new employee to Web Link")
+POST "https://{{baseUrl}}/v2/weblinkstaging/companies/:companyId/employees/newemployees"
+
+
+

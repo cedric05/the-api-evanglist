@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// Initiate a mass payment from an Account or verified Customer resource. A mass payment contains a list of items representing individual payments. Optionally, mass payments can contain metadata on the mass payment itself as well as items contained in the mass payment which can be used to pass along additional information with the mass payment and item respectively.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn-------|---------|----------|--------|-------
+
+@name("Create A Mass Payment")
+POST "https://{{baseUrl}}/mass-payments"
+
+
+

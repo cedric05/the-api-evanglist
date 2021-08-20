@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Retrieve all collections in a workspace.
+
+@name("List Collections for Workspace")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/collections"
+
+
+// Create new collection in a workspace.
+
+@name("Create Collection")
+POST "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/collections"
+"Content-Type": "application/json"
+data('null')
+
+
+

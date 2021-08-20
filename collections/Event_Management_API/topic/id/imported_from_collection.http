@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a496d7b6-180f-456c-ac3d-540e777764e6.postman_collection.json
+
+// This operation retrieves a Topic entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Topic by ID")
+GET "https://{{baseUrl}}/topic/:id"
+? "fields"= "Excepteur vo"
+
+
+// This operation deletes a Topic entity.
+
+@name("Deletes a Topic")
+DELETE "https://{{baseUrl}}/topic/:id"
+
+
+

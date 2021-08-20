@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Post a package to an application.
+
+@name("Post a package") : "base-inherit-auth"
+POST "https://{{baseUrl}}/packages"
+"Content-Type": "application/json"
+json({
+    "applicationId": "b2006a70-a19c-4b9f-973d-3a561e159061",
+    "type": "CLOSING_DISCLOSURE",
+    "envelopes": [
+        {
+            "providerType": "ESIGN",
+            "recipients": [
+                {
+                    "partyId": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "veniam0e": 95313708.49985516
+                },
+                {
+                    "partyId": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "et111": -38733979.31876523
+                }
+            ]
+        }
+    ],
+    "foreignPackageId": "b2006f70-a19c-4b9f-973d-3a561e159061",
+    "name": "Closing Disclosure",
+    "description": "Closing Disclosure with exceptions",
+    "dueDate": "2020-04-19T02:35:00.789Z"
+})
+
+
+// Retrieve all packages for an application. Optional query parameters available to filter.
+
+@name("Retrieve all packages") : "base-inherit-auth"
+GET "https://{{baseUrl}}/packages"
+? "applicationId"= "9250f84b-c2a1-4cab-b225-vd720685d221"
+? "foreignPackageId"= "1230f84b-c2a1-4cab-b225-vd720685d244"
+? "status"= "CREATED"
+
+
+

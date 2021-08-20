@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f6803d-cd9d-44a5-aa66-33a5315babb5.postman_collection.json
+
+// Get a list of peers.
+
+@name("Peer List")
+GET "https://{{baseUrl}}/peer/list"
+
+
+// Get a single block.
+
+@name("Peer Block")
+GET "https://{{baseUrl}}/peer/block"
+? "address"= "<get>"
+
+
+// .
+
+@name("Peer Transactions")
+GET "https://{{baseUrl}}/peer/transactions"
+
+
+// Get a list of transactions by ids.
+
+@name("Peer Transactions From Ids")
+GET "https://{{baseUrl}}/peer/transactionsFromIds"
+? "ids"= "<>"
+
+
+// Get the blockchain height.
+
+@name("Peer Height")
+GET "https://{{baseUrl}}/peer/height"
+
+
+// Get the blockchain status.
+
+@name("Peer Status")
+GET "https://{{baseUrl}}/peer/status"
+
+
+

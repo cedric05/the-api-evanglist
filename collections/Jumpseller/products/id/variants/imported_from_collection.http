@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-47bcec16-21a6-42ae-a7dc-e3c1d2799ca3.postman_collection.json
+
+@name("Get Products Variants Count")
+GET "https://{{baseUrl}}/products/:id/variants/count.json"
+
+
+@name("Get Products Variants Variant")
+GET "https://{{baseUrl}}/products/:id/variants/{{variant_id}}.json"
+
+
+

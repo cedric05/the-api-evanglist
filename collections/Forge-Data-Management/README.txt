@@ -1,0 +1,5 @@
+The Data Management API provides a unified and consistent way to access data across A360, Fusion 360, and the Object Storage Service.nnWith this API, you can accomplish a number of workflows, including accessing a Fusion model in A360 and getting an ordered structure of items, IDs, and properties for generating a bill of materials in a 3rd-party process. Or, you might want to superimpose a Fusion model and a building model to use in the [Viewer](https://developer.autodesk.com/en/docs/viewer/v2).nnThe Data Management API is composed of the following services:nn|  |  |n|-----|-----|n| Project Service | Navigate to a project from an A360 Hub. The project acts as an u201canchoru201d point for data available through the API. |n| Data Service | Navigate and manage the A360 metadata in terms of folders, items, and versions, as well as the relationships between these entities. An item could be a file or a Fusion 360 design. Each item can have multiple versions. |n| Schema Service | This allows you
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

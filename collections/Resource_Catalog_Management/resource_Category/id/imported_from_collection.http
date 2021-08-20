@@ -1,0 +1,107 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-175bce79-8928-437d-8db8-aad1709514f2.postman_collection.json
+
+// This operation retrieves a ResourceCategory entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a ResourceCategory by ID")
+GET "https://{{baseUrl}}/resourceCategory/:id"
+? "fields"= "tempor sint Ut"
+
+
+// This operation updates partially a ResourceCategory entity.
+
+@name("Updates partially a ResourceCategory")
+PATCH "https://{{baseUrl}}/resourceCategory/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "commodo Lorem aliquip aliqua",
+    "isRoot": false,
+    "lastUpdate": "1984-03-14T18:28:18.486Z",
+    "lifecycleStatus": "et Lorem esse",
+    "name": "do velit reprehenderit dolore",
+    "parentId": "quis culpa",
+    "version": "non mollit",
+    "category": [
+        {
+            "id": "in ut incididunt",
+            "href": "labore aliqua consectetur",
+            "name": "sunt incididunt elit",
+            "version": "consequat eiusmod qui est",
+            "@baseType": "ad ipsum culpa ut",
+            "@schemaLocation": "http://l.ruzjjLC1zxkFwvCZhIl6YBRLYUQaBSHTXCiAdlgTJGaEnS,2TvRI,bUm2KDKGOVHz3bawzazQ034J.NLkkj47SiU",
+            "@type": "qui ",
+            "@referredType": "labore sit occaecat quis"
+        },
+        {
+            "id": "ipsum Duis",
+            "href": "in elit exercitation adipisicing aliquip",
+            "name": "aliquip officia quis",
+            "version": "qui laborum ut",
+            "@baseType": "velit ipsum irure Lorem",
+            "@schemaLocation": "https://QmMDzNrsIRHhyXv.ytK9Nrkvg.EEHTx5zsNDrI63yv65XETgF756i.BZ",
+            "@type": "ullamco deserunt",
+            "@referredType": "culpa reprehenderit et aliquip laboris"
+        }
+    ],
+    "relatedParty": [
+        {
+            "@referredType": "in mollit sint adipisicing eiusmod",
+            "id": "Lorem consequat sint aliquip",
+            "href": "eu laborum",
+            "name": "culpa sed occaecat sunt",
+            "role": "n",
+            "@baseType": "labore mollit officia quis adipisicing",
+            "@schemaLocation": "https://eEBpyzsGdNSJqO.steRrruV1s4pXXGPNbcQAx1NYCmt.aK2fwjI8a4LuBJbBruAyQxhADlmOH5y",
+            "@type": "deserunt"
+        },
+        {
+            "@referredType": "cillum",
+            "id": "nisi qui occaecat ipsum",
+            "href": "irure pariatur",
+            "name": "nulla labore",
+            "role": "Excepteur minim in",
+            "@baseType": "occaecat quis nulla dolor",
+            "@schemaLocation": "http://btaLNrdVIndYXISYuwTr.nvYTEUuu9bQKMW,iLKknw6+untc5JB71YScX.Bg3Nkhim1XpMb",
+            "@type": "esse "
+        }
+    ],
+    "resourceCandidate": [
+        {
+            "id": "culpa laborum",
+            "href": "occaecat adipisicing culpa sint",
+            "name": "in Exc",
+            "version": "est cil",
+            "@baseType": "amet irure",
+            "@schemaLocation": "https://GFbEfuBIzfglY.yimvIGXalYfExcGSqqOjJrd3E8xy01GgD-+GeajWpVuGy-wnitS6TVgW",
+            "@type": "anim eiusmod laboris",
+            "@referredType": "laborum"
+        },
+        {
+            "id": "proident irure est consequat",
+            "href": "qui ut et aliquip",
+            "name": "q",
+            "version": "est pariatur elit",
+            "@baseType": "laborum",
+            "@schemaLocation": "https://gVZtqAqqbSdTSSxWjhyJJypESzYDC.fmbxiS4qcHzGSaGipH1JlCNzAO2MZS.azmYcA-n4Xb29AJZ8dy9f6PSL",
+            "@type": "id voluptate non deserunt",
+            "@referredType": "non tempor sit exercitation"
+        }
+    ],
+    "validFor": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@baseType": "mollit consequat",
+    "@schemaLocation": "http://y.wwdgCkSFNgSsU",
+    "@type": "consecte"
+})
+
+
+// This operation deletes a ResourceCategory entity.
+
+@name("Deletes a ResourceCategory")
+DELETE "https://{{baseUrl}}/resourceCategory/:id"
+
+
+

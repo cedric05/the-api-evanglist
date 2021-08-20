@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Shows sovereignty data for campaigns.
+// 
+// ---
+// Alternate route: `/dev/sovereignty/campaigns/`
+// 
+// Alternate route: `/legacy/sovereignty/campaigns/`
+// 
+// Alternate route: `/v1/sovereignty/campaigns/`
+// 
+// ---
+// This route is cached for up to 5 seconds
+
+@name("List sovereignty campaigns")
+GET "https://{{baseUrl}}/sovereignty/campaigns/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Shows sovereignty information for solar systems
+// 
+// ---
+// Alternate route: `/dev/sovereignty/map/`
+// 
+// Alternate route: `/legacy/sovereignty/map/`
+// 
+// Alternate route: `/v1/sovereignty/map/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List sovereignty of systems")
+GET "https://{{baseUrl}}/sovereignty/map/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Shows sovereignty data for structures.
+// 
+// ---
+// Alternate route: `/dev/sovereignty/structures/`
+// 
+// Alternate route: `/legacy/sovereignty/structures/`
+// 
+// Alternate route: `/v1/sovereignty/structures/`
+// 
+// ---
+// This route is cached for up to 120 seconds
+
+@name("List sovereignty structures")
+GET "https://{{baseUrl}}/sovereignty/structures/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

@@ -1,0 +1,60 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01dcf85f-3ef8-448e-9cc1-9e1b0d7335f1.postman_collection.json
+
+// Suggests possible diagnoses and relevant observations based on provided patient information.
+
+@name("Post Diagnosis")
+POST "https://{{baseUrl}}/diagnosis"
+
+
+// Explains which evidence impact probability of selected condition.
+
+@name("Post Explain")
+POST "https://{{baseUrl}}/explain"
+
+
+// Returns information about data used by diagnostic engine.
+
+@name("Get Info")
+GET "https://{{baseUrl}}/info"
+
+
+// Returns a single observation matching given phrase.
+
+@name("Get Lookup")
+GET "https://{{baseUrl}}/lookup"
+? "phrase"= "<>"
+? "sex"= "<post>"
+
+
+// Returns list of mentions of observation found in given text.
+
+@name("Post Parse")
+POST "https://{{baseUrl}}/parse"
+
+
+// Returns list of observations matching the given phrase.
+
+@name("Get Search")
+GET "https://{{baseUrl}}/search"
+? "phrase"= "<>"
+? "sex"= "<post>"
+? "max_results"= "<>"
+? "type"= "<post>"
+
+
+// Suggests possible symptoms based on provided patient information.
+
+@name("Post Suggest")
+POST "https://{{baseUrl}}/suggest"
+? "max_results"= "<>"
+
+
+// Estimates triage level based on provided patient information.
+
+@name("Post Triage")
+POST "https://{{baseUrl}}/triage"
+
+
+

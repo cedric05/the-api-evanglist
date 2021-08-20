@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1f22e2cb-c653-40b3-ae3e-8b9e732d13bc.postman_collection.json
+
+// Clock punch event instance
+
+@name("Clock Punch Offline")
+POST "https://{{baseUrl}}/events/time/v1/clock-offline.punch"
+? "No Name"= "<string>"
+
+
+// Retrieve event metadata
+
+@name("Clock Punch Offline Meta")
+GET "https://{{baseUrl}}/events/time/v1/clock-offline.punch/meta"
+? "No Name"= "<string>"
+
+
+

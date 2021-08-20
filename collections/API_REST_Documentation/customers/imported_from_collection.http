@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// ***
+// 
+// **Overview**
+// 
+// Retrieve the details of a customer entity from the 2Checkout system. Send the SSO token you create by generating tokenized cart payment links.
+// Click [here](#reference/single-sign-on/sso-in-cart) to learn how to generate a single-sign-on URL.
+// 
+// Here's an example of a single-sign-on URL:
+// 
+// <pre>
+// <code>
+// https://store.YourCustomDomain.com/order/checkout.php?PRODS=1112233&logintoken=8b74ac97f8277654563c44da6915b054ba0d21be
+// </code>
+// </pre>
+// 
+// The SSO token used for retrieving customer in
+
+@name("Working example: Retrieve Single Sign On customer info by SSOToken")
+GET "https://{{baseUrl}}/customers/"
+? "ssotoken"= "<string>"
+
+
+

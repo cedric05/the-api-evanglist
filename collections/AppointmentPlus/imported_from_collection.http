@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Retrieves the value for a specific set of preferences.
+
+@name("GetPreferences")
+POST "https://{{baseUrl}}/Preferences/GetPreferences"
+? "location_id"= "<integer>"
+? "preference"= "<string>"
+
+
+// Returns a list of account plugins for the given location.
+
+@name("GetPlugins")
+POST "https://{{baseUrl}}/AccountOptions/GetPlugins"
+? "location_id"= "<integer>"
+? "option_id"= "<integer>"
+? "enable"= "<boolean>"
+
+
+// Returns details about the customer and appointment level fields enabled in the account.    `id` (integer, multiple, optional): returns details only for the specified field ids    `c_id` (integer, multiple, optional): location to retrieve fields for; if the id is for a sublocation that does not have its own fields, return the fields for the HQ; if not provided, returns for HQ only    `field_name` (string, multiple, optional): return details only for the specified fields    `entity_type` (string, 
+
+@name("GetFields")
+POST "https://{{baseUrl}}/Fields/GetFields"
+? "id"= "<integer>"
+? "c_id"= "<integer>"
+? "field_name"= "<string>"
+? "entity_type"= "<string>"
+? "aux_id"= "<integer>"
+? "required_registration"= "<string>"
+? "required_profile"= "<string>"
+? "required_appointment"= "<string>"
+
+
+@name("GetMobileCarriers")
+POST "https://{{baseUrl}}/MobileCarriers/GetMobileCarriers"
+? "carrier_id"= "<integer>"
+? "country_id"= "<integer>"
+
+
+

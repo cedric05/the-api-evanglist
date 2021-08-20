@@ -1,0 +1,95 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get a specific company.
+
+@name("READ User Company")
+GET "https://{{baseUrl}}/user-company/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Modify a specific company's data.
+
+@name("UPDATE User Company")
+PUT "https://{{baseUrl}}/user-company/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "address_main": {
+        "city": "dolore occaecat minim laborum",
+        "country": "qui Lorem eu aliquip",
+        "extra": "voluptate non pariatur",
+        "house_number": "minim",
+        "mailbox_name": "eu quis",
+        "po_box": "anim officia",
+        "postal_code": "et pariatur proident qui id",
+        "province": "esse nostrud sit",
+        "street": "cupidatat minim velit"
+    },
+    "address_postal": {
+        "city": "labore in",
+        "country": "tempor in laboris nisi eiusmod",
+        "extra": "reprehenderit cupidatat",
+        "house_number": "dolor",
+        "mailbox_name": "quis",
+        "po_box": "sit exercitation dolor",
+        "postal_code": "adipisicing aliqua",
+        "province": "ipsum",
+        "street": "laboris voluptate n"
+    },
+    "avatar_uuid": "<string>",
+    "chamber_of_commerce_number": "<string>",
+    "country": "<string>",
+    "daily_limit_without_confirmation_login": {
+        "currency": "pariatur eiusmod laborum",
+        "value": "reprehenderit ex deserunt"
+    },
+    "language": "<string>",
+    "legal_form": "<string>",
+    "name": "<string>",
+    "public_nick_name": "<string>",
+    "region": "<string>",
+    "session_timeout": "<integer>",
+    "status": "<string>",
+    "sub_status": "<string>",
+    "ubo": [
+        {
+            "date_of_birth": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "nationality": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        {
+            "date_of_birth": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "nationality": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        }
+    ]
+})
+
+
+

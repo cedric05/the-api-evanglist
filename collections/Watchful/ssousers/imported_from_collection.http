@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd3bb79e-7d36-49f2-9d90-ac848a0b6d74.postman_collection.json
+
+// Returns a list of SSO Users
+
+@name("Get A List Of SSO Users")
+GET "https://{{baseUrl}}/ssousers"
+
+
+// Delete a specific SSO User
+
+@name("Delete A Specific SSO User")
+DELETE "https://{{baseUrl}}/ssousers/:id"
+
+
+

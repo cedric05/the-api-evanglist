@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return details about a fleet
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/`
+// 
+// ---
+// This route is cached for up to 5 seconds
+
+@name("Get fleet information")
+GET "https://{{baseUrl}}/fleets/:fleet_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Update settings about a fleet
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/`
+
+@name("Update fleet")
+PUT "https://{{baseUrl}}/fleets/:fleet_id/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "is_free_move": false,
+    "motd": "do Duis nulla officia"
+})
+
+
+

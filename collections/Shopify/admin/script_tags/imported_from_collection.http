@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Get a single  script tag.
+
+@name("Get a single  script tag")
+GET "https://{{baseUrl}}/admin/script_tags/373484.json"
+"Content": "<>"
+
+
+// Update a script tag.
+
+@name("update a script tag")
+PUT "https://{{baseUrl}}/admin/script_tags/108074126.json"
+"Content": "<>"
+
+
+// Get a count of all script tags.
+
+@name("Get a count of all script tags")
+GET "https://{{baseUrl}}/admin/script_tags/count.json"
+"Content": "<>"
+
+
+

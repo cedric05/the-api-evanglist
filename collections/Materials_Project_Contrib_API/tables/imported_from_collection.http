@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f4b114e2-448f-4e5a-987c-5ed016683c87.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Filter and retrieve tables.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/tables/"
+? "_fields"= "id"
+? "_fields"= "name"
+? "_fields"= "md5"
+? "data_page"= "1"
+? "data_per_page"= "20"
+? "_order_by"= "sit veniam nostrud aute"
+? "order"= "sit veniam nostrud aute"
+? "id__in"= "veniam eiusmod magna"
+? "id__in"= "sint"
+? "id"= "sit veniam nostrud aute"
+? "name__in"= "veniam eiusmod magna"
+? "name__in"= "sint"
+? "name"= "sit veniam nostrud aute"
+? "name__contains"= "sit veniam nostrud aute"
+? "columns__icontains"= "sit veniam nostrud aute"
+? "md5__in"= "veniam eiusmod magna"
+? "md5__in"= "sint"
+? "md5"= "sit veniam nostrud aute"
+? "_skip"= "-63312168"
+? "_limit"= "-63312168"
+? "page"= "-63312168"
+? "per_page"= "-63312168"
+
+
+@name("Retrieve a table.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/tables/:pk/"
+? "_fields"= "id"
+? "_fields"= "name"
+? "_fields"= "md5"
+? "data_page"= "1"
+? "data_per_page"= "20"
+
+
+

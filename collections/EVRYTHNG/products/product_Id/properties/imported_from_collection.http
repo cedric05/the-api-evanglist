@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Create/update a product's properties. When a resource is created, you can specify an initial set of properties and their values. To update those properties or to add new ones, use a `PUT` request with an array of `PropertyDocument` JSON objects containing the changed fields. If the properties updated do not exist, they are created automatically by this request and no error/notification will be returned.
+
+@name("Create/update product properties")
+POST "https://{{baseUrl}}/products/:productId/properties"
+? "No Name"= "<string>"
+
+
+// Read a single product property. By default, all the updates of this property are returned using pagination in a reverse history fashion (the first element of the returned array is the latest update). For accessing only a subset of all the updates to a single property, you can specify a time range using `?from=Timestamp` and `?to=Timestamp` to specify respectively the beginning and end of the time window. You will receive an array of all the property updates during this time.
+
+@name("Read a product property")
+GET "https://{{baseUrl}}/products/:productId/properties/:propertyKey"
+? "No Name"= "<string>"
+
+
+

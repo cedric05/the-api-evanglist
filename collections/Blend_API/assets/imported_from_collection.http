@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Gets a summary of Assets data for an Application
+
+@name("Get Assets from an Application") : "base-inherit-auth"
+GET "https://{{baseUrl}}/assets"
+? "applicationId"= "aa9fdaa2-7bf3-4411-a836-c2a46117f5c3"
+
+
+// Initiates an asynchronous attempt to refresh Assets data for the specified application and accounts. Refreshes can only be initiated once per hour for an application. Refreshes can take up to 20 minutes to complete.
+
+@name("Initiate Refresh of Assets data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/assets/refresh"
+"Content-Type": "application/json"
+json({
+    "applicationId": "aa9fdaa2-7bf3-4411-a836-c2a46117f5c3",
+    "accountIds": [
+        "b2006a70-a19b-4b7f-973d-3a561e159060",
+        "b2006a70-a19b-4b7f-973d-3a561e159060"
+    ]
+})
+
+
+

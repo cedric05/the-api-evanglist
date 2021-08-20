@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Lists bids on a particular auction contract
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/contracts/{contract_id}/bids/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/contracts/{contract_id}/bids/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/contracts/{contract_id}/bids/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get corporation contract bids")
+GET "https://{{baseUrl}}/corporations/:corporation_id/contracts/:contract_id/bids/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Lists items of a particular contract
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/contracts/{contract_id}/items/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/contracts/{contract_id}/items/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/contracts/{contract_id}/items/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get corporation contract items")
+GET "https://{{baseUrl}}/corporations/:corporation_id/contracts/:contract_id/items/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

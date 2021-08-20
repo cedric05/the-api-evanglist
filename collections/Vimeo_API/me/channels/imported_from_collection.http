@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method gets all the channels to which the specified user subscribes.
+
+@name("Get all the channels to which a user subscribes")
+GET "https://{{baseUrl}}/me/channels"
+? "direction"= "<string>"
+? "filter"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+// This method causes a user to stop following the channel in question.
+
+@name("Unsubscribe a user from a specific channel")
+DELETE "https://{{baseUrl}}/me/channels/:channel_id"
+
+
+

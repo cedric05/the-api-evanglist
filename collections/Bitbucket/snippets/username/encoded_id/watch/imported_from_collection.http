@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Used to stop watching a specific snippet. Returns 204 (No Content)
+// to indicate success.
+
+@name("/snippets/:username/:encoded_id/watch")
+DELETE "https://{{baseUrl}}/snippets/:username/:encoded_id/watch"
+
+
+// Used to check if the current user is watching a specific snippet.
+// 
+// Returns 204 (No Content) if the user is watching the snippet and 404 if
+// not.
+// 
+// Hitting this endpoint anonymously always returns a 404.
+
+@name("/snippets/:username/:encoded_id/watch")
+GET "https://{{baseUrl}}/snippets/:username/:encoded_id/watch"
+
+
+// Used to start watching a specific snippet. Returns 204 (No Content).
+
+@name("/snippets/:username/:encoded_id/watch")
+PUT "https://{{baseUrl}}/snippets/:username/:encoded_id/watch"
+
+
+

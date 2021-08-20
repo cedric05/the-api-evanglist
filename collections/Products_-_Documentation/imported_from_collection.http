@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-80021a7d-aaf9-4fdf-a0c4-6028f4124323.postman_collection.json
+
+// Pulls a list of all product
+
+@name("Get Products")
+GET "https://{{baseUrl}}/products"
+? "query"= "shirts"
+data('{hello}')
+
+
+// Retrieves a single product.
+
+@name("Get Product")
+GET "https://{{baseUrl}}/products/:productId"
+
+
+// Creates a new product.
+
+@name("Add Product")
+POST "https://{{baseUrl}}/products"
+"Content-Type": "application/json"
+
+
+// Supports either full or partial updates.
+
+@name("Update")
+PUT "https://{{baseUrl}}/products/:productId"
+"Content-Type": "application/json"
+json({
+    "identifier": "incididunt ex consequat",
+    "name": "reprehenderit incididunt sed occaecat",
+    "description": "sed aute",
+    "image": "et qui",
+    "url": "sunt fugiat qui in",
+    "brand": "volu",
+    "category": "aliquip",
+    "color": "in esse cillum proident",
+    "logo": "eiusm",
+    "manufacturer": "aute id",
+    "material": "Excepteur aliqua",
+    "model": "consequat",
+    "releaseDate": "sunt velit Duis c",
+    "sku": "in anim laborum",
+    "width": "ipsum enim",
+    "weight": "mollit ut",
+    "depth": "nisi dolor cupidatat id",
+    "height": "laborum nulla pariatur exercitation"
+})
+
+
+// Delete an individual product.
+
+@name("Delete")
+DELETE "https://{{baseUrl}}/products/:productId"
+
+
+

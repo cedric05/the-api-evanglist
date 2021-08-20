@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets the list of all tasks that the user created or used. The response is a list of objects where each objectncontains essential information about a single task.nnThe endpoint supports pagination using the `limit` and `offset` parameters, and it does not return more than a 1000 records.nnBy default, the records are sorted by the `createdAt` field in ascending order;ntherefore you can use pagination to incrementally fetch all tasks while newnones are still being created. To sort the records in de
+
+@name("Get list of tasks")
+GET "https://{{baseUrl}}/v2/actor-tasks"
+? "token"= "<string>"
+? "offset"= "<number>"
+? "limit"= "<number>"
+? "desc"= "<boolean>"
+
+
+

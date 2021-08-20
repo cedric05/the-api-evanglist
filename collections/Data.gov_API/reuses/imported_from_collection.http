@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// Get Reuses
+
+@name("Get Reuses")
+GET "https://{{baseUrl}}/reuses/"
+? "sort"= "<>"
+? "datasets"= "<string>"
+? "extra"= "<>"
+? "type"= "<string>"
+? "facets"= "<string>"
+? "page_size"= "<string>"
+? "dataset"= "<object>"
+? "q"= "<>"
+? "featured"= "<string>"
+? "tag"= "<>"
+? "followers"= "<>"
+? "owner"= "<>"
+? "organization"= "<object>"
+? "badge"= "<object>"
+? "page"= "<string>"
+
+
+// List all available reuse badges and their labels
+
+@name("Get Reuses Badges")
+GET "https://{{baseUrl}}/reuses/badges/"
+
+
+// Suggest reuses
+
+@name("Get Reuses Suggest")
+GET "https://{{baseUrl}}/reuses/suggest/"
+? "q"= "<>"
+? "size"= "<>"
+
+
+// List all reuse types
+
+@name("Get Reuses Types")
+GET "https://{{baseUrl}}/reuses/types/"
+
+
+// Unfollow an object given its ID
+
+@name("Delete Reuses  Followers")
+DELETE "https://{{baseUrl}}/reuses/:id/followers/"
+
+
+

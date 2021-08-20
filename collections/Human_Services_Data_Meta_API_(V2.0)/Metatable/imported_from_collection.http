@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-60e93ec1-23e9-4691-8a86-2d833dc2b896.postman_collection.json
+
+// Deletes a metatable by Id
+
+@name("Delete metatable")
+DELETE "https://{{baseUrl}}/metatable/:metatable_id/"
+
+
+// Returns a list of all metatable.
+
+@name("Get Metatable")
+GET "https://{{baseUrl}}/metatable/"
+? "query"= "<string>"
+? "fields"= "<string>"
+? "page"= "<number>"
+? "per_page"= "<number>"
+? "sort_by"= "<string>"
+? "order"= "<string>"
+? "format"= "<string>"
+
+
+// Creates a new metatable entry.
+
+@name("Add Metatable")
+POST "https://{{baseUrl}}/metatable/"
+
+
+// Returns a single metatable entry
+
+@name("Get Metatable")
+GET "https://{{baseUrl}}/metatable/:metatable_id/"
+
+
+// Updates an existing metatable entry using its id.
+
+@name("Update Metatable")
+PUT "https://{{baseUrl}}/metatable/:metatable_id/"
+
+
+

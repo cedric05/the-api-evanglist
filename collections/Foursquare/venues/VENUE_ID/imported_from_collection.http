@@ -1,0 +1,155 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /users/self/update
+
+@name("/users/self/update")
+GET "https://{{baseUrl}}/venues/:VENUE_ID"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/tips
+
+@name("/venues/{VENUE_ID}/tips")
+POST "https://{{baseUrl}}/venues/:VENUE_ID/edit"
+? "address"= "<string>"
+? "categoryId"= "<string>"
+? "city"= "<string>"
+? "crossStreet"= "<string>"
+? "description"= "<string>"
+? "ll"= "<string>"
+? "name"= "<string>"
+? "phone"= "<xsd:string>"
+? "state"= "<string>"
+? "twitter"= "<xsd:string>"
+? "url"= "<string>"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+? "zip"= "<string>"
+
+
+// /venues/trending
+
+@name("/venues/trending")
+GET "https://{{baseUrl}}/venues/:VENUE_ID/events"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/edit
+
+@name("/venues/{VENUE_ID}/edit")
+POST "https://{{baseUrl}}/venues/:VENUE_ID/flag"
+? "problem"= "<string>"
+? "v"= "<string>"
+? "venueId"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/events
+
+@name("/venues/{VENUE_ID}/events")
+GET "https://{{baseUrl}}/venues/:VENUE_ID/herenow"
+? "afterTimestamp"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<string>"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/herenow
+
+@name("/venues/{VENUE_ID}/herenow")
+GET "https://{{baseUrl}}/venues/:VENUE_ID/links"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/links
+
+@name("/venues/{VENUE_ID}/links")
+GET "https://{{baseUrl}}/venues/:VENUE_ID/listed"
+? "group"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<string>"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/flag
+
+@name("/venues/{VENUE_ID}/flag")
+POST "https://{{baseUrl}}/venues/:VENUE_ID/marktodo"
+? "text"= "<string>"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/listed
+
+@name("/venues/{VENUE_ID}/listed")
+GET "https://{{baseUrl}}/venues/:VENUE_ID/menu"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/menu
+
+@name("/venues/{VENUE_ID}/menu")
+GET "https://{{baseUrl}}/venues/:VENUE_ID/photos"
+? "group"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<string>"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/marktodo
+
+@name("/venues/{VENUE_ID}/marktodo")
+POST "https://{{baseUrl}}/venues/:VENUE_ID/proposeedit"
+? "address"= "<string>"
+? "city"= "<string>"
+? "crossStreet"= "<string>"
+? "ll"= "<string>"
+? "name"= "<string>"
+? "phone"= "<xsd:string>"
+? "primaryCategoryId"= "<string>"
+? "state"= "<string>"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+? "zip"= "<string>"
+
+
+// /venues/{VENUE_ID}/photos
+
+@name("/venues/{VENUE_ID}/photos")
+GET "https://{{baseUrl}}/venues/:VENUE_ID/similar"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/similar
+
+@name("/venues/{VENUE_ID}/similar")
+GET "https://{{baseUrl}}/venues/:VENUE_ID/stats"
+? "endAt"= "<string>"
+? "startAt"= "<string>"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+// /venues/{VENUE_ID}/stats
+
+@name("/venues/{VENUE_ID}/stats")
+GET "https://{{baseUrl}}/venues/:VENUE_ID/tips"
+? "limit"= "<integer>"
+? "offset"= "<string>"
+? "sort"= "<string>"
+? "v"= "<string>"
+? "VENUE_ID"= "<string>"
+
+
+

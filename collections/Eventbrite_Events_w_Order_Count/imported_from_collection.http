@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-31e043b5-a140-4b9f-bc21-e514c232ac76.postman_collection.json
+
+// Pulls all the events, and gets orders for each then displays using the visualizer.
+
+@name("Event Orders")
+GET "https://www.eventbriteapi.com/v3/organizations/:organization_id/events/"
+? "status"= "live"
+? "order_by"= "start_asc"
+? "token"= "{{token}}"
+
+
+

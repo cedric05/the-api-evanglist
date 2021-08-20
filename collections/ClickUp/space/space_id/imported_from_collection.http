@@ -1,0 +1,66 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Please paste the previously created space_id for continuity
+
+@name("Update a Space") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/space/space_id"
+"Content-Type": "application/json"
+json({
+    "name": "Updated Space Name",
+    "multiple_assignees": true,
+    "features": {
+        "due_dates": {
+            "enabled": true,
+            "start_date": false,
+            "remap_due_dates": true,
+            "remap_closed_due_date": false
+        },
+        "time_tracking": {
+            "enabled": true
+        },
+        "tags": {
+            "enabled": true
+        },
+        "time_estimates": {
+            "enabled": true
+        },
+        "checklists": {
+            "enabled": true
+        },
+        "custom_fields": {
+            "enabled": true
+        },
+        "remap_dependencies": {
+            "enabled": true
+        },
+        "dependency_warning": {
+            "enabled": false
+        },
+        "portfolios": {
+            "enabled": true
+        }
+    }
+})
+
+
+// Please paste the previously updated space_id for continuity
+
+@name("Delete a Space") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/space/space_id"
+"Content-Type": "application/json"
+
+
+@name("Get Space") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/space/space_id"
+"Content-Type": "application/json"
+
+
+

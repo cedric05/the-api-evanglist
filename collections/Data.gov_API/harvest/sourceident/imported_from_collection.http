@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+@name("Delete Harvest Source Ent")
+DELETE "https://{{baseUrl}}/harvest/source/:ident"
+
+
+// List all jobs for a given source
+
+@name("Get Harvest Source Ent Jobs")
+GET "https://{{baseUrl}}/harvest/source/:ident/jobs/"
+? "page"= "<string>"
+? "page_size"= "<string>"
+
+
+// Preview a single harvest source given an ID or a slug
+
+@name("Get Harvest Source Ent Preview")
+GET "https://{{baseUrl}}/harvest/source/:ident/preview"
+
+
+// Validate or reject an harvest source
+
+@name("Add Harvest Source Ent Valate")
+POST "https://{{baseUrl}}/harvest/source/:ident/validate"
+
+
+

@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f95c71f8-440c-4354-8978-2a8659a376a0.postman_collection.json
+
+// Sends a message by assembling it from the components. Note that you can specify most parameters multiple times, HTTP supports this out of the box. This makes sense for parameters like cc, to or attachment.
+
+@name("Send Message")
+POST "https://{{baseUrl}}/messages/"
+? "attachment"= "<>"
+? "bcc"= "<>"
+? "cc"= "<>"
+? "from"= "<>"
+? "h:X-My-Header"= "<>"
+? "html"= "<>"
+? "inline"= "<>"
+? "o:campaign"= "<>"
+? "o:deliverytime"= "<>"
+? "o:dkim"= "<>"
+? "o:tag"= "<>"
+? "o:testmode"= "<>"
+? "o:tracking"= "<>"
+? "o:tracking-clicks"= "<>"
+? "o:tracking-opens"= "<>"
+? "subject"= "<>"
+? "text"= "<>"
+? "to"= "<>"
+? "v:my-var"= "<>"
+
+
+// Gets a message.
+
+@name("Message")
+GET "https://{{baseUrl}}/messages/:id"
+? "id"= "<>"
+
+
+

@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get a collection of all the DeviceServers you have created.
+
+@name("List all Device Server")
+GET "https://{{baseUrl}}/device-server"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create a new DeviceServer providing the installation token in the header and signing the request with the private part of the key you used to create the installation. The API Key that you are using will be bound to the IP address of the DeviceServer which you have created.<br/><br/>Using a Wildcard API Key gives you the freedom to make API calls even if the IP address has changed after the POST device-server.<br/><br/>Find out more at this link <a href="https:/bunq.com/en/apikey-dynamic-ip" target="_blank">https:/bunq.com/en/apikey-dynamic-ip</a>.
+
+@name("CREATE Device Server")
+POST "https://{{baseUrl}}/device-server"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "description": "<string>",
+    "secret": "<string>",
+    "permitted_ips": [
+        "<string>",
+        "<string>"
+    ]
+})
+
+
+// Get one of your DeviceServers.
+
+@name("READ Device Server")
+GET "https://{{baseUrl}}/device-server/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+

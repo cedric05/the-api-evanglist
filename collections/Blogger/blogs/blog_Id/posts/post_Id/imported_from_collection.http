@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2e3bbcd-4c1a-45f3-8016-86639e868822.postman_collection.json
+
+// Delete a post by ID.
+
+@name("Delete Blog Post")
+DELETE "https://{{baseUrl}}/blogs/:blogId/posts/:postId"
+
+
+// Publishes a draft post, optionally at the specific time of the given publishDate parameter.
+
+@name("Publish Blog Post")
+POST "https://{{baseUrl}}/blogs/:blogId/posts/:postId/publish"
+? "publishDate"= "<>"
+
+
+// Revert a published or scheduled post to draft state.
+
+@name("Revert Blog Post")
+POST "https://{{baseUrl}}/blogs/:blogId/posts/:postId/revert"
+
+
+

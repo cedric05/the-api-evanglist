@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+@name("Get a project column")
+GET "https://{{baseUrl}}/projects/columns/:column_id"
+
+
+@name("Update an existing project column")
+PATCH "https://{{baseUrl}}/projects/columns/:column_id"
+"Content-Type": "application/json"
+json({
+    "name": "<string>"
+})
+
+
+@name("Delete a project column")
+DELETE "https://{{baseUrl}}/projects/columns/:column_id"
+
+
+@name("Move a project column")
+POST "https://{{baseUrl}}/projects/columns/:column_id/moves"
+"Content-Type": "application/json"
+json({
+    "position": "<string>"
+})
+
+
+

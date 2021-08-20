@@ -1,0 +1,128 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create International Scheduled Payments")
+POST "https://{{baseUrl}}/international-scheduled-payments"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "ConsentId": "cillum",
+        "Initiation": {
+            "CreditorAccount": {
+                "Identification": "Excepteur eiusmod amet officia minim",
+                "Name": "nisi commodo amet aute",
+                "SchemeName": "UK.OBIE.BICFI",
+                "SecondaryIdentification": "consequat ea minim veniam"
+            },
+            "CurrencyOfTransfer": "cillum irure",
+            "InstructedAmount": {
+                "Amount": "aliquip non",
+                "Currency": "ipsum esse"
+            },
+            "InstructionIdentification": "Duis labore aliqua dolore",
+            "RequestedExecutionDateTime": "1967-12-04T08:10:15.695Z",
+            "ChargeBearer": "BorneByDebtor",
+            "Creditor": {
+                "PostalAddress": {
+                    "AddressLine": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "AddressType": "Business",
+                    "BuildingNumber": "dolor magna ut sunt",
+                    "Country": "eu sit ullamco in",
+                    "CountrySubDivision": "in dolor",
+                    "Department": "occaecat reprehenderit",
+                    "PostCode": "in proident consectetur in",
+                    "StreetName": "dolore ex consectetur",
+                    "SubDepartment": "p",
+                    "TownName": "nulla irure laborum do id"
+                },
+                "Name": "Ut exercitation"
+            },
+            "CreditorAgent": {
+                "Identification": "laborum dolor Exc",
+                "Name": "aliquip nulla sint exercitation",
+                "PostalAddress": {
+                    "AddressLine": [
+                        "non ad mollit",
+                        "aliquip sed"
+                    ],
+                    "AddressType": "Residential",
+                    "BuildingNumber": "veniam anim",
+                    "Country": "mollit",
+                    "CountrySubDivision": "aliquip",
+                    "Department": "reprehenderit consectetur ullamco",
+                    "PostCode": "culpa labore ullamco dolore",
+                    "StreetName": "eiusmod Ut exercitation cillum",
+                    "SubDepartment": "in Excepteur Duis",
+                    "TownName": "nisi cupidatat ad reprehenderit"
+                },
+                "SchemeName": "UK.OBIE.IBAN"
+            },
+            "EndToEndIdentification": "exercitation velit",
+            "ExchangeRateInformation": {
+                "RateType": "Actual",
+                "UnitCurrency": "in magna elit"
+            },
+            "InstructionPriority": "Normal",
+            "LocalInstrument": "UK.OBIE.CHAPS",
+            "Purpose": "consequat nostrud officia esse",
+            "RemittanceInformation": {
+                "Reference": "ad nostru",
+                "Unstructured": "deserunt Duis tempor culpa"
+            },
+            "SupplementaryData": {
+                "LocalInstrument": "UK.OBIE.CHAPS"
+            }
+        }
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "ut dolore do",
+            "TownName": "esse amet occaecat aliqua laboris",
+            "AddressLine": [
+                "ipsum aliquip sint dolore",
+                "ut"
+            ],
+            "BuildingNumber": "occaecat in",
+            "CountrySubDivision": [
+                "culpa eu ex",
+                "do fugiat ea"
+            ],
+            "PostCode": "id sunt amet dolor",
+            "StreetName": "ut enim id eiusmod"
+        },
+        "MerchantCategoryCode": "sunt nulla",
+        "MerchantCustomerIdentification": "sit cupidatat incididunt laboris",
+        "PaymentContextCode": "Other"
+    }
+})
+
+
+@name("Get International Scheduled Payments")
+GET "https://{{baseUrl}}/international-scheduled-payments/:InternationalScheduledPaymentId"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+
+
+

@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Returns the raw content of the QR code that links to this Tab. The raw content is the binary representation of a file, without any JSON wrapping.
+
+@name("List all Qr Code Content for User Monetary Account Cash Register Tab")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/tab/:tabUUID/qr-code-content"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create tab items as a batch.
+
+@name("CREATE Tab Item Batch for User Monetary Account Cash Register Tab")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/tab/:tabUUID/tab-item-batch"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "tab_items": [
+        {
+            "amount": {
+                "currency": "in ex officia aliqua",
+                "value": "cupidatat nulla"
+            },
+            "avatar_attachment_uuid": "<string>",
+            "description": "<string>",
+            "ean_code": "<string>",
+            "quantity": "<integer>",
+            "tab_attachment": [
+                "<object>",
+                "<object>"
+            ]
+        },
+        {
+            "amount": {
+                "currency": "temp",
+                "value": "dolor reprehenderit"
+            },
+            "avatar_attachment_uuid": "<string>",
+            "description": "<string>",
+            "ean_code": "<string>",
+            "quantity": "<integer>",
+            "tab_attachment": [
+                "<object>",
+                "<object>"
+            ]
+        }
+    ]
+})
+
+
+

@@ -1,0 +1,89 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a user a object. Sensitive information will be sanitized out.n##### PermissionsnRequires an active session but no other permissions.n
+
+@name("Get a user")
+GET "https://{{baseUrl}}/users/:user_id"
+
+
+// Partially update a user by providing only the fields you want to update. Omitted fields will not be updated. The fields that can be updated are defined in the request body, all other provided fields will be ignored.n##### PermissionsnMust be logged in as the user being updated or have the `edit_other_users` permission.n
+
+@name("Patch a user")
+PUT "https://{{baseUrl}}/users/:user_id/patch"
+
+
+// Update a user's system-level roles. Valid user roles are system_user, system_admin or both of them. Overwrites any previously assigned system-level roles.n##### PermissionsnMust have the `manage_roles` permission.n
+
+@name("Update a user's roles")
+PUT "https://{{baseUrl}}/users/:user_id/roles"
+
+
+// Update user active or inactive status.nn__Since server version 4.6, users using a SSO provider to login can be activated or deactivated with this endpoint. However, if their activation status in Mattermost does not reflect their status in the SSO provider, the next synchronization or login by that user will reset the activation status to that of their account in the SSO provider. Server versions 4.5 and before do not allow activation or deactivation of SSO users from this endpoint.__n##### Permi
+
+@name("Update user active status")
+PUT "https://{{baseUrl}}/users/:user_id/active"
+
+
+// Get a user's profile image based on user_id string parameter.n##### PermissionsnMust be logged in.n
+
+@name("Get user's profile image")
+GET "https://{{baseUrl}}/users/:user_id/image"
+
+
+// Update a user's password. New password must meet password policy set by server configuration. Current password is required if you're updating your own password.n##### PermissionsnMust be logged in as the user the password is being changed for or have `manage_system` permission.n
+
+@name("Update a user's password")
+PUT "https://{{baseUrl}}/users/:user_id/password"
+
+
+// Get a list of audit by providing the user GUID.n##### PermissionsnMust be logged in as the user or have the `edit_other_users` permission.n
+
+@name("Get users audits")
+GET "https://{{baseUrl}}/users/:user_id/audits"
+
+
+// Generate a user access token that can be used to authenticate with the Mattermost REST API.nn__Minimum server version__: 4.1nn##### PermissionsnMust have `create_user_access_token` permission. For non-self requests, must also have the `edit_other_users` permission.n
+
+@name("Create a user access token")
+POST "https://{{baseUrl}}/users/:user_id/tokens"
+
+
+// Updates a user's authentication method. This can be used to change them to/from LDAP authentication for example.nn__Minimum server version__: 4.6n##### PermissionsnMust have the `edit_other_users` permission.n
+
+@name("Update a users authentication method")
+PUT "https://{{baseUrl}}/users/:user_id/auth"
+
+
+// Get user status by id from the server.n##### PermissionsnMust be authenticated.n
+
+@name("Get user status")
+GET "https://{{baseUrl}}/users/:user_id/status"
+
+
+// Get the total unread messages and mentions for a channel for a user.n##### PermissionsnMust be logged in as user and have the `read_channel` permission, or have `edit_other_usrs` permission.n
+
+@name("Get unread messages")
+GET "https://{{baseUrl}}/users/:user_id/channels/:channel_id/unread"
+
+
+// Get a page of flagged posts of a user provided user id string. Selects from a channel, team or all flagged posts by a user.n##### PermissionsnMust be user or have `manage_system` permission.n
+
+@name("Get a list of flagged posts")
+GET "https://{{baseUrl}}/users/:user_id/posts/flagged"
+? "team_id"= "<post>"
+? "channel_id"= "<post>"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Get a page of OAuth 2.0 client applications authorized to access a user's account.n##### PermissionsnMust be authenticated as the user or have `edit_other_users` permission.n
+
+@name("Get authorized OAuth apps")
+GET "https://{{baseUrl}}/users/:user_id/oauth/apps/authorized"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+

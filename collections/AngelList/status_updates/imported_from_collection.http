@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d2c214b-77c4-4e90-8dc4-3cd4493a1c9a.postman_collection.json
+
+// Get Status Updates
+
+@name("Get Status Updates")
+GET "https://{{baseUrl}}/status_updates"
+? "startup_id"= "<get>"
+? "user_id"= "<>"
+
+
+// Delete Status Update
+
+@name("Delete Status Update")
+DELETE "https://{{baseUrl}}/status_updates/:status_update_id"
+? "message"= "<get>"
+? "startup_id"= "<get>"
+
+
+

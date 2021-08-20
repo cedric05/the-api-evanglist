@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0844b16b-d5bd-4114-8004-1fa248b2dcfc.postman_collection.json
+
+// The Products endpoint returns information about the Uber products offered at a given location. The response includes the display name and other details about each product, and lists the products in the proper display order.
+
+@name("Product Types")
+GET "https://{{baseUrl}}/products"
+? "latitude"= "<>"
+? "longitude"= "<>"
+
+
+// The User Profile endpoint returns information about the Uber user that has authorized with the application.
+
+@name("User Profile")
+GET "https://{{baseUrl}}/me"
+
+
+// The User Activity endpoint returns data about a user's lifetime activity with Uber. The response will include pickup locations and times, dropoff locations and times, the distance of past requests, and information about which products were requested.<br><br>The history array in the response will have a maximum length based on the limit parameter. The response value count may exceed limit, therefore subsequent API requests may be necessary.
+
+@name("User Activity")
+GET "https://{{baseUrl}}/history"
+? "offset"= "<get>"
+? "limit"= "<get>"
+
+
+

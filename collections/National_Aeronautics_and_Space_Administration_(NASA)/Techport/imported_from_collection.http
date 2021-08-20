@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d47c7988-a7de-44ff-ba08-7608a9285ad4.postman_collection.json
+
+// Returns a list of available technology project IDs.
+
+@name("Projects")
+GET "https://api.nasa.gov/techport/api/projects"
+"Accept": "application/xml, application/json"
+? "updatedSince"= "2016-01-01"
+? "api_key"= "{{api_key}}"
+
+
+// Returns information about a specific technology project.
+
+@name("Project")
+GET "https://api.nasa.gov/techport/api/projects/:project_id"
+"Accept": "application/xml, application/json"
+? "api_key"= "{{api_key}}"
+
+
+

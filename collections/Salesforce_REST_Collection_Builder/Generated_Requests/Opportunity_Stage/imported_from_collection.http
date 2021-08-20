@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Opportunity Stage") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/OpportunityStage/"
+
+
+@name("Opportunity Stage Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/OpportunityStage/{ID}/"
+
+
+@name("Describe Opportunity Stage") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/OpportunityStage/describe/"
+
+
+

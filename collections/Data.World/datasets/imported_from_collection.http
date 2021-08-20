@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Simple Dataset Search. Available for single tenant only.
+
+@name("Search for datasets") : "base-inherit-auth"
+GET "https://{{baseUrl}}/datasets/search"
+? "query"= "et officia pariatur"
+? "fields"= "et officia pariatur"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+
+
+

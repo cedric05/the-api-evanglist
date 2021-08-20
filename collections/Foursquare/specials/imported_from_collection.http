@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /specials/{SPECIAL_ID}
+
+@name("/specials/{SPECIAL_ID}")
+POST "https://{{baseUrl}}/specials/add"
+? "cost"= "<string>"
+? "count1"= "<string>"
+? "count2"= "<string>"
+? "count3"= "<string>"
+? "finePrint"= "<string>"
+? "name"= "<string>"
+? "offerId"= "<string>"
+? "text"= "<string>"
+? "type"= "<string>"
+? "unlockedText"= "<string>"
+? "v"= "<string>"
+
+
+// /specials/add
+
+@name("/specials/add")
+GET "https://{{baseUrl}}/specials/list"
+? "status"= "<string>"
+? "v"= "<string>"
+? "venueId"= "<string>"
+
+
+// /specials/list
+
+@name("/specials/list")
+GET "https://{{baseUrl}}/specials/search"
+? "alt"= "<string>"
+? "altAcc"= "<string>"
+? "limit"= "<integer>"
+? "ll"= "<string>"
+? "llAcc"= "<string>"
+? "radius"= "<decimal>"
+? "v"= "<string>"
+
+
+// /specials/{SPECIAL_ID}/configuration
+
+@name("/specials/{SPECIAL_ID}/configuration")
+POST "https://{{baseUrl}}/specials/:ID/flag"
+? "ID"= "<string>"
+? "problem"= "<string>"
+? "text"= "<string>"
+? "v"= "<string>"
+? "venueId"= "<string>"
+
+
+

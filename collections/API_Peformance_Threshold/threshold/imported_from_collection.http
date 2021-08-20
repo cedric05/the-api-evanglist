@@ -1,0 +1,102 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ee1bcca8-1dc2-4d21-9276-24298e87d40c.postman_collection.json
+
+@name("thresholdCreate")
+POST "https://{{baseUrl}}/threshold"
+"Content-Type": "application/json"
+json({
+    "id": 68328688,
+    "description": "qui consequat ullamco",
+    "name": "labore",
+    "thresholdRule": [
+        {
+            "performanceConsequence": [
+                {
+                    "alarmSpecification": {
+                        "perfAlarmSpecSeverity": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "perfAlarmSpecAdditionalText": "dol",
+                        "perfAlarmSpecAlarmType": "cillum commodo sint eu",
+                        "perfAlarmSpecSpecificProblem": "et amet nostrud",
+                        "perfAlarmThresholdCrossingDescription": "est tempor aliqua",
+                        "perfeAlarmSpecProbableCause": "sint nulla dolor eiusmod",
+                        "performanceConsequence": {
+                            "value": "<Circular reference to #/components/schemas/PerformanceConsequence detected>"
+                        }
+                    },
+                    "Description": "incididunt commodo exercitation",
+                    "name": "adi",
+                    "prescribedAction": "mollit qui cillum commodo"
+                },
+                {
+                    "alarmSpecification": {
+                        "perfAlarmSpecSeverity": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "perfAlarmSpecAdditionalText": "adipisicing Duis dolore",
+                        "perfAlarmSpecAlarmType": "magna labore est in",
+                        "perfAlarmSpecSpecificProblem": "dolor commodo id eu",
+                        "perfAlarmThresholdCrossingDescription": "Duis do velit",
+                        "perfeAlarmSpecProbableCause": "eu ex",
+                        "performanceConsequence": {
+                            "value": "<Circular reference to #/components/schemas/PerformanceConsequence detected>"
+                        }
+                    },
+                    "Description": "ex elit in",
+                    "name": "tempor Ut do incididunt amet",
+                    "prescribedAction": "velit ullamco anim"
+                }
+            ],
+            "thresholdRuleCondition": "Raise",
+            "thresholdRuleSeverity": "CRITICAL"
+        },
+        {
+            "performanceConsequence": [
+                {
+                    "alarmSpecification": {
+                        "perfAlarmSpecSeverity": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "perfAlarmSpecAdditionalText": "enim ipsum",
+                        "perfAlarmSpecAlarmType": "Lorem nostrud",
+                        "perfAlarmSpecSpecificProblem": "aute quis elit",
+                        "perfAlarmThresholdCrossingDescription": "velit do labore fugiat",
+                        "perfeAlarmSpecProbableCause": "sed laboris",
+                        "performanceConsequence": {
+                            "value": "<Circular reference to #/components/schemas/PerformanceConsequence detected>"
+                        }
+                    },
+                    "Description": "exercitation consectetur",
+                    "name": "cupidatat",
+                    "prescribedAction": "est tempor commodo"
+                },
+                {
+                    "alarmSpecification": {
+                        "perfAlarmSpecSeverity": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "perfAlarmSpecAdditionalText": "consequat nostrud consectetur",
+                        "perfAlarmSpecAlarmType": "id dolore ullamco",
+                        "perfAlarmSpecSpecificProblem": "nulla consectetur tempor reprehenderit",
+                        "perfAlarmThresholdCrossingDescription": "magna dolor",
+                        "perfeAlarmSpecProbableCause": "eu officia mollit",
+                        "performanceConsequence": {
+                            "value": "<Circular reference to #/components/schemas/PerformanceConsequence detected>"
+                        }
+                    },
+                    "Description": "in commodo exercitation reprehenderit sunt",
+                    "name": "aliquip dolore",
+                    "prescribedAction": "adipisicing ut aliqua non in"
+                }
+            ],
+            "thresholdRuleCondition": "Raise",
+            "thresholdRuleSeverity": "CRITICAL"
+        }
+    ],
+    "thresholdType": "LogicDefinition"
+})
+
+
+

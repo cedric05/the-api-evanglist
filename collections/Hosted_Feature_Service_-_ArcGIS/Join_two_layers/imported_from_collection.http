@@ -1,0 +1,85 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8758df9f-c56b-4503-9985-607c932b0403.postman_collection.json
+
+// First, create an empty database
+
+@name("<root-url>/content/users/<username>/createService")
+POST "{{protocol}}://{{portalHost}}/sharing/rest/content/users/{{username}}/createService"
+data({
+    "createParameters": [
+        "{\"currentVersion\":10.2,\"serviceDescription\":\"\",\"hasVersionedData\":false,\"supportsDisconnectedEditing\":false,\"hasStaticData\":true,\"maxRecordCount\":2000,\"supportedQueryFormats\":\"JSON\",\"capabilities\":\"Query\",\"description\":\"\",\"copyrightText\":\"\",\"allowGeometryUpdates\":false,\"syncEnabled\":false,\"editorTrackingInfo\":{\"enableEditorTracking\":false,\"enableOwnershipAccessControl\":false,\"allowOthersToUpdate\":true,\"allowOthersToDelete\":true},\"xssPreventionInfo\":{\"xssPreventionEnabled\":true,\"xssPreventionRule\":\"InputOnly\",\"xssInputRule\":\"rejectInvalid\"},\"tables\":[],\"name\":\"Join_Features_FeaturerLayerName_AND_TableName_2\"}"
+    ],
+    "f": [
+        "json"
+    ],
+    "isView": [
+        "true"
+    ],
+    "outputType": [
+        "featureService"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+// Add a layer with **just adminLayerInfo**. With this structure:
+// 
+// ```
+// {
+// 	"layers": [{
+// 		"name": "Join_Features_FeaturerLayerName_AND_TableName",
+// 		"displayField": "",
+// 		"description": "AttributeJoin",
+// 		"adminLayerInfo": {
+// 			"viewLayerDefinition": {
+// 				"table": {
+// 					"name": "Testing_purposes_POSTMAN_Collection_1570094204565_target",
+// 					"sourceServiceName": "Testing_purposes_POSTMAN_Collection",
+// 					"sourceLayerId": 0,
+// 					"sourceLayerFields": [...],
+// 					"relatedTables": [{
+// 						"name": "Testing_purposes_POSTMAN_Collection_1570094204566_join",
+// 						"sourceServiceName": "Testing_purposes_POSTMAN_Collection",
+// 						"sourceLayerId": 3,
+// 						"sourceLayerFields": [...],
+// 						"type": "INNER",
+// 						"parentKeyFields": ["Name"],
+// 						"keyFields": ["Event_Title"],
+// 						"topFilter": {
+// 							"groupByFields": "Event_Title",
+// 							"orderByFields": "ObjectId ASC",
+// 							"topCount": 1
+// 						}
+// 					}],
+// 					"materialized": false
+// 				}
+// 			},
+// 			"geometryField": {
+// 				"name": "Testing_purposes_POSTMAN_Collection_1570094204565_target.Shape"
+// 			}
+// 		}
+// 	}]
+// }
+// ```
+// 
+// Where `òbj.layers[0].adminLayerInfo.viewLayerDefinition.table.relatedTables` define the information about the join: `sourceServiceName`, `type`, `parentKeyFields`, `keyFields`, ...
+
+@name("<admin-catalog-url>/<serviceName>/FeatureServer/addToDefinition")
+POST "{{protocol}}://{{host}}/{{instance}}/arcgis/rest/admin/services/{{serviceName}}/FeatureServer/addToDefinition"
+data({
+    "addToDefinition": [
+        "{\"layers\":[{\"name\":\"Join_Features_FeaturerLayerName_AND_TableName\",\"displayField\":\"\",\"description\":\"AttributeJoin\",\"adminLayerInfo\":{\"viewLayerDefinition\":{\"table\":{\"name\":\"Testing_purposes_POSTMAN_Collection_1570094204565_target\",\"sourceServiceName\":\"Testing_purposes_POSTMAN_Collection\",\"sourceLayerId\":0,\"sourceLayerFields\":[{\"name\":\"GlobalID\",\"alias\":\"\",\"source\":\"GlobalID\"},{\"name\":\"CreationDate\",\"alias\":\"CreationDate\",\"source\":\"CreationDate\"},{\"name\":\"Creator\",\"alias\":\"Creator\",\"source\":\"Creator\"},{\"name\":\"EditDate\",\"alias\":\"EditDate\",\"source\":\"EditDate\"},{\"name\":\"Editor\",\"alias\":\"Editor\",\"source\":\"Editor\"},{\"name\":\"Name\",\"alias\":\"Beach Name\",\"source\":\"Name\"},{\"name\":\"SandType\",\"alias\":\"Sand type\",\"source\":\"SandType\"}],\"relatedTables\":[{\"name\":\"Testing_purposes_POSTMAN_Collection_1570094204566_join\",\"sourceServiceName\":\"Testing_purposes_POSTMAN_Collection\",\"sourceLayerId\":3,\"sourceLayerFields\":[{\"name\":\"Start_Date\",\"alias\":\"Start Date\",\"source\":\"Start_Date\"},{\"name\":\"Start_Time\",\"alias\":\"Start Time\",\"source\":\"Start_Time\"},{\"name\":\"End_Date\",\"alias\":\"End Date\",\"source\":\"End_Date\"},{\"name\":\"End_Time\",\"alias\":\"End Time\",\"source\":\"End_Time\"},{\"name\":\"Event_Title\",\"alias\":\"Event Title\",\"source\":\"Event_Title\"},{\"name\":\"All_Day_Event\",\"alias\":\"All Day Event\",\"source\":\"All_Day_Event\"},{\"name\":\"No_End_Time\",\"alias\":\"No End Time\",\"source\":\"No_End_Time\"},{\"name\":\"Event_Description\",\"alias\":\"Event Description\",\"source\":\"Event_Description\"},{\"name\":\"Contact\",\"alias\":\"Contact\",\"source\":\"Contact\"},{\"name\":\"Contact_Email\",\"alias\":\"Contact Email\",\"source\":\"Contact_Email\"},{\"name\":\"Contact_Phone\",\"alias\":\"Contact Phone\",\"source\":\"Contact_Phone\"},{\"name\":\"Location\",\"alias\":\"Location\",\"source\":\"Location\"},{\"name\":\"Category\",\"alias\":\"Category\",\"source\":\"Category\"},{\"name\":\"Mandatory\",\"alias\":\"Mandatory\",\"source\":\"Mandatory\"},{\"name\":\"Registration\",\"alias\":\"Registration\",\"source\":\"Registration\"},{\"name\":\"Maximum\",\"alias\":\"Maximum\",\"source\":\"Maximum\"},{\"name\":\"Last_Date_To_Register\",\"alias\":\"Last Date To Register\",\"source\":\"Last_Date_To_Register\"},{\"name\":\"GlobalID_1570094204566\",\"alias\":\"\",\"source\":\"GlobalID\"}],\"type\":\"INNER\",\"parentKeyFields\":[\"Name\"],\"keyFields\":[\"Event_Title\"],\"topFilter\":{\"groupByFields\":\"Event_Title\",\"orderByFields\":\"ObjectId ASC\",\"topCount\":1}}],\"materialized\":false}},\"geometryField\":{\"name\":\"Testing_purposes_POSTMAN_Collection_1570094204565_target.Shape\"}}}]}"
+    ],
+    "f": [
+        "json"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+

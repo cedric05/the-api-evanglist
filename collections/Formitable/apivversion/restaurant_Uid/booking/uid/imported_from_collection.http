@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get information about a specific booking
+
+@name("Get booking")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/:uid"
+
+
+// Cancels the booking
+
+@name("Cancel booking")
+DELETE "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/:uid"
+
+
+// Update the details of a booking. Only specify the properties that need to change. Not specifying a property (or set it to null) will keep the current value
+
+@name("Update booking")
+PUT "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/:uid"
+"Content-Type": "application/json"
+json({
+    "bookingDateTime": "1954-10-01T18:16:14.312Z",
+    "bookingDuration": 2175321,
+    "numberOfPeople": 34792563,
+    "companyName": "do adipisicing dolor",
+    "title": "in",
+    "firstName": "mollit Ut anim u",
+    "lastName": "dolore elit occaecat tempor",
+    "telephone": "id Duis",
+    "email": "in qui Duis",
+    "comments": "pariatur id nisi sit",
+    "culture": "elit dolor veniam",
+    "company": false,
+    "color": "cillum adipisicing dolor magna",
+    "tables": [
+        -57569295,
+        -47253369
+    ],
+    "optionExpiresDateTime": "1987-02-03T13:15:55.059Z"
+})
+
+
+// Create a new message from restaurant to user
+
+@name("Create restaurant message")
+POST "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/:uid/messagetouser"
+"Content-Type": "application/json"
+json({
+    "content": "et in incididunt"
+})
+
+
+

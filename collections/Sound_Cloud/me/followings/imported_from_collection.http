@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-edf4e52a-d167-4c2f-bb89-c42269bd9481.postman_collection.json
+
+// Checks if the user with the id contact_id is in the logged-in user's list of contacts.
+
+@name("Get Me Followings Contact")
+GET "https://{{baseUrl}}/me/followings/{{contact_id}}.json"
+
+
+// Checks if the user with the id contact_id is in the logged-in user's list of contacts.
+
+@name("Get Me Followings Contact . Format")
+GET "https://{{baseUrl}}/me/followings/{{contact_id}}.{{format}}"
+
+
+

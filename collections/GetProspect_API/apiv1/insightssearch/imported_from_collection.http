@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Create a search document in MongoDB
+
+@name("Create search")
+POST "https://{{baseUrl}}/api/v1/insights/search"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+
+
+
+@name("Insights Controller get Saved Contact By Insight Id")
+GET "https://{{baseUrl}}/api/v1/insights/search/contact/:insightId"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Insights Controller check Processing Contacts")
+GET "https://{{baseUrl}}/api/v1/insights/search/check/contacts/:searchId"
+"Authorization": "Bearer <Bearer Token>"
+
+
+

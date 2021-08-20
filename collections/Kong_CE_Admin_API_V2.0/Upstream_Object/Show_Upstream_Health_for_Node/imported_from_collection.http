@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// # List All Upstreams [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-all-upstreams)
+// * Displays the health status for all Targets of a given Upstream, or for the whole Upstream, according to the perspective of a specific Kong node. Note that, being node-specific information, making this same request to different nodes of the Kong cluster may produce different results. For example, one specific node of the Kong cluster may be experiencing network issues, causing it to fail to connect to some Targets: these Targets will be marked as unhealthy by that node (directing traffic from this node to other Targets that it can successfully reach), but healthy to all others Kong nodes (which have no problems using that Target).
+// 
+// * The data field of the response contains an array of Target objects. The health for each Target is returned in its health field:
+// 
+// 	* If a Target fails to be activated in the balancer due to DNS issues, its status displays as DNS_ERROR.
+// 	* When health checks are not enabled in the Upstream configuration, the health status for active Targets is displayed as HEALTHCHECKS_OFF.
+// 	* When health checks are enabled and the Target is determined to be healthy, either automatically or manually, its status is displayed as HEALTHY. This means that this Target is currently included in this Upstream’s load balancer execution.
+// 
+// * When a Target has been disabled by either active or passive health checks (circuit breakers) or manually, its status is displayed as UNHEALTHY. The load balancer is not directing any traffic to this Target via this Upstream.
+// When the request query parameter balancer_health is set to 1, the data field of the response refers to the whole Upstream, and its health attribute is defined by the state of all of Upstream’s Targets, according to the field [health checker’s threshold][healthchecks.threshold].
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Upstream for which to display Target health.</td>
+//   </tr>
+//   <tr>
+//     <td>balancer_health</td>
+//     <td>optional</td>
+//     <td>query</td>
+//     <td>If set to 1, Kong will return the health status of the whole Upstream.</td>
+//   </tr>
+// </table>
+
+@name("List All Upstreams")
+GET "https://{{gateway}}/upstreams/:nameOrId/health"
+? "balancer_health"= "1"
+
+
+

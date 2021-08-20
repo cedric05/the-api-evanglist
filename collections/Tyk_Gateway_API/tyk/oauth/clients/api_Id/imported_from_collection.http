@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26cd91a2-9b1d-4b13-a446-5962a1db044c.postman_collection.json
+
+// Get a list of OAuth clients bound to this back endn
+
+@name("OAuth Get Clients")
+GET "https://{{baseUrl}}/tyk/oauth/clients/:apiId"
+"x": "<>"
+
+
+// Delete the OAuth clientn
+
+@name("Delete Client")
+DELETE "https://{{baseUrl}}/tyk/oauth/clients/:apiId/:clientId"
+"x": "<>"
+
+
+

@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Sets the avatar displayed for a project.
+// 
+// Use [Load project avatar](#api-rest-api-3-project-projectIdOrKey-avatar2-post) to store avatars against the project, before using this operation to set the displayed avatar.
+// 
+// **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
+
+@name("Set Project Avatar") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/rest/api/3/project/:projectIdOrKey/avatar"
+"Content-Type": "application/json"
+json({
+    "id": "<string>"
+})
+
+
+// Deletes a custom avatar from a project. Note that system avatars cannot be deleted.
+// 
+// **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
+
+@name("Delete Project Avatar") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/rest/api/3/project/:projectIdOrKey/avatar/:id"
+
+
+

@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Finds all active Listings associated with a Shop
+
+@name("Get Shops Shop Listings Active")
+GET "https://{{baseUrl}}/shops/:shop_id/listings/active"
+? "limit"= "<>"
+? "offset"= "<>"
+? "keywords"= "<>"
+? "sort_on"= "<>"
+? "sort_order"= "<>"
+? "min_price"= "<>"
+? "max_price"= "<>"
+? "color"= "<>"
+? "color_accuracy"= "<>"
+? "tags"= "<>"
+? "materials"= "<>"
+? "category"= "<>"
+
+
+// Retrieves Listings associated to a Shop that are featured
+
+@name("Get Shops Shop Listings Featured")
+GET "https://{{baseUrl}}/shops/:shop_id/listings/featured"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

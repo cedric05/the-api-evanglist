@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets the list of webhooks that the user created.nnThe endpoint supports pagination using the `limit` and `offset` parameters and it will not return more than 1000 records.nBy default, the records are sorted by the `createdAt` field in ascending order. To sort the records in descending order, use the `desc=1`nparameter.
+
+@name("Get list of webhooks")
+GET "https://{{baseUrl}}/v2/webhooks"
+? "token"= "<string>"
+? "offset"= "<number>"
+? "limit"= "<number>"
+? "desc"= "<boolean>"
+
+
+// Gets webhook object with all details.
+
+@name("Get webhook")
+GET "https://{{baseUrl}}/v2/webhooks/:webhookId"
+? "token"= "<string>"
+
+
+

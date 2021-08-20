@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Url Parameters:
+// 
+//     template: template_id
+//     title: document_title
+
+@name("Get template version managers") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/template-version-manager/global/"
+
+
+// Create a TemplateVersion
+
+@name("rest template-version-manager version create") : "base-inherit-auth"
+POST "https://{{baseUrl}}/rest/template-version-manager/:id/version/"
+
+
+

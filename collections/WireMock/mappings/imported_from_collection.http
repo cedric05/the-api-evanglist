@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5bfc6a7a-9723-4bb7-a53c-665f538df741.postman_collection.json
+
+// Delete all stub mappings
+
+@name("Delete Mappings")
+DELETE "https://{{baseUrl}}/mappings"
+
+
+// Find stubs by matching on their metadata
+
+@name("Post Mappings Find By Metadata")
+POST "https://{{baseUrl}}/mappings/find-by-metadata"
+
+
+// Remove stubs by matching on their metadata
+
+@name("Post Mappings Remove By Metadata")
+POST "https://{{baseUrl}}/mappings/remove-by-metadata"
+
+
+// Reset stub mappings (restore to defaults defined back the backing store)
+
+@name("Post Mappings Reset")
+POST "https://{{baseUrl}}/mappings/reset"
+
+
+// Save all persistent stub mappings to the backing store
+
+@name("Post Mappings Save")
+POST "https://{{baseUrl}}/mappings/save"
+
+
+// Delete mappings stubmappingid.
+
+@name("Delete Mappings Stubmappingid")
+DELETE "https://{{baseUrl}}/mappings/:stubMappingId"
+
+
+

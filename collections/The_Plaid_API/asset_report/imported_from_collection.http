@@ -1,0 +1,140 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// The `/asset_report/create` endpoint initiates the process of creating an Asset Report, which can then be retrieved by passing the `asset_report_token` return value to the `/asset_report/get` or `/asset_report/pdf/get` endpoints.
+// 
+// The Asset Report takes some time to be created and is not available immediately after calling `/asset_report/create`. When the Asset Report is ready to be retrieved using `/asset_report/get` or `/asset_report/pdf/get`, Plaid will fire a `PRODUCT_READY` webhook. For full details of the webhook schema, see [Asset Report webhooks](/docs/api/webhooks/#Assets-webhooks).
+// 
+// The `/asset_report/create` endpoint creates an Asset Report at a moment in time. Asset Reports are immutable. To get an updated Asset Report, use the `/asset_report/refresh` endpoint.
+
+@name("Create an Asset Report") : "base-inherit-auth"
+POST "https://{{baseUrl}}/asset_report/create"
+"Content-Type": "application/json"
+json({
+    "access_tokens": [
+        "ullamco reprehenderit"
+    ],
+    "days_requested": 167,
+    "client_id": "ut amet",
+    "secret": "Lorem laborum",
+    "options": {
+        "client_report_id": "veniam dolor ut ex",
+        "webhook": "officia aliqua irure",
+        "user": {
+            "client_user_id": "magna aliqui",
+            "first_name": "est consequat Excepteur Duis",
+            "middle_name": "quis enim adipisicing deserunt sit",
+            "last_name": "ullamco consectetur incid",
+            "ssn": "eiusmod exercitation in minim",
+            "phone_number": "nisi",
+            "email": "Ut exercitation consequat occaecat"
+        }
+    }
+})
+
+
+// An Asset Report is an immutable snapshot of a user's assets. In order to "refresh" an Asset Report you created previously, you can use the `/asset_report/refresh` endpoint to create a new Asset Report based on the old one, but with the most recent data available.
+// 
+// The new Asset Report will contain the same Items as the original Report, as well as the same filters applied by any call to `/asset_report/filter`. By default, the new Asset Report will also use the same parameters you submitted with your original `/asset_report/create` request, but the original `days_requested` value and the values of any parameters in the `options` object can be overridden with new values. To change these arguments, simply supply new values for them in your request to `/asset_report/refresh`. Submit an empty string ("") for any previously-populated fields you would like set as empty.
+
+@name("Refresh an Asset Report") : "base-inherit-auth"
+POST "https://{{baseUrl}}/asset_report/refresh"
+"Content-Type": "application/json"
+json({
+    "asset_report_token": "ipsum",
+    "client_id": "anim incididunt occaecat",
+    "secret": "id eiusmod",
+    "days_requested": 578,
+    "options": {
+        "client_report_id": "esse eu cupidatat elit amet",
+        "webhook": "cillum sit aliquip",
+        "user": {
+            "client_user_id": "reprehenderit sint mollit sit ad",
+            "first_name": "Lorem laboris anim",
+            "middle_name": "cillum fugiat",
+            "last_name": "est quis eiusmod",
+            "ssn": "ut ea",
+            "phone_number": "ex",
+            "email": "ullamco ut"
+        }
+    }
+})
+
+
+// The `/item/remove` endpoint allows you to invalidate an `access_token`, meaning you will not be able to create new Asset Reports with it. Removing an Item does not affect any Asset Reports or Audit Copies you have already created, which will remain accessible until you remove them specifically.
+// 
+// The `/asset_report/remove` endpoint allows you to remove an Asset Report. Removing an Asset Report invalidates its `asset_report_token`, meaning you will no longer be able to use it to access Report data or create new Audit Copies. Removing an Asset Report does not affect the underlying Items, but does invalidate any `audit_copy_tokens` associated with the Asset Report.
+
+@name("Delete an Asset Report") : "base-inherit-auth"
+POST "https://{{baseUrl}}/asset_report/remove"
+"Content-Type": "application/json"
+json({
+    "asset_report_token": "irure non n",
+    "client_id": "deserunt velit",
+    "secret": "eu proident incididunt"
+})
+
+
+// By default, an Asset Report will contain all of the accounts on a given Item. In some cases, you may not want the Asset Report to contain all accounts. For example, you might have the end user choose which accounts are relevant in Link using the Select Account view, which you can enable in the dashboard. Or, you might always exclude certain account types or subtypes, which you can identify by using the `/accounts/get` endpoint. To narrow an Asset Report to only a subset of accounts, use the `/asset_report/filter` endpoint.
+// 
+// To exclude certain Accounts from an Asset Report, first use the `/asset_report/create` endpoint to create the report, then send the `asset_report_token` along with a list of `account_ids` to exclude to the `/asset_report/filter` endpoint, to create a new Asset Report which contains only a subset of the original Asset Report's data.
+// 
+// Because Asset Reports are immutable, calling `/asset_report/filter` does not alter the original Asset Report in any way; rather, `/asset_report/filter` creates a new Asset Report with a new token and id. Asset Reports created via `/asset_report/filter` do not contain new Asset data, and are not billed.
+// 
+// Plaid will fire a [`PRODUCT_READY`](/docs/api/webhooks) webhook once generation of the filtered Asset Report has completed.
+
+@name("Filter Asset Report") : "base-inherit-auth"
+POST "https://{{baseUrl}}/asset_report/filter"
+"Content-Type": "application/json"
+json({
+    "asset_report_token": "aliquip elit ipsum",
+    "account_ids_to_exclude": [
+        "veniam pariatur nulla aute",
+        "nostrud cillum amet"
+    ],
+    "client_id": "sint cupidatat proid",
+    "secret": "Duis ad do"
+})
+
+
+// The `/asset_report/get` endpoint retrieves the Asset Report in JSON format. Before calling `/asset_report/get`, you must first create the Asset Report using `/asset_report/create` (or filter an Asset Report using `/asset_report/filter`) and then wait for the [`PRODUCT_READY`](/docs/api/webhooks) webhook to fire, indicating that the Report is ready to be retrieved.
+// 
+// By default, an Asset Report includes transaction descriptions as returned by the bank, as opposed to parsed and categorized by Plaid. You can also receive cleaned and categorized transactions, as well as additional insights like merchant name or location information. We call this an Asset Report with Insights. An Asset Report with Insights provides transaction category, location, and merchant information in addition to the transaction strings provided in a standard Asset Report.
+// 
+// To retrieve an Asset Report with Insights, call the `/asset_report/get` endpoint with `include_insights` set to `true`. Note that you will need to [contact us](https://dashboard.plaid.com/support) to get access to this feature.
+
+@name("Retrieve an Asset Report") : "base-inherit-auth"
+POST "https://{{baseUrl}}/asset_report/get"
+"Content-Type": "application/json"
+json({
+    "asset_report_token": "ea cillum non qui",
+    "client_id": "in",
+    "secret": "elit nulla mollit ut",
+    "include_insights": false
+})
+
+
+// The `/asset_report/pdf/get` endpoint retrieves the Asset Report in PDF format. Before calling `/asset_report/pdf/get`, you must first create the Asset Report using `/asset_report/create` (or filter an Asset Report using `/asset_report/filter`) and then wait for the [`PRODUCT_READY`](/docs/api/webhooks) webhook to fire, indicating that the Report is ready to be retrieved.
+// 
+// The response to `/asset_report/pdf/get` is the PDF binary data. The `request_id`  is returned in the `Plaid-Request-ID` header.
+// 
+// [View a sample PDF Asset Report with Insights](https://plaid.com/documents/sample-asset-report.pdf).
+
+@name("Retrieve a PDF Asset Report") : "base-inherit-auth"
+POST "https://{{baseUrl}}/asset_report/pdf/get"
+"Content-Type": "application/json"
+json({
+    "asset_report_token": "nostrud",
+    "client_id": "dolor nulla",
+    "secret": "in nisi elit"
+})
+
+
+

@@ -1,0 +1,1 @@
+Welcome to the UNSD SDG API: In this API you will be able to explore the official SDG data reported by the custodiam agencies. Visit [the SDG API website for more information](https://unstats-undesa.opendata.arcgis.com/).

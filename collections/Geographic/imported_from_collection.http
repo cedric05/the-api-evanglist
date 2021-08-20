@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cac73e7b-93c8-409d-929f-188913023030.postman_collection.json
+
+// Geographic API
+
+@name("Geographic API")
+GET "https://{{baseUrl}}/query.json"
+? "name"= "<string>"
+? "latitude"= "<string>"
+? "longitude"= "<string>"
+? "elevation"= "<integer>"
+? "sw"= "<string>"
+? "query"= "<string>"
+? "filter"= "<string>"
+? "date_range"= "<string>"
+? "facets"= "<integer>"
+? "sort"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+
+
+

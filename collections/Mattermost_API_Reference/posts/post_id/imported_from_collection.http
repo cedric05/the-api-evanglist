@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a single post.n##### PermissionsnMust have `read_channel` permission for the channel the post is in or if the channel is public, have the `read_public_channels` permission for the team.n
+
+@name("Get a post")
+GET "https://{{baseUrl}}/posts/:post_id"
+
+
+// Partially update a post by providing only the fields you want to update. Omitted fields will not be updated. The fields that can be updated are defined in the request body, all other provided fields will be ignored.n##### PermissionsnMust have the `edit_post` permission.n
+
+@name("Patch a post")
+PUT "https://{{baseUrl}}/posts/:post_id/patch"
+
+
+// Get a post and the rest of the posts in the same thread.n##### PermissionsnMust have `read_channel` permission for the channel the post is in or if the channel is public, have the `read_public_channels` permission for the team.n
+
+@name("Get a thread")
+GET "https://{{baseUrl}}/posts/:post_id/thread"
+
+
+// Gets a list of file information objects for the files attached to a post.n##### PermissionsnMust have `read_channel` permission for the channel the post is in.n
+
+@name("Get file info for post")
+GET "https://{{baseUrl}}/posts/:post_id/files/info"
+
+
+// Pin a post to a channel it is in based from the provided post id string.n##### PermissionsnMust be authenticated and have the `read_channel` permission to the channel the post is in.n
+
+@name("Pin a post to the channel")
+POST "https://{{baseUrl}}/posts/:post_id/pin"
+
+
+// Unpin a post to a channel it is in based from the provided post id string.n##### PermissionsnMust be authenticated and have the `read_channel` permission to the channel the post is in.n
+
+@name("Unpin a post to the channel")
+POST "https://{{baseUrl}}/posts/:post_id/unpin"
+
+
+// Perform a post action, which allows users to interact with integrations through posts.n##### PermissionsnMust be authenticated and have the `read_channel` permission to the channel the post is in.n
+
+@name("Perform a post action")
+POST "https://{{baseUrl}}/posts/:post_id/actions/:action_id"
+
+
+

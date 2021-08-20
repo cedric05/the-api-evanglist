@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Registers a new OAuth client.
+
+@name("Create an OAuth client")
+POST "https://{{baseUrl}}/projects/:projectId/applications/:applicationId/oauthClients"
+? "No Name"= "<string>"
+
+
+// Read a specific OAuth client by ID.
+
+@name("Read an OAuth client")
+GET "https://{{baseUrl}}/projects/:projectId/applications/:applicationId/oauthClients/:clientId"
+? "No Name"= "<string>"
+
+
+

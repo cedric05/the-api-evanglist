@@ -1,0 +1,595 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-68bf1ee8-80ac-44a0-b533-9d28b8dfaf2c.postman_collection.json
+
+// Returns version information of connected Steem node/websocket.n
+
+@name("get version of Steem")
+GET "https://{{baseUrl}}/get_version"
+
+
+// Get Number of Accounts from Steemn
+
+@name("number of accounts")
+GET "https://{{baseUrl}}/get_account_count"
+
+
+// get chain propertiesn
+
+@name("get chain properties")
+GET "https://{{baseUrl}}/get_chain_properties"
+
+
+// get confign
+
+@name("get config")
+GET "https://{{baseUrl}}/get_config"
+
+
+// get_dynamic_global_propertiesn
+
+@name("get_dynamic_global_properties")
+GET "https://{{baseUrl}}/get_dynamic_global_properties"
+
+
+// get_feed_historyn
+
+@name("get_feed_history")
+GET "https://{{baseUrl}}/get_feed_history"
+
+
+// get_current_median_history_pricen
+
+@name("get_current_median_history_price")
+GET "https://{{baseUrl}}/get_current_median_history_price"
+
+
+// get_hardfork_versionn
+
+@name("get_hardfork_version")
+GET "https://{{baseUrl}}/get_hardfork_version"
+
+
+// get_next_scheduled_hardforkn
+
+@name("get_next_scheduled_hardfork")
+GET "https://{{baseUrl}}/get_next_scheduled_hardfork"
+
+
+// get_witness_countn
+
+@name("get_witness_count")
+GET "https://{{baseUrl}}/get_witness_count"
+
+
+// lookup_witness_accounts regex searchn
+
+@name("lookup_witness_accounts")
+GET "https://{{baseUrl}}/lookup_witness_accounts"
+? "lowerBoundName"= "<>"
+? "limit"= "<>"
+
+
+// get_witness_schedulen
+
+@name("get_witness_schedule")
+GET "https://{{baseUrl}}/get_witness_schedule"
+
+
+// get_witnessesn
+
+@name("get_witnesses")
+GET "https://{{baseUrl}}/get_witnesses"
+? "witnessIds"= "<>"
+
+
+// get_witness_by_accountn
+
+@name("get_witness_by_account")
+GET "https://{{baseUrl}}/get_witness_by_account"
+? "accountName"= "<>"
+
+
+// get_witnesses_by_voten
+
+@name("get_witnesses_by_vote")
+GET "https://{{baseUrl}}/get_witnesses_by_vote"
+? "from"= "<>"
+? "limit"= "<>"
+
+
+// get_active_witnessesn
+
+@name("get_active_witnesses")
+GET "https://{{baseUrl}}/get_active_witnesses"
+
+
+// witness_updaten
+
+@name("witness_update")
+GET "https://{{baseUrl}}/witness_update"
+? "owner"= "<>"
+? "url"= "<>"
+? "block_signing_key"= "<>"
+? "fee"= "<>"
+? "props"= "<>"
+
+
+// get_miner_queuen
+
+@name("get_miner_queue")
+GET "https://{{baseUrl}}/get_miner_queue"
+
+
+// get_liquidity_queuen
+
+@name("get_liquidity_queue")
+GET "https://{{baseUrl}}/get_liquidity_queue"
+? "startAccount"= "<>"
+? "limit"= "<>"
+
+
+// get_open_ordersn
+
+@name("get_open_orders")
+GET "https://{{baseUrl}}/get_open_orders"
+? "owner"= "<>"
+
+
+// get_order_bookn
+
+@name("get_order_book")
+GET "https://{{baseUrl}}/get_order_book"
+? "limit"= "<>"
+
+
+// get tagsn
+
+@name("get active categories")
+GET "https://{{baseUrl}}/get_active_categories"
+? "after"= "<>"
+? "limit"= "<>"
+
+
+// get tagsn
+
+@name("get best categories")
+GET "https://{{baseUrl}}/get_best_categories"
+? "after"= "<>"
+? "limit"= "<>"
+
+
+// get tagsn
+
+@name("get recent categories")
+GET "https://{{baseUrl}}/get_recent_categories"
+? "after"= "<>"
+? "limit"= "<>"
+
+
+// get tagsn
+
+@name("get trending categories")
+GET "https://{{baseUrl}}/get_trending_categories"
+? "after"= "<>"
+? "limit"= "<>"
+
+
+// get tagsn
+
+@name("get trending categories")
+GET "https://{{baseUrl}}/get_trending_tags"
+? "afterTag"= "<>"
+? "limit"= "<>"
+
+
+// get contentn
+
+@name("get content")
+GET "https://{{baseUrl}}/get_content"
+? "author"= "<>"
+? "permlink"= "<>"
+
+
+// get content repliesn
+
+@name("get content replies")
+GET "https://{{baseUrl}}/get_content_replies"
+? "author"= "<>"
+? "permlink"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_trending"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_trending30"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_created"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_active"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_promoted"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_cashout"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_payout"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_votes"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_children"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:steem} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_hot"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tags:good-karma} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_feed"
+? "query"= "<>"
+
+
+// get discussions, | query example {limit:10, tag:good-karma} OR {start_author:author, permlink:permlink} for paginationn
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_blog"
+? "query"= "<>"
+
+
+// get discussions, | query example {start_author:author, start_permlink:permlink, limi:10}n
+
+@name("get discussions")
+GET "https://{{baseUrl}}/get_discussions_by_comments"
+? "query"= "<>"
+
+
+// get_discussions_by_author_before_daten
+
+@name("get_discussions_by_author_before_date")
+GET "https://{{baseUrl}}/get_discussions_by_author_before_date"
+? "author"= "<>"
+? "startPermlink"= "<>"
+? "beforeDate"= "<>"
+? "limit"= "<>"
+
+
+// get_replies_by_last_updaten
+
+@name("get_replies_by_last_update")
+GET "https://{{baseUrl}}/get_replies_by_last_update"
+? "startAuthor"= "<>"
+? "startPermlink"= "<>"
+? "limit"= "<>"
+
+
+// get_staten
+
+@name("get_state")
+GET "https://{{baseUrl}}/get_state"
+? "path"= "<>"
+
+
+// get_active_votesn
+
+@name("get_active_votes")
+GET "https://{{baseUrl}}/get_active_votes"
+? "author"= "<>"
+? "permlink"= "<>"
+
+
+// get_account_votesn
+
+@name("get_account_votes")
+GET "https://{{baseUrl}}/get_account_votes"
+? "voter"= "<>"
+
+
+// Account historyn
+
+@name("Account history")
+GET "https://{{baseUrl}}/get_account_history"
+? "account"= "<>"
+? "from"= "<>"
+? "limit"= "<>"
+
+
+// get_owner_historyn
+
+@name("get_owner_history")
+GET "https://{{baseUrl}}/get_owner_history"
+? "account"= "<>"
+
+
+// Get Accounts from Steemn
+
+@name("Account")
+GET "https://{{baseUrl}}/get_accounts"
+? "names[]"= "<>"
+
+
+// get conversation requests of accountn
+
+@name("get conversation")
+GET "https://{{baseUrl}}/get_conversion_requests"
+? "accountName"= "<>"
+
+
+// get_recovery_requestn
+
+@name("get_recovery_request")
+GET "https://{{baseUrl}}/get_recovery_request"
+? "account"= "<>"
+
+
+// lookup_account_names example of accountNames [good-karma, fabien]n
+
+@name("lookup_account_names")
+GET "https://{{baseUrl}}/lookup_account_names"
+? "accountNames"= "<>"
+
+
+// lookup_accounts regex searchn
+
+@name("lookup_accounts")
+GET "https://{{baseUrl}}/lookup_accounts"
+? "lowerBoundName"= "<>"
+? "limit"= "<>"
+
+
+// get_follow_countn
+
+@name("get_follow_count")
+GET "https://{{baseUrl}}/get_follow_count"
+? "account"= "<>"
+
+
+// get_followersn
+
+@name("get_followers")
+GET "https://{{baseUrl}}/get_followers"
+? "following"= "<>"
+? "startFollower"= "<>"
+? "followType"= "<>"
+? "limit"= "<>"
+
+
+// get_followingn
+
+@name("get_following")
+GET "https://{{baseUrl}}/get_following"
+? "follower"= "<>"
+? "startFollowing"= "<>"
+? "followType"= "<>"
+? "limit"= "<>"
+
+
+// get_escrown
+
+@name("get_escrow")
+GET "https://{{baseUrl}}/get_escrow"
+? "from"= "<>"
+? "escrowId"= "<>"
+
+
+// get_withdraw_routesn
+
+@name("get_withdraw_routes")
+GET "https://{{baseUrl}}/get_withdraw_routes"
+? "account"= "<>"
+? "withdrawRouteType"= "<>"
+
+
+// get_account_bandwidthn
+
+@name("get_account_bandwidth")
+GET "https://{{baseUrl}}/get_account_bandwidth"
+? "account"= "<>"
+? "bandwidthType"= "<>"
+
+
+// get_savings_withdraw_fromn
+
+@name("get_savings_withdraw_from")
+GET "https://{{baseUrl}}/get_savings_withdraw_from"
+? "account"= "<>"
+
+
+// get_savings_withdraw_ton
+
+@name("get_savings_withdraw_to")
+GET "https://{{baseUrl}}/get_savings_withdraw_to"
+? "account"= "<>"
+
+
+// get blockn
+
+@name("get block")
+GET "https://{{baseUrl}}/get_block"
+? "blockNum"= "<>"
+
+
+// get block headern
+
+@name("get block header")
+GET "https://{{baseUrl}}/get_block_header"
+? "blockNum"= "<>"
+
+
+// get_ops_in_blockn
+
+@name("get_ops_in_block")
+GET "https://{{baseUrl}}/get_ops_in_block"
+? "blockNum"= "<>"
+? "onlyVirtual"= "<>"
+
+
+// get_transaction_hexn
+
+@name("get_transaction_hex")
+GET "https://{{baseUrl}}/get_transaction_hex"
+? "trx"= "<>"
+
+
+// get_transactionn
+
+@name("get_transaction")
+GET "https://{{baseUrl}}/get_transaction"
+? "trxId"= "<>"
+
+
+// get_required_signaturesn
+
+@name("get_required_signatures")
+GET "https://{{baseUrl}}/get_required_signatures"
+? "trx"= "<>"
+? "availableKeys"= "<>"
+
+
+// get_potential_signaturesn
+
+@name("get_potential_signatures")
+GET "https://{{baseUrl}}/get_potential_signatures"
+? "trx"= "<>"
+
+
+// verify_authorityn
+
+@name("verify_authority")
+GET "https://{{baseUrl}}/verify_authority"
+? "trx"= "<>"
+
+
+// verify_account_authorityn
+
+@name("verify_account_authority")
+GET "https://{{baseUrl}}/verify_account_authority"
+? "nameOrId"= "<>"
+? "signers"= "<>"
+
+
+// get_key_referencesn
+
+@name("get_key_references")
+GET "https://{{baseUrl}}/get_key_references"
+? "key"= "<>"
+
+
+// broadcast_transactionn
+
+@name("broadcast_transaction")
+GET "https://{{baseUrl}}/broadcast_transaction"
+? "trx"= "<>"
+
+
+// broadcast_transaction_synchronousn
+
+@name("broadcast_transaction_synchronous")
+GET "https://{{baseUrl}}/broadcast_transaction_synchronous"
+? "trx"= "<>"
+
+
+// broadcast_blockn
+
+@name("broadcast_block")
+GET "https://{{baseUrl}}/broadcast_block"
+? "b"= "<>"
+
+
+// broadcast_transaction_with_callbackn
+
+@name("WARNING: can only be used in Steem node or in scripts broadcast_transaction_with_callbackn")
+GET "https://{{baseUrl}}/broadcast_transaction_with_callback"
+? "confirmationCallback"= "<>"
+? "trx"= "<>"
+
+
+// set_max_block_agen
+
+@name("WARNING: can only be used in Steem node or in scripts set_max_block_agen")
+GET "https://{{baseUrl}}/set_max_block_age"
+? "maxBlockAge"= "<>"
+
+
+// set_subscribe_callback n
+
+@name("WARNING: can only be used in Steem node or in scripts set_subscribe_callbackn")
+GET "https://{{baseUrl}}/set_subscribe_callback"
+? "callback"= "<>"
+? "clearFilter"= "<>"
+
+
+// set_pending_transaction_callback n
+
+@name("WARNING: can only be used in Steem node or in scripts set_pending_transaction_callbackn")
+GET "https://{{baseUrl}}/set_pending_transaction_callback"
+? "cb"= "<>"
+
+
+// set_block_applied_callback n
+
+@name("WARNING: can only be used in Steem node or in scripts set_block_applied_callbackn")
+GET "https://{{baseUrl}}/set_block_applied_callback"
+? "cb"= "<>"
+
+
+// cancel_all_subscriptions n
+
+@name("WARNING: can only be used in Steem node or in scripts cancel_all_subscriptionsn")
+GET "https://{{baseUrl}}/cancel_all_subscriptions"
+
+
+// get_api_by_namen
+
+@name("get_api_by_name")
+GET "https://{{baseUrl}}/get_api_by_name"
+? "apiName"= "<>"
+
+
+

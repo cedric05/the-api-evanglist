@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists the attribute values for an attribute. The attribute ID must be specified.
+
+@name("List attribute values")
+GET "https://{{baseUrl}}/rest/items/attributes/:attributeId/values"
+? "with"= "<>"
+? "updatedAt"= "<post>"
+
+
+// Deletes an attribute value map. The ID of the attribute, the ID of the attribute value and the ID of the market must be specified.
+
+@name("Deletes an attribute value map.")
+DELETE "https://{{baseUrl}}/rest/items/attributes/:attributeId/values/:attributeValueId/markets/:marketId/maps"
+
+
+// Deletes an attribute value. The attribute ID must be specified.
+
+@name("Delete an attribute value")
+DELETE "https://{{baseUrl}}/rest/items/attributes/:attributeId/values/:id"
+
+
+

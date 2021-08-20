@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93f02d77-d29c-4b5c-8f98-5e285995302f.postman_collection.json
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casedocs/bundle.xml?sn=75757575,78787878
+
+@name(" Obtains metadata for a document bundle for the given query params in XML format.")
+GET "https://{{baseUrl}}/casedocs/bundle.xml"
+
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casedocs/bundle.pdf?sn=75757575,78787878
+
+@name(" Obtains metadata for a document bundle for the given query params in PDF format.")
+GET "https://{{baseUrl}}/casedocs/bundle.pdf"
+
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casedocs/bundle.zip?sn=75757575,78787878
+
+@name(" Obtains metadata for a document bundle for the given query params in ZIP format.")
+GET "https://{{baseUrl}}/casedocs/bundle.zip"
+
+
+

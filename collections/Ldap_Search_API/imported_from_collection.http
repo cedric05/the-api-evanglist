@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1f8ce29d-fbd1-44f5-93f9-332770d68e1f.postman_collection.json
+
+// search user
+
+@name("/search")
+POST "https://{{baseUrl}}/search"
+"jwt": "anim amet consectetur"
+"Content-Type": "application/json"
+json({
+    "searchKey": "officia anim incididunt est"
+})
+
+
+

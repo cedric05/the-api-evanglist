@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get a list of item groups
+// 
+// ---
+// Alternate route: `/legacy/universe/groups/`
+// 
+// Alternate route: `/v1/universe/groups/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get item groups")
+GET "https://{{baseUrl}}/universe/groups/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+
+
+// Get information on an item group
+// 
+// ---
+// Alternate route: `/dev/universe/groups/{group_id}/`
+// 
+// Alternate route: `/legacy/universe/groups/{group_id}/`
+// 
+// Alternate route: `/v1/universe/groups/{group_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get item group information")
+GET "https://{{baseUrl}}/universe/groups/:group_id/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+

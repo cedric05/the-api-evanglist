@@ -1,0 +1,123 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// The endpoint for joint monetary accounts.
+
+@name("READ Monetary Account Joint for User")
+GET "https://{{baseUrl}}/user/:userID/monetary-account-joint/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// The endpoint for joint monetary accounts.
+
+@name("UPDATE Monetary Account Joint for User")
+PUT "https://{{baseUrl}}/user/:userID/monetary-account-joint/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "currency": "<string>",
+    "all_co_owner": [
+        {
+            "alias": {
+                "avatar": {
+                    "anchor_uuid": "anim Excepteur ipsum",
+                    "image": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "uuid": "<string>"
+                },
+                "country": "minim exer",
+                "display_name": "dolor consectetur Ut",
+                "public_nick_name": "sunt",
+                "uuid": "dolor sint"
+            },
+            "status": "Excepteur consectetur ea"
+        },
+        {
+            "alias": {
+                "avatar": {
+                    "anchor_uuid": "id officia pariatur",
+                    "image": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "uuid": "<string>"
+                },
+                "country": "minim consequat",
+                "display_name": "laborum dolore",
+                "public_nick_name": "aliquip voluptate",
+                "uuid": "dolore anim ut est"
+            },
+            "status": "ut labore irure"
+        }
+    ],
+    "alias": [
+        {
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "type": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "value": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        {
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "type": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "value": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        }
+    ],
+    "avatar_uuid": "<string>",
+    "daily_limit": {
+        "currency": "non Ut in elit",
+        "value": "sunt et nostrud"
+    },
+    "description": "<string>",
+    "overdraft_limit": {
+        "currency": "irure qui eu",
+        "value": "Ut veniam pariatur"
+    },
+    "reason": "<string>",
+    "reason_description": "<string>",
+    "setting": {
+        "color": "incididunt sit reprehenderit eiusmod occaecat",
+        "default_avatar_status": "in nostrud",
+        "icon": "quis in eu officia fugiat",
+        "restriction_chat": "laboris do"
+    },
+    "status": "<string>",
+    "sub_status": "<string>"
+})
+
+
+

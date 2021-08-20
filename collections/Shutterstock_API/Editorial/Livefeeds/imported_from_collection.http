@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("List Livefeeds")
+GET "https://{{baseurl}}/editorial/livefeeds"
+? "country"= "USA"
+? "page"= ""
+? "per_page"= ""
+
+
+@name("Get Livefeed")
+GET "https://{{baseurl}}/editorial/livefeeds/:id"
+? "country"= "USA"
+
+
+@name("Get Items")
+GET "https://{{baseurl}}/editorial/livefeeds/:id/items"
+? "country"= "USA"
+
+
+

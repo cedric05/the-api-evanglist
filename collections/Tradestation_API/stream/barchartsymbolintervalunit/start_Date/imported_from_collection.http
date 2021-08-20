@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Streams barchart data starting from startDate, each bar filling quantity of unit.n
+
+@name("Stream BarChart - Starting on Daten")
+GET "https://{{baseUrl}}/stream/barchart/:symbol/:interval/:unit/:startDate"
+? "access_token"= "<string>"
+? "SessionTemplate"= "<string>"
+
+
+// Streams barchart data starting from startDate to end date, each bar filling interval of unit.n
+
+@name("Stream BarChart - Date Rangen")
+GET "https://{{baseUrl}}/stream/barchart/:symbol/:interval/:unit/:startDate/:endDate"
+? "access_token"= "<string>"
+? "SessionTemplate"= "<string>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// Delete a given resource on a given dataset
+
+@name("Delete Datasets Dataset Resources R")
+DELETE "https://{{baseUrl}}/datasets/:dataset/resources/:rid/"
+
+
+// Upload a file related to a given resource on a given dataset
+
+@name("Add Datasets Dataset Resources R Upload")
+POST "https://{{baseUrl}}/datasets/:dataset/resources/:rid/upload/"
+
+
+

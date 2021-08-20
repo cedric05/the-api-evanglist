@@ -1,0 +1,226 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1e167a8f-2de8-4d63-a2ac-1189cfa7a2ce.postman_collection.json
+
+// Returns the list of all Series currently published in the latest release, you can use the allreleases flag to include archived data
+
+@name("Returns the list of all Series available")
+GET "https://{{baseUrl}}/v1/sdg/Series/List"
+? "allreleases"= "true"
+
+
+// Given a series SDMX code will return the attributes related to that series. Including Goal, Target and Indicators to which the series are leated.
+
+@name("Returns the series information")
+GET "https://{{baseUrl}}/v1/sdg/Series/:serieCode/List"
+? "allreleases"= "true"
+
+
+// Given a series SDMX codes and areaCodes will return a list of years available for that data
+
+@name("Returns a list of TimePeriods for a list of series and regions")
+POST "https://{{baseUrl}}/v1/sdg/Series/GeoAreaCode"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "seriesCodes": [
+        "[\"Excepteur minim eiusmod do\",\"ipsum nostrud laborum ex\"]"
+    ]
+})
+
+
+// Given a series SDMX codes and areaCodes will return a list of years available for that data
+
+@name("Returns a Cound of data points available for a list of series and regions")
+POST "https://{{baseUrl}}/v1/sdg/Series/TimePeriods"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "seriesCodes": [
+        "[\"mollit occaecat eu vel\",\"sunt ipsum\"]"
+    ],
+    "areaCodes": [
+        "[-67951912,-60200338]"
+    ]
+})
+
+
+// Given a series SDMX codes and areaCodes will return a count of data points available for that data
+
+@name("Returns a count of data points for series and areacodes")
+POST "https://{{baseUrl}}/v1/sdg/Series/DataCount"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "seriesCodes": [
+        "[\"ut culpa proident\",\"in non cillum\"]"
+    ],
+    "areaCodes": [
+        "[54574944,-37246283]"
+    ],
+    "timePeriodStart": [
+        "-18651644.855703786"
+    ],
+    "timePeriodEnd": [
+        "-85927545.1304947"
+    ]
+})
+
+
+// Returns a list of obeservations filetered by the parameters defined on the call
+
+@name("Returns a list of paginated observations")
+GET "https://{{baseUrl}}/v1/sdg/Series/Data"
+? "seriesCode"= "in quis magna enim"
+? "seriesCode"= "id voluptate do esse occaecat"
+? "releaseCode"= "veniam aliqu"
+? "areaCode"= "86606243"
+? "areaCode"= "-31007030"
+? "timePeriod"= "-82415680.42607912"
+? "timePeriod"= "10713607.645734727"
+? "dimensions"= "veniam aliqu"
+? "timePeriodStart"= "20835154.614729986"
+? "timePeriodEnd"= "20835154.614729986"
+? "page"= "28430278"
+? "pageSize"= "28430278"
+
+
+// Returns a csv file
+
+@name("Returns a csv file")
+POST "https://{{baseUrl}}/v1/sdg/Series/DataCSV"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "seriesCodes": [
+        "[\"esse deserunt\",\"dolor officia in\"]"
+    ],
+    "areaCodes": [
+        "[55788384,-86038847]"
+    ],
+    "timePeriodStart": [
+        "-1674234.0036379248"
+    ],
+    "timePeriodEnd": [
+        "26909710.060298234"
+    ]
+})
+
+
+// Returns an Excel file
+
+@name("Returns an Excel file")
+POST "https://{{baseUrl}}/v1/sdg/Series/DataExcel"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "seriesCodes": [
+        "[\"ut proident\",\"nulla\"]"
+    ],
+    "areaCodes": [
+        "[-52145198,-70583741]"
+    ],
+    "timePeriodStart": [
+        "60039900.514283925"
+    ],
+    "timePeriodEnd": [
+        "-91460322.592572"
+    ]
+})
+
+
+// Returns a pivoted excel file
+
+@name("Returns a pivoted excel file")
+POST "https://{{baseUrl}}/v1/sdg/Series/PivotDataExcel"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "seriesCodes": [
+        "[\"consequat consectetur\",\"ex sit sed dolore eu\"]"
+    ],
+    "areaCodes": [
+        "[-23686880,54167824]"
+    ],
+    "timePeriodStart": [
+        "36575031.0974997"
+    ],
+    "timePeriodEnd": [
+        "43710992.29747063"
+    ]
+})
+
+
+// Returns a csv file
+
+@name("Returns a csv file")
+POST "https://{{baseUrl}}/v1/sdg/Series/EmailDataCSV"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "seriesCodes": [
+        "[\"dolore tempor\",\"culpa proident labore\"]"
+    ],
+    "areaCodes": [
+        "[15839159,20016360]"
+    ],
+    "timePeriodStart": [
+        "-7568780.938292325"
+    ],
+    "timePeriodEnd": [
+        "-63382543.387205906"
+    ],
+    "email": [
+        "commodo laborum "
+    ],
+    "firstname": [
+        "in anim labore adipisicing commodo"
+    ],
+    "lastname": [
+        "laboris in consequat voluptate"
+    ],
+    "usertype": [
+        "fugiat reprehenderit voluptate"
+    ],
+    "comments": [
+        "dolore sed ex"
+    ]
+})
+
+
+// Returns an Excel file
+
+@name("Returns an Excel file")
+POST "https://{{baseUrl}}/v1/sdg/Series/EmailDataExcel"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "seriesCodes": [
+        "[\"cupidatat eiusmod non\",\"ad nulla do veniam\"]"
+    ],
+    "areaCodes": [
+        "[-80914603,36492612]"
+    ],
+    "timePeriodStart": [
+        "-79881948.10335952"
+    ],
+    "timePeriodEnd": [
+        "72213968.38461712"
+    ],
+    "email": [
+        "in do"
+    ],
+    "firstname": [
+        "consectetur commodo"
+    ],
+    "lastname": [
+        "ullamco"
+    ],
+    "usertype": [
+        "est"
+    ],
+    "comments": [
+        "nisi sit commod"
+    ]
+})
+
+
+// Returns the time last time the data was updated.
+
+@name("Returns the time last time the data was updated.")
+GET "https://{{baseUrl}}/v1/sdg/Series/LastUpdated"
+
+
+

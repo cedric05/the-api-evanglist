@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** This feature is only available if you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) feature enabled. We are actively soliciting feedback from a small set of early adopters. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnnDeletes a specified order. All the subscriptions changed by this order are deleted. After the deletion, the subscriptions are rolled back to the previous versi
+
+@name("Delete order")
+DELETE "https://{{baseUrl}}/v1/orders/:orderNumber"
+
+
+// **Note:** This feature is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/Orders_Generation_for_Subscriptions_and_Amendments) feature enabled. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). We will investigate your use cases and data before enabling this feature for you. If you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) 
+
+@name("Get billing information for order")
+GET "https://{{baseUrl}}/v1/orders/:orderNumber/billingInfo"
+? "asOfDate"= "<>"
+
+
+// **Note:** This feature is only available if you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) feature enabled. We are actively soliciting feedback from a small set of early adopters. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnUpdates the custom fields of a specified order.n
+
+@name("Update order custom fields")
+PUT "https://{{baseUrl}}/v1/orders/:orderNumber/customFields"
+
+
+// **Note:** This feature is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/Orders_Generation_for_Subscriptions_and_Amendments) feature enabled. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). We will investigate your use cases and data before enabling this feature for you. If you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) 
+
+@name("Get order metrics for evergreen subscription")
+GET "https://{{baseUrl}}/v1/orders/:orderNumber/evergreenMetrics/:subscriptionNumber"
+? "startDate"= "<put>"
+? "endDate"= "<put>"
+
+
+// **Note:** This feature is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/Orders_Generation_for_Subscriptions_and_Amendments) feature enabled. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). We will investigate your use cases and data before enabling this feature for you. If you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) 
+
+@name("Get rated result for order")
+GET "https://{{baseUrl}}/v1/orders/:orderNumber/ratedResults"
+
+
+

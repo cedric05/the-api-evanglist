@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Retrieves details for a single transaction.
+
+@name("Get Locations Transactions")
+GET "https://{{baseUrl}}/v2/locations/:location_id/transactions/:transaction_id"
+
+
+// Captures a transaction that was created with the **Charge**nendpoint with a `delay_capture` value of `true`.
+
+@name("Post Locations Transactions Capture")
+POST "https://{{baseUrl}}/v2/locations/:location_id/transactions/:transaction_id/capture"
+
+
+// Initiates a refund for a previously charged tender.
+
+@name("Post Locations Transactions Refund")
+POST "https://{{baseUrl}}/v2/locations/:location_id/transactions/:transaction_id/refund"
+
+
+// Cancels a transaction that was created with the **Charge**nendpoint with a `delay_capture` value of `true`.
+
+@name("Post Locations Transactions Void")
+POST "https://{{baseUrl}}/v2/locations/:location_id/transactions/:transaction_id/void"
+
+
+

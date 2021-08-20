@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Locate ip address.
+
+@name("Locate IP Address")
+GET "https://{{baseUrl}}/api/v1/geoip"
+
+
+// Locate provided ip address.
+
+@name("Locate Provided IP Address")
+GET "https://{{baseUrl}}/api/v1/geoip/:ip"
+
+
+

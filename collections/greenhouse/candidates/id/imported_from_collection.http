@@ -1,0 +1,112 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Update a candidate")
+PATCH "https://{{baseUrl}}/candidates/:id"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "user_id": -73748791,
+    "addresses": [
+        {
+            "type": "aliqua",
+            "value": "fugiat"
+        },
+        {
+            "type": "quis occaecat eiusmod Ut Excepteur",
+            "value": "qui"
+        }
+    ],
+    "company": "voluptate",
+    "custom_fields": [
+        {
+            "delete_value": "aliqua dolore magna",
+            "id": 41782618,
+            "max_value": 26292268,
+            "min_value": 49858712,
+            "name_key": "fugiat",
+            "unit": "consectetur cillum fugiat aliqua",
+            "value": "anim aliqua sint sunt"
+        },
+        {
+            "delete_value": "eiusmod officia",
+            "id": 83448916,
+            "max_value": 62894448,
+            "min_value": -16835675,
+            "name_key": "consequat",
+            "unit": "exercitation sunt",
+            "value": "consequat in"
+        }
+    ],
+    "email_addresses": [
+        {
+            "type": "deserunt laboris ex in Lorem",
+            "value": "elit volup"
+        },
+        {
+            "type": "sint exercitation aute",
+            "value": "est ullamco"
+        }
+    ],
+    "first_name": "sit in ea dolore ullamco",
+    "is_private": true,
+    "last_name": "labore",
+    "phone_numbers": [
+        {
+            "type": "Excepteur ullamco ad labore",
+            "value": "deserunt id in proident"
+        },
+        {
+            "type": "labo",
+            "value": "minim consectetur cupidatat"
+        }
+    ],
+    "social_media_addresses": [
+        {
+            "value": "dolor consectetur"
+        },
+        {
+            "value": "magna ad Lorem ullamco"
+        }
+    ],
+    "tags": [
+        "occaecat aute",
+        "est et"
+    ],
+    "title": "exercitation aliqua non amet",
+    "website_addresses": [
+        {
+            "type": "Duis Lorem",
+            "value": "veniam"
+        },
+        {
+            "type": "eiusmod cillum ex in",
+            "value": "aute anim eu ullamco"
+        }
+    ]
+})
+
+
+@name("Retrieve a candidate")
+GET "https://{{baseUrl}}/candidates/:id"
+"Authorization": "ad cillum non laborum"
+
+
+@name("Delete a candidate")
+DELETE "https://{{baseUrl}}/candidates/:id"
+"Authorization": "ad cillum non laborum"
+? "User Id"= "ad cillum non laborum"
+
+
+@name("Upload an attachment for a candidate")
+POST "https://{{baseUrl}}/candidates/:id/attachments"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "multipart/form-data"
+files(
+	("body", "aliquip amet occaecat"),
+	("file", "eu pariatur fugiat tempor reprehenderit")
+)
+
+
+

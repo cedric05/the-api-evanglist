@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-088ce1e1-1400-4c38-9591-d8665a931e87.postman_collection.json
+
+// Request a photo
+
+@name("Worker Photo")
+GET "https://{{baseUrl}}/static-content/:sor-id/hr/associates/:aoid/photos/:photo-id"
+? "No Name"= "<string>"
+? "ADP-Acting-SessionID"= "<string>"
+
+
+// Request a photo
+
+@name("Worker Photo (Legacy)")
+GET "https://{{baseUrl}}/staticContent/:sor-id/hr/associates/:aoid/photos/:photo-id"
+? "No Name"= "<string>"
+? "ADP-Acting-SessionID"= "<string>"
+
+
+

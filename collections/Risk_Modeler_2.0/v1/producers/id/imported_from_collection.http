@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves a Producer by id in a specified data source.
+
+@name("Get Producer by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/producers/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates existing Producer in a specified data source.
+
+@name("Updates existing Producer ") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/producers/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "name": "aute irure enim ut ipsum",
+    "id": "IVofXs0NBE"
+})
+
+
+// Deletes existing Producer in a specified data source.
+
+@name("Deletes existing Producer ") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/producers/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

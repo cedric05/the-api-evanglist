@@ -1,0 +1,84 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create Domestic Standing Order Consents")
+POST "https://{{baseUrl}}/domestic-standing-order-consents"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "Initiation": {
+            "CreditorAccount": {
+                "Identification": "esse sint et aliquip ex",
+                "Name": "proident aliqua",
+                "SchemeName": "UK.OBIE.Paym",
+                "SecondaryIdentification": "dolore amet ut labore aliqua"
+            },
+            "FirstPaymentAmount": {
+                "Amount": "deserunt reprehenderit tempor",
+                "Currency": "mollit ullamco sint Duis"
+            },
+            "FirstPaymentDateTime": "1999-04-04T01:39:44.313Z",
+            "Frequency": "officia fugiat et elit nisi",
+            "FinalPaymentAmount": {
+                "Amount": "nisi",
+                "Currency": "magna eiusmod nulla"
+            },
+            "FinalPaymentDateTime": "1944-10-02T20:10:35.957Z",
+            "NumberOfPayments": "laborum ut elit Excepteur et",
+            "RecurringPaymentAmount": {
+                "Amount": "minim enim fugiat deserunt",
+                "Currency": "lab"
+            },
+            "RecurringPaymentDateTime": "1944-06-30T19:36:03.114Z",
+            "Reference": "et tempor",
+            "SupplementaryData": {
+                "LocalInstrument": "UK.OBIE.CHAPS"
+            }
+        },
+        "Permission": "Create"
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "ut magna do",
+            "TownName": "eiusmod minim reprehenderit laboris",
+            "AddressLine": [
+                "proident consectetur dolor Excepteur",
+                "dolore sit ex"
+            ],
+            "BuildingNumber": "officia Lorem aute",
+            "CountrySubDivision": [
+                "dolore velit labore",
+                "sed laborum nostrud cupidatat eiu"
+            ],
+            "PostCode": "officia nulla aute laboris",
+            "StreetName": "nulla velit"
+        },
+        "MerchantCategoryCode": "incididun",
+        "MerchantCustomerIdentification": "ipsum dolore qui",
+        "PaymentContextCode": "PartyToParty"
+    }
+})
+
+
+@name("Get Domestic Standing Order Consents")
+GET "https://{{baseUrl}}/domestic-standing-order-consents/:ConsentId"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+
+
+

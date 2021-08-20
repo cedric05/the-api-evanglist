@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f953fa-f8c8-4115-9ab9-d70490b97ce6.postman_collection.json
+
+// Returns a single artisan by slug.
+
+@name("Artisan")
+GET "https://{{battle-net-host}}/d3/data/artisan/{{d3.artisan-slug}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns a single recipe by slug for the specified artisan.
+
+@name("Recipe")
+GET "https://{{battle-net-host}}/d3/data/artisan/{{d3.artisan-slug}}/recipe/{{d3.recipe-slug}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Retrieve all aliases in a workspace.
+
+@name("List Aliases for Workspace")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/aliases"
+
+
+// Create new alias in a workspace.
+
+@name("Create Alias")
+POST "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/aliases"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "non pariatur ea adipisicing",
+        "nisi laboris"
+    ],
+    "name": "aliasName",
+    "description": "version alias"
+})
+
+
+

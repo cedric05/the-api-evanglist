@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-50989257-8fa3-40de-a7b9-4f8f4960bb93.postman_collection.json
+
+// Get raw image
+
+@name("Get raw image")
+GET "https://{{baseUrl}}/v1/images/:pid"
+
+
+// Get raw masterbrand
+
+@name("Get raw masterbrand")
+GET "https://{{baseUrl}}/v1/master_brands/:mbid"
+
+
+// Get raw promotion
+
+@name("Get raw promotion")
+GET "https://{{baseUrl}}/v1/promotions/:pid"
+
+
+

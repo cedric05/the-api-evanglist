@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This REST API reference describes how to create a new credit cardnpayment method for a customer account.nn## NotesnnThis API call is CORS Enabled. Use client-side JavaScript to invoke the call. n
+
+@name("Create payment method")
+POST "https://{{baseUrl}}/v1/payment-methods/credit-cards"
+
+
+// This REST API reference describes how to retrieve all credit cardninformation for the specified customer account. nn## NotesnThe response includes details credit or debit cards for the specified customer account. Card numbers are masked, e.g., ************1234. Cards are returned in reverse chronological order of last update.nnYou can send requests for bank transfer payment methods types. The response will not include bank transfer details.nnThe response only includes payment details on paymen
+
+@name("Get payment methods")
+GET "https://{{baseUrl}}/v1/payment-methods/credit-cards/accounts/:account-key"
+
+
+// Updates an existing credit card payment method for the specifiedncustomer account.n
+
+@name("Update payment method")
+PUT "https://{{baseUrl}}/v1/payment-methods/credit-cards/:payment-method-id"
+
+
+

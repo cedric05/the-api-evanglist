@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Service Phones")
+GET "https://{{baseUrl}}/services/:service_id/phones"
+
+
+@name("add Service Phone")
+POST "https://{{baseUrl}}/services/:service_id/phones"
+"Content-Type": "application/json"
+json({
+    "id": "magna labore id in tempor",
+    "number": "eu reprehenderit quis",
+    "location_id": "et sed laborum",
+    "service_id": "do laborum nostrud Ut",
+    "organization_id": "eiusmod sed",
+    "contact_id": "irure es",
+    "service_at_location_id": "sed sunt",
+    "extension": 20496013.07623963,
+    "type": "nulla in",
+    "language": "ut qui enim",
+    "description": "Ut anim sunt",
+    "department": "cupidatat pariatur in occaec"
+})
+
+
+@name("get Service Phone")
+GET "https://{{baseUrl}}/services/:service_id/phones/:phone_id"
+
+
+@name("update Service Phone")
+PUT "https://{{baseUrl}}/services/:service_id/phones/:phone_id"
+"Content-Type": "application/json"
+json({
+    "id": "magna labore id in tempor",
+    "number": "eu reprehenderit quis",
+    "location_id": "et sed laborum",
+    "service_id": "do laborum nostrud Ut",
+    "organization_id": "eiusmod sed",
+    "contact_id": "irure es",
+    "service_at_location_id": "sed sunt",
+    "extension": 20496013.07623963,
+    "type": "nulla in",
+    "language": "ut qui enim",
+    "description": "Ut anim sunt",
+    "department": "cupidatat pariatur in occaec"
+})
+
+
+@name("delete Service Phone")
+DELETE "https://{{baseUrl}}/services/:service_id/phones/:phone_id"
+
+
+

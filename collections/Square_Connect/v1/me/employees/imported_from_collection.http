@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Provides summary information for all of a business's employees.
+
+@name("Get Me Employees")
+GET "https://{{baseUrl}}/v1/me/employees"
+? "order"= "<object>"
+? "begin_updated_at"= "<string>"
+? "end_updated_at"= "<string>"
+? "begin_created_at"= "<string>"
+? "end_created_at"= "<string>"
+? "status"= "<string>"
+? "external_id"= "<string>"
+? "limit"= "<integer>"
+? "batch_token"= "<string>"
+
+
+// Provides the details for a single employee.
+
+@name("Get Me Employees")
+GET "https://{{baseUrl}}/v1/me/employees/:employee_id"
+
+
+

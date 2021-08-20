@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieve a class from the data redaction list
+
+@name("Retrieve a class") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/data-redaction/classes/:class_name"
+
+
+// Add a class to the redaction list. The body class name must match the resource identifier
+
+@name("Add a class for data redaction") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/services/:env_id/settings/data-redaction/classes/:class_name"
+"Content-Type": "application/json"
+json({
+    "name": "IPv4"
+})
+
+
+// Delete a class
+
+@name("Delete a class") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/services/:env_id/settings/data-redaction/classes/:class_name"
+
+
+

@@ -1,0 +1,73 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete a server's statistics") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/stats/:id/"
+
+
+@name("Retrieve a server's statistics") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/stats/:id/"
+
+
+@name("Update a server's statistics") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/stats/:id/"
+"Content-Type": "application/json"
+json({
+    "id": [
+        "<string>",
+        "<string>"
+    ],
+    "non_field_errors": [
+        "<string>",
+        "<string>"
+    ],
+    "size": [
+        "<string>",
+        "<string>"
+    ],
+    "start": [
+        "<string>",
+        "<string>"
+    ],
+    "stop": [
+        "<string>",
+        "<string>"
+    ]
+})
+
+
+@name("Replace a server's statistics") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/stats/:id/"
+"Content-Type": "application/json"
+json({
+    "id": [
+        "<string>",
+        "<string>"
+    ],
+    "non_field_errors": [
+        "<string>",
+        "<string>"
+    ],
+    "size": [
+        "<string>",
+        "<string>"
+    ],
+    "start": [
+        "<string>",
+        "<string>"
+    ],
+    "stop": [
+        "<string>",
+        "<string>"
+    ]
+})
+
+
+

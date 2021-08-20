@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Creates an item variation for an existing item.
+
+@name("Post Location Items Variations")
+POST "https://{{baseUrl}}/v1/:location_id/items/:item_id/variations"
+
+
+// Deletes an existing item variation from an item.
+
+@name("Delete Location Items Variations")
+DELETE "https://{{baseUrl}}/v1/:location_id/items/:item_id/variations/:variation_id"
+
+
+

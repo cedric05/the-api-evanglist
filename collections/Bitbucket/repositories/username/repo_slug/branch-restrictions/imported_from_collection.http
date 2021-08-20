@@ -1,0 +1,243 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns a paginated list of all branch restrictions on the
+// repository.
+
+@name("/repositories/:username/:repo_slug/branch-restrictions")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/branch-restrictions"
+
+
+// Creates a new branch restriction rule for a repository.
+// 
+// `kind` describes what will be restricted. Allowed values are: `push`,
+// `force`, `delete`, and `restrict_merges`.
+// 
+// Different kinds of branch restrictions have different requirements:
+// 
+// * `push` and `restrict_merges` require `users` and `groups` to be
+//   specified. Empty lists are allowed, in which case permission is
+//   denied for everybody.
+// * `force` can not be specified in a Mercurial repository.
+// 
+// `pattern` is used to determine which branches will be restricted.
+// 
+// A `'*'` in `pattern` will expand to match zero or more characters, and
+// every other character matches itself. For example, `'foo*'` will match
+// `'foo'` and `'foobar'`, but not `'barfoo'`. `'*'` will match all
+// branches.
+// 
+// `users` and `groups` are lists of user names and group names.
+// 
+// `kind` and `pattern` must be unique within a repository; adding new
+// users or groups to an existing restriction should be done via `PUT`.
+// 
+// Note that branch restrictions with overlapping patterns are allowed,
+// but the resulting behavior may be surprising.
+
+@name("/repositories/:username/:repo_slug/branch-restrictions")
+POST "https://{{baseUrl}}/repositories/:username/:repo_slug/branch-restrictions"
+"Content-Type": "application/json"
+json({
+    "type": "reprehenderit dolor in ut",
+    "groups": [
+        {
+            "full_slug": "in in",
+            "links": {
+                "html": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "self": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "members": -99006818,
+            "name": "non ipsum cillum",
+            "owner": {
+                "created_on": "2002-09-04T20:11:10.606Z",
+                "display_name": "sunt ut",
+                "links": {
+                    "avatar": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "followers": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "following": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "html": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "repositories": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "self": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "username": "h",
+                "uuid": "amet anim do dolore ullamco",
+                "website": "eu dolore Duis elit"
+            },
+            "slug": "in cillum"
+        },
+        {
+            "full_slug": "laboris",
+            "links": {
+                "html": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "self": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "members": -92421629,
+            "name": "consequat veniam",
+            "owner": {
+                "created_on": "1983-12-01T03:49:10.816Z",
+                "display_name": "occaecat in labore anim",
+                "links": {
+                    "avatar": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "followers": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "following": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "html": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "repositories": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "self": {
+                        "href": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "username": "dZrbU",
+                "uuid": "ea sed",
+                "website": "sit nostrud velit incididunt occaecat"
+            },
+            "slug": "voluptate qui"
+        }
+    ],
+    "id": "<integer>",
+    "kind": "<string>",
+    "links": {
+        "self": {
+            "href": "<uri>"
+        }
+    },
+    "users": [
+        {
+            "created_on": "1973-04-12T01:46:59.742Z",
+            "display_name": "eu",
+            "links": {
+                "avatar": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "followers": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "following": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "html": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "repositories": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "self": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            },
+            "username": "UL80F",
+            "uuid": "laboris",
+            "website": "in cillum Ut"
+        },
+        {
+            "created_on": "1941-01-21T22:15:20.816Z",
+            "display_name": "elit ipsum",
+            "links": {
+                "avatar": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "followers": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "following": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "html": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "repositories": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "self": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            },
+            "username": "Z",
+            "uuid": "",
+            "website": "officia consectetur eu u"
+        }
+    ],
+    "value": "<integer>"
+})
+
+
+

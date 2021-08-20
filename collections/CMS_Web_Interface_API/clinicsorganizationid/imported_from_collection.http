@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ae419a4f-68f3-40b5-821c-80057f0df0bd.postman_collection.json
+
+// Returns a list containing all matching clinics whose organization ids match the id provided by current active organization registration.
+
+@name("Returns a list containing all matching clinics whose organization ids match the id provided")
+GET "https://{{baseUrl}}/clinics/organization/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"qpp-clinic-id": "<byte>"
+"qpp-clinic-name": "<byte>"
+"qpp-address-1": "<byte>"
+"qpp-address-2": "<byte>"
+"qpp-city": "<byte>"
+"qpp-zip-code": "<byte>"
+"qpp-q": "<byte>"
+? "state"= "<string>"
+? "fields"= "<string>"
+? "sort"= "<string>"
+? "assigned"= "<boolean>"
+? "offset"= "0"
+? "limit"= "25"
+
+
+// Creates a new clinic. Unique compositeIndex on clinicId and organizationId.
+
+@name("Creates a new clinic")
+POST "https://{{baseUrl}}/clinics/organization/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"Content-Type": "application/json"
+json({
+    "clinicId": "<string>",
+    "name": "<string>",
+    "address1": "<string>",
+    "address2": "<string>",
+    "city": "<string>",
+    "state": "<string>",
+    "zipCode": "<string>"
+})
+
+
+

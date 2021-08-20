@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1496d86f-2ecc-4608-b252-72a09b88c525.postman_collection.json
+
+// By default, this call gets information about your local node and itsnconnections. The `scope` parameter enabled this query to be extendednto get further information about nodes that are visible to your node.n
+
+@name("Get Node")
+GET "https://{{baseUrl}}/node"
+"MCWSSAML": "<>"
+? "scope"= "<>"
+
+
+// Information about a specific node may be retrieved by its address.nThis is useful when navigating the network.n
+
+@name("Get Node Address")
+GET "https://{{baseUrl}}/node/:address"
+"MCWSSAML": "<>"
+
+
+

@@ -1,0 +1,1 @@
+This collection contains all API calls to do the "PNF Simulator Day-N config-assign and config-deploy use case" in CDS. 

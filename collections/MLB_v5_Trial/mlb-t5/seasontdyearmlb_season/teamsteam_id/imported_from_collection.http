@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cf55551-2c7b-4b64-b9aa-1a2b870aef17.postman_collection.json
+
+// Obtain season splits for MLB -- Not available pre-2015
+
+@name("Obtain season splits for MLB -- Not available pre-...")
+GET "https://{{baseUrl}}/mlb-t5/seasontd/:year/:mlb_season/teams/:team_id/splits{{format}}"
+
+
+@name("Obtain season statistics for MLB")
+GET "https://{{baseUrl}}/mlb-t5/seasontd/:year/:mlb_season/teams/:team_id/statistics{{format}}"
+
+
+

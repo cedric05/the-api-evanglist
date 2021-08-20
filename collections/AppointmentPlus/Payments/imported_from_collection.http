@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Returns the details for payment types.
+
+@name("GetPaymentTypes")
+POST "https://{{baseUrl}}/Payments/GetPaymentTypes"
+
+
+// Creates a new payment type.
+
+@name("CreatePaymentTypes")
+POST "https://{{baseUrl}}/Payments/CreatePaymentTypes"
+? "description"= "<string>"
+? "sort_order"= "<integer>"
+? "display"= "<string>"
+
+
+

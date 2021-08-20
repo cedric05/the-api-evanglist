@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-49418870-7240-40ed-b5ad-dd946417768e.postman_collection.json
+
+// Pulls pricing for Gold, London A.M. Fixing.
+
+@name("Get Gold Pricing")
+GET "https://{{baseUrl}}/LBMA/GOLD"
+
+
+// Pulls pricing for Silver, London fixing, USD equivalent.
+
+@name("Get Silver pricing")
+GET "https://{{baseUrl}}/LBMA/SILVER"
+
+
+

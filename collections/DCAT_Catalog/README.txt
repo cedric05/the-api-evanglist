@@ -1,0 +1,1 @@
+This was pulled from https://api.data.amsterdam.nl/api/swagger/?url=/dcatd/openapi and needs to be reviewed and evolved to match the specification.

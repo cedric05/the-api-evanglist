@@ -1,0 +1,1 @@
+Collaboration on API related workflows during development, testing, documentation, operations, support and sales related workflows. API Collaboration tools notify stakeholders about changes and help multiple participants to work together. API Collaboration can be between producers, between consumers, or between producers and consumers.

@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Deletes a contact. The ID of the contact must be specified.
+
+@name("Delete a contact")
+DELETE "https://{{baseUrl}}/rest/accounts/contacts/:contactId"
+? "checkExistingOrders"= "<>"
+
+
+// anonymizes the given contact.
+
+@name("anonymize Contact")
+PUT "https://{{baseUrl}}/rest/accounts/contacts/:contactId/anonymize"
+
+
+// Lists bank accounts of the contact. The ID of the contact must be specified.
+
+@name("List bank accounts")
+GET "https://{{baseUrl}}/rest/accounts/contacts/:contactId/banks"
+
+
+// Lists contact events by contact ID. The ID of the contact must be specified.
+
+@name("List contact events by contact ID")
+GET "https://{{baseUrl}}/rest/accounts/contacts/:contactId/contact_events"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+
+
+// Delete files from contact documents.
+
+@name("Delete files from contact documents")
+DELETE "https://{{baseUrl}}/rest/accounts/contacts/:contactId/documents"
+? "keyList"= "<>"
+
+
+// Returns all contact related data.
+
+@name("Return all contact related data")
+GET "https://{{baseUrl}}/rest/accounts/contacts/:contactId/related_data"
+
+
+// Get a filestream of vcard from customer.
+
+@name("get a filestream of vcard from customer")
+GET "https://{{baseUrl}}/rest/accounts/contacts/:contactId/vcard"
+
+
+

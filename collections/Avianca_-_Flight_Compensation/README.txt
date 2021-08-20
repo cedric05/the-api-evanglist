@@ -1,0 +1,1 @@
+API for the issue and query of customer compensations. Supports customer view in CRM.

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Uploads a new data file to create an activity from. Requires activity:write scope.
+
+@name("Upload Activity")
+POST "https://{{baseUrl}}/uploads"
+
+
+// Returns an upload for a given identifier. Requires activity:write scope.
+
+@name("Get Upload")
+GET "https://{{baseUrl}}/uploads/:uploadId"
+
+
+

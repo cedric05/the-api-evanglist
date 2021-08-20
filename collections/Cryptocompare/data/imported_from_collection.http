@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8bae5fd6-66ce-4c4a-84b3-9005ab1373cf.postman_collection.json
+
+// Get single price.
+
+@name("Get Single Price")
+GET "https://{{baseUrl}}/data/price"
+? "fsym"= "<>"
+? "tsyms"= "<>"
+
+
+// Get multiple prices.
+
+@name("Get Multiple Prices")
+GET "https://{{baseUrl}}/data/pricemulti"
+? "fsyms"= "<>"
+? "tsyms"= "<>"
+
+
+// Get coinlist.
+
+@name("Get Coinlist")
+GET "https://{{baseUrl}}/data/all/coinlist"
+
+
+

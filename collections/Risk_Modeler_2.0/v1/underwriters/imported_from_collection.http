@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves a list of the underwriters in a specified data source.
+
+@name("Get list of underwriters") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/underwriters"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Creates new Underwriter in a specified data source.
+
+@name("Create new Underwriter") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/underwriters"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "name": "aliqua Duis",
+    "id": -97368111
+})
+
+
+

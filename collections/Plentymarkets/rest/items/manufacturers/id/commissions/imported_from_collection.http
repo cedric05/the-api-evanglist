@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists all commissions associated with a manufacturer. The ID of the manufacturer must be specified.
+
+@name("List commissions")
+GET "https://{{baseUrl}}/rest/items/manufacturers/:id/commissions"
+
+
+// Delete a commission. The ID of the commission must be specified.
+
+@name("Delete a commission")
+DELETE "https://{{baseUrl}}/rest/items/manufacturers/:id/commissions/:manufacturerId"
+
+
+

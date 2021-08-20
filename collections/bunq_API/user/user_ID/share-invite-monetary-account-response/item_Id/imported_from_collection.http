@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Return the details of a specific share a user was invited to.
+
+@name("READ Share Invite Monetary Account Response for User")
+GET "https://{{baseUrl}}/user/:userID/share-invite-monetary-account-response/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Accept or reject a share a user was invited to.
+
+@name("UPDATE Share Invite Monetary Account Response for User")
+PUT "https://{{baseUrl}}/user/:userID/share-invite-monetary-account-response/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "card_id": "<integer>",
+    "status": "<string>"
+})
+
+
+

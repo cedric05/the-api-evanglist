@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-df55bd21-8efe-4dae-ac10-923f5911c3f0.postman_collection.json
+
+@name("Return all information about availabe data")
+GET "https://{{baseUrl}}/sources"
+"token": "{{token}}"
+
+
+@name("Return all information for the given resource")
+GET "https://{{baseUrl}}/sources/:resource_name"
+"token": "{{token}}"
+
+
+

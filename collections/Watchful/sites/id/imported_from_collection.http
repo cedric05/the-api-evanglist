@@ -1,0 +1,127 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd3bb79e-7d36-49f2-9d90-ac848a0b6d74.postman_collection.json
+
+// Delete a specific Site
+
+@name("Delete A Specific Site")
+DELETE "https://{{baseUrl}}/sites/:id"
+
+
+// Return audits for a specific website
+
+@name("Return Audits For A Specific Website")
+GET "https://{{baseUrl}}/sites/:id/audits"
+? "fields"= "<>"
+? "limit"= "<>"
+? "limitstart"= "<>"
+? "order"= "<>"
+
+
+// Add the site to the backup queue
+
+@name("Add The Site To The Backup Queue")
+POST "https://{{baseUrl}}/sites/:id/backupnow"
+
+
+// Return backup profile
+
+@name("Return Backup Profile")
+GET "https://{{baseUrl}}/sites/:id/backupprofiles"
+
+
+// List of latest backups
+
+@name("List Of Latest Backups")
+GET "https://{{baseUrl}}/sites/:id/backups"
+
+
+// Start a remote backup for the site
+
+@name("Start A Remote Backup For The Site")
+POST "https://{{baseUrl}}/sites/:id/backupstart"
+
+
+// Step (continue) a remote backup for the site
+
+@name("Step (continue) A Remote Backup For The Site")
+POST "https://{{baseUrl}}/sites/:id/backupstep"
+
+
+// Get extensions for a site
+
+@name("Get Extensions For A Site")
+GET "https://{{baseUrl}}/sites/:id/extensions"
+? "fields"= "<>"
+? "limit"= "<>"
+? "limitstart"= "<>"
+? "order"= "<>"
+
+
+// Return logs for a specific website
+
+@name("Return Logs For A Specific Website")
+GET "https://{{baseUrl}}/sites/:id/logs"
+? "log_entry"= "<get>"
+? "log_type"= "<get>"
+? "from"= "<>"
+? "to"= "<>"
+? "fields"= "<>"
+? "limit"= "<>"
+? "limitstart"= "<>"
+? "order"= "<>"
+
+
+// Return boolean
+
+@name("Delete Uptime Monitor")
+DELETE "https://{{baseUrl}}/sites/:id/monitor"
+
+
+// Scan the site for malware
+
+@name("Scan The Site For Malware")
+GET "https://{{baseUrl}}/sites/:id/scanner"
+
+
+// SEO analyze for a page
+
+@name("SEO Analyze For A Page")
+GET "https://{{baseUrl}}/sites/:id/seo"
+
+
+// Return tags for a specific website
+
+@name("Return Tags For A Specific Website")
+GET "https://{{baseUrl}}/sites/:id/tags"
+? "name"= "<get>"
+? "type"= "<get>"
+? "fields"= "<>"
+? "limit"= "<>"
+? "limitstart"= "<>"
+? "order"= "<>"
+
+
+// Update Joomla core on the remote site
+
+@name("Update Joomla Core On The Remote Site")
+POST "https://{{baseUrl}}/sites/:id/updatejoomla"
+
+
+// Return uptime data
+
+@name("Return Uptime Data")
+GET "https://{{baseUrl}}/sites/:id/uptime"
+
+
+// validate the site
+
+@name("Validate The Site, Return The New Logs")
+GET "https://{{baseUrl}}/sites/:id/validate"
+
+
+@name("Validate The Site, Return The Debug Information")
+GET "https://{{baseUrl}}/sites/:id/validatedebug"
+
+
+

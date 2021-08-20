@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e6cc373a-9787-49b0-88be-ee9e950275b8.postman_collection.json
+
+// The Archive API provides lists of NYT articles by month going back to 1851.  Simply pass in the year and month you want and it returns a JSON object with all articles for that month.n
+
+@name("Archive API")
+GET "https://{{baseUrl}}/:year/{{month}}.json"
+
+
+

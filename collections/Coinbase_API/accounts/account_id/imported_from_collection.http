@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-07b8f9ff-4fab-4f58-a64e-0549bc880422.postman_collection.json
+
+// Show current useru2019s account. To access useru2019s primary account, primary keyword can be used instead of the account id in the URL.
+
+@name("Show an account")
+GET "https://{{baseUrl}}/accounts/:account_id"
+
+
+// Promote an account as primary account.
+
+@name("Set account as primary")
+GET "https://{{baseUrl}}/accounts/:account_id/primary"
+
+
+

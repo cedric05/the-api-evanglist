@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List view categories
+
+@name("List categories") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/categories"
+? "name"= "e"
+? "views"= "true"
+
+
+// Create category (Not implemented yet)
+
+@name("Create category (Not implemented yet)") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/categories"
+"Content-Type": "application/json"
+json({
+    "id": "B345",
+    "name": "CI/CD",
+    "shared": false,
+    "admin": true,
+    "icon": "sed non in",
+    "views": [
+        {
+            "id": "P12",
+            "name": "DB Errors",
+            "shared": false,
+            "admin": true
+        },
+        {
+            "id": "P12",
+            "name": "DB Errors",
+            "shared": false,
+            "admin": true
+        }
+    ]
+})
+
+
+

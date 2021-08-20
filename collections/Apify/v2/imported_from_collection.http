@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Responds with HTTP status 302 to redirect to an URL containing the requested log. The log has a content type `text/plain` and it is encoded as `gzip` returned withnappropriate HTTP headers. The log has following format:nn```n2017-07-14T06:00:49.733Z Application started.n2017-07-14T06:00:49.741Z Input: { test: 123 }n2017-07-14T06:00:49.752Z Some useful debug information follows.n```
+
+@name("Get log")
+GET "https://{{baseUrl}}/v2/logs/:buildOrRunId"
+? "stream"= "<string>"
+? "download"= "<string>"
+
+
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f95c71f8-440c-4354-8978-2a8659a376a0.postman_collection.json
+
+// Creates a new mailing list.
+
+@name("Create List")
+POST "https://{{baseUrl}}/lists"
+? "access_level"= "<>"
+? "address"= "<>"
+? "description"= "<>"
+? "name"= "<>"
+
+
+// Returns a list of mailing lists under your account.
+
+@name("Lists")
+GET "https://{{baseUrl}}/lists/"
+? "access_level"= "<>"
+? "address"= "<>"
+? "description"= "<>"
+? "limit"= "<>"
+? "namespace_id"= "<>"
+? "skip"= "<>"
+
+
+

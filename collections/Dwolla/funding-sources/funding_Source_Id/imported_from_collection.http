@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// Retrieve a funding source by its unique id. nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn--------|---------|--------|-----------|---------|nid | string | path | yes | id of funding source to retrieve.
+
+@name("Retrieve A Funding Source")
+GET "https://{{baseUrl}}/funding-sources/:fundingSourceId"
+
+
+// If you choose to verify using micro-deposits, Dwolla will transfer two deposits of less than $0.10 to the Customeru2019s linked bank or credit union account. After initiating micro-deposits, these two random amounts should post to the Customeru2019s bank account in 1-2 business days. Once the Customer sees these deposits in their account, they need to verify the two deposit amounts in your application. If subscribed to webhooks, your application will be notified throughout this process with the trig
+
+@name("Initiate Micro Deposits For Bank Verification")
+POST "https://{{baseUrl}}/funding-sources/:fundingSourceId/micro-deposits"
+
+
+

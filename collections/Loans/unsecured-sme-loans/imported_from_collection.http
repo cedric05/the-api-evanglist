@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-02faa1c1-24e6-4c14-aa8b-93c0a877c8f5.postman_collection.json
+
+// Gets a list of all `Unsercured SME Lending` objects.
+
+@name("/unsecured-sme-loans")
+GET "https://{{baseUrl}}/unsecured-sme-loans"
+"If-Modified-Since": "mollit in proident"
+"If-None-Match": "mollit in proident"
+
+
+// Gets header information on the current set of `Unsercured SME Lending` data
+
+@name("/unsecured-sme-loans")
+HEAD "https://{{baseUrl}}/unsecured-sme-loans"
+"If-Modified-Since": "mollit in proident"
+"If-None-Match": "mollit in proident"
+
+
+

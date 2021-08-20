@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3a55c9f7-9ebf-458a-9891-b43e91a12a1f.postman_collection.json
+
+// Get Correspondence
+
+@name("/getCorrespondence")
+POST "https://{{baseUrl}}/getCorrespondence"
+"jwt": "mollit amet"
+"Content-Type": "application/json"
+data('"do commodo"')
+
+
+// Add Correspondence
+
+@name("/addCorrespondence")
+POST "https://{{baseUrl}}/addCorrespondence"
+"jwt": "mollit amet"
+"Content-Type": "application/json"
+data('"anim sed"')
+
+
+// Get Correspondence Type List
+
+@name("/getCorrespondenceTypes")
+GET "https://{{baseUrl}}/getCorrespondenceTypes"
+"jwt": "mollit amet"
+
+
+// Get Correspondence Direction List
+
+@name("/getCorrDirection")
+GET "https://{{baseUrl}}/getCorrDirection"
+"jwt": "mollit amet"
+
+
+// Edit Correspondence
+
+@name("/editCorrespondence")
+POST "https://{{baseUrl}}/editCorrespondence"
+"jwt": "mollit amet"
+"Content-Type": "application/json"
+data('"pariatur cillum"')
+
+
+// deleteCorrespondence
+
+@name("/deleteCorrespondence")
+POST "https://{{baseUrl}}/deleteCorrespondence"
+"jwt": "mollit amet"
+"Content-Type": "application/json"
+json({
+    "cGuid": "ex fugiat"
+})
+
+
+

@@ -1,0 +1,1 @@
+This is a collection for working with the [Octopart REST API](https://octopart.com/api).

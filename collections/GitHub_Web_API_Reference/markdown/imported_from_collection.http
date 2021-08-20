@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("Render a Markdown document")
+POST "https://{{baseUrl}}/markdown"
+"Content-Type": "application/json"
+json({
+    "text": "<string>",
+    "mode": "markdown",
+    "context": "<string>"
+})
+
+
+// You must send Markdown as plain text (using a `Content-Type` header of `text/plain` or `text/x-markdown`) to this endpoint, rather than using JSON format. In raw mode, [GitHub Flavored Markdown](https://github.github.com/gfm/) is not supported and Markdown will be rendered in plain format like a README.md file. Markdown content must be 400 KB or less.
+
+@name("Render a Markdown document in raw mode")
+POST "https://{{baseUrl}}/markdown/raw"
+"Content-Type": "text/plain"
+data('"<string>"')
+
+
+

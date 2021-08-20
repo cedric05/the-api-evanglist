@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f95c71f8-440c-4354-8978-2a8659a376a0.postman_collection.json
+
+// Fetches the list of routes. Note that routes are defined globally, per account, not per domain as most of other API calls.
+
+@name("Routes")
+GET "https://{{baseUrl}}/routes/"
+
+
+// Deletes a route based on the id.
+
+@name("Delete Route")
+DELETE "https://{{baseUrl}}/routes/:id"
+
+
+

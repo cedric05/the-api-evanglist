@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6cbfd18c-acff-4cd7-8414-957be82e307d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{bearer_token}}"
+
+
+// Searches Twitter based upon the parameters set for each request. All parameters are turned on by default, and you should uncheck the ones you do not need.
+
+@name("Search") : "base-inherit-auth"
+GET "https://api.twitter.com/2/tweets/search/recent"
+? "query"= "2020+election"
+? "tweet.fields"= "created_at,author_id,lang,context_annotations"
+? "place.fields"= "client_credentials"
+? "start_time"= ""
+? "since_id"= ""
+? "end_time"= ""
+? "expansions"= ""
+? "media.fields"= ""
+? "poll.fields"= ""
+? "next_token"= ""
+? "max_results"= "100"
+? "user.fields"= ""
+
+
+

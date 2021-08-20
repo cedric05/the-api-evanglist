@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Delete an account level variable.
+
+@name("delete Pipeline Variable For User")
+DELETE "https://{{baseUrl}}/users/:username/pipelines_config/variables/:variable_uuid"
+
+
+// Retrieve a user level variable.
+
+@name("get Pipeline Variable For User")
+GET "https://{{baseUrl}}/users/:username/pipelines_config/variables/:variable_uuid"
+
+
+// Update a user level variable.
+
+@name("update Pipeline Variable For User")
+PUT "https://{{baseUrl}}/users/:username/pipelines_config/variables/:variable_uuid"
+"Content-Type": "application/json"
+json({
+    "type": "sed ipsum ad",
+    "key": "<string>",
+    "secured": "<boolean>",
+    "uuid": "<string>",
+    "value": "<string>"
+})
+
+
+

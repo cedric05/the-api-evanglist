@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// Retrieve a transfer belonging to an Account or Customer by its id.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn---------|---------|---------|--------|---------|nid | string | path | yes | The id of the transfer to be retrieved.
+
+@name("Retrieve A Transfer")
+GET "https://{{baseUrl}}/transfers/:transferId"
+
+
+// Retrieve fees charged on a created transfer. Fees are visible to the Customer or Account that is charged the fee, as well as the Dwolla Account that is involved in receiving the fee.nn### Request parametersnn| Parameter | Data Type | Parameter Type | Required | Description |n|----------|------------|-------------|---------|------|nid | string | path | yes | The id of the transfer to retrieve fees for.
+
+@name("List Fees For A Transfer")
+GET "https://{{baseUrl}}/transfers/:transferId/fees"
+
+
+// When a bank transfer fails for an Account or Customer, Dwolla returns a `failure` link when getting the transfer by Id. This failure link is used to retrieve the return code and description. For reference, the list of possible failure codes and descriptions are shown in the [Transfer failures](https://developers.dwolla.com/resources/bank-transfer-workflow/transfer-failures.html) resource article.nn### Request Parametersnn| Parameter | Data Type | Parameter Type | Required | Description |n|------
+
+@name("Retrieve A Transfer Failure Reason")
+GET "https://{{baseUrl}}/transfers/:transferId/failure"
+
+
+

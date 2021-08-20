@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This REST API reference describes how to retrieve the entire product catalog, including all products, features, and their corresponding rate plans, charges. Products are returned in reverse chronological order on the UpdatedDate field. nnWith rate plans and rate plan charges, the REST API has a maximum array size. n
+
+@name("Get product catalog")
+GET "https://{{baseUrl}}/v1/catalog/products"
+
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnShares a product with a target entity. Zuora synchronizes the shared products to the target entity after sharing. For more information about product sharing, see [Products Sharing Across Entities](https://knowledgecenter.zuora.com/BB_Introducing_Z_Business/Multi-entity/C_Business_Objects_Sharing_Across_Entities/B_Pro
+
+@name("Multi-entity: Share a Product with an Entity")
+PUT "https://{{baseUrl}}/v1/catalog/products/:product-id/share"
+
+
+

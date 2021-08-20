@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// **Note**: Repositories inherited through a parent team will also be checked.
+// 
+// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Check team permissions for a repository](https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository) endpoint.
+// 
+// You can also get information about the specified repository, including what permissions the team grants on it, by passing the following custom [media type](https://developer.github.com/v3/media/) via the `Accept` header:
+
+@name("Check team permissions for a repository (Legacy)")
+GET "https://{{baseUrl}}/teams/:team_id/repos/:owner/:repo"
+
+
+// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Add or update team repository permissions](https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions) endpoint.
+// 
+// To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization.
+// 
+// Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+
+@name("Add or update team repository permissions (Legacy)")
+PUT "https://{{baseUrl}}/teams/:team_id/repos/:owner/:repo"
+"Content-Type": "application/json"
+json({
+    "permission": "<string>"
+})
+
+
+// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Remove a repository from a team](https://developer.github.com/v3/teams/#remove-a-repository-from-a-team) endpoint.
+// 
+// If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. NOTE: This does not delete the repository, it just removes it from the team.
+
+@name("Remove a repository from a team (Legacy)")
+DELETE "https://{{baseUrl}}/teams/:team_id/repos/:owner/:repo"
+
+
+

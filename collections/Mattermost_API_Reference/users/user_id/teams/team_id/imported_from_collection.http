@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get the unread mention and message counts for a team for the specified user.n##### PermissionsnMust be the user or have `edit_other_users` permission and have `view_team` permission for the team.n
+
+@name("Get unreads for a team")
+GET "https://{{baseUrl}}/users/:user_id/teams/:team_id/unread"
+
+
+

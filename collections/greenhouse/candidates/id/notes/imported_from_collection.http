@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Create a note for a candidate")
+POST "https://{{baseUrl}}/candidates/:id/notes"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "visibility": "cillum quis",
+    "user_id": 55346061,
+    "body": "incididunt in veniam"
+})
+
+
+@name("Retrieve a note for a candidate")
+GET "https://{{baseUrl}}/candidates/:id/notes"
+"Authorization": "ad cillum non laborum"
+? "pageSize"= "ad cillum non laborum"
+? "nextPage"= "ad cillum non laborum"
+? "fields"= "ad cillum non laborum"
+
+
+

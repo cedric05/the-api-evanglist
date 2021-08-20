@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieve treaty information based on given analysis and treaty.
+
+@name("Get treat by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analyses/:analysisID/treaty/:treatyID"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves a list of Cedants for a specified analysis
+
+@name("Get a list of Cedants") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analyses/:analysisID/cedants"
+"Authorization": "Bearer <Bearer Token>"
+? "perspective"= "Excepteur nisi in"
+? "jobUUID"= "Excepteur nisi in"
+
+
+// Retrieves a list of the treaties for a specified analysis
+
+@name("Get a list of treaties") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analyses/:analysisID/treaties"
+"Authorization": "Bearer <Bearer Token>"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Retrieves the values for specified analysis perspective dropdown
+
+@name("Get the values for analysis perspective dropdown") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analyses/:analysisID/perspectives"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves Location AAL for specified analysis by its ID.
+
+@name("Get Location AAL for a specified analysis") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analyses/:analysisID/location-aal"
+"Authorization": "Bearer <Bearer Token>"
+? "perspective"= "Excepteur nisi in"
+? "sort"= "AAL DESC"
+? "limit"= "100"
+? "offset"= "0"
+
+
+

@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-baa21855-56c4-411b-b54e-86741f2e4115.postman_collection.json
+
+// Get shoppers me carts active.
+
+@name("Get Shoppers Me Carts Active")
+GET "https://{{baseUrl}}/v1/shoppers/me/carts/active"
+
+
+// Post shoppers me carts active apply shipping option.
+
+@name("Post Shoppers Me Carts Active Apply Shipping Option")
+POST "https://{{baseUrl}}/v1/shoppers/me/carts/active/apply-shipping-option"
+
+
+// Post shoppers me carts active apply shopper.
+
+@name("Post Shoppers Me Carts Active Apply Shopper")
+POST "https://{{baseUrl}}/v1/shoppers/me/carts/active/apply-shopper"
+
+
+// Get shoppers me carts active billing address.
+
+@name("Get Shoppers Me Carts Active Billing Address")
+GET "https://{{baseUrl}}/v1/shoppers/me/carts/active/billing-address"
+
+
+// Get shoppers me carts active point of promotions offers.
+
+@name("Get Shoppers Me Carts Active Point Of Promotions Offers")
+GET "https://{{baseUrl}}/v1/shoppers/me/carts/active/point-of-promotions/:id/offers"
+
+
+// Get shoppers me carts active shipping address.
+
+@name("Get Shoppers Me Carts Active Shipping Address")
+GET "https://{{baseUrl}}/v1/shoppers/me/carts/active/shipping-address"
+
+
+// Post shoppers me carts active submit cart.
+
+@name("Post Shoppers Me Carts Active Submit Cart")
+POST "https://{{baseUrl}}/v1/shoppers/me/carts/active/submit-cart"
+
+
+// Get shoppers me carts active web checkout.
+
+@name("Get Shoppers Me Carts Active Web Checkout")
+GET "https://{{baseUrl}}/v1/shoppers/me/carts/active/web-checkout"
+
+
+

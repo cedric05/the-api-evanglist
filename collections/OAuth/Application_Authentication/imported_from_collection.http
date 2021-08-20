@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7a2dac4c-d2bf-4d80-8e30-474f749b9a58.postman_collection.json
+
+@name("Access Token Request")
+POST "https://{{auth-uri}}/oauth/token"
+basicauth("{{client-id}}", "{{client-secret}}")
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "grant_type": [
+        "client_credentials"
+    ],
+    "scope": [
+        "wow.profile"
+    ]
+})
+
+
+

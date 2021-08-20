@@ -1,0 +1,86 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Please paste view_id from "API V2 View" on "API V2 Test Space" for continuity
+
+@name("Get View") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/view/view_id"
+"Content-Type": "application/json"
+
+
+// Please paste view_id from "API V2 View" on "API V2 Test Space" for continuity
+
+@name("Update View") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/view/view_id"
+"Content-Type": "application/json"
+json({
+    "name": "API V2 View",
+    "type": "list",
+    "parent": {
+        "id": 512,
+        "type": 7
+    },
+    "grouping": {
+        "field": "status",
+        "dir": 1,
+        "collapsed": [],
+        "ignore": false
+    },
+    "divide": {
+        "field": null,
+        "dir": null,
+        "collapsed": []
+    },
+    "sorting": {
+        "fields": []
+    },
+    "filters": {
+        "op": "AND",
+        "fields": [],
+        "search": "",
+        "show_closed": false
+    },
+    "columns": {
+        "fields": []
+    },
+    "team_sidebar": {
+        "assignees": [],
+        "assigned_comments": false,
+        "unassigned_tasks": false
+    },
+    "settings": {
+        "show_task_locations": false,
+        "show_subtasks": 3,
+        "show_subtask_parent_names": true,
+        "show_closed_subtasks": true,
+        "show_assignees": false,
+        "show_images": true,
+        "collapse_empty_columns": null,
+        "me_comments": true,
+        "me_subtasks": true,
+        "me_checklists": true
+    }
+})
+
+
+// Please paste view_id from a view on "Everything" for continuity
+
+@name("Delete a View") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/view/view_id"
+"Content-Type": "application/json"
+
+
+@name("Get View Tasks") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/view/view_id/task"
+"Content-Type": "application/json"
+? "page"= "0"
+
+
+

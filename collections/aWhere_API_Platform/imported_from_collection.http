@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-08e60012-84a0-43aa-8ba6-20d6c054c306.postman_collection.json
+
+// This is the first API call you will make any time you use the API n(but you only need to use once per hour). This request will nrequest a security access token and save it to Postman. Later nAPI calls will use the token from Postman's saved variables. nn[Authentication Documentation](http://developer.awhere.com/api/authentication)nnPrior to using this API call you should load the aWhere Environmentnfile into Postman and change the settings to your API Key and Secret.nYou can also see where the k
+
+@name("Get a Token")
+POST "https://{{baseUrl}}/oauth/token"
+
+
+

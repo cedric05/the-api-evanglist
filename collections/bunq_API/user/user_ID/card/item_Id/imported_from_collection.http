@@ -1,0 +1,85 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Return the details of a specific card.
+
+@name("READ Card for User")
+GET "https://{{baseUrl}}/user/:userID/card/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Update the card details. Allow to change pin code, status, limits, country permissions and the monetary account connected to the card. When the card has been received, it can be also activated through this endpoint.
+
+@name("UPDATE Card for User")
+PUT "https://{{baseUrl}}/user/:userID/card/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "card_limit": {
+        "currency": "deserunt",
+        "value": "labore in"
+    },
+    "card_limit_atm": {
+        "currency": "fugiat id occae",
+        "value": "cupidatat nisi in mollit tempor"
+    },
+    "country_permission": [
+        {
+            "country": "consequat ex",
+            "expiry_time": "pariatur aliquip aliqua",
+            "id": 5776687
+        },
+        {
+            "country": "consequat voluptate labore est veniam",
+            "expiry_time": "culpa officia et dolor",
+            "id": 681426
+        }
+    ],
+    "monetary_account_id_fallback": "<integer>",
+    "pin_code": "<string>",
+    "pin_code_assignment": [
+        {
+            "monetary_account_id": -67773016,
+            "type": "aute ullamco in sit"
+        },
+        {
+            "monetary_account_id": -75640037,
+            "type": "adipisicing mollit cillum Excepteur"
+        }
+    ],
+    "primary_account_numbers": [
+        {
+            "description": "occaecat pariatur labore qui minim",
+            "four_digit": "sunt ex dolore ut",
+            "id": -14376712,
+            "monetary_account_id": 13591891,
+            "status": "paria",
+            "uuid": "ut aliquip ut cillum proident"
+        },
+        {
+            "description": "aliquip sint nulla",
+            "four_digit": "dolore fugiat Duis ut",
+            "id": -76364697,
+            "monetary_account_id": 25894930,
+            "status": "id aliqua nulla adipisicing",
+            "uuid": "ipsum deserunt"
+        }
+    ],
+    "status": "<string>"
+})
+
+
+

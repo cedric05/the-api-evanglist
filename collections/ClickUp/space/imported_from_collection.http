@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Create a Folder") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/space/300267/folder"
+"Content-Type": "application/json"
+json({
+    "name": "New Folder From API V2"
+})
+
+
+@name("Get Folders") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/space/2100010/folder"
+"Content-Type": "application/json"
+
+
+

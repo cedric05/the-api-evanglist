@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns all the thumbnail images of the specified video.
+
+@name("Get all the thumbnails of a video")
+GET "https://{{baseUrl}}/videos/:video_id/pictures"
+? "page"= "<string>"
+? "per_page"= "<string>"
+
+
+// This method deletes the specified thumbnail image from a video.
+
+@name("Delete a video thumbnail")
+DELETE "https://{{baseUrl}}/videos/:video_id/pictures/:picture_id"
+
+
+

@@ -1,0 +1,208 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Creates a new scan configuration.
+// 
+//  This operation is asynchronous and returns with an immediate 202. The scan configuration is guaranteed to be created at some point in the immediate future depending on resource load. To track the status of the operation, use the [GET /was/v2/configs/{config_id}/status/{tracking_id}](ref:was-v2-config-status) endpoint. The `config_id` and `tracking_id` can be retrieved from the URI provided in the `Location` header of the `202 Accepted` response. <p>Requires SCAN MANAGER [40] user permissions and CAN CONFIGURE [64] scan permissions. Alternatively, SCAN OPERATOR [24] user permissions and CAN USE [16] policy permissions. See [Permissions](doc:permissions).</p>
+
+@name("Create scan configuration") : "base-inherit-auth"
+POST "https://{{baseUrl}}/was/v2/configs"
+"Content-Type": "application/json"
+json({
+    "name": "culpa sit dolor",
+    "target": "https://example.com",
+    "owner_id": "b018aed8-554f-4965-9b05-994eaa66d459",
+    "template_id": "fe889212-69e8-14e5-926c-660ee52c5aec",
+    "settings": {
+        "target": "https://example.com",
+        "description": "Security scan configuration for Facebook applications.",
+        "timeout": "08:00:00",
+        "debug_mode": true,
+        "input_force": false,
+        "credentials": {
+            "credential_ids": [
+                "1763d235-61bd-2506-0940-6b9bf1c49526",
+                "urn:uuid:4a09f29e-50d1-a2c8-7b30-e37cbf18eeeb"
+            ]
+        },
+        "scope": {
+            "option": "urls",
+            "dom_depth_limit": 5,
+            "directory_depth_limit": 10,
+            "page_limit": 10000,
+            "crawl_script": {},
+            "decompose_paths": false,
+            "exclude_binaries": false,
+            "auto_redundant_paths": 50643613,
+            "openapi_file": "Duis Lorem ipsum in reprehenderit",
+            "openapi_filename": "id Lorem labore",
+            "crawl_script_filename": "cillum"
+        },
+        "plugin": {
+            "rateLimiter": {
+                "requests_per_second": 25,
+                "autothrottle": true,
+                "timeout_threshold": 100
+            },
+            "mode": "disable",
+            "ids": [
+                98000,
+                98001
+            ],
+            "names": [
+                "path_traversal"
+            ],
+            "families": [
+                "web_servers",
+                "csrf"
+            ]
+        },
+        "browser": {
+            "screen_width": 1600,
+            "screen_height": 1200,
+            "ignore_images": true,
+            "job_timeout": 10000,
+            "analysis": true,
+            "pool_size": 20085498
+        },
+        "http": {
+            "response_max_size": 500000,
+            "request_redirect_limit": 1,
+            "user_agent": "Nessus WAS/%v",
+            "custom_user_agent": true,
+            "request_headers": {},
+            "request_concurrency": 10,
+            "request_timeout": 5000
+        },
+        "chrome_script": {
+            "finish_wait": 5000,
+            "page_load_wait": 10000,
+            "command_wait": 500
+        },
+        "assessment": {
+            "rfi_remote_url": "http://rfi.nessus.org/rfi.txt",
+            "dictionary": "limited",
+            "fingerprinting": true,
+            "enable": true,
+            "element_exclusions": [
+                {
+                    "element_type": "dom_element",
+                    "selector_type": "attribute",
+                    "selector": "sit aliqua nostrud"
+                },
+                {
+                    "element_type": "dom_element",
+                    "selector_type": "text",
+                    "selector": "cupidatat Duis ut Exc"
+                }
+            ]
+        },
+        "audit": {
+            "forms": false,
+            "cookies": false,
+            "ui_forms": false,
+            "ui_inputs": false,
+            "headers": false,
+            "links": false,
+            "parameter_names": false,
+            "parameter_values": false,
+            "jsons": false,
+            "xmls": false,
+            "cookies_extensively": true,
+            "with_raw_payloads": false,
+            "with_both_http_methods": false,
+            "with_extra_parameter": false
+        }
+    },
+    "description": "My cool scan configuration.",
+    "folder_id": "urn:uuid:31510575-a9e5-d036-9141-524b1a5f2758",
+    "user_template_id": "fcb105e7-f376-76de-3e0c-3fa056657c21",
+    "scanner_id": 15694568,
+    "schedule": {
+        "rrule": "FREQ=MONTHLY;BYDAY=MO,TU,WE,TH,FR;BYSETPOS=-1",
+        "starttime": "19970105T083000 or 19970105T083000Z (utc)",
+        "timezone": "America/New_York",
+        "enabled": false
+    },
+    "notifications": {
+        "emails": []
+    },
+    "permissions": [
+        {
+            "permissions_id": "urn:uuid:fe9f363d-3bd7-d19d-ee13-60cb4489b9b8",
+            "entity": "group",
+            "entity_id": "d20edb09-147b-5550-48ea-15dc7a01da1a",
+            "level": "configure"
+        },
+        {
+            "permissions_id": "eec9f0e6-55af-81eb-9ed3-e582e4fd5726",
+            "entity": "user",
+            "entity_id": "urn:uuid:cab1925e-6559-644c-7965-75317fb7cb20",
+            "level": "no_access"
+        }
+    ]
+})
+
+
+// Returns a list of web application scan configurations. If a scan has been run using the configuration, the list also contains information about the last scan that was run.
+// 
+// **Deprecated:** This endpoint is deprecated. On October 1st, 2021, documentation related to this endpoint will be removed from the Tenable developer portal. Tenable recommends that you use the [POST /was/v2/configs/search](ref:was-v2-config-search) endpoint instead. Please update any existing integrations that your organization has before 2021-10-01. <p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("List scan configurations") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/configs"
+? "status"= "completed,completed"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+
+
+// Returns a list of web application scan configurations. If a scan has been run using the configuration, the list also contains information about the last scan that was run. <p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Search scan configurations") : "base-inherit-auth"
+POST "https://{{baseUrl}}/was/v2/configs/search"
+"Content-Type": "application/json"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+json({
+    "AND": [
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        },
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        }
+    ],
+    "OR": [
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        },
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        }
+    ]
+})
+
+
+// Lists the filtering capabilities available for scan configurations for endpoints that support scan configuration filtering.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List scan configuration filters") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/configs/filters"
+
+
+

@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("List collections")
+GET "https://{{baseurl}}/images/collections/featured"
+? "embed"= ""
+? "type"= ""
+? "asset_hint"= ""
+
+
+@name("Get details")
+GET "https://{{baseurl}}/images/collections/featured/:id"
+? "embed"= ""
+? "asset_hint"= ""
+
+
+@name("List items")
+GET "https://{{baseurl}}/images/collections/featured/:id/items"
+? "page"= ""
+? "per_page"= ""
+
+
+

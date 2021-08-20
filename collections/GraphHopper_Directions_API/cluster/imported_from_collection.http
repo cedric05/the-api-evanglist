@@ -1,0 +1,112 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f1494990-6b2e-4273-b056-b290ffedd5ef.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// 
+// The Cluster endpoint is used with a POST request towards
+// `https://graphhopper.com/api/1/cluster?key=<your_key>`. The solution will be provided in the JSON response.
+// Please note that for problems that take longer than 10 seconds a bad request error is returned.
+// In this case please use the asynchronous [Batch Cluster Endpoint](#operation/asyncClusteringProblem) instead.
+
+@name("POST Cluster Endpoint") : "base-inherit-auth"
+POST "https://{{baseUrl}}/cluster"
+"Content-Type": "application/json"
+json({
+    "configuration": {
+        "clustering": {
+            "max_quantity": "<int32>",
+            "min_quantity": "<int32>",
+            "num_clusters": "<int32>"
+        },
+        "response_type": "json",
+        "routing": {
+            "cost_per_meter": "<double>",
+            "cost_per_second": "<double>",
+            "profile": "<string>"
+        }
+    },
+    "customers": [
+        {
+            "address": {
+                "lat": "<double>",
+                "lon": "<double>",
+                "street_hint": "<string>"
+            },
+            "id": "<string>",
+            "quantity": "<int32>"
+        },
+        {
+            "address": {
+                "lat": "<double>",
+                "lon": "<double>",
+                "street_hint": "<string>"
+            },
+            "id": "<string>",
+            "quantity": "<int32>"
+        }
+    ]
+})
+
+
+// 
+// Prefer the [synchronous endpoint](#operation/solveClusteringProblem) and use this Batch Cluster endpoint for
+// long running problems only. The work flow is asynchronous:
+// 
+// - send a POST request towards `https://graphhopper.com/api/1/cluster/calculate?key=<your_key>` and fetch the job_id.
+// - poll the solution every 500ms until it gives `status=finished`. Do this with a GET request
+//   towards `https://graphhopper.com/api/1/cluster/solution/<job_id>?key=<your_key>`.
+
+@name("Batch Cluster Endpoint") : "base-inherit-auth"
+POST "https://{{baseUrl}}/cluster/calculate"
+"Content-Type": "application/json"
+json({
+    "configuration": {
+        "clustering": {
+            "max_quantity": "<int32>",
+            "min_quantity": "<int32>",
+            "num_clusters": "<int32>"
+        },
+        "response_type": "json",
+        "routing": {
+            "cost_per_meter": "<double>",
+            "cost_per_second": "<double>",
+            "profile": "<string>"
+        }
+    },
+    "customers": [
+        {
+            "address": {
+                "lat": "<double>",
+                "lon": "<double>",
+                "street_hint": "<string>"
+            },
+            "id": "<string>",
+            "quantity": "<int32>"
+        },
+        {
+            "address": {
+                "lat": "<double>",
+                "lon": "<double>",
+                "street_hint": "<string>"
+            },
+            "id": "<string>",
+            "quantity": "<int32>"
+        }
+    ]
+})
+
+
+// This endpoint returns the solution of the clustering problems submitted to the [Batch Cluster endpoint](#operation/asyncClusteringProblem).
+// You can fetch it with the job_id, you have been sent.
+
+@name("GET Batch Solution Endpoint") : "base-inherit-auth"
+GET "https://{{baseUrl}}/cluster/solution/:jobId"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets project group projects.
+
+@name("Gets project group projects")
+GET "https://{{baseUrl}}/projectgroups/:projectgroupid/projects"
+
+
+// Adds project to project group.
+
+@name("Adds project to project group")
+PUT "https://{{baseUrl}}/projectgroups/:projectgroupid/projects/:projectid"
+
+
+

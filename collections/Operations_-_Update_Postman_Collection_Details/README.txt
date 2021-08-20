@@ -1,0 +1,14 @@
+This collection is a wrapper collection for being able to pull collections using the Postman API, make changes and then save back the results. It is meant to be the base for other collections that will be used to manage collections in ways that the interface cannot keep up with.
+
+To use you will need a Postman API key, which you can pull from your [Postman user account settings](https://go.postman.co/integrations/services/pm_pro_api). The collection just makes calls to the Postman API on your behalf to obtain the collection, then PUTs the collection backing, saving the results.
+
+If you have any questions about this collection leave a comment, or email info@apievangelist.com. This collection will become a fundamental base of many other collections that I develop to help automate the API lifecycle using collections.
+
+## Todo
+
+- Find and replace variables
+- Index all of the variables
+- Componentize the examples
+- Generate an OpenAPI from collection
+- Loop through all collections and build OpenAPI of all requests.
+- Add header and update header.

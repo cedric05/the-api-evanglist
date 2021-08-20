@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-33af5de4-dc9a-486d-b92d-1eaf85678dac.postman_collection.json
+
+// A worker is hired.
+
+@name("Hire Worker")
+POST "https://{{baseUrl}}/events/hr/v1/worker.hire"
+? "No Name"= "<string>"
+
+
+// Returns an event metadata
+
+@name("Hire Worker Meta")
+GET "https://{{baseUrl}}/events/hr/v1/worker.hire/meta"
+? "No Name"= "<string>"
+
+
+

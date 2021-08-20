@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-83d768b1-950f-434d-8ea8-e2e63edbcbef.postman_collection.json
+
+// Returns a specific school admin
+
+@name("get School Admin")
+GET "https://{{baseUrl}}/school_admins/:id"
+? "include"= "<string>"
+
+
+// Returns the schools for a school admin
+
+@name("get Schools For School Admin")
+GET "https://{{baseUrl}}/school_admins/:id/schools"
+? "limit"= "<integer>"
+? "starting_after"= "<string>"
+? "ending_before"= "<string>"
+
+
+

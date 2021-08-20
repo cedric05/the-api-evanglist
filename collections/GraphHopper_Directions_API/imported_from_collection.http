@@ -1,0 +1,116 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f1494990-6b2e-4273-b056-b290ffedd5ef.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// 
+// ### Introduction
+// 
+// ![Geocoding Example](./img/geocoding-example.png)
+// 
+// _Geocoding_ describes the process of transforming an textual address representation to a coordinate (`latitude,longitude`).
+// For example the conversion from `Berlin` to `52.5170365,13.3888599`.
+// 
+// _Reverse geocoding_ converts a coordinate to a textual address representation or place name. Find out more about Geocoding itself on [Wikipedia](http://en.wikipedia.org/wiki/Geocoding).
+
+@name("Geocoding Endpoint") : "base-inherit-auth"
+GET "https://{{baseUrl}}/geocode"
+? "q"= "<string>"
+? "locale"= "en"
+? "limit"= "10"
+? "reverse"= "false"
+? "debug"= "false"
+? "point"= "<string>"
+? "provider"= "default"
+
+
+// ### Example
+// You can get an example response via:
+// 
+// ```
+// curl "https://graphhopper.com/api/1/isochrone?point=51.131108,12.414551&key=[YOUR_KEY]"
+// ```
+// 
+// Don't forget to replace the placeholder with your own key.
+// 
+// ### Introduction
+// ![Isochrone screenshot](./img/isochrone-example.png)
+// 
+// An isochrone of a location is ''a line connecting points at which a vehicle arrives at the same time'', see Wikipedia.
+// With the same API you can also calculate isodistances, just use the parameter distance_limit instead of time_limit`.
+// 
+// ### Use Cases
+// Some possible areas in which this API may be useful to you:
+// 
+// - real estate analysis
+// - realtors
+// - vehicle scheduling
+// - geomarketing
+// - reach of electric vehicles
+// - transport planning
+// - logistics (distribution and retail network planning)
+// 
+// ### API Clients and Examples
+// See the [clients](#section/API-Clients) section in the main documentation, and [live examples](https://graphhopper.com/api/1/examples/#isochrone).
+
+@name("Isochrone Endpoint") : "base-inherit-auth"
+GET "https://{{baseUrl}}/isochrone"
+? "point"= "<string>"
+? "time_limit"= "600"
+? "distance_limit"= "<integer>"
+? "vehicle"= "car"
+? "buckets"= "1"
+? "reverse_flow"= "false"
+? "weighting"= "fastest"
+
+
+// ### Example
+// You get an example response for a GPX via:
+// 
+// ```
+// curl -XPOST -H "Content-Type: application/gpx+xml" "https://graphhopper.com/api/1/match?vehicle=car&key=[YOUR_KEY]" --data @/path/to/some.gpx
+// ```
+// 
+// A minimal working GPX file looks like
+// ```gpx
+// <gpx>
+//  <trk>
+//   <trkseg>
+//    <trkpt lat="51.343657" lon="12.360708"></trkpt>
+//    <trkpt lat="51.343796" lon="12.361337"></trkpt>
+//    <trkpt lat="51.342784" lon="12.361882"></trkpt>
+//   </trkseg>
+//  </trk>
+// </gpx>
+// ```
+// 
+// ### Introduction
+// ![Map Matching screenshot](./img/map-matching-example.gif)
+// 
+// The Map Matching API is part of the GraphHopper Directions API and with this API you can snap measured GPS points typically as GPX files to a digital
+// road network to e.g. clean data or attach certain data like elevation or turn instructions to it. Read more at Wikipedia.
+// 
+// In the example screenshot above and demo you see the Map Matching API in action where the black line is the GPS track and the green one is matched result.
+// 
+// Most of the times, you can simply POST a GPX file, but some of the request parameters of the [Routing API](#tag/Routing-API) apply here, too.
+// 
+// ### API Clients and Examples
+// See the [clients](#section/API-Clients) section in the main documentation, and [live examples](https://graphhopper.com/api/1/examples/#map-matching).
+// 
+// ### Limits and Counts
+// The cost for one request depends on the number of GPS location and is documented [here](https://graphhopper.com/api/1/docs/FAQ/).
+// 
+// One request should not exceed the Map Matching API location limit depending on the package, see the pricing in our dashboard.
+
+@name("Map-match a GPX file") : "base-inherit-auth"
+POST "https://{{baseUrl}}/match"
+? "gps_accuracy"= "<integer>"
+? "vehicle"= "<string>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnRemoves an entity and its sub-entities from a multi-entity hierarchy. You can only remove unprovisioned entities. An error occurred when you remove a provisioned entity.nn## User Access PermissionnYou must make the call as a global entity administrator.   n
+
+@name("Multi-entity: Delete entity")
+DELETE "https://{{baseUrl}}/v1/entities/:id"
+
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnProvisions an entity. You can only provision an entity if its parent entity is provisioned.nn## User Access PermissionnYou must make the call as a global entity administrator. nn## Notesn* Zuora does not allow you to remove a provisioned entity from the multi-entity hierarchy. So before you provision an entity, make
+
+@name("Multi-entity: Provision entity")
+PUT "https://{{baseUrl}}/v1/entities/:id/provision"
+
+
+

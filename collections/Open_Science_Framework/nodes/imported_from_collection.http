@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// nA paginated list of nodes, representing projects and components, on the OSF.nnThe returned nodes are those which are public or which the user has access to view.nnThe returned nodes are sorted by their `date_modified`, with the most recently updated nodes appearing first.nnRegistrations cannot be accessed through this endpoint (use the [registrations](#Registrations_registrations_list) endpoints instead).n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key con
+
+@name("List all nodes")
+GET "https://{{baseUrl}}/nodes/"
+
+
+

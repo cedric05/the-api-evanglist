@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6dd4b6b5-e2d1-4630-9235-6d7bb1d13702.postman_collection.json
+
+// Search
+
+@name("Search")
+GET "https://{{baseUrl}}/facility/search/{{keyword}}.{{format}}"
+
+
+// Relationship FRN
+
+@name("Relationship FRN")
+GET "https://{{baseUrl}}/relationship/frn/{{frn}}.{{format}}"
+
+
+// Specify contactType as "MS" for Main Studio Contact and "CC" for Closed Caption Contact. Allowed values for contactSourceServiceCode are "TV", "AM" and "FM" for Main Studio Contact and "TV" for Closed Captions.
+
+@name('Specify contactType as "MS" for Main Studio Contact and "CC" for Closed Caption Contact.')
+POST "https://{{baseUrl}}/contact/update.json"
+"Content-Type": "application/json"
+json({
+    "accessToken": "<string>",
+    "contactEntityId": "<string>",
+    "contactSourceServiceCode": "<string>",
+    "contactName": "<string>",
+    "contactType": "<string>",
+    "contactAddress1": "<string>",
+    "contactAddress2": "<string>",
+    "contactCity": "<string>",
+    "contactZip": "<string>",
+    "contactZipExt": "<string>",
+    "contactState": "<string>",
+    "contactPhone": "<string>",
+    "contactPhoneExt": "<string>",
+    "contactFax": "<string>",
+    "contactWebsite": "<string>",
+    "contactEmail": "<string>"
+})
+
+
+

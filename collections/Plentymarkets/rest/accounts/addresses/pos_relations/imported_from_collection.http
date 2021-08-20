@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// List address pos relations.
+
+@name("List address POS relations")
+GET "https://{{baseUrl}}/rest/accounts/addresses/pos_relations"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+? "with"= "<>"
+
+
+// Deletes an address POS relation. The ID of the address POS relation must be specified.
+
+@name("Delete an address POS relation")
+DELETE "https://{{baseUrl}}/rest/accounts/addresses/pos_relations/:addressPosRelationId"
+
+
+

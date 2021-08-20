@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c5e56645-bf09-4e5c-8f01-15f069cbfb0f.postman_collection.json
+
+// Parameters application domains.
+
+@name("Parameters Application Domains")
+GET "https://{{baseUrl}}/apps/:app/domains"
+
+
+// Parameters application domain name.
+
+@name("Parameters Application Domain Name")
+GET "https://{{baseUrl}}/apps/:app/domains/:domain_name"
+
+
+

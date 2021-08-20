@@ -1,0 +1,201 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Delete a project and associated data. This operation cannot be undone, but you may recreate the project using the same id.
+
+@name("Delete a data project") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/projects/:owner/:id"
+
+
+// Retrieve a project. The definition of the project will be returned, not the associated data. Use `POST:/sql/{owner}/{id}` or `POST:/sparql/{owner}/{id}` to query the data or use dataset APIs to retrieve data from linked datasets.
+
+@name("Retrieve a data project") : "base-inherit-auth"
+GET "https://{{baseUrl}}/projects/:owner/:id"
+
+
+// Update an existing project. Only elements included in the request will be updated. All omitted elements will remain untouched.
+
+@name("Update a data project") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/projects/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "files": [
+        {
+            "name": "0U^j",
+            "description": "Duis",
+            "labels": [
+                "visualization",
+                "documentation"
+            ],
+            "source": {
+                "authorization": {
+                    "type": "hSY#",
+                    "credentials": "?Df\t"
+                },
+                "credentials": {
+                    "user": "ex",
+                    "password": "E"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "h--n",
+                    "site": "ywp2",
+                    "id": "641c4cdb-241f-2f09-88e6-ee0af7ae84f4"
+                },
+                "requestEntity": "Ut",
+                "requestHeaders": {},
+                "url": "http"
+            }
+        },
+        {
+            "name": "H H ",
+            "description": "nost",
+            "labels": [
+                "visualization",
+                "clean data"
+            ],
+            "source": {
+                "authorization": {
+                    "type": "VIM:",
+                    "credentials": "?a{N"
+                },
+                "credentials": {
+                    "user": "al",
+                    "password": "si"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "b-r-",
+                    "site": "h66k",
+                    "id": "urn:uuid:6ffdfcbc-b7b8-314e-d5b3-59f2b4da8635"
+                },
+                "requestEntity": "l",
+                "requestHeaders": {},
+                "url": "http"
+            }
+        }
+    ],
+    "license": "CC BY-ND",
+    "linkedDatasets": [
+        {
+            "id": "g8maj",
+            "owner": "621-ox4-2"
+        },
+        {
+            "id": "b0-9not",
+            "owner": "u----j-h"
+        }
+    ],
+    "objective": "null",
+    "summary": "qui ",
+    "tags": [
+        "",
+        "\r Lz"
+    ],
+    "title": "sint",
+    "visibility": "PRIVATE"
+})
+
+
+// Create or replace a project with a given id. If a project exists with the same id, this call will reset such project redefining all its attributes.
+
+@name("Create / Replace a data project") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/projects/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "title": "ulla",
+    "visibility": "PRIVATE",
+    "files": [
+        {
+            "name": "BC$B",
+            "source": {
+                "authorization": {
+                    "type": "F6Q3",
+                    "credentials": "UI] "
+                },
+                "credentials": {
+                    "user": "Ut ",
+                    "password": "et"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "nb--",
+                    "site": "u.ie",
+                    "id": "7174563d-d959-f259-43f1-756ec4dfb870"
+                },
+                "requestEntity": "qui",
+                "requestHeaders": {},
+                "url": "ftps"
+            },
+            "description": "ulla",
+            "labels": [
+                "raw data",
+                "script"
+            ]
+        },
+        {
+            "name": "| | ",
+            "source": {
+                "authorization": {
+                    "type": "A",
+                    "credentials": "-zw<"
+                },
+                "credentials": {
+                    "user": "",
+                    "password": "non "
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "t---",
+                    "site": "whzh",
+                    "id": "d3d57286-20e9-9e9b-e9c1-7555cbbcc257"
+                },
+                "requestEntity": "veni",
+                "requestHeaders": {},
+                "url": "ftp:"
+            },
+            "description": "quis",
+            "labels": [
+                "documentation",
+                "visualization"
+            ]
+        }
+    ],
+    "license": "CC BY-NC-SA",
+    "linkedDatasets": [
+        {
+            "id": "1--on--lhn",
+            "owner": "7-i--tr3"
+        },
+        {
+            "id": "vg--iy",
+            "owner": "cgcw"
+        }
+    ],
+    "objective": "do u",
+    "summary": "Lore",
+    "tags": [
+        "H",
+        "LA"
+    ]
+})
+
+
+// Retrieve a project version. The definition of the project will be returned.
+
+@name("Retrieve a data project version") : "base-inherit-auth"
+GET "https://{{baseUrl}}/projects/:owner/:id/v/:versionId"
+
+
+

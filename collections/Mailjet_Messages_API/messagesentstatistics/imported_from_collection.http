@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-236c527d-f0f2-41aa-b04f-72c7372ecd60.postman_collection.json
+
+// Lists the message statistics.
+
+@name("Message Statistics")
+GET "https://{{baseUrl}}/messagesentstatistics/"
+? "AllMessages"= "<>"
+? "CampaignID"= "<>"
+? "CampaignStatus"= "<>"
+? "Contact"= "<>"
+? "ContactsList"= "<>"
+? "CustomCampaign"= "<>"
+? "From"= "<>"
+? "FromDomain"= "<>"
+? "FromID"= "<>"
+? "FromTS"= "<>"
+? "FromType"= "<>"
+? "IsDeleted"= "<>"
+? "IsNewsletterTool"= "<>"
+? "IsStarred"= "<>"
+? "MessageStatus"= "<>"
+? "Period"= "<>"
+? "ShowExtraData"= "<>"
+? "ToTS"= "<>"
+
+
+// List message statistics.
+
+@name("Message Statistic")
+GET "https://{{baseUrl}}/messagesentstatistics/:id"
+
+
+

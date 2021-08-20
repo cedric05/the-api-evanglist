@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// List all notifications for the current user.
+
+@name("List repository notifications for the authenticated user")
+GET "https://{{baseUrl}}/repos/:owner/:repo/notifications"
+? "all"= "false"
+? "participating"= "false"
+? "since"= "<string>"
+? "before"= "<string>"
+? "per_page"= "30"
+? "page"= "1"
+
+
+// Marks all notifications in a repository as "read" removes them from the [default view on GitHub](https://github.com/notifications). If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List repository notifications for the authenticated user](https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
+
+@name("Mark repository notifications as read")
+PUT "https://{{baseUrl}}/repos/:owner/:repo/notifications"
+"Content-Type": "application/json"
+json({
+    "last_read_at": "<string>"
+})
+
+
+

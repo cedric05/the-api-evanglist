@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// Extract product information using the unique identifier you assign to subscription plans/products.
+
+@name("Retrieve product info by code")
+GET "https://{{baseUrl}}/products/:ProductCode/"
+
+
+@name("Get crossSell campaigns by filter")
+GET "https://{{baseUrl}}/products/:ProductCode/crosssells/"
+? "Enabled"= "<boolean>"
+? "Type"= "<string>"
+? "Page"= "<integer>"
+? "Limit"= "<integer>"
+
+
+@name("Working example: Retrieve a price options group")
+GET "https://{{baseUrl}}/products/:ProductCode/priceoptions/"
+
+
+// Following the assignation, the 2Checkout system uses the shopping cart template associated with the product group as the default cart design when shoppers purchase a subscription plan/product.
+// 
+// ***
+// 
+// **Method and URL**
+// 
+// **POST** `https://api.2checkout.com/rest/6.0/products/{ProductCode}/productgroups/{ProductGroupCode}/`
+// 
+// The name of the product group is case sensitive.
+// 
+// ***
+// 
+// **URL parameters**
+// 
+// <table><thead>
+// <tr>
+// <th>
+// Attributes
+// </th>
+// <th>
+// Type/Description
+// </th>
+// </tr>
+// </thead>
+// <tbody>
+// <tr>
+// <td>
+
+@name("Assign a product to a product group")
+POST "https://{{baseUrl}}/products/:ProductCode/productgroups/:ProductGroupCode/"
+
+
+@name("Set product upgrade schema")
+POST "https://{{baseUrl}}/products/:ProductCode/upgrade/"
+
+
+

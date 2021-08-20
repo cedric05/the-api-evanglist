@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fd7d2ea6-a952-4f62-a293-b2e3fbf6a201.postman_collection.json
+
+// You can use this method to report usage events for multiple subscriptions and multiple features with a single API call.
+
+@name("Post Usages")
+POST "https://{{baseUrl}}/v1/usages"
+
+
+// You can retrieve the service catalog for specific distribution channels, segments or customers.
+
+@name("Get Catalog")
+GET "https://{{baseUrl}}/v1/catalog"
+
+
+// You can retrieve the available Offerings for a specific Segment and/or Distribution channel, by using the following attributes in your method call.
+
+@name("Get Offerings")
+GET "https://{{baseUrl}}/v1/offerings"
+
+
+

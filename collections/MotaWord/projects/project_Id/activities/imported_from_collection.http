@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d4cf5606-be3b-4e27-b14f-77855e9137ad.postman_collection.json
+
+// Get a list of realtime activities on the project, such as translation suggestion and translation approval.
+
+@name("Get a list of realtime activities.")
+GET "https://{{baseUrl}}/projects/:projectId/activities"
+? "page"= "<integer>"
+? "per_page"= "<integer>"
+
+
+

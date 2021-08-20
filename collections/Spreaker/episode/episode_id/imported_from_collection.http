@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f67aecc5-ff45-4de9-97cc-ff8ad045654d.postman_collection.json
+
+// Deletes an episode. Theres no way to recover a deleted episode.
+
+@name("Delete Episode")
+DELETE "https://{{baseUrl}}/episode/:episode_id"
+
+
+// Get Episode Media List
+
+@name("Get Episode Media List")
+GET "https://{{baseUrl}}/episode/:episode_id/media"
+
+
+

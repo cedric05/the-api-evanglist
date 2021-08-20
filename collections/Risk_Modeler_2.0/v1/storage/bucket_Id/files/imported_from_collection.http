@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Save object needed for import job
+
+@name("Save object needed for import job") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/storage/:bucketId/files/aggregate-exposures-lists"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "*/*"
+data('{
+    "values": [
+        [
+            37203557.90785676,
+            53492781.010849416
+        ],
+        [
+            -56928077.613281846,
+            -46454288.13944244
+        ]
+    ],
+    "lobs": [
+        "mag",
+        "dolor ullamco"
+    ],
+    "resolutionValues": [
+        "et non aliquip",
+        "ut"
+    ],
+    "errorMessages": [
+        {
+            "row": "ut tempor exercitation",
+            "column": "eu cupidatat ut",
+            "text": "cillum pariatur"
+        },
+        {
+            "row": "culpa non",
+            "column": "in ex aute id",
+            "text": "et qui dolore Ut"
+        }
+    ],
+    "countryCode": "proident sit",
+    "resolution": "ut",
+    "dependencyResolution": "quis veniam do minim"
+}')
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Get information about a single integration.
+
+@name("Get Integration")
+GET "https://{{baseUrl}}/v1/orgs/self/integrations/:integration"
+
+
+// Remove an integration.
+
+@name("Delete Integration")
+DELETE "https://{{baseUrl}}/v1/orgs/self/integrations/:integration"
+
+
+

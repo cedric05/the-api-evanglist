@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f67aecc5-ff45-4de9-97cc-ff8ad045654d.postman_collection.json
+
+// Retrieves an user by unique identifier.
+
+@name("Get User")
+GET "https://{{baseUrl}}/user/:user_id"
+
+
+// Delete the association from a mobile device and a registered user
+
+@name("Delete Device")
+DELETE "https://{{baseUrl}}/user/:user_id/device/:token"
+
+
+// Creates a new device.
+
+@name("Create Device")
+GET "https://{{baseUrl}}/user/:user_id/devices"
+? "application_id"= "<>"
+? "device_name"= "<>"
+? "device_token"= "<>"
+
+
+// Retrieves all listenable episodes by user (both live and podcast, ordered by published_at DESC).
+
+@name("Get User Episodes")
+GET "https://{{baseUrl}}/user/:user_id/episodes"
+
+
+// Change User Profile Image
+
+@name("Change User Profile Image")
+PUT "https://{{baseUrl}}/user/:user_id/image"
+? "image_id"= "<>"
+
+
+// Upload An Image
+
+@name("Upload An Image")
+POST "https://{{baseUrl}}/user/:user_id/images"
+
+
+@name("Get Favorite Live Episodes")
+GET "https://{{baseUrl}}/user/:user_id/lives/fan"
+
+
+// This API returns a list of newsfeed items. The request MUST be authenticated (an user can only fetch its own newsfeed).
+
+@name("Newsfeed")
+GET "https://{{baseUrl}}/user/:user_id/newsfeed"
+? "last_id"= "<>"
+? "max_per_page"= "<>"
+
+
+

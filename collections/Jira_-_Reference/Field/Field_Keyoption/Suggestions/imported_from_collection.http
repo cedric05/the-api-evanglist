@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a [paginated](#pagination) list of options for a select list issue field that can be viewed and selected by the user.
+// 
+// Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Get Selectable Issue Field Options") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/field/:fieldKey/option/suggestions/edit"
+? "startAt"= "0"
+? "maxResults"= "50"
+? "projectId"= "<long>"
+
+
+// Returns a [paginated](#pagination) list of options for a select list issue field that can be viewed by the user.
+// 
+// Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Get Visible Issue Field Options") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/field/:fieldKey/option/suggestions/search"
+? "startAt"= "0"
+? "maxResults"= "<integer>"
+? "projectId"= "<long>"
+
+
+

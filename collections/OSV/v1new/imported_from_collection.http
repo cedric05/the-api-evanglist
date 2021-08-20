@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fc486ecc-c1bb-4615-8989-1418c186a423.postman_collection.json
+
+@name("Query vulnerabilities for a particular project at a given commit or
+version.")
+POST "https://{{baseUrl}}/v1new/query"
+"Content-Type": "application/json"
+json({
+    "commit": "esse eiusmod",
+    "version": "proident anim qui esse veniam",
+    "package": {
+        "name": "do adipisicing ad officia tempor",
+        "ecosystem": "eu",
+        "purl": "amet consequat"
+    }
+})
+
+
+@name("Return a `Vulnerability` object for a given OSV ID.")
+GET "https://{{baseUrl}}/v1new/vulns/:id"
+
+
+

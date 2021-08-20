@@ -1,0 +1,145 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d879d2e1-1162-48e4-8e1e-4eef33d41820.postman_collection.json
+
+// Save a resource dictionary by dictionary provided.
+
+@name("Save a resource dictionary")
+POST "http://{{host}}/api/v1/dictionary"
+basicauth("ccsdkapps", "ccsdkapps")
+json({
+    "name": "test-source",
+    "dataType": "string",
+    "entrySchema": null,
+    "resourceDictionaryGroup": "default",
+    "definition": {
+        "tags": "oam-local-ipv4-address",
+        "name": "test-source",
+        "property": {
+            "description": "test",
+            "required": null,
+            "type": "string",
+            "status": null,
+            "constraints": null,
+            "metadata": null,
+            "value": null,
+            "input-param": null,
+            "default": null,
+            "entry_schema": null,
+            "external-schema": null
+        },
+        "group": "default",
+        "updated-by": "sample@onap.com",
+        "sources": {
+            "sdnc": {
+                "description": null,
+                "type": "source-rest",
+                "metadata": null,
+                "directives": null,
+                "properties": {
+                    "type": "JSON",
+                    "endpoint-selector": "",
+                    "url-path": "test",
+                    "path": "/v4-assigned-ip-list/0/v4-ip-prefix",
+                    "input-key-mapping": {
+                        "service-instance-id": "service-instance-id",
+                        "network-role": "network-role",
+                        "v4-ip-type": "v4-ip-type",
+                        "vm-type": "vm-type"
+                    },
+                    "output-key-mapping": {
+                        "oam-local-ipv4-address": "v4-ip-prefix"
+                    },
+                    "key-dependencies": [
+                        "service-instance-id",
+                        "network-role",
+                        "v4-ip-type",
+                        "vm-type"
+                    ]
+                },
+                "attributes": null,
+                "capabilities": null,
+                "requirements": null,
+                "interfaces": null,
+                "artifacts": null,
+                "copy": null,
+                "node_filter": null
+            }
+        }
+    },
+    "description": "test",
+    "tags": "oam-local-ipv4-address",
+    "updatedBy": "sample@onap.com"
+})
+
+
+// Search for a resource dictionary by names provided.
+
+@name("Search for a resource dictionary")
+POST "http://{{host}}/api/v1/dictionary/by-names"
+basicauth("ccsdkapps", "ccsdkapps")
+json([
+    "pub_key",
+    "hostname"
+])
+
+
+// Save a resource dictionary by dictionary provided.
+
+@name("Save a resource dictionary")
+POST "http://{{host}}/api/v1/dictionary/api/v1/dictionary/definition"
+basicauth("ccsdkapps", "ccsdkapps")
+json({
+    "tags": "v4-ip-type, tosca.datatypes.Root, data_type",
+    "name": "test-source",
+    "group": "test",
+    "property": {
+        "description": "test",
+        "type": "string"
+    },
+    "updated-by": "sample@onap.com",
+    "sources": {
+        "default": {
+            "type": "source-default",
+            "properties": {}
+        }
+    }
+})
+
+
+// Retrieve all config snapshots matching a specified Resource Type, ordered by most recently created/modified date.
+
+@name("Retrieve all resource dictionary groups")
+GET "http://{{host}}/api/v1/dictionary/resource_dictionary_group"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Retrieve all config snapshots matching a specified Resource Type, ordered by most recently created/modified date.
+
+@name("Search for a resource dictionary")
+GET "http://{{host}}/api/v1/dictionary/search/hostname"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Search for a source mapping.
+
+@name("Search for a source mapping")
+GET "http://{{host}}/api/v1/dictionary/search/hostname"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Retrieve a resource dictionary by name provided.
+
+@name("Retrieve a resource dictionary")
+GET "http://{{host}}/api/v1/dictionary/active-streams"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Remove a resource dictionary by name provided.
+
+@name("Remove a resource dictionary")
+DELETE "http://{{host}}/api/v1/dictionary/active-streams"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+

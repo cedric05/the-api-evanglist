@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Service Service Areas")
+GET "https://{{baseUrl}}/services/:service_id/service-area"
+
+
+@name("add Service Service Areas")
+POST "https://{{baseUrl}}/services/:service_id/service-area"
+"Content-Type": "application/json"
+json({
+    "id": "tempor eu in aliqua",
+    "service_id": "fugiat ut in",
+    "service_area": "irure",
+    "description": "veniam cill"
+})
+
+
+@name("get Service Service Area")
+GET "https://{{baseUrl}}/services/:service_id/service-area/:service_area_id"
+
+
+@name("update Service Service Area")
+PUT "https://{{baseUrl}}/services/:service_id/service-area/:service_area_id"
+"Content-Type": "application/json"
+json({
+    "id": "tempor eu in aliqua",
+    "service_id": "fugiat ut in",
+    "service_area": "irure",
+    "description": "veniam cill"
+})
+
+
+@name("delete Service Service Area")
+DELETE "https://{{baseUrl}}/services/:service_id/service-area/:service_area_id"
+
+
+

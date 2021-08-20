@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-47bcec16-21a6-42ae-a7dc-e3c1d2799ca3.postman_collection.json
+
+// Delete an existing customercategory..
+
+@name("Delete Customer Categories")
+DELETE "https://{{baseUrl}}/customer_categories/{{id}}.json"
+
+
+// Delete customers from an existing customercategory..
+
+@name("Delete Customer Categories Customers")
+DELETE "https://{{baseUrl}}/customer_categories/:id/customers.json"
+
+
+

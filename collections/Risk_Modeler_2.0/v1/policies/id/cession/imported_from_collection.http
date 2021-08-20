@@ -1,0 +1,146 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates a reinsurance cession for a policy specified by its ID.
+
+@name("Create a reinsurance cession for a specified policy") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/policies/:id/cession"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": 56251696,
+    "name": "magna sunt",
+    "exposureId": 18699286,
+    "exposureType": "LOC",
+    "type": "Facultative",
+    "facReinsurer": {
+        "id": "velit dolor",
+        "name": "officia est"
+    },
+    "treaty": {
+        "cedant": {
+            "name": "eiusmod",
+            "id": "E29"
+        },
+        "treatyNumber": "enim",
+        "treatyId": -41878053,
+        "treatyName": "dolor qui Duis ex",
+        "producer": {
+            "name": "ad in",
+            "id": "yut5MRYs"
+        },
+        "treatyType": {
+            "id": 34005426,
+            "code": "cillum irure ut",
+            "name": "nisi proiden"
+        },
+        "currency": {
+            "id": -46575042,
+            "code": "mollit",
+            "name": "eu nulla r"
+        },
+        "attachBasis": {
+            "id": -64480056,
+            "code": "amet exercitation",
+            "name": "culpa in"
+        },
+        "attachLevel": {
+            "id": -82172302,
+            "code": "incididunt minim voluptate enim non",
+            "name": "tempor quis"
+        },
+        "premium": -11417945.443479165,
+        "occurLimit": 97683043.73735678,
+        "attachPt": 68094671.40991744,
+        "riskLimit": -30937494.931827873,
+        "retentAmt": -28133174.52045521,
+        "pcntPlaced": 70656843.73150286,
+        "effectDate": "magna proident",
+        "expireDate": "nulla qui occaecat sint Excepteur",
+        "pcntRetent": -45188843.68777592,
+        "pcntRiShare": -31980290.15889819,
+        "pcntCovered": 89728353.57362482,
+        "priority": -45698415,
+        "numOfReinst": -79743006,
+        "reinstCharge": 38926477.96244964,
+        "maolAmount": -17206866.877695188,
+        "isValid": true,
+        "userId1": "Lorem enim adipisicing reprehenderit aute",
+        "userId2": "dolore occaecat",
+        "lobs": [
+            {
+                "name": "est Lo",
+                "id": 94044193
+            },
+            {
+                "name": "sit anim",
+                "id": 49064741
+            }
+        ],
+        "aggregateDeductible": -75221221.0637759,
+        "aggregateLimit": -26918721.27611293,
+        "lossOccurrences": [
+            {
+                "treatyId": 28703090,
+                "id": -15776986,
+                "regionPeril": {
+                    "id": -6221118,
+                    "code": "commodo exercita",
+                    "name": "est"
+                },
+                "lossOccurrenceTime": -12611088,
+                "lossOccurrenceRadius": -39771254,
+                "radiusUnit": {
+                    "id": 86860222,
+                    "code": "proident occaecat",
+                    "name": "cillum"
+                },
+                "multiLossOccurrence": {
+                    "id": 19494522,
+                    "code": "consectetur sed",
+                    "name": "sed cillum aliquip"
+                }
+            },
+            {
+                "treatyId": 62885711,
+                "id": -16697186,
+                "regionPeril": {
+                    "id": -15205255,
+                    "code": "aute est",
+                    "name": "enim do fugiat"
+                },
+                "lossOccurrenceTime": 66431776,
+                "lossOccurrenceRadius": -31351880,
+                "radiusUnit": {
+                    "id": 18865266,
+                    "code": "ex pariatur dolore",
+                    "name": "sint labore nisi velit"
+                },
+                "multiLossOccurrence": {
+                    "id": 38095147,
+                    "code": "esse",
+                    "name": "non sint id"
+                }
+            }
+        ]
+    },
+    "layerNumber": 58409599,
+    "layerAmount": 93119408.12745374,
+    "excessAmount": 1838707.471288219,
+    "percentReinsurance": 49765367.93076956,
+    "maolAmount": -50122399.300170265,
+    "priority": -41959342,
+    "isValid": false
+})
+
+
+

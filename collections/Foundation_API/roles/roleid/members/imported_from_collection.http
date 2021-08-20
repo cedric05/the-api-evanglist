@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets role members.
+
+@name("Gets role members")
+GET "https://{{baseUrl}}/roles/:roleid/members"
+
+
+// Add user to a role.
+
+@name("Add user to a role")
+PUT "https://{{baseUrl}}/roles/:roleid/members/:username"
+
+
+

@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns all the credited users in a video.
+
+@name("Get all the credited users in a video")
+GET "https://{{baseUrl}}/videos/:video_id/credits"
+? "direction"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+// This method deletes the specified user credit from a video.
+
+@name("Delete the credit for a user in a video")
+DELETE "https://{{baseUrl}}/videos/:video_id/credits/:credit_id"
+
+
+

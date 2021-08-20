@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets preferences for current user.
+
+@name("Gets preferences for current user")
+GET "https://{{baseUrl}}/users/myself/preferences"
+
+
+// Gets preference for current user.
+
+@name("Gets preference for current user")
+GET "https://{{baseUrl}}/users/myself/preferences/:preference"
+
+
+

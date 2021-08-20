@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2f41d21a-2d73-440c-b5a1-d622f612ff71.postman_collection.json
+
+// Returns event with the specified scheduleID.
+
+@name("Find schedule by scheduleID.")
+GET "https://{{baseUrl}}/schedules/:scheduleID"
+
+
+// Returns all Transport Calls filtered by the parameters.
+
+@name("Find transport calls by scheduleID")
+GET "https://{{baseUrl}}/schedules/:scheduleID/transport-calls"
+? "carrierServiceCode"= "FE1"
+? "vesselIMONumber"= "1801323"
+? "carrierVoyageNumber"= "2015W"
+? "UNLocationCode"= "USNYC"
+
+
+

@@ -1,0 +1,104 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e760486c-f487-465f-b743-146cfe5b92a4.postman_collection.json
+
+// Initiates a Mastercard Merchant Presented QR purchase transaction by securing funds from a consumer’s account with a Funding Transaction and pushing funds to a merchant account with a Payment Transaction.
+
+@name("Initiates a Mastercard Merchant Presented QR purchase transaction by securing funds from a consumer’s account with a Funding Transaction and pushing funds to a merchant account with a Payment Transaction.")
+POST "https://{{baseUrl}}/send/"
+"Content-Type": "application/json"
+json({
+    "merchant_transfer": {
+        "transfer_reference": "<string>",
+        "payment_type": "<string>",
+        "transfer_amount": {
+            "value": "<string>",
+            "currency": "<string>"
+        },
+        "sender_account_uri": "<string>",
+        "sender": {
+            "first_name": "<string>",
+            "last_name": "<string>",
+            "additional_merchant_data": {
+                "payment_facilitator_id": "<integer>",
+                "sub_merchant_id": "<string>"
+            },
+            "address": {
+                "city": "<string>",
+                "country": "<string>",
+                "country_subdivision": "<string>",
+                "line1": "<string>",
+                "line2": "<string>",
+                "postal_code": "<string>"
+            },
+            "authentication_value": "<string>",
+            "email": "<string>",
+            "middle_name": "<string>",
+            "phone": "<string>",
+            "token_cryptogram": {
+                "type": "<string>",
+                "value": "<string>",
+                "pan_sequence_number": "<string>"
+            }
+        },
+        "recipient_account_uri": "<string>",
+        "recipient": {
+            "first_name": "<string>",
+            "last_name": "<string>",
+            "address": {
+                "city": "<string>",
+                "country": "<string>",
+                "country_subdivision": "<string>",
+                "line1": "<string>",
+                "line2": "<string>",
+                "postal_code": "<string>"
+            },
+            "merchant_category_code": "<string>",
+            "additional_merchant_data": {
+                "payment_facilitator_id": "<integer>",
+                "sub_merchant_id": "<string>"
+            },
+            "authentication_value": "<string>",
+            "email": "<string>",
+            "middle_name": "<string>",
+            "phone": "<string>",
+            "token_cryptogram": {
+                "type": "<string>",
+                "value": "<string>",
+                "pan_sequence_number": "<string>"
+            }
+        },
+        "transaction_local_date_time": "<string>",
+        "participant": {
+            "card_acceptor_name": "<string>",
+            "card_acceptor_id": "<string>"
+        },
+        "additional_message": "<string>",
+        "convenience_amount": "<string>",
+        "convenience_indicator": "<string>",
+        "digital_account_reference_number": "<string>",
+        "interchange_rate_designator": "<string>",
+        "mastercard_assigned_id": "<string>",
+        "participation_id": "<string>",
+        "payment_origination_country": "<string>",
+        "processor_id": "<string>",
+        "qr_data": "<string>",
+        "reconciliation_data": {
+            "custom_field": [
+                {
+                    "name": "<string>",
+                    "value": "<string>"
+                },
+                {
+                    "name": "<string>",
+                    "value": "<string>"
+                }
+            ]
+        },
+        "routing_transit_number": "<string>",
+        "unique_reference_number": "<string>"
+    }
+})
+
+
+

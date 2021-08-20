@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3d32f4d3-5b9d-4d42-8b63-a468c27a2f9e.postman_collection.json
+
+// <p>Get entries of a content type along with the comprehensive details of the specified referenced entries. This query uses inline fragments and relay specification to retrieve details of entries referring to multiple content types.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#include-multi-content-type-reference-fields>Include Multi Content Type Reference Fields</a> API Reference document
+
+@name(" Include Multi Content Type Reference Fields")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries of a content type along with the comprehensive details of an asset that has been used in the entries. This query uses <a href="https://relay.dev/docs/en/graphql-server-specification.html" target="_blank">relay specification</a> to fetch asset details such as the title of an asset or its URL.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#include-assets-added-to-a-content-type>Include Assets Added to a Content Type</a> API Reference document
+
+@name(" Include Assets Added to a Content Type")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries having values based on referenced fields. This query uses <a href="https://graphql.org/learn/queries/#inline-fragments" target="_blank">inline fragments</a> to retrieve all entries that satisfy query conditions made on referenced fields that refer to multiple content types.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#search-within-referenced-entries-from-multiple-content-types>Search within Referenced Entries from Multiple Content Types</a> API Reference document
+
+@name(" Search Referenced Entries from Multiple Content Types")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Get entries by using asset data to query a content type.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#get-entries-by-referenced-asset>Get Entries by Referenced Asset</a> API Reference document
+
+@name("Get Entries by Referenced Asset")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+

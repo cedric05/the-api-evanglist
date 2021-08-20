@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-20eaed55-6256-4049-a8c9-74a7e5e0ac65.postman_collection.json
+
+// Obtain series statistics for a given series. Please note that this feed will not return data until the 2017 playoffs begin
+
+@name("Obtain series statistics for a given series. Pleas...")
+GET "https://{{baseUrl}}/mlb-t6/series/:series_id/teams/:team_id/statistics{{format}}"
+
+
+// Obtain series summary info for a given series. Please note that this feed will not return data until the 2017 playoffs begin
+
+@name("Obtain series summary info for a given series. Ple...")
+GET "https://{{baseUrl}}/mlb-t6/series/:series_id/summary{{format}}"
+
+
+

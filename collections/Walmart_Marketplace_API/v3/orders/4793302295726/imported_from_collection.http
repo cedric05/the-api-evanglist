@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b04ade5-8838-4197-b3c0-06861796932d.postman_collection.json
+
+@name("getOrder")
+GET "https://{{baseUrl}}/v3/orders/4793302295726"
+
+
+@name("ackOrder")
+POST "https://{{baseUrl}}/v3/orders/4793302295726/acknowledge"
+
+
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a83dc528-999f-4e27-ba7e-49a503015a5a.postman_collection.json
+
+// 
+// <p>If you’d like more detailed information about bike incidents, use this endpoint. For mapping, <code>locations</code> is probably a better bet.</p>
+// 
+// <p><strong>Notes on location searching</strong>: <br />
+// - <code>proximity</code> accepts an ip address, an address, zipcode, city, or latitude,longitude - i.e. <code>70.210.133.87</code>, <code>210 NW 11th Ave, Portland, OR</code>, <code>60647</code>, <code>Chicago, IL</code>, and <code>45.521728,-122.67326</code> are all acceptable<br />
+// - <code>proximity_square</code> sets the length of the sides of the square to find matches inside of. The square is centered on the location specified by <code>proximity</code>. It defaults to 100.</p>
+
+@name("Paginated incidents matching parameters")
+GET "https://{{baseUrl}}/v2/incidents"
+? "page"= "1"
+? "per_page"= "<integer>"
+? "occurred_before"= "<integer>"
+? "occurred_after"= "<integer>"
+? "incident_type"= "<string>"
+? "proximity"= "<string>"
+? "proximity_square"= "100"
+? "query"= "<string>"
+
+
+@name("GET--version-incidents--id---format-")
+GET "https://{{baseUrl}}/v2/incidents/:id"
+
+
+

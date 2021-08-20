@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-28db29ee-ca8d-4539-8a7a-6cde82dcfb73.postman_collection.json
+
+// Retrieves information about a project.
+
+@name("Get Projects Project")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID"
+
+
+// Retrieves the recent activity of a specific project.
+
+@name("Get Projects Project Activities")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/activities"
+? "limit"= "<>"
+? "occurred_since_date"= "<>"
+
+
+

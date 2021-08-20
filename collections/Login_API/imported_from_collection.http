@@ -1,0 +1,121 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39c9bc18-f665-4894-8dca-16097c31611c.postman_collection.json
+
+// Login Authentication
+
+@name("/authenticate")
+POST "https://{{baseUrl}}/authenticate"
+"Content-Type": "application/json"
+json({
+    "email": "culpa esse ul",
+    "pwd": "dolore "
+})
+
+
+// Login Authentication
+
+@name("/projectsLogin")
+POST "https://{{baseUrl}}/projectsLogin"
+"Content-Type": "application/json"
+json({
+    "email": "amet dolor",
+    "pwd": "esse commodo quis irure",
+    "applicationType": "qui"
+})
+
+
+// Login Authentication
+
+@name("/projectAuthenticate")
+POST "https://{{baseUrl}}/projectAuthenticate"
+"jwt": "quis proident exercitation"
+"Content-Type": "application/json"
+json({
+    "pGuid": "aute Duis laboris do"
+})
+
+
+// Create User
+
+@name("/create")
+POST "https://{{baseUrl}}/create"
+"jwt": "quis proident exercitation"
+"Content-Type": "application/json"
+json({
+    "email": "fugiat reprehenderit ",
+    "pwd": "mollit quis",
+    "firstName": "pariatur est ad do",
+    "lastName": "qui officia dolor",
+    "faastRoleGuid": "veniam sunt qui"
+})
+
+
+// Change User Role
+
+@name("/changeRole")
+POST "https://{{baseUrl}}/changeRole"
+"jwt": "quis proident exercitation"
+"Content-Type": "application/json"
+json({
+    "uGuid": "dolor deserunt ullamco sed",
+    "faastRoleGuid": "in dolore"
+})
+
+
+// Create User
+
+@name("/changeUser")
+POST "https://{{baseUrl}}/changeUser"
+"jwt": "quis proident exercitation"
+"Content-Type": "application/json"
+json({
+    "uGuid": "veniam dolore labore reprehenderit",
+    "firstName": "cu",
+    "lastName": "est Lorem reprehenderit in amet",
+    "pwd": "non in nulla Lorem culpa",
+    "email": "voluptate aute",
+    "faastRoleGuid": "dolore anim ad"
+})
+
+
+// Delete User
+
+@name("/delete")
+POST "https://{{baseUrl}}/delete"
+"jwt": "quis proident exercitation"
+"Content-Type": "application/json"
+json({
+    "uGuid": "labore aliqua adipisicing"
+})
+
+
+// Get all Users
+
+@name("/getUsers")
+GET "https://{{baseUrl}}/getUsers"
+"jwt": "quis proident exercitation"
+
+
+// User logout
+
+@name("/logout")
+GET "https://{{baseUrl}}/logout"
+"jwt": "quis proident exercitation"
+
+
+// User logout
+
+@name("/getUserByuGuid/:uGuid")
+GET "https://{{baseUrl}}/getUserByuGuid/:uGuid"
+"jwt": "quis proident exercitation"
+
+
+// User logout
+
+@name("/getRoleByUGUID/:uGuid")
+GET "https://{{baseUrl}}/getRoleByUGUID/:uGuid"
+"jwt": "quis proident exercitation"
+
+
+

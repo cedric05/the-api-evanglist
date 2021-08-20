@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Browse transactions.
+
+@name("Browse Transactions")
+GET "https://{{baseUrl}}/api/v1/transactions"
+? "filter_text"= "<get>"
+? "offset"= "<get>"
+? "has_note"= "<get>"
+? "key_or_custom_id"= "<get>"
+? "currency_code"= "<get>"
+? "order_date_to"= "<get>"
+? "sort_reverse"= "<get>"
+? "limit"= "<get>"
+? "invoice_number"= "<get>"
+? "tax_country_codes"= "<get>"
+? "statuses"= "<get>"
+? "original_transaction_key"= "<get>"
+? "order_date_from"= "<get>"
+? "total_amount_greater_than"= "<get>"
+? "format"= "<get>"
+? "total_amount_less_than"= "<get>"
+? "tax_country_code"= "<get>"
+
+
+

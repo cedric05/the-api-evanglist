@@ -1,0 +1,152 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Return a paginated list of loans data.
+
+@name("Retrieve Basic Loan Data") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reporting/loans"
+? "deleted"= "true"
+? "archived"= "true"
+? "appSourceName"= "Empower"
+? "appLeadSource"= "LENDER"
+? "loanType"= "MORTGAGE"
+? "loanCreatedStartDate"= "2016-04-09"
+? "loanCreatedEndDate"= "2016-04-09"
+? "borrowerStartedStartDate"= "2016-04-09"
+? "borrowerStartedEndDate"= "2016-04-09"
+? "borrowerSubmittedStartDate"= "2016-04-09"
+? "borrowerSubmittedEndDate"= "2016-04-09"
+? "loanExportedStartDate"= "2016-04-09"
+? "loanExportedEndDate"= "2016-04-09"
+? "loanDeletedStartDate"= "2016-04-09"
+? "loanDeletedEndDate"= "2016-04-09"
+? "loanArchivedStartDate"= "2016-04-09"
+? "loanArchivedEndDate"= "2016-04-09"
+? "loanPurgedStartDate"= "2016-04-09"
+? "loanPurgedEndDate"= "2016-04-09"
+? "loanLastUpdatedStartDate"= "2016-04-09"
+? "loanLastUpdatedEndDate"= "2016-04-09"
+? "orderBy"= "createdDatetime"
+? "limit"= "100"
+? "cursor"= "cCwxNTIzOTk4NTQ4MTU5LGEwYWNkZTZjLWY1M2MtNGM5NC1iYmM1LWE0M2MyYTY5YjM3Mg"
+
+
+// Return a paginated list of borrower data.
+
+@name("Retrieve Borrower Users") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reporting/borrowers"
+? "activationStartDate"= "2016-04-09"
+? "activationEndDate"= "2016-04-09"
+? "invitedStartDate"= "2016-04-09"
+? "invitedEndDate"= "2016-04-09"
+? "loanType"= "MORTGAGE"
+? "orderBy"= "activationDatetime"
+? "limit"= "100"
+? "cursor"= "cCwxNTIzOTk4NTQ4MTU5LGEwYWNkZTZjLWY1M2MtNGM5NC1iYmM1LWE0M2MyYTY5YjM3Mg"
+
+
+// Return a paginated list of lenders data.
+
+@name("Retrieve Lender Users and usage metrics") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reporting/lenders"
+? "userMetricsStartDate"= "2016-04-09"
+? "userMetricsEndDate"= "2016-04-09"
+? "invitedStartDate"= "2016-04-09"
+? "invitedEndDate"= "2016-04-09"
+? "activationStartDate"= "2016-04-09"
+? "activationEndDate"= "2016-04-09"
+? "lastLoginStartDate"= "2016-04-09"
+? "lastLoginEndDate"= "2016-04-09"
+? "lastBorrowerSubmitStartDate"= "2016-04-09"
+? "lastBorrowerSubmitEndDate"= "2016-04-09"
+? "orderBy"= "activationDatetime"
+? "limit"= "100"
+? "cursor"= "cCwxNTIzOTk4NTQ4MTU5LGEwYWNkZTZjLWY1M2MtNGM5NC1iYmM1LWE0M2MyYTY5YjM3Mg"
+
+
+// This captures only the borrower's activity within Blend on the process-level.
+
+@name("Retrieve Borrower Workflows") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reporting/activities"
+? "processStartedStartDate"= "2016-04-09"
+? "processStartedEndDate"= "2016-04-09"
+? "processCompletedStartDate"= "2016-04-09"
+? "processCompletedEndDate"= "2016-04-09"
+? "orderBy"= "startedDatetime"
+? "loanType"= "MORTGAGE"
+? "limit"= "100"
+? "cursor"= "cCwxNTIzOTk4NTQ4MTU5LGEwYWNkZTZjLWY1M2MtNGM5NC1iYmM1LWE0M2MyYTY5YjM3Mg"
+
+
+// Return a paginated list of nps data.
+
+@name("Retrieve NPS and Comments") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reporting/nps"
+? "startDate"= "2016-04-09"
+? "endDate"= "2016-04-09"
+? "loanType"= "MORTGAGE"
+? "limit"= "100"
+? "cursor"= "cCwxNTIzOTk4NTQ4MTU5LGEwYWNkZTZjLWY1M2MtNGM5NC1iYmM1LWE0M2MyYTY5YjM3Mg"
+
+
+// Return a paginated list of documents data.
+
+@name("Retrieve Document Metadata") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reporting/documents"
+? "type"= "LOE_PUBLIC_RECORD:BANKRUPTCY"
+? "createdAfter"= "2016-04-09"
+? "createdBefore"= "2016-04-09"
+? "loanType"= "MORTGAGE"
+? "limit"= "100"
+? "cursor"= "cCwxNTIzOTk4NTQ4MTU5LGEwYWNkZTZjLWY1M2MtNGM5NC1iYmM1LWE0M2MyYTY5YjM3Mg"
+
+
+// Returns a paginated list of connectivity metrics data.
+
+@name("Retrieve Connectivity Metrics") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reporting/data-verification-usage"
+? "startDate"= "2016-04-09"
+? "endDate"= "2016-04-09"
+? "limit"= "100"
+? "cursor"= "cCwxNTIzOTk4NTQ4MTU5LGEwYWNkZTZjLWY1M2MtNGM5NC1iYmM1LWE0M2MyYTY5YjM3Mg"
+
+
+// Return a paginated list of individual follow-up data.
+
+@name("Retrieve Follow-ups data") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reporting/follow-ups"
+? "loanType"= "MORTGAGE"
+? "followUpCreatedStartDate"= "2016-04-09"
+? "followUpCreatedEndDate"= "2016-04-09"
+? "requestedStartDate"= "2016-04-09"
+? "requestedEndDate"= "2016-04-09"
+? "completedStartDate"= "2016-04-09"
+? "completedEndDate"= "2016-04-09"
+? "reviewedStartDate"= "2016-04-09"
+? "reviewedEndDate"= "2016-04-09"
+? "cancelledStartDate"= "2016-04-09"
+? "cancelledEndDate"= "2016-04-09"
+? "orderBy"= "followUpCreatedDatetime"
+? "limit"= "100"
+? "cursor"= "cCwxNTIzOTk4NTQ4MTU5LGEwYWNkZTZjLWY1M2MtNGM5NC1iYmM1LWE0M2MyYTY5YjM3Mg"
+
+
+// Return a paginated list of PAB Activities
+
+@name("Retrieve PAB activities") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reporting/lender-pab-activities"
+? "activityStartDate"= "2016-04-09"
+? "activityEndDate"= "2016-04-09"
+? "limit"= "100"
+? "cursor"= "cCwxNTIzOTk4NTQ4MTU5LGEwYWNkZTZjLWY1M2MtNGM5NC1iYmM1LWE0M2MyYTY5YjM3Mg"
+
+
+

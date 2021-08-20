@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// ***
+// 
+// **Overview**
+// 
+// Retrieve information on the evolution of a subscription in the 2Checkout system, including details of the initial acquisition and the subsequent renewals and upgrades.
+// 
+// Subscriptions can be retrieved starting with 5 minutes after their orders are generated in the 2Checkout system.
+
+@name("Retrieve the history of a subscription")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/history/"
+
+
+// Retrieve a snapshot of a subscription’s evolution corresponding to a specific purchase for which you provide the order reference number.
+
+@name("Retrieve a subscription's purchase, renewal or upgrade details")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/history/:OrderReference/"
+
+
+

@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-007fb30c-c8ae-4349-8a4c-36e7914a7a99.postman_collection.json
+
+// Use this call to search for and retrieve one or more orders based on their creation date, last modification date, or fulfillment status using the filter parameter. You can alternatively specify a list of orders using the orderIds parameter. The returned Order objects contain information you can use to create and process fulfillments, including: Information about the buyer and seller Information about the order's line items The plans for packaging, addressing and shipping the order The status of 
+
+@name("Get Order")
+GET "https://{{baseUrl}}/order"
+? "filter"= "<>"
+? "limit"= "<get>"
+? "offset"= "<get>"
+? "orderIds"= "<>"
+
+
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-baf4a014-6c7b-4f4e-b764-89b8472d3cf4.postman_collection.json
+
+// Sign a transaction with the user's chainAccount.  Returns a Base4 encoded signed Transaction and/or transaction ID
+// 
+// <br/><br/>
+// 
+// ##### PARAMETERS
+// ---
+// **account** - (Required) The 12-character ORE account name of the user.
+// 
+// **chain_account** - (Required) The 12-character account name on the chain specified by chain_network. Usually the same as the user’s ORE account but can be different for different chains.
+// 
+// **chain_network** - (Required) eos_main, eos_kylin, etc. Valid options can be found in 
+
+@name("Custodial - Sign Transaction")
+POST "https://{{baseUrl}}/api/transaction/sign"
+
+
+// 
+// Checks whether a transaction can be signed (via Custodial - Sign Transaction) without requiring user intervention. A transaction can be auto-signed if the user has previously authorized auto-sign for a specific transaction contract/action (while signing a similar transaction) and if those auto-sign credentials have not yet expired. If autoSignCredentialsExist is true, then the transaction can be signed by calling Custodial - Sign Transaction and including auto_sign=true param. This endpoint als
+
+@name("Can auto-sign")
+POST "https://{{baseUrl}}/api/transaction/can-auto-sign"
+
+
+

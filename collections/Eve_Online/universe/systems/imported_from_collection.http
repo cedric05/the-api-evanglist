@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get a list of solar systems
+// 
+// ---
+// Alternate route: `/dev/universe/systems/`
+// 
+// Alternate route: `/legacy/universe/systems/`
+// 
+// Alternate route: `/v1/universe/systems/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get solar systems")
+GET "https://{{baseUrl}}/universe/systems/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get information on a solar system.
+// 
+// ---
+// Alternate route: `/dev/universe/systems/{system_id}/`
+// 
+// Alternate route: `/v4/universe/systems/{system_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get solar system information")
+GET "https://{{baseUrl}}/universe/systems/:system_id/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+

@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete team group") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/teams/:team/groups/:group/"
+
+
+@name("Get team group") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/teams/:team/groups/:group/"
+
+
+@name("Patch team group") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/teams/:team/groups/:group/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "description": "<string>",
+    "parent": "<string>",
+    "private": "<boolean>"
+})
+
+
+@name("Patch team group") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/teams/:team/groups/:group/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "description": "<string>",
+    "parent": "<string>",
+    "private": "<boolean>"
+})
+
+
+@name("Add user to group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/teams/:team/groups/:group/add/"
+
+
+@name("User removed from group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/teams/:team/groups/:group/remove/"
+
+
+

@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9dab0145-9066-4a7b-90a7-7a8a94bce777.postman_collection.json
+
+@name("Creates an order that represents the items in your customer's shopping cart.")
+POST "https://{{baseUrl}}/orders"
+
+
+@name("Fetches the details of an order and displays its status.")
+GET "https://{{baseUrl}}/orders/:orderToken"
+
+
+

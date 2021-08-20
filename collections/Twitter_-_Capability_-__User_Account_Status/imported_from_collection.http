@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52e0e032-8996-4fb7-8851-5dfdd8f3f93b.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("User Account Validation") : "base-inherit-auth"
+GET "https://api.twitter.com/1.1//users/lookup.json"
+? "screen_name"= "kinlane,apievangelist"
+
+
+

@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// List all Issues
+
+@name("Get Issues")
+GET "https://{{baseUrl}}/issues/"
+? "sort"= "<>"
+? "page_size"= "<string>"
+? "page"= "<string>"
+? "for"= "<>"
+? "closed"= "<string>"
+
+
+// Get an issue given its ID
+
+@name("Get Issues")
+GET "https://{{baseUrl}}/issues/:id/"
+
+
+

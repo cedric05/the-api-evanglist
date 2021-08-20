@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-78c0dc33-e726-4d39-9b71-5a066250bed7.postman_collection.json
+
+// Use this method to retrieve the dashboard that matches the OAuth credentials submitted with the request.
+
+@name("Get User Dashboard")
+GET "https://{{baseUrl}}/user/dashboard"
+? "limit"= "<>"
+? "offset"= "<>"
+? "type"= "<>"
+? "since_id"= "<>"
+
+
+// Use this method to retrieve the liked posts that match the OAuth credentials submitted with the request.
+
+@name("Get User Likes")
+GET "https://{{baseUrl}}/user/likes"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Use this method to retrieve the blogs followed by the user whose OAuth credentials are submitted with the request.
+
+@name("Get User Following")
+GET "https://{{baseUrl}}/user/following"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Follow a blog.
+
+@name("Add User Follow")
+POST "https://{{baseUrl}}/user/follow"
+? "url"= "<>"
+
+
+// Unfollow a blog.
+
+@name("Add User Unfollow")
+POST "https://{{baseUrl}}/user/unfollow"
+? "url"= "<>"
+
+
+

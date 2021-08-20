@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves list of portfolios filtered by the specified parameters.
+
+@name("Get list of portfolios") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/portfolios"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Creates a new portfolio.
+
+@name("Create a new portfolio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/portfolios"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "description": "nulla aliqua minim incididunt sed",
+    "name": "consequat in dolore est",
+    "number": "adipisicing co",
+    "id": -34109467,
+    "createDate": "fugiat in",
+    "stampDate": "ex commodo non"
+})
+
+
+

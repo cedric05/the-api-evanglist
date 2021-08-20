@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Get teams") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/teams/"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+@name("Create a new team") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/teams/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "avatar": "<byte>",
+    "avatar_url": "<string>",
+    "description": "<string>",
+    "location": "<string>",
+    "website": "<string>"
+})
+
+
+

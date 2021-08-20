@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Revokes a user session from the provided user id and session id strings.n##### PermissionsnMust be logged in as the user being updated or have the `edit_other_users` permission.n
+
+@name("Revoke a user session")
+POST "https://{{baseUrl}}/users/:user_id/sessions/revoke"
+
+
+// Revokes all user sessions from the provided user id and session id strings.n##### PermissionsnMust be logged in as the user being updated or have the `edit_other_users` permission.n__Minimum server version__: 4.4n
+
+@name("Revoke all active sessions for a user")
+POST "https://{{baseUrl}}/users/:user_id/sessions/revoke/all"
+
+
+

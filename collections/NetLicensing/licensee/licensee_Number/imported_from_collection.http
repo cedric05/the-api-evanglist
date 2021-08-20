@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2dd3b81c-4b11-4e46-b2e6-83bc9a4638dc.postman_collection.json
+
+// Delete a licensee by number
+
+@name("Delete licensee")
+DELETE "https://{{baseUrl}}/licensee/:licenseeNumber"
+? "forceCascade"= "<>"
+
+
+// Licenses transfer between licensees
+
+@name("Transfer licenses")
+POST "https://{{baseUrl}}/licensee/:licenseeNumber/transfer"
+
+
+// Validates active licenses of the licensee
+
+@name("Validate licensee")
+POST "https://{{baseUrl}}/licensee/:licenseeNumber/validate"
+
+
+

@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a [paginated](#pagination) list of the users specified by one or more account IDs.
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Bulk Get Users") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/user/bulk"
+? "startAt"= "0"
+? "maxResults"= "10"
+? "username"= "<string>"
+? "username"= "<string>"
+? "key"= "<string>"
+? "key"= "<string>"
+? "accountId"= "<string>"
+? "accountId"= "<string>"
+
+
+// Returns the account IDs for the users specified in the `key` or `username` parameters. Note that multiple `key` or `username` parameters can be specified.
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Get Account Ids For Users") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/user/bulk/migration"
+? "startAt"= "0"
+? "maxResults"= "10"
+? "username"= "<string>"
+? "username"= "<string>"
+? "key"= "<string>"
+? "key"= "<string>"
+
+
+

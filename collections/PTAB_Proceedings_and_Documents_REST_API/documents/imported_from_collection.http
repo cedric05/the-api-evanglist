@@ -1,0 +1,89 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bf3ab025-e124-45c4-8365-ff0708180fce.postman_collection.json
+
+// Returns PTAB Public Documents for given search input. No required parameters. Parameters may be provided to filter the result set. Repeated filter query parameters will be logical "OR" rather than logical "AND" Invalid query parameter values will be ignored.
+
+@name("Return PTAB Public Documents")
+GET "https://{{baseUrl}}/documents"
+? "applicationNumberText"= "<string>"
+? "documentFilingDate"= "<string>"
+? "documentFilingFromDate"= "<string>"
+? "documentFilingToDate"= "<string>"
+? "documentIdentifier"= "<string>"
+? "documentName"= "<string>"
+? "documentNumber"= "<string>"
+? "documentTitleText"= "<string>"
+? "documentTypeName"= "<string>"
+? "filingPartyCategory"= "<string>"
+? "partyName"= "<string>"
+? "patentOwnerName"= "<string>"
+? "proceedingNumber"= "<string>"
+? "proceedingTypeCategory"= "<string>"
+? "recordStartNumber"= "<integer>"
+? "recordTotalQuantity"= "<integer>"
+? "sortOrderCategory"= "<string>"
+? "styleNameText"= "<string>"
+
+
+// Returns PTAB Public Documents for given search input. Here are some examples of input format:
+// 
+//  E.g. 1.
+// {
+//   "facetMap": {"filingParty": ["board"]},
+//   "paramMap": {},
+//   "rows": 10,
+//   "start": 2
+// }
+// 
+//  E.g. 2. 
+// {
+//   "facetMap": {"filingParty": ["board", "petitioner"], "type": ["notice"]},
+//   "paramMap": {"documentNumber":"73", "title":"power of attorney"},
+//   "rows": 20,
+//   "sortByColumn": "type",
+//   "sortOrder": "desc",
+//   "start": 0
+// }
+// 
+//  E.g. 3. {}
+// 
+//  E.g. 4. 
+// {
+// "dateRangeMap": {"filingDatetime": {"start": "2014-03-12", "end": "2014-03-15"}},
+//   "sortMapArray": [
+//     {"type":"asc"}, {"title":"desc"}
+//   ],
+//   "rows": 15,
+//   "start": 6
+// }
+// 
+//  <em><strong>Please DO NOT copy/paste, rather type in to avoid ascii chars issue or something else.</strong></em>
+// 
+// For more filter/param values for Documents, refer to the response of above GET (/documents) end point.
+
+@name("Return PTAB Public Documents")
+POST "https://{{baseUrl}}/documents/json"
+"Content-Type": "application/json"
+json({
+    "actionDownload": "<boolean>",
+    "dateRangeData": "<object>",
+    "facetData": "<object>",
+    "parameterData": "<object>",
+    "recordStartNumber": "<integer>",
+    "recordTotalQuantity": "<integer>",
+    "searchText": "<string>",
+    "sortDataBag": [
+        "<object>",
+        "<object>"
+    ]
+})
+
+
+// Download a single document for a given document id
+
+@name("Download a single document of certain document id")
+GET "https://{{baseUrl}}/documents/:documentIdentifier/download"
+
+
+

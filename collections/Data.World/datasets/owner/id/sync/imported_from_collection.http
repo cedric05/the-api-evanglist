@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Same as `POST:/dataset/{owner}/{id}/sync`.
+
+@name("Sync files (via GET)") : "base-inherit-auth"
+GET "https://{{baseUrl}}/datasets/:owner/:id/sync"
+
+
+// Sync files within a dataset. This method will process the latest data available for files added from URLs or via streams.
+
+@name("Sync files") : "base-inherit-auth"
+POST "https://{{baseUrl}}/datasets/:owner/:id/sync"
+
+
+

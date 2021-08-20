@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns all fields for a screen tab.
+// 
+// **[Permissions](#permissions) required:**
+// 
+//  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+//  *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) when the project key is specified, providing that the screen is associated with the project through a Screen Scheme and Issue Type Screen Scheme.
+
+@name("Get All Screen Tab Fields") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/screens/:screenId/tabs/:tabId/fields"
+? "projectKey"= "<string>"
+
+
+// Adds a field to a screen tab.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Add Screen Tab Field") : "base-inherit-auth"
+POST "https://{{baseUrl}}/rest/api/3/screens/:screenId/tabs/:tabId/fields"
+"Content-Type": "application/json"
+json({
+    "fieldId": "<string>"
+})
+
+
+

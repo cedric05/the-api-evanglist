@@ -1,0 +1,1 @@
+This an API for managing products.

@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Assuming that there is already a draft for the given product. The draft was created by the same user that using this request.
+// The user has only an edition permission through categories on the given product.
+
+@name("draft (2.x and EE only)")
+GET "https://{{baseUrl}}/rest/v1/products/AKNTS_BPS/draft"
+
+
+// Assuming that there is already a draft for the given product. The draft was created by the same user using this request.
+// The user has only an edition permission through categories on the given product.
+
+@name("proposal (2.x and EE only)")
+POST "https://{{baseUrl}}/rest/v1/products/AKNTS_BPS/proposal"
+"Content": "<>"
+
+
+

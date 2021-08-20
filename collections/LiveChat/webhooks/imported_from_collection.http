@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Returns a list of webhooks that have been created in a LiveChat account.nn
+
+@name("Display configured webhooks")
+GET "https://{{baseUrl}}/webhooks"
+"X": "<>"
+
+
+// Deletes a webhook with the given ID.nn
+
+@name("Delete a webhook")
+DELETE "https://{{baseUrl}}/webhooks/12345"
+"X": "<>"
+
+
+

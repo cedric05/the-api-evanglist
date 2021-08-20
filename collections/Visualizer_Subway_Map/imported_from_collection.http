@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1fe57f29-05c6-43c4-88b1-dd94a24b691b.postman_collection.json
+
+// Takes a list of HTML tags, with different sizes applied, and turns into a visual tag cloud.
+
+@name("Visualizer Subway Map")
+POST "https://postman-echo.com/post"
+"Content-Type": "application/json"
+data('{
+	"content":
+	[
+	 {{$randomInt}},
+	 {{$randomInt}},
+	 {{$randomInt}},
+	 {{$randomInt}}
+		
+	]
+}')
+
+
+

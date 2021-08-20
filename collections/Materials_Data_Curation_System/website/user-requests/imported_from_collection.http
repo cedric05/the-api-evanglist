@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get all account requests
+
+@name("website user-requests list") : "base-inherit-auth"
+GET "https://{{baseUrl}}/website/user-requests/"
+
+
+// Create a new account request
+
+@name("website user-requests create") : "base-inherit-auth"
+POST "https://{{baseUrl}}/website/user-requests/"
+
+
+

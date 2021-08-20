@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6955ed11-a73c-4307-bb23-5a863194d33b.postman_collection.json
+
+@name("GET request for retrieving the default input values for the GCSolar module,
+this is equivalent to selecting the first option from the start menu of the desktop application.")
+GET "https://{{baseUrl}}/api/water-quality/solar/inputs"
+
+
+@name("GET request for metadata on the inputs for the GCSolar module.")
+GET "https://{{baseUrl}}/api/water-quality/solar/inputs/metadata"
+
+
+

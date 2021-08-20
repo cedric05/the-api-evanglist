@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-20eaed55-6256-4049-a8c9-74a7e5e0ac65.postman_collection.json
+
+// Obtain changes made to previously closed events, team rosters, or player profiles for a given day.
+
+@name("Obtain changes made to previously closed events, t...")
+GET "https://{{baseUrl}}/mlb-t6/league/:year/:month/:day/changes{{format}}"
+
+
+// Obtain information concerning all transactions taking place on a given MLB defined day.
+
+@name("Obtain information concerning all transactions tak...")
+GET "https://{{baseUrl}}/mlb-t6/league/:year/:month/:day/transactions{{format}}"
+
+
+

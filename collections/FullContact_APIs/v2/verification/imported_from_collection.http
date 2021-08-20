@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cbe52561-c0c1-4a0b-9d4c-69380596376d.postman_collection.json
+
+// Sends a synchronous request for a single email.
+
+@name("/v2/verification/email")
+GET "https://{{baseUrl}}/v2/verification/email"
+"Authorization": "Bearer <Bearer Token>"
+? "email"= "<string>"
+
+
+// Submits multiple emails at once for processing. This is the preferred method for processing multiple emails. It can accept and process up to 300 emails in a single request (if you need more capacity than that, please let us know). Once submitted, the result of this batch request can be supplied either via webhooks or via our batch status polling endpoint (see below).
+
+@name("/v2/verification/emails.json")
+POST "https://{{baseUrl}}/v2/verification/emails.json"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "emails": [
+        "<string>",
+        "<string>"
+    ],
+    "webhookUrl": "<string>"
+})
+
+
+// GET the state and result of a previous batch request, where {id} represents the “batchId” field that was present in the result of the batch submit request above. You can also receive these results by webhook.
+// If the batch ID does not exist (or has been removed from our system), the status code will be 404.
+// There is no guaranteed amount of time it will take for a batch request to be completed, but 1 - 10 minutes is the average depending on the type and amount of emails.
+
+@name("/v2/verification/emails/:batchId")
+GET "https://{{baseUrl}}/v2/verification/emails/:batchId"
+
+
+

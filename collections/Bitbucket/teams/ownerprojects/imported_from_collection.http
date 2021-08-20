@@ -1,0 +1,126 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+@name("/teams/:owner/projects/")
+GET "https://{{baseUrl}}/teams/:owner/projects/"
+
+
+// Creates a new project.
+// 
+// Note that the avatar has to be embedded as either a data-url
+// or a URL to an external image as shown in the examples below:
+// 
+// ```
+// $ body=$(cat << EOF
+// {
+//     "name": "Mars Project",
+//     "key": "MARS",
+//     "description": "Software for colonizing mars.",
+//     "links": {
+//         "avatar": {
+//             "href": "data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/..."
+//         }
+//     },
+//     "is_private": false
+// }
+// EOF
+// )
+// $ curl -H "Content-Type: application/json" \
+//        -X POST \
+//        -d "$body" \
+//        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq .
+// {
+//   // Serialized project document
+// }
+// ```
+// 
+// or even:
+// 
+// ```
+// $ body=$(cat << EOF
+// {
+//     "name": "Mars Project",
+//     "key": "MARS",
+//     "description": "Software for colonizing mars.",
+//     "links": {
+//         "avatar": {
+//             "href": "http://i.imgur.com/72tRx4w.gif"
+//         }
+//     },
+//     "is_private": false
+// }
+// EOF
+// )
+// $ curl -H "Content-Type: application/json" \
+//        -X POST \
+//        -d "$body" \
+//        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq .
+// {
+//   // Serialized project document
+// }
+// ```
+
+@name("/teams/:owner/projects/")
+POST "https://{{baseUrl}}/teams/:owner/projects/"
+"Content-Type": "application/json"
+json({
+    "type": "sunt est",
+    "created_on": "<dateTime>",
+    "description": "<string>",
+    "is_private": "<boolean>",
+    "key": "<string>",
+    "links": {
+        "avatar": {
+            "href": "<uri>"
+        },
+        "html": {
+            "href": "<uri>"
+        }
+    },
+    "name": "<string>",
+    "owner": {
+        "created_on": "1982-04-12T22:25:45.182Z",
+        "display_name": "ea reprehenderit e",
+        "links": {
+            "avatar": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "followers": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "following": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "html": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "repositories": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "self": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        },
+        "username": "qm",
+        "uuid": "in Ut sunt et",
+        "website": "quis ut commodo pariatur"
+    },
+    "updated_on": "<dateTime>",
+    "uuid": "<string>"
+})
+
+
+

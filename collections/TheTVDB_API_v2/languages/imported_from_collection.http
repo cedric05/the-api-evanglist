@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// All available languages. These language abbreviations can be used in the `Accept-Language` header for routes that return translation records.
+
+@name("languages.get")
+GET "https://{{baseUrl}}/languages"
+
+
+// Information about a particular language, given the language ID.
+
+@name("languages.id.get")
+GET "https://{{baseUrl}}/languages/:id"
+? "No Name"= "<string>"
+
+
+

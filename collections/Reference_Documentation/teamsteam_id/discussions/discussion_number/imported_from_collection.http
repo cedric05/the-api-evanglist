@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get a discussion](https://developer.github.com/v3/teams/discussions/#get-a-discussion) endpoint.
+// 
+// Get a specific discussion on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+
+@name("Get a discussion (Legacy)")
+GET "https://{{baseUrl}}/teams/:team_id/discussions/:discussion_number"
+
+
+// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a discussion](https://developer.github.com/v3/teams/discussions/#update-a-discussion) endpoint.
+// 
+// Edits the title and body text of a discussion post. Only the parameters you provide are updated. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+
+@name("Update a discussion (Legacy)")
+PATCH "https://{{baseUrl}}/teams/:team_id/discussions/:discussion_number"
+"Content-Type": "application/json"
+json({
+    "title": "<string>",
+    "body": "<string>"
+})
+
+
+// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a discussion`](https://developer.github.com/v3/teams/discussions/#delete-a-discussion) endpoint.
+// 
+// Delete a discussion from a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+
+@name("Delete a discussion (Legacy)")
+DELETE "https://{{baseUrl}}/teams/:team_id/discussions/:discussion_number"
+
+
+

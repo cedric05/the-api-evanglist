@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-882aeff3-f3ce-41f3-bede-f8ba9ccfddd2.postman_collection.json
+
+// Searches active and deleted domain names that match a query string
+
+@name("Domain Search")
+GET "https://{{baseUrl}}/domain-search/"
+? "query"= "<string>"
+? "exclude_query"= "<string>"
+? "max_length"= "<string>"
+? "min_length"= "<string>"
+? "has_hyphen"= "<string>"
+? "has_number"= "<string>"
+? "active_only"= "<string>"
+? "deleted_only"= "<string>"
+? "anchor_left"= "<string>"
+? "anchor_right"= "<string>"
+? "page"= "<string>"
+
+
+

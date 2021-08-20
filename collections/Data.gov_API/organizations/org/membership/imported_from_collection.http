@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// List membership requests for a given organization
+
+@name("Get Organizations Org Membership")
+GET "https://{{baseUrl}}/organizations/:org/membership/"
+? "status"= "<string>"
+
+
+

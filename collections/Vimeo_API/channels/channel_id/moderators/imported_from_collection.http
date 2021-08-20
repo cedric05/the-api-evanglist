@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method removes multiple moderators from the specified channel.
+
+@name("Remove a list of channel moderators")
+DELETE "https://{{baseUrl}}/channels/:channel_id/moderators"
+
+
+// This method gets a single moderator of the specified channel.
+
+@name("Get a specific channel moderator")
+GET "https://{{baseUrl}}/channels/:channel_id/moderators/:user_id"
+
+
+

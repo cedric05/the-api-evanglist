@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Fetch OverOps live processes report
+
+@name("List agents and collectors") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/overops-status"
+? "connected"= "true"
+
+
+// Fetch collectors live processes report
+
+@name("List collectors") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/overops-status/collectors"
+? "connected"= "true"
+
+
+

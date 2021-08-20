@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get info about an APM Resource belonging to a given Deployment.
+
+@name("Get Deployment APM Resource Info") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/:deployment_id/apm/:ref_id"
+? "show_metadata"= "false"
+? "show_plans"= "true"
+? "show_plan_logs"= "false"
+? "show_plan_history"= "false"
+? "show_plan_defaults"= "false"
+? "show_settings"= "false"
+
+
+// Reset the token of an APM resource.
+
+@name("Reset the secret token for an APM resource.") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/apm/:ref_id/_reset-token"
+
+
+

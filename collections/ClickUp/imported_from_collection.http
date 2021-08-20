@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Get Access Token") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/oauth/token"
+? "client_id"= "qui ullamco consequat"
+? "client_secret"= "qui ullamco consequat"
+? "code"= "qui ullamco consequat"
+
+
+@name("Get Authorized User") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/user"
+
+
+@name("Start a time entry") : "base-inherit-auth"
+POST "https://ivan-dev-api.clickup.com/api/v2/team/300702/time_entries/start/:timer_id"
+
+
+// Please paste webhook_id from previously created webhook for continuity
+
+@name("Delete a Webhook") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/webhook/webhook_id"
+"Content-Type": "application/json"
+
+
+

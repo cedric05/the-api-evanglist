@@ -1,0 +1,233 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c1768622-1cf0-492c-bb59-036ee9d75638.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("", "")
+
+
+@name("Api Healthcheck") : "base-inherit-auth"
+GET "https://{{POLICY-API-URL}}/policy/api/v1/healthcheck"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+@name("Create Authorization Policy Type") : "base-inherit-auth"
+POST "https://{{POLICY-API-URL}}/policy/api/v1/policytypes"
+basicauth("healthcheck", "zb!XztG34")
+"Accept": "application/yaml"
+"Content-Type": "application/yaml"
+data('tosca_definitions_version: tosca_simple_yaml_1_1_0
+policy_types:
+    onap.policies.Authorization:
+        derived_from: tosca.policies.Root
+        version: 1.0.0
+        description: Example tutorial policy type for doing user authorization
+        properties:
+            user:
+                type: string
+                required: true
+                description: The unique user name
+            permissions:
+                type: list
+                required: true
+                description: A list of resource permissions
+                entry_schema:
+                    type: onap.datatypes.Tutorial
+data_types:
+    onap.datatypes.Tutorial:
+        derived_from: tosca.datatypes.Root
+        version: 1.0.0
+        properties:
+            entity:
+                type: string
+                required: true
+                description: The resource
+            permission:
+                type: string
+                required: true
+                description: The permission level
+                constraints:
+                    - valid_values: [read, write, delete]
+')
+
+
+@name("Create policies") : "base-inherit-auth"
+POST "https://{{POLICY-API-URL}}/policy/api/v1/policytypes/onap.policies.Authorization/versions/1.0.0/policies"
+basicauth("healthcheck", "zb!XztG34")
+"Accept": "application/yaml"
+"Content-Type": "application/yaml"
+data('tosca_definitions_version: tosca_simple_yaml_1_1_0
+topology_template:
+    policies:
+        -
+            onap.policy.tutorial.demo:
+                type: onap.policies.Authorization
+                type_version: 1.0.0
+                version: 1.0.0
+                metadata:
+                    policy-id: onap.policy.tutorial.demo
+                    policy-version: 1
+                properties:
+                    user: demo
+                    permissions:
+                        -
+                            entity: foo
+                            permission: read
+                        -
+                            entity: foo
+                            permission: write
+        -
+            onap.policy.tutorial.audit:
+                type: onap.policies.Authorization
+                version: 1.0.0
+                type_version: 1.0.0
+                metadata:
+                    policy-id: onap.policy.tutorial.bar
+                    policy-version: 1
+                properties:
+                    user: audit
+                    permissions:
+                        -
+                            entity: foo
+                            permission: read
+')
+
+
+@name("PAP Healthcheck") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/healthcheck"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+@name("PAP Get PDPs") : "base-inherit-auth"
+GET "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps"
+basicauth("healthcheck", "zb!XztG34")
+"Accept": "application/json"
+"Content-Type": "application/json"
+
+
+// This is an API to change the current state of a PdpGroup (example - "defaultGroup") resulting in changing state of all the PDP instances registered with the PdpGroup. As of now, the allowed states are ACTIVE and PASSIVE.
+
+@name("PdpGroup State Change PASSIVE") : "base-inherit-auth"
+PUT "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/groups/defaultGroup"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+? "state"= "PASSIVE"
+
+
+// This is an API to delete a specific PdpGroup (example - "SampleGroup") currently available in Policy DB, resulting in removing all the PDP instances registered with the group.
+
+@name("Delete PdpGroup") : "base-inherit-auth"
+DELETE "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/groups/defaultGroup"
+basicauth("healthcheck", "zb!XztG34")
+"Accept": "application/json"
+"Content-Type": "application/json"
+
+
+// This is a generic API to create/update PdpGroups in Policy DB. However, the supportedPolicyTypes field of PdpSubGroup cannot be changed once created.
+
+@name("Create/Update PdpGroup") : "base-inherit-auth"
+POST "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/groups/batch"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "groups": [
+        {
+            "name": "defaultGroup",
+            "pdpGroupState": "ACTIVE",
+            "properties": {},
+            "pdpSubgroups": [
+                {
+                    "pdpType": "xacml",
+                    "desiredInstanceCount": 1,
+                    "properties": {},
+                    "supportedPolicyTypes": [
+                        {
+                            "name": "onap.policies.Authorization",
+                            "version": "1.0.0"
+                        }
+                    ],
+                    "policies": []
+                }
+            ]
+        }
+    ]
+})
+
+
+@name("Simple Deploy Policy - onap.policy.tutorial.demo") : "base-inherit-auth"
+POST "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/policies"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "policies": [
+        {
+            "policy-id": "onap.policy.tutorial.demo",
+            "policy-version": "1.0.0"
+        },
+        {
+            "policy-id": "onap.policy.tutorial.audit",
+            "policy-version": "1.0.0"
+        }
+    ]
+})
+
+
+@name("Dmaap Simulator - Policy Update Notification")
+GET "https://{{DMAAP-URL}}/events/POLICY-NOTIFICATION/group/id"
+"Content-Type": "application/json"
+"Accept": "application/json"
+? "timeout"= "5000"
+
+
+
+@name("Xacml Healthcheck") : "base-inherit-auth"
+GET "https://{{POLICY-XACML-URL}}/policy/pdpx/v1/healthcheck"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+@name("Xacml Statistics") : "base-inherit-auth"
+GET "https://{{POLICY-XACML-URL}}/policy/pdpx/v1/statistics"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+@name("Xacml Decision - Authorization policy-type") : "base-inherit-auth"
+POST "https://{{POLICY-XACML-URL}}/policy/pdpx/v1/decision"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "ONAPName": "TutorialPEP",
+    "ONAPComponent": "TutorialPEPComponent",
+    "ONAPInstance": "TutorialPEPInstance",
+    "requestId": "unique-request-id-tutorial",
+    "action": "authorize",
+    "resource": {
+        "user": "audit",
+        "entity": "foo",
+        "permission": "read"
+    }
+})
+
+
+@name("Simple Undeploy Policy") : "base-inherit-auth"
+DELETE "https://{{POLICY-PAP-URL}}/policy/pap/v1/pdps/policies/onap.policy.tutorial.demo"
+basicauth("healthcheck", "zb!XztG34")
+"Accept": "application/json"
+"Content-Type": "application/json"
+
+
+

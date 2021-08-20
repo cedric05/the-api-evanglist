@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get an individual table metadata
+
+@name("Get an individual table metadata") : "base-inherit-auth"
+GET "https://{{baseUrl}}/metadata/data/sources/:owner/:sourceid/tables/:tableid"
+
+
+// Replace an existing table
+
+@name("Replace an existing table") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/metadata/data/sources/:owner/:sourceid/tables/:tableid"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "Aid Option"
+    ],
+    "title": "crypto.snowflake",
+    "typeLabel": "Tableau dashboard",
+    "description": "Aid given to charity is an option that can be exercised by individuals and corporations",
+    "tags": [
+        "HumanitarianAid"
+    ],
+    "properties": {}
+})
+
+
+// Delete a table.
+
+@name("Delete a table") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/metadata/data/sources/:owner/:sourceid/tables/:tableid"
+
+
+// Update an existing table.
+
+@name("Update an existing table") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/metadata/data/sources/:owner/:sourceid/tables/:tableid"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "Aid Option"
+    ],
+    "title": "crypto.snowflake",
+    "typeLabel": "Tableau dashboard",
+    "description": "Aid given to charity is an option that can be exercised by individuals and corporations",
+    "tags": [
+        "HumanitarianAid"
+    ],
+    "properties": {}
+})
+
+
+

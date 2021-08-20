@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Medias.
+
+@name("medias")
+GET "https://{{baseUrl}}/rest/v1/media-files"
+
+
+// Assuming that the given code is the code of an existing media file
+
+@name("media")
+GET "https://{{baseUrl}}/rest/v1/media-files/d/d/b/6/ddb6ad393f81503b6be7380785e3b32bbd28cd08_test.png"
+
+
+

@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Get properties for all entity types
+
+@name("Get all properties")
+GET "https://{{baseUrl}}/api/v1/properties"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Create a new property
+
+@name("Create property")
+POST "https://{{baseUrl}}/api/v1/properties"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "sourceType": "company",
+    "label": "in ex",
+    "description": "Excepteur laborum in commodo non",
+    "group": "sunt minim dolor quis",
+    "fieldType": "checkbox",
+    "options": [
+        {
+            "description": "magna veniam eiusmod",
+            "label": "commodo Lorem exercitation irure",
+            "hidden": false,
+            "value": "esse sunt"
+        },
+        {
+            "description": "a",
+            "label": "ea sunt",
+            "hidden": true,
+            "value": "ipsum quis"
+        }
+    ],
+    "required": true
+})
+
+
+// Delete multiple properties by id
+
+@name("Delete multiple properties")
+DELETE "https://{{baseUrl}}/api/v1/properties"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Update multiple properties by id
+
+@name("Bulk properties updating")
+PUT "https://{{baseUrl}}/api/v1/properties"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "label": "anim",
+    "description": "in Lorem ipsum",
+    "group": "non commodo",
+    "sourceType": "companies"
+})
+
+
+

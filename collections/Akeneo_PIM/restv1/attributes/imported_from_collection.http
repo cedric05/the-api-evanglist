@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Attributes.
+
+@name("attributes")
+GET "https://{{baseUrl}}/rest/v1/attributes"
+
+
+// Assuming that the given code is the code of an existing attribute
+
+@name("attribute")
+GET "https://{{baseUrl}}/rest/v1/attributes/auto_exposure"
+
+
+

@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Search Subscriptions")
+GET "https://{{baseUrl}}/subscriptions/"
+? "Email"= "<string>"
+? "DeliveredCode"= "<string>"
+? "AvangateCustomerReference"= "<integer>"
+? "ExternalCustomerReference"= "<string>"
+? "Aggregate"= "<string>"
+? "SubscriptionEnabled"= "<boolean>"
+? "RecurringEnabled"= "<boolean>"
+? "ProductCodes"= "<string>"
+? "CountryCodes"= "<string>"
+? "PurchasedAfter"= "<string>"
+? "PurchasedBefore"= "<string>"
+? "ExpireAfter"= "<string>"
+? "ExpireBefore"= "<string>"
+? "RenewedAfter"= "<string>"
+? "RenewedBefore"= "<string>"
+? "NotificationAfter"= "<string>"
+? "NotificationBefore"= "<string>"
+? "ModifiedAfter"= "<string>"
+? "ModifiedBefore"= "<string>"
+? "LifetimeSubscription"= "<string>"
+? "Type"= "<string>"
+? "Page"= "<integer>"
+? "Limit"= "<integer>"
+
+
+

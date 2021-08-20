@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3d32f4d3-5b9d-4d42-8b63-a468c27a2f9e.postman_collection.json
+
+// <p>Let’s get started by using a single <code>format</code> parameter to understand how these parameters function.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#using-a-single-parameter>Using a Single Parameter</a> API Reference document
+
+@name(" Format Parameter")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>Let’s look at a few sample GraphQL queries that make use of multiple parameters.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#using-multiple-parameters>Using Multiple Parameters</a> API Reference document
+
+@name(" Width and Height Parameters")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+// <p>To place one image on top of another, use the <code>overlay</code> parameter. In addition, use the <code>overlay_align</code> parameter to define the position of the overlay image.<br><p>To use the API Request, you will need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment. Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#authentication">Authentication</a>.</p>
+// <p></p>
+// <p></p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/#using-multiple-parameters>Using Multiple Parameters</a> API Reference document
+
+@name(" Overlay and Overlay Align Parameters")
+POST "https://{{base_url}}/stacks/{{api_key}}"
+"access_token": "{{access_token}}"
+? "environment"= "{{environment}}"
+
+
+
+

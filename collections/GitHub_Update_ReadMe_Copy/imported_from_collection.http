@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5a390a1b-e6b0-45e7-b6c8-8df26773d79c.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{bearer_token}}"
+
+
+// List public events
+
+@name("Latest README") : "base-inherit-auth"
+GET "https://api.github.com/repos/:owner/:repo/contents/:path"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+data('{
+  "message": "Updating README.md",
+  "committer": {
+    "name": "Monalisa Octocat",
+    "email": "octocat@github.com"
+  },
+  "content": "bXkgbmV3IGZpbGUgY29udGVudHM="
+}')
+
+
+// List public events
+
+@name("Change README") : "base-inherit-auth"
+POST "https://postman-echo.com/post"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+data('# API Evangelist 
+
+Working to make sense of the technology, business and politics of APIs.
+
+The website no longer runs on GitHub, but I am keeping this repository up to manage the conversation and other details around the operation of the network of sites.
+
+Feel free to submit issues, and contribute any links via GitHub issues, Twitter, or email.
+
+URL: http://apievangelist.com Email: info@apievangelist.com Twitter: @apievangelist Github: @apievangelist')
+
+
+// List public events
+
+@name("Publish README") : "base-inherit-auth"
+PUT "https://api.github.com/repos/:owner/:repo/contents/:path"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+data('{
+  "message": "Updating the README",
+  "sha": "{{sha}}",
+  "committer": {
+    "name": "Kin Lane",
+    "email": "kinlane@gmail.com.com"
+  },
+  "content": "{{github_readme_encoded}}"
+}')
+
+
+

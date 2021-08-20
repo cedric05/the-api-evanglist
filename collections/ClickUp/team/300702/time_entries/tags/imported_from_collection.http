@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Remove tags from timer entry") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/team/300702/time_entries/tags"
+"Content-Type": "application/json"
+json({
+    "time_entry_ids": [
+        2004673344540003600
+    ],
+    "tags": [
+        {
+            "name": "josh1",
+            "tag_bg": "#BF55EC",
+            "tag_fg": "#BF55EC"
+        }
+    ]
+})
+
+
+@name("Change tag names from time entries") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/team/300702/time_entries/tags"
+"Content-Type": "application/json"
+json({
+    "name": "joshy",
+    "new_name": "MAMA",
+    "tag_bg": "#000000",
+    "tag_fg": "#000000"
+})
+
+
+

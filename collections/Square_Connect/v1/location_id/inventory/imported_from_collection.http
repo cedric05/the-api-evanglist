@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Provides inventory information for all of a merchant's inventory-enabled item variations.
+
+@name("Get Location Inventory")
+GET "https://{{baseUrl}}/v1/:location_id/inventory"
+? "limit"= "<integer>"
+? "batch_token"= "<string>"
+
+
+// Adjusts an item variation's current available inventory.
+
+@name("Post Location Inventory Variation")
+POST "https://{{baseUrl}}/v1/:location_id/inventory/:variation_id"
+
+
+

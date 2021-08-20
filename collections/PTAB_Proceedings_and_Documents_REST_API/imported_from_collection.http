@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bf3ab025-e124-45c4-8365-ff0708180fce.postman_collection.json
+
+// Download all documents in one zip file for a given proceeding number
+
+@name("Download all documents of certain proceeding number in one zip file")
+GET "https://{{baseUrl}}/documents.zip/:proceedingNumber/download"
+
+
+// Return aggregations for Public PTAB Proceedings
+
+@name("Return aggregations for Public PTAB Proceedings")
+GET "https://{{baseUrl}}/proceedingAggregationData"
+? "proceedingFilingFromDate"= "<string>"
+? "proceedingFilingToDate"= "<string>"
+
+
+

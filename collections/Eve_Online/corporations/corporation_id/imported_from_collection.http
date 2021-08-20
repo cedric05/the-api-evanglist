@@ -1,0 +1,327 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Public information about a corporation
+// 
+// ---
+// Alternate route: `/v4/corporations/{corporation_id}/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get corporation information")
+GET "https://{{baseUrl}}/corporations/:corporation_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get a list of all the alliances a corporation has been a member of
+// 
+// ---
+// Alternate route: `/v2/corporations/{corporation_id}/alliancehistory/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get alliance history")
+GET "https://{{baseUrl}}/corporations/:corporation_id/alliancehistory/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Returns a list of blueprints the corporation owns
+// 
+// ---
+// Alternate route: `/v2/corporations/{corporation_id}/blueprints/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get corporation blueprints")
+GET "https://{{baseUrl}}/corporations/:corporation_id/blueprints/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Returns logs recorded in the past seven days from all audit log secure containers (ALSC) owned by a given corporation
+// 
+// ---
+// Alternate route: `/v2/corporations/{corporation_id}/containers/logs/`
+// 
+// ---
+// This route is cached for up to 600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get all corporation ALSC logs")
+GET "https://{{baseUrl}}/corporations/:corporation_id/containers/logs/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// List customs offices owned by a corporation
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/customs_offices/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/customs_offices/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/customs_offices/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("List corporation customs offices")
+GET "https://{{baseUrl}}/corporations/:corporation_id/customs_offices/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Return corporation hangar and wallet division names, only show if a division is not using the default name
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/divisions/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/divisions/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get corporation divisions")
+GET "https://{{baseUrl}}/corporations/:corporation_id/divisions/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return a corporation's facilities
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/facilities/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/facilities/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Factory_Manager
+
+@name("Get corporation facilities")
+GET "https://{{baseUrl}}/corporations/:corporation_id/facilities/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Statistics about a corporation involved in faction warfare
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/fw/stats/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/fw/stats/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/fw/stats/`
+// 
+// Alternate route: `/v2/corporations/{corporation_id}/fw/stats/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Overview of a corporation involved in faction warfare")
+GET "https://{{baseUrl}}/corporations/:corporation_id/fw/stats/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Get the icon urls for a corporation
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/icons/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/icons/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/icons/)
+
+@name("Get corporation icon")
+GET "https://{{baseUrl}}/corporations/:corporation_id/icons/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// List industry jobs run by a corporation
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/industry/jobs/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/industry/jobs/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/industry/jobs/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Factory_Manager
+
+@name("List corporation industry jobs")
+GET "https://{{baseUrl}}/corporations/:corporation_id/industry/jobs/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "include_completed"= "false"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Get a list of a corporation's kills and losses going back 90 days
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/killmails/recent/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/killmails/recent/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/killmails/recent/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get a corporation's recent kills and losses")
+GET "https://{{baseUrl}}/corporations/:corporation_id/killmails/recent/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Returns additional information about a corporation's members which helps tracking their activities
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/membertracking/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/membertracking/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Track corporation members")
+GET "https://{{baseUrl}}/corporations/:corporation_id/membertracking/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return the current shareholders of a corporation.
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/shareholders/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/shareholders/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/shareholders/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get corporation shareholders")
+GET "https://{{baseUrl}}/corporations/:corporation_id/shareholders/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Return corporation standings from agents, NPC corporations, and factions
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/standings/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/standings/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get corporation standings")
+GET "https://{{baseUrl}}/corporations/:corporation_id/standings/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Get a list of corporation structures. This route's version includes the changes to structures detailed in this blog: https://www.eveonline.com/article/upwell-2.0-structures-changes-coming-on-february-13th
+// 
+// ---
+// Alternate route: `/v3/corporations/{corporation_id}/structures/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Station_Manager
+// 
+// 
+// ---
+// [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/corporations/{corporation_id}/structures/)
+
+@name("Get corporation structures")
+GET "https://{{baseUrl}}/corporations/:corporation_id/structures/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Returns a corporation's titles
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/titles/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/titles/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get corporation titles")
+GET "https://{{baseUrl}}/corporations/:corporation_id/titles/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

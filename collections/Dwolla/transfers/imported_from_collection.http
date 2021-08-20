@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// Initiate a transfer for either an Account or Customer resource.nn### Request parametersnnParameter | Data Type | Parameter Type | Optional? | Descriptionn--------|---------|---------|--------|---------|n| _links | yes | object | A _links JSON object describing the desired `source` and `destination` of a transfer. [Reference the Source and Destination object to learn more](#source-and-destination-types) about possible values for `source` and `destination`. |n| amount | yes | object | An amount JS
+
+@name("Create A Transfer")
+POST "https://{{baseUrl}}/transfers"
+
+
+

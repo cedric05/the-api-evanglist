@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0419cf22-9e9d-4f97-874b-c93a4e6c3a53.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{bearer_token}}"
+
+
+// Search for GitHub users.
+
+@name("Search Users") : "base-inherit-auth"
+GET "https://kinlaneg-dxw55mmdpx5-apigcp.nimbella.io/api/github-search-users/search-users"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+? "q"= "postman"
+
+
+

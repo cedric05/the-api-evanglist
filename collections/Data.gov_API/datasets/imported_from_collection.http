@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// List or search all datasets
+
+@name("Get Datasets")
+GET "https://{{baseUrl}}/datasets/"
+? "sort"= "<>"
+? "geozone"= "<>"
+? "license"= "<string>"
+? "extra"= "<>"
+? "facets"= "<string>"
+? "format"= "<string>"
+? "page_size"= "<string>"
+? "q"= "<>"
+? "featured"= "<string>"
+? "tag"= "<>"
+? "temporal_coverage"= "<>"
+? "granularity"= "<string>"
+? "owner"= "<>"
+? "organization"= "<object>"
+? "badge"= "<object>"
+? "page"= "<string>"
+? "reuses"= "<string>"
+
+
+// List all available dataset badges and their labels
+
+@name("Get Datasets Badges")
+GET "https://{{baseUrl}}/datasets/badges/"
+
+
+// Checks that a URL exists and returns metadata
+
+@name("Get Datasets Checkurl")
+GET "https://{{baseUrl}}/datasets/checkurl/"
+? "url"= "<string>"
+? "group"= "<>"
+
+
+// List all available frequencies
+
+@name("Get Datasets Frequencies")
+GET "https://{{baseUrl}}/datasets/frequencies/"
+
+
+@name("Get Datasets Full")
+GET "https://{{baseUrl}}/datasets/full/"
+? "sort"= "<>"
+? "geozone"= "<>"
+? "license"= "<string>"
+? "extra"= "<>"
+? "facets"= "<string>"
+? "format"= "<string>"
+? "page_size"= "<string>"
+? "q"= "<>"
+? "featured"= "<string>"
+? "tag"= "<>"
+? "temporal_coverage"= "<>"
+? "granularity"= "<string>"
+? "owner"= "<>"
+? "organization"= "<object>"
+? "badge"= "<object>"
+? "page"= "<string>"
+? "reuses"= "<string>"
+
+
+// List all available licenses
+
+@name("Get Datasets Licenses")
+GET "https://{{baseUrl}}/datasets/licenses/"
+
+
+// Unfollow an object given its ID
+
+@name("Delete Datasets  Followers")
+DELETE "https://{{baseUrl}}/datasets/:id/followers/"
+
+
+

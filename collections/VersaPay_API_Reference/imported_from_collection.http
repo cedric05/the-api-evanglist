@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c0b81c98-7930-4b6a-9b69-98d8407da2e9.postman_collection.json
+
+// Clients, customers, or donors, for instance, can send your organization money directly from their bank account or credit card simply by clicking a link which displays a page with your account name allowing your customer to make a payment to you for the specified dollar amount:n<br>n`https://secure.versapay.com/send_money?api_token={your_api_token}&amount={dollar_amount_for_customer_to_pay}`n<br>nFunds will go to the fund destination passed in the to_fund parameter. By default, the funds will be 
+
+@name("Single Payment Hosted Checkout")
+GET "https://{{baseUrl}}/send_money"
+? "api_token"= "<>"
+? "amount"= "<get>"
+? "message"= "<get>"
+? "return_to"= "<>"
+? "link_url"= "<get>"
+? "pref"= "<>"
+? "to_fund"= "<get>"
+? "reference"= "<get>"
+? "locale"= "<get>"
+
+
+// Clients, customers, or donors, for instance, can initiate a pre-authorized debit agreement by clicking a link on your website or in an email.n<br>n`https://secure.versapay.com/authorize?api_token={your_api_token}&message={explanation_of_what_this_is_for}`n<br>n
+
+@name("Debit Agreement Hosted Checkout")
+GET "https://{{baseUrl}}/authorize"
+? "api_token"= "<>"
+? "message"= "<get>"
+? "return_to"= "<>"
+? "reference"= "<get>"
+
+
+

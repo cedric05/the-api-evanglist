@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-538b4bae-014b-4e31-9e7e-f206b0a4dc0c.postman_collection.json
+
+// This operation retrieves a Entity entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Entity by ID")
+GET "https://{{baseUrl}}/entity/:id"
+? "fields"= "ad dolor"
+
+
+// This operation updates partially a Entity entity.
+
+@name("Updates partially a Entity")
+PATCH "https://{{baseUrl}}/entity/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "@baseType": "consequat sint",
+    "@schemaLocation": "https://MhhogGZGFKMvfNQVCJFfHSSPaooeMa.gmglz",
+    "@type": "elit tempor commodo"
+})
+
+
+// This operation deletes a Entity entity.
+
+@name("Deletes a Entity")
+DELETE "https://{{baseUrl}}/entity/:id"
+
+
+

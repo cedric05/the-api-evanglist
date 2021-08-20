@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Get the records for the library item usage report
+
+@name("Get Library Item Usage Report")
+GET "https://{{baseUrl}}/library/usage/:mediaId"
+
+
+// Get the records for the library item usage report for Layouts
+
+@name("Get Library Item Usage Report for Layouts")
+GET "https://{{baseUrl}}/library/usage/layouts/:mediaId"
+
+
+

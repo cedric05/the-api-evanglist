@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Set new list of buckets for a type version manager
+
+@name("composer rest buckets type-version-manager partial update") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/composer/rest/buckets/type-version-manager/:id/"
+
+
+// Url Parameters:
+// 
+//     template: template_id
+//     title: document_title
+
+@name("Get template version managers") : "base-inherit-auth"
+GET "https://{{baseUrl}}/composer/rest/type-version-manager/global/"
+
+
+

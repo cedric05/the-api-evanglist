@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("App Definition") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/AppDefinition/"
+
+
+@name("App Definition Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/AppDefinition/{ID}/"
+
+
+@name("Describe App Definition") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/AppDefinition/describe/"
+
+
+

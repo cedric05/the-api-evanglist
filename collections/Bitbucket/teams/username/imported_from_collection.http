@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Gets the public information associated with a team.
+// 
+// If the team's profile is private, `location`, `website` and
+// `created_on` elements are omitted.
+
+@name("/teams/:username")
+GET "https://{{baseUrl}}/teams/:username"
+
+
+// Returns the list of accounts that are following this team.
+
+@name("/teams/:username/followers")
+GET "https://{{baseUrl}}/teams/:username/followers"
+
+
+// Returns the list of accounts this team is following.
+
+@name("/teams/:username/following")
+GET "https://{{baseUrl}}/teams/:username/following"
+
+
+// All members of a team.
+// 
+// Returns all members of the specified team. Any member of any of the
+// team's groups is considered a member of the team. This includes users
+// in groups that may not actually have access to any of the team's
+// repositories.
+// 
+// Note that members using the "private profile" feature are not included.
+
+@name("/teams/:username/members")
+GET "https://{{baseUrl}}/teams/:username/members"
+
+
+// All repositories owned by a user/team. This includes private
+// repositories, but filtered down to the ones that the calling user has
+// access to.
+
+@name("/teams/:username/repositories")
+GET "https://{{baseUrl}}/teams/:username/repositories"
+
+
+

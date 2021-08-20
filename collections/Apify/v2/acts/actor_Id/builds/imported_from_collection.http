@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets the list of builds of a specific actor. The response is a JSON with the list of objects where each objectncontains basic information about a single build.nnThe endpoint supports pagination using the `limit` and `offset` parameters and it will not return more than 1000 records.nnBy default, the records are sorted by the `startedAt` field in ascending order,ntherefore you can use pagination to incrementally fetch all builds while newnones are still being started. To sort the records in descen
+
+@name("Get list of builds")
+GET "https://{{baseUrl}}/v2/acts/:actorId/builds"
+? "token"= "<string>"
+? "offset"= "<number>"
+? "limit"= "<number>"
+? "desc"= "<boolean>"
+? "waitForFinish"= "<string>"
+? "version"= "<object>"
+? "useCache"= "<string>"
+? "betaPackages"= "<string>"
+? "tag"= "<string>"
+
+
+

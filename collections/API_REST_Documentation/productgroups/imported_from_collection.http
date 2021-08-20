@@ -1,0 +1,85 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// Extract information about the product groups you created for your account.
+// 
+// ***
+// 
+// **Method and URL**
+// 
+// **GET** `https://api.2checkout.com/rest/6.0/productgroups/`
+// 
+// ***
+// 
+// **Example URL**
+// 
+// `https://api.2checkout.com/rest/6.0/productgroups/`
+// 
+// ***
+// 
+// **Response**
+// 
+// 200 JSON
+// 
+// <table>
+// <tbody>
+// <tr>
+// <td>
+// <strong>ProductGroup</strong>
+// </td>
+// <td>
+// <strong>Array of objects</strong>
+// </td>
+// </tr>
+// </tbody>
+// </table>
+
+@name("Retrieve product groups")
+GET "https://{{baseUrl}}/productgroups/"
+
+
+// Extract information about a specific product group you created for your account.
+// 
+// ***
+// 
+// **Method and URL**
+// 
+// **GET** `https://api.2checkout.com/rest/6.0/productgroups/{PRODUCT_GROUP_CODE}/`
+// 
+// ***
+// 
+// **URL parameters**
+// 
+// <table><thead>
+// <tr>
+// <th>
+// Attributes
+// </th>
+// <th>
+// Type/Description
+// </th>
+// </tr>
+// </thead>
+// <tbody>
+// <tr>
+// <td>
+// <strong>ProductGroupCode</strong>
+// </td>
+// <td>
+// <strong>Required (string)</strong>
+// </td>
+// </tr>
+// <tr>
+// <td>
+// 
+// </td>
+// <td>
+// Unique, system-generated identifier assigned to product groups.
+// </td>
+
+@name("Retrieve a product group")
+GET "https://{{baseUrl}}/productgroups/:ProductGroupCode/"
+
+
+

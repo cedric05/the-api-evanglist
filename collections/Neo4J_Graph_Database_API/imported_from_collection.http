@@ -1,0 +1,374 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9fa18fe2-b498-4640-8e4d-b01e8705f5e1.postman_collection.json
+
+// create a Neo4j graph node
+
+@name("/createNode")
+POST "https://{{baseUrl}}/createNode"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "nodeGuid": "eu quis non",
+    "nodeName": "pariatur commodo",
+    "indexName": "adipisicing sed eiusmod",
+    "nodeProperties": [
+        {
+            "name": "ea fugiat",
+            "value": "ut Lorem exercitation et fugiat"
+        },
+        {
+            "name": "voluptate a",
+            "value": "ut ipsum aliquip"
+        }
+    ],
+    "nodeLabels": [
+        {
+            "label": "sed re"
+        },
+        {
+            "label": "comm"
+        }
+    ]
+})
+
+
+// check if a node exists. if a node exists, return exist node, else, create a Neo4j graph node
+
+@name("/checkOrCreateNode")
+POST "https://{{baseUrl}}/checkOrCreateNode"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "nodeGuid": "nulla ipsum",
+    "nodeName": "laboris magna consequat",
+    "checkLabel": "minim cillum nulla Excepteur sint",
+    "checkPropertyName": "nostrud nulla deserunt nisi et",
+    "checkPropertyValue": "officia laboris Duis mini",
+    "nodeProperties": [
+        {
+            "name": "officia dolor",
+            "value": "non velit exercitation Ut esse"
+        },
+        {
+            "name": "aliqua esse commodo",
+            "value": "nulla"
+        }
+    ],
+    "nodeLabels": [
+        {
+            "label": "reprehenderit veniam dolore ut"
+        },
+        {
+            "label": ""
+        }
+    ]
+})
+
+
+// when a node does not exist, it will create a Neo4j graph node. When a node exists, it will update node properties or labels.
+
+@name("/createOrUpdateNode")
+POST "https://{{baseUrl}}/createOrUpdateNode"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "nodeGuid": "consectetur sint nulla",
+    "nodeName": "labore",
+    "indexName": "magna esse",
+    "nodeProperties": [
+        {
+            "name": "fugiat ea ullamco culpa Lorem",
+            "value": "sit cupidatat"
+        },
+        {
+            "name": "qui",
+            "value": "in consectetur"
+        }
+    ],
+    "nodeLabels": [
+        {
+            "label": "mollit tempor et"
+        },
+        {
+            "label": "veniam enim velit aliqua in"
+        }
+    ]
+})
+
+
+// batch create a Neo4j graph nodes
+
+@name("/batchCreateOrUpdateNodes")
+POST "https://{{baseUrl}}/batchCreateOrUpdateNodes"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+data('"laboris ea consect"')
+
+
+// get a Neo4j graph node
+
+@name("/getNodeDetail/:nodeId")
+GET "https://{{baseUrl}}/getNodeDetail/:nodeId"
+"jwt": "ut proident"
+
+
+// get a Neo4j graph node
+
+@name("/getNodeByNodeGuid/:nodeGuid")
+GET "https://{{baseUrl}}/getNodeByNodeGuid/:nodeGuid"
+"jwt": "ut proident"
+
+
+// get a node with nodeGuid, and a property. The API will be used to check exitence of a node
+
+@name("/getNodeByLabelAndProperty")
+POST "https://{{baseUrl}}/getNodeByLabelAndProperty"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "checkLabel": "dolor irure",
+    "checkPropertyName": "ut deserunt sed sunt",
+    "checkPropertyValue": "sint eu"
+})
+
+
+// get all node labels
+
+@name("/getAllNodeLabels")
+GET "https://{{baseUrl}}/getAllNodeLabels"
+"jwt": "ut proident"
+
+
+// get all FAAST nodes
+
+@name("/getFaastNodes")
+GET "https://{{baseUrl}}/getFaastNodes"
+"jwt": "ut proident"
+? "indexName"= "ut proident"
+
+
+// batch create a Neo4j graph nodes
+
+@name("/getNodeListByNodeGuids")
+POST "https://{{baseUrl}}/getNodeListByNodeGuids"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+data('"et dolor aute"')
+
+
+// update a Neo4j graph node properties
+
+@name("/updateNodeProperties")
+POST "https://{{baseUrl}}/updateNodeProperties"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "nodeGuid": "tempor voluptate est",
+    "nodeProperties": [
+        {
+            "name": "dolor sint",
+            "value": "nisi"
+        },
+        {
+            "name": "Duis deser",
+            "value": "ut minim in pariatur"
+        }
+    ]
+})
+
+
+// update a Neo4j graph node labels
+
+@name("/updateNodeLabels")
+POST "https://{{baseUrl}}/updateNodeLabels"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "nodeGuid": "fugiat incididunt",
+    "indexName": "non eiusmod deserunt exercitation fugiat",
+    "nodeLabels": [
+        {
+            "label": "mollit culpa non deserunt"
+        },
+        {
+            "label": "laborum incididunt officia ut eu"
+        }
+    ]
+})
+
+
+// delete a Neo4j graph node
+
+@name("/deleteNodeByNodeId/:nodeId")
+DELETE "https://{{baseUrl}}/deleteNodeByNodeId/:nodeId"
+"jwt": "ut proident"
+
+
+// delete a Neo4j graph node
+
+@name("/deleteNodeByNodeGuid/:nodeGuid")
+DELETE "https://{{baseUrl}}/deleteNodeByNodeGuid/:nodeGuid"
+"jwt": "ut proident"
+
+
+// create a Neo4j graph relationship
+
+@name("/createRelationship")
+POST "https://{{baseUrl}}/createRelationship"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "beginNodeGuid": "velit ad",
+    "endNodeGuid": "amet magna incididunt reprehenderit",
+    "relationshipType": "elit",
+    "relationshipProperties": [
+        {
+            "name": "ea ipsum non",
+            "value": "nisi aute"
+        },
+        {
+            "name": "esse officia id minim",
+            "value": "do d"
+        }
+    ]
+})
+
+
+// create a Neo4j graph relationships
+
+@name("/batchCreateRelationships")
+POST "https://{{baseUrl}}/batchCreateRelationships"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+data('"dolore proident"')
+
+
+// get all relationship types
+
+@name("/getRelationshipTypes")
+GET "https://{{baseUrl}}/getRelationshipTypes"
+"jwt": "ut proident"
+
+
+// get a Neo4j graph relationship
+
+@name("/getRelationship/:relationshipId")
+GET "https://{{baseUrl}}/getRelationship/:relationshipId"
+"jwt": "ut proident"
+
+
+// get all relationships for Neo4j node.
+
+@name("/getNodeRelationships/:nodeGuid")
+GET "https://{{baseUrl}}/getNodeRelationships/:nodeGuid"
+"jwt": "ut proident"
+
+
+// query relationship with expected data format for a Neo4j node.
+
+@name("/queryNodeRelationships/:nodeGuid")
+GET "https://{{baseUrl}}/queryNodeRelationships/:nodeGuid"
+"jwt": "ut proident"
+
+
+// get a Neo4j node degree. The node degree is the number of relationships associated with a node.
+
+@name("/getNodeDegree/:nodeGuid")
+GET "https://{{baseUrl}}/getNodeDegree/:nodeGuid"
+"jwt": "ut proident"
+
+
+// update a Neo4j graph relationship
+
+@name("/updateRelationshipProperties")
+POST "https://{{baseUrl}}/updateRelationshipProperties"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "relationshipId": "Lo",
+    "relationshipProperties": [
+        {
+            "name": "ex eiusmod tempor",
+            "value": "sit culpa"
+        },
+        {
+            "name": "Ut incididunt laboris amet",
+            "value": "id in Excepteur commodo veniam"
+        }
+    ]
+})
+
+
+// create a Neo4j graph nodes and relationships with selected tables and columns
+
+@name("/populateDatabaseData")
+POST "https://{{baseUrl}}/populateDatabaseData"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "beginNodeTableName": "exercitation non s",
+    "endNodeTableName": "non dolor",
+    "relationshipType": "proident eu minim laborum",
+    "beginNodeRelationshipColumn": "ipsum dolor",
+    "endNodeRelationshipColumn": "voluptate aliquip est non",
+    "beginNodeColumns": [
+        {
+            "name": "occaecat amet mollit"
+        },
+        {
+            "name": "aliqua sunt"
+        }
+    ],
+    "endNodeColumns": [
+        {
+            "name": "incididunt aute Duis"
+        },
+        {
+            "name": "reprehenderit ut amet exercitation dolore"
+        }
+    ],
+    "maxRows": 90766088
+})
+
+
+// delete a Neo4j graph relationship
+
+@name("/deleteRelationship/:relationshipId")
+DELETE "https://{{baseUrl}}/deleteRelationship/:relationshipId"
+"jwt": "ut proident"
+
+
+// query Neo4j graph database with cypher query language
+
+@name("/queryGraphDatabase")
+POST "https://{{baseUrl}}/queryGraphDatabase"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "cypherQuery": "pr",
+    "queryParameters": [
+        {
+            "name": "adipisicing officia sunt reprehenderit",
+            "value": "mollit amet"
+        },
+        {
+            "name": "officia aute",
+            "value": "dolor proident"
+        }
+    ]
+})
+
+
+// delete all graph relationships and nodes
+
+@name("/cleanupGraphDatabase")
+POST "https://{{baseUrl}}/cleanupGraphDatabase"
+"jwt": "ut proident"
+"Content-Type": "application/json"
+json({
+    "label": "magna aute"
+})
+
+
+

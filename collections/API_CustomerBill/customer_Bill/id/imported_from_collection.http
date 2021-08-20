@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-70cbed27-4ba9-4a22-82b9-822ae0e61858.postman_collection.json
+
+// This operation retrieves a CustomerBill entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a CustomerBill by ID")
+GET "https://{{baseUrl}}/customerBill/:id"
+? "fields"= "veniam aliqua"
+
+
+// This operation updates partially a CustomerBill entity.
+
+@name("Updates partially a CustomerBill")
+PATCH "https://{{baseUrl}}/customerBill/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "billCycle": {
+        "id": "non ut ea voluptate",
+        "href": "in Lor",
+        "name": "velit sed anim adip",
+        "@baseType": "dolore qui aliquip non",
+        "@schemaLocation": "https://bYcoKjoEMjPoMMQcHIgX.ehmqVirZl3E8PIKHbbVst-MSOZaJn6kRbJiudWnlegkNyqj",
+        "@type": "ad incididunt laborum",
+        "@referredType": "et"
+    },
+    "state": "validated",
+    "@baseType": "nisi",
+    "@schemaLocation": "https://jxQvthuDN.yvqZrnN-tatwfw",
+    "@type": "irure eiusmod"
+})
+
+
+

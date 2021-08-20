@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4727ff8b-21cd-41e7-b532-19284cb5abdf.postman_collection.json
+
+// Get All Custom Fields for the selected company
+
+@name("Get All Custom Fields")
+GET "https://{{baseUrl}}/v2/companies/:companyId/customfields/:category"
+
+
+// The company-specific Open API endpoint allows the client to GET an Open API document for the Paylocity API that is customized with company-specific resource schemas. These customized resource schemas define certain properties as enumerations of pre-defined values that correspond to the company's setup with Web Pay. The customized schemas also indicate which properties are required by the company within Web Pay.<br  />To learn more about Open API, click [here](https://www.openapis.org/)
+
+@name("Get Company-Specific Open API Documentation")
+GET "https://{{baseUrl}}/v2/companies/:companyId/openapi"
+
+
+

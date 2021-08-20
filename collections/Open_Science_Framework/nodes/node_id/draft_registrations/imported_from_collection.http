@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// A paginated list of all of the draft registrations of a given node.nnDraft registrations contain the supplemental registration questions that accompany a registration. A registration is a frozen version of the project that can never be edited or deleted, but can be withdrawn.nnYour original project remains editable but will now have the draft registration linked to it.n#### PermissionsnOnly project administrators may view draft registrations.n#### ReturnsnReturns a JSON object containing `data` 
+
+@name("List all draft registrations")
+GET "https://{{baseUrl}}/nodes/:node_id/draft_registrations/"
+
+
+// Permanently deletes a draft registration. A draft that has already been registered cannot be deleted.n#### PermissionsnOnly project administrators may delete draft registrations.n#### ReturnsnIf the request is successful, no content is returned.nnIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes]() to understand why this request may have failed.
+
+@name("Delete a draft registration")
+DELETE "https://{{baseUrl}}/nodes/:node_id/draft_registrations/:draft_id/"
+
+
+

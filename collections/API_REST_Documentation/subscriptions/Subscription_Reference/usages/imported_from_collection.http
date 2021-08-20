@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Filter usages for a subscription")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/usages/"
+? "IntervalStart"= "<string>"
+? "IntervalEnd"= "<string>"
+? "Page"= "<integer>"
+? "Limit"= "<integer>"
+? "OptionCode"= "<string>"
+? "RenewalOrderReference"= "<string>"
+
+
+@name("Update a specific usage entry")
+PUT "https://{{baseUrl}}/subscriptions/:SubscriptionReference/usages/:UsageReference"
+
+
+

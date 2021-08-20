@@ -1,0 +1,90 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Creates an eNote for a closing.
+
+@name("Create eNote for Closing") : "base-inherit-auth"
+POST "https://{{baseUrl}}/close/closings/:id/enote"
+"Content-Type": "application/json"
+json({
+    "smartDocTemplateData": {
+        "fixedLoan": {
+            "formId": "3200e",
+            "scheduledFirstPaymentDate": "2018-03-14",
+            "paymentRemittanceDay": 3,
+            "lenderLoanId": "777777777",
+            "lienPriorityType": "FirstLien",
+            "noteRatePercent": 13.85,
+            "originalLoanAmount": 30000000,
+            "loanMaturityDate": "2048-12-13",
+            "originalPrincipalAndInterestPaymentAmount": 14460.45,
+            "lateChargeGracePeriod": 8,
+            "lateChargeRate": 13.45,
+            "lateChargeMaximumAmount": 20.15,
+            "conformingYearType": "Pre2010",
+            "propertyAddress": {
+                "city": "New York",
+                "state": "NY",
+                "postalCode": "10010",
+                "county": "New York",
+                "parsedStreetAddress": {
+                    "streetPrimaryNumberText": "123",
+                    "streetPreDirectionalText": "W",
+                    "streetName": "Hook",
+                    "streetSuffixText": "Road",
+                    "addressUnitDesignatorType": "Unit",
+                    "addressUnitIdentifier": "3C"
+                }
+            },
+            "notePayToAddress": {
+                "streetAddress": "1180 6th Avenue",
+                "city": "New York",
+                "state": "NY",
+                "postalCode": "10036"
+            },
+            "closingDocumentInfo": {
+                "executionDate": "2018-03-14",
+                "executionCity": "New York",
+                "executionState": "NY",
+                "agent": {
+                    "unparsedName": "Nelson and Nelson",
+                    "type": "Attorney",
+                    "contactName": "Matthew Nelson",
+                    "postalAddress": {
+                        "streetAddress": "403 W 49th Street",
+                        "city": "New York",
+                        "state": "NY",
+                        "postalCode": "10019"
+                    }
+                },
+                "lender": {
+                    "unparsedName": "Northstar Lending",
+                    "contactName": "Harold Osborn",
+                    "nmlsId": 665444
+                },
+                "loanOriginator": {
+                    "unparsedName": "Northstar Lending",
+                    "nmlsId": 353553
+                }
+            }
+        },
+        "MIN": "100012398765432127"
+    }
+})
+
+
+// Removes the eNote from the Closing to make way for a paper note.
+
+@name("Remove the eNote from a Closing") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/close/closings/:id/enote"
+
+
+

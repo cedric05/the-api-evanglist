@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-712034b2-265e-4ffc-a7a7-e49d61c6660a.postman_collection.json
+
+// Deletes a participant. The user itself will still remain but any state related to the project will be deleted. nIt might not be possible due to constraints from the products in the project to delete the participant. Howevernthis can only be determined at the time of the delete. If a delete fails the participant will have their inErrornflag set.n
+
+@name("Deletes a participant")
+DELETE "https://{{baseUrl}}/orgunits/:orgid/projects/:projectid/participants/${{participantId}}"
+
+
+// Activates a participant so that it can be usedn
+
+@name("Activate participant")
+POST "https://{{baseUrl}}/orgunits/:orgid/projects/:projectid/participants/${{participantId}}/activate"
+
+
+// Returns a single sign on link for the participant. The link is only usable once and should be used directly. The link expires after a few minutes.nnThis operation requires the *login link* permission.n
+
+@name("Participant login link")
+POST "https://{{baseUrl}}/orgunits/:orgid/projects/:projectid/participants/${{participantId}}/loginlink"
+
+
+

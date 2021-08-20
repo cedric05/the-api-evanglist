@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Gets a channel from the provided team name and channel name strings.n##### Permissionsn`read_channel` permission for the channel.n
+
+@name("Get a channel by name and team name")
+GET "https://{{baseUrl}}/teams/name/:team_name/channels/name/:channel_name"
+
+
+

@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets a summary of pending approval requests on tf server.
+
+@name("Gets a summary of pending approval requests on TF server")
+GET "https://{{baseUrl}}/approval-requests/summary"
+? "projectId"= "<put>"
+
+
+// Gets the association information for the given object/activity ids.
+
+@name("Gets the association information for the given object/activity ids")
+GET "https://{{baseUrl}}/associations"
+? "ids"= "<>"
+? "depth"= "<>"
+? "includeDependencies"= "<>"
+? "includeEvents"= "<>"
+? "includePhantoms"= "<>"
+? "limit"= "<>"
+
+
+// Check baseline permission for given project.
+
+@name("Check Baseline Permission for given project")
+GET "https://{{baseUrl}}/permission/:projectid/:folderPath/baseline"
+
+
+// Gets paginated project template list..
+
+@name("Gets paginated project template list.")
+GET "https://{{baseUrl}}/projecttemplates"
+? "sortby"= "<>"
+? "offset"= "<put>"
+? "count"= "<>"
+
+
+

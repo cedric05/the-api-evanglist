@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-139d2cf6-a45e-49f8-b258-0453deb0a5e1.postman_collection.json
+
+// Categories Details 
+
+@name("Categories Details")
+GET "https://{{baseUrl}}/categories/details.json"
+? "category"= "<string>"
+
+
+// Categories ListThreads 
+
+@name("Categories ListThreads")
+GET "https://{{baseUrl}}/categories/listThreads.json"
+? "category"= "<string>"
+? "cursor"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+
+
+// Categories ListPosts 
+
+@name("Categories ListPosts")
+GET "https://{{baseUrl}}/categories/listPosts.json"
+? "category"= "<string>"
+? "cursor"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "query"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+
+
+// Categories List 
+
+@name("Categories List")
+GET "https://{{baseUrl}}/categories/list.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+
+
+

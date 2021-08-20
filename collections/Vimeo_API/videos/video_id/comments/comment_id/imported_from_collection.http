@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method deletes the specified comment from a video.
+
+@name("Delete a video comment")
+DELETE "https://{{baseUrl}}/videos/:video_id/comments/:comment_id"
+
+
+// This method returns all the replies to the specified video comment.
+
+@name("Get all the replies to a video comment")
+GET "https://{{baseUrl}}/videos/:video_id/comments/:comment_id/replies"
+? "page"= "<string>"
+? "per_page"= "<string>"
+
+
+

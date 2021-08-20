@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// The decryption API endpoint can conditionally perform 3 tasks in one atomic call:n  * Decrypt Apple Pay Payment tokenn  * Create Credit Card Payment Method in Zuora with decrypted Apple Pay informationn  * Process Payment on a specified Invoice (optional)n
+
+@name("Create payment method decryption")
+POST "https://{{baseUrl}}/v1/payment-methods/decryption"
+
+
+

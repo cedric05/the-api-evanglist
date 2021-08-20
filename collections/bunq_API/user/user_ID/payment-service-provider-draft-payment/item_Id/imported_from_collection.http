@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Manage the PaymentServiceProviderDraftPayment's for a PISP.
+
+@name("READ Payment Service Provider Draft Payment for User")
+GET "https://{{baseUrl}}/user/:userID/payment-service-provider-draft-payment/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Manage the PaymentServiceProviderDraftPayment's for a PISP.
+
+@name("UPDATE Payment Service Provider Draft Payment for User")
+PUT "https://{{baseUrl}}/user/:userID/payment-service-provider-draft-payment/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "sender_iban": "<string>",
+    "counterparty_iban": "<string>",
+    "counterparty_name": "<string>",
+    "description": "<string>",
+    "amount": {
+        "currency": "Lorem labore",
+        "value": "qui fugiat Lorem in"
+    },
+    "sender_name": "<string>",
+    "status": "<string>"
+})
+
+
+

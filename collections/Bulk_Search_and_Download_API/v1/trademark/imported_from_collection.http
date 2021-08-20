@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c943980b-661f-4048-933f-76da45d62852.postman_collection.json
+
+@name("get Status 2")
+GET "https://{{baseUrl}}/v1/trademark/apistatus"
+
+
+// Return the application by application number and various other parameters.
+
+@name("Return the applications by applcation number and various other parameters.")
+GET "https://{{baseUrl}}/v1/trademark/documents"
+? "text"= "<string>"
+? "serialNumber"= "<string>"
+? "specimenDescription"= "<string>"
+? "filingDescription"= "<string>"
+? "filingBasis"= "<string>"
+? "name"= "<string>"
+? "street"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "country"= "<string>"
+? "classCode"= "<string>"
+? "goodsServices"= "<string>"
+? "start"= "<long>"
+? "rows"= "<long>"
+
+
+// Return the Trademark application by application attributes.
+
+@name("Return Trademark application by application attributes.")
+GET "https://{{baseUrl}}/v1/trademark/markImages"
+? "url"= "<string>"
+? "feature"= "ph"
+? "accuracy"= "0.05"
+? "metricSpaces"= "false"
+? "candidates"= "10000"
+? "serialNumber"= "<string>"
+
+
+

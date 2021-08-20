@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("License")
+POST "https://{{baseurl}}/images/licenses"
+"Content-Type": "application/json"
+? "subscription_id"= ""
+? "format"= ""
+? "size"= ""
+? "search_id"= ""
+json({
+    "images": [
+        {
+            "image_id": "123",
+            "subscription_id": "s34829324"
+        }
+    ]
+})
+
+
+@name("List licenses")
+GET "https://{{baseurl}}/images/licenses"
+? "image_id"= ""
+? "license"= ""
+? "page"= ""
+? "per_page"= ""
+? "sort"= ""
+
+
+@name("Redownload")
+POST "https://{{baseurl}}/images/licenses/:id/downloads"
+"Content-Type": "application/json"
+json({
+    "size": "small"
+})
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Finds all favorite listings for a user
+
+@name("Get Users User Favorites Listings")
+GET "https://{{baseUrl}}/users/:user_id/favorites/listings"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Finds a favorite listing for a user
+
+@name("Get Users User Favorites Listings Listing")
+GET "https://{{baseUrl}}/users/:user_id/favorites/listings/:listing_id"
+
+
+

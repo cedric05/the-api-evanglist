@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4727ff8b-21cd-41e7-b532-19284cb5abdf.postman_collection.json
+
+// New Employee API sends new employee data directly to Web Pay. Companies who use the New Hire Template in Web Pay may require additional fields when hiring employees. New Employee API Requests will honor these required fields.
+
+@name("Add new employee")
+POST "https://{{baseUrl}}/v2/companies/:companyId/employees"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This REST API reference describes how to retrieve basic information about a customer account.nnThis REST call is a quick retrieval that doesn't include the account's subscriptions, invoices, payments, or usage details. Use Get account summary to get more detailed information about an account.n
+
+@name("Get account")
+GET "https://{{baseUrl}}/v1/accounts/:account-key"
+
+
+// This REST API reference describes how to retrieve detailed information about the specified customer account.nnThe response includes the account information and a summary of the account???s subscriptions, invoices, payments, and usages for the last six recently updated subscriptions.nn## Notes nReturns only the six most recent subscriptions based on the subscription updatedDate. Within those subscriptions, there may be many rate plans and many rate plan charges. These items are subject to the max
+
+@name("Get account summary")
+GET "https://{{baseUrl}}/v1/accounts/:account-key/summary"
+
+
+

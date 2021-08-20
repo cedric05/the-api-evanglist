@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d90fe3bc-a342-4867-915e-44120619da60.postman_collection.json
+
+// Retrieves data about an individual SC2 profile.
+
+@name("Profile")
+GET "https://{{battle-net-host}}/sc2/legacy/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Retrieves data about an individual SC2 profile's ladders.
+
+@name("Ladders")
+GET "https://{{battle-net-host}}/sc2/legacy/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}/ladders"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns data about an individual SC2 profile's match history.
+
+@name("Match History")
+GET "https://{{battle-net-host}}/sc2/legacy/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}/matches"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns data about an individual SC2 ladder.
+
+@name("Ladder")
+GET "https://{{battle-net-host}}/sc2/legacy/ladder/{{sc2.region-id}}/{{sc2.ladder-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns data about the achievements available in SC2.
+
+@name("Achievements")
+GET "https://{{battle-net-host}}/sc2/legacy/data/achievements/{{sc2.region-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns data about the rewards available in SC2.
+
+@name("Rewards")
+GET "https://{{battle-net-host}}/sc2/legacy/data/rewards/{{sc2.region-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+

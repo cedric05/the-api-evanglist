@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns a full specification for the Vimeo API.
+
+@name("Get an API specification")
+GET "https://{{baseUrl}}/"
+? "openapi"= "<string>"
+
+
+// This method returns all available content ratings.
+
+@name("Get all content ratings")
+GET "https://{{baseUrl}}/contentratings"
+
+
+// This method returns all available Creative Commons licenses.
+
+@name("Get all Creative Commons licenses")
+GET "https://{{baseUrl}}/creativecommons"
+
+
+// This method returns all the video languages that Vimeo supports.
+
+@name("Get all languages")
+GET "https://{{baseUrl}}/languages"
+? "filter"= "<string>"
+
+
+// This method enables an app to notify the API that it is done with a token and that the token can be discarded.
+
+@name("Revoke the current access token")
+DELETE "https://{{baseUrl}}/tokens"
+
+
+// This method, in conjunction with our [Getting Started](https://developer.vimeo.com/api/guides/start) guide, cannhelp you learn how to use the Vimeo API.
+
+@name("Get started with the Vimeo API")
+GET "https://{{baseUrl}}/tutorial"
+
+
+

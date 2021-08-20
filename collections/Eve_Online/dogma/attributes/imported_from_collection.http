@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get a list of dogma attribute ids
+// 
+// ---
+// Alternate route: `/dev/dogma/attributes/`
+// 
+// Alternate route: `/legacy/dogma/attributes/`
+// 
+// Alternate route: `/v1/dogma/attributes/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get attributes")
+GET "https://{{baseUrl}}/dogma/attributes/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get information on a dogma attribute
+// 
+// ---
+// Alternate route: `/dev/dogma/attributes/{attribute_id}/`
+// 
+// Alternate route: `/legacy/dogma/attributes/{attribute_id}/`
+// 
+// Alternate route: `/v1/dogma/attributes/{attribute_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get attribute information")
+GET "https://{{baseUrl}}/dogma/attributes/:attribute_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

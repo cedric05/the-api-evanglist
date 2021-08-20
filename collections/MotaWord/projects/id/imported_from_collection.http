@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d4cf5606-be3b-4e27-b14f-77855e9137ad.postman_collection.json
+
+// Delete(cancel) a project.
+
+@name("Delete a project")
+DELETE "https://{{baseUrl}}/projects/:id"
+
+
+// Trigger a call to your callback URL related to this project.
+
+@name("Trigger a call to your callback URL related to this project.")
+GET "https://{{baseUrl}}/projects/:id/callback/:actionType"
+
+
+@name("Cancel your translation project")
+POST "https://{{baseUrl}}/projects/:id/cancel"
+
+
+@name("Launch your translation project")
+POST "https://{{baseUrl}}/projects/:id/launch"
+
+
+// Get the progress of an already launched project.
+
+@name("Get project progress")
+GET "https://{{baseUrl}}/projects/:id/progress"
+
+
+@name("Submit reports for a project")
+POST "https://{{baseUrl}}/projects/:id/reports"
+
+
+

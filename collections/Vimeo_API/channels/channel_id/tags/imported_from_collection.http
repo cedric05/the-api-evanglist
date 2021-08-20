@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method gets all the tags that have been added to the specified channel.
+
+@name("Get all the tags that have been added to a channel")
+GET "https://{{baseUrl}}/channels/:channel_id/tags"
+
+
+// This method removes a single tag from the specified channel.
+
+@name("Remove a tag from a channel")
+DELETE "https://{{baseUrl}}/channels/:channel_id/tags/:word"
+
+
+

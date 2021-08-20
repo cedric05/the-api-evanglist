@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Extract information about additional fields you set up for your account")
+GET "https://{{baseUrl}}/additionalfields/"
+? "Enabled"= "<boolean>"
+? "Required"= "<>"
+? "ApplyTo"= "<string>"
+? "Type"= "<string>"
+
+
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// Shows which group of GitHub users can interact with this organization and when the restriction expires. If there are no restrictions, you will see an empty response.
+
+@name("Get interaction restrictions for an organization")
+GET "https://{{baseUrl}}/orgs/:org/interaction-limits"
+
+
+// Temporarily restricts interactions to certain GitHub users in any public repository in the given organization. You must be an organization owner to set these restrictions.
+
+@name("Set interaction restrictions for an organization")
+PUT "https://{{baseUrl}}/orgs/:org/interaction-limits"
+"Content-Type": "application/json"
+json({
+    "limit": "<string>"
+})
+
+
+// Removes all interaction restrictions from public repositories in the given organization. You must be an organization owner to remove restrictions.
+
+@name("Remove interaction restrictions for an organization")
+DELETE "https://{{baseUrl}}/orgs/:org/interaction-limits"
+
+
+

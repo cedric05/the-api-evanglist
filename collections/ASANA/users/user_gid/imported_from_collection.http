@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-520eedaa-7e93-4d4f-b389-c0bf3c1f2f52.postman_collection.json
+
+// Returns the full user record for the single user with the provided ID.
+
+@name("Get Users User")
+GET "https://{{baseUrl}}/users/:user_gid"
+
+
+// Returns the compact records for all teams to which user is assigned.
+
+@name("Get Users User Teams")
+GET "https://{{baseUrl}}/users/:user_gid/teams"
+? "organization"= "<string>"
+
+
+

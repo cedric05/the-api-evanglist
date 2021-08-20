@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d4cf5606-be3b-4e27-b14f-77855e9137ad.postman_collection.json
+
+// Delete the document
+
+@name("Delete the document")
+DELETE "https://{{baseUrl}}/projects/:projectId/documents/:documentId"
+
+
+// Download a document
+
+@name("Download a document")
+GET "https://{{baseUrl}}/projects/:projectId/documents/:documentId/download"
+
+
+

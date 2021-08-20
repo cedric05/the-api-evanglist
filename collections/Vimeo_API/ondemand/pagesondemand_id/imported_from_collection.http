@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// Information about this method appears below.
+
+@name("Delete a draft of an On Demand page")
+DELETE "https://{{baseUrl}}/ondemand/pages/:ondemand_id"
+
+
+// This method gets all the users who have liked a particular video on an On Demand page.
+
+@name("Get all the users who have liked a video on an On Demand page")
+GET "https://{{baseUrl}}/ondemand/pages/:ondemand_id/likes"
+? "direction"= "<string>"
+? "filter"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "sort"= "<string>"
+
+
+

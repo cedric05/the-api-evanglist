@@ -1,0 +1,78 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92d5cb4e-531a-4563-a38b-410ea9d2acdc.postman_collection.json
+
+// San francisco 511 transit lines api.
+
+@name("Lines API")
+GET "https://{{baseUrl}}/lines"
+? "operator_id"= "<string>"
+
+
+// San francisco 511 transit transit patterns api.
+
+@name("Transit Patterns API")
+GET "https://{{baseUrl}}/patterns"
+? "api_key"= "<string>"
+? "operator_id"= "<string>"
+? "pattern_id"= "<string>"
+
+
+// San francisco 511 transit stops api.
+
+@name("Stops API")
+GET "https://{{baseUrl}}/stops"
+? "api_key"= "<string>"
+? "operator_id"= "<string>"
+
+
+// San francisco 511 transit stop monitoring api.
+
+@name("Stop Monitoring API")
+GET "https://{{baseUrl}}/StopMonitoring"
+? "agency"= "<string>"
+? "api_key"= "<string>"
+? "stopCode"= "<string>"
+
+
+// San francisco 511 transit stop timetable api.
+
+@name("Stop Timetable API")
+GET "https://{{baseUrl}}/stoptimetable"
+? "api_key"= "<string>"
+? "MonitoringRef"= "<string>"
+? "OperatorRef"= "<string>"
+
+
+// San francisco 511 general announcements api.
+
+@name("San Francisco 511 General Announcements API")
+GET "https://{{baseUrl}}/GeneralAnnouncements"
+? "api_key"= "<string>"
+
+
+// San francisco 511 transit stop places api.
+
+@name("Stop Places API")
+GET "https://{{baseUrl}}/stopPlaces"
+? "api_key"= "<string>"
+? "operator_id"= "<string>"
+
+
+// San francisco 511 vehicle monitoring api.
+
+@name("San Francisco 511 Vehicle Monitoring API")
+GET "https://{{baseUrl}}/VehicleMonitoring"
+? "agency"= "<string>"
+? "api_key"= "<string>"
+? "stopCode"= "<string>"
+
+
+// San francisco 511 transit operatorators api.
+
+@name("Operatorators API")
+GET "https://{{baseUrl}}/operators"
+? "api_key"= "<string>"
+
+
+

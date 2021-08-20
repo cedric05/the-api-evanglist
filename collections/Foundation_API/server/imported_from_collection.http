@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets teamforge server information.
+
+@name("Gets TeamForge server information")
+GET "https://{{baseUrl}}/server"
+
+
+// Gets the health of the ctf core.
+
+@name("Gets the health of the CTF core")
+GET "https://{{baseUrl}}/server/health"
+? "verbose"= "<>"
+? "thorough"= "<>"
+? "assumeactive"= "<>"
+
+
+// Sets/updates license key.
+
+@name("Sets/Updates license key")
+PUT "https://{{baseUrl}}/server/licensekey"
+
+
+// Gets valid license types.
+
+@name("Gets valid license types")
+GET "https://{{baseUrl}}/server/licensetypes"
+
+
+

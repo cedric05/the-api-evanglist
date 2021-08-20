@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cf05d8c7-fffb-4a7c-923b-c06517c2b783.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Creates a new user.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Create user") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users"
+"Content-Type": "application/json"
+json({
+    "username": "ex magna culpa labore",
+    "password": "nostrud consectetur",
+    "permissions": -67330571,
+    "name": "in sint aliqu",
+    "email": "velit"
+})
+
+
+// Returns a list of users.<p>Requires BASIC [16] user permissions. If the requesting user has ADMINISTRATOR [64] permissions, Tenable.io returns all attributes for individual user details. Otherwise, user details include only the `uuid`, `id`, `username`, and `email` attributes. See [Permissions](doc:permissions).</p>
+
+@name("List users") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users"
+
+
+

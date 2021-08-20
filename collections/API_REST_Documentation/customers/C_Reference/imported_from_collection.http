@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// ***
+// **Overview**
+// Retrieve customer information from the 2Checkout platform using either the 2Checkout Customer Reference or the External Customer Reference.
+
+@name("Working example of how to retreive a customer")
+GET "https://{{baseUrl}}/customers/:CReference/"
+
+
+// ***
+// 
+// **Overview**
+// 
+// Create Single Sign On links into 2Checkout myAccount based on customer references (IDs). Use either the 2Checkout Customer Reference or the External Customer Reference to identify specific customers.
+
+@name("Working example: SSO by customer reference")
+GET "https://{{baseUrl}}/customers/:CReference/account/:PageType/"
+? "Lang"= "<string>"
+? "ValidityTime"= "<string>"
+? "ValidationIp"= "<string>"
+
+
+// Generate tokenized payment links for returning customers, and display their previously used credit cards in the shopping cart, along with their prefilled billing information. 2Checkout attaches a unique token to links, designed to identify the returning shoppers and support the automatic extraction of payment data and billing information from the 2Checkout system. For example, you can generate <strong>single sign on in cart</strong> links for existing customers logged into your website based on 
+
+@name("Working example: SSO in cart")
+GET "https://{{baseUrl}}/customers/:CReference/cart/"
+? "Url"= "<string>"
+? "Lang"= "<string>"
+? "ValidityTime"= "<string>"
+? "ValidationIp"= "<string>"
+
+
+

@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// Fetch site activity, optionally filterd by user of org
+
+@name("Get Activity")
+GET "https://{{baseUrl}}/activity"
+? "organization"= "<object>"
+? "page"= "<string>"
+? "page_size"= "<string>"
+? "user"= "<object>"
+
+
+// Fetch metrics for an object given its ID
+
+@name("Get Metrics")
+GET "https://{{baseUrl}}/metrics/:id"
+? "start"= "<string>"
+? "cumulative"= "<>"
+? "end"= "<string>"
+? "day"= "<>"
+
+
+// List all current user pending notifications
+
+@name("Get Notifications")
+GET "https://{{baseUrl}}/notifications/"
+
+
+// The returned payload is a list of OEmbed formatted responses
+
+@name("Get Oembeds")
+GET "https://{{baseUrl}}/oembeds/"
+? "references"= "<>"
+
+
+// Suggest tags
+
+@name("Get Tags Suggest")
+GET "https://{{baseUrl}}/tags/suggest/"
+? "q"= "<>"
+? "size"= "<>"
+
+
+@name("Get Territory Suggest")
+GET "https://{{baseUrl}}/territory/suggest/"
+? "q"= "<>"
+? "size"= "<>"
+
+
+

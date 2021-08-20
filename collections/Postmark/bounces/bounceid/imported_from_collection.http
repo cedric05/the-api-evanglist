@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Get a single bounce")
+GET "https://{{baseUrl}}/bounces/:bounceid"
+
+
+@name("Activate a bounce")
+PUT "https://{{baseUrl}}/bounces/:bounceid/activate"
+
+
+@name("Get bounce dump")
+GET "https://{{baseUrl}}/bounces/:bounceid/dump"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17776046-ece2-4e9f-8598-d00e62122c30.postman_collection.json
+
+// Creates validation document using the request body, and returns the document created with unique identifier in Location header for reference. This is how validation data is submitted to BetterDoctor for addition to the API. The posted document must conform to BetterDoctor???s JSON schema for validation objects, see included model specification for more information. <br><h4 style='margin-bottom: 0px !important;'> Return Headers </h4> <div>Location: The uid of the created document. This can be use
+
+@name("Add a new record")
+POST "https://{{baseUrl}}/validations"
+? "user_key"= "<>"
+
+
+// Returns requested validation document. The endpoint is a conveniece method to check status and accepted data of a specific validation, like after creation of a validation. The response consist of raw data from the validation event and related validation information. <br><h4 style='margin-bottom: 0px !important;'> Return Headers </h4> <div>Last-Modified: Timestamp of the validation made.</div>
+
+@name("Retrieve a specific record")
+GET "https://{{baseUrl}}/validations/:uid"
+? "user_key"= "<>"
+
+
+

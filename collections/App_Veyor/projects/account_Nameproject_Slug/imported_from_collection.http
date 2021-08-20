@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-87030e81-ee2c-4c09-8477-6fa66d8714cc.postman_collection.json
+
+// Delete projects accountname projectslug.
+
+@name("Delete Projects Accountname Projectslug")
+DELETE "https://{{baseUrl}}/projects/:accountName/:projectSlug"
+
+
+// Get projects accountname projectslug artifacts artifactfilename.
+
+@name("Get Projects Accountname Projectslug Artifacts Artifactfilename")
+GET "https://{{baseUrl}}/projects/:accountName/:projectSlug/artifacts/:artifactFileName"
+
+
+// Get projects accountname projectslug branch buildbranch.
+
+@name("Get Projects Accountname Projectslug Branch Buildbranch")
+GET "https://{{baseUrl}}/projects/:accountName/:projectSlug/branch/:buildBranch"
+
+
+// Get projects accountname projectslug build buildversion.
+
+@name("Get Projects Accountname Projectslug Build Buildversion")
+GET "https://{{baseUrl}}/projects/:accountName/:projectSlug/build/:buildVersion"
+
+
+// Delete projects accountname projectslug buildcache.
+
+@name("Delete Projects Accountname Projectslug Buildcache")
+DELETE "https://{{baseUrl}}/projects/:accountName/:projectSlug/buildcache"
+
+
+// Get projects accountname projectslug deployments.
+
+@name("Get Projects Accountname Projectslug Deployments")
+GET "https://{{baseUrl}}/projects/:accountName/:projectSlug/deployments"
+
+
+// Get projects accountname projectslug history.
+
+@name("Get Projects Accountname Projectslug History")
+GET "https://{{baseUrl}}/projects/:accountName/:projectSlug/history"
+
+
+

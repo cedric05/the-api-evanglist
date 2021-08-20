@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c482753d-6677-4bf3-8016-18d78f3fecc5.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Query the admin2 reference table") : "base-inherit-auth"
+GET "https://{{baseUrl}}/geocode/18.0/admin2"
+? "countryFips"= "ipsum eiusmod dolore aliqua"
+? "admin1Code"= "ipsum eiusmod dolore aliqua"
+? "admin2Code"= "ipsum eiusmod dolore aliqua"
+? "admin2Name"= "ipsum eiusmod dolore aliqua"
+? "limit"= "100"
+? "offset"= "0"
+
+
+@name("Query the admin2 reference table by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/geocode/18.0/admin2/:id"
+
+
+

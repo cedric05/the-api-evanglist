@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b982553e-8975-4962-bc9d-a464c11c5f3a.postman_collection.json
+
+@name("Delete an existing Feed")
+DELETE "https://{{baseUrl}}/:username/feeds/:feed_key"
+? "No Name"= "<string>"
+
+
+// Returns more detailed feed record based on the feed key
+
+@name("Get detailed feed by feed key")
+GET "https://{{baseUrl}}/:username/feeds/:feed_key/details"
+? "No Name"= "<string>"
+
+
+

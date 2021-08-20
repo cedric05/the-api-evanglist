@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d7983dde-939d-40dc-b6dd-dc594d2c6781.postman_collection.json
+
+// Get a list of all datasets, optionally selected by a free-text query and/or facet filters. This endpoint supports paging using the limit parameter.
+// Search for datasets concerned with jeugdzorg: ``GET /datasets?q=jeugdzorg``
+// Get all datasets that have ``jeugdzorg`` as one of its themes:
+// ``GET /datasets?/properties/dct:theme/items=in=jeugdzorg``
+// Get all datasets that have ``jeugdzorg`` or ``ouderenzorg`` as one of their themes:
+// ``GET /datasets?/properties/dct:theme/items=in=jeugdzorg,ouderenzorg``
+// Get all datasets modified in January 2017:
+// ``GET /datasets?/properties/dct:modified=ge=2017-01-01&/properties/dct:modified=lt=2017-01-31``
+
+@name("/datasets")
+GET "https://{{baseUrl}}/datasets"
+? "q"= "dolor enim pariatur laborum"
+? "any_json_pointer"= "Excepteur in dolor"
+? "limit"= "-14407622"
+? "offset"= "-14407622"
+
+
+// Upload a new dataset and let the system generate an identifier.
+
+@name("/datasets")
+POST "https://{{baseUrl}}/datasets"
+"Content-Type": "application/json"
+json({
+    "dct:title": "}H }H",
+    "dct:description": "est ut quis esse dolore",
+    "ams:status": "gepland",
+    "dcat:distribution": [],
+    "overheidds:doel": "qui laborum in irure ad",
+    "ams:temporalUnit": "na",
+    "dct:language": "lang1:nl",
+    "ams:owner": "]O||V\\",
+    "dcat:contactPoint": {
+        "vcard:fn": "xb'Qbfe]m![YzctFW/n",
+        "vcard:hasEmail": "Aj3dr9I0pziV@SnGmABfaFudbTgTbrcua.dizu",
+        "vcard:hasURL": "http://ChvAwWUlNGgfWXbsSeevKRcL.dhnvbYdI2CxnQT0,bFUSygrdWmaJV03mcv9j"
+    },
+    "dct:publisher": {
+        "foaf:name": "H H H H",
+        "foaf:homepage": "http://UhzxtUjdKt.sugttW0",
+        "foaf:mbox": "WKoe6LV@EFJxWbggzzPWmVoKngf.cuzu"
+    },
+    "dcat:theme": [],
+    "dcat:keyword": [],
+    "ams:license": "unspec",
+    "ams:spatialDescription": "YP|zyo",
+    "ams:spatialUnit": "na",
+    "dcat:landingPage": "http://VtjcxjvZkNlCGhoBICej.tywlNxJQtQ48ZkDnwrz3lst7MUvxtgFyM9HIjNukmAJuL56APjQr",
+    "dct:accrualPeriodicity": "unknown",
+    "dct:source": "http://uHjZFeHOtcYQnDsKgUzkDqMxEUOdePN.gySL3rn-nfW7FcyS+guj8Hhg2i2UFz9JBi+1TrnbzGNCFZyFXw",
+    "dct:spatial": "Z%%ROI40zy#20FK})",
+    "dct:temporal": {
+        "time:hasBeginning": "0631-12-21T08:11:02",
+        "time:hasEnd": "4343-06-07T03:57:08Z"
+    },
+    "overheid:grondslag": "reprehenderit"
+})
+
+
+

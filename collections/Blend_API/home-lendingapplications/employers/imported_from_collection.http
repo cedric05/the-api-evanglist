@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Gets a summary of verified employers data for an Application
+
+@name("Get verified employers from an Application") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/employers/verified"
+? "applicationId"= "aa9fdaa2-7bf3-4411-a836-c2a46117f5c3"
+
+
+// Initiates an asynchronous attempt to reverify employers for the specified application and employers.
+
+@name("Initiate Reverification of Employers") : "base-inherit-auth"
+POST "https://{{baseUrl}}/home-lending/applications/employers/reverify"
+"Content-Type": "application/json"
+json({
+    "applicationId": "aa9fdaa2-7bf3-4411-a836-c2a46117f5c3",
+    "partyId": "b2006a70-a19b-4b7f-973d-3a561e159060",
+    "employerIds": [
+        "b2006a70-a19b-4b7f-973d-3a561e159060",
+        "b2006a70-a19b-4b7f-973d-3a561e159060"
+    ]
+})
+
+
+

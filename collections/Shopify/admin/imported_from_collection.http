@@ -1,0 +1,210 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Get a list of all custom collections.
+
+@name("Get a list of all custom collections")
+GET "https://{{baseUrl}}/admin/custom_collections.json"
+"Content": "<>"
+
+
+// Get all metafields that belong to a store.
+
+@name("Get all metafields that belong to a store")
+GET "https://{{baseUrl}}/admin/metafields.json"
+"Content": "<>"
+
+
+// Get a list of all blogs.
+
+@name("Get a list of all blogs")
+GET "https://{{baseUrl}}/admin/blogs.json"
+"Content": "<>"
+
+
+// Getting the shops policies.
+
+@name("getting the shops policies")
+GET "https://{{baseUrl}}/admin/policies.json"
+"Content": "<>"
+
+
+// Get a list of all countries.
+
+@name("Get a list of all countries")
+GET "https://{{baseUrl}}/admin/countries.json"
+"Content": "<>"
+
+
+// List your app's fulfillment services.
+
+@name("List your app's fulfillment services")
+GET "https://{{baseUrl}}/admin/fulfillment_services.json"
+"Content": "<>"
+
+
+// Retrieving all one-time charges since a specified id.
+
+@name("Retrieving all one-time charges since a specified ID")
+GET "https://{{baseUrl}}/admin/application_charges.json"
+"Content": "<>"
+? "since_id"= "<>"
+
+
+// Get a list of all gift cards.
+
+@name("Get a list of all gift cards")
+GET "https://{{baseUrl}}/admin/gift_cards.json"
+"Content": "<>"
+
+
+// Get all collection.
+
+@name("Get all collection")
+GET "https://{{baseUrl}}/admin/smart_collections.json"
+"Content": "<>"
+
+
+// Get a single location.
+
+@name("Get a single location")
+GET "https://{{baseUrl}}/admin/locations/8790723.json"
+"Content": "<>"
+
+
+// Get a list of all webhooks for your shop..
+
+@name("Get a list of all webhooks for your shop.")
+GET "https://{{baseUrl}}/admin/webhooks.json"
+"Content": "<>"
+
+
+// Get all orders from a customer.
+
+@name("Get all orders from a customer")
+GET "https://{{baseUrl}}/admin/orders.json"
+"Content": "<>"
+? "customer_id"= "<>"
+
+
+// List carrier services.
+
+@name("List carrier services")
+GET "https://{{baseUrl}}/admin/carrier_services.json"
+"Content": "<>"
+
+
+// Get a single fulfillment service by its id.
+
+@name("Get a single fulfillment service by its ID")
+GET "https://{{baseUrl}}/admin/fulfillment_services/1357646.json"
+"Content": "<>"
+
+
+// Get a list of all pages.
+
+@name("Get a list of all pages")
+GET "https://{{baseUrl}}/admin/pages.json"
+"Content": "<>"
+
+
+// List all discounts.
+
+@name("List all discounts")
+GET "https://{{baseUrl}}/admin/discounts.json"
+"Content": "<>"
+
+
+// Get a list of all locations for a shop.
+
+@name("Get a list of all locations for a shop")
+GET "https://{{baseUrl}}/admin/locations.json"
+"Content": "<>"
+
+
+// Update a carrier service.
+
+@name("Update a carrier service")
+GET "https://{{baseUrl}}/admin/carrier_services/13841038.json"
+"Content": "<>"
+
+
+// List all abandoned checkouts.
+
+@name("List all abandoned checkouts")
+GET "https://{{baseUrl}}/admin/checkouts.json"
+"Content": "<>"
+
+
+// Get all customer saved searches for a shop.
+
+@name("Get all customer saved searches for a shop")
+GET "https://{{baseUrl}}/admin/customer_saved_searches.json"
+"Content": "<>"
+
+
+// Get a list of all url redirect.
+
+@name("Get a list of all URL redirect")
+GET "https://{{baseUrl}}/admin/redirects.json"
+"Content": "<>"
+
+
+// Get a list of all script tags.
+
+@name("Get a list of all script tags")
+GET "https://{{baseUrl}}/admin/script_tags.json"
+"Content": "<>"
+
+
+// Get the configuration of the shop account.
+
+@name("Get the configuration of the shop account")
+GET "https://{{baseUrl}}/admin/shop.json"
+"Content": "<>"
+
+
+// Get all products.
+
+@name("Get all products")
+GET "https://{{baseUrl}}/admin/products.json"
+"Content": "<>"
+
+
+// Create a new charge.
+
+@name("Create a new charge")
+POST "https://{{baseUrl}}/admin/recurring_application_charges.json"
+"Content": "<>"
+
+
+// Retrieve all customers.
+
+@name("Retrieve all customers")
+GET "https://{{baseUrl}}/admin/customers.json"
+"Content": "<>"
+
+
+// Get all shop themes.
+
+@name("Get all shop themes")
+GET "https://{{baseUrl}}/admin/themes.json"
+"Content": "<>"
+
+
+// Show list of shipping zones.
+
+@name("Show list of shipping zones")
+GET "https://{{baseUrl}}/admin/shipping_zones.json"
+"Content": "<>"
+
+
+// Get a count of checkouts.
+
+@name("Get a count of checkouts")
+GET "https://{{baseUrl}}/admin/checkouts/count.json"
+"Content": "<>"
+
+
+

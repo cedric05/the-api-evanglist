@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba1cdcb3-6e1e-442c-bb37-51af59111040.postman_collection.json
+
+// Returns usage statistics for the api account..
+
+@name("Returns usage statistics for the API account.")
+GET "https://{{baseUrl}}/account.json/apiTokenStatus"
+"api_key": "<>"
+
+
+// Authenticates a user.
+
+@name("Authenticates a User")
+GET "https://{{baseUrl}}/account.json/authenticate/:username"
+? "password"= "<get>"
+
+
+// Requires a valid auth_token to be set.
+
+@name("Returns the logged-in User")
+GET "https://{{baseUrl}}/account.json/user"
+"auth_token": "<>"
+
+
+// Fetches wordlist objects for the logged-in user..
+
+@name("Fetches WordList objects for the logged-in user.")
+GET "https://{{baseUrl}}/account.json/wordLists"
+"auth_token": "<>"
+? "skip"= "<>"
+? "limit"= "<>"
+
+
+

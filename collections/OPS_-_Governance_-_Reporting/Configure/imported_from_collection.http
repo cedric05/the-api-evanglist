@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5936cabd-2be9-42bb-8041-c57974577cfe.postman_collection.json
+
+// This makes a single call to the Postman API and pulls the API, version, and individual schema for an API, putting the three Ids into the environment for use by other requests made as part of this question. You can configure using this, or manually add the three ids to the environment.
+
+@name("Pull API, Version, and Schema Id")
+GET "https://{{postman_base_url}}/apis/"
+"x-api-key": "{{postman_api_key}}"
+? "workspace_name"= "Governance"
+? "api_name"= "Products"
+? "api_version"= "v1.0"
+
+
+

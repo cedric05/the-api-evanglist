@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Generates a scan report for the specified scan. <p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Export scan results") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/was/v2/scans/:scan_id/report"
+
+
+// Downloads a scan report for the specified scan.
+// 
+// **Note:** A 404 Not Found is returned if the requested report is not yet ready for download. <p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Download exported scan") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/scans/:scan_id/report"
+
+
+

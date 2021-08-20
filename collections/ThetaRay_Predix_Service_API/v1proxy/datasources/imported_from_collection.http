@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-38980b40-c6a1-4b92-9424-04cc9f2f63e8.postman_collection.json
+
+// Get list of all Data Sources
+
+@name("Data Sources List")
+GET "https://{{baseUrl}}/v1/proxy/datasources/datasources"
+
+
+// Upload a data file
+
+@name("Upload a file")
+POST "https://{{baseUrl}}/v1/proxy/datasources/process"
+? "dataSourceName"= "<post>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d73a1a0-5a05-4d06-ac30-82c90173ac85.postman_collection.json
+
+// To retrieve file data, an application submits an HTTP GET request to then          file data resource that represents the data for the file.
+
+@name("Retrieving File Data")
+GET "https://{{baseUrl}}/file"
+
+
+// An application can permanently delete a file by issuing an HTTP DELETE request to the URL of thenfile resource.nIts a good idea to precede DELETE requests like this with a caution note in your applications user interface.n
+
+@name("Deleting a File")
+DELETE "https://{{baseUrl}}/file/"
+
+
+

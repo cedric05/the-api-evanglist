@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-007fb30c-c8ae-4349-8a4c-36e7914a7a99.postman_collection.json
+
+// This call returns an array of products based on the category and metric specified. This includes details of the product, such as the eBay product Id (EPID), title, and user reviews and ratings for the product. You can use the epid returned by this call in the Browse API search call to retrieve items for this product. Restrictions For a list of supported sites and other restrictions, see API Restrictions.
+
+@name("Get Merchandised Product")
+GET "https://{{baseUrl}}/merchandised_product"
+? "aspect_filter"= "<>"
+? "category_id"= "<>"
+? "limit"= "<get>"
+? "metric_name"= "<>"
+
+
+// This call returns products that were also bought when shoppers bought the product specified in the request. Showing 'also bought' products inspires up-selling and cross-selling. You specify the product by one of the following. epid (eBay Product Id) gtin (Global Trade Item Number) brand (brand name such as Nike) plus mpn (Manufacturer's Part Number) Restrictions For a list of supported sites and other restrictions, see API Restrictions. Maximum: A maximum of 12 products are returned. The call wi
+
+@name("Get Merchandised Product Get Also Bought Products")
+GET "https://{{baseUrl}}/merchandised_product/get_also_bought_products"
+? "brand"= "<get>"
+? "epid"= "<get>"
+? "gtin"= "<get>"
+? "mpn"= "<get>"
+
+
+// This call returns products that were also viewed when shoppers viewed the product specified in the request. Showing 'also viewed' products encourages up-selling and cross-selling. You specify the product by one of the following. epid (eBay Product Id) gtin (Global Trade Item Number) brand (brand name such as Nike) plus mpn (Manufacturer's Part Number) Restrictions For a list of supported sites and other restrictions, see API Restrictions. Maximum: A maximum of 12 products are returned. The call 
+
+@name("Get Merchandised Product Get Also Viewed Products")
+GET "https://{{baseUrl}}/merchandised_product/get_also_viewed_products"
+? "brand"= "<get>"
+? "epid"= "<get>"
+? "gtin"= "<get>"
+? "mpn"= "<get>"
+
+
+

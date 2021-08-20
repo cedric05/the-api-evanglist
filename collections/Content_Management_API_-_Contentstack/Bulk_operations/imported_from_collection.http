@@ -1,0 +1,173 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <span class="code">Publish entries and assets in bulk</span> request allows you to publish multiple entries and assets at the same time.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#bulk-publish-operation>Bulk Publish Operation</a> API Reference document
+
+@name("Publish entries and assets in bulk")
+POST "https://{{base_url}}/v3/bulk/publish"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "skip_workflow_stage_check"= "true"
+? "approvals"= "true"
+json({
+    "entries": [
+        {
+            "uid": "{{entry_uid}}",
+            "content_type": "{{content_type_uid}}",
+            "version": "{{version}}",
+            "locale": "{{entry_locale}}"
+        },
+        {
+            "uid": "{{entry_uid}}",
+            "content_type": "{{content_type_uid}}",
+            "version": "{{version}}",
+            "locale": "{{entry_locale}}"
+        }
+    ],
+    "assets": [
+        {
+            "uid": "{{uid}}"
+        }
+    ],
+    "locales": [
+        "en"
+    ],
+    "environments": [
+        "{{env_name}}/env_uid}}"
+    ]
+})
+
+
+// <p>The <span class="code">Unpublish entries and assets in bulk</span> request allows you to unpublish multiple entries and assets at the same time.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#bulk-unpublish-operation>Bulk Unpublish Operation</a> API Reference document
+
+@name("Unpublish entries and assets in bulk")
+POST "https://{{base_url}}/v3/bulk/unpublish"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "skip_workflow_stage_check"= "true"
+? "approvals"= "true"
+json({
+    "entries": [
+        {
+            "content_type": "news",
+            "uid": "bhs12565525612",
+            "locale": "en-us"
+        },
+        {
+            "content_type": "article",
+            "uid": "bjhcud11787212",
+            "locale": "en-us"
+        }
+    ],
+    "workflow": {
+        "workflow_stage": {
+            "comment": "String Comment",
+            "due_date": "Thu Dec 01 2018",
+            "notify": false,
+            "uid": "bueyr8723823",
+            "assigned_to": [
+                {
+                    "uid": "bhgt28726372",
+                    "name": "user_name",
+                    "email": "user_email_ID"
+                }
+            ],
+            "assigned_by_roles": [
+                {
+                    "uid": "gsshgs27627361",
+                    "name": "Content Manager"
+                }
+            ]
+        }
+    }
+})
+
+
+// <p>The <span class="code">Delete entries and assets in bulk</span> request allows you to delete multiple entries and assets at the same time.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#bulk-delete-operation>Bulk Delete Operation</a> API Reference document
+
+@name("Delete entries and assets in bulk")
+POST "https://{{base_url}}/v3/bulk/delete"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entries": [
+        {
+            "content_type": "{{content_type_uid}}",
+            "uid": "{{entry_uid}}",
+            "locale": "{{locale}}"
+        },
+        {
+            "content_type": "{{content_type_uid}}",
+            "uid": "{{entry_uid}",
+            "locale": "{{entry_locale}}"
+        }
+    ],
+    "assets": [
+        {
+            "uid": "{{uid}}"
+        }
+    ]
+})
+
+
+// <p>The <span class="code">Update workflow details in bulk</span> request allows you to update the workflow details for multiple entries at the same time.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#bulk-update-workflow-details-operation>Bulk Update Workflow Details Operation</a> API Reference document
+
+@name("Update workflow details in bulk")
+POST "https://{{base_url}}/v3/bulk/workflow"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entries": [
+        {
+            "content_type": "content_type_uid1",
+            "uid": "entry_uid",
+            "locale": "en-us"
+        },
+        {
+            "content_type": "content_type_uid2",
+            "uid": "entry_uid",
+            "locale": "en-us"
+        }
+    ],
+    "workflow": {
+        "workflow_stage": {
+            "comment": "Workflow-related Comments",
+            "due_date": "Thu Dec 01 2018",
+            "notify": false,
+            "uid": "workflow_stage_uid",
+            "assigned_to": [
+                {
+                    "uid": "user_uid",
+                    "name": "user_name",
+                    "email": "user_email_id"
+                }
+            ],
+            "assigned_by_roles": [
+                {
+                    "uid": "role_uid",
+                    "name": "role_name"
+                }
+            ]
+        }
+    }
+})
+
+
+

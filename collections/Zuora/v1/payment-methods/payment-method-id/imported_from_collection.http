@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// Deletes a credit card payment method from the specified customernaccount.nnIf the specified payment method is the account's default paymentnmethod, the request will fail.  In that case, you must first designate andifferent payment method for that customer to be the default.n
+
+@name("Delete payment method")
+DELETE "https://{{baseUrl}}/v1/payment-methods/:payment-method-id"
+
+
+// Sends an authorization request to the corresponding payment gateway to verify the payment method, even though no changes are made for the payment method. Supported payment methods are Credit Cards and Paypal.nnZuora now supports performing a standalone zero dollar verification or one dollar authorization for credit cards. It also supports a billing agreement status check on PayPal payment methods.nnIf a payment method is created by Hosted Payment Pages and is not assigned to any billing account,
+
+@name("Verify payment method")
+PUT "https://{{baseUrl}}/v1/payment-methods/:payment-method-id/verify"
+
+
+

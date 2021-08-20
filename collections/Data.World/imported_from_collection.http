@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Download a .zip file containing all files within a dataset as originally uploaded. Prefer `POST:/sql` or `POST:/sparql` for retrieving clean and structured data.
+
+@name("Download a dataset") : "base-inherit-auth"
+GET "https://{{baseUrl}}/download/:owner/:id"
+
+
+// Download a file within the dataset as originally uploaded. Prefer `POST:/sql` or `POST:/sparql` for retrieving clean and structured data.
+
+@name("Download a file") : "base-inherit-auth"
+GET "https://{{baseUrl}}/file_download/:owner/:id/:file"
+
+
+// Retrieve user profile information for the specified account.
+
+@name("Retrieve a user's profile") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users/:account"
+
+
+

@@ -1,0 +1,333 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f4b114e2-448f-4e5a-987c-5ed016683c87.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Filter and delete contributions.") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/contributions/"
+? "id__in"= "veniam eiusmod magna"
+? "id__in"= "sint"
+? "id"= "sit veniam nostrud aute"
+? "project__in"= "veniam eiusmod magna"
+? "project__in"= "sint"
+? "project"= "sit veniam nostrud aute"
+? "identifier__in"= "veniam eiusmod magna"
+? "identifier__in"= "sint"
+? "identifier__contains"= "sit veniam nostrud aute"
+? "identifier"= "sit veniam nostrud aute"
+? "formula__in"= "veniam eiusmod magna"
+? "formula__in"= "sint"
+? "formula__contains"= "sit veniam nostrud aute"
+? "formula"= "sit veniam nostrud aute"
+? "is_public"= "true"
+? "last_modified__gte"= "-39282240.871309295"
+? "last_modified__lte"= "-39282240.871309295"
+? "^data__((?!__).)*$__contains"= "sit veniam nostrud aute"
+? "^data__((?!__).)*$__gte"= "-39282240.871309295"
+? "^data__((?!__).)*$__lte"= "-39282240.871309295"
+? "_skip"= "-63312168"
+? "_limit"= "-63312168"
+? "page"= "-63312168"
+? "per_page"= "-63312168"
+
+
+@name("Create new contribution(s).") : "base-inherit-auth"
+POST "https://{{baseUrl}}/contributions/"
+"Content-Type": "application/json"
+json([
+    {
+        "identifier": "occaecat enim",
+        "project": {},
+        "formula": "veniam commodo in amet",
+        "is_public": false,
+        "last_modified": "2020-11-04T00:22:57.562Z",
+        "data": {},
+        "structures": [
+            {
+                "name": "elit nisi tempor",
+                "md5": "rwol3i9q4zi75fvrsct4k67bb83swlap",
+                "lattice": {},
+                "charge": -68156487.42859727,
+                "cif": "ut Duis nostrud",
+                "id": {}
+            },
+            {
+                "name": "cons",
+                "md5": "z06wlhyp4lanj951xyhm1f71knrczp3v",
+                "lattice": {},
+                "charge": -7643338.393730432,
+                "cif": "et est",
+                "id": {}
+            }
+        ],
+        "tables": [
+            {
+                "name": "pariatur non",
+                "md5": "xk2eer2srrdmw100p40p8a3gpuc0mcvf",
+                "data": [
+                    [
+                        "occaecat sit laboris enim",
+                        "elit amet dolore"
+                    ],
+                    [
+                        "esse Excepteur",
+                        "reprehenderit ut non"
+                    ]
+                ],
+                "total_data_rows": 71276584,
+                "id": {},
+                "index": [
+                    "dolore aute officia",
+                    "in ipsum sit"
+                ],
+                "columns": [
+                    "culpa sint ex",
+                    "qui voluptate"
+                ],
+                "attrs": {
+                    "labels": {
+                        "variable": "amet laborum dolor",
+                        "value": "nostrud enim mollit in ipsum",
+                        "index": "deserunt"
+                    },
+                    "title": ""
+                }
+            },
+            {
+                "name": "ullamco cupidatat",
+                "md5": "r89736n8mtok745sqmui4qg6j303rd50",
+                "data": [
+                    [
+                        "incididunt amet ips",
+                        "Duis est"
+                    ],
+                    [
+                        "Lorem consequat",
+                        "Ut sunt"
+                    ]
+                ],
+                "total_data_rows": -22711769,
+                "id": {},
+                "index": [
+                    "sit Lorem pariatur dolore tempor",
+                    "aliquip officia irure occaecat"
+                ],
+                "columns": [
+                    "eli",
+                    "amet sed cupidatat Ut"
+                ],
+                "attrs": {
+                    "labels": {
+                        "variable": "exercitation laborum tempor sed",
+                        "value": "ad dolore",
+                        "index": "pariatur esse"
+                    },
+                    "title": "eiusmod consectetur ipsum"
+                }
+            }
+        ],
+        "notebook": {},
+        "id": {}
+    },
+    {
+        "identifier": "laborum eu est dolor",
+        "project": {},
+        "formula": "dolor dolor",
+        "is_public": false,
+        "last_modified": "2000-09-12T05:49:42.231Z",
+        "data": {},
+        "structures": [
+            {
+                "name": "aliqua dolor aliquip",
+                "md5": "82fj1zt8s38r1hec69d5o5qmbh4xzicz",
+                "lattice": {},
+                "charge": 46066927.54710436,
+                "cif": "culpa",
+                "id": {}
+            },
+            {
+                "name": "do ex proident",
+                "md5": "mvv176zc8c6ryudzbmz980msfhi34ro8",
+                "lattice": {},
+                "charge": -59256178.483721286,
+                "cif": "dolor Excepte",
+                "id": {}
+            }
+        ],
+        "tables": [
+            {
+                "name": "culpa nis",
+                "md5": "n2fydkklcyjcawaz4vhq8pzr316d1st4",
+                "data": [
+                    [
+                        "tempor",
+                        "deserunt consequat"
+                    ],
+                    [
+                        "dolor do labore",
+                        "sed officia"
+                    ]
+                ],
+                "total_data_rows": -1939305,
+                "id": {},
+                "index": [
+                    "in Excepteur veniam dolor",
+                    "minim eiusmod"
+                ],
+                "columns": [
+                    "ut dolor voluptate ipsum",
+                    "consequat sed aliquip dolore"
+                ],
+                "attrs": {
+                    "labels": {
+                        "variable": "culpa aliqua aliquip",
+                        "value": "nisi Ut",
+                        "index": "esse voluptate dolor culpa tempor"
+                    },
+                    "title": "ad pariatur consequat"
+                }
+            },
+            {
+                "name": "ullamco ",
+                "md5": "hgso6b3zpzna4kvchp6igpf208q436nt",
+                "data": [
+                    [
+                        "veniam in laborum sint",
+                        "do"
+                    ],
+                    [
+                        "consequat sit nisi",
+                        "dolore in"
+                    ]
+                ],
+                "total_data_rows": 26447889,
+                "id": {},
+                "index": [
+                    "tempor sed",
+                    "nostrud anim sint dolore"
+                ],
+                "columns": [
+                    "nostrud do do",
+                    "ut est sunt do"
+                ],
+                "attrs": {
+                    "labels": {
+                        "variable": "ad",
+                        "value": "Ut eiusmod",
+                        "index": "eiusmod culpa"
+                    },
+                    "title": "ut dolore adipisicing Duis nostrud"
+                }
+            }
+        ],
+        "notebook": {},
+        "id": {}
+    }
+])
+
+
+@name("Filter and update contributions.") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/contributions/"
+"Content-Type": "application/json"
+? "id__in"= "veniam eiusmod magna"
+? "id__in"= "sint"
+? "id"= "sit veniam nostrud aute"
+? "project__in"= "veniam eiusmod magna"
+? "project__in"= "sint"
+? "project"= "sit veniam nostrud aute"
+? "identifier__in"= "veniam eiusmod magna"
+? "identifier__in"= "sint"
+? "identifier__contains"= "sit veniam nostrud aute"
+? "identifier"= "sit veniam nostrud aute"
+? "formula__in"= "veniam eiusmod magna"
+? "formula__in"= "sint"
+? "formula__contains"= "sit veniam nostrud aute"
+? "formula"= "sit veniam nostrud aute"
+? "is_public"= "true"
+? "last_modified__gte"= "-39282240.871309295"
+? "last_modified__lte"= "-39282240.871309295"
+? "^data__((?!__).)*$__contains"= "sit veniam nostrud aute"
+? "^data__((?!__).)*$__gte"= "-39282240.871309295"
+? "^data__((?!__).)*$__lte"= "-39282240.871309295"
+? "_skip"= "-63312168"
+? "_limit"= "-63312168"
+? "page"= "-63312168"
+? "per_page"= "-63312168"
+
+
+
+@name("Filter and retrieve contributions.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/contributions/"
+? "_fields"= "id"
+? "_fields"= "project"
+? "_fields"= "identifier"
+? "_fields"= "formula"
+? "_fields"= "is_public"
+? "_fields"= "last_modified"
+? "_order_by"= "sit veniam nostrud aute"
+? "order"= "sit veniam nostrud aute"
+? "id__in"= "veniam eiusmod magna"
+? "id__in"= "sint"
+? "id"= "sit veniam nostrud aute"
+? "project__in"= "veniam eiusmod magna"
+? "project__in"= "sint"
+? "project"= "sit veniam nostrud aute"
+? "identifier__in"= "veniam eiusmod magna"
+? "identifier__in"= "sint"
+? "identifier__contains"= "sit veniam nostrud aute"
+? "identifier"= "sit veniam nostrud aute"
+? "formula__in"= "veniam eiusmod magna"
+? "formula__in"= "sint"
+? "formula__contains"= "sit veniam nostrud aute"
+? "formula"= "sit veniam nostrud aute"
+? "is_public"= "true"
+? "last_modified__gte"= "-39282240.871309295"
+? "last_modified__lte"= "-39282240.871309295"
+? "^data__((?!__).)*$__contains"= "sit veniam nostrud aute"
+? "^data__((?!__).)*$__gte"= "-39282240.871309295"
+? "^data__((?!__).)*$__lte"= "-39282240.871309295"
+? "_skip"= "-63312168"
+? "_limit"= "-63312168"
+? "page"= "-63312168"
+? "per_page"= "-63312168"
+
+
+@name("Filter and download contributions.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/contributions/download/:short_mime/"
+? "format"= "sit veniam nostrud aute"
+? "_fields"= "id"
+? "_fields"= "project"
+? "_fields"= "identifier"
+? "_fields"= "formula"
+? "_fields"= "is_public"
+? "_fields"= "last_modified"
+? "_order_by"= "sit veniam nostrud aute"
+? "order"= "sit veniam nostrud aute"
+? "id__in"= "veniam eiusmod magna"
+? "id__in"= "sint"
+? "id"= "sit veniam nostrud aute"
+? "project__in"= "veniam eiusmod magna"
+? "project__in"= "sint"
+? "project"= "sit veniam nostrud aute"
+? "identifier__in"= "veniam eiusmod magna"
+? "identifier__in"= "sint"
+? "identifier__contains"= "sit veniam nostrud aute"
+? "identifier"= "sit veniam nostrud aute"
+? "formula__in"= "veniam eiusmod magna"
+? "formula__in"= "sint"
+? "formula__contains"= "sit veniam nostrud aute"
+? "formula"= "sit veniam nostrud aute"
+? "is_public"= "true"
+? "last_modified__gte"= "-39282240.871309295"
+? "last_modified__lte"= "-39282240.871309295"
+? "^data__((?!__).)*$__contains"= "sit veniam nostrud aute"
+? "^data__((?!__).)*$__gte"= "-39282240.871309295"
+? "^data__((?!__).)*$__lte"= "-39282240.871309295"
+
+
+

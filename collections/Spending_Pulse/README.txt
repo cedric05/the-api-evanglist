@@ -1,0 +1,1 @@
+This API will provide monthly data which includes metrics such as sales volume and growth rate.

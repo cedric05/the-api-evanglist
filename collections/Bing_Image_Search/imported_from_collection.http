@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b8cdc1e-b249-4135-b109-452de18858b0.postman_collection.json
+
+@name("Image Search")
+GET "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
+"Ocp-Apim-Subscription-Key": "{{apiKey}}"
+? "q"= ""
+
+
+@name("Trending")
+GET "https://api.cognitive.microsoft.com/bing/v7.0/images/trending"
+"Ocp-Apim-Subscription-Key": "{{apiKey}}"
+
+
+

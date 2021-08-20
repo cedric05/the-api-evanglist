@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Retrieve information about current organization.
+
+@name("Get Organization")
+GET "https://{{baseUrl}}/v1/orgs/self"
+
+
+// Retrieve all aliases in an organization
+
+@name("List Aliases")
+GET "https://{{baseUrl}}/v1/orgs/self/aliases"
+
+
+// Retrieve all collections in an organization.
+
+@name("List Collections")
+GET "https://{{baseUrl}}/v1/orgs/self/collections"
+
+
+

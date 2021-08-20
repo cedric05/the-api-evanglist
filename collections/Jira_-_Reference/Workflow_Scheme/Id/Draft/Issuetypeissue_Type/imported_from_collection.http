@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns the issue type-workflow mapping for an issue type in a workflow scheme's draft.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get Workflow For Issue Type In Draft Workflow Scheme") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/workflowscheme/:id/draft/issuetype/:issueType"
+
+
+// Sets the workflow for an issue type in a workflow scheme's draft.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Set Workflow For Issue Type In Draft Workflow Scheme") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/rest/api/3/workflowscheme/:id/draft/issuetype/:issueType"
+"Content-Type": "application/json"
+json({
+    "issueType": "<string>",
+    "workflow": "<string>",
+    "updateDraftIfNeeded": "<boolean>"
+})
+
+
+// Deletes the issue type-workflow mapping for an issue type in a workflow scheme's draft.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Delete Workflow For Issue Type In Draft Workflow Scheme") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/rest/api/3/workflowscheme/:id/draft/issuetype/:issueType"
+
+
+

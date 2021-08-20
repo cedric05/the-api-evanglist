@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d2c214b-77c4-4e90-8dc4-3cd4493a1c9a.postman_collection.json
+
+// Get Tag
+
+@name("Get Tag")
+GET "https://{{baseUrl}}/tags/:tag_id"
+
+
+// Get Tags Children
+
+@name("Get Tags Children")
+GET "https://{{baseUrl}}/tags/:tag_id/children"
+
+
+// Get Jobs by Tag
+
+@name("Get Jobs by Tag")
+GET "https://{{baseUrl}}/tags/:tag_id/jobs"
+
+
+// Get Tag Parents
+
+@name("Get Tag Parents")
+GET "https://{{baseUrl}}/tags/:tag_id/parents"
+
+
+// Get Startups by Tag
+
+@name("Get Startups by Tag")
+GET "https://{{baseUrl}}/tags/:tag_id/startups"
+
+
+// Get Users by Tag
+
+@name("Get Users by Tag")
+GET "https://{{baseUrl}}/tags/:tag_id/users"
+
+
+

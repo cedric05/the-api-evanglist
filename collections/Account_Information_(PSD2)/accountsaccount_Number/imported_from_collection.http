@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b633ec3-0d8e-4860-9b42-73c08cee7190.postman_collection.json
+
+// Retrieve a list of transactions for a specific account number. Maximum of 50 transactions are returned
+
+@name("Get Accounts Account Number Transactions")
+GET "https://{{baseUrl}}/accounts/:accountNumber/transactions"
+? "bookDateFrom"= "<string>"
+? "bookDateTo"= "<string>"
+? "nextPageKey"= "<string>"
+
+
+// This operation allows you to retrieve the details of the account, like book balance of the account and currency.
+
+@name("Get Accounts Account Number Balances")
+GET "https://{{baseUrl}}/accounts/:accountNumber/balances"
+
+
+// This operation allows you to retrieve the details of the account, like currency and account holder name.
+
+@name("Get Accounts Account Number Details")
+GET "https://{{baseUrl}}/accounts/:accountNumber/details"
+
+
+// This operation will allow you to verify if the amount specified in the request is available on the account at that time (including any creditline).
+
+@name("Get Accounts Account Number Funds")
+GET "https://{{baseUrl}}/accounts/:accountNumber/funds"
+? "amount"= "<number>"
+? "currency"= "<string>"
+
+
+

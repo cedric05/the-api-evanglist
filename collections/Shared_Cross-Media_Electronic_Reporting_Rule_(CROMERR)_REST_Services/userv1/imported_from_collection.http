@@ -1,0 +1,132 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2131e7d-01ce-4512-a5ba-81bbec9b0ac2.postman_collection.json
+
+@name("Create user.")
+POST "https://{{baseUrl}}/user/v1"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "userId": "<string>",
+    "firstName": "<string>",
+    "lastName": "<string>",
+    "middleInitial": "<string>",
+    "organization": {
+        "organizationName": "voluptate proident",
+        "organizationId": -76000106
+    },
+    "address": {
+        "mailingAddress1": "<string>",
+        "mailingAddress2": "<string>",
+        "mailingAddress3": "<string>",
+        "mailingAddress4": "<string>",
+        "city": "<string>",
+        "state": "<string>",
+        "country": "<string>",
+        "zip": "<string>"
+    },
+    "contact": {
+        "email": "<string>",
+        "phone": "<string>",
+        "phoneExtension": "<string>",
+        "fax": "<string>"
+    },
+    "password": "<string>",
+    "status": "<string>",
+    "lastLoginDate": "<dateTime>",
+    "createdDate": "<dateTime>",
+    "answers": [
+        {
+            "questionId": "<string>",
+            "answerText": "<string>"
+        },
+        {
+            "questionId": "<string>",
+            "answerText": "<string>"
+        }
+    ],
+    "properties": [
+        {
+            "key": "<string>",
+            "value": "<string>"
+        },
+        {
+            "key": "<string>",
+            "value": "<string>"
+        }
+    ]
+})
+
+
+@name("Update user.")
+PUT "https://{{baseUrl}}/user/v1"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "userId": "<string>",
+    "firstName": "<string>",
+    "lastName": "<string>",
+    "middleInitial": "<string>",
+    "organization": {
+        "organizationName": "deserunt ad",
+        "organizationId": -1225181
+    },
+    "address": {
+        "mailingAddress1": "<string>",
+        "mailingAddress2": "<string>",
+        "mailingAddress3": "<string>",
+        "mailingAddress4": "<string>",
+        "city": "<string>",
+        "state": "<string>",
+        "country": "<string>",
+        "zip": "<string>"
+    },
+    "contact": {
+        "email": "<string>",
+        "phone": "<string>",
+        "phoneExtension": "<string>",
+        "fax": "<string>"
+    },
+    "password": "<string>",
+    "status": "<string>",
+    "lastLoginDate": "<dateTime>",
+    "createdDate": "<dateTime>",
+    "answers": [
+        {
+            "questionId": "<string>",
+            "answerText": "<string>"
+        },
+        {
+            "questionId": "<string>",
+            "answerText": "<string>"
+        }
+    ],
+    "properties": [
+        {
+            "key": "<string>",
+            "value": "<string>"
+        },
+        {
+            "key": "<string>",
+            "value": "<string>"
+        }
+    ]
+})
+
+
+@name("Authenticate user.")
+POST "https://{{baseUrl}}/user/v1/authenticate"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "userId": "<string>",
+    "password": "<string>"
+})
+
+
+@name("Retrieve eligible questions.")
+GET "https://{{baseUrl}}/user/v1/eligibleQuestions"
+"Authorization": "<string>"
+
+
+

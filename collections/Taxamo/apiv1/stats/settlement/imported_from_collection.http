@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Settlement by country.
+
+@name("Settlement By Country")
+GET "https://{{baseUrl}}/api/v1/stats/settlement/by_country"
+? "date_from"= "<get>"
+? "date_to"= "<get>"
+
+
+// Settlement by tax type.
+
+@name("Settlement By Tax Type")
+GET "https://{{baseUrl}}/api/v1/stats/settlement/by_taxation_type"
+? "date_from"= "<get>"
+? "date_to"= "<get>"
+
+
+// Settlement stats over time.
+
+@name("Settlement Stats Over Time")
+GET "https://{{baseUrl}}/api/v1/stats/settlement/daily"
+? "interval"= "<get>"
+? "date_from"= "<get>"
+? "date_to"= "<get>"
+
+
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Get the issue type hierarchy for a next-gen project.
+// 
+// The issue type hierarchy for a project consists of:
+// 
+//  *  *Epic* at level 1 (optional).
+//  *  One or more issue types at level 0 such as *Story*, *Task*, or *Bug*. Where the issue type *Epic* is defined, these issue types are used to break down the content of an epic.
+//  *  *Subtask* at level -1 (optional). This issue type enables level 0 issue types to be broken down into components. Issues based on a level -1 issue type must have a parent issue.
+// 
+// **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
+
+@name("Get Project Issue Type Hierarchy") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/project/:projectId/hierarchy"
+
+
+

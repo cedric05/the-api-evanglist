@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fc06b48f-b548-47f5-91a1-9548e7a612e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns details for the specified logo in the Tenable.io MSSP Portal. <p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get logo details") : "base-inherit-auth"
+GET "https://{{baseUrl}}/mssp/logos/:logo_uuid"
+
+
+// Updates a logo in the Tenable.io MSSP Portal. This update overwrites the existing logo.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Update logo") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/mssp/logos/:logo_uuid"
+"Content-Type": "multipart/form-data"
+files(
+	("logo", "aliqua"),
+	("name", "veniam et sed voluptate")
+)
+
+
+// Deletes the specified logo in the Tenable.io MSSP Portal. <p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Delete logo") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/mssp/logos/:logo_uuid"
+
+
+// Returns a logo file in PNG format. <p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Download logo (PNG)") : "base-inherit-auth"
+GET "https://{{baseUrl}}/mssp/logos/:logo_uuid/logo.png"
+
+
+// Returns a logo file in Base64 format. <p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Download logo (Base64)") : "base-inherit-auth"
+GET "https://{{baseUrl}}/mssp/logos/:logo_uuid/logo.base64"
+
+
+

@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7c1911c0-b9d3-49c2-a1c8-b51e46787741.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get details for the specified transaction.
+
+@name("Get Customer Transaction") : "base-inherit-auth"
+GET "https://{{baseUrl}}/aggregation/v2/customers/:customerId/transactions/:transactionId"
+
+
+// The institutionLoginId parameter uses Finicity’s internal FI mapping to move accounts from the current FI legacy connection to the new OAuth FI connection.
+// 
+// The API returns a list of accounts for the institution login id specified with an HTTP status code 200.
+
+@name("Migrate Institution Login Accounts V2") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/aggregation/v2/customers/:customerId/institutionLogins/:institutionLoginId/migration"
+
+
+

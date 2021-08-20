@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** The Invoice Item Settlement feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at  [Zuora Global Support](http://support.zuora.com/).nnRetrieves the information about all items of a refund part. A refund part item is a single line item in a refund part. A refund part can consist of several different types of items.n
+
+@name("Get refund part items")
+GET "https://{{baseUrl}}/v1/refunds/:refundId/parts/:refundpartid/itemparts"
+
+
+// **Note:** The Invoice Item Settlement feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at  [Zuora Global Support](http://support.zuora.com/).  nnRetrieves the information about a specific refund part item. A refund part item is a single line item in a refund part. A refund part can consist of several different types of items.n
+
+@name("Get refund part item")
+GET "https://{{baseUrl}}/v1/refunds/:refundId/parts/:refundpartid/itemparts/:itempartid"
+
+
+

@@ -1,0 +1,79 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-99b807d0-abac-481e-a509-d69785137b6b.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Create AB Activity") : "base-inherit-auth"
+POST "https://mc.adobe.io/:tenant/target/activities/ab"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v3+json"
+data('{
+    "name": "ab minimal",
+    "options": [
+        {
+            "optionLocalId": 0,
+            "name": "Offer 332379",
+            "offerId": 332379
+        }
+    ],
+    "locations": {
+        "mboxes": [
+            {
+                "locationLocalId": 0,
+                "name": "homePageHero"
+            }
+        ]
+    },
+    "experiences": [
+        {
+            "experienceLocalId": 0,
+            "name": "experienceName",
+            "optionLocations": [
+                {
+                    "locationLocalId": 0,
+                    "optionLocalId": 0
+                }
+            ]
+        }
+    ],
+    "workspace": "37740098",
+    "propertyIds": [
+        195
+    ],
+    "metrics": [
+        {
+            "metricLocalId": 3,
+            "name": "conversion",
+            "conversion": true
+        }
+    ]
+}')
+
+
+@name("Get AB Peformance report") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/activities/ab/166423/report/performance"
+"X-Api-Key": "{{api_key}}"
+
+
+@name("Get XT Peformance report") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/activities/ab/167169/report/performance"
+"X-Api-Key": "{{api_key}}"
+
+
+@name("Get AB Activity by ID") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/activities/ab/181171"
+"X-Api-Key": "{{api_key}}"
+
+
+@name("Delete AB Activity by ID") : "base-inherit-auth"
+DELETE "https://mc.adobe.io/:tenant/target/activities/ab/181172"
+"X-Api-Key": "{{api_key}}"
+
+
+

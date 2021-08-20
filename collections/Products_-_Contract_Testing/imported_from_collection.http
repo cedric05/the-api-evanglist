@@ -1,0 +1,80 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52e9e888-5d5e-4e2e-85a4-452985781a3c.postman_collection.json
+
+// Creates a new product.
+
+@name("Add Product")
+POST "https://{{baseUrl}}/commerce/products"
+"Content-Type": "application/json"
+json({
+    "name": "Womens Concept Hoodie",
+    "description": "This womens concept hoodie is for putting on when you are settling in to do some serious thinking on a project.",
+    "image": "http://union.fashion/images/products/concepts-hoodie..png",
+    "url": "http://union.fashion/catalog/childrens/concepts-hoodie./",
+    "brand": "Union Fashion",
+    "category": "Womens",
+    "color": "White",
+    "logo": "http://union.fashion/images/union-fashion-logo.png",
+    "manufacturer": "Union Fashion",
+    "material": "Cotton",
+    "model": "Mens",
+    "releaseDate": "01/01/2020",
+    "sku": "uf-womens-concepts-hoodie.",
+    "width": "0",
+    "weight": "0",
+    "depth": "0",
+    "height": "0"
+})
+
+
+// Pulls a list of all product
+
+@name("Get Products")
+GET "https://{{baseUrl}}/products"
+"content-type": "application/vnd.api+json"
+? "query"= "apis"
+data('test')
+
+
+// Allows you to get a list of all of the Union Fashion product catalog.
+
+@name("Get Product")
+GET "https://{{baseUrl}}/products/:productId"
+"query": "product"
+
+
+// Supports either full or partial updates.
+
+@name("Update Product")
+PUT "https://{{baseUrl}}/commerce/products/:productId"
+"Content-Type": "application/json"
+json({
+    "identifier": "24",
+    "name": "API Bedding",
+    "description": "For curling up at night to stay warm while you also stay connected with friends.",
+    "image": "http://union.fashion/images/products/api-bedding.png",
+    "url": "http://union.fashion/catalog/childrens/api-bedding/",
+    "brand": "Union Fashion",
+    "category": "Home",
+    "color": "White",
+    "logo": "http://union.fashion/images/union-fashion-logo.png",
+    "manufacturer": "Unon Fashion",
+    "material": "Cotton",
+    "model": "Home",
+    "releaseDate": "01/01/2020",
+    "sku": "uf-home-api-bedding",
+    "width": "0",
+    "weight": "0",
+    "depth": "0",
+    "height": "0"
+})
+
+
+// Delete an individual product.
+
+@name("Delete Product")
+DELETE "https://{{baseUrl}}/commerce/products/:productId"
+
+
+

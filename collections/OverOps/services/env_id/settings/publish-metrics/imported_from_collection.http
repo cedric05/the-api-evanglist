@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Use this call to fetch data about publish metrics settings, output format and the actual metrics which are currently beeing published
+
+@name("Fetch Publish Metrics settings") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/publish-metrics"
+
+
+// Use this call to set and customize publish metrics. Use one of the presets, or customize you tokens by setting output_format to 'custom'.
+
+@name("Set Publish Metrics") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/settings/publish-metrics"
+"Content-Type": "application/json"
+json({
+    "enabled": true,
+    "hostname": "127.0.0.1:8125",
+    "output_format": "Splunk",
+    "metrics": [
+        {
+            "name": "Views",
+            "pattern": "overops_views,${viewname},${serviceid},${application},${server},${deployment}"
+        },
+        {
+            "name": "Events",
+            "pattern": "overops_events,${serviceid},${application},${server},${deployment},${class},${method},${eventlink},${eventid},${labels},${eventtype},${eventname},${introducedby},${entrypointclass},${entrypointmethod},${firstseen},${infra},${jiraissuekey}"
+        },
+        {
+            "name": "Entry points",
+            "pattern": "overops_entrypoints,${serviceid},${application},${server},${deployment},${entrypointclass},${entrypointmetrics}"
+        },
+        {
+            "name": "Custom Metrics",
+            "pattern": "overops_metrics,${serviceid},${application},${server},${deployment},${metric}"
+        },
+        {
+            "name": "System",
+            "pattern": "overops_system,${serviceid},${application},${server},${systemmetrics}"
+        },
+        {
+            "name": "Diagnostics",
+            "pattern": "overops_jvms,${serviceid},${application},${server},${applicationpid}"
+        }
+    ]
+})
+
+
+// Use this call to fetch available formats / presets, their metrics and their tokens
+
+@name("Fetch Available formats") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/publish-metrics/available_formats"
+
+
+

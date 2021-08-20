@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96092c6-2ddc-4e57-bdc3-4ff0804f3144.postman_collection.json
+
+// This operation list or find ServiceLevelSpecification entities
+
+@name("List or find ServiceLevelSpecification objects")
+GET "https://{{baseUrl}}/serviceLevelSpecification"
+? "fields"= "non incididunt nostrud Duis"
+? "offset"= "80487809"
+? "limit"= "80487809"
+
+
+// This operation creates a ServiceLevelSpecification entity.
+
+@name("Creates a ServiceLevelSpecification")
+POST "https://{{baseUrl}}/serviceLevelSpecification"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "name": "dolore aliquip ea aute",
+    "relatedServiceLevelObjective": [
+        {
+            "id": "proident exercitation culpa voluptate sed",
+            "href": "veni",
+            "@baseType": "Lorem tempor",
+            "@schemaLocation": "http://sN.byqDyXySnglIYqz+kmQ1hfdDFGs2hBtGQXsHibq6pnRLLie6.IhD9QakXPth-s0,4cFu0dzscLuCoiurP",
+            "@type": "in aliquip",
+            "@referredType": "minim quis elit"
+        }
+    ],
+    "description": "in enim amet velit",
+    "validFor": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z",
+        "@baseType": "officia Lorem",
+        "@schemaLocation": "https://aWWqsXwxl.ynnwyaHcuLKwFuVkoaI2JPOZrc3zb,DPQKRr05.ndVhVYp3O3cDW0i,XugB9X.XbNwxc",
+        "@type": "qui"
+    },
+    "@baseType": "reprehenderit culpa",
+    "@schemaLocation": "https://DYCezSCkVDAVVyjYz.smB8cfii2Ign5vY-lUMVMxM-LEsQ,dxeVJW9xa9V1GWRYTLvvtdbX+FbT",
+    "@type": "nostrud minim enim sed"
+})
+
+
+

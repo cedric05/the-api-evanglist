@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** The Billing Preview feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnnGenerates a preview of future invoice items for one customer account. Use the BillingPreview call to calculate how much a single customer will be invoiced from the most recent invoice to a specific end of term date in the future.nnAdditionally, you can use the BillingPreview service to access real-time data on a
+
+@name("Create billing preview")
+POST "https://{{baseUrl}}/v1/operations/billing-preview"
+
+
+// Generates and posts invoices and credit memos and collects payments for posted invoices. Credit memos are only available if you have the Advanced AR Settlement feature enabled and negative charges exist. Credit memos will not be applied to invoices. If draft invoices and credit memos exist when you run this operation, this operation will post the invoices and credit memos. Note that draft credit memos created from an invoice or a product rate plan charge will not be posted.nnYou can use this ope
+
+@name("Invoice and collect")
+POST "https://{{baseUrl}}/v1/operations/invoice-collect"
+"zuora": "<>"
+
+
+

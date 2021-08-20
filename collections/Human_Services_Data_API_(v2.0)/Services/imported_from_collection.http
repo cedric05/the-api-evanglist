@@ -1,0 +1,68 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("get Service")
+GET "https://{{baseUrl}}/services/:service_id"
+
+
+@name("list Services")
+GET "https://{{baseUrl}}/services"
+? "sort_by"= "c"
+? "query"= "c"
+? "order"= "c"
+? "resources"= "c"
+? "fields"= "c"
+? "page"= "c"
+? "per_page"= "c"
+
+
+@name("add Service")
+POST "https://{{baseUrl}}/services"
+"Content-Type": "application/json"
+json({
+    "id": "Duis ut aliqua",
+    "name": "cupidatat est elit",
+    "organization_id": "et officia Lorem anim",
+    "status": "labore ",
+    "program_id": "in aliquip",
+    "alternate_name": "ullamco",
+    "description": "dolore",
+    "url": "ut",
+    "email": "sint dolore",
+    "interpretation_services": "exercitation",
+    "application_process": "do quis ullamco",
+    "wait_time": "aute occaecat consequat enim adipisicing",
+    "fees": "ullamco eu",
+    "accreditations": "Lorem eu elit adipisicing",
+    "licenses": "nulla veniam quis occaecat"
+})
+
+
+@name("update Service")
+PUT "https://{{baseUrl}}/services/:service_id"
+"Content-Type": "application/json"
+json({
+    "id": "Duis ut aliqua",
+    "name": "cupidatat est elit",
+    "organization_id": "et officia Lorem anim",
+    "status": "labore ",
+    "program_id": "in aliquip",
+    "alternate_name": "ullamco",
+    "description": "dolore",
+    "url": "ut",
+    "email": "sint dolore",
+    "interpretation_services": "exercitation",
+    "application_process": "do quis ullamco",
+    "wait_time": "aute occaecat consequat enim adipisicing",
+    "fees": "ullamco eu",
+    "accreditations": "Lorem eu elit adipisicing",
+    "licenses": "nulla veniam quis occaecat"
+})
+
+
+@name("delete Service Complete")
+DELETE "https://{{baseUrl}}/services/:service_id"
+
+
+

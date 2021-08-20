@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2bb02751-e4e0-4352-a0aa-235a6edeace7.postman_collection.json
+
+// Asterank offers a database API for the Minor Planet Center's MPCORB.DAT data files. This API is a simple way to quickly apply constraints to a set of over 600,000 asteroids. Users can construct queries with specific constraints across all data attributes recorded by the MPC. Information is updated nightly from the MPC's MPCORB.dat dataset.
+
+@name("Minor Planet Center")
+GET "https://{{baseUrl}}/api/mpc"
+
+
+// The Asterank database is a thin layer over the NASA/JPL Small Body Database, merged with JPL delta-v data, published asteroid mass data, and our own calculations. 
+
+@name("Asterank")
+GET "https://{{baseUrl}}/api/asterank"
+
+
+// Asterank offers a basic queryable database for NASA's Kepler Project. It is a simple way to quickly apply constraints to a set of over 2,000 exoplanets and unconfirmed objects of interest. The database supports comparators and specific criteria for all attributes provided by the Kepler Data Explorer.
+
+@name("Kepler Project")
+GET "https://{{baseUrl}}/api/kepler"
+
+
+

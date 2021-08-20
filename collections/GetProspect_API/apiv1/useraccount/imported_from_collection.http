@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+@name("Account Controller get Workspace Limits")
+GET "https://{{baseUrl}}/api/v1/user/account/workspace-limits"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Apply coupon code
+
+@name("Apply coupon code")
+GET "https://{{baseUrl}}/api/v1/user/account/apply/:couponCode"
+"Authorization": "Bearer <Bearer Token>"
+? "couponCode"= "incididunt voluptate"
+
+
+

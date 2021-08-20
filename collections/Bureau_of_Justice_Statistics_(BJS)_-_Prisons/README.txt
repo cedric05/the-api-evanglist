@@ -1,0 +1,1 @@
+This is a handful of datasets from the Bureau of Justic Statistics about prison and supervised populations. For more information visit: https://www.bjs.gov/index.cfm?ty=tp&tid=13. The goal of this colleciton is to make datasets more accessible as JSON via mock servers that can be shared using portable Postman collections.

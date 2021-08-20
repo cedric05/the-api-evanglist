@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// Retrieves the details of a given users.nnThe returned information includes the user's bibliographic information and the date the user was registered.nnAdditionally, relationships to the list of institutions with which the user is affiliated, and to the list of nodes which the user contributes to (that the requesting user has permission to see) are returned.nnIf `me` is given as the `user_id` in the request path, the record of the currently logged-in user will be returned.n#### ReturnsnReturns a 
+
+@name("Retrieve a user")
+GET "https://{{baseUrl}}/users/:user_id/"
+
+
+// A paginated list of institutions that the user is affiliated with.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of 10 institutions. Each resource in the array is a complete institution object and contains the full representation of the institution, meaning additional requests to a institution's detail view are not necessary.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
+
+@name("List all institutions")
+GET "https://{{baseUrl}}/users/:user_id/institutions/"
+
+
+// A paginated list of nodes that the user is a contributor to. The returned nodes are sorted by their `date_modified`, with the most recently updated nodes appearing first.nnIf the user ID in the path is the same as the logged-in user, all nodes will be returned. Otherwise, only the user's public nodes will be returned.nnUser registrations are not available at this endpoint.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of 10 nodes. Each r
+
+@name("List all nodes")
+GET "https://{{baseUrl}}/users/:user_id/nodes/"
+
+
+// A paginated list of preprints that the user contributes to. The returned preprints are sorted by their creation date, with the most recent preprints appearing first.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of 10 preprints. Each resource in the array is a complete preprint object and contains the full representation of the preprint, meaning additional requests to a preprint's detail view are not necessary.nnThe `links` key contains 
+
+@name("List all preprints")
+GET "https://{{baseUrl}}/users/:user_id/preprints/"
+
+
+// A paginated list of registrations that the user is a contributor to. The returned registrations are sorted by their `date_modified`, with the most recently updated registrations appearing first.nnIf the user ID in the path is the same as the logged-in user, all registrations will be returned. Otherwise, only the user's public registrations will be returned.nnUser nodes are not available at this endpoint.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key conta
+
+@name("List all registrations")
+GET "https://{{baseUrl}}/users/:user_id/registrations/"
+
+
+

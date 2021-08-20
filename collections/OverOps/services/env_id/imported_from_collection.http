@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get information about an environment
+
+@name("Get information about an environment") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id"
+
+
+// Rename an environment. This call is allowed for admins only
+
+@name("Rename an environment") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id"
+"Content-Type": "application/json"
+json({
+    "name": "commodo"
+})
+
+
+// List all (or just active) servers that were used to monitor applications. These can be either the IP/Hostname of a host or a cluster identifier. [How to name your Server](https://doc.overops.com/docs/naming-your-application-server-deployment)
+
+@name("List servers") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/servers"
+? "active"= "false"
+
+
+// List all (or just active) applications that were used to monitor applications. These can be either an application name, an integration suite name or a specific instance. [How to name your Application](https://doc.overops.com/docs/naming-your-application-server-deployment)
+
+@name("List applications") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/applications"
+? "active"= "true"
+
+
+// List all (or just active) deployments that were monitoring in the environment. These can be either the Jenkins build number, Git commit, Maven version, etc. [How to tag your deployment](https://doc.overops.com/docs/naming-your-application-server-deployment)
+
+@name("List deployments") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/deployments"
+? "active"= "true"
+
+
+

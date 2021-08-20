@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Get outbound overview")
+GET "https://{{baseUrl}}/stats/outbound"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get bounce counts")
+GET "https://{{baseUrl}}/stats/outbound/bounces"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get sent counts")
+GET "https://{{baseUrl}}/stats/outbound/sends"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get spam complaints")
+GET "https://{{baseUrl}}/stats/outbound/spam"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get tracked email counts")
+GET "https://{{baseUrl}}/stats/outbound/tracked"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+

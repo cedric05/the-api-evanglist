@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bddbaf5a-26e6-497b-85a9-b22a2a06054d.postman_collection.json
+
+@name("Create User")
+POST "http://{{host}}/vapi/api1/createUser.php"
+data({
+    "username": [
+        ""
+    ],
+    "name": [
+        ""
+    ],
+    "course": [
+        ""
+    ],
+    "password": [
+        ""
+    ]
+})
+
+
+@name("Get User")
+GET "http://{{host}}/vapi/api1/getUser.php"
+"Authorization-Token": "{{api1_auth}}"
+? "id"= "{{api1_id}}"
+
+
+

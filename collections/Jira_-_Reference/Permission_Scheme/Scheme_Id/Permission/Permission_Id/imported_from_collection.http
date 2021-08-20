@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a permission grant.
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Get Permission Scheme Grant") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/permissionscheme/:schemeId/permission/:permissionId"
+? "expand"= "<string>"
+
+
+// Deletes a permission grant from a permission scheme. See [About permission schemes and grants](#about-permission-schemes) for more details.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Delete Permission Scheme Grant") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/rest/api/3/permissionscheme/:schemeId/permission/:permissionId"
+
+
+

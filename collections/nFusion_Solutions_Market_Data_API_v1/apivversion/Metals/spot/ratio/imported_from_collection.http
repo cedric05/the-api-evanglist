@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-96f7548c-485b-4677-99ba-2d47911de0c8.postman_collection.json
+
+// Get latest spot summary for requested metal ratios.
+
+@name("Get latest Spot Summary for requested metal ratios")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/spot/ratio/summary"
+? "token"= "<>"
+? "pairs"= "<>"
+? "format"= "<>"
+
+
+// Historical data for the specified period and interval size
+// 
+// The combination of the interval parameter and start and end dates can result in results
+// being truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.
+
+@name("Get historical Spot Ratio prices for requested metals")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/spot/ratio/history"
+? "token"= "<>"
+? "pairs"= "<>"
+? "start"= "<get>"
+? "end"= "<get>"
+? "interval"= "<object>"
+? "format"= "<>"
+
+
+

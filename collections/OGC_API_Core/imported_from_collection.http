@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d030c01e-365a-478c-9ecb-a72a38d929b5.postman_collection.json
+
+// The landing page provides links to the API definition, the conformance
+// statements and to the feature collections in this dataset.
+
+@name("landing page")
+GET "https://{{baseUrl}}/"
+
+
+// A list of all conformance classes specified in a standard that the
+// server conforms to.
+
+@name("information about specifications that this API conforms to")
+GET "https://{{baseUrl}}/conformance"
+
+
+

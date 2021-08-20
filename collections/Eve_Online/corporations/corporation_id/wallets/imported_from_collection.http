@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get a corporation's wallets
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/wallets/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/wallets/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/wallets/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+
+@name("Returns a corporation's wallet balance")
+GET "https://{{baseUrl}}/corporations/:corporation_id/wallets/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

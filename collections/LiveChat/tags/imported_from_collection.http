@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Returns tags from all groups.nn
+
+@name("List all tags")
+GET "https://{{baseUrl}}/tags"
+"X": "<>"
+? "group"= "<object>"
+
+
+// Deletes a tag from the chosen group. The agents will no longer be able to tag chats and tickets using this tag.nnDeleting a tag will not remove it from the archived chats and tickets.n
+
+@name("Delete a tag")
+DELETE "https://{{baseUrl}}/tags/support"
+"X": "<>"
+
+
+

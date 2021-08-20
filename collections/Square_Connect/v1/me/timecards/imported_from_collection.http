@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Provides summary information for all of a business's employee timecards.
+
+@name("Get Me Timecards")
+GET "https://{{baseUrl}}/v1/me/timecards"
+? "order"= "<object>"
+? "employee_id"= "<string>"
+? "begin_clockin_time"= "<string>"
+? "end_clockin_time"= "<string>"
+? "begin_clockout_time"= "<string>"
+? "end_clockout_time"= "<string>"
+? "begin_updated_at"= "<string>"
+? "end_updated_at"= "<string>"
+? "deleted"= "<boolean>"
+? "limit"= "<integer>"
+? "batch_token"= "<string>"
+
+
+

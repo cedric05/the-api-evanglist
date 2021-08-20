@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bdca8cb-a591-4d01-90eb-dc36f5720cac.postman_collection.json
+
+// Deletes a YouTube video.
+
+@name("Delete Videos")
+DELETE "https://{{baseUrl}}/videos"
+? "id"= "<parameters>"
+? "onBehalfOfContentOwner"= "<>"
+
+
+// Retrieves the ratings that the authorized user gave to a list of specified videos.
+
+@name("Get Videos Get Rating")
+GET "https://{{baseUrl}}/videos/getRating"
+? "id"= "<parameters>"
+? "onBehalfOfContentOwner"= "<>"
+
+
+// Add a like or dislike rating to a video or remove a rating from a video.
+
+@name("Add Videos Rate")
+POST "https://{{baseUrl}}/videos/rate"
+? "id"= "<parameters>"
+? "rating"= "<post>"
+
+
+// Report abuse for a video.
+
+@name("Add Videos Report Abuse")
+POST "https://{{baseUrl}}/videos/reportAbuse"
+? "onBehalfOfContentOwner"= "<>"
+
+
+

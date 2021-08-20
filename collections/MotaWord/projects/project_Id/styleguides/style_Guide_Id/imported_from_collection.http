@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d4cf5606-be3b-4e27-b14f-77855e9137ad.postman_collection.json
+
+// Delete the style guide
+
+@name("Delete the style guide")
+DELETE "https://{{baseUrl}}/projects/:projectId/styleguides/:styleGuideId"
+
+
+// Download a style guide
+
+@name("Download a style guide")
+GET "https://{{baseUrl}}/projects/:projectId/styleguides/:styleGuideId/download"
+
+
+

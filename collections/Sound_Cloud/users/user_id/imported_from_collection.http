@@ -1,0 +1,103 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-edf4e52a-d167-4c2f-bb89-c42269bd9481.postman_collection.json
+
+// Returns a collection of tracks uploaded by user id
+
+@name("Get Users Tracks")
+GET "https://{{baseUrl}}/users/:user_id/tracks.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of comments made by user id
+
+@name("Get Users Comments")
+GET "https://{{baseUrl}}/users/:user_id/comments.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of users the user with user id is following
+
+@name("Get Users Followings")
+GET "https://{{baseUrl}}/users/:user_id/followings.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of users who follow the user with user id
+
+@name("Get Users Followers")
+GET "https://{{baseUrl}}/users/:user_id/followers.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of tracks favorited by the user with user id
+
+@name("Get Users Favorites")
+GET "https://{{baseUrl}}/users/:user_id/favorites.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of groups joined by user with user id
+
+@name("Get Users Groups")
+GET "https://{{baseUrl}}/users/:user_id/groups.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of playlists created by user with user id
+
+@name("Get Users Playlists")
+GET "https://{{baseUrl}}/users/:user_id/playlists.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of tracks uploaded by user id
+
+@name("Get Users Tracks. Format")
+GET "https://{{baseUrl}}/users/:user_id/tracks.{{format}}"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of comments made by user id
+
+@name("Get Users Comments. Format")
+GET "https://{{baseUrl}}/users/:user_id/comments.{{format}}"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of users the user with user id is following
+
+@name("Get Users Followings. Format")
+GET "https://{{baseUrl}}/users/:user_id/followings.{{format}}"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of users who follow the user with user id
+
+@name("Get Users Followers. Format")
+GET "https://{{baseUrl}}/users/:user_id/followers.{{format}}"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of tracks favorited by the user with user id
+
+@name("Get Users Favorites. Format")
+GET "https://{{baseUrl}}/users/:user_id/favorites.{{format}}"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of groups joined by user with user id
+
+@name("Get Users Groups. Format")
+GET "https://{{baseUrl}}/users/:user_id/groups.{{format}}"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of playlists created by user with user id
+
+@name("Get Users Playlists. Format")
+GET "https://{{baseUrl}}/users/:user_id/playlists.{{format}}"
+? "consumer_key"= "<>"
+
+
+

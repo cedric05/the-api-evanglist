@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Get all posting accounts.
+
+@name("Get all posting accounts")
+GET "https://{{baseUrl}}/rest/accounting/locations/posting_accounts"
+
+
+// Delete an posting account.
+
+@name("Delete an posting account")
+DELETE "https://{{baseUrl}}/rest/accounting/locations/posting_accounts/:id"
+
+
+

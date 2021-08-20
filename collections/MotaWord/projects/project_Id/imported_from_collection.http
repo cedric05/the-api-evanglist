@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d4cf5606-be3b-4e27-b14f-77855e9137ad.postman_collection.json
+
+// Get a list of activity comments throughout the whole project.
+
+@name("Get a list of activity comments throughout the whole project.")
+GET "https://{{baseUrl}}/projects/:projectId/comments"
+? "page"= "<integer>"
+? "per_page"= "<integer>"
+
+
+

@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4ad2590-7a09-4b2a-9ac8-f9039ba10098.postman_collection.json
+
+// This operation retrieves a ShoppingCartRiskAssessment entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a ShoppingCartRiskAssessment by ID")
+GET "https://{{baseUrl}}/shoppingCartRiskAssessment/:id"
+? "fields"= "quis elit commodo tempor"
+
+
+// This operation deletes a ShoppingCartRiskAssessment entity.
+
+@name("Deletes a ShoppingCartRiskAssessment")
+DELETE "https://{{baseUrl}}/shoppingCartRiskAssessment/:id"
+
+
+

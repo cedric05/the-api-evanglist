@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-32ced5f7-e4d1-46f1-acad-6349d837288f.postman_collection.json
+
+// This operation retrieves a UserRole entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a UserRole by ID")
+GET "https://{{baseUrl}}/userRole/:id"
+? "fields"= "est minim"
+
+
+// This operation updates partially a UserRole entity.
+
+@name("Updates partially a UserRole")
+PATCH "https://{{baseUrl}}/userRole/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "involvementRole": "officia eiusmod amet",
+    "entitlement": [
+        {
+            "id": "ut laboris",
+            "action": "ullamco consectetur",
+            "function": "eu est sed in",
+            "@baseType": "velit occaecat nisi",
+            "@schemaLocation": "http://ArugBSqfBJZYNHfbhAUBBOvfnDxumyf.jmxBywIbv+HmBoLQeU",
+            "@type": "mollit et"
+        },
+        {
+            "id": "in",
+            "action": "anim est exercitation",
+            "function": "labore iru",
+            "@baseType": "anim ad Lorem deserunt",
+            "@schemaLocation": "https://EDRRrBtcHbbsEalmmgaPgSXPZzxht.mnbmDrKH-i,IsEPPemdTc8nSNHtoBXBgBj9dTrYozAdILywCthQ5S,OAJL-DI",
+            "@type": "eu"
+        }
+    ],
+    "@baseType": "nostrud ullamco qui",
+    "@schemaLocation": "https://WRtdpuKrRLxdeRSx.mfipWwg0Zz",
+    "@type": "occaecat"
+})
+
+
+

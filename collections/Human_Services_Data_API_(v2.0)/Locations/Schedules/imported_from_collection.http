@@ -1,0 +1,71 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Location Schedules")
+GET "https://{{baseUrl}}/locations/:location_id/schedule"
+
+
+@name("add Location Schedule")
+POST "https://{{baseUrl}}/locations/:location_id/schedule"
+"Content-Type": "application/json"
+json({
+    "id": "ea ut in",
+    "service_id": "in ut",
+    "location_id": "enim fugiat aliqua",
+    "service_at_location_id": "est laboris cupid",
+    "valid_from": "1999-02-10",
+    "valid_to": "1947-04-23",
+    "dtstart": "1996-12-27",
+    "timezone": -45138539.71377087,
+    "until": "1977-10-24",
+    "count": "1989-08-11",
+    "wkst": "1977-04-21",
+    "freq": "ad of",
+    "interval": 73803390.81802854,
+    "byday": "eu esse culpa amet dolor",
+    "byweekno": "Duis in",
+    "bymonthday": -33820628.18665914,
+    "byyearday": 54732345.98769331,
+    "description": "laborum labore consectetur id",
+    "opens_at": "01:16:42.790Z",
+    "closes_at": "07:50:52.636Z"
+})
+
+
+@name("get Location Schedule")
+GET "https://{{baseUrl}}/locations/:location_id/schedule/:schedule_id"
+
+
+@name("update Location Schedule")
+PUT "https://{{baseUrl}}/locations/:location_id/schedule/:schedule_id"
+"Content-Type": "application/json"
+json({
+    "id": "ea ut in",
+    "service_id": "in ut",
+    "location_id": "enim fugiat aliqua",
+    "service_at_location_id": "est laboris cupid",
+    "valid_from": "1999-02-10",
+    "valid_to": "1947-04-23",
+    "dtstart": "1996-12-27",
+    "timezone": -45138539.71377087,
+    "until": "1977-10-24",
+    "count": "1989-08-11",
+    "wkst": "1977-04-21",
+    "freq": "ad of",
+    "interval": 73803390.81802854,
+    "byday": "eu esse culpa amet dolor",
+    "byweekno": "Duis in",
+    "bymonthday": -33820628.18665914,
+    "byyearday": 54732345.98769331,
+    "description": "laborum labore consectetur id",
+    "opens_at": "01:16:42.790Z",
+    "closes_at": "07:50:52.636Z"
+})
+
+
+@name("delete Location Schedule")
+DELETE "https://{{baseUrl}}/locations/:location_id/schedule/:schedule_id"
+
+
+

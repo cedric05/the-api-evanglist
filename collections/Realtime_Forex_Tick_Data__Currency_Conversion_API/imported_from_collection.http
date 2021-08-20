@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7b2fdde5-83bd-4069-a7f1-cfc6be0a5ab5.postman_collection.json
+
+// Convert from one currency to another https://forex.1forge.com/1.0.1/convert?from=USD&to=EUR&quantity=100
+
+@name("/convert")
+GET "https://{{baseUrl}}/convert"
+? "quantity"= "<string>"
+? "to"= "<string>"
+? "from"= "<string>"
+
+
+@name("/market_status")
+GET "https://{{baseUrl}}/market_status"
+
+
+// Get quotes for specific currency pair(s):
+
+@name("/quotes")
+GET "https://{{baseUrl}}/quotes"
+? "pairs"= "<string>"
+
+
+// Get a list of symbols for which we provide real-time quotes:
+
+@name("/symbols")
+GET "https://{{baseUrl}}/symbols"
+
+
+

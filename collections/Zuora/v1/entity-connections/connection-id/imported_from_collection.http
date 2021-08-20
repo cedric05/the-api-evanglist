@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnAccepts a connection request.nn## User Access PermissionnYou must make the call as an entity administrator to accept a connection request.n
+
+@name("Multi-entity: Accept connection")
+PUT "https://{{baseUrl}}/v1/entity-connections/:connection-id/accept"
+
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnDenies a connection request.nn## User Access PermissionnYou must make the call as an entity administrator to deny a connection request.n
+
+@name("Multi-entity: Deny connection")
+PUT "https://{{baseUrl}}/v1/entity-connections/:connection-id/deny"
+
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnDisconnects an established connection request.nn## User Access PermissionnYou must make the call as an administrator of the target entity or source entity.n
+
+@name("Multi-entity: Disconnect connection")
+PUT "https://{{baseUrl}}/v1/entity-connections/:connection-id/disconnect"
+
+
+

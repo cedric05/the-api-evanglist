@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-87f9f9dc-5401-4018-97ec-abc123495be8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("createAuthenticationToken") : "base-inherit-auth"
+POST "https://{{baseUrl}}/authenticate"
+"Content-Type": "application/json"
+? "includeUserDetails"= "false"
+json({
+    "password": "ut quis et",
+    "username": "non ipsum do"
+})
+
+
+

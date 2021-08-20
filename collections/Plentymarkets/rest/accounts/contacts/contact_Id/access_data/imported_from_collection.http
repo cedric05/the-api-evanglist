@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Gets the URL to login as the given contact. The ID of the contact must be specified.
+
+@name("Get the login URL")
+GET "https://{{baseUrl}}/rest/accounts/contacts/:contactId/access_data/login_url"
+
+
+// Sends an email to a contact with a link to change the password. The ID of the contact must be specified.
+
+@name("Send password link for a contact")
+PUT "https://{{baseUrl}}/rest/accounts/contacts/:contactId/access_data/new_password"
+? "password"= "<>"
+
+
+// Updates the password for a contact. The ID of the contact must be specified.
+
+@name("Update the password for a contact")
+PUT "https://{{baseUrl}}/rest/accounts/contacts/:contactId/access_data/set_password"
+? "password"= "<>"
+
+
+// Unblocks a contact to allow this contact to log in again. The ID of the contact must be specified.
+
+@name("Unblock a contact")
+PUT "https://{{baseUrl}}/rest/accounts/contacts/:contactId/access_data/unblock_user"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("Update a repository invitation")
+PATCH "https://{{baseUrl}}/repos/:owner/:repo/invitations/:invitation_id"
+"Content-Type": "application/json"
+json({
+    "permissions": "<string>"
+})
+
+
+@name("Delete a repository invitation")
+DELETE "https://{{baseUrl}}/repos/:owner/:repo/invitations/:invitation_id"
+
+
+

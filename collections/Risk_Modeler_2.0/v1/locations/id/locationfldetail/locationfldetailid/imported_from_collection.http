@@ -1,0 +1,207 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Gets a location FL detail
+
+@name("Gets a location FL detail") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/locations/:id/locationfldetail/:locationfldetailid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates FL detail
+
+@name("Updates FL detail") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/locations/:id/locationfldetail/:locationfldetailid"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": -68897420,
+    "siteLimit": -28653239.019362167,
+    "siteDeduct": 27184392.55450815,
+    "combinedLimit": 2484548.042038977,
+    "combinedDeduct": -44038958.6794367,
+    "yearUpgrade": "ea adipisicing esse",
+    "startDate": "commodo anim labor",
+    "completionDate": "officia deserunt nulla ex",
+    "percentComplete": -94660883.62027927,
+    "percentageSiteLossDeductibleAmount": -24396191.548903927,
+    "percentageCombinedLossDeductibleAmount": -85798643.80184783,
+    "isFranchiseSiteDeductible": {
+        "id": 91062474,
+        "code": "tempor ut",
+        "name": "ut esse mollit"
+    },
+    "isFranchiseCombinedDeductible": {
+        "id": 70351739,
+        "code": "ex qui magna irure",
+        "name": "labore ipsum"
+    },
+    "isValid": true,
+    "floodProtect": {
+        "id": 82379853,
+        "code": "velit",
+        "name": "aliqua cupidatat"
+    },
+    "floorType": {
+        "id": -83424752,
+        "code": "Ut in",
+        "name": "occaecat minim deserunt"
+    },
+    "floodMissile": {
+        "id": 54480157,
+        "code": "consequat esse aliqua consectetur ea",
+        "name": "reprehenderit irure ipsum sit"
+    },
+    "basement": {
+        "id": 22027621,
+        "code": "nisi consectetur aute laborum",
+        "name": "in culpa magna enim"
+    },
+    "floodVulnerability": {
+        "id": -35037540,
+        "code": "eu in ex laboris ut",
+        "name": "Ut officia consequat ullamco non"
+    },
+    "mechElecGround": {
+        "id": 43383149,
+        "code": "esse reprehenderit do ullamco",
+        "name": "e"
+    },
+    "cladType": {
+        "id": 11273863,
+        "code": "in vol",
+        "name": "mollit tempor irure"
+    },
+    "foundation": {
+        "id": -11441603,
+        "code": "consequat non quis cillum",
+        "name": "deserunt Ut"
+    },
+    "duration": {
+        "id": 95178963,
+        "code": "aute in officia ut consequat",
+        "name": "sint nulla"
+    },
+    "contamination": {
+        "id": -37389242,
+        "code": "ipsum in fugiat",
+        "name": "quis veniam deserunt"
+    },
+    "velocity": {
+        "id": 78731254,
+        "code": "Excepteur et labore amet do",
+        "name": "ut ex quis"
+    },
+    "flPackage": {
+        "id": 10023682,
+        "code": "nis",
+        "name": "Ut"
+    },
+    "flProtect": {
+        "id": 14539073,
+        "code": "sit nostrud in sed",
+        "name": "Duis"
+    },
+    "flSalvage": {
+        "id": -53000176,
+        "code": "culpa do consequat ex",
+        "name": "eiusmod do eu"
+    },
+    "flSpecieStorage": {
+        "id": 1619191,
+        "code": "fugiat",
+        "name": "sed Lorem pariatur eiusmod"
+    },
+    "ifmVerticalExpDist": {
+        "id": 62251793,
+        "code": "ad fugiat deserunt",
+        "name": "adipisicing aliqua"
+    },
+    "flFoundationType": {
+        "id": -40392076,
+        "code": "laborum ut",
+        "name": "aliqua Duis"
+    },
+    "floodIndex": -25745916.027515754,
+    "elevation": 26848597.17258425,
+    "elevationCov": 45534116.50891772,
+    "annProb": "adipisicing occaecat",
+    "flZone": "Excepteur proident in labore",
+    "bfe": "eu consectetur",
+    "additionalInfo": "sint laboris",
+    "panel": "ut Lorem",
+    "cobra": "deserunt",
+    "floodWay": "et commodo eiusmod",
+    "sfha": "minim",
+    "community": "aute incididunt",
+    "confidence": 27187650.87547794,
+    "underRev": "velit Duis aliquip",
+    "panelDate": "dolore nulla",
+    "buffer": 93017890.05356094,
+    "otherZones": "Excepteur veniam ut ad",
+    "huZones": "tempor irure",
+    "mapSource": -99126894,
+    "flMatch": {
+        "id": -60757566,
+        "code": "dolore aliqua quis est",
+        "name": "commodo"
+    },
+    "finishedFloor": 77937945.59135213,
+    "userId1": "conse",
+    "userId2": "anim minim fugiat officia",
+    "basinName": "Duis anim quis voluptate magna",
+    "catchmentId": -82796930,
+    "floodDriver": "dolor anim aliquip ut",
+    "rms100Flzone": -44165836,
+    "rms500Flzone": 26734478,
+    "fl50YrRpDef": -90611692,
+    "fl75YrRpDef": -94924423,
+    "fl100YrRpDef": -69581717,
+    "fl200YrRpDef": 67205154,
+    "fl250YrRpDef": 59870697,
+    "fl500YrRpDef": -4934254,
+    "fl1000YrRpDef": 9231333,
+    "fl10000YrRpDef": -83974163,
+    "fl50YrRpUndef": 93646250,
+    "fl75YrRpUndef": 16007315,
+    "fl100YrRpUndef": -68957216,
+    "fl200YrRpUndef": -17101193,
+    "fl250YrRpUndef": 89411868,
+    "fl500YrRpUndef": -99042321,
+    "fl1000YrRpUndef": 38179605,
+    "fl10000YrRpUndef": 98503753,
+    "hdFlMatch": {
+        "id": -46915222,
+        "code": "dolore do",
+        "name": "qui reprehenderit"
+    },
+    "flFfHag": -69149943.30014141,
+    "flFfHagFlag": {
+        "id": -17476367,
+        "code": "ipsum eu nostrud",
+        "name": "id aliquip"
+    },
+    "flZoneGroup": -83991617,
+    "flPerBasement": 88827010.47301596
+})
+
+
+// Deletes a location FL detail
+
+@name("Deletes a location FL detail") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/locations/:id/locationfldetail/:locationfldetailid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

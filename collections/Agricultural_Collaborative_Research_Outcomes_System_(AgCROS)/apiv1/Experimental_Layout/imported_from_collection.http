@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a47e4362-9c02-4662-817b-428452ef6e7d.postman_collection.json
+
+@name("Metadata - describes experimental units for every treatment and sites.")
+GET "https://{{baseUrl}}/api/v1/ExperimentalLayout/Experunits"
+
+
+@name("Metadata - describes treatments for every experimental site")
+GET "https://{{baseUrl}}/api/v1/ExperimentalLayout/Treatments"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-18af961a-c8f9-4c42-85af-0f2fe7c91aaa.postman_collection.json
+
+// Change information for a user who can view your status page
+
+@name("Change information for a user who can view your status page")
+PATCH "https://{{baseUrl}}/pages/[page_id]/page_access_users/[page_access_user_id].json"
+? "page_access_user[external_login]"= "<string>"
+? "page_access_user[email]"= "<string>"
+? "page_access_user[component_ids][]"= "<string>"
+? "page_access_user[metric_ids][]"= "<string>"
+? "page_access_user[page_access_group_ids][]"= "<string>"
+
+
+// Assign components to a page access user (overwrites existing components)
+
+@name("Assign components to a page access user (overwrites existing components)")
+POST "https://{{baseUrl}}/pages/[page_id]/page_access_users/[page_access_user_id]/components.json"
+? "component_ids[]"= "<string>"
+
+
+

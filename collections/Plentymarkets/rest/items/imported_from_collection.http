@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Search item.
+
+@name("Search item")
+GET "https://{{baseUrl}}/rest/items"
+? "with"= "<>"
+? "lang"= "<post>"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+? "name"= "<post>"
+? "manufacturerId"= "<post>"
+? "tagId"= "<>"
+? "flagOne"= "<post>"
+? "flagTwo"= "<post>"
+? "updatedBetween"= "<>"
+? "variationUpdatedBetween"= "<>"
+? "variationRelatedUpdatedBetween"= "<>"
+
+
+// Lists all shipping profiles of all items. Results can be filtered by the timestamp of the link between items and shipping profiles (eq, lt, lte, gt, gte, between).n<ul>n<li>eq = Equal to</li>n<li>gte = Greater than or equal to</li>n<li>gt = Greater than</li>n<li>lte = Less than or equal to</li>n<li>lt = Less than</li>n<li>between = Date range</li>n</ul>nExample: updated=gt:2018-04-16 16:00:00 returns all items with shipping profiles that were activated after 4pm on the 16th of April 2018.
+
+@name("List all shipping profiles of all items")
+GET "https://{{baseUrl}}/rest/items/item_shipping_profiles"
+
+
+// Lists the ID and name of all item label templates saved in the system.
+
+@name("List item label templates")
+GET "https://{{baseUrl}}/rest/items/labels"
+
+
+

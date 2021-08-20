@@ -1,0 +1,90 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6b84cc71-ce77-48b8-babd-323eb8d670bd.postman_collection.json
+
+// This service returns one or more substance by alternate ID, given a specific alternate ID type. The alt_id_type service can be used to list all alternate ID types to determine which alternate ID types are available.
+
+@name("Get substance by Alternate ID.")
+GET "https://{{baseUrl}}/substance/alt_id/:altId/alt_id_type/:altIdType"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "includeRelationships"= "<string>"
+? "listAcronym"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns one or more substances by CAS number. By default, only current CAS numbers are searched. This can be changed using the searchAllCas query parameter.
+
+@name("Get substance by CAS Number.")
+GET "https://{{baseUrl}}/substance/cas/:casNum"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "includeRelationships"= "<string>"
+? "listAcronym"= "<string>"
+? "qualifier"= "exact"
+? "searchAllCas"= "<string>"
+
+
+// This service returns a substance by EPA Identifier.
+
+@name("Get substance by EPAID.")
+GET "https://{{baseUrl}}/substance/epaid/:epaid"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "includeRelationships"= "<string>"
+? "listAcronym"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns a substance by internal tracking number (ITN).
+
+@name("Get substance by ITN.")
+GET "https://{{baseUrl}}/substance/itn/:itnNum"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "includeRelationships"= "<string>"
+? "listAcronym"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns a substance by substance systematic name, EPA name, or synonym name.
+
+@name("Get substance by name.")
+GET "https://{{baseUrl}}/substance/name/:substanceName"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "includeRelationships"= "<string>"
+? "listAcronym"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns a substance by the synonym key (numeric).
+
+@name("Get substance by the synonym key.")
+GET "https://{{baseUrl}}/substance/synonymKey/:synonymKey"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "includeRelationships"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns a substance by Taxonomic Serial Number (TSN).
+
+@name("Get substance by TSN.")
+GET "https://{{baseUrl}}/substance/tsn/:tsnNum"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "includeRelationships"= "<string>"
+? "listAcronym"= "<string>"
+? "qualifier"= "exact"
+? "searchAllTsn"= "<string>"
+
+
+

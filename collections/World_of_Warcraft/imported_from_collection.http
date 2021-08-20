@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d72acdeb-8ec8-4c11-a7e7-a467752fee9e.postman_collection.json
+
+// Fetches a single character at a time through an HTTP GET request to a URL describing the character profile resource. By default, a basic dataset will be returned and with each request and zero or more additional fields can be retrieved. The core dataset returned includes the character's realm, name, level, last modified timestamp, thumbnail, race id, achievement points value, gender id and class id.
+
+@name("Get Character Realm Charactername")
+GET "https://{{baseUrl}}/character/:realm/:characterName"
+? "fields"= "<>"
+
+
+// Fetches a single guild at a time through an HTTP GET request to a url describing the guild profile resource. By default, a basic dataset will be returned and with each request and zero or more additional fields can be retrieved. The core dataset returned includes the guild's name, level, faction and achievement points.
+
+@name("Get Guild Realm Guildname")
+GET "https://{{baseUrl}}/guild/:realm/:guildName"
+? "fields"= "<>"
+
+
+// Retrieves realms status information. This information is limited to whether or not the realm is up, the type and state of the realm and the current population.
+
+@name("Get Realm Status")
+GET "https://{{baseUrl}}/realm/status"
+
+
+// Provides a per-realm list of recently generated auction house data dumps. The current auctions data is represented as JSON structures containing auction data for the tree auctions houses available on each realm.
+
+@name("Get Auction Data Realm")
+GET "https://{{baseUrl}}/auction/data/:realm"
+
+
+// Provides detailed item information.
+
+@name("Get Item Itemid")
+GET "https://{{baseUrl}}/item/:itemId"
+
+
+// Provides detailed arena team information.
+
+@name("Get Arena Realm Teamsize Teamname")
+GET "https://{{baseUrl}}/arena/:realm/:teamSize/:teamName"
+
+
+

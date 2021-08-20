@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Update the Reactor script for an application.
+
+@name("Update a Reactor script")
+PUT "https://{{baseUrl}}/projects/:projectId/applications/:applicationId/reactor/script"
+? "No Name"= "<string>"
+
+
+// Read the status of a Reactor script update in progress.
+
+@name("Read Reactor script status")
+GET "https://{{baseUrl}}/projects/:projectId/applications/:applicationId/reactor/script/status"
+? "No Name"= "<string>"
+
+
+

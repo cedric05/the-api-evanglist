@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfc666ca-94aa-4d7e-b49b-06193ecb21e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// <p>Update a descriptor by issuing a PUT request to the @id of the descriptor being updated.<br/><br/>This action is <em>re-writing</em> the existing descriptor, therefore the payload must include all descriptor fields that were required when the descriptor was defined.</p>
+
+@name("Update a descriptor by ID.") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/tenant/descriptors/:DESCRIPTOR_ID"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+"Content-Type": "application/json"
+data('"{{descriptorPayload}}"')
+
+
+// <p>Remove a descriptor from the registry by issuing a DELETE request to the @id of the descriptor being removed.</p>
+
+@name("Delete a descriptor by ID.") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/tenant/descriptors/:DESCRIPTOR_ID"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+
+
+

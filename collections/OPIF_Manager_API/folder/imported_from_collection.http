@@ -1,0 +1,112 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d3c96cc-956a-44d5-9cdb-114ad7d90bde.postman_collection.json
+
+// Get OPIF folder information including list of subfolders and files. Response returned in specified format.
+
+@name("Get Subfolder and files")
+GET "https://{{baseUrl}}/folder/id/{{folderId}}.{{format}}"
+? "entityId"= "<string>"
+
+
+// Get root folder information including list of subfolders and files. Response returned in specified format.
+
+@name("Get parent folders")
+GET "https://{{baseUrl}}/folder/parentFolders.{{format}}"
+? "entityId"= "<string>"
+? "sourceService"= "<string>"
+
+
+// Get folders for the specified entityId in 'More Public Files'category. Response returned in specified format.
+
+@name("Get More Public Folders ")
+GET "https://{{baseUrl}}/folder/morePublicFolders.{{format}}"
+? "entityId"= "<string>"
+? "sourceService"= "<string>"
+
+
+// Get OPIF folder information. Response returned in specified format.
+
+@name("Get Folder for specified path.")
+GET "https://{{baseUrl}}/folder/path.{{format}}"
+? "folderPath"= "<string>"
+? "entityId"= "<string>"
+? "sourceService"= "<string>"
+
+
+// Create new folder with the folder details specified.
+
+@name("Create new folder")
+POST "https://{{baseUrl}}/folder/create.{{format}}"
+"accessToken": "<string>"
+"Content-Type": "application/json"
+json({
+    "parentFolderId": "<string>",
+    "folderName": "<string>",
+    "entityId": "<string>",
+    "serviceCode": "<string>"
+})
+
+
+// Rename the folder with the specified folder name.
+
+@name("Rename Folder")
+PUT "https://{{baseUrl}}/folder/rename.{{format}}"
+"accessToken": "<string>"
+"Content-Type": "application/json"
+json({
+    "folderId": "<string>",
+    "folderName": "<string>",
+    "entityId": "<string>",
+    "serviceCode": "<string>"
+})
+
+
+// Lists folders that were modified.
+
+@name("Folder changes list")
+GET "https://{{baseUrl}}/folder/history.{{format}}"
+? "count"= "<integer>"
+? "entityId"= "<string>"
+? "startDate"= "<date>"
+? "endDate"= "<date>"
+? "offset"= "<int332>"
+? "status"= "<string>"
+
+
+// Count folders that were modified.
+
+@name("Count of Folder changes")
+GET "https://{{baseUrl}}/folder/historyCount.json"
+? "entityId"= "{{entityId}}"
+? "entityId"= "<string>"
+
+
+// Restore the status of the folder with the specified id.
+
+@name("Restore Folder")
+PUT "https://{{baseUrl}}/folder/restore.{{format}}"
+"accessToken": "<string>"
+"Content-Type": "application/json"
+json({
+    "folderId": "<string>",
+    "entityId": "<string>",
+    "serviceCode": "<string>"
+})
+
+
+// Mark the specified folder as deleted.
+
+@name("Delete Folder")
+DELETE "https://{{baseUrl}}/folder/delete/:folderId/:entityId/{{serviceCode}}.{{format}}"
+"accessToken": "<string>"
+
+
+// Purge the folder with the specified id.
+
+@name("Purge Folder")
+DELETE "https://{{baseUrl}}/folder/purge/:folderId/:entityId/{{serviceCode}}.{{format}}"
+"accessToken": "<string>"
+
+
+

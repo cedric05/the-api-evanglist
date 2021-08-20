@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
+
+@name("List pending organization invitations")
+GET "https://{{baseUrl}}/orgs/:org/invitations"
+? "per_page"= "30"
+? "page"= "1"
+
+
+// Invite people to an organization by using their GitHub user ID or their email address. In order to create invitations in an organization, the authenticated user must be an organization owner.
+// 
+// This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+
+@name("Create an organization invitation")
+POST "https://{{baseUrl}}/orgs/:org/invitations"
+"Content-Type": "application/json"
+json({
+    "invitee_id": "<integer>",
+    "email": "<string>",
+    "role": "direct_member",
+    "team_ids": [
+        "<integer>",
+        "<integer>"
+    ]
+})
+
+
+// List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.
+
+@name("List organization invitation teams")
+GET "https://{{baseUrl}}/orgs/:org/invitations/:invitation_id/teams"
+? "per_page"= "30"
+? "page"= "1"
+
+
+

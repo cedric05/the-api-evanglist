@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Starts maintenance mode of all instances belonging to a Deployment Resource.
+
+@name("Start maintenance mode (all instances)") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/:resource_kind/:ref_id/instances/maintenance-mode/_start"
+
+
+// Stops maintenance mode of all instances belonging to a Deployment Resource.
+
+@name("Stop maintenance mode (all instances)") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/:resource_kind/:ref_id/instances/maintenance-mode/_stop"
+
+
+

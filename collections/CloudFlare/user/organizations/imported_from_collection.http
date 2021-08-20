@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// List organizations the user is associated with
+
+@name("List organizations the user is associated with")
+GET "https://{{baseUrl}}/user/organizations"
+"X": "<>"
+? "direction"= "<>"
+? "match"= "<>"
+? "name"= "<>"
+? "order"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+? "status"= "<>"
+
+
+// Remove association to an organization
+
+@name("Remove association to an organization")
+DELETE "https://{{baseUrl}}/user/organizations/:identifier"
+
+
+

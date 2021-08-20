@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Get audit log</code>&nbsp;request is used to retrieve the audit log of a stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-audit-log>Get Audit Log</a> API Reference document
+
+@name("Get audit log")
+GET "https://{{base_url}}/v3/audit-logs"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Get audit log item</code>&nbsp;request is used to retrieve a specific item from the audit log of a stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-audit-log-item>Get Audit Log Item</a> API Reference document
+
+@name("Get audit log item")
+GET "https://{{base_url}}/v3/audit-logs/{{log_item_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+

@@ -1,0 +1,78 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Open the contract window inside the client
+// 
+// ---
+// Alternate route: `/dev/ui/openwindow/contract/`
+// 
+// Alternate route: `/legacy/ui/openwindow/contract/`
+// 
+// Alternate route: `/v1/ui/openwindow/contract/`
+
+@name("Open Contract Window")
+POST "https://{{baseUrl}}/ui/openwindow/contract/"
+? "contract_id"= "-26592061"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Open the information window for a character, corporation or alliance inside the client
+// 
+// ---
+// Alternate route: `/dev/ui/openwindow/information/`
+// 
+// Alternate route: `/legacy/ui/openwindow/information/`
+// 
+// Alternate route: `/v1/ui/openwindow/information/`
+
+@name("Open Information Window")
+POST "https://{{baseUrl}}/ui/openwindow/information/"
+? "datasource"= "tranquility"
+? "target_id"= "-26592061"
+? "token"= "commodo irure"
+
+
+// Open the market details window for a specific typeID inside the client
+// 
+// ---
+// Alternate route: `/dev/ui/openwindow/marketdetails/`
+// 
+// Alternate route: `/legacy/ui/openwindow/marketdetails/`
+// 
+// Alternate route: `/v1/ui/openwindow/marketdetails/`
+
+@name("Open Market Details")
+POST "https://{{baseUrl}}/ui/openwindow/marketdetails/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+? "type_id"= "-26592061"
+
+
+// Open the New Mail window, according to settings from the request if applicable
+// 
+// ---
+// Alternate route: `/dev/ui/openwindow/newmail/`
+// 
+// Alternate route: `/legacy/ui/openwindow/newmail/`
+// 
+// Alternate route: `/v1/ui/openwindow/newmail/`
+
+@name("Open New Mail Window")
+POST "https://{{baseUrl}}/ui/openwindow/newmail/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "subject": "qui",
+    "body": "",
+    "recipients": [
+        -95936421
+    ],
+    "to_corp_or_alliance_id": 22020269,
+    "to_mailing_list_id": -35814384
+})
+
+
+

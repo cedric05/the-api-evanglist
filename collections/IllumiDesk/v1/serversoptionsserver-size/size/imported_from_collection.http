@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Only super users with on-premises version have acceess to this endpoint.
+
+@name("Delete a server size by id") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/servers/options/server-size/:size/"
+
+
+@name("Get a server size by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/servers/options/server-size/:size/"
+
+
+// Only super users with on-premises version have acceess to this endpoint.
+
+@name("Update a server size by id") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/servers/options/server-size/:size/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "cpu": "<integer>",
+    "memory": "<integer>",
+    "active": "<boolean>"
+})
+
+
+// Only super users with on-premises version have acceess to this endpoint.
+
+@name("Replace a server size by id") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/servers/options/server-size/:size/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "cpu": "<integer>",
+    "memory": "<integer>",
+    "active": "<boolean>"
+})
+
+
+

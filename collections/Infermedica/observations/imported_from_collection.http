@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01dcf85f-3ef8-448e-9cc1-9e1b0d7335f1.postman_collection.json
+
+// Returns a list of all available observations.
+
+@name("List all observations")
+GET "https://{{baseUrl}}/observations"
+
+
+// Returns details of a single observation specified by id parameter.
+
+@name("Get observation by id")
+GET "https://{{baseUrl}}/observations/:id"
+
+
+

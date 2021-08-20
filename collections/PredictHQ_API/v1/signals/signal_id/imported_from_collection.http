@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-be4a5181-521c-480d-a9e2-a53cb6b4dec5.postman_collection.json
+
+// This action returns a Signal according to the unique identifier you provide.
+
+@name("Retrieve A Signal")
+GET "https://{{baseUrl}}/v1/signals/:signal_id/"
+
+
+// This action returns a complete analysis of your Signal, which includes what your actual figures were, what could be expected, and what was in excess in terms of **demand**, **lead time** and **duration** and can be explained using events. Note that lead time (`lead`) and duration (`span`) analysis are only available when an `initiated` and `completed` dates are provided with data points, respectively.nnTo retrieve a list of events that we estimate impacted your business at a specific date in the
+
+@name("Retrieve Analysis")
+GET "https://{{baseUrl}}/v1/signals/:signal_id/analysis/"
+
+
+// Every Signal needs a series of Data Points for the API to do its job.nnUnlike the other endpoints, the Data Point sink accepts three content types for uploading your data:n- `application/json`: A JSON array of Data Points.n- `application/x-ldjson`: A list of JSON Data Points, one on each line.n- `text/csv`: A list of Data Points with each column comma-separated, and column names on the first row.nnAs a rule of thumb, you should limit the number of records you upload with any single request to 1,
+
+@name("Create Data Points")
+POST "https://{{baseUrl}}/v1/signals/:signal_id/sink/"
+"Content": "<>"
+
+
+// This action returns a summary for each dimension of your Signal.n
+
+@name("Retrieve All Dimensions")
+GET "https://{{baseUrl}}/v1/signals/:signal_id/dimensions/"
+
+
+

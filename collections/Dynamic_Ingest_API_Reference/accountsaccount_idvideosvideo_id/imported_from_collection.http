@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d5dfe1f8-7e19-4e13-baf5-ed376a939264.postman_collection.json
+
+// Get temporary S3 URLs to upload source files for ingestion into Video Cloud. See Source File Upload for more information. NOTE that before you ingest a new video, you must first make a Create Video request. 
+
+@name("Get_S3_URLs")
+GET "https://{{baseUrl}}/accounts/:account_id/videos/:video_id/upload-urls/:source_name"
+
+
+// Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. NOTE that before you ingest a new video, you must first make a Create Video request. 
+
+@name("Ingest_Media_Asset")
+POST "https://{{baseUrl}}/accounts/:account_id/videos/:video_id/ingest-requests"
+
+
+

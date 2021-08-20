@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Note And Attachment") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/NoteAndAttachment/"
+
+
+@name("Note And Attachment Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/NoteAndAttachment/{ID}/"
+
+
+@name("Describe Note And Attachment") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/NoteAndAttachment/describe/"
+
+
+

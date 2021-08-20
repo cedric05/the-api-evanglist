@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves metadata for an entity in a domain tablespace.
+
+@name("Get metadata for an entity in a domain tablespace") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/domains/:domainname/tablespace/:tablespace/entities/:entity"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates new Currency in a specified data source.
+
+@name("Create new Currency ") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/domains/:domainname/tablespace/:tablespace/entities/:entity"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+
+
+
+// Retrieves attributes for a specified entity associated with a named domain's particular tablespace.
+
+@name("Get attributes for a specified entity in a domain tablespace") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/domains/:domainname/tablespace/:tablespace/entities/:entity/meta"
+"Authorization": "Bearer <Bearer Token>"
+? "tag"= "Excepteur nisi in"
+
+
+// Get values for an entity in a domain tablespace
+
+@name("Get values for an entity in a domain tablespace") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/domains/:domainname/tablespace/:tablespace/entities/:entity/values"
+"Authorization": "Bearer <Bearer Token>"
+? "fields"= "Excepteur nisi in"
+? "tag"= "Excepteur nisi in"
+? "attributename"= "Excepteur nisi in"
+? "sortby"= "Excepteur nisi in"
+? "sortorder"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+? "filter"= "Excepteur nisi in"
+
+
+// Retrieves a list  secondary modifiers for a domain/tablespace/entity specified by their respective names.
+
+@name("Get a list of all secondary modifiers for a specified domain/tablespace/entity.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/domains/:domainname/tablespace/:tablespace/entities/:entity/secondarymodifiers"
+"Authorization": "Bearer <Bearer Token>"
+? "jsonfield"= "Excepteur nisi in"
+? "option"= "Excepteur nisi in"
+? "tag"= "Excepteur nisi in"
+? "q"= "Excepteur nisi in"
+? "sortby"= "Excepteur nisi in"
+? "sortorder"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Retrieves a list hazards for a domain/tablespace/entity specified by their respective names.
+
+@name("Get a list of all hazards for a specified domain/tablespace/entity.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/domains/:domainname/tablespace/:tablespace/entities/:entity/hazards"
+"Authorization": "Bearer <Bearer Token>"
+? "jsonfield"= "Excepteur nisi in"
+? "option"= "Excepteur nisi in"
+? "tag"= "Excepteur nisi in"
+? "q"= "Excepteur nisi in"
+? "sortby"= "Excepteur nisi in"
+? "sortorder"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+

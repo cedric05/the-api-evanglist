@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c039dcb8-c468-46a5-bef2-944b0de198e7.postman_collection.json
+
+// Checks the supplied TeX formula for correctness and returns thennormalised formula representation as well as information aboutnidentifiers. Available types are tex and inline-tex. The responsencontains the `x-resource-location` header which can be used to retrieventhe render of the checked formula in one of the supported renderingnformats. Just append the value of the header to `/media/math/{format}/`nand perform a GET request against that URL.nnStability: [stable](https://www.mediawiki.org/wiki
+
+@name("Check and normalize a TeX formula.")
+POST "https://{{baseUrl}}/media/math/check/:type"
+
+
+// Returns the previously-stored formula via `/media/math/check/{type}` fornthe given hash.nnStability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable).n
+
+@name("Get a previously-stored formula")
+GET "https://{{baseUrl}}/media/math/formula/:hash"
+
+
+// Given a request hash, renders a TeX formula into its mathematicnrepresentation in the given format. When a request is issued to then`/media/math/check/{format}` POST endpoint, the response contains then`x-resource-location` header denoting the hash ID of the POST data. Oncenobtained, this endpoint has to be used to obtain the actual render.nnStability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable).n
+
+@name("Get rendered formula in the given format.")
+GET "https://{{baseUrl}}/media/math/render/:format/:hash"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1eafd448-a35c-467b-bb97-09ace45ef013.postman_collection.json
+
+// Returns all of the Capital One branches.
+
+@name("Get all branches")
+GET "https://{{baseUrl}}/branches"
+
+
+// Returns the branch with the specific id
+
+@name("Get branch by id")
+GET "https://{{baseUrl}}/branches/:id"
+
+
+

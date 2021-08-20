@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Email Domain Key") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/EmailDomainKey/"
+
+
+@name("Email Domain Key Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/EmailDomainKey/{ID}/"
+
+
+@name("Describe Email Domain Key") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/EmailDomainKey/describe/"
+
+
+

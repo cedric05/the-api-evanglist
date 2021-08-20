@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Manage the notes for a given user.
+
+@name("List all Note Attachment for User Monetary Account Request Inquiry Batch")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/request-inquiry-batch/:request-inquiry-batchID/note-attachment"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Used to manage attachment notes.
+
+@name("CREATE Note Attachment for User Monetary Account Request Inquiry Batch")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/request-inquiry-batch/:request-inquiry-batchID/note-attachment"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "attachment_id": "<integer>",
+    "description": "<string>"
+})
+
+
+

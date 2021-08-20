@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-83d768b1-950f-434d-8ea8-e2e63edbcbef.postman_collection.json
+
+// Returns a specific student
+
+@name("get Student")
+GET "https://{{baseUrl}}/students/:id"
+? "include"= "<string>"
+
+
+// Returns the contacts for a student
+
+@name("get Contacts For Student")
+GET "https://{{baseUrl}}/students/:id/contacts"
+? "limit"= "<integer>"
+
+
+// Returns the district for a student
+
+@name("get District For Student")
+GET "https://{{baseUrl}}/students/:id/district"
+
+
+// Returns the primary school for a student
+
+@name("get School For Student")
+GET "https://{{baseUrl}}/students/:id/school"
+
+
+// Returns the sections for a student
+
+@name("get Sections For Student")
+GET "https://{{baseUrl}}/students/:id/sections"
+? "limit"= "<integer>"
+? "starting_after"= "<string>"
+? "ending_before"= "<string>"
+
+
+// Returns the teachers for a student
+
+@name("get Teachers For Student")
+GET "https://{{baseUrl}}/students/:id/teachers"
+? "limit"= "<integer>"
+? "starting_after"= "<string>"
+? "ending_before"= "<string>"
+
+
+

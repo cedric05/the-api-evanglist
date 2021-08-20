@@ -1,0 +1,74 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2131e7d-01ce-4512-a5ba-81bbec9b0ac2.postman_collection.json
+
+@name("Search for a summary of activities.")
+GET "https://{{baseUrl}}/activity/v1"
+"Authorization": "<string>"
+? "activityId"= "<string>"
+? "dataflow"= "<string>"
+? "userId"= "<string>"
+? "roleName"= "<string>"
+? "roleId"= "<long>"
+? "organizationName"= "<string>"
+? "organizationId"= "<long>"
+? "documentId"= "<string>"
+? "documentName"= "<string>"
+? "documentRetentionStatus"= "<string>"
+? "startDate"= "<string>"
+? "endDate"= "<string>"
+
+
+@name("Create activity.")
+POST "https://{{baseUrl}}/activity/v1"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "activityId": "<string>",
+    "dataflow": "<string>",
+    "createdDate": "<dateTime>",
+    "user": {
+        "userId": "veniam id voluptate quis",
+        "firstName": "voluptate consequat reprehenderit aliquip laborum",
+        "lastName": "sint labor",
+        "middleInitial": "veniam minim in in",
+        "role": {
+            "roleName": "sint",
+            "roleId": 60927752
+        },
+        "organization": {
+            "organizationName": "ut ipsum irure officia",
+            "organizationId": -82439028
+        }
+    },
+    "documents": [
+        {
+            "id": "adipisicing laborum velit",
+            "name": "ad consectetur Duis ut",
+            "format": "BIN",
+            "createdDate": "1963-12-04T17:26:41.344Z",
+            "retentionStatus": "Default",
+            "repudiationInfo": {
+                "description": "occaecat labore"
+            }
+        },
+        {
+            "id": "eu dolore sunt sit",
+            "name": "amet sint",
+            "format": "BIN",
+            "createdDate": "2003-06-28T08:57:55.591Z",
+            "retentionStatus": "Repudiated",
+            "repudiationInfo": {
+                "description": "in exercitation"
+            }
+        }
+    ]
+})
+
+
+@name("Retrieve details about the specified activity.")
+GET "https://{{baseUrl}}/activity/v1/:activityId"
+"Authorization": "<string>"
+
+
+

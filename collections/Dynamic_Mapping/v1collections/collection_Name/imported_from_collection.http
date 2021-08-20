@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-daa7ecf3-bea2-44a6-8a62-868217e1296e.postman_collection.json
+
+// Returns the collection name and a list of ids of the assets that belong tonthe collection.n
+
+@name("Return all asset ids for a collection")
+GET "https://{{baseUrl}}/v1/collections/:collectionName"
+
+
+// Returns all assets in the specified collection whose latest location exist within the specified bounding box.nThe bounding box is defined by two coordinates in the EPSG:4326 (WGS84) (for further details seenhttp://epsg.io/4326):n* left (longitude), bottom (latitude)n* right (longitude), top (latitude)nThe results can be filtered by including key and value pairs to match in location meta data.n
+
+@name("Returns collection assets in specified bounding box")
+GET "https://{{baseUrl}}/v1/collections/:collectionName/spatial-query/bbox-interacts"
+
+
+// Returns clusters of assets in the specified collection whose latest location exists within the specifiednbounding box. The clusters can also optionally be filtered by a single key-value pair.n
+
+@name("Returns clustered assets in a specified bounding box")
+GET "https://{{baseUrl}}/v1/collections/:collectionName/cluster"
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Return a paged set of Reference search results, with additional detail, belonging to the specified Reference Type.")
+GET "https://{{baseUrl}}/rest/ReferenceTypeSearch/Composite/:id"
+? "top"= "<integer>"
+? "page"= "<integer>"
+? "orderby"= "<string>"
+? "sort"= "<string>"
+
+
+@name("Return a paged set of Reference search results belonging to the specified Reference Type.")
+GET "https://{{baseUrl}}/rest/ReferenceTypeSearch/:id"
+? "top"= "<integer>"
+? "page"= "<integer>"
+? "orderby"= "<string>"
+? "sort"= "<string>"
+
+
+

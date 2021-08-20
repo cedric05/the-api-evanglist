@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Paginated list of all entities capable of observing and recording mining for a corporation
+// 
+// 
+// ---
+// Alternate route: `/dev/corporation/{corporation_id}/mining/observers/`
+// 
+// Alternate route: `/legacy/corporation/{corporation_id}/mining/observers/`
+// 
+// Alternate route: `/v1/corporation/{corporation_id}/mining/observers/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Accountant
+
+@name("Corporation mining observers")
+GET "https://{{baseUrl}}/corporation/:corporation_id/mining/observers/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Paginated record of all mining seen by an observer
+// 
+// 
+// ---
+// Alternate route: `/dev/corporation/{corporation_id}/mining/observers/{observer_id}/`
+// 
+// Alternate route: `/legacy/corporation/{corporation_id}/mining/observers/{observer_id}/`
+// 
+// Alternate route: `/v1/corporation/{corporation_id}/mining/observers/{observer_id}/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Accountant
+
+@name("Observed corporation mining")
+GET "https://{{baseUrl}}/corporation/:corporation_id/mining/observers/:observer_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+

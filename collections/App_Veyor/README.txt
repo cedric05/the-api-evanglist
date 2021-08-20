@@ -1,0 +1,5 @@
+AppVeyor is a hosted continuous integration service which runs on MicrosoftnWindows.  The AppVeyor REST API provides a RESTful way to interact with thenAppVeyor service.  This includes managing projects, builds, deployments,nand the teams that build them.nnAdditional help and discussion of the AppVeyor REST API is available atnhttp://help.appveyor.com/discussionsnnThis Swagger definition is an **unofficial** description of the AppVeyornREST API maintained at https://github.com/kevinoid/appveyor-swaggernPlease report any issues or suggestions for this Swagger definition atnhttps://github.com/kevinoid/appveyor-swagger/issues/newnn#### API ConventionsnnFields which are missing from update operations (`PUT` requests) arentypically reset to their default values.  So although most fields are notntechnically required, they should usually be specified in practice.n
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

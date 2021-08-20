@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f4b114e2-448f-4e5a-987c-5ed016683c87.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Update a contribution.") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/contributions/:pk/"
+"Content-Type": "application/json"
+
+
+
+@name("Retrieve a contribution.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/contributions/:pk/"
+? "_fields"= "id"
+? "_fields"= "project"
+? "_fields"= "identifier"
+? "_fields"= "formula"
+? "_fields"= "is_public"
+? "_fields"= "last_modified"
+
+
+@name("Delete a contribution.") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/contributions/:pk/"
+
+
+

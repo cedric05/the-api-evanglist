@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92585ca3-4af5-4f55-9f95-f80c9040e561.postman_collection.json
+
+// After a successful call, this returns a User document with an updated list of affiliations.
+
+@name("Update the following status of the logged-in user for a particular aggregation")
+POST "https://{{baseUrl}}/identity/v2/following"
+
+
+// Right now, only the primary station can be changed. Previously selected stations will not be deleted, but the new station will be moved to first in the array.
+
+@name("Update the logged-in user's favorite station(s)")
+PUT "https://{{baseUrl}}/identity/v2/stations"
+
+
+

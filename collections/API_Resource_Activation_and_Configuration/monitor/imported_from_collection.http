@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-22cbc221-e0b6-4b98-94ff-4d9fe2f458ca.postman_collection.json
+
+// This operation list or find Monitor entities
+
+@name("List or find Monitor objects")
+GET "https://{{baseUrl}}/monitor"
+? "fields"= "esse id fugiat"
+? "offset"= "20097554"
+? "limit"= "20097554"
+
+
+// This operation retrieves a Monitor entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Monitor by ID")
+GET "https://{{baseUrl}}/monitor/:id"
+? "fields"= "esse id fugiat"
+
+
+

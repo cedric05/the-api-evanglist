@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c0b81c98-7930-4b6a-9b69-98d8407da2e9.postman_collection.json
+
+// View a transaction.
+
+@name("View a Transaction")
+GET "https://{{baseUrl}}/api/transactions/:token"
+
+
+// Approve a `new` or `wait_for_request_approval` transaction.<br>nAn API key with administrative access is required to approve a transaction.n
+
+@name("Approve a Transaction")
+POST "https://{{baseUrl}}/api/transactions/:token/approve"
+
+
+// Cancel a `new`, `wait_for_request_approval` or `wait_for_bank_account_verification` transaction you created. Transactions cannot be cancelled after they have been sent to the bank and are `in_progress`.<br>nAn API key with administrative access is required to approve a transaction.n
+
+@name("Cancel a Transaction")
+POST "https://{{baseUrl}}/api/transactions/:token/cancel"
+
+
+

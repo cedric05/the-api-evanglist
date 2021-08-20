@@ -1,0 +1,1 @@
+Document is a tangible output from an activity

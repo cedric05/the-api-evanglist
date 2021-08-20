@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Create Folder View") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/folder/folder_id/view"
+"Content-Type": "application/json"
+json({
+    "name": "API V2 View",
+    "type": "list",
+    "grouping": {
+        "field": "status",
+        "dir": 1,
+        "collapsed": [],
+        "ignore": false
+    },
+    "divide": {
+        "field": null,
+        "dir": null,
+        "collapsed": []
+    },
+    "sorting": {
+        "fields": []
+    },
+    "filters": {
+        "op": "AND",
+        "fields": [],
+        "search": "",
+        "show_closed": false
+    },
+    "columns": {
+        "fields": []
+    },
+    "team_sidebar": {
+        "assignees": [],
+        "assigned_comments": false,
+        "unassigned_tasks": false
+    },
+    "settings": {
+        "show_task_locations": false,
+        "show_subtasks": 3,
+        "show_subtask_parent_names": false,
+        "show_closed_subtasks": false,
+        "show_assignees": true,
+        "show_images": true,
+        "collapse_empty_columns": null,
+        "me_comments": true,
+        "me_subtasks": true,
+        "me_checklists": true
+    }
+})
+
+
+@name("Get Folder Views") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/folder/folder_id/view"
+"Content-Type": "application/json"
+
+
+

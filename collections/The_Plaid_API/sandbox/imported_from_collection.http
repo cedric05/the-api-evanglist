@@ -1,0 +1,68 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Use the `/sandbox/processor_token/create` endpoint to create a valid `processor_token` for an arbitrary institution ID and test credentials. The created `processor_token` corresponds to a new Sandbox Item. You can then use this `processor_token` with the `/processor/` API endpoints in Sandbox. You can also use `/sandbox/processor_token/create` with the [`user_custom` test username](/docs/sandbox/user-custom) to generate a test account with custom data.
+
+@name("Create a test Item and processor token") : "base-inherit-auth"
+POST "https://{{baseUrl}}/sandbox/processor_token/create"
+"Content-Type": "application/json"
+json({
+    "institution_id": "esse",
+    "client_id": "nostrud commodo deserunt enim",
+    "secret": "labore irure ullamco",
+    "options": {
+        "override_username": "user_good",
+        "override_password": "pass_good"
+    }
+})
+
+
+// Use the `/sandbox/public_token/create`  endpoint to create a valid `public_token`  for an arbitrary institution ID, initial products, and test credentials. The created `public_token` maps to a new Sandbox Item. You can then call `/item/public_token/exchange` to exchange the `public_token` for an `access_token` and perform all API actions. `/sandbox/public_token/create` can also be used with the [`user_custom` test username](/docs/sandbox/user-custom) to generate a test account with custom data.
+
+@name("Create a test Item") : "base-inherit-auth"
+POST "https://{{baseUrl}}/sandbox/public_token/create"
+"Content-Type": "application/json"
+json({
+    "institution_id": "quis qui deserunt",
+    "initial_products": [
+        "transactions"
+    ],
+    "client_id": "sed proident labore anim eu",
+    "secret": "nisi",
+    "options": {
+        "webhook": "consequat ipsum",
+        "override_username": "user_good",
+        "override_password": "pass_good",
+        "transactions": {
+            "start_date": "proident aute adipisicing pariatur",
+            "end_date": "officia tempor"
+        }
+    }
+})
+
+
+// Use the `/sandbox/bank_transfer/simulate` endpoint to simulate a bank transfer event in the Sandbox environment.  Note that while an event will be simulated and will appear when using endpoints such as `/bank_transfer/event/sync` or `/bank_transfer/event/list`, no transactions will actually take place and funds will not move between accounts, even within the Sandbox.
+
+@name("Simulate a bank transfer event in Sandbox") : "base-inherit-auth"
+POST "https://{{baseUrl}}/sandbox/bank_transfer/simulate"
+"Content-Type": "application/json"
+json({
+    "bank_transfer_id": "nostrud",
+    "event_type": "nulla tempor",
+    "client_id": "non ex deserunt esse",
+    "secret": "aute quis",
+    "failure_reason": {
+        "ach_return_code": "aute dolor proident",
+        "description": "ea of"
+    }
+})
+
+
+

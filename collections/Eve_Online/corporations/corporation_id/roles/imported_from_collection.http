@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return the roles of all members if the character has the personnel manager role or any grantable role.
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/roles/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/roles/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get corporation member roles")
+GET "https://{{baseUrl}}/corporations/:corporation_id/roles/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return how roles have changed for a coporation's members, up to a month
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/roles/history/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/roles/history/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get corporation member roles history")
+GET "https://{{baseUrl}}/corporations/:corporation_id/roles/history/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+

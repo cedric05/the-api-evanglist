@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method gets all the custom uploaded thumbnails from the specified album.
+
+@name("Get all the custom upload thumbnails of an album")
+GET "https://{{baseUrl}}/users/:user_id/albums/:album_id/custom_thumbnails"
+? "page"= "<string>"
+? "per_page"= "<string>"
+
+
+// This method removes a custom uploaded thumbnail from the specified album.
+
+@name("Remove a custom uploaded album thumbnail")
+DELETE "https://{{baseUrl}}/users/:user_id/albums/:album_id/custom_thumbnails/:thumbnail_id"
+
+
+

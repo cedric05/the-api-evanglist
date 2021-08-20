@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// Welcome to the Open Science Framework API. With this API you can access users, projects, components, logs, and files from the [Open Science Framework](https://osf.io/). The Open Science Framework (OSF) is a free, open-source service maintained by the [Center for Open Science](http://cos.io/).nn#### ReturnsnA JSON object with `meta` and `links` keys.nnThe `meta` key contains information such as a welcome message from the API, the specified version of the request, and the full representation of th
+
+@name("Root")
+GET "https://{{baseUrl}}/"
+
+
+// nA log can have one of many actions. The complete list of loggable actions (in the format {identifier}: {description}) is as follows:n* `project_created`: A Node is createdn* `project_registered`: A Node is registeredn* `project_deleted`: A Node is deletedn* `created_from`: A Node is created using an existing Node as a templaten* `pointer_created`: A Pointer is createdn* `pointer_forked`: A Pointer is forkedn* `pointer_removed`: A Pointer is removedn* `node_removed`: A component is deletedn* `no
+
+@name("Actions")
+GET "https://{{baseUrl}}/actions/"
+
+
+// nA paginated list of addons configurable with the OSFn#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 addons. Each resource in the array is a separate addon object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nnThis request should never return an error.
+
+@name("List all addons")
+GET "https://{{baseUrl}}/addons/"
+
+
+// Deletes a comment. This action can be undone by setting deleted to False in a comment update request.n#### ReturnsnIf the request is successful, no content is returned.nnIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
+
+@name("Delete a comment")
+DELETE "https://{{baseUrl}}/comments/:comment_id/"
+
+
+// Retrieves the details of a license.n#### ReturnsnReturns a JSON object with a `data` key containing the representation of the requested license, if the request is successful.nnIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
+
+@name("Retrieve a license")
+GET "https://{{baseUrl}}/license/:license_id/"
+
+
+// A paginated list of licenses. The returned licenses are sorted by their name.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nThe `data` key contains an array of 10 licenses. Each resource in the array is a separate license object and contains the full representation of the license, meaning additional requests to a license's detail view are not necessary.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nnThis requ
+
+@name("List all licenses")
+GET "https://{{baseUrl}}/licenses/"
+
+
+// Retrieves the details of a log.nA log is permanent immutable record of a node's history. A log is created when a user performs one of many actions. See the [actions](#Logs_logs_actions) section for more details.n####ReturnsnReturns a JSON object with a `data` key containing the representation of the requested log, if the request was successful.nnIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduct
+
+@name("Retrieve a log")
+GET "https://{{baseUrl}}/logs/:log_id/"
+
+
+

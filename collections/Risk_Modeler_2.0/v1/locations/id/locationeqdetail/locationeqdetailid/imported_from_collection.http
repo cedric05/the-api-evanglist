@@ -1,0 +1,376 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Gets a location EQ detail
+
+@name("Gets a location EQ detail") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/locations/:id/locationeqdetail/:locationeqdetailid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates EQ detail
+
+@name("Updates EQ detail") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/locations/:id/locationeqdetail/:locationeqdetailid"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": -12237815,
+    "siteLimit": -9126487.58191432,
+    "siteDeduct": 37488321.37533644,
+    "combinedLimit": -29157240.97072205,
+    "combinedDeduct": -48647465.36322171,
+    "yearUpgrade": "ut laborum aliqua",
+    "startDate": "in sunt",
+    "completionDate": "sunt elit",
+    "yearSprinkler": "esse deserunt ipsum ullamco",
+    "percentComplete": 50429264.406512976,
+    "atcClass": "in sint eiusmod fugiat",
+    "isoClass": "laboris Duis tempor enim esse",
+    "fireClass": "deserunt aliqua in est",
+    "rmsClass": "nisi reprehenderit dolor Excepteur",
+    "userClass": "labore aliqua aliquip officia",
+    "atcOccupancy": "adipisicing ea",
+    "isoOccupancy": "incididunt ",
+    "sicOccupancy": "voluptate ullamco",
+    "ibcOccupancy": "aliqua laboris a",
+    "userOccupancy": "reprehenderit proident sit",
+    "percentageSiteLossDeductibleAmount": 76456135.88076264,
+    "percentageCombinedLossDeductibleAmount": -34138584.93744897,
+    "isFranchiseSiteDeductible": {
+        "id": -86922448,
+        "code": "anim qui tempor",
+        "name": "adipisicing"
+    },
+    "isFranchiseCombinedDeductible": {
+        "id": 93746828,
+        "code": "non veniam labore",
+        "name": "in ut tempor nulla"
+    },
+    "secondarySupply": {
+        "id": 73489056,
+        "code": "Excepteur cillum labore quis adipisicing",
+        "name": "ut id tempor fugiat in"
+    },
+    "eqslSusceptibility": {
+        "id": 85266321,
+        "code": "reprehenderit ad sint",
+        "name": "anim voluptate minim exercitation"
+    },
+    "sprinklerType": {
+        "id": -42308934,
+        "code": "n",
+        "name": "L"
+    },
+    "baseIsolation": {
+        "id": -37188830,
+        "code": "et ipsum",
+        "name": "non mollit"
+    },
+    "bldgExterior": {
+        "id": -436509,
+        "code": "dolore do et in",
+        "name": "laborum cupidatat commodo aute"
+    },
+    "cladding": {
+        "id": -13281600,
+        "code": "et minim reprehenderit",
+        "name": "aliquip"
+    },
+    "constructQuality": {
+        "id": 64467406,
+        "code": "laboris",
+        "name": "culpa"
+    },
+    "ductility": {
+        "id": -13979011,
+        "code": "Lorem aliqua cillum",
+        "name": "velit in"
+    },
+    "duress": {
+        "id": 62395423,
+        "code": "sint ea labore exercitation",
+        "name": "sit sint consectetur"
+    },
+    "enggFoundation": {
+        "id": 329710,
+        "code": "ea",
+        "name": "irure in labore enim"
+    },
+    "frameBolt": {
+        "id": 19999949,
+        "code": "Excepteur aliqua est laborum elit",
+        "name": "ex"
+    },
+    "hazardExposed": {
+        "id": -46327426,
+        "code": "pariatur proident elit irure",
+        "name": "cupidatat in"
+    },
+    "internalMasonaryPart": {
+        "id": 29786518,
+        "code": "consequat irure aliquip cillum ex",
+        "name": "ut incididunt consequat"
+    },
+    "longSpan": {
+        "id": 19848741,
+        "code": "elit la",
+        "name": "magna Duis ad dolor aliquip"
+    },
+    "mechElecEquip": {
+        "id": 10888866,
+        "code": "incididunt occaecat laboris nostrud",
+        "name": "laborum proident in"
+    },
+    "ornamentation": {
+        "id": -94552874,
+        "code": "irure officia",
+        "name": "officia e"
+    },
+    "overhangProfile": {
+        "id": 34560860,
+        "code": "reprehenderit",
+        "name": "eu culpa ea"
+    },
+    "preFabrication": {
+        "id": 4143860,
+        "code": "culpa",
+        "name": "proident quis et veniam"
+    },
+    "pounding": {
+        "id": -80824425,
+        "code": "laborum",
+        "name": "sunt quis enim"
+    },
+    "redundancy": {
+        "id": -67103787,
+        "code": "reprehenderit sit",
+        "name": "laboris irure"
+    },
+    "shapeConfigure": {
+        "id": 26042061,
+        "code": "cupidatat ",
+        "name": "qui sint"
+    },
+    "shortColumn": {
+        "id": -31318822,
+        "code": "consequat incididunt",
+        "name": "qui irure culpa dolore dolore"
+    },
+    "sidingType": {
+        "id": -154431,
+        "code": "in sunt nostrud",
+        "name": "proident mollit Lorem eiusmod"
+    },
+    "storyProfile": {
+        "id": -48353222,
+        "code": "pariatur ",
+        "name": "sit enim anim"
+    },
+    "structureUpgrade": {
+        "id": -88837253,
+        "code": "Excepteur",
+        "name": "minim"
+    },
+    "tank": {
+        "id": 23233066,
+        "code": "do adipisicing",
+        "name": "et ex"
+    },
+    "tiltupRetrofit": {
+        "id": 80900223,
+        "code": "ut Duis adipisicing nisi",
+        "name": "nostrud quis cillum magna pariatur"
+    },
+    "torsion": {
+        "id": -34466378,
+        "code": "in sunt",
+        "name": "laboris dolore "
+    },
+    "urmRetrofit": {
+        "id": 77044579,
+        "code": "elit fugiat",
+        "name": "elit cupidatat"
+    },
+    "wallsBrace": {
+        "id": -16205582,
+        "code": "officia minim",
+        "name": "sunt commodo aliqua"
+    },
+    "tsDebris": {
+        "id": -91876373,
+        "code": "culpa quis",
+        "name": "mollit id nisi"
+    },
+    "tsScour": {
+        "id": -28891213,
+        "code": "nostrud officia tempor",
+        "name": "ad"
+    },
+    "tsSafeDist": {
+        "id": -90839629,
+        "code": "reprehenderit",
+        "name": "eu"
+    },
+    "tsProtect": {
+        "id": 90270901,
+        "code": "ullamco quis",
+        "name": "dolor laborum"
+    },
+    "eqPackage": {
+        "id": -46634977,
+        "code": "cillum culpa qui dolor",
+        "name": "sit est ipsum anim"
+    },
+    "eqProtect": {
+        "id": -66544880,
+        "code": "ullamco esse",
+        "name": "nulla sed aliquip"
+    },
+    "eqSalvage": {
+        "id": -83316582,
+        "code": "elit consequat",
+        "name": "labore culpa"
+    },
+    "eqSpecieStorage": {
+        "id": -95195820,
+        "code": "velit pariatur sit non",
+        "name": "pariatu"
+    },
+    "urmChimney": {
+        "id": -17571102,
+        "code": "nisi Excepteur sed ullamco",
+        "name": "anim deserunt"
+    },
+    "builtOnSlope": {
+        "id": 89118183,
+        "code": "sunt exercitation",
+        "name": "ipsum veniam fugiat"
+    },
+    "alquistPreoloZone": -37703218,
+    "soil": -34913351.1788001,
+    "landslide": -4612068.408164397,
+    "liquefaction": -29072809.165265083,
+    "biZone": 29655094,
+    "landslideMatch": {
+        "id": 7309728,
+        "code": "anim mollit dolor",
+        "name": "amet proident nisi Lorem ex"
+    },
+    "liquefactionMatch": {
+        "id": 22162140,
+        "code": "fugiat Lorem",
+        "name": "magna"
+    },
+    "soilMatch": {
+        "id": -10262071,
+        "code": "ullamco sunt consequat",
+        "name": "Lorem pa"
+    },
+    "fireLossMatch": {
+        "id": 89736337,
+        "code": "nostrud est ad veniam",
+        "name": "dolore"
+    },
+    "landslideCov": 67025431.6263116,
+    "liquefactionCov": 92782922.43055359,
+    "soilCov": -87293311.98142414,
+    "fireLossCov": 16942672.80217345,
+    "soilPeriod": 59485168.87334433,
+    "soilThickness": 99328699.55608115,
+    "fire1": -29213999.461790904,
+    "fire2": -30078580.697243676,
+    "fire3": -62912206.80155427,
+    "fire4": 61805791.40181041,
+    "fire5": -17961878.780575573,
+    "fire6": -75962737.83980192,
+    "fire7": -57708794.87925704,
+    "fire8": -50728940.52168815,
+    "mmi100": -2354344.850624919,
+    "mmi200": 20511218.675435126,
+    "mmi250": -64627835.57303395,
+    "mmi475": 24224122.991903886,
+    "avgSlope": 36148664.08752966,
+    "distFault1": -60902865.09483445,
+    "apMatch": {
+        "id": 20823961,
+        "code": "elit enim Ut ea deserunt",
+        "name": "quis adipisicing"
+    },
+    "mmiMatch": {
+        "id": 88662564,
+        "code": "quis culpa l",
+        "name": "aliquip aliqua ipsum ea"
+    },
+    "distSinkhole": 49229298.96444172,
+    "distMine": 79820685.93721786,
+    "sinkholeZone": 18164685,
+    "soilVs": -57552210.21784327,
+    "soilVsMatch": {
+        "id": -87532646,
+        "code": "reprehenderit exercitation in eiusmod consequat",
+        "name": "dolor aliquip enim veniam"
+    },
+    "basinLocId": -29046132,
+    "di": -82872978.72185478,
+    "critd": -42412543.389250204,
+    "n160CS": 4857578.970646068,
+    "t15": -40878098.54746305,
+    "wff": 59973966.39776012,
+    "distriv": 96807356.39927116,
+    "gwd": -68915202.12710097,
+    "dc": 32948862.469186142,
+    "liqcv": 61471938.151818275,
+    "hdLiqMatch": {
+        "id": 65832014,
+        "code": "non quis",
+        "name": "ipsum"
+    },
+    "phi": -23519980.13234295,
+    "rough": -78739712.95688543,
+    "ndvi": -21593630.377841815,
+    "cohes": 47183292.74664956,
+    "landcv": 18696608.29151401,
+    "hdLandMatch": {
+        "id": 18499363,
+        "code": "est ea in",
+        "name": "voluptate consectetur amet"
+    },
+    "eqSlope": -75330093.05947083,
+    "elev": -63015205.4869332,
+    "cti": 96130626.04111105,
+    "precip": 54535842.19114819,
+    "topo": 44356767.7484093,
+    "hdSecMatch": {
+        "id": -8630491,
+        "code": "pariatur est quis amet in",
+        "name": "aute id Duis consectetur"
+    },
+    "isValid": true,
+    "eqslInsurance": {
+        "id": 70039061,
+        "code": "consectetur Ut in labore",
+        "name": "non "
+    }
+})
+
+
+// Deletes a location EQ detail
+
+@name("Deletes a location EQ detail") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/locations/:id/locationeqdetail/:locationeqdetailid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

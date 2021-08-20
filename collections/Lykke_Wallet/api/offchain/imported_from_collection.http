@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e04c6fb1-e891-4983-80ec-38175b6c944e.postman_collection.json
+
+// Get api offchain requests.
+
+@name("Get API Offchain Requests")
+GET "https://{{baseUrl}}/api/offchain/requests"
+"Authorization": "<>"
+
+
+// Add api offchain trade.
+
+@name("Add API Offchain Trade")
+POST "https://{{baseUrl}}/api/offchain/trade"
+"Authorization": "<>"
+
+
+// Add api offchain processchannel.
+
+@name("Add API Offchain Processchannel")
+POST "https://{{baseUrl}}/api/offchain/processchannel"
+"Authorization": "<>"
+
+
+// Add api offchain finalizetransfer.
+
+@name("Add API Offchain Finalizetransfer")
+POST "https://{{baseUrl}}/api/offchain/finalizetransfer"
+"Authorization": "<>"
+
+
+// Add api offchain requesttransfer.
+
+@name("Add API Offchain Requesttransfer")
+POST "https://{{baseUrl}}/api/offchain/requestTransfer"
+"Authorization": "<>"
+
+
+// Get api offchain channelkey.
+
+@name("Get API Offchain Channelkey")
+GET "https://{{baseUrl}}/api/offchain/channelkey"
+"Authorization": "<>"
+? "asset"= "<delete>"
+
+
+// Add api offchain transfertomargin.
+
+@name("Add API Offchain Transfertomargin")
+POST "https://{{baseUrl}}/api/offchain/transferToMargin"
+"Authorization": "<>"
+
+
+// Add api offchain operation transfertotrusted.
+
+@name("Add API Offchain Operation Transfertotrusted")
+POST "https://{{baseUrl}}/api/offchain/:operationId/transferToTrusted"
+"Authorization": "<>"
+
+
+

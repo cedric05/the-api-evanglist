@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Retrieves a Listing by id.
+
+@name("Get Listings Listing")
+GET "https://{{baseUrl}}/listings/:listing_id"
+
+
+// Retrieves a set of FavoriteListing objects associated to a Listing.
+
+@name("Get Listings Listing Favored By")
+GET "https://{{baseUrl}}/listings/:listing_id/favored-by"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of ShippingInfo objects associated to a Listing.
+
+@name("Get Listings Listing Shipping Info")
+GET "https://{{baseUrl}}/listings/:listing_id/shipping/info"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of ListingPayment objects associated to a Listing.
+
+@name("Get Listings Listing Payments")
+GET "https://{{baseUrl}}/listings/:listing_id/payments"
+
+
+

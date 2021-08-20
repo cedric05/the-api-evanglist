@@ -1,0 +1,94 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe3a67a8-afd0-43aa-87c4-7d44157077ab.postman_collection.json
+
+// This operation list or find GeographicAddressValidation entities
+
+@name("List or find GeographicAddressValidation objects")
+GET "https://{{baseUrl}}/geographicAddressValidation"
+? "fields"= "Ut eiusmod"
+? "offset"= "-6845752"
+? "limit"= "-6845752"
+
+
+// This operation creates a GeographicAddressValidation entity.
+
+@name("Creates a GeographicAddressValidation")
+POST "https://{{baseUrl}}/geographicAddressValidation"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "submittedGeographicAddress": {
+        "id": "nisi sed dolore quis",
+        "href": "esse",
+        "city": "enim Lorem",
+        "country": "eu",
+        "locality": "nisi consequat ut Ut exercitation",
+        "name": "nostru",
+        "postcode": "dolor nost",
+        "stateOrProvince": "nulla exercitation",
+        "streetName": "tempor ea",
+        "streetNr": "id sit",
+        "streetNrLast": "eu Lorem reprehenderit ",
+        "streetNrLastSuffix": "ut qui esse voluptate quis",
+        "streetNrSuffix": "est",
+        "streetSuffix": "proident elit Lorem esse",
+        "streetType": "Duis in in",
+        "geographicLocation": {
+            "@type": "GeoJsonLineString",
+            "id": "e",
+            "href": "sit proident nostrud aute",
+            "name": "dolor adipisicing",
+            "@baseType": "ResourceSpecification",
+            "bbox": [
+                -73711947.17798954,
+                87646154.43109688
+            ],
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+            "@referredType": "sit"
+        },
+        "geographicSubAddress": [
+            {
+                "id": "Ut",
+                "href": "irure aliqua Lorem cillum tempor",
+                "buildingName": "ex cupidatat non",
+                "levelNumber": "commodo elit qui",
+                "levelType": "commodo",
+                "name": "Ut occaecat dolor tempor exercitation",
+                "privateStreetName": "occaecat",
+                "privateStreetNumber": "do est velit eu",
+                "subAddressType": "sint consequat aute",
+                "subUnitNumber": "amet dolor sunt minim",
+                "subUnitType": "nulla",
+                "@baseType": "eu laboris",
+                "@schemaLocation": "http://EfNUpv.xmMcQSI4zlc0-ZScvhUPpT.wZPDkiduAJ,PMCRdam.DmQX-5vxHZnvH",
+                "@type": "officia conseq"
+            },
+            {
+                "id": "laboris sit sint sunt",
+                "href": "in sint ut",
+                "buildingName": "nisi et qui a",
+                "levelNumber": "proident incididunt id culpa enim",
+                "levelType": "do Duis mollit",
+                "name": "ipsum culpa incididunt",
+                "privateStreetName": "Duis est id dolore",
+                "privateStreetNumber": "in esse",
+                "subAddressType": "laboris nostrud fugiat adipisicing",
+                "subUnitNumber": "nisi sed culpa Lorem",
+                "subUnitType": "nulla elit cupidatat et do",
+                "@baseType": "aute",
+                "@schemaLocation": "http://JievTtXstptVnHwVuzbDjvkXlsVK.dueel2P,1jUHS1K7wznAauXY-5sZylMdOMAD2PdO8x",
+                "@type": "exercitation"
+            }
+        ],
+        "@baseType": "ad sed",
+        "@schemaLocation": "https://DaJDffxPkcrfULDC.syzll1ERDCz0Mtsl5zbpuz1OJlQeG",
+        "@type": "non esse cillum"
+    },
+    "provideAlternative": false,
+    "@baseType": "consequat e",
+    "@schemaLocation": "http://CPMOrqfmMe.nnDEc77Y1KkWrXyYALxNa2DSYDOEiG3J30",
+    "@type": "in adipisicing"
+})
+
+
+

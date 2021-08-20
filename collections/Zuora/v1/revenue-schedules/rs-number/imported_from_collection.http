@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// Deletes a revenue schedule by specifying its revenue schedule numbern## PrerequisitesnYou must have the Delete Custom Revenue Schedule permissions in Zuora Finance.n
+
+@name("Delete revenue schedule")
+DELETE "https://{{baseUrl}}/v1/revenue-schedules/:rs-number"
+
+
+// Retrieves basic information of a revenue schedule by specifying the revenue schedule number. Request and response field descriptions and sample code are provided.n
+
+@name("Update revenue schedule basic information")
+PUT "https://{{baseUrl}}/v1/revenue-schedules/:rs-number/basic-information"
+
+
+// Distributes revenue by specifying the revenue schedule number. Request and response field descriptions and sample code are provided.n
+
+@name("Distribute revenue across accounting periods")
+PUT "https://{{baseUrl}}/v1/revenue-schedules/:rs-number/distribute-revenue-across-accounting-periods"
+
+
+// Distributes revenue on a specific recognition date. Request and response field descriptions and sample code are provided.n
+
+@name("Distribute revenue on specific date")
+PUT "https://{{baseUrl}}/v1/revenue-schedules/:rs-number/distribute-revenue-on-specific-date"
+
+
+// Distributes revenue by specifying the recognition start and end dates. Request and response field descriptions and sample code are provided.n
+
+@name("Distribute revenue by recognition start and end dates")
+PUT "https://{{baseUrl}}/v1/revenue-schedules/:rs-number/distribute-revenue-with-date-range"
+
+
+

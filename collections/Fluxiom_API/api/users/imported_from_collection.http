@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-171a8c67-fca5-43a5-8135-dc521868bfb3.postman_collection.json
+
+// Get users
+
+@name("Get users")
+GET "https://{{baseUrl}}/api/users"
+
+
+// Get single user
+
+@name("Get single user")
+GET "https://{{baseUrl}}/api/users/:id"
+
+
+

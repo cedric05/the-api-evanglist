@@ -1,0 +1,200 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Returns the list of Custom Location Atrtibutes that have been configured in the account.  Using the name_search parameter will search for all attributes that start with the value of name_search.  If none of the optional POST/GET variables are sent, the service will return the details for all custom attributes.
+
+@name("GetCustomAttributes")
+POST "https://{{baseUrl}}/Locations/GetCustomAttributes"
+? "response_type"= "<string>"
+? "attribute_id"= "<integer>"
+? "name"= "<string>"
+? "name_search"= "<string>"
+? "active"= "<integer>"
+
+
+// Returns the details for all locations.  If none of the optional parameters are sent, the method will return the details for all locations.
+
+@name("GetLocations")
+POST "https://{{baseUrl}}/Locations/GetLocations"
+? "response_type"= "<string>"
+? "c_id"= "<integer>"
+? "location_name"= "<string>"
+? "store_number"= "<string>"
+? "hide_from_customer"= "<string>"
+? "store_number_search"= "<string>"
+? "status"= "<string>"
+? "custom_attribute_value_id"= "<string>"
+? "custom_attribute_operator"= "<string>"
+? "sort_by"= "<string>"
+? "sort_direction"= "<string>"
+? "max_distance_km"= "<number>"
+? "center_latitude"= "<number>"
+? "center_longitude"= "<number>"
+? "include_custom_attributes"= "<boolean>"
+? "include_secret"= "<boolean>"
+? "include_coordinates"= "<boolean>"
+
+
+// Removes days off from the locations calendar (i.e. reopens those days for scheduling).  The method will accept a list of multiple, comma separated locations (c_id) and multiple dates, and will remove each of the dates for each of the locations.
+
+@name("DeleteDaysOff")
+POST "https://{{baseUrl}}/Locations/DeleteDaysOff"
+? "response_type"= "<string>"
+? "c_id"= "<integer>"
+? "date"= "<integer>"
+
+
+// Retrieves the schedule details of a specified location.  The open_ and close_ fields should be represented by the number of minutes past 12:00am.   For example, 8:00am should be sent as 480 (8hrs x 60min = 480min) and 5:00pm should be sent as 1020 (17hrs x 60min = 1020min).
+
+@name("GetSchedules")
+POST "https://{{baseUrl}}/Locations/GetSchedules"
+? "response_type"= "<string>"
+? "c_id"= "<integer>"
+
+
+// Updates the locations regular open hours for each day of the week.  The method will accept a list of multiple, comma separated locations (c_id) and apply the same hours to each of the locations.  The open_ and close_ fields should be represented by the number of minutes past 12:00am.   For example, 8:00am should be sent as 480 (8hrs x 60min = 480min) and 5:00pm should be sent as 1020 (17hrs x 60min = 1020min).
+
+@name("UpdateSchedules")
+POST "https://{{baseUrl}}/Locations/UpdateSchedules"
+? "response_type"= "<string>"
+? "c_id"= "<integer>"
+? "open_sun"= "<integer>"
+? "close_sun"= "<integer>"
+? "open_mon"= "<integer>"
+? "close_mon"= "<integer>"
+? "open_tue"= "<integer>"
+? "close_tue"= "<integer>"
+? "open_wed"= "<integer>"
+? "close_wed"= "<integer>"
+? "open_thu"= "<integer>"
+? "close_thu"= "<integer>"
+? "open_fri"= "<integer>"
+? "close_fri"= "<integer>"
+? "open_sat"= "<integer>"
+? "close_sat"= "<integer>"
+
+
+// Returns the dates between the start_date and end_date on which the location is closed, based on the Days Off settings.  The method will accept a list of multiple, comma separated locations (c_id) and return the dates for each of the locations.
+
+@name("GetDaysOff")
+POST "https://{{baseUrl}}/Locations/GetDaysOff"
+? "response_type"= "<string>"
+? "c_id"= "<integer>"
+? "start_date"= "<integer>"
+? "end_date"= "<integer>"
+
+
+// Retrieves the list of staff members that are assigned to the specified location.   Valid values for status are active or inactive.  Providing staff_details=true will also include profile details of the staff members assigned to specified location.
+
+@name("GetAssignedStaff")
+POST "https://{{baseUrl}}/Locations/GetAssignedStaff"
+? "response_type"= "<string>"
+? "c_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "status"= "<string>"
+? "staff_details"= "<boolean>"
+
+
+// Retrieves the list of services offered by the staff members at the specified location.
+
+@name("GetAssignedServices")
+POST "https://{{baseUrl}}/Locations/GetAssignedServices"
+? "response_type"= "<string>"
+? "c_id"= "<integer>"
+? "service_id"= "<integer>"
+
+
+// Returns the list of Custom Location Atrtibutes that have been configured in the account.   Using the `name_search` parameter will search for all attributes that start with the value of `name_search`.   If none of the optional POST/GET variables are sent, the service will return the details for all custom attribute values.
+
+@name("GetCustomAttributeValues")
+POST "https://{{baseUrl}}/Locations/GetCustomAttributeValues"
+? "response_type"= "<string>"
+? "attribute_id"= "<integer>"
+? "value_id"= "<integer>"
+? "name"= "<string>"
+? "name_search"= "<string>"
+? "active"= "<integer>"
+
+
+// Marks date(s) as being a day off on the locations calendar (i.e. closes the day for scheduling).  The method will accept multiple dates and multiple locations. It will mark each date as a day off at each of the locations.
+
+@name("CreateDaysOff")
+POST "https://{{baseUrl}}/Locations/CreateDaysOff"
+? "response_type"= "<string>"
+? "c_id"= "<integer>"
+? "date"= "<integer>"
+
+
+// Creates a new location. Note that this may be a billable activity, depending on your account type.
+
+@name("CreateLocations")
+POST "https://{{baseUrl}}/Locations/CreateLocations"
+? "response_type"= "<string>"
+? "name"= "<string>"
+? "location_name"= "<string>"
+? "address1"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zip"= "<string>"
+? "country_id"= "<integer>"
+? "phone"= "<string>"
+? "contact_first_name"= "<string>"
+? "contact_last_name"= "<string>"
+? "email"= "<string>"
+? "use_main"= "<string>"
+? "separate_emails"= "<string>"
+? "timezone_id"= "<integer>"
+? "store_number"= "<string>"
+? "alt_phone"= "<string>"
+? "fax"= "<string>"
+? "address2"= "<string>"
+? "current_site"= "<string>"
+? "directions"= "<string>"
+? "sales_manager"= "<integer>"
+? "sales_person"= "<integer>"
+? "territory_id"= "<integer>"
+? "skip_default_staff"= "<boolean>"
+? "hide_from_customer_view"= "<boolean>"
+? "group_id"= "<integer>"
+
+
+// Updates a location.
+
+@name("UpdateLocations")
+POST "https://{{baseUrl}}/Locations/UpdateLocations"
+? "response_type"= "<string>"
+? "name"= "<string>"
+? "location_name"= "<string>"
+? "address1"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zip"= "<string>"
+? "country_id"= "<integer>"
+? "phone"= "<string>"
+? "contact_first_name"= "<string>"
+? "contact_last_name"= "<string>"
+? "email"= "<string>"
+? "use_main"= "<string>"
+? "timezone_id"= "<integer>"
+? "store_number"= "<string>"
+? "alt_phone"= "<string>"
+? "fax"= "<string>"
+? "address2"= "<string>"
+? "current_site"= "<string>"
+? "directions"= "<string>"
+? "abbrev"= "<string>"
+? "hide_from_customer_view"= "<boolean>"
+
+
+// Returns the dates on which the company is open for business, based on the accounts Open Hours and Closed Days settings.  If none of the optional POST/GET variables are sent, the service will return the open dates for the headquarters location, starting from today.
+
+@name("GetOpenDates")
+POST "https://{{baseUrl}}/Locations/GetOpenDates"
+? "response_type"= "<string>"
+? "num_days"= "<integer>"
+? "location"= "<integer>"
+? "start_date"= "<integer>"
+
+
+

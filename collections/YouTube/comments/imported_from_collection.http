@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bdca8cb-a591-4d01-90eb-dc36f5720cac.postman_collection.json
+
+// Deletes a comment.
+
+@name("Delete Comments")
+DELETE "https://{{baseUrl}}/comments"
+? "id"= "<parameters>"
+
+
+// Expresses the caller's opinion that one or more comments should be flagged as spam.
+
+@name("Add Comments Mark as SPAM")
+POST "https://{{baseUrl}}/comments/markAsSpam"
+? "id"= "<parameters>"
+
+
+// Sets the moderation status of one or more comments. The API request must be authorized by the owner of the channel or video associated with the comments.
+
+@name("Add Comments Set Moderation Status")
+POST "https://{{baseUrl}}/comments/setModerationStatus"
+? "banAuthor"= "<>"
+? "id"= "<parameters>"
+? "moderationStatus"= "<post>"
+
+
+

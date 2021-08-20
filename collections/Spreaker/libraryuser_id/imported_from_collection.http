@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f67aecc5-ff45-4de9-97cc-ff8ad045654d.postman_collection.json
+
+// Upload a new Media in the specified user library
+
+@name("Create Media")
+POST "https://{{baseUrl}}/library/:user_id"
+? "length"= "<>"
+? "style_id"= "<>"
+? "type"= "<>"
+
+
+// Get a paginated list of media owned by <user_id> filtered by type:.
+
+@name("Get Owned Media")
+GET "https://{{baseUrl}}/library/:user_id/effects/owned"
+? "sort_col"= "<>"
+? "sort_dir"= "<>"
+
+
+// Get a paginated list of media owned by <user_id> filtered by type:.
+
+@name("Get Owned Media")
+GET "https://{{baseUrl}}/library/:user_id/jingles/owned"
+? "sort_col"= "<>"
+? "sort_dir"= "<>"
+
+
+// Get a paginated list of media owned by <user_id> filtered by type:.
+
+@name("Get Owned Media")
+GET "https://{{baseUrl}}/library/:user_id/loops/owned"
+? "sort_col"= "<>"
+? "sort_dir"= "<>"
+
+
+// Get a paginated list of media owned by <user_id> filtered by type:.
+
+@name("Get Owned Media")
+GET "https://{{baseUrl}}/library/:user_id/songs/owned"
+? "sort_col"= "<>"
+? "sort_dir"= "<>"
+? "user_id"= "<>"
+
+
+// Get a paginated list of media owned by <user_id> filtered by type:.
+
+@name("Get Owned Media")
+GET "https://{{baseUrl}}/library/:user_id/soundtracks/owned"
+? "sort_col"= "<>"
+? "sort_dir"= "<>"
+
+
+

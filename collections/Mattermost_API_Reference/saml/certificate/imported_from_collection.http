@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Upload the IDP certificate to be used with your SAML configuration. This will also set the filename for the IdpCertificateFile setting in your `config.json`.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Upload IDP certificate")
+POST "https://{{baseUrl}}/saml/certificate/idp"
+
+
+// Upload the public certificate to be used for encryption with your SAML configuration. This will also set the filename for the PublicCertificateFile setting in your `config.json`.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Upload public certificate")
+POST "https://{{baseUrl}}/saml/certificate/public"
+
+
+// Upload the private key to be used for encryption with your SAML configuration. This will also set the filename for the PrivateKeyFile setting in your `config.json`.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Upload private key")
+POST "https://{{baseUrl}}/saml/certificate/private"
+
+
+// Get the status of the uploaded certificates and keys in use by your SAML configuration.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Get certificate status")
+GET "https://{{baseUrl}}/saml/certificate/status"
+
+
+

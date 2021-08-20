@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Finds all FeaturedListings regardless of Listing state
+
+@name("Get Homepages Listings")
+GET "https://{{baseUrl}}/homepages/listings/"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Finds all FeaturedListings that point to active Listings
+
+@name("Get Homepages Listings Active")
+GET "https://{{baseUrl}}/homepages/listings/active"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieves the rulesets associated with a deployment.
+
+@name("Get associated rulesets") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/traffic-filter/associations/:association_type/:associated_entity_id/rulesets"
+
+
+

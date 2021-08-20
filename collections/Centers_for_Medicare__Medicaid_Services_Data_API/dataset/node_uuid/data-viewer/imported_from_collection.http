@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-df143062-66a1-46d8-94d2-ddbb84c5bd79.postman_collection.json
+
+// Retrieve filtered/paginated/sorted data from the primary dataset file.
+
+@name("get Dataset Version Data Viewer")
+GET "https://{{baseUrl}}/dataset/:node_uuid/data-viewer"
+? "column"= "foo"
+? "column"= "bar"
+? "keyword"= "Chronic"
+? "offset"= "0"
+? "size"= "10"
+? "sort_by"= "consequat nu"
+? "sort_order"= "DESC"
+? "distinct"= "true"
+? "group_by"= "foo"
+? "group_by"= "bar"
+? "_table"= "consequat nu"
+
+
+// Retrieve the mroe expensive "found_rows" value for a set of filters.
+
+@name("get Dataset Version Data Viewer Stats")
+GET "https://{{baseUrl}}/dataset/:node_uuid/data-viewer/stats"
+? "column"= "foo"
+? "column"= "bar"
+? "keyword"= "Chronic"
+? "distinct"= "true"
+? "group_by"= "foo"
+? "group_by"= "bar"
+? "_table"= "consequat nu"
+
+
+

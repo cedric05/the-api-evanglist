@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method gets all the videos from the specified portfolio.
+
+@name("Get all the videos in a portfolio")
+GET "https://{{baseUrl}}/users/:user_id/portfolios/:portfolio_id/videos"
+? "containing_uri"= "<string>"
+? "filter"= "<string>"
+? "filter_embeddable"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "sort"= "<string>"
+
+
+// This method removes a video from the specified portfolio.
+
+@name("Remove a video from a portfolio")
+DELETE "https://{{baseUrl}}/users/:user_id/portfolios/:portfolio_id/videos/:video_id"
+
+
+

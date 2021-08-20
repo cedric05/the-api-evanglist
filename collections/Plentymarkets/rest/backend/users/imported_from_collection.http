@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// .
+
+@name("get Rest Backend Users")
+GET "https://{{baseUrl}}/rest/backend/users"
+
+
+// Find all users having a name or username like the given one..
+
+@name("Find all users having a name or username like the given one.")
+GET "https://{{baseUrl}}/rest/backend/users/search_name/:name"
+
+
+

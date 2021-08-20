@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3a6fa668-19d7-4395-a552-9b7f28cadcb6.postman_collection.json
+
+// List all Locations with their details. Locations have a type, name and the ISRS Locode.
+
+@name("List")
+GET "https://{{baseUrl}}/api/v1/locations"
+? "api_token"= "<>"
+
+
+// Get details of 1 location.
+
+@name("Details")
+GET "https://{{baseUrl}}/api/v1/locations/:id"
+? "api_token"= "<>"
+
+
+

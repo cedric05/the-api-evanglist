@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets current user's project list.
+
+@name("Gets current user's project list")
+GET "https://{{baseUrl}}/users/myself/projects"
+? "sortby"= "<>"
+? "fetchHierarchyPath"= "<>"
+
+
+// Adds current user to specified project's member list.
+
+@name("Adds current user to specified project's member list")
+PUT "https://{{baseUrl}}/users/myself/projects/:projectid"
+
+
+

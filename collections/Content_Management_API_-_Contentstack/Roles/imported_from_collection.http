@@ -1,0 +1,203 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The ‘Get all roles’ request returns comprehensive information about all roles created in a stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#role-collection>Role Collection</a> API Reference document
+
+@name("Get all roles")
+GET "https://{{base_url}}/v3/roles"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "include_permissions"= "false"
+? "include_rules"= "false"
+
+
+// <p>The <code>Get a single role</code> request&nbsp;returns comprehensive information on a specific role.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#role-collection>Role Collection</a> API Reference document
+
+@name("Get a single role")
+GET "https://{{base_url}}/v3/roles/{{role_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "include_permissions"= "true"
+? "include_rules"= "false"
+
+
+// <p>The <code>Create a role</code> call creates a new role in a stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#role-collection>Role Collection</a> API Reference document
+
+@name("Create a role")
+POST "https://{{base_url}}/v3/roles"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "role": {
+        "name": "testRole",
+        "description": "",
+        "rules": [
+            {
+                "module": "content_type",
+                "content_types": [
+                    "group1"
+                ],
+                "acl": {
+                    "read": true,
+                    "sub_acl": {
+                        "read": true
+                    }
+                }
+            },
+            {
+                "module": "asset",
+                "assets": [
+                    "asset_uid"
+                ],
+                "acl": {
+                    "read": true,
+                    "update": true,
+                    "publish": true,
+                    "delete": true
+                }
+            },
+            {
+                "module": "folder",
+                "folders": [
+                    "asset_folder_uid"
+                ],
+                "acl": {
+                    "read": true,
+                    "sub_acl": {
+                        "read": true
+                    }
+                }
+            },
+            {
+                "module": "environment",
+                "environments": [
+                    "environment_uids"
+                ],
+                "acl": {
+                    "read": true
+                }
+            },
+            {
+                "module": "locale",
+                "locales": [
+                    "locale_uid"
+                ],
+                "acl": {
+                    "read": true
+                }
+            }
+        ]
+    }
+})
+
+
+// <p>The <code>Update role</code> call lets you modify an existing role of your stack. However, the pre-existing system roles cannot be modified.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#role-collection>Role Collection</a> API Reference document
+
+@name("Update role")
+PUT "https://{{base_url}}/v3/roles/{{role_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "role": {
+        "name": "testRole",
+        "description": "",
+        "rules": [
+            {
+                "module": "content_type",
+                "content_types": [
+                    "group1"
+                ],
+                "acl": {
+                    "read": true,
+                    "sub_acl": {
+                        "read": true
+                    }
+                }
+            },
+            {
+                "module": "asset",
+                "assets": [
+                    "asset_uids"
+                ],
+                "acl": {
+                    "read": true,
+                    "update": true,
+                    "publish": true,
+                    "delete": true
+                }
+            },
+            {
+                "module": "folder",
+                "folders": [
+                    "asset_folder_uids"
+                ],
+                "acl": {
+                    "read": true,
+                    "update": true,
+                    "publish": true,
+                    "delete": true,
+                    "sub_acl": {
+                        "read": true,
+                        "update": true,
+                        "publish": true,
+                        "delete": true
+                    }
+                }
+            },
+            {
+                "module": "environment",
+                "environments": [
+                    "environment_uids"
+                ],
+                "acl": {
+                    "read": true
+                }
+            },
+            {
+                "module": "locale",
+                "locales": [
+                    "locale_uids"
+                ],
+                "acl": {
+                    "read": true
+                }
+            }
+        ],
+        "uid": "role_uid"
+    }
+})
+
+
+// <p>The <code>Delete role</code> call deletes an existing role from your stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#role-collection>Role Collection</a> API Reference document
+
+@name("Delete role")
+DELETE "https://{{base_url}}/v3/roles/{{role_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+
+

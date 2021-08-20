@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8f0ef5f1-d82f-47e1-8bde-ff3a9b29d3be.postman_collection.json
+
+// Retrieve all available keyspaces in the specific database.
+
+@name("Get all keyspaces")
+GET "https://{{baseUrl}}/api/rest/v2/schemas/keyspaces"
+"X-Cassandra-Token": "sint dolore"
+? "raw"= "false"
+
+
+

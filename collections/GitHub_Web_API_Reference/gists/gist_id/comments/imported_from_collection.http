@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("List gist comments")
+GET "https://{{baseUrl}}/gists/:gist_id/comments"
+? "per_page"= "30"
+? "page"= "1"
+
+
+@name("Create a gist comment")
+POST "https://{{baseUrl}}/gists/:gist_id/comments"
+"Content-Type": "application/json"
+json({
+    "body": "<string>"
+})
+
+
+

@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// ## List All Routes [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-all-routes)
+
+@name("List All Routes")
+GET "https://{{gateway}}/routes"
+
+
+// ## List Routes Associated to a Specific Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-routes-associated-to-a-specific-service)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name attribute of the Service whose Routes are to be retrieved. When using this endpoint, only Routes associated to the specified Service will be listed.</td>
+//   </tr>
+
+@name("List Routes Associated to a Specific Service")
+GET "https://{{gateway}}/services/:serviceNameOrId/routes"
+
+
+

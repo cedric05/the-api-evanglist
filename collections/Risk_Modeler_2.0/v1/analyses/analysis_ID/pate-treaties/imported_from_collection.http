@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves a list of the pate treaties for a specified analysis
+
+@name("Get a list of PATE treaties") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analyses/:analysisID/pate-treaties"
+"Authorization": "Bearer <Bearer Token>"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Deletes a list of the PATE treaties in a specified analysis
+
+@name("Deletes a list of PATE treaties") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/analyses/:analysisID/pate-treaties"
+"Authorization": "Bearer <Bearer Token>"
+
+
+

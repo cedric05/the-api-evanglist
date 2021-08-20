@@ -1,0 +1,83 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Check if the server is up and healthy based on the configuration setting `GoRoutineHealthThreshold`. If `GoRoutineHealthThreshold` and the number of goroutines on the server exceeds that threshold the server is considered unhealthy. If `GoRoutineHealthThreshold` is not set or the number of goroutines is below the threshold the server is considered healthy.n__Minimum server version__: 3.10n##### PermissionsnMust be logged in.n
+
+@name("Check system health")
+GET "https://{{baseUrl}}/system/ping"
+
+
+// Recycle database connections by closing and reconnecting all connections to master and read replica databases.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Recycle database connections")
+POST "https://{{baseUrl}}/database/recycle"
+
+
+// Send a test email to make sure you have your email settings configured correctly. Optionally provide a configuration in the request body to test. If no valid configuration is present in the request body the current server configuration will be tested.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Send a test email")
+POST "https://{{baseUrl}}/email/test"
+
+
+// Send a test to validate if can connect to AWS S3. Optionally provide a configuration in the request body to test. If no valid configuration is present in the request body the current server configuration will be tested.n##### PermissionsnMust have `manage_system` permission.n__Minimum server version__: 4.8n
+
+@name("Test AWS S3 connection")
+POST "https://{{baseUrl}}/file/s3_test"
+
+
+// Get a page of audits for all users on the system, selected with `page` and `per_page` query parameters.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Get audits")
+GET "https://{{baseUrl}}/audits"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Purge all the in-memory caches for the Mattermost server. This can have a temporary negative effect on performance while the caches are re-populated.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Invalidate all the caches")
+POST "https://{{baseUrl}}/caches/invalidate"
+
+
+// Get a page of server logs, selected with `page` and `logs_per_page` query parameters.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Get logs")
+GET "https://{{baseUrl}}/logs"
+? "page"= "<>"
+? "logs_per_page"= "<>"
+
+
+// Get a valid WebRTC token, STUN and TURN server URLs along with TURN credentials to use with the Mattermost WebRTC service. See https://docs.mattermost.com/administration/config-settings.html#webrtc-beta for WebRTC configutation settings. The token returned is for the current user's session.n##### PermissionsnMust be authenticated.n
+
+@name("Get WebRTC token")
+GET "https://{{baseUrl}}/webrtc/token"
+
+
+// Get some analytics data about the system. This endpoint uses the old format, the `/analytics` route is reserved for the new format when it gets implemented.nnThe returned JSON changes based on the `name` query parameter but is always key/value pairs.nn__Minimum server version__: 4.0nn##### PermissionsnMust have `manage_system` permission.n
+
+@name("Get analytics")
+GET "https://{{baseUrl}}/analytics/old"
+? "name"= "<post>"
+? "team_id"= "<post>"
+
+
+// Get a set of information for each node in the cluster, useful for checking the status and health of each node.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Get cluster status")
+GET "https://{{baseUrl}}/cluster/status"
+
+
+// Get the previously uploaded brand image. Returns 404 if no brand image has been uploaded.n##### PermissionsnNo permission required.n
+
+@name("Get brand image")
+GET "https://{{baseUrl}}/brand/image"
+
+
+// Gets the current data retention policy details from the server, including what data should be purged and the cutoff times for each data type that should be purged.n__Minimum server version__: 4.3n##### PermissionsnRequires an active session but no other permissions.n
+
+@name("Get the data retention policy details.")
+GET "https://{{baseUrl}}/data_retention/policy"
+
+
+

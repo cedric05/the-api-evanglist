@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fa8a14bc-8bbb-49aa-bb9e-5735f704b91c.postman_collection.json
+
+// Get List by Guid
+
+@name("/getList")
+POST "https://{{baseUrl}}/getList"
+"jwt": "in laboris dolore"
+"Content-Type": "application/json"
+data('"deserunt sed esse eiusmod Duis"')
+
+
+// Get all Lists
+
+@name("/getAllLists")
+GET "https://{{baseUrl}}/getAllLists"
+"jwt": "in laboris dolore"
+
+
+// Create List
+
+@name("/createList")
+POST "https://{{baseUrl}}/createList"
+"jwt": "in laboris dolore"
+"Content-Type": "application/json"
+data('"consequat ea"')
+
+
+// Add List Items
+
+@name("/addListItems")
+POST "https://{{baseUrl}}/addListItems"
+"jwt": "in laboris dolore"
+"Content-Type": "application/json"
+json({
+    "lGuid": "Excepteur labore proident non",
+    "items": [
+        "id non nulla",
+        "veniam"
+    ]
+})
+
+
+// deleteList
+
+@name("/deleteList")
+POST "https://{{baseUrl}}/deleteList"
+"jwt": "in laboris dolore"
+"Content-Type": "application/json"
+json({
+    "lGuid": "occaecat Excepteur cillum quis labori"
+})
+
+
+// Delete List Item
+
+@name("/deleteListItems")
+POST "https://{{baseUrl}}/deleteListItems"
+"jwt": "in laboris dolore"
+"Content-Type": "application/json"
+json({
+    "guid": "in do non eu Ut"
+})
+
+
+// Get List Types
+
+@name("/getListTypes")
+GET "https://{{baseUrl}}/getListTypes"
+"jwt": "in laboris dolore"
+
+
+// Get List Items
+
+@name("/getListItems")
+GET "https://{{baseUrl}}/getListItems"
+"jwt": "in laboris dolore"
+
+
+

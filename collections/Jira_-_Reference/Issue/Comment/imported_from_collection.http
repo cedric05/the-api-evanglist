@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns all comments for an issue.
+// 
+// This operation can be accessed anonymously.
+// 
+// **[Permissions](#permissions) required:** Comments are included in the response where the user has:
+// 
+//  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the comment.
+//  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
+//  *  If the comment has visibility restrictions, belongs to the group or has the role visibility is role visibility is restricted to.
+
+@name("Get Comments") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/issue/:issueIdOrKey/comment"
+? "startAt"= "0"
+? "maxResults"= "50"
+? "orderBy"= "<string>"
+? "expand"= "<string>"
+
+
+// Adds a comment to an issue.
+// 
+// This operation can be accessed anonymously.
+// 
+// **[Permissions](#permissions) required:**
+// 
+//  *  *Browse projects* and *Add comments* [ project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue containing the comment is in.
+//  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
+
+@name("Add Comment") : "base-inherit-auth"
+POST "https://{{baseUrl}}/rest/api/3/issue/:issueIdOrKey/comment"
+"Content-Type": "application/json"
+? "expand"= "<string>"
+json({
+    "body": {},
+    "visibility": {
+        "type": "<string>",
+        "value": "<string>"
+    },
+    "properties": [
+        {
+            "key": "<string>",
+            "value": {}
+        },
+        {
+            "key": "<string>",
+            "value": {}
+        }
+    ]
+})
+
+
+

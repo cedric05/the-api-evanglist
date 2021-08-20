@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Get all imports
+
+@name("Get all imports")
+GET "https://{{baseUrl}}/api/v1/import"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Create a new import task
+
+@name("Start import")
+POST "https://{{baseUrl}}/api/v1/import"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "name": "do irure dolore",
+    "dataFileUrl": "consectetur ullamco cillum",
+    "matchedProperties": [
+        {
+            "source": "esse",
+            "getProspect": "qui fug"
+        },
+        {
+            "source": "ea amet officia ad",
+            "getProspect": "Lorem"
+        }
+    ],
+    "source": "contact",
+    "lists": [
+        "consectetur occaecat aliquip veniam",
+        "eu officia ut fugiat"
+    ],
+    "type": "list_of_enrichment",
+    "useGetProspectId": false
+})
+
+
+// Get import by id
+
+@name("Get import by id")
+GET "https://{{baseUrl}}/api/v1/import/:importId"
+"Authorization": "Bearer <Bearer Token>"
+
+
+

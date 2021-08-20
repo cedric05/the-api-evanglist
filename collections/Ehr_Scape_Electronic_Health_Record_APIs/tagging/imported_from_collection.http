@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-078f0c0e-f03d-4124-bda1-c7d8042a0e64.postman_collection.json
+
+// Delete a composition's tags..
+
+@name("Delete a composition's tags.")
+DELETE "https://{{baseUrl}}/tagging"
+
+
+// Returns tags for the specified composition..
+
+@name("Returns tags for the specified composition.")
+GET "https://{{baseUrl}}/tagging/:compositionUid"
+
+
+

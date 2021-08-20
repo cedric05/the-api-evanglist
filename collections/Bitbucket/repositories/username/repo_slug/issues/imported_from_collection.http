@@ -1,0 +1,289 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns the issues in the issue tracker.
+
+@name("/repositories/:username/:repo_slug/issues")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/issues"
+
+
+// Creates a new issue.
+// 
+// This call requires authentication. Private repositories or private
+// issue trackers require the caller to authenticate with an account that
+// has appropriate authorisation.
+// 
+// The authenticated user is used for the issue's `reporter` field.
+
+@name("/repositories/:username/:repo_slug/issues")
+POST "https://{{baseUrl}}/repositories/:username/:repo_slug/issues"
+"Content-Type": "application/json"
+json({
+    "type": "nisi commodo in",
+    "assignee": {
+        "created_on": "1999-09-16T05:18:35.136Z",
+        "display_name": "ut eu nulla Duis eiusmod",
+        "links": {
+            "avatar": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "followers": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "following": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "html": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "repositories": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "self": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        },
+        "username": "q8hKpV_",
+        "uuid": "nulla cupidatat quis ut",
+        "website": "laborum tempor ea",
+        "account_id": "Ut",
+        "is_staff": true
+    },
+    "component": {
+        "type": "sunt in ex",
+        "id": 69759231,
+        "links": {
+            "self": {
+                "href": "http://R.awcD.KfhlWWgu"
+            }
+        },
+        "name": "aliquip quis proident ad"
+    },
+    "content": {
+        "html": "<string>",
+        "markup": "<string>",
+        "raw": "<string>"
+    },
+    "created_on": "<dateTime>",
+    "edited_on": "<dateTime>",
+    "id": "<integer>",
+    "kind": "<string>",
+    "links": {
+        "attachments": {
+            "href": "<uri>"
+        },
+        "comments": {
+            "href": "<uri>"
+        },
+        "html": {
+            "href": "<uri>"
+        },
+        "self": {
+            "href": "<uri>"
+        },
+        "vote": {
+            "href": "<uri>"
+        },
+        "watch": {
+            "href": "<uri>"
+        }
+    },
+    "milestone": {
+        "id": -33415129,
+        "links": {
+            "self": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        },
+        "name": "incididunt fugiat dolore"
+    },
+    "priority": "<string>",
+    "reporter": {
+        "created_on": "1993-01-27T15:14:32.904Z",
+        "display_name": "Lorem in reprehenderit",
+        "links": {
+            "avatar": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "followers": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "following": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "html": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "repositories": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "self": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        },
+        "username": "UE9hEhdSk0E",
+        "uuid": "voluptate pariatur sint nostrud",
+        "website": "id fugiat ullamco",
+        "account_id": "e",
+        "is_staff": false
+    },
+    "repository": {
+        "type": "officia quis",
+        "created_on": "1986-10-07T20:26:05.085Z",
+        "description": "voluptate labore Ut",
+        "fork_policy": "no_public_forks",
+        "full_name": "nisi",
+        "has_issues": false,
+        "has_wiki": true,
+        "is_private": false,
+        "language": "et eu voluptate tempor",
+        "links": {
+            "avatar": {
+                "href": "http://iolJrFbknRirvzhFeBLiXfVctDE.rnkT9h5qOvederhDZ8y7gN,FZfd8oIIdBVQkGnl99P"
+            },
+            "clone": {
+                "href": "https://fruNCwgbnErNBFsTIVIVDPoCrKgIoZky.pqjiB2OcE"
+            },
+            "commits": {
+                "href": "http://v.mhVKBs3CRlCy0HljM4iveMwMXks0pBjAu9xBMJVkapCOLuWrLb"
+            },
+            "downloads": {
+                "href": "http://MQOVdoOISgcRRAOhkhLZEXeUlFuAzlxg.ohtbRd7"
+            },
+            "forks": {
+                "href": "https://kYiqGglaZvPxeLLVjaJakxs.zkxmmP4oEfnxg"
+            },
+            "hooks": {
+                "href": "http://rSgpfaEOfjjbC.bvbhVw4V+C"
+            },
+            "html": {
+                "href": "http://OhTMjJxpZZPQDWnSpglmCXRwX.lbcH7uKpUOiGh3HYcbIHsIRPvpZ6WUt-izO"
+            },
+            "pullrequests": {
+                "href": "http://gNXnFcrBkfEWSOJUth.xytwopCU6yeXU8VOWR.PLTbPldZSa"
+            },
+            "self": {
+                "href": "http://RgtgEjnfpfqeJptGiGBbcvnOONKB.cjcFEycXwS6hBzCcKYtzMiHfeMchTkPQuz1-OJvLy"
+            },
+            "watchers": {
+                "href": "http://MizjHdCJRXSGNAJAYyEAxBfqPVsPOb.hrbwJa7TjuOQp6FsKpfL+fEFNbAHZ9SFGSu6u-PdJ6J"
+            }
+        },
+        "name": "reprehenderit",
+        "owner": {
+            "created_on": "1979-05-26T20:47:58.369Z",
+            "display_name": "sint reprehenderit",
+            "links": {
+                "avatar": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "followers": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "following": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "html": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "repositories": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "self": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            },
+            "username": "x",
+            "uuid": "do Ut qui minim",
+            "website": "culpa Ut in ad aliq"
+        },
+        "parent": {
+            "value": "<Circular reference to #/components/schemas/repository detected>"
+        },
+        "project": {
+            "created_on": "1941-11-06T16:03:22.238Z",
+            "description": "labore velit proident ullamco",
+            "is_private": false,
+            "key": "",
+            "links": {
+                "avatar": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "html": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            },
+            "name": "dolor elit minim",
+            "owner": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "updated_on": "1977-10-05T08:36:44.256Z",
+            "uuid": "adipisicing labore"
+        },
+        "scm": "git",
+        "size": -18120693,
+        "updated_on": "2016-11-29T10:24:27.350Z",
+        "uuid": "velit cillum culpa veni"
+    },
+    "state": "<string>",
+    "title": "<string>",
+    "updated_on": "<dateTime>",
+    "version": {
+        "id": 30806675,
+        "links": {
+            "self": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        },
+        "name": "magna aute"
+    },
+    "votes": "<integer>"
+})
+
+
+

@@ -1,0 +1,3 @@
+With oceans absorbing much heat, glacier retreating, and ice sheets shrinking, the sea level is rising. Global sea level rose about 8 inches last decade with the rate doubling in the last two decades (NASA). This collection provides a set of resources about the impact of climate change on our oceans, pulled from behind the different United Nations visualizations.
+
+Source: https://graphs.unepgrid.ch/

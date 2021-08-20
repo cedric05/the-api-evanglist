@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("/payouts/")
+GET "https://{{baseUrl}}/payouts/"
+? "Reference"= "<string>"
+? "Status"= "<string>"
+? "Currency"= "<string>"
+? "StartDate"= "<string>"
+? "EndDate"= "<string>"
+? "PaymentType"= "<string>"
+? "OrderBy"= "<string>"
+? "Page"= "<integer>"
+? "Limit"= "<integer>"
+
+
+@name("Retrieve account balance")
+GET "https://{{baseUrl}}/payouts/pending/"
+? "Currency"= "<string>"
+? "TotalCurrency"= "<string>"
+
+
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns a list of plugins used in Tenable.io Web Application Scanning scans. <p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List plugins") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/plugins"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+
+
+// Returns details for the specified Tenable.io Web Application Scanning plugin. <p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get plugin details") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/plugins/:plugin_id"
+
+
+

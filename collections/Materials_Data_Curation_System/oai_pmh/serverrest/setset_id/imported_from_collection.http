@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get a OaiProviderSet
+
+@name("oai pmh server rest set read") : "base-inherit-auth"
+GET "https://{{baseUrl}}/oai_pmh/server/rest/set/:set_id/"
+
+
+// Update a OaiProviderSet
+
+@name("oai pmh server rest set partial update") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/oai_pmh/server/rest/set/:set_id/"
+
+
+// Delete a OaiProviderSet
+
+@name("oai pmh server rest set delete") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/oai_pmh/server/rest/set/:set_id/"
+
+
+

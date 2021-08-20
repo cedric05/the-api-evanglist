@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Log in to your account</code>&nbsp;request is used to sign in to your Contentstack account and obtain the authtoken.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#logging-in-out>Logging in/out</a> API Reference document
+
+@name("Log in to your account")
+POST "https://{{base_url}}/v3/user-session"
+"Content-Type": "application/json"
+json({
+    "user": {
+        "email": "{{user_email}}",
+        "password": "{{password}}",
+        "tfa_token": "{{your_2FA_token}}"
+    }
+})
+
+
+// <p>The <code>Log out of your account</code> call is used to sign out the user of&nbsp;Contentstack account.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#logging-in-out>Logging in/out</a> API Reference document
+
+@name("Log out of your account")
+DELETE "https://{{base_url}}/v3/user-session"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+
+
+
+

@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets an object that contains all the details about a specific build of an actor.nnBy passing the optional `waitForFinish=1` parameter the API endpoint will synchronously wait for the build to finish.nThis is useful to avoid periodic polling when waiting for an actor build to finish.
+
+@name("Get build")
+GET "https://{{baseUrl}}/v2/acts/:actorId/builds/:buildId"
+? "waitForFinish"= "<string>"
+? "token"= "<string>"
+
+
+// Aborts an actor build and returns an object that contains all the details about the build.nOnly builds that are starting or running are aborted. For builds with status `FINISHED`, `FAILED`, `ABORTING` and `TIMED-OUT` this call does nothing.
+
+@name("Abort build")
+POST "https://{{baseUrl}}/v2/acts/:actorId/builds/:buildId/abort"
+? "token"= "<string>"
+
+
+

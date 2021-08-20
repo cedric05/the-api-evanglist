@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// The Time
+
+@name("The current CMS time")
+GET "https://{{baseUrl}}/clock"
+
+
+// Information about this API, such as Version code, etc
+
+@name("About")
+GET "https://{{baseUrl}}/about"
+
+
+@name("stats Search")
+GET "https://{{baseUrl}}/stats"
+
+
+// Search User Groups
+
+@name("UserGroup Search")
+GET "https://{{baseUrl}}/usergroup"
+
+
+// Copy an user group, optionally copying the group members
+
+@name("Copy User Group")
+POST "https://{{baseUrl}}/group/:userGroupId/copy"
+
+
+

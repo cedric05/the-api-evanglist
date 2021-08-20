@@ -1,0 +1,161 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-99b807d0-abac-481e-a509-d69785137b6b.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Create XT Activity") : "base-inherit-auth"
+POST "https://mc.adobe.io/:tenant/target/activities/xt"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v3+json"
+data('{
+    "name": "xt minimal",
+    "options": [
+        {
+            "optionLocalId": 0,
+            "name": "Offer 332379",
+            "offerId": 332379
+        }
+    ],
+    "locations": {
+        "mboxes": [
+            {
+                "locationLocalId": 0,
+                "name": "homePageHero"
+            }
+        ]
+    },
+    "experiences": [
+        {
+            "experienceLocalId": 0,
+            "name": "experienceName",
+            "optionLocations": [
+                {
+                    "locationLocalId": 0,
+                    "optionLocalId": 0
+                }
+            ]
+        }
+    ],
+    "workspace": "37740098",
+    "propertyIds": [
+        195
+    ],
+    "metrics": [
+        {
+            "metricLocalId": 3,
+            "name": "conversion",
+            "conversion": true
+        }
+    ]
+}')
+
+
+@name("Delete XT Activity by ID") : "base-inherit-auth"
+DELETE "https://mc.adobe.io/:tenant/target/activities/xt/181174"
+"X-Api-Key": "{{api_key}}"
+
+
+@name("Update XT Activity") : "base-inherit-auth"
+PUT "https://mc.adobe.io/:tenant/target/activities/xt/183919"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v3+json"
+data('{
+    "name": "New XT API Activity 2",
+    "state": "saved",
+    "priority": 10,
+    "autoAllocateTraffic": {
+        "enabled": false,
+        "successEvaluationCriteria": "conversion_rate"
+    },
+    "locations": {
+        "mboxes": [
+            {
+                "locationLocalId": 0,
+                "name": "a1-serverside-xt"
+            }
+        ]
+    },
+    "experiences": [
+        {
+            "experienceLocalId": 0,
+            "name": "USA Experience",
+            "audienceIds": [
+                1224696
+            ],
+            "offerLocations": [
+                {
+                    "locationLocalId": 0,
+                    "offerId": 396067
+                }
+            ]
+        },
+        {
+            "experienceLocalId": 1,
+            "name": "UK Experience",
+            "audienceIds": [
+                1224698
+            ],
+            "offerLocations": [
+                {
+                    "locationLocalId": 0,
+                    "offerId": 396064
+                }
+            ]
+        },
+        {
+            "experienceLocalId": 2,
+            "name": "France Experience",
+            "audienceIds": [
+                1224699
+            ],
+            "offerLocations": [
+                {
+                    "locationLocalId": 0,
+                    "offerId": 396065
+                }
+            ]
+        },
+        {
+            "experienceLocalId": 3,
+            "name": "Australia Experience",
+            "audienceIds": [
+                1224700
+            ],
+            "offerLocations": [
+                {
+                    "locationLocalId": 0,
+                    "offerId": 396066
+                }
+            ]
+        }
+    ],
+    "metrics": [
+        {
+            "metricLocalId": 32767,
+            "name": "metric_placeholder",
+            "conversion": true,
+            "mboxes": [
+                {
+                    "name": "conversion_placeholder",
+                    "successEvent": "mbox_shown"
+                }
+            ],
+            "action": {
+                "type": "count_once"
+            }
+        }
+    ],
+    "analytics": {
+        "reportSuite": "adobetargetmobilewesteros",
+        "dataCollectionHost": "adobetargetmobile.sc.omtrdc.net"
+    }
+}')
+
+
+

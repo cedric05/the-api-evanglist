@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Attribute options.
+
+@name("attribute options")
+GET "https://{{baseUrl}}/rest/v1/attributes/main_color/options"
+
+
+// Assuming that the given codes are respectively the code of an existing attribute and an existing option of this attribute
+
+@name("attribute option")
+GET "https://{{baseUrl}}/rest/v1/attributes/main_color/options/white"
+
+
+

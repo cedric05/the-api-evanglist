@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Group Member") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/GroupMember/"
+
+
+@name("Group Member Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/GroupMember/{ID}/"
+
+
+@name("Describe Group Member") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/GroupMember/describe/"
+
+
+

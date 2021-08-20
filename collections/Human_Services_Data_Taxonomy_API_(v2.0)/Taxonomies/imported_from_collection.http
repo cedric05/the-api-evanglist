@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe401428-96ce-43c8-99a2-ca13929e71a5.postman_collection.json
+
+// Get Taxonomy
+
+@name("Get Taxonomy")
+GET "https://{{baseUrl}}/taxonomies/"
+
+
+// Addtaxonomy
+
+@name("Add taxonomy")
+POST "https://{{baseUrl}}/taxonomies/"
+"Content-Type": "application/json"
+json({
+    "id": "<string>",
+    "description": "<string>",
+    "term": "<string>",
+    "parent_id": "<string>",
+    "taxonomy": "<string>",
+    "language": "<string>"
+})
+
+
+// Get Taxonomy
+
+@name("Get Taxonomy")
+GET "https://{{baseUrl}}/taxonomies/:taxonomy_id/"
+
+
+// Update Taxonomy
+
+@name("Update Taxonomy")
+PUT "https://{{baseUrl}}/taxonomies/:taxonomy_id/"
+"Content-Type": "application/json"
+json({
+    "id": "<string>",
+    "description": "<string>",
+    "term": "<string>",
+    "parent_id": "<string>",
+    "taxonomy": "<string>",
+    "language": "<string>"
+})
+
+
+// Delete Taxonomy
+
+@name("Delete Taxonomy")
+DELETE "https://{{baseUrl}}/taxonomies/:taxonomy_id/"
+
+
+

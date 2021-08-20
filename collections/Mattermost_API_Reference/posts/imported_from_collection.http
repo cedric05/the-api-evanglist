@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Create a new post in a channel. To create the post as a comment on another post, provide `root_id`.n##### PermissionsnMust have `create_post` permission for the channel the post is being created in.n
+
+@name("Create a post")
+POST "https://{{baseUrl}}/posts"
+
+
+// Create a new ephemeral post in a channel.n##### PermissionsnMust have `create_post_ephemeral` permission (currently only given to system admin)n
+
+@name("Create a ephemeral post")
+POST "https://{{baseUrl}}/posts/ephemeral"
+
+
+

@@ -1,0 +1,3 @@
+An essential part of the MGI is the development of phase-based data repository. Phase-based data are important for many applications, including the development of CALPHAD-based multicomponent databases. The phase-based data include zero-dimensional, one-dimensional, two-dimensional, and three-dimensional data. Examples of some of the phase-data included are phase transformation temperatures (e.g. melting, solidus, solvus), lattice parameters, thermal expansion, elastic constants, and diffusion coefficients and compositions profiles. These data are reported as functions of composition, temperature and/or pressure.
+
+URL - https://phasedata.nist.gov/

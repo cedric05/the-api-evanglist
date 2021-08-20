@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ae419a4f-68f3-40b5-821c-80057f0df0bd.postman_collection.json
+
+// Returns current performance year measures.json metadata
+
+@name("Returns current performance year measures.json metadata")
+GET "https://{{baseUrl}}/metadata"
+"Accept": "<string>"
+
+
+// Returns current performance year measures.json metadata schema
+
+@name("Returns current performance year measures.json metadata schema")
+GET "https://{{baseUrl}}/metadata/schema"
+"Accept": "<string>"
+
+
+

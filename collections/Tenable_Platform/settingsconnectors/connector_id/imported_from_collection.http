@@ -1,0 +1,124 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cf05d8c7-fffb-4a7c-923b-c06517c2b783.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Updates the specified connector. You can change the connector name, associated service accounts, and schedule. You cannot change the connector type for an existing connector.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Update connector") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/settings/connectors/:connector_id"
+"Content-Type": "application/json"
+json({
+    "name": "elit in cupidatat",
+    "params": {
+        "access_key": "enim occaecat Ut dolore",
+        "secret_key": "aliquip ex pariatur",
+        "trails": [
+            {
+                "arn": "dolor quis in",
+                "name": "nisi Duis nulla",
+                "region": {
+                    "name": "ad sed laboris proident",
+                    "friendly_name": "reprehenderit voluptate sed Excepteur incididunt"
+                },
+                "availability": "error"
+            },
+            {
+                "arn": "irure",
+                "name": "ut eu minim anim",
+                "region": {
+                    "name": "velit",
+                    "friendly_name": "Lorem ut"
+                },
+                "availability": "error"
+            }
+        ],
+        "sub_accounts": [
+            {
+                "role_arn": "in amet ex",
+                "external_id": "conse",
+                "trails": [
+                    {
+                        "arn": "esse",
+                        "name": "veniam eiusmod",
+                        "region": {
+                            "name": "nostrud nisi exercitation veniam",
+                            "friendly_name": "Duis quis adipisicing in"
+                        },
+                        "availability": "error"
+                    },
+                    {
+                        "arn": "magna in ut",
+                        "name": "labore i",
+                        "region": {
+                            "name": "in dolor id amet",
+                            "friendly_name": "nisi Duis deserunt dolor"
+                        },
+                        "availability": "error"
+                    }
+                ],
+                "incremental_mode": false
+            },
+            {
+                "role_arn": "mollit Excepteur ipsum ut",
+                "external_id": "ad",
+                "trails": [
+                    {
+                        "arn": "mollit consequat minim est",
+                        "name": "Duis enim",
+                        "region": {
+                            "name": "ipsum sed dolore",
+                            "friendly_name": "deserunt aliquip quis commodo"
+                        },
+                        "availability": "error"
+                    },
+                    {
+                        "arn": "ipsum",
+                        "name": "sunt Excepteur sit fugiat",
+                        "region": {
+                            "name": "et ullamco",
+                            "friendly_name": "pariatur laboris"
+                        },
+                        "availability": "success"
+                    }
+                ],
+                "incremental_mode": false
+            }
+        ],
+        "application_id": "labore Excepteur quis",
+        "tenant_id": "ut elit esse volupt",
+        "subscription_id": "laborum aute eu quis anim",
+        "service_account_key": "cupidatat nisi ad Ut"
+    },
+    "network_uuid": "00000000-0000-0000-0000-000000000000",
+    "schedule": {
+        "units": "laborum id et exercitation dolor",
+        "value": -62830171
+    }
+})
+
+
+// Returns the details for the specified connector.<p>For information about connector error codes, see [Connectors](doc:io-connectors).</p><p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get connector details") : "base-inherit-auth"
+GET "https://{{baseUrl}}/settings/connectors/:connector_id"
+
+
+// Deletes the specified connector.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Delete connector") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/settings/connectors/:connector_id"
+
+
+// Imports data using a connector. This creates an asynchronous import job in Tenable.io. You can check the import status by examining the `status_message` property in [connector details](ref:connectors-connector-details).<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Import data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/settings/connectors/:connector_id/import"
+
+
+

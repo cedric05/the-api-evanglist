@@ -1,0 +1,117 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96092c6-2ddc-4e57-bdc3-4ff0804f3144.postman_collection.json
+
+// This operation retrieves a ServiceLevelObjective entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a ServiceLevelObjective by ID")
+GET "https://{{baseUrl}}/serviceLevelObjective/:id"
+? "fields"= "non incididunt nostrud Duis"
+
+
+// This operation updates partially a ServiceLevelObjective entity.
+
+@name("Updates partially a ServiceLevelObjective")
+PATCH "https://{{baseUrl}}/serviceLevelObjective/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "conformanceComparator": "deserunt eiusmod nulla",
+    "conformanceTarget": "aute dolor",
+    "graceTimes": "reprehenderit in",
+    "name": "sunt eiusmod labore laborum",
+    "thresholdTarget": "dolor eu",
+    "toleranceTarget": "anim aliquip cillum dolor",
+    "conformancePeriod": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z",
+        "@baseType": "irure est",
+        "@schemaLocation": "https://JydjDthAxVkbhezkSOJiM.tiutFUyPte2qpVlO4L16N",
+        "@type": "aliqua in incididunt ad"
+    },
+    "serviceLevelObjectiveConsequence": [
+        {
+            "prescribedAction": "Lorem et aliqua nos",
+            "validFor": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z",
+                "@baseType": "magna consectetur deserunt",
+                "@schemaLocation": "http://CTYnIutFNwPiqXWkFHPcVEZD.gqxdNDbddzIUJTy.BN65PZC,PSWHiXsV,czwRfXZQhCYROgoJw4C45znayR",
+                "@type": "reprehenderit enim qui"
+            },
+            "@baseType": "consectetur aliqua co",
+            "@schemaLocation": "https://MCwUadLEljndqtUqShyKrCg.zdggAFA5scFkWLeLYnT6A",
+            "@type": "in eu"
+        },
+        {
+            "prescribedAction": "tempor officia",
+            "validFor": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z",
+                "@baseType": "laborum sed incididunt",
+                "@schemaLocation": "https://wzfpjloUmY.xcjX2mRS0,OgIiauUY58r0rDf",
+                "@type": "sint"
+            },
+            "@baseType": "Duis in",
+            "@schemaLocation": "http://PYtUrsTNiiDpvrYyXDXrWDZ.efrduPZ9J-NgIM6Jmo4xws",
+            "@type": "consequat aute"
+        }
+    ],
+    "serviceLevelObjectiveParameter": {
+        "name": "magna reprehenderit dolor",
+        "parameterType": "incididunt eiusmod",
+        "serviceParmCategory": "officia in aliquip fugiat",
+        "serviceParmPerspective": "officia tempor cupidatat nostrud aliquip",
+        "transformationAlgorithmOfKQI": "cupidatat",
+        "relatedEntity": [
+            {
+                "@referredType": "nostrud magna dolor",
+                "id": "do adipisicing velit",
+                "role": "irure anim",
+                "href": "officia nostrud",
+                "name": "consectetur anim dolor nulla",
+                "@baseType": "ResourceSpecification",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                "@type": "LogicalResourceSpecification"
+            },
+            {
+                "@referredType": "officia esse pariatur",
+                "id": "consectetur exercitation Lorem deserunt anim",
+                "role": "in commodo velit laborum",
+                "href": "consectetur la",
+                "name": "veniam aute nostrud",
+                "@baseType": "ResourceSpecification",
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                "@type": "LogicalResourceSpecification"
+            }
+        ],
+        "validFor": {
+            "endDateTime": "1985-04-12T23:20:50.52Z",
+            "startDateTime": "1985-04-12T23:20:50.52Z",
+            "@baseType": "v",
+            "@schemaLocation": "https://NrQhxjwCf.gbmi+4jOUJWbjguvPWGrP5Kxb3BzSiIbi",
+            "@type": "consequat labore ut Ut cupidatat"
+        },
+        "@baseType": "aliquip minim pariatur ",
+        "@schemaLocation": "http://gIzrXLGQpoTMALICSHLoKjJeJaGYPoCd.lunvqSFMXRu9j3tjCz+XGSy5Zn89yL0h-RV5lD6L-P4s",
+        "@type": "aliqua amet laboris conse"
+    },
+    "tolerancePeriod": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z",
+        "@baseType": "dolor cillum non",
+        "@schemaLocation": "http://NxMtKnqOl.fkuxp+h.mKhZpPglShiQq8qOPhMDqWL",
+        "@type": "fugiat aliqua"
+    },
+    "@baseType": "ipsum Excepteur pariatur laborum nostrud",
+    "@schemaLocation": "http://oPVBykdiiGEMBXWd.fufbOIO+x5IxAfZhA9ysWxLgtXyFetMOgV5xPDsH",
+    "@type": "laboris eiusm"
+})
+
+
+// This operation deletes a ServiceLevelObjective entity.
+
+@name("Deletes a ServiceLevelObjective")
+DELETE "https://{{baseUrl}}/serviceLevelObjective/:id"
+
+
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dcac1fa6-ec6e-4ad7-8435-bc556328ee08.postman_collection.json
+
+// Use the API key in your UTS Profile in the body of your post request in this example to obtain a ticket granting ticket.
+
+@name("Request a ticket granting ticket with your API Key")
+POST "https://utslogin.nlm.nih.gov/cas/v1/api-key"
+data({
+    "apikey": [
+        "{api-key}"
+    ]
+})
+
+
+// Substitute the {TGT} portion of the URL with your ticket granting ticket.  Make the POST call and you'll receive a service ticket that you can use one time to make a request to the API.  Re-run this call each time you need a new service ticket.
+
+@name("Request a Single-use service ticket")
+POST "https://utslogin.nlm.nih.gov/cas/v1/api-key/{TGT}"
+data({
+    "service": [
+        "http://umlsks.nlm.nih.gov"
+    ]
+})
+
+
+

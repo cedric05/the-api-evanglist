@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get the opening times of the restaurant for a given day
+
+@name("Get opening times")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/availability/open/:date"
+? "productUid"= "laborum dolor fugiat"
+
+
+// Verify that a booking time is available for the provided number of people or any amount of people if not provided.
+
+@name("Verify availability")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/availability/available/:dateTime/:numberOfPeople"
+
+
+

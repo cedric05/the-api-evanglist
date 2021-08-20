@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// List all distinct Query Lambda tags in an organization.
+
+@name("List All Query Lambda Tags")
+GET "https://{{baseUrl}}/v1/orgs/self/lambdas/tags"
+
+
+// List all Query Lambda versions associated with a given tag.
+
+@name("List Query Lambda Tag Versions")
+GET "https://{{baseUrl}}/v1/orgs/self/lambdas/tags/:tag"
+
+
+

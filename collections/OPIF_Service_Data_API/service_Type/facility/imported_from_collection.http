@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6dd4b6b5-e2d1-4630-9235-6d7bb1d13702.postman_collection.json
+
+// Get All
+
+@name("Get All")
+GET "https://{{baseUrl}}/:serviceType/facility/getall.{{format}}"
+
+
+// Entity Details
+
+@name("Entity Details")
+GET "https://{{baseUrl}}/:serviceType/facility/id/{{entityID}}.{{format}}"
+
+
+

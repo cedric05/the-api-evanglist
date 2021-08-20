@@ -1,0 +1,101 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4a03fcae-b7ff-4c33-a2b8-074c5a74493f.postman_collection.json
+
+// Used by Acquirers to add a terminated a merchant in the MATCH system. Merchant information, and up to five principal owners per merchant, can be provided by an acquiring bank as part of the listing.
+
+@name("Used by Acquirers to add a terminated a merchant in the MATCH system. Merchant information, and up to five principal owners per merchant, can be provided by an acquiring bank as part of the listing.")
+POST "https://{{baseUrl}}/fraud/merchant/v3/add-merchant"
+"Content-Type": "application/json"
+json({
+    "AddMerchantRequest": {
+        "AcquirerId": "<string>",
+        "Merchant": {
+            "MerchantId": "<string>",
+            "Name": "<string>",
+            "CountrySubdivisionTaxId": "<string>",
+            "CATFlag": "<string>",
+            "PhoneNumber": "<string>",
+            "ReasonCode": "<string>",
+            "MerchantCategory": "<string>",
+            "DateOpened": "<string>",
+            "DateClosed": "<string>",
+            "Address": {
+                "Country": "<string>",
+                "Line1": "<string>",
+                "City": "<string>",
+                "PostalCode": "<string>",
+                "CountrySubdivision": "<string>",
+                "Line2": "<string>",
+                "Province": "<string>"
+            },
+            "AltPhoneNumber": "<string>",
+            "Comments": "<string>",
+            "DoingBusinessAsName": "<string>",
+            "NationalTaxId": "<string>",
+            "Principal": {
+                "FirstName": "<string>",
+                "LastName": "<string>",
+                "Address": {
+                    "Country": "<string>",
+                    "Line1": "<string>",
+                    "City": "<string>",
+                    "PostalCode": "<string>",
+                    "CountrySubdivision": "<string>",
+                    "Line2": "<string>",
+                    "Province": "<string>"
+                },
+                "AltPhoneNumber": "<string>",
+                "DriversLicense": {
+                    "Country": "<string>",
+                    "CountrySubdivision": "<string>",
+                    "Number": "<string>"
+                },
+                "MiddleInitial": "<string>",
+                "NationalId": "<string>",
+                "PhoneNumber": "<string>",
+                "SearchCriteria": {
+                    "SearchAll": "<string>",
+                    "Country": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "MinPossibleMatchCount": "<string>",
+                    "Region": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ]
+                }
+            },
+            "ServiceProvDBA": "<string>",
+            "ServiceProvLegal": "<string>",
+            "Url": [
+                "<string>",
+                "<string>"
+            ]
+        }
+    }
+})
+
+
+// Returns the contact information for the acquirer id requested. When MATCH returns a possible merchant match, this resource assists users by retrieving the contact information associated with the Acquirer ID/ICA that added the merchant to MATCH.
+
+@name("Returns the contact information for the acquirer id requested. When MATCH returns a possible merchant match, this resource assists users by retrieving the contact information associated with the Acquirer ID/ICA that added the merchant to MATCH.")
+POST "https://{{baseUrl}}/fraud/merchant/v3/common/contact-details"
+"Content-Type": "application/json"
+json({
+    "ContactRequest": {
+        "AcquirerId": "<string>"
+    }
+})
+
+
+

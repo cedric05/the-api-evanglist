@@ -1,0 +1,205 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e760486c-f487-465f-b743-146cfe5b92a4.postman_collection.json
+
+// Purpose of this service is to retrieve the Transfer resource associated with a specified transfer_reference value.
+
+@name("Purpose of this service is to retrieve the Transfer resource associated with a specified transfer_reference value.")
+GET "https://{{baseUrl}}/send/"
+? "ref"= "<string>"
+
+
+// Initiates a Mastercard Merchant Presented QR purchase transaction by pushing funds to a merchant account.
+
+@name("Initiates a Mastercard Merchant Presented QR purchase transaction by pushing funds to a merchant account.")
+POST "https://{{baseUrl}}/send/"
+"Content-Type": "application/json"
+json({
+    "merchant_payment_transfer": {
+        "transfer_reference": "<string>",
+        "payment_type": "<string>",
+        "amount": "<string>",
+        "currency": "<string>",
+        "sender_account_uri": "<string>",
+        "funding_source": "<string>",
+        "recipient_account_uri": "<string>",
+        "recipient": {
+            "first_name": "<string>",
+            "last_name": "<string>",
+            "address": {
+                "city": "<string>",
+                "country": "<string>",
+                "country_subdivision": "<string>",
+                "line1": "<string>",
+                "line2": "<string>",
+                "postal_code": "<string>"
+            },
+            "merchant_category_code": "<string>",
+            "additional_merchant_data": {
+                "payment_facilitator_id": "<long>",
+                "sub_merchant_id": "<string>"
+            },
+            "email": "<string>",
+            "middle_name": "<string>",
+            "phone": "<string>"
+        },
+        "transaction_local_date_time": "<string>",
+        "additional_message": "<string>",
+        "authentication_value": "<string>",
+        "channel": "<string>",
+        "convenience_amount": "<string>",
+        "convenience_indicator": "<string>",
+        "device_id": "<string>",
+        "digital_account_reference_number": "<string>",
+        "funding_transaction_reference": {
+            "reference_number": "<string>",
+            "network": "<string>"
+        },
+        "interchange_rate_designator": "<string>",
+        "location": "<string>",
+        "mastercard_assigned_id": "<string>",
+        "participant": {
+            "card_acceptor_name": "<string>",
+            "card_acceptor_id": "<string>"
+        },
+        "participation_id": "<string>",
+        "payment_origination_country": "<string>",
+        "processor_id": "<string>",
+        "qr_data": "<string>",
+        "reconciliation_data": {
+            "custom_field": [
+                {
+                    "name": "<string>",
+                    "value": "<string>"
+                },
+                {
+                    "name": "<string>",
+                    "value": "<string>"
+                }
+            ]
+        },
+        "routing_transit_number": "<string>",
+        "sender": {
+            "first_name": "<string>",
+            "last_name": "<string>",
+            "address": {
+                "city": "<string>",
+                "country": "<string>",
+                "country_subdivision": "<string>",
+                "line1": "<string>",
+                "line2": "<string>",
+                "postal_code": "<string>"
+            },
+            "date_of_birth": "<string>",
+            "email": "<string>",
+            "middle_name": "<string>",
+            "phone": "<string>"
+        },
+        "token_cryptogram": {
+            "type": "<string>",
+            "value": "<string>",
+            "pan_sequence_number": "<string>"
+        }
+    }
+})
+
+
+// Initiates a Mastercard Merchant Presented QR Refund transaction by pushing funds from a merchant account back to the customer's account.
+
+@name("Initiates a Mastercard Merchant Presented QR Refund transaction by pushing funds from a merchant account back to the customer's account.")
+POST "https://{{baseUrl}}/send/"
+"Content-Type": "application/json"
+json({
+    "merchant_refund_transfer": {
+        "transfer_reference": "<string>",
+        "payment_type": "<string>",
+        "amount": "<string>",
+        "currency": "<string>",
+        "sender_account_uri": "<string>",
+        "funding_source": "<string>",
+        "transaction_local_date_time": "<string>",
+        "additional_message": "<string>",
+        "authentication_value": "<string>",
+        "channel": "<string>",
+        "device_id": "<string>",
+        "digital_account_reference_number": "<string>",
+        "interchange_rate_designator": "<string>",
+        "location": "<string>",
+        "mastercard_assigned_id": "<string>",
+        "participant": {
+            "card_acceptor_name": "<string>",
+            "card_acceptor_id": "<string>"
+        },
+        "participation_id": "<string>",
+        "payment_origination_country": "<string>",
+        "payment_transaction_reference": {
+            "reference_number": "<string>",
+            "network": "<string>"
+        },
+        "processor_id": "<string>",
+        "recipient": {
+            "address": {
+                "city": "<string>",
+                "country": "<string>",
+                "country_subdivision": "<string>",
+                "line1": "<string>",
+                "line2": "<string>",
+                "postal_code": "<string>"
+            },
+            "merchant_category_code": "<string>",
+            "additional_merchant_data": {
+                "payment_facilitator_id": "<long>",
+                "sub_merchant_id": "<string>"
+            },
+            "email": "<string>",
+            "first_name": "<string>",
+            "last_name": "<string>",
+            "middle_name": "<string>",
+            "phone": "<string>"
+        },
+        "reconciliation_data": {
+            "custom_field": [
+                {
+                    "name": "<string>",
+                    "value": "<string>"
+                },
+                {
+                    "name": "<string>",
+                    "value": "<string>"
+                }
+            ]
+        },
+        "routing_transit_number": "<string>",
+        "sender": {
+            "merchant_category_code": "<string>",
+            "address": {
+                "city": "<string>",
+                "country": "<string>",
+                "country_subdivision": "<string>",
+                "line1": "<string>",
+                "line2": "<string>",
+                "postal_code": "<string>"
+            },
+            "date_of_birth": "<string>",
+            "email": "<string>",
+            "first_name": "<string>",
+            "last_name": "<string>",
+            "middle_name": "<string>",
+            "phone": "<string>"
+        },
+        "token_cryptogram": {
+            "type": "<string>",
+            "value": "<string>",
+            "pan_sequence_number": "<string>"
+        }
+    }
+})
+
+
+// Purpose of this service is to retrieve the Transfer resource associated with the specified transfer-id.
+
+@name("Purpose of this service is to retrieve the Transfer resource associated with the specified transfer-id.")
+GET "https://{{baseUrl}}/send/"
+
+
+

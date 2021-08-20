@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-36a63eb6-45d1-4133-9bc2-bb45cae7ee6e.postman_collection.json
+
+// Verify that an OTP sent by the Send SMS Verification API is valid.
+
+@name("/v1/verification/result")
+GET "https://{{baseUrl}}/v1/verification/result"
+? "tran_id"= "<string>"
+? "key"= "<string>"
+? "format"= "<string>"
+? "otp"= "<string>"
+
+
+// Send an SMS with verification code and a custom message for authentication purpose.
+
+@name("/v1/verification/send")
+POST "https://{{baseUrl}}/v1/verification/send"
+? "country_code"= "<string>"
+? "format"= "<string>"
+? "tel"= "<string>"
+? "key"= "<string>"
+? "mesg"= "<string>"
+
+
+

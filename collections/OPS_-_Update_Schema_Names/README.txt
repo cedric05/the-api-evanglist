@@ -1,0 +1,5 @@
+This collection helps you manage the OpenAPIs you have stored for each API within Postman. This is a fundamental call you will have to make repeatedly as part of OpenAPI work, so I have developed this collection to help make things easier when it comes to pulling the OpenAPI until the Postman API catches up to the needs for automation on the platform.
+
+To use you will need a Postman API key, which you can pull from your [Postman user account settings](https://go.postman.co/integrations/services/pm_pro_api). The collection just makes calls to the Postman API on your behalf to obtain the OpenAPI from the Postman API schema API. The current process takes three separate API calls, and this request will abstract away all of that for you.
+
+If you have any questions about this collection leave a comment, or email info@apievangelist.com. This collection will become a fundamental base of many other collections that I develop which need the OpenAPI to understand the contract of the API.

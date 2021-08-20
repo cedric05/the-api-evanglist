@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Retrieve the current server configurationn##### PermissionsnMust have `manage_system` permission.n
+
+@name("Get configuration")
+GET "https://{{baseUrl}}/config"
+
+
+// Reload the configuration file to pick up on any changes made to it.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Reload configuration")
+POST "https://{{baseUrl}}/config/reload"
+
+
+// Get a subset of the server configuration needed by the client.n##### PermissionsnNo permission required.n
+
+@name("Get client configuration")
+GET "https://{{baseUrl}}/config/client"
+? "format"= "<>"
+
+
+// Retrieve a json object mirroring the server configuration where fields are set to truenif the corresponding config setting is set through an environment variable. Settingsnthat haven't been set through environment variables will be missing from the object.nn__Minimum server version__: 4.10nn##### PermissionsnMust have `manage_system` permission.n
+
+@name("Get configuration made through environment variables")
+GET "https://{{baseUrl}}/config/environment"
+
+
+

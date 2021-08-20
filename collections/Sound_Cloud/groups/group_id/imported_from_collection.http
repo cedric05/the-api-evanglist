@@ -1,0 +1,80 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-edf4e52a-d167-4c2f-bb89-c42269bd9481.postman_collection.json
+
+// Returns a combined collection of moderators, members and contributors of the group with group id
+
+@name("Get Groups Users")
+GET "https://{{baseUrl}}/groups/:group_id/users.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of moderators of the group with group id
+
+@name("Get Groups Moderators")
+GET "https://{{baseUrl}}/groups/:group_id/moderators.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of members of the group with group id
+
+@name("Get Groups Members")
+GET "https://{{baseUrl}}/groups/:group_id/members.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of contributors of the group with group id
+
+@name("Get Groups Contributors")
+GET "https://{{baseUrl}}/groups/:group_id/contributors.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of tracks contributed to the group with group id
+
+@name("Get Groups Tracks")
+GET "https://{{baseUrl}}/groups/:group_id/tracks.json"
+? "consumer_key"= "<>"
+
+
+// Returns a combined collection of moderators, members and contributors of the group with group id
+
+@name("Get Groups Users. Format")
+GET "https://{{baseUrl}}/groups/:group_id/users.{{format}}"
+? "consumer_key"= "<>"
+? "playlist_id"= "<>"
+
+
+// Returns a collection of moderators of the group with group id
+
+@name("Get Groups Moderators. Format")
+GET "https://{{baseUrl}}/groups/:group_id/moderators.{{format}}"
+? "consumer_key"= "<>"
+? "playlist_id"= "<>"
+
+
+// Returns a collection of members of the group with group id
+
+@name("Get Groups Members. Format")
+GET "https://{{baseUrl}}/groups/:group_id/members.{{format}}"
+? "consumer_key"= "<>"
+? "playlist_id"= "<>"
+
+
+// Returns a collection of contributors of the group with group id
+
+@name("Get Groups Contributors. Format")
+GET "https://{{baseUrl}}/groups/:group_id/contributors.{{format}}"
+? "consumer_key"= "<>"
+? "playlist_id"= "<>"
+
+
+// Returns a collection of tracks contributed to the group with group id
+
+@name("Get Groups Tracks. Format")
+GET "https://{{baseUrl}}/groups/:group_id/tracks.{{format}}"
+? "consumer_key"= "<>"
+? "playlist_id"= "<>"
+
+
+

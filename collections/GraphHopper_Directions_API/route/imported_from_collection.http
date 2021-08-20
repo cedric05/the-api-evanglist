@@ -1,0 +1,140 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f1494990-6b2e-4273-b056-b290ffedd5ef.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// The GET request is the most simple one: just specify the parameter in the URL and you are done.
+// Can be tried directly in every browser.
+
+@name("GET Route Endpoint") : "base-inherit-auth"
+GET "https://{{baseUrl}}/route"
+? "point"= "<string>"
+? "point"= "<string>"
+? "point_hint"= "<string>"
+? "point_hint"= "<string>"
+? "snap_prevention"= "<string>"
+? "snap_prevention"= "<string>"
+? "vehicle"= "car"
+? "curbside"= "<string>"
+? "curbside"= "<string>"
+? "turn_costs"= "false"
+? "locale"= "en"
+? "elevation"= "false"
+? "details"= "<string>"
+? "details"= "<string>"
+? "optimize"= "false"
+? "instructions"= "true"
+? "calc_points"= "true"
+? "debug"= "false"
+? "points_encoded"= "true"
+? "ch.disable"= "false"
+? "weighting"= "fastest"
+? "heading"= "<integer>"
+? "heading"= "<integer>"
+? "heading_penalty"= "120"
+? "pass_through"= "false"
+? "block_area"= "<string>"
+? "avoid"= "<string>"
+? "algorithm"= "<string>"
+? "round_trip.distance"= "10000"
+? "round_trip.seed"= "<long>"
+? "alternative_route.max_paths"= "2"
+? "alternative_route.max_weight_factor"= "1.4"
+? "alternative_route.max_share_factor"= "0.6"
+
+
+// Please see the [GET endpoint](#operation/getRoute) for a simpler method on how to get started.
+// If you are familiar with POST requests and JSON then do not hesitate to continue here.
+// 
+// Especially when you use many locations you should get familiar with this POST endpoint as the GET endpoint
+// has an URL length limitation. Additionally the request of this POST endpoint can be compressed and can slightly
+// speed up the request.
+// 
+// To do a request you send JSON data. Both request scenarios GET and POST are identical except that all singular parameter names are named as their plural for a POST request.
+// The effected parameters are: `points`, `point_hints` and `snap_preventions`.
+// 
+// **Please note that in opposite to the GET endpoint, points are specified in the order of `longitude, latitude`**.
+// 
+// For example `point=10,11&point=20,22` will be converted to the `points` array (plural):
+// ```json
+// { "points": [[11,10], [22,20]] }
+// ```
+// Note again that also the order changes from `[latitude,longitude]` to `[longitude,latitude]`
+// similar to [GeoJson](http://geojson.org/geojson-spec.html#examples).
+// 
+// Example:
+// ```bash
+// curl -X POST -H "Content-Type: application/json" "https://graphhopper.com/api/1/route?key=[YOUR_KEY]" -d '{"elevation":false,"points":[[-0.087891,51.534377],[-0.090637,51.467697]],"vehicle":"car"}'
+// ```
+
+@name("POST Route Endpoint") : "base-inherit-auth"
+POST "https://{{baseUrl}}/route"
+"Content-Type": "application/json"
+json({
+    "algorithm": "<string>",
+    "alternative_route.max_paths": 2,
+    "alternative_route.max_share_factor": 0.6,
+    "alternative_route.max_weight_factor": 1.4,
+    "avoid": "<string>",
+    "block_area": "<string>",
+    "calc_points": true,
+    "ch.disable": false,
+    "curbsides": [
+        "<string>",
+        "<string>"
+    ],
+    "debug": false,
+    "details": [
+        "<string>",
+        "<string>"
+    ],
+    "elevation": false,
+    "heading_penalty": 120,
+    "headings": [
+        "<integer>",
+        "<integer>"
+    ],
+    "instructions": true,
+    "locale": "en",
+    "optimize": "false",
+    "pass_through": false,
+    "point_hints": [
+        "<string>",
+        "<string>"
+    ],
+    "points": [
+        [
+            "<double>",
+            "<double>"
+        ],
+        [
+            "<double>",
+            "<double>"
+        ]
+    ],
+    "points_encoded": true,
+    "round_trip.distance": 10000,
+    "round_trip.seed": "<long>",
+    "snap_preventions": [
+        "<string>",
+        "<string>"
+    ],
+    "vehicle": {
+        "value": "<Error: Could not resolve allOf schema"
+    },
+    "weighting": "fastest"
+})
+
+
+// Use this to find out details about the supported vehicle profiles and features, or if you just need to ping the server.
+
+@name("Coverage information") : "base-inherit-auth"
+GET "https://{{baseUrl}}/route/info"
+
+
+

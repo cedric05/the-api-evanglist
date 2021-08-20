@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bccf5d55-a2df-4783-8125-6d0355865ae6.postman_collection.json
+
+// Returns auto-hashtagged text of the post.
+
+@name("Auto-Hashtag")
+GET "https://{{baseUrl}}/v1/stats/auto-hashtag"
+? "post"= "<string>"
+? "maxHashtags"= "<integer>"
+? "hashtagPosition"= "<string>"
+
+
+// Returns list of hashtag suggestions for a single-word topic or a shorter text up to 1000 characters. Takes into account both semantic relevancy and real-time hashtag popularity.
+
+@name("Hashtag Suggestions")
+GET "https://{{baseUrl}}/v1/stats/hashtag-suggestions"
+? "text"= "<string>"
+
+
+// Returns historical stats for a given hashtag from the last 30 days
+
+@name("Hashtag History")
+GET "https://{{baseUrl}}/v1/stats/history/:hashtag"
+
+
+// Returns real-time stats for up to 100 hashtags (updated hourly).
+
+@name("Hashtag Stats")
+GET "https://{{baseUrl}}/v1/stats/multiple-hashtags"
+? "tags"= "<array>"
+
+
+

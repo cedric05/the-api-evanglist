@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3beba34b-de4f-461e-84f9-8a677b9e3fd9.postman_collection.json
+
+// Permanently deletes this basket and all collected requests.
+
+@name("Delete basket")
+DELETE "https://{{baseUrl}}/baskets/:name"
+
+
+// Deletes all requests collected by this basket.
+
+@name("Delete all requests")
+DELETE "https://{{baseUrl}}/baskets/:name/requests"
+
+
+// Retrieves information about configured response of the basket. Service will reply with this response to anynHTTP request sent to the basket with appropriate HTTP method.nnIf nothing is configured, the default response is HTTP 200 - OK with empty content.n
+
+@name("Get response settings")
+GET "https://{{baseUrl}}/baskets/:name/responses/:method"
+
+
+

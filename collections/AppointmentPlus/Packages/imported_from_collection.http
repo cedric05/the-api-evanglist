@@ -1,0 +1,80 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Returns the details for packages.  If none of the optional parameters are sent, the service will return the details for all packages at the headquarters location.  If using the `exclude_event_templates_from_services` flag, the response will not include the events (in the `package_services` element) that were generated from an event template that is already assigned to the package. This will reduce the size of the response when using a high volumne of events and event templates.
+
+@name("GetPackages")
+POST "https://{{baseUrl}}/Packages/GetPackages"
+? "location_id"= "<integer>"
+? "item_id"= "<integer>"
+? "package_type_id"= "<string>"
+? "exclude_event_templates_from_services"= "<boolean>"
+
+
+// Updates the details of a package and returns the details.  If changing the `package_type_id`, one of the following parameters may be required: `monthly_fee`, `num_sessions`, `num_days`, `per_session_cost`.  If any of the parameters are not sent, the current value will be preserved. If any of the parameters are sent containing an empty string, the value will be cleared.
+
+@name("UpdatePackages")
+POST "https://{{baseUrl}}/Packages/UpdatePackages"
+? "item_id"= "<integer>"
+? "name"= "<string>"
+? "package_type_id"= "<string>"
+? "status"= "<string>"
+? "monthly_fee"= "<number>"
+? "num_sessions"= "<integer>"
+? "num_days"= "<integer>"
+? "per_session_cost"= "<number>"
+? "package_services"= "<string>"
+? "location_id"= "<integer>"
+? "price"= "<number>"
+? "down_payment"= "<number>"
+? "enrollment_fee"= "<number>"
+? "package_statuses"= "<string>"
+? "package_event_templates"= "<string>"
+
+
+// Deletes the specified package.
+
+@name("DeletePackages")
+POST "https://{{baseUrl}}/Packages/DeletePackages"
+? "item_id"= "<integer>"
+
+
+// Assigns the specified package to a customer.  If any of the optional parameters above are not sent, the default value will be used.
+
+@name("AssignPackages")
+POST "https://{{baseUrl}}/Packages/AssignPackages"
+? "item_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "price"= "<number>"
+? "monthly_fee"= "<number>"
+? "num_sessions"= "<integer>"
+? "num_days"= "<integer>"
+? "per_session_cost"= "<number>"
+? "down_payment"= "<number>"
+? "enrollment_fee"= "<number>"
+? "creation_date"= "<integer>"
+? "expiration_date"= "<integer>"
+
+
+// Creates a new package and returns the details of the new package. t Depending upon the `package_type_id`, only one of the following parameters is required: `monthly_fee`, `num_sessions`, `num_days`, `per_session_cost`.
+
+@name("CreatePackages")
+POST "https://{{baseUrl}}/Packages/CreatePackages"
+? "name"= "<string>"
+? "package_type_id"= "<string>"
+? "status"= "<string>"
+? "monthly_fee"= "<number>"
+? "num_sessions"= "<integer>"
+? "num_days"= "<integer>"
+? "per_session_cost"= "<number>"
+? "package_services"= "<string>"
+? "location_id"= "<integer>"
+? "price"= "<number>"
+? "down_payment"= "<number>"
+? "enrollment_fee"= "<number>"
+? "package_statuses"= "<string>"
+? "package_event_templates"= "<string>"
+
+
+

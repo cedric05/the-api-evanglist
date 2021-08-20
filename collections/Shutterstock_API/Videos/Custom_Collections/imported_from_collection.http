@@ -1,0 +1,67 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("Create Collection")
+POST "https://{{baseurl}}/videos/collections"
+"Content-Type": "application/json"
+json({
+    "name": ""
+})
+
+
+@name("List Collections")
+GET "https://{{baseurl}}/videos/collections"
+"Content-Type": "application/json"
+? "embed"= ""
+? "page"= ""
+? "per_page"= ""
+
+
+@name("Get Collection")
+GET "https://{{baseurl}}/videos/collections/:id"
+? "embed"= ""
+? "share_code"= ""
+
+
+@name("Rename Collection")
+POST "https://{{baseurl}}/videos/collections/:id"
+"Content-Type": "application/json"
+json({
+    "name": ""
+})
+
+
+@name("Delete Collection")
+DELETE "https://{{baseurl}}/videos/collections/:id"
+"Content-Type": "application/json"
+json({
+    "name": ""
+})
+
+
+@name("Add items")
+POST "https://{{baseurl}}/videos/collections/:id/items"
+"Content-Type": "application/json"
+json({
+    "items": [
+        {
+            "id": ""
+        }
+    ]
+})
+
+
+@name("List Items")
+GET "https://{{baseurl}}/videos/collections/:id/items"
+? "share_code"= ""
+? "page"= ""
+? "per_page"= ""
+
+
+@name("Delete Item")
+DELETE "https://{{baseurl}}/videos/collections/:id/items"
+? "item_id"= "123"
+
+
+

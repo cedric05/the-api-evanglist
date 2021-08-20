@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
+
+@name("Get Location Refunds")
+GET "https://{{baseUrl}}/v1/:location_id/refunds"
+? "order"= "<object>"
+? "begin_time"= "<string>"
+? "end_time"= "<string>"
+? "limit"= "<integer>"
+? "batch_token"= "<string>"
+
+
+

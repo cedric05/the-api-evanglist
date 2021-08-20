@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5df42158-5f10-4516-8329-7ee0147c0dd4.postman_collection.json
+
+// Disables stored payment details to stop charging a shopper with this particular recurring detail ID.
+// 
+// For more information, refer to [Disable stored details](https://docs.adyen.com/developers/features/recurring-payments/disable-stored-details).
+
+@name("Disables stored payment details.")
+POST "https://{{baseUrl}}/disable"
+
+
+// Lists the stored payment details for a shopper, if there are any available. The recurring detail ID can be used with a regular authorisation request to charge the shopper. A summary of the payment detail is returned for presentation to the shopper.
+// 
+// For more information, refer to [Retrieve stored details](https://docs.adyen.com/developers/features/recurring-payments/retrieve-stored-details).
+
+@name("Retrieves stored payment details for a shopper.")
+POST "https://{{baseUrl}}/listRecurringDetails"
+
+
+

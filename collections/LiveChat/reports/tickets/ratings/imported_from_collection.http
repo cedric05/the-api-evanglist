@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Shows the tickets that were rated during the specified period.nn
+
+@name("Ticket ratings report")
+GET "https://{{baseUrl}}/reports/tickets/ratings"
+"X": "<>"
+? "group"= "<object>"
+? "date_from"= "<>"
+? "date_to"= "<>"
+? "group_by"= "<>"
+
+
+// Shows the ratio of good to bad ratings for each operator.nn
+
+@name("Ticket Ranking")
+GET "https://{{baseUrl}}/reports/tickets/ratings/ranking"
+"X": "<>"
+
+
+

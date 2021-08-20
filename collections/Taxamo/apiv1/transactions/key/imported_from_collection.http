@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Delete transaction.
+
+@name("Delete Transaction")
+DELETE "https://{{baseUrl}}/api/v1/transactions/:key"
+
+
+// Confirm transaction.
+
+@name("Confirm Transaction")
+POST "https://{{baseUrl}}/api/v1/transactions/:key/confirm"
+
+
+// Get transaction refunds.
+
+@name("Get Transaction Refunds")
+GET "https://{{baseUrl}}/api/v1/transactions/:key/refunds"
+
+
+// Un-confirm the transaction.
+
+@name("Un-confirm The Transaction")
+POST "https://{{baseUrl}}/api/v1/transactions/:key/unconfirm"
+
+
+

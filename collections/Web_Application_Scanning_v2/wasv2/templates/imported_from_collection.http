@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns a paginated list of Tenable-provided templates that are available to be used for scan configurations.<p>Requires STANDARD [32] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List Tenable-provided templates") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/templates"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+
+
+// Returns the details for a Tenable-provided template. Tenable-provided templates can be used to define scan configurations.<p>Requires STANDARD [32] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get Tenable-provided template details") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/templates/:template_id"
+
+
+

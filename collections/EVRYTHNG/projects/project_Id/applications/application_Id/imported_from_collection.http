@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Read an application by `applicationId` in the project specified by `projectId`.
+
+@name("Read an application")
+GET "https://{{baseUrl}}/projects/:projectId/applications/:applicationId"
+? "No Name"= "<string>"
+
+
+// Read the Trusted Application API key for the application with `applicationId`. This is a secret key that has access to more endpoints than the standard Application API key.
+
+@name("Read Trusted App API Key")
+GET "https://{{baseUrl}}/projects/:projectId/applications/:applicationId/secretKey"
+? "No Name"= "<string>"
+
+
+// Read an application's Redirector.
+
+@name("Read an application Redirector")
+GET "https://{{baseUrl}}/projects/:projectId/applications/:applicationId/redirector"
+? "No Name"= "<string>"
+
+
+

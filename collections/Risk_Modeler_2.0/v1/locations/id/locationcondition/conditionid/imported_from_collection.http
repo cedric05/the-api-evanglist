@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Gets a location condition
+
+@name("Gets a location condition") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/locations/:id/locationcondition/:conditionid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates location condition
+
+@name("Updates location condition") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/locations/:id/locationcondition/:conditionid"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "locationId": -36429933,
+    "conditionId": -74210291,
+    "isIncluded": "NotIncluded"
+})
+
+
+// Deletes a location condition
+
+@name("Deletes a location condition") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/locations/:id/locationcondition/:conditionid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

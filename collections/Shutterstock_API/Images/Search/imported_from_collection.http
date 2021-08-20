@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("Search")
+GET "https://{{baseurl}}/images/search"
+? "added_date"= ""
+? "added_date_start"= ""
+? "added_date_end"= ""
+? "category"= ""
+? "color"= ""
+? "contributor"= ""
+? "height_from"= ""
+? "height_to"= ""
+? "image_type"= ""
+? "language"= ""
+? "license"= ""
+? "model"= ""
+? "orientation"= ""
+? "page"= ""
+? "per_page"= ""
+? "people_model_released"= ""
+? "people_age"= ""
+? "people_ethnicity"= ""
+? "people_gender"= ""
+? "people_number"= ""
+? "query"= ""
+? "safe"= ""
+? "sort"= ""
+? "spellcheck_query"= ""
+? "view"= ""
+? "width_from"= ""
+? "width_to"= ""
+
+
+@name("List Categories")
+GET "https://{{baseurl}}/images/categories"
+
+
+@name("List Similar")
+GET "https://{{baseurl}}/images/:id/similar"
+
+
+

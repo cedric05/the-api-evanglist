@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Get a single collection.
+
+@name("Get a single collection")
+GET "https://{{baseUrl}}/admin/smart_collections/401912846.json"
+"Content": "<>"
+
+
+// Get a count of all collections.
+
+@name("Get a count of all collections")
+GET "https://{{baseUrl}}/admin/smart_collections/count.json"
+"Content": "<>"
+
+
+// Delete a single collection.
+
+@name("Delete a single collection")
+DELETE "https://{{baseUrl}}/admin/smart_collections/408154574.json"
+"Content": "<>"
+
+
+

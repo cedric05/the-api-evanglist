@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Read a single account by ID.
+
+@name("Read an account")
+GET "https://{{baseUrl}}/accounts/:accountId"
+? "No Name"= "<string>"
+
+
+// Read all short domains available to an account.
+
+@name("Read account short domains")
+GET "https://{{baseUrl}}/accounts/:accountId/shortDomains"
+? "No Name"= "<string>"
+
+
+// Read all domains available to an account.
+
+@name("Read account domains")
+GET "https://{{baseUrl}}/accounts/:accountId/domains"
+? "No Name"= "<string>"
+
+
+

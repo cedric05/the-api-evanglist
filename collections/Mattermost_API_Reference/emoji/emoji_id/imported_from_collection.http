@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get some metadata for a custom emoji.n##### PermissionsnMust be authenticated.n
+
+@name("Get a custom emoji")
+GET "https://{{baseUrl}}/emoji/:emoji_id"
+
+
+// Get the image for a custom emoji.n##### PermissionsnMust be authenticated.n
+
+@name("Get custom emoji image")
+GET "https://{{baseUrl}}/emoji/:emoji_id/image"
+
+
+

@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Get swagger docs for an object.")
+GET "https://{{baseUrl}}/objects/:objectName/docs"
+"Authorization": "ad cillum non laborum"
+? "discovery"= "true"
+? "resolveReferences"= "true"
+? "basic"= "true"
+? "version"= "-1"
+
+
+@name("Get a list of all the field for an object.")
+GET "https://{{baseUrl}}/objects/:objectName/metadata"
+"Authorization": "ad cillum non laborum"
+"Elements-Version": "Hydrogen"
+
+
+

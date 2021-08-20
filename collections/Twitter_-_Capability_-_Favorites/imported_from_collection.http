@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fa45f76e-dcb6-4e1f-9212-f5dab45f33fb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Pull User Favorites") : "base-inherit-auth"
+GET "https://api.twitter.com/1.1/favorites/list.json"
+? "screen_name"= "kinlane"
+? "count"= "200"
+? "max_id"= ""
+? "since_id"= ""
+
+
+

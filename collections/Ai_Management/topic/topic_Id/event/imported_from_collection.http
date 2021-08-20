@@ -1,0 +1,123 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-69935689-abac-4ca3-a7a8-e89ccfe72173.postman_collection.json
+
+// This operation list or find Event entities
+
+@name("List or find Event objects")
+GET "https://{{baseUrl}}/topic/:topicId/event"
+? "fields"= "ex ullamco ad"
+? "offset"= "-82478083"
+? "limit"= "-82478083"
+
+
+// This operation creates a Event entity.
+
+@name("Creates a Event")
+POST "https://{{baseUrl}}/topic/:topicId/event"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "correlationId": "Ut quis Duis incididunt",
+    "description": "laboris fugiat ut",
+    "domain": "officia",
+    "eventId": "quis et officia consectetur",
+    "eventTime": "1961-07-07T02:27:10.155Z",
+    "eventType": "est eiusmod pariatur ipsum",
+    "priority": "ullamco velit est ipsum proident",
+    "timeOccurred": "2020-06-04T12:41:24.151Z",
+    "title": "amet ex occaecat eiusmod et",
+    "analyticCharacteristic": [
+        {
+            "name": "irure culpa",
+            "value": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "id": "ea",
+            "valueType": "esse",
+            "characteristicRelationship": [
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            ],
+            "@baseType": "Ut",
+            "@schemaLocation": "https://WCOIFoXiwFKhCt.oaognL1WgtAqIFJQtFfEC1,FplWdQ9CtuZp2wIMFZ,4",
+            "@type": "in id in anim sint"
+        },
+        {
+            "name": "eiusmod qui",
+            "value": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "id": "dolore ad dolore cillum",
+            "valueType": "aliqua laborum ea",
+            "characteristicRelationship": [
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            ],
+            "@baseType": "ullamco in",
+            "@schemaLocation": "https://euskbWz.wjkBjlKwoh-lXSoEm6qM",
+            "@type": "anim ipsum in L"
+        }
+    ],
+    "event": {},
+    "relatedParty": [
+        {
+            "@referredType": "officia eiusmod deserunt aliqua",
+            "id": "in aute",
+            "href": "https://QFlM.dbmdqSUXzkemrope7Yfr9kou008BN--EsJ",
+            "name": "enim",
+            "role": "aliquip est dolore",
+            "@baseType": "Lorem do",
+            "@schemaLocation": "http://vMUovFahacoFRGJlD.agvpQvshUSDJmhD+9x+,X7gBpVsCDFawH8+H,lozgcQtPgD3O",
+            "@type": "cillum ea"
+        },
+        {
+            "@referredType": "dolore qui",
+            "id": "ullamco et occaecat Ut",
+            "href": "http://hlLYZjBqTAAasWKQSrxXtxNSjEmGD.zmLvzlqWhNGm0sfMJV4VgJKleEi",
+            "name": "proident Lorem",
+            "role": "quis est Lorem ipsum in",
+            "@baseType": "do Ut est",
+            "@schemaLocation": "https://cdYELnSTXEsjJMYzeKTJSwWO.ydyneRFQ,rCJ0",
+            "@type": "incididunt dolor ipsum nostrud"
+        }
+    ],
+    "reportingSystem": {
+        "id": "dolor labore velit nostrud",
+        "href": "http://eFPoOKxkSfErOgzkUJbYUpXsmsIzAr.rgelIJugstYfp7SmPIPklRaxFYsgD",
+        "name": "aute officia eiusmod",
+        "@baseType": "et sed co",
+        "@schemaLocation": "http://goDpq.ccdPnQnflfs4WmmnOhzA-GZCMufATREuUVWFFuR2H6bkym3Q1",
+        "@type": "consectetur anim dolor officia",
+        "@referredType": "dolor"
+    },
+    "source": {
+        "id": "et dolor id nulla ut",
+        "href": "https://okTnqAgLispspEGrvKuiPGXCXdN.khf-lhwgIl,",
+        "name": "commodo Ut voluptate anim",
+        "@baseType": "consequat aute enim dolor",
+        "@schemaLocation": "https://MILuisSvenZnwRpilBZnGb.pubjIePbsOpqv7nvK9BGxchWIA0ymF,54f.O.FgH5wHWhjmTZHP",
+        "@type": "do incididunt",
+        "@referredType": "deserunt dolor commodo"
+    },
+    "@baseType": "dolor cillum qui minim anim",
+    "@schemaLocation": "https://TXlMg.obuU.RvTrsga-jsks3gJUjUdYTe5-SXC-nlBYUbBGGeohox4huEZGY.Bg6A8NADJXySzM",
+    "@type": "commodo cupidatat eu non"
+})
+
+
+// This operation retrieves a Event entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Event by ID")
+GET "https://{{baseUrl}}/topic/:topicId/event/:id"
+? "fields"= "ex ullamco ad"
+
+
+

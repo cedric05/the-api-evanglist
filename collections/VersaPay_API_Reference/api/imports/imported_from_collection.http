@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c0b81c98-7930-4b6a-9b69-98d8407da2e9.postman_collection.json
+
+// View recent in-progress and completed import batches.
+
+@name("View In-Progress & Completed Batches")
+GET "https://{{baseUrl}}/api/imports"
+? "page"= "<>"
+
+
+// Create a customer in ARC using the following attributes (at minimum by providing values for required attributes). If providing an identifier for an existing customer, its information is updated.<br><br>n*Note: Any additional non-standard attribute will be stored with customer record and available for presentment rendering.*n
+
+@name("Create and Update Customer")
+POST "https://{{baseUrl}}/api/imports/customer"
+
+
+// Create and update invoices in ARC. If the invoice already exists when a request is processed, it will be updated.<br><br>nThe set of attributes to send in the request body may vary based on the account configuration. Please contact the implementation specialist for more information.<br><br>n*Note:*n  * *Customer will be created/updated using the customer_&ast; attributes if necessary at time of invoice import.*n  * *Any additional non-standard attribute will be stored with invoice record and ava
+
+@name("Create and Update Invoice")
+POST "https://{{baseUrl}}/api/imports/invoice"
+
+
+// Create and update external payment records in ARC.<br><br>The set of attributes to send in the request body may vary based on the account configuration. Please contact the implementation specialist for more information.<br><br>nThe request schema for posting a payment for a single invoice is slightly different than that for posting a payment for multiple invoices.nnFor instance, sample request for posting payment for a single invoice looks like:n```n{n  identifier: PMT0010-05,n  invoice_num
+
+@name("Create a Payment")
+POST "https://{{baseUrl}}/api/imports/payment"
+
+
+// View only recent in-progress import batches.
+
+@name("View In-Progress Batches")
+GET "https://{{baseUrl}}/api/imports/processing"
+? "page"= "<>"
+
+
+// View only recent completed import batches.
+
+@name("View Completed Batches")
+GET "https://{{baseUrl}}/api/imports/completed"
+? "page"= "<>"
+
+
+// View batch details.
+
+@name("View Batch Details")
+GET "https://{{baseUrl}}/api/imports/:id"
+
+
+

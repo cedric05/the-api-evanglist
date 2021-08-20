@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists elastic exports.
+
+@name("List elastic exports")
+GET "https://{{baseUrl}}/rest/exports"
+? "id"= "<post>"
+? "formatKey"= "<post>"
+? "type"= "<post>"
+? "name"= "<post>"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+
+
+// Creates a new token which can be used as <code>OutputParam</code> entry.
+
+@name("Generate a token")
+GET "https://{{baseUrl}}/rest/exports/generate_token"
+
+
+

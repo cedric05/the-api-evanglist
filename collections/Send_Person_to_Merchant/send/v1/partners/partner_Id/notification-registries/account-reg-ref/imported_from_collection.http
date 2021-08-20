@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e760486c-f487-465f-b743-146cfe5b92a4.postman_collection.json
+
+// This service allows Mastercard Merchant QR originating and receiving partners to delete a registered PAN for notifications. 
+
+@name("This service allows Mastercard Merchant QR originating and receiving partners to delete a registered PAN for notifications. ")
+DELETE "https://{{baseUrl}}/send/v1/partners/:partnerId/notification-registries/:account-reg-ref"
+
+
+// This service allows Mastercard Merchant QR originating and receiving partners to retrieve the service provider's information for a registered PAN for notifications. 
+
+@name("This service allows Mastercard Merchant QR originating and receiving partners to retrieve the service provider's information for a registered PAN for notifications. ")
+GET "https://{{baseUrl}}/send/v1/partners/:partnerId/notification-registries/:account-reg-ref"
+
+
+// This service allows Mastercard Merchant QR originating and receiving partners to update the notitification service provider for a registered PAN.
+
+@name("This service allows Mastercard Merchant QR originating and receiving partners to update the notitification service provider for a registered PAN.")
+PUT "https://{{baseUrl}}/send/v1/partners/:partnerId/notification-registries/:account-reg-ref"
+"Content-Type": "application/json"
+json({
+    "accountregistration": {
+        "account_uri": "<string>",
+        "notification_partner_id": "<string>"
+    }
+})
+
+
+

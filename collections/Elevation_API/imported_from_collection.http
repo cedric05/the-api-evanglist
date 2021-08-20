@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c3ce106e-4e59-4837-81b9-43420a0fc5fe.postman_collection.json
+
+// Get elevation data based on latitude, longitude, data source and unit of measurement. Response returned in JSON format.
+
+@name("Get elevation")
+GET "https://{{baseUrl}}/elevation.{{format}}"
+? "lat"= ""
+? "lon"= ""
+? "src"= "ned_13"
+? "unit"= "m"
+
+
+

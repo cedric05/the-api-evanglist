@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieve file id and location for saving on S3
+
+@name("Get file location on S3") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/storage/:bucketId/path"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "fileName": "voluptate quis pariatur",
+    "fileType": "amet",
+    "fileInputType": "ALM",
+    "fileSize": 84235515
+})
+
+
+

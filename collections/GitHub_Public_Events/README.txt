@@ -1,0 +1,1 @@
+List all of the public events using the GitHub API.

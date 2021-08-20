@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Retrieve a Registry (Data provider)
+
+@name("oai pmh rest registry read") : "base-inherit-auth"
+GET "https://{{baseUrl}}/oai_pmh/rest/registry/:registry_id/"
+
+
+// Update oai-pmh configuration for a given registry (Data provider)
+
+@name("oai pmh rest registry partial update") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/oai_pmh/rest/registry/:registry_id/"
+
+
+// Delete a Registry (Data provider)
+
+@name("oai pmh rest registry delete") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/oai_pmh/rest/registry/:registry_id/"
+
+
+// Activate a given registry (Data provider)
+
+@name("oai pmh rest registry activate partial update") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/oai_pmh/rest/registry/:registry_id/activate/"
+
+
+// Deactivate a given registry (Data provider)
+
+@name("oai pmh rest registry deactivate partial update") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/oai_pmh/rest/registry/:registry_id/deactivate/"
+
+
+// Update oai-pmh information for a given registry (Data provider)
+
+@name("oai pmh rest registry info partial update") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/oai_pmh/rest/registry/:registry_id/info/"
+
+
+

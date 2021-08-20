@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Returns a single ticket item for the given TICKET_ID
+
+@name("Get single ticket")
+GET "https://{{baseUrl}}/tickets/5FUED"
+"X": "<>"
+
+
+// Updates tags associated with the ticket.nn
+
+@name("Update ticket tags")
+PUT "https://{{baseUrl}}/tickets/5FUED/tags"
+"X": "<>"
+
+
+

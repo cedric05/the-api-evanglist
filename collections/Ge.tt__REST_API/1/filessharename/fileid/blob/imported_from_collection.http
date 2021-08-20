@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-37b08a1e-666d-477b-b7f8-ac0474a9fcb3.postman_collection.json
+
+// Will redirect to the binary content of the file
+
+@name("Files  Blob")
+GET "https://{{baseUrl}}/1/files/:sharename/:fileid/blob"
+
+
+// Will redirect to a thumbnail of the binary file. Currently only available for images.
+
+@name("Files  Blob Thumb")
+GET "https://{{baseUrl}}/1/files/:sharename/:fileid/blob/thumb"
+
+
+

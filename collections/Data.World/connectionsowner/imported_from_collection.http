@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get a list of configured virtual connections by owner. For increased security, connection endpoints require an Enterprise Admin Token. This token can be found under [Advanced Settings](https://data.world/settings/advanced). 
+
+@name("Get connections by owner.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/connections/:owner"
+? "size"= "et officia pariatur"
+? "from"= "et officia pariatur"
+? "sort"= "et officia pariatur"
+
+
+// Create a new virtual connection. For increased security, connection endpoints require an Enterprise Admin Token. This token can be found under [Advanced Settings](https://data.world/settings/advanced). 
+
+@name("Create a new connection.") : "base-inherit-auth"
+POST "https://{{baseUrl}}/connections/:owner"
+"Content-Type": "application/json"
+json({
+    "host": "dwserver.thinktank.com",
+    "type": "ATHENA",
+    "name": "Humanitarian_Aid",
+    "port": 40014,
+    "database": "schemadw",
+    "credentials": {
+        "user": "johnsmith",
+        "password": "!AdHJfGgd@3#"
+    },
+    "sshTunnel": {
+        "host": "passthru.tunnel.ca",
+        "user": "johnsmith",
+        "userKeyPair": true,
+        "port": 55199
+    },
+    "sslRequired": true,
+    "verifyServerCertificate": true,
+    "trustedServerCertificates": "dolo",
+    "properties": {},
+    "advancedProperties": {}
+})
+
+
+

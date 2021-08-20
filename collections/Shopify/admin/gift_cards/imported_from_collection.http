@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Disable a gift card.
+
+@name("Disable a gift card")
+POST "https://{{baseUrl}}/admin/gift_cards/61810574/disable.json"
+"Content": "<>"
+
+
+// Show a specific gift card's details.
+
+@name("Show a specific gift card's details")
+GET "https://{{baseUrl}}/admin/gift_cards/61466894.json"
+"Content": "<>"
+
+
+// Retrieve a count of all gift cards.
+
+@name("Retrieve a count of all gift cards")
+GET "https://{{baseUrl}}/admin/gift_cards/count.json"
+"Content": "<>"
+
+
+// Update the expiry date of a gift card.
+
+@name("Update the expiry date of a gift card")
+PUT "https://{{baseUrl}}/admin/gift_cards/61810574.json"
+"Content": "<>"
+
+
+// Get all gift cards that matches the query.
+
+@name("Get all gift cards that matches the query")
+GET "https://{{baseUrl}}/admin/gift_cards/search.json"
+"Content": "<>"
+? "query"= "<post>"
+
+
+

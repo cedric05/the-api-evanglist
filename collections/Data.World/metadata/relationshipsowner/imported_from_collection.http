@@ -1,0 +1,86 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Create a relationship between two resources. 
+
+@name("Create a relationship between two resources") : "base-inherit-auth"
+POST "https://{{baseUrl}}/metadata/relationships/:owner"
+"Content-Type": "application/json"
+json({
+    "relationshipType": "RELATED_TO_BUSINESS_TERM",
+    "sourceId": "nisi adipisicing non",
+    "sourceType": "PROJECT",
+    "targetId": "in minim",
+    "targetType": "COLUMN",
+    "sourceDatasetId": "reprehenderit qui aute fugiat",
+    "sourceTableId": "Ut esse culpa",
+    "targetDatasetId": "dolore incididunt",
+    "targetTableId": "eu Lorem esse in qui"
+})
+
+
+// Delete a relationship between two resources
+
+@name("Delete a relationship between two resources") : "base-inherit-auth"
+POST "https://{{baseUrl}}/metadata/relationships/:owner/delete"
+"Content-Type": "application/json"
+json({
+    "relationshipType": "RELATED_TO_BUSINESS_TERM",
+    "sourceId": "nisi adipisicing non",
+    "sourceType": "PROJECT",
+    "targetId": "in minim",
+    "targetType": "COLUMN",
+    "sourceDatasetId": "reprehenderit qui aute fugiat",
+    "sourceTableId": "Ut esse culpa",
+    "targetDatasetId": "dolore incididunt",
+    "targetTableId": "eu Lorem esse in qui"
+})
+
+
+// Get a list of resources related to a particular resource specified by id. For example, you may use this endpoint to retrieve a list of business glossary terms related to an analysis dashboard. The resourceType param in the request body is required. Results may be filtered by resource type (byResourceTypes) or by relationship type (byRelationTypes).
+
+@name("Get related resources for a given resource id") : "base-inherit-auth"
+POST "https://{{baseUrl}}/metadata/relationships/:owner/resource/:resourceId"
+"Content-Type": "application/json"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+json({
+    "resourceType": "DATA_TYPE",
+    "byResourceTypes": [
+        "DATA_TYPE",
+        "ANALYSIS"
+    ],
+    "byRelationTypes": [
+        "eu exercitation in id",
+        "laboris"
+    ]
+})
+
+
+// Get resources related to a table
+
+@name("Get resources related to a table") : "base-inherit-auth"
+POST "https://{{baseUrl}}/metadata/relationships/:owner/table/:sourceId/:tableId"
+"Content-Type": "application/json"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+json({
+    "byResourceTypes": [
+        "DATASET",
+        "DATA_TYPE"
+    ],
+    "byRelationTypes": [
+        "occaecat Excepteur in ipsum",
+        "Lorem non reprehenderit"
+    ]
+})
+
+
+

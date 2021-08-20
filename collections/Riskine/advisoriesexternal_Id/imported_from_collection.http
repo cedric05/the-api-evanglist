@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Either create a new advisory or update an existing one with new data. Prefill data or even a whole advisory (for example, one that was previously saved). If the riskine web app is used, the response contains a redirection URL that leads to the prefilled we app. The identifier in the redirection URL is opaque for secure integration.
+
+@name("Create or Update Advisory") : "base-inherit-auth"
+POST "https://{{baseUrl}}/advisories/:externalId"
+"Content-Type": "application/json"
+? "block-navigation"= "true"
+json({
+    "person.name.first": "Max",
+    "person.birthdate": "1980-01-01"
+})
+
+
+// Get back the advisory data associated with your `externalId`.
+
+@name("Get Advisory Data") : "base-inherit-auth"
+GET "https://{{baseUrl}}/advisories/:externalId"
+? "includeReports"= "true"
+
+
+// Delete the advisory data associated with your `externalId`.
+
+@name("Delete Advisory Data") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/advisories/:externalId"
+? "includeReports"= "true"
+
+
+

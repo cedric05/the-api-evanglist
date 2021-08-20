@@ -1,0 +1,86 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-538b4bae-014b-4e31-9e7e-f206b0a4dc0c.postman_collection.json
+
+// This operation retrieves a Association entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Association by ID")
+GET "https://{{baseUrl}}/association/:id"
+? "fields"= "ad dolor"
+
+
+// This operation updates partially a Association entity.
+
+@name("Updates partially a Association")
+PATCH "https://{{baseUrl}}/association/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "in est",
+    "lastUpdate": "1968-03-19T19:47:07.162Z",
+    "lifecycleStatus": "ea ex proident do",
+    "name": "ut sit amet",
+    "version": "deserunt aliquip ame",
+    "associationRole": {
+        "entity": {
+            "id": "",
+            "href": "http://MDiBtMdCEMwZ.cojlxovy-6nny7rAwJ.5sn5+ZhCcjaaVFjFkAUA96693VL",
+            "name": "pariatur in cillum Excepteur",
+            "@baseType": "amet aute Duis ut nostrud",
+            "@schemaLocation": "http://RNfYZJbAfFHUl.gujEbuONkmtaHeYblv+",
+            "@type": "sit",
+            "@referredType": "labore magna ipsum"
+        },
+        "role": "eiusmod aliqua minim",
+        "isSource": true,
+        "@baseType": "proident nostrud Lorem",
+        "@schemaLocation": "https://sqIJmY.mcfqX,U6J7LTJFb",
+        "@type": "in proident dolor dolore"
+    },
+    "associationSpec": {
+        "id": "irure voluptate",
+        "href": "https://ZnNuLKugvRevuTvXpR.elf3tFtHicy10",
+        "name": "Excepte",
+        "@baseType": "esse et",
+        "@schemaLocation": "http://WShEjiXVxKrvFNLBVmpKHdtai.btisOXECq89CwZ0pl",
+        "@type": "eiusmod tempor Duis sit",
+        "@referredType": "adipisicing in"
+    },
+    "constraint": [
+        {
+            "id": "id cillum",
+            "href": "http://TnQBIDMcmHIgVW.wauwTDg494v+x3rWk1ROqJlah+3WhYwHbEYT0aZJV",
+            "name": "sed ea dolore",
+            "version": "ullamco fugiat occaecat",
+            "@baseType": "est labore",
+            "@schemaLocation": "https://jKBCBnSxEbRlidrhDsXhftNgCtCJKlFq.fgVII9T",
+            "@type": "ea cillum minim",
+            "@referredType": "proident esse"
+        },
+        {
+            "id": "id laborum nisi",
+            "href": "https://NuLBuTSFSfFLyqpLToLJR.vsnlgmKCe3oi,vq.ub5-PfVT24wlHbqts5BxVSua4U.+1hoYxwmgm954n1RaDoieKQrtMtTq",
+            "name": "Excepteur quis ullamco Lor",
+            "version": "id tempor",
+            "@baseType": "in nulla Duis",
+            "@schemaLocation": "http://CoIljjaMDlfwYCssoKbEj.skxeH9EPfJunwCsRtH",
+            "@type": "deserunt ad aliquip",
+            "@referredType": "pariatur dolor officia cupidatat"
+        }
+    ],
+    "validFor": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@baseType": "Duis Ut minim",
+    "@schemaLocation": "http://FHPDnyJtVaFTyKAaUypuZ.holynf0s",
+    "@type": "tempor sunt et voluptate Ut"
+})
+
+
+// This operation deletes a Association entity.
+
+@name("Deletes a Association")
+DELETE "https://{{baseUrl}}/association/:id"
+
+
+

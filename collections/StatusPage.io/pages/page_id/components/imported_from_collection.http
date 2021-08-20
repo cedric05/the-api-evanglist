@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-18af961a-c8f9-4c42-85af-0f2fe7c91aaa.postman_collection.json
+
+// Update a component
+
+@name("Update a component")
+PATCH "https://{{baseUrl}}/pages/[page_id]/components/[component_id].json"
+? "component[name]"= "<string>"
+? "component[description]"= "<string>"
+? "component[status]"= "<string>"
+
+
+

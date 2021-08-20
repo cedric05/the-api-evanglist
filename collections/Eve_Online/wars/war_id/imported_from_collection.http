@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return details about a war
+// 
+// ---
+// Alternate route: `/dev/wars/{war_id}/`
+// 
+// Alternate route: `/legacy/wars/{war_id}/`
+// 
+// Alternate route: `/v1/wars/{war_id}/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get war information")
+GET "https://{{baseUrl}}/wars/:war_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Return a list of kills related to a war
+// 
+// ---
+// Alternate route: `/dev/wars/{war_id}/killmails/`
+// 
+// Alternate route: `/legacy/wars/{war_id}/killmails/`
+// 
+// Alternate route: `/v1/wars/{war_id}/killmails/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List kills for a war")
+GET "https://{{baseUrl}}/wars/:war_id/killmails/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+
+
+

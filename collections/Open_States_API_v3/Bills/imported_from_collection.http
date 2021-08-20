@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f1aa5674-d4d3-460d-b323-7d6513ac3ab2.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"X-API-KEY": "{{open_states_api_key}}"
+
+
+// Search for bills matching given criteria.
+// 
+// Must either specify a jurisdiction or a full text query (q).  Additional parameters will
+// futher restrict bills returned.
+
+@name("Bills Search") : "base-inherit-auth"
+GET "https://{{open_states_base_url}}/bills"
+"x-api-key": "Excepteur"
+? "jurisdiction"= "tempor eu enim anim quis"
+? "session"= "labore dolor ex Excepteur"
+? "chamber"= "esse laborum culpa"
+? "classification"= "elit consectetur"
+? "updated_since"= "nisi"
+? "created_since"= "ea in"
+? "action_since"= "proident ipsum"
+? "sort"= "updated_asc"
+? "sponsor"= "ut"
+? "sponsor_classification"= "ad irure et incididunt"
+? "q"= "consequat deserunt in labore enim"
+? "page"= "1"
+? "per_page"= "10"
+? "apikey"= "null"
+
+
+// Obtain bill information by internal ID in the format ocd-bill/*uuid*. 
+
+@name("Bill Detail By Id") : "base-inherit-auth"
+GET "https://{{open_states_base_url}}/bills/ocd-bill/:openstates_bill_id"
+"x-api-key": "Excepteur"
+? "apikey"= "null"
+
+
+// Obtain bill information based on (state, session, bill_id).
+
+@name("Bill Detail") : "base-inherit-auth"
+GET "https://{{open_states_base_url}}/bills/:jurisdiction/:session/:bill_id"
+"x-api-key": "Excepteur"
+? "apikey"= "null"
+
+
+

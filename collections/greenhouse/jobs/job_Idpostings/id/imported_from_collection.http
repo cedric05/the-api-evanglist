@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Update a posting for a job")
+PATCH "https://{{baseUrl}}/jobs/:jobId/postings/:id"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "user_id": -9382735,
+    "close_reason_id": 83123957,
+    "opening_id": "ea sint ut",
+    "status": "nulla"
+})
+
+
+@name("Retrieve a posting for a job")
+GET "https://{{baseUrl}}/jobs/:jobId/postings/:id"
+"Authorization": "ad cillum non laborum"
+
+
+@name("Delete a posting for a job")
+DELETE "https://{{baseUrl}}/jobs/:jobId/postings/:id"
+"Authorization": "ad cillum non laborum"
+? "user_id"= "ad cillum non laborum"
+
+
+

@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f23c3fb9-0581-4634-b3db-11e156df11ca.postman_collection.json
+
+// This creates a new table in DynamoDB for using as the backend of this API. While a simple step, it is one that might need to be inter changeable with other database backends, so I'm keeping exposed as its own step.
+
+@name("Delete Table (DynamoDB)")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DeleteTable"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DeleteTable"
+data('{
+   "TableName": "{{aws_dynamodb_table_name}}"
+}')
+
+
+@name("Delete API (AWS API Gateway)")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/:apiId"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete API Deployment (AWS API Gateway)")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/:apiId/deployments/:deploymentId"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Usage Plan (AWS API Gateway)")
+DELETE "https://{{aws_api_gateway_base_url}}/usageplans/:usagePlanId"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete API Key (AWS API Gateway)")
+DELETE "https://{{aws_api_gateway_base_url}}/apikeys/:apiKey"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

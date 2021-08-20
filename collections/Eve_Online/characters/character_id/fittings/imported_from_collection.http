@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return fittings of a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/fittings/`
+// 
+// Alternate route: `/v2/characters/{character_id}/fittings/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("Get fittings")
+GET "https://{{baseUrl}}/characters/:character_id/fittings/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Save a new fitting for a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/fittings/`
+// 
+// Alternate route: `/v2/characters/{character_id}/fittings/`
+
+@name("Create fitting")
+POST "https://{{baseUrl}}/characters/:character_id/fittings/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "name": "aliq",
+    "description": "nost",
+    "ship_type_id": 56117942,
+    "items": [
+        {
+            "type_id": 68295353,
+            "flag": "RigSlot1",
+            "quantity": -82931098
+        }
+    ]
+})
+
+
+// Delete a fitting from a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/fittings/{fitting_id}/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/fittings/{fitting_id}/`
+// 
+// Alternate route: `/v1/characters/{character_id}/fittings/{fitting_id}/`
+
+@name("Delete fitting")
+DELETE "https://{{baseUrl}}/characters/:character_id/fittings/:fitting_id/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

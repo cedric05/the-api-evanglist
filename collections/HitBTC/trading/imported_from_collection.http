@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-585a2d49-6eb1-4045-8898-5ab8d446bc39.postman_collection.json
+
+// Get trading balance.
+
+@name("Get Trading Balance")
+GET "https://{{baseUrl}}/trading/balance"
+
+
+// Get trading fee rate.
+
+@name("Get Trading Fee Rate")
+GET "https://{{baseUrl}}/trading/fee/:symbol"
+
+
+

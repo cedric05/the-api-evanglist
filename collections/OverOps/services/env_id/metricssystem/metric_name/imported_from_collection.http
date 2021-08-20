@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Fetch info about a specific metric
+
+@name("Get a specific metric's metadata") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/metrics/system/:metric_name"
+
+
+// Fetch data for a specific system metric within a target timeframe, application / server / deployment set.
+
+@name("Fetch metric graph/data") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/metrics/system/:metric_name/graph"
+? "from"= "e"
+? "to"= "e"
+? "points"= "-94342729"
+? "resolution"= "H8"
+? "server"= "e"
+? "app"= "e"
+? "deployment"= "e"
+
+
+

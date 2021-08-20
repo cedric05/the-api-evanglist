@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f953fa-f8c8-4115-9ab9-d70490b97ce6.postman_collection.json
+
+// Returns an index of available seasons.
+
+@name("Season Index")
+GET "https://{{battle-net-host}}/data/d3/season/"
+? "access_token"= "{{access-token}}"
+
+
+// Returns a leaderboard list for the specified season.
+
+@name("Season")
+GET "https://{{battle-net-host}}/data/d3/season/{{d3.season-id}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns a leaderboard list for the specified season.
+
+@name("Season Leaderboard")
+GET "https://{{battle-net-host}}/data/d3/season/{{d3.season-id}}/leaderboard/{{d3.leaderboard}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns an index of available eras.
+
+@name("Era Index")
+GET "https://{{battle-net-host}}/data/d3/era/"
+? "access_token"= "{{access-token}}"
+
+
+// Returns a leaderboard list for a particular era.
+
+@name("Era")
+GET "https://{{battle-net-host}}/data/d3/era/{{d3.era-id}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns the specified leaderboard for the specified era.
+
+@name("Era Leaderboard")
+GET "https://{{battle-net-host}}/data/d3/era/{{d3.era-id}}/leaderboard/{{d3.leaderboard}}"
+? "access_token"= "{{access-token}}"
+
+
+

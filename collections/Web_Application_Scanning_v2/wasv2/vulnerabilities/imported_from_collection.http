@@ -1,0 +1,67 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns a list of vulnerabilities detected by Tenable.io Web Application Scanning API v2 scans. 
+// 
+// **Deprecated:** This endpoint is deprecated. On October 1st, 2021, documentation related to this endpoint will be removed from the Tenable developer portal. Tenable recommends that you use the POST [/was/v2/vulnerabilities/search](ref:was-v2-vulns-search) endpoint instead. Please update any existing integrations that your organization has before 2021-10-01. <p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("List vulnerabilities") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/vulnerabilities"
+? "plugin_id"= "-54086346"
+? "application_uri"= "https://www.tenable.com"
+? "asset_id"= "b018aed8-554f-4965-9b05-994eaa66d459"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+
+
+// Lists the filtering capabilities available for vulnerability findings for endpoints that support vulnerability filtering. <p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List vulnerability filters") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/vulnerabilities/filters"
+
+
+// Returns a list of vulnerabilities detected by Tenable.io Web Application Scanning API v2 scans.<p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Search vulnerabilities") : "base-inherit-auth"
+POST "https://{{baseUrl}}/was/v2/vulnerabilities/search"
+"Content-Type": "application/json"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+json({
+    "AND": [
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        },
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        }
+    ],
+    "OR": [
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        },
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        }
+    ]
+})
+
+
+

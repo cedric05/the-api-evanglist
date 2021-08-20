@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search this users DataSets
+
+@name("DataSet Search")
+GET "https://{{baseUrl}}/dataset"
+
+
+// Copy a DataSet
+
+@name("Copy DataSet")
+POST "https://{{baseUrl}}/dataset/copy/:dataSetId"
+
+
+// Import a CSV into a DataSet
+
+@name("Import CSV")
+POST "https://{{baseUrl}}/dataset/import/:dataSetId"
+
+
+// Import JSON into a DataSet
+
+@name("Import JSON")
+POST "https://{{baseUrl}}/dataset/importjson/:dataSetId"
+
+
+

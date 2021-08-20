@@ -1,0 +1,70 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-360d7b8b-69fc-43e5-a5f9-2b390a9b9052.postman_collection.json
+
+// addDataRequest
+
+@name("/addDataReq")
+POST "https://{{baseUrl}}/addDataReq"
+"jwt": "in est consequat aliquip do"
+"Content-Type": "application/json"
+json({
+    "description": "ullamco",
+    "type": "occaecat",
+    "reqDate": "1984-11-04T15:43:20.735Z",
+    "dueDate": "2002-02-17T14:34:13.616Z",
+    "requestor": "consequat aute",
+    "requestFrom": "nisi aute officia in",
+    "domain": "elit anim"
+})
+
+
+// getDataRequest
+
+@name("/getDataReq")
+GET "https://{{baseUrl}}/getDataReq"
+"jwt": "in est consequat aliquip do"
+
+
+// editDataRequest
+
+@name("/editDataRequest")
+POST "https://{{baseUrl}}/editDataRequest"
+"jwt": "in est consequat aliquip do"
+"Content-Type": "application/json"
+json({
+    "action": "EDIT",
+    "guid": "paria",
+    "description": "laboris inc",
+    "type": "reprehenderit aliqua",
+    "reqDate": "minim voluptate dolore",
+    "dueDate": "officia adipisicing",
+    "requestor": "aute",
+    "requestFrom": "ci",
+    "domain": "do",
+    "status": "laboris commodo"
+})
+
+
+// getDataReqDomains
+
+@name("/getDataReqDomains")
+GET "https://{{baseUrl}}/getDataReqDomains"
+"jwt": "in est consequat aliquip do"
+
+
+// getDataReqTypes
+
+@name("/getDataReqTypes")
+GET "https://{{baseUrl}}/getDataReqTypes"
+"jwt": "in est consequat aliquip do"
+
+
+// getDataReqStatus
+
+@name("/getDataReqStatus")
+GET "https://{{baseUrl}}/getDataReqStatus"
+"jwt": "in est consequat aliquip do"
+
+
+

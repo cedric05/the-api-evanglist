@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Get catalog product.
+
+@name("Get Catalog Product")
+GET "https://{{baseUrl}}/catalog/product/:id"
+? "includePromotionMessages"= "<>"
+? "includePriceData"= "<>"
+
+
+

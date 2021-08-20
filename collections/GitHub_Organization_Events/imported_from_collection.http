@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8f03bc0c-ebda-4198-bcb2-bc2dc763482e.postman_collection.json
+
+@name("List Organization Public Events")
+GET "https://api.github.com/orgs/guardian/events"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+? "access_token"= "{{github_bearer}}"
+
+
+

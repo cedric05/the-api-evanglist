@@ -1,0 +1,86 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba6572bc-3c63-4861-923c-7002a7305149.postman_collection.json
+
+// ### Description
+// This call returns a set of balances for a given PSU account that is specified by the AISP through an account resource Identification
+// ### Prerequisites         
+// - The TPP has been registered by the Registration Authority for the AISP role
+// - The TPP and the PSU have a contract that has been enrolled by the ASPSP
+//   - At this step, the ASPSP has delivered an OAUTH2 &ldquo;Authorization Code&rdquo; or &ldquo;Resource Owner Password&rdquo; access token to the TPP (cf. &sect; 3.4.2).
+// - The TPP and the ASPSP have successfully processed a mutual check and authentication
+// - The TPP has presented its OAUTH2 &ldquo;Authorization Code&rdquo; or &ldquo;Resource Owner Password&rdquo; access token which allows the ASPSP to identify the relevant PSU and retrieve the linked PSU context (cf. &sect; 3.4.2) if any.
+// - The ASPSP takes into account the access token that establishes the link between the PSU and the AISP.
+// - The TPP has previously retrieved the list of available accounts for the PSU
+// ### Business flow
+// The AISP requests the ASPSP on one of the PSU&rsquo;s accounts.
+// The ASPSP answers by providing a list of balances on this account.
+//   - The ASPSP must provide at least the accounting balance on the account.
+//   - The ASPSP can provide other balance restitutions, e.g. instant balance, as well, if possible.
+//   - Actually, from the PSD2 perspective, any other balances that are provided through the Web-Banking service of the ASPSP must also be provided by this ASPSP through the API.
+//   
+
+@name("Retrieval of an account balances report (AISP)")
+GET "https://{{baseUrl}}/accounts/:accountResourceId/balances"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+
+
+// ### Description
+// This call returns transactions for an account for a given PSU account that is specified by the AISP through an account resource identification.
+// The request may use some filter parameter in order to restrict the query 
+//   - on a given imputation date range
+//   - past a given incremental technical identification
+// The result may be subject to pagination (i.e. retrieving a partial result in case of having too many results) through a set of pages by the ASPSP. Thereafter, the AISP may ask for the first, next, previous or last page of results.
+// ### Prerequisites
+// - The TPP has been registered by the Registration Authority for the AISP role
+// - The TPP and the PSU have a contract that has been enrolled by the ASPSP
+//   - At this step, the ASPSP has delivered an OAUTH2 "Authorization Code" or "Resource Owner Password" access token to the TPP (cf. § 3.4.2).
+// - The TPP and the ASPSP have successfully processed a mutual check and authentication 
+// - The TPP has presented its OAUTH2 "Authorization Code" or "Resource Owner Password" access token which allows the ASPSP to identify the relevant PSU and retrieve the linked PSU context (cf. § 3.4.2) is any.
+// - The ASPSP takes into account the access token that establishes the link between the PSU and the AISP.
+// - The TPP has previously retrieved the list of available accounts for the PSU
+// ### Business flow
+// The AISP requests the ASPSP on one of the PSU’s accounts. It may specify some selection criteria.
+// The ASPSP answers by a set of transactions that matches the query. The result may be subject to pagination in order to avoid an excessive result set.
+// The default transaction set, in the absence of filter query parameter, has to be specified and documented by the implementation. 
+
+@name("Retrieval of an account transaction set (AISP)")
+GET "https://{{baseUrl}}/accounts/:accountResourceId/transactions"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+? "dateFrom"= "2014-05-10T01:42:39.555Z"
+? "dateTo"= "2014-05-10T01:42:39.555Z"
+? "entryReferenceFrom"= "r"
+? "entryReferenceto"= "r"
+
+
+

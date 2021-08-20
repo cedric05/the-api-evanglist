@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d2c214b-77c4-4e90-8dc4-3cd4493a1c9a.postman_collection.json
+
+// Get Users Following
+
+@name("Get Users Following")
+GET "https://{{baseUrl}}/users/:user_id/following"
+
+
+// Get User Following IDs
+
+@name("Get User Following IDs")
+GET "https://{{baseUrl}}/users/:user_id/following/ids"
+
+
+

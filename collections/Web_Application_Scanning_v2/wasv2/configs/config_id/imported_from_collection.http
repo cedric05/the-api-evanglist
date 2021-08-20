@@ -1,0 +1,186 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns details for the specified scan configuration.<p>Requires SCAN OPERATOR [24] user permissions and CAN CONTROL [32] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get scan configuration details") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/configs/:config_id"
+
+
+// Updates an existing scan configuration or creates a new scan configuration. 
+// 
+// This operation is asynchronous and returns with an immediate 202. The scan configuration is guaranteed to be created at some point in the immediate future depending on resource load. To track the status of the operation, use the [GET /was/v2/configs/{config_id}/status/{tracking_id}](ref:was-v2-config-status) endpoint. The `config_id` and `tracking_id` can be retrieved from the URI provided in the `Location` header of the `202 Accepted` response. 
+// 
+// **Note:** Although this endpoint can be used to create a scan configuration, Tenable recommends the [POST /was/v2/configs](ref:was-v2-config-create) endpoint instead for the creation of scan configurations. To create a scan configuration with this endpoint, you first need to generate a UUID. Tenable recommends the `uuidgen` tool available in most Linux distributions. The `--time` option can be passed to the `uuidgen` tool to ensure that the UUID is unique.<p>Requires SCAN MANAGER [40] user permissions and CAN CONFIGURE [64] scan permissions. Alternatively, SCAN OPERATOR [24] user permissions and CAN USE [16] policy permissions. See [Permissions](doc:permissions).</p>
+
+@name("Upsert scan configuration") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/was/v2/configs/:config_id"
+"Content-Type": "application/json"
+json({
+    "name": "mollit in aliqua cupidatat",
+    "target": "https://example.com",
+    "owner_id": "b018aed8-554f-4965-9b05-994eaa66d459",
+    "template_id": "urn:uuid:3dc7ceb6-d7b1-8f75-89cb-1e93f751db04",
+    "settings": {
+        "target": "https://example.com",
+        "description": "Security scan configuration for Facebook applications.",
+        "timeout": "08:00:00",
+        "debug_mode": true,
+        "input_force": false,
+        "credentials": {
+            "credential_ids": [
+                "a256af31-a651-5a94-ceb5-670c9e2379c8",
+                "urn:uuid:0e96ca6d-d035-3075-673a-1fa8bdd3e5c5"
+            ]
+        },
+        "scope": {
+            "option": "urls",
+            "dom_depth_limit": 5,
+            "directory_depth_limit": 10,
+            "page_limit": 10000,
+            "crawl_script": {},
+            "decompose_paths": false,
+            "exclude_binaries": true,
+            "auto_redundant_paths": 9649448,
+            "openapi_file": "sint ea",
+            "openapi_filename": "labore aliquip deserunt non",
+            "crawl_script_filename": "eiusmod fugiat sit"
+        },
+        "plugin": {
+            "rateLimiter": {
+                "requests_per_second": 25,
+                "autothrottle": true,
+                "timeout_threshold": 100
+            },
+            "mode": "disable",
+            "ids": [
+                98000,
+                98001
+            ],
+            "names": [
+                "path_traversal"
+            ],
+            "families": [
+                "web_servers",
+                "csrf"
+            ]
+        },
+        "browser": {
+            "screen_width": 1600,
+            "screen_height": 1200,
+            "ignore_images": true,
+            "job_timeout": 10000,
+            "analysis": true,
+            "pool_size": 3026161
+        },
+        "http": {
+            "response_max_size": 500000,
+            "request_redirect_limit": 1,
+            "user_agent": "Nessus WAS/%v",
+            "custom_user_agent": false,
+            "request_headers": {},
+            "request_concurrency": 10,
+            "request_timeout": 5000
+        },
+        "chrome_script": {
+            "finish_wait": 5000,
+            "page_load_wait": 10000,
+            "command_wait": 500
+        },
+        "assessment": {
+            "rfi_remote_url": "http://rfi.nessus.org/rfi.txt",
+            "dictionary": "limited",
+            "fingerprinting": true,
+            "enable": true,
+            "element_exclusions": [
+                {
+                    "element_type": "dom_element",
+                    "selector_type": "attribute",
+                    "selector": "et eiusmod dolor"
+                },
+                {
+                    "element_type": "dom_element",
+                    "selector_type": "text",
+                    "selector": "Duis esse laboris anim ut"
+                }
+            ]
+        },
+        "audit": {
+            "forms": false,
+            "cookies": false,
+            "ui_forms": false,
+            "ui_inputs": false,
+            "headers": false,
+            "links": false,
+            "parameter_names": false,
+            "parameter_values": false,
+            "jsons": false,
+            "xmls": false,
+            "cookies_extensively": false,
+            "with_raw_payloads": true,
+            "with_both_http_methods": true,
+            "with_extra_parameter": true
+        }
+    },
+    "description": "My cool scan configuration.",
+    "folder_id": "urn:uuid:0a6b88ba-2716-1c34-6691-09cb4ed7d617",
+    "user_template_id": "urn:uuid:f1901cec-817b-8494-af8a-0dbd1cf16adc",
+    "scanner_id": -49174710,
+    "schedule": {
+        "rrule": "FREQ=MONTHLY;BYDAY=MO,TU,WE,TH,FR;BYSETPOS=-1",
+        "starttime": "19970105T083000 or 19970105T083000Z (utc)",
+        "timezone": "America/New_York",
+        "enabled": true
+    },
+    "notifications": {
+        "emails": []
+    },
+    "permissions": [
+        {
+            "permissions_id": "urn:uuid:0d5aa490-00a8-6891-c70a-25007b40641b",
+            "entity": "user",
+            "entity_id": "urn:uuid:b9f1b503-375f-c62d-c863-9e62c20e436f",
+            "level": "view"
+        },
+        {
+            "permissions_id": "fdbf8e6c-bc3c-dc8d-fd95-f175f63e81a1",
+            "entity": "user",
+            "entity_id": "fedd3a74-b1c9-3ca5-fba1-7845f752e5e6",
+            "level": "no_access"
+        }
+    ]
+})
+
+
+// Moves the scan configuration to the specified folder. <p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Move scan configuration") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/was/v2/configs/:config_id"
+"Content-Type": "application/json"
+json({
+    "folder_name": "esse non ad dolor laboris"
+})
+
+
+// Deletes the specified scan configuration and all associated scan history and vulnerabilities. You cannot delete a scan configuration if a scan based on that configuration is currently running.<p>Requires SCAN MANAGER [40] user permissions and CAN CONFIGURE [64] scan permissions. Alternatively, SCAN OPERATOR [24] user permissions and CAN USE [16] policy permissions. See [Permissions](doc:permissions).</p>
+
+@name("Delete scan configuration") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/was/v2/configs/:config_id"
+
+
+// Tracks the current status of a scan configuration creation, update, or upsert process. When creating or updating a scan configuration, this endpoint can be used to determine the current status of the request. You can poll this endpoint using a sensible pause duration between each request until a `completed` or `failed` status is returned. 
+// 
+// The `config_id` and `tracking_id` can be retrieved from the URI provided in the `Location` header of the `202 Accepted` response from the [POST /was/v2/configs](ref:was-v2-config-create) or [PUT /was/v2/configs/{config_id}](ref:was-v2-config-upsert) request used to create or update the scan configuration. <p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get scan configuration processing status") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/configs/:config_id/status/:tracking_id"
+
+
+

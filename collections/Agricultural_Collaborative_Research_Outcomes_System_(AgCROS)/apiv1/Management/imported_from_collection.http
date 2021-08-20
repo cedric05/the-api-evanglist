@@ -1,0 +1,83 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a47e4362-9c02-4662-817b-428452ef6e7d.postman_collection.json
+
+// Data is limited to the max of the indicated limit (default to 2000 records at a time);
+// Use offset parameter to navigate data.
+
+@name("Amendments added (fertilizer, pesticides, irrigation) data.")
+GET "https://{{baseUrl}}/api/v1/Management/Amendments"
+? "treatmentId"= "<string>"
+? "treatmentId"= "<string>"
+? "expUnitId"= "<string>"
+? "expUnitId"= "<string>"
+? "offset"= "0"
+? "limit"= "2000"
+
+
+// Data is limited to the max of the indicated limit (default to 2000 records at a time);
+// Use offset parameter to navigate data.
+
+@name("Grazing information data.")
+GET "https://{{baseUrl}}/api/v1/Management/Grazing"
+? "treatmentId"= "<string>"
+? "treatmentId"= "<string>"
+? "expUnitId"= "<string>"
+? "expUnitId"= "<string>"
+? "offset"= "0"
+? "limit"= "2000"
+
+
+// Data is limited to the max of the indicated limit (default to 2000 records at a time);
+// Use offset parameter to navigate data.
+
+@name("Plant growth stage at time of observation data.")
+GET "https://{{baseUrl}}/api/v1/Management/GrowthStages"
+? "treatmentId"= "<string>"
+? "treatmentId"= "<string>"
+? "expUnitId"= "<string>"
+? "expUnitId"= "<string>"
+? "offset"= "0"
+? "limit"= "2000"
+
+
+// Data is limited to the max of the indicated limit (default to 2000 records at a time);
+// Use offset parameter to navigate data.
+
+@name("Residue removal management data.")
+GET "https://{{baseUrl}}/api/v1/Management/Residue"
+? "treatmentId"= "<string>"
+? "treatmentId"= "<string>"
+? "expUnitId"= "<string>"
+? "expUnitId"= "<string>"
+? "offset"= "0"
+? "limit"= "2000"
+
+
+// Data is limited to the max of the indicated limit (default to 2000 records at a time);
+// Use offset parameter to navigate data.
+
+@name("Planting method data.")
+GET "https://{{baseUrl}}/api/v1/Management/Planting"
+? "treatmentId"= "<string>"
+? "treatmentId"= "<string>"
+? "expUnitId"= "<string>"
+? "expUnitId"= "<string>"
+? "offset"= "0"
+? "limit"= "2000"
+
+
+// Data is limited to the max of the indicated limit (default to 2000 records at a time);
+// Use offset parameter to navigate data.
+
+@name("Tillage management data.")
+GET "https://{{baseUrl}}/api/v1/Management/Tillage"
+? "treatmentId"= "<string>"
+? "treatmentId"= "<string>"
+? "expUnitId"= "<string>"
+? "expUnitId"= "<string>"
+? "offset"= "0"
+? "limit"= "2000"
+
+
+

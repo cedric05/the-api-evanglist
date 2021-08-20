@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+//     
+
+@name("Get List Members") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/task/list_id/member"
+
+
+// Paste task_id from previously created task.
+// 
+// Make sure to update all fields when testing to make sure they are all updated.
+
+@name("Update a Task") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/task/1n5ed65"
+"Content-Type": "application/json"
+json({
+    "name": "Updated Task Name",
+    "description": "Updated Task Content",
+    "status": "in progress",
+    "priority": 1,
+    "time_estimate": 8640000,
+    "assignees": {
+        "add": [
+            182
+        ],
+        "rem": [
+            183
+        ]
+    },
+    "archived": false
+})
+
+
+@name("Get Bulk Tasks' Time in Status") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/task/bulk_time_in_status/task_ids"
+
+
+

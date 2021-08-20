@@ -1,0 +1,299 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates a location ws details
+
+@name("Creates a location ws details") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/locations/:id/locationwsdetail"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": -93274683,
+    "yearUpgrade": "fugiat consectetur ex",
+    "startDate": "laboris",
+    "completionDate": "ipsum enim laboris eiusmod",
+    "percentComplete": 2172700.850193858,
+    "coastalSegment": "anim ea Ut veniam nostrud",
+    "fireClass": "consectetur sed dolor dolore",
+    "rmsClass": "laborum irure magna",
+    "userClass": "officia",
+    "atcOccupancy": "consequat exercitation dolor amet",
+    "isoOccupancy": "dolor mollit ipsum Duis",
+    "sicOccupancy": "nostrud Ut in ad",
+    "ibcOccupancy": "ex",
+    "userOccupancy": "proident amet cupidatat",
+    "siteLimit": -81254975.97180992,
+    "siteDeduct": 45143589.48588008,
+    "combinedLimit": 36659363.52224955,
+    "combinedDeduct": -77363091.32255527,
+    "percentageSiteLossDeductibleAmount": -71386577.85239388,
+    "percentageCombinedLossDeductibleAmount": -15435383.710335419,
+    "isFranchiseSiteDeductible": {
+        "id": 70961656,
+        "code": "culpa laboru",
+        "name": "ullamco d"
+    },
+    "isFranchiseCombinedDeductible": {
+        "id": 16210252,
+        "code": "dolore magna",
+        "name": "laboris nisi ullamco"
+    },
+    "isValid": true,
+    "architecture": {
+        "id": 10938083,
+        "code": "in",
+        "name": "dolor reprehenderit velit Duis eiusmod"
+    },
+    "cladRate": {
+        "id": 68332776,
+        "code": "velit incididunt",
+        "name": "qui pariatur id Lorem"
+    },
+    "cladType": {
+        "id": -57481265,
+        "code": "et reprehenderit consectetur laborum",
+        "name": "in laboris"
+    },
+    "constructQuality": {
+        "id": 74182477,
+        "code": "in id Excepteur",
+        "name": "ut"
+    },
+    "designCode": {
+        "id": -68900282,
+        "code": "officia",
+        "name": "ea reprehenderit irure voluptate occaecat"
+    },
+    "doorOpenings": {
+        "id": 12928835,
+        "code": "fugiat sit est consectetur ad",
+        "name": "fugiat"
+    },
+    "externalOrnament": {
+        "id": 66432291,
+        "code": "ullamco aliqua laborum",
+        "name": "deserunt laborum nulla sint"
+    },
+    "floodVulnerability": {
+        "id": 75684998,
+        "code": "fugiat amet sed deserunt",
+        "name": "of"
+    },
+    "foundation": {
+        "id": 241276,
+        "code": "deserunt sit amet i",
+        "name": "minim culpa"
+    },
+    "maintenance": {
+        "id": 75987751,
+        "code": "tempor dolor cillum amet",
+        "name": "fugiat occaecat sunt"
+    },
+    "mechElecSide": {
+        "id": -48884168,
+        "code": "consectetur elit id dolore",
+        "name": "proident eiusmod sed laborum"
+    },
+    "otherOpenings": {
+        "id": 19646887,
+        "code": "magna",
+        "name": "enim amet"
+    },
+    "roofAge": {
+        "id": 56125292,
+        "code": "mollit deserunt fugi",
+        "name": "aute elit"
+    },
+    "roofAnchor": {
+        "id": 91180965,
+        "code": "nulla laboris",
+        "name": "id officia nisi occaecat et"
+    },
+    "roofEquipment": {
+        "id": 26642497,
+        "code": "Ut dolor Duis aliqua",
+        "name": "Ut fugiat in commodo"
+    },
+    "roofFrame": {
+        "id": 94070021,
+        "code": "sed ea cillum aliqua",
+        "name": "ad nisi in"
+    },
+    "roofGeometry": {
+        "id": -27123361,
+        "code": "minim ipsum quis",
+        "name": "Lorem magna Excepteur"
+    },
+    "roofParpet": {
+        "id": -47286877,
+        "code": "do laboris ut in nulla",
+        "name": "qui ullamco culpa ex"
+    },
+    "roofSystem": {
+        "id": 85699468,
+        "code": "velit cillum est do",
+        "name": "aute Lorem amet sunt dolor"
+    },
+    "windMissile": {
+        "id": 4868718,
+        "code": "laboris ea",
+        "name": "eu"
+    },
+    "windVulnerability": {
+        "id": -91952602,
+        "code": "elit",
+        "name": "consequat fugiat qui exercitation ipsum"
+    },
+    "floodMissiles": {
+        "id": -35058911,
+        "code": "dolore occaecat aute pariat",
+        "name": "aute minim"
+    },
+    "floodProtection": {
+        "id": -58990508,
+        "code": "minim sint",
+        "name": "ipsum"
+    },
+    "basement": {
+        "id": 21476628,
+        "code": "magna ea",
+        "name": "cillum sint"
+    },
+    "mechElecGround": {
+        "id": 10098179,
+        "code": "",
+        "name": "et sunt velit"
+    },
+    "flashing": {
+        "id": -25305891,
+        "code": "do cupidatat",
+        "name": "eiusmod dolor ut"
+    },
+    "ifmVerticalExpDist": {
+        "id": -28116368,
+        "code": "dolore sed et anim",
+        "name": "voluptate commodo"
+    },
+    "ifmStructCondition": {
+        "id": 88506328,
+        "code": "qui esse incididunt",
+        "name": "aute velit"
+    },
+    "ifmEquipBracing": {
+        "id": 90932327,
+        "code": "pariatur",
+        "name": "nis"
+    },
+    "ifmMissileExp": {
+        "id": 77688904,
+        "code": "ipsum non",
+        "name": "laborum ipsum"
+    },
+    "wsPackage": {
+        "id": 65981598,
+        "code": "non adipisicing",
+        "name": "id in"
+    },
+    "wsProtect": {
+        "id": 83104181,
+        "code": "laborum dolor in exercitation",
+        "name": "cillum enim"
+    },
+    "wsSalvage": {
+        "id": 33361077,
+        "code": "cillum nostrud quis est",
+        "name": "occaecat consectetur do exercitation"
+    },
+    "wsSpecieStorage": {
+        "id": -66470230,
+        "code": "proident",
+        "name": "irure dolore sit incididunt ex"
+    },
+    "resistGarage": {
+        "id": 86731913,
+        "code": "consectetur do",
+        "name": "quis enim"
+    },
+    "wsFloorType": {
+        "id": -18634350,
+        "code": "magna",
+        "name": "labore eiusmod"
+    },
+    "wsFoundationType": {
+        "id": -88518364,
+        "code": "Lorem voluptate sit in",
+        "name": "ex elit consectetur"
+    },
+    "floodIndex": 58392910.533010274,
+    "distToCoast": -70729046.16787459,
+    "sysDistToCoast": -35979065.32952315,
+    "elevation": 28347157.349372804,
+    "manMadeCov": 80709572.28919542,
+    "naturalCov": 51374722.2326884,
+    "elevationCov": -2643916.677579835,
+    "distToCoastCov": -26340486.802012414,
+    "manMadeRoughness": -11464076,
+    "naturalRoughness": 54398560,
+    "windPool": 84992160,
+    "biZone": -76642648,
+    "topologyFeature": 49210542,
+    "elevationMatch": {
+        "id": -66750026,
+        "code": "aliquip",
+        "name": "eiusmod nostrud aliqua veniam"
+    },
+    "naturalRoughnessMatch": {
+        "id": 99777772,
+        "code": "ex veniam amet",
+        "name": "sit in cillum commodo minim"
+    },
+    "manMadeRoughnessMatch": {
+        "id": -70968809,
+        "code": "exercitation elit pariatur dolor",
+        "name": "exercitation elit ut dolore"
+    },
+    "distToCoastMatch": {
+        "id": -68830494,
+        "code": "est sint deserun",
+        "name": "dolore"
+    },
+    "windPoolMatch": {
+        "id": 20140719,
+        "code": "dolor eiusmod",
+        "name": "qui in"
+    },
+    "windExposure": -55320952,
+    "nfipRate": -44386770.75982685,
+    "nfipYear": -56891576,
+    "nfipYearMatch": {
+        "id": -87566829,
+        "code": "sunt pariatur proident",
+        "name": "dolor nisi est"
+    },
+    "buildingElevation": 79260055.58490187,
+    "buildingElevationMatch": {
+        "id": 240564,
+        "code": "laborum dolore dolore nulla",
+        "name": "irure dolore sint"
+    },
+    "rmsBuildingElevation": 1068761.5898454785,
+    "rmsBuildingElevationMatch": {
+        "id": -95467750,
+        "code": "deserunt et qui adipisicing",
+        "name": "reprehenderit cupidatat Excepteur amet"
+    },
+    "zoneGroup": 57416412,
+    "perBasement": -91387028.33007719
+})
+
+
+

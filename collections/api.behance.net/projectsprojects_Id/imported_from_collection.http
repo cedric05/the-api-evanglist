@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-153b1edc-7cd0-4f1f-a8a3-bd5fb65bc144.postman_collection.json
+
+@name("Project")
+GET "https://{{baseUrl}}/projects/:projectsId"
+? "api_key"= "<integer>"
+
+
+@name("Project Comments")
+GET "https://{{baseUrl}}/projects/:projectsId/comments"
+? "client_id"= "<string>"
+
+
+

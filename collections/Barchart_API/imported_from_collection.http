@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3d3deb82-6077-4c9b-ae5c-4fd917c37b61.postman_collection.json
+
+// The getQuote API is used to request price data, either real-time, delayed or end-of-day, by symbol. In addition to Last Price or Settlement, other fields such as Open, High, Low, Close, Bid, Ask, 52-week high and low, and more are available.
+
+@name("Get Quote")
+GET "https://{{baseUrl}}/getQuote.json"
+? "symbols"= "<string>"
+
+
+// Receive all real-time or delayed stock and/or index price data by exchange through a single onDemand query.
+
+@name("Get Equities by Exchange")
+GET "https://{{baseUrl}}/getEquitiesByExchange.json"
+? "symbols"= "<string>"
+
+
+// Receive all real-time or delayed, or end-of-day Futures data by exchange through a single onDemand query.
+
+@name("Get Futures by Exchange")
+GET "https://{{baseUrl}}/getFuturesByExchange.json"
+
+
+// Get the close price for given instruments for the given date.
+
+@name("Get Close Price")
+GET "https://{{baseUrl}}/getClosePrice.json"
+? "symbols"= "<string>"
+
+
+

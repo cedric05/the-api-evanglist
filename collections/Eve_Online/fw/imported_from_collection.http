@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Statistical overviews of factions involved in faction warfare
+// 
+// ---
+// Alternate route: `/dev/fw/stats/`
+// 
+// Alternate route: `/legacy/fw/stats/`
+// 
+// Alternate route: `/v1/fw/stats/`
+// 
+// Alternate route: `/v2/fw/stats/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("An overview of statistics about factions involved in faction warfare")
+GET "https://{{baseUrl}}/fw/stats/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// An overview of the current ownership of faction warfare solar systems
+// 
+// ---
+// Alternate route: `/dev/fw/systems/`
+// 
+// Alternate route: `/legacy/fw/systems/`
+// 
+// Alternate route: `/v2/fw/systems/`
+// 
+// Alternate route: `/v3/fw/systems/`
+// 
+// ---
+// This route is cached for up to 1800 seconds
+
+@name("Ownership of faction warfare systems")
+GET "https://{{baseUrl}}/fw/systems/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Data about which NPC factions are at war
+// 
+// ---
+// Alternate route: `/dev/fw/wars/`
+// 
+// Alternate route: `/legacy/fw/wars/`
+// 
+// Alternate route: `/v1/fw/wars/`
+// 
+// Alternate route: `/v2/fw/wars/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Data about which NPC factions are at war")
+GET "https://{{baseUrl}}/fw/wars/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

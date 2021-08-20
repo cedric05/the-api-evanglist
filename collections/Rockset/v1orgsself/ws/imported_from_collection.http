@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// List all workspaces in an organization.
+
+@name("List Workspaces")
+GET "https://{{baseUrl}}/v1/orgs/self/ws"
+
+
+// Create a new workspace.
+
+@name("Create Workspace")
+POST "https://{{baseUrl}}/v1/orgs/self/ws"
+"Content-Type": "application/json"
+json({
+    "name": "event_logs",
+    "description": "Datasets of system logs for the ops team."
+})
+
+
+

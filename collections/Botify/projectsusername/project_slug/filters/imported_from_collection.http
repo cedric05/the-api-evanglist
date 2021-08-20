@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// List all the project's saved filters (each filter's name, ID and filter value)
+
+@name("List all the project's saved filters (each filter's name, ID and filter value)")
+GET "https://{{baseUrl}}/projects/:username/:project_slug/filters"
+? "page"= "<integer>"
+? "size"= "<integer>"
+
+
+// Retrieves a specific saved filter's name, ID and filter value
+
+@name("Retrieves a specific saved filter's name, ID and filter value")
+GET "https://{{baseUrl}}/projects/:username/:project_slug/filters/:identifier"
+
+
+

@@ -1,0 +1,509 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Public information about a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/`
+// 
+// Alternate route: `/v4/characters/{character_id}/`
+// 
+// ---
+// This route is cached for up to 86400 seconds
+
+@name("Get character's public information")
+GET "https://{{baseUrl}}/characters/:character_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Return a list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)
+// 
+// ---
+// Alternate route: `/legacy/characters/{character_id}/agents_research/`
+// 
+// Alternate route: `/v1/characters/{character_id}/agents_research/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get agents research")
+GET "https://{{baseUrl}}/characters/:character_id/agents_research/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return attributes of a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/attributes/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/attributes/`
+// 
+// Alternate route: `/v1/characters/{character_id}/attributes/`
+// 
+// ---
+// This route is cached for up to 120 seconds
+
+@name("Get character attributes")
+GET "https://{{baseUrl}}/characters/:character_id/attributes/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return a list of blueprints the character owns
+// 
+// ---
+// Alternate route: `/v2/characters/{character_id}/blueprints/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get blueprints")
+GET "https://{{baseUrl}}/characters/:character_id/blueprints/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// A list of the character's clones
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/clones/`
+// 
+// Alternate route: `/v3/characters/{character_id}/clones/`
+// 
+// Alternate route: `/v4/characters/{character_id}/clones/`
+// 
+// ---
+// This route is cached for up to 120 seconds
+
+@name("Get clones")
+GET "https://{{baseUrl}}/characters/:character_id/clones/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Get a list of all the corporations a character has been a member of
+// 
+// ---
+// Alternate route: `/legacy/characters/{character_id}/corporationhistory/`
+// 
+// Alternate route: `/v1/characters/{character_id}/corporationhistory/`
+// 
+// ---
+// This route is cached for up to 86400 seconds
+
+@name("Get corporation history")
+GET "https://{{baseUrl}}/characters/:character_id/corporationhistory/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost
+// 
+// ---
+// Alternate route: `/v4/characters/{character_id}/cspa/`
+
+@name("Calculate a CSPA charge cost")
+POST "https://{{baseUrl}}/characters/:character_id/cspa/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json([
+    -10622015
+])
+
+
+// Return a character's jump activation and fatigue information
+// 
+// ---
+// Alternate route: `/legacy/characters/{character_id}/fatigue/`
+// 
+// Alternate route: `/v1/characters/{character_id}/fatigue/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("Get jump fatigue")
+GET "https://{{baseUrl}}/characters/:character_id/fatigue/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return the fleet ID the character is in, if any.
+// 
+// ---
+// Alternate route: `/legacy/characters/{character_id}/fleet/`
+// 
+// Alternate route: `/v1/characters/{character_id}/fleet/`
+// 
+// ---
+// This route is cached for up to 60 seconds
+// 
+// ---
+// Warning: This route has an upgrade available
+// 
+// ---
+// [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/fleet/)
+
+@name("Get character fleet info")
+GET "https://{{baseUrl}}/characters/:character_id/fleet/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Statistical overview of a character involved in faction warfare
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/fw/stats/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/fw/stats/`
+// 
+// Alternate route: `/v1/characters/{character_id}/fw/stats/`
+// 
+// Alternate route: `/v2/characters/{character_id}/fw/stats/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Overview of a character involved in faction warfare")
+GET "https://{{baseUrl}}/characters/:character_id/fw/stats/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return implants on the active clone of a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/implants/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/implants/`
+// 
+// Alternate route: `/v1/characters/{character_id}/implants/`
+// 
+// Alternate route: `/v2/characters/{character_id}/implants/`
+// 
+// ---
+// This route is cached for up to 120 seconds
+
+@name("Get active implants")
+GET "https://{{baseUrl}}/characters/:character_id/implants/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// List industry jobs placed by a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/industry/jobs/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/industry/jobs/`
+// 
+// Alternate route: `/v1/characters/{character_id}/industry/jobs/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("List character industry jobs")
+GET "https://{{baseUrl}}/characters/:character_id/industry/jobs/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "include_completed"= "false"
+? "token"= "commodo irure"
+
+
+// Return a list of a character's kills and losses going back 90 days
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/killmails/recent/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/killmails/recent/`
+// 
+// Alternate route: `/v1/characters/{character_id}/killmails/recent/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("Get a character's recent kills and losses")
+GET "https://{{baseUrl}}/characters/:character_id/killmails/recent/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Information about the characters current location. Returns the current solar system id, and also the current station or structure ID if applicable
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/location/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/location/`
+// 
+// Alternate route: `/v1/characters/{character_id}/location/`
+// 
+// Alternate route: `/v2/characters/{character_id}/location/`
+// 
+// ---
+// This route is cached for up to 5 seconds
+
+@name("Get character location")
+GET "https://{{baseUrl}}/characters/:character_id/location/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return a list of loyalty points for all corporations the character has worked for
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/loyalty/points/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/loyalty/points/`
+// 
+// Alternate route: `/v1/characters/{character_id}/loyalty/points/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get loyalty points")
+GET "https://{{baseUrl}}/characters/:character_id/loyalty/points/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return a list of medals the character has
+// 
+// ---
+// Alternate route: `/legacy/characters/{character_id}/medals/`
+// 
+// Alternate route: `/v1/characters/{character_id}/medals/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get medals")
+GET "https://{{baseUrl}}/characters/:character_id/medals/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Paginated record of all mining done by a character for the past 30 days
+// 
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mining/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/mining/`
+// 
+// Alternate route: `/v1/characters/{character_id}/mining/`
+// 
+// ---
+// This route is cached for up to 600 seconds
+
+@name("Character mining ledger")
+GET "https://{{baseUrl}}/characters/:character_id/mining/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Checks if the character is currently online
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/online/`
+// 
+// Alternate route: `/v2/characters/{character_id}/online/`
+// 
+// Alternate route: `/v3/characters/{character_id}/online/`
+// 
+// ---
+// This route is cached for up to 60 seconds
+
+@name("Get character online")
+GET "https://{{baseUrl}}/characters/:character_id/online/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return a list of tasks finished by a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/opportunities/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/opportunities/`
+// 
+// Alternate route: `/v1/characters/{character_id}/opportunities/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get a character's completed tasks")
+GET "https://{{baseUrl}}/characters/:character_id/opportunities/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Get portrait urls for a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/portrait/`
+// 
+// Alternate route: `/v2/characters/{character_id}/portrait/`
+// 
+// Alternate route: `/v3/characters/{character_id}/portrait/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get character portraits")
+GET "https://{{baseUrl}}/characters/:character_id/portrait/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Returns a character's corporation roles
+// 
+// ---
+// Alternate route: `/v2/characters/{character_id}/roles/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get character corporation roles")
+GET "https://{{baseUrl}}/characters/:character_id/roles/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Search for entities that match a given sub-string.
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/search/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/search/`
+// 
+// Alternate route: `/v3/characters/{character_id}/search/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Search on a string")
+GET "https://{{baseUrl}}/characters/:character_id/search/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "categories"= "structure"
+? "datasource"= "tranquility"
+? "language"= "en"
+? "search"= "ipsum quis"
+? "strict"= "false"
+? "token"= "commodo irure"
+
+
+// Get the current ship type, name and id
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/ship/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/ship/`
+// 
+// Alternate route: `/v1/characters/{character_id}/ship/`
+// 
+// Alternate route: `/v2/characters/{character_id}/ship/`
+// 
+// ---
+// This route is cached for up to 5 seconds
+
+@name("Get current ship")
+GET "https://{{baseUrl}}/characters/:character_id/ship/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// List the configured skill queue for the given character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/skillqueue/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/skillqueue/`
+// 
+// Alternate route: `/v2/characters/{character_id}/skillqueue/`
+// 
+// ---
+// This route is cached for up to 120 seconds
+
+@name("Get character's skill queue")
+GET "https://{{baseUrl}}/characters/:character_id/skillqueue/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// List all trained skills for the given character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/skills/`
+// 
+// Alternate route: `/v4/characters/{character_id}/skills/`
+// 
+// ---
+// This route is cached for up to 120 seconds
+
+@name("Get character skills")
+GET "https://{{baseUrl}}/characters/:character_id/skills/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return character standings from agents, NPC corporations, and factions
+// 
+// ---
+// Alternate route: `/legacy/characters/{character_id}/standings/`
+// 
+// Alternate route: `/v1/characters/{character_id}/standings/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get standings")
+GET "https://{{baseUrl}}/characters/:character_id/standings/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Returns a character's titles
+// 
+// ---
+// Alternate route: `/legacy/characters/{character_id}/titles/`
+// 
+// Alternate route: `/v1/characters/{character_id}/titles/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get character corporation titles")
+GET "https://{{baseUrl}}/characters/:character_id/titles/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

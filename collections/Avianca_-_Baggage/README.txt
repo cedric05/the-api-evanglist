@@ -1,0 +1,1 @@
+API for querying details of baggage claims. Supports customer view in CRM.

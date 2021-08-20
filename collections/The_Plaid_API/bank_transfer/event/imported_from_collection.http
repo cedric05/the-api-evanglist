@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Use the `/bank_transfer/event/list` endpoint to get a list of bank transfer events based on specified filter criteria.
+
+@name("List bank transfer events") : "base-inherit-auth"
+POST "https://{{baseUrl}}/bank_transfer/event/list"
+"Content-Type": "application/json"
+json({
+    "client_id": "ipsum eu sed anim",
+    "secret": "ut mollit dolor anim",
+    "start_date": "1981-08-10T19:33:49.881Z",
+    "end_date": "1954-04-20T11:07:36.987Z",
+    "bank_transfer_id": "adipisicing sint Ut reprehenderit",
+    "account_id": "tempor incididunt",
+    "bank_transfer_type": "credit",
+    "event_types": [
+        "cancelled",
+        "receiver_posted"
+    ],
+    "count": 25,
+    "offset": 0,
+    "origination_account_id": "ut in in cillum",
+    "direction": "est cillum"
+})
+
+
+// `/bank_transfer/event/sync` allows you to request up to the next 25 bank transfer events that happened after a specific `event_id`. Use the `/bank_transfer/event/sync` endpoint to guarantee you have seen all bank transfer events. 
+
+@name("Sync bank transfer events") : "base-inherit-auth"
+POST "https://{{baseUrl}}/bank_transfer/event/sync"
+"Content-Type": "application/json"
+json({
+    "after_id": 92272325,
+    "client_id": "dolor enim",
+    "secret": "sint veniam cupidatat in",
+    "count": 25
+})
+
+
+

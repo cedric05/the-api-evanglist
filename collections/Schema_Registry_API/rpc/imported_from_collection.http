@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfc666ca-94aa-4d7e-b49b-06193ecb21e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Retrieve an export payload for a specific resource in order to transfer it into a different sandbox or IMS Organization.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rpc/export/:RESOURCE_ID"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+
+
+@name("Use an export payload to import a resource into a different sandbox or IMS Organization.") : "base-inherit-auth"
+POST "https://{{baseUrl}}/rpc/import"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+"Content-Type": "application/json"
+data('"{{body}}"')
+
+
+@name("Retrieve sample data for a schema by ID.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rpc/sampledata/:SCHEMA_ID"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+
+
+@name("Retrieve a chonological list of changes made to a resource specified by ID.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rpc/auditlog/:RESOURCE_ID"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+
+
+

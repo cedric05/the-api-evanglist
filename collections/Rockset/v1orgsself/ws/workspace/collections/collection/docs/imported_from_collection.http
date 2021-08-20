@@ -1,0 +1,77 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Add documents to a collection.
+
+@name("Add Documents")
+POST "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/collections/:collection/docs"
+"Content-Type": "application/json"
+json({
+    "data": []
+})
+
+
+// Delete documents from a collection.
+
+@name("Delete Documents")
+DELETE "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/collections/:collection/docs"
+"Content-Type": "application/json"
+json({
+    "data": [
+        {
+            "_id": "2cd61e3b"
+        },
+        {
+            "_id": "2cd61e3b"
+        }
+    ]
+})
+
+
+// Update existing documents in a collection.
+
+@name("Patch Documents")
+PATCH "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/collections/:collection/docs"
+"Content-Type": "application/json"
+json({
+    "data": [
+        {
+            "_id": "ca2d6832-1bfd-f88f-0620-d2aa27a5d86c",
+            "patch": [
+                {
+                    "op": "INCREMENT",
+                    "path": "/foo/bar",
+                    "value": {},
+                    "from": "non tempor amet"
+                },
+                {
+                    "op": "REMOVE",
+                    "path": "/foo/bar",
+                    "value": {},
+                    "from": "in sint fugi"
+                }
+            ]
+        },
+        {
+            "_id": "ca2d6832-1bfd-f88f-0620-d2aa27a5d86c",
+            "patch": [
+                {
+                    "op": "MOVE",
+                    "path": "/foo/bar",
+                    "value": {},
+                    "from": "Lorem aliqua"
+                },
+                {
+                    "op": "TEST",
+                    "path": "/foo/bar",
+                    "value": {},
+                    "from": "ullamco eiusmod"
+                }
+            ]
+        }
+    ]
+})
+
+
+

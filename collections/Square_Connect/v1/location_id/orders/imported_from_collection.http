@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Provides summary information for a merchant's online store orders.
+
+@name("Get Location Orders")
+GET "https://{{baseUrl}}/v1/:location_id/orders"
+? "order"= "<object>"
+? "limit"= "<integer>"
+? "batch_token"= "<string>"
+
+
+// Provides comprehensive information for a single online store order, including the order's history.
+
+@name("Get Location Orders")
+GET "https://{{baseUrl}}/v1/:location_id/orders/:order_id"
+
+
+

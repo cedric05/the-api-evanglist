@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d7a5fc9-3f9b-4b0b-ae23-71c4fb27e02a.postman_collection.json
+
+@name("Delete Email")
+DELETE "https://{{baseUrl}}/messages/emails/:email_id"
+? "from_label"= "<string>"
+? "reply_to"= "<string>"
+? "subject"= "<string>"
+? "message"= "<string>"
+? "unsubscribe_message"= "<string>"
+
+
+@name("Send a test email campaign")
+POST "https://{{baseUrl}}/messages/emails/:email_id/test"
+? "default_test_recipient_emails"= "<boolean>"
+? "recipients"= "<array>"
+
+
+@name("Send a test email campaign")
+POST "https://{{baseUrl}}/messages/emails/:email_id/stats"
+
+
+@name("Retrieve lists to which the given email was sent")
+GET "https://{{baseUrl}}/messages/emails/:email_id/lists"
+
+
+

@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92585ca3-4af5-4f55-9f95-f80c9040e561.postman_collection.json
+
+// This endpoint provides a list of recent audio items associated with the aggregation along with metadata about the aggregation.
+
+@name("Get a set of recommendations for an aggregation")
+GET "https://{{baseUrl}}/listening/v2/aggregation/:aggId/recommendations"
+? "startNum"= "<>"
+
+
+// These channels allow the user to specify a focus for the content returned in the recommendations endpoint.
+
+@name("Get the list of available channels")
+GET "https://{{baseUrl}}/listening/v2/channels"
+? "exploreOnly"= "<>"
+
+
+// This endpoint provides the list of recently-rated audio recommendations that the logged-in user has consumed. Some rated recommendations are filtered, such as sponsorship and donation.
+
+@name("Get recent ratings the logged-in user has submitted")
+GET "https://{{baseUrl}}/listening/v2/history"
+
+
+// Gets the most recently played promo for which the user has neither tapped through the promo or listened to the target story.
+
+@name("Retrieve the most recent promo audio heard by the logged-in user")
+GET "https://{{baseUrl}}/listening/v2/promo/recommendations"
+
+
+// This endpoint is the main mechanism for providing feedback from the user to NPR about the recommendations that are obtained from `GET /listening/v2/recommendations`.nnA fully-populated link to this endpoint is returned with each individual recommendation and is located in the AudioItemDocument under the `links['recommendations']` object. The query parameters in this link should not be modified.nBe sure to copy and send back the entire ratings object (RatingData), as new fields may be added to it
+
+@name("Collect new ratings for media previously recommended to the logged-in user")
+POST "https://{{baseUrl}}/listening/v2/ratings"
+? "recommend"= "<>"
+
+
+// This endpoint returns a list of audio recommendations. It is designed to be used for an initial list of recommendations, and then `GET /listening/v2/ratings?recommend=true` should be used for subsequent requests for recommendations.nnA fully-populated link to the ratings endpoint is returned with each individual recommendation and is located in the AudioItemDocument under the `links['recommendations']` object. The query parameters in this link should not be modified.nBe sure to copy and send bac
+
+@name("Get a list of media for the logged-in user from NPR's recommendation engine")
+GET "https://{{baseUrl}}/listening/v2/recommendations"
+? "sharedMediaId"= "<>"
+? "notifiedMediaId"= "<>"
+
+
+// In the schema shown below, SearchItemDocument is not an actual type of returned object; the object returned by a search will be either an AggregationAudioItemListDocument or an AudioItemDocument.
+
+@name("Get a list of recent audio and aggregation items associated with search terms")
+GET "https://{{baseUrl}}/listening/v2/search/recommendations"
+? "searchTerms"= "<>"
+
+
+

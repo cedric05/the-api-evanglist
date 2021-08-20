@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Creates a new Listing
+
+@name("Post Listings")
+POST "https://{{baseUrl}}/listings"
+? "quantity"= "<>"
+? "title"= "<>"
+? "description"= "<>"
+? "price"= "<>"
+? "materials"= "<>"
+? "tags"= "<>"
+? "shipping_template_id"= "<>"
+? "shop_section_id"= "<>"
+
+
+// Finds all active Listing
+
+@name("Get Listings Active")
+GET "https://{{baseUrl}}/listings/active"
+? "limit"= "<>"
+? "offset"= "<>"
+? "keywords"= "<>"
+? "sort_on"= "<>"
+? "sort_order"= "<>"
+? "min_price"= "<>"
+? "max_price"= "<>"
+? "color"= "<>"
+? "color_accuracy"= "<>"
+? "tags"= "<>"
+? "materials"= "<>"
+? "category"= "<>"
+
+
+// Collects the list of interesting listings
+
+@name("Get Interesting Listings")
+GET "https://{{baseUrl}}/listings/interesting"
+
+
+// Collects the list of listings used to generate the trending listing page.
+
+@name("Get Trending Listings")
+GET "https://{{baseUrl}}/listings/trending"
+
+
+

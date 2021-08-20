@@ -1,0 +1,396 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Get all assets</code> request returns comprehensive information on all assets available in a stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-all-assets>Get All Assets</a> API Reference document
+
+@name("Get all assets")
+GET "https://{{base_url}}/v3/assets"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "folder"= "bltd7854a4567gh7"
+? "include_folders"= "true"
+? "environment_name"= "{{environment_name}}"
+? "environment"= "production"
+? "version"= "1"
+? "include_publish_details"= "true"
+? "include_count"= "false"
+? "relative_urls"= "false"
+? "asc_field_uid"= "created_at"
+? "desc_field_uid"= "file_size"
+
+
+// <p>The <code>Get an asset</code> call returns comprehensive information about a specific version of an asset of a stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-a-single-asset>Get a Single Asset</a> API Reference document
+
+@name("Get an asset")
+GET "https://{{base_url}}/v3/assets/{{asset_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "include_path"= "fase"
+? "version"= "1"
+? "environment_name"= "{{environment_name}}"
+? "environment"= "production"
+? "include_publish_details"= "true"
+? "relative_urls"= "false"
+
+
+// <p>The <code>Get assets of a specific folder</code> retrieves all assets of a specific asset folder; however, it doesn't retrieve the details of subfolders within it.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-assets-of-a-specific-folder>Get Assets of a Specific Folder</a> API Reference document
+
+@name("Get assets of a specific folder")
+GET "https://{{base_url}}/v3/assets"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "folder"= "enter_your_folder_uid"
+
+
+// <p>The <code>Get assets and folders of a parent folder</code> retrieves details of both assets and asset subfolders within a specific parent asset folder.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-assets-and-subfolders-of-a-parent-folder>Get Assets and Subfolders of a Parent Folder</a> API Reference document
+
+@name("Get assets and subfolders of a parent folder")
+GET "https://{{base_url}}/v3/assets"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "include_folders"= "true"
+? "folder"= "enter_your_folder_uid"
+
+
+// <p>The <code>Upload asset</code> request uploads an asset file to your stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#upload-asset>Upload Asset</a> API Reference document
+
+@name("Upload asset")
+POST "https://{{base_url}}/v3/assets"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+? "relative_urls"= "false"
+? "include_dimension"= "true"
+files(
+	("asset[upload]", "None"),
+	("asset[parent_uid]", "None"),
+	("asset[title]", "None"),
+	("asset[description]", "None"),
+	("asset[tags]", "None")
+)
+
+
+// <p>The <code>Replace asset</code> call will replace an existing asset with another file on the stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#replace-asset>Replace Asset</a> API Reference document
+
+@name("Replace asset")
+PUT "https://{{base_url}}/v3/assets/{{asset_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+? "environment_name"= "{{environment_name}}"
+? "environment"= "production"
+? "relative_urls"= "false"
+files(
+	("asset[upload]", "None"),
+	("asset[parent_uid]", "None"),
+	("asset[title]", "None"),
+	("asset[description]", "None"),
+	("asset[tags]", "None")
+)
+
+
+// <p>The <code>Delete asset</code> call will delete an existing asset from the stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#delete-asset>Delete Asset</a> API Reference document
+
+@name("Delete asset")
+DELETE "https://{{base_url}}/v3/assets/{{asset_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+
+// <p>The <code>Get information on RTE assets</code> call returns comprehensive information on all assets uploaded through the <a href="/docs/developers/create-content-types/rich-text-editor/">Rich Text Editor field</a>.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#rich-text-editor-assets>Rich Text Editor Assets</a> API Reference document
+
+@name("Get information on RTE assets")
+GET "https://{{base_url}}/v3/assets/rt"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Set Version Name for Asset</code> request allows you to assign a name to a specific version of an asset.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-version-naming>Asset Version Naming</a> API Reference document
+
+@name("Set Version Name for Asset")
+POST "https://{{base_url}}/v3/assets/{{asset_uid}}/versions/{{version_number}}/name"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "upload": {
+        "_version_name": "Version name"
+    }
+})
+
+
+// <p>The <code>Get Details of All Versions of an Asset</code> request allows you to retrieve the details of all the versions of an asset.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-version-naming>Asset Version Naming</a> API Reference document
+
+@name("Get Details of All Versions of an Asset")
+GET "https://{{base_url}}/v3/assets/{{asset_uid}}/versions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "skip"= "2"
+? "limit"= "5"
+? "named"= "false"
+? "include_count"= "false"
+
+
+// <p>The <code>Delete Version Name of Asset</code> request allows you to delete the name assigned to a specific version of an asset. This request resets the name of the asset version to the version number.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-version-naming>Asset Version Naming</a> API Reference document
+
+@name("Delete Version Name of Asset")
+DELETE "https://{{base_url}}/v3/assets/{{asset_uid}}/versions/{{version_number}}/name"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+
+// <p>The <code>Get asset references</code> call returns the details of the entries and the content types in which the specified asset is referenced.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-reference>Asset Reference</a> API Reference document
+
+@name("Get asset references")
+GET "https://{{base_url}}/v3/assets/{{asset_uid}}/references"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Get either only images or videos</code> call retrieves assets that are either image or video files, based on query request.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#retrieve-specific-asset-types>Retrieve Specific Asset Types</a> API Reference document
+
+@name("Get either only images or videos")
+GET "https://{{base_url}}/v3/assets/{{asset_type}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Update asset revision</code> call upgrades a specified version of an asset as the latest version of that asset.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#update-asset-details>Update Asset Details</a> API Reference document
+
+@name("Update asset revision")
+PUT "https://{{base_url}}/v3/assets/{{asset_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+data('{
+	"asset": {
+		"title": "Title",
+		"description": "Description"
+	},
+	"version": enter_version_number
+}')
+
+
+// <p>The <code>Update asset</code> call updates the title and description of an asset.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#update-asset-details>Update Asset Details</a> API Reference document
+
+@name("Update asset")
+PUT "https://{{base_url}}/v3/assets/{{asset_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+files(
+	("asset[title]", "None"),
+	("asset[description]", "None"),
+	("asset[parent_uid]", "None")
+)
+
+
+// <p>The <code>Publish an asset</code> call is used to publish a specific version of an asset on the desired <a href="/docs/developers/set-up-environments/about-environments/">environment</a> either immediately or at a later date/time.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-asset>Publish Asset</a> API Reference document
+
+@name("Publish an asset")
+POST "https://{{base_url}}/v3/assets/{{asset_uid}}/publish"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "asset": {
+        "locales": [
+            "en-us"
+        ],
+        "environments": [
+            "development"
+        ]
+    },
+    "version": 1,
+    "scheduled_at": "2019-02-08T18:30:00.000Z"
+})
+
+
+// <p>The <code>Unpublish an asset</code> call is used to unpublish a specific version of&nbsp;an asset from a desired <a href="/docs/developers/set-up-environments/about-environments/">environment</a>.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#unpublish-asset>Unpublish Asset</a> API Reference document
+
+@name("Unpublish an asset")
+POST "https://{{base_url}}/v3/assets/{{asset_uid}}/unpublish"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "asset": {
+        "locales": [
+            "en-us"
+        ],
+        "environments": [
+            "development"
+        ]
+    },
+    "version": 1,
+    "scheduled_at": "2019-02-08T18:30:00.000Z"
+})
+
+
+// <p>The <code>Get a single folder</code> call gets the comprehensive details of a specific <a href="/docs/content-managers/asset-folders/">asset folder</a> by means of folder UID.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-folder-collection>Asset Folder Collection</a> API Reference document
+
+@name("Get a single folder")
+GET "https://{{base_url}}/v3/assets/folders/{{folder_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "include_path"= "false"
+
+
+// <p>The <code>Get a single folder by name</code>&nbsp;call retrieves a specific <a href="/docs/content-managers/asset-folders/">asset folder</a> based on the name provided.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-folder-collection>Asset Folder Collection</a> API Reference document
+
+@name("Get a single folder by name")
+GET "https://{{base_url}}/v3/assets"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? 'query'= '{"is_dir": true, "name": "folder_name"}'
+
+
+// <p>The <code>Get subfolders of a parent folder</code> request retrieves the details of only the subfolders of a specific <a href="/docs/content-managers/asset-folders/">asset folder</a>. This request does not retrieve asset files.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-folder-collection>Asset Folder Collection</a> API Reference document
+
+@name("Get subfolders of a parent folder")
+GET "https://{{base_url}}/v3/assets"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "include_folders"= "true"
+? 'query'= '{"is_dir": true}'
+? "folder"= "enter_your_folder_uid"
+
+
+// <p>The <code>Create a folder</code> call is used to create an asset folder and/or add a parent folder to it (if required).
+// <br><br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-folder-collection>Asset Folder Collection</a> API Reference document
+
+@name("Create a folder")
+POST "https://{{base_url}}/v3/assets/folders"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "asset": {
+        "name": "Demo"
+    }
+})
+
+
+// <p>The <code>Update or move folder</code> request can be used either to update the details of a folder or set the parent folder if you want to move a folder under another folder.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-folder-collection>Asset Folder Collection</a> API Reference document
+
+@name("Update or move folder")
+PUT "https://{{base_url}}/v3/assets/folders/{{folder_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "asset": {
+        "name": "Demo"
+    }
+})
+
+
+// <p>The <code>Delete a folder</code> call is used to delete an <a href="/docs/content-managers/asset-folders/">asset folder</a> along with all the assets within that folder.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#asset-folder-collection>Asset Folder Collection</a> API Reference document
+
+@name("Delete a folder")
+DELETE "https://{{base_url}}/v3/assets/folders/{{folder_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+
+

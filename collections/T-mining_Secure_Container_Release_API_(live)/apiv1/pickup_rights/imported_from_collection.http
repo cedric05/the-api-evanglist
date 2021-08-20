@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3a6fa668-19d7-4395-a552-9b7f28cadcb6.postman_collection.json
+
+// Get all PickupRights that are assigned / transferred to the users's Organization.
+
+@name("List PickupRights")
+GET "https://{{baseUrl}}/api/v1/pickup_rights/"
+? "api_token"= "<>"
+
+
+

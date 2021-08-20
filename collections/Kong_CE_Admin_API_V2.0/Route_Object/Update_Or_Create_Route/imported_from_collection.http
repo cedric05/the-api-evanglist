@@ -1,0 +1,425 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// ## Create Or Update Route [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-or-update-route)
+// 
+// * Inserts (or replaces) the Route under the requested resource with the definition specified in the body. The Route will be identified via the name or id attribute.
+// * When the name or id attribute has the structure of a UUID, the Route being inserted/replaced will be identified by its id. Otherwise it will be identified by its name.
+// * When creating a new Route without specifying id (neither in the URL nor in the body), then it will be auto-generated.
+// *Notice that specifying a name in the URL and a different one in the request body is not allowed.
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>route name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Route to create or update.</td>
+//   </tr>
+// </table>
+// 
+// ## Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>optional</td>
+//     <td>The Route name</td>
+//   </tr>
+//   <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the protocols this Route should allow. When set to ["https"], HTTP requests are answered with a request to upgrade to HTTPS. Defaults to ["http", "https"].</td>
+//   </tr>
+//   <tr>
+//     <td>methods</td>
+//     <td>semi-optional</td>
+//     <td>A list of HTTP methods that match this Route.</td>
+//   </tr>
+//    <tr>
+//     <td>hosts</td>
+//     <td>semi-optional</td>
+//     <td>A list of domain names that match this Route. With form-encoded, the notation is hosts[]=example.com&hosts[]=foo.test. With JSON, use an Array.</td>
+//   </tr>
+//    <tr>
+//     <td>paths</td>
+//     <td>semi-optional</td>
+//     <td>A list of paths that match this Route. With form-encoded, the notation is paths[]=/foo&paths[]=/bar. With JSON, use an Array.</td>
+//   </tr>
+//      <tr>
+//     <td>headers</td>
+//     <td>semi-optional</td>
+//     <td>One or more lists of values indexed by header name that will cause this Route to match if present in the request. The Host header cannot be used with this attribute: hosts should be specified using the hosts attribute.</td>
+//   </tr>
+//      <tr>
+//     <td>https_redirect_status_code</td>
+//     <td>required</td>
+//     <td>The status code Kong responds with when all properties of a Route match except the protocol i.e. if the protocol of the request is HTTP instead of HTTPS. Location header is injected by Kong if the field is set to 301, 302, 307 or 308. Accepted values are: 426, 301, 302, 307, 308. Defaults to 426.</td>
+//   </tr>
+//      <tr>
+//     <td>regex_priority</td>
+//     <td>optional</td>
+//     <td>A number used to choose which route resolves a given request when several routes match it using regexes simultaneously. When two routes match the path and have the same regex_priority, the older one (lowest created_at) is used. Note that the priority for non-regex routes is different (longer non-regex routes are matched before shorter ones). Defaults to 0.</td>
+//   </tr>
+//      <tr>
+//     <td>strip_path</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the paths, strip the matching prefix from the upstream request URL. Defaults to true.</td>
+//   </tr>
+//        <tr>
+//     <td>path_handling</td>
+//     <td>optional</td>
+//     <td>Controls how the Service path, Route path and requested path are combined when sending a request to the upstream. See above for a detailed description of each behavior. Accepted values are: "v0", "v1". Defaults to "v0".</td>
+//   </tr>
+//        <tr>
+//     <td>preserve_host</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the hosts domain names, use the request Host header in the upstream request headers. If set to false, the upstream Host header will be that of the Service’s host.</td>
+//   </tr>
+//          <tr>
+//     <td>preserve_host</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the hosts domain names, use the request Host header in the upstream request headers. If set to false, the upstream Host header will be that of the Service’s host.</td>
+//   </tr>
+//         <tr>
+//     <td>snis</td>
+//     <td>semi-optional</td>
+//     <td>A list of SNIs that match this Route when using stream routing.</td>
+//   </tr>
+//         <tr>
+//     <td>sources</td>
+//     <td>semi-optional</td>
+//     <td>A list of IP sources of incoming connections that match this Route when using stream routing. Each entry is an object with fields “ip” (optionally in CIDR range notation) and/or “port”.</td>
+//   </tr>
+//         <tr>
+//     <td>destinations</td>
+//     <td>semi-optional</td>
+//     <td>A list of IP destinations of incoming connections that match this Route when using stream routing. Each entry is an object with fields “ip” (optionally in CIDR range notation) and/or “port”.</td>
+//   </tr>
+//          <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Route, for grouping and filtering.</td>
+//   </tr>
+//         <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>The Service this Route is associated to. This is where the Route proxies traffic to. With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+// </table>
+// 
+// ## Response
+// * HTTP 201 Created or HTTP 200 OK
+// * See POST and PATCH responses.
+
+@name("Create Or Update Route")
+PUT "https://{{gateway}}/routes/:routeNameOrId"
+"Content-Type": "application/json"
+json({
+    "host": "httpbin.org",
+    "name": "httpbin-api",
+    "retries": 5,
+    "protocol": "https",
+    "port": 443,
+    "path": "/",
+    "connect_timeout": 60000,
+    "write_timeout": 60000,
+    "read_timeout": 60000,
+    "tags": null,
+    "client_certificate": null
+})
+
+
+// ## Create Or Update Route Associated to a Specific Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-or-update-route-associated-to-a-specific-service)
+// 
+// * Inserts (or replaces) the Route under the requested resource with the definition specified in the body. The Route will be identified via the name or id attribute.
+// * When the name or id attribute has the structure of a UUID, the Route being inserted/replaced will be identified by its id. Otherwise it will be identified by its name.
+// * When creating a new Route without specifying id (neither in the URL nor in the body), then it will be auto-generated.
+// *Notice that specifying a name in the URL and a different one in the request body is not allowed.
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Service to create or update.</td>
+//   </tr>
+//   <tr>
+//     <td>route name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Route to create or update.</td>
+//   </tr>
+// </table>
+// 
+// ## Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>optional</td>
+//     <td>The Route name</td>
+//   </tr>
+//   <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the protocols this Route should allow. When set to ["https"], HTTP requests are answered with a request to upgrade to HTTPS. Defaults to ["http", "https"].</td>
+//   </tr>
+//   <tr>
+//     <td>methods</td>
+//     <td>semi-optional</td>
+//     <td>A list of HTTP methods that match this Route.</td>
+//   </tr>
+//    <tr>
+//     <td>hosts</td>
+//     <td>semi-optional</td>
+//     <td>A list of domain names that match this Route. With form-encoded, the notation is hosts[]=example.com&hosts[]=foo.test. With JSON, use an Array.</td>
+//   </tr>
+//    <tr>
+//     <td>paths</td>
+//     <td>semi-optional</td>
+//     <td>A list of paths that match this Route. With form-encoded, the notation is paths[]=/foo&paths[]=/bar. With JSON, use an Array.</td>
+//   </tr>
+//      <tr>
+//     <td>headers</td>
+//     <td>semi-optional</td>
+//     <td>One or more lists of values indexed by header name that will cause this Route to match if present in the request. The Host header cannot be used with this attribute: hosts should be specified using the hosts attribute.</td>
+//   </tr>
+//      <tr>
+//     <td>https_redirect_status_code</td>
+//     <td>required</td>
+//     <td>The status code Kong responds with when all properties of a Route match except the protocol i.e. if the protocol of the request is HTTP instead of HTTPS. Location header is injected by Kong if the field is set to 301, 302, 307 or 308. Accepted values are: 426, 301, 302, 307, 308. Defaults to 426.</td>
+//   </tr>
+//      <tr>
+//     <td>regex_priority</td>
+//     <td>optional</td>
+//     <td>A number used to choose which route resolves a given request when several routes match it using regexes simultaneously. When two routes match the path and have the same regex_priority, the older one (lowest created_at) is used. Note that the priority for non-regex routes is different (longer non-regex routes are matched before shorter ones). Defaults to 0.</td>
+//   </tr>
+//      <tr>
+//     <td>strip_path</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the paths, strip the matching prefix from the upstream request URL. Defaults to true.</td>
+//   </tr>
+//        <tr>
+//     <td>path_handling</td>
+//     <td>optional</td>
+//     <td>Controls how the Service path, Route path and requested path are combined when sending a request to the upstream. See above for a detailed description of each behavior. Accepted values are: "v0", "v1". Defaults to "v0".</td>
+//   </tr>
+//        <tr>
+//     <td>preserve_host</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the hosts domain names, use the request Host header in the upstream request headers. If set to false, the upstream Host header will be that of the Service’s host.</td>
+//   </tr>
+//          <tr>
+//     <td>preserve_host</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the hosts domain names, use the request Host header in the upstream request headers. If set to false, the upstream Host header will be that of the Service’s host.</td>
+//   </tr>
+//         <tr>
+//     <td>snis</td>
+//     <td>semi-optional</td>
+//     <td>A list of SNIs that match this Route when using stream routing.</td>
+//   </tr>
+//         <tr>
+//     <td>sources</td>
+//     <td>semi-optional</td>
+//     <td>A list of IP sources of incoming connections that match this Route when using stream routing. Each entry is an object with fields “ip” (optionally in CIDR range notation) and/or “port”.</td>
+//   </tr>
+//         <tr>
+//     <td>destinations</td>
+//     <td>semi-optional</td>
+//     <td>A list of IP destinations of incoming connections that match this Route when using stream routing. Each entry is an object with fields “ip” (optionally in CIDR range notation) and/or “port”.</td>
+//   </tr>
+//          <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Route, for grouping and filtering.</td>
+//   </tr>
+//         <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>The Service this Route is associated to. This is where the Route proxies traffic to. With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+// </table>
+// 
+// ## Response
+// * HTTP 201 Created or HTTP 200 OK
+// * See POST and PATCH responses.
+
+@name("Create Or Update Route Associated to a Specific Service")
+PUT "https://{{gateway}}/services/:serviceNameOrId/routes/:routeNameOrId"
+"Content-Type": "application/json"
+json({
+    "host": "httpbin.org",
+    "name": "httpbin-api",
+    "retries": 5,
+    "protocol": "https",
+    "port": 443,
+    "path": "/",
+    "connect_timeout": 60000,
+    "write_timeout": 60000,
+    "read_timeout": 60000,
+    "tags": null,
+    "client_certificate": null
+})
+
+
+// ## Create Or Update Route Associated to a Specific Plugin [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-or-update-route-associated-to-a-specific-plugin)
+// 
+// * Inserts (or replaces) the Route under the requested resource with the definition specified in the body. The Route will be identified via the name or id attribute.
+// * When the name or id attribute has the structure of a UUID, the Route being inserted/replaced will be identified by its id. Otherwise it will be identified by its name.
+// * When creating a new Route without specifying id (neither in the URL nor in the body), then it will be auto-generated.
+// *Notice that specifying a name in the URL and a different one in the request body is not allowed.
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>plugin id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Plugin associated to the Route to be created or updated.</td>
+//   </tr>
+// </table>
+// 
+// ## Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>optional</td>
+//     <td>The Route name</td>
+//   </tr>
+//   <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the protocols this Route should allow. When set to ["https"], HTTP requests are answered with a request to upgrade to HTTPS. Defaults to ["http", "https"].</td>
+//   </tr>
+//   <tr>
+//     <td>methods</td>
+//     <td>semi-optional</td>
+//     <td>A list of HTTP methods that match this Route.</td>
+//   </tr>
+//    <tr>
+//     <td>hosts</td>
+//     <td>semi-optional</td>
+//     <td>A list of domain names that match this Route. With form-encoded, the notation is hosts[]=example.com&hosts[]=foo.test. With JSON, use an Array.</td>
+//   </tr>
+//    <tr>
+//     <td>paths</td>
+//     <td>semi-optional</td>
+//     <td>A list of paths that match this Route. With form-encoded, the notation is paths[]=/foo&paths[]=/bar. With JSON, use an Array.</td>
+//   </tr>
+//      <tr>
+//     <td>headers</td>
+//     <td>semi-optional</td>
+//     <td>One or more lists of values indexed by header name that will cause this Route to match if present in the request. The Host header cannot be used with this attribute: hosts should be specified using the hosts attribute.</td>
+//   </tr>
+//      <tr>
+//     <td>https_redirect_status_code</td>
+//     <td>required</td>
+//     <td>The status code Kong responds with when all properties of a Route match except the protocol i.e. if the protocol of the request is HTTP instead of HTTPS. Location header is injected by Kong if the field is set to 301, 302, 307 or 308. Accepted values are: 426, 301, 302, 307, 308. Defaults to 426.</td>
+//   </tr>
+//      <tr>
+//     <td>regex_priority</td>
+//     <td>optional</td>
+//     <td>A number used to choose which route resolves a given request when several routes match it using regexes simultaneously. When two routes match the path and have the same regex_priority, the older one (lowest created_at) is used. Note that the priority for non-regex routes is different (longer non-regex routes are matched before shorter ones). Defaults to 0.</td>
+//   </tr>
+//      <tr>
+//     <td>strip_path</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the paths, strip the matching prefix from the upstream request URL. Defaults to true.</td>
+//   </tr>
+//        <tr>
+//     <td>path_handling</td>
+//     <td>optional</td>
+//     <td>Controls how the Service path, Route path and requested path are combined when sending a request to the upstream. See above for a detailed description of each behavior. Accepted values are: "v0", "v1". Defaults to "v0".</td>
+//   </tr>
+//        <tr>
+//     <td>preserve_host</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the hosts domain names, use the request Host header in the upstream request headers. If set to false, the upstream Host header will be that of the Service’s host.</td>
+//   </tr>
+//          <tr>
+//     <td>preserve_host</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the hosts domain names, use the request Host header in the upstream request headers. If set to false, the upstream Host header will be that of the Service’s host.</td>
+//   </tr>
+//         <tr>
+//     <td>snis</td>
+//     <td>semi-optional</td>
+//     <td>A list of SNIs that match this Route when using stream routing.</td>
+//   </tr>
+//         <tr>
+//     <td>sources</td>
+//     <td>semi-optional</td>
+//     <td>A list of IP sources of incoming connections that match this Route when using stream routing. Each entry is an object with fields “ip” (optionally in CIDR range notation) and/or “port”.</td>
+//   </tr>
+//         <tr>
+//     <td>destinations</td>
+//     <td>semi-optional</td>
+//     <td>A list of IP destinations of incoming connections that match this Route when using stream routing. Each entry is an object with fields “ip” (optionally in CIDR range notation) and/or “port”.</td>
+//   </tr>
+//          <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Route, for grouping and filtering.</td>
+//   </tr>
+//         <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>The Service this Route is associated to. This is where the Route proxies traffic to. With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+// </table>
+// 
+// ## Response
+// * HTTP 201 Created or HTTP 200 OK
+// * See POST and PATCH responses.
+
+@name("Create Or Update Route Associated to a Specific Plugin")
+PUT "https://{{gateway}}/plugins/:pluginId/route"
+"Content-Type": "application/json"
+json({
+    "host": "httpbin.org",
+    "name": "httpbin-api",
+    "retries": 5,
+    "protocol": "https",
+    "port": 443,
+    "path": "/",
+    "connect_timeout": 60000,
+    "write_timeout": 60000,
+    "read_timeout": 60000,
+    "tags": null,
+    "client_certificate": null
+})
+
+
+

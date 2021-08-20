@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get an OAuth 2.0 client application registered with Mattermost.n##### PermissionsnIf app creator, must have `mange_oauth` permission otherwise `manage_system_wide_oauth` permission is required.n
+
+@name("Get an OAuth app")
+GET "https://{{baseUrl}}/oauth/apps/:app_id"
+
+
+// Regenerate the client secret for an OAuth 2.0 client application registered with Mattermost.n##### PermissionsnIf app creator, must have `mange_oauth` permission otherwise `manage_system_wide_oauth` permission is required.n
+
+@name("Regenerate OAuth app secret")
+POST "https://{{baseUrl}}/oauth/apps/:app_id/regen_secret"
+
+
+// Get public information about an OAuth 2.0 client application registered with Mattermost. The application's client secret will be blanked out.n##### PermissionsnMust be authenticated.n
+
+@name("Get info on an OAuth app")
+GET "https://{{baseUrl}}/oauth/apps/:app_id/info"
+
+
+

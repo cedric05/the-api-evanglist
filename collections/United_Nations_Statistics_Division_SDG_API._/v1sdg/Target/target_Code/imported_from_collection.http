@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1e167a8f-2de8-4d63-a2ac-1189cfa7a2ce.postman_collection.json
+
+// Returns the list of all Indicators for an specific Target currently published in the latest release, you can include all Indicator and series description using includechildren
+
+@name("Returns the list of all Indicators available for a Target.")
+GET "https://{{baseUrl}}/v1/sdg/Target/:targetCode/Indicator/List"
+? "includechildren"= "true"
+
+
+// Given a target code will return a list of M49 code - Name of countries that have observations for that series
+
+@name("Returns a list of geographies that have values on that Target")
+GET "https://{{baseUrl}}/v1/sdg/Target/:targetCode/GeoAreas"
+
+
+

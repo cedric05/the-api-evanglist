@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get JSON object containing application data for account opening.
+
+@name("Get Account Application Data") : "base-inherit-auth"
+GET "https://{{baseUrl}}/account-applications/:id"
+
+
+// Update application data.
+
+@name("Update Account Application Data") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/account-applications/:id"
+"Content-Type": "application/json"
+json({
+    "referenceId": "200ABC123",
+    "approvalStatus": "APPROVED",
+    "accounts": [
+        {
+            "_id": "1239635c-6a0b-406a-85b2-e0e8e23c35db",
+            "accountNumber": "33112244",
+            "routingNumber": "00227799",
+            "accessLimits": [
+                {
+                    "type": "ATM",
+                    "display": "ATM withdrawal limit per day",
+                    "value": 500
+                },
+                {
+                    "type": "ATM",
+                    "display": "ATM withdrawal limit per day",
+                    "value": 500
+                }
+            ]
+        },
+        {
+            "_id": "1239635c-6a0b-406a-85b2-e0e8e23c35db",
+            "accountNumber": "33112244",
+            "routingNumber": "00227799",
+            "accessLimits": [
+                {
+                    "type": "ATM",
+                    "display": "ATM withdrawal limit per day",
+                    "value": 500
+                },
+                {
+                    "type": "ATM",
+                    "display": "ATM withdrawal limit per day",
+                    "value": 500
+                }
+            ]
+        }
+    ],
+    "applicants": [
+        {
+            "_id": "1239635c-6a0b-406a-85b2-e0e8e23c35db",
+            "memberNumber": "9083409234"
+        },
+        {
+            "_id": "1239635c-6a0b-406a-85b2-e0e8e23c35db",
+            "memberNumber": "9083409234"
+        }
+    ],
+    "integrationEvent": {
+        "type": "applicationSubmitted",
+        "status": "SUCCEEDED",
+        "failureCode": "CORE_DOWN_FOR_MAINTENANCE",
+        "failureMessage": "User already exists in the core"
+    }
+})
+
+
+

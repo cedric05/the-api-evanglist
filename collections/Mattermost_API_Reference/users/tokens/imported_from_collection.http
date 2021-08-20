@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a page of user access tokens for users on the system. Does not include the actual authentication tokens. Use query parameters for paging.nn__Minimum server version__: 4.7nn##### PermissionsnMust have `manage_system` permission.n
+
+@name("Get user access tokens")
+GET "https://{{baseUrl}}/users/tokens"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Revoke a user access token and delete any sessions using the token.nn__Minimum server version__: 4.1nn##### PermissionsnMust have `revoke_user_access_token` permission. For non-self requests, must also have the `edit_other_users` permission.n
+
+@name("Revoke a user access token")
+POST "https://{{baseUrl}}/users/tokens/revoke"
+
+
+// Get a user access token. Does not include the actual authentication token.nn__Minimum server version__: 4.1nn##### PermissionsnMust have `read_user_access_token` permission. For non-self requests, must also have the `edit_other_users` permission.n
+
+@name("Get a user access token")
+GET "https://{{baseUrl}}/users/tokens/:token_id"
+
+
+// Disable a personal access token and delete any sessions using the token. The token can be re-enabled using `/users/tokens/enable`.nn__Minimum server version__: 4.4nn##### PermissionsnMust have `revoke_user_access_token` permission. For non-self requests, must also have the `edit_other_users` permission.n
+
+@name("Disable personal access token")
+POST "https://{{baseUrl}}/users/tokens/disable"
+
+
+// Re-enable a personal access token that has been disabled.nn__Minimum server version__: 4.4nn##### PermissionsnMust have `create_user_access_token` permission. For non-self requests, must also have the `edit_other_users` permission.n
+
+@name("Enable personal access token")
+POST "https://{{baseUrl}}/users/tokens/enable"
+
+
+// Get a list of tokens based on search criteria provided in the request body. Searches are done against the token id, user id and username.nn__Minimum server version__: 4.7nn##### PermissionsnMust have `manage_system` permission.n
+
+@name("Search tokens")
+POST "https://{{baseUrl}}/users/tokens/search"
+
+
+

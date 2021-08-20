@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Creates or updates the target [CatalogObject](#type-catalogobject).
+
+@name("Post Catalog Object")
+POST "https://{{baseUrl}}/v2/catalog/object"
+
+
+// Deletes a single [CatalogObject](#type-catalogobject) based on thenprovided ID and returns the set of successfully deleted IDs in the response.nDeletion is a cascading event such that all children of the targeted objectnare also deleted. For example, deleting a [CatalogItem](#type-catalogitem)nwill also delete all of itsn[CatalogItemVariation](#type-catalogitemvariation) children.
+
+@name("Delete Catalog Object")
+DELETE "https://{{baseUrl}}/v2/catalog/object/:object_id"
+
+
+

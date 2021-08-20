@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6e90ddfd-d8be-45c2-9615-f4a24a1dd00f.postman_collection.json
+
+// Get a `Variant` object.
+
+@name("Retrieve a single variant")
+GET "https://{{baseUrl}}/:store_hash/v3/catalog/products/:id/variants/:id"
+
+
+@name("Upload a variant image")
+POST "https://{{baseUrl}}/:store_hash/v3/catalog/products/:id/variants/:id/image"
+
+
+

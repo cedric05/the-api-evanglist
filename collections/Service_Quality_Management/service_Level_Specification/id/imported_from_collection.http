@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96092c6-2ddc-4e57-bdc3-4ff0804f3144.postman_collection.json
+
+// This operation retrieves a ServiceLevelSpecification entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a ServiceLevelSpecification by ID")
+GET "https://{{baseUrl}}/serviceLevelSpecification/:id"
+? "fields"= "non incididunt nostrud Duis"
+
+
+// This operation updates partially a ServiceLevelSpecification entity.
+
+@name("Updates partially a ServiceLevelSpecification")
+PATCH "https://{{baseUrl}}/serviceLevelSpecification/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "exercitation commodo ad",
+    "name": "nisi sed non",
+    "relatedServiceLevelObjective": [
+        {
+            "id": "labore do",
+            "href": "sit",
+            "@baseType": "incididunt laboris deserunt ut",
+            "@schemaLocation": "https://kJH.caA6b6RN,gCV0hhGYhbkib",
+            "@type": "officia in pariatur",
+            "@referredType": "magna consectetur"
+        },
+        {
+            "id": "esse nostrud",
+            "href": "minim",
+            "@baseType": "amet",
+            "@schemaLocation": "http://amYJUPoGVJfYXtmHyIBD.lfqPYm-aMKFuHEJXOjJ7,ttdGqlXWT5,lPcSi4PiFw.,cTyoaezEUYCxLiQHUyNzyF",
+            "@type": "q",
+            "@referredType": "aute enim id in"
+        }
+    ],
+    "@baseType": "aliquip sed officia",
+    "@schemaLocation": "https://InwjVhSbTdMei.rcwqVenpfRtWl9NSQWpefP6wKnjQdnfpUdjRGoLYHcPq",
+    "@type": "Duis pariatur cillum moll"
+})
+
+
+// This operation deletes a ServiceLevelSpecification entity.
+
+@name("Deletes a ServiceLevelSpecification")
+DELETE "https://{{baseUrl}}/serviceLevelSpecification/:id"
+
+
+

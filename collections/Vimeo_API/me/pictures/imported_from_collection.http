@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns all the portrait images belonging to the authenticated user.
+
+@name("Get all the pictures that belong to a user")
+GET "https://{{baseUrl}}/me/pictures"
+? "page"= "<string>"
+? "per_page"= "<string>"
+
+
+// This method removes a portrait image from the authenticated user's Vimeo account.
+
+@name("Delete a user picture")
+DELETE "https://{{baseUrl}}/me/pictures/:portraitset_id"
+
+
+

@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Returns the details of the available vehicle makes.  Use `name_search` to filter the result set to vehicle makes that start with the `name_search`.
+
+@name("GetMakes")
+POST "https://{{baseUrl}}/Vehicles/GetMakes"
+? "make_id"= "<integer>"
+? "name"= "<string>"
+? "name_search"= "<string>"
+
+
+// Returns the details of the available vehicle models.  Use `name_search` to filter the resultset to vehicle models that start with the `name_search`.
+
+@name("GetModels")
+POST "https://{{baseUrl}}/Vehicles/GetModels"
+? "make_id"= "<integer>"
+? "model_id"= "<integer>"
+? "name"= "<string>"
+? "name_search"= "<string>"
+
+
+

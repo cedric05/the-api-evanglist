@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// List contact classes.
+
+@name("List contact classes")
+GET "https://{{baseUrl}}/rest/accounts/contacts/classes"
+
+
+// Gets a contact class. The ID of the contact class must be specified.
+
+@name("Get a contact class")
+GET "https://{{baseUrl}}/rest/accounts/contacts/classes/:contactClassId"
+
+
+

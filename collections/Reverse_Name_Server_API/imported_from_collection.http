@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d1e5b0f3-5ff1-4218-89d2-3fdd8ba24f4e.postman_collection.json
+
+// List of domains that share the same primary name server
+
+@name("Reverse Name Server")
+GET "https://{{baseUrl}}/{domain]/name-server-domains/"
+? "limit"= "<string>"
+
+
+

@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Used to determine the recipient account requirements for Transferwise transfers.
+
+@name("List all Transferwise Recipient Requirement for User Transferwise Quote")
+GET "https://{{baseUrl}}/user/:userID/transferwise-quote/:transferwise-quoteID/transferwise-recipient-requirement"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Used to determine the recipient account requirements for Transferwise transfers.
+
+@name("CREATE Transferwise Recipient Requirement for User Transferwise Quote")
+POST "https://{{baseUrl}}/user/:userID/transferwise-quote/:transferwise-quoteID/transferwise-recipient-requirement"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "name_account_holder": "<string>",
+    "type": "<string>",
+    "country": "<string>",
+    "detail": [
+        {
+            "key": "<string>",
+            "value": "<string>"
+        },
+        {
+            "key": "<string>",
+            "value": "<string>"
+        }
+    ]
+})
+
+
+

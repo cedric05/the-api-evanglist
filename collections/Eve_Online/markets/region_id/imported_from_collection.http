@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return a list of historical market statistics for the specified type in a region
+// 
+// ---
+// Alternate route: `/dev/markets/{region_id}/history/`
+// 
+// Alternate route: `/legacy/markets/{region_id}/history/`
+// 
+// Alternate route: `/v1/markets/{region_id}/history/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("List historical market statistics in a region")
+GET "https://{{baseUrl}}/markets/:region_id/history/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "type_id"= "-26592061"
+
+
+// Return a list of orders in a region
+// 
+// ---
+// Alternate route: `/dev/markets/{region_id}/orders/`
+// 
+// Alternate route: `/legacy/markets/{region_id}/orders/`
+// 
+// Alternate route: `/v1/markets/{region_id}/orders/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("List orders in a region")
+GET "https://{{baseUrl}}/markets/:region_id/orders/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "order_type"= "all"
+? "page"= "1"
+? "type_id"= "-26592061"
+
+
+// Return a list of type IDs that have active orders in the region, for efficient market indexing.
+// 
+// ---
+// Alternate route: `/dev/markets/{region_id}/types/`
+// 
+// Alternate route: `/legacy/markets/{region_id}/types/`
+// 
+// Alternate route: `/v1/markets/{region_id}/types/`
+// 
+// ---
+// This route is cached for up to 600 seconds
+
+@name("List type IDs relevant to a market")
+GET "https://{{baseUrl}}/markets/:region_id/types/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+
+
+

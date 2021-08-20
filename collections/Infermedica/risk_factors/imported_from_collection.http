@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01dcf85f-3ef8-448e-9cc1-9e1b0d7335f1.postman_collection.json
+
+// Returns a list of all available risk factors.
+
+@name("Get Risk Factors")
+GET "https://{{baseUrl}}/risk_factors"
+
+
+// Returns details of a single risk factor specified by id parameter.
+
+@name("Get Risk Factors")
+GET "https://{{baseUrl}}/risk_factors/:id"
+
+
+

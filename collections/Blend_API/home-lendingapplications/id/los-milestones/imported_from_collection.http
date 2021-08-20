@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get the current los milestone on the application
+
+@name("List LOS Milestones for an Application") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/:id/los-milestones"
+
+
+// Update the los milestone on an application
+
+@name("Patch LOS Milestone on an Application") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/home-lending/applications/:id/los-milestones"
+"Content-Type": "application/json"
+json({
+    "losMilestone": "CLOSING"
+})
+
+
+

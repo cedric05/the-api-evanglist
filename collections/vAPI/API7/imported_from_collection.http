@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bddbaf5a-26e6-497b-85a9-b22a2a06054d.postman_collection.json
+
+@name("Create User")
+POST "http://{{host}}/vapi/api7/createUser.php"
+data({
+    "username": [
+        ""
+    ],
+    "password": [
+        ""
+    ]
+})
+
+
+@name("User Login")
+POST "http://{{host}}/vapi/api7/login.php"
+data({
+    "username": [
+        "{{api7_username}}"
+    ],
+    "password": [
+        "{{api7_password}}"
+    ]
+})
+
+
+@name("Get Key")
+GET "http://{{host}}/vapi/api7/getKey.php"
+
+
+@name("User Logout")
+GET "http://{{host}}/vapi/api7/logout.php"
+
+
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Bulk lookup of character IDs to corporation, alliance and faction
+// 
+// ---
+// Alternate route: `/legacy/characters/affiliation/`
+// 
+// Alternate route: `/v1/characters/affiliation/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/affiliation/)
+
+@name("Character affiliation")
+POST "https://{{baseUrl}}/characters/affiliation/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+json([
+    -81393513
+])
+
+
+

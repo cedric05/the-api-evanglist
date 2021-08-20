@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7e6f9362-d794-4f68-8889-4b98dbcc6d76.postman_collection.json
+
+// This operation will register a SEPA payment at the bank for further authorization by the account holder through the consent application. For information see authorization and tutorial sections on developer portal. The access token from this consent can be used in PUT payments to execute the registered payment.
+
+@name("post SEPA Payment")
+POST "https://{{baseUrl}}/payments"
+
+
+// This operation will release a registered SEPA payment at the bank for further processing. Authorization by the account holder is needed through the consent application to obtain a access token.
+
+@name("put SEPA Payment")
+PUT "https://{{baseUrl}}/payments/:transactionId"
+
+
+// This operation will post a batch payment for further authorization by a commercial account holder in Internet Banking or Access Online. The batch payment can be sent in as SCT (PAIN.001.001.03) or SDD (pain.008.001.02) XML file. For more information see [ABN AMRO SEPA implementation guidelines](https://www.abnamro.nl/en/commercialbanking/products/payments/sepa/downloads.html). 
+// When delivering payment towards ABN AMRO through this API, the payment must be compressed first using GZIP format. The 
+
+@name("post Batch Payment")
+POST "https://{{baseUrl}}/payments/batch"
+
+
+

@@ -1,0 +1,90 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves information on a specified step policy by its ID
+
+@name("Get information on a specified step policy") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/steppolicies/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates a step policy specified by its ID.
+
+@name("Update a specified step policy") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/steppolicies/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "expirationDate": "labore",
+    "inceptionDate": "non",
+    "number": "consequat amet dolore enim",
+    "id": 73485305,
+    "accountId": -53269798,
+    "name": "proident dolore",
+    "stepOrderId": -55811955,
+    "lobDetId": {
+        "id": -20023713,
+        "code": "cillum elit minim in",
+        "name": "eu est dolor"
+    },
+    "causeOfLoss": {
+        "id": 76025950,
+        "code": "cillum ullamco do ex labore",
+        "name": "in"
+    },
+    "payoutAmount": 30373098.45088525,
+    "currency": {
+        "id": -79734669,
+        "code": "dolor nulla",
+        "name": "tempor laborum"
+    },
+    "payoutFunctionId": {
+        "id": -2877091,
+        "code": "non",
+        "name": "amet officia enim Ut"
+    },
+    "share": 55728222.04996118,
+    "excessAmount": -15819895.2402616,
+    "isPerRiskSubject": {
+        "id": 15280078,
+        "code": "mollit sint pariatur adipisicing fugiat",
+        "name": "non dolor"
+    },
+    "childOrderId": "",
+    "subjectFunctionId": {
+        "id": -6930096,
+        "code": "culpa in",
+        "name": "id nulla in sit aliquip"
+    },
+    "coverageBase": {
+        "id": 2821179,
+        "code": "occaecat nulla ullamco rep",
+        "name": "aliqua deserunt anim"
+    },
+    "limitGU": {
+        "id": 93717518,
+        "code": "magna",
+        "name": "amet proident irure Lorem"
+    }
+})
+
+
+// Deletes a step policy specified by its ID.
+
+@name("Delete a specified step policy") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/steppolicies/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

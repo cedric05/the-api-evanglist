@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Create an address warehouse relation.
+
+@name("Create an address warehouse relation")
+POST "https://{{baseUrl}}/rest/accounts/addresses/warehouse_relations"
+
+
+// Deletes an address warehouse relation. The ID of the relation must be specified.
+
+@name("Delete an address warehouse relation")
+DELETE "https://{{baseUrl}}/rest/accounts/addresses/warehouse_relations/:relationId"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Attribute groups (2.x only).
+
+@name("attribute groups (2.x only)")
+GET "https://{{baseUrl}}/rest/v1/attribute-groups"
+
+
+// Assuming that the given code is the code of an existing attribute group
+
+@name("attribute group (2.x only)")
+GET "https://{{baseUrl}}/rest/v1/attribute-groups/technical"
+
+
+

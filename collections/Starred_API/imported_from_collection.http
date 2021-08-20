@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e9c4a16e-bb34-4909-8b6c-2c0d1bb0d112.postman_collection.json
+
+// Webhook v1.0 is our standard webhook response. This version will be deprecated soon. We highly recommend migrating to Webhook v1.1nnPlease get in touch with our support to migrate your account to Webhook v1.1
+
+@name("Webhook v1.0")
+POST "https://{{baseUrl}}/"
+
+
+// Retrieve segment summary from your account. This summary includes your NPS score and detailed breakdown.nn**Request Parameters**nn| Parameter | Required | Description |n| ------ | ------ | ------ |n| `form` | Required | ID of the form that will be sent out |n| `segment` | Optional | Group ID to get summary data for (defaults to 0) |nnNote: Segment is an alias for Groups in Starred Platform. You can retrieve Segment ID on Groups page in Starred Platform. [Groups in Starred](https://app.starred.co
+
+@name("Dashboard Summary")
+GET "https://{{baseUrl}}/segment/summary"
+
+
+

@@ -1,0 +1,72 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return the 50 most recent mail headers belonging to the character that match the query criteria. Queries can be filtered by label, and last_mail_id can be used to paginate backwards
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mail/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/mail/`
+// 
+// Alternate route: `/v1/characters/{character_id}/mail/`
+// 
+// ---
+// This route is cached for up to 30 seconds
+
+@name("Return mail headers")
+GET "https://{{baseUrl}}/characters/:character_id/mail/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "labels"= "67676399"
+? "last_mail_id"= "-26592061"
+? "token"= "commodo irure"
+
+
+// Create and send a new mail
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mail/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/mail/`
+// 
+// Alternate route: `/v1/characters/{character_id}/mail/`
+
+@name("Send a new mail")
+POST "https://{{baseUrl}}/characters/:character_id/mail/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "recipients": [
+        {
+            "recipient_type": "mailing_list",
+            "recipient_id": 50532167
+        }
+    ],
+    "subject": "co",
+    "body": "p",
+    "approved_cost": 0
+})
+
+
+// Return all mailing lists that the character is subscribed to
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mail/lists/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/mail/lists/`
+// 
+// Alternate route: `/v1/characters/{character_id}/mail/lists/`
+// 
+// ---
+// This route is cached for up to 120 seconds
+
+@name("Return mailing list subscriptions")
+GET "https://{{baseUrl}}/characters/:character_id/mail/lists/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

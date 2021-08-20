@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e04c6fb1-e891-4983-80ec-38175b6c944e.postman_collection.json
+
+// Get api client codes.
+
+@name("Get API Client Codes")
+GET "https://{{baseUrl}}/api/Client/codes"
+"Authorization": "<>"
+
+
+// Add api client keys encodedmainkey.
+
+@name("Add API Client Keys Encodedmainkey")
+POST "https://{{baseUrl}}/api/Client/keys/encodedmainkey"
+"Authorization": "<>"
+
+
+// Get api client balances baseasset.
+
+@name("Get API Client Balances Baseasset")
+GET "https://{{baseUrl}}/api/Client/balances/:baseAsset"
+"Authorization": "<>"
+
+
+// Add api client pushtxdialogok.
+
+@name("Add API Client Pushtxdialogok")
+POST "https://{{baseUrl}}/api/Client/pushTxDialogOk"
+"Authorization": "<>"
+
+
+// Get api client properties isuserfromus.
+
+@name("Get API Client Properties Isuserfromus")
+GET "https://{{baseUrl}}/api/Client/properties/isUserFromUS"
+"Authorization": "<>"
+
+
+// Get api client pendingactions.
+
+@name("Get API Client Pendingactions")
+GET "https://{{baseUrl}}/api/Client/pendingActions"
+"Authorization": "<>"
+
+
+

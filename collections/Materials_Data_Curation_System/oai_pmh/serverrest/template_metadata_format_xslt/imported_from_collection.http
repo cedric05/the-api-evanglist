@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Map a template, a metadata format and a XSLT. Used for the transformation of the
+// template toward the metadata format thanks to the XSLT.
+
+@name("oai pmh server rest template metadata format xslt create") : "base-inherit-auth"
+POST "https://{{baseUrl}}/oai_pmh/server/rest/template_metadata_format_xslt"
+
+
+// Remove the mapping between a template, a metadata format and a XSLT
+
+@name("oai pmh server rest template metadata format xslt delete") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/oai_pmh/server/rest/template_metadata_format_xslt"
+
+
+

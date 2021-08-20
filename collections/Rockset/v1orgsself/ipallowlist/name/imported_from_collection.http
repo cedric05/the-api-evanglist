@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Get details about a IP Allowlist network policy
+
+@name("Get IP Allowlist Network Policy")
+GET "https://{{baseUrl}}/v1/orgs/self/ip/allowlist/:name"
+
+
+// Delete an entry for IP allowlist network policy.
+
+@name("Delete IP Allowlist Network Policy")
+DELETE "https://{{baseUrl}}/v1/orgs/self/ip/allowlist/:name"
+
+
+

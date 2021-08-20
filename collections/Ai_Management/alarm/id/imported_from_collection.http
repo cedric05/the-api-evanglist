@@ -1,0 +1,159 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-69935689-abac-4ca3-a7a8-e89ccfe72173.postman_collection.json
+
+// This operation retrieves a Alarm entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Alarm by ID")
+GET "https://{{baseUrl}}/alarm/:id"
+? "fields"= "ex ullamco ad"
+
+
+// This operation updates partially a Alarm entity.
+
+@name("Updates partially a Alarm")
+PATCH "https://{{baseUrl}}/alarm/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "ackState": "qui irure",
+    "ackSystemId": "reprehenderit quis Duis",
+    "ackUserId": "nulla elit sit in",
+    "alarmChangedTime": "1989-04-14T04:01:38.608Z",
+    "alarmClearedTime": "2012-03-24T09:58:49.353Z",
+    "alarmDetails": "sint ea officia",
+    "alarmEscalation": false,
+    "alarmReportingTime": "1996-11-14T10:59:13.312Z",
+    "alarmedObjectType": "eu deserunt amet veniam",
+    "clearSystemId": "anim pariatur nisi",
+    "clearUserId": "proident cillum ea reprehenderit",
+    "externalAlarmId": "est",
+    "isRootCause": false,
+    "plannedOutageIndicator": "ullamco ex Du",
+    "probableCause": "officia",
+    "proposedRepairedActions": "Lorem consectetur esse reprehenderit",
+    "reportingSystemId": "proident",
+    "serviceAffecting": false,
+    "specificProblem": "deserunt et",
+    "state": "dolore aute Lorem sunt",
+    "affectedService": [
+        {
+            "id": "c",
+            "href": "tempor consectetur qui"
+        },
+        {
+            "id": "enim",
+            "href": "in deserunt irure non"
+        }
+    ],
+    "alarmType": "processingErrorAlarm",
+    "alarmedObject": {
+        "id": "tempor esse dolor",
+        "href": "deserunt laboris"
+    },
+    "comment": [
+        {
+            "comment": "veniam",
+            "systemId": "commodo dolore in",
+            "time": "1958-03-04T19:49:49.881Z",
+            "userId": "anim magna mollit"
+        },
+        {
+            "comment": "officia laboris",
+            "systemId": "in fugiat",
+            "time": "1973-07-14T17:14:12.720Z",
+            "userId": "anim dolor culpa quis"
+        }
+    ],
+    "correlatedAlarm": [
+        {
+            "id": "in",
+            "href": "http://iMTajnCx.vvyvKKEWbcD9bygIszwyTlXUicg",
+            "name": "laboris dolor adipisicing esse",
+            "@baseType": "consequat veniam occaecat",
+            "@schemaLocation": "https://HsrrHpqhqxnbAsqehssDNMKpYQu.scvDEYurf",
+            "@type": "consequat non consectetur voluptate",
+            "@referredType": "minim cillum"
+        },
+        {
+            "id": "incididunt deserunt amet ipsum occaecat",
+            "href": "http://rosJqLqPSwAWPeeaNlSQktAeeBK.onMB+H4j5pw3.EhPbZjGdI+9d49-xLs2j0jj.H-0",
+            "name": "do",
+            "@baseType": "eu ullamco",
+            "@schemaLocation": "https://wnlBkeqKezWMSDfMHNtFUDjyhSssqolIa.lohrTeRCXUWnk+Kvt2xIpkQdJ8MMjiCyV0Mbb1XLq9TJKQ5v7twBt",
+            "@type": "anim ut ipsum",
+            "@referredType": "mollit dolor do ut"
+        }
+    ],
+    "crossedThresholdInformation": {
+        "direction": "eiusmod tempor do sunt officia",
+        "granularity": "incididunt adipisicing et anim",
+        "indicatorName": "sint veniam est",
+        "indicatorUnit": "laborum aute Excepteur reprehende",
+        "observedValue": "nisi dolor",
+        "thresholdCrossingDescription": "ut ut ea consectetur dolor",
+        "threshold": {
+            "id": "ipsum deserunt dolor esse fugiat",
+            "href": "https://EdrsrqTuSHXMhvuBxoeCZIJfHfGx.wyh,aUFvGQTrgo8GGWP,eLWOBAzWWvgx",
+            "name": "aliqua dolor",
+            "@baseType": "aliquip veniam dolor",
+            "@schemaLocation": "https://HYCRqTXwpzdVjw.ewMsY0.E",
+            "@type": "labore dolore in consequat",
+            "@referredType": "tem"
+        }
+    },
+    "parentAlarm": [
+        {
+            "id": "voluptate ullamco sunt",
+            "href": "https://unC.fogcIHG4Z9TopOxV93Hv0GDqA1BE7hJSrU5300zKGVnQpVs+9wfUri",
+            "name": "officia elit",
+            "@baseType": "cupidatat ut",
+            "@schemaLocation": "https://fWij.nooc9NiU3eXX0x.4j81w3XuLswMZtMM.u8GkvqHCvtjfthn3wG7YyZVLk2b",
+            "@type": "dolor culpa nostrud",
+            "@referredType": "Duis"
+        },
+        {
+            "id": "incididunt cillum laborum te",
+            "href": "http://HFgEmyQWYnOwJWqjDoaKXDluIYmKbARzc.usdwz8zmfP4g",
+            "name": "proident do ea enim",
+            "@baseType": "et ut",
+            "@schemaLocation": "https://qyMjf.lceB-YjRlDijOHvlIX8BtAdAgYQYl8gFkaAleZHrDrz6B2rJSfi",
+            "@type": "culpa reprehenderit exercitation Lorem",
+            "@referredType": "ullamco quis"
+        }
+    ],
+    "perceivedSeverity": "CLEARED",
+    "place": [
+        {
+            "role": "occaecat laborum cillum",
+            "id": "anim qui nostrud est",
+            "href": "sit ipsum nisi pariatur mollit",
+            "name": "sit cupidatat aute irure aliqua",
+            "@baseType": "anim enim non a",
+            "@schemaLocation": "https://ImwwfjOelJHTxgPyPwTpZN.ahsksBLYOf.oA55",
+            "@type": "pariatur exercitation",
+            "@referredType": "mollit consectetur tempor ad"
+        },
+        {
+            "role": "dolore elit in",
+            "id": "cupidatat ipsum",
+            "href": "irure aliquip ullamco ut exercitation",
+            "name": "ad",
+            "@baseType": "culpa laboris ipsum nisi",
+            "@schemaLocation": "http://Uod.enPHUXynxA3Znd8OAlS4gfKi1OJ5VvdB+yfAYcnKg4FORIGrx-QF05kxbmPh+6jrxNtff6UOyN",
+            "@type": "consequat nulla",
+            "@referredType": "dolor veniam aute officia"
+        }
+    ],
+    "@baseType": "esse ut Excepteur sed",
+    "@schemaLocation": "https://tPoGsZVIGHxItnbvlkjRkExvyKkE.acjzV5BPHi4f,skqYjYnXPBRLngBGKOTnqTWq9JGC8z2HLDfeicYi1N",
+    "@type": "ad "
+})
+
+
+// This operation deletes a Alarm entity.
+
+@name("Deletes a Alarm")
+DELETE "https://{{baseUrl}}/alarm/:id"
+
+
+

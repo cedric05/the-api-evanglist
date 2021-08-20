@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a47e4362-9c02-4662-817b-428452ef6e7d.postman_collection.json
+
+// Data is limited to the max of the indicated limit (default to 2000 records at a time);
+// Use offset parameter to navigate data.
+
+@name("Daily weather date by site/field")
+GET "https://{{baseUrl}}/api/v1/Meteorology/WeatherDaily"
+? "siteIds"= "<string>"
+? "siteIds"= "<string>"
+? "fieldIds"= "<string>"
+? "fieldIds"= "<string>"
+? "offset"= "0"
+? "limit"= "2000"
+
+
+

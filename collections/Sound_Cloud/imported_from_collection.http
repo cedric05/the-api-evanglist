@@ -1,0 +1,99 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-edf4e52a-d167-4c2f-bb89-c42269bd9481.postman_collection.json
+
+// Returns a collection of tracks
+
+@name("Get Tracks")
+GET "https://{{baseUrl}}/tracks.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of users
+
+@name("Get Users")
+GET "https://{{baseUrl}}/users.json"
+? "consumer_key"= "<>"
+
+
+// Returns the logged-in user
+
+@name("Get Me")
+GET "https://{{baseUrl}}/me.json"
+
+
+// Returns a collection of playlists
+
+@name("Get Playlists")
+GET "https://{{baseUrl}}/playlists.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of groups
+
+@name("Get Groups")
+GET "https://{{baseUrl}}/groups.json"
+? "consumer_key"= "<>"
+
+
+// Translates a website URI into an API URI
+
+@name("Get Resolve")
+GET "https://{{baseUrl}}/resolve.json"
+? "consumer_key"= "<>"
+
+
+// Returns a collection of tracks
+
+@name("Get Tracks. Format")
+GET "https://{{baseUrl}}/tracks.{{format}}"
+? "consumer_key"= "<>"
+? "q"= "<>"
+? "tags"= "<>"
+? "filter"= "<>"
+? "order"= "<>"
+? "bpm"= "<>"
+? "duration"= "<>"
+? "created_at"= "<>"
+? "ids"= "<>"
+
+
+// Returns a collection of users
+
+@name("Get Users. Format")
+GET "https://{{baseUrl}}/users.{{format}}"
+? "consumer_key"= "<>"
+? "q"= "<>"
+
+
+// Returns the logged-in user
+
+@name("Get Me. Format")
+GET "https://{{baseUrl}}/me.{{format}}"
+
+
+// Returns a collection of playlists
+
+@name("Get Playlists. Format")
+GET "https://{{baseUrl}}/playlists.{{format}}"
+? "consumer_key"= "<>"
+? "q"= "<>"
+? "filter"= "<>"
+
+
+// Returns a collection of groups
+
+@name("Get Groups. Format")
+GET "https://{{baseUrl}}/groups.{{format}}"
+? "consumer_key"= "<>"
+
+
+// Translates a website URI into an API URI
+
+@name("Get Resolve. Format")
+GET "https://{{baseUrl}}/resolve.{{format}}"
+? "consumer_key"= "<>"
+? "url"= "<>"
+
+
+

@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-007fb30c-c8ae-4349-8a4c-36e7914a7a99.postman_collection.json
+
+// This call retrieves the complete category tree that is identified by the category_tree_id parameter. The value of category_tree_id was returned by the getDefaultCategoryTreeId call in the categoryTreeId field. The response contains details of all nodes of the specified eBay category tree, as well as the eBay marketplaces that use this category tree. Note: This call can return a very large payload, so you are strongly advised to submit the request with the following HTTP header: &nbsp;&nbsp;Accep
+
+@name("Get Category Tree Category Tree")
+GET "https://{{baseUrl}}/category_tree/:category_tree_id"
+
+
+// This call retrieves the details of all nodes of the category tree hierarchy (the subtree) below a specified category of a category tree. You identify the tree using the category_tree_id parameter, which was returned by the getDefaultCategoryTreeId call in the categoryTreeId field. Note: This call can return a very large payload, so you are strongly advised to submit the request with the following HTTP header: &nbsp;&nbsp;Accept-Encoding: application/gzip With this header (in addition to the requ
+
+@name("Get Category Tree Category Tree  Get Category Subtree")
+GET "https://{{baseUrl}}/category_tree/:category_tree_id/get_category_subtree"
+? "category_id"= "<>"
+
+
+// This call returns an array of category tree leaf nodes in the specified category tree that are considered by eBay to most closely correspond to the query string q. Returned with each suggested node is a localized name for that category (based on the Accept-Language header specified for the call), and details about each of the category's ancestor nodes, extending from its immediate parent up to the root of the category tree. Note: This call can return a large payload, so you are advised to submit
+
+@name("Get Category Tree Category Tree  Get Category Suggestions")
+GET "https://{{baseUrl}}/category_tree/:category_tree_id/get_category_suggestions"
+? "q"= "<>"
+
+
+// This call returns a list of aspects that are appropriate or necessary for accurately describing items in the specified leaf category. Each aspect identifies an item attribute (for example, color) for which the seller will be required or encouraged to provide a value (or variation values) when offering an item in that category on eBay. For each aspect, getItemAspectsForCategory provides complete metadata, including: The aspect's data type, format, and entry mode Whether the aspect is required in 
+
+@name("Get Category Tree Category Tree  Get Item Aspects For Category")
+GET "https://{{baseUrl}}/category_tree/:category_tree_id/get_item_aspects_for_category"
+? "category_id"= "<>"
+
+
+

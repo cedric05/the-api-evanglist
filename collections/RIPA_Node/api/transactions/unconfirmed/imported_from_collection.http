@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f6803d-cd9d-44a5-aa66-33a5315babb5.postman_collection.json
+
+// Get all unconfirmed transactions.
+
+@name("Transactions Unconfirmed")
+GET "https://{{baseUrl}}/api/transactions/unconfirmed"
+? "senderPublicKey"= "<get>"
+? "address"= "<get>"
+
+
+// Get a single unconfirmed transaction.
+
+@name("Transactions Unconfirmed Get")
+GET "https://{{baseUrl}}/api/transactions/unconfirmed/get"
+? "id"= "<get>"
+
+
+

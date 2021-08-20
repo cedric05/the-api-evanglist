@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /photos/add
+
+@name("/photos/add")
+GET "https://{{baseUrl}}/settings/:SETTING_ID"
+? "SETTING_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /settings/all
+
+@name("/settings/all")
+POST "https://{{baseUrl}}/settings/:SETTING_ID/set"
+? "SETTING_ID"= "<string>"
+? "v"= "<string>"
+? "value"= "<integer>"
+
+
+

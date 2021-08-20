@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1f95d4ad-4bed-4612-ab22-a2ceedd7842a.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Twitter - Tweet Search") : "base-inherit-auth"
+GET "https://api.twitter.com/1.1/search/tweets.json"
+? "q"= "postman"
+? "count"= "100"
+
+
+

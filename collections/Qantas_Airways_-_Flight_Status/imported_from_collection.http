@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5960f892-99d9-474a-bce5-9589549a85b1.postman_collection.json
+
+// Returns list of flights and their status
+
+@name("Find flight status by flight number")
+GET "https://{{baseUrl}}/:flightNo"
+? "departureFrom"= "consectetur"
+? "departureTo"= "consectetur"
+? "arrivalFrom"= "consectetur"
+? "arrivalTo"= "consectetur"
+
+
+// Returns list of flights and their status
+
+@name("Find flight status by arrival port & times")
+GET "https://{{baseUrl}}/arrivals/:arrivalPort"
+? "departureFrom"= "consectetur"
+? "departureTo"= "consectetur"
+? "arrivalFrom"= "consectetur"
+? "arrivalTo"= "consectetur"
+
+
+// Returns airports
+
+@name("Find all airports based on locale")
+GET "https://{{baseUrl}}/airports"
+? "locale"= "EN_AU"
+
+
+

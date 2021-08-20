@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1496d86f-2ecc-4608-b252-72a09b88c525.postman_collection.json
+
+// Gets general metadata about the current state of the blockchain network.nUseful for building dashboards.n
+
+@name("Get Status")
+GET "https://{{baseUrl}}/status"
+"MCWSSAML": "<>"
+
+
+// Information about an application referenced by the `id` parameter. Ifnyou are permissioned to that application, this will also return thenmessage definitions you will need to comply with to issue valid transactionnentries for that application.n
+
+@name("Get App")
+GET "https://{{baseUrl}}/app/:id"
+"MCWSSAML": "<>"
+
+
+// Information about a particular address on the network. Note that thisncall may return information about a blockchain node or a signing entity.nAlso, the level of detail returned will vary depending on your permissionsnfor the query target.n
+
+@name("Get Address Address")
+GET "https://{{baseUrl}}/address/:address"
+"MCWSSAML": "<>"
+
+
+// A utility function that can be used temporarily if you don't have anlibrary handy for a specific encoding. Provides transforms betweennBase-58, Base-64 and Hexadecimal encodings. You specify the input formatnand output format you wish, and a list of values to transcode.n
+
+@name("Add Support Encoding")
+POST "https://{{baseUrl}}/support/encoding"
+"MCWSSAML": "<>"
+
+
+

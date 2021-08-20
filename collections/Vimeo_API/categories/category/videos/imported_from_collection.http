@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method gets all the videos that belong to a category.
+
+@name("Get all the videos in a category")
+GET "https://{{baseUrl}}/categories/:category/videos"
+? "direction"= "<string>"
+? "filter"= "<string>"
+? "filter_embeddable"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+// This method gets a single video from a category. Use it to determine whether the video belongs to the category.
+
+@name("Check for a video in a category")
+GET "https://{{baseUrl}}/categories/:category/videos/:video_id"
+
+
+

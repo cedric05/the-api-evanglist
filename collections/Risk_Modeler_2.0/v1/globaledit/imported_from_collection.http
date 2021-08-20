@@ -1,0 +1,132 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Bulk edit a single account or portfolio with its policies and locations using a basic query builder.
+
+@name("Bulk edit a single account or portfolio with its policies and locations") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/globaledit"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "editType": "POLICY",
+    "exposureId": 63187863,
+    "exposureType": "STEP_POLICY",
+    "updates": [
+        "consectetur",
+        "sunt do enim culpa"
+    ],
+    "editQuery": "laborum incididunt fugiat irure nisi",
+    "editCondition": {
+        "type": "Duis pariatur"
+    },
+    "updateConditions": [
+        {
+            "identifier": {
+                "type": "commodo sit sunt",
+                "dataType": "NULL",
+                "name": "occaecat in",
+                "columnName": "enim eiusm",
+                "tableName": "aliquip ad deserunt",
+                "castTo": "LINK",
+                "clearDataResolution": true,
+                "dataResolutionUS": false,
+                "validation": "ex aute ipsum"
+            },
+            "operator": "MULTIPLY",
+            "expression": {
+                "type": "id et occaecat esse ad",
+                "dataType": "STRING"
+            }
+        },
+        {
+            "identifier": {
+                "type": "et",
+                "dataType": "INTEGER",
+                "name": "officia",
+                "columnName": "dolor eu",
+                "tableName": "deserunt mollit reprehenderit Excepteur",
+                "castTo": "LINK",
+                "clearDataResolution": false,
+                "dataResolutionUS": false,
+                "validation": "magna in ea"
+            },
+            "operator": "MULTIPLY",
+            "expression": {
+                "type": "nulla in quis",
+                "dataType": "DATE_ONLY"
+            }
+        }
+    ],
+    "outputClause": "velit Lorem non ipsum"
+})
+
+
+// Bulk edit dry run on a single account or portfolio with its policies and locations using a basic query builder.
+
+@name("Bulk edit dry run on a single account or portfolio with its policies and locations") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/globaledit/dryrun"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "editType": "ACCOUNT",
+    "exposureId": 78181371,
+    "exposureType": "POLICY",
+    "updates": [
+        "dolore ex",
+        "exercitation sint id ut"
+    ],
+    "editQuery": "fugiat sint anim non ut",
+    "editCondition": {
+        "type": "ea reprehenderit am"
+    },
+    "updateConditions": [
+        {
+            "identifier": {
+                "type": "con",
+                "dataType": "LIST",
+                "name": "enim ",
+                "columnName": "et in cillum",
+                "tableName": "Lorem ipsum iru",
+                "castTo": "LINK",
+                "clearDataResolution": true,
+                "dataResolutionUS": false,
+                "validation": "in cillum ut"
+            },
+            "operator": "ADD",
+            "expression": {
+                "type": "qui",
+                "dataType": "OPERATOR"
+            }
+        },
+        {
+            "identifier": {
+                "type": "est in Duis laborum",
+                "dataType": "FLOAT",
+                "name": "occae",
+                "columnName": "occaecat",
+                "tableName": "dolore nostrud",
+                "castTo": "FLOAT",
+                "clearDataResolution": true,
+                "dataResolutionUS": true,
+                "validation": "ex fugiat laboris nostrud"
+            },
+            "operator": "MULTIPLY",
+            "expression": {
+                "type": "ipsum",
+                "dataType": "FLOAT"
+            }
+        }
+    ],
+    "outputClause": "nostrud eiusmod labore"
+})
+
+
+

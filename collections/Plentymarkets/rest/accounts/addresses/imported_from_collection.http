@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Create an address.
+
+@name("Create an address")
+POST "https://{{baseUrl}}/rest/accounts/addresses"
+
+
+// Deletes an address option. The ID of the option must be specified.
+
+@name("Delete an address option by the option ID")
+DELETE "https://{{baseUrl}}/rest/accounts/addresses/options/:optionId"
+
+
+// List address relation types.
+
+@name("List address relation types")
+GET "https://{{baseUrl}}/rest/accounts/addresses/relation_types"
+
+
+// Lists address relation types. The application and the language must be specified.n<br>Possible applications:n<ul>n<li>contact</li>n<li>order</li>n<li>warehouse</li>n<li>pos</li>n</ul>
+
+@name("List address relation types")
+GET "https://{{baseUrl}}/rest/accounts/addresses/relations/types/applications/:application/:lang"
+
+
+

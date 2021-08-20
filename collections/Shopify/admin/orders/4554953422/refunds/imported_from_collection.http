@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Calculate a refund for a line item and shipping.
+
+@name("Calculate a refund for a line item and shipping")
+POST "https://{{baseUrl}}/admin/orders/4554953422/refunds/calculate.json"
+"Content": "<>"
+
+
+// Get a representation of a single refund.
+
+@name("Get a representation of a single refund")
+GET "https://{{baseUrl}}/admin/orders/4554953422/refunds/646546.json"
+"Content": "<>"
+
+
+

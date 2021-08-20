@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-78c0dc33-e726-4d39-9b71-5a066250bed7.postman_collection.json
+
+// Creates a new video blog post.
+
+@name("Add Blog Base Hostname Add")
+POST "https://{{baseUrl}}/blog/:base-hostname/post"
+? "type"= "<>"
+? "tags"= "<>"
+? "tweet"= "<>"
+? "date"= "<>"
+? "markdown"= "<>"
+? "caption"= "<>"
+? "embed"= "<>"
+? "data"= "<>"
+
+
+// Edits a blog post.
+
+@name("Add Blog Base Hostname Add Edit")
+POST "https://{{baseUrl}}/blog/:base-hostname/post/edit"
+? "type"= "<>"
+? "tags"= "<>"
+? "tweet"= "<>"
+? "date"= "<>"
+? "markdown"= "<>"
+? "id"= "<>"
+
+
+// Reblogs a post.
+
+@name("Add Blog Base Hostname Add Reblog")
+POST "https://{{baseUrl}}/blog/:base-hostname/post/reblog"
+? "type"= "<>"
+? "tags"= "<>"
+? "tweet"= "<>"
+? "date"= "<>"
+? "markdown"= "<>"
+? "id"= "<>"
+? "reblog_key"= "<>"
+? "comment"= "<>"
+
+
+// Deletes a post.
+
+@name("Add Blog Base Hostname Add Delete")
+POST "https://{{baseUrl}}/blog/:base-hostname/post/delete"
+? "id"= "<>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** This feature is only available if you have the Advanced AR Settlement feature enabled. The Advanced AR Settlement feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnRetrieves the details about a revenue schedule by specifying a valid debit memo item ID.n
+
+@name("Get revenue schedule by debit memo item IDn")
+GET "https://{{baseUrl}}/v1/revenue-schedules/debit-memo-items/:dmi-id"
+
+
+// **Note:** This feature is only available if you have the Advanced AR Settlement feature enabled. The Advanced AR Settlement feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnCreates a revenue schedule for a debit memo item, and automatically distribute the revenue by specifying the recognition start and end dates.n
+
+@name("Create revenue schedule for debit memo item (distribute by date range)n")
+POST "https://{{baseUrl}}/v1/revenue-schedules/debit-memo-items/:dmi-id/distribute-revenue-with-date-range"
+
+
+

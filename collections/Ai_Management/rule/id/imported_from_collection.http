@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-69935689-abac-4ca3-a7a8-e89ccfe72173.postman_collection.json
+
+// This operation retrieves a Rule entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Rule by ID")
+GET "https://{{baseUrl}}/rule/:id"
+? "fields"= "ex ullamco ad"
+
+
+// This operation deletes a Rule entity.
+
+@name("Deletes a Rule")
+DELETE "https://{{baseUrl}}/rule/:id"
+
+
+// This operation updates partially a Rule entity.
+
+@name("Updates partially a Rule")
+PATCH "https://{{baseUrl}}/rule/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "name": "quis commodo velit sint sunt",
+    "@baseType": "enim eiusmod aute consectetur cupidatat",
+    "@schemaLocation": "https://rZAore.irhD4K68rbJmLmQFfI.Z.QrP",
+    "@type": "nisi esse"
+})
+
+
+

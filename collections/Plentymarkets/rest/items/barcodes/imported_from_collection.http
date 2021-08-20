@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists all barcodes.
+
+@name("List barcodes")
+GET "https://{{baseUrl}}/rest/items/barcodes"
+? "updatedAt"= "<post>"
+
+
+// Lists barcodes linked to the specified referrer. The ID of the referrer must be specified.
+
+@name("List barcodes by referrer")
+GET "https://{{baseUrl}}/rest/items/barcodes/referrer/:referrerId"
+
+
+// Lists all barcodes of a specific type. The type must be specified.
+
+@name("List barcodes by type")
+GET "https://{{baseUrl}}/rest/items/barcodes/type/:type"
+
+
+

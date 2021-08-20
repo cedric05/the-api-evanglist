@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-255e9189-3b5f-4c9f-b400-d4f087ad771b.postman_collection.json
+
+// Get contour based on serviceType (FM, TV). Response returned in GeoJSON, JSONP, Shapefile, KML, GML, CSV.
+
+@name("Get Contour by Service Type")
+GET "https://{{baseUrl}}/coverage.{{format}}"
+? "serviceType"= ""
+? "lat"= ""
+? "lon"= ""
+? "nradial"= ""
+? "rcamsl"= ""
+? "field"= ""
+? "channel"= ""
+? "erp"= ""
+? "curve"= ""
+? "pattern"= ""
+? "ant_rotation"= "0"
+? "pop"= "false"
+? "area"= "false"
+? "src"= ""
+? "unit"= "m"
+
+
+

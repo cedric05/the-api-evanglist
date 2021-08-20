@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7871656e-e03d-47bc-b756-528d4b913bbd.postman_collection.json
+
+// This operation list or find BalanceAction entities
+
+@name("List or find BalanceAction objects")
+GET "https://{{baseUrl}}/balanceAction"
+? "fields"= "id voluptate"
+? "offset"= "6696224"
+? "limit"= "6696224"
+
+
+// This operation retrieves a BalanceAction entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a BalanceAction by ID")
+GET "https://{{baseUrl}}/balanceAction/:id"
+? "fields"= "id voluptate"
+
+
+

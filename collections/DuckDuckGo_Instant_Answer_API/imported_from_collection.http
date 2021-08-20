@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-481ee746-ec7c-4a96-978f-fec051e294d0.postman_collection.json
+
+// Our Zero-click Info API gives you free access to much of our topic summaries, categories, disambiguation, !bang redirects, definitions and more.
+
+@name("Search")
+GET "https://{{baseUrl}}/"
+? "callback"= "<>"
+? "format"= "<>"
+? "no_html"= "<>"
+? "no_redirect"= "<>"
+? "q"= "<>"
+? "skip_disambig"= "<>"
+
+
+

@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Returns a list of car makes matching the search term.
+
+@name("Car Makes") : "base-inherit-auth"
+POST "https://{{baseUrl}}/makes/car"
+"Content-Type": "application/json"
+json({
+    "automarke": "la"
+})
+
+
+// Returns a list of motorcycle makes matching the search term.
+
+@name("Motorcycle Makes") : "base-inherit-auth"
+POST "https://{{baseUrl}}/makes/motorcycle"
+"Content-Type": "application/json"
+json({
+    "motorradmarke": "su"
+})
+
+
+

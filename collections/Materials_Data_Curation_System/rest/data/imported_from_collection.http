@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Download the XML file from a data
+
+@name("rest data download read") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/data/download/:id/"
+
+
+// Retrieve a Data with template information
+
+@name("rest data get-full list") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/data/get-full"
+
+
+// Give the user permissions for a list of data ids
+
+@name("rest data permissions list") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/data/permissions/"
+
+
+// Retrieve a data
+
+@name("rest data read") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/data/:id/"
+
+
+

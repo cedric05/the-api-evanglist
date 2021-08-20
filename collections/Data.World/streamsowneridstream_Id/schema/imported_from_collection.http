@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieve a stream's schema.
+
+@name("Retrieve stream schema") : "base-inherit-auth"
+GET "https://{{baseUrl}}/streams/:owner/:id/:streamId/schema"
+
+
+// Set or update a stream's schema.
+// 
+// The schema of a stream defines its primary key(s) and sort/sequence field. 
+// 
+// data.world streams are append-only by default. Alternatively, if a primary key is specified, data.world will replace records with the same primary key value. data.world will sort records by sequence field value and will discard all but the last record appended for each given primary key value.
+// 
+// The `updateMethod` parameter specifies how data.world should handle existing records when schema is updated. Currently, the only `updateMethod` supported is `TRUNCATED`. data.world will discard all records when the schema is updated.
+
+@name("Set / Update stream schema") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/streams/:owner/:id/:streamId/schema"
+"Content-Type": "application/json"
+json({
+    "updateMethod": "TRUNCATE",
+    "primaryKeyFields": [
+        "proident aute",
+        "et ad ea"
+    ],
+    "sequenceField": "reprehender"
+})
+
+
+

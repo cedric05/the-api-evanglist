@@ -1,0 +1,122 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The PUSH operation allows you to “push” (or append) data into an array without overriding an existing value.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#atomic-updates-to-entries>Atomic Updates to Entries</a> API Reference document
+
+@name("PUSH Operation")
+PUT "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entry": {
+        "multiple_number": {
+            "PUSH": {
+                "data": [
+                    2,
+                    3
+                ]
+            }
+        },
+        "multiple_group": {
+            "PUSH": {
+                "data": {
+                    "demo_field": "abc"
+                }
+            }
+        }
+    }
+})
+
+
+// <p>The PULL operation allows you to pull data from an array field based on a query passed.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#atomic-updates-to-entries>Atomic Updates to Entries</a> API Reference document
+
+@name("PULL Operation")
+PUT "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entry": {
+        "multiple_number": {
+            "PULL": {
+                "query": {
+                    "$in": [
+                        2,
+                        3
+                    ]
+                }
+            }
+        }
+    }
+})
+
+
+// <p>The UPDATE operation allows you to update data at a specific index. This operation works for both singular fields and fields marked “Multiple”.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#atomic-updates-to-entries>Atomic Updates to Entries</a> API Reference document
+
+@name("UPDATE Operation")
+PUT "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entry": {
+        "multiple_number": {
+            "UPDATE": {
+                "index": 0,
+                "data": 1
+            }
+        }
+    }
+})
+
+
+// <p>The ADD operation reads the latest value of a “Number” field and increments it by a numeric passed along with the operator. The increment occurs irrespective of what the current value of the field is.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#atomic-updates-to-entries>Atomic Updates to Entries</a> API Reference document
+
+@name("ADD Operation")
+PUT "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entry": {
+        "number": {
+            "ADD": 1
+        }
+    }
+})
+
+
+// <p>The SUB operation works the opposite of ADD. It reads the latest value of a “Number” field and decrements it by a numeric value passed along with the operator.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#atomic-updates-to-entries>Atomic Updates to Entries</a> API Reference document
+
+@name("SUB Operation")
+PUT "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entry": {
+        "number": {
+            "SUB": 2
+        }
+    }
+})
+
+
+

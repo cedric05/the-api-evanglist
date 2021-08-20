@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-520eedaa-7e93-4d4f-b389-c0bf3c1f2f52.postman_collection.json
+
+// Returns the user records for all users in all workspaces and organizations accessible to the authenticated user. Accepts an optional workspace ID parameter.
+
+@name("Get Users")
+GET "https://{{baseUrl}}/users"
+? "workspace"= "<string>"
+
+
+// Returns the full user record for the currently authenticated user.
+
+@name("Get Users Me")
+GET "https://{{baseUrl}}/users/me"
+
+
+

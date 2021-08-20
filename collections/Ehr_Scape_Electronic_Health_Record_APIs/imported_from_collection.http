@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-078f0c0e-f03d-4124-bda1-c7d8042a0e64.postman_collection.json
+
+// Import csv data..
+
+@name("Import CSV data.")
+POST "https://{{baseUrl}}/import/csv"
+? "committerName"= "<>"
+? "composerName"= "<>"
+? "converterLocale"= "<>"
+? "subjectNamespace"= "<get>"
+? "templateId"= "<get>"
+? "templateLanguage"= "<>"
+
+
+// Returns presentation documents for a specified aql query..
+
+@name("Returns presentation documents for a specified AQL query.")
+POST "https://{{baseUrl}}/presentation"
+
+
+// Returns the results of the specified aql query..
+
+@name("Returns the results of the specified AQL query.")
+GET "https://{{baseUrl}}/query"
+? "aql"= "<get>"
+
+
+

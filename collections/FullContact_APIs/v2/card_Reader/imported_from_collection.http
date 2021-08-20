@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cbe52561-c0c1-4a0b-9d4c-69380596376d.postman_collection.json
+
+// Use the view requests method to view a paged history of your transcriptions.
+
+@name("/v2/cardReader")
+GET "https://{{baseUrl}}/v2/cardReader"
+? "page"= "<string>"
+? "returnedData"= "<string>"
+
+
+// Use the Upload Card method to submit front and back photos of a business card for processing.
+
+@name("/v2/cardReader")
+POST "https://{{baseUrl}}/v2/cardReader"
+"Content-Type": "multipart/form-data"
+? "webhookUrl"= "<string>"
+? "verified"= "<string>"
+? "returnedData"= "<string>"
+? "format"= "<string>"
+? "sandbox"= "<string>"
+? "URID"= "<string>"
+files(
+	("front", "<binary>"),
+	("back", "<binary>")
+)
+
+
+

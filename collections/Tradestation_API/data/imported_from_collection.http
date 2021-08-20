@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Finds the given symbol and returns a collection of fields describing thensymbol, its origin exchange, and other pertinant information.n
+
+@name("Get Symbol Infon")
+GET "https://{{baseUrl}}/data/symbol/:symbol"
+? "access_token"= "<string>"
+
+
+// Gets the latest Level 1 Quote for the given Symboln
+
+@name("Get Quoten")
+GET "https://{{baseUrl}}/data/quote/:symbols"
+? "access_token"= "<string>"
+
+
+

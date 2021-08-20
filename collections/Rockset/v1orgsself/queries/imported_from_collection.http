@@ -1,0 +1,60 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Make a SQL query to Rockset.
+
+@name("Query")
+POST "https://{{baseUrl}}/v1/orgs/self/queries"
+"Content-Type": "application/json"
+json({
+    "sql": {
+        "query": "SELECT * FROM foo where _id = :_id",
+        "parameters": [
+            {
+                "name": "_id",
+                "type": "string",
+                "value": "85beb391"
+            },
+            {
+                "name": "_id",
+                "type": "string",
+                "value": "85beb391"
+            }
+        ],
+        "default_row_limit": 73595355,
+        "generate_warnings": false,
+        "profiling_enabled": false
+    }
+})
+
+
+// Validate a SQL query with Rockset's parser and planner.
+
+@name("Validate Query")
+POST "https://{{baseUrl}}/v1/orgs/self/queries/validations"
+"Content-Type": "application/json"
+? "parameters"= "false"
+json({
+    "sql": {
+        "query": "SELECT * FROM foo where _id = :_id",
+        "parameters": [
+            {
+                "name": "_id",
+                "type": "string",
+                "value": "85beb391"
+            },
+            {
+                "name": "_id",
+                "type": "string",
+                "value": "85beb391"
+            }
+        ],
+        "default_row_limit": 73595355,
+        "generate_warnings": false,
+        "profiling_enabled": false
+    }
+})
+
+
+

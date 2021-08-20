@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method removes a video from the specified album.
+
+@name("Remove a video from an album")
+DELETE "https://{{baseUrl}}/me/albums/:album_id/videos/:video_id"
+
+
+// Information about this method appears below.
+
+@name("Set a video as the album thumbnail")
+POST "https://{{baseUrl}}/me/albums/:album_id/videos/:video_id/set_album_thumbnail"
+
+
+

@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Get list of EDMs based on query and pagination criteria.
+
+@name("Get list of EDMs.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/datasources"
+"Authorization": "Bearer <Bearer Token>"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Performs admin action on data source.
+
+@name("Performs an admin action on data source") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/datasources"
+"Authorization": "Bearer <Bearer Token>"
+? "datasourcename"= "Excepteur nisi in"
+? "filename"= "Excepteur nisi in"
+? "operation"= "CREATE"
+? "servername"= "Excepteur nisi in"
+? "format"= "MDF"
+
+
+// Delete EDM.
+
+@name("Delete EDM.") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/datasources/:datasourcename"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Get list of all tenant DB instance based on query parameters
+
+@name("Get list of all tenant DB instances.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/datasources/db-instances"
+"Authorization": "Bearer <Bearer Token>"
+? "type"= "Excepteur nisi in"
+? "status"= "Excepteur nisi in"
+
+
+

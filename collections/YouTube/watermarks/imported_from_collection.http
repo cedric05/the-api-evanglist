@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bdca8cb-a591-4d01-90eb-dc36f5720cac.postman_collection.json
+
+// Uploads a watermark image to YouTube and sets it for a channel.
+
+@name("Add Watermarks Set")
+POST "https://{{baseUrl}}/watermarks/set"
+? "channelId"= "<post>"
+? "onBehalfOfContentOwner"= "<>"
+
+
+// Deletes a channel's watermark image.
+
+@name("Add Watermarks Unset")
+POST "https://{{baseUrl}}/watermarks/unset"
+? "channelId"= "<post>"
+? "onBehalfOfContentOwner"= "<>"
+
+
+

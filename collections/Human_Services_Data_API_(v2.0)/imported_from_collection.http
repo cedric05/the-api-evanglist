@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("update Program Service")
+PUT "https://{{baseUrl}}/organizations/:organization_id/programs/:program_id/services/:service_id"
+"Content-Type": "application/json"
+json({
+    "id": "volupt",
+    "name": "dolore sed mollit inc",
+    "organization_id": "magna sed in",
+    "status": "adipisicing dolore ullamco",
+    "program_id": "mollit",
+    "alternate_name": "tempor aliqua Lorem",
+    "description": "dolor Dui",
+    "url": "Lorem consectetur nulla",
+    "email": "officia ut mollit",
+    "interpretation_services": "deserunt amet ex",
+    "application_process": "ullamco",
+    "wait_time": "Lorem do sunt",
+    "fees": "cupidatat velit reprehenderit",
+    "accreditations": "pariatur in amet et",
+    "licenses": "eiusmod qui fugiat"
+})
+
+
+@name("update Location")
+PUT "https://{{baseUrl}}/locations/:location_id"
+"Content-Type": "application/json"
+json({
+    "id": "in mollit",
+    "organization_id": "qui ullamco",
+    "name": "mollit esse in Duis",
+    "alternate_name": "nostrud consequat quis",
+    "description": "occaecat laboris officia labore deserunt",
+    "transportation": "sint",
+    "latitude": 48393841.19266802,
+    "longitude": -34995028.770060845
+})
+
+
+@name("delete Location Complete")
+DELETE "https://{{baseUrl}}/locations/:location_id"
+
+
+

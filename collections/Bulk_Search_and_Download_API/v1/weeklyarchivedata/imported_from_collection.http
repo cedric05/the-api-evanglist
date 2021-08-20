@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c943980b-661f-4048-933f-76da45d62852.postman_collection.json
+
+@name("get Status")
+GET "https://{{baseUrl}}/v1/weeklyarchivedata/apistatus"
+
+
+// Downloads inpu zip file if available
+
+@name("Download input zip file if available.")
+GET "https://{{baseUrl}}/v1/weeklyarchivedata/downloadWeeklyArchive"
+? "weeklyArchiveFileName"= "<string>"
+
+
+// Return the list of weekly zip data.
+
+@name("Searches for weekly zip data in the provided date range")
+GET "https://{{baseUrl}}/v1/weeklyarchivedata/searchWeeklyArchiveData"
+? "fromDate"= "<string>"
+? "toDate"= "<string>"
+
+
+

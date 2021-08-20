@@ -1,0 +1,168 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Adds documents to a closing or updates their metadata, like their closing designation.
+
+@name("Add or Update Closing Documents") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/close/closings/:id/documents"
+"Content-Type": "application/json"
+json({
+    "documents": [
+        {
+            "documentID": "b2006a70-a19b-4b7f-973d-3a561e159060",
+            "sourceType": "LENDER",
+            "closingDesignation": "NOTE",
+            "requireNotarization": true,
+            "signersRequired": "ALL",
+            "recipients": [
+                {
+                    "partyId": "fecbc83e-7fd2-421d-b21d-3b5634d5c5f0",
+                    "tabExtractionMethod": "EXPERE_ACROFORM",
+                    "extractTabs": [
+                        {
+                            "fieldName": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "required": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "fieldName": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "required": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "tabs": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ]
+                },
+                {
+                    "partyId": "fecbc83e-7fd2-421d-b21d-3b5634d5c5f0",
+                    "tabExtractionMethod": "EXPERE_ACROFORM",
+                    "extractTabs": [
+                        {
+                            "fieldName": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "required": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "fieldName": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "required": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "tabs": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "documentID": "b2006a70-a19b-4b7f-973d-3a561e159060",
+            "sourceType": "LENDER",
+            "closingDesignation": "NOTE",
+            "requireNotarization": true,
+            "signersRequired": "ALL",
+            "recipients": [
+                {
+                    "partyId": "fecbc83e-7fd2-421d-b21d-3b5634d5c5f0",
+                    "tabExtractionMethod": "ENCOMPASS",
+                    "extractTabs": [
+                        {
+                            "fieldName": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "required": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "fieldName": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "required": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "tabs": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ]
+                },
+                {
+                    "partyId": "fecbc83e-7fd2-421d-b21d-3b5634d5c5f0",
+                    "tabExtractionMethod": "MANUAL",
+                    "extractTabs": [
+                        {
+                            "fieldName": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "required": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "fieldName": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "required": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "tabs": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+})
+
+
+// Remove documents from a closing.
+
+@name("Remove Closing Documents") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/close/closings/:id/documents"
+? "ids"= "a5e69a6f-a522-4750-a740-7c748f71d4d5"
+
+
+

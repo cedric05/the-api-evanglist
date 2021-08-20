@@ -1,0 +1,5 @@
+<div class="humanColumnApiDescription markdown formalTheme"> <p>Connect to the 2Checkout Commerce API and Ecosystem.</p> <p>Before you start using the 2Checkout API, make sure you are PCI DSS compliant. Find out more details about what PCI DSS compliance means and what you should do to be PCI compliant <a href="https://knowledgecenter.2checkout.com/Onboarding/Merchant-PCI-Compliance">here</a>.</p> <h1>Authentication</h1> <p>To authenticate to the 2Checkout REST API include a header with the following structure into your requests:</p> <p><strong>X-Avangate-Authentication: code="{VENDOR_CODE}" date="{REQUEST_DATE_TIME}" hash="{HASH}"</strong></p> <ul> <li> <p><strong>VENDOR_CODE</strong>: Your unique 2Checkout supplied merchant code.</p> </li> <li> <p><strong>REQUEST_DATE_TIME</strong>: The <strong>UTC</strong> date time of the request. Format: <strong>YYYY-MM-DD HH:MM:SS</strong>. You must provide the time of the request in the <strong>GMT</strong> timezone.</p> </li> <li> <p><strong>HA
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

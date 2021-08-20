@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9515f51c-5f32-4b7c-897d-760e3b24732f.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Ocp-Apim-Subscription-Key": "{{apiKey}}"
+
+
+@name("Search") : "base-inherit-auth"
+GET "https://api.cognitive.microsoft.com/bing/v7.0/search"
+? "count"= "50"
+? "offset"= "0"
+? "q"= "{{keyword}}"
+? "responseFilter"= "Webpages"
+? "setLang"= "en"
+
+
+

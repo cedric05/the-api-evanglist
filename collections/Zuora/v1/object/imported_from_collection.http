@@ -1,0 +1,109 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+@name("CRUD: Retrieve CommunicationProfile")
+GET "https://{{baseUrl}}/v1/object/communication-profile/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Retrieve CreditBalanceAdjustment")
+GET "https://{{baseUrl}}/v1/object/credit-balance-adjustment/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Delete Feature")
+DELETE "https://{{baseUrl}}/v1/object/feature/:id"
+
+
+@name("CRUD: Delete InvoiceItemAdjustment")
+DELETE "https://{{baseUrl}}/v1/object/invoice-item-adjustment/:id"
+
+
+@name("CRUD: Retrieve InvoiceItem")
+GET "https://{{baseUrl}}/v1/object/invoice-item/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Retrieve InvoiceSplitItem")
+GET "https://{{baseUrl}}/v1/object/invoice-split-item/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Retrieve InvoiceSplit")
+GET "https://{{baseUrl}}/v1/object/invoice-split/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Delete Invoice")
+DELETE "https://{{baseUrl}}/v1/object/invoice/:id"
+
+
+// This REST API reference describes how to retrieve a Payment Method Snapshot.nnA Payment Method Snapshot is a copy of the particular Payment Method used in a transaction. If the Payment Method is deleted, the Payment Method Snapshot continues to retain the data used in each of the past transactions.nn## NotesnThe following Payment Method fields are not available in Payment Method Snapshots:nn* `Active`n* `AchAddress1`n* `AchAddress2`n* `CreatedById`n* `CreatedDate`n* `UpdatedById`n* `UpdatedDate`
+
+@name("CRUD: Retrieve PaymentMethodSnapshot")
+GET "https://{{baseUrl}}/v1/object/payment-method-snapshot/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Retrieve PaymentMethodTransactionLog")
+GET "https://{{baseUrl}}/v1/object/payment-method-transaction-log/:id"
+? "fields"= "<>"
+
+
+// Retrieves information about a specific payment transaction log.n
+
+@name("CRUD: Get payment transaction log")
+GET "https://{{baseUrl}}/v1/object/payment-transaction-log/:id"
+
+
+@name("CRUD: Delete ProductFeature")
+DELETE "https://{{baseUrl}}/v1/object/product-feature/:id"
+
+
+@name("CRUD: Retrieve ProductRatePlanChargeTier")
+GET "https://{{baseUrl}}/v1/object/product-rate-plan-charge-tier/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Delete ProductRatePlanCharge")
+DELETE "https://{{baseUrl}}/v1/object/product-rate-plan-charge/:id"
+
+
+@name("CRUD: Retrieve RatePlanChargeTier")
+GET "https://{{baseUrl}}/v1/object/rate-plan-charge-tier/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Retrieve RatePlanCharge")
+GET "https://{{baseUrl}}/v1/object/rate-plan-charge/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Retrieve RatePlan")
+GET "https://{{baseUrl}}/v1/object/rate-plan/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Retrieve RefundInvoicePayment")
+GET "https://{{baseUrl}}/v1/object/refund-invoice-payment/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Retrieve RefundTransactionLog")
+GET "https://{{baseUrl}}/v1/object/refund-transaction-log/:id"
+? "fields"= "<>"
+
+
+@name("CRUD: Retrieve SubscriptionProductFeature")
+GET "https://{{baseUrl}}/v1/object/subscription-product-feature/:id"
+? "fields"= "<>"
+
+
+// **Note:** This feature is unavailable if you have the Orders feature enabled. See [Orders Migration Guidance](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AB_Orders_Migration_Guidance) for more information.n
+
+@name("CRUD: Delete Subscription")
+DELETE "https://{{baseUrl}}/v1/object/subscription/:id"
+
+
+

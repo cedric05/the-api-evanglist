@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd3bb79e-7d36-49f2-9d90-ac848a0b6d74.postman_collection.json
+
+// Returns a PDF report based on a site ID
+
+@name("Returns A PDF Report For A Specific Site")
+GET "https://{{baseUrl}}/reports/sites/:id"
+? "from"= "<>"
+? "to"= "<>"
+? "reports"= "<>"
+? "log_type"= "<get>"
+? "compare"= "<>"
+
+
+// Returns a report based on a site ID
+
+@name("Find Sites By ID")
+GET "https://{{baseUrl}}/reports/tags/:id"
+? "from"= "<>"
+? "to"= "<>"
+? "reports"= "<>"
+? "log_type"= "<get>"
+? "compare"= "<>"
+
+
+

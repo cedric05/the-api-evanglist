@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aa655ea0-f6d4-4615-b1ce-a1873e7cfc4c.postman_collection.json
+
+// Return the topic specified by the given GUID. 
+
+@name("Topic")
+GET "https://{{baseUrl}}/topic/:guid/"
+? "access_key"= "<>"
+
+
+// The guid for the topic.
+
+@name("Topic Sources")
+GET "https://{{baseUrl}}/topic/:guid/sources/"
+? "access_key"= "<>"
+? "from_date"= "<>"
+? "offset"= "<>"
+? "pagesize"= "<>"
+? "sources"= "<>"
+? "source_countries"= "<>"
+? "source_filter_mode"= "<>"
+? "source_filter_name"= "<>"
+? "to_date"= "<>"
+
+
+// Returns a list of topics related to the topic specified.
+
+@name("Related Topics")
+GET "https://{{baseUrl}}/topic/:guid/topics/"
+? "access_key"= "<>"
+? "from_date"= "<>"
+? "guid"= "<>"
+? "offset"= "<>"
+? "pagesize"= "<>"
+? "topics"= "<>"
+? "topic_classifications"= "<>"
+? "topic_filter_mode"= "<>"
+? "topic_filter_name"= "<>"
+? "topic_subclassifications"= "<>"
+? "to_date"= "<>"
+
+
+// Returns a list of real-time tweets related to the specified topic.
+
+@name("Related Tweets")
+GET "https://{{baseUrl}}/topic/:guid/tweets/"
+? "access_key"= "<>"
+? "offset"= "<>"
+? "pagesize"= "<>"
+
+
+// Returns a list of videos related to the specified topic.
+
+@name("Topic Videos")
+GET "https://{{baseUrl}}/topic/:guid/videos/"
+? "access_key"= "<>"
+? "categories"= "<>"
+? "offset"= "<>"
+? "pagesize"= "<>"
+
+
+

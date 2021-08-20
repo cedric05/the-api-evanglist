@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Secure Agent Plugin Property") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/SecureAgentPluginProperty/"
+
+
+@name("Secure Agent Plugin Property Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/SecureAgentPluginProperty/{ID}/"
+
+
+@name("Describe Secure Agent Plugin Property") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/SecureAgentPluginProperty/describe/"
+
+
+

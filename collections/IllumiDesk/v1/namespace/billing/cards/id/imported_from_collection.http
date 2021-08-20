@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete a credit card") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/:namespace/billing/cards/:id/"
+
+
+@name("Get credit card by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/billing/cards/:id/"
+
+
+@name("Update a credit card") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/:namespace/billing/cards/:id/"
+"Content-Type": "application/json"
+json({
+    "address_city": "<string>",
+    "address_country": "<string>",
+    "address_line1": "<string>",
+    "address_line2": "<string>",
+    "address_state": "<string>",
+    "address_zip": "<string>",
+    "exp_month": "<integer>",
+    "exp_year": "<integer>",
+    "name": "<string>"
+})
+
+
+@name("Replace a credit card") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/:namespace/billing/cards/:id/"
+"Content-Type": "application/json"
+json({
+    "address_city": "<string>",
+    "address_country": "<string>",
+    "address_line1": "<string>",
+    "address_line2": "<string>",
+    "address_state": "<string>",
+    "address_zip": "<string>",
+    "exp_month": "<integer>",
+    "exp_year": "<integer>",
+    "name": "<string>"
+})
+
+
+

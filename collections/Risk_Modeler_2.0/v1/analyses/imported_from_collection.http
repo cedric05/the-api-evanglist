@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves all analyses. This endpoint has been deprecated, please use /v2/analyses instead. Support for this endpoint will end on Wed, 15 Dec 2021 00:00:00 GMT
+
+@name("Get all analyses") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analyses"
+"Authorization": "Bearer <Bearer Token>"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Delete given list of analysis
+
+@name("Deletes given list of analysis") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/analyses"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json([
+    45831674,
+    2250844
+])
+
+
+

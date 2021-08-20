@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d2c214b-77c4-4e90-8dc4-3cd4493a1c9a.postman_collection.json
+
+// Delete the follow for given user or startup.
+
+@name("Delete Follow")
+DELETE "https://{{baseUrl}}/follows"
+? "id"= "<get>"
+? "type"= "<get>"
+
+
+// Returns a batched lists of follows
+
+@name("Get Batch of Follows")
+GET "https://{{baseUrl}}/follows/batch"
+? "ids"= "<object>"
+
+
+// Gets the relationships for followers
+
+@name("Get Follows Relationship")
+GET "https://{{baseUrl}}/follows/relationship"
+? "source_id"= "<>"
+? "target_id"= "<>"
+? "target_type"= "<>"
+
+
+

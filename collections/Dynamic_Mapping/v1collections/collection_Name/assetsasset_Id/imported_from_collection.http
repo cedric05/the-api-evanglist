@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-daa7ecf3-bea2-44a6-8a62-868217e1296e.postman_collection.json
+
+// Insert a location entry into the named collection for the given asset identifier and timestamp. In addition tonadding the new asset location, the request also controls the retention of the location history that isnstored for the given asset in the given collection.nn  - If the mandatory property retain_history is set to false then all existing location history for then  given asset is removed before the new location is added.nn  - If the retain_history property is set to true and the optional pr
+
+@name("Add an asset location into a collection.")
+PUT "https://{{baseUrl}}/v1/collections/:collectionName/assets/:assetId"
+
+
+// Returns the locations for an asset by three types of query for a given customer id and collection name.nThe returned locations are in descending order of time.nThree types of query:n1. type=latest: The latest n locations will be returned.n2. type=timeperiod: Locations within a time period will be returned.n3. type=bbox: Locations within a time period and a spatial bounding box will be returned.n
+
+@name("Return locations for an asset by query condition for given customer id and collection name.")
+POST "https://{{baseUrl}}/v1/collections/:collectionName/assets/:assetId/query"
+
+
+

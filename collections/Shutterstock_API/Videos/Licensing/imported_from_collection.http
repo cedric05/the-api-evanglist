@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("License")
+POST "https://{{baseurl}}/videos/licenses"
+"Content-Type": "application/json"
+? "license"= ""
+? "search_id"= ""
+json({
+    "videos": [
+        {
+            "video_id": "123",
+            "size": "hd",
+            "subscription_id": "s881",
+            "price": 10,
+            "metadata": {
+                "purchase_order": "123",
+                "client": "",
+                "job": "",
+                "other": ""
+            }
+        }
+    ]
+})
+
+
+@name("List Licenses")
+GET "https://{{baseurl}}/videos/licenses"
+? "video_id"= ""
+? "license"= ""
+? "page"= ""
+? "per_page"= ""
+? "sort"= ""
+
+
+@name("Redownload")
+GET "https://{{baseurl}}/videos/licenses/:id/downloads"
+
+
+

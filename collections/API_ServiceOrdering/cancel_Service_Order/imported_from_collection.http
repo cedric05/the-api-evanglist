@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-709f10fa-673c-4910-aba3-793f40dc6d4b.postman_collection.json
+
+// This operation list or find CancelServiceOrder entities
+
+@name("List or find CancelServiceOrder objects")
+GET "https://{{baseUrl}}/cancelServiceOrder"
+? "fields"= "deserunt incididunt enim non qui"
+? "offset"= "96994698"
+? "limit"= "96994698"
+
+
+// This operation creates a CancelServiceOrder entity.
+
+@name("Creates a CancelServiceOrder")
+POST "https://{{baseUrl}}/cancelServiceOrder"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "serviceOrder": {
+        "id": "elit dolore",
+        "href": "https://WFkRaCSVVVXVMaNmMjVaB.tbMLGlFv5PLvFA2beTn",
+        "name": "qui u",
+        "@baseType": "est ut",
+        "@schemaLocation": "http://rHUxhazWjH.ffgpL-bEJitKnKjumId8YfOfaBWFmcpbdEovvckk,RPzQx2yfHiAe.cK6BHGUA8",
+        "@type": "mollit magna culpa aliquip oc",
+        "@referredType": "labore aliquip deserunt consectetur"
+    },
+    "cancellationReason": "dolore nostrud",
+    "requestedCancellationDate": "1983-08-06T06:54:06.911Z",
+    "@baseType": "do ipsum tempor est reprehe",
+    "@schemaLocation": "https://ovmHxYMdalDoRwSRTvqIvqAlCwv.iefJGdwigHvP4ecY47b8LzdQdGnWGSFb",
+    "@type": "reprehenderit quis mollit"
+})
+
+
+// This operation retrieves a CancelServiceOrder entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a CancelServiceOrder by ID")
+GET "https://{{baseUrl}}/cancelServiceOrder/:id"
+? "fields"= "deserunt incididunt enim non qui"
+
+
+

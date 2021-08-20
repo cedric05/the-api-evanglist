@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Create remote file metadata. This operation is the basis for a remote file upload. A successful HTTP `POST` will create a `FileDocument` record with a unique ID and a transient `uploadUrl` field. This signed `uploadUrl` can then be used by a client with an HTTP `PUT` request to do the actual upload to remote storage. The `uploadUrl` will expire after 30 minutes. The input payload to this endpoint should also contain a setting for the `privateAccess` field to indicate whether the file should have
+
+@name("Create a file")
+POST "https://{{baseUrl}}/files"
+? "No Name"= "<string>"
+
+
+// Read a single remote file metadata item by ID.
+
+@name("Read a file")
+GET "https://{{baseUrl}}/files/:fileId"
+? "No Name"= "<string>"
+
+
+

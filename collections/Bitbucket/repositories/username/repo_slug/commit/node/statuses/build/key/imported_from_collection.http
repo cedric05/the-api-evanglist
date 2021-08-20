@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns the specified build status for a commit.
+
+@name("/repositories/:username/:repo_slug/commit/:node/statuses/build/:key")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/commit/:node/statuses/build/:key"
+
+
+// Used to update the current status of a build status object on the
+// specific commit.
+// 
+// This operation can also be used to change other properties of the
+// build status:
+// 
+// * `state`
+// * `name`
+// * `description`
+// * `url`
+// * `refname`
+// 
+// The `key` cannot be changed.
+
+@name("/repositories/:username/:repo_slug/commit/:node/statuses/build/:key")
+PUT "https://{{baseUrl}}/repositories/:username/:repo_slug/commit/:node/statuses/build/:key"
+"Content-Type": "application/json"
+json({
+    "type": "nulla in qui",
+    "created_on": "<dateTime>",
+    "description": "<string>",
+    "key": "<string>",
+    "links": {
+        "commit": {
+            "href": "<uri>"
+        },
+        "self": {
+            "href": "<uri>"
+        }
+    },
+    "name": "<string>",
+    "refname": "<string>",
+    "state": "<string>",
+    "updated_on": "<dateTime>",
+    "url": "<string>",
+    "uuid": "<string>"
+})
+
+
+

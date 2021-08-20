@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Execute a saved query.
+// 
+// SQL results are available in a variety of formats. By default, `application/json` will be returned. Set the `Accept` header to one of the following values in accordance with your preference:
+// 
+// * `text/csv`
+// * `application/json`
+// * `application/json-l`
+// * `application/x-ndjson`
+// 
+// SPARQL results are available in a variety of formats. By default, `application/sparql-results+json` will be returned. Set the `Accept` header to one of the following values in accordance with your preference:
+// 
+// - `application/sparql-results+xml`
+// - `application/sparql-results+json`
+// - `application/rdf+json`
+// - `application/rdf+xml`
+// - `text/csv`
+// - `text/tab-separated-values`
+// - `text/turtle`
+
+@name("Execute a saved query") : "base-inherit-auth"
+GET "https://{{baseUrl}}/queries/:id/results"
+? "includeTableSchema"= "false"
+
+
+// Execute a saved query (same as GET:/queries/{id}/results) with the option to specify named query parameters.
+
+@name("Execute a saved query (with parameters)") : "base-inherit-auth"
+POST "https://{{baseUrl}}/queries/:id/results"
+"Content-Type": "application/json"
+data('null')
+
+
+

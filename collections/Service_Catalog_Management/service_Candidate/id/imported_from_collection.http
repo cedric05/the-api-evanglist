@@ -1,0 +1,70 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c49a34ba-ca49-4e12-bd50-71617960cf26.postman_collection.json
+
+// This operation retrieves a ServiceCandidate entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a ServiceCandidate by ID")
+GET "https://{{baseUrl}}/serviceCandidate/:id"
+? "fields"= "id Ut Excepteur"
+
+
+// This operation updates partially a ServiceCandidate entity.
+
+@name("Updates partially a ServiceCandidate")
+PATCH "https://{{baseUrl}}/serviceCandidate/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "eu amet",
+    "lifecycleStatus": "in mollit eiusmod",
+    "name": "nisi exercitation volupt",
+    "version": "irure",
+    "category": [
+        {
+            "id": "ipsum anim",
+            "href": "https://GAVhHmPJbGemMGMtPxXuyQzCGGGBaMLx.gjZD.PmxtxTGSA9SzcFq1axz06x0AERFfYqyfq",
+            "name": "Ut nostrud aliquip",
+            "version": "dolore",
+            "@baseType": "cillum in exercitation do",
+            "@schemaLocation": "http://jWbicGwpGheRPxRYBYxnRwZGDqgP.xvzO86K,J3IxbDSDHFbOwmx6e",
+            "@type": "incididunt esse mollit",
+            "@referredType": "ut do in tempor"
+        },
+        {
+            "id": "amet pariatur aliquip",
+            "href": "http://yOUgZOUbxYOFQUJHrSiXBboTdNzA.oxc76iYdd34ZSK-LzAEgi-WUSdrqEsgiS",
+            "name": "est",
+            "version": "fugiat quis",
+            "@baseType": "laboris",
+            "@schemaLocation": "https://KDnsdCYqDiwLeRffAlVduSSQGvZmTy.hsghi495zVfPcOYAfpDCZbex6bv2+1ADPq9Dr0yZQ",
+            "@type": "et pari",
+            "@referredType": "tempor aliquip et magna"
+        }
+    ],
+    "serviceSpecification": {
+        "id": "Excepteur sit dolore enim dolor",
+        "href": "http://eOjkhAiCengdhagrfxyu.bvvvg6AsKgza7FrNGexy2zxvq+KJ4K7iyULzA-XIV",
+        "name": "aliquip sint quis",
+        "version": "exercitation irure",
+        "@baseType": "consequat dolore Lorem sint",
+        "@schemaLocation": "https://jFeRgpYcQGXnBNciAQ.votP9bbPRL6SKwDUikGooll9HORw4",
+        "@type": "fugiat",
+        "@referredType": "Lorem"
+    },
+    "validFor": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@baseType": "Excepteur pariatur",
+    "@schemaLocation": "https://TyeVZfWEzOisPuXDpGaFfYy.nzetXl4K-lH8Ge",
+    "@type": "est ut sit"
+})
+
+
+// This operation deletes a ServiceCandidate entity.
+
+@name("Deletes a ServiceCandidate")
+DELETE "https://{{baseUrl}}/serviceCandidate/:id"
+
+
+

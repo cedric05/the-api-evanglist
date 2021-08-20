@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-152a01a0-5a89-47e3-8c66-2f1e0de12c73.postman_collection.json
+
+// Delete All Images
+
+@name("Delete All Images")
+DELETE "https://{{baseUrl}}/:username/library/folders/:folder-id/images"
+
+
+// Delete Image
+
+@name("Delete Image")
+DELETE "https://{{baseUrl}}/:username/library/folders/:folder-id/images/:image-id"
+
+
+

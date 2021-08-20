@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2ea02246-cad3-422e-aaa1-2168755db8d6.postman_collection.json
+
+// This pulls a list of all APIs using the Postman API. Then using a test script it loops through all APIs and finds the API by name, repeats for each version until it finds the version, ultimately pulling the individual schema and resulting OpenAPI so that it can be used in other requests.
+// 
+// **Notes**
+// 
+// - This script is pretty verbose
+// - this script is meant to abstract away 3 separate API calls.
+// - Ideally Postman provides an endpoint that pulls "latest" in the future.
+
+@name("Pull OpenAPI Into Environment")
+GET "https://{{postman_base_url}}/apis/"
+"x-api-key": "{{postman_api_key}}"
+? "api_name"= "Human Services Data API"
+? "api_version"= "v2.0"
+
+
+// This will pull the OpenAPI from the environment and then convert all schema names from snake case to camel case, then loop through all the operations to replace on responses. I currently have set to process three different content types for 200 responses--it can be adjusted for any scenario--this is just what I needed in the moment.
+
+@name("Change Schema from Snake Case to Camel Case")
+GET "https://postman-echo.com/get"
+
+
+// This pulls a list of all APIs using the Postman API. Then using a test script it loops through all APIs and finds the API by name, repeats for each version until it finds the version, ultimately pulling the individual schema and resulting OpenAPI so that it can be used in other requests.
+// 
+// **Notes**
+// 
+// - This script is pretty verbose
+// - this script is meant to abstract away 3 separate API calls.
+// - Ideally Postman provides an endpoint that pulls "latest" in the future.
+
+@name("Save OpenAPI To Postman")
+GET "https://{{postman_base_url}}/apis/{{postman_api_id}}/versions/{{postman_api_version_id}}/schemas/{{postman_api_schema_id}}"
+"x-api-key": "{{postman_api_key}}"
+data('{
+	"schema": {
+		"language": "yaml",
+		"schema": "{{openapi_yaml}}",
+		"type": "openapi3"
+	}
+}')
+
+
+

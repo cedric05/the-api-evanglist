@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d3f2edc-e0e7-4b26-a712-076a7e2780a4.postman_collection.json
+
+// ### List all Group MembersnPage through a list of all members of a group with a ```group_id```. You can specify the maximum number of results to be retuned, and from which result to start.n
+
+@name("Get Groups Group Members")
+GET "https://{{baseUrl}}/groups/:group_id/members"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// ### Delete a Group MembernUpdates a member with the ```member_id``` to the group with a ```group_id```.n
+
+@name("Put Groups Group Members Member")
+PUT "https://{{baseUrl}}/groups/:group_id/members/:member_id"
+
+
+

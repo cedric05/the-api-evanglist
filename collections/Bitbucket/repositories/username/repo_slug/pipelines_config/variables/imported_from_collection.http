@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Find repository level variables.
+
+@name("get Repository Pipeline Variables")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config/variables/"
+
+
+// Create a repository level variable.
+
+@name("create Repository Pipeline Variable")
+POST "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config/variables/"
+"Content-Type": "application/json"
+json({
+    "type": "sed ipsum ad",
+    "key": "<string>",
+    "secured": "<boolean>",
+    "uuid": "<string>",
+    "value": "<string>"
+})
+
+
+

@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Retrieve a subscription")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/"
+
+
+// Extract information on the customer associated with a specific subscription.
+
+@name("Retrieve a subscription’s customer")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/customer/"
+
+
+// ***
+// 
+// **Overview**
+// 
+// Extract information about the end user of a specific subscription.
+
+@name("Retrieve a subscription's end user")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/enduser/"
+
+
+// Retrieve the payment information associated with a subscription and that the 2Checkout system uses for the auto-renewal process (recurring billing).
+
+@name("Retrieve the payment info for a subscription")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/payment/"
+
+
+// Create Single Sign On links into 2Checkout myAccount based on subscription references.
+
+@name("SSO by subscription reference")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/signon/:PageType/"
+? "Email"= "<string>"
+? "Lang"= "<string>"
+? "ValidityTime"= "<string>"
+? "ValidationIp"= "<string>"
+
+
+

@@ -1,0 +1,3 @@
+A feature service can contain datasets (for example, tables and views) with or without a spatial column. Datasets with a spatial column are considered layers; those without a spatial column are considered tables. A feature service allows clients to query and edit feature geometry and attributes.
+
+[More info](https://developers.arcgis.com/rest/services-reference/get-started-with-the-services-directory.htm)

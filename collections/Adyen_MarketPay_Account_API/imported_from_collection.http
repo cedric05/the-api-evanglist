@@ -1,0 +1,113 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-57713f44-dd70-4d43-bff2-c319e3fe331c.postman_collection.json
+
+// This endpoint allows to trigger the verification of the account holder earlier than it's required by the currently processed volume.
+
+@name("Request to perform verification for an account holder.")
+POST "https://{{baseUrl}}/checkAccountHolder"
+
+
+// This endpoint is used to close an existing account under an account holder. If an account is closed, it may not process transactions or have its funds paid out,and it may not be reopened. Any payments made to a closed account will be directed to the merchant's liable account.
+
+@name("Close an existing account under an account holder.")
+POST "https://{{baseUrl}}/closeAccount"
+
+
+// This endpoint is used to close an existing account holder and its accounts. If an account holder is closed, it may not process transactions or pay out funds, and it may not be reopened. Any payments made to a closed account will be directed to the merchant's liable account.
+
+@name("Close an existing account holder.")
+POST "https://{{baseUrl}}/closeAccountHolder"
+
+
+// This endpoint is used to create an account under an existing account holder. An account holder may have multiple accounts.
+
+@name("Create a new account under an existing account holder.")
+POST "https://{{baseUrl}}/createAccount"
+
+
+// This endpoint is used to create an account holder. Each account holder represents a single sub-merchant, and each sub-merchant must be represented by an account holder. Depending on the legal entity type, different details are required to be provided in the call to this endpoint.
+
+@name("Create a new account holder.")
+POST "https://{{baseUrl}}/createAccountHolder"
+
+
+// This endpoint is used to delete existing bank accounts from an account holder. For this, pass the `accountHolderCode` you got on the account holder creation, and one or more `bankAccountUUIDs` specifying bank accounts to delete.
+
+@name("Delete bank accounts of an existing account holder.")
+POST "https://{{baseUrl}}/deleteBankAccounts"
+
+
+// This endpoint is used to delete existing payout method from an account holder. For this, pass the `accountHolderCode` you got on the account holder creation, and one or more `payoutMethodCodes` specifying payout methods to delete.
+
+@name("Delete payout methods of an existing account holder.")
+POST "https://{{baseUrl}}/deletePayoutMethods"
+
+
+// This endpoint is used to delete existing shareholders from an account holder.
+
+@name("Delete shareholders of an existing account holder.")
+POST "https://{{baseUrl}}/deleteShareholders"
+
+
+// This endpoint is used to retrieve the details of an account holder.
+
+@name("Retrieve the details of an account holder.")
+POST "https://{{baseUrl}}/getAccountHolder"
+
+
+// This endpoint is used to retrieve documents previously uploaded for use in the KYC Verification of an account holder.
+// 
+// For further information regarding KYC Verification, please refer to [Verification checks](https://docs.adyen.com/marketpay/onboarding-and-verification/verification-checks).
+
+@name("Retrieve the uploaded documents of an existing account holder.")
+POST "https://{{baseUrl}}/getUploadedDocuments"
+
+
+// This endpoint is used to suspend an existing account holder. If an account holder is suspended, it may not process transactions or pay out funds. Any payments made to a suspended account holder will be directed to the merchant's liable account.
+
+@name("Suspend an existing account holder.")
+POST "https://{{baseUrl}}/suspendAccountHolder"
+
+
+// This endpoint is used to reinstate an existing account holder, which has been suspended through the `/suspendAccountHolder` endpoint. An account holder which has been suspended due to KYC verification issues cannot be reinstated through this endpoint.
+
+@name("Reinstate a disabled account holder.")
+POST "https://{{baseUrl}}/unSuspendAccountHolder"
+
+
+// This endpoint is used to update the description or payout schedule of an existing account.
+
+@name("Update an existing account under an account holder.")
+POST "https://{{baseUrl}}/updateAccount"
+
+
+// This endpoint is used to update the `accountHolderDetails` or `processingTier` of an account holder.
+// 
+// If updating the `accountHolderDetails`, only the details which have been provided will be updated. Other details will be left as-is with the exception of the following fields:
+// * `accountHolderDetails.address`
+// * `accountHolderDetails.fullPhoneNumber`
+// * `accountHolderDetails.bankAccountDetails.BankAccountDetail`
+// * `accountHolderDetails.businessDetails.shareholders.ShareholderContact`, which requir
+
+@name("Update an existing account holder.")
+POST "https://{{baseUrl}}/updateAccountHolder"
+
+
+// This endpoint is used to disable or enable the processing or payout state of an account holder. It cannot be used to enable an account holder whose processing or payout state has not been disabled through this endpoint.
+// 
+// For further information regarding processing and payout states of an account holder, please refer to the [MarketPay documentation](https://docs.adyen.com/marketpay).
+
+@name("Update the state of an existing account holder.")
+POST "https://{{baseUrl}}/updateAccountHolderState"
+
+
+// This endpoint is used to upload a document for use in the KYC verification of an account holder.
+// 
+// For further information regarding KYC Verification, please refer to [Verification checks](https://docs.adyen.com/marketpay/onboarding-and-verification/verification-checks).
+
+@name("Upload a document for an existing account holder.")
+POST "https://{{baseUrl}}/uploadDocument"
+
+
+

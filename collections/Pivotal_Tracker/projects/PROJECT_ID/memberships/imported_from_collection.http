@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-28db29ee-ca8d-4539-8a7a-6cde82dcfb73.postman_collection.json
+
+// Retrieves all memberships for a project.
+
+@name("Get Projects Project Memberships")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/memberships"
+
+
+// Retrieves information about a single membership.
+
+@name("Get Projects Project Memberships Membership")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/memberships/:MEMBERSHIP_ID"
+
+
+

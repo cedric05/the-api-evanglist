@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-153258a5-a1eb-43c6-ae2b-1378320e86b1.postman_collection.json
+
+// Applicant removed an existing profile
+
+@name("Remove Applicant Profile")
+POST "https://{{baseUrl}}/events/staffing/v1/job-applicant-profile.remove"
+? "No Name"= "<string>"
+
+
+// Returns an event metadata
+
+@name("Remove Applicant Profile Meta")
+GET "https://{{baseUrl}}/events/staffing/v1/job-applicant-profile.remove/meta"
+? "No Name"= "<string>"
+
+
+

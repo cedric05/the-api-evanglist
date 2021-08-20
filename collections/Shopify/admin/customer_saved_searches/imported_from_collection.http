@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Get all customers who match the criteria.
+
+@name("Get all customers who match the criteria")
+GET "https://{{baseUrl}}/admin/customer_saved_searches/1189248515/customers.json"
+"Content": "<>"
+
+
+// Get a count of all customer saved searches.
+
+@name("Get a count of all customer saved searches")
+GET "https://{{baseUrl}}/admin/customer_saved_searches/count.json"
+"Content": "<>"
+
+
+// Update an existing customer saved search.
+
+@name("Update an existing Customer Saved Search")
+PUT "https://{{baseUrl}}/admin/customer_saved_searches/2029905294.json"
+"Content": "<>"
+
+
+// Get one customer saved search by id.
+
+@name("Get one customer saved search by ID")
+GET "https://{{baseUrl}}/admin/customer_saved_searches/1189248515.json"
+"Content": "<>"
+
+
+

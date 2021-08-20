@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-20629178-ebd8-47d3-9bbd-183b8ff86247.postman_collection.json
+
+// Monitor new domains registrations for specific keywords
+
+@name("Brand Monitor")
+GET "https://{{baseUrl}}/mark-alert/"
+? "query"= "<string>"
+? "exclude"= "<string>"
+? "domain_status"= "<string>"
+? "days_back"= "<string>"
+
+
+

@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get the details for a specific existing RequestResponse.
+
+@name("READ Request Response for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/request-response/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Update the status to accept or reject the RequestResponse.
+
+@name("UPDATE Request Response for User Monetary Account")
+PUT "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/request-response/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "address_billing": {
+        "city": "eu qui amet m",
+        "country": "eiusmod occaecat ullamco deserunt",
+        "extra": "sint in in sunt incididunt",
+        "house_number": "ea ad dolor",
+        "mailbox_name": "ut",
+        "po_box": "ipsum mollit id",
+        "postal_code": "quis dolore labore",
+        "province": "ut ip",
+        "street": "Lorem ut esse labore"
+    },
+    "address_shipping": {
+        "city": "aliquip officia aute",
+        "country": "enim dolor",
+        "extra": "dolor tempor ad incididunt proident",
+        "house_number": "ullamco ea sint amet ex",
+        "mailbox_name": "nostrud anim non",
+        "po_box": "cillum reprehenderit laboris eiusmod commodo",
+        "postal_code": "Ut esse ex est",
+        "province": "quis Lorem enim",
+        "street": "ut nisi"
+    },
+    "amount_responded": {
+        "currency": "ex magna ea eiusmod",
+        "value": "nostrud dolore"
+    },
+    "status": "<string>"
+})
+
+
+

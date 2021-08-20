@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ae419a4f-68f3-40b5-821c-80057f0df0bd.postman_collection.json
+
+// Returns combined measure stats for a given organization
+
+@name("Returns combined measure stats for a given organization")
+GET "https://{{baseUrl}}/organizations/:id/stats"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"qpp-provider-name": "<byte>"
+"qpp-provider-number": "<byte>"
+"qpp-clinic-name": "<byte>"
+"qpp-clinic-id": "<byte>"
+"qpp-beneficiary-id": "<byte>"
+"qpp-beneficiary-name": "<byte>"
+"qpp-medical-record-number": "<byte>"
+
+
+// Returns an array of individual measure stats for a given organization
+
+@name("Returns an array of individual measure stats for a given organization")
+GET "https://{{baseUrl}}/organizations/:id/measure/stats"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"qpp-provider-name": "<byte>"
+"qpp-provider-npi": "<byte>"
+"qpp-clinic-name": "<byte>"
+"qpp-clinic-id": "<byte>"
+"qpp-beneficiary-id": "<byte>"
+"qpp-beneficiary-name": "<byte>"
+? "measures"= ""
+? "rank"= "<string>"
+
+
+// Returns a score for all the measures of a given organization
+
+@name("Returns a score for all the measures of a given organization")
+GET "https://{{baseUrl}}/organizations/:id/score"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+
+
+

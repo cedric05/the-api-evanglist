@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Working example: Retrieve the list of banks that support iDEAL")
+GET "https://{{baseUrl}}/paymentmethods/IDEAL/issuerbanks/"
+
+
+@name("Working example: Retrieve PayPal Express redirect URL")
+PUT "https://{{baseUrl}}/paymentmethods/PAYPAL_EXPRESS/redirecturl/"
+
+
+// 2Checkout supports 1-click purchases for returning customers who paid for their previous orders with credit card or Paypal. 
+// 
+// Once a order reference has been validated, it can be used in the POST call on an order to place an order with a previous order reference. 
+
+@name("Validate order references in order to be used for a new order using previous order as payment reference")
+GET "https://{{baseUrl}}/paymentmethods/PREVIOUS_ORDER/refno/:OrderReference/"
+
+
+

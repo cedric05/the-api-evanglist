@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b61ade0-60b3-4dcc-a6b1-7acb55b522a0.postman_collection.json
+
+// All actions and visibility is limited in scope to items that are descendents of the authenticated vendor and the backup_definitions owned thereby. At this time, all Access Tokens are scoped with full write capabilities.
+
+@name("Retrieve an Access Token authenticated using the provided client_id and client_secret.")
+POST "https://{{baseUrl}}/oauth/token"
+
+
+

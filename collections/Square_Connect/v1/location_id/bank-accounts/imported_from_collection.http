@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+
+@name("Get Location Bank Accounts")
+GET "https://{{baseUrl}}/v1/:location_id/bank-accounts"
+
+
+// Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+
+@name("Get Location Bank Accounts Bank Account")
+GET "https://{{baseUrl}}/v1/:location_id/bank-accounts/:bank_account_id"
+
+
+

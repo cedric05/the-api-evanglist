@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get a list of item categories
+// 
+// ---
+// Alternate route: `/legacy/universe/categories/`
+// 
+// Alternate route: `/v1/universe/categories/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get item categories")
+GET "https://{{baseUrl}}/universe/categories/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get information of an item category
+// 
+// ---
+// Alternate route: `/legacy/universe/categories/{category_id}/`
+// 
+// Alternate route: `/v1/universe/categories/{category_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get item category information")
+GET "https://{{baseUrl}}/universe/categories/:category_id/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+

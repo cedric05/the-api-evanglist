@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Search Treasuries or else List all Treasuries
+
+@name("Get Treasuries")
+GET "https://{{baseUrl}}/treasuries"
+? "keywords"= "<>"
+? "sort_on"= "<>"
+? "sort_order"= "<>"
+? "maturity"= "<>"
+? "detail_level"= "<>"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Get a Treasury
+
+@name("Get Treasuries Treasury")
+GET "https://{{baseUrl}}/treasuries/:treasury_id"
+
+
+

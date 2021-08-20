@@ -1,0 +1,82 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates a location WC details
+
+@name("Creates a location WC details") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/locations/:id/locationwcdetail"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": -8372715,
+    "totalPayroll": 40834637.557711184,
+    "totalNumEmployees": 26944858.542582527,
+    "numEmployeesShift1": 94218654.29777703,
+    "numEmployeesShift2": 62000832.883897156,
+    "numEmployeesShift3": -33527295.6458895,
+    "numEmployeesShift4": 3708745.462630421,
+    "calcNumEmployees": -89911911.70696786,
+    "emergencyProtection": {
+        "id": 79866162,
+        "code": "Excepteur dolore veniam non",
+        "name": "do et ex"
+    },
+    "hazardousMaterials": {
+        "id": -71470717,
+        "code": "ullamco amet",
+        "name": "officia ut tempor"
+    },
+    "wageRelativity": {
+        "id": -32999145,
+        "code": "nisi",
+        "name": "adipisicing null"
+    },
+    "riskManagement": {
+        "id": -28108410,
+        "code": "exercitation ipsum",
+        "name": "mollit labore ipsum"
+    },
+    "employeeDensity": {
+        "id": -34524366,
+        "code": "id ipsum ex cupidatat pariatur",
+        "name": "sit fugiat sed consectetur"
+    },
+    "undMngtAdjustment": 19558098.716378286,
+    "groupNum": "sint culpa adipisicing",
+    "groupName": "cupidatat non sit",
+    "occupancyTypeScheme": {
+        "id": -89453357,
+        "code": "elit cupidatat Ut ex deserunt",
+        "name": "laborum eu id voluptate anim"
+    },
+    "occupancyType": {
+        "id": -74940967,
+        "code": "ipsum",
+        "name": "elit in eiusmod ut"
+    },
+    "maxEmployees": 74178284.01202428,
+    "shiftType": {
+        "id": 69569122,
+        "code": "deserunt consectetur aliqua enim commodo",
+        "name": "in velit ullamco nisi"
+    },
+    "isValid": true,
+    "uslh": true,
+    "excessComp": {
+        "id": 19655666,
+        "code": "sed id amet",
+        "name": "m"
+    }
+})
+
+
+

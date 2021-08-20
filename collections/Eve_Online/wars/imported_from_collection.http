@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return a list of wars
+// 
+// ---
+// Alternate route: `/dev/wars/`
+// 
+// Alternate route: `/legacy/wars/`
+// 
+// Alternate route: `/v1/wars/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List wars")
+GET "https://{{baseUrl}}/wars/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "max_war_id"= "-26592061"
+
+
+

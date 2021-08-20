@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-be4a5181-521c-480d-a9e2-a53cb6b4dec5.postman_collection.json
+
+// Use the below parameters to search and filter all places. Places are sorted by relevance (location or text query proximity).nnA search requires at least one of the `q`, `id`, `country` or `location` parameters.n
+
+@name("Search Places")
+GET "https://{{baseUrl}}/v1/places/"
+
+
+// If you need your account details for whatever reason, it's really easy to get them.
+
+@name("Retrieve Account Details")
+GET "https://{{baseUrl}}/v1/accounts/self/"
+
+
+

@@ -1,0 +1,91 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Retrieves the existing rules for triggering a Customer Callout.
+
+@name("GetCustomerCalloutRules")
+POST "https://{{baseUrl}}/Callouts/GetCustomerCalloutRules"
+? "id"= "<integer>"
+? "location_id"= "<integer>"
+? "event"= "<string>"
+
+
+// Creates a rule for triggering an Appointment Callout.  If the optional `url` or `alert_email` parameters are not specified, the rule will inherit the values from the features base settings.
+
+@name("CreateAppointmentCalloutRules")
+POST "https://{{baseUrl}}/Callouts/CreateAppointmentCalloutRules"
+? "location_id"= "<integer>"
+? "event"= "<string>"
+? "from_status_id"= "<integer>"
+? "to_status_id"= "<integer>"
+? "url"= "<string>"
+? "alert_email"= "<string>"
+
+
+// Retrieves the existing rules for triggering an Appointment Callout.
+
+@name("GetAppointmentCalloutRules")
+POST "https://{{baseUrl}}/Callouts/GetAppointmentCalloutRules"
+? "id"= "<integer>"
+? "location_id"= "<integer>"
+? "event"= "<string>"
+
+
+// Returns the base settings for Appointment Callouts
+
+@name("GetAppointmentCalloutSettings")
+POST "https://{{baseUrl}}/Callouts/GetAppointmentCalloutSettings"
+
+
+// Deletes an existing rule for triggering an Appointment Callout.
+
+@name("DeleteAppointmentCalloutRules")
+POST "https://{{baseUrl}}/Callouts/DeleteAppointmentCalloutRules"
+? "id"= "<integer>"
+
+
+// Returns the base settings for Customer Callouts
+
+@name("GetCustomerCalloutSettings")
+POST "https://{{baseUrl}}/Callouts/GetCustomerCalloutSettings"
+
+
+// Deletes an existing rule for triggering a Customer Callout.
+
+@name("DeleteCustomerCalloutRules")
+POST "https://{{baseUrl}}/Callouts/DeleteCustomerCalloutRules"
+? "id"= "<integer>"
+
+
+// Modifies the Appointment Callout feature base settings. If you set `enabled=false`, any associated Callout Rules will not trigger.
+
+@name("UpdateAppointmentCalloutSettings")
+POST "https://{{baseUrl}}/Callouts/UpdateAppointmentCalloutSettings"
+? "enabled"= "<boolean>"
+? "url"= "<string>"
+? "return_type"= "<string>"
+? "alert_email"= "<string>"
+
+
+// Creates a rule for triggering a Customer Callout.  If the optional `url` or `alert_email` parameters are not specified, the rule will inherit the values from the features base settings.
+
+@name("CreateCustomerCalloutRules")
+POST "https://{{baseUrl}}/Callouts/CreateCustomerCalloutRules"
+? "location_id"= "<integer>"
+? "event"= "<string>"
+? "url"= "<string>"
+? "alert_email"= "<string>"
+
+
+// Modifies the Customer Callout feature base settings. If you set `enabled=false`, any associated Callout Rules will not trigger.
+
+@name("UpdateCustomerCalloutSettings")
+POST "https://{{baseUrl}}/Callouts/UpdateCustomerCalloutSettings"
+? "enabled"= "<boolean>"
+? "url"= "<string>"
+? "return_type"= "<string>"
+? "alert_email"= "<string>"
+
+
+

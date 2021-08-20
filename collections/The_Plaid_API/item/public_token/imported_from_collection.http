@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Exchange a Link `public_token` for an API `access_token`. Link hands off the `public_token` client-side via the `onSuccess` callback once a user has successfully created an Item. The `public_token` is ephemeral and expires after 30 minutes.
+// 
+// The response also includes an `item_id` that should be stored with the `access_token`. The `item_id` is used to identify an Item in a webhook. The `item_id` can also be retrieved by making an `/item/get` request.
+
+@name("Exchange public token for an access token") : "base-inherit-auth"
+POST "https://{{baseUrl}}/item/public_token/exchange"
+"Content-Type": "application/json"
+json({
+    "public_token": "non aute ea ut dolor",
+    "client_id": "ad dolor",
+    "secret": "eu irure"
+})
+
+
+// Note: As of July 2020, the `/item/public_token/create` endpoint is deprecated. Instead, use `/link/token/create` with an `access_token` to create a Link token for use with [update mode](/docs/link/update-mode).
+// 
+// If you need your user to take action to restore or resolve an error associated with an Item, generate a public token with the `/item/public_token/create` endpoint and then initialize Link with that `public_token`.
+// 
+// A `public_token` is one-time use and expires after 30 minutes. You use a `public_token` to initialize Link in [update mode](/docs/link/update-mode) for a particular Item. You can generate a `public_token` for an Item even if you did not use Link to create the Item originally.
+// 
+// The `/item/public_token/create` endpoint is **not** used to create your initial `public_token`. If you have not already received an `access_token` for a specific Item, use Link to obtain your `public_token` instead. See the [Quickstart](/docs/quickstart) for more information.
+
+@name("Create public token") : "base-inherit-auth"
+POST "https://{{baseUrl}}/item/public_token/create"
+"Content-Type": "application/json"
+json({
+    "client_id": "sit culpa sed",
+    "secret": "Ut laborum consequat",
+    "access_token": "tempor culpa sed eiusmod p"
+})
+
+
+

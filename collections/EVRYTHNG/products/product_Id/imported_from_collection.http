@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Read a single product.
+
+@name("Read a product")
+GET "https://{{baseUrl}}/products/:productId"
+? "No Name"= "<string>"
+
+
+// Create a product's redirection.
+
+@name("Create a product's redirection")
+POST "https://{{baseUrl}}/products/:productId/redirector"
+? "No Name"= "<string>"
+
+
+

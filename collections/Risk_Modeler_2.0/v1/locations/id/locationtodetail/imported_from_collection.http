@@ -1,0 +1,229 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Create a new TO detail
+
+@name("Creates a new OT detail") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/locations/:id/locationtodetail"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": -7928800,
+    "siteLimit": 93580439.8125478,
+    "siteDeduct": -20641472.24911949,
+    "combinedLimit": -55108625.21504829,
+    "combinedDeduct": -15845853.646069184,
+    "yearUpgrade": "id sed Lorem velit quis",
+    "percentComplete": -62745487.76191722,
+    "fireClass": "irure ea veniam consequat ut",
+    "rmsClass": "nisi",
+    "userClass": "anim aute labore cillum",
+    "atcOccupancy": "E",
+    "isoOccupancy": "elit incididunt ullamco",
+    "userOccupancy": "aute consequat",
+    "percentageSiteLossDeductibleAmount": 40293526.88205609,
+    "percentageCombinedLossDeductibleAmount": 2583373.412789896,
+    "isFranchiseSiteDeductible": {
+        "id": -19851405,
+        "code": "ex sed laborum",
+        "name": "ut laborum deserunt est"
+    },
+    "isFranchiseCombinedDeductible": {
+        "id": -67420580,
+        "code": "irure sit do voluptate",
+        "name": "cupidatat minim dolor"
+    },
+    "isValid": true,
+    "architecture": {
+        "id": -63050237,
+        "code": "sed non",
+        "name": "sit ut aliqua Duis"
+    },
+    "cladRate": {
+        "id": 75483743,
+        "code": "occaecat esse pariatur proident incididunt",
+        "name": "proident"
+    },
+    "cladType": {
+        "id": -13307036,
+        "code": "dolor nostrud nulla",
+        "name": "ex amet"
+    },
+    "constructQuality": {
+        "id": -24584981,
+        "code": "ex nulla amet",
+        "name": "ut pariatur laboris"
+    },
+    "designCode": {
+        "id": 54964601,
+        "code": "fugiat",
+        "name": "quis sit"
+    },
+    "doorOpenings": {
+        "id": -27383395,
+        "code": "aute magna tempor proident",
+        "name": "ullamco cillum non"
+    },
+    "externalOrnament": {
+        "id": 17179301,
+        "code": "elit",
+        "name": "elit est voluptate in"
+    },
+    "floodVulnerability": {
+        "id": -74601595,
+        "code": "in commodo non do Lorem",
+        "name": "ea esse"
+    },
+    "foundation": {
+        "id": -97872429,
+        "code": "laborum ex exercitation",
+        "name": "dolor"
+    },
+    "maintenance": {
+        "id": -17457802,
+        "code": "dolor id amet irure",
+        "name": "dolor voluptate cillum non iru"
+    },
+    "mechElecSide": {
+        "id": -54035543,
+        "code": "tempor enim",
+        "name": "est sunt id"
+    },
+    "otherOpenings": {
+        "id": -71752495,
+        "code": "ea sit nulla esse veniam",
+        "name": "qui tempor voluptate officia fugiat"
+    },
+    "roofAge": {
+        "id": 60678331,
+        "code": "velit proident a",
+        "name": "veniam irure"
+    },
+    "roofAnchor": {
+        "id": 19242113,
+        "code": "sunt nostrud eiusmod reprehenderit aliquip",
+        "name": "ut minim laborum consequat"
+    },
+    "roofEquipment": {
+        "id": -38192750,
+        "code": "velit commodo magna ut",
+        "name": "sint adipisicing proident nulla"
+    },
+    "roofFrame": {
+        "id": -39895036,
+        "code": "cillum do mollit",
+        "name": "consequat sunt"
+    },
+    "roofGeometry": {
+        "id": 66564007,
+        "code": "ea am",
+        "name": "sunt Ex"
+    },
+    "roofParpet": {
+        "id": 98184130,
+        "code": "Excepteur adipisicing eu",
+        "name": "in amet"
+    },
+    "roofSystem": {
+        "id": -77424572,
+        "code": "sunt aliqua enim",
+        "name": "et non ad dolor"
+    },
+    "windMissile": {
+        "id": -64516641,
+        "code": "magna",
+        "name": "elit"
+    },
+    "windVulnerability": {
+        "id": 66757830,
+        "code": "eu dolore reprehenderit",
+        "name": "Ut aute ex"
+    },
+    "basement": {
+        "id": -42241976,
+        "code": "cillum consectetur in amet",
+        "name": "dolor ut"
+    },
+    "mechElecGround": {
+        "id": -10295250,
+        "code": "consequat anim sed elit",
+        "name": "commodo minim"
+    },
+    "floodMissiles": {
+        "id": 52536513,
+        "code": "deserunt aliqua",
+        "name": "reprehen"
+    },
+    "floodProtection": {
+        "id": 31533920,
+        "code": "Duis",
+        "name": "proident id cupidatat veniam"
+    },
+    "iceDamProtection": {
+        "id": -84463320,
+        "code": "esse occaecat veniam",
+        "name": "non labore laboris proident"
+    },
+    "plumbingInsulation": {
+        "id": -42905508,
+        "code": "proident voluptate minim",
+        "name": "sunt"
+    },
+    "atticInsulation": {
+        "id": 18219883,
+        "code": "qui fugiat laboris dolore",
+        "name": "nisi consequat"
+    },
+    "roofVentilation": {
+        "id": 76393237,
+        "code": "ullamco",
+        "name": "id voluptate et in"
+    },
+    "snowGuards": {
+        "id": -67592188,
+        "code": "anim ",
+        "name": "ut consequat ipsum"
+    },
+    "treeDensity": {
+        "id": 53517819,
+        "code": "magna",
+        "name": "ea pariatur laboris ut"
+    },
+    "garaging": {
+        "id": -97764299,
+        "code": "tempor",
+        "name": "tempor minim elit velit qui"
+    },
+    "toPackage": {
+        "id": -3363515,
+        "code": "sint adipisicing reprehenderit",
+        "name": "non amet eiusmod dolor"
+    },
+    "toProtect": {
+        "id": 19086554,
+        "code": "Duis dolor",
+        "name": "quis irure mollit Lorem"
+    },
+    "toSalvage": {
+        "id": 51518064,
+        "code": "eiu",
+        "name": "amet in laborum"
+    },
+    "toSpecieStorage": {
+        "id": -15778448,
+        "code": "voluptate ut exercitation",
+        "name": "minim laboris"
+    }
+})
+
+
+

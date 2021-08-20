@@ -1,0 +1,56 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /checkins/{CHECKIN_ID}/deletecomment
+
+@name("/checkins/{CHECKIN_ID}/deletecomment")
+GET "https://{{baseUrl}}/tips/:TIP_ID"
+? "TIP_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /tips/search
+
+@name("/tips/search")
+GET "https://{{baseUrl}}/tips/:TIP_ID/done"
+? "limit"= "<integer>"
+? "offset"= "<string>"
+? "TIP_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /tips/{TIP_ID}/done
+
+@name("/tips/{TIP_ID}/done")
+GET "https://{{baseUrl}}/tips/:TIP_ID/listed"
+? "group"= "<string>"
+? "TIP_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /tips/{TIP_ID}/listed
+
+@name("/tips/{TIP_ID}/listed")
+POST "https://{{baseUrl}}/tips/:TIP_ID/markdone"
+? "TIP_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /tips/{TIP_ID}/markdone
+
+@name("/tips/{TIP_ID}/markdone")
+POST "https://{{baseUrl}}/tips/:TIP_ID/marktodo"
+? "TIP_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /tips/{TIP_ID}/marktodo
+
+@name("/tips/{TIP_ID}/marktodo")
+POST "https://{{baseUrl}}/tips/:TIP_ID/unmark"
+? "TIP_ID"= "<string>"
+? "v"= "<string>"
+
+
+

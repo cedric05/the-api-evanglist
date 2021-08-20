@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return a list of prices
+// 
+// ---
+// Alternate route: `/dev/markets/prices/`
+// 
+// Alternate route: `/legacy/markets/prices/`
+// 
+// Alternate route: `/v1/markets/prices/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List market prices")
+GET "https://{{baseUrl}}/markets/prices/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Return all orders in a structure
+// 
+// ---
+// Alternate route: `/dev/markets/structures/{structure_id}/`
+// 
+// Alternate route: `/legacy/markets/structures/{structure_id}/`
+// 
+// Alternate route: `/v1/markets/structures/{structure_id}/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("List orders in a structure")
+GET "https://{{baseUrl}}/markets/structures/:structure_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+

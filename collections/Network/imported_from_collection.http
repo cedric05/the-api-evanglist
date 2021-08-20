@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a778a05b-70c0-48cb-8834-722c0a156082.postman_collection.json
+
+// This pull a list of all 11k+ workspaces from the [Postman API Network](https://www.postman.com/explore). It is just a cache that is updated regularly and not a live pull of the public workspaces.
+
+@name("All Workspaces")
+GET "https://{{baseUrl}}/all-workspaces/"
+
+
+// This pull a list of 1k+ workspaces from the [Postman API Network](https://www.postman.com/explore) that have descriptions which tends to demonstrate someone cares. It is just a cache that is updated regularly and not a live pull of the public workspaces.
+
+@name("Workspace w/ Description")
+GET "https://{{baseUrl}}/all-workspaces/description/"
+
+
+// These are the top workspaces I am tracking on as the Postman API network continues to expand. As I see new ones emerge from partner and open technologies efforts I will add to the list, or feel free to [submit a PR on the repo holding this data](https://github.com/postman-open-technologies/workspaces/blob/main/_data/top-workspaces.yaml).
+
+@name("Top Workspaces")
+GET "https://{{baseUrl}}/top-workspaces/"
+
+
+@name("Top Brands")
+GET "https://{{baseUrl}}/top-brands/"
+
+
+@name("API 101")
+GET "https://{{baseUrl}}/api-101/"
+
+
+

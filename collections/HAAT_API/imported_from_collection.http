@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eaffc1f6-a1d7-4d87-8ed8-676dfdd63bfe.postman_collection.json
+
+// Get HAAT data based on latitude, longitude, data source, number of radials, radiation center and unit of measurement. Response returned in JSON format.
+
+@name("Get HAAT")
+GET "https://{{baseUrl}}/haat.{{format}}"
+? "lat"= ""
+? "lon"= ""
+? "nradial"= ""
+? "rcamsl"= ""
+? "src"= ""
+? "unit"= "m"
+
+
+

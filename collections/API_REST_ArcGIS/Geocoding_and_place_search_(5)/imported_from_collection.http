@@ -1,0 +1,89 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// [Full description of the service](http://resources.arcgis.com/en/help/rest/apiref/candidates.html) 
+// // [World Geocoding Service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm)
+// // [View JS Demo: input autocomplete](http://developers.arcgis.com/javascript/samples/widget_directions_basic/)
+
+@name("FindAddressCandidates")
+POST "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates"
+data({
+    "SingleLine": [
+        "Calle emilio mu\u00f1oz 35, Madrid"
+    ],
+    "outFields": [
+        "*"
+    ],
+    "f": [
+        "pjson"
+    ],
+    "token": [
+        "{{token}}"
+    ],
+    "forStorage": [
+        "false"
+    ]
+})
+
+
+// Geocodes one location per request; the input address is specified in a single parameter.
+// 
+// [Full description of the service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find.htm)
+// 
+
+@name("Find")
+POST "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/find"
+data({
+    "text": [
+        "Calle emilio mu\u00f1oz 35, Madrid"
+    ],
+    "categorforStoragey": [
+        "true"
+    ],
+    "outFields": [
+        "*"
+    ],
+    "f": [
+        "pjson"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+// [Full description of the service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-geocode-addresses.htm)
+// 
+
+@name("geocodeAddresses")
+GET "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/geocodeAddresses"
+? 'addresses'= '{     "records": [         {             "attributes": {                 "OBJECTID": 1,                 "Address": "Calle elena",                 "City": "Granada"            }         },         {             "attributes": {                 "OBJECTID": 2,                 "Address": "Emilio Muñoz 35",                 "City": "Madrid",                 "Region": "CA",                 "Postal": "28037"             }         }     ] }'
+? "sourceCountry"= "ES"
+? "token"= "{{token}}"
+? "f"= "pjson"
+
+
+// [Full description of the service:](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-reverse-geocode.htm) //
+// [View JS Demo](http://timw1984.github.io/WebApp-Location/)
+
+@name("reverseGeocode")
+GET "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode"
+? "token"= "{{token}}"
+? "f"= "pjson"
+? "location"= "-3.626966,40.432546"
+
+
+// [Full description of the service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-suggest.htm)
+// 
+
+@name("suggest")
+GET "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest"
+? "token"= "{{token}}"
+? "f"= "pjson"
+? "location"= "-3.626966,40.432546"
+? "text"= "em"
+? "maxSuggestions"= "30"
+
+
+

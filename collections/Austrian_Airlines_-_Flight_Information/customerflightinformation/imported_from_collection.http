@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e3689a47-06be-4dad-8525-c1b906ee4c84.postman_collection.json
+
+// Get customerflightinformation By Airport Arrival
+
+@name("GetFlightStatusByAirportArrival")
+GET "https://{{baseUrl}}/customerflightinformation/arrivals/:airportCode/:startDateTime"
+? "limit"= "magn"
+? "offset"= "magn"
+
+
+// Get customerflightinformation By Airport Departure
+
+@name("GetFlightStatusByAirportDeparture")
+GET "https://{{baseUrl}}/customerflightinformation/departures/:airportCode/:startDateTime"
+? "limit"= "magn"
+? "offset"= "magn"
+
+
+// Get customerflightinformation By Origin and Destination
+
+@name("GetFlightStatusByOandD")
+GET "https://{{baseUrl}}/customerflightinformation/route/:departureAirport/:arrivalAirport/:departureDate"
+? "limit"= "magn"
+? "offset"= "magn"
+
+
+// Get customerflightinformation By FlightNumber and Departure Date
+
+@name("GetFlightStatusByFlightNumberAndDepartureDate")
+GET "https://{{baseUrl}}/customerflightinformation/:flightNumber/:departureDate"
+? "limit"= "magn"
+? "offset"= "magn"
+
+
+

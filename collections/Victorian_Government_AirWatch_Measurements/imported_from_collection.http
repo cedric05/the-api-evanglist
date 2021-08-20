@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7a827bc4-c4a8-4e8f-9911-fb1f0e52b9d8.postman_collection.json
+
+// Ambient air quality monitoring data from 17 fixed stations around Victoria. Some data goes back to 1970. Parameters include particulates (PM10 and PM2.5), Gases (CO, NO2, NO3, O3, and SO2, etc) and meteorological (wind direction and speed, visibility, temperature, humidity) and an overall Air Quality Index (AQI). Data is available as 1 hour averages. Data is near real time. This data is supplimented with air quality for short periods from incidents
+
+@name("Measurements")
+GET "http://sciwebsvc.epa.vic.gov.au/aqapi/Measurements"
+? "siteId"= "10217"
+? "monitorId"= "PM10"
+? "timebasisid"= "1H"
+
+
+

@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-08ab3f78-8a80-4ede-a62f-97a794d65f50.postman_collection.json
+
+@name("Delete Functions (AWS API Gateway)")
+DELETE "https://{{aws_lambda_base_url}}/2015-03-31/functions/:functionName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lambda_service}}", region="{{aws_lambda_region}}")
+
+
+@name("Delete API (AWS API Gateway)")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/:apiId"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete API Deployment (AWS API Gateway)")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/:apiId/deployments/:deploymentId"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Usage Plan (AWS API Gateway)")
+DELETE "https://{{aws_api_gateway_base_url}}/usageplans/:usagePlanId"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete API Key (AWS API Gateway)")
+DELETE "https://{{aws_api_gateway_base_url}}/apikeys/:apiKey"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

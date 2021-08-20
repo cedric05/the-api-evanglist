@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f953fa-f8c8-4115-9ab9-d70490b97ce6.postman_collection.json
+
+// Returns a single item by item slug and ID.
+
+@name("Item")
+GET "https://{{battle-net-host}}/d3/data/item/{{d3.item-slug-and-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+

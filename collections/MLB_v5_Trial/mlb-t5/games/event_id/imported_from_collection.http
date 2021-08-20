@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cf55551-2c7b-4b64-b9aa-1a2b870aef17.postman_collection.json
+
+@name("Obtain a boxscore for a specific MLB game.")
+GET "https://{{baseUrl}}/mlb-t5/games/:event_id/boxscore{{format}}"
+
+
+@name("Obtain a game summary for a specific MLB game.")
+GET "https://{{baseUrl}}/mlb-t5/games/:event_id/summary{{format}}"
+
+
+// Obtain the play-by-play data for a specific MLB game.
+
+@name("Obtain the play-by-play data for a specific MLB ga...")
+GET "https://{{baseUrl}}/mlb-t5/games/:event_id/pbp{{format}}"
+
+
+

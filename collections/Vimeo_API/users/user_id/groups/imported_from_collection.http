@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns all the groups to which a particular user belongs.
+
+@name("Get all the groups that a user has joined")
+GET "https://{{baseUrl}}/users/:user_id/groups"
+? "direction"= "<string>"
+? "filter"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+// This method removes a single user from the specified group.
+
+@name("Remove a user from a group")
+DELETE "https://{{baseUrl}}/users/:user_id/groups/:group_id"
+
+
+

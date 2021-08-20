@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets the list of versions of a specific actor. The response is a JSON with the listnof [Version objects](#reference/actors/version-object) where eachncontains basic information about a single version.
+
+@name("Get list of versions")
+GET "https://{{baseUrl}}/v2/acts/:actorId/versions"
+? "token"= "<string>"
+
+
+// The **Version object** contains the source code of a specific version of an actor.nThe `sourceType` field indicates where the source code is hosted, and basednon its value the Version object has the following additionalSource code is a single JavaScript/Node.js file whose content is in the sourceCode field, and uses a base Docker image specified in baseDockerImage.
+
+@name("Get version")
+GET "https://{{baseUrl}}/v2/acts/:actorId/versions/:versionNumber"
+? "token"= "<string>"
+
+
+

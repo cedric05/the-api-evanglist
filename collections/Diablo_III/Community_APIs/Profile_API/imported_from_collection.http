@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f953fa-f8c8-4115-9ab9-d70490b97ce6.postman_collection.json
+
+// Returns the specified account profile.
+
+@name("Account")
+GET "https://{{battle-net-host}}/d3/profile/{{d3.profile-battle-tag}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns a single hero.
+
+@name("Detail Hero")
+GET "https://{{battle-net-host}}/d3/profile/{{d3.profile-battle-tag}}/hero/{{d3.profile-hero-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns a list of items for the specified hero.
+
+@name("Detail Hero Items")
+GET "https://{{battle-net-host}}/d3/profile/{{d3.profile-battle-tag}}/hero/{{d3.profile-hero-id}}/items"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns a list of items for the specified hero's followers.
+
+@name("Detail Follower Items")
+GET "https://{{battle-net-host}}/d3/profile/{{d3.profile-battle-tag}}/hero/{{d3.profile-hero-id}}/follower-items"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+

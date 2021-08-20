@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c06f082c-7c18-4317-b196-8ad07101a2f4.postman_collection.json
+
+@name("Count of active objects by type, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/activeObject/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of gene types, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/geneType/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of objects with given status, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/objectStatus/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of objects with reference sequence(s), by object type, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/objectWithRefSeq/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of objects with reference, by object type, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/objectWithReference/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of objects with external database ids, by database id, for specified species, object type and date")
+GET "https://{{baseUrl}}/stats/count/objectWithXdb/:speciesTypeKey/:objectKey/:dateYYYYMMDD"
+
+
+@name("Count of protein interactions, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/proteinInteraction/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of strains, by qtl inheritance type, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/qtlInheritanceType/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of retired objects by type, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/retiredObject/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of strain types, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/strainType/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of withdrawn objects by type, for specified species and date")
+GET "https://{{baseUrl}}/stats/count/withdrawnObject/:speciesTypeKey/:dateYYYYMMDD"
+
+
+@name("Count of external database ids, for specied species and date")
+GET "https://{{baseUrl}}/stats/count/xdb/:speciesTypeKey/:dateYYYYMMDD"
+
+
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// ***
+// 
+// **Overview**
+// 
+// Extract information on a specific pricing configuration for a subscription plan/product.
+
+@name("Working example: Retrieve a pricing configuration")
+GET "https://{{baseUrl}}/products/:ProductCode/pricingconfigurations/:Code/"
+
+
+// ***
+// 
+// **Overview**
+// Retrieve a product's SKU code by details. At least one of the optional parameters should be provided, no matter which of them.
+
+@name("Working example: Retrieve SKU code by details")
+GET "https://{{baseUrl}}/products/:ProductCode/pricingconfigurations/:Code/sku/match/"
+? "Currency"= "<string>"
+? "PurchaseType"= "<string>"
+? "PriceOptions"= "<object>"
+? "Quantity"= "<integer>"
+
+
+

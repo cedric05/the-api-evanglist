@@ -1,0 +1,400 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fac60040-18b7-4a1e-b593-be7f14e9b914.postman_collection.json
+
+// This operation retrieves a PartyInteraction entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a PartyInteraction by ID")
+GET "https://{{baseUrl}}/partyInteraction/:id"
+? "fields"= "aute enim ex cupidatat"
+
+
+// This operation updates partially a PartyInteraction entity.
+
+@name("Updates partially a PartyInteraction")
+PATCH "https://{{baseUrl}}/partyInteraction/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "esse aliquip nisi",
+    "reason": "consectetur enim velit",
+    "status": "aute fugiat dolor",
+    "attachment": [
+        {
+            "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "attachmentType": "video",
+            "content": "qui ad in esse mollit",
+            "description": "Photograph of the Product",
+            "mimeType": "dolore fugiat aliqua",
+            "name": "in amet occaecat",
+            "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "size": {
+                "amount": 1,
+                "units": "ea proident eiusmod"
+            },
+            "validFor": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z"
+            },
+            "@baseType": "in cillum ex est",
+            "@schemaLocation": "http://azA.pxeoWhjByA2vPxP9Gsm0jf8NasEiLFx0u9KP1Gi9GOi5w5EaN-RwNLY3gEBi37VXl+gg2ckr6N",
+            "@type": "quis",
+            "@referredType": "est qui elit"
+        },
+        {
+            "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "attachmentType": "video",
+            "content": "anim nulla officia nisi",
+            "description": "Photograph of the Product",
+            "mimeType": "mollit exercitation sed irure id",
+            "name": "voluptate aliqua aute",
+            "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "size": {
+                "amount": 1,
+                "units": "officia in ut eu"
+            },
+            "validFor": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z"
+            },
+            "@baseType": "elit sed",
+            "@schemaLocation": "https://dEdmTAafSqGONZlxaKJxArVjPJDRJCj.ugtI,kLtPVHe7P8vwR2gPe",
+            "@type": "enim do officia nostru",
+            "@referredType": "ad dolor"
+        }
+    ],
+    "channel": [
+        {
+            "id": "elit consectetur",
+            "href": "https://XRP.cebHuARKW4L-XCgrzksFFS2i5dZBX",
+            "name": "elit id amet ad",
+            "role": "ullamco",
+            "@baseType": "mollit ea eiusmod Ut",
+            "@schemaLocation": "http://SYRaQJzyJoqfiUzBK.yud4SQvQ96v8uKfZM8Bm9PpPrq-RqiUqLbrxBBiDRqgYVF0KfkoQyxEIMihRyaXjvJqjNJsAwfwT3-kDu",
+            "@type": "ut fugiat",
+            "@referredType": "sunt ad Lorem aliqua"
+        },
+        {
+            "id": "adipisicing veniam dolore sed",
+            "href": "http://OnwMwYfOdIpajGmlZQxWeYFOawjhFSnT.gyKI6-LLa3XsBpV",
+            "name": "officia mollit labore deserunt",
+            "role": "enim et aliqua in reprehenderit",
+            "@baseType": "velit culpa adipisicing Ut est",
+            "@schemaLocation": "https://pOLwkxdOkjAPAPihYk.pmfa",
+            "@type": "fugiat magna ipsum anim dolore",
+            "@referredType": "dolore"
+        }
+    ],
+    "interactionDate": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "interactionItem": [
+        {
+            "id": "et laborum proident",
+            "creationDate": "2005-10-22T09:55:05.483Z",
+            "reason": "veniam quis",
+            "resolution": "dolor in",
+            "attachment": [
+                {
+                    "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "attachmentType": "video",
+                    "content": "mollit velit aliquip",
+                    "description": "Photograph of the Product",
+                    "mimeType": "id adipisicing",
+                    "name": "consectetur aute",
+                    "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "size": {
+                        "amount": 1,
+                        "units": "do quis magna"
+                    },
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    },
+                    "@baseType": "deserunt esse dolore sed cillum",
+                    "@schemaLocation": "https://qQjzjE.rqSkv.Lob+P1E+WzigN.X7H2sXiuNSdycVwNQQAL18vC",
+                    "@type": "magna dolor",
+                    "@referredType": "ex laborum Duis"
+                },
+                {
+                    "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "attachmentType": "video",
+                    "content": "labore ipsum ullamco proident",
+                    "description": "Photograph of the Product",
+                    "mimeType": "Excepteur anim eiusmod",
+                    "name": "aliquip anim",
+                    "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "size": {
+                        "amount": 1,
+                        "units": ""
+                    },
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    },
+                    "@baseType": "id ",
+                    "@schemaLocation": "https://pchJKzukdSRqDDKnVWEV.rjy8d3xzHEtZ01sEkpKLe4fPSDfur",
+                    "@type": "ipsum",
+                    "@referredType": "nostrud aute"
+                }
+            ],
+            "channel": [
+                {
+                    "id": "labore",
+                    "href": "https://vOcxGfbeyVJDEPlLpoANliuT.dtBUIiD9u+AxYj-zGr2gIf+53Ne51Pq",
+                    "name": "adipisicing",
+                    "role": "minim labore aliquip officia",
+                    "@baseType": "in",
+                    "@schemaLocation": "http://ksrxOrgOwP.fvg4cjWgC4lzUD,S8M3HvDsHUoGYvo7rMP",
+                    "@type": "laboris ",
+                    "@referredType": "dolore Ut ullamco commodo"
+                },
+                {
+                    "id": "deserunt sunt",
+                    "href": "https://SGDhJgeaYnCwkaucFVGjGkq.sgtytt9GyDuiGQEN70kFbFxSATQr6Q9Uoozc0",
+                    "name": "sit pariatur et dolor magna",
+                    "role": "tempor reprehenderit",
+                    "@baseType": "occaecat",
+                    "@schemaLocation": "http://gihipzguTfpCiBKXGyYJ.aptrMd+AeyUq",
+                    "@type": "sint in veniam",
+                    "@referredType": "mollit"
+                }
+            ],
+            "item": {
+                "role": "labore quis occaecat",
+                "id": "nostrud eiusmod in tempor",
+                "href": "in cillum",
+                "name": "Ut ad aliquip reprehenderit qui",
+                "@baseType": "eiusmod Excepteur",
+                "@schemaLocation": "http://UPCAUJeUbPyfahYBrYXNDXeJiP.xfhaX49DS.ws1zIKp2+oIOL58SUhqp-wt,nY-FOOMJpvrO14s4m-",
+                "@type": "consequat adipisicing cillum",
+                "@referredType": "Duis nisi"
+            },
+            "itemDate": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z"
+            },
+            "note": [
+                {
+                    "id": "ut et",
+                    "author": "veniam ex consectetur quis",
+                    "date": "2011-11-21T03:41:15.810Z",
+                    "text": "reprehenderit"
+                },
+                {
+                    "id": "velit sunt exercitation sit in",
+                    "author": "ipsum",
+                    "date": "2016-03-15T10:26:06.670Z",
+                    "text": "anim"
+                }
+            ],
+            "relatedParty": [
+                {
+                    "@referredType": "comm",
+                    "id": "fugiat sed culpa non",
+                    "href": "http://RRsVlvUOBUvKSFbHFdItwgeUME.kjhOKMqC,sCFIcyKlM3U80VDwNXpDERPNlH",
+                    "name": "dolor ut exercitation elit",
+                    "role": "in et",
+                    "@baseType": "Duis aute ad",
+                    "@schemaLocation": "http://X.fxPUURm.g.QzyfRmL",
+                    "@type": "ullamco fugiat"
+                },
+                {
+                    "@referredType": "Excepteur voluptate aliq",
+                    "id": "est mollit ut in",
+                    "href": "http://rzXOT.uqwayEqv2qhBO6V3OxMETeIxlhkRM9TXmqijcAyJME21uZGa0aSSnQef+Mn9Ogk.5DRRNUL",
+                    "name": "ut",
+                    "role": "cupidatat officia occaecat fugiat",
+                    "@baseType": "ex magna Duis anim dolore",
+                    "@schemaLocation": "http://IGxOrUODrStsyyiwnqKLGofLdZLY.miiQKuN-WgLFn+xjaHuPKtWgfOAzDwAB,hZXc-GIuJ9kQqyCL3QJrXHOoCe9gekB2wZ3ZPpTq",
+                    "@type": "ipsum fugiat amet anim sunt"
+                }
+            ]
+        },
+        {
+            "id": "esse ex",
+            "creationDate": "1962-04-09T21:28:30.742Z",
+            "reason": "esse cupidatat",
+            "resolution": "sit incididunt reprehenderit",
+            "attachment": [
+                {
+                    "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "attachmentType": "video",
+                    "content": "sint enim esse proide",
+                    "description": "Photograph of the Product",
+                    "mimeType": "eiusmod ut",
+                    "name": "ea do",
+                    "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "size": {
+                        "amount": 1,
+                        "units": "nostrud Lorem"
+                    },
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    },
+                    "@baseType": "esse in",
+                    "@schemaLocation": "https://fgEQubwlDZUoiQqyOa.dbRUR5khU.cNd",
+                    "@type": "qui labore cillum minim culpa",
+                    "@referredType": "Excepteur nisi Ut adipisicing"
+                },
+                {
+                    "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "attachmentType": "video",
+                    "content": "in aliqua ut",
+                    "description": "Photograph of the Product",
+                    "mimeType": "Ut irure deserunt la",
+                    "name": "mollit est incididunt Duis et",
+                    "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                    "size": {
+                        "amount": 1,
+                        "units": "tempor dolore non aliqua"
+                    },
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    },
+                    "@baseType": "exercitation",
+                    "@schemaLocation": "http://mfj.ezkv6UWHYUXR.Zj6lnCELtDmUDvV24k",
+                    "@type": "esse ad labore Excepteur pariatur",
+                    "@referredType": "occaecat et reprehenderit amet anim"
+                }
+            ],
+            "channel": [
+                {
+                    "id": "incididunt ut elit quis minim",
+                    "href": "http://IDcfcoCCLTJfznmxlKuYdPfRZKH.qljJP7r",
+                    "name": "reprehenderit",
+                    "role": "fugiat Excepteur",
+                    "@baseType": "fugiat adipisicing",
+                    "@schemaLocation": "http://AOimmIVqwnTDKXDy.abzJ5s1Qdf-Vn+eB.Q4ijtAP3bLEnr5k+IYeN7bEi5Sg+Yskt4",
+                    "@type": "fugiat ex mollit",
+                    "@referredType": "sed minim cupidatat"
+                },
+                {
+                    "id": "ad ipsum elit esse",
+                    "href": "http://gCzhvKstiKfYUZEO.clqbJk+A78uL036P+rWWoUwZdpyXh8uYE36ql6cMe9",
+                    "name": "aliqua commodo adipisicing laboris velit",
+                    "role": "laboris irure",
+                    "@baseType": "anim enim sed amet commodo",
+                    "@schemaLocation": "http://CYuveeTeBT.ugmr+O7",
+                    "@type": "reprehenderit ullamco est minim",
+                    "@referredType": "non voluptate esse sed"
+                }
+            ],
+            "item": {
+                "role": "id",
+                "id": "exercitation nisi",
+                "href": "dolor",
+                "name": "ad",
+                "@baseType": "magna voluptate",
+                "@schemaLocation": "https://HHglCcSOsBSXThMIEAMo.dmjpDA.-rTBop+MIxCrm7tMjGYGuPTxNGgdVXTalTaPqNw92ILKiIfa8+ZS2UYPMpfoIe",
+                "@type": "amet est magna in",
+                "@referredType": "Excepteur sint id"
+            },
+            "itemDate": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z"
+            },
+            "note": [
+                {
+                    "id": "aute pariatur laborum",
+                    "author": "officia",
+                    "date": "1997-06-13T18:01:42.387Z",
+                    "text": "est adipisicing dol"
+                },
+                {
+                    "id": "sit",
+                    "author": "dolore quis sed",
+                    "date": "1949-12-05T03:51:35.740Z",
+                    "text": "laborum pariatur"
+                }
+            ],
+            "relatedParty": [
+                {
+                    "@referredType": "moll",
+                    "id": "ut nisi aliqua culpa eni",
+                    "href": "http://dlCJwLOPohrivLyrqbpsTRuU.zxiwV-UELYzZZ4Mevm9eujX0OKUd",
+                    "name": "enim nulla mollit",
+                    "role": "Excepteur Ut aute",
+                    "@baseType": "dolor eu",
+                    "@schemaLocation": "http://FyEkzeChiuE.omcLYPnwGLuc.TAa",
+                    "@type": "non irure in"
+                },
+                {
+                    "@referredType": "cillum proident labo",
+                    "id": "voluptate",
+                    "href": "http://ysLVaK.znc02LXBAuwyq3iR+dNnpU.l",
+                    "name": "reprehenderit non ex aute",
+                    "role": "anim ad",
+                    "@baseType": "Duis eu enim dolore",
+                    "@schemaLocation": "http://JLReIiIe.mshqhn5BLiZM7zc",
+                    "@type": "mollit sunt non in"
+                }
+            ]
+        }
+    ],
+    "interactionRelationship": [
+        {
+            "id": "Excepteur la",
+            "href": "nulla aliquip",
+            "relationshipType": "consectetur fugiat"
+        },
+        {
+            "id": "laboris aliquip",
+            "href": "labore cillum",
+            "relationshipType": "sint ut id"
+        }
+    ],
+    "note": [
+        {
+            "id": "velit sed",
+            "author": "minim labore do aliqua",
+            "date": "2008-02-26T02:22:14.127Z",
+            "text": "do qui"
+        },
+        {
+            "id": "enim Ut consequat qui",
+            "author": "id minim",
+            "date": "1971-04-13T16:03:39.103Z",
+            "text": "proident eiusmod Lorem laboris"
+        }
+    ],
+    "relatedParty": [
+        {
+            "@referredType": "sunt amet",
+            "id": "dolore",
+            "href": "https://vyyavNVomlHEesCTTJrWjG.iwhnF",
+            "name": "dolore",
+            "role": "anim labore pariatur incididunt veniam",
+            "@baseType": "minim eiusmod pariatur ea",
+            "@schemaLocation": "https://VGXokfBHoDKt.blVm1MvLI4xLcOA3FJs0HiOnVlQsSx1HMVk6p6nstmm",
+            "@type": "occaecat"
+        },
+        {
+            "@referredType": "sit dolore",
+            "id": "proident anim ullamco",
+            "href": "http://mvWaOxiGBmPQzgstuNAUxqLIXexKdBaq.tjPhB2QpPE,Ck",
+            "name": "aute ex dolore anim",
+            "role": "aute e",
+            "@baseType": "ullamco ipsum laboris mollit",
+            "@schemaLocation": "https://OBEPhGLrC.zvaorjPswr9WyzfznycgTrVrbRyK9Wnv1fWb.WAw.Xyoy9wcrLkM",
+            "@type": "exercitation cupidatat Dui"
+        }
+    ]
+})
+
+
+// This operation deletes a PartyInteraction entity.
+
+@name("Deletes a PartyInteraction")
+DELETE "https://{{baseUrl}}/partyInteraction/:id"
+
+
+

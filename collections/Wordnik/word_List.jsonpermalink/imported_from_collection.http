@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba1cdcb3-6e1e-442c-bb37-51af59111040.postman_collection.json
+
+// Deletes an existing wordlist.
+
+@name("Deletes an existing WordList")
+DELETE "https://{{baseUrl}}/wordList.json/:permalink"
+"auth_token": "<>"
+
+
+// Removes words from a wordlist.
+
+@name("Removes words from a WordList")
+POST "https://{{baseUrl}}/wordList.json/:permalink/deleteWords"
+"auth_token": "<>"
+
+
+// Fetches words in a wordlist.
+
+@name("Fetches words in a WordList")
+GET "https://{{baseUrl}}/wordList.json/:permalink/words"
+"auth_token": "<>"
+? "sortBy"= "<>"
+? "sortOrder"= "<>"
+? "skip"= "<>"
+? "limit"= "<>"
+
+
+

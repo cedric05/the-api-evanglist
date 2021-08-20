@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3a6fa668-19d7-4395-a552-9b7f28cadcb6.postman_collection.json
+
+// Serves to create a Container together with its PickupRight that gets automatically transferred to the consignee.
+
+@name("Create release")
+POST "https://{{baseUrl}}/api/v1/releases/"
+? "api_token"= "<>"
+
+
+// Blocking a release is done by a delete. This will revoke the PickupRight from the consignee. The Container and its PickupRight are deleted. Afterwards it is still possible to release again.n The following conditions apply for this to work:n* the container must have been released, i.e. there must be a vallid PickupRight   for the Containern* the PickupRight should not be transferred to another Organization than the one that got the relesase initiallyn* the PickupRight should not yet be assigned (
+
+@name("Block")
+DELETE "https://{{baseUrl}}/api/v1/releases/:id"
+? "api_token"= "<>"
+
+
+

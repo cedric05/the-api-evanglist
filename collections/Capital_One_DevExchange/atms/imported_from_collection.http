@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1eafd448-a35c-467b-bb97-09ace45ef013.postman_collection.json
+
+// Returns all of the Capital One ATMs in the speified search area.
+
+@name("Get all ATMs")
+GET "https://{{baseUrl}}/atms"
+? "lat"= "<delete>"
+? "lng"= "<delete>"
+? "rad"= "<>"
+
+
+// Returns the ATM with the specific id
+
+@name("Get ATM by id")
+GET "https://{{baseUrl}}/atms/:id"
+
+
+

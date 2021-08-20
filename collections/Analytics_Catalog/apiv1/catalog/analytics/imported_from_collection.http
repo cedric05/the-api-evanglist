@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0df0d40b-bb5f-4ab4-9756-1a85f04bd436.postman_collection.json
+
+// Returns all analytic catalog entries as specified by page and sort criteria.
+
+@name("Get all analytic catalog entries.")
+GET "https://{{baseUrl}}/api/v1/catalog/analytics"
+? "page"= "<>"
+? "size"= "<>"
+? "sortOrder"= "<>"
+? "sortableFields"= "<>"
+? "taxonomyPath"= "<>"
+
+
+// Returns all versions of the analytic catalog entry with the given name.
+
+@name("Get all versions of the analytic catalog entry with the given name.")
+GET "https://{{baseUrl}}/api/v1/catalog/analytics/versions"
+? "name"= "<post>"
+
+
+// Given the name of an analytic, this API deletes all its versions.
+
+@name("Delete all versions of the named analytic.")
+DELETE "https://{{baseUrl}}/api/v1/catalog/analytics/:name/versions"
+
+
+

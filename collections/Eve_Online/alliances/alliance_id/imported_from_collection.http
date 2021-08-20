@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Public information about an alliance
+// 
+// ---
+// Alternate route: `/dev/alliances/{alliance_id}/`
+// 
+// Alternate route: `/legacy/alliances/{alliance_id}/`
+// 
+// Alternate route: `/v3/alliances/{alliance_id}/`
+// 
+// Alternate route: `/v4/alliances/{alliance_id}/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get alliance information")
+GET "https://{{baseUrl}}/alliances/:alliance_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// List all current member corporations of an alliance
+// 
+// ---
+// Alternate route: `/dev/alliances/{alliance_id}/corporations/`
+// 
+// Alternate route: `/legacy/alliances/{alliance_id}/corporations/`
+// 
+// Alternate route: `/v1/alliances/{alliance_id}/corporations/`
+// 
+// Alternate route: `/v2/alliances/{alliance_id}/corporations/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List alliance's corporations")
+GET "https://{{baseUrl}}/alliances/:alliance_id/corporations/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get the icon urls for a alliance
+// 
+// ---
+// Alternate route: `/legacy/alliances/{alliance_id}/icons/`
+// 
+// Alternate route: `/v1/alliances/{alliance_id}/icons/`
+// 
+// ---
+// This route expires daily at 11:05
+// 
+// ---
+// [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/icons/)
+
+@name("Get alliance icon")
+GET "https://{{baseUrl}}/alliances/:alliance_id/icons/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

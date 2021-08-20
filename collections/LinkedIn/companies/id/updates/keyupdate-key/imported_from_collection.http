@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6ea3ce3a-56c9-4319-9efc-e0b187989a5f.postman_collection.json
+
+// Get companies  updates key update key
+
+@name("Get Companies Updates Key Update Key")
+GET "https://{{baseUrl}}/companies/:id/updates/key={{update-key}}"
+
+
+// Post companies  updates key update key update comments as company
+
+@name("Add Companies Updates Key Update Key Update Comments As Company")
+POST "https://{{baseUrl}}/companies/:id/updates/key={{update-key}}/update-comments-as-company/"
+
+
+// Get companies  updates key update key update comments
+
+@name("Get Companies Updates Key Update Key Update Comments")
+GET "https://{{baseUrl}}/companies/:id/updates/key={{update-key}}/update-comments"
+
+
+// Get companies  updates key update key likes
+
+@name("Get Companies Updates Key Update Key Likes")
+GET "https://{{baseUrl}}/companies/:id/updates/key={{update-key}}/likes"
+
+
+

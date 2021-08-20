@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get UDF (User Defined Function) library properties
+
+@name("Get UDF library properties") : "base-inherit-auth"
+GET "https://{{baseUrl}}/global-settings/udfs/:library_id"
+
+
+// Remove UDF library (TBD - Not yet implemented)
+
+@name("Remove UDF library (TBD - Not yet implemented)") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/global-settings/udfs/:library_id"
+
+
+

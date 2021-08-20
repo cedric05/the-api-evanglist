@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-078f0c0e-f03d-4124-bda1-c7d8042a0e64.postman_collection.json
+
+// Returns smart records for a patient..
+
+@name("Returns SMART records for a patient.")
+GET "https://{{baseUrl}}/smart/records/:ehrId/:modelName"
+
+
+// Returns specific smart record for a patient..
+
+@name("Returns specific SMART record for a patient.")
+GET "https://{{baseUrl}}/smart/records/:ehrId/:modelName/:recordId"
+
+
+

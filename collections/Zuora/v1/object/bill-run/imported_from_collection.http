@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com). nnnCreates an ad hoc bill run or a single account or multiple customer accounts.nnWhen creating a single account ad hoc bill run, your request must include `AccountId` and must not include `Batch` or `BillCycleDay`. n
+
+@name("CRUD: Create Bill Run")
+POST "https://{{baseUrl}}/v1/object/bill-run"
+
+
+// **Note:** This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com). nnnWhen deleting a bill run, the logic is the same as when using the UI to delete a bill run. The only required parameter is `BillRunId`. The Status for the bill run must be `Canceled` in order to delete a bill run.n
+
+@name("CRUD: Delete Bill Run")
+DELETE "https://{{baseUrl}}/v1/object/bill-run/:id"
+
+
+

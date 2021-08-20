@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Deletes the specified webhook subscription from the given
+// repository.
+
+@name("/repositories/:username/:repo_slug/hooks/:uid")
+DELETE "https://{{baseUrl}}/repositories/:username/:repo_slug/hooks/:uid"
+
+
+// Returns the webhook with the specified id installed on the specified
+// repository.
+
+@name("/repositories/:username/:repo_slug/hooks/:uid")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/hooks/:uid"
+
+
+// Updates the specified webhook subscription.
+// 
+// The following properties can be mutated:
+// 
+// * `description`
+// * `url`
+// * `active`
+// * `events`
+
+@name("/repositories/:username/:repo_slug/hooks/:uid")
+PUT "https://{{baseUrl}}/repositories/:username/:repo_slug/hooks/:uid"
+
+
+

@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieve a pattern
+
+@name("Retrieve a pattern") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/data-redaction/patterns/:pattern"
+
+
+// Add a RegEx pattern to be redacted. The pattern name must match the resource identifier
+
+@name("Create a pattern") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/services/:env_id/settings/data-redaction/patterns/:pattern"
+"Content-Type": "application/json"
+json({
+    "name": "Visa",
+    "category": "Credit Card",
+    "regex": "\\b4\\d{3}([\\-\\ ]?)(?:\\d{4}\\1){2}\\d(?:\\d{3})?\\b",
+    "is_active": true
+})
+
+
+// Removes a pattern from the redaction list
+
+@name("Delete a pattern") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/services/:env_id/settings/data-redaction/patterns/:pattern"
+
+
+

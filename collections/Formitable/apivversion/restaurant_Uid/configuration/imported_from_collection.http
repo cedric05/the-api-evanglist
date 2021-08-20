@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get configuration of the day and for the specified number of people.
+
+@name("Get configuration")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/configuration/:dateTime/:numberOfPeople"
+
+
+// Get configuration of the day and for the specified number of people.
+
+@name("Get batch of configurations")
+POST "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/configuration/batch"
+"Content-Type": "application/json"
+
+
+
+// Get configuration of a day.
+
+@name("Get configuration of a day")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/configuration/day/:date"
+
+
+// Get configuration of the month.
+
+@name("Get configuration of month")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/configuration/month/:year/:month"
+
+
+

@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team members`](https://developer.github.com/v3/teams/members/#list-team-members) endpoint.
+// 
+// Team members will include the members of child teams.
+
+@name("List team members (Legacy)")
+GET "https://{{baseUrl}}/teams/:team_id/members"
+? "role"= "all"
+? "per_page"= "30"
+? "page"= "1"
+
+
+

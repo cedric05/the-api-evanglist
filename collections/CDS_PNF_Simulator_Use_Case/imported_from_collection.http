@@ -1,0 +1,182 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-60348e3a-0571-43f2-9992-68cafb347ce7.postman_collection.json
+
+@name("Bootstrap")
+POST "http://{{host}}/api/v1/blueprint-model/bootstrap"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+json({
+    "loadModelType": true,
+    "loadResourceDictionary": true,
+    "loadCBA": true
+})
+
+
+@name("Get Blueprints")
+GET "http://{{host}}/api/v1/blueprint-model"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+json({
+    "loadModelType": true,
+    "loadResourceDictionary": true,
+    "loadCBA": false
+})
+
+
+// Delete a blueprint model identified by its name and version from CDS.
+
+@name("Delete Blueprint Model loaded in Bootstrap")
+DELETE "http://{{host}}/api/v1/blueprint-model/name/pnf_netconf/version/1.0.0"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+
+
+@name("Data Dictionary")
+POST "http://{{host}}/api/v1/dictionary"
+basicauth("ccsdkapps", "ccsdkapps")
+data('{{DataDictionary}}')
+
+
+@name("Enrich Blueprint")
+POST "http://{{host}}/api/v1/blueprint-model/enrich"
+basicauth("ccsdkapps", "ccsdkapps")
+"Accept": "application/json"
+"Accept-Encoding": "gzip,deflate"
+"Referer": "http://84.39.39.116:30497/blueprint"
+"Origin": "http://84.39.39.116:30497"
+files(
+	("file", "None")
+)
+
+
+@name("Save Blueprint")
+POST "http://{{host}}/api/v1/blueprint-model"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+files(
+	("file", "None")
+)
+
+
+@name("Create Config Assign Day-1")
+POST "http://{{host}}/api/v1/execution-service/process"
+basicauth("ccsdkapps", "ccsdkapps")
+"Accept": "application/json"
+"Accept-Encoding": "gzip,deflate"
+"Referer": "http://84.39.39.116:30497/blueprint"
+"Origin": "http://84.39.39.116:30497"
+json({
+    "actionIdentifiers": {
+        "mode": "sync",
+        "blueprintName": "pnf_netconf",
+        "blueprintVersion": "1.0.0",
+        "actionName": "config-assign"
+    },
+    "payload": {
+        "config-assign-request": {
+            "resolution-key": "day-1",
+            "config-assign-properties": {
+                "stream-count": 5
+            }
+        }
+    },
+    "commonHeader": {
+        "subRequestId": "143748f9-3cd5-4910-81c9-a4601ff2ea58",
+        "requestId": "e5eb1f1e-3386-435d-b290-d49d8af8db4c",
+        "originatorId": "SDNC_DG"
+    }
+})
+
+
+@name("Create Config Assign Day-2")
+POST "http://{{host}}/api/v1/execution-service/process"
+basicauth("ccsdkapps", "ccsdkapps")
+"Accept": "application/json"
+"Accept-Encoding": "gzip,deflate"
+"Referer": "http://84.39.39.116:30497/blueprint"
+"Origin": "http://84.39.39.116:30497"
+json({
+    "actionIdentifiers": {
+        "mode": "sync",
+        "blueprintName": "pnf_netconf",
+        "blueprintVersion": "1.0.0",
+        "actionName": "config-assign"
+    },
+    "payload": {
+        "config-assign-request": {
+            "resolution-key": "day-2",
+            "config-assign-properties": {
+                "stream-count": 10
+            }
+        }
+    },
+    "commonHeader": {
+        "subRequestId": "143748f9-3cd5-4910-81c9-a4601ff2ea58",
+        "requestId": "e5eb1f1e-3386-435d-b290-d49d8af8db4c",
+        "originatorId": "SDNC_DG"
+    }
+})
+
+
+@name("Day-1 Config Deploy")
+POST "http://{{host}}/api/v1/execution-service/process"
+basicauth("ccsdkapps", "ccsdkapps")
+"Accept": "application/json"
+"Accept-Encoding": "gzip,deflate"
+"Referer": "http://84.39.39.116:30497/blueprint"
+"Origin": "http://84.39.39.116:30497"
+json({
+    "actionIdentifiers": {
+        "mode": "sync",
+        "blueprintName": "pnf_netconf",
+        "blueprintVersion": "1.0.0",
+        "actionName": "config-deploy"
+    },
+    "payload": {
+        "config-deploy-request": {
+            "resolution-key": "day-1",
+            "pnf-ipv4-address": "{{pnf-ipv4-address}}",
+            "netconf-username": "{{netconf-username}}",
+            "netconf-password": "{{netconf-password}}"
+        }
+    },
+    "commonHeader": {
+        "subRequestId": "143748f9-3cd5-4910-81c9-a4601ff2ea58",
+        "requestId": "e5eb1f1e-3386-435d-b290-d49d8af8db4c",
+        "originatorId": "SDNC_DG"
+    }
+})
+
+
+@name("Day-2 Config Deploy")
+POST "http://{{host}}/api/v1/execution-service/process"
+basicauth("ccsdkapps", "ccsdkapps")
+"Accept": "application/json"
+"Accept-Encoding": "gzip,deflate"
+"Referer": "http://84.39.39.116:30497/blueprint"
+"Origin": "http://84.39.39.116:30497"
+json({
+    "actionIdentifiers": {
+        "mode": "sync",
+        "blueprintName": "pnf_netconf",
+        "blueprintVersion": "1.0.0",
+        "actionName": "config-deploy"
+    },
+    "payload": {
+        "config-deploy-request": {
+            "resolution-key": "day-2",
+            "pnf-ipv4-address": "{{pnf-ipv4-address}}",
+            "netconf-username": "{{netconf-username}}",
+            "netconf-password": "{{netconf-password}}"
+        }
+    },
+    "commonHeader": {
+        "subRequestId": "143748f9-3cd5-4910-81c9-a4601ff2ea58",
+        "requestId": "e5eb1f1e-3386-435d-b290-d49d8af8db4c",
+        "originatorId": "SDNC_DG"
+    }
+})
+
+
+

@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /updates/notifications
+
+@name("/updates/notifications")
+POST "https://{{baseUrl}}/updates/marknotificationsread"
+? "highWatermark"= "<integer>"
+? "v"= "<string>"
+
+
+// /updates/{UPDATE_ID}
+
+@name("/updates/{UPDATE_ID}")
+GET "https://{{baseUrl}}/updates/notifications"
+? "limit"= "<integer>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/updateitem
+
+@name("/lists/{LIST_ID}/updateitem")
+GET "https://{{baseUrl}}/updates/:UPDATE_ID"
+? "UPDATE_ID"= "<string>"
+? "v"= "<string>"
+
+
+

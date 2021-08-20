@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1b358839-b176-4430-9533-5d12bd38f9d2.postman_collection.json
+
+// Gets a list of all `Branch Current Account` objects.
+
+@name("/business-current-accounts")
+GET "https://{{baseUrl}}/business-current-accounts"
+"If-Modified-Since": "labore in est"
+"If-None-Match": "labore in est"
+
+
+// Gets header information on the current set of `Business Current Account` data
+
+@name("/business-current-accounts")
+HEAD "https://{{baseUrl}}/business-current-accounts"
+"If-Modified-Since": "labore in est"
+"If-None-Match": "labore in est"
+
+
+

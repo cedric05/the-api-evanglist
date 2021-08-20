@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c25d627-86e8-4072-b0fa-98946e646a2c.postman_collection.json
+
+// <p>The <code>Initial Sync</code>&nbsp;request syncs the entries and assets of a stack, published on a specific environment.
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#initial-synchronization>Initial Synchronization</a> API Reference document
+
+@name("Initial Sync")
+GET "https://{{base_url}}/v3/stacks/sync"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "init"= "true"
+? "environment"= "{{environment}}"
+? "content_type_uid"= "{{content_type_uid}}"
+? "locale"= "{{locale}}"
+? "start_from"= "2018-01-14T00:00:00.000Z"
+? "type"= "entry_published, entry_unpublished, asset_published"
+
+
+// <p>When running the <a href="#initial-synchronization">Initial Synchronization</a> or the <a href="#subsequent-sync">Subsequent Sync</a> request, if the result of the&nbsp;sync (initial or subsequent) request exceeds 100 records you will get a <code>pagination_token</code>.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#sync-using-pagination-token>Sync using pagination token</a> API Reference document
+
+@name("Sync using pagination token")
+GET "https://{{base_url}}/v3/stacks/sync"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "pagination_token"= "{{pagination_token}}"
+
+
+// <p>The <code>Subsequent Sync</code> request is used to retrieve the updated content (i.e., published or unpublished content, or any published content that has been deleted) since the last performed complete Sync.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#subsequent-sync>Subsequent Sync</a> API Reference document
+
+@name("Subsequent Sync")
+GET "https://{{base_url}}/v3/stacks/sync"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "sync_token"= "{{sync_token}}"
+
+
+

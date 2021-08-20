@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Returns the activity stats of an athlete.
+
+@name("Get Athlete Stats")
+GET "https://{{baseUrl}}/athletes/:id/stats"
+? "No Name"= "<string>"
+
+
+// Returns a list of the routes created by the authenticated athlete using their athlete ID. Private routes are filtered out unless requested by a token with read_all scope.
+
+@name("List Athlete Routes")
+GET "https://{{baseUrl}}/athletes/:id/routes"
+? "No Name"= "<string>"
+
+
+

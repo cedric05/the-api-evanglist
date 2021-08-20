@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get details for an individual virtual connection. For increased security, connection endpoints require an Enterprise Admin Token. This token can be found under [Advanced Settings](https://data.world/settings/advanced). 
+
+@name("Get an individual connection") : "base-inherit-auth"
+GET "https://{{baseUrl}}/connections/:owner/:id"
+
+
+// Delete a Connection. For increased security, connection endpoints require an Enterprise Admin Token. This token can be found under [Advanced Settings](https://data.world/settings/advanced). 
+
+@name("Delete a Connection.") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/connections/:owner/:id"
+
+
+

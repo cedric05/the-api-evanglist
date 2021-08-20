@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7e6f9362-d794-4f68-8889-4b98dbcc6d76.postman_collection.json
+
+// This operation will register a non-SEPA payment at the bank for
+// further authorization by the account holder through the consent application.
+// The access token from the consent can be used in PUT payments to execute the
+// registered payment. These type of payments are subject to SWIFT characterset
+// limitations and possible truncation of fields.
+
+@name("post Xborder Payment")
+POST "https://{{baseUrl}}/payments/xborder"
+
+
+// This operation will release a registered non-SEPA
+// payment at the bank for further processing. Authorization by the account holder
+// is needed through consent to obtain a access token. The TransactionId is received
+// as response to POST Payments.
+
+@name("put Xborder Payment")
+PUT "https://{{baseUrl}}/payments/xborder/:transactionId"
+
+
+

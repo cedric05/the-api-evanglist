@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get an individual column metadata
+
+@name("Get an individual column metadata") : "base-inherit-auth"
+GET "https://{{baseUrl}}/metadata/data/sources/:owner/:sourceid/tables/:tableid/columns/:columnid"
+
+
+// Replace an existing column
+
+@name("Replace an existing column") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/metadata/data/sources/:owner/:sourceid/tables/:tableid/columns/:columnid"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "Aid Option"
+    ],
+    "title": "crypto.snowflake",
+    "typeLabel": "Tableau dashboard",
+    "description": "Aid given to charity is an option that can be exercised by individuals and corporations",
+    "tags": [
+        "sensitive"
+    ],
+    "properties": {},
+    "dataType": "BIGINT",
+    "columnIndex": 73031738
+})
+
+
+// Delete a Column.
+
+@name("Delete a Column") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/metadata/data/sources/:owner/:sourceid/tables/:tableid/columns/:columnid"
+
+
+// Update an existing Column.
+
+@name("Update an existing Column") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/metadata/data/sources/:owner/:sourceid/tables/:tableid/columns/:columnid"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "Aid Option"
+    ],
+    "title": "crypto.snowflake",
+    "typeLabel": "Tableau dashboard",
+    "description": "Aid given to charity is an option that can be exercised by individuals and corporations",
+    "tags": [
+        "sensitive"
+    ],
+    "properties": {},
+    "dataType": "BIGINT",
+    "columnIndex": 73031738
+})
+
+
+

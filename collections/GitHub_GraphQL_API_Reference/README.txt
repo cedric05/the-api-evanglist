@@ -1,0 +1,1 @@
+This is a reference collection for the GitHub GraphQL API. More work is needed to help visualize the surface area of the GitHub GraphQL API schema.

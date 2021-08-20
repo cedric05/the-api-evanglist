@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-edf4e52a-d167-4c2f-bb89-c42269bd9481.postman_collection.json
+
+// Returns a track by track id
+
+@name("Get Tracks Track")
+GET "https://{{baseUrl}}/tracks/{{track_id}}.json"
+? "consumer_key"= "<>"
+
+
+// Returns a track by track id
+
+@name("Get Tracks Track . Format")
+GET "https://{{baseUrl}}/tracks/{{track_id}}.{{format}}"
+? "consumer_key"= "<>"
+
+
+

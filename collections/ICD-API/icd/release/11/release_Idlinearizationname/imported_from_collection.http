@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b71fd21b-bfe2-48a4-b72e-2e45c80f54e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("This endpoint returns basic information on the released linearization (such as MMS) together with the chapters in it") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/release/11/:releaseId/:linearizationname"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+
+
+@name("This endpoint allows looking up an entity from its code. For postcoordinated code combinations, it provides 
+more information on the code combination such as which axes are used and what values do they have") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/release/11/:releaseId/:linearizationname/codeinfo/:code"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+
+
+

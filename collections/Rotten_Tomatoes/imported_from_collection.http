@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ce20e6b1-bbe2-4633-bbfd-c4d3fdf33b8a.postman_collection.json
+
+// Get lists.json.
+
+@name("Get Lists")
+GET "https://{{baseUrl}}/lists.json"
+
+
+// Get movie alias.json.
+
+@name("Get Movie Alias")
+GET "https://{{baseUrl}}/movie_alias.json"
+? "id"= "<>"
+? "type"= "<>"
+
+
+// Get movies.json.
+
+@name("Get Movies")
+GET "https://{{baseUrl}}/movies.json"
+? "q"= "<>"
+? "page_limit"= "<>"
+? "page"= "<>"
+
+
+

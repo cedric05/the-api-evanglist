@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Returns the Balance for the given accountsn
+
+@name("Get Account Balancesn")
+GET "https://{{baseUrl}}/accounts/:account_keys/balances"
+? "access_token"= "<string>"
+
+
+// Returns the Positions for the given accountsn
+
+@name("Get Account Positionsn")
+GET "https://{{baseUrl}}/accounts/:account_keys/positions"
+? "access_token"= "<string>"
+? "$filter"= "<string>"
+
+
+// Returns the Orders for the given accounts sorted descending, most recent order first.nnNote: Intermediate order state changes are not available.n
+
+@name("Get Account Ordersn")
+GET "https://{{baseUrl}}/accounts/:account_keys/orders"
+? "access_token"= "<string>"
+? "since"= "<string>"
+? "pageSize"= "<string>"
+? "pageNum"= "<string>"
+
+
+

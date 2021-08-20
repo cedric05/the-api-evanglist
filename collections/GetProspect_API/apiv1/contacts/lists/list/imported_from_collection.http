@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Save new contacts to list
+
+@name("Add contacts to list")
+POST "https://{{baseUrl}}/api/v1/contacts/lists/:list/add"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "contactsIds": [
+        "sunt pariatur dolor",
+        "enim"
+    ]
+})
+
+
+// Search contacts by filter related to list
+
+@name("Search contacts related to list")
+GET "https://{{baseUrl}}/api/v1/contacts/lists/:list/contacts/search"
+"Authorization": "Bearer <Bearer Token>"
+? "order"= "incididunt voluptate"
+? "sort"= "incididunt voluptate"
+? "pageNumber"= "56827440.204882234"
+? "pageSize"= "56827440.204882234"
+
+
+

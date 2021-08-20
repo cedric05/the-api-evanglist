@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Used to create a comparison between all available quotes. The array in the response contains all quotes for a specific product that were available in the request scope based on permissions. Later, this comparison can be sorted (e.g. cheapest, best, most popular quote), filtered (only quotes fulfilling certain criteria), etc.
+
+@name("Get all available quotes for a product") : "base-inherit-auth"
+POST "https://{{baseUrl}}/quotes/:product"
+"Content-Type": "application/json"
+json({
+    "inputs": {
+        "object.home.address": "Linke Wienzeile 10/4 1060 Wien",
+        "object.home.size.total": 256,
+        "product.household.coverage.sum": 250000,
+        "product.household.coverage.burglary.is-included": true
+    }
+})
+
+
+// Used to generate a quote for a specific product by a specific provider. Product and provider are defined in the URL.
+
+@name("Get a specific quote") : "base-inherit-auth"
+POST "https://{{baseUrl}}/quotes/:product/:provider"
+"Content-Type": "application/json"
+json({
+    "inputs": {
+        "object.home.address": "Linke Wienzeile 10/4 1060 Wien",
+        "object.home.size.total": 256,
+        "product.household.coverage.sum": 250000,
+        "product.household.coverage.burglary.is-included": true
+    }
+})
+
+
+

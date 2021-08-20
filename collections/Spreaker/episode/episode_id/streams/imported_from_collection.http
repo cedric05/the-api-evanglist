@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f67aecc5-ff45-4de9-97cc-ff8ad045654d.postman_collection.json
+
+// The response contains a collection of ICY streams.
+
+@name("Get Episode Streams")
+GET "https://{{baseUrl}}/episode/:episode_id/streams/icy"
+? "episode_id"= "<>"
+
+
+// The response contains a collection of RTMP / RTMPT streams.
+
+@name("Get Episode Streams")
+GET "https://{{baseUrl}}/episode/:episode_id/streams/rtmp"
+
+
+

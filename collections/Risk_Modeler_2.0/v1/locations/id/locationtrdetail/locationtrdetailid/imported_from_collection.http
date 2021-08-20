@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Gets a location TR detail
+
+@name("Gets a location TR detail") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/locations/:id/locationtrdetail/:locationtrdetailid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates a location TR detail
+
+@name("Updates a location TR detail") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/locations/:id/locationtrdetail/:locationtrdetailid"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": -29498919,
+    "siteLimit": -71633484.82162726,
+    "siteDeduct": 69595328.7185021,
+    "combinedLimit": 26168759.302695006,
+    "combinedDeduct": 35737733.52442804,
+    "yearUpgrade": "anim",
+    "startDate": "veniam voluptate",
+    "completionDate": "laborum irure",
+    "percentComplete": -95557960.13973454,
+    "percentageSiteLossDeductibleAmount": -39892541.99047116,
+    "percentageCombinedLossDeductibleAmount": -48340588.53594989,
+    "isFranchiseSiteDeductible": {
+        "id": 87484099,
+        "code": "ad",
+        "name": "occaecat est cillum adipisicing veniam"
+    },
+    "isFranchiseCombinedDeductible": {
+        "id": -51185029,
+        "code": "voluptate labore nostrud proident",
+        "name": "sint dolor"
+    },
+    "isValid": false,
+    "trPackage": {
+        "id": -42557794,
+        "code": "sed quis dolore",
+        "name": "Duis tempor elit officia "
+    },
+    "trProtect": {
+        "id": 11726155,
+        "code": "voluptate",
+        "name": "in proident pariatur consequat"
+    },
+    "trSalvage": {
+        "id": 93665962,
+        "code": "officia tempor laboris",
+        "name": "officia commodo do sint"
+    },
+    "trSpecieStorage": {
+        "id": -76337202,
+        "code": "sunt id nisi ad laboris",
+        "name": "anim magna"
+    }
+})
+
+
+// Deletes a location TR detail
+
+@name("Deletes a location terrorism detail") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/locations/:id/locationtrdetail/:locationtrdetailid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b71fd21b-bfe2-48a4-b72e-2e45c80f54e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("This endpoint returns lists the URIs of the entity in the available releases") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/release/11/:linearizationname/:id"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+
+
+@name("This endpoint returns lists the URIs of the residual entity in the available releases.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/release/11/:linearizationname/:id/:residual"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+
+
+

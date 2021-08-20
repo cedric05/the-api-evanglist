@@ -1,0 +1,79 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Cancel a specific TabUsageSingle.
+
+@name("DELETE Tab Usage Single for User Monetary Account Cash Register")
+DELETE "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/tab-usage-single/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Get a specific TabUsageSingle.
+
+@name("READ Tab Usage Single for User Monetary Account Cash Register")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/tab-usage-single/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Modify a specific TabUsageSingle. You can change the amount_total, status and visibility. Once you change the status to WAITING_FOR_PAYMENT the TabUsageSingle will expire after 5 minutes (default) or up to 1 hour if a different expiration is provided.
+
+@name("UPDATE Tab Usage Single for User Monetary Account Cash Register")
+PUT "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/tab-usage-single/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "allow_amount_higher": "<boolean>",
+    "allow_amount_lower": "<boolean>",
+    "amount_total": {
+        "currency": "esse dolor",
+        "value": "sed dolor eiusmod"
+    },
+    "description": "<string>",
+    "expiration": "<string>",
+    "merchant_reference": "<string>",
+    "minimum_age": "<boolean>",
+    "redirect_url": "<string>",
+    "require_address": "<string>",
+    "status": "<string>",
+    "tab_attachment": [
+        {
+            "id": 75740617
+        },
+        {
+            "id": 54346096
+        }
+    ],
+    "visibility": {
+        "cash_register_qr_code": false,
+        "location": {
+            "altitude": 94677000,
+            "latitude": 79079112,
+            "longitude": -56077702,
+            "radius": -38345288
+        },
+        "tab_qr_code": true
+    },
+    "want_tip": "<boolean>"
+})
+
+
+

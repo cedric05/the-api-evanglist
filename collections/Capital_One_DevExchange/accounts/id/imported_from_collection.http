@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1eafd448-a35c-467b-bb97-09ace45ef013.postman_collection.json
+
+// Returns the account with the specific id
+
+@name("Get account by id")
+GET "https://{{baseUrl}}/accounts/:id"
+
+
+// Returns the customer that the account belongs to.
+
+@name("Get customer that owns the specified account")
+GET "https://{{baseUrl}}/accounts/:id/customer"
+
+
+// Returns the bills that are tied to the specific account.
+
+@name("Get all bills for a specific account")
+GET "https://{{baseUrl}}/accounts/:id/bills"
+
+
+// Returns the deposits that you are involved in.
+
+@name("Get all deposits")
+GET "https://{{baseUrl}}/accounts/:id/deposits"
+
+
+// Returns the loans that you are involved in.
+
+@name("Get all loans")
+GET "https://{{baseUrl}}/accounts/:id/loans"
+
+
+// Returns the purchases that you are involved in.
+
+@name("Get all purchases")
+GET "https://{{baseUrl}}/accounts/:id/purchases"
+
+
+// Returns the transfers that you are involved in.
+
+@name("Get all transfers")
+GET "https://{{baseUrl}}/accounts/:id/transfers"
+? "type"= "<delete>"
+
+
+// Returns the withdrawals that you are involved in.
+
+@name("Get all withdrawals")
+GET "https://{{baseUrl}}/accounts/:id/withdrawals"
+
+
+

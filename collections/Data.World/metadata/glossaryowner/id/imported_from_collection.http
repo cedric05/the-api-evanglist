@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get a business glossary resource by id
+
+@name("Get a business glossary resource by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/metadata/glossary/:owner/:id"
+
+
+// Overwrite an existing business glossary resource
+
+@name("Overwrite an existing business glossary resource") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/metadata/glossary/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "Aid Option"
+    ],
+    "title": "crypto.snowflake",
+    "typeLabel": "Tableau dashboard",
+    "description": "Aid given to charity is an option that can be exercised by individuals and corporations",
+    "tags": [
+        "sensitive"
+    ],
+    "properties": {},
+    "summary": "elit"
+})
+
+
+// Delete a business glossary resource
+
+@name("Delete a business glossary resource") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/metadata/glossary/:owner/:id"
+
+
+// Update an existing business glossary resource
+
+@name("Update an existing business glossary resource") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/metadata/glossary/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "Aid Option"
+    ],
+    "title": "crypto.snowflake",
+    "typeLabel": "Tableau dashboard",
+    "description": "Aid given to charity is an option that can be exercised by individuals and corporations",
+    "tags": [
+        "sensitive"
+    ],
+    "properties": {},
+    "summary": "elit"
+})
+
+
+

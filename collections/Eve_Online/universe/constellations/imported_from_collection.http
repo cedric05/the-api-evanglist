@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get a list of constellations
+// 
+// ---
+// Alternate route: `/legacy/universe/constellations/`
+// 
+// Alternate route: `/v1/universe/constellations/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get constellations")
+GET "https://{{baseUrl}}/universe/constellations/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get information on a constellation
+// 
+// ---
+// Alternate route: `/legacy/universe/constellations/{constellation_id}/`
+// 
+// Alternate route: `/v1/universe/constellations/{constellation_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get constellation information")
+GET "https://{{baseUrl}}/universe/constellations/:constellation_id/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+

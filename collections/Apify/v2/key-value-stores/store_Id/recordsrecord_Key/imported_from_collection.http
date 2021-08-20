@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets a value stored in the key-value store under a specific key.nnIf the request defines the `Accept-Encoding: gzip` HTTP header then the response will be gzipped.
+
+@name("Get record")
+GET "https://{{baseUrl}}/v2/key-value-stores/:storeId/records/:recordKey"
+? "disableRedirect"= "<string>"
+? "token"= "<string>"
+
+
+// Generates a unique URL that can be used to upload a record under a specific key to the key-value store.nThe record must be uploaded to the resulting URL using a PUT request.nnThis endpoint is useful if your record is larger than the limitnimposed by the [Put record](#reference/key-value-stores/record/put-record) endpointn(i.e. 9 MB) or if you want to get the maximum speed for your upload.nnTo save bandwidth and speed up your upload, send the request payload compressed with Gzip compression andna
+
+@name("Get direct upload URL")
+GET "https://{{baseUrl}}/v2/key-value-stores/:storeId/records/:recordKey/direct-upload-url"
+? "token"= "<string>"
+
+
+

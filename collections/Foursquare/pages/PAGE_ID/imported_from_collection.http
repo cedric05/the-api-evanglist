@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /events/search
+
+@name("/events/search")
+GET "https://{{baseUrl}}/pages/:PAGE_ID"
+? "PAGE_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /pages/search
+
+@name("/pages/search")
+GET "https://{{baseUrl}}/pages/:PAGE_ID/venues"
+? "limit"= "<integer>"
+? "ll"= "<string>"
+? "ne"= "<string>"
+? "offset"= "<string>"
+? "PAGE_ID"= "<string>"
+? "radius"= "<decimal>"
+? "sw"= "<string>"
+? "v"= "<string>"
+
+
+

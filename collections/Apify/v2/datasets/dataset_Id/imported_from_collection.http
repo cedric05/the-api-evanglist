@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Returns dataset object for given dataset ID.
+
+@name("Get dataset")
+GET "https://{{baseUrl}}/v2/datasets/:datasetId"
+? "token"= "<string>"
+
+
+// Returns data stored in the dataset in a desired format.nn### Response formatnnThe format of the response depends on format query parameter.nnThe format parameter can have one of the following values:njson, jsonl, xml, html, csv, xlsx and rss.nnThe following table describes how each format is treated.nnn  n    Formatn    Items
+
+@name("Get items")
+GET "https://{{baseUrl}}/v2/datasets/:datasetId/items"
+? "token"= "<string>"
+? "format"= "<string>"
+? "clean"= "<string>"
+? "offset"= "<number>"
+? "limit"= "<number>"
+? "fields"= "<string>"
+? "omit"= "<string>"
+? "unwind"= "<string>"
+? "desc"= "<boolean>"
+? "attachment"= "<string>"
+? "delimiter"= "<string>"
+? "bom"= "<string>"
+? "xmlRoot"= "<string>"
+? "xmlRow"= "<string>"
+? "skipHeaderRow"= "<string>"
+? "skipHidden"= "<string>"
+? "skipEmpty"= "<string>"
+? "simplified"= "<string>"
+? "skipFailedPages"= "<string>"
+
+
+

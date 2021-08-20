@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dadfb11e-0cc4-4482-820a-6fa30a417e82.postman_collection.json
+
+// send email
+
+@name("/sendEmail")
+POST "https://{{baseUrl}}/sendEmail"
+"Content-Type": "application/json"
+json({
+    "email": "id sed velit magna irure",
+    "subject": "elit dolor tempor",
+    "content": "dolore anim"
+})
+
+
+

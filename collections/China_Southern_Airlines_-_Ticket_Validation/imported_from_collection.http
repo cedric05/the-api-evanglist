@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a9e36912-436f-4149-aa13-d0467f5b3b6c.postman_collection.json
+
+// Get ticket check information By ticketNo and userName
+
+@name("getEticketInfosByEticketNo")
+POST "https://{{baseUrl}}/v1/ticketValidation/getEticketInfosByEticketNo"
+"Content-Type": "application/json"
+json({
+    "ticketNo": "784****1",
+    "userName": "Test/Test",
+    "lang": "zh"
+})
+
+
+

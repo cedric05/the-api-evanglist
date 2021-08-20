@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// List contacts.
+
+@name("List contacts")
+GET "https://{{baseUrl}}/rest/accounts/contacts"
+? "fullText"= "<post>"
+? "contactEmail"= "<>"
+? "email"= "<post>"
+? "postalCode"= "<post>"
+? "plentyId"= "<post>"
+? "externalId"= "<post>"
+? "number"= "<post>"
+? "typeId"= "<post>"
+? "createdAtBefore"= "<>"
+? "createdAtAfter"= "<>"
+? "updatedAtBefore"= "<>"
+? "updatedAtAfter"= "<>"
+? "with"= "<>"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+? "newsletterAllowanceAfter"= "<>"
+? "newsletterAllowanceBefore"= "<>"
+? "newsletterAllowance"= "<>"
+? "contactId"= "<post>"
+? "contactAddress"= "<>"
+? "countryId"= "<post>"
+? "userId"= "<post>"
+? "referrerId"= "<post>"
+? "name"= "<post>"
+? "town"= "<post>"
+? "privatePhone"= "<post>"
+? "billingAddressId"= "<>"
+? "deliveryAddressId"= "<>"
+
+
+// Lists all data that is related to the contact group function contents.
+
+@name("List all group function related data")
+GET "https://{{baseUrl}}/rest/accounts/contacts/group_functions"
+
+
+// Deletes a contact option. The ID of the option must be specified.
+
+@name("Delete a contact option by the option ID")
+DELETE "https://{{baseUrl}}/rest/accounts/contacts/options/:optionId"
+
+
+

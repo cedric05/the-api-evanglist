@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-585a2d49-6eb1-4045-8898-5ab8d446bc39.postman_collection.json
+
+// Available currencies.
+
+@name("Available Currencies")
+GET "https://{{baseUrl}}/public/currency"
+
+
+// Get currency info.
+
+@name("Get Currency Info")
+GET "https://{{baseUrl}}/public/currency/:currency"
+
+
+

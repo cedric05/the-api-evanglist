@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7de2a508-4d8e-4b18-b4ea-4008f6460424.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{bearer_token}}"
+
+
+// This is a call to the root of the GitHub GraphQL API.
+
+@name("A quick hello world to the root!") : "base-inherit-auth"
+GET "https://api.github.com/graphql"
+
+
+// This is a call to the root of the GitHub GraphQL API.
+
+@name("How many repositories do I have?") : "base-inherit-auth"
+POST "https://api.github.com/graphql"
+
+
+
+// This is a call to the root of the GitHub GraphQL API.
+
+@name("Give me the last 60 issues for a repo.") : "base-inherit-auth"
+POST "https://api.github.com/graphql"
+
+
+
+

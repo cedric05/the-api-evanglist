@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Shows the number of the tickets solved during the specified period.nn
+
+@name("Solved tickets")
+GET "https://{{baseUrl}}/reports/tickets/solved_tickets"
+"X": "<>"
+? "date_from"= "<>"
+? "date_to"= "<>"
+
+
+// Shows the distribution of the tickets between various channels.
+
+@name("Ticket sources")
+GET "https://{{baseUrl}}/reports/tickets/ticket_sources"
+"X": "<>"
+? "date_from"= "<>"
+? "date_to"= "<>"
+
+
+// Shows the resolution time of the tickets that were solved during the specified period.nn
+
+@name("Tickets resolution time")
+GET "https://{{baseUrl}}/reports/tickets/resolution_time"
+"X": "<>"
+? "date_from"= "<>"
+? "date_to"= "<>"
+
+
+// Shows the time of the first response to the tickets that were responded to for the first time during the specified period.
+
+@name("Tickets first response time")
+GET "https://{{baseUrl}}/reports/tickets/first_response_time"
+"X": "<>"
+? "date_from"= "<>"
+? "date_to"= "<>"
+? "agent"= "<>"
+
+
+// Shows the number of the tickets created during the specified period.nn
+
+@name("New tickets")
+GET "https://{{baseUrl}}/reports/tickets/new_tickets"
+"X": "<>"
+? "date_from"= "<>"
+? "date_to"= "<>"
+? "group_by"= "<>"
+
+
+

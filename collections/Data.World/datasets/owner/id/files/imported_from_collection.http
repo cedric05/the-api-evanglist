@@ -1,0 +1,97 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Delete one or more files from a dataset.   
+// 
+// **Batching**  
+// Note that the `name` parameter can be include multiple times in the query string, once for each file that is to be deleted together in a single request.
+
+@name("Delete files") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/datasets/:owner/:id/files"
+? "name"= "quis sit"
+? "name"= "proident ut"
+
+
+// Add files from URLs to a dataset. This method allows files published on the web to be added to a data.world dataset via their URL. This method can also be used to retrieve data via web APIs, with advanced options for http method, request payload and authentication.
+// 
+// The source URL will be stored so you can easily update your file anytime it changes via the *fetch latest* link on the [data.world](https://data.world/) dataset page or by triggering the `GET:/sync` endpoint.  
+
+@name("Add files from URLs") : "base-inherit-auth"
+POST "https://{{baseUrl}}/datasets/:owner/:id/files"
+"Content-Type": "application/json"
+json({
+    "files": [
+        {
+            "name": "K6Gj",
+            "description": "cill",
+            "labels": [
+                "raw data",
+                "script"
+            ],
+            "source": {
+                "authorization": {
+                    "type": "",
+                    "credentials": "z17J"
+                },
+                "credentials": {
+                    "user": "et e",
+                    "password": "ut "
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "2b-s",
+                    "site": "pes8",
+                    "id": "urn:uuid:11c953be-94e4-a541-a3e6-eaa30569cbca"
+                },
+                "requestEntity": "",
+                "requestHeaders": {},
+                "url": "stre"
+            }
+        },
+        {
+            "name": ">]\\$",
+            "description": "inci",
+            "labels": [
+                "visualization",
+                "documentation"
+            ],
+            "source": {
+                "authorization": {
+                    "type": "B=G",
+                    "credentials": "t}?M"
+                },
+                "credentials": {
+                    "user": "ad ",
+                    "password": "in "
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "s---",
+                    "site": "nza4",
+                    "id": "urn:uuid:bacd6348-b092-98b3-f99c-39237d55d21e"
+                },
+                "requestEntity": "c",
+                "requestHeaders": {},
+                "url": "stre"
+            }
+        }
+    ]
+})
+
+
+// Delete a single file from a dataset.
+
+@name("Delete a file") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/datasets/:owner/:id/files/:file"
+
+
+

@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34a38a08-9881-4c51-9aa4-0e19e7bc1d51.postman_collection.json
+
+// Retrieve a list of clients.
+
+@name("List clients")
+GET "https://{{baseUrl}}/client"
+
+
+// Register a new client with this Authentiq Connect provider.
+// 
+// This endpoint is compatible with [OIDC's Client Registration](http://openid.net/specs/openid-connect-registration-1_0.html) extension.
+
+@name("Register a client")
+POST "https://{{baseUrl}}/client"
+"Content-Type": "multipart/form-data"
+files(
+	("client_name", "<string>"),
+	("client_uri", "<string>"),
+	("application_type", "<string>"),
+	("client_id", "<string>"),
+	("contacts", "["<string>","<string>"]"),
+	("default_max_age", "<integer>"),
+	("default_scopes", "["<string>","<string>"]"),
+	("grant_types", "["<string>","<string>"]"),
+	("logo_uri", "<string>"),
+	("policy_uri", "<string>"),
+	("redirect_uris", "["<string>","<string>"]"),
+	("response_types", "["<string>","<string>"]"),
+	("tos_uri", "<string>")
+)
+
+
+

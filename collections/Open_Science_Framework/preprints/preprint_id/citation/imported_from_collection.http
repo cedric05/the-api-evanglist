@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// The citation details for a preprint, in CSL format.n#### ReturnsnReturns a JSON object with a `data` key that contains the representation of the details necessary for the preprint citation.
+
+@name("Retrieve citation details")
+GET "https://{{baseUrl}}/preprints/:preprint_id/citation/"
+
+
+// The citation for a preprint in a specific style.n#### ReturnsnReturns a JSON object with a `data` key that contains the representation of the preprint citation, in the requested style.
+
+@name("Retrieve a styled citation")
+GET "https://{{baseUrl}}/preprints/:preprint_id/citation/:style_id/"
+
+
+

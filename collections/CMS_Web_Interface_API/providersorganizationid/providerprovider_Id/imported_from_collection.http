@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ae419a4f-68f3-40b5-821c-80057f0df0bd.postman_collection.json
+
+// Returns a provider whose id matches the id provided by current active organization registration.
+
+@name("Returns a provider whose id matches the id provided")
+GET "https://{{baseUrl}}/providers/organization/:id/provider/:providerId"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+
+
+// Updates a provider by current active organization registration with the provided object. WARNING: Any properties that are nullable and not included in the request body will be set to NULL.
+
+@name("Updates a provider")
+PUT "https://{{baseUrl}}/providers/organization/:id/provider/:providerId"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"Content-Type": "application/json"
+json({
+    "npi": "<string>",
+    "ein": "<string>",
+    "firstName": "<string>",
+    "lastName": "<string>",
+    "credentials": "<string>",
+    "organizationId": "<string>"
+})
+
+
+// Deletes a provider by current active organization registration with the provided object
+
+@name("Deletes a provider")
+DELETE "https://{{baseUrl}}/providers/organization/:id/provider/:providerId"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+
+
+

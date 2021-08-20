@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cf55551-2c7b-4b64-b9aa-1a2b870aef17.postman_collection.json
+
+// Obtain Schedule for the MLB for a given season. NOTE: The 2012 sample data is an abbreviated season.
+
+@name("Obtain Schedule for the MLB for a given season. NO...")
+GET "https://{{baseUrl}}/mlb-t5/games/:year/:mlb_season/schedule{{format}}"
+
+
+

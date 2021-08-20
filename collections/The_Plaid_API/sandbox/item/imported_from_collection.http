@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// The `/sandbox/item/fire_webhook` endpoint is used to test that code correctly handles webhooks. Calling this endpoint triggers a Transactions `DEFAULT_UPDATE` webhook to be fired for a given Sandbox Item. If the Item does not support Transactions, a `SANDBOX_PRODUCT_NOT_ENABLED` error will result.
+
+@name("Fire a test webhook") : "base-inherit-auth"
+POST "https://{{baseUrl}}/sandbox/item/fire_webhook"
+"Content-Type": "application/json"
+json({
+    "access_token": "cillum ad adipisicing",
+    "client_id": "minim nulla Lorem",
+    "secret": "consequat enim",
+    "webhook_code": "DEFAULT_UPDATE"
+})
+
+
+// `/sandbox/item/reset_login/` forces an Item into an `ITEM_LOGIN_REQUIRED` state in order to simulate an Item whose login is no longer valid. This makes it easy to test Link's [update mode](/docs/link/update-mode) flow in the Sandbox environment.  After calling `/sandbox/item/reset_login`, You can then use Plaid Link update mode to restore the Item to a good state. An `ITEM_LOGIN_REQUIRED` webhook will also be fired after a call to this endpoint, if one is associated with the Item.
+// 
+// 
+// In the Sandbox, Items will transition to an `ITEM_LOGIN_REQUIRED` error state automatically after 30 days, even if this endpoint is not called.
+
+@name("Force a Sandbox Item into an error state") : "base-inherit-auth"
+POST "https://{{baseUrl}}/sandbox/item/reset_login"
+"Content-Type": "application/json"
+json({
+    "access_token": "labore eiusmod ullamco pariatur",
+    "client_id": "officia irure",
+    "secret": "amet ut"
+})
+
+
+// The `/sandbox/item/set_verification_status` endpoint can be used to change the verification status of an Item in in the Sandbox in order to simulate the Automated Micro-deposit flow.
+// 
+// Note that not all Plaid developer accounts are enabled for micro-deposit based verification by default. Your account must be enabled for this feature in order to test it in Sandbox. To enable this features or check your status, contact your account manager or [submit a product access Support ticket](https://dashboard.plaid.com/support/new/product-and-development/product-troubleshooting/request-product-access).
+// 
+// For more information on testing Automated Micro-deposits in Sandbox, see [Auth full coverage testing](/docs/auth/coverage/testing#).
+
+@name("Set verification status for Sandbox account") : "base-inherit-auth"
+POST "https://{{baseUrl}}/sandbox/item/set_verification_status"
+"Content-Type": "application/json"
+json({
+    "access_token": "adipisicing minim tempor ipsum",
+    "account_id": "in ad",
+    "verification_status": "automatically_verified",
+    "client_id": "dolor eiusmod ea pariatur",
+    "secret": "labore ut"
+})
+
+
+

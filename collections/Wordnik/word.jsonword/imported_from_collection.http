@@ -1,0 +1,103 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba1cdcb3-6e1e-442c-bb37-51af59111040.postman_collection.json
+
+// Given a word as a string, returns the wordobject that represents it.
+
+@name("Given a word as a string, returns the WordObject that represents it")
+GET "https://{{baseUrl}}/word.json/:word"
+? "useCanonical"= "<>"
+? "includeSuggestions"= "<>"
+
+
+// The metadata includes a time-expiring fileUrl which allows reading the audio file directly from the API.  Currently only audio pronunciations from the American Heritage Dictionary in mp3 format are supported.
+
+@name("Fetches audio metadata for a word.")
+GET "https://{{baseUrl}}/word.json/:word/audio"
+? "useCanonical"= "<>"
+? "limit"= "<>"
+
+
+// Return definitions for a word.
+
+@name("Return definitions for a word")
+GET "https://{{baseUrl}}/word.json/:word/definitions"
+? "limit"= "<>"
+? "partOfSpeech"= "<get>"
+? "includeRelated"= "<>"
+? "sourceDictionaries"= "<>"
+? "useCanonical"= "<>"
+? "includeTags"= "<>"
+
+
+// Fetches etymology data.
+
+@name("Fetches etymology data")
+GET "https://{{baseUrl}}/word.json/:word/etymologies"
+? "useCanonical"= "<>"
+
+
+// Returns examples for a word.
+
+@name("Returns examples for a word")
+GET "https://{{baseUrl}}/word.json/:word/examples"
+? "includeDuplicates"= "<>"
+? "useCanonical"= "<>"
+? "skip"= "<>"
+? "limit"= "<>"
+
+
+// Returns word usage over time.
+
+@name("Returns word usage over time")
+GET "https://{{baseUrl}}/word.json/:word/frequency"
+? "useCanonical"= "<>"
+? "startYear"= "<>"
+? "endYear"= "<>"
+
+
+// Returns syllable information for a word.
+
+@name("Returns syllable information for a word")
+GET "https://{{baseUrl}}/word.json/:word/hyphenation"
+? "useCanonical"= "<>"
+? "sourceDictionary"= "<get>"
+? "limit"= "<>"
+
+
+// Fetches bi-gram phrases for a word.
+
+@name("Fetches bi-gram phrases for a word")
+GET "https://{{baseUrl}}/word.json/:word/phrases"
+? "limit"= "<>"
+? "wlmi"= "<get>"
+? "useCanonical"= "<>"
+
+
+// Returns text pronunciations for a given word.
+
+@name("Returns text pronunciations for a given word")
+GET "https://{{baseUrl}}/word.json/:word/pronunciations"
+? "useCanonical"= "<>"
+? "sourceDictionary"= "<get>"
+? "typeFormat"= "<>"
+? "limit"= "<>"
+
+
+// Given a word as a string, returns relationships from the word graph.
+
+@name("Given a word as a string, returns relationships from the Word Graph")
+GET "https://{{baseUrl}}/word.json/:word/relatedWords"
+? "useCanonical"= "<>"
+? "relationshipTypes"= "<>"
+? "limitPerRelationshipType"= "<>"
+
+
+// Returns a top example for a word.
+
+@name("Returns a top example for a word")
+GET "https://{{baseUrl}}/word.json/:word/topExample"
+? "useCanonical"= "<>"
+
+
+

@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Finds all Shops. If there is a keywords parameter, finds shops with shop_name starting with keywords.
+
+@name("Get Shops")
+GET "https://{{baseUrl}}/shops"
+? "shop_name"= "<>"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

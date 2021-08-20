@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Get the Templates associated with this Server")
+GET "https://{{baseUrl}}/templates"
+? "count"= "<integer>"
+? "offset"= "<integer>"
+
+
+@name("Test Template Content")
+POST "https://{{baseUrl}}/templates/validate"
+
+
+@name("Delete a Template")
+DELETE "https://{{baseUrl}}/templates/:templateIdOrAlias"
+
+
+

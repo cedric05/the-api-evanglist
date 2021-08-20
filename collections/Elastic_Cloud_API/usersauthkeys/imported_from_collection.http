@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Creates a new API key.
+
+@name("Create API key") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users/auth/keys"
+"Content-Type": "application/json"
+json({
+    "description": "deserunt occaecat sit nisi",
+    "authentication_token": "laboris voluptate quis ullamco"
+})
+
+
+// Delete or invalidate API keys.
+
+@name("Delete API keys") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/users/auth/keys"
+"Content-Type": "application/json"
+json({
+    "keys": [
+        "eiusmod Lorem consectetur incididunt",
+        "enim labore culpa Ut"
+    ]
+})
+
+
+// Retrieves the metadata for all of the API keys that the user generated.
+
+@name("Get all API keys") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users/auth/keys"
+
+
+

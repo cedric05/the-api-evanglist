@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Fetch events data for a target timeframe, application / server / deployment set.
+
+@name("Fetch events details") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/views/:view_id/events"
+? "from"= "e"
+? "to"= "e"
+? "server"= "e"
+? "app"= "e"
+? "deployment"= "e"
+? "stats"= "invocations"
+
+
+// Fetch stats for a target timeframe, application / server / deployment set.
+
+@name("Fetch stats for all events in the specified view") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/views/:view_id/events/stats"
+? "from"= "e"
+? "to"= "e"
+? "server"= "e"
+? "app"= "e"
+? "deployment"= "e"
+? "stats"= "hits"
+
+
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8c11161c-3905-4d05-93f7-569dc5ee23c6.postman_collection.json
+
+// Search file names of the uploaded documents in the OPIF system.
+
+@name("Search File Names")
+GET "https://{{baseUrl}}/q={{keyword}}&s={{offset}}&o={{order}}&f={{filters}}"
+
+
+

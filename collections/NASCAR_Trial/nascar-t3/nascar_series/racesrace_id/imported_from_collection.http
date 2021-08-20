@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3d06c843-a94e-4b71-9ece-d3a5cdbfad31.postman_collection.json
+
+// Obtain leaderboard for a race. Use schedule feed to get a race ID.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain leaderboard for a race. Use schedule feed t...")
+GET "https://{{baseUrl}}/nascar-t3/:nascar_series/races/:race_id/results{{format}}"
+
+
+// Obtain qualifying leaderboard for a race.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain qualifying leaderboard for a race.  NOTE:  ...")
+GET "https://{{baseUrl}}/nascar-t3/:nascar_series/races/:race_id/qualifying{{format}}"
+
+
+// Obtain entry list for a given race.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain entry list for a given race.  NOTE:  The 20...")
+GET "https://{{baseUrl}}/nascar-t3/:nascar_series/races/:race_id/entry_list{{format}}"
+
+
+// Obtain starting grid for a given race.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain starting grid for a given race.  NOTE:  The...")
+GET "https://{{baseUrl}}/nascar-t3/:nascar_series/races/:race_id/starting_grid{{format}}"
+
+
+

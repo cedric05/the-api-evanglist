@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-07881e38-7c11-4c85-bc65-e2dab0a92227.postman_collection.json
+
+// Returns the most recent time a bookmark was added, updated or deleted. Use this before calling posts/all to see if the data has changed since the last fetch.
+
+@name("Update Tag")
+GET "https://{{baseUrl}}/posts/update"
+
+
+// Add a new bookmark.
+
+@name("Add New Bookmark")
+GET "https://{{baseUrl}}/posts/add"
+
+
+// Delete a bookmark.
+
+@name("Delete a Post")
+GET "https://{{baseUrl}}/posts/delete"
+
+
+// Returns one or more posts on a single day matching the arguments. If no date or url is given, date of most recent bookmark will be used.
+
+@name("Get Posts")
+GET "https://{{baseUrl}}/posts/get"
+
+
+// Returns a list of dates with the number of posts at each date.
+
+@name("Get Post by Dates")
+GET "https://{{baseUrl}}/posts/dates"
+
+
+// Returns a list of the user's most recent posts, filtered by tag.
+
+@name("Get Recent Posts")
+GET "https://{{baseUrl}}/posts/recent"
+? "tag"= "<string>"
+? "count"= "<string>"
+
+
+// Returns all bookmarks in the user's account.
+
+@name("Get All Posts")
+GET "https://{{baseUrl}}/posts/all"
+? "results"= "<string>"
+? "tag"= "<string>"
+? "start"= "<string>"
+? "fromdt"= "<string>"
+? "todt"= "<string>"
+? "meta"= "<string>"
+
+
+// Returns a list of popular tags and recommended tags for a given URL. Popular tags are tags used site-wide for the url; recommended tags are drawn from the user's own tags.
+
+@name("Get Popular Tags")
+GET "https://{{baseUrl}}/posts/suggest"
+? "url"= "<string>"
+? "format"= "<string>"
+
+
+

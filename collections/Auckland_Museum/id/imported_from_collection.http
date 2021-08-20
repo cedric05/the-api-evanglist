@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7adf1b21-03d3-43ad-8394-653202b44086.postman_collection.json
+
+// Gets `media` at a given pathn
+
+@name("Retrieve media associated with Collections and Cenotaph subjects in Auckland Museum")
+GET "https://{{baseUrl}}/id/media/:path"
+? "rendering"= "<string>"
+
+
+// Gets information about a `subject` identified by the `identifier`.nnThe response format depends upon the `Accept` header.n  - `text/html` - the default response type. Returned data can be easily viewed in any modern Internet Browsern  - `application/ld+json` - the response will be in [JSON-LD](http://json-ld.org/)n  - `application/json` - the response will be a simple JSON Object with keys (predicates) and values (objects).n
+
+@name("Explore details about a given subject node")
+GET "https://{{baseUrl}}/id/:identifier"
+
+
+

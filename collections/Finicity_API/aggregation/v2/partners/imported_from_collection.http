@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7c1911c0-b9d3-49c2-a1c8-b51e46787741.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get the status of your application registration to access financial institutions using OAuth connections.
+
+@name("Get App Registration Status V2") : "base-inherit-auth"
+GET "https://{{baseUrl}}/aggregation/v2/partners/applications"
+? "preAppId"= "7456"
+? "applicationId"= "velit incididunt"
+? "status"= "A"
+? "appName"= "Lorem consectetur culpa deserunt dolore"
+? "submittedDate"= "1595303316"
+? "modifiedDate"= "1595303316"
+? "page"= "1"
+? "pageSize"= "20"
+
+
+

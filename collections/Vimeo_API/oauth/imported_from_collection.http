@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method exchanges an OAuth authorization code for an OAuth access token.
+
+@name("Exchange an authorization code for an access token")
+POST "https://{{baseUrl}}/oauth/access_token"
+
+
+// This method verifies that an OAuth 2 token exists.
+
+@name("Verify an OAuth 2 token")
+GET "https://{{baseUrl}}/oauth/verify"
+
+
+

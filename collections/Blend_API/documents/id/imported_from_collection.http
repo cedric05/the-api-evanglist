@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Download the file associated with a document
+
+@name("Get Document Data") : "base-inherit-auth"
+GET "https://{{baseUrl}}/documents/:id"
+
+
+// Update a document's export status
+
+@name("Update a Document's Export Status") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/documents/:id"
+"Content-Type": "application/json"
+json({
+    "exportedTime": "2018-10-03T20:07:27+00:00",
+    "losId": "11111"
+})
+
+
+// Get all metadata associated with a document
+
+@name("Get Document Metadata") : "base-inherit-auth"
+GET "https://{{baseUrl}}/documents/:id/metadata"
+
+
+// Get all export statuses of the document
+
+@name("List Document Export Statuses") : "base-inherit-auth"
+GET "https://{{baseUrl}}/documents/:id/export-statuses"
+? "exportedTo"= "Document-12345"
+? "exportedBefore"= "2018-10-03T20:07:27+00:00"
+? "exportedAfter"= "2018-10-03T20:07:27+00:00"
+
+
+

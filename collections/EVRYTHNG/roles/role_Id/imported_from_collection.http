@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Read a single role by ID.
+
+@name("Read a role")
+GET "https://{{baseUrl}}/roles/:roleId"
+? "No Name"= "<string>"
+
+
+// Read an array of paths and access types that an Application User with the specified role can access.
+
+@name("Read an Application User role's permissions")
+GET "https://{{baseUrl}}/roles/:roleId/permissions"
+? "No Name"= "<string>"
+
+
+

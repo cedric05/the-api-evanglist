@@ -1,0 +1,1 @@
+This is a collection dedicated to helping people begin making their first call to the GitHub GraphQL API, before they learn how GraphQL works.

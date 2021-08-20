@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-940631ab-b80d-496e-a8ee-7bdf98c1ca94.postman_collection.json
+
+// 'Within' returns GeoGJSON of type FeatureCollection containing all GeoJSON features within the provided polygon.n'Nearest' returns a FeatureCollection with the longitude and latitude of the nearest point.n'LineIntersectsLine' returns a FeatureCollection containing all points of intersection as GeoJSON features.n
+
+@name("For 'within' operator - find all points within an area.nFor 'nearest' operator - return the nearest point to the one specified.nFor 'lineIntersectsLine' - find all points of intersection between two linestrings.n")
+POST "https://{{baseUrl}}/v1/collections/:collectionName/spatial-query"
+? "operator"= "<>"
+
+
+// Returns all features in the specified collection that exist fully ornpartially within the specified bounding box. The bounding box is definednby two coordinates in the EPSG:4326 (WGS84) (for further details seenhttp://epsg.io/4326):nn* left (longitude), bottom (latitude)nn* right (longitude), top (latitude)n
+
+@name("Return collection features in specified bounding box")
+GET "https://{{baseUrl}}/v1/collections/:collectionName/spatial-query/bbox-interacts"
+
+
+

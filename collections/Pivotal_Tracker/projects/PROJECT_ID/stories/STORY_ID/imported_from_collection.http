@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-28db29ee-ca8d-4539-8a7a-6cde82dcfb73.postman_collection.json
+
+// Retrieves information about a single story.
+
+@name("Get Projects Project Stories Story")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/stories/:STORY_ID"
+
+
+// Put projects project stories story notes.
+
+@name("Put Projects Project Stories Story Notes")
+PUT "https://{{baseUrl}}/projects/:PROJECT_ID/stories/:STORY_ID/notes"
+
+
+// Moves a story before or after another story. The moved story is returned in the response.
+
+@name("Post Projects Project Stories Story Moves")
+POST "https://{{baseUrl}}/projects/:PROJECT_ID/stories/:STORY_ID/moves"
+
+
+// Post projects project stories story attachments.
+
+@name("Post Projects Project Stories Story Attachments")
+POST "https://{{baseUrl}}/projects/:PROJECT_ID/stories/:STORY_ID/attachments"
+
+
+

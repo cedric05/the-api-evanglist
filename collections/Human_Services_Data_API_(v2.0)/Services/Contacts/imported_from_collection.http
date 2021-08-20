@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Service Contacts")
+GET "https://{{baseUrl}}/services/:service_id/contacts"
+
+
+@name("add Service Contact")
+POST "https://{{baseUrl}}/services/:service_id/contacts"
+"Content-Type": "application/json"
+json({
+    "id": "in amet labore sed",
+    "organization_id": "ut esse",
+    "service_id": "non dolore in",
+    "service_at_location_id": "tempor id",
+    "name": "pariatur aliquip",
+    "title": "sed nostrud voluptate officia sunt",
+    "department": "esse ipsum quis est",
+    "email": "non sed et officia dolore"
+})
+
+
+@name("get Service Contact")
+GET "https://{{baseUrl}}/services/:service_id/contacts/:contact_id"
+
+
+@name("update Service Contact")
+PUT "https://{{baseUrl}}/services/:service_id/contacts/:contact_id"
+"Content-Type": "application/json"
+json({
+    "id": "in amet labore sed",
+    "organization_id": "ut esse",
+    "service_id": "non dolore in",
+    "service_at_location_id": "tempor id",
+    "name": "pariatur aliquip",
+    "title": "sed nostrud voluptate officia sunt",
+    "department": "esse ipsum quis est",
+    "email": "non sed et officia dolore"
+})
+
+
+@name("delete Service Contact")
+DELETE "https://{{baseUrl}}/services/:service_id/contacts/:contact_id"
+
+
+

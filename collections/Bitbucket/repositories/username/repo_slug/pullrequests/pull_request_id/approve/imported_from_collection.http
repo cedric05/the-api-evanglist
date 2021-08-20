@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Redact the authenticated user's approval of the specified pull
+// request.
+
+@name("/repositories/:username/:repo_slug/pullrequests/:pull_request_id/approve")
+DELETE "https://{{baseUrl}}/repositories/:username/:repo_slug/pullrequests/:pull_request_id/approve"
+
+
+// Approve the specified pull request as the authenticated user.
+
+@name("/repositories/:username/:repo_slug/pullrequests/:pull_request_id/approve")
+POST "https://{{baseUrl}}/repositories/:username/:repo_slug/pullrequests/:pull_request_id/approve"
+
+
+

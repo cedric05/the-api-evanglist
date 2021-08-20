@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-153258a5-a1eb-43c6-ae2b-1378320e86b1.postman_collection.json
+
+// Returns a job applicant pay distribution details
+
+@name("Job Applicant Pay Distributions")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants/:applicant-id/pay-distributions"
+? "No Name"= "<string>"
+
+
+// Returns a job applicant pay distribution details
+
+@name("Job Applicant Pay Distribution Details")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants/:applicant-id/pay-distributions/:pay-distribution-id"
+? "No Name"= "<string>"
+
+
+

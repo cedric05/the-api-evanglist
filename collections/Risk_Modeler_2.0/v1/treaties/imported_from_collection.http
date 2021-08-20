@@ -1,0 +1,171 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Get list of Treaties with optional filters.
+
+@name("Get list of Treaties with optional filters") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/treaties"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Returns the URL location of the created Treaty resource
+
+@name("Create a treaty") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/treaties"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "cedant": {
+        "name": "sunt nostrud labor",
+        "id": "A"
+    },
+    "treatyNumber": "ipsum exercitation Lorem velit Ut",
+    "treatyId": -70608023,
+    "treatyName": "ad eu",
+    "producer": {
+        "name": "anim ea culpa n",
+        "id": "k"
+    },
+    "treatyType": {
+        "id": 4691230,
+        "code": "Ut nostrud qui",
+        "name": "sit labore cillum officia"
+    },
+    "currency": {
+        "id": -96005387,
+        "code": "in laborum aliqua",
+        "name": "culpa consequat"
+    },
+    "attachBasis": {
+        "id": -20903415,
+        "code": "officia",
+        "name": "qui"
+    },
+    "attachLevel": {
+        "id": 12814464,
+        "code": "ni",
+        "name": "proident ex ut"
+    },
+    "premium": -28653819.44919175,
+    "occurLimit": 62755344.31322071,
+    "attachPt": 54151121.22983712,
+    "riskLimit": 24438182.354798064,
+    "retentAmt": -73989362.09506303,
+    "pcntPlaced": 34984286.93544921,
+    "effectDate": "sed reprehenderit officia cupidatat",
+    "expireDate": "deserunt pariatur Duis",
+    "pcntRetent": -55365188.44321647,
+    "pcntRiShare": -54505026.13132473,
+    "pcntCovered": 14813108.00879246,
+    "priority": 81625575,
+    "numOfReinst": -35685784,
+    "reinstCharge": -9426862.917251721,
+    "maolAmount": 69209780.32268983,
+    "isValid": true,
+    "userId1": "cupid",
+    "userId2": "sint labore sit",
+    "lobs": [
+        {
+            "name": "sed Duis",
+            "id": 81620261
+        },
+        {
+            "name": "incididunt nulla si",
+            "id": 68210858
+        }
+    ],
+    "aggregateDeductible": -60363683.213052385,
+    "aggregateLimit": 73567518.72483617,
+    "lossOccurrences": [
+        {
+            "treatyId": 54330052,
+            "id": -5771537,
+            "regionPeril": {
+                "id": -53394821,
+                "code": "cupidatat adipisicing eiusmod",
+                "name": "veniam"
+            },
+            "lossOccurrenceTime": -98488009,
+            "lossOccurrenceRadius": -90126520,
+            "radiusUnit": {
+                "id": -37861065,
+                "code": "officia sit",
+                "name": "dolor labore ullamco eu"
+            },
+            "multiLossOccurrence": {
+                "id": 31600069,
+                "code": "adipisicing",
+                "name": "ut dolor non officia"
+            }
+        },
+        {
+            "treatyId": 48487914,
+            "id": 21405849,
+            "regionPeril": {
+                "id": -34734114,
+                "code": "elit",
+                "name": "ex enim deserunt laborum"
+            },
+            "lossOccurrenceTime": 7695767,
+            "lossOccurrenceRadius": -65446878,
+            "radiusUnit": {
+                "id": 19497062,
+                "code": "et aliquip",
+                "name": "culpa quis Ut"
+            },
+            "multiLossOccurrence": {
+                "id": 23734184,
+                "code": "voluptate anim id mollit aliquip",
+                "name": "Duis enim dolor"
+            }
+        }
+    ]
+})
+
+
+// Retrieves a list of the treaties in a specified data source.
+
+@name("Get list of treaties") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/treaties/getbytype"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "type"= "Excepteur nisi in"
+? "exposuretype"= "Excepteur nisi in"
+
+
+// Runs creating/deleting treaty lobs in a batch.
+
+@name("Run batch of creating/deleting treaty lobs") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/treaties/lob/batch"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json([
+    {
+        "method": "commodo ut aliquip eu",
+        "path": "aute incididunt",
+        "body": "officia ipsum consequat ullamco"
+    },
+    {
+        "method": "aute consequat",
+        "path": "labor",
+        "body": "incididunt sed"
+    }
+])
+
+
+

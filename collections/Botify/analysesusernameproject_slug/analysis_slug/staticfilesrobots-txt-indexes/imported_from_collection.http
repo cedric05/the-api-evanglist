@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// Return a list of all robots.txt files found on the project's domains.
+
+@name("Return a list of all robots")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/staticfiles/robots-txt-indexes"
+? "page"= "<integer>"
+? "size"= "<integer>"
+
+
+// Return content of a robots.txt file.
+
+@name("Return content of a robots")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/staticfiles/robots-txt-indexes/:robots_txt"
+? "page"= "<integer>"
+? "size"= "<integer>"
+
+
+

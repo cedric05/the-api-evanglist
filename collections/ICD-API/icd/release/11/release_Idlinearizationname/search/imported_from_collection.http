@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b71fd21b-bfe2-48a4-b72e-2e45c80f54e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("This endpoint is for searching the linearization (such as MMS). The search can be customized using the parameters as described
+Search endpoint accepts both GET and POST requests. If the size of the request is too large, you may need to use POST
+as HTTP ") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/release/11/:releaseId/:linearizationname/search"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+? "q"= "sed velit minim dolore"
+? "subtreesFilter"= "eu"
+? "includeKeywordResult"= "false"
+? "chapterFilter"= "veniam laboris"
+? "useFlexisearch"= "false"
+? "flatResults"= "true"
+? "propertiesToBeSearched"= "ut id ipsum sint"
+
+
+@name("This endpoint is for searching the linearization (such as MMS). The search can be customized using the parameters as described
+Search endpoint accepts both GET and POST requests. If the size of the request is too large, you may need to use POST
+as HTTP ") : "base-inherit-auth"
+POST "https://{{baseUrl}}/icd/release/11/:releaseId/:linearizationname/search"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+? "q"= "sed velit minim dolore"
+? "subtreesFilter"= "eu"
+? "includeKeywordResult"= "false"
+? "chapterFilter"= "veniam laboris"
+? "useFlexisearch"= "false"
+? "flatResults"= "true"
+? "propertiesToBeSearched"= "ut id ipsum sint"
+
+
+

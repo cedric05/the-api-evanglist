@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-208bc5aa-3cdc-49dd-8fa8-fecceeb9d3bc.postman_collection.json
+
+// Get quotes
+
+@name("Get quotes for all symbols")
+GET "https://{{baseUrl}}/quotes"
+
+
+// Symbol List
+
+@name("Get a list of symbols for which we provide real-time quotes")
+GET "https://{{baseUrl}}/symbols"
+
+
+

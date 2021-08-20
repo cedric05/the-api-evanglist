@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af2039b0-31a0-4f6a-ac5a-b2cae8b507ac.postman_collection.json
+
+// Get the currency conversion rate details.
+
+@name("Get the currency conversion rate details.")
+GET "https://{{baseUrl}}/conversion-rate"
+? "fxDate"= "<string>"
+? "transCurr"= "<string>"
+? "crdhldBillCurr"= "<string>"
+? "bankFee"= "<double>"
+? "transAmt"= "<double>"
+
+
+// Determine if the settlement rate has been issued.
+
+@name("Determine if the settlement rate has been issued.")
+GET "https://{{baseUrl}}/conversion-rate-issued"
+? "date"= "<string>"
+
+
+// List of supported currencies.
+
+@name("getCurrencyRateData")
+GET "https://{{baseUrl}}/settlement-currencies"
+
+
+

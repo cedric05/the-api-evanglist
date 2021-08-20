@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4eade174-fad8-4f5b-b62e-c5434d4d04ee.postman_collection.json
+
+// This endpoint solves large problems, i.e. traveling salesman or vehicle routing problems, and returns the solution.n
+
+@name("Solves large routing problems")
+POST "https://{{baseUrl}}/optimize"
+? "key"= "<string>"
+
+
+// This endpoint returns the solution of a large problems. You can fetch it with the job_id, you have been sent.n
+
+@name("Return the solution associated to the jobId")
+GET "https://{{baseUrl}}/solution/:jobId"
+? "key"= "<string>"
+
+
+

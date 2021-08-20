@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// Delete an existing zone
+
+@name("Delete an existing zone")
+DELETE "https://{{baseUrl}}/zones/:identifier"
+
+
+//  Initiate another zone activation check permission needed: #zone:editntt  
+
+@name("Initiate another zone activation check permission needed: #zone:edit")
+PUT "https://{{baseUrl}}/zones/:identifier/activation_check"
+
+
+// Remove ALL files from CloudFlare&#39;s cache
+
+@name("Remove ALL files from CloudFlare&#39;s cache")
+DELETE "https://{{baseUrl}}/zones/:identifier/purge_cache"
+"X": "<>"
+? "files"= "<>"
+? "purge_everything"= "<>"
+? "tags"= "<>"
+
+
+

@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Whitelist an SDD so that when one comes in, it is automatically accepted.
+
+@name("DELETE Whitelist Sdd for User")
+DELETE "https://{{baseUrl}}/user/:userID/whitelist-sdd/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Get a specific SDD whitelist entry.
+
+@name("READ Whitelist Sdd for User")
+GET "https://{{baseUrl}}/user/:userID/whitelist-sdd/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Whitelist an SDD so that when one comes in, it is automatically accepted.
+
+@name("UPDATE Whitelist Sdd for User")
+PUT "https://{{baseUrl}}/user/:userID/whitelist-sdd/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "monetary_account_paying_id": "<integer>",
+    "request_id": "<integer>",
+    "maximum_amount_per_month": {
+        "currency": "reprehenderit occaecat quis",
+        "value": "eu eiusmod ex dolore"
+    }
+})
+
+
+

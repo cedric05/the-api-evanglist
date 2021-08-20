@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bdca8cb-a591-4d01-90eb-dc36f5720cac.postman_collection.json
+
+// Delete livebroadcasts
+
+@name("Delete Live Broadcasts")
+DELETE "https://{{baseUrl}}/liveBroadcasts"
+? "id"= "<parameters>"
+? "onBehalfOfContentOwner"= "<>"
+? "onBehalfOfContentOwnerChannel"= "<>"
+
+
+// Binds a YouTube broadcast to a stream or removes an existing binding between a broadcast and a stream. A broadcast can only be bound to one video stream, though a video stream may be bound to more than one broadcast.
+
+@name("Add Live Broadcasts Bind")
+POST "https://{{baseUrl}}/liveBroadcasts/bind"
+? "id"= "<parameters>"
+? "onBehalfOfContentOwner"= "<>"
+? "onBehalfOfContentOwnerChannel"= "<>"
+? "part"= "<>"
+? "streamId"= "<>"
+
+
+// Controls the settings for a slate that can be displayed in the broadcast stream.
+
+@name("Add Live Broadcasts Control")
+POST "https://{{baseUrl}}/liveBroadcasts/control"
+? "displaySlate"= "<>"
+? "id"= "<parameters>"
+? "offsetTimeMs"= "<>"
+? "onBehalfOfContentOwner"= "<>"
+? "onBehalfOfContentOwnerChannel"= "<>"
+? "part"= "<>"
+? "walltime"= "<>"
+
+
+// Changes the status of a YouTube live broadcast and initiates any processes associated with the new status. For example, when you transition a broadcast's status to testing, YouTube starts to transmit video to that broadcast's monitor stream. Before calling this method, you should confirm that the value of the status.streamStatus property for the stream bound to your broadcast is active.
+
+@name("Add Live Broadcasts Transition")
+POST "https://{{baseUrl}}/liveBroadcasts/transition"
+? "broadcastStatus"= "<>"
+? "id"= "<parameters>"
+? "onBehalfOfContentOwner"= "<>"
+? "onBehalfOfContentOwnerChannel"= "<>"
+? "part"= "<>"
+
+
+

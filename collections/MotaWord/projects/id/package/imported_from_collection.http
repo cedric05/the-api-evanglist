@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d4cf5606-be3b-4e27-b14f-77855e9137ad.postman_collection.json
+
+// Package the translation project, make it ready to be downloaded.
+
+@name("Package the translation of all languages to be downloaded.")
+POST "https://{{baseUrl}}/projects/:id/package"
+? "async"= "<integer>"
+
+
+// This request will tell you the current progress of the translation packaging. You will use the 'key' provided by the /package call.
+
+@name("Track the status of translation packaging.")
+GET "https://{{baseUrl}}/projects/:id/package/check"
+? "key"= "<string>"
+
+
+// Package the translation project, make it ready to be downloaded.
+
+@name("Package the translation of a specific target language to be downloaded.")
+POST "https://{{baseUrl}}/projects/:id/package/:language"
+? "async"= "<integer>"
+
+
+

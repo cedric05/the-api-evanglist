@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-51a922a3-552d-4075-ac95-f80fd77c5d4c.postman_collection.json
+
+// Retrieves all available fares for a specific Origin & Destination pair on a given date. Available fares are: One-way and Return for 4U. Return only for OS
+
+@name("All Fares")
+GET "https://{{baseUrl}}/offers/fares/allfares"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "origin"= "<>"
+? "destination"= "<>"
+? "travel"= "<>"
+? "return"= "<>"
+? "cabin"= "<>"
+? "travelers"= "<>"
+? "fare"= "<>"
+? "trackingid"= "<>"
+
+
+// Retrieve best fares for the requested journey across multiple days or multiple months.
+
+@name("Best Fares")
+GET "https://{{baseUrl}}/offers/fares/bestfares"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "origin"= "<>"
+? "destination"= "<>"
+? "travel"= "<>"
+? "trip"= "<>"
+? "range"= "<>"
+? "cabin"= "<>"
+? "country"= "<>"
+? "trackingid"= "<>"
+? "fare"= "<>"
+
+
+// Retrieve all available fares per fare family for a specific Origin & Destination on a given date
+
+@name("Fares")
+GET "https://{{baseUrl}}/offers/fares/fares"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "segments"= "<>"
+? "carriers"= "<>"
+? "travelers"= "<>"
+? "fare"= "<>"
+
+
+// Retrieve lowest fare for a specific Origin & Destination pair on a given date. Available fares are: One-way and Return for 4U. Return only for OS & LH
+
+@name("Lowest Fares")
+GET "https://{{baseUrl}}/offers/fares/lowestfares"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "origin"= "<>"
+? "destination"= "<>"
+? "travel"= "<>"
+? "return"= "<>"
+? "cabin"= "<>"
+? "travelers"= "<>"
+? "fare"= "<>"
+? "country"= "<>"
+
+
+// Create a subscription for best price O&D. Receive regular updates on lowest fares
+
+@name("Fares Subscriptions")
+GET "https://{{baseUrl}}/offers/fares/subscriptions"
+"Accept": "<>"
+? "origin"= "<>"
+? "destination"= "<>"
+? "cabin"= "<>"
+? "trip"= "<>"
+? "email"= "<>"
+? "lang"= "<>"
+? "country"= "<>"
+? "trackingid"= "<>"
+
+
+

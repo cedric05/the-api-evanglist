@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Gets a file that has been uploaded previously.n##### PermissionsnMust have `read_channel` permission or be uploader of the file.n
+
+@name("Get a file")
+GET "https://{{baseUrl}}/files/:file_id"
+
+
+// Gets a file's thumbnail.n##### PermissionsnMust have `read_channel` permission or be uploader of the file.n
+
+@name("Get a files thumbnail")
+GET "https://{{baseUrl}}/files/:file_id/thumbnail"
+
+
+// Gets a file's preview.n##### PermissionsnMust have `read_channel` permission or be uploader of the file.n
+
+@name("Get a files preview")
+GET "https://{{baseUrl}}/files/:file_id/preview"
+
+
+// Gets a public link for a file that can be accessed without logging into Mattermost.
+
+@name("Get a public file link")
+GET "https://{{baseUrl}}/files/:file_id/link"
+
+
+// Gets a file's info.n##### PermissionsnMust have `read_channel` permission or be uploader of the file.n
+
+@name("Get metadata for a file")
+GET "https://{{baseUrl}}/files/:file_id/info"
+
+
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Stop watching this issue.
+
+@name("/repositories/:username/:repo_slug/issues/:issue_id/watch")
+DELETE "https://{{baseUrl}}/repositories/:username/:repo_slug/issues/:issue_id/watch"
+
+
+// Indicated whether or not the authenticated user is watching this
+// issue.
+
+@name("/repositories/:username/:repo_slug/issues/:issue_id/watch")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/issues/:issue_id/watch"
+
+
+// Start watching this issue.
+// 
+// To start watching this issue, do an empty PUT. The 204 status code
+// indicates that the operation was successful.
+
+@name("/repositories/:username/:repo_slug/issues/:issue_id/watch")
+PUT "https://{{baseUrl}}/repositories/:username/:repo_slug/issues/:issue_id/watch"
+
+
+

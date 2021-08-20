@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Get product SKUs matching to parameters specified in request")
+GET "https://{{baseUrl}}/productsku/search"
+? "ProductCode"= "<string>"
+? "PricingConfigurations"= "<object>"
+? "PurchaseTypes"= "<array>"
+
+
+// Delete product SKU by criteria
+
+@name("Delete product SKU")
+POST "https://{{baseUrl}}/productsku/delete"
+
+
+

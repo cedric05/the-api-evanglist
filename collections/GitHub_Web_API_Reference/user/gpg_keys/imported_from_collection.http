@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// Lists the current user's GPG keys. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+
+@name("List GPG keys for the authenticated user")
+GET "https://{{baseUrl}}/user/gpg_keys"
+? "per_page"= "30"
+? "page"= "1"
+
+
+// Adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+
+@name("Create a GPG key for the authenticated user")
+POST "https://{{baseUrl}}/user/gpg_keys"
+"Content-Type": "application/json"
+json({
+    "armored_public_key": "<string>"
+})
+
+
+

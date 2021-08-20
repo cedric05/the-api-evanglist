@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-20eaed55-6256-4049-a8c9-74a7e5e0ac65.postman_collection.json
+
+@name("Obtain team depth chart information.")
+GET "https://{{baseUrl}}/mlb-t6/teams/:team_id/depth_chart{{format}}"
+
+
+@name("Obtain team profile information.")
+GET "https://{{baseUrl}}/mlb-t6/teams/:team_id/profile{{format}}"
+
+
+

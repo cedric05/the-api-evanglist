@@ -1,0 +1,76 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-99b807d0-abac-481e-a509-d69785137b6b.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("List Audiences") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/audiences"
+"X-Api-Key": "{{api_key}}"
+? "limit"= "50"
+? "sortBy"= "-name"
+
+
+@name("Create Audience") : "base-inherit-auth"
+POST "https://mc.adobe.io/:tenant/target/audiences"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v3+json"
+data('{
+    "name": "New Audience",
+    "description": "Description for my audience",
+    "targetRule": {
+        "and": [
+            {
+                "page": "url",
+                "equals": [
+                    "http://www.myhomepage.com/"
+                ]
+            },
+            {
+                "geo": "region",
+                "matches": [
+                    "california"
+                ]
+            }
+        ]
+    }
+}')
+
+
+@name("Update Audience by ID") : "base-inherit-auth"
+PUT "https://mc.adobe.io/:tenant/target/audiences/1537195"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v3+json"
+data('{
+    "name": "Homepage visitors from California",
+    "description": "Description for my audience",
+    "targetRule": {
+        "and": [
+            {
+                "page": "url",
+                "equals": [
+                    "http://www.mynewhomepage.com/"
+                ]
+            },
+            {
+                "geo": "region",
+                "matches": [
+                    "california"
+                ]
+            }
+        ]
+    }
+}')
+
+
+@name("Delete Audience by ID") : "base-inherit-auth"
+DELETE "https://mc.adobe.io/:tenant/target/audiences/1537214"
+"X-Api-Key": "{{api_key}}"
+
+
+

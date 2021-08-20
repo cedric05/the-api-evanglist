@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-55802a0c-3a00-4043-8c8f-a26229df0ebe.postman_collection.json
+
+// This operation retrieves a GeographicLocation entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a GeographicLocation by ID")
+GET "https://{{baseUrl}}/geographicLocation/:id"
+? "fields"= "ad"
+
+
+// This operation updates partially a GeographicLocation entity.
+
+@name("Updates partially a GeographicLocation")
+PATCH "https://{{baseUrl}}/geographicLocation/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "@type": "id nulla eiusmod laboris",
+    "name": "est cillu",
+    "@baseType": "adipisicing",
+    "@schemaLocation": "https://DnhkreaSDhsLlYWpdmPINNkKuCazP.vmlaNJkbyOd5TZxGgBAJ-SDsxEFwOYTpAqHlq1iOW6"
+})
+
+
+// This operation deletes a GeographicLocation entity.
+
+@name("Deletes a GeographicLocation")
+DELETE "https://{{baseUrl}}/geographicLocation/:id"
+
+
+

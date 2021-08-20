@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// List all tags associated with a Query Lambda
+
+@name("List Query Lambda Tags")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/lambdas/:queryLambda/tags"
+
+
+// Create a tag for a specific Query Lambda version, or update that tag if it already exists.
+
+@name("Create Query Lambda Tag")
+POST "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/lambdas/:queryLambda/tags"
+"Content-Type": "application/json"
+json({
+    "tag_name": "production",
+    "version": "123ABC"
+})
+
+
+

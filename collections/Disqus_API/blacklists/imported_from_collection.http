@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-139d2cf6-a45e-49f8-b258-0453deb0a5e1.postman_collection.json
+
+// Blacklists Remove
+
+@name("Blacklists Remove")
+POST "https://{{baseUrl}}/blacklists/remove.json"
+? "domain"= "<string>"
+? "email"= "<string>"
+? "forum"= "<string>"
+? "ip"= "<string>"
+? "user"= "<string>"
+? "word"= "<string>"
+
+
+// Blacklists List 
+
+@name("Blacklists List")
+GET "https://{{baseUrl}}/blacklists/list.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "query"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+? "since_id"= "<string>"
+? "type"= "<string>"
+
+
+

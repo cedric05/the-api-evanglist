@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Manage the IPs which may be used for a credential of a user for server authentication.
+
+@name("List all Ip for User Credential Password Ip")
+GET "https://{{baseUrl}}/user/:userID/credential-password-ip/:credential-password-ipID/ip"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Manage the IPs which may be used for a credential of a user for server authentication.
+
+@name("CREATE Ip for User Credential Password Ip")
+POST "https://{{baseUrl}}/user/:userID/credential-password-ip/:credential-password-ipID/ip"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "ip": "<string>",
+    "status": "<string>"
+})
+
+
+

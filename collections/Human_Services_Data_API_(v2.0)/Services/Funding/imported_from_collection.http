@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Service Fundings")
+GET "https://{{baseUrl}}/services/:service_id/funding"
+
+
+@name("add Service Funding")
+POST "https://{{baseUrl}}/services/:service_id/funding"
+"Content-Type": "application/json"
+json({
+    "id": "anim incididunt consectetur elit",
+    "organization_id": "mollit est reprehenderit velit",
+    "service_id": "id ea",
+    "source": "in eu"
+})
+
+
+@name("get Service Funding")
+GET "https://{{baseUrl}}/services/:service_id/funding/:funding_id"
+
+
+@name("update Service Funding")
+PUT "https://{{baseUrl}}/services/:service_id/funding/:funding_id"
+"Content-Type": "application/json"
+json({
+    "id": "anim incididunt consectetur elit",
+    "organization_id": "mollit est reprehenderit velit",
+    "service_id": "id ea",
+    "source": "in eu"
+})
+
+
+@name("delete Service Funding")
+DELETE "https://{{baseUrl}}/services/:service_id/funding/:funding_id"
+
+
+

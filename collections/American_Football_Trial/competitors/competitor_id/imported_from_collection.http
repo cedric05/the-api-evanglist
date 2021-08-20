@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af2f73d6-96cf-46d7-a9a8-7e4e19ca898b.postman_collection.json
+
+@name("Provides information for a given competitor")
+GET "https://{{baseUrl}}/competitors/:competitor_id/profile{{format}}"
+
+
+// Provides past match results for a given competitor
+
+@name("Provides past match results for a given competitor...")
+GET "https://{{baseUrl}}/competitors/:competitor_id/results{{format}}"
+
+
+@name("Provides the schedule for a given competitor")
+GET "https://{{baseUrl}}/competitors/:competitor_id/schedule{{format}}"
+
+
+

@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Manage the push notification filters for a user.
+
+@name("List all Notification Filter Push for User")
+GET "https://{{baseUrl}}/user/:userID/notification-filter-push"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Manage the push notification filters for a user.
+
+@name("CREATE Notification Filter Push for User")
+POST "https://{{baseUrl}}/user/:userID/notification-filter-push"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "notification_filters": [
+        {
+            "category": "mollit est non magna"
+        },
+        {
+            "category": "commodo in amet ut"
+        }
+    ]
+})
+
+
+

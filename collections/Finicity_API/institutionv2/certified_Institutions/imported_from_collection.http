@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7c1911c0-b9d3-49c2-a1c8-b51e46787741.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Search for institutions by certified product
+
+@name("Get Certified Institutions") : "base-inherit-auth"
+GET "https://{{baseUrl}}/institution/v2/certifiedInstitutions"
+? "search"= "finbank"
+? "start"= "1"
+? "limit"= "25"
+? "type"= "voa"
+
+
+// Get Certified Institution List w/RSSD
+
+@name("Get Certified Institutions With RSSD") : "base-inherit-auth"
+GET "https://{{baseUrl}}/institution/v2/certifiedInstitutions/rssd"
+? "search"= "finbank"
+? "start"= "1"
+? "limit"= "25"
+? "type"= "voa"
+
+
+

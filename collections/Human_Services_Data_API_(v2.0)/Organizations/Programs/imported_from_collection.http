@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Organization Programs")
+GET "https://{{baseUrl}}/organizations/:organization_id/programs"
+
+
+@name("add Organization Program")
+POST "https://{{baseUrl}}/organizations/:organization_id/programs"
+"Content-Type": "application/json"
+json({
+    "id": "sint Duis ex",
+    "name": "cupidatat",
+    "organization_id": "fugiat ea",
+    "alternate_name": "ullamco labore do"
+})
+
+
+@name("get Organization Program")
+GET "https://{{baseUrl}}/organizations/:organization_id/programs/:program_id"
+
+
+@name("update Organization Program")
+PUT "https://{{baseUrl}}/organizations/:organization_id/programs/:program_id"
+"Content-Type": "application/json"
+json({
+    "id": "sint Duis ex",
+    "name": "cupidatat",
+    "organization_id": "fugiat ea",
+    "alternate_name": "ullamco labore do"
+})
+
+
+@name("delete Organization Program")
+DELETE "https://{{baseUrl}}/organizations/:organization_id/programs/:program_id"
+
+
+

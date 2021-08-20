@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Delete a fleet squad, only empty squads can be deleted
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/squads/{squad_id}/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/squads/{squad_id}/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/squads/{squad_id}/`
+
+@name("Delete fleet squad")
+DELETE "https://{{baseUrl}}/fleets/:fleet_id/squads/:squad_id/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Rename a fleet squad
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/squads/{squad_id}/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/squads/{squad_id}/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/squads/{squad_id}/`
+
+@name("Rename fleet squad")
+PUT "https://{{baseUrl}}/fleets/:fleet_id/squads/:squad_id/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "name": "do"
+})
+
+
+

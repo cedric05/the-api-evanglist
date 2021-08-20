@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5bfc6a7a-9723-4bb7-a53c-665f538df741.postman_collection.json
+
+// Update global settings
+
+@name("Post Settings")
+POST "https://{{baseUrl}}/settings"
+
+
+// Shutdown the WireMock server
+
+@name("Post Shutdown")
+POST "https://{{baseUrl}}/shutdown"
+
+
+

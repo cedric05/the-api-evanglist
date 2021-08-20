@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-269919f2-9b06-4710-8aba-79605a574b07.postman_collection.json
+
+// This pulls a CSV file from a location then uses a test script to convert the response from CSV to JSON, then renders the JSON using the Postman Visualizer tab.
+
+@name("CSV to JSON")
+GET "https://raw.githubusercontent.com/cmusam/fortune500/master/csv/fortune500-2019.csv"
+
+
+

@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9079e245-0026-4d41-91a9-0010d7c8d828.postman_collection.json
+
+// **Get tikkie user payment requests (sandbox)**
+// 
+// Before you can start using the Tikkie API, you need to obtain an access token from the [OAuth API](https://developer.abnamro.com//get-started#authentication).
+// 
+// 
+// Technical Detils of this operation can be found [here](https://developer.abnamro.com/api/tikkie/technical-details).
+
+@name("Get User Payment Requests")
+GET "https://{{baseUrl}}/tikkie/platforms/:platformToken/users/:userToken/paymentrequests"
+? "offset"= "<string>"
+? "limit"= "<string>"
+? "fromDate"= "<string>"
+
+
+// **Get tikkie payment request (sandbox)**
+// 
+// Before you can start using the Tikkie API, you need to obtain an access token from the [OAuth API](https://developer.abnamro.com//get-started#authentication).
+// 
+// 
+// Technical Detils of this operation can be found [here](https://developer.abnamro.com/api/tikkie/technical-details).
+
+@name("Get Single Payment Request")
+GET "https://{{baseUrl}}/tikkie/platforms/:platformToken/users/:userToken/paymentrequests/:paymentToken"
+
+
+

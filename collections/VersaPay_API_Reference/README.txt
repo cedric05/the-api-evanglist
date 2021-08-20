@@ -1,0 +1,5 @@
+The VersaPay API offers operations in support of its flagship products:n* ARC - accounts receivable platform with automated invoicing, effective collaboration, flexible payments and cash application to improve efficiency and customer relationships.nn  * Importing & exporting customers, invoices, and payments.nn  * Monitoring file based imports/batches.nn* PayPort - cloud based platform to electronically push and pull funds across the EFT / ACH network.nn  * Moving funds using transactions and pre-authorized debit agreements.nn  * A secure hosted checkout for accepting payments through your website or email.nnPlease contact us at support@versapay.com for support & setup of A/R invoicing integration, hosted checkout, and/or payment acceptance.nn## EnvironmentsnnThe demo environment is a useful sandbox for integration testing where transaction settlements are simulated using test account numbers and test dollar amounts.nn`https://demo.versapay.com`nnOnce integration testin
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

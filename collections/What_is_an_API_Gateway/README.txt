@@ -1,0 +1,1 @@
+An infrastructure component that has capabilities like throttling, blocking, and other mechanisms to ensure that operational requirements for an API are met. Similar to a web server.

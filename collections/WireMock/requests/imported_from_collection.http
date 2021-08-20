@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5bfc6a7a-9723-4bb7-a53c-665f538df741.postman_collection.json
+
+// Delete all received requests
+
+@name("Delete Requests")
+DELETE "https://{{baseUrl}}/requests"
+
+
+// Count requests logged in the journal matching the specified criteria
+
+@name("Post Requests Count")
+POST "https://{{baseUrl}}/requests/count"
+
+
+// Retrieve details of requests logged in the journal matching the specified criteria
+
+@name("Post Requests Find")
+POST "https://{{baseUrl}}/requests/find"
+
+
+// Empty the request journal
+
+@name("Post Requests Reset")
+POST "https://{{baseUrl}}/requests/reset"
+
+
+// Get requests requestid.
+
+@name("Get Requests Requestid")
+GET "https://{{baseUrl}}/requests/:requestId"
+
+
+

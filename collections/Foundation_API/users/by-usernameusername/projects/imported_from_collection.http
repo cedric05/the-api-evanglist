@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets a user's project list by username.
+
+@name("Gets a user's project list by username")
+GET "https://{{baseUrl}}/users/by-username/:username/projects"
+? "sortby"= "<>"
+? "fetchHierarchyPath"= "<>"
+
+
+// Adds a user to specified project's member list by username.
+
+@name("Adds a user to specified project's member list by username")
+PUT "https://{{baseUrl}}/users/by-username/:username/projects/:projectid"
+
+
+

@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Retrieve the web page
+
+@name("rest login-page list") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/login-page"
+
+
+// Create or update the custom web page
+
+@name("rest login-page create") : "base-inherit-auth"
+POST "https://{{baseUrl}}/rest/login-page"
+
+
+// Delete the custom web page
+
+@name("rest login-page delete") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/rest/login-page"
+
+
+

@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2adeb4af-95b6-4924-86d2-634feee248e7.postman_collection.json
+
+// get all hierarchy
+
+@name("/getHierarchyBuilder")
+GET "https://{{baseUrl}}/getHierarchyBuilder"
+"jwt": "reprehenderit consequat sed do"
+
+
+// get all hierarchy types
+
+@name("/getHierarchyBuilderTypes")
+GET "https://{{baseUrl}}/getHierarchyBuilderTypes"
+"jwt": "reprehenderit consequat sed do"
+
+
+// Add Hierarchy Items
+
+@name("/saveHierarchy")
+POST "https://{{baseUrl}}/saveHierarchy"
+"jwt": "reprehenderit consequat sed do"
+"Content-Type": "application/json"
+json({
+    "code": -17079871,
+    "msg": "aliquip in sint"
+})
+
+
+

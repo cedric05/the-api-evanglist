@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-49418870-7240-40ed-b5ad-dd946417768e.postman_collection.json
+
+// Pulls pricing for Gold, World Bank.
+
+@name("Get Gold Pricing")
+GET "https://{{baseUrl}}/WORLDBANK/WLD_GOLD"
+
+
+// Pull pricing Silver, World Bank.
+
+@name("Get Silver Pricing")
+GET "https://{{baseUrl}}/WORLDBANK/WLD_SILVER"
+
+
+

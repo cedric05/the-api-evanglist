@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// Retrieve a list of industry classifications to identify the Customeru2019s business.
+
+@name("List Business Classifications")
+GET "https://{{baseUrl}}/business-classifications"
+
+
+// Retrieve a business classification from a list of industry classifications.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn----------|--------|--------|----------|-----------|nid | string | path | yes | Business classification unique identifier.
+
+@name("Retrieve A Business Classification")
+GET "https://{{baseUrl}}/business-classifications/:businessClassificationId"
+
+
+

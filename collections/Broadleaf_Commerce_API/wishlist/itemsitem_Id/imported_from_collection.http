@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Put wishlist items.
+
+@name("Put Wishlist Items")
+PUT "https://{{baseUrl}}/wishlist/items/:itemId"
+? "wishlistName"= "<>"
+? "quantity"= "<post>"
+
+
+// Post wishlist items move.
+
+@name("Post Wishlist Items Move")
+POST "https://{{baseUrl}}/wishlist/items/:itemId/move"
+? "wishlistName"= "<>"
+
+
+

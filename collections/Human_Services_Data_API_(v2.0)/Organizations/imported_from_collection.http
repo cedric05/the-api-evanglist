@@ -1,0 +1,58 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("update Organization")
+PUT "https://{{baseUrl}}/organizations/:organization_id"
+"Content-Type": "application/json"
+json({
+    "description": "sunt ipsum pariatur irure",
+    "id": "dolore",
+    "name": "esse",
+    "alternate_name": "reprehenderit Ut",
+    "email": "nostrud",
+    "url": "Excepteur nulla aliqua",
+    "tax_status": "dolore velit aliqua",
+    "tax_id": "id cupidatat",
+    "year_incorporated": "1979-05-01",
+    "legal_status": "reprehenderit cillum cupid"
+})
+
+
+@name("list Organizations")
+GET "https://{{baseUrl}}/organizations"
+? "sort_by"= "c"
+? "query"= "c"
+? "order"= "c"
+? "resources"= "c"
+? "fields"= "c"
+? "page"= "c"
+? "per_page"= "c"
+
+
+@name("add Organization")
+POST "https://{{baseUrl}}/organizations"
+"Content-Type": "application/json"
+json({
+    "description": "sunt ipsum pariatur irure",
+    "id": "dolore",
+    "name": "esse",
+    "alternate_name": "reprehenderit Ut",
+    "email": "nostrud",
+    "url": "Excepteur nulla aliqua",
+    "tax_status": "dolore velit aliqua",
+    "tax_id": "id cupidatat",
+    "year_incorporated": "1979-05-01",
+    "legal_status": "reprehenderit cillum cupid"
+})
+
+
+@name("get Organization")
+GET "https://{{baseUrl}}/organizations/:organization_id"
+
+
+@name("delete Organization Complete")
+DELETE "https://{{baseUrl}}/organizations/:organization_id"
+
+
+

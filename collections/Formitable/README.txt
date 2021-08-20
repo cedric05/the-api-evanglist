@@ -1,0 +1,1 @@
+New in this version: <ul><li>Added Get Single restaurant operation.</li><li>Verify availability for a datetime / partysize.</li><li>Select tables with create and update booking.</li><li>Get tables and areas by the POS identifiers</li></ul>

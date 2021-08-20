@@ -1,0 +1,86 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create Domestic Standing Orders")
+POST "https://{{baseUrl}}/domestic-standing-orders"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "ConsentId": "pariatur velit deserunt ut ut",
+        "Initiation": {
+            "CreditorAccount": {
+                "Identification": "reprehenderit ad nulla labore",
+                "Name": "et reprehenderit Lorem magna",
+                "SchemeName": "UK.OBIE.Paym",
+                "SecondaryIdentification": "elit tempor labor"
+            },
+            "FirstPaymentAmount": {
+                "Amount": "dolore in sit ad",
+                "Currency": "Lorem"
+            },
+            "FirstPaymentDateTime": "1969-02-05T16:37:28.009Z",
+            "Frequency": "exercitation officia proident nulla",
+            "FinalPaymentAmount": {
+                "Amount": "enim eiusmod",
+                "Currency": "exercitation irure Lorem in labore"
+            },
+            "FinalPaymentDateTime": "2015-09-17T05:20:18.987Z",
+            "NumberOfPayments": "in nisi",
+            "RecurringPaymentAmount": {
+                "Amount": "in",
+                "Currency": "magna sunt anim"
+            },
+            "RecurringPaymentDateTime": "1965-01-24T17:03:06.250Z",
+            "Reference": "anim ut non",
+            "SupplementaryData": {
+                "LocalInstrument": "UK.OBIE.FPS"
+            }
+        }
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "consequat",
+            "TownName": "elit ut qui",
+            "AddressLine": [
+                "anim aliqua sunt",
+                "tem"
+            ],
+            "BuildingNumber": "Lorem culpa",
+            "CountrySubDivision": [
+                "eiusmod tempor Excepteur deserunt",
+                "sed incidi"
+            ],
+            "PostCode": "Excepteur",
+            "StreetName": "voluptate deserunt"
+        },
+        "MerchantCategoryCode": "nulla ea ad aliqua",
+        "MerchantCustomerIdentification": "ex consequat",
+        "PaymentContextCode": "EcommerceServices"
+    }
+})
+
+
+// Get a domestic standing order based on id
+
+@name("Get Domestic Standing Orders")
+GET "https://{{baseUrl}}/domestic-standing-orders/:DomesticStandingOrderId"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+
+
+

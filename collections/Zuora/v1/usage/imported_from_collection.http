@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// nThis REST API reference describes how to post or import usage data for one or more accounts in the CSV  format. There are no path or query parameters. The data is uploade using the HTTP multipart/form-data POST method and applied to the user's tenant. nn## How this REST API Call WorksnThe content of the upload file must follow the format used by the UI import tool. It must be a comma-separated (CSV) file with a corresponding .csv extension. The length of the file name must not exceed 50 charact
+
+@name("Post usage")
+POST "https://{{baseUrl}}/v1/usage"
+"Content": "<>"
+
+
+// This REST API reference describes how to retrieve usage details for an account. Usage data is returned in reverse chronological order.n
+
+@name("Get usage")
+GET "https://{{baseUrl}}/v1/usage/accounts/:account-key"
+
+
+

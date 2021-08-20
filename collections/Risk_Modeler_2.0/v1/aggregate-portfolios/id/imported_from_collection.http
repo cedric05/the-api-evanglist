@@ -1,0 +1,148 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves an aggregate portfolios by id.
+
+@name("Get aggregate portfolio") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/aggregate-portfolios/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates a aggregate portfolio specified by its ID with new information.
+
+@name("Update a specified aggregate portfolio") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/aggregate-portfolios/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "cedant": {
+        "name": "elit",
+        "id": "c4dGT"
+    },
+    "name": "ips",
+    "number": "amet i",
+    "id": 95611142,
+    "source": "aliquip cillum est",
+    "currency": {
+        "id": -2407562,
+        "code": "sit adipisicing velit",
+        "name": "cupidatat"
+    },
+    "createDate": "mollit nostrud",
+    "peril": {
+        "id": 81144508,
+        "code": "laborum enim nostrud consequat proident",
+        "name": "do fugiat labore sunt"
+    }
+})
+
+
+// Deletes an aggregate portfolio specified by its ID.
+
+@name("Delete a specified aggregate portfolio") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/aggregate-portfolios/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Returns the URL location of the copied aggregate portfolio resource
+
+@name("Copy aggregate portfolio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/aggregate-portfolios/:id/copy"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "newName": "proident commodo officia",
+    "newNumber": "in ex ipsum"
+})
+
+
+// Retrieves list of aggregate exposure values for a specific portfolio, country and resolution.
+
+@name("Get list of aggregate exposure values") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/aggregate-portfolios/:id/aggregate-exposures-lists"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "countryCode"= "Excepteur nisi in"
+? "resolution"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Places an aggregate portfolio into a queue, where it waits until the analysis occurs.
+
+@name("Process an aggregate portfolio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/aggregate-portfolios/:id/process"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "almProfileIds": [
+        -12403653,
+        36946310
+    ],
+    "currency": {
+        "asOfDate": "ex dolore ullamco cupidatat",
+        "code": "velit aute adipisicing",
+        "scheme": "sit ex aute",
+        "vintage": "voluptate aliqua mollit"
+    },
+    "edm": "deserunt non",
+    "id": 61418226,
+    "exposureType": "LOCATION",
+    "modelProfileId": 16476254,
+    "eventRateSchemeId": 8797719,
+    "treaties": [
+        -40532138,
+        -23055539
+    ],
+    "jobName": "ic5_gB",
+    "analysisMode": "id irure",
+    "portEltByGeoidByLobByCedant": true,
+    "portStatsByGeoidByLobByCedant": true,
+    "portStatsByGeoidByCedant": true
+})
+
+
+// Retrieves metrics for a aggregate portfolio specified by its ID.
+
+@name("Get metrics for a specified aggregate portfolio") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/aggregate-portfolios/:id/metrics"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Gets list of countries covered by an aggregate portfolio specified by its ID.
+
+@name("Get list of countries covered by a specified aggregate portfolio") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/aggregate-portfolios/:id/countries"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Converts the currency of an aggregate portfolio specified by its ID.
+
+@name("Convert the currency of a specified aggregate portfolio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/aggregate-portfolios/:id/convert-currency"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "*/*"
+? "datasource"= "Excepteur nisi in"
+data('{
+    "asOfDate": "pariatur tempor id",
+    "code": "non",
+    "scheme": "commodo",
+    "vintage": "eu voluptat"
+}')
+
+
+

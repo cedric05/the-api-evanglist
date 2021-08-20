@@ -1,0 +1,109 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get all payment requests for a user's monetary account. bunqme_share_url is always null if the counterparty is a bunq user.
+
+@name("List all Request Inquiry for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/request-inquiry"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create a new payment request.
+
+@name("CREATE Request Inquiry for User Monetary Account")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/request-inquiry"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "allow_bunqme": "<boolean>",
+    "allow_amount_higher": "<boolean>",
+    "allow_amount_lower": "<boolean>",
+    "amount_inquired": {
+        "currency": "labore laborum anim dolore",
+        "value": "aliqua amet velit"
+    },
+    "attachment": [
+        {
+            "id": -57917995
+        },
+        {
+            "id": -24057100
+        }
+    ],
+    "counterparty_alias": {
+        "avatar": {
+            "anchor_uuid": "in mollit",
+            "image": [
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            ],
+            "uuid": "<string>"
+        },
+        "bunq_me": {
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "type": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "value": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        "country": "deserunt",
+        "display_name": "laborum",
+        "iban": "dolor sint nostrud",
+        "is_light": false,
+        "label_user": {
+            "avatar": {
+                "anchor_uuid": "aute commodo incididunt ex",
+                "image": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "uuid": "<string>"
+            },
+            "country": "sunt consectetur cillum",
+            "display_name": "ullamco",
+            "public_nick_name": "ullamco do",
+            "uuid": "Lorem qui aliqua ven"
+        },
+        "merchant_category_code": "non deserunt eu",
+        "swift_account_number": "laboris amet",
+        "swift_bic": "incididunt labore veniam nisi",
+        "transferwise_account_number": "consequat ipsum dolor cupidatat qui",
+        "transferwise_bank_code": "proident"
+    },
+    "description": "<string>",
+    "event_id": "<integer>",
+    "merchant_reference": "<string>",
+    "minimum_age": "<integer>",
+    "redirect_url": "<string>",
+    "require_address": "<string>",
+    "status": "<string>",
+    "want_tip": "<boolean>"
+})
+
+
+

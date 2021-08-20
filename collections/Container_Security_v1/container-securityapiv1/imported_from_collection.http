@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cdb56144-caaa-4d88-bf69-74da565813ea.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated.
+// Checks the compliance of an image that you specify by ID against your policies.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get compliance status by ID") : "base-inherit-auth"
+GET "https://{{baseUrl}}/container-security/api/v1/policycompliance"
+? "image_id"= "18528013"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated.
+// Checks the compliance of an image that you specify by name against your policies.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get compliance status by name") : "base-inherit-auth"
+GET "https://{{baseUrl}}/container-security/api/v1/compliancebyname"
+? "image"= "Lorem id ipsum amet in"
+? "repo"= "Lorem id ipsum amet in"
+? "tag"= "Lorem id ipsum amet in"
+
+
+

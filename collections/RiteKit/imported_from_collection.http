@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bccf5d55-a2df-4783-8125-6d0355865ae6.postman_collection.json
+
+// Remove banned hashtags before posting to Instagram
+
+@name("Hashtags cleaner")
+GET "https://{{baseUrl}}/v2/instagram/hashtags-cleaner"
+? "post"= "<string>"
+
+
+

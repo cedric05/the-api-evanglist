@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c011aa95-27fe-4c01-b46b-399763f84def.postman_collection.json
+
+// Get details about a specific category identified by its identifier.
+
+@name("Get category details")
+GET "https://{{baseUrl}}/v2/categories/:categoryID"
+
+
+// Get details about a specific ico
+
+@name("Get icon details")
+GET "https://{{baseUrl}}/v2/icons/:iconID"
+
+
+// Provides a list of all icons in an icon set sorted descendingly by the popularity of the icons.List all icons in an icon set
+
+@name("List all icons in an icon set")
+GET "https://{{baseUrl}}/v2/iconsets/:iconID/icons"
+? "after"= "<>"
+? "count"= "<>"
+
+
+// List all styles sorted ascendingly by their identifier.
+
+@name("List all styles")
+GET "https://{{baseUrl}}/v2/styles"
+? "after"= "<>"
+? "count"= "<>"
+
+
+

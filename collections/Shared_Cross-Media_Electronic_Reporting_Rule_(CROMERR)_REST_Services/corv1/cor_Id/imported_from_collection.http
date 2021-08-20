@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2131e7d-01ce-4512-a5ba-81bbec9b0ac2.postman_collection.json
+
+@name("Retrieves a document with the specified ID.")
+GET "https://{{baseUrl}}/cor/v1/:corId"
+"Authorization": "<string>"
+? "type"= "cor"
+
+
+@name("Validate a document against the specified signature data.")
+PUT "https://{{baseUrl}}/cor/v1/:corId"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "activityId": "<string>",
+    "user": {
+        "userId": "eu cillum",
+        "firstName": "Duis aliqua adipisicing",
+        "lastName": "ut do ips",
+        "middleInitial": "in voluptate nostrud",
+        "role": {
+            "roleName": "consectetur Lorem eiusmod",
+            "roleId": -64246724
+        },
+        "organization": {
+            "organizationName": "dolore Duis",
+            "organizationId": 14626491
+        }
+    },
+    "notifications": [
+        {
+            "category": "<string>",
+            "value": "<string>"
+        },
+        {
+            "category": "<string>",
+            "value": "<string>"
+        }
+    ],
+    "signatureData": {
+        "passwordSHA256Hash": "<string>",
+        "questionId": "<string>",
+        "answerSHA256Hash": "<string>"
+    }
+})
+
+
+@name("Repudiates a document with specified ID.")
+POST "https://{{baseUrl}}/cor/v1/:corId/repudiate"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "user": {
+        "userId": "tempor laboris nulla",
+        "firstName": "in",
+        "lastName": "sit irure",
+        "middleInitial": "sunt consectetur",
+        "role": {
+            "roleName": "incididunt",
+            "roleId": -23890935
+        },
+        "organization": {
+            "organizationName": "incididunt dolor laboris",
+            "organizationId": 16269916
+        }
+    },
+    "repudiationInfo": {
+        "description": "dolore irure sint minim"
+    }
+})
+
+
+@name("Set the status for a document with specified ID.")
+POST "https://{{baseUrl}}/cor/v1/:corId/setStatus"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+data('"<string>"')
+
+
+

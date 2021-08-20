@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-712034b2-265e-4ffc-a7a7-e49d61c6660a.postman_collection.json
+
+// Returns a list of all members in User Groups that are based on the Global Group with this groupid.n
+
+@name("List of all users in group.")
+GET "https://{{baseUrl}}/orgunits/:orgid/usergroups/:groupid/members"
+
+
+// Removes a user from a user group.n
+
+@name("Remove user group member.")
+DELETE "https://{{baseUrl}}/orgunits/:orgid/usergroups/:groupid/members/:uuid"
+
+
+

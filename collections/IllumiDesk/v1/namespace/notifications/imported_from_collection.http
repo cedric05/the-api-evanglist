@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Get notifications of all types and entities for the authenticated user.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/notifications/"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "ordering"= "<string>"
+? "read"= "<boolean>"
+
+
+@name("Mark a list of notifications as either read or unread.") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/:namespace/notifications/"
+"Content-Type": "application/json"
+json({
+    "notifications": [
+        "<string>",
+        "<string>"
+    ],
+    "read": "<boolean>"
+})
+
+
+

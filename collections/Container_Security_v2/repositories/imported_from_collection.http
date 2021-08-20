@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3c2b6188-a531-47ed-9d8d-d16b3bb80232.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns a list of image repositories in your Tenable.io Container Security instance. Use the query parameters to filter the list. <p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List repositories") : "base-inherit-auth"
+GET "https://{{baseUrl}}/repositories"
+? "imageName"= "ea ex pariatur velit tempor"
+? "nameContains"= "ea ex pariatur velit tempor"
+? "offset"= "0"
+? "limit"= "50"
+
+
+

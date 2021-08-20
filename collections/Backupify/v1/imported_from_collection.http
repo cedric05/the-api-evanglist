@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b61ade0-60b3-4dcc-a6b1-7acb55b522a0.postman_collection.json
+
+// A simple method to test authentication of a customer access token..
+
+@name("A simple method to test authentication of a customer access token.")
+GET "https://{{baseUrl}}/v1/authenticate_customer"
+"Authorization": "<>"
+
+
+// A simple method to test authentication of a vendor access token. the response body is empty json object..
+
+@name("A simple method to test authentication of a vendor access token. The response body is empty JSON object.")
+GET "https://{{baseUrl}}/v1/authenticate_vendor"
+"Authorization": "<>"
+
+
+// A simple method that returns a 200 response if the connection succeeds.
+
+@name("A simple method that returns a 200 response if the connection succeeds")
+GET "https://{{baseUrl}}/v1/ping"
+
+
+// Provides information about the currently authenticated vendor user.
+
+@name("Provides information about the currently authenticated vendor user")
+GET "https://{{baseUrl}}/v1/vendors/me"
+"Authorization": "<>"
+
+
+

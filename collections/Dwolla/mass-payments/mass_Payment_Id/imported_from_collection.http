@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// Retrieve a mass payment by its id. All mass payments will have a status of pending upon creation and will move to processing and finally complete as the service runs.n n ### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn--------|---------|---------|----------|----------|nid | string | path | yes | The id of the mass payment to retrieve information for.
+
+@name("Retrieve A Mass Payment")
+GET "https://{{baseUrl}}/mass-payments/:massPaymentId"
+
+
+// A mass payment contains a list of payments called items. An item is distinct from the transfer which it creates. An item can contain a status of either failed, pending, or success depending on whether the payment was created by the Dwolla service or not. A mass payment item status of success is an indication that a transfer was successfully created. A mass paymentu2019s items will be returned in the _embedded object as a list of items.nn### Request ParametersnnParameter | Data Type | Parameter Typ
+
+@name("List Items For A Mass Payment")
+GET "https://{{baseUrl}}/mass-payments/:massPaymentId/items"
+
+
+

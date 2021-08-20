@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e04c6fb1-e891-4983-80ec-38175b6c944e.postman_collection.json
+
+// Add api ethereum trade.
+
+@name("Add API Ethereum Trade")
+POST "https://{{baseUrl}}/api/Ethereum/trade"
+"Authorization": "<>"
+
+
+// Add api ethereum cashout.
+
+@name("Add API Ethereum Cashout")
+POST "https://{{baseUrl}}/api/Ethereum/cashout"
+"Authorization": "<>"
+
+
+// Get api ethereum transfers.
+
+@name("Get API Ethereum Transfers")
+GET "https://{{baseUrl}}/api/Ethereum/transfers"
+"Authorization": "<>"
+
+
+// Add api ethereum hash.
+
+@name("Add API Ethereum Hash")
+POST "https://{{baseUrl}}/api/Ethereum/hash"
+"Authorization": "<>"
+
+
+// Get api ethereum getcurrentnetworkgas.
+
+@name("Get API Ethereum Getcurrentnetworkgas")
+GET "https://{{baseUrl}}/api/Ethereum/getCurrentNetworkGas"
+"Authorization": "<>"
+
+
+// Get api ethereum tx transactionhash.
+
+@name("Get API Ethereum Tx Transactionhash")
+GET "https://{{baseUrl}}/api/Ethereum/tx/:transactionHash"
+"Authorization": "<>"
+
+
+// Get api ethereum history address.
+
+@name("Get API Ethereum History Address")
+GET "https://{{baseUrl}}/api/Ethereum/history/:address"
+"Authorization": "<>"
+? "start"= "<>"
+? "count"= "<delete>"
+? "assetId"= "<delete>"
+
+
+// Get api ethereum settings.
+
+@name("Get API Ethereum Settings")
+GET "https://{{baseUrl}}/api/Ethereum/settings"
+"Authorization": "<>"
+
+
+

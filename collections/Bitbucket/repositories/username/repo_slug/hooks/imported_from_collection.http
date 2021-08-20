@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns a paginated list of webhooks installed on this repository.
+
+@name("/repositories/:username/:repo_slug/hooks")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/hooks"
+
+
+// Creates a new webhook on the specified repository.
+// 
+// Example:
+// 
+// ```
+// $ curl -X POST -u credentials -H 'Content-Type: application/json'           https://api.bitbucket.org/2.0/repositories/username/slug/hooks           -d '
+//     {
+//       "description": "Webhook Description",
+//       "url": "https://example.com/",
+//       "active": true,
+//       "events": [
+//         "repo:push",
+//         "issue:created",
+//         "issue:updated"
+//       ]
+//     }'
+// ```
+// 
+// Note that this call requires the webhook scope, as well as any scope
+// that applies to the events that the webhook subscribes to. In the
+// example above that means: `webhook`, `repository` and `issue`.
+// 
+// Also note that the `url` must properly resolve and cannot be an
+// internal, non-routed address.
+
+@name("/repositories/:username/:repo_slug/hooks")
+POST "https://{{baseUrl}}/repositories/:username/:repo_slug/hooks"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Get a business's information.
+
+@name("Get Me")
+GET "https://{{baseUrl}}/v1/me"
+
+
+// Provides details for a business's locations, including their IDs.
+
+@name("Get Me Locations")
+GET "https://{{baseUrl}}/v1/me/locations"
+
+
+

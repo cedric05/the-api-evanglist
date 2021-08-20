@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c34e1268-51e0-4c47-9993-e9f389540a91.postman_collection.json
+
+@name("/trackings/:slug/:tracking_number")
+DELETE "https://{{baseUrl}}/trackings/:slug/:tracking_number"
+
+
+@name("/trackings/:slug/:tracking_number/retrack")
+POST "https://{{baseUrl}}/trackings/:slug/:tracking_number/retrack"
+
+
+

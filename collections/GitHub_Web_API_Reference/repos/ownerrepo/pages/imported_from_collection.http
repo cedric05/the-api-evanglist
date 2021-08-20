@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("Get a GitHub Pages site")
+GET "https://{{baseUrl}}/repos/:owner/:repo/pages"
+
+
+@name("Create a GitHub Pages site")
+POST "https://{{baseUrl}}/repos/:owner/:repo/pages"
+"Content-Type": "application/json"
+json({
+    "source": {
+        "branch": "<string>",
+        "path": "<string>"
+    }
+})
+
+
+@name("Update information about a GitHub Pages site")
+PUT "https://{{baseUrl}}/repos/:owner/:repo/pages"
+"Content-Type": "application/json"
+json({
+    "cname": "<string>",
+    "source": "<string>"
+})
+
+
+@name("Delete a GitHub Pages site")
+DELETE "https://{{baseUrl}}/repos/:owner/:repo/pages"
+
+
+

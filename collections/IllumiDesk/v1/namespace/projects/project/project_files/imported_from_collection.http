@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Get project files") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/:project/project_files/"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "ordering"= "<string>"
+? "filename"= "<string>"
+? "content"= "<string>"
+
+
+@name("Create project files") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/projects/:project/project_files/"
+"Content-Type": "multipart/form-data"
+files(
+	("file", "<binary>"),
+	("base64_data", "<string>"),
+	("name", "<string>"),
+	("path", "<string>")
+)
+
+
+

@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d946382c-8052-4cee-90da-b48b6cbdc70a.postman_collection.json
+
+// Get the changed items and profiles
+
+@name("Get the changed items and profiles")
+GET "https://{{baseUrl}}/updates.json"
+
+
+// Returns the current top 100 stories.
+
+@name("Returns the current top 100 stories.")
+GET "https://{{baseUrl}}/topstories.json"
+
+
+// Users are identified by case-sensitive ids
+
+@name("Users are identified by case-sensitive ids")
+GET "https://{{baseUrl}}/user/{{id}}.json"
+
+
+// Get the current largest item id
+
+@name("Get the current largest item id")
+GET "https://{{baseUrl}}/maxitem.json"
+
+
+// Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers.
+
+@name("Get the Item (story, comment, jobs, Ask HN, etc)")
+GET "https://{{baseUrl}}/item/{{id}}.json"
+
+
+

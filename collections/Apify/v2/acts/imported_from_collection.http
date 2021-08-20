@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets the list of all actors that the user created or used. The response is a list of objects where each objectncontains a basic information about a single actor.nTo only get actors created by the user, add the `my=1` query parameter.nnThe endpoint supports pagination using the `limit` and `offset` parameters and it will not return more than 1000 records.nnBy default, the records are sorted by the `createdAt` field in ascending order,ntherefore you can use pagination to incrementally fetch all ac
+
+@name("Get list of actors")
+GET "https://{{baseUrl}}/v2/acts"
+? "token"= "<string>"
+? "my"= "<string>"
+? "offset"= "<number>"
+? "limit"= "<number>"
+? "desc"= "<boolean>"
+
+
+

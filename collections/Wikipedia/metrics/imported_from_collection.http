@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c039dcb8-c468-46a5-bef2-944b0de198e7.postman_collection.json
+
+// Given a Mediawiki project and a date range, returns a timeseries of edits counts.nYou can filter by editors-type (all-editor-types, anonymous, bot, registered) andnpage-type (all-page-types, content or non-content). You can choose between daily andnmonthly granularity as well.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 license](https://creativecommo
+
+@name("Get edits counts for a project.")
+GET "https://{{baseUrl}}/metrics/edits/aggregate/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+// Given a project and a date range, returns a timeseries of pagecounts.nYou can filter by access site (mobile or desktop) and you can choose between monthly,ndaily and hourly granularity as well.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).n
+
+@name("Given a project and a date range, returns a timeseries of pagecounts. You can filter by access site (mobile or desktop) and you can choose between monthly, daily and hourly granularity as well.")
+GET "https://{{baseUrl}}/metrics/legacy/pagecounts/aggregate/:project/:access-site/:granularity/:start/:end"
+
+
+// Given a Mediawiki project and a date range, returns a timeseries of its newly registerednusers counts. You can choose between daily and monthly granularity. The newly registerednusers value is computed with self-created users only, not auto-login created ones.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 license](https://creativecommons.org/publicdoma
+
+@name("Get newly registered users counts for a project.")
+GET "https://{{baseUrl}}/metrics/registered-users/new/:project/:granularity/:start/:end"
+
+
+// Given a project and a date range, returns a timeseries of unique devices counts.nYou need to specify a project, and can filter by accessed site (mobile or desktop).nYou can choose between daily and hourly granularity as well.nn- Stability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).n
+
+@name("Get unique devices count per project")
+GET "https://{{baseUrl}}/metrics/unique-devices/:project/:access-site/:granularity/:start/:end"
+
+
+

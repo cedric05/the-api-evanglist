@@ -1,0 +1,155 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search widgets on a Playlist
+
+@name("Playlist Widget Search")
+GET "https://{{baseUrl}}/playlist/widget"
+
+
+// Adds In/Out transition to a specified widget
+
+@name("Adds In/Out transition")
+PUT "https://{{baseUrl}}/playlist/widget/transition/:type/:widgetId"
+
+
+// Parameters for editing existing audio widget on a layout, for adding new audio, please refer to POST /library documentation
+
+@name("Parameters for editing existing audio widget on a layout")
+POST "https://{{baseUrl}}/playlist/widget/audio/:playlistId"
+
+
+// Add a new Chart Widget to the specified playlist
+
+@name("Add a Chart Widget")
+POST "https://{{baseUrl}}/playlist/widget/chart/:playlistId"
+
+
+// Add a new Clock Widget to the specified playlist
+
+@name("Add a Clock Widget")
+POST "https://{{baseUrl}}/playlist/widget/clock/:playlistId"
+
+
+// Add a new Currencies Widget to the specified playlist
+
+@name("Add a Currencies Widget")
+POST "https://{{baseUrl}}/playlist/widget/currencies/:playlistId"
+
+
+// Add a new dataSetView Widget to the specified playlist
+
+@name("Add a dataSetView Widget")
+POST "https://{{baseUrl}}/playlist/widget/dataSetView/:playlistId"
+
+
+// Add a new Embedded Widget to the specified playlist
+
+@name("Add a Embedded Widget")
+POST "https://{{baseUrl}}/playlist/widget/embedded/:playlistId"
+
+
+// Add a new Finance Widget to the specified playlist
+
+@name("Add a Finance Widget")
+POST "https://{{baseUrl}}/playlist/widget/finance/:playlistId"
+
+
+// Add a new Weather Widget to the specified playlist
+
+@name("Add a Weather Widget")
+POST "https://{{baseUrl}}/playlist/widget/forecastIo/:playlistId"
+
+
+// Add a new Google traffic Widget to the specified playlist
+
+@name("Add a Google Traffic Widget")
+POST "https://{{baseUrl}}/playlist/widget/googleTraffic/:playlistId"
+
+
+// Add a new HLS Widget to the specified playlist
+
+@name("Add a HLS Widget")
+POST "https://{{baseUrl}}/playlist/widget/hls/:playlistId"
+
+
+// Parameters for editing existing image on a layout, for adding new images, please refer to POST /library documentation
+
+@name("Parameters for editing existing image on a layout")
+POST "https://{{baseUrl}}/playlist/widget/image/:playlistId"
+
+
+// Add a new Local Video Widget to the specified playlist
+
+@name("Add a Local Video Widget")
+POST "https://{{baseUrl}}/playlist/widget/localVideo/:playlistId"
+
+
+// Add a new Notification Widget to the specified playlist
+
+@name("Add a Notification Widget")
+POST "https://{{baseUrl}}/playlist/widget/notificationview/:playlistId"
+
+
+// Parameters for editing existing pdf on a layout, for adding new files, please refer to POST /library documentation
+
+@name("Parameters for editing existing pdf on a layout")
+POST "https://{{baseUrl}}/playlist/widget/pdf/:playlistId"
+
+
+// Add a new Shell Command Widget to the specified playlist
+
+@name("Add a Shell Command Widget")
+POST "https://{{baseUrl}}/playlist/widget/shellCommand/:playlistId"
+
+
+// Add a new Stocks Widget to the specified playlist
+
+@name("Add a Stocks Widget")
+POST "https://{{baseUrl}}/playlist/widget/stocks/:playlistId"
+
+
+// Add a new Text Widget to the specified playlist
+
+@name("Add a Text Widget")
+POST "https://{{baseUrl}}/playlist/widget/text/:playlistId"
+
+
+// Add a new ticker Widget to the specified playlist
+
+@name("Add a ticker Widget")
+POST "https://{{baseUrl}}/playlist/widget/ticker/:playlistId"
+
+
+// Add a new Twitter Widget to the specified playlist
+
+@name("Add a Twitter Widget")
+POST "https://{{baseUrl}}/playlist/widget/twitter/:playlistId"
+
+
+// Add a new Twitter Metro Widget to the specified playlist
+
+@name("Add a Twitter Metro Widget")
+POST "https://{{baseUrl}}/playlist/widget/twittermetro/:playlistId"
+
+
+// Parameters for editing existing video on a layout, for adding new videos, please refer to POST /library documentation
+
+@name("Parameters for editing existing video on a layout")
+POST "https://{{baseUrl}}/playlist/widget/video/:playlistId"
+
+
+// Add a new Video In Widget to the specified playlist
+
+@name("Add a Video In Widget")
+POST "https://{{baseUrl}}/playlist/widget/videoin/:playlistId"
+
+
+// Add a new Web page Widget to the specified playlist
+
+@name("Add a Web page Widget")
+POST "https://{{baseUrl}}/playlist/widget/webpage/:playlistId"
+
+
+

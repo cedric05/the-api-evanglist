@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Create a new action of the specified type. `all` can be specified as the `actionType`, in which case the specified action type must be supplied in the payload. If no location is specified, the Platform will automatically determine the location based on the IP address of the device who has issued it, along with a country code that is returned in the context object.
+
+@name("Create an action")
+POST "https://{{baseUrl}}/actions/:actionType"
+? "No Name"= "<string>"
+
+
+// Read a single action by ID. You can use `all` as an `actionType` to read actions of unknown type.
+
+@name("Read an action")
+GET "https://{{baseUrl}}/actions/:actionType/:actionId"
+? "No Name"= "<string>"
+
+
+// Read a single action by ID with context. The `?context=true` query parameter can be used to include the context field in the action read.
+
+@name("Read an action with context")
+GET "https://{{baseUrl}}/actions/:actionType/{{actionId}}"
+? "context"= "true"
+? "No Name"= "<string>"
+
+
+

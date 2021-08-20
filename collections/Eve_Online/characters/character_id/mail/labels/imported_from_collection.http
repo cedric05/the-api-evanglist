@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return a list of the users mail labels, unread counts for each label and a total unread count.
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mail/labels/`
+// 
+// Alternate route: `/v3/characters/{character_id}/mail/labels/`
+// 
+// ---
+// This route is cached for up to 30 seconds
+
+@name("Get mail labels and unread counts")
+GET "https://{{baseUrl}}/characters/:character_id/mail/labels/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Create a mail label
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mail/labels/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/mail/labels/`
+// 
+// Alternate route: `/v2/characters/{character_id}/mail/labels/`
+
+@name("Create a mail label")
+POST "https://{{baseUrl}}/characters/:character_id/mail/labels/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "name": "culp",
+    "color": "#ffffff"
+})
+
+
+// Delete a mail label
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mail/labels/{label_id}/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/mail/labels/{label_id}/`
+// 
+// Alternate route: `/v1/characters/{character_id}/mail/labels/{label_id}/`
+
+@name("Delete a mail label")
+DELETE "https://{{baseUrl}}/characters/:character_id/mail/labels/:label_id/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a team on the system.n##### PermissionsnMust be authenticated and have the `view_team` permission.n
+
+@name("Get a team")
+GET "https://{{baseUrl}}/teams/:team_id"
+
+
+// Partially update a team by providing only the fields you want to update. Omitted fields will not be updated. The fields that can be updated are defined in the request body, all other provided fields will be ignored.n##### PermissionsnMust have the `manage_team` permission.n
+
+@name("Patch a team")
+PUT "https://{{baseUrl}}/teams/:team_id/patch"
+
+
+// Get a team stats on the system.n##### PermissionsnMust be authenticated and have the `view_team` permission.n
+
+@name("Get a team stats")
+GET "https://{{baseUrl}}/teams/:team_id/stats"
+
+
+// Get the team icon of the team.nn__Minimum server version__: 4.9nn##### PermissionsnUser must be authenticated. In addition, team must be open or the user must have the `view_team` permission.n
+
+@name("Get the team icon")
+GET "https://{{baseUrl}}/teams/:team_id/image"
+
+
+// Invite users to the existing team usign the user's email.n##### PermissionsnMust have `invite_to_team` permission for the team.n
+
+@name("Invite users to the team by email")
+POST "https://{{baseUrl}}/teams/:team_id/invite/email"
+
+
+// Import a team into a existing team. Import users, channels, posts, hooks.n##### PermissionsnMust have `permission_import_team` permission.n
+
+@name("Import a Team from other application")
+POST "https://{{baseUrl}}/teams/:team_id/import"
+
+
+// Search posts in the team and from the provided terms string.n##### PermissionsnMust be authenticated and have the `view_team` permission.n
+
+@name("Search for team posts")
+POST "https://{{baseUrl}}/teams/:team_id/posts/search"
+
+
+// List autocomplete commands in the team.n##### Permissionsn`view_team` for the team.n
+
+@name("List autocomplete commands")
+GET "https://{{baseUrl}}/teams/:team_id/commands/autocomplete"
+
+
+

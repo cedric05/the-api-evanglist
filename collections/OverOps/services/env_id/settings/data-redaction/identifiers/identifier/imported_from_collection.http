@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieve an identifier
+
+@name("Retrieve an identifier") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/data-redaction/identifiers/:identifier"
+
+
+// Add an identifier. The body identifier name must match the resource identifier
+
+@name("Add an identifier") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/services/:env_id/settings/data-redaction/identifiers/:identifier"
+"Content-Type": "application/json"
+json({
+    "name": "password"
+})
+
+
+// Delete identifier
+
+@name("Delete identifier") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/services/:env_id/settings/data-redaction/identifiers/:identifier"
+
+
+

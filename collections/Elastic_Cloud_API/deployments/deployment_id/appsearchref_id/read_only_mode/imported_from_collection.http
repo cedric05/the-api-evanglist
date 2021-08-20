@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Enable/Disable read-only mode on the given App Search resource.
+
+@name("Set AppSearch read-only status") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/deployments/:deployment_id/appsearch/:ref_id/read_only_mode"
+"Content-Type": "application/json"
+json({
+    "enabled": true
+})
+
+
+// Enable/Disable read-only mode on the given App Search resource.
+
+@name("Set AppSearch read-only status") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/:deployment_id/appsearch/:ref_id/read_only_mode"
+
+
+

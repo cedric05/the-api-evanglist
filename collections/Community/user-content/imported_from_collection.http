@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-feae85c7-2ebe-481a-b96a-d6a405e2d989.postman_collection.json
+
+@name("Comments by Date")
+GET "https://{{baseUrl}}/user-content/by-date.json"
+? "date"= "<string>"
+
+
+@name("Recent User Comments")
+GET "https://{{baseUrl}}/user-content/recent.json"
+
+
+@name("Comments by URL")
+GET "https://{{baseUrl}}/user-content/url.json"
+? "url"= "<string>"
+
+
+@name("Comments by User")
+GET "https://{{baseUrl}}/user-content/user.json"
+? "userID"= "<integer>"
+
+
+

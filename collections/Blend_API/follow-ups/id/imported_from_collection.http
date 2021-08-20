@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get specific follow-up.
+
+@name("Get a Specific Follow-Up") : "base-inherit-auth"
+GET "https://{{baseUrl}}/follow-ups/:id"
+
+
+// Update specific follow-up.
+
+@name("Update a Specific Follow-Up") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/follow-ups/:id"
+"Content-Type": "application/json"
+json({
+    "status": "COMPLETED_EXTERNALLY",
+    "comments": "Please upload the requested document by the end of the week.",
+    "clientFollowUpReferenceId": "internalID-187f5efc-0b82-4480-84a5-e23d8c3c9a32",
+    "dueDate": "2018-10-03T20:07:27+00:00",
+    "context": {
+        "document": {
+            "title": "Custom title"
+        }
+    }
+})
+
+
+// Delete specific follow-up.
+
+@name("Remove a Specific Follow-Up") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/follow-ups/:id"
+
+
+

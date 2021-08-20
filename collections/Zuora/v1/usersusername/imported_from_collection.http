@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnAccepts user access to an entity.nn## User Access PermissionnYou must make the calls as an administrator of the entity that you want to accept the user access to. n
+
+@name("Multi-entity: Accept user access")
+PUT "https://{{baseUrl}}/v1/users/:username/accept-access"
+
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnRetrieves detailed information about all the entities that a user has permission to access.nn## User Access PermissionnYou can make the call as any entity user.n
+
+@name("Multi-entity: Get entities that a user can access")
+GET "https://{{baseUrl}}/v1/users/:username/accessible-entities"
+
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnDenies a user access to an entity. nn## User Access PermissionnYou must make the calls as an administrator of the entity that you want to deny the user access to.n
+
+@name("Multi-entity: Deny user access")
+PUT "https://{{baseUrl}}/v1/users/:username/deny-access"
+
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnSends access requests to the entities that a user wants to access.nn## User Access PermissionnYou must make the call as an administrator of the entity, in which the request user is created. Also, this administrator must have the permission to access the entities that the request user wants to access.n
+
+@name("Multi-entity: Send user access requests")
+PUT "https://{{baseUrl}}/v1/users/:username/request-access"
+
+
+

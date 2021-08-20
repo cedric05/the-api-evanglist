@@ -1,0 +1,77 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// This service gives access to an algorithm-based investment profile. The core information in the profile is the recommended highest suitable SRRI class, which is a widely used standard to classify assets based on their risk/return dynamic. The risk profile is thus intended to accompany an advisory on specific investments - also in compliance with EU regulations.  
+// 
+// The needed inputs are divided into data about knowledge and experiences, risk tolerance, risk-bearing ability, and investment goals. In the profile, knowledge evaluation and risk tolerance are scored - `knowledge-evaluation` and `estimated-risk-tolerance` respectively. Estimated risk tolerance is calculated based on subjective questions and an algorithm which aims to psychologically extract the true risk tolerance instead of just asking the user for it. However, the user can override the risk tolerance with his self-assessment if he so wishes.  
+// 
+// The main profile parameter, `highest-suitable-srri-class` gives the highest recommended SRRI class recommended for the user. SRRI classes range from 1 to 7.  
+// 
+// All inputs are optional. In the output, `adequacy-test` and `suitability-test` indicate whether the set of inputs is sufficient to guarantee adequacy and suitability, respectively.
+
+@name("Investment Profile") : "base-inherit-auth"
+POST "https://{{baseUrl}}/profile/investment"
+"Content-Type": "application/json"
+json({
+    "person.investment.goals": 1,
+    "recommendation.savings.invest.duration": 3,
+    "person.investment.available.monthly.suggested-values": 4,
+    "person.investment.assets.liquid": 3,
+    "person.investment.risktype.subjective.self-assessment": 3,
+    "person.investment.risktype.subjective-question1": 1,
+    "person.investment.risktype.subjective-question2": 1,
+    "person.investment.risktype.subjective-question3": 1,
+    "person.investment.risktype.subjective-question4": 1,
+    "person.investment.risktype.subjective-question5": 1,
+    "person.investment.knowledge.source": [
+        4
+    ],
+    "person.investment.knowledge.life-insurance": 4,
+    "person.investment.knowledge.bond": 4,
+    "person.investment.knowledge.funds": 4,
+    "person.investment.knowledge.shares": 4,
+    "person.investment.knowledge.mixed": 4,
+    "person.investment.knowledge.equity": 4,
+    "person.investment.knowledge.real-estate-fund": 4,
+    "person.investment.knowledge.futures-options": 4,
+    "person.investment.knowledge.pfandbrief": 4,
+    "person.investment.knowledge.government-bonds": 4,
+    "person.investment.knowledge.certificate": 4,
+    "person.investment.knowledge.foreign-currency": 4,
+    "person.investment.knowledge.money-market-instruments": 4,
+    "person.investment.frequency.mixed": 2,
+    "person.investment.frequency.life-insurance": 1,
+    "person.investment.frequency.certificate": 3,
+    "person.investment.frequency.equity": 3,
+    "person.investment.frequency.government-bonds": 3,
+    "person.investment.frequency.real-estate-fund": 3,
+    "person.investment.frequency.funds": 3,
+    "person.investment.frequency.futures-options": 3,
+    "person.investment.frequency.foreign-currency": 3,
+    "person.investment.frequency.shares": 3,
+    "person.investment.frequency.pfandbrief": 3,
+    "person.investment.frequency.money-market-instruments": 3,
+    "person.investment.frequency.bond": 3,
+    "person.birthdate": "1980-01-01"
+})
+
+
+// This service returns an indication which parameter in the general demands and needs analysis for corporate clients has an impact on which risk category.
+
+@name("Business Risks") : "base-inherit-auth"
+POST "https://{{baseUrl}}/profile/risks-corporate/prioritization"
+"Content-Type": "application/json"
+json({
+    "qrel": "organization.sector"
+})
+
+
+

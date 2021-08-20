@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17776046-ece2-4e9f-8598-d00e62122c30.postman_collection.json
+
+// Specialty group list
+
+@name("Retrieve a list of all specialties")
+GET "https://{{baseUrl}}/specialties"
+? "fields"= "<>"
+? "skip"= "<get>"
+? "limit"= "<get>"
+? "user_key"= "<>"
+
+
+// Insurance provider & plan list
+
+@name("Retrieve insurance providers and plans")
+GET "https://{{baseUrl}}/insurances"
+? "fields"= "<>"
+? "skip"= "<get>"
+? "limit"= "<get>"
+? "user_key"= "<>"
+
+
+// List all conditions
+
+@name("Retrieve a list of known conditions")
+GET "https://{{baseUrl}}/conditions"
+? "fields"= "<>"
+? "skip"= "<get>"
+? "limit"= "<get>"
+? "user_key"= "<>"
+
+
+// Returns basic API health information for monitoring
+
+@name("API Health Check")
+GET "https://{{baseUrl}}/info"
+? "user_key"= "<>"
+
+
+

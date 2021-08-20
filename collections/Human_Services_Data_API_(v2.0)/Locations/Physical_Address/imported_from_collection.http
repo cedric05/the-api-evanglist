@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Location Physical Addresses")
+GET "https://{{baseUrl}}/locations/:location_id/physical-address"
+
+
+@name("add Location Physical Address")
+POST "https://{{baseUrl}}/locations/:location_id/physical-address"
+"Content-Type": "application/json"
+json({
+    "address_1": "eu aute Lorem",
+    "city": "dolore veniam",
+    "country": "dolore voluptate deserunt",
+    "id": "Duis adipisicing",
+    "postal_code": "reprehenderit aliqua Duis",
+    "state_province": "dolor",
+    "location_id": "sit deserunt reprehenderit Ut adipisicing",
+    "attention": "amet",
+    "address_2": "ipsum",
+    "address_3": "occaecat ",
+    "address_4": "sit consectetur",
+    "region": "eiusmod dolor"
+})
+
+
+@name("get Location Physical Address")
+GET "https://{{baseUrl}}/locations/:location_id/physical-address/:physical_address_id"
+
+
+@name("update Location Physical Address")
+PUT "https://{{baseUrl}}/locations/:location_id/physical-address/:physical_address_id"
+"Content-Type": "application/json"
+json({
+    "address_1": "eu aute Lorem",
+    "city": "dolore veniam",
+    "country": "dolore voluptate deserunt",
+    "id": "Duis adipisicing",
+    "postal_code": "reprehenderit aliqua Duis",
+    "state_province": "dolor",
+    "location_id": "sit deserunt reprehenderit Ut adipisicing",
+    "attention": "amet",
+    "address_2": "ipsum",
+    "address_3": "occaecat ",
+    "address_4": "sit consectetur",
+    "region": "eiusmod dolor"
+})
+
+
+@name("delete Location Physical Address")
+DELETE "https://{{baseUrl}}/locations/:location_id/physical-address/:physical_address_id"
+
+
+

@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Creates a new reference from a given task to a contact or a ticket..
+
+@name("Creates a new reference from a given task to a contact or a ticket.")
+POST "https://{{baseUrl}}/rest/boards/:boardId/columns/:columnId/tasks/:taskId/references"
+? "referenceValue"= "<post>"
+
+
+// Deletes a reference from a given task..
+
+@name("Deletes a reference from a given task.")
+DELETE "https://{{baseUrl}}/rest/boards/:boardId/columns/:columnId/tasks/:taskId/references/:referenceId"
+
+
+// .
+
+@name("get Rest Boards Board Columns Column Tasks Task References Referencetype Referencekey")
+GET "https://{{baseUrl}}/rest/boards/:boardId/columns/:columnId/tasks/:taskId/references/:referenceType/:referenceKey"
+
+
+

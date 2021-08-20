@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-33af5de4-dc9a-486d-b92d-1eaf85678dac.postman_collection.json
+
+// A worker is rehired.
+
+@name("Rehire Worker")
+POST "https://{{baseUrl}}/events/hr/v1/worker.rehire"
+? "No Name"= "<string>"
+
+
+// Returns an event metadata
+
+@name("Rehire Worker Meta")
+GET "https://{{baseUrl}}/events/hr/v1/worker.rehire/meta"
+? "No Name"= "<string>"
+
+
+

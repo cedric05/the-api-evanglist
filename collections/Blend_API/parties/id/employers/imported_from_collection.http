@@ -1,0 +1,99 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get details about party employers.
+
+@name("List a Party's Employers") : "base-inherit-auth"
+GET "https://{{baseUrl}}/parties/:id/employers"
+
+
+// Create employers and incomes for party.
+
+@name("Add Employers to a Party") : "base-inherit-auth"
+POST "https://{{baseUrl}}/parties/:id/employers"
+"Content-Type": "application/json"
+json({
+    "employers": [
+        {
+            "status": "CURRENT",
+            "name": "Blend",
+            "type": "MILITARY",
+            "address": {
+                "streetAddressLine1": "100 Main St",
+                "city": "Chicago",
+                "state": "IL",
+                "zipCode": "60007",
+                "streetAddressLine2": "Apt 10",
+                "zipCodePlusFour": "1000",
+                "countyName": "Cook County"
+            },
+            "phoneNumber": 1112223333,
+            "startDate": "2018-10-03T20:07:27+00:00",
+            "endDate": "2018-11-03T20:07:27+00:00",
+            "incomes": [
+                {
+                    "type": "MILITARY_HAZARD_PAY",
+                    "yearlyIncome": {
+                        "code": "USD",
+                        "amount": 1234
+                    },
+                    "description": "Sole income"
+                },
+                {
+                    "type": "MORTGAGE_CREDIT_CERTIFICATE",
+                    "yearlyIncome": {
+                        "code": "USD",
+                        "amount": 1234
+                    },
+                    "description": "Sole income"
+                }
+            ]
+        },
+        {
+            "status": "PREVIOUS",
+            "name": "Blend",
+            "type": "MILITARY",
+            "address": {
+                "streetAddressLine1": "100 Main St",
+                "city": "Chicago",
+                "state": "IL",
+                "zipCode": "60007",
+                "streetAddressLine2": "Apt 10",
+                "zipCodePlusFour": "1000",
+                "countyName": "Cook County"
+            },
+            "phoneNumber": 1112223333,
+            "startDate": "2018-10-03T20:07:27+00:00",
+            "endDate": "2018-11-03T20:07:27+00:00",
+            "incomes": [
+                {
+                    "type": "SOCIAL_SECURITY",
+                    "yearlyIncome": {
+                        "code": "USD",
+                        "amount": 1234
+                    },
+                    "description": "Sole income"
+                },
+                {
+                    "type": "HOUSING_ALLOWANCE",
+                    "yearlyIncome": {
+                        "code": "USD",
+                        "amount": 1234
+                    },
+                    "description": "Sole income"
+                }
+            ]
+        }
+    ]
+})
+
+
+

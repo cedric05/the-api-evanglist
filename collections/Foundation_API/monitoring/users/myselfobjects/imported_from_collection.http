@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Returns the list of monitoring items for current user.
+
+@name("Returns the list of monitoring items for current user")
+GET "https://{{baseUrl}}/monitoring/users/myself/objects"
+? "projectId"= "<put>"
+? "offset"= "<put>"
+? "count"= "<>"
+
+
+// The logged in user is monitoring the current object or not (true / false).
+
+@name("The logged in user is monitoring the current object or not (true / false)")
+GET "https://{{baseUrl}}/monitoring/users/myself/objects/:objectid"
+
+
+

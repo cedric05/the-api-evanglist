@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get channel from the provided channel id string.n##### Permissionsn`read_channel` permission for the channel.n
+
+@name("Get a channel")
+GET "https://{{baseUrl}}/channels/:channel_id"
+
+
+// Partially update a channel by providing only the fields you want to update. Omitted fields will not be updated. The fields that can be updated are defined in the request body, all other provided fields will be ignored.n##### PermissionsnIf updating a public channel, `manage_public_channel_members` permission is required. If updating a private channel, `manage_private_channel_members` permission is required.n
+
+@name("Patch a channel")
+PUT "https://{{baseUrl}}/channels/:channel_id/patch"
+
+
+// Convert into private channel from the provided channel id string.nn__Minimum server version__: 4.10nn##### PermissionsnMust have `manage_system` permission.n
+
+@name("Convert a channel from public to private")
+POST "https://{{baseUrl}}/channels/:channel_id/convert"
+
+
+// Restore channel from the provided channel id string.nn__Minimum server version__: 3.10nn##### Permissionsn`manage_team` permission for the team of channel.n
+
+@name("Restore a channel")
+POST "https://{{baseUrl}}/channels/:channel_id/restore"
+
+
+// Get statistics for a channel.n##### PermissionsnMust have the `read_channel` permission.n
+
+@name("Get channel statistics")
+GET "https://{{baseUrl}}/channels/:channel_id/stats"
+
+
+// Get a list of pinned posts for channel.
+
+@name("Get a channels pinned posts")
+GET "https://{{baseUrl}}/channels/:channel_id/pinned"
+
+
+// Get a page of posts in a channel. Use the query parameters to modify the behaviour of this endpoint. The parameters `since`, `before` and `after` must not be used together.n##### PermissionsnMust have `read_channel` permission for the channel.n
+
+@name("Get posts for a channel")
+GET "https://{{baseUrl}}/channels/:channel_id/posts"
+? "page"= "<>"
+? "per_page"= "<>"
+? "since"= "<>"
+? "before"= "<>"
+? "after"= "<>"
+
+
+

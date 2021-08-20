@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// `/income/verification/create` begins the income verification process by returning an `income_verification_id`. You can then provide the `income_verification_id` to `/link/token/create` under the `income_verification` parameter in order to create a Link instance that will prompt the user to upload their income documents. Once the documents have been uploaded and parsed, Plaid will fire an `INCOME` webhook.
+
+@name("Create an income verification instance") : "base-inherit-auth"
+POST "https://{{baseUrl}}/income/verification/create"
+"Content-Type": "application/json"
+json({
+    "webhook": "dolore fugiat ut exercitation consectetur",
+    "client_id": "voluptate reprehenderit",
+    "secret": "eu dolore "
+})
+
+
+// `/income/verification/summary/get` returns a verification summary for the income that was verified for an end user. It can be called once the status of the verification has been set to `VERIFICATION_STATUS_PROCESSING_COMPLETE`, as reported by the `INCOME: verification_status` webhook. Attempting to call the endpoint before verification has been completed will result in an error.
+
+@name("Retrieve a summary of information derived from income verification") : "base-inherit-auth"
+POST "https://{{baseUrl}}/income/verification/summary/get"
+"Content-Type": "application/json"
+json({
+    "income_verification_id": "ea sint nisi",
+    "client_id": "eu aliquip ad proident id",
+    "secret": "voluptate"
+})
+
+
+// `/income/verification/paystub/get` returns the information collected from the paystub that was used to verify an end user's income. It can be called once the status of the verification has been set to `VERIFICATION_STATUS_PROCESSING_COMPLETE`, as reported by the `INCOME: verification_status` webhook. Attempting to call the endpoint before verification has been completed will result in an error.
+
+@name("Retrieve information from the paystub used for income verification") : "base-inherit-auth"
+POST "https://{{baseUrl}}/income/verification/paystub/get"
+"Content-Type": "application/json"
+json({
+    "income_verification_id": "incididunt nostrud",
+    "client_id": "occaecat voluptate",
+    "secret": "sit dolore"
+})
+
+
+// `/income/verification/documents/download` provides the ability to download the source paystub PDF that the end user uploaded via Paystub Import.
+// 
+// The response to `/income/verification/documents/download` is a ZIP file in binary data. The `request_id`  is returned in the `Plaid-Request-ID` header.
+// 
+// In the future, when Digital Verification is available, the most recent file available for download with the payroll provider will also be available from this endpoint.
+
+@name("Download the original documents used for income verification") : "base-inherit-auth"
+POST "https://{{baseUrl}}/income/verification/documents/download"
+"Content-Type": "application/json"
+json({
+    "income_verification_id": "offi",
+    "client_id": "Duis magna aute",
+    "secret": "occaecat Lorem"
+})
+
+
+

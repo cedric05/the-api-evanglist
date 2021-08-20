@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e4b9e6dc-8f23-466d-86b8-cf78b2637bf5.postman_collection.json
+
+@name("By Country")
+GET "https://postman-open-technologies.github.io/environment/apis/green-house-gases/emissions-per-country/"
+? "code"= "MCO"
+
+
+@name("Per Capita")
+GET "https://postman-open-technologies.github.io/environment/apis/green-house-gases/emissions-per-capita/"
+
+
+// A set of data points and/or visual elements cover the key facts and figures of the current emission levels to include: overall emissions versus where they need to be, snapshot facts and / or invitations to explore further into emissions per sector, per country, wider trends over time, and insights into emissions per capita trends. [Some of the further exploration could take the user into the WESR.]
+// 
+// Question: Human activities has contributed significantly to greenhouse gas emissions with CO2 and other gases increasing significantly Screen reader support enabled.
+// 
+// "Landing Page in WESR: https://wesr-s.unepgrid.ch/display/WCCD/Pressure
+
+@name("CO2 Trends")
+GET "https://postman-open-technologies.github.io/environment/apis/green-house-gases/co2-trends/"
+
+
+@name("Global CO2 Concentration")
+GET "https://postman-open-technologies.github.io/environment/apis/green-house-gases/global-co2-concentration/"
+"Accept": "*/*"
+"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"
+"X-Requested-With": "XMLHttpRequest"
+
+
+@name("Global CH4 Concentration")
+GET "https://postman-open-technologies.github.io/environment/apis/green-house-gases/global-ch4-concentration/"
+"Accept": "*/*"
+"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"
+"X-Requested-With": "XMLHttpRequest"
+
+
+

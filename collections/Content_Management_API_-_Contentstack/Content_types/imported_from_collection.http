@@ -1,0 +1,285 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Get all content types</code> call returns comprehensive information of all the content types available in a particular stack in your account.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-all-content-types>Get All Content Types</a> API Reference document
+
+@name("Get all content types")
+GET "https://{{base_url}}/v3/content_types"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "include_count"= "false"
+? "include_global_field_schema"= "true"
+
+
+// <p>The <code>Get a single content type</code> call returns information of a specific content type.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-single-content-type>Get Single Content Type</a> API Reference document
+
+@name("Get a single content type")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "version"= "1"
+? "include_global_field_schema"= "true"
+
+
+// <p>The <code>Create a content type</code> call creates a new content type in a particular stack of your Contentstack account.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#create-content-type>Create Content Type</a> API Reference document
+
+@name("Create a content type")
+POST "https://{{base_url}}/v3/content_types"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "content_type": {
+        "title": "Page",
+        "uid": "page",
+        "schema": [
+            {
+                "display_name": "Title",
+                "uid": "title",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "mandatory": true,
+                "multiple": false
+            },
+            {
+                "display_name": "URL",
+                "uid": "url",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "multiple": false
+            }
+        ],
+        "options": {
+            "title": "title",
+            "publishable": true,
+            "is_page": true,
+            "singleton": false,
+            "sub_title": [
+                "url"
+            ],
+            "url_pattern": "/:title",
+            "url_prefix": "/"
+        }
+    }
+})
+
+
+// <p>The <code>Update Content Type</code> call is used to update the schema of an existing content type.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#update-content-type>Update Content Type</a> API Reference document
+
+@name("Update Content Type")
+PUT "https://{{base_url}}/v3/content_types/{{content_type_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "content_type": {
+        "title": "Page",
+        "uid": "page",
+        "schema": [
+            {
+                "display_name": "Title",
+                "uid": "title",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "mandatory": true,
+                "multiple": false
+            },
+            {
+                "display_name": "URL",
+                "uid": "url",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "multiple": false
+            }
+        ],
+        "options": {
+            "title": "title",
+            "publishable": true,
+            "is_page": true,
+            "singleton": false,
+            "sub_title": [
+                "url"
+            ],
+            "url_pattern": "/:title",
+            "url_prefix": "/"
+        }
+    }
+})
+
+
+// <p>The <code>Set Field Visibility Rule for Content Type</code> API request lets you add Field Visibility Rules to existing content types. These rules allow you to show and hide fields based on the state or value of certain fields.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#set-field-visibility-rule-for-content-type>Set Field Visibility Rule for Content Type</a> API Reference document
+
+@name("Set Field Visibility Rule for Content Type")
+PUT "https://{{base_url}}/v3/content_types/{{content_type_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "content_type": {
+        "title": "Page",
+        "uid": "page",
+        "schema": [
+            {
+                "display_name": "Title",
+                "uid": "title",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "mandatory": true,
+                "multiple": false
+            },
+            {
+                "display_name": "URL",
+                "uid": "url",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "multiple": false
+            },
+            {
+                "display_name": "Single Line Textbox",
+                "uid": "single_line_textbox",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "multiple": false
+            },
+            {
+                "display_name": "Multi Line Textbox",
+                "uid": "multi_line_textbox",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "multiple": false
+            }
+        ],
+        "field_rules": [
+            {
+                "conditions": [
+                    {
+                        "operand_field": "single_line_textbox",
+                        "operator": "equals",
+                        "value": "abc"
+                    }
+                ],
+                "match_type": "all",
+                "actions": [
+                    {
+                        "action": "show",
+                        "target_field": "multi_line_textbox"
+                    }
+                ]
+            }
+        ],
+        "options": {
+            "title": "title",
+            "publishable": true,
+            "is_page": true,
+            "singleton": false,
+            "sub_title": [
+                "url"
+            ],
+            "url_pattern": "/:title",
+            "url_prefix": "/"
+        }
+    }
+})
+
+
+// <p>The <code>Delete Content Type</code> call deletes an existing content type and all the entries within it.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#delete-content-type>Delete Content Type</a> API Reference document
+
+@name("Delete Content Type")
+DELETE "https://{{base_url}}/v3/content_types/{{content_type_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "force"= "false"
+
+
+
+// <p>The <code>Get all references of content type</code> call will fetch all the content types in which a specified content type is&nbsp;referenced.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#content-type-references>Content Type References</a> API Reference document
+
+@name("Get all references of content type")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/references"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "include_global_fields"= "true"
+
+
+// <p>This call is used to export a specific content type and its schema. The data is exported in JSON format.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#export-content-type>Export Content Type</a> API Reference document
+
+@name("Export a content type")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/export"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "version"= "1"
+
+
+// <p>The <code>Import a content type</code> call imports a content type into a stack by uploading JSON file.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#import-content-type>Import Content Type</a> API Reference document
+
+@name("Import a content type")
+POST "https://{{base_url}}/v3/content_types/import"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+? "overwrite"= "false"
+files(
+	("content_type", "None")
+)
+
+
+

@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// A list of your character's personal bookmarks
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/bookmarks/`
+// 
+// Alternate route: `/v2/characters/{character_id}/bookmarks/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List bookmarks")
+GET "https://{{baseUrl}}/characters/:character_id/bookmarks/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// A list of your character's personal bookmark folders
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/bookmarks/folders/`
+// 
+// Alternate route: `/v2/characters/{character_id}/bookmarks/folders/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List bookmark folders")
+GET "https://{{baseUrl}}/characters/:character_id/bookmarks/folders/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+

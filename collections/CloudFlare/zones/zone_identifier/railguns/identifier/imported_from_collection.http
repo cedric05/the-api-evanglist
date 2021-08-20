@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// Details about a specific Railgun
+
+@name("Details about a specific Railgun")
+GET "https://{{baseUrl}}/zones/:zone_identifier/railguns/:identifier"
+
+
+// Test Railgun connection to the Zone
+
+@name("Test Railgun connection to the Zone")
+GET "https://{{baseUrl}}/zones/:zone_identifier/railguns/:identifier/diagnose"
+
+
+

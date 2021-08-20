@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3d06c843-a94e-4b71-9ece-d3a5cdbfad31.postman_collection.json
+
+@name("Obtain NASCAR Track Details")
+GET "https://{{baseUrl}}/nascar-t3/tracks/list{{format}}"
+
+
+// information on any changes made to race information, race results, driver information, track information, or standings
+
+@name("information on any changes made to race informatio...")
+GET "https://{{baseUrl}}/nascar-t3/:year/:month/:day/changes{{format}}"
+
+
+

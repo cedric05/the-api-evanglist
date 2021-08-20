@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// List all available harvest backends
+
+@name("Get Harvest Backends")
+GET "https://{{baseUrl}}/harvest/backends"
+
+
+// List all jobs for a given source
+
+@name("Get Harvest Job")
+GET "https://{{baseUrl}}/harvest/job/:ident/"
+? "page"= "<string>"
+? "page_size"= "<string>"
+
+
+// List all available harvesters
+
+@name("Get Harvest Job Status")
+GET "https://{{baseUrl}}/harvest/job_status"
+
+
+// List all harvest sources
+
+@name("Get Harvest Sources")
+GET "https://{{baseUrl}}/harvest/sources/"
+? "owner"= "<>"
+
+
+

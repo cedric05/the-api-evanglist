@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Manage the url notification filters for a user.
+
+@name("List all Notification Filter Url for User")
+GET "https://{{baseUrl}}/user/:userID/notification-filter-url"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Manage the url notification filters for a user.
+
+@name("CREATE Notification Filter Url for User")
+POST "https://{{baseUrl}}/user/:userID/notification-filter-url"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "notification_filters": [
+        {
+            "category": "pariatur in esse",
+            "created": "laboris cupidatat irure eu",
+            "id": -60019102,
+            "notification_target": "nostrud proident in ipsum in",
+            "updated": "aliquip incididunt"
+        },
+        {
+            "category": "aute Ut",
+            "created": "aute eiusmod",
+            "id": -26431849,
+            "notification_target": "amet qui",
+            "updated": "commodo "
+        }
+    ]
+})
+
+
+

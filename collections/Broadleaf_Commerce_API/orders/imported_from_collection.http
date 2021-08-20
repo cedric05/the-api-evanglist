@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Get orders.
+
+@name("Get Orders")
+GET "https://{{baseUrl}}/orders"
+? "orderStatus"= "<>"
+? "orderNumber"= "<post>"
+
+
+// Get orders summary.
+
+@name("Get Orders Summary")
+GET "https://{{baseUrl}}/orders/summary"
+
+
+// Get orders orderid.
+
+@name("Get Orders Orderid")
+GET "https://{{baseUrl}}/orders/:orderId"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1e167a8f-2de8-4d63-a2ac-1189cfa7a2ce.postman_collection.json
+
+// Returns the list of all series for an indincator code, currently published in the latest release
+
+@name("Returns the list of all series for an indincator code")
+GET "https://{{baseUrl}}/v1/sdg/Indicator/:indicatorCode/Series/List"
+
+
+// Given a Indicator code will return a list of M49 code - Name of countries that have observations for that series
+
+@name("Returns a list of geographies that have values on that Indicator")
+GET "https://{{baseUrl}}/v1/sdg/Indicator/:indicatorCode/GeoAreas"
+
+
+

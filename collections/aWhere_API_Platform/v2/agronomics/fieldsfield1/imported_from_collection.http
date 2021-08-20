@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-08e60012-84a0-43aa-8ba6-20d6c054c306.postman_collection.json
+
+// ####RequestnThis API call gets calculated agronomics and accumulations at a field location. nnThe URL used here will get the values for a certain range of days. This is a very flexible API and so you're encouraged to review the [Agronomics Documentation](http://developer.awhere.com/api/reference/agronomics/values).nn_Tip: Remember to use a field ID that exists in your account. By default, this collection uses a default field ID of 'field1'_nnn####SecuritynThis API call uses the security Access T
+
+@name("Agronomic Values & Accumulations")
+GET "https://{{baseUrl}}/v2/agronomics/fields/field1/agronomicvalues/2015-08-01,2015-08-03"
+
+
+// ####RequestnThis API call gets the long term averages for agronomic values and accumulations at a field location. nnThe URL used here will get the values for a certain range of days over a certain range of years. This is a very flexible API and so you're encouraged to review the [Agronomics Documentation](http://developer.awhere.com/api/reference/agronomics/norms).nn_Tip: Remember to use a field ID that exists in your account. By default, this collection uses a default field ID of 'field1'_nnn##
+
+@name("Agronomic Norms")
+GET "https://{{baseUrl}}/v2/agronomics/fields/field1/agronomicnorms/08-01,08-03/years/2010,2014"
+
+
+// ####RequestnThis API call returns the current results of a model based on the data provided for the identified field location. nn[Model Results Documentation](http://developer.awhere.com/api/reference/models/results).nnn####SecuritynThis API call uses the security Access Token that is retrieved with the Get a Token request. If you run that request first, it will save a token to Postman and this API will use it automatically. You can also see where the token should normally go by clicking the 
+
+@name("Get Model Results")
+GET "https://{{baseUrl}}/v2/agronomics/fields/field1/models/BarleyGenericMSU/results"
+
+
+

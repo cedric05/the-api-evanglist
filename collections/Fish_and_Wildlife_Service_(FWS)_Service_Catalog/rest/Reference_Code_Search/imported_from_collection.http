@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Execute a Search by Reference Code from a GET request with the query string containing one or more Reference Codes.")
+GET "https://{{baseUrl}}/rest/ReferenceCodeSearch"
+? "q"= "<string>"
+
+
+@name("Execute a Search by Reference Code from a POST request that includes a collection of one or more Reference Codes in its body.")
+POST "https://{{baseUrl}}/rest/ReferenceCodeSearch"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "0": [
+        "<integer>"
+    ],
+    "1": [
+        "<integer>"
+    ]
+})
+
+
+

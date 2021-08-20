@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-54ff3bcc-fda4-4dd2-8348-838878113bba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Token {{apiKey}}"
+
+
+// This resource allows searching sounds in Freesound by matching their tags and other kinds of metadata.
+
+@name("Search sounds") : "base-inherit-auth"
+GET "https://{{baseUrl}}/search/text"
+? "query"= "crowds"
+? "filter"= "<string>"
+? "sort"= "<string>"
+? "group_by_pack"= "<integer>"
+? "page"= "1"
+? "page_size"= "15"
+
+
+// This resource allows the retrieval of detailed information about a sound.
+
+@name("Details of a sound") : "base-inherit-auth"
+GET "https://{{baseUrl}}/sounds/:soundId"
+
+
+

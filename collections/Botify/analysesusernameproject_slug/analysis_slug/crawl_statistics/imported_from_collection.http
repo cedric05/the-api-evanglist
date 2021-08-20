@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// Return global statistics for an analysis
+
+@name("Return global statistics for an analysis")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/crawl_statistics"
+
+
+// Return crawl statistics grouped by time frequency (1 min, 5 mins or 60 min) for an analysis
+
+@name("Return crawl statistics grouped by time frequency (1 min, 5 mins or 60 min)")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/crawl_statistics/time"
+? "limit"= "<integer>"
+? "frequency"= "<string>"
+
+
+// Return a list of 1000 latest URLs crawled (all crawled URLs or only URLS with HTTP errors)
+
+@name("Return a list of 1000 latest URLs crawled (all crawled URLs or only URLS with HTTP errors)")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/crawl_statistics/urls/:list_type"
+
+
+

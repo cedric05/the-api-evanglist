@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Location Accessibility For Disabilities")
+GET "https://{{baseUrl}}/locations/:location_id/accessibility"
+
+
+@name("add Location Accessibility For Disabilities")
+POST "https://{{baseUrl}}/locations/:location_id/accessibility"
+"Content-Type": "application/json"
+json({
+    "id": "dolor culpa",
+    "location_id": "consectetur id anim in",
+    "accessibility": "est adipisicing laborum proident",
+    "details": "Lorem in"
+})
+
+
+@name("get Location Accessibility For Disabilities")
+GET "https://{{baseUrl}}/locations/:location_id/accessibility/:accessibility_id"
+
+
+@name("update Location Accessibility For Disabilities")
+PUT "https://{{baseUrl}}/locations/:location_id/accessibility/:accessibility_id"
+"Content-Type": "application/json"
+json({
+    "id": "dolor culpa",
+    "location_id": "consectetur id anim in",
+    "accessibility": "est adipisicing laborum proident",
+    "details": "Lorem in"
+})
+
+
+@name("delete Location Accessibility For Disabilities")
+DELETE "https://{{baseUrl}}/locations/:location_id/accessibility/:accessibility_id"
+
+
+

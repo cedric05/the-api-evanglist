@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// Retrieves the details of an institutionn####ReturnsnReturns a JSON object with a `data` key containing the representation of the requested institution, if the request was successful.nnIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
+
+@name("Retrieve an institution")
+GET "https://{{baseUrl}}/institutions/:institution_id/"
+
+
+// A paginated list of all nodes affiliated with an institution.n#### VersioningnAs of version `2.2`, affiliated components (in addition to affiliated top-level projects) are returned from this endpoint.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of 10 nodes. Each resource in the array is a separate nodes object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nnIf the request i
+
+@name("List all affiliated nodes")
+GET "https://{{baseUrl}}/institutions/:institution_id/nodes/"
+
+
+// A paginated list of all registrations affiliated with an institution.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of 10 registrations. Each resource in the array is a separate users object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nnIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error code
+
+@name("List all affiliated registrations")
+GET "https://{{baseUrl}}/institutions/:institution_id/registrations/"
+
+
+// A paginated list of all users affiliated with an institution.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of 10 users. Each resource in the array is a separate users object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nnIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduction
+
+@name("List all affiliated users")
+GET "https://{{baseUrl}}/institutions/:institution_id/users/"
+
+
+

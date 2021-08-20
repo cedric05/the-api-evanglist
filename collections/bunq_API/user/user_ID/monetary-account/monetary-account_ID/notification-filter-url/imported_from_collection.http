@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Manage the url notification filters for a user.
+
+@name("List all Notification Filter Url for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/notification-filter-url"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Manage the url notification filters for a user.
+
+@name("CREATE Notification Filter Url for User Monetary Account")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/notification-filter-url"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "notification_filters": [
+        {
+            "category": "quis cupidatat dolor deserunt",
+            "created": "dolor laboris consequat ullamco",
+            "id": 93360662,
+            "notification_target": "laborum in in reprehenderit",
+            "updated": "Lorem velit dolore"
+        },
+        {
+            "category": "enim proident",
+            "created": "non enim ut",
+            "id": 98441984,
+            "notification_target": "veniam dolor velit ut",
+            "updated": "aliquip laborum culpa pariatur ullamco"
+        }
+    ]
+})
+
+
+

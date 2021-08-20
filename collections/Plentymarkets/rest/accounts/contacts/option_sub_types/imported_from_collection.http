@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// List contact option sub-types.
+
+@name("List contact option sub-types")
+GET "https://{{baseUrl}}/rest/accounts/contacts/option_sub_types"
+
+
+// Deletes a contact option sub-type. The ID of the option sub-type must be specified.
+
+@name("Delete a contact option sub-type")
+DELETE "https://{{baseUrl}}/rest/accounts/contacts/option_sub_types/:optionSubTypeId"
+
+
+

@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfc666ca-94aa-4d7e-b49b-06193ecb21e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// <p>You are able to view a list of all schemas within a container by performing a single GET request. To help filter results, the Schema Registry supports the use of query parameters when listing resources. The most common query parameters include:</br><ul><li>limit - Limit the number of resources returned. e.g. limit=5 will return only five resources in the list.</li><li>orderby - Sort results by a specific property. e.g. orderby=title will sort results by title ascending (A-Z). Adding a - before title (orderby=-title) will sort items by title descending (Z-A).</li><li>properties - Filter results on any top-level attributes. e.g. property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile returns only mixins that are compatible with the Profile class.</li><li>You may also use an ampersand (&) to combine query parameters.</li></ul></p><p>The response format depends on the Accept header sent in the request. The following Accept headers are available for this request:<br/><ul><li><strong>application/vnd.adobe.xed-id+json</strong> | Returns a short summary of each resource, generally the preferred header for listing.</li><li><strong>application/vnd.adobe.xed+json</strong> | Returns full JSON for each resource, with original $ref and allOf attributes included.</li></ul></p>
+
+@name("Retrieve a list of schemas within the specified container.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/:CONTAINER_ID/schemas"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+? "properties"= "{{properties}}"
+? "orderby"= "{{orderby}}"
+? "start"= "{{start}}"
+? "limit"= "{{limit}}"
+
+
+// <p>The response format depends on the Accept header sent in the request. The following Accept headers are available for this request:<br/><ul><li><strong>application/vnd.adobe.xed+json; version={major version}</strong>  Raw with $ref and allOf, has titles, descriptions</li><li><strong>application/vnd.adobe.xed-full+json; version={major version}</strong> $refs and allOf resolved, has titles and descriptions</li><li><strong>application/vnd.adobe.xed-notext+json; version={major version}</strong> Raw with $ref and allOf, no titles or descriptions</li><li><strong>application/vnd.adobe.xed-full-notext+json; version={major version}</strong>  $refs and allOf resolved, no titles or descriptions</li><li><strong>application/vnd.adobe.xed-full-desc+json; version={major version}</strong> $refs and allOf resolved, descriptors included</li></ul></p><br/><p>A lookup request requires the resource 'major version' be included in the Accept header. When supplying the major version, the registry returns the latest minor version automatically.</p>
+
+@name("Retrieve a schema within the specified container by ID.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/:CONTAINER_ID/schemas/:SCHEMA_ID"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+
+
+

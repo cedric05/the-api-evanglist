@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c82464a2-fcdd-46d3-a590-d76b1557b2bf.postman_collection.json
+
+// Submits an order for an FX outright based upon a quote that has been obtained by the previous request for quote.
+
+@name("Post Order")
+POST "https://{{baseUrl}}/orders"
+
+
+// Returns the FX Order that was requested earlier.
+
+@name("Get Order")
+GET "https://{{baseUrl}}/orders/:orderId"
+
+
+

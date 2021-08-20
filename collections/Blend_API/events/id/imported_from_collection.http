@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get an event and its current status
+
+@name("Get a Specific Event") : "base-inherit-auth"
+GET "https://{{baseUrl}}/events/:id"
+"bons-profile": "default"
+
+
+// Set a status for an event
+
+@name("Set the Status of a Specific Event") : "base-inherit-auth"
+POST "https://{{baseUrl}}/events/:id/status-updates"
+"Content-Type": "application/json"
+json({
+    "status": "SUCCEEDED"
+})
+
+
+

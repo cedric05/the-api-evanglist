@@ -1,0 +1,95 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-43573c01-48fa-4c78-a7b7-bb2f165145a3.postman_collection.json
+
+// This is a socket protocol delimited by CRLF (not http)
+
+@name("/request")
+POST "https://{{baseUrl}}/request"
+"Content-Type": "application/json"
+json({
+    "authentication": {
+        "id": "<integer>",
+        "op": "<string>",
+        "appKey": "<string>",
+        "session": "<string>"
+    },
+    "heartbeat": "<object>",
+    "marketSubscription": {
+        "id": "<integer>",
+        "op": "<string>",
+        "clk": "<string>",
+        "conflateMs": "<long>",
+        "heartbeatMs": "<long>",
+        "initialClk": "<string>",
+        "marketDataFilter": {
+            "fields": [
+                "<string>",
+                "<string>"
+            ],
+            "ladderLevels": "<integer>"
+        },
+        "marketFilter": {
+            "bettingTypes": [
+                "<string>",
+                "<string>"
+            ],
+            "bspMarket": "<boolean>",
+            "countryCodes": [
+                "<string>",
+                "<string>"
+            ],
+            "eventIds": [
+                "<string>",
+                "<string>"
+            ],
+            "eventTypeIds": [
+                "<string>",
+                "<string>"
+            ],
+            "marketIds": [
+                "<string>",
+                "<string>"
+            ],
+            "marketTypes": [
+                "<string>",
+                "<string>"
+            ],
+            "raceTypes": [
+                "<string>",
+                "<string>"
+            ],
+            "turnInPlayEnabled": "<boolean>",
+            "venues": [
+                "<string>",
+                "<string>"
+            ]
+        },
+        "segmentationEnabled": "<boolean>"
+    },
+    "opTypes": "<string>",
+    "orderSubscriptionMessage": {
+        "id": "<integer>",
+        "op": "<string>",
+        "clk": "<string>",
+        "conflateMs": "<long>",
+        "heartbeatMs": "<long>",
+        "initialClk": "<string>",
+        "orderFilter": {
+            "accountIds": [
+                "<long>",
+                "<long>"
+            ],
+            "customerStrategyRefs": [
+                "<string>",
+                "<string>"
+            ],
+            "includeOverallPosition": "<boolean>",
+            "partitionMatchedByStrategyRef": "<boolean>"
+        },
+        "segmentationEnabled": "<boolean>"
+    }
+})
+
+
+

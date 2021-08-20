@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d90fe3bc-a342-4867-915e-44120619da60.postman_collection.json
+
+// Returns all static SC2 profile data (achievements, categories, criteria, and rewards).
+
+@name("Static")
+GET "https://{{battle-net-host}}/sc2/static/profile/{{sc2.region-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns metadata for an individual's profile.
+
+@name("Metadata")
+GET "https://{{battle-net-host}}/sc2/metadata/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns data about an individual SC2 profile.
+
+@name("Profile")
+GET "https://{{battle-net-host}}/sc2/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns a ladder summary for an individual SC2 profile.
+
+@name("Ladder Summary")
+GET "https://{{battle-net-host}}/sc2/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}/ladder/summary"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns data about an individual profile's ladder.
+
+@name("Ladder")
+GET "https://{{battle-net-host}}/sc2/profile/{{sc2.region-id}}/{{sc2.realm-id}}/{{sc2.profile-id}}/ladder/{{sc2.ladder-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+

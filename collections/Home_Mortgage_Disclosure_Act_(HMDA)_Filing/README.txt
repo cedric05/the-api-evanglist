@@ -1,0 +1,3 @@
+The Home Mortgage Disclosure Act (HMDA) Platform is a Regulatory technology application for financial institutions to submit mortgage information as described in the Filing Instruction Guide (FIG). The HMDA-Platform parses data as submitted by mortgage leading institutions and validates the information for edits (Syntactical, Validity, Quality, and Macro as-per the instructions in the FIG) before submitting the data. The HMDA-Platform supports quarterly and yearly filing periods. For detailed information on Home Mortgage Disclosure Act (HMDA), checkout the About HMDA page on the CFPB website.
+
+URL - https://github.com/cfpb/hmda-platform

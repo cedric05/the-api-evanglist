@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.
+// 
+// Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://developer.github.com/v3/#link-header) to get the URL for the next page of users.
+
+@name("List users")
+GET "https://{{baseUrl}}/users"
+? "since"= "<string>"
+? "per_page"= "30"
+
+
+

@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets project information.
+
+@name("Gets project information")
+GET "https://{{baseUrl}}/projects/:projectid"
+
+
+// Gets project administrators.
+
+@name("Gets project administrators")
+GET "https://{{baseUrl}}/projects/:projectid/admins"
+
+
+// Gets project disk usage in bytes.
+
+@name("Gets project disk usage in bytes")
+GET "https://{{baseUrl}}/projects/:projectid/diskusage"
+
+
+// Locks a project.
+
+@name("Locks a project")
+PUT "https://{{baseUrl}}/projects/:projectid/lock"
+
+
+// Gets project members.
+
+@name("Gets project members")
+GET "https://{{baseUrl}}/projects/:projectid/members"
+? "offset"= "<put>"
+? "count"= "<>"
+? "sortby"= "<>"
+? "searchvalue"= "<>"
+
+
+// Gets subproject list..
+
+@name("Gets subproject list.")
+GET "https://{{baseUrl}}/projects/:projectid/subprojects"
+? "sortby"= "<>"
+? "fetchHierarchyPath"= "<>"
+
+
+// Adds project member.
+
+@name("Adds project member")
+PUT "https://{{baseUrl}}/projects/:projectid/:username"
+
+
+

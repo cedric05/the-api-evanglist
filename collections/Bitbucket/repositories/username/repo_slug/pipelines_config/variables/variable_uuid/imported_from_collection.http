@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Delete a repository level variable.
+
+@name("delete Repository Pipeline Variable")
+DELETE "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config/variables/:variable_uuid"
+
+
+// Retrieve a repository level variable.
+
+@name("get Repository Pipeline Variable")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config/variables/:variable_uuid"
+
+
+// Update a repository level variable.
+
+@name("update Repository Pipeline Variable")
+PUT "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config/variables/:variable_uuid"
+"Content-Type": "application/json"
+json({
+    "type": "sed ipsum ad",
+    "key": "<string>",
+    "secured": "<boolean>",
+    "uuid": "<string>",
+    "value": "<string>"
+})
+
+
+

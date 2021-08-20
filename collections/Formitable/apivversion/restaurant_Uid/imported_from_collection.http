@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+@name("Gets all orders of the specified restaurant.")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/order/:startDate/:endDate/:skip/:take"
+? "productType"= "cupidatat ex in"
+? "status"= "proident dolore"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// To enable a third party integration for a specific application, `POST` a connector model describing the configuration of the connection with the third party cloud. Only the Operator can enable connectors in an application. For Nest connectors, the `auth` credentials can be found in the Nest Developers console.
+
+@name("Create a connector")
+POST "https://{{baseUrl}}/projects/:projectId/applications/:applicationId/connectors"
+? "No Name"= "<string>"
+
+
+// Read a single connector by name within an application.
+
+@name("Read an app connector")
+GET "https://{{baseUrl}}/projects/:projectId/applications/:applicationId/connectors/:connectorName"
+? "No Name"= "<string>"
+
+
+

@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1ea08393-bd99-4d44-bb0b-f15a3fd07520.postman_collection.json
+
+// Query the current status of multiple requests.
+
+@name("Service Requests")
+GET "https://{{baseUrl}}/requests.{{response_format}}"
+? "jurisdiction_id"= "voluptate ut"
+? "service_request_id"= "voluptate ut"
+? "service_code"= "voluptate ut"
+? "start_date"= "2000-09-06T20:57:19.018Z"
+? "end_date"= "2000-09-06T20:57:19.018Z"
+? "status"= "open"
+
+
+// Get the service_request_id from a temporary token. This is unnecessary if the response from creating a service request does not contain a token.
+
+@name("Service Request")
+GET "https://{{baseUrl}}/tokens/{{token_id}}.{{response_format}}"
+? "jurisdiction_id"= "voluptate ut"
+
+
+// Query the current status of an individual request
+
+@name("Current Status")
+GET "https://{{baseUrl}}/request/{{service_request_id}}.{{response_format}}"
+? "jurisdiction_id"= "voluptate ut"
+
+
+// List acceptable service request types and their associated service codes. These request types can be unique to the city/jurisdiction.
+
+@name("Service Types")
+GET "https://{{baseUrl}}/services.{{response_format}}"
+? "jurisdiction_id"= "voluptate ut"
+
+
+// Define attributes associated with a service code. These attributes can be unique to the city/jurisdiction.
+
+@name("Service Type")
+GET "https://{{baseUrl}}/services/{{service_code}}.{{response_format}}"
+? "jurisdiction_id"= "voluptate ut"
+
+
+// Submit a new request for with specific details of a single service. Must provide a location via lat/long or address_string or address_id
+
+@name("Service Request")
+POST "https://{{baseUrl}}/requests.{{response_format}}"
+? "jurisdiction_id"= "voluptate ut"
+? "service_code"= "voluptate ut"
+? "lat"= "-23361157.652081713"
+? "long"= "-23361157.652081713"
+? "address_string"= "voluptate ut"
+? "address_id"= "voluptate ut"
+? "attribute"= "in nulla"
+? "attribute"= "elit minim est"
+
+
+

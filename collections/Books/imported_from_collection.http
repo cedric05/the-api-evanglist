@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f66a061e-abb2-4d78-badf-f8e47d17b93a.postman_collection.json
+
+@name("Best Seller List")
+GET "https://{{baseUrl}}/lists.{{format}}"
+? "list"= "<string>"
+? "weeks-on-list"= "<integer>"
+? "bestsellers-date"= "<string>"
+? "date"= "<string>"
+? "isbn"= "<string>"
+? "published-date"= "<string>"
+? "rank"= "<integer>"
+? "rank-last-week"= "<integer>"
+? "offset"= "<integer>"
+? "sort-order"= "<string>"
+
+
+@name("Reviews")
+GET "https://{{baseUrl}}/reviews.{{format}}"
+? "isbn"= "<string>"
+? "title"= "<string>"
+? "author"= "<string>"
+? "api-key"= "<string>"
+
+
+

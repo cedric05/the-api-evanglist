@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// The route service can be used to find the best way to get from one location to another or to visit several locations. The best route can be the quickest route for a given time of day considering the traffic conditions applicable during that time, or it can be the shortest route that minimizes the travel distance. The route service can also find the best route that visits each stop during permitted time windows you specify. 
+// 
+// [Full description of the service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Route_service_with_synchronous_execution/02r300000036000000/) //
+// [View JS Demo](http://developers.arcgis.com/javascript/samples/widget_directions_basic/)
+
+@name("Route service")
+GET "http://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve"
+? "stops"= "-3.696715,40.436614;-3.673884,40.430277"
+? "f"= "json"
+? "token"= "{{token}}"
+
+
+// [Full description of the service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Service_Area_service_with_synchronous_execution/02r3000000n2000000/) // 
+// [View JS Demo](http://developers.arcgis.com/javascript/samples/routetask_basic_servicearea/)
+
+@name("Service Area service")
+GET "https://route.arcgis.com/arcgis/rest/services/World/ServiceAreas/NAServer/ServiceArea_World/solveServiceArea"
+? "f"= "json"
+? "token"= "{{token}}"
+? "facilities"= "-122.253,37.757"
+
+
+// [Full description of the service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Closest_Facility_service_with_synchronous_execution/02r3000000n7000000/) //
+// [View JS Demo](http://developers.arcgis.com/javascript/samples/routetask_closest_facility/)
+
+@name("Closest Facility")
+GET "http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World/solveClosestFacility"
+? "f"= "json"
+? "returnDirections"= "true"
+? "returnFacilities"= "false"
+? "returnIncidents"= "false"
+? "returnBarriers"= "false"
+? "returnPolylineBarriers"= "false"
+? "returnCFRoutes"= "true"
+? "useHierarchy"= "false"
+? "defaultCutoff"= "7"
+? "outSR"= "102100"
+? "travelMode"= "null"
+? 'incidents'= '{"type":"features","features":[{"geometry":{"x":-13625563.00086767,"y":4549045.33719256,"spatialReference":{"wkid":102100,"latestWkid":3857}}}],"doNotLocateOnRestrictedElements":true}'
+? 'facilities'= '{"type":"features","features":[{"geometry":{"x":-13625960,"y":4549921,"spatialReference":{"wkid":102100,"latestWkid":3857}}},{"geometry":{"x":-13626184,"y":4549247,"spatialReference":{"wkid":102100,"latestWkid":3857}}},{"geometry":{"x":-13626477,"y":4549415,"spatialReference":{"wkid":102100,"latestWkid":3857}}},{"geometry":{"x":-13625385,"y":4549659,"spatialReference":{"wkid":102100,"latestWkid":3857}}},{"geometry":{"x":-13624374,"y":4548254,"spatialReference":{"wkid":102100,"latestWkid":3857}}},{"geometry":{"x":-13624891,"y":4548565,"spatialReference":{"wkid":102100,"latestWkid":3857}}}],"doNotLocateOnRestrictedElements":true}'
+? "token"= "{{token}}"
+
+
+

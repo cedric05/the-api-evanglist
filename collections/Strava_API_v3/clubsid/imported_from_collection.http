@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Returns a given club using its identifier.
+
+@name("Get Club")
+GET "https://{{baseUrl}}/clubs/:id"
+
+
+// Returns a list of the athletes who are members of a given club.
+
+@name("List Club Members")
+GET "https://{{baseUrl}}/clubs/:id/members"
+? "No Name"= "<string>"
+
+
+// Returns a list of the administrators of a given club.
+
+@name("List Club Administrators.")
+GET "https://{{baseUrl}}/clubs/:id/admins"
+? "No Name"= "<string>"
+
+
+// Retrieve recent activities from members of a specific club. The authenticated athlete must belong to the requested club in order to hit this endpoint. Pagination is supported. Athlete profile visibility is respected for all activities.
+
+@name("List Club Activities")
+GET "https://{{baseUrl}}/clubs/:id/activities"
+? "No Name"= "<string>"
+
+
+

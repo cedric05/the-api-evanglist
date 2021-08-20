@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af2f73d6-96cf-46d7-a9a8-7e4e19ca898b.postman_collection.json
+
+// Provides the match scoring for all matches played on a given day
+
+@name("Provides the match scoring for all matches played ...")
+GET "https://{{baseUrl}}/schedules/{{year-}}{{month-}}{{day}}/results{{format}}"
+? "year"= "<number>"
+? "month"= "<number>"
+
+
+// Provides the schedule for all matches played on a given day
+
+@name("Provides the schedule for all matches played on a ...")
+GET "https://{{baseUrl}}/schedules/{{year-}}{{month-}}{{day}}/schedule{{format}}"
+? "year"= "<number>"
+? "month"= "<number>"
+
+
+

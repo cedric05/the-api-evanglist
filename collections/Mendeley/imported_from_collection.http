@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0927895a-71a4-4f81-8e6c-0f9b60aa6a63.postman_collection.json
+
+@name("Create a document from an uploaded file")
+POST "https://{{baseUrl}}/documents"
+
+
+@name("Get follower information")
+GET "https://{{baseUrl}}/followers"
+? "follower"= "<string>"
+? "followed"= "<string>"
+? "status"= "<string>"
+? "limit"= "<string>"
+
+
+@name("Submit a newsworthy event")
+POST "https://{{baseUrl}}/news_events"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// Enables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)".
+
+@name("Enable automated security fixes")
+PUT "https://{{baseUrl}}/repos/:owner/:repo/automated-security-fixes"
+
+
+// Disables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring automated security fixes](https://help.github.com/en/articles/configuring-automated-security-fixes)".
+
+@name("Disable automated security fixes")
+DELETE "https://{{baseUrl}}/repos/:owner/:repo/automated-security-fixes"
+
+
+

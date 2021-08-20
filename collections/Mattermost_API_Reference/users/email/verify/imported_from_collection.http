@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Verify the email used by a user to sign-up their account with.n##### PermissionsnNo permissions required.n
+
+@name("Verify user email")
+POST "https://{{baseUrl}}/users/email/verify"
+
+
+// Send an email with a verification link to a user that has an email matching the one in the request body. This endpoint will return success even if the email does not match any users on the system.n##### PermissionsnNo permissions required.n
+
+@name("Send verification email")
+POST "https://{{baseUrl}}/users/email/verify/send"
+
+
+

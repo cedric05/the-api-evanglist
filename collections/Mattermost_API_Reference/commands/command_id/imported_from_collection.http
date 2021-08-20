@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Update a single command based on command id string and Command struct.n##### PermissionsnMust have `manage_slash_commands` permission for the team the command is in.n
+
+@name("Update a command")
+PUT "https://{{baseUrl}}/commands/:command_id"
+
+
+// Generate a new token for the command based on command id string.n##### PermissionsnMust have `manage_slash_commands` permission for the team the command is in.n
+
+@name("Generate a new token")
+PUT "https://{{baseUrl}}/commands/:command_id/regen_token"
+
+
+

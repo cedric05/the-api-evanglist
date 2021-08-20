@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f95c71f8-440c-4354-8978-2a8659a376a0.postman_collection.json
+
+// Posts a message in MIME format. Note: you will need to build a MIME string yourself. Use a MIME library for your programming language to do this. Pass the resulting MIME string as message parameter.
+
+@name("Posts Mime Message")
+POST "https://{{baseUrl}}/messages.mime"
+? "h:X-My-Header"= "<>"
+? "message"= "<>"
+? "o:campaign"= "<>"
+? "o:deliverytime"= "<>"
+? "o:dkim"= "<>"
+? "o:tag"= "<>"
+? "o:testmode"= "<>"
+? "o:tracking"= "<>"
+? "o:tracking-clicks"= "<>"
+? "o:tracking-opens"= "<>"
+? "to"= "<>"
+? "v:my-var"= "<>"
+
+
+// Returns a list of event stat items. Each record represents counts for one event per one day.
+
+@name("Stats")
+GET "https://{{baseUrl}}/stats/"
+? "event"= "<>"
+? "limit"= "<>"
+? "skip"= "<>"
+? "start-date"= "<>"
+
+
+// Deletes all counters for particular tag and the tag itself.
+
+@name("Delete Tag")
+DELETE "https://{{baseUrl}}/tags/:tag"
+
+
+

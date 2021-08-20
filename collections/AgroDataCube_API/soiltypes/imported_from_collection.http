@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-df55bd21-8efe-4dae-ac10-923f5911c3f0.postman_collection.json
+
+@name("Return the intersections of the supplied geometry and soilmap. If no epsg is provided epsg = 28992 (RD) is assumed. Currently only epsg's 28992 and 4326 (WGS 84) are supported")
+GET "https://{{baseUrl}}/soiltypes"
+"token": "{{token}}"
+? "output_epsg"= "4326"
+? "geometry"= "{{geometry}}"
+? "epsg"= "4326"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+@name("Return all the information for the given soilmap entityid.")
+GET "https://{{baseUrl}}/soiltypes/:entityid"
+"token": "{{token}}"
+? "output_epsg"= "4326"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+

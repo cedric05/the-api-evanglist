@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6e9c2354-32bd-442c-8e9d-f6e7a32fd29f.postman_collection.json
+
+// Get the information of the current user. The current user is fetched using the auth cookie.
+
+@name("Get the information of the current user")
+GET "https://{{baseUrl}}/address"
+
+
+// Get the information of a specific user.
+
+@name("Get the information of a specific user")
+GET "https://{{baseUrl}}/address/:address"
+
+
+

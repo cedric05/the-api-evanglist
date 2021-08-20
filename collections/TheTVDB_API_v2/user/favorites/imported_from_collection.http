@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// Returns an array of favorite series for a given user, will be a blank array if no favorites exist.
+
+@name("/user/favorites")
+GET "https://{{baseUrl}}/user/favorites"
+
+
+// Deletes the given series ID from the useru2019s favoriteu2019s list and returns the updated list.
+
+@name("/user/favorites/:id")
+DELETE "https://{{baseUrl}}/user/favorites/:id"
+? "No Name"= "<string>"
+
+
+

@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Edit Guest Username") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/team/team_id/guest/guest_id"
+
+
+@name("Remove Guest from Workspace") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/team/team_id/guest/guest_id"
+
+
+// All the locations on the Workspace the guest has access too
+
+@name("Get Guest") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/team/team_id/guest/guest_id"
+
+
+

@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Delete a fleet wing, only empty wings can be deleted. The wing may contain squads, but the squads must be empty
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/wings/{wing_id}/`
+
+@name("Delete fleet wing")
+DELETE "https://{{baseUrl}}/fleets/:fleet_id/wings/:wing_id/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Rename a fleet wing
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/wings/{wing_id}/`
+
+@name("Rename fleet wing")
+PUT "https://{{baseUrl}}/fleets/:fleet_id/wings/:wing_id/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "name": "non"
+})
+
+
+// Create a new squad in a fleet
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/wings/{wing_id}/squads/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/wings/{wing_id}/squads/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/wings/{wing_id}/squads/`
+
+@name("Create fleet squad")
+POST "https://{{baseUrl}}/fleets/:fleet_id/wings/:wing_id/squads/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

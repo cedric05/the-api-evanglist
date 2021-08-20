@@ -1,0 +1,157 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4fd4d3a6-4065-4974-9d03-c508553bcb2b.postman_collection.json
+
+@name("Get data")
+GET "https://{{baseUrl}}/data/:flow/:key/:provider"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "startPeriod"= "6722-S1"
+? "endPeriod"= "6722-S1"
+? "updatedAfter"= "1976-12-30T19:05:44.626Z"
+? "firstNObservations"= "23488557"
+? "lastNObservations"= "23488557"
+? "dimensionAtObservation"= "TIME_PERIOD"
+? "detail"= "full"
+? "includeHistory"= "false"
+
+
+@name("Get information about data availability")
+GET "https://{{baseUrl}}/availableconstraint/:flow/:key/:provider/:componentID"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "mode"= "exact"
+? "references"= "none"
+? "startPeriod"= "6722-S1"
+? "endPeriod"= "6722-S1"
+? "updatedAfter"= "1976-12-30T19:05:44.626Z"
+
+
+@name("Get data structures")
+GET "https://{{baseUrl}}/datastructure/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get metadata structures")
+GET "https://{{baseUrl}}/metadatastructure/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get dataflows")
+GET "https://{{baseUrl}}/dataflow/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get metadadataflows")
+GET "https://{{baseUrl}}/metadataflow/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get provision agreements")
+GET "https://{{baseUrl}}/provisionagreement/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get structure sets")
+GET "https://{{baseUrl}}/structureset/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get processes")
+GET "https://{{baseUrl}}/process/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get categorisations")
+GET "https://{{baseUrl}}/categorisation/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get content constraints")
+GET "https://{{baseUrl}}/contentconstraint/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get actual constraints")
+GET "https://{{baseUrl}}/actualconstraint/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get allowed constraints")
+GET "https://{{baseUrl}}/allowedconstraint/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get attachment constraints")
+GET "https://{{baseUrl}}/attachmentconstraint/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get structures")
+GET "https://{{baseUrl}}/structure/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"Accept-Language": "in"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "references"= "none"
+? "detail"= "full"
+
+
+@name("Get XML schemas")
+GET "https://{{baseUrl}}/schema/:context/:agencyID/:resourceID/:version"
+"Accept-Encoding": "identity"
+"If-Modified-Since": "1976-12-30T19:05:44.626Z"
+? "dimensionAtObservation"= "TIME_PERIOD"
+? "explicitMeasure"= "false"
+
+
+

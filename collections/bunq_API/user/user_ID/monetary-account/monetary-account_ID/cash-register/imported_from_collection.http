@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get a collection of CashRegister for a given user and monetary account.
+
+@name("List all Cash Register for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create a new CashRegister. Only an UserCompany can create a CashRegisters. They need to be created with status PENDING_APPROVAL, an bunq admin has to approve your CashRegister before you can use it. In the sandbox testing environment an CashRegister will be automatically approved immediately after creation.
+
+@name("CREATE Cash Register for User Monetary Account")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "avatar_uuid": "<string>",
+    "location": {
+        "altitude": 47067557,
+        "latitude": -55870408,
+        "longitude": -70303982,
+        "radius": -91659942
+    },
+    "name": "<string>",
+    "status": "<string>",
+    "tab_text_waiting_screen": [
+        {
+            "description": "pariatur nisi s",
+            "language": "nulla adipisicing fugiat in"
+        },
+        {
+            "description": "incididunt vol",
+            "language": "est"
+        }
+    ]
+})
+
+
+

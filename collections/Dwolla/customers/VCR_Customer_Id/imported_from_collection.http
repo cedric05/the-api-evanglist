@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+@name("Create A New Beneficial Owner.")
+POST "https://{{baseUrl}}/customers/:VCRCustomerId/beneficial-owners"
+
+
+@name("Certify Beneficial Ownership")
+POST "https://{{baseUrl}}/customers/:VCRCustomerId/beneficial-ownership"
+
+
+// Create a document for a Customer pending verification by uploading a photo of the document. This requires a multipart form-data POST request. The file must be either a .jpg, .jpeg, .png, .tif, or .pdf up to 10MB in size.nnn|Form Field| Data type | Required | Description|n|---------|----------|----------|--------------|n| documentType | string | yes | One of `passport`, `license`, `idCard`, or `other` |n| file | file | yes | File contents.
+
+@name("Create A Document For A Customer")
+POST "https://{{baseUrl}}/customers/:VCRCustomerId/documents"
+
+
+// Create a new Funding Source for a Customer. Customers can have a maximum of 6 funding sources.nn### Request parametersnParameter | Data Type | Parameter Type | Required | Descriptionn---------|---------|----------|--------|---------|n_links | object | body | no | A <code>_links</code> JSON object containing an `on-demand-authorization` link relation. See example raw request and response below.nroutingNumber | string | body | yes | The bank account's routing number.naccountNumber | string | body 
+
+@name("Create A Funding Source For A Customer")
+POST "https://{{baseUrl}}/customers/:VCRCustomerId/funding-sources"
+
+
+// Retrieve a white label Customeru2019s list of transfers. Transaction search is supported by passing in optional querystring parameters such as: `search` which represents a term to search on, `startAmount`, `endAmount`, `startDate`, and `endDate`.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn---------|---------|---------|---------|--------|nid | string | path | yes | Customer unique identifier to get transfers for.nsearch | string | query | no | A string 
+
+@name("List And Search Transfers For A Customer")
+GET "https://{{baseUrl}}/customers/:VCRCustomerId/transfers"
+
+
+// Retrieve a verified Customer's list of previously created mass payments. Mass payments are returned ordered by date created, with most recent mass payments appearing first.nn### Request parametersnn| Parameter | Data Type | Parameter Type | Required | Description |n| --------|--------|---------|---------|---------|n| id | string | path | yes | Customer unique identifier to get mass payments for. |n| limit | integer | query | no | How many results to return. Defaults to 25. |n| offset | integer |
+
+@name("List Mass Payments For A Customer")
+GET "https://{{baseUrl}}/customers/:VCRCustomerId/mass-payments"
+
+
+@name("Create A Label")
+POST "https://{{baseUrl}}/customers/:VCRCustomerId/labels"
+
+
+

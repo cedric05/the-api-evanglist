@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-08e60012-84a0-43aa-8ba6-20d6c054c306.postman_collection.json
+
+// ####RequestnThis API call returns the list of currently available models in the aWhere platform.nn[Crops Documentation](http://developer.awhere.com/api/reference/models/get-models).nnn####SecuritynThis API call uses the security Access Token that is retrieved with the Get a Token request. If you run that request first, it will save a token to Postman and this API will use it automatically. You can also see where the token should normally go by clicking the Headers tab below. The Authorizatio
+
+@name("Get Models")
+GET "https://{{baseUrl}}/v2/agronomics/models"
+
+
+// ####RequestnThis API call returns the details about a particular model. Currently, growth stage models are available via the API, so the details are a list of the possible stages with GDD threshold information. nn[Model Details Documentation](http://developer.awhere.com/api/reference/models/details).nnn####SecuritynThis API call uses the security Access Token that is retrieved with the Get a Token request. If you run that request first, it will save a token to Postman and this API will use it 
+
+@name("Get Model Details")
+GET "https://{{baseUrl}}/v2/agronomics/models/BarleyGenericMSU/details"
+
+
+

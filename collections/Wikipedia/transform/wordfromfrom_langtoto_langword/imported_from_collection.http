@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c039dcb8-c468-46a5-bef2-944b0de198e7.postman_collection.json
+
+// Fetches the dictionary meaning of a word from a language and displaysnit in the target language.nnStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)n
+
+@name("Fetch the dictionary meaning of a word")
+GET "https://{{baseUrl}}/transform/word/from/:from_lang/to/:to_lang/:word"
+
+
+// Fetches the dictionary meaning of a word from a language and displaysnit in the target language.nnStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)n
+
+@name("Fetch the dictionary meaning of a word")
+GET "https://{{baseUrl}}/transform/word/from/:from_lang/to/:to_lang/:word/:provider"
+
+
+

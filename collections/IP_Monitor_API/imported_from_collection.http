@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9031cca1-aedd-4c03-bc99-00305b19bb07.postman_collection.json
+
+// Receive notification when there are new and/or deleted domains on a given IP Address
+
+@name("IP Monitor")
+GET "https://{{baseUrl}}/ip-monitor/"
+? "query"= "<string>"
+? "days_back"= "<string>"
+? "page"= "<string>"
+
+
+

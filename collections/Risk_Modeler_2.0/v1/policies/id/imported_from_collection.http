@@ -1,0 +1,113 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves information on a specified policy by its ID
+
+@name("Get information on a specified policy") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/policies/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates a policy specified by its ID.
+
+@name("Update a specified policy") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/policies/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "number": "exercitation anim D",
+    "id": 24236700,
+    "accountId": 24455588,
+    "lob": {
+        "id": 66374927,
+        "code": "anim exercitation",
+        "name": "cillum ex culpa et"
+    },
+    "peril": {
+        "id": -26371428,
+        "code": "sint dolor quis",
+        "name": "ullamco"
+    },
+    "status": {
+        "id": -66866056,
+        "code": "Duis",
+        "name": "qui eiusmod sed labore reprehenderit"
+    },
+    "inceptionDate": "aliquip deserunt",
+    "expirationDate": "voluptate non irure ",
+    "currency": {
+        "id": 60255525,
+        "code": "veniam",
+        "name": "mollit"
+    },
+    "partOf": -97857634.27328216,
+    "attachmentPoint": 27555169.591659963,
+    "minDeductible": 70046221.98348328,
+    "maxDeductible": -18514082.528820053,
+    "blanketLimit": -38169350.20821211,
+    "blanketDeductible": 69532542.82202765,
+    "blanketPremium": -5352389.619935408,
+    "biLifeLine": 20512300,
+    "deductType": 20920950,
+    "structure": {
+        "id": 87026643,
+        "code": "aliqua consequat consectetur",
+        "name": "non"
+    },
+    "coverageBase": {
+        "id": -96591286,
+        "code": "incididunt et nulla",
+        "name": "consectetur irure voluptate e"
+    },
+    "limitGU": {
+        "id": 73669118,
+        "code": "labor",
+        "name": "Excepteur ea"
+    },
+    "userText1": "Duis ex sed",
+    "userText2": "sunt veniam sit q",
+    "userText3": "officia pariatur",
+    "userText4": "ea",
+    "isValid": false,
+    "CustomData": {},
+    "newCauseOfLoss": {
+        "id": 96668853,
+        "code": "sed ut",
+        "name": "labore sint dolore ut"
+    },
+    "percentOfLossDeductible": 49145787.57432276,
+    "isFranchiseDeductible": {
+        "id": 4172748,
+        "code": "enim aliquip veniam",
+        "name": "elit irure Ut ut"
+    }
+})
+
+
+// Deletes a policy specified by its ID.
+
+@name("Delete a specified policy") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/policies/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Retrieves list of surplus treaties for a policy specified by its ID.
+
+@name("Get surplus treaties for a specified policy") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/policies/:id/surplustreaties"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

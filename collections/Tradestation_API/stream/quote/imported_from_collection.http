@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Streams the latest Quote information for the given Symbols. The first chunk in the stream is a full quote snapshot - subsequent chunks only contain fields of the quote object that have changed since the last chunk.nnAn invalid symbol name will result in a response of this form - {Symbol:BADEXAMPLESYMBOL,Error:FAILED, EX_INVALID_SYMBOL}nnIf the user is not entitled for the symbol requested, response will be of this form - {Symbol:EXAMPLESYMBOL,Error:FAILED, EX_NOT_ENTITLED}n
+
+@name("Stream Quote Changesn")
+GET "https://{{baseUrl}}/stream/quote/changes/:symbols"
+? "access_token"= "<string>"
+
+
+// Streams the latest Quote for the given Symbols. Each chunk is a full quote object.nnAn invalid symbol name will result in a response of this form - {Symbol:BADSYMBOLEXAMPLE,Error:FAILED, EX_INVALID_SYMBOL}nnIf the user is not entitled for the symbol requested, response will be of this form - {Symbol:EXAMPLESYMBOL,Error:FAILED, EX_NOT_ENTITLED}n
+
+@name("Stream Quote Snapshotsn")
+GET "https://{{baseUrl}}/stream/quote/snapshots/:symbols"
+? "access_token"= "<string>"
+
+
+

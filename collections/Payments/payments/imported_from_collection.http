@@ -1,0 +1,77 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create a single immediate payment")
+POST "https://{{baseUrl}}/payments"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "Initiation": {
+            "InstructionIdentification": "irure dolor",
+            "CreditorAccount": {
+                "Identification": "fugiat ipsum",
+                "Name": "mollit Ut cillum",
+                "SchemeName": "SortCodeAccountNumber"
+            },
+            "CreditorAgent": {
+                "Identification": "cillum pariatur",
+                "SchemeName": "BICFI"
+            },
+            "DebtorAccount": {
+                "Identification": "ea veniam esse velit",
+                "SchemeName": "SortCodeAccountNumber",
+                "AccountNumber": "proident ex sunt exercitation",
+                "Name": "aliqua sed",
+                "SecondaryIdentification": "irure elit adipisicing sed",
+                "SortCode": "voluptate non anim"
+            },
+            "DebtorAgent": {
+                "Identification": "quis dolore",
+                "SchemeName": "BICFI"
+            },
+            "EndToEndIdentification": "minim",
+            "InstructedAmount": {
+                "Amount": -32308232.18748516,
+                "Currency": "et Lorem aute"
+            },
+            "PaymentScheme": "FPS",
+            "RemittanceInformation": {
+                "Reference": "culpa ut dolore in enim",
+                "Unstructured": "eiusmod"
+            }
+        },
+        "PaymentId": "mollit sit in paria"
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "dolore nisi minim consect",
+            "TownName": "magna id",
+            "AddressLine": [
+                "ipsum",
+                "fu"
+            ],
+            "BuildingNumber": "qui i",
+            "CountrySubDivision": [
+                "dolor mollit sunt cupidatat",
+                "reprehenderit c"
+            ],
+            "PostCode": "dolore",
+            "StreetName": "consectetur"
+        },
+        "MerchantCategoryCode": "veniam",
+        "MerchantCustomerIdentification": "ipsum in ",
+        "PaymentContextCode": "EcommerceServices"
+    }
+})
+
+
+

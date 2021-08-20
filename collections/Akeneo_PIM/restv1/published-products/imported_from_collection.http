@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Published products (2.x and ee only).
+
+@name("published products (2.x and EE only)")
+GET "https://{{baseUrl}}/rest/v1/published-products"
+"Content": "<>"
+
+
+// Assuming that the given identifier is the identifier of an existing product that is currently published
+
+@name("published product (2.x and EE only)")
+GET "https://{{baseUrl}}/rest/v1/published-products/13527420"
+"Content": "<>"
+
+
+

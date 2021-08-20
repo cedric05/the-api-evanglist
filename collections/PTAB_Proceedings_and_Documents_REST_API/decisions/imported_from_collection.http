@@ -1,0 +1,74 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bf3ab025-e124-45c4-8365-ff0708180fce.postman_collection.json
+
+// Return Outcome Records for given search input. No required parameter. By default all outcome metadata would return. Filters are optional parameters that can be used to reduce the number of result.	
+
+@name("Provides Decision Outcomes information on AIA Trials, Appeals and Intereferences based on filter inputs")
+GET "https://{{baseUrl}}/decisions"
+? "applicationNumberText"= "<string>"
+? "decisionDate"= "<string>"
+? "decisionFromDate"= "<string>"
+? "decisionToDate"= "<string>"
+? "decisionTypeCategory"= "<string>"
+? "documentIdentifier"= "<string>"
+? "documentName"= "<string>"
+? "grantDate"= "<string>"
+? "grantFromDate"= "<string>"
+? "grantToDate"= "<string>"
+? "partyName"= "<string>"
+? "patentNumber"= "<string>"
+? "patentOwnerName"= "<string>"
+? "proceedingNumber"= "<string>"
+? "proceedingTypeCategory"= "<string>"
+? "recordStartNumber"= "<integer>"
+? "recordTotalQuantity"= "<integer>"
+? "searchText"= "<string>"
+? "sortOrderCategory"= "<string>"
+? "styleNameText"= "<string>"
+? "subdecisionTypeCategory"= "<string>"
+? "subproceedingTypeCategory"= "<string>"
+? "technologyCenterNumber"= "<string>"
+
+
+// Return Outcome Records for given search input. Here are some examples of input format:
+//  E.g. 1. 
+//  {
+//   "facetMap": {"filingParty": ["board"]},
+//   "paramMap": {},
+//   "rows": 0,
+//   "sortByColumn": "string",
+//   "sortOrder": "string",
+//   "start": 0
+// }
+//  E.g. 2. 
+// {
+//   "facetMap": {"filingParty": ["board", "petitioner"], "type": ["notice"]},
+//   "paramMap": {"documentNumber":"73", "title":"power of attorney"},
+//   "rows": 20,
+//   "sortByColumn": "type",
+//   "sortOrder": "desc",
+//   "start": 0
+// }
+//  E.g. 3. {}
+//  <em><strong>Please DO NOT copy/paste, rather type in.</strong></em> For more filter values, refer to the response of above GET (/documents) end point for the documents
+
+@name("Provides Decision Outcomes information on AIA Trials, Appeals and Intereferences")
+POST "https://{{baseUrl}}/decisions/json"
+"Content-Type": "application/json"
+json({
+    "actionDownload": "<boolean>",
+    "dateRangeData": "<object>",
+    "facetData": "<object>",
+    "parameterData": "<object>",
+    "recordStartNumber": "<integer>",
+    "recordTotalQuantity": "<integer>",
+    "searchText": "<string>",
+    "sortDataBag": [
+        "<object>",
+        "<object>"
+    ]
+})
+
+
+

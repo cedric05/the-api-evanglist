@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Third Party Account Link") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/ThirdPartyAccountLink/"
+
+
+@name("Third Party Account Link Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/ThirdPartyAccountLink/{ID}/"
+
+
+@name("Describe Third Party Account Link") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/ThirdPartyAccountLink/describe/"
+
+
+

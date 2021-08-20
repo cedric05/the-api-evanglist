@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// Get all available roles for an organization
+
+@name("Get all available roles for an organization")
+GET "https://{{baseUrl}}/organizations/:organization_identifier/roles"
+
+
+// Get information about a specific role for an organization
+
+@name("Get information about a specific role for an organization")
+GET "https://{{baseUrl}}/organizations/:organization_identifier/roles/:identifier"
+
+
+

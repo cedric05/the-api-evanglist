@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Read all visible application users.
+
+@name("Read all Application Users")
+GET "https://{{baseUrl}}/users"
+
+
+// Read a single Application User but their `evrythngUser` ID.
+
+@name("Read an Application User")
+GET "https://{{baseUrl}}/users/:evrythngUser"
+? "No Name"= "<string>"
+
+
+// Log an Application User in and obtain access details.
+
+@name("Log In with Access Info")
+POST "https://{{baseUrl}}/users/login"
+? "No Name"= "<string>"
+
+
+

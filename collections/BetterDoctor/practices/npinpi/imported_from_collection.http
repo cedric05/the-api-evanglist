@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17776046-ece2-4e9f-8598-d00e62122c30.postman_collection.json
+
+// Returns a practice object based on an NPI. The office returned is registered in the NPI directory. There may be additional offices with this NPI registered at this location. Use the /practices search to find additional locations.
+
+@name("Retrieve a specific practice description using NPI")
+GET "https://{{baseUrl}}/practices/npi/:npi"
+? "fields"= "<>"
+? "user_key"= "<>"
+
+
+// Returns a paginated list of doctors in the specified practice. This is a convenience endpoint, you may also use /doctors search for all doctors.
+
+@name("Retrieve a list of doctors in this practice using NPI")
+GET "https://{{baseUrl}}/practices/npi/:npi/doctors"
+? "fields"= "<>"
+? "skip"= "<get>"
+? "limit"= "<get>"
+? "user_key"= "<>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Delete item sets.
+
+@name("Delete item sets")
+DELETE "https://{{baseUrl}}/rest/item_sets"
+
+
+// Deletes an item set. The item ID of the item set must be specified.
+
+@name("Delete an item set")
+DELETE "https://{{baseUrl}}/rest/item_sets/:id"
+
+
+

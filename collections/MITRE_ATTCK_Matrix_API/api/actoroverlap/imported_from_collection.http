@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5da4bd40-1308-4c08-9688-8cbdcd14f62d.postman_collection.json
+
+@name("Actoroverlap")
+GET "https://{{baseUrl}}/api/actoroverlap/"
+? "actor1"= "id pariatur enim"
+? "actor2"= "sed irure dolore Excepteur"
+? "token"= "anim commodo Ut ad"
+
+
+@name("Deprecatedactoroverlap")
+GET "https://{{baseUrl}}/api/actoroverlap/:mitreID1/:mitreID2"
+? "token"= "anim commodo Ut ad"
+
+
+

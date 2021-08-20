@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cfbeaf2-0501-4ada-b318-94f62ae95a10.postman_collection.json
+
+@name("Find event occurrences in the area. Returns results at specific place and time, event groups are expanded for every occurrence.")
+GET "https://{{baseUrl}}/events"
+? "category"= "<array>"
+? "activity"= "<array>"
+? "ambience"= "<array>"
+? "genre"= "<array>"
+? "name"= "<string>"
+? "q"= "<string>"
+? "from_day"= "<string>"
+? "to_day"= "<string>"
+? "capacity_min"= "<number>"
+? "capacity_max"= "<number>"
+? "center"= "<string>"
+? "radius"= "<integer>"
+? "bbox"= "<array>"
+? "polygon"= "<array>"
+? "within"= "<string>"
+? "offset"= "<integer>"
+? "limit"= "<integer>"
+? "fieldset"= "<string>"
+
+
+@name("Get Specific event details.")
+GET "https://{{baseUrl}}/events/:id"
+? "fieldset"= "<string>"
+
+
+

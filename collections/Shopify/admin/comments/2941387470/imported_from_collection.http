@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Mark a comment as spam.
+
+@name("Mark a comment as Spam")
+POST "https://{{baseUrl}}/admin/comments/2941387470/spam.json"
+"Content": "<>"
+
+
+// Remove a comment.
+
+@name("Remove a comment")
+POST "https://{{baseUrl}}/admin/comments/2941387470/remove.json"
+"Content": "<>"
+
+
+// Approve a comment.
+
+@name("Approve a comment")
+POST "https://{{baseUrl}}/admin/comments/2941387470/approve.json"
+"Content": "<>"
+
+
+// Mark a comment as not spam.
+
+@name("Mark a comment as not spam")
+POST "https://{{baseUrl}}/admin/comments/2941387470/not_spam.json"
+"Content": "<>"
+
+
+// Restore a comment.
+
+@name("restore a comment")
+POST "https://{{baseUrl}}/admin/comments/2941387470/restore.json"
+"Content": "<>"
+
+
+

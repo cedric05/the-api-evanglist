@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-940631ab-b80d-496e-a8ee-7bdf98c1ca94.postman_collection.json
+
+// For the specified map identifier, returns the map properties and annarray of the associated layers. For each layer, the identifier, name andnUniform Resource Identifier (URI) are returned.n
+
+@name("Return map details")
+GET "https://{{baseUrl}}/v1/maps/:mapId"
+
+
+// Updates the order of layers for a given map.n
+
+@name("Update order of layers")
+POST "https://{{baseUrl}}/v1/maps/:mapId/orderlayers"
+
+
+

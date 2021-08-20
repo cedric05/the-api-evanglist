@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d47c7988-a7de-44ff-ba08-7608a9285ad4.postman_collection.json
+
+@name("Search")
+GET "https://api.nasa.gov/patents/content"
+? "query"= "metal"
+? "limit"= "5"
+? "api_key"= "{{api_key}}"
+? "concept_tags"= "True"
+
+
+

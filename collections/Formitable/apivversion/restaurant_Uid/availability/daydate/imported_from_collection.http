@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get the times available for the requested number of people
+
+@name("Get times of a day")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/availability/day/:date/:numberOfPeople/:language"
+? "productUid"= "velit dolore in culpa"
+? "showPrivate"= "false"
+
+
+// Get the times available for any number of people
+
+@name("Get times of a day")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/availability/day/:date/:language"
+? "productUid"= "velit dolore in culpa"
+
+
+

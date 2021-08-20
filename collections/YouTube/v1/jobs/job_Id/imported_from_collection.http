@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bdca8cb-a591-4d01-90eb-dc36f5720cac.postman_collection.json
+
+// Delete v1 jobs job
+
+@name("Delete Jobs Job")
+DELETE "https://{{baseUrl}}/v1/jobs/:jobId"
+? "onBehalfOfContentOwner"= "<>"
+
+
+

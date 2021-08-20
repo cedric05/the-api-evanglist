@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Upload a new listing image
+
+@name("Post Listings Listing Images")
+POST "https://{{baseUrl}}/listings/:listing_id/images"
+? "image"= "<>"
+
+
+// Retrieves a ListingImage by id.
+
+@name("Get Listings Listing Images Listing Image")
+GET "https://{{baseUrl}}/listings/:listing_id/images/:listing_image_id"
+
+
+

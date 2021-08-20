@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-520eedaa-7e93-4d4f-b389-c0bf3c1f2f52.postman_collection.json
+
+// Creating a new task is as easy as POSTing to the /tasks endpoint with a data block containing the fields youu2019d like to set on the task. Any unspecified fields will take on default values.
+
+@name("Post Workspace Tasks")
+POST "https://{{baseUrl}}/workspaces/:workspace_gid/tasks"
+
+
+// The search endpoint allows you to build complex queries to find and fetch exactly the data you need from Asana. For a more comprehensive description of all the query parameters and limitations of this endpoint, see our long-form documentation for this feature.
+
+@name("Get Workspace Tasks Search")
+GET "https://{{baseUrl}}/workspaces/:workspace_gid/tasks/search"
+
+
+

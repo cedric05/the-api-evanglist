@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+@name("Retrieve A Webhook Subscription")
+GET "https://{{baseUrl}}/webhook-subscriptions/:webhookSubscriptionId"
+
+
+@name("List Webhooks For A Webhook Subscription")
+GET "https://{{baseUrl}}/webhook-subscriptions/:webhookSubscriptionId/webhooks"
+
+
+

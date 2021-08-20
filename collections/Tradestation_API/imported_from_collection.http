@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Returns all accounts for the given usern
+
+@name("Get User Accountsn")
+GET "https://{{baseUrl}}/users/:user_id/accounts"
+? "access_token"= "<string>"
+
+
+

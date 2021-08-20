@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-96f7548c-485b-4677-99ba-2d47911de0c8.postman_collection.json
+
+// Get list of currencies supported by metals endpoints for currency conversion.
+
+@name("Get list of currencies supported by metals endpoints for currency conversion")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/supported/currency"
+? "token"= "<>"
+? "format"= "<>"
+
+
+

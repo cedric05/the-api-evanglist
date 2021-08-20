@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1e167a8f-2de8-4d63-a2ac-1189cfa7a2ce.postman_collection.json
+
+// Returns a flat list with all the geographies; geoAreaCode is the M49 Code
+
+@name("Returns a flat list with all the geographies; geoAreaCode is the M49 Code")
+GET "https://{{baseUrl}}/v1/sdg/GeoArea/List"
+
+
+// Returns a flat list with all the geographies with hierarchy
+
+@name("Returns a tree of regions and countries.")
+GET "https://{{baseUrl}}/v1/sdg/GeoArea/Tree"
+
+
+// Returns the list of Series avialable for that geoArea
+
+@name("Returns the list of Series avialable for that geoArea")
+GET "https://{{baseUrl}}/v1/sdg/GeoArea/:GeoAreaCode/List"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-171a8c67-fca5-43a5-8135-dc521868bfb3.postman_collection.json
+
+// Get tags
+
+@name("Get tags")
+GET "https://{{baseUrl}}/api/tags"
+
+
+// Get single tag
+
+@name("Get single tag")
+GET "https://{{baseUrl}}/api/tags/ID"
+
+
+// Delete tag
+
+@name("Delete tag")
+DELETE "https://{{baseUrl}}/api/tags/:id"
+
+
+

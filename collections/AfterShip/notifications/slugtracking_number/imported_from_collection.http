@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c34e1268-51e0-4c47-9993-e9f389540a91.postman_collection.json
+
+@name("/notifications/:slug/:tracking_number")
+GET "https://{{baseUrl}}/notifications/:slug/:tracking_number"
+
+
+@name("/notifications/:slug/:tracking_number/add")
+POST "https://{{baseUrl}}/notifications/:slug/:tracking_number/add"
+
+
+@name("/notifications/:slug/:tracking_number/remove")
+POST "https://{{baseUrl}}/notifications/:slug/:tracking_number/remove"
+
+
+

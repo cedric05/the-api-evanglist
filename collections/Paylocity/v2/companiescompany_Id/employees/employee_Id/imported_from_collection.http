@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4727ff8b-21cd-41e7-b532-19284cb5abdf.postman_collection.json
+
+// Get Employee API will return employee data currently available in Web Pay.
+
+@name("Get employee")
+GET "https://{{baseUrl}}/v2/companies/:companyId/employees/:employeeId"
+
+
+// Sends new or updated employee benefit setup information directly to Web Pay.
+
+@name("Add/update employee's benefit setup")
+PUT "https://{{baseUrl}}/v2/companies/:companyId/employees/:employeeId/benefitSetup"
+
+
+// Sends new or updated employee non-primary state tax information directly to Web Pay.
+
+@name("Add/update non-primary state tax")
+PUT "https://{{baseUrl}}/v2/companies/:companyId/employees/:employeeId/nonprimaryStateTax"
+
+
+// Sends new or updated employee primary state tax information directly to Web Pay.
+
+@name("Add/update primary state tax")
+PUT "https://{{baseUrl}}/v2/companies/:companyId/employees/:employeeId/primaryStateTax"
+
+
+

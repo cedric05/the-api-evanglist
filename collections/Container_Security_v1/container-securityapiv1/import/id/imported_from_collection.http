@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cdb56144-caaa-4d88-bf69-74da565813ea.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. For images import, use Tenable.io connectors. For more information, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/containersecurity/Content/ContainerSecurity/ConfigureConnectors.htm).
+// Updates an import by ID.<p>Requires STANDARD [32] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Update import") : "base-inherit-auth"
+POST "https://{{baseUrl}}/container-security/api/v1/import/:id"
+"Content-Type": "application/json"
+json({
+    "host": "Excepteur",
+    "port": -62810326,
+    "username": "fugiat ex aute",
+    "password": "id incididunt nulla",
+    "provider": "qui nulla eiusmod ad mollit",
+    "ssl": true,
+    "active": false
+})
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. For images import, use Tenable.io connectors. For more information, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/containersecurity/Content/ContainerSecurity/ConfigureConnectors.htm).
+// Deletes an import by ID.<p>Requires STANDARD [32] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Delete import") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/container-security/api/v1/import/:id"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. For images import, use Tenable.io connectors. For more information, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/containersecurity/Content/ContainerSecurity/ConfigureConnectors.htm).
+// Runs an import by ID.<p>Requires STANDARD [32] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Run import ") : "base-inherit-auth"
+POST "https://{{baseUrl}}/container-security/api/v1/import/:id/run"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. For images import, use Tenable.io connectors. For more information, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/containersecurity/Content/ContainerSecurity/ConfigureConnectors.htm).
+// Tests your connection to Tenable.io Container Security.<p>Requires STANDARD [32] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Test connection to Tenable.io") : "base-inherit-auth"
+POST "https://{{baseUrl}}/container-security/api/v1/import/:id/test"
+
+
+

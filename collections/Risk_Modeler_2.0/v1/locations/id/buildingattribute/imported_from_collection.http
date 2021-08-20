@@ -1,0 +1,56 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Create a new building attribute
+
+@name("Creates a new building attribute") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/locations/:id/buildingattribute"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "buildingId": "reprehenderit",
+    "buildingNumber": "labore incididunt eiusmod",
+    "streetPrefix": "reprehenderit incididunt dolore elit",
+    "streetName": "officia",
+    "streetType": "nostrud Lorem",
+    "streetSuffix": "enim occaecat deserunt",
+    "cityName": "velit ut in culpa nulla",
+    "stateCode": "voluptate sit velit",
+    "country": "dolore mollit incididun",
+    "latitude": 91108589.99120107,
+    "longitude": 18091914.710066885,
+    "buildingClassScheme": "ATC",
+    "occupancyTypeScheme": "IBC",
+    "derivedStories": 51584589,
+    "areaUnit": "SqFeet",
+    "yearRange": 36653462,
+    "exterior": "culpa",
+    "fireproof": "volup",
+    "esdbBuildingName": "ea minim nisi cillum cupidatat",
+    "esdbBuildingClass": {
+        "id": -23893702,
+        "code": "in dolore sint",
+        "name": "dolor consequat labore"
+    },
+    "esdbOccupancyType": {
+        "id": -22260195,
+        "code": "laboris incididunt",
+        "name": "sunt nostrud"
+    },
+    "esdbBldgHeight": 47388654.4768703,
+    "esdbStories": -8895480,
+    "esdbSquareFootage": 99132209.28135234,
+    "esdbYearBuilt": "consectetur incididunt quis in"
+})
+
+
+

@@ -1,0 +1,933 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c25d627-86e8-4072-b0fa-98946e646a2c.postman_collection.json
+
+// <p>Get entries containing the field values matching the condition in the query.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#equals-operator>Equals Operator</a> API Reference document
+
+@name("Equals Operator")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"title": "Redmi 3S"}'
+
+
+// <p>Get entries where the value of a field within a Group field matches the condition in the query. <em>This query is specifically for fields that are part of the Group field</em>.
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#equals-operator>Equals Operator</a> API Reference document
+
+@name("Equals Operator Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"bank_offers.card_type": "Debit Card"}'
+
+
+// <p>Get entries where the value of a field within a Modular Blocks field matches the condition in the query. <em>This query is specifically for fields that are part of the Modular Blocks field</em>.
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#equals-operator>Equals Operator</a> API Reference document
+
+@name("Equals Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"additional_info.deals.deal_name": "Christmas Deal"}'
+
+
+// <p>Get all the entries in which the value of a field does not match the value provided in the condition.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#not-equals-operator>Not-equals Operator</a> API Reference document
+
+@name("Not-equals Operator")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "price_in_usd": { "$ne": 146 } }'
+
+
+// <p>Get entries where the value of a field does not match the value provided in the condition. <em>This query is specifically for fields that are part of the Group field.</em>
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#not-equals-operator>Not-equals Operator</a> API Reference document
+
+@name("Not-equals Operator Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "bank_offers.card_type": { "$ne": "Debit Card" } }'
+
+
+// <p>Get entries where the value of a field within the Modular Blocks field matches the condition in the query. <em>This query is specifically for fields that are part of any block within a Modular Block field.</em>
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#not-equals-operator>Not-equals Operator</a> API Reference document
+
+@name("Not-equals Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "additional_info.deals.deal_name": { "$ne": "Christmas Deal" } }'
+
+
+// <p>Get entries is which the value of a field matches to any of the given values. This parameter will compare field values of entries to that of the values provided in the condition.
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#array-equals-operator>Array Equals Operator</a> API Reference document
+
+@name("Array Equals Operator")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "price_in_usd": { "$in": [ 101, 749 ] } }'
+
+
+// <p>Get entries where the value of a field, within a Group field, matches any of the given values. This parameter will compare field values of entries to that of the values provided in the condition. <em>This query is specifically for fields that are part of the Group field.</em>
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#array-equals-operator>Array Equals Operator</a> API Reference document
+
+@name("Array Equals Operator Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "bank_offers.card_type": { "$in": [ "Credit Card", "Debit Card"] } }'
+
+
+// <p>Get entries where the value of a field within Modular Blocks matches to any of the given values. <em>This query is specifically for fields that are part of any block within a Modular Block field.</em>
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#array-equals-operator>Array Equals Operator</a> API Reference document
+
+@name("Array Equals Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "additional_info.deals.deal_name": { "$in": [ "Christmas Deal", "Summer Deal"] } }'
+
+
+// <p>Get all entries in which the value of a field does not match to any of the given values. This parameter will compare field values of entries to that of the values provided in the condition, and the query will retrieve entries that have field values that does not match to any of the values provided.
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#array-not-equals-operator>Array Not-equals Operator</a> API Reference document
+
+@name("Array Not-equals Operator")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "price_in_usd": { "$nin": [ 101, 749 ] } }'
+
+
+// <p>Get entries in which the value of a field does not match any of the values provided in the condition. <em>This query is specifically for fields that are part of the Group field.</em>
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#array-not-equals-operator>Array Not-equals Operator</a> API Reference document
+
+@name("Array Not-equals Operator Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "bank_offers.card_type": { "$nin": ["Debit Card"] } }'
+
+
+// <p>Get entries where the values of the fields within Modular Blocks match the condition in the query. <em>This query is specifically for fields that are part of any block within a Modular Block field.</em>
+// <br><br>
+// <span>This query will work for entries only.</span><br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#array-not-equals-operator>Array Not-equals Operator</a> API Reference document
+
+@name("Array Not-equals Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "additional_info.deals.deal_name": { "$nin": [ "Christmas Deal", "Summer Deal" ] } }'
+
+
+// <p>When fetching an entry, the content of referred entries that are part of the parent entry is NOT included in the Response body; you only get their UIDs. To include the content of the referred entries in your response, you need to use the <code>include[]</code> parameter and specify the UID of the reference field as value.
+// <br>
+// <br>The API request should be as follows:
+// <br>
+// <br><code>https://cdn.contentstack.io/v3/content_types/product/entries?include[]={reference_field_UID}</code>
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#include-reference>Include Reference</a> API Reference document
+
+@name("Include Reference")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "include[]"= "categories"
+
+
+// <p>If the reference field is part of a Group field, you need to use the Group field UID as well as the reference field UID using a dot operator.
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#include-reference>Include Reference</a> API Reference document
+
+@name("Include Reference Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "include[]"= "bank_offers.bank"
+
+
+// <p>If the reference field is part of a Modular Blocks field, you need to use the Modular Blocks UID, Block UID, as well as the reference field UID using a dot operator.
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#include-reference>Include Reference</a> API Reference document
+
+@name("Include Reference Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "include[]"= "additional_info.related_products.products"
+
+
+// <p>Get entries having values based on referenced fields. This query retrieves all entries that satisfy the query conditions made on referenced fields.
+// <br><br>
+// This query will work for entries only.
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#reference-search-equals>Reference Search Equals</a> API Reference document
+
+@name("Reference Search Equals")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"brand":{"$in_query":{"title":"Apple Inc."}}}'
+
+
+// <p>Get entries having values based on referenced fields. This query retrieves all entries that satisfy query conditions made on referenced fields.<br><br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#reference-search-equals>Reference Search Equals</a> API Reference document
+
+@name("Reference Search Equals Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"bank_offers.bank":{"$in_query":{"title":"Citigroup"}}}'
+
+
+// <p>Get entries having values based on referenced fields. 
+// This query retrieves all entries that satisfy query conditions made on referenced fields.
+// <br><br>
+// If the reference is part of a Modular Blocks field, you need to mention the Modular Blocks UID, Block UID, as well as the reference field UID using a dot operator
+// <br><br>
+// <span>Note that this query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#reference-search-equals>Reference Search Equals</a> API Reference document
+
+@name("Reference Search Equals Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"additional_info.related_products.products":{"$in_query":{"title":"iPhone 7 128GB"}}}'
+
+
+// <p>Get entries having values based on referenced fields. This query works the opposite of <code>$in_query</code> and retrieves all entries that does not satisfy query conditions made on referenced fields.
+// <br><br>
+// <span>Note that this query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#reference-search-not-equals>Reference Search Not-equals</a> API Reference document
+
+@name("Reference Search Not-equals")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"brand":{"$nin_query":{"title":"Apple Inc."}}}'
+
+
+// <p>Get entries having values based on referenced fields. This query works the opposite of <code>$in_query</code> and retrieves all entries that does not satisfy query conditions made on referenced fields.
+// <br><br>
+// <span>Note that this query will work for entries only.</span>
+// <br>
+// <br>If the reference is part of a Group field, you need to use the Group field UID as well as the reference field UID using a dot operator.
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#reference-search-not-equals>Reference Search Not-equals</a> API Reference document
+
+@name("Reference Search Not-equals Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"bank_offers.bank":{"$nin_query":{"title":"Citigroup"}}}'
+
+
+// <p>Get entries having values based on referenced fields. This query works the opposite of <code>$in_query</code> and retrieves all entries that does not satisfy query conditions made on referenced fields.
+// <br><br>
+// <span>Note that this query will work for entries only.</span>
+// <br>
+// <br>If the reference is part of a Modular Blocks field, you need to use the Modular Blocks UID, Block UID, as well as the reference field UID using a dot operator.
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#reference-search-not-equals>Reference Search Not-equals</a> API Reference document
+
+@name("Reference Search Not-equals Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"additional_info.related_products.products":{"$nin_query":{"title":"iPhone 7 128GB"}}}'
+
+
+// <p>Get entries by using regular expressions to query fields of a content type. These regex queries will help to retrieve all the entries of a content type that have field values matching the condition provided in the query parameter.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#search-by-regex>Search by Regex</a> API Reference document
+
+@name("Search by Regex")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "color": { "$regex": "^Bla" } }'
+
+
+// <p>Get entries by using regular expressions to query fields of a Group field. These regex queries will help to retrieve all the entries of a content type that have field values matching the condition provided in the query parameter.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#search-by-regex>Search by Regex</a> API Reference document
+
+@name("Search By Regex Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "bank_offers.card_type": { "$regex": "^Credit Card" } }'
+
+
+// <p>Get entries by using regular expressions to query fields of a Modular Block. These regex queries will help to retrieve all the entries of a content type that have field values matching the condition provided in the query parameter.
+// <br><br>
+// <em>This query will work for entries only and works specifically for fields that are part of any block within a Modular Block field.</em>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#search-by-regex>Search by Regex</a> API Reference document
+
+@name("Search by Regex Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "additional_info.deals.deal_name": { "$regex": "^Christmas Deal" } }'
+
+
+// <p>Get entries that satisfy all the conditions provided in the '$and' query.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#and-operator>AND Operator</a> API Reference document
+
+@name("AND operator")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"$and":[{"title": "Redmi Note 3"},{"color": "Gold"}]}'
+
+
+// <p>Get entries that satisfy all the conditions provided in the <code>$and</code> query.
+// <br><br>
+// <span>This query is specifically for entries and works on&nbsp;fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#and-operator>AND Operator</a> API Reference document
+
+@name("AND Operator Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"$and":[{"bank_offers.card_type": "Credit Card"},{"bank_offers.discount_in_percentage": 12}]}'
+
+
+// <p>Get entries that satisfy all the conditions provided in the <code>$and</code> query.<br><br><span>This query is specifically for entries and works on fields that are part of any block within a Modular Block field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#and-operator>AND Operator</a> API Reference document
+
+@name("AND Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{"$and":[{"additional_info.deals.deal_name": "Christmas Deal"},{"additional_info.rating.stars": 2}]}'
+
+
+// <p>Get all entries that satisfy at least one of the given conditions provided in the '$or' query.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#or-operator>OR Operator</a> API Reference document
+
+@name("OR Operator")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "$or": [{ "color": "Gold" }, { "color": "Black" }] }'
+
+
+// <p>Get all entries that satisfy at least one of the given conditions provided in the <code>$or</code> query.
+// <br><br>
+// <span>This query is specifically for entries and works for fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#or-operator>OR Operator</a> API Reference document
+
+@name("OR Operator Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "$or": [{ "bank_offers.card_type": "Debit Card" }, { "bank_offers.discount_in_percentage": 12}] }'
+
+
+// <p>Get all entries that satisfy at least one of the given conditions provided in the '$or' query.
+// <br><br>
+// <span>This query is specifically for entries and works on fields that are part of any block within a Modular Block field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#or-operator>OR Operator</a> API Reference document
+
+@name("OR Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "$or": [{ "additional_info.deals.deal_name": "Christmas Deal" }, { "additional_info.rating.stars": 2}] }'
+
+
+// <p>Get entries in which the value of a field is lesser than the value provided in the condition.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#less-than>Less Than</a> API Reference document
+
+@name("Less Than")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "price_in_usd": { "$lt": 600 } }'
+
+
+// <p>Get entries in which the value of a field is lesser than the value provided in the condition.<br><br><span>This query is specifically for fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#less-than>Less Than</a> API Reference document
+
+@name("Less Than Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "bank_offers.discount_in_percentage": { "$lt": 25 } }'
+
+
+// <p>Get entries in which the value of a field is lesser than the value provided in the condition.<br><br><span>This query is specifically for fields that are part of any block within a Modular Block field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#less-than>Less Than</a> API Reference document
+
+@name("Less Than Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "additional_info.rating.stars": { "$lt": 3 } }'
+
+
+// <p>Get entries in which the value of a field is lesser than or equal to the value provided in the condition.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#less-than-or-equal-to>Less Than Or Equal To</a> API Reference document
+
+@name("Less Than or Equal To")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "price_in_usd": { "$lte": 146 } }'
+
+
+// <p>Get entries in which the value of a field is lesser than or equal to the value provided in the condition.<br><br><span>This query is specifically for fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#less-than-or-equal-to>Less Than Or Equal To</a> API Reference document
+
+@name("Less Than Or Equal To Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "bank_offers.discount_in_percentage": { "$lte": 24 } }'
+
+
+// <p>Get entries in which the value of a field is lesser than or equal to the value provided in the condition.<br><br><span>This query is specifically for entries and works on fields that are part of any block within a Modular Block field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#less-than-or-equal-to>Less Than Or Equal To</a> API Reference document
+
+@name("Less Than Or Equal To Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "additional_info.rating.stars": { "$lte": 3 } }'
+
+
+// <p>Get entries in which the value for a field is greater than the value provided in the condition.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#greater-than>Greater Than</a> API Reference document
+
+@name("Greater Than")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "price_in_usd": { "$gt": 146 } }'
+
+
+// <p>Get entries in which the value for a field is greater than the value provided in the condition.<br><br><span>This query is specifically for entries and works on fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#greater-than>Greater Than</a> API Reference document
+
+@name("Greater Than Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "bank_offers.discount_in_percentage": { "$gt": 20 } }'
+
+
+// <p>Get entries in which the value for a field is greater than the value provided in the condition.<br><br><span>This query is specifically for entries and works on fields that are part of any block within a Modular Block field.</span><br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#greater-than>Greater Than</a> API Reference document
+
+@name("Greater Than Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "additional_info.rating.stars": { "$gt": 3 } }'
+
+
+// <p>Get entries in which the value of a field is greater than or equal to the value provided in the condition.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#greater-than-or-equal-to>Greater Than Or Equal To</a> API Reference document
+
+@name("Greater Than or Equal To")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "price_in_usd": { "$gte": 146 } }'
+
+
+// <p>Get entries in which the value of a field is greater than or equal to the value provided in the condition.<br><br><span>This query is specifically for fields that are part of the Group field.</span><br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#greater-than-or-equal-to>Greater Than Or Equal To</a> API Reference document
+
+@name("Greater Than Or Equal To Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "bank_offers.discount_in_percentage": { "$gte": 20 } }'
+
+
+// <p>Get entries in which the value of a field is greater than or equal to the value provided in the condition.<br><br><span>This query is specifically for fields that are part of any block within a Modular Block field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#greater-than-or-equal-to>Greater Than Or Equal To</a> API Reference document
+
+@name("Greater Than Or Equal To Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "additional_info.rating.stars": { "$gte": 3 } }'
+
+
+// <p>The limit parameter will return a specific number of entries in the output. So for example, if the content type contains more than 100 entries and you wish to fetch only the first 2 entries, you need to specify '2' as value in this parameter.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#limit>Limit</a> API Reference document
+
+@name("Limit")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "limit"= "2"
+
+
+// <p>The skip parameter will skip a specific number of entries in the output. So, for example, if the content type contains around 12 entries and you want to skip the first 2 entries to get only the last 10 in the response body, you need to specify ‘2’ here.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#skip>Skip</a> API Reference document
+
+@name("Skip")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "skip"= "2"
+
+
+// <p>When fetching entries, you can sort them in the ascending order with respect to the value of a specific field in the response body.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#order-by-asc>Order by asc</a> API Reference document
+
+@name("Order by asc")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "asc"= "price_in_usd"
+
+
+// <p>Sort your fetched entries in the ascending order with respect to the value of a specific field in the response body.
+// <br><br>
+// <span>This query is specifically for entries and works on fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#order-by-asc>Order by asc</a> API Reference document
+
+@name("Order by asc Operator Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "asc"= "bank_offers.discount_in_percentage"
+
+
+// <p>When fetching entries, you can sort them in the descending order with respect to the value of a specific field in the response body.
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#order-by-desc>Order by desc</a> API Reference document
+
+@name("Order by desc")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "desc"= "price_in_usd"
+
+
+// <p>Sort your fetched entries in the descending order with respect to the value of a specific field in the response body.
+// <br><br><span>This query is specifically for entries and works on fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#order-by-desc>Order by desc</a> API Reference document
+
+@name("Order By desc Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "desc"= "bank_offers.discount_in_percentage"
+
+
+// <p>Sort your fetched entries in the descending order with respect to the value of a specific field in the response body.<br><br><span>This query is specifically for entries and works on fields that are part of any block within a Modular Block field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#order-by-desc>Order by desc</a> API Reference document
+
+@name("Order by desc Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "desc"= "additional_info.rating.stars"
+
+
+// <p>Get entries if value of the field, mentioned in the condition, exists.
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#exists>Exists</a> API Reference document
+
+@name("Exists")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "price_in_usd": { "$exists": true } }'
+
+
+// <p>Get entries if value of the field, mentioned in the condition, exists.
+// <br><br>
+// <span>This query is specifically for entries and work on fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#exists>Exists</a> API Reference document
+
+@name("Exists Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "bank_offers.discount_in_percentage": { "$exists": true } }'
+
+
+// <p>Get entries if value of the field, mentioned in the condition, exists.<br><br><span>This query is specifically for entries and works on fields that are part of any block within a Modular Block field.</span><br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#exists>Exists</a> API Reference document
+
+@name("Exists Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? 'query'= '{ "additional_info.rating.stars": { "$exists": true } }'
+
+
+// <p>The <code>only[][]</code> parameter will include the data of only the specified fields for each entry and exclude the data of all other fields. There are two approaches to this parameter. Firstly, we have the <code>only[BASE][]</code> parameter, where 'BASE' is the default value and refers to the top-level fields of the schema. Secondly, we have the <code>only[Reference_field_uid][]</code> parameter, where you need to enter the UID&nbsp;of the reference field in place&nbsp;of "<code>Reference_field_uid</code>".
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#only-operator>Only Operator</a> API Reference document
+
+@name("Only operator")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "only[BASE][]"= "price_in_usd"
+
+
+// <p>Get entries in which the data of a specific field is included in the response JSON.<br><br><span>This query is specifically for entries and works on fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#only-operator>Only Operator</a> API Reference document
+
+@name("Only Operator Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "only[BASE][]"= "bank_offers.discount_in_percentage"
+
+
+// <p>Get entries in which the data of a specific field is included in the response JSON.<br><br><span>This query is specifically for fields that are part of any block within a Modular Block field.</span><br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#only-operator>Only Operator</a> API Reference document
+
+@name("Only Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "only[BASE][]"= "additional_info.rating.stars"
+
+
+// <p>The <code>except[][]</code> parameter will exclude the data of the specified fields for each entry and will include the data of the rest of the fields. There are two approaches to this parameter. Firstly, we have the <code>except[BASE][]</code> parameter, where 'BASE' is the default value and refers to the top-level fields of the schema. Secondly, we have the <code>except[Reference_field_uid][]</code> parameter, where you need to enter the UID of the reference field in place of <code>Reference_field_uid</code>.
+// <br><br>
+// <span>This query will work for entries only.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#exclude-operator>Exclude Operator</a> API Reference document
+
+@name("Exclude operator")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "except[BASE][]"= "price_in_usd"
+
+
+// <p>Get entries in which the data of a specific field is excluded from the response JSON, but the data of the rest of the fields are included.<br><br><span>This query is specifically for entries and works with&nbsp;fields that are part of the Group field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#exclude-operator>Exclude Operator</a> API Reference document
+
+@name("Exclude Operator Within Group")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "except[BASE][]"= "bank_offers.discount_in_percentage"
+
+
+// <p>Get entries in which the data of a specific field is excluded from the response JSON, but the data of the rest of the fields are included.<br><br><span>This query is specifically for entries and works with&nbsp;fields that are part of any block within a Modular Block field.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#exclude-operator>Exclude Operator</a> API Reference document
+
+@name("Exclude Operator Within Modular Blocks")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "except[BASE][]"= "additional_info.rating.stars"
+
+
+// <p>To retrieve the count of entries, we have two parameters: <code>include_count</code>&nbsp;(retrieves entries' details and their count) and <code>count</code>&nbsp;(retrieves only the count of entries).
+//      <br><br>
+//      <span>This query will work for both entries as well as assets.</span>
+// <br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#count>Count</a> API Reference document
+
+@name("Count")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "include_count"= "true"
+
+
+// <p>The 'Get all entries' API request returns only the first 100 entries of the specified content type. Similarly, the 'Get all assets' request fetches the first 100 assets of a particular stack.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#pagination>Pagination</a> API Reference document
+
+@name("Pagination")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "include_count"= "true"
+? "skip"= "2"
+? "limit"= "7"
+
+
+

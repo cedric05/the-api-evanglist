@@ -1,0 +1,83 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bf3ab025-e124-45c4-8365-ff0708180fce.postman_collection.json
+
+// No required parameter. By default all trials metadata would return. Filters are optional parameters that can be used to reduce the number of result.
+
+@name("Return Public PTAB Proceeding Information based on filter input")
+GET "https://{{baseUrl}}/proceedings"
+? "accordedFilingDate"= "<string>"
+? "accordedFilingFromDate"= "<string>"
+? "accordedFilingToDate"= "<string>"
+? "applicationNumberText"= "<string>"
+? "declarationDate"= "<string>"
+? "declarationFromDate"= "<string>"
+? "declarationToDate"= "<string>"
+? "grantDate"= "<string>"
+? "grantFromDate"= "<string>"
+? "grantToDate"= "<string>"
+? "institutionDecisionDate"= "<string>"
+? "institutionDecisionFromDate"= "<string>"
+? "institutionDecisionToDate"= "<string>"
+? "inventorName"= "<string>"
+? "partyName"= "<string>"
+? "patentNumber"= "<string>"
+? "patentOwnerName"= "<string>"
+? "proceedingFilingDate"= "<string>"
+? "proceedingFilingFromDate"= "<string>"
+? "proceedingFilingToDate"= "<string>"
+? "proceedingLastModifiedDate"= "<string>"
+? "proceedingLastModifiedFromDate"= "<string>"
+? "proceedingLastModifiedToDate"= "<string>"
+? "proceedingNumber"= "<string>"
+? "proceedingStatusCategory"= "<string>"
+? "proceedingTypeCategory"= "<string>"
+? "recordStartNumber"= "<integer>"
+? "recordTotalQuantity"= "<integer>"
+? "sortOrderCategory"= "<string>"
+? "styleNameText"= "<string>"
+? "subproceedingTypeCategory"= "<string>"
+? "technologyCenterNumber"= "<string>"
+
+
+// Return PTAB Proceedings Information for given search input. Here are some examples of input format:
+//  E.g. 1. 
+//  {
+//   "facetMap": {"prosecutionStatus": ["FWD Entered"]},
+//   "paramMap": {},
+//   "rows": 0,
+//   "sortByColumn": "string",
+//   "sortOrder": "string",
+//   "start": 0
+// }
+//  E.g. 2. 
+// {
+//   "facetMap": {"petitionerName": ["Liberty Mutual Insurance Company", "SAP America, Inc."]},
+//   "paramMap": {"proceedingNumber":"CBM2012-00001", "patentNumber":"6553350"},
+//   "rows": 20,
+//   "sortByColumn": "patentNumber",
+//   "sortOrder": "desc",
+//   "start": 0
+// }
+//  E.g. 3. {}
+//  <em><strong>Please DO NOT copy/paste, rather type in.</strong></em> For more filter values, refer to the response of above GET (/trials) end point for the trials
+
+@name("Return Public PTAB Proceedings Information")
+POST "https://{{baseUrl}}/proceedings/json"
+"Content-Type": "application/json"
+json({
+    "actionDownload": "<boolean>",
+    "dateRangeData": "<object>",
+    "facetData": "<object>",
+    "parameterData": "<object>",
+    "recordStartNumber": "<integer>",
+    "recordTotalQuantity": "<integer>",
+    "searchText": "<string>",
+    "sortDataBag": [
+        "<object>",
+        "<object>"
+    ]
+})
+
+
+

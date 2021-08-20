@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get datasources by owner.
+
+@name("Get datasources by owner.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/metadata/data/sources/:owner"
+? "size"= "et officia pariatur"
+? "from"= "et officia pariatur"
+? "sort"= "et officia pariatur"
+
+
+

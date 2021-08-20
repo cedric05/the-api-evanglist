@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-65467f43-e4da-4c59-9b36-d7b4ca8a1049.postman_collection.json
+
+// Returns the weekly gasoline report. This resource pulls back the report with ProductLine = "US Weekly Gasoline Demand Report". Keep in mind that you must be subscribed to the gasoline weekly report to be able to receive data back from this resource.
+
+@name('Returns the weekly gasoline report. This resource pulls back the report with ProductLine = "US Weekly Gasoline Demand Report". Keep in mind that you must be subscribed to the gasoline weekly report to be able to receive data back from this resource.')
+GET "https://{{baseUrl}}/gasweekly"
+? "CurrentRow"= "<string>"
+? "Offset"= "<string>"
+
+
+// Returns a distinct list of all reports are available and that one is subscribed to.
+
+@name("Returns a distinct list of all reports are available and that one is subscribed to.")
+GET "https://{{baseUrl}}/parameters"
+? "CurrentRow"= "<string>"
+? "Offset"= "<string>"
+
+
+// Returns all Spending Pulse reports (with the exception of the gasoline weekly report, which has its own resource), that one is subscribed to.
+
+@name("Returns all Spending Pulse reports (with the exception of the gasoline weekly report, which has its own resource), that one is subscribed to.")
+GET "https://{{baseUrl}}/spendingpulse"
+? "CurrentRow"= "<string>"
+? "Offset"= "<string>"
+? "ProductLine"= "<string>"
+? "PublicationCoveragePeriod"= "<string>"
+? "Country"= "<string>"
+? "ReportType"= "<string>"
+? "Period"= "<string>"
+? "Sector"= "<string>"
+? "Ecomm"= "<string>"
+
+
+// Returns a list of all reports one is currently subscribed to.
+
+@name("Returns a list of all reports one is currently subscribed to.")
+GET "https://{{baseUrl}}/subscription"
+? "CurrentRow"= "<string>"
+? "Offset"= "<string>"
+
+
+

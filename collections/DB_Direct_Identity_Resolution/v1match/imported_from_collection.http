@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a9cd9bcc-93b2-4c15-8ff4-f9bd9b31f543.postman_collection.json
+
+// Idr domain email.
+
+@name("IDR Domain Email")
+GET "https://{{baseUrl}}/v1/match/cleanseMatch"
+"Content": "<>"
+? "email"= "<>"
+? "countryISOAlpha2Code"= "<>"
+
+
+// Idr & append domain url.
+
+@name("IDR & Append Domain URL")
+GET "https://{{baseUrl}}/v1/match/extendedMatch"
+"Content": "<>"
+? "productId"= "<>"
+? "versionId"= "<>"
+? "url"= "<>"
+? "countryISOAlpha2Code"= "<>"
+
+
+// Cleanse & standardize.
+
+@name("Cleanse & Standardize")
+GET "https://{{baseUrl}}/v1/match/cleanseAndStandardize"
+? "name"= "<>"
+? "streetAddressLine1"= "<>"
+? "countryISOAlpha2Code"= "<>"
+? "addressLocality"= "<>"
+? "addressRegion"= "<>"
+
+
+

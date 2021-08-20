@@ -1,0 +1,5 @@
+This page describes the APIs used for Blizzard's OAuth 2.0 authentication flows. User Authentication describes the authentication code flow, which allows applications to authenticate a user and perform API requests on their behalf. Server Authentication describes the client credentials flow, which allows applications to authenticate with Blizzard's servers and perform requests as a client application.
+
+See the [Using OAuth](https://develop.battle.net/documentation/guides/using-oauth) page for detailed information about making requests, including host names.
+
+Hosts: note that Blizzard API request paths follow this format: `{region}.battle.net/{API path}` for OAuth requests (or `www.battlenet.com.cn/{API path}` for OAuth requests in China). For more information, see the [Getting Started guide](https://develop.battle.net/documentation/guides/getting-started).

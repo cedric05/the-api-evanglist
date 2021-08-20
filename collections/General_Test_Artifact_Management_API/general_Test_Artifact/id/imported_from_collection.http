@@ -1,0 +1,191 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-013a471b-0bec-4856-b7f4-9d7158d81794.postman_collection.json
+
+// This operation retrieves a GeneralTestArtifact entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a GeneralTestArtifact by ID")
+GET "https://{{baseUrl}}/generalTestArtifact/:id"
+? "fields"= "aliqua irure et"
+
+
+// This operation updates partially a GeneralTestArtifact entity.
+
+@name("Updates partially a GeneralTestArtifact")
+PATCH "https://{{baseUrl}}/generalTestArtifact/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "",
+    "versionDescription": "What's changed: ...",
+    "agreement": {
+        "name": "My Agreement",
+        "terms": "<EULA>",
+        "url": "http://myagreement.com"
+    },
+    "attribute": [
+        {
+            "description": "laborum in laboris",
+            "characteristic": {
+                "name": "tempor adipisicing ",
+                "value": {},
+                "id": "dolore cupidatat non",
+                "valueType": "laboris aliquip minim",
+                "characteristicRelationship": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "@baseType": "reprehenderit adipisicing culpa occaecat",
+                "@schemaLocation": "http://qnptuiafjtfSbNLocOaQcIKYA.tliwcGdc7fuqzyJQGqypZFCsX+d+lIIQ3,X3walr3hl6D.qfVQK4rPh0T8q+5LXeWEt",
+                "@type": "nostrud et adipisicing velit"
+            }
+        },
+        {
+            "description": "ullamco voluptate ex",
+            "characteristic": {
+                "name": "id voluptate eiusmod",
+                "value": {},
+                "id": "enim eu adipisicing",
+                "valueType": "e",
+                "characteristicRelationship": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "@baseType": "quis in",
+                "@schemaLocation": "http://WLWidjepWwWwNYHrBv.wgnwqOX1jF+rrJHBi,cMLjdLM.8TBTDNrOusiL-6FBS5C3yCeIamrTeqtamg9wR5Ia9sAVYXq,umSfuNg.yW4P",
+                "@type": "incididunt"
+            }
+        }
+    ],
+    "generalArtifactDefinition": {
+        "id": "ex mollit sunt Lorem non",
+        "href": "https://NlqqLZbKWwYpJdy.udQ",
+        "attachmentType": "video",
+        "content": "elit in amet Duis mollit",
+        "description": "Photograph of the Product",
+        "mimeType": "eu laboris ullamco",
+        "name": "ullamco esse commodo consectetur",
+        "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+        "size": {
+            "amount": 1,
+            "units": "quis eiusmod cillum"
+        },
+        "validFor": {
+            "endDateTime": "1985-04-12T23:20:50.52Z",
+            "startDateTime": "1985-04-12T23:20:50.52Z"
+        },
+        "@baseType": "Duis laboris eiusmod enim",
+        "@schemaLocation": "https://S.sjxfjt",
+        "@type": "Ut elit reprehenderit aliquip"
+    },
+    "relatedParty": [
+        {
+            "@referredType": "ex nisi sed",
+            "id": "elit anim",
+            "href": "http://dkaXivVBXyPCerf.perKPW96tdGAex5nXS9Vw7KHdENh-OhooqO6gytP37uBtp",
+            "name": "ea fugiat nostrud",
+            "role": "ut aliqua sint cupidatat",
+            "contact": [
+                {
+                    "id": "laboris veniam laborum Ut",
+                    "href": "https://gjNaIdTMWtEXVSarqCp.ilsuTk9EEPIJV",
+                    "mediumType": "nulla ut labore",
+                    "preferred": false,
+                    "characteristic": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    },
+                    "@baseType": "non",
+                    "@schemaLocation": "https://qeFHul.jcoKHjhEcWp1H21zuPRPhduTOYsx2+8EQ",
+                    "@type": "aliqua laboris tempor irure"
+                },
+                {
+                    "id": "incididunt laboris",
+                    "href": "http://YvVnyuFLDUJtNyoFmwrsvhXCXh.zcabwsW5FoN6EHfIBKVOJweg",
+                    "mediumType": "in incididunt Excepteur sunt dolore",
+                    "preferred": false,
+                    "characteristic": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    },
+                    "@baseType": "Lorem ut",
+                    "@schemaLocation": "https://JflURROEOjxYmbf.gxfZQj7NKL-XgQvPF.7uTNjO7z",
+                    "@type": "pariatur laborum"
+                }
+            ],
+            "@baseType": "consectetur veniam magna",
+            "@schemaLocation": "http://mzSnQAiViLHFvovsCnMQm.hany+uNQNzgh5BxKc,S9A9ZHDxI3",
+            "@type": "mollit dolore nulla"
+        },
+        {
+            "@referredType": "ipsum est",
+            "id": "exercitation",
+            "href": "https://QTfZSbykMmjWab.fkpUDAXjAZNZvRRDc0XGP.Ls3Umpo,eiNOlTNtFAmkE",
+            "name": "culpa quis",
+            "role": "incididunt",
+            "contact": [
+                {
+                    "id": "tempor amet anim deserunt",
+                    "href": "https://fMceMkGBQMEKhQqvNyL.rkvjovZ2O+",
+                    "mediumType": "ut ad nulla consectetur",
+                    "preferred": true,
+                    "characteristic": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    },
+                    "@baseType": "magna aliquip pariatur dolo",
+                    "@schemaLocation": "https://yxocqsF.kaRbeaPoBKyKxRBsgfjvtnc1EHtGGIgTca0ymv",
+                    "@type": "eiusmod est"
+                },
+                {
+                    "id": "Excepteur cillum Ut",
+                    "href": "http://ea.miaQE1CP2OJ+vsgK0rkwyhNSAlRM90g8Rs",
+                    "mediumType": "nulla irure",
+                    "preferred": true,
+                    "characteristic": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    },
+                    "@baseType": "est quis occaecat nulla",
+                    "@schemaLocation": "https://uROMfJumSERluvPWrbZStbDWEjdR.aomoDFzLNoQJ77OMiYdZL87ZptyqgC6nBt4Tl2Zpu0XYG-X",
+                    "@type": "dolore nisi ut aliqua officia"
+                }
+            ],
+            "@baseType": "reprehenderit enim Excepteur labore ea",
+            "@schemaLocation": "https://PWIHFZfLptgZuCiXAHPk.koz0Ebyjxz9A1zMXWGHdPYT.IjDRnQvOFlGhxtwYC-jNS+3GFwgTZ,IhmXKEvaSo2qRd1kX",
+            "@type": "Ut magna dolor in"
+        }
+    ],
+    "state": "stable",
+    "@baseType": "ea ipsum",
+    "@schemaLocation": "http://bbLrRDtRDTdTJceDxYScnxfDxpmfDPmB.krGRiawn6gqGElLvgd",
+    "@type": "sint"
+})
+
+
+// This operation deletes a GeneralTestArtifact entity.
+
+@name("Deletes a GeneralTestArtifact")
+DELETE "https://{{baseUrl}}/generalTestArtifact/:id"
+
+
+

@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Add a party to a specific application.
+
+@name("Add a Party to a Specific Application") : "base-inherit-auth"
+POST "https://{{baseUrl}}/parties"
+"Content-Type": "application/json"
+json({
+    "applicationId": "4ab61cfd-e4f0-47af-bdfa-06901e2bf180",
+    "name": {
+        "firstName": "John",
+        "middleName": "Angel",
+        "lastName": "Hernandez",
+        "suffixName": "Jr."
+    },
+    "email": "john@email.com",
+    "type": "SPOUSE",
+    "verificationData": {
+        "code": "1234",
+        "hint": "Verification hint"
+    },
+    "losPartyId": "externalId1",
+    "econsent": {
+        "status": "Declined"
+    },
+    "customFields": {
+        "fieldName": "fldValue"
+    }
+})
+
+
+

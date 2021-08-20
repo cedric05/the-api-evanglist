@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Edit User on Workspace") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/team/team_id/user/user_id"
+"Content-Type": "application/json"
+json({
+    "username": "User Name",
+    "admin": false
+})
+
+
+@name("Remove User From Workspace") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/team/team_id/user/user_id"
+
+
+@name("Get User") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/team/team_id/user/user_id"
+
+
+

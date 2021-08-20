@@ -1,0 +1,75 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// [Full description of the service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Generate_Token/02r3000000m5000000/)
+
+@name("Get ArcGIS Online Token")
+POST "https://www.arcgis.com/sharing/rest/generateToken"
+files(
+	("f", "json"),
+	("username", "{{username}}"),
+	("password", "{{password}}"),
+	("client", "referer"),
+	("referer", "arcgis.com"),
+	("expiration", "21600")
+)
+
+
+// [Full description of the service](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Generate_Token/02r3000001w0000000/)
+
+@name("Get Admin Server Token")
+POST "https://{{host}}/arcgis/admin/generateToken"
+data({
+    "username": [
+        "{{username}}"
+    ],
+    "password": [
+        "{{password}}"
+    ],
+    "client": [
+        "{{client}}"
+    ],
+    "referer": [
+        "{{referer}}"
+    ],
+    "expiration": [
+        "{{expiration}}"
+    ]
+})
+
+
+// [Más info](https://developers.arcgis.com/authentication/)
+
+@name("Get ArcGIS Online Token (using credentials)")
+POST "https://www.arcgis.com/sharing/rest/oauth2/token/"
+files(
+	("client_id", "{{client_id}}"),
+	("client_secret", "{{client_secret}}"),
+	("grant_type", "client_credentials"),
+	("expiration", "60")
+)
+
+
+@name("Get ArcGIS Online Token (using refresh_token)")
+POST "https://www.arcgis.com/sharing/rest/oauth2/token"
+files(
+	("client_id", "{{client_id}}"),
+	("grant_type", "refresh_token"),
+	("refresh_token", "{{refresh_token}}")
+)
+
+
+// [Más info](https://developers.arcgis.com/authentication/)
+
+@name("Get Portal for ArcGIS Token")
+POST "https://{{host}}/portal/sharing/rest/oauth2/token/"
+files(
+	("client_id", "{{client_id}}"),
+	("client_secret", "{{client_secret}}"),
+	("grant_type", "client_credentials"),
+	("expiration", "3600")
+)
+
+
+

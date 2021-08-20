@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d3f2edc-e0e7-4b26-a712-076a7e2780a4.postman_collection.json
+
+// ### List all AlertsnnPage through a list of all your alerts. You can specify the maximum number of results to be retuned, and from which result to start.n
+
+@name("Get Alerts")
+GET "https://{{baseUrl}}/alerts"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// ### Retrieve an AlertnnGet a single alert with its information by specifying its ```alert_id```.n
+
+@name("Get Alerts Alert")
+GET "https://{{baseUrl}}/alerts/:alert_id"
+
+
+

@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93f02d77-d29c-4b5c-8f98-5e285995302f.postman_collection.json
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casestatus/sn78787878/content.pdf
+
+@name(" Returns the content of a Document in PDF format.")
+GET "https://{{baseUrl}}/casestatus/:caseid/content.pdf"
+
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casestatus/sn78787878/content.zip
+
+@name(" Returns the content of a Document in ZIP format.")
+GET "https://{{baseUrl}}/casestatus/:caseid/content.zip"
+
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casestatus/sn78787878/content.html
+
+@name(" Returns the content of a Document in HTML format.")
+GET "https://{{baseUrl}}/casestatus/:caseid/content.html"
+
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casestatus/sn78787878/download.zip
+
+@name("Returns trademark bibliographic information in ZIP format.")
+GET "https://{{baseUrl}}/casestatus/:caseid/download.zip"
+
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/casestatus/sn78787878/download.pdf
+
+@name("Returns trademark bibliographic information in PDF format.")
+GET "https://{{baseUrl}}/casestatus/:caseid/download.pdf"
+
+
+@name("Returns to the user the Trademark data for a specific serial number serialized into ST96 compliant XML.")
+GET "https://{{baseUrl}}/casestatus/:caseid/info"
+
+
+@name("Returns to the user the Trademark data for a specific serial number serialized into ST96 compliant XML.")
+GET "https://{{baseUrl}}/casestatus/:caseid/v1/info"
+
+
+

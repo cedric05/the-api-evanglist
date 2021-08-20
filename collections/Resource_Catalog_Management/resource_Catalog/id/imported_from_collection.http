@@ -1,0 +1,83 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-175bce79-8928-437d-8db8-aad1709514f2.postman_collection.json
+
+// This operation retrieves a ResourceCatalog entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a ResourceCatalog by ID")
+GET "https://{{baseUrl}}/resourceCatalog/:id"
+? "fields"= "tempor sint Ut"
+
+
+// This operation updates partially a ResourceCatalog entity.
+
+@name("Updates partially a ResourceCatalog")
+PATCH "https://{{baseUrl}}/resourceCatalog/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "proident in adipisicing quis",
+    "lastUpdate": "1943-02-13T23:54:21.843Z",
+    "lifecycleStatus": "sit minim dolor",
+    "name": "proident velit esse",
+    "version": "cupidatat anim aliquip",
+    "category": [
+        {
+            "id": "commodo exercitation ut cillum",
+            "href": "laborum aute ea",
+            "name": "irure consequat",
+            "version": "qui eu elit",
+            "@baseType": "aute dolor",
+            "@schemaLocation": "https://O.lqpJgO6lVGDcy2Filc.brY-n.IxYaRJS6T13",
+            "@type": "ad exercitation qui mollit",
+            "@referredType": "aliqua Ut consectetur"
+        },
+        {
+            "id": "incididunt labore proident",
+            "href": "in nulla ullamco laboris",
+            "name": "ipsum dolore do dolor occaecat",
+            "version": "ex ad minim et enim",
+            "@baseType": "nostrud mollit Ut officia",
+            "@schemaLocation": "http://BvWUBXgSCpmMEdicIBiTYUUtYFey.lgysnUB-6-9g",
+            "@type": "sed",
+            "@referredType": "dolore incididunt do"
+        }
+    ],
+    "relatedParty": [
+        {
+            "@referredType": "nisi enim sed eiusmod",
+            "id": "exercitation consectetur quis",
+            "href": "deserunt non",
+            "name": "aute voluptate",
+            "role": "consectetur et qui est",
+            "@baseType": "do nulla dolore ipsum magna",
+            "@schemaLocation": "https://AyEqqfNMSuTDLaR.hbh.acGvSX3mPsTQb2bCKlcXn.CynLyjjMHepFacu1FB93r",
+            "@type": "aliqua aliquip in"
+        },
+        {
+            "@referredType": "deserunt et",
+            "id": "aute ad in tempor elit",
+            "href": "nostrud sunt pariatur dolore",
+            "name": "adipisicing aliquip",
+            "role": "commodo eiusmod cillum veniam",
+            "@baseType": "fugiat",
+            "@schemaLocation": "https://ReejAPqOmVhuUapQbqJhqREWpkzpmqdF.lpbzipf",
+            "@type": "proi"
+        }
+    ],
+    "validFor": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@baseType": "Excepteur in",
+    "@schemaLocation": "https://YwsGHpUrRyh.jzswhqX9pfqnq4Cqrh8rrFglOn,VUKRHvGB6w",
+    "@type": "tempor in eu cillum enim"
+})
+
+
+// This operation deletes a ResourceCatalog entity.
+
+@name("Deletes a ResourceCatalog")
+DELETE "https://{{baseUrl}}/resourceCatalog/:id"
+
+
+

@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cf05d8c7-fffb-4a7c-923b-c06517c2b783.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Enables or disables a user's two-factor authentication settings.
+// 
+//  **Note:** The workflow for two-factor authentication is as follows:<ol><li>[Send a verification code](ref:users-two-factor-enable).</li><li>[Validate the verification code](ref:users-two-factor-enable-verify).</li><li>[Configure two-factor authentication](ref:users-two-factor).</li></ol><p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Configure two-factor authentication ") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/users/:user_id/two-factor"
+"Content-Type": "application/json"
+json({
+    "email_enabled": false,
+    "sms_enabled": true,
+    "sms_phone": "+155555555555"
+})
+
+
+// Sends a one-time verification code to the user's phone number to start the process of enabling two-factor authentication.
+// 
+//  **Note:** The workflow for two-factor authentication is as follows:<ol><li>[Send a verification code](ref:users-two-factor-enable).</li><li>[Validate the verification code](ref:users-two-factor-enable-verify).</li><li>[Configure two-factor authentication](ref:users-two-factor).</li></ol><p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Send verification code") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users/:user_id/two-factor/send-verification"
+"Content-Type": "application/json"
+json({
+    "sms_phone": "Ut labore aliqua sed amet"
+})
+
+
+// Validate the verification code sent to a phone number. If this request is successful, it enables two-factor authentication for the specified user.
+// 
+//  **Note:** The workflow for two-factor authentication is as follows:<ol><li>[Send a verification code](ref:users-two-factor-enable).</li><li>[Validate the verification code](ref:users-two-factor-enable-verify).</li><li>[Configure two-factor authentication](ref:users-two-factor).</li></ol><p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Validate verification code") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users/:user_id/two-factor/verify-code"
+"Content-Type": "application/json"
+json({
+    "verification_code": "est laboris"
+})
+
+
+

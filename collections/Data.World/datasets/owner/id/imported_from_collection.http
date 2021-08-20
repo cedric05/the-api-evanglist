@@ -1,0 +1,220 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Delete a dataset and associated data. This operation cannot be undone, but you may recreate the dataset using the same id.
+
+@name("Delete a dataset") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/datasets/:owner/:id"
+
+
+// Retrieve a dataset. The definition of the dataset will be returned, not its data. Use `GET:/download/{owner}/{id}` or `GET:/file_download/{owner}/{id}/{file}` to retrieve the original files content, or `POST:/sql/{owner}/{id}` or `POST:/sparql/{owner}/{id}` to query the data.
+
+@name("Retrieve a dataset") : "base-inherit-auth"
+GET "https://{{baseUrl}}/datasets/:owner/:id"
+
+
+// Update an existing dataset. Only elements or files included in the request will be updated. All omitted elements or files will remain untouched.
+
+@name("Update a dataset") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/datasets/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "description": "cons",
+    "files": [
+        {
+            "name": ";w^`",
+            "description": "in i",
+            "labels": [
+                "visualization",
+                "report"
+            ],
+            "source": {
+                "authorization": {
+                    "type": "*5u",
+                    "credentials": "hD>I"
+                },
+                "credentials": {
+                    "user": "q",
+                    "password": "i"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "0-s ",
+                    "site": "sktj",
+                    "id": "urn:uuid:93a486b5-a199-b41d-a40c-d059fdbffba8"
+                },
+                "requestEntity": "anim",
+                "requestHeaders": {},
+                "url": "stre"
+            }
+        },
+        {
+            "name": "Ms M",
+            "description": "quis",
+            "labels": [
+                "report",
+                "documentation"
+            ],
+            "source": {
+                "authorization": {
+                    "type": "\\",
+                    "credentials": "Tpr "
+                },
+                "credentials": {
+                    "user": "el",
+                    "password": "i"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "i--u",
+                    "site": "rpjd",
+                    "id": "c2a90cbd-eec3-49c5-322b-9d84b6c68fd9"
+                },
+                "requestEntity": "sed",
+                "requestHeaders": {},
+                "url": "stre"
+            }
+        }
+    ],
+    "license": "CC BY-NC-ND",
+    "summary": "moll",
+    "tags": [
+        "FG7c",
+        " 　ur"
+    ],
+    "title": "cill",
+    "visibility": "OPEN",
+    "properties": {}
+})
+
+
+// Create or replace a dataset with a given id. If a dataset exists with the same id, this call will reset such dataset and all the data contained in it.
+
+@name("Create / Replace a dataset") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/datasets/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "title": "ut l",
+    "visibility": "PRIVATE",
+    "description": "in L",
+    "files": [
+        {
+            "name": "LsjG",
+            "source": {
+                "authorization": {
+                    "type": "&smM",
+                    "credentials": "\"dL8"
+                },
+                "credentials": {
+                    "user": "eni",
+                    "password": "e"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "p--z",
+                    "site": "sqsn",
+                    "id": "urn:uuid:a2fc2bbc-01b2-8a6a-56c4-a684f6d51b84"
+                },
+                "requestEntity": "m",
+                "requestHeaders": {},
+                "url": "http"
+            },
+            "description": "Ut l",
+            "labels": [
+                "script",
+                "visualization"
+            ]
+        },
+        {
+            "name": "@]3f",
+            "source": {
+                "authorization": {
+                    "type": "v_",
+                    "credentials": "F230"
+                },
+                "credentials": {
+                    "user": "ei",
+                    "password": "eu a"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "hk--",
+                    "site": "t10n",
+                    "id": "d6ed0727-cba1-88bf-287a-90ed191c55cb"
+                },
+                "requestEntity": "e",
+                "requestHeaders": {},
+                "url": "ftp:"
+            },
+            "description": "proi",
+            "labels": [
+                "report",
+                "raw data"
+            ]
+        }
+    ],
+    "license": "CDLA-Sharing-1.0",
+    "summary": "culp",
+    "tags": [
+        "wvON",
+        " "
+    ],
+    "properties": {}
+})
+
+
+// Add tables from an established virtual connection. For increased security, endpoints that interact with external connection sources require an Enterprise Admin Token. This token can be found under [Advanced Settings](https://data.world/settings/advanced). To learn more about the virtual connections data.world supports, please visit our [help protal](https://help.data.world/hc/en-us/sections/360009504254-Create-and-manage-virtual-connections).
+
+@name("Add live or extracted tables from a virtual connection") : "base-inherit-auth"
+POST "https://{{baseUrl}}/datasets/:owner/:id/tables"
+"Content-Type": "application/json"
+json({
+    "tables": [
+        {
+            "name": "0[31",
+            "description": "et i",
+            "source": {
+                "databaseSource": {
+                    "owner": "8--p",
+                    "id": "urn:uuid:f98929d1-baeb-2d0a-3690-120a08773473"
+                },
+                "tableSpec": {
+                    "database": "ad D",
+                    "schema": "Lore",
+                    "table": "nost",
+                    "tableType": "EXTRACT"
+                }
+            }
+        },
+        {
+            "name": "~+ ~",
+            "description": "aliq",
+            "source": {
+                "databaseSource": {
+                    "owner": "l-u3",
+                    "id": "urn:uuid:882f2850-2e03-67ae-a26e-b5fabb01b0f4"
+                },
+                "tableSpec": {
+                    "database": "Exce",
+                    "schema": "in l",
+                    "table": "Exce",
+                    "tableType": "VIRTUAL"
+                }
+            }
+        }
+    ]
+})
+
+
+

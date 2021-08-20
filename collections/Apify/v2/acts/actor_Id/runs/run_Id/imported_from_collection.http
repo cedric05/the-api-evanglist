@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets an object that contains all the details about a specific run of an actor.nnBy passing the optional `waitForFinish=1` parameter the API endpoint will synchronously wait for the build to finish.nThis is useful to avoid periodic polling when waiting for actor build to complete.nnThis endpoints do not require the authentication token, the calls are authenticated using a hard-to-guess ID of the run.
+
+@name("Get run")
+GET "https://{{baseUrl}}/v2/acts/:actorId/runs/:runId"
+? "waitForFinish"= "<string>"
+? "token"= "<string>"
+
+
+// Aborts an actor run and returns an object that contains all the details about the run.nOnly runs that are starting or running are aborted. For runs with status `FINISHED`, `FAILED`, `ABORTING` and `TIMED-OUT` this call does nothing.
+
+@name("Abort run")
+POST "https://{{baseUrl}}/v2/acts/:actorId/runs/:runId/abort"
+? "token"= "<string>"
+
+
+// Transforms an actor run into a run of another actor with a new input.nThis is useful if you want to use another actor to finish the worknof your current actor run, without the need to create a completely new run and waiting for its finish.nFor the users of your actors, the metamorph operation is transparent, they will just see your actor got the work done.nnInternally, the system stops the Docker container corresponding to the actor runnand starts a new container using a different Docker image.
+
+@name("Metamorph run")
+POST "https://{{baseUrl}}/v2/acts/:actorId/runs/:runId/metamorph"
+? "token"= "<string>"
+? "targetActorId"= "<string>"
+? "build"= "<object>"
+
+
+// Resurrects a finished actor run and returns an object that contains all the details about the resurrected run.nOnly finished runs, i.e. runs with status `FINISHED`, `FAILED`, `ABORTED` and `TIMED-OUT` can be resurrected.nRun status will be updated to RUNNING and its container will be restarted with the same storagesn(the same behaviour as when the run gets migrated to the new server).nnFor more information, see [Actor docs](https://apify.com/docs/actor#run-resurrect).
+
+@name("Resurrect run")
+POST "https://{{baseUrl}}/v2/acts/:actorId/runs/:runId/resurrect"
+? "token"= "<string>"
+
+
+

@@ -1,0 +1,66 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Create JSON Web Token (JWT)") : "base-inherit-auth"
+POST "https://{{baseUrl}}/auth/jwt-token-auth/"
+"Content-Type": "application/json"
+json({
+    "username": "<string>",
+    "password": "<string>"
+})
+
+
+// Obtains a new JSON Web Token using existing user credentials.
+
+@name("Refresh a JSON Web Token (JWT)") : "base-inherit-auth"
+POST "https://{{baseUrl}}/auth/jwt-token-refresh/"
+"Content-Type": "application/json"
+json({
+    "token": "<string>"
+})
+
+
+// Checks veraciy of token.
+
+@name("Validate JSON Web Token (JWT)") : "base-inherit-auth"
+POST "https://{{baseUrl}}/auth/jwt-token-verify/"
+"Content-Type": "application/json"
+json({
+    "token": "<string>"
+})
+
+
+@name("oauth login") : "base-inherit-auth"
+GET "https://{{baseUrl}}/auth/login/:provider/"
+
+
+// User registration requires confirming email address to activate user.
+
+@name("Register a user") : "base-inherit-auth"
+POST "https://{{baseUrl}}/auth/register/"
+"Content-Type": "application/json"
+json({
+    "username": "<string>",
+    "password": "<string>",
+    "profile": {
+        "avatar": "<byte>",
+        "bio": "<string>",
+        "company": "<string>",
+        "location": "<string>",
+        "timezone": "<string>",
+        "url": "<string>"
+    },
+    "email": "<string>",
+    "first_name": "<string>",
+    "last_name": "<string>"
+})
+
+
+

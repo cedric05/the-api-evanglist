@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8f2c3301-6af0-4ad2-921e-7df6902543e4.postman_collection.json
+
+// List available guides..
+
+@name("List available guides.")
+GET "https://{{baseUrl}}/guide"
+
+
+// Execute guide on given ehr ids.
+
+@name("Execute guide on given EHR IDs")
+GET "https://{{baseUrl}}/guide/execute/:guideId/:ehrIds"
+"Authorization": "<>"
+"Ehr": "<>"
+? "persist"= "<>"
+
+
+// Uploads new guide definition..
+
+@name("Uploads new guide definition.")
+POST "https://{{baseUrl}}/guide/upload"
+
+
+

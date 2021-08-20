@@ -1,0 +1,60 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0fafc69d-2f0a-4697-977f-95c74bbbe329.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Ocp-Apim-Subscription-Key": "{{apiKey}}"
+
+
+@name("Pull Tags from Github") : "base-inherit-auth"
+GET "http://vocabulary.specificationtoolbox.com/apis/specifications/"
+
+
+// List public events
+
+@name("Pull News from Github") : "base-inherit-auth"
+GET "https://api.github.com/repos/:owner/:repo/contents/:path"
+"Authorization": "Bearer {{github_token}}"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+data('{
+  "message": "Updating README.md",
+  "committer": {
+    "name": "Monalisa Octocat",
+    "email": "octocat@github.com"
+  },
+  "content": "bXkgbmV3IGZpbGUgY29udGVudHM="
+}')
+
+
+@name("Search for Keyword on Bing") : "base-inherit-auth"
+GET "https://api.cognitive.microsoft.com/bing/v7.0/news/search"
+? "count"= "50"
+? "offset"= "0"
+? "q"= "{{keyword}}"
+? "responseFilter"= "Webpages"
+? "setLang"= "en"
+
+
+// List public events
+
+@name("Publish News to Github") : "base-inherit-auth"
+PUT "https://api.github.com/repos/:owner/:repo/contents/:path"
+"Authorization": "Bearer {{github_token}}"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+data('{
+  "message": "Updating the News",
+  "sha": "{{news_sha}}",
+  "committer": {
+    "name": "Kin Lane",
+    "email": "kinlane@gmail.com"
+  },
+  "content": "{{news_encoded}}"
+}')
+
+
+

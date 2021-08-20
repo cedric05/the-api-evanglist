@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-22a10f2d-8624-488d-95c0-85a6c45216c5.postman_collection.json
+
+// Performs the specified operation against the device type. The followingnvalues can be specified for the operation property:nn  - deactivate-configurationnnThe **deactivate-configuration** operation will remove any activatenconfiguration that is currently associated with the device type. If anyninstances of the device type exist, the state for those devices will bendeleted as a result of performing the **deactivate-configuration**noperation. The **deactivate-configuration** operation will fail if
+
+@name("Perform an operation against a device type")
+PATCH "https://{{baseUrl}}/device/types/:typeId"
+
+
+// Retrieve the active physical interface that has been associated with thendevice type.  At least one active physical interface must be associatednwith the device type before any mappings can be defined that willngenerate state for the device.n
+
+@name("Get the active physical interface associated with the device typen")
+GET "https://{{baseUrl}}/device/types/:typeId/physicalinterface"
+
+
+// Retrieve the list of active logical interfaces that have beennassociated with the device type.  At least one logical interfacenmust be associated with the device type before any mappings can bendefined that will generate state for the device.n
+
+@name("Get the list of active logical interfaces associated with the devicentypen")
+GET "https://{{baseUrl}}/device/types/:typeId/logicalinterfaces"
+
+
+// Retrieve the current state of the device with the specified id.n
+
+@name("Get the state for the device with the specified id")
+GET "https://{{baseUrl}}/device/types/:typeId/devices/:deviceId/state/:logicalInterfaceId"
+
+
+

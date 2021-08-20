@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Upload a plugin compressed in a .tar.gz file. Plugins and plugin uploads must be enabled in the server's config settings.nn##### PermissionsnMust have `manage_system` permission.nn__Minimum server version__: 4.4n
+
+@name("Upload plugin")
+POST "https://{{baseUrl}}/plugins"
+
+
+// Get a list of web app plugins installed and activated on the server.nn##### PermissionsnNo permissions required.nn__Minimum server version__: 4.4n
+
+@name("Get webapp plugins")
+GET "https://{{baseUrl}}/plugins/webapp"
+
+
+

@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d879d2e1-1162-48e4-8e1e-4eef33d41820.postman_collection.json
+
+// Save a model type by model type definition provided.
+
+@name("Save a model type")
+POST "http://{{host}}/api/v1/model-type/"
+basicauth("ccsdkapps", "ccsdkapps")
+json({
+    "modelName": "test",
+    "derivedFrom": "test",
+    "definitionType": "data_type",
+    "definition": {},
+    "description": "Some test",
+    "version": "1.0",
+    "tags": "test",
+    "updatedBy": "test"
+})
+
+
+// Retrieve a list of model types by definition type provided.
+
+@name("Retrieve a list of model types")
+GET "http://{{host}}/api/v1/model-type/by-definition/data_type"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Retrieve a list of model types by tags provided.
+
+@name("Retrieve a list of model types")
+GET "http://{{host}}/api/v1/model-type/search/test"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Retrieve a model type by name provided.
+
+@name("Retrieve a model type")
+GET "http://{{host}}/api/v1/model-type/test"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Remove a model type by name provided.
+
+@name("Remove a model type")
+DELETE "http://{{host}}/api/v1/model-type/test"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+

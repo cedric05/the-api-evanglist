@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// nA paginated list of addons connected to the given node or project.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of at most 10 addon objects. Each resource in the array is a separate addon object and contains the full representation of the addon, meaning additional requests to a addon's detail view are not necessary.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
+
+@name("List all addons")
+GET "https://{{baseUrl}}/nodes/:node_id/addons/"
+
+
+

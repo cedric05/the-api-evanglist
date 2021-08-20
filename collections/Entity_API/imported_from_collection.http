@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-756513c1-0e93-424c-ab4a-3eae09bd1c8f.postman_collection.json
+
+// Get contour based on serviceType (TV, FM, AM), idType (callsign, applicationid, fileNumber, antennaid), and idValue. Response returned in GeoJSON, JSONP, Shapefile, KML, GML, CSV.
+
+@name("Get Contour by Service Type")
+GET "https://{{baseUrl}}/entity.{{format}}"
+? "serviceType"= "<string>"
+? "callsign"= ""
+? "facilityId"= ""
+? "applicationId"= ""
+? "nradial"= ""
+? "field"= ""
+? "curve"= ""
+? "pop"= "false"
+? "area"= "false"
+? "src"= ""
+
+
+

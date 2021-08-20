@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0d968f48-44c0-4886-b890-607a7e856a91.postman_collection.json
+
+// Obtain entry list information for NASCAR.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain entry list information for NASCAR.  NOTE:  ...")
+GET "https://{{baseUrl}}/nascar-ot3/:nascar_series/races/:race_id/entry_list{{format}}"
+
+
+// Obtain practice leaderboard information for NASCAR.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain practice leaderboard information for NASCAR...")
+GET "https://{{baseUrl}}/nascar-ot3/:nascar_series/races/:race_id/practices{{format}}"
+
+
+// Obtain qualifying leaderboard information for NASCAR.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain qualifying leaderboard information for NASC...")
+GET "https://{{baseUrl}}/nascar-ot3/:nascar_series/races/:race_id/qualifying{{format}}"
+
+
+// Obtain starting grid information for NASCAR.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain starting grid information for NASCAR.  NOTE...")
+GET "https://{{baseUrl}}/nascar-ot3/:nascar_series/races/:race_id/starting_grid{{format}}"
+
+
+// Obtain race leaderboard information for NASCAR.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain race leaderboard information for NASCAR.  N...")
+GET "https://{{baseUrl}}/nascar-ot3/:nascar_series/races/:race_id/results{{format}}"
+
+
+

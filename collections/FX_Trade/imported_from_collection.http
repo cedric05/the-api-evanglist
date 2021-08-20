@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c82464a2-fcdd-46d3-a590-d76b1557b2bf.postman_collection.json
+
+// To invoke an API you must obtain an access token. The token obtained, together with the API key that you obtained from the developer portal during onboarding for sandbox, is required for every call to the FX Trade API.
+
+@name("Get Access Token")
+POST "https://{{baseUrl}}/token.oauth2"
+
+
+// Returns the currency pairs for which a spot or outright rate, quote, and order can be requested.
+
+@name("Get Allowed Currency Pairs")
+GET "https://{{baseUrl}}/allowedcurrencypairs"
+
+
+// Returns the settlement account group identifiers that are used to control the settlement of an amount for the FX spot, or outright trade, on the payment accounts at settlement date.
+
+@name("Get Settlement Account Groups")
+GET "https://{{baseUrl}}/settlementaccountgroups"
+
+
+

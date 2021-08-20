@@ -1,0 +1,2 @@
+This is a specification describing the Human Services Data API, using the
+Human Services Data Specification (HSDS). This proposed upgrade of HSDA is developed in accordance with both the approved 2.0 upgrade of HSDS.

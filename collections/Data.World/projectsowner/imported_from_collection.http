@@ -1,0 +1,105 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List projects that the currently authenticated user has access to, for the specified owner; when the project is open, or when project is private but has view/edit/manage permissions for the authenticated user
+
+@name("List projects for a specified owner") : "base-inherit-auth"
+GET "https://{{baseUrl}}/projects/:owner"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+
+
+// Create a new project.
+
+@name("Create a data project") : "base-inherit-auth"
+POST "https://{{baseUrl}}/projects/:owner"
+"Content-Type": "application/json"
+json({
+    "title": "labo",
+    "visibility": "PRIVATE",
+    "files": [
+        {
+            "name": "y% y",
+            "source": {
+                "authorization": {
+                    "type": "1Q/M",
+                    "credentials": "IIM "
+                },
+                "credentials": {
+                    "user": "e",
+                    "password": "D"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "vt--",
+                    "site": "dplp",
+                    "id": "urn:uuid:e0151894-3b43-d4e7-87fe-499ebb043243"
+                },
+                "requestEntity": "in ",
+                "requestHeaders": {},
+                "url": "ftps"
+            },
+            "description": "nisi",
+            "labels": [
+                "clean data",
+                "documentation"
+            ]
+        },
+        {
+            "name": "6d{w",
+            "source": {
+                "authorization": {
+                    "type": ".h=t",
+                    "credentials": "D9t7"
+                },
+                "credentials": {
+                    "user": "",
+                    "password": "iru"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "r-ur",
+                    "site": "n.v.",
+                    "id": "39f80607-65fb-688c-f320-1cec3d0d5f5b"
+                },
+                "requestEntity": "lab",
+                "requestHeaders": {},
+                "url": "ftps"
+            },
+            "description": "dese",
+            "labels": [
+                "clean data",
+                "script"
+            ]
+        }
+    ],
+    "license": "Public Domain",
+    "linkedDatasets": [
+        {
+            "id": "pq-z-w-vdw",
+            "owner": "21-r9ah0"
+        },
+        {
+            "id": "h-2t",
+            "owner": "77lh--j"
+        }
+    ],
+    "objective": "sed ",
+    "summary": "sit ",
+    "tags": [
+        "﻿6 P",
+        "q\tl"
+    ]
+})
+
+
+

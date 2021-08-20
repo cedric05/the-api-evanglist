@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Retrieve a paged set of References belonging to a Saved Search using a GET request with the search id and paging parameters,
+yielding results with additional composite detail.")
+GET "https://{{baseUrl}}/rest/SavedSearch/Composite/:id"
+? "top"= "<integer>"
+? "page"= "<integer>"
+? "orderby"= "<string>"
+? "sort"= "<string>"
+
+
+@name("Retrieve a paged set of References belonging to a Saved Search using a POST request
+where the collection is filtered by one or more unit codes as submitted in the request body,
+and yields results with additional composite detail.")
+POST "https://{{baseUrl}}/rest/SavedSearch/Composite/:id"
+"Content-Type": "application/x-www-form-urlencoded"
+? "top"= "<integer>"
+? "page"= "<integer>"
+? "orderby"= "<string>"
+? "sort"= "<string>"
+data({
+    "0": [
+        "<string>"
+    ],
+    "1": [
+        "<string>"
+    ]
+})
+
+
+

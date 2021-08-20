@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-37b08a1e-666d-477b-b7f8-ac0474a9fcb3.postman_collection.json
+
+// Returns all your shares and the containing files:
+
+@name("Shares")
+GET "https://{{baseUrl}}/1/shares"
+? "accesstoken"= "<>"
+
+
+// Creates a new share. The request body is optional but can look like:
+
+@name("Shares Create")
+POST "https://{{baseUrl}}/1/shares/create"
+? "accesstoken"= "<>"
+
+
+

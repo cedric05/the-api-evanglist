@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Returns the current version of WebServices.
+
+@name("GetVersion")
+POST "https://{{baseUrl}}/General/GetVersion"
+
+
+// Returns all available valid countries.
+
+@name("GetCountries")
+POST "https://{{baseUrl}}/General/GetCountries"
+? "country_id"= "<integer>"
+
+
+// Returns all available valid time zones.
+
+@name("GetTimeZones")
+POST "https://{{baseUrl}}/General/GetTimeZones"
+? "timezone_id"= "<integer>"
+
+
+

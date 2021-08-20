@@ -1,0 +1,130 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6327bead-13ec-43cc-82dd-10992b0238ae.postman_collection.json
+
+@name("Get list of Categories")
+GET "https://{{baseUrl}}/categories"
+"user-key": "ipsum sunt labore ex"
+
+
+@name("Find the Zomato ID and other details for a city.")
+GET "https://{{baseUrl}}/cities"
+"user-key": "ipsum sunt labore ex"
+? "q"= "ipsum sunt labore ex"
+? "lat"= "-77596659.4184915"
+? "lon"= "-77596659.4184915"
+? "city_ids"= "ipsum sunt labore ex"
+? "count"= "56625527"
+
+
+// List of all restaurants listed in any particular Zomato Collection can be obtained using the '/search' API with Collection ID and Zomato City ID as the input.
+
+@name("Returns Zomato Restaurant Collections in a City.")
+GET "https://{{baseUrl}}/collections"
+"user-key": "ipsum sunt labore ex"
+? "lat"= "-77596659.4184915"
+? "lon"= "-77596659.4184915"
+? "city_id"= "ipsum sunt labore ex"
+? "count"= "56625527"
+
+
+// List of all restaurants serving a particular cuisine can be obtained using '/search' API with cuisine ID and location details.
+
+@name("Get a list of all cuisines of restaurants listed in a city.")
+GET "https://{{baseUrl}}/cuisines"
+"user-key": "ipsum sunt labore ex"
+? "lat"= "-77596659.4184915"
+? "lon"= "-77596659.4184915"
+? "city_id"= "ipsum sunt labore ex"
+
+
+// List of all restaurants categorized under a particular restaurant type can obtained using /Search API with Establishment ID and location details as inputs.
+
+@name("Get a list of restaurant types in a city.")
+GET "https://{{baseUrl}}/establishments"
+"user-key": "ipsum sunt labore ex"
+? "lat"= "-77596659.4184915"
+? "lon"= "-77596659.4184915"
+? "city_id"= "ipsum sunt labore ex"
+
+
+// Get Foodie and Nightlife Index, list of popular cuisines and nearby restaurants around the given coordinates.
+
+@name("Get location details based on coordinates")
+GET "https://{{baseUrl}}/geocode"
+"user-key": "ipsum sunt labore ex"
+? "lat"= "-77596659.4184915"
+? "lon"= "-77596659.4184915"
+
+
+// Search for Zomato locations by keyword. Provide coordinates to get better search results.
+
+@name("Search for locations.")
+GET "https://{{baseUrl}}/locations"
+"user-key": "ipsum sunt labore ex"
+? "query"= "56625527"
+? "lat"= "-77596659.4184915"
+? "lon"= "-77596659.4184915"
+? "cunt"= "56625527"
+
+
+// Get Foodie Index, Nightlife Index, Top Cuisines and Best rated restaurants in a given location
+
+@name("Get Zomato location details.")
+GET "https://{{baseUrl}}/location_details"
+"user-key": "ipsum sunt labore ex"
+? "entity_id"= "56625527"
+? "entity_type"= "ipsum sunt labore ex"
+
+
+// Get detailed restaurant information using Zomato restaurant ID. Partner Access is required to access photos and reviews.
+
+@name("Get restaurant details.")
+GET "https://{{baseUrl}}/restaurant"
+"user-key": "ipsum sunt labore ex"
+? "res_id"= "56625527"
+
+
+// Get daily menu using Zomato restaurant ID.
+
+@name("Get daily menu of a restaurant")
+GET "https://{{baseUrl}}/dailymenu"
+"user-key": "ipsum sunt labore ex"
+? "res_id"= "56625527"
+
+
+// Get restaurant reviews using the Zomato restaurant ID. Only 5 latest reviews are available under the Basic API plan.
+
+@name("Get restaurant reviews.")
+GET "https://{{baseUrl}}/reviews"
+"user-key": "ipsum sunt labore ex"
+? "res_id"= "56625527"
+? "start"= "56625527"
+? "count"= "56625527"
+
+
+// The location input can be specified using Zomato location ID or coordinates. Cuisine / Establishment / Collection IDs can be obtained from respective api calls. Get up to 100 restaurants by changing the 'start' and 'count' parameters with the maximum value of count being 20. Partner Access is required to access photos and reviews.
+
+@name("Search for restaurant")
+GET "https://{{baseUrl}}/search"
+"user-key": "ipsum sunt labore ex"
+? "entity_id"= "56625527"
+? "entity_type"= "available"
+? "entity_type"= "available"
+? "q"= "ipsum sunt labore ex"
+? "lat"= "-77596659.4184915"
+? "lon"= "-77596659.4184915"
+? "start"= "56625527"
+? "count"= "56625527"
+? "cuisine"= "ipsum sunt labore ex"
+? "radius"= "-77596659.4184915"
+? "establishment_type"= "ipsum sunt labore ex"
+? "collection_id"= "ipsum sunt labore ex"
+? "category"= "ipsum sunt labore ex"
+? "sort"= "available"
+? "sort"= "available"
+? "order"= "available"
+? "order"= "available"
+
+
+

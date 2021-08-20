@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-05306a6b-69c2-4209-a2df-e8045de14831.postman_collection.json
+
+// add Assignment(s)
+
+@name("/addAssignment")
+POST "https://{{baseUrl}}/addAssignment"
+"jwt": "dolore aliqua"
+"Content-Type": "application/json"
+data('"non voluptate velit nulla Lorem"')
+
+
+// get Assignment(s)
+
+@name("/getCurrent")
+POST "https://{{baseUrl}}/getCurrent"
+"jwt": "dolore aliqua"
+"Content-Type": "application/json"
+data('"in sint tempor ullamco sit"')
+
+
+// get Assignment(s) by User
+
+@name("/getCurAsgbyUser")
+POST "https://{{baseUrl}}/getCurAsgbyUser"
+"jwt": "dolore aliqua"
+"Content-Type": "application/json"
+data('"Ut pariatur est"')
+
+
+// get Assignment history
+
+@name("/getAssignmentsHis")
+POST "https://{{baseUrl}}/getAssignmentsHis"
+"jwt": "dolore aliqua"
+"Content-Type": "application/json"
+data('"consequat ullamco"')
+
+
+// edit Assignments
+
+@name("/editAssignments")
+POST "https://{{baseUrl}}/editAssignments"
+"jwt": "dolore aliqua"
+"Content-Type": "application/json"
+data('"in cupidatat fugiat"')
+
+
+// delete Assignments
+
+@name("/deleteAssignments")
+POST "https://{{baseUrl}}/deleteAssignments"
+"jwt": "dolore aliqua"
+"Content-Type": "application/json"
+data('"exercitation sint pariatur"')
+
+
+

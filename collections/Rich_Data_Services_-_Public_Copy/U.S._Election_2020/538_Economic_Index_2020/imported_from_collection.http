@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2946480c-e32a-46d0-b716-9186ddb26e01.postman_collection.json
+
+// This request returns the data product from the RDS API. It contains descriptive properties such as the data product name, label, description, a citation of the source of the data, provenance information, when the product was last updated, and any additional notes that may be needed to further understand the data or how to use it.
+
+@name("Data Product Overview")
+GET "https://public.richdataservices.com/rds/api/catalog/us_election_2020/538_economic_index"
+
+
+// This request returns the data dictionary for the data product. The data dictionary is a simple listing of all the variables that make up the data product. This should include descriptive properties of each variable including its name, label, description, question text (if captured as part of a survey / questionnare) and any associated classification references. This is not meant to provide a detailed view of any particular variable, but a general overview of the variables that are available as part of the product. 
+
+@name("Data Dictionary")
+GET "https://public.richdataservices.com/rds/api/catalog/us_election_2020/538_economic_index/variables"
+
+
+// This request returns detailed variable information for **model**. The variable ID or URI can be used in the path to get the details for any variable in the data product.
+
+@name("Variable Details - model")
+GET "https://public.richdataservices.com/rds/api/catalog/us_election_2020/538_economic_index/variable/model"
+
+
+// This query will select the first 25 variables and 25 records in the data product as a basic example of querying records. For a complete list of available parameters, please reference the <a href="https://documenter.getpostman.com/view/2220438/SzS5umZ3?version=latest#b11de492-633b-49cb-a422-47b90c0810dd" target="_blank">select query documentation</a>.
+
+@name("Select All")
+GET "https://public.richdataservices.com/rds/api/query/us_election_2020/538_economic_index/select"
+? "format"= "MTNA"
+? "limit"= "25"
+? "collimit"= "25"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Remove the plugin with the provided ID from the server. All plugin files are deleted. Plugins must be enabled in the server's config settings.nn##### PermissionsnMust have `manage_system` permission.nn__Minimum server version__: 4.4n
+
+@name("Remove plugin")
+DELETE "https://{{baseUrl}}/plugins/:plugin_id"
+
+
+// Activate a previously uploaded plugin. Plugins must be enabled in the server's config settings.nn##### PermissionsnMust have `manage_system` permission.nn__Minimum server version__: 4.4n
+
+@name("Activate plugin")
+POST "https://{{baseUrl}}/plugins/:plugin_id/activate"
+
+
+// Deactivate a previously activated plugin. Plugins must be enabled in the server's config settings.nn##### PermissionsnMust have `manage_system` permission.nn__Minimum server version__: 4.4n
+
+@name("Deactivate plugin")
+POST "https://{{baseUrl}}/plugins/:plugin_id/deactivate"
+
+
+

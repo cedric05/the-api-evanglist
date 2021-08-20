@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+@name("List IP Allowlist Entries")
+GET "https://{{baseUrl}}/v1/orgs/self/ip/allowlist"
+
+
+// Create a new entry to allow an IP address
+
+@name("Create IP Allowlist Network Policy")
+POST "https://{{baseUrl}}/v1/orgs/self/ip/allowlist"
+"Content-Type": "application/json"
+json({
+    "ip_address": "82.217.192.0/18",
+    "name": "Office",
+    "description": "Office IP address"
+})
+
+
+

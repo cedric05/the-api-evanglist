@@ -1,0 +1,146 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a5c85019-57b7-4777-a958-8626105bec65.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("", "")
+
+
+@name("Api Healthcheck") : "base-inherit-auth"
+GET "https://0.0.0.0/policy/api/v1/healthcheck"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+@name("Create MyAnalytic Policy Type") : "base-inherit-auth"
+POST "https://0.0.0.0/policy/api/v1/policytypes"
+basicauth("healthcheck", "zb!XztG34")
+"Accept": "application/yaml"
+"Content-Type": "application/yaml"
+data('tosca_definitions_version: tosca_simple_yaml_1_1_0
+policy_types:
+   onap.policies.Monitoring:
+      derived_from: tosca.policies.Root
+      version: 1.0.0
+      name: onap.policies.Monitoring
+      description: a base policy type for all policies that govern monitoring provisioning
+   onap.policies.monitoring.MyAnalytic:
+      derived_from: onap.policies.Monitoring
+      type_version: 1.0.0
+      version: 1.0.0
+      description: Example analytic
+      properties:
+         myProperty:
+            type: string
+            required: true')
+
+
+@name("Create policy1 MyAnalytic Policy") : "base-inherit-auth"
+POST "https://0.0.0.0/policy/api/v1/policytypes/onap.policies.monitoring.MyAnalytic/versions/1.0.0/policies"
+basicauth("healthcheck", "zb!XztG34")
+"Accept": "application/yaml"
+"Content-Type": "application/yaml"
+data('tosca_definitions_version: tosca_simple_yaml_1_1_0
+topology_template:
+   policies:
+     -
+       policy1:
+           type: onap.policies.monitoring.MyAnalytic
+           type_version: 1.0.0
+           version: 1.0.0
+           name: policy1
+           metadata:
+             policy-id: policy1
+             policy-version: 1.0.0
+           properties:
+             myProperty: value1
+             ')
+
+
+@name("PAP Healthcheck") : "base-inherit-auth"
+GET "https://0.0.0.0/policy/pap/v1/healthcheck"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+@name("PAP Get PDPs") : "base-inherit-auth"
+GET "https://0.0.0.0/policy/pap/v1/pdps"
+basicauth("healthcheck", "zb!XztG34")
+"Accept": "application/json"
+"Content-Type": "application/json"
+
+
+@name("Simple Deploy Policy - policy1") : "base-inherit-auth"
+POST "{https://0.0.0.0/policy/pap/v1/pdps/policies"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "policies": [
+        {
+            "policy-id": "policy1",
+            "policy-version": "1.0.0"
+        }
+    ]
+})
+
+
+@name("Xacml Healthcheck") : "base-inherit-auth"
+GET "https://0.0.0.0/policy/pdpx/v1/healthcheck"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+@name("Xacml Statistics") : "base-inherit-auth"
+GET "https://0.0.0.0/policy/pdpx/v1/healthcheck"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+@name("Xacml Decision - MyAnalytic policy-type") : "base-inherit-auth"
+POST "https://0.0.0.0/policy/pdpx/v1/decision"
+basicauth("healthcheck", "zb!XztG34")
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "ONAPName": "myName",
+    "ONAPComponent": "myComponent",
+    "ONAPInstance": "myInstanceId",
+    "requestId": "1",
+    "action": "configure",
+    "resource": {
+        "policy-type": "onap.policies.monitoring.MyAnalytic"
+    }
+})
+
+
+@name("Dmaap Simulator - Policy Update Notification")
+POST "http://localhost/events/POLICY-PDP-PAP"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "messageName": "PDP_STATE_CHANGE",
+    "requestId": "05d08a05-e182-46fa-a6d1-5500e52cd3e5",
+    "timestampMs": "1576598570797",
+    "name": "PamelaDragosh.local",
+    "pdpGroup": "defaultGroup",
+    "pdpSubgroup": "XacmlPdpGroup",
+    "state": "ACTIVE"
+})
+
+
+@name("Simple Undeploy Policy Copy") : "base-inherit-auth"
+DELETE "https://0.0.0.0/policy/pap/v1/pdps/policies/onap.policies.monitoring.MyAnalytic"
+basicauth("healthcheck", "zb!XztG34")
+"Accept": "application/json"
+"Content-Type": "application/json"
+
+
+

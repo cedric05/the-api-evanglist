@@ -1,0 +1,457 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Exchange a Basic Auth hash for a JWT token. Use the JWT token in every subsequent request to the API. Tokens are valid for 4 hours.
+
+@name("Get Token") : "base-inherit-auth"
+GET "https://{{baseUrl}}/gettoken"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Define the contracts held by the user. The held contracts are either used as input to refine other content or to enrich the contract data itself.
+
+@name("Contracts") : "base-inherit-auth"
+POST "https://{{baseUrl}}/contracts"
+"Content-Type": "application/json"
+json([
+    {
+        "insurer": "MyInsurance",
+        "policy-number": "123-123-123"
+    }
+])
+
+
+// This service is used for any calculation involving compound interest. It exposes a compound interest model defined by a time period with initial capital (`initial`), recurring savings amount (`recurring`), end capital (`targetvalue`) and interest rate (`interest`). As any of these can be calculated when the others are known, this endpoint can be flexibly used to find the missing parameter in various use cases. Here are the four main use cases:  
+// 
+//  * use case 1: calculate monthly savings amount (`recurring`) needed to reach a capital goal until a defined targetdate  
+// 
+//  * use case 2: calculate the capital (`targetvalue`) after a certain time period  
+// 
+//  * use case 3: calculate the needed initial capital (initial) to reach a defined capital goal after a defined time period  
+// 
+//  * use case 4: calculate the interest rate (`interest`) needed to go from an initial capital to a capital goal in a defined time period
+
+@name("Interest") : "base-inherit-auth"
+POST "https://{{baseUrl}}/interest"
+"Content-Type": "application/json"
+? "includeTimeseries"= "true"
+json({
+    "initial": 10000,
+    "startdate": "2019-10-02",
+    "targetdate": "2025-01-01",
+    "interest": 0.01,
+    "targetvalue": 18000
+})
+
+
+// This service is used for any calculation involving annuities. It exposes an annuity model defined by two time periods. First, an accumulation phase with an initial capital (`initial`), recurring savings (`recurring`), needed end capital after accumulation (`targetvalue`), initial date of the accumulation phase or savings (`startdate`) and last date of initial date of the accumulation phase or savings (this defaults to the estimated retirement entry date)(`targetdate`). Second, an annuitization phase with a recurring payout (`goal.recurring`). The interest (`interest`) rate can be defined and is taken to be constant over both periods. As any of these parameters can be calculated when the others are known, this endpoint can be flexibly used to find the missing parameter in various use cases. Here are the four main use cases:  
+// 
+//  * use case 1: calculate the initial amount (`recurring`) you need to save monthly if you want an annuity of a value for some years from the age of retirement  
+// 
+//  * use case 2: calculate the monthly annuity (`goal.recurring`) that you get from the age of retirement  
+// 
+//  * use case 3: calculate the interest rate (`interest`) needed to go from an initial capital to a defined monthly annuity in the annuitization phase
+
+@name("Annuities") : "base-inherit-auth"
+POST "https://{{baseUrl}}/goals/annuity"
+"Content-Type": "application/json"
+? "includeTimeseries"= "true"
+json({
+    "goal.recurring": 160,
+    "interest": 0.05,
+    "startdate": "2024-12-01",
+    "person.birthdate": "1989-10-22",
+    "person.gender": 1
+})
+
+
+// This service is used for any calculation regarding loans. It exposes a loan model defined by a time period with loan amount (`initial`), recurring loan repayment rate (`recurring`), remaining debt (`targetvalue`) and interest rate (`interest`). The time period can be specified in different ways: with a start date and a target date (`startdate`, `targetdate`), with a duration in months (`duration-months`) or with a duration in years (`duration-years`).  
+// 
+// | <div style=width:150px> __field__ </div> | <div style=width:300px> __description__ </div> |
+// | --- | --- |
+// | `initial` | loan amount |
+// | `recurring` | recurring loan repayment rate |
+// | `targetvalue` | remaining debt|
+// | `interest` | interest rate |
+// | `startdate` | start date of the loan |
+// | `targetdate` | date of reaching targetvalue |
+// | `duration-months` | duration of the loan in months |
+// | `duration-years` | duration of the loan in years |
+// | `periods-per-year` | number of recurring payments per year |  
+// 
+// As any of these can be calculated when the others are known, this endpoint can be flexibly used to find the missing parameter in various use cases. Here are the five main use cases:  
+// 
+//  * use case 1: calculate recurring loan repayment rate (`recurring`) needed to repay a loan in a defined time period  
+// 
+//  * use case 2: calculate the loan amount (`initial`) that one can get if he pays a defined recurring loan repayment rate in a defined time period  
+// 
+//  * use case 3: calculate the remaining debt (`targetvalue`) after a certain time period  
+// 
+//  * use case 4: calculate the interest rate (`interest`) needed to repay a loan in a defined time period  
+// 
+//  * use case 5: calculate the time period (`startdate`,`targetdate`,`duration-months`,`duration-years`) needed to repay a loan with a defined recurring loan repayment rate
+
+@name("Loans") : "base-inherit-auth"
+POST "https://{{baseUrl}}/loan"
+"Content-Type": "application/json"
+? "includeTimeseries"= "true"
+? "correctCashflowSign"= "true"
+json({
+    "initial": 100000,
+    "duration-years": 20,
+    "interest": 0.02625,
+    "targetvalue": 0
+})
+
+
+// This service analyzes scenarios for buying or renting. The scenarios are compared and create a decision basis for the questions "Should I rent or buy, which is better financially, can I afford it?". The service calculates the total costs of buying and renting for given price of the home, down payment, loan duration, planned years to live in the home and monthly renting costs. Based on the calculation of the costs it gives an recommendation to buy or to rent.  
+// 
+// The costs consist of 
+//  * initial costs: 
+//   * buy: down payment, closing costs
+//   * rent: security deposit, broker's fee 
+//  * recurring costs: 
+//   * buy: loan payments, maintenance costs 
+//   * rent: monthly rent 
+//  * opportunity costs: 
+//   * buy: how much you could have made if invested initial and recurring cost instead of buying your home 
+//   * rent: how much you could have made if invested initial and recurring cost instead of renting your home 
+//  * net proceeds 
+//   * buy: amount you receive from the sale of your home 
+//   * rent: return of the rental security deposit 
+// 
+// | <div style=width:150px> __field__ </div> | <div style=width:300px> __description__ </div> |
+// | --- | --- |
+// | `buy` | costs of buying scenario |
+// | `equilibrium` | monthly rent needed to get same total costs as in the buying scenario, corresponding costs of renting scenario|
+// | `rent` | costs of renting scenario |
+// | `recommendation` | recommendation if renting or buying is better |  
+// 
+//  These assumptions behind the model can be defined dynamically in the service or based on a default configuration. Example default values are: 
+//  * loan interest : 3% 
+//  * investment return rate: 2% 
+//  * inflation: 2.17% 
+//  * rent growth rate: 3% 
+//  * home price growth rate: 5.7% 
+//  * yearly maintenance costs (buying): 3% of home price 
+//  * one time fees (buying): 15% of home price 
+//  * one time fees (renting): 1 monthly rent 
+//  * security deposit (renting): 3 monthly rents 
+
+@name("Rent Or Buy") : "base-inherit-auth"
+POST "https://{{baseUrl}}/assets/rent-or-buy"
+"Content-Type": "application/json"
+json({
+    "object.home.value": 250000,
+    "object.home.down-payment": 50000,
+    "person.investment.loan.duration": 20,
+    "object.home.yearsplanned": 7,
+    "object.home.rent": 500
+})
+
+
+// This service capsules riskine's insurance-and-financial-specific natural language understanding model. It is available in `de` and `en`. Behind are several natural language models that can analyze intent, entity, and other tags from an open-ended text. The models are retrained perpetually with growing insurance- and finance-specific training data. The service is used for  
+// 
+//  - chatbots
+//  - media text analysis
+//  - E-Mail and other communication parsing
+
+@name("Natural Language Understanding (NLU)") : "base-inherit-auth"
+POST "https://{{baseUrl}}/model/parse"
+"Content-Type": "application/json"
+json({
+    "text": "Ich hätte gerne eine Unfallversicherung"
+})
+
+
+// This service is used to validate an address data set against the riskine address database. The service will return an array of matches from the database including an ID. It is intended to be used as a pre-validation of address parameters prior to using the other services. As the riskine algorithm takes into account elementary risk on a GPS-exact basis, posting validated addresses is important for exact calculation. Once matched, the ID `adresseid` can be used to quickly match the address in the future. The ID is the same across all services.  
+// 
+// The `/addresses` service was designed with the consideration in mind hat every client may have addresses of their users which are incomplete, contain typos or are generally written down in a non-standard way. Using this service, clients of the __riskine API__ could also implement validation routines to prompt their users with suggestions of correct addresses during the customer journey (As in the [riskine analysis](https://www.riskine.com/analyse)).  
+// 
+// Note a few things about usage:  
+// 
+//  * The result will always be a list of matches  
+// 
+//  * It is intended for clients to fill the parameters partially and display several matches to the user to choose from  
+// 
+//  * Address Parameters should be matched in order - `person.address.postcode`, `person.address.city`, `person.address.street`, `person.address.housenumber`  
+// 
+//  * The below table lists which kind of requests yield which kind of results  
+// 
+// | <div style=width:220px> __Input__ </div> | <div style=width:220px> __Output__ </div> | <div style=width:220px> __have to be matched exactly__ </div> |
+// | --- | --- | --- |
+// | `person.address.postcode` | `person.address.postcode`, `person.address.city` | - |
+// | `person.address.postcode`, `person.address.city`, `person.address.street` | `person.address.postcode`, `person.address.city`, `person.address.street` | `person.address.postcode`, `person.address.city` |
+// | `person.address.postcode`, `person.address.city`, `person.address.street`, `person.address.housenumber` | `person.address.postcode`, `person.address.city`, `person.address.street`, `person.address.housenumber` | `person.address.postcode`, `person.address.city`, `person.address.street` |
+
+@name("Addresses") : "base-inherit-auth"
+POST "https://{{baseUrl}}/addresses"
+"Content-Type": "application/json"
+json({
+    "person.address.city": "Wien",
+    "person.address.postcode": "1060",
+    "person.address.street": "Linke Wienzeile"
+})
+
+
+// Returns a list of industry sectors matching the search term.
+
+@name("Industry Sectors") : "base-inherit-auth"
+POST "https://{{baseUrl}}/industrysectors"
+"Content-Type": "application/json"
+? "locale"= "dolore"
+json({
+    "organization.company.type": "teaching assistant in"
+})
+
+
+// Returns a list of professions matching the search term.
+
+@name("Professions") : "base-inherit-auth"
+POST "https://{{baseUrl}}/professions"
+"Content-Type": "application/json"
+json({
+    "person.work.occupation": "teaching assistant in"
+})
+
+
+// This service exposes a gross/net tax model. Its most simple use case is as a gross net calculator. Given a job description and either net monthly or gross monthly income, this calculates the missing value in accordance with the law in the specified country. This service also indicates the annual income, 12 times monthly income, based on the gross or net monthly income.
+
+@name("Income") : "base-inherit-auth"
+POST "https://{{baseUrl}}/income"
+"Content-Type": "application/json"
+json({
+    "person.work.income.gross.monthly": 2500,
+    "person.work.professiontype": 1,
+    "person.family.incomedepending": [
+        2
+    ],
+    "person.birthdate": "1980-01-01",
+    "person.children": [
+        [
+            "2008-01-12",
+            0,
+            1
+        ]
+    ]
+})
+
+
+// This service provides peer comparisons in the form of statistical information on individual and household finances such as income, pension, savings, household spendings, living situation, spendings, etc. but also subjective topics like knowledge about financial products. Some of the parameters are dynamic, for example `income-comparison` (parameters of gross monthly income of people with similar gender and age and number of employees within same range as user). Others are static and give a comparison with the overall average, for example `savings-share` (ratio of net income saved on average by all the household)  
+// 
+// The service returns a collection of peer-comparison objects. A peer-comparison has an `id`, a `description` and either a `value` or a `values` map.  
+// 
+// | <div style=width:150px> __topic (by topic 'id')__ </div> | <div style=width:300px> __description__ </div> |
+// | --- | --- |
+// | savings-share | ratio of net income saved on average by all the household |
+// | groceries-spendings-share | ratio of spendings allocated to groceries on average |
+// | income-statistics | monthly and yearly gross income values of the year 2018 |
+// | owned-properties-share | ratio of people living in an owned property |
+// | private-pension-share | ratio of people over 18 who save for their pension privately |
+// | state-pension-benefit-statistics | state old-age pension benefit statistics |
+// | insurance-knowledge | ratio of people with only basic knowledge about insurance products |
+// | private-pension-spendings | ratio of people who use following products to save for pension |
+// | groceries-spendings-comparison | spendings of similar households |
+// | income-comparison | parameters of gross monthly income of people with similar gender and age and number of employees within same range as user |
+// | private-pension-comparison | spending for private pension of similar households  |  
+// 
+
+@name("Peer Comparison") : "base-inherit-auth"
+POST "https://{{baseUrl}}/peer-comparison"
+"Content-Type": "application/json"
+? "country"= "it"
+? "id"= "groceries-spendings-share"
+json({
+    "person.work.income.gross.monthly": 3500,
+    "person.gender": 1,
+    "person.birthdate": "1974-12-25",
+    "person.work.hours.weekly": 38.5,
+    "person.household.net-income": 5500,
+    "person.household.adults.number": 2,
+    "person.household.children.number": 1
+})
+
+
+// This service gives an estimate on recommended savings parameters based on the lifecycle model.
+
+@name("Spendings Recommendations") : "base-inherit-auth"
+POST "https://{{baseUrl}}/spendings/recommendations"
+"Content-Type": "application/json"
+json({
+    "person.work.income.net.monthly": 2000,
+    "person.investment.saving.monthly": 150
+})
+
+
+// There are info-cards available for various topics like risks, insurance products, list types like industry sectors. Info-cards contain a title, a description text and an image. Get infocards with this service in various formats to support the advisory with auxiliary information where needed.
+
+@name("Cards") : "base-inherit-auth"
+POST "https://{{baseUrl}}/cards"
+"Content-Type": "application/json"
+? "area"= "dolore"
+? "format"= "base64"
+json({
+    "branche": "224",
+    "besitztum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+    ]
+})
+
+
+// Calculates PS from kW and vice versa.
+
+@name("Enginepower") : "base-inherit-auth"
+POST "https://{{baseUrl}}/enginepower"
+"Content-Type": "application/json"
+json({
+    "unit_kw": 999
+})
+
+
+// This service can be used to create a visualization of a question path. Returns all edges relevant for the visualization.
+
+@name("Visualization of Question Path") : "base-inherit-auth"
+POST "https://{{baseUrl}}/edges/:path"
+"Content-Type": "application/json"
+json({
+    "riskine.com/edges/pension-insurance": ""
+})
+
+
+// Returns a list of countries matching the search term.
+
+@name("Countries") : "base-inherit-auth"
+POST "https://{{baseUrl}}/countries"
+"Content-Type": "application/json"
+json({
+    "country": "united"
+})
+
+
+// Returns a list of nationalities matching the search term.
+
+@name("Nationalities") : "base-inherit-auth"
+POST "https://{{baseUrl}}/nationalities"
+"Content-Type": "application/json"
+? "locale"= "dolore"
+json({
+    "nationality": "moza"
+})
+
+
+// Returns a list of risk sports matching the search term.
+
+@name("Risk Sports") : "base-inherit-auth"
+POST "https://{{baseUrl}}/risksport"
+"Content-Type": "application/json"
+? "locale"= "dolore"
+json({
+    "risksport": "div"
+})
+
+
+// This service can be used to create a visualization of a question path. Returns all nodes relevant for the visualization.  
+// 
+// (The rest of the result was omitted)
+
+@name("Visualization of given workflow") : "base-inherit-auth"
+GET "https://{{baseUrl}}/nodes/:path"
+
+
+// Returns a list of licensing district(s) matching the search term.
+
+@name("Licensing District") : "base-inherit-auth"
+POST "https://{{baseUrl}}/licensingdistrict"
+"Content-Type": "application/json"
+json({
+    "zulassungsbezirk": "neu"
+})
+
+
+// Subtracts provided percent values from 100. Parameters provided in the body must be prefixed with `diff`.
+
+@name("Subtract Percentages") : "base-inherit-auth"
+POST "https://{{baseUrl}}/diff/percent"
+"Content-Type": "application/json"
+json({
+    "diff-a": 20,
+    "diff-b": 20,
+    "diff-c": 5
+})
+
+
+// Sums up provided parameters. Parameters need to be prefixed with `sum`.
+
+@name("Sum Parameters") : "base-inherit-auth"
+POST "https://{{baseUrl}}/sum"
+"Content-Type": "application/json"
+json({
+    "sum-a": 123,
+    "sum-b": 321,
+    "sum-c": 111
+})
+
+
+// Get all paramnames of questions that can occur in a path as an array, sorted by their occurrence in the path (topological sorting). Questions that can occur multiple times in a path (like `object.animal.cat[1].birthdate`, `object.animal.cat[2].birthdate`, etc.) are output with a wildcard (`object.animal.cat[*].birthdate`) instead of the numeric index that you see in the response of `/conversation/questions`.
+
+@name("Path") : "base-inherit-auth"
+POST "https://{{baseUrl}}/paths/:path/questions"
+"Content-Type": "application/json"
+? "context"= "dolore"
+json({
+    "organization": "",
+    "employee": ""
+})
+
+
+// Used to generate an application from inputs but also existing quotes. Applications are designed to be a collection of datapoints with exactly rendered legal text-annotations given in markdown. These datapoints are taken and merged from inputs and 1 to N quotes. The application is generated from quotes in the request and NOT generated from quotes that are calculated on the fly during the request. This is  
+// 
+//  - to ensure a proper separation of concerns between the APIs 
+//  - because usually, a user will first look at quotes and then sign them off to generate an application. This way the API optimally supports clients in the process.  
+// 
+// Later, applications can also be generated from on-the-fly-calculated quotes to create a one-request process from inputs to application.
+
+@name("Generate an application from quotes") : "base-inherit-auth"
+POST "https://{{baseUrl}}/applications/:application-id"
+"Content-Type": "application/json"
+json({
+    "inputs": {
+        "object.home.address": "Linke Wienzeile 10/4 1060 Wien",
+        "object.home.size.total": 256,
+        "product.household.coverage.sum": 250000,
+        "product.household.coverage.burglary.is-included": true
+    }
+})
+
+
+// Returns the personal ecological footprint and compares it to the country-average.
+// 
+//  Also returns the country-average per capita CO2-emissions caused by traffic and compares it to the EU-average
+
+@name("Climate") : "base-inherit-auth"
+POST "https://{{baseUrl}}/climate"
+"Content-Type": "application/json"
+json({
+    "object.home.residents.number": 2,
+    "person.flighthours.yearly": 0,
+    "object.vehicle.yearly-mileage": 5000,
+    "person.diet.habits": 1,
+    "object.home.size.total": 73
+})
+
+
+

@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a [paginated](#pagination) list of all workflow schemes, not including draft workflow schemes.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get All Workflow Schemes") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/workflowscheme"
+? "startAt"= "0"
+? "maxResults"= "50"
+
+
+// Creates a workflow scheme.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Create Workflow Scheme") : "base-inherit-auth"
+POST "https://{{baseUrl}}/rest/api/3/workflowscheme"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "description": "<string>",
+    "defaultWorkflow": "<string>",
+    "issueTypeMappings": "<object>",
+    "updateDraftIfNeeded": "<boolean>"
+})
+
+
+

@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("List organization webhooks")
+GET "https://{{baseUrl}}/orgs/:org/hooks"
+? "per_page"= "30"
+? "page"= "1"
+
+
+// Here's how you can create a hook that posts payloads in JSON format:
+
+@name("Create an organization webhook")
+POST "https://{{baseUrl}}/orgs/:org/hooks"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "config": {
+        "url": "<string>",
+        "content_type": "<string>",
+        "secret": "<string>",
+        "insecure_ssl": "<string>",
+        "username": "<string>",
+        "password": "<string>"
+    },
+    "events": [
+        "push"
+    ],
+    "active": true
+})
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This REST API reference describes how to retrieve the details of a charge revenue summary by specifying the subscription charge ID. This response retrieves all revenue items associated with a charge revenue summary.n
+
+@name("Get charge summary details by charge ID")
+GET "https://{{baseUrl}}/v1/charge-revenue-summaries/subscription-charges/:charge-key"
+
+
+// This REST API reference describes how to retrieve the details of a charge revenue summary by specifying the charge revenue summary number. The response includes all revenue items associated with the charge revenue summary.n
+
+@name("Get charge summary details by CRS number")
+GET "https://{{baseUrl}}/v1/charge-revenue-summaries/:crs-number"
+
+
+

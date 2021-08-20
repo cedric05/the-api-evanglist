@@ -1,0 +1,56 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves treaty loss occurrence in a specified data source.
+
+@name("Get a treaty loss occurrence by ID") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/treaties/:treatyId/lossoccurrences/:lossOccurrenceId"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Update a treaty loss occurrence
+
+@name("Update a treaty loss occurrence") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/treaties/:treatyId/lossoccurrences/:lossOccurrenceId"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "treatyId": -32519152,
+    "id": 17167830,
+    "regionPeril": {
+        "id": -51167942,
+        "code": "aliqua magna Duis consequat",
+        "name": "cupidatat adipisicing"
+    },
+    "lossOccurrenceTime": -84563119,
+    "lossOccurrenceRadius": -86809811,
+    "radiusUnit": {
+        "id": 19744923,
+        "code": "cupidatat quis enim sit irure",
+        "name": "consectetur non id"
+    },
+    "multiLossOccurrence": {
+        "id": -35833927,
+        "code": "irure",
+        "name": "aliqua"
+    }
+})
+
+
+@name("Delete a treaty loss occurrence") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/treaties/:treatyId/lossoccurrences/:lossOccurrenceId"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

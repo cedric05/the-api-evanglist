@@ -1,0 +1,76 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cbe52561-c0c1-4a0b-9d4c-69380596376d.postman_collection.json
+
+// Enrich a person contact by supplying a Person Summary object.
+// This endpoint supports the use of webhooks. To use webhooks, include webhookUrl as a property inside of the Person Summary object. Only one of email, twitter, or phone are required.
+
+@name("/v3/person.enrich")
+POST "https://{{baseUrl}}/v3/person.enrich"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "email": "<string>",
+    "twitter": "<string>",
+    "phone": "<string>",
+    "confidence": "<string>",
+    "webhookUrl": "<string>"
+})
+
+
+// Retrieve information about a company by supplying the domain name.
+// This endpoint supports the use of webhooks. To use webhooks, include webhookUrl as a property inside of the Company request object.
+
+@name("/v3/company.enrich")
+POST "https://{{baseUrl}}/v3/company.enrich"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "domain": "<string>",
+    "webhookUrl": "<string>"
+})
+
+
+// Subscriptions enable you to receive updates about your contacts of interest as soon as we have new data to deliver through the use of webhooks. When updates for a subscribed contact are available, the FullContact API will send the data to the supplied webhook URL provided when the subscription was created.
+// A subscription will exist and be active until you have explicitly un-subscribed from the contact.
+
+@name("/v3/person.subscribe")
+POST "https://{{baseUrl}}/v3/person.subscribe"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "email": "<string>",
+    "emailHash": "<string>",
+    "phone": "<string>",
+    "fullName": "<string>",
+    "ageRange": "<string>",
+    "gender": "<string>",
+    "location": "<string>",
+    "title": "<string>",
+    "organization": "<string>",
+    "twitter": "<string>",
+    "linkedin": "<string>",
+    "facebook": "<string>",
+    "bio": "<string>",
+    "avatar": "<string>",
+    "website": "<string>",
+    "details": "<object>",
+    "webhookUrl": "<string>"
+})
+
+
+// Understanding your current API usage is helpful, not only for billing purposes, but also within your application. For example, if you are nearing or have exceeded your usage limits for our Enrich API, you may want your application to behave differently, possibly limiting or preventing further requests until you have upgraded your plan to avoid overages. The Account Stats API will give you the insights needed to make these sorts of decisions by providing usage information for the current billing period.
+
+@name("/v3/stats.get")
+POST "https://{{baseUrl}}/v3/stats.get"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "stats": [
+        "<string>",
+        "<string>"
+    ]
+})
+
+
+

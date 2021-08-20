@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39108f35-1ba3-4bd5-b575-42f3c8c91ca8.postman_collection.json
+
+// Pulls a list of all product
+
+@name("Get Products")
+GET "https://{{baseUrl}}/products"
+"x-api-key": "{{api-key}}"
+"query": "product"
+
+
+

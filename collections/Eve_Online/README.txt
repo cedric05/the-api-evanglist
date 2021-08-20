@@ -1,0 +1,1 @@
+An OpenAPI for EVE Online

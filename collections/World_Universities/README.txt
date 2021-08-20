@@ -1,0 +1,1 @@
+This is a JSON Collection of universities around the world, it was forked from https://github.com/endSly/world-universities-csv, and published as a simple Postman API collection that can be mocked and run within postman, or downloaded as JSON. 

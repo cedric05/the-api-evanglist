@@ -1,0 +1,281 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6955ed11-a73c-4307-bb23-5a863194d33b.postman_collection.json
+
+@name("POST method for submitting a request for dew point temperature data.")
+POST "https://{{baseUrl}}/api/meteorology/dewpoint"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for humidity data.")
+POST "https://{{baseUrl}}/api/meteorology/humidity"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "relative": "<boolean>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("NOAA Solar Calculator")
+POST "https://{{baseUrl}}/api/meteorology/solar"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "model": "<string>",
+    "localTime": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for precipitation data.")
+POST "https://{{baseUrl}}/api/meteorology/precipitation"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for pressure data.")
+POST "https://{{baseUrl}}/api/meteorology/pressure"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for radiation data.")
+POST "https://{{baseUrl}}/api/meteorology/radiation"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for wind data.")
+POST "https://{{baseUrl}}/api/meteorology/wind"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+

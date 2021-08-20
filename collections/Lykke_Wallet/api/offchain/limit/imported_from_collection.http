@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e04c6fb1-e891-4983-80ec-38175b6c944e.postman_collection.json
+
+// Get api offchain limit list.
+
+@name("Get API Offchain Limit List")
+GET "https://{{baseUrl}}/api/offchain/limit/list"
+"Authorization": "<>"
+? "assetPair"= "<delete>"
+
+
+// Get api offchain limit count.
+
+@name("Get API Offchain Limit Count")
+GET "https://{{baseUrl}}/api/offchain/limit/count"
+"Authorization": "<>"
+
+
+// Add api offchain limit trade.
+
+@name("Add API Offchain Limit Trade")
+POST "https://{{baseUrl}}/api/offchain/limit/trade"
+"Authorization": "<>"
+
+
+// Add api offchain limit cancel.
+
+@name("Add API Offchain Limit Cancel")
+POST "https://{{baseUrl}}/api/offchain/limit/cancel"
+"Authorization": "<>"
+
+
+

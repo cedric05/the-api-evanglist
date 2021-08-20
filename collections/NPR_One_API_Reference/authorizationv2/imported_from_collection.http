@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92585ca3-4af5-4f55-9f95-f80c9040e561.postman_collection.json
+
+// If the parameters passed to this endpoint are correct, it will redirect to `npr.org/oauth2/login` for the user to complete the sign-in.nnCurrently acceptable values for `scope` are any combination of the following:n- `identity.readonly` - for read-only access to the Identity Servicen- `identity.write` - for write access to the Identity Servicen- `listening.readonly` - for read-only access to the Listening Servicen- `listening.write` - for write access to the Listening Servicen- `localactivation`
+
+@name("Show a web-based login/signup form to a user")
+GET "https://{{baseUrl}}/authorization/v2/authorize"
+? "client_id"= "<>"
+? "redirect_uri"= "<>"
+? "response_type"= "<>"
+? "scope"= "<>"
+? "state"= "<get>"
+
+
+// This flow should only be used by clients who cannot show a native webview or do not have advanced input controls. It is an alternative to `GET /authorization/v2/authorize`.nnThird-party clients will need to use one or the other of these two endpoints, but they will generally not use both.
+
+@name("Initiate an OAuth2 login flow for limited input devices")
+POST "https://{{baseUrl}}/authorization/v2/device"
+
+
+

@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Send the collect now action to this DisplayGroup
+
+@name("Action: Collect Now")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/action/collectNow"
+
+
+// Clear all stats and logs on this Group
+
+@name("Action: Clear Stats and Logs")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/action/clearStatsAndLogs"
+
+
+// Send the change layout action to this DisplayGroup
+
+@name("Action: Change Layout")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/action/changeLayout"
+
+
+// Send the revert to schedule action to this DisplayGroup
+
+@name("Action: Revert to Schedule")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/action/revertToSchedule"
+
+
+// Send the overlay layout action to this DisplayGroup
+
+@name("Action: Overlay Layout")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/action/overlayLayout"
+
+
+// Send a predefined command to this Group of Displays
+
+@name("Send Command")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/action/command"
+
+
+

@@ -1,0 +1,245 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6233c115-c5bf-4e49-aa03-73e1ae81bd1b.postman_collection.json
+
+@name("CDS #1 - SDC Catalog Service")
+GET "https://{{k8s}}/sdc/v1/catalog/services"
+"Authorization": "Basic dmlkOktwOGJKNFNYc3pNMFdYbGhhazNlSGxjc2UyZ0F3ODR2YW9HR21KdlV5MlU="
+"X-ECOMP-InstanceID": "VID"
+
+
+@name("CDS #2 - SO Catalog DB Service VNFs - CDS")
+GET "http://{{k8s}}/ecomp/mso/catalog/v2/serviceVnfs"
+basicauth("bpel", "password1$")
+"Authorization": "Basic YnBlbDpwYXNzd29yZDEk"
+? "serviceModelName"= "{{service-name}}"
+
+
+@name("CDS #3 - SO Self-Serve Service Assign & Activate")
+POST "http://{{k8s}}/onap/so/infra/serviceInstantiation/v7/serviceInstances"
+basicauth("InfraPortalClient", "password1$")
+"Content-Type": "application/json"
+json({
+    "requestDetails": {
+        "subscriberInfo": {
+            "globalSubscriberId": "Demonstration"
+        },
+        "requestInfo": {
+            "suppressRollback": false,
+            "productFamilyId": "a9a77d5a-123e-4ca2-9eb9-0b015d2ee0fb",
+            "requestorId": "adt",
+            "instanceName": "{{cds-instance-name}}",
+            "source": "VID"
+        },
+        "cloudConfiguration": {
+            "lcpCloudRegionId": "fr2",
+            "tenantId": "6270eaa820934710960682c506115453",
+            "cloudOwner": "CloudOwner"
+        },
+        "requestParameters": {
+            "subscriptionServiceType": "vFW",
+            "userParams": [
+                {
+                    "Homing_Solution": "none"
+                },
+                {
+                    "service": {
+                        "instanceParams": [],
+                        "instanceName": "{{cds-instance-name}}",
+                        "resources": {
+                            "vnfs": [
+                                {
+                                    "modelInfo": {
+                                        "modelName": "{{vnf-modelinfo-modelname}}",
+                                        "modelVersionId": "{{vnf-modelinfo-modeluuid}}",
+                                        "modelInvariantUuid": "{{vnf-modelinfo-modelinvariantuuid}}",
+                                        "modelVersion": "1.0",
+                                        "modelCustomizationId": "{{vnf-modelinfo-modelcustomizationuuid}}",
+                                        "modelInstanceName": "{{vnf-modelinfo-modelinstancename}}"
+                                    },
+                                    "cloudConfiguration": {
+                                        "lcpCloudRegionId": "fr2",
+                                        "tenantId": "6270eaa820934710960682c506115453"
+                                    },
+                                    "platform": {
+                                        "platformName": "test"
+                                    },
+                                    "lineOfBusiness": {
+                                        "lineOfBusinessName": "LOB-Demonstration"
+                                    },
+                                    "productFamilyId": "a9a77d5a-123e-4ca2-9eb9-0b015d2ee0fb",
+                                    "instanceName": "{{vnf-modelinfo-modelinstancename}}",
+                                    "instanceParams": [
+                                        {
+                                            "onap_private_net_id": "olc-private",
+                                            "onap_private_subnet_id": "olc-private",
+                                            "pub_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCs84Cy8+qi/jvucay0BwFtOq3ian0ulTXFGxkZcZCR0N48j88pbHJaEqb9e25MAsrfH+7Etb9Kd5nbBThEL/i0AyHXnDsc80Oq0sqlLcfLo3SGSurkrNoRofHboJ5Hn+N9SlWN5FCQGbTx1w3rjqR4LasAI6XxH9xpXSFyyge6ysVXH0cYaZ8sg98nFZa1fPJR9L8COjZvF+EYudub2RC5HVyV/sx7bliNFo9JwQh6du1abG4G7ZDjTIcYwYp21iq52UzWU28RVcAyY6AQZJu2lHLdsr8fPvyeWZpC5EqGsxI1G609m9G/dURRKwYfez/f2ATzpn5QjEX7LrLWBM8r Generated-by-Nova",
+                                            "image_name": "Ubuntu 16.04",
+                                            "flavor_name": "n2.cw.standard-1",
+                                            "sec_group": "olc-open",
+                                            "install_script_version": "1.4.0-SNAPSHOT",
+                                            "demo_artifacts_version": "1.4.0-SNAPSHOT",
+                                            "cloud_env": "openstack",
+                                            "public_net_id": "olc-public",
+                                            "aic-cloud-region": "fr2"
+                                        }
+                                    ],
+                                    "vfModules": [
+                                        {
+                                            "modelInfo": {
+                                                "modelName": "{{vnf-vfmodule-0-modelinfo-modelname}}",
+                                                "modelVersionId": "{{vnf-vfmodule-0-modelinfo-modeluuid}}",
+                                                "modelInvariantUuid": "{{vnf-vfmodule-0-modelinfo-modelinvariantuuid}}",
+                                                "modelVersion": "1",
+                                                "modelCustomizationId": "{{vnf-vfmodule-0-modelinfo-modelcustomizationuuid}}"
+                                            },
+                                            "instanceName": "{{vnf-vfmodule-0-modelinfo-modelname}}",
+                                            "instanceParams": [
+                                                {
+                                                    "sec_group": "olc-open",
+                                                    "public_net_id": "olc-net"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "modelInfo": {
+                                                "modelName": "{{vnf-vfmodule-1-modelinfo-modelname}}",
+                                                "modelVersionId": "{{vnf-vfmodule-1-modelinfo-modeluuid}}",
+                                                "modelInvariantUuid": "{{vnf-vfmodule-1-modelinfo-modelinvariantuuid}}",
+                                                "modelVersion": "1",
+                                                "modelCustomizationId": "{{vnf-vfmodule-1-modelinfo-modelcustomizationuuid}}"
+                                            },
+                                            "instanceName": "{{vnf-vfmodule-1-modelinfo-modelname}}",
+                                            "instanceParams": [
+                                                {
+                                                    "sec_group": "olc-open",
+                                                    "public_net_id": "olc-net"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "modelInfo": {
+                                                "modelName": "{{vnf-vfmodule-2-modelinfo-modelname}}",
+                                                "modelVersionId": "{{vnf-vfmodule-2-modelinfo-modeluuid}}",
+                                                "modelInvariantUuid": "{{vnf-vfmodule-2-modelinfo-modelinvariantuuid}}",
+                                                "modelVersion": "1",
+                                                "modelCustomizationId": "{{vnf-vfmodule-2-modelinfo-modelcustomizationuuid}}"
+                                            },
+                                            "instanceName": "{{vnf-vfmodule-2-modelinfo-modelname}}",
+                                            "instanceParams": [
+                                                {
+                                                    "sec_group": "olc-open",
+                                                    "public_net_id": "olc-net"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "modelInfo": {
+                                                "modelName": "{{vnf-vfmodule-3-modelinfo-modelname}}",
+                                                "modelVersionId": "{{vnf-vfmodule-3-modelinfo-modeluuid}}",
+                                                "modelInvariantUuid": "{{vnf-vfmodule-3-modelinfo-modelinvariantuuid}}",
+                                                "modelVersion": "1",
+                                                "modelCustomizationId": "{{vnf-vfmodule-3-modelinfo-modelcustomizationuuid}}"
+                                            },
+                                            "instanceName": "{{vnf-vfmodule-3-modelinfo-modelname}}",
+                                            "instanceParams": [
+                                                {
+                                                    "sec_group": "olc-open",
+                                                    "public_net_id": "olc-net"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "modelInfo": {
+                            "modelVersion": "1.0",
+                            "modelVersionId": "{{service-uuid}}",
+                            "modelInvariantId": "{{service-invariantUUID}}",
+                            "modelName": "{{service-name}}",
+                            "modelType": "service"
+                        }
+                    }
+                }
+            ],
+            "aLaCarte": false
+        },
+        "project": {
+            "projectName": "Project-Demonstration"
+        },
+        "owningEntity": {
+            "owningEntityId": "67f2e84c-734d-4e90-a1e4-d2ffa2e75849",
+            "owningEntityName": "OE-Demonstration"
+        },
+        "modelInfo": {
+            "modelVersion": "1.0",
+            "modelVersionId": "{{service-uuid}}",
+            "modelInvariantId": "{{service-invariantUUID}}",
+            "modelName": "{{service-name}}",
+            "modelType": "service"
+        }
+    }
+})
+
+
+@name("CDS  #4 - SO Infra Active Requests - CDS")
+GET "http://{{k8s}}/infraActiveRequests/{{cds-requestid}}"
+basicauth("bpel", "password1$")
+
+
+@name("CDS Blueprint Enrich")
+POST "https://84.39.39.116/api/v1/blueprint-model/enrich"
+basicauth("ccsdkapps", "ccsdkapps")
+"Accept": "application/json"
+"Accept-Encoding": "gzip,deflate"
+"Referer": "http://84.39.39.116:30497/blueprint"
+"Origin": "http://84.39.39.116:30497"
+files(
+	("file", "None")
+)
+
+
+@name("CDS Blueprint Deploy")
+POST "http://84.39.39.116/deploy-blueprint/"
+files(
+	("file", "None")
+)
+
+
+@name("SDNC GR-API MD-SAL Services")
+GET "http://{{k8s}}/restconf/config/GENERIC-RESOURCE-API:services/service/{{cds-instanceid}}"
+"X-TransactionId": "999"
+"X-FromAppId": "SDC"
+"Accept": "application/json"
+"Content-Type": "application/json"
+"Authorization": "Basic YWRtaW46S3A4Yko0U1hzek0wV1hsaGFrM2VIbGNzZTJnQXc4NHZhb0dHbUp2VXkyVQ=="
+"path": "/param/0/value"
+
+
+@name("CDS Blueprint Download")
+GET "http://84.39.39.116/download-blueprint/test/1.0.0"
+"Accept": "application/json, text/plain, */*"
+"Connection": "keep-alive"
+"Accept-Encoding": "gzip, deflate"
+"Referer": "http://84.39.39.116:30497/blueprint"
+"Accept-Language": "en-US,en;q=0.9,ar;q=0.8,fr;q=0.7"
+"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+
+
+
+@name("CDS Blueprint Deploy 2")
+POST "http://84.39.39.116/deploy-blueprint/"
+"Origin": "http://84.39.39.116:30497"
+"Accept-Encoding": "gzip, deflate"
+"Accept-Language": "en-US,en;q=0.9,ar;q=0.8,fr;q=0.7"
+"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+"Accept": "application/json, text/plain, */*"
+"Referer": "http://84.39.39.116:30497/blueprint"
+"Connection": "keep-alive"
+files(
+	("file", "None")
+)
+
+
+

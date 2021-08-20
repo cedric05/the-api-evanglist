@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Execute a Search by Unit Code and Taxon Code yielding results with additional composite detail.")
+GET "https://{{baseUrl}}/rest/UnitSpeciesSearch/Composite/:unit/:taxon"
+
+
+@name("Execute a Search by Unit Code and Taxon Code.")
+GET "https://{{baseUrl}}/rest/UnitSpeciesSearch/:unit/:taxon"
+
+
+

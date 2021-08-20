@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-712034b2-265e-4ffc-a7a7-e49d61c6660a.postman_collection.json
+
+// Lists all users. Only api callers that have full access can call this method.
+
+@name("Lists all users")
+GET "https://{{baseUrl}}/users"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

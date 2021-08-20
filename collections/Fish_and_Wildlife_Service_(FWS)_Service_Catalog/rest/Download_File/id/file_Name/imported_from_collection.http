@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("This endpoint supports requests with the file name in the url path.
+The file name is for display and readability of the underlying link. The name itself has no effect on which file is retrieved.
+It's main purpose is to support compatibility with the pre")
+GET "https://{{baseUrl}}/rest/DownloadFile/:id/:fileName"
+
+
+@name("This endpoint supports requests with the file name in the url path.
+The file name is for display and readability of the underlying link. The name itself has no effect on which file is retrieved.
+It's main purpose is to support compatibility with the pre")
+HEAD "https://{{baseUrl}}/rest/DownloadFile/:id/:fileName"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-176e2ba7-20b8-4a6a-a915-03b5fba2051f.postman_collection.json
+
+@name("Obtain detailed location information.")
+GET "https://{{baseUrl}}/nfl-ngs-t1/tracking/:play_id/tracking{{format}}"
+
+
+// Obtain all 22 players on the field for every play of the game.
+
+@name("Obtain all 22 players on the field for every play ...")
+GET "https://{{baseUrl}}/nfl-ngs-t1/participation/:game_id/participation{{format}}"
+
+
+@name("Obtain complete players season statistics.")
+GET "https://{{baseUrl}}/nfl-ngs-t1/players/:year/:nfl_season/:player_id/statistics{{format}}"
+
+
+@name("Obtain complete team seasonal statistics.")
+GET "https://{{baseUrl}}/nfl-ngs-t1/teams/:year/:nfl_season/:team_id/statistics{{format}}"
+
+
+

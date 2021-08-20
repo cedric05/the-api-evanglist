@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b982553e-8975-4962-bc9d-a464c11c5f3a.postman_collection.json
+
+// The Tokens endpoint returns information about the user's tokens.
+
+@name("All tokens for current user")
+GET "https://{{baseUrl}}/:username/tokens"
+? "No Name"= "<string>"
+
+
+@name("Delete an existing Token")
+DELETE "https://{{baseUrl}}/:username/tokens/:id"
+? "No Name"= "<string>"
+
+
+

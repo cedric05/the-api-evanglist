@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Add a new property group
+
+@name("Create property group")
+POST "https://{{baseUrl}}/api/v1/properties/groups"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "name": "in dolore",
+    "sourceType": "veniam dolor"
+})
+
+
+// Retrive all property groups
+
+@name("Get all property groups")
+GET "https://{{baseUrl}}/api/v1/properties/groups"
+"Authorization": "Bearer <Bearer Token>"
+
+
+

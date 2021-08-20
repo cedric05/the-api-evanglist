@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e7284ee4-fd9b-45f9-a31d-197af3b48c31.postman_collection.json
+
+// Retrieve the web page
+
+@name("Retrieve the web page")
+GET "https://{{baseUrl}}/website/terms_of_use/"
+
+
+// Create or update the custom web page
+
+@name("Create or update the custom web page")
+POST "https://{{baseUrl}}/website/terms_of_use/"
+
+
+// Delete the custom web page
+
+@name("Delete the custom web page")
+DELETE "https://{{baseUrl}}/website/terms_of_use/"
+
+
+

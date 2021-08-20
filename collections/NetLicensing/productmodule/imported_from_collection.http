@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2dd3b81c-4b11-4e46-b2e6-83bc9a4638dc.postman_collection.json
+
+// Return a list of all product modules for the current vendor
+
+@name("Product Modules list")
+GET "https://{{baseUrl}}/productmodule"
+
+
+// Delete a product module by number
+
+@name("Delete product module")
+DELETE "https://{{baseUrl}}/productmodule/:productModuleNumber"
+? "forceCascade"= "<>"
+
+
+

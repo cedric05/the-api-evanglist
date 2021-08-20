@@ -1,0 +1,120 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create International Standing Orders")
+POST "https://{{baseUrl}}/international-standing-orders"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "ConsentId": "anim non incididunt",
+        "Initiation": {
+            "CreditorAccount": {
+                "Identification": "occaecat aliquip ipsum dolore enim",
+                "Name": "pariatur magna",
+                "SchemeName": "UK.OBIE.IBAN",
+                "SecondaryIdentification": "labore sed"
+            },
+            "CurrencyOfTransfer": "ullamco labore",
+            "FirstPaymentDateTime": "1942-11-25T23:43:32.114Z",
+            "Frequency": "occaecat in dolore est",
+            "InstructedAmount": {
+                "Amount": "ad voluptate ut aliquip",
+                "Currency": "dolor laborum culp"
+            },
+            "ChargeBearer": "Shared",
+            "Creditor": {
+                "PostalAddress": {
+                    "AddressLine": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "AddressType": "Residential",
+                    "BuildingNumber": "laboris occaecat dolore cupidatat",
+                    "Country": "dolore enim cupidatat reprehenderit",
+                    "CountrySubDivision": "pariatur dolore dolor et",
+                    "Department": "in non",
+                    "PostCode": "amet commodo cillum",
+                    "StreetName": "mollit aliquip culpa proident",
+                    "SubDepartment": "occaecat",
+                    "TownName": "ut qui"
+                },
+                "Name": "incididunt sint"
+            },
+            "CreditorAgent": {
+                "Identification": "enim esse",
+                "Name": "Duis sint mollit",
+                "PostalAddress": {
+                    "AddressLine": [
+                        "culpa amet anim",
+                        "in Excepteur incididunt"
+                    ],
+                    "AddressType": "Business",
+                    "BuildingNumber": "deserunt in",
+                    "Country": "esse",
+                    "CountrySubDivision": "consectetur sit reprehenderit",
+                    "Department": "mollit dolore laboris",
+                    "PostCode": "labore",
+                    "StreetName": "de",
+                    "SubDepartment": "amet",
+                    "TownName": "commodo"
+                },
+                "SchemeName": "UK.OBIE.Paym"
+            },
+            "FinalPaymentDateTime": "2010-06-10T13:45:33.463Z",
+            "NumberOfPayments": "culpa",
+            "Purpose": "ut ad nulla",
+            "Reference": "commodo ad do",
+            "SupplementaryData": {
+                "LocalInstrument": "UK.OBIE.CHAPS"
+            }
+        }
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "dolor aliqua deserunt Lorem",
+            "TownName": "ex non minim pariatur dolore",
+            "AddressLine": [
+                "reprehenderit et quis dolore",
+                "dolor in"
+            ],
+            "BuildingNumber": "veniam",
+            "CountrySubDivision": [
+                "sunt ut ipsum",
+                "enim pariatur"
+            ],
+            "PostCode": "id",
+            "StreetName": "fugiat culpa minim"
+        },
+        "MerchantCategoryCode": "ullamco irure dolor ut",
+        "MerchantCustomerIdentification": "nulla occaecat proident ea fugiat",
+        "PaymentContextCode": "Other"
+    }
+})
+
+
+@name("Get International Standing Orders")
+GET "https://{{baseUrl}}/international-standing-orders/:InternationalStandingOrderPaymentId"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+
+
+

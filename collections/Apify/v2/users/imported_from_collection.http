@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Returns public information about a specific user account, similar to what can be seen on public profile pages (e.g. https://apify.com/apify).nThis operation requires no authentication token.
+
+@name("Get public user data")
+GET "https://{{baseUrl}}/v2/users/:userId"
+
+
+// Returns information about the current user account, including both public and private information.nThe user account is identified by the provided authentication token.
+
+@name("Get private user data")
+GET "https://{{baseUrl}}/v2/users/me"
+? "token"= "<string>"
+
+
+

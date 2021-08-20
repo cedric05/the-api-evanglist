@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Update a comment.
+
+@name("Update a comment")
+PUT "https://{{baseUrl}}/admin/comments/2941387470.json"
+"Content": "<>"
+
+
+// Get a single comment.
+
+@name("Get a single comment")
+GET "https://{{baseUrl}}/admin/comments/"
+"Content": "<>"
+
+
+// Get a count of all comments.
+
+@name("Get a count of all comments")
+GET "https://{{baseUrl}}/admin/comments/count.json"
+"Content": "<>"
+
+
+

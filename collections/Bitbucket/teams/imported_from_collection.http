@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns all the teams that the authenticated user is associated
+// with.
+
+@name("/teams")
+GET "https://{{baseUrl}}/teams"
+? "role"= "<string>"
+
+
+

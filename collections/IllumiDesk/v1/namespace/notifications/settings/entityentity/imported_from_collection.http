@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Retrieve global notification settings for the authenticated user") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/notifications/settings/entity/:entity"
+
+
+@name("Modify global notification settings.") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/:namespace/notifications/settings/entity/:entity"
+"Content-Type": "application/json"
+json({
+    "enabled": "<boolean>",
+    "emails_enabled": "<boolean>"
+})
+
+
+@name("Create global notification settings") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/notifications/settings/entity/:entity"
+"Content-Type": "application/json"
+json({
+    "enabled": "<boolean>",
+    "emails_enabled": "<boolean>"
+})
+
+
+

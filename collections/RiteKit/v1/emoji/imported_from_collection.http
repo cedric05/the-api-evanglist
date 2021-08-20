@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bccf5d55-a2df-4783-8125-6d0355865ae6.postman_collection.json
+
+// Returns text of the post with emoji added
+
+@name("Auto-Emojify")
+GET "https://{{baseUrl}}/v1/emoji/auto-emojify"
+? "text"= "<string>"
+
+
+// Returns list of emoji suggestions for a given text of the post
+
+@name("Emoji Suggestions")
+GET "https://{{baseUrl}}/v1/emoji/suggestions"
+? "text"= "<string>"
+
+
+

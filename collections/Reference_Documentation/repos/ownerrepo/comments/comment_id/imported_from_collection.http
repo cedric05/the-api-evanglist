@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+@name("Get a commit comment")
+GET "https://{{baseUrl}}/repos/:owner/:repo/comments/:comment_id"
+
+
+@name("Update a commit comment")
+PATCH "https://{{baseUrl}}/repos/:owner/:repo/comments/:comment_id"
+"Content-Type": "application/json"
+json({
+    "body": "<string>"
+})
+
+
+@name("Delete a commit comment")
+DELETE "https://{{baseUrl}}/repos/:owner/:repo/comments/:comment_id"
+
+
+

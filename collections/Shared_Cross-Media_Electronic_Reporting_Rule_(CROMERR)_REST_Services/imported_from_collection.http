@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2131e7d-01ce-4512-a5ba-81bbec9b0ac2.postman_collection.json
+
+@name("Authenticate partner.")
+POST "https://{{baseUrl}}/token/v1"
+"Content-Type": "application/json"
+json({
+    "partnerId": "<string>",
+    "partnerCredential": "<string>"
+})
+
+
+

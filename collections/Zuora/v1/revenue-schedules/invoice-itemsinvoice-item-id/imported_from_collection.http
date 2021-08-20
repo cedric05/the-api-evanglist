@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// Retrieves the details of a revenue schedule by specifying the invoice item ID.n
+
+@name("Get revenue schedule by invoice item ID")
+GET "https://{{baseUrl}}/v1/revenue-schedules/invoice-items/:invoice-item-id"
+
+
+// Creates a revenue schedule for an Invoice Item and distribute the revenue by specifying the recognition start and end dates.n
+
+@name("Create revenue schedule for Invoice Item (distribute by date range)")
+POST "https://{{baseUrl}}/v1/revenue-schedules/invoice-items/:invoice-item-id/distribute-revenue-with-date-range"
+
+
+

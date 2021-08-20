@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Retrieve details about a package
+
+@name("Retrieve a single package") : "base-inherit-auth"
+GET "https://{{baseUrl}}/packages/:id"
+
+
+// Update a package to CANCELLED status or set a paperedAt date
+
+@name("Update a package") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/packages/:id"
+"Content-Type": "application/json; charset=utf-8"
+json({
+    "status": "CANCELLED",
+    "dueDate": "2020-04-19T02:35:00.789Z",
+    "paperedAt": "2020-04-19T21:04:08.859Z"
+})
+
+
+

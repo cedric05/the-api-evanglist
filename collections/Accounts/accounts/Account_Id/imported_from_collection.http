@@ -1,0 +1,75 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7455ae64-df8d-496d-90bf-5a74ed10ffaa.postman_collection.json
+
+@name("Get Accounts")
+GET "https://{{baseUrl}}/accounts/:AccountId"
+"Authorization": "sunt"
+"x-fapi-financial-id": "sunt"
+"x-consumer-key": "sunt"
+"x-customer-user-agent": "sunt"
+"x-fapi-customer-ip-address": "sunt"
+"x-fapi-customer-last-logged-time": "sunt"
+"x-fapi-interaction-id": "sunt"
+
+
+@name("Get Balances")
+GET "https://{{baseUrl}}/accounts/:AccountId/balances"
+"Authorization": "sunt"
+"x-fapi-financial-id": "sunt"
+"x-consumer-key": "sunt"
+"x-customer-user-agent": "sunt"
+"x-fapi-customer-ip-address": "sunt"
+"x-fapi-customer-last-logged-time": "sunt"
+"x-fapi-interaction-id": "sunt"
+
+
+@name("Get Direct Debits")
+GET "https://{{baseUrl}}/accounts/:AccountId/direct-debits"
+"Authorization": "sunt"
+"x-fapi-financial-id": "sunt"
+"x-consumer-key": "sunt"
+"x-customer-user-agent": "sunt"
+"x-fapi-customer-ip-address": "sunt"
+"x-fapi-customer-last-logged-time": "sunt"
+"x-fapi-interaction-id": "sunt"
+? "page"= "1"
+
+
+@name("Get Scheduled Payments")
+GET "https://{{baseUrl}}/accounts/:AccountId/scheduled-payments"
+"Authorization": "sunt"
+"x-fapi-financial-id": "sunt"
+"x-consumer-key": "sunt"
+"x-customer-user-agent": "sunt"
+"x-fapi-customer-ip-address": "sunt"
+"x-fapi-customer-last-logged-time": "sunt"
+"x-fapi-interaction-id": "sunt"
+
+
+@name("Get Standing Orders")
+GET "https://{{baseUrl}}/accounts/:AccountId/standing-orders"
+"Authorization": "sunt"
+"x-fapi-financial-id": "sunt"
+"x-consumer-key": "sunt"
+"x-customer-user-agent": "sunt"
+"x-fapi-customer-ip-address": "sunt"
+"x-fapi-customer-last-logged-time": "sunt"
+"x-fapi-interaction-id": "sunt"
+
+
+@name("Get Transactions")
+GET "https://{{baseUrl}}/accounts/:AccountId/transactions"
+"Authorization": "sunt"
+"x-fapi-financial-id": "sunt"
+"x-consumer-key": "sunt"
+"x-customer-user-agent": "sunt"
+"x-fapi-customer-ip-address": "sunt"
+"x-fapi-customer-last-logged-time": "sunt"
+"x-fapi-interaction-id": "sunt"
+? "fromBookingDateTime"= "1959-12-06T10:39:38.513Z"
+? "toBookingDateTime"= "1959-12-06T10:39:38.513Z"
+? "page"= "1"
+
+
+

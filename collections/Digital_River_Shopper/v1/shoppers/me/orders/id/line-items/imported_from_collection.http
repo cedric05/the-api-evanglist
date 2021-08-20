@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-baa21855-56c4-411b-b54e-86741f2e4115.postman_collection.json
+
+// Get shoppers me orders line items.
+
+@name("Get Shoppers Me Orders Line Items")
+GET "https://{{baseUrl}}/v1/shoppers/me/orders/:id/line-items"
+
+
+// Get shoppers me orders line items lineitemid.
+
+@name("Get Shoppers Me Orders Line Items Lineitemid")
+GET "https://{{baseUrl}}/v1/shoppers/me/orders/:id/line-items/:lineItemId"
+
+
+

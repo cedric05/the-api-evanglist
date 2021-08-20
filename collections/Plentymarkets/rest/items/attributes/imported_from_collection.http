@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists all attributes.
+
+@name("List attributes")
+GET "https://{{baseUrl}}/rest/items/attributes"
+? "with"= "<>"
+? "updatedAt"= "<post>"
+
+
+// Lists all attribute maps..
+
+@name("Lists all attribute maps.")
+GET "https://{{baseUrl}}/rest/items/attributes/maps"
+
+
+// Creates a new attribute map..
+
+@name("Creates a new attribute map.")
+POST "https://{{baseUrl}}/rest/items/attributes/markets/maps"
+
+
+// Deletes an attribute. The ID of the attribute must be specified.
+
+@name("Delete an attribute")
+DELETE "https://{{baseUrl}}/rest/items/attributes/:id"
+
+
+

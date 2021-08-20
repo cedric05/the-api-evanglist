@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get a list of dogma effect ids
+// 
+// ---
+// Alternate route: `/dev/dogma/effects/`
+// 
+// Alternate route: `/legacy/dogma/effects/`
+// 
+// Alternate route: `/v1/dogma/effects/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get effects")
+GET "https://{{baseUrl}}/dogma/effects/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get information on a dogma effect
+// 
+// ---
+// Alternate route: `/dev/dogma/effects/{effect_id}/`
+// 
+// Alternate route: `/v2/dogma/effects/{effect_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get effect information")
+GET "https://{{baseUrl}}/dogma/effects/:effect_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

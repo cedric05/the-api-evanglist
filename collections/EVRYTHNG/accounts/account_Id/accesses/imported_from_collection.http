@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Read an account's access information and current role.
+
+@name("Read account accesses")
+GET "https://{{baseUrl}}/accounts/:accountId/accesses"
+? "No Name"= "<string>"
+
+
+// Read an account access by ID.
+
+@name("Read an account access")
+GET "https://{{baseUrl}}/accounts/:accountId/accesses/:accessId"
+? "No Name"= "<string>"
+
+
+

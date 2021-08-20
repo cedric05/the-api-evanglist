@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Association types (2.x only).
+
+@name("association types (2.x only)")
+GET "https://{{baseUrl}}/rest/v1/association-types"
+
+
+// Assuming that the given code is the code of an existing association type
+
+@name("association type (2.x only)")
+GET "https://{{baseUrl}}/rest/v1/association-types/upsell"
+
+
+

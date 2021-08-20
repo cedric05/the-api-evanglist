@@ -1,0 +1,1 @@
+This provides a draft registry for the Unique API Identifier. This is just a beginning collection that is generated and validated against the OpenAPI for the registry. This collection provides documentation, and can be forked, mocked, and used by any user. Contributions are handled via forking and pull requests, and feedback on all or part of it using comments.

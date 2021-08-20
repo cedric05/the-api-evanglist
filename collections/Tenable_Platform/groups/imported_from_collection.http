@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cf05d8c7-fffb-4a7c-923b-c06517c2b783.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Create a group.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Create group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups"
+"Content-Type": "application/json"
+json({
+    "name": "ipsum nostrud adipisicing nulla"
+})
+
+
+// Returns the group list.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List groups") : "base-inherit-auth"
+GET "https://{{baseUrl}}/groups"
+
+
+

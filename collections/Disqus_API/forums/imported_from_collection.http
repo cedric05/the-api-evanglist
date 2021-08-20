@@ -1,0 +1,166 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-139d2cf6-a45e-49f8-b258-0453deb0a5e1.postman_collection.json
+
+// Forums Details 
+
+@name("Forums Details")
+GET "https://{{baseUrl}}/forums/details.json"
+? "attach"= "<string>"
+? "forum"= "<string>"
+? "related"= "<string>"
+
+
+// Forums Create 
+
+@name("Forums Create")
+POST "https://{{baseUrl}}/forums/create.json"
+? "category"= "<string>"
+? "description"= "<string>"
+? "guidelines"= "<string>"
+? "name"= "<string>"
+? "short_name"= "<string>"
+? "website"= "<string>"
+
+
+// Forums ListMostLikedUsers 
+
+@name("Forums ListMostLikedUsers")
+GET "https://{{baseUrl}}/forums/listMostLikedUsers.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+
+
+// Forums ListFollowers 
+
+@name("Forums ListFollowers")
+GET "https://{{baseUrl}}/forums/listFollowers.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+
+
+// Forums ListCategories 
+
+@name("Forums ListCategories")
+GET "https://{{baseUrl}}/forums/listCategories.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+
+
+// Forums ListModerators 
+
+@name("Forums ListModerators")
+GET "https://{{baseUrl}}/forums/listModerators.json"
+? "forum"= "<string>"
+
+
+// Forums Unfollow 
+
+@name("Forums Unfollow")
+POST "https://{{baseUrl}}/forums/unfollow.json"
+? "target"= "<string>"
+
+
+// Forums Update 
+
+@name("Forums Update")
+POST "https://{{baseUrl}}/forums/update.json"
+? "category"= "<string>"
+? "description"= "<string>"
+? "forum"= "<string>"
+? "guidelines"= "<string>"
+? "name"= "<string>"
+? "website"= "<string>"
+
+
+// Forums ListMostActiveUsers 
+
+@name("Forums ListMostActiveUsers")
+GET "https://{{baseUrl}}/forums/listMostActiveUsers.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+
+
+// Forums Follow 
+
+@name("Forums Follow")
+POST "https://{{baseUrl}}/forums/follow.json"
+? "target"= "<string>"
+
+
+// Forums ListThreads 
+
+@name("Forums ListThreads")
+GET "https://{{baseUrl}}/forums/listThreads.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+? "thread"= "<string>"
+
+
+// Forums ListPosts 
+
+@name("Forums ListPosts")
+GET "https://{{baseUrl}}/forums/listPosts.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "query"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+
+
+// Forums ListUsers 
+
+@name("Forums ListUsers")
+GET "https://{{baseUrl}}/forums/listUsers.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+
+
+// Forums GenerateInterestingContent 
+
+@name("Forums GenerateInterestingContent")
+GET "https://{{baseUrl}}/forums/generateInterestingContent.json"
+
+
+// Forums RemoveModerator 
+
+@name("Forums RemoveModerator")
+POST "https://{{baseUrl}}/forums/removeModerator.json"
+? "moderator"= "<string>"
+
+
+// Forums InterestingForums 
+
+@name("Forums InterestingForums")
+GET "https://{{baseUrl}}/forums/interestingForums.json"
+? "limit"= "<string>"
+
+
+// Forums FixFavIconsForClassifiedForums 
+
+@name("Forums FixFavIconsForClassifiedForums")
+GET "https://{{baseUrl}}/forums/fixFavIconsForClassifiedForums.json"
+
+
+

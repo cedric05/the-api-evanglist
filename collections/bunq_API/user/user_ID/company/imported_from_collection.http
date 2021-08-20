@@ -1,0 +1,86 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Create and manage companies.
+
+@name("List all Company for User")
+GET "https://{{baseUrl}}/user/:userID/company"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create and manage companies.
+
+@name("CREATE Company for User")
+POST "https://{{baseUrl}}/user/:userID/company"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "address_main": {
+        "city": "sunt nisi ut",
+        "country": "nulla pariatur in incididunt fugiat",
+        "extra": "nisi nulla ad veniam nostrud",
+        "house_number": "laborum dolor",
+        "mailbox_name": "magna in cillum",
+        "po_box": "ad occaecat Ut est",
+        "postal_code": "voluptate proident mollit",
+        "province": "veniam minim non",
+        "street": "cupidatat vo"
+    },
+    "address_postal": {
+        "city": "pariatur labore ipsum exercitation",
+        "country": "laboris elit",
+        "extra": "in quis et reprehenderit dolor",
+        "house_number": "deserunt sit irure volup",
+        "mailbox_name": "irure eu occaecat anim",
+        "po_box": "pariatur sed nulla magna",
+        "postal_code": "esse commodo",
+        "province": "dolore ut eiusmod proident dolore",
+        "street": "velit ad cupidatat"
+    },
+    "country": "<string>",
+    "legal_form": "<string>",
+    "avatar_uuid": "<string>",
+    "chamber_of_commerce_number": "<string>",
+    "subscription_type": "<string>",
+    "ubo": [
+        {
+            "date_of_birth": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "nationality": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        {
+            "date_of_birth": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "nationality": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        }
+    ]
+})
+
+
+

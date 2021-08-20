@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Deletes a category. The ID of the category must be specified.
+
+@name("Deletes a category")
+DELETE "https://{{baseUrl}}/rest/categories/:id"
+
+
+// Deactivate availability for clients.
+
+@name("Deactivate availability for clients")
+DELETE "https://{{baseUrl}}/rest/categories/:id/clients"
+
+
+// Delete category details for the specified languages.
+
+@name("Delete category details for the specified languages")
+DELETE "https://{{baseUrl}}/rest/categories/:id/details"
+
+
+// Deletes a category template. The ID of the category, the plenty ID of the client (store) and the language must be specified.
+
+@name("Delete a category template")
+DELETE "https://{{baseUrl}}/rest/categories/:id/templates"
+
+
+

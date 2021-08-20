@@ -1,0 +1,200 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves information on an portfolio specified by its ID.
+
+@name("Get a specified portfolio") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/portfolios/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates a portfolio specified by its ID with new information.
+
+@name("Update a specified portfolio") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v2/portfolios/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "description": "nulla aliqua minim incididunt sed",
+    "name": "consequat in dolore est",
+    "number": "adipisicing co",
+    "id": -34109467,
+    "createDate": "fugiat in",
+    "stampDate": "ex commodo non"
+})
+
+
+// Deletes an portfolio specified by its ID.
+
+@name("Delete a specified portfolio") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v2/portfolios/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "deleteType"= "PORTFOLIO_EXCEPT_ACCOUNTS"
+? "datasource"= "Excepteur nisi in"
+
+
+// Places an portfolios into a queue, where it waits until the analysis occurs.
+
+@name("Process a portfolio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/portfolios/:id/process"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "currency": {
+        "asOfDate": "Duis ad eu commodo",
+        "code": "voluptate enim ullamco",
+        "scheme": "aliquip fugiat Ut",
+        "vintage": "veniam occaecat sint Duis"
+    },
+    "edm": "Lorem commodo laboris anim",
+    "id": 28102828,
+    "exposureType": "ACCOUNT",
+    "modelProfileId": -91367976,
+    "eventRateSchemeId": -83565760,
+    "treaties": [
+        97507620,
+        78866283
+    ],
+    "jobName": "AV_o3",
+    "outputProfileId": -17812681
+})
+
+
+// Retrieves analyses for exposure specified by its ID.
+
+@name("Get analyses for a specified exposure") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/portfolios/:id/analyses"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Retrieves a coordinate for a portfolio specified by its ID, latitude and longitude.
+
+@name("Get coordinate for a specified portfolio by latitude and longitude") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/portfolios/:id/coordinate"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "latitude"= "-61281687.88214854"
+? "longitude"= "-61281687.88214854"
+
+
+// Submits a report generation workflow task and returns a download link to the report when the task is done
+
+@name("Generates a report for this portfolio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/portfolios/:id/summary_report"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "perilList": [
+        "ullamco magna voluptate"
+    ],
+    "reportName": "quis nostrud commodo Ut minim"
+})
+
+
+// Copies existing portfolio.
+
+@name("Copy portfolio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/portfolios/:id/copy"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "newDescription": "in cupidatat ",
+    "newName": "deserunt velit qui cupidatat",
+    "newNumber": "pariatur irure ipsum voluptate qui",
+    "deep": true,
+    "isDeep": false
+})
+
+
+// Retrieves a list of location coordinates for a portfolio specified by its ID.
+
+@name("Get list of location coordinates for a specified portfolio") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/portfolios/:id/coordinates"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Manage filtered accounts in an already existing portfolio.
+
+@name("Manage filtered accounts in an already existing portfolio") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v2/portfolios/:id/filteredaccounts"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "*/*"
+? "datasource"= "Excepteur nisi in"
+data('{
+    "selectAll": false,
+    "queryFilter": "do dolor",
+    "markedAccounts": [
+        7961086,
+        72727288
+    ],
+    "manageExistingAccounts": true
+}')
+
+
+// Performs Geocode And/Or Hazard on a portfolio
+
+@name("Performs Geocode And/Or Hazard on a specified portfolio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/portfolios/:id/geohaz"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json([
+    {
+        "engineType": "anim enim exercitation in Lorem",
+        "name": "elit eu ut",
+        "type": "minim magna aliqua in",
+        "version": "commodo dolore ir",
+        "layerOptions": {}
+    },
+    {
+        "engineType": "ullamco non sunt nisi",
+        "name": "fugiat in Lorem non",
+        "type": "dolor cillum amet nulla est",
+        "version": "dolore cillum sint amet nostrud",
+        "layerOptions": {}
+    }
+])
+
+
+// Converts the currency of a portfolio specified by its ID.
+
+@name("Convert the currency of a specified portfolio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/portfolios/:id/convertcurrency"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "*/*"
+? "datasource"= "Excepteur nisi in"
+data('{
+    "asOfDate": "pariatur tempor id",
+    "code": "non",
+    "scheme": "commodo",
+    "vintage": "eu voluptat"
+}')
+
+
+// Retrieves metrics for a portfolio specified by its ID.
+
+@name("Get metrics for a specified portfolio") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/portfolios/:id/metrics"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

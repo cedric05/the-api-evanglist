@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Returns a list running races based on a set of search criteria.
+
+@name("List Running Races")
+GET "https://{{baseUrl}}/running_races"
+? "year"= "<integer>"
+? "year"= "<integer>"
+
+
+// Returns a running race for a given identifier.
+
+@name("Get Running Race")
+GET "https://{{baseUrl}}/running_races/:id"
+
+
+

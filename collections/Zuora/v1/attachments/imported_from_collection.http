@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// Use the Add Attachment REST request with a multipart/form-data to attach a document file to an Account, a Subscription, or an Invoice.
+
+@name("Add attachments")
+POST "https://{{baseUrl}}/v1/attachments"
+? "description"= "<put>"
+? "associatedObjectType"= "<>"
+? "associatedObjectKey"= "<>"
+
+
+// Use the Delete Attachment REST request to delete an attachment from a Zuora object.
+
+@name("Delete attachments")
+DELETE "https://{{baseUrl}}/v1/attachments/:attachment-id"
+
+
+// Use the View Attachment REST request to get a list of attachments on an account, an invoice, or a subscription.
+
+@name("View attachments list")
+GET "https://{{baseUrl}}/v1/attachments/:object-type/:object-key"
+
+
+

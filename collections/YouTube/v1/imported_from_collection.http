@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bdca8cb-a591-4d01-90eb-dc36f5720cac.postman_collection.json
+
+// Method for media download. Download is supportednon the URI `/v1/media/{+name}?alt=media`.
+
+@name("Get Media Resource Name")
+GET "https://{{baseUrl}}/v1/media/:resourceName"
+
+
+// Lists report types.
+
+@name("Get Reporttypes")
+GET "https://{{baseUrl}}/v1/reportTypes"
+? "includeSystemManaged"= "<>"
+? "onBehalfOfContentOwner"= "<>"
+? "pageSize"= "<>"
+? "pageToken"= "<>"
+
+
+

@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fb8b1d1d-31f3-4aac-94ea-7ae1f5b6c52d.postman_collection.json
+
+// Translate a source file from one format to another.  Derivatives are stored in a manifest that is updated each time this endpoint is used on a source file.  Note that this endpoint is asynchronous and initiates a process that runs in the background, rather than keeping an open HTTP connection until completion. Use the [GET {urn}/manifest](https://developer.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-manifest-GET) endpoint to poll for the jobs completion. 
+
+@name("translate")
+POST "https://{{baseUrl}}/modelderivative/v2/designdata/job"
+? "No Name"= "<string>"
+
+
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// nA paginated list of preprints from all preprint providers. The returned preprints are sorted by their creation date, with the most recent preprints appearing first.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of 10 preprints. Each resource in the array is a separate preprint object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nnThis request should never return an error.n#
+
+@name("List all preprints")
+GET "https://{{baseUrl}}/preprints/"
+
+
+

@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-78c0dc33-e726-4d39-9b71-5a066250bed7.postman_collection.json
+
+// This method returns general information about the blog, such as the title, number of posts, and other high-level data.
+
+@name("Get Blog Base Hostname Info")
+GET "https://{{baseUrl}}/blog/:base-hostname/info"
+
+
+// Retrieves a blog's avatar in one of 9 different sizes.
+
+@name("Get Blog Base Hostname Avatar Size")
+GET "https://{{baseUrl}}/blog/:base-hostname/avatar/:size"
+
+
+// Retrieves a blog's followers.
+
+@name("Get Blog Base Hostname Followers")
+GET "https://{{baseUrl}}/blog/:base-hostname/followers"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

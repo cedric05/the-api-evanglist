@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Get details about a collection.
+
+@name("Get Collection")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/collections/:collection"
+
+
+// Delete a collection and all its documents from Rockset.
+
+@name("Delete Collection")
+DELETE "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/collections/:collection"
+
+
+// Get all Aliases for a specific Rockset Collection.
+
+@name("Get Aliases for Collection")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/collections/:collection/aliases"
+
+
+// Get all Query Lambdas that hit a specific Rockset Collection.
+
+@name("Get Query Lambdas for Collection")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/collections/:collection/lambdas"
+
+
+

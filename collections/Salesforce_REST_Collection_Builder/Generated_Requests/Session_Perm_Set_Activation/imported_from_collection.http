@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Session Perm Set Activation") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/SessionPermSetActivation/"
+
+
+@name("Session Perm Set Activation Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/SessionPermSetActivation/{ID}/"
+
+
+@name("Describe Session Perm Set Activation") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/SessionPermSetActivation/describe/"
+
+
+

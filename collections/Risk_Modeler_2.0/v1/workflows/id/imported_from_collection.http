@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves information on a specified workflow by its ID.
+
+@name("Get workflow specified workflow ID") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/workflows/:id"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Cancels specified workflow by its ID.
+
+@name("Cancel workflow specified by ID") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/workflows/:id"
+"Authorization": "Bearer <Bearer Token>"
+
+
+

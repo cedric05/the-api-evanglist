@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e7284ee4-fd9b-45f9-a31d-197af3b48c31.postman_collection.json
+
+// Retrieve a data
+
+@name("Retrieve a data")
+GET "https://{{baseUrl}}/rest/data/:id/"
+
+
+// Assign Data to a Workspace
+
+@name("Assign Data to a Workspace")
+PATCH "https://{{baseUrl}}/rest/data/:id/assign/:workspace_id"
+
+
+

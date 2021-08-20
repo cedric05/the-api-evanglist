@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bccf5d55-a2df-4783-8125-6d0355865ae6.postman_collection.json
+
+// Returns list of available CTA for current user. Requires each user to authenticate with RiteKit
+
+@name("List of CTAs")
+GET "https://{{baseUrl}}/v1/link/cta"
+
+
+// Returns a shorten link with a given CTA.
+
+@name("Shorten Link")
+GET "https://{{baseUrl}}/v1/link/short-link"
+? "url"= "<string>"
+? "cta"= "<integer>"
+
+
+

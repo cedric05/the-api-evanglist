@@ -1,0 +1,176 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c042ba95-004a-4eae-9c9b-9e092b6ffd0f.postman_collection.json
+
+// This operation retrieves a GeographicSite entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a GeographicSite by ID")
+GET "https://{{baseUrl}}/geographicSite/:id"
+? "fields"= "irure "
+
+
+// This operation updates partially a GeographicSite entity.
+
+@name("Updates partially a GeographicSite")
+PATCH "https://{{baseUrl}}/geographicSite/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "code": "officia ut eu",
+    "description": "irure ex magna veniam",
+    "name": "consectetur",
+    "status": "culpa esse labore",
+    "calendar": [
+        {
+            "status": "culpa sed nulla esse",
+            "id": "sit",
+            "href": "https://EVLVPYQpzVzxCBlooaZBrklPobFbJIMHB.sxxlMeDxUnXFBi1nR-6,hNzli4-Bat8Q-XFV.T8ukhRKAjO",
+            "day": "cupidatat",
+            "timeZone": "sit sint",
+            "hourPeriod": [
+                {
+                    "id": "Duis enim esse",
+                    "href": "http://BVBbASmzzMsFYiOSSvrfmaDyWIY.buvpQVephF,V7d7+YiF-W9Qx-MwMTE6uWk4ksFlXKYa3xsKH6aU",
+                    "endHour": "ullamco deserunt elit incididunt",
+                    "startHour": "magna cupidatat ad",
+                    "@baseType": "tempor enim",
+                    "@schemaLocation": "http://ySZ.izwMx6SNMNDWWm5G16krAW4rajRFql-jgSy,cI",
+                    "@type": "ut fugiat commodo"
+                },
+                {
+                    "id": "magna irure fugiat cupidatat",
+                    "href": "http://rANamOIbVcCLAhkBXAAIRibXaNk.rfniZ1iRazgSYpp",
+                    "endHour": "fugiat sint elit",
+                    "startHour": "commodo nisi eu non",
+                    "@baseType": "nostrud pariatur",
+                    "@schemaLocation": "https://kdKrXlMXHZTlhy.mtaqvw-cQZs,TTUEDMsn1fK8lQ9S6fUeoYSD1c",
+                    "@type": "cillum nulla"
+                }
+            ],
+            "@baseType": "esse do voluptate",
+            "@schemaLocation": "https://lCyenEbHndFtsFlu.ginpeuMBRqpN-YvyP6AT+y25VwpR,3vGgo2hj7FQvHagS5gyY0V",
+            "@type": "ea dolor Lorem mollit"
+        },
+        {
+            "status": "aliqua occaecat Ut aliquip",
+            "id": "ipsum culpa aute amet",
+            "href": "https://AzTVd.gclIdZydI6IqKtf",
+            "day": "Duis tempor sed ut",
+            "timeZone": "Lorem",
+            "hourPeriod": [
+                {
+                    "id": "anim ea elit ex laboris",
+                    "href": "http://UogDvp.rxw-SKg+p.NHou6C9DIvoYLdWTgnDbkkuTsXDpB-U1jJC.cwseYCFjM",
+                    "endHour": "et enim qui",
+                    "startHour": "consectetu",
+                    "@baseType": "Ut aute officia",
+                    "@schemaLocation": "http://wrizncCqemfadcpLPUCTGwpbAL.wiaxjf9as8-nqRUbcklPJ.juKbsYkV56",
+                    "@type": "in laborum incididunt est"
+                },
+                {
+                    "id": "ullamco ea nulla",
+                    "href": "https://JgmquRAzfiyVXLSk.kpfaJCJJ-,feMnpyVHQW,eKmPqF1rI9tZ1CtozuW-PSKk2u",
+                    "endHour": "ut mollit consectetur",
+                    "startHour": "consectetur ex",
+                    "@baseType": "officia ex Excepteur dolore occaecat",
+                    "@schemaLocation": "https://QhErnceMIwATWve.deAGD",
+                    "@type": "aliqua ea do quis"
+                }
+            ],
+            "@baseType": "officia",
+            "@schemaLocation": "https://sRjIfpfdoirQQDHMBhKQCWnMKMy.irsSFKk7x1N",
+            "@type": "deserunt ullamco ipsum"
+        }
+    ],
+    "place": [
+        {
+            "id": "esse mollit",
+            "href": "voluptate officia",
+            "name": "labore enim p",
+            "@baseType": "velit",
+            "@schemaLocation": "http://VvdwITkcnWgCwjrUZlgNApDn.vvixPiV5B5QhLkk4lRIWhrImZNBpoa",
+            "@type": "consectetur dolor cupidatat adipisicing",
+            "@referredType": "proident tempor voluptate"
+        },
+        {
+            "id": "commodo cillu",
+            "href": "aute eu",
+            "name": "in sint",
+            "@baseType": "aute culpa sed",
+            "@schemaLocation": "https://MW.xyrZhbDkJTKlXPD1abElvbOAKh,TCej+Hd1YIgfiMh.TIVy",
+            "@type": "Ut in",
+            "@referredType": "fugiat sed"
+        }
+    ],
+    "relatedParty": [
+        {
+            "@referredType": "ea ad voluptate labore nulla",
+            "id": "exercitation do",
+            "href": "http://CDBvATnDtekqKlGeMuPxk.vlyMyJTKKaCloZozifdU2098I,.NPMkN",
+            "name": "id occaecat ut",
+            "role": "in",
+            "@baseType": "ullamco velit qui cillum minim",
+            "@schemaLocation": "https://MoNmaTOuYAXICrAqFDfYMHFyfHuRpwY.fepnDuIQ",
+            "@type": "esse dolor"
+        },
+        {
+            "@referredType": "deserunt ipsum",
+            "id": "elit ea labore in ut",
+            "href": "https://F.oqlV-RFI3P1UR+tcGjfoW01l9e5P5eRy0CkKI",
+            "name": "pariatur in",
+            "role": "eiusmod proident",
+            "@baseType": "tempor aliqua cupidatat",
+            "@schemaLocation": "http://hLZdfwJMg.rng4tef2ArjgyuN.POIdXzQNQVzPm5vUC",
+            "@type": "minim laboris adipisicing"
+        }
+    ],
+    "siteRelationship": [
+        {
+            "id": "ut exercitation",
+            "relationshipType": "sed do quis",
+            "href": "est eu amet esse",
+            "role": "velit aliquip Ut",
+            "validFor": {
+                "id": "cillum qui",
+                "href": "http://sdZktnmclmcLxXzidAOaumtNczH.fcorh+XS0fWPf4HPoaysgkBr.bQ+Dcir5EaF0Y",
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z",
+                "@baseType": "pariatur fugiat consequat",
+                "@schemaLocation": "http://YSEnyxApHIWVuMEsKvdtuXWGmuFDSo.xldnTvCtEeixpeVwhm,XaeAXqlMUNs20Ojkb-6VofKxqa6MVMfvO",
+                "@type": "nulla ea"
+            },
+            "@baseType": "laborum",
+            "@schemaLocation": "http://ILH.wgrc+VbmVYiEtPteA-7-JSdW",
+            "@type": "id occaecat ut laboris"
+        },
+        {
+            "id": "occaecat laborum con",
+            "relationshipType": "et",
+            "href": "id sint sunt est",
+            "role": "veniam ",
+            "validFor": {
+                "id": "eiusmod",
+                "href": "http://FBPExPYfHvpDRmPiPnnYUNmPjIm.zmzvYXbJ,YM4AOcn,MkiBGHSZWhoPm8NIs2PwLv07CeSPlbWEhfKmAYIoZW",
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z",
+                "@baseType": "quis ipsum",
+                "@schemaLocation": "https://yUf.xoN3zdatCtt4UVvoZ9lGzR2M",
+                "@type": "cupidatat incididunt dolor esse"
+            },
+            "@baseType": "amet dolore Duis",
+            "@schemaLocation": "http://HxGfkEcoizeKNbldMFfDVdpLDCkBXmRS.jikcD92NhusHCoVwFAAhyDR",
+            "@type": "fugiat volupta"
+        }
+    ],
+    "@baseType": "eiusmod minim et",
+    "@schemaLocation": "http://p.eacepiVy2FLCJOkrmwGtoCvbaPNGkrbiBirchA",
+    "@type": "ea exercitation fugiat dolor qui"
+})
+
+
+// This operation deletes a GeographicSite entity.
+
+@name("Deletes a GeographicSite")
+DELETE "https://{{baseUrl}}/geographicSite/:id"
+
+
+

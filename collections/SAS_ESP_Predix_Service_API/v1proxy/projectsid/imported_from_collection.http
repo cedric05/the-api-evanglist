@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0b864055-985c-4878-9728-48e02f094adc.postman_collection.json
+
+// API to Load/Create project in ESP server.
+
+@name("Load/Create Project")
+PUT "https://{{baseUrl}}/v1/proxy/projects/:id"
+
+
+// API to update project status etc. started, running, stopped
+
+@name("Update project status")
+PUT "https://{{baseUrl}}/v1/proxy/projects/:id/state"
+
+
+

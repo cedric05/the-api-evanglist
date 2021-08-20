@@ -1,0 +1,1 @@
+Latest Swagger specification for OpenData Business Current Account data

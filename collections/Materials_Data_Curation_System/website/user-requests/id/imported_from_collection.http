@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Retrieve a Account Request
+
+@name("website user-requests read") : "base-inherit-auth"
+GET "https://{{baseUrl}}/website/user-requests/:id/"
+
+
+// Deny or Accept
+
+@name("website user-requests accept partial update") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/website/user-requests/:id/accept/"
+
+
+// Deny or Accept
+
+@name("website user-requests deny partial update") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/website/user-requests/:id/deny/"
+
+
+

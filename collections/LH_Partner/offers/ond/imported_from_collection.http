@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-51a922a3-552d-4075-ac95-f80fd77c5d4c.postman_collection.json
+
+// Returns LH route origin & destination information
+
+@name("OND Route")
+GET "https://{{baseUrl}}/offers/ond/route/:origin/:destination"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Returns LH network route status information. Search for recently added or retired routes
+
+@name("OND Status")
+GET "https://{{baseUrl}}/offers/ond/status"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "new"= "<>"
+? "old"= "<>"
+
+
+// Returns LH Top routes per country or across all countries
+
+@name("Top OND")
+GET "https://{{baseUrl}}/offers/ond/top"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "origin"= "<>"
+
+
+

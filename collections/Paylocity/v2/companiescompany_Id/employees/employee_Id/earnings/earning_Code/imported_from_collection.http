@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4727ff8b-21cd-41e7-b532-19284cb5abdf.postman_collection.json
+
+// Get Earnings returns all earnings with the provided earning code for the selected employee.
+
+@name("Get Earnings by Earning Code")
+GET "https://{{baseUrl}}/v2/companies/:companyId/employees/:employeeId/earnings/:earningCode"
+
+
+// Delete Earning by Earning Code and Start Date
+
+@name("Delete Earning by Earning Code and Start Date")
+DELETE "https://{{baseUrl}}/v2/companies/:companyId/employees/:employeeId/earnings/:earningCode/:startDate"
+
+
+

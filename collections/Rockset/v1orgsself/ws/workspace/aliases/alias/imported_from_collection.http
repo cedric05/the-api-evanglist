@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Get details about a alias
+
+@name("Get Alias")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/aliases/:alias"
+
+
+// Update alias in a workspace.
+
+@name("Update Alias")
+POST "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/aliases/:alias"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "labore",
+        "laborum amet cupidatat dolore in"
+    ],
+    "description": "version alias"
+})
+
+
+// Delete an alias.
+
+@name("Delete Alias")
+DELETE "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/aliases/:alias"
+
+
+// Get all Query Lambdas that hit a specific Rockset Alias.
+
+@name("Get Query Lambdas with Alias")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/aliases/:alias/lambdas"
+
+
+

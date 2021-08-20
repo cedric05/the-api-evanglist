@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1eafd448-a35c-467b-bb97-09ace45ef013.postman_collection.json
+
+// Returns the merchant with the specific id
+
+@name("Get merchant by id")
+GET "https://{{baseUrl}}/merchants/:id"
+
+
+// Returns the purchases that a merchant is involved in.
+
+@name("Get all purchases by merchant")
+GET "https://{{baseUrl}}/merchants/:id/purchases"
+
+
+// Returns the purchases that a merchant is involved in.
+
+@name("Get all purchases by account and merchant")
+GET "https://{{baseUrl}}/merchants/:id/accounts/:accountId/purchases"
+
+
+

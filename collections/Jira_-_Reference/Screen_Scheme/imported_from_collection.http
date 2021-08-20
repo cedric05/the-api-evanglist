@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a [paginated](#pagination) list of screen schemes.
+// 
+// Only screen schemes used in classic projects are returned.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get Screen Schemes") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/screenscheme"
+? "startAt"= "0"
+? "maxResults"= "25"
+? "id"= "<long>"
+
+
+// Creates a screen scheme.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Create Screen Scheme") : "base-inherit-auth"
+POST "https://{{baseUrl}}/rest/api/3/screenscheme"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "screens": {
+        "type": "integer",
+        "description": "The ID of the default screen. Required when creating a screen scheme.",
+        "default": "<long>"
+    },
+    "description": "<string>"
+})
+
+
+

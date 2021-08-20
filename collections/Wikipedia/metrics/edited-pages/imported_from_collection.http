@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c039dcb8-c468-46a5-bef2-944b0de198e7.postman_collection.json
+
+// Given a Mediawiki project and a date range, returns a timeseries of its edited-pages counts.nYou can filter by editor-type (all-editor-types, anonymous, group-bot, name-bot, user),npage-type (all-page-types, content or non-content) or activity-level (1..4-edits,n5..24-edits, 25..99-edits, 100..-edits). You can choose between daily and monthlyngranularity as well.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data acces
+
+@name("Get edited-pages counts for a project.")
+GET "https://{{baseUrl}}/metrics/edited-pages/aggregate/:project/:editor-type/:page-type/:activity-level/:granularity/:start/:end"
+
+
+// Given a Mediawiki project and a date range, returns a timeseries of its new pages counts.nYou can filter by editor type (all-editor-types, anonymous, group-bot, name-bot, user)nor page-type (all-page-types, content or non-content). You can choose between daily andnmonthly granularity as well.nThe new pages value is computed as follow:n  [number of created pages] - [number of deleted pages] + [number of restored pages]nfor the chosen filters.nn- Stability: [experimental](https://www.mediawiki.org
+
+@name("Get new pages counts for a project.")
+GET "https://{{baseUrl}}/metrics/edited-pages/new/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+// Given a Mediawiki project and a date range, returns a timeseries of the top 100 edited-pagesnby absolute bytes-difference. You can filter by editor-type (all-editor-types, anonymous,ngroup-bot, name-bot, user) or page-type (all-page-types, content or non-content). You cannchoose between daily and monthly granularity as well.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available un
+
+@name("Get top 100 edited-pages by absolute bytes-difference.")
+GET "https://{{baseUrl}}/metrics/edited-pages/top-by-absolute-bytes-difference/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+// Given a Mediawiki project and a date range, returns a timeseries of the top 100 edited-pagesnby edits count. You can filter by editor-type (all-editor-types, anonymous, group-bot,nname-bot, user) or page-type (all-page-types, content or non-content). You can choosenbetween daily and monthly granularity as well.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0
+
+@name("Get top 100 edited-pages by edits count.")
+GET "https://{{baseUrl}}/metrics/edited-pages/top-by-edits/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+// Given a Mediawiki project and a date range, returns a timeseries of the top 100 edited-pagesnby net bytes-difference. You can filter by editor-type (all-editor-types, anonymous,ngroup-bot, name-bot, user) or page-type (all-page-types, content or non-content). You cannchoose between daily and monthly granularity as well.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under t
+
+@name("Get top 100 edited-pages by net bytes-difference.")
+GET "https://{{baseUrl}}/metrics/edited-pages/top-by-net-bytes-difference/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+

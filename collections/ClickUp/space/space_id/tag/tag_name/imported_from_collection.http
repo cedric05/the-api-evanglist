@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Edit a Space Tag") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/space/space_id/tag/tag_name"
+"Content-Type": "application/json"
+json({
+    "tag": {
+        "name": "API V2 PUT",
+        "tag_fg": "#ffffff",
+        "tag_bg": "#3e3d9f"
+    }
+})
+
+
+@name("Delete a Space Tag") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/space/space_id/tag/tag_name"
+"Content-Type": "application/json"
+json({
+    "tag": {
+        "name": "Tag name",
+        "tag_fg": "#000000",
+        "tag_bg": "#000000"
+    }
+})
+
+
+

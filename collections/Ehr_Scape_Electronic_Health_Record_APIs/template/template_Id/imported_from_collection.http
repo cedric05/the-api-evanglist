@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-078f0c0e-f03d-4124-bda1-c7d8042a0e64.postman_collection.json
+
+// Deletes an existing openehr template..
+
+@name("Deletes an existing OpenEHR template.")
+DELETE "https://{{baseUrl}}/template/:templateId"
+
+
+// Returns an example of data values for a web template..
+
+@name("Returns an example of data values for a web template.")
+GET "https://{{baseUrl}}/template/:templateId/example"
+? "defaultLanguage"= "<get>"
+? "exampleFilter"= "<>"
+? "format"= "<get>"
+? "languages"= "<get>"
+
+
+

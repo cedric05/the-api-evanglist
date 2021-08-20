@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92585ca3-4af5-4f55-9f95-f80c9040e561.postman_collection.json
+
+// This will send a station-specific donation email to the logged-in user.
+
+@name("Send a donation email to the logged-in user (only on request)")
+GET "https://{{baseUrl}}/localactivation/v2/donate_email"
+
+
+// **Not** for use by NPR One clients (for whom sponsorship is already integrated into the Listening Service), this endpoint is designed to be used by our other client applications to request sponsorship on behalf of a user. Sponsorship units are returned in the form of DAAST XML. It is worth noting that this endpoint attempts to always return XML, even in the case of exceptions.nnThe default behavior of this endpoint is asynchronous; on an initial request, a call to our external sponsorship provid
+
+@name("Request DAAST sponsorship units")
+GET "https://{{baseUrl}}/sponsorship/v2/ads"
+? "forceResult"= "<>"
+? "adCount"= "<>"
+
+
+

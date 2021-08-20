@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-078f0c0e-f03d-4124-bda1-c7d8042a0e64.postman_collection.json
+
+// Returns the ehr for the specified subject id and namespace..
+
+@name("Returns the EHR for the specified subject ID and namespace.")
+GET "https://{{baseUrl}}/ehr"
+? "subjectId"= "<get>"
+? "subjectNamespace"= "<get>"
+
+
+// Update ehr_status of an ehr..
+
+@name("Update EHR_STATUS of an EHR.")
+PUT "https://{{baseUrl}}/ehr/status/:ehrId"
+
+
+// Returns information about the specified ehr..
+
+@name("Returns information about the specified EHR.")
+GET "https://{{baseUrl}}/ehr/:ehrId"
+
+
+

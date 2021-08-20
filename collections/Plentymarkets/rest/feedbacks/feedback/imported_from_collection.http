@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Creates a feedback.
+
+@name("Create a feedback")
+POST "https://{{baseUrl}}/rest/feedbacks/feedback"
+? "title"= "<post>"
+? "feedbackRelationTargetId"= "<>"
+? "feedbackRelationTargetTypeId"= "<>"
+? "feedbackRelationSourceTypeId"= "<>"
+
+
+// Lists feedback replies. The ID of the feedback must be specified.
+
+@name("List feedback replies")
+GET "https://{{baseUrl}}/rest/feedbacks/feedback/replies/:feedbackId"
+
+
+// Deletes a feedback. The ID of the feedback must be specified.
+
+@name("Delete a feedback")
+DELETE "https://{{baseUrl}}/rest/feedbacks/feedback/:feedbackId"
+
+
+

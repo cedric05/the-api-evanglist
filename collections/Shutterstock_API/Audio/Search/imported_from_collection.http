@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("Search")
+GET "https://{{baseurl}}/audio/search"
+? "artists"= ""
+? "bpm_from"= ""
+? "bpm_to"= ""
+? "duration"= ""
+? "duration_from"= ""
+? "duration_to"= ""
+? "genre"= ""
+? "is_instrumental"= ""
+? "instruments"= ""
+? "moods"= ""
+? "page"= ""
+? "per_page"= ""
+? "query"= ""
+? "sort"= ""
+? "sort_order"= ""
+? "vocal_description"= ""
+? "view"= ""
+
+
+@name("List Genres")
+GET "https://{{baseurl}}/audio/genres"
+
+
+@name("List Instruments")
+GET "https://{{baseurl}}/audio/instruments"
+
+
+@name("List Moods")
+GET "https://{{baseurl}}/audio/moods"
+
+
+

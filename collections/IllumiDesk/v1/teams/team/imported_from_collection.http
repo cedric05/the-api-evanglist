@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete a team") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/teams/:team/"
+
+
+@name("Get a team") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/teams/:team/"
+
+
+@name("Update a team") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/teams/:team/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "avatar": "<byte>",
+    "avatar_url": "<string>",
+    "description": "<string>",
+    "location": "<string>",
+    "website": "<string>"
+})
+
+
+@name("Replace a team") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/teams/:team/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "avatar": "<byte>",
+    "avatar_url": "<string>",
+    "description": "<string>",
+    "location": "<string>",
+    "website": "<string>"
+})
+
+
+

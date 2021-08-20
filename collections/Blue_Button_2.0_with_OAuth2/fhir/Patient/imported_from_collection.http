@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c75719e6-6a0a-49ec-bec2-5816e656b79f.postman_collection.json
+
+@name("/fhir/Patient")
+GET "https://{{baseUrl}}/fhir/Patient"
+? "_id"= "<string>"
+? "identifier"= "<string>"
+? "_format"= "application/fhir+json"
+
+
+@name("/fhir/Patient/:id")
+GET "https://{{baseUrl}}/fhir/Patient/:id"
+
+
+

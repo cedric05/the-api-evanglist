@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b3a2d760-0850-44a8-a054-b81d03f9fcb6.postman_collection.json
+
+// Approve 1 to many timesheets
+
+@name("Timesheet Review")
+POST "https://{{baseUrl}}/time/v1/timeSheets/review"
+? "No Name"= "<string>"
+
+
+// Resolve 1 to many exceptions
+
+@name("Time Entry - Resolve Exception")
+POST "https://{{baseUrl}}/time/v1/timeSheets/resolveEntryExceptions"
+? "No Name"= "<string>"
+
+
+

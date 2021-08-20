@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Deletes a specific column..
+
+@name("Deletes a specific column.")
+DELETE "https://{{baseUrl}}/rest/boards/:boardId/columns/:columnId"
+
+
+// Updates the position of a specific column. also updates the positions of all following columns on the same board..
+
+@name("Updates the position of a specific column. Also updates the positions of all following columns on the same board.")
+PUT "https://{{baseUrl}}/rest/boards/:boardId/columns/:columnId/position"
+? "position"= "<post>"
+
+
+

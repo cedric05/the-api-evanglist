@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Create/update Thng properties. When a resource is created, you can specify an initial set of properties and their values. To update those properties or to add new ones, use a `PUT` request with an array of `PropertyDocument` JSON objects containing the changed fields. If the properties updated do not exist, they are created automatically by this request and no error/notification will be returned.
+
+@name("Create/update Thng properties")
+POST "https://{{baseUrl}}/thngs/:thngId/properties"
+? "No Name"= "<string>"
+
+
+// Update a single Thng property by `key`.
+
+@name("Update a Thng property")
+PUT "https://{{baseUrl}}/thngs/:thngId/properties/:propertyKey"
+? "No Name"= "<string>"
+
+
+

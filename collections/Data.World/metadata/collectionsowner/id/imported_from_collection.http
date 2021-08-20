@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get a collection by ID
+
+@name("Get a collection by ID") : "base-inherit-auth"
+GET "https://{{baseUrl}}/metadata/collections/:owner/:id"
+
+
+// Replace a collection
+
+@name("Replace a collection") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/metadata/collections/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "title": "proi",
+    "description": "est ",
+    "tags": [
+        {
+            "value": "0J9 "
+        },
+        {
+            "value": "HTh "
+        }
+    ]
+})
+
+
+// Delete an empty collection
+
+@name("Delete an empty collection") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/metadata/collections/:owner/:id"
+
+
+// Update a collection
+
+@name("Update a collection") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/metadata/collections/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "title": "proi",
+    "description": "est ",
+    "tags": [
+        {
+            "value": "0J9 "
+        },
+        {
+            "value": "HTh "
+        }
+    ]
+})
+
+
+

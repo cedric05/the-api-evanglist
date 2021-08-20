@@ -1,0 +1,135 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aa655ea0-f6d4-4615-b1ce-a1873e7cfc4c.postman_collection.json
+
+// Returns a list of articles according to the specified set of parameters.
+
+@name("Articles")
+GET "https://{{baseUrl}}/articles/"
+? "access_key"= "<>"
+? "article_filter_mode"= "<>"
+? "article_filter_name"= "<>"
+? "boolean_operator"= "<>"
+? "categories"= "<>"
+? "exact"= "<>"
+? "from_date"= "<>"
+? "get_topics"= "<>"
+? "has_images"= "<>"
+? "languages"= "<>"
+? "licensed"= "<>"
+? "links"= "<>"
+? "max_length"= "<>"
+? "media_types"= "<>"
+? "min_length"= "<>"
+? "mm"= "<>"
+? "modified_since"= "<>"
+? "offset"= "<>"
+? "query"= "<>"
+? "query_fields"= "<>"
+? "safe_search"= "<>"
+? "sort"= "<>"
+? "sources"= "<>"
+? "source_countries"= "<>"
+? "source_filter_mode"= "<>"
+? "source_filter_name"= "<>"
+? "topics"= "<>"
+? "topic_filter_mode"= "<>"
+? "topic_filter_name"= "<>"
+? "to_date"= "<>"
+
+
+// Search for categories
+
+@name("Categories")
+GET "https://{{baseUrl}}/categories/"
+? "access_key"= "<>"
+? "autosuggest"= "<>"
+? "query"= "<>"
+
+
+// Returns the image specified by the given GUID.
+
+@name("Image")
+GET "https://{{baseUrl}}/image/:guid/"
+? "access_key"= "<>"
+
+
+// Returns images matched by the query string
+
+@name("Search Images")
+GET "https://{{baseUrl}}/images/"
+? "access_key"= "<>"
+? "from_date"= "<>"
+? "offset"= "<>"
+? "pagesize"= "<>"
+? "query"= "<>"
+? "to_date"= "<>"
+
+
+// Search sources by name. Returns a list of sources objects
+
+@name("Sources")
+GET "https://{{baseUrl}}/sources/"
+? "access_key"= "<>"
+? "autosuggest"= "<>"
+? "licensed"= "<>"
+? "media_types"= "<>"
+? "query"= "<>"
+? "sources"= "<>"
+? "source_countries"= "<>"
+? "source_filter_mode"= "<>"
+? "source_filter_name"= "<>"
+
+
+// Returns the top stories related to the specified query. A story is a group of similar articles. By default, stories are sorted by a combination of recency and importance. If the from_date and/or to_date parameters are specified, stories are sorted by importance only.
+
+@name("Stories")
+GET "https://{{baseUrl}}/stories/"
+? "access_key"= "<>"
+? "article_filter_mode"= "<>"
+? "article_filter_name"= "<>"
+? "boolean_operator"= "<>"
+? "categories"= "<>"
+? "cluster_size"= "<>"
+? "exact"= "<>"
+? "from_date"= "<>"
+? "get_topics"= "<>"
+? "has_images"= "<>"
+? "languages"= "<>"
+? "licensed"= "<>"
+? "links"= "<>"
+? "max_length"= "<>"
+? "media_types"= "<>"
+? "min_length"= "<>"
+? "mm"= "<>"
+? "modified_since"= "<>"
+? "offset"= "<>"
+? "query"= "<>"
+? "query_fields"= "<>"
+? "safe_search"= "<>"
+? "sort"= "<>"
+? "sources"= "<>"
+? "source_countries"= "<>"
+? "source_filter_mode"= "<>"
+? "source_filter_name"= "<>"
+? "topics"= "<>"
+? "topic_filter_mode"= "<>"
+? "topic_filter_name"= "<>"
+? "to_date"= "<>"
+
+
+// Returns videos matching the given query string
+
+@name("Videos")
+GET "https://{{baseUrl}}/videos/"
+? "from_date"= "<>"
+? "licensed"= "<>"
+? "maxduration"= "<>"
+? "minduration"= "<>"
+? "offset"= "<>"
+? "pagesize"= "<>"
+? "query"= "<>"
+? "to_date"= "<>"
+
+
+

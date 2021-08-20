@@ -1,0 +1,225 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-86f913c9-5273-4302-9396-fd25df62c505.postman_collection.json
+
+// Get Active Document(s)
+
+@name("/getActiveDocuments")
+POST "https://{{baseUrl}}/getActiveDocuments"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"tempor dolor aliqua"')
+
+
+// Add Document(s)
+
+@name("/addActiveDocuments")
+POST "https://{{baseUrl}}/addActiveDocuments"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"exercitation in velit officia"')
+
+
+// edit active doc(s)
+
+@name("/editActiveDocuments")
+POST "https://{{baseUrl}}/editActiveDocuments"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"Lorem sunt"')
+
+
+// Preview Active Document(s)
+
+@name("/previewActiveDocuments")
+POST "https://{{baseUrl}}/previewActiveDocuments"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"enim irure cillum incididunt"')
+
+
+// Analyze Active Document(s)
+
+@name("/analyzeActiveDocuments")
+POST "https://{{baseUrl}}/analyzeActiveDocuments"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"min"')
+
+
+// Load To Table
+
+@name("/loadToTable")
+POST "https://{{baseUrl}}/loadToTable"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"volupta"')
+
+
+// Load To Table History
+
+@name("/loadHistory")
+POST "https://{{baseUrl}}/loadHistory"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"esse in tempor enim"')
+
+
+// Get Document(s) Statistics
+
+@name("/getDocumentStatistics")
+POST "https://{{baseUrl}}/getDocumentStatistics"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"min"')
+
+
+// Delete Document(s)
+
+@name("/deleteActiveDocuments")
+POST "https://{{baseUrl}}/deleteActiveDocuments"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"in nulla"')
+
+
+// Download document
+
+@name("/getDocument/:dGuid")
+GET "https://{{baseUrl}}/getDocument/:dGuid"
+"jwt": "eu"
+
+
+// Get All Documents
+
+@name("/getDocs")
+GET "https://{{baseUrl}}/getDocs"
+"jwt": "eu"
+
+
+// get doc type list
+
+@name("/getDocType")
+GET "https://{{baseUrl}}/getDocType"
+"jwt": "eu"
+
+
+// Delete Doc Types
+
+@name("/deleteDocTypes")
+POST "https://{{baseUrl}}/deleteDocTypes"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"lab"')
+
+
+// edit doc(s)
+
+@name("/editDocs")
+POST "https://{{baseUrl}}/editDocs"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"sunt fugiat officia"')
+
+
+// add doc(s)
+
+@name("/addDocs")
+POST "https://{{baseUrl}}/addDocs"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"ullamco culpa pariatur in"')
+
+
+// Delete Docs List
+
+@name("/deleteDocs")
+POST "https://{{baseUrl}}/deleteDocs"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"incididunt culpa"')
+
+
+// Get Doc Objects
+
+@name("/getDocObjects")
+POST "https://{{baseUrl}}/getDocObjects"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"tempor dolor aliqua"')
+
+
+// add document object(s)
+
+@name("/addDocObjects")
+POST "https://{{baseUrl}}/addDocObjects"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"in nulla"')
+
+
+// Delete Docs Objects
+
+@name("/deleteDocObjects")
+POST "https://{{baseUrl}}/deleteDocObjects"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"in"')
+
+
+// Add Document(s) to Object
+
+@name("/addDocstoObject")
+POST "https://{{baseUrl}}/addDocstoObject"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"mollit"')
+
+
+// Get Document(s) from Object
+
+@name("/getDocsFromObject")
+POST "https://{{baseUrl}}/getDocsFromObject"
+"jwt": "eu"
+"Content-Type": "application/json"
+data('"tempor dolor aliqua"')
+
+
+// Get Document by dGuid
+
+@name("/getDocBydGuid/:dGuid")
+GET "https://{{baseUrl}}/getDocBydGuid/:dGuid"
+"jwt": "eu"
+
+
+// getDocumentsByObjectList
+
+@name("/getDocumentsByObjectList")
+POST "https://{{baseUrl}}/getDocumentsByObjectList"
+"jwt": "eu"
+"Content-Type": "application/json"
+json({
+    "limit": -46551000,
+    "offset": 12904894,
+    "objectList": [
+        "enim tempor sint eiusmod",
+        "ex"
+    ]
+})
+
+
+// getDocsByUguids
+
+@name("/getDocsByUguids")
+POST "https://{{baseUrl}}/getDocsByUguids"
+"jwt": "eu"
+"Content-Type": "application/json"
+json({
+    "uGuidList": [
+        "Duis consequat cupidatat",
+        "labore tempor deserunt"
+    ]
+})
+
+
+

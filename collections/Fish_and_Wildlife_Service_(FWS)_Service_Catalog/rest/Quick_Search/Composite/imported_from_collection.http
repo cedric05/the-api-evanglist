@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Execute a QuickSearch from a GET request with a query string and paging parameters, yielding results with additional composite detail.")
+GET "https://{{baseUrl}}/rest/QuickSearch/Composite"
+? "q"= "<string>"
+? "top"= "<integer>"
+? "page"= "<integer>"
+? "orderby"= "<string>"
+? "sort"= "<string>"
+
+
+@name("Execute a QuickSearch from a POST request that includes all search criteria in its body and paging parameters in the uri query,
+yielding results with additional composite detail.")
+POST "https://{{baseUrl}}/rest/QuickSearch/Composite"
+"Content-Type": "application/x-www-form-urlencoded"
+? "top"= "<integer>"
+? "page"= "<integer>"
+? "orderby"= "<string>"
+? "sort"= "<string>"
+data({
+    "searchCriteria": [
+        "<string>"
+    ],
+    "units": [
+        "[\"<string>\",\"<string>\"]"
+    ]
+})
+
+
+

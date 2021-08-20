@@ -1,0 +1,1427 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-28605f6b-c6ad-4fa1-a5ff-54d5c520f888.postman_collection.json
+
+// Example of a client listener for receiving the notification PaymentCreateEvent
+
+@name("Client listener for entity PaymentCreateEvent")
+POST "https://{{baseUrl}}/listener/paymentCreateEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "payment": {
+            "account": {
+                "id": "nulla ut irure ea consequat",
+                "href": "aliquip",
+                "description": "aute anim",
+                "name": "consequat exercitation",
+                "@baseType": "fugiat cupidatat Ut",
+                "@schemaLocation": "https://YtIcpcirbEEhmdNsl.wvotfG2ofwv,7W1a",
+                "@type": "do labore ad",
+                "@referredType": "sed exercitation occaecat labore proident"
+            },
+            "paymentMethod": {
+                "id": "amet velit enim esse officia",
+                "href": "et est nulla veniam minim",
+                "description": "id quis consequat tempor",
+                "isPreferred": true,
+                "name": "nostrud mag",
+                "status": "exercitation eiusmod",
+                "statusDate": "1999-04-14T06:17:12.754Z",
+                "account": [
+                    {
+                        "id": "labore eiusmod dolore do",
+                        "href": "sed",
+                        "description": "aute sint esse",
+                        "name": "eu dolore ea officia",
+                        "@baseType": "eiusmod",
+                        "@schemaLocation": "http://gqkrDYPgNTJCrKLSWDxgIljkwhoXuiNsI.kxddSdoQ.U,ItQhXBPEfgQyR.",
+                        "@type": "in",
+                        "@referredType": "culpa velit occaecat"
+                    },
+                    {
+                        "id": "sunt dolor sint aliquip",
+                        "href": "aliquip adipisicing amet",
+                        "description": "dolor velit est",
+                        "name": "nulla magna officia nostrud dolor",
+                        "@baseType": "e",
+                        "@schemaLocation": "https://KhEMHceHSHExnkiyaYVURh.fryLZ7x",
+                        "@type": "enim in Lorem eu",
+                        "@referredType": "aliquip in officia"
+                    }
+                ],
+                "relatedParty": {
+                    "@referredType": "sit",
+                    "id": "aliquip magna reprehenderit dolor",
+                    "href": "sit ullamco aute tempor",
+                    "name": "voluptate con",
+                    "role": "culpa pariatur sunt veniam",
+                    "@baseType": "Place",
+                    "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                    "@type": "VendorProductOffering"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z",
+                    "@baseType": "proident ad non labore",
+                    "@schemaLocation": "http://SdJw.bomi4,eDme226EJzBMfx5kdqhDXQhsC71tVHBsAkEnsYYPIFZYUt",
+                    "@type": "laborum"
+                },
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "esse culpa minim dolore labore"
+            },
+            "id": "velit officia consequat",
+            "href": "irure aliquip qui id culpa",
+            "authorizationCode": "reprehenderi",
+            "correlatorId": "fugiat consequat",
+            "description": "exercitation ",
+            "name": "Duis ut",
+            "paymentDate": "2007-09-19T00:48:37.760Z",
+            "status": "sed",
+            "statusDate": "1944-10-06T11:08:25.928Z",
+            "amount": {
+                "unit": "nisi ipsum veniam laborum",
+                "value": 33347722.14081943,
+                "@baseType": "velit et aute ullamco",
+                "@schemaLocation": "https://tDulw.jfLcCavGy1K7tIAkZtvyNJhYBhR756i.G",
+                "@type": "labore"
+            },
+            "channel": {
+                "id": "consequat anim commodo eu",
+                "href": "in exercitation ex anim",
+                "name": "pariatur ad",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "enim Excepteur ut"
+            },
+            "payer": {
+                "@referredType": "Ut irure incididunt",
+                "id": "reprehenderit minim in velit irure",
+                "href": "eu minim non dolor",
+                "name": "ex incididunt sint",
+                "role": "qui aliqua",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering"
+            },
+            "paymentItem": [
+                {
+                    "item": {
+                        "id": "adipisicing proident",
+                        "href": "occaecat enim amet et",
+                        "name": "qui ipsum in",
+                        "@baseType": "Place",
+                        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                        "@type": "VendorProductOffering",
+                        "@referredType": "culpa fugiat"
+                    },
+                    "id": "do id reprehenderit quis",
+                    "amount": {
+                        "unit": "al",
+                        "value": -8269102.637938455,
+                        "@baseType": "nulla Ut dolore",
+                        "@schemaLocation": "https://QbIBUsSUjGysAwmYUUFbZYIAIvurQc.afzxbD-1w6vjV",
+                        "@type": "anim ut elit nulla"
+                    },
+                    "taxAmount": {
+                        "unit": "est culpa non ea",
+                        "value": 14701430.614448309,
+                        "@baseType": "Lorem Excepteur amet",
+                        "@schemaLocation": "http://LwAJfAblKIcfhaasmhxKMyV.rljtVtpZZoo9dPZBlKgUZ,pPiefZuAALDz8KmgZthmcFF0ng",
+                        "@type": "fugiat non esse"
+                    },
+                    "totalAmount": {
+                        "unit": "cillum in",
+                        "value": 8760495.629954606,
+                        "@baseType": "ea enim aliqua",
+                        "@schemaLocation": "http://cOP.mpqgCjjJdGWE",
+                        "@type": "tempor ut id minim exercitation"
+                    },
+                    "@baseType": "laborum",
+                    "@schemaLocation": "https://HhnWGMUmAzO.hccdW4xdcyX61SJYKCI04FidIwtR1X.tdBpkwhmkkB0",
+                    "@type": "aliqua"
+                },
+                {
+                    "item": {
+                        "id": "quis ",
+                        "href": "pariatur officia amet consequat",
+                        "name": "eu laboris",
+                        "@baseType": "Place",
+                        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                        "@type": "VendorProductOffering",
+                        "@referredType": "laborum"
+                    },
+                    "id": "cillum in Lorem nisi",
+                    "amount": {
+                        "unit": "quis ad pariatur id enim",
+                        "value": -24616199.19054438,
+                        "@baseType": "aute velit cupidatat",
+                        "@schemaLocation": "https://cTeNpocrnnkwQlpLUfXrW.unhsRHyuSrO0AFHWryCcXSu.Qi0+itEZyyK7D+-y,z",
+                        "@type": "incididunt sit culpa"
+                    },
+                    "taxAmount": {
+                        "unit": "eu non est",
+                        "value": 64250365.491360694,
+                        "@baseType": "mollit magna",
+                        "@schemaLocation": "http://AAeuZOWV.linh6ta7IrGTrR8",
+                        "@type": "eu in"
+                    },
+                    "totalAmount": {
+                        "unit": "elit Lorem quis",
+                        "value": -58911183.31730687,
+                        "@baseType": "ullamco quis velit",
+                        "@schemaLocation": "http://eiGHJLc.zrumzwF0cp.kjWjnB7,Bunl,uErZUQj.nORTlbQwcyIFmGX",
+                        "@type": "veniam eu ex nulla"
+                    },
+                    "@baseType": "aliqua sunt laborum in nostrud",
+                    "@schemaLocation": "http://WRKZiZcFwdyxttdvAcpbg.xygY24JmSu264toNvwRgWZTnB+rMB39snbV",
+                    "@type": "nostrud en"
+                }
+            ],
+            "taxAmount": {
+                "unit": "in eu",
+                "value": -43587090.60460169,
+                "@baseType": "in exercitation adipisicing",
+                "@schemaLocation": "http://JEszvoPzruQyXNuObWP.lceiCw1xvG-pdFR4WKIM8gTyIAjteQrKQASJvbiNB-BU,dqGN6sT,CeX5DN,f",
+                "@type": "id velit deserunt aliquip eu"
+            },
+            "totalAmount": {
+                "unit": "p",
+                "value": 73526805.47041658,
+                "@baseType": "esse qui l",
+                "@schemaLocation": "http://HCXVxJPlnIpqCSftdKm.jrA,fBcU.mnxuPmSS1m",
+                "@type": "aliquip"
+            },
+            "@baseType": "adipisicing quis",
+            "@schemaLocation": "https://J.cyjIWbgE9Zqe7ts4DH6zo.RfSwre,w7WMhxsli3ZEHY6jYK5nG8dssHk50ILVHz5QrF.rsE2",
+            "@type": "elit"
+        }
+    },
+    "eventId": "fugiat Duis culpa pariatur quis",
+    "eventTime": "2016-01-10T15:16:10.373Z",
+    "eventType": "Lorem incididunt magna",
+    "correlationId": "in anim ea ex dolore",
+    "domain": "enim consectetur non nulla quis",
+    "title": "adipisicing pariatur do",
+    "description": "eiusmod dolore ipsum Excepteur ea",
+    "priority": "Duis",
+    "timeOcurred": "2018-06-26T06:33:42.800Z"
+})
+
+
+// Example of a client listener for receiving the notification PaymentAttributeValueChangeEvent
+
+@name("Client listener for entity PaymentAttributeValueChangeEvent")
+POST "https://{{baseUrl}}/listener/paymentAttributeValueChangeEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "eventId": "ipsum deserunt occaecat elit",
+    "eventTime": "1946-05-09T11:37:48.557Z",
+    "eventType": "ex est",
+    "correlationId": "ut est ipsum",
+    "domain": "dolore sint ea",
+    "title": "dolor fugiat dolore ullamco mollit",
+    "description": "esse officia dolor qui",
+    "priority": "ad eu",
+    "timeOcurred": "2008-04-24T02:24:34.678Z",
+    "fieldPath": "labore exercitation nisi",
+    "event": {
+        "payment": {
+            "account": {
+                "id": "consequat velit in do tempor",
+                "href": "exercitation ad",
+                "description": "aliqua anim non",
+                "name": "ex magna aliquip consequat",
+                "@baseType": "eu ullamco quis",
+                "@schemaLocation": "http://tUwVBLfMBGXupBmjFhhxEwsIannHByEl.whgZsHmui1Q4ZghZTrmIK4mgCbTWemQIiFm",
+                "@type": "incididunt officia qui exercitation",
+                "@referredType": "ipsum incididunt"
+            },
+            "paymentMethod": {
+                "id": "aute ipsum deserunt nulla dolor",
+                "href": "fugiat pariatur",
+                "description": "non fugiat sunt Ut",
+                "isPreferred": true,
+                "name": "eiusmod ad",
+                "status": "officia aliquip aliqua Duis",
+                "statusDate": "2010-03-14T13:08:51.728Z",
+                "account": [
+                    {
+                        "id": "consequat",
+                        "href": "reprehenderit qui do Excepteur",
+                        "description": "Lorem exercitation",
+                        "name": "labore esse",
+                        "@baseType": "laborum magna sunt reprehenderit minim",
+                        "@schemaLocation": "http://tUjwlRiLamlJrpzIWvU.cslgR37vr2o5bs",
+                        "@type": "Excepteur nulla labore",
+                        "@referredType": "id ut"
+                    },
+                    {
+                        "id": "ea sunt incididunt consequat",
+                        "href": "amet Duis es",
+                        "description": "occaecat nisi tempor",
+                        "name": "sint nulla mollit nostrud",
+                        "@baseType": "Lorem enim sunt",
+                        "@schemaLocation": "http://UZTFmaHdxM.qgdBG+.RBheEAzWPEJeu0aP2,YvxrzoZJ4tgskGQLm+wCkDRI",
+                        "@type": "ipsum aliqua",
+                        "@referredType": "Lorem dolor"
+                    }
+                ],
+                "relatedParty": {
+                    "@referredType": "ex ut irure",
+                    "id": "deserunt Lorem magna d",
+                    "href": "dolor mollit",
+                    "name": "in eiusmod tempor",
+                    "role": "quis in est eu",
+                    "@baseType": "Place",
+                    "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                    "@type": "VendorProductOffering"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z",
+                    "@baseType": "labore fugiat",
+                    "@schemaLocation": "https://MOebelvkvumhsCdVnEWvdgYjjmIliYE.qwj9bOGAFjUR5ltBF5h90vrI",
+                    "@type": "tempor "
+                },
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "anim est labore nostrud"
+            },
+            "id": "ea minim sit esse amet",
+            "href": "reprehenderit qui anim",
+            "authorizationCode": "officia Lorem",
+            "correlatorId": "eu et commodo",
+            "description": "exercitation labore ",
+            "name": "in consectet",
+            "paymentDate": "1981-04-13T01:24:38.353Z",
+            "status": "commodo",
+            "statusDate": "1972-06-05T08:47:42.136Z",
+            "amount": {
+                "unit": "id",
+                "value": -71857004.94782603,
+                "@baseType": "dolore eu est officia commodo",
+                "@schemaLocation": "http://FOoyukMkLqmqZiakKONKFBBZncmfgAQ.eqBdFP0xKwdqW2l0Fk",
+                "@type": "dolor"
+            },
+            "channel": {
+                "id": "dolor eu",
+                "href": "consequ",
+                "name": "occaec",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "deserunt minim tempor sed"
+            },
+            "payer": {
+                "@referredType": "nisi ea",
+                "id": "Excepteur adipisicing dolore deserunt ut",
+                "href": "eiusmod sunt",
+                "name": "ipsum",
+                "role": "elit Duis veniam",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering"
+            },
+            "paymentItem": [
+                {
+                    "item": {
+                        "id": "ipsum ex reprehenderit",
+                        "href": "irure culpa esse",
+                        "name": "id",
+                        "@baseType": "Place",
+                        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                        "@type": "VendorProductOffering",
+                        "@referredType": "dolore deserunt"
+                    },
+                    "id": "proident dolore Lorem",
+                    "amount": {
+                        "unit": "officia ut",
+                        "value": -23504144.086813435,
+                        "@baseType": "laboris aute",
+                        "@schemaLocation": "http://KR.tlsVkWJ.",
+                        "@type": "ex dolore minim"
+                    },
+                    "taxAmount": {
+                        "unit": "minim",
+                        "value": 67506946.43419802,
+                        "@baseType": "do Lorem exercitation minim",
+                        "@schemaLocation": "https://ewBbHJsOFIQZVDYyNEcl.phUP4a8iw",
+                        "@type": "cillum"
+                    },
+                    "totalAmount": {
+                        "unit": "elit aliqua eiusmod in",
+                        "value": 81420991.6620903,
+                        "@baseType": "Lorem magna",
+                        "@schemaLocation": "https://xyjeYBdFSmurSmy.jypvYyc0ad3FqnJEdV1ito1+Jml+.5Q",
+                        "@type": "sunt pariatur aute ex"
+                    },
+                    "@baseType": "exercitation tempor",
+                    "@schemaLocation": "https://ztbnjsZHMTWvkowAlgUshrX.zpofoOMokHZpQU2zeYb9XfS5Thvr2oVbRXzz2tCF",
+                    "@type": "tempor adipisicing sunt proident"
+                },
+                {
+                    "item": {
+                        "id": "in incididunt reprehenderit culpa proident",
+                        "href": "magna velit",
+                        "name": "et exercitation irure",
+                        "@baseType": "Place",
+                        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                        "@type": "VendorProductOffering",
+                        "@referredType": "Ut sunt nostrud ut elit"
+                    },
+                    "id": "sed Lorem commodo",
+                    "amount": {
+                        "unit": "consequat incididunt",
+                        "value": -15936194.676889762,
+                        "@baseType": "laboris",
+                        "@schemaLocation": "https://xuH.xwxRAk7rJlIyWaHLKKab.gJml+kwn4BnjofrZ.V",
+                        "@type": "eiusmod ea"
+                    },
+                    "taxAmount": {
+                        "unit": "non esse cillum minim",
+                        "value": 83918458.96709377,
+                        "@baseType": "laboris consectetur ad mollit",
+                        "@schemaLocation": "https://ttncOWUolUsEYWppMtKjTbkfufAGbpFL.zqpdvgoqMVkQqM8DL,qiyBG,SaUU,HFXrEdQVMyKczGbOtewL78JQ",
+                        "@type": "ad quis pariatur dolore"
+                    },
+                    "totalAmount": {
+                        "unit": "dolor adipisicing id incididunt magna",
+                        "value": -38376729.55379841,
+                        "@baseType": "Lorem fugiat Excepteur",
+                        "@schemaLocation": "https://nstMRiizfmQma.otlqATUmT8Vd6S,nNSeC0RTobqDNsREfA-kEnq530jKPdFlUNziaCXfVteAyP23rWXDzdGkyAZxrYFeWqkp",
+                        "@type": "labore in ad officia n"
+                    },
+                    "@baseType": "ut reprehenderit",
+                    "@schemaLocation": "https://UwmDDvZRgwRKgShPDgXpgaQG.rzgzPtZUN4wGxI3o3xmrEGf1u7LgiaToHNLbt5sJWhpm6peLuk,vLbX",
+                    "@type": "dolor"
+                }
+            ],
+            "taxAmount": {
+                "unit": "dolor irure",
+                "value": 66248578.21039426,
+                "@baseType": "in est",
+                "@schemaLocation": "http://DeNTUpSxEQAcam.czRhMGgzbLRFQIJ2t8nJ,cllhIRTkn1pVwO.txVq6dnEsG.o3E",
+                "@type": "sed"
+            },
+            "totalAmount": {
+                "unit": "irure aliqua anim dolor",
+                "value": 98365569.39615554,
+                "@baseType": "amet",
+                "@schemaLocation": "https://BrEsVHDPqchkTFcdGKzUxHJHqCgYsdHRo.xhnbFAWZ,eYJ9edbv5dVHCCwo+dTKLKdhFPlCfNYBE+0KJCyK2TXm8Sz9",
+                "@type": "adipisicing sed"
+            },
+            "@baseType": "aliquip fugiat adipisicing et eu",
+            "@schemaLocation": "http://BTwvnTuNxfCMaxsjFHFohBF.iwyUoTw3tD+8gxQIa,d44V.bfHCNbUt6tFr8WsZS8Zs-uW",
+            "@type": "in magna sit minim"
+        }
+    }
+})
+
+
+// Example of a client listener for receiving the notification PaymentStateChangeEvent
+
+@name("Client listener for entity PaymentStateChangeEvent")
+POST "https://{{baseUrl}}/listener/paymentStateChangeEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "payment": {
+            "account": {
+                "id": "nulla ut irure ea consequat",
+                "href": "aliquip",
+                "description": "aute anim",
+                "name": "consequat exercitation",
+                "@baseType": "fugiat cupidatat Ut",
+                "@schemaLocation": "https://YtIcpcirbEEhmdNsl.wvotfG2ofwv,7W1a",
+                "@type": "do labore ad",
+                "@referredType": "sed exercitation occaecat labore proident"
+            },
+            "paymentMethod": {
+                "id": "amet velit enim esse officia",
+                "href": "et est nulla veniam minim",
+                "description": "id quis consequat tempor",
+                "isPreferred": true,
+                "name": "nostrud mag",
+                "status": "exercitation eiusmod",
+                "statusDate": "1999-04-14T06:17:12.754Z",
+                "account": [
+                    {
+                        "id": "labore eiusmod dolore do",
+                        "href": "sed",
+                        "description": "aute sint esse",
+                        "name": "eu dolore ea officia",
+                        "@baseType": "eiusmod",
+                        "@schemaLocation": "http://gqkrDYPgNTJCrKLSWDxgIljkwhoXuiNsI.kxddSdoQ.U,ItQhXBPEfgQyR.",
+                        "@type": "in",
+                        "@referredType": "culpa velit occaecat"
+                    },
+                    {
+                        "id": "sunt dolor sint aliquip",
+                        "href": "aliquip adipisicing amet",
+                        "description": "dolor velit est",
+                        "name": "nulla magna officia nostrud dolor",
+                        "@baseType": "e",
+                        "@schemaLocation": "https://KhEMHceHSHExnkiyaYVURh.fryLZ7x",
+                        "@type": "enim in Lorem eu",
+                        "@referredType": "aliquip in officia"
+                    }
+                ],
+                "relatedParty": {
+                    "@referredType": "sit",
+                    "id": "aliquip magna reprehenderit dolor",
+                    "href": "sit ullamco aute tempor",
+                    "name": "voluptate con",
+                    "role": "culpa pariatur sunt veniam",
+                    "@baseType": "Place",
+                    "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                    "@type": "VendorProductOffering"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z",
+                    "@baseType": "proident ad non labore",
+                    "@schemaLocation": "http://SdJw.bomi4,eDme226EJzBMfx5kdqhDXQhsC71tVHBsAkEnsYYPIFZYUt",
+                    "@type": "laborum"
+                },
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "esse culpa minim dolore labore"
+            },
+            "id": "velit officia consequat",
+            "href": "irure aliquip qui id culpa",
+            "authorizationCode": "reprehenderi",
+            "correlatorId": "fugiat consequat",
+            "description": "exercitation ",
+            "name": "Duis ut",
+            "paymentDate": "2007-09-19T00:48:37.760Z",
+            "status": "sed",
+            "statusDate": "1944-10-06T11:08:25.928Z",
+            "amount": {
+                "unit": "nisi ipsum veniam laborum",
+                "value": 33347722.14081943,
+                "@baseType": "velit et aute ullamco",
+                "@schemaLocation": "https://tDulw.jfLcCavGy1K7tIAkZtvyNJhYBhR756i.G",
+                "@type": "labore"
+            },
+            "channel": {
+                "id": "consequat anim commodo eu",
+                "href": "in exercitation ex anim",
+                "name": "pariatur ad",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "enim Excepteur ut"
+            },
+            "payer": {
+                "@referredType": "Ut irure incididunt",
+                "id": "reprehenderit minim in velit irure",
+                "href": "eu minim non dolor",
+                "name": "ex incididunt sint",
+                "role": "qui aliqua",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering"
+            },
+            "paymentItem": [
+                {
+                    "item": {
+                        "id": "adipisicing proident",
+                        "href": "occaecat enim amet et",
+                        "name": "qui ipsum in",
+                        "@baseType": "Place",
+                        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                        "@type": "VendorProductOffering",
+                        "@referredType": "culpa fugiat"
+                    },
+                    "id": "do id reprehenderit quis",
+                    "amount": {
+                        "unit": "al",
+                        "value": -8269102.637938455,
+                        "@baseType": "nulla Ut dolore",
+                        "@schemaLocation": "https://QbIBUsSUjGysAwmYUUFbZYIAIvurQc.afzxbD-1w6vjV",
+                        "@type": "anim ut elit nulla"
+                    },
+                    "taxAmount": {
+                        "unit": "est culpa non ea",
+                        "value": 14701430.614448309,
+                        "@baseType": "Lorem Excepteur amet",
+                        "@schemaLocation": "http://LwAJfAblKIcfhaasmhxKMyV.rljtVtpZZoo9dPZBlKgUZ,pPiefZuAALDz8KmgZthmcFF0ng",
+                        "@type": "fugiat non esse"
+                    },
+                    "totalAmount": {
+                        "unit": "cillum in",
+                        "value": 8760495.629954606,
+                        "@baseType": "ea enim aliqua",
+                        "@schemaLocation": "http://cOP.mpqgCjjJdGWE",
+                        "@type": "tempor ut id minim exercitation"
+                    },
+                    "@baseType": "laborum",
+                    "@schemaLocation": "https://HhnWGMUmAzO.hccdW4xdcyX61SJYKCI04FidIwtR1X.tdBpkwhmkkB0",
+                    "@type": "aliqua"
+                },
+                {
+                    "item": {
+                        "id": "quis ",
+                        "href": "pariatur officia amet consequat",
+                        "name": "eu laboris",
+                        "@baseType": "Place",
+                        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                        "@type": "VendorProductOffering",
+                        "@referredType": "laborum"
+                    },
+                    "id": "cillum in Lorem nisi",
+                    "amount": {
+                        "unit": "quis ad pariatur id enim",
+                        "value": -24616199.19054438,
+                        "@baseType": "aute velit cupidatat",
+                        "@schemaLocation": "https://cTeNpocrnnkwQlpLUfXrW.unhsRHyuSrO0AFHWryCcXSu.Qi0+itEZyyK7D+-y,z",
+                        "@type": "incididunt sit culpa"
+                    },
+                    "taxAmount": {
+                        "unit": "eu non est",
+                        "value": 64250365.491360694,
+                        "@baseType": "mollit magna",
+                        "@schemaLocation": "http://AAeuZOWV.linh6ta7IrGTrR8",
+                        "@type": "eu in"
+                    },
+                    "totalAmount": {
+                        "unit": "elit Lorem quis",
+                        "value": -58911183.31730687,
+                        "@baseType": "ullamco quis velit",
+                        "@schemaLocation": "http://eiGHJLc.zrumzwF0cp.kjWjnB7,Bunl,uErZUQj.nORTlbQwcyIFmGX",
+                        "@type": "veniam eu ex nulla"
+                    },
+                    "@baseType": "aliqua sunt laborum in nostrud",
+                    "@schemaLocation": "http://WRKZiZcFwdyxttdvAcpbg.xygY24JmSu264toNvwRgWZTnB+rMB39snbV",
+                    "@type": "nostrud en"
+                }
+            ],
+            "taxAmount": {
+                "unit": "in eu",
+                "value": -43587090.60460169,
+                "@baseType": "in exercitation adipisicing",
+                "@schemaLocation": "http://JEszvoPzruQyXNuObWP.lceiCw1xvG-pdFR4WKIM8gTyIAjteQrKQASJvbiNB-BU,dqGN6sT,CeX5DN,f",
+                "@type": "id velit deserunt aliquip eu"
+            },
+            "totalAmount": {
+                "unit": "p",
+                "value": 73526805.47041658,
+                "@baseType": "esse qui l",
+                "@schemaLocation": "http://HCXVxJPlnIpqCSftdKm.jrA,fBcU.mnxuPmSS1m",
+                "@type": "aliquip"
+            },
+            "@baseType": "adipisicing quis",
+            "@schemaLocation": "https://J.cyjIWbgE9Zqe7ts4DH6zo.RfSwre,w7WMhxsli3ZEHY6jYK5nG8dssHk50ILVHz5QrF.rsE2",
+            "@type": "elit"
+        }
+    },
+    "eventId": "fugiat Duis culpa pariatur quis",
+    "eventTime": "2016-01-10T15:16:10.373Z",
+    "eventType": "Lorem incididunt magna",
+    "correlationId": "in anim ea ex dolore",
+    "domain": "enim consectetur non nulla quis",
+    "title": "adipisicing pariatur do",
+    "description": "eiusmod dolore ipsum Excepteur ea",
+    "priority": "Duis",
+    "timeOcurred": "2018-06-26T06:33:42.800Z"
+})
+
+
+// Example of a client listener for receiving the notification PaymentDeleteEvent
+
+@name("Client listener for entity PaymentDeleteEvent")
+POST "https://{{baseUrl}}/listener/paymentDeleteEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "payment": {
+            "account": {
+                "id": "nulla ut irure ea consequat",
+                "href": "aliquip",
+                "description": "aute anim",
+                "name": "consequat exercitation",
+                "@baseType": "fugiat cupidatat Ut",
+                "@schemaLocation": "https://YtIcpcirbEEhmdNsl.wvotfG2ofwv,7W1a",
+                "@type": "do labore ad",
+                "@referredType": "sed exercitation occaecat labore proident"
+            },
+            "paymentMethod": {
+                "id": "amet velit enim esse officia",
+                "href": "et est nulla veniam minim",
+                "description": "id quis consequat tempor",
+                "isPreferred": true,
+                "name": "nostrud mag",
+                "status": "exercitation eiusmod",
+                "statusDate": "1999-04-14T06:17:12.754Z",
+                "account": [
+                    {
+                        "id": "labore eiusmod dolore do",
+                        "href": "sed",
+                        "description": "aute sint esse",
+                        "name": "eu dolore ea officia",
+                        "@baseType": "eiusmod",
+                        "@schemaLocation": "http://gqkrDYPgNTJCrKLSWDxgIljkwhoXuiNsI.kxddSdoQ.U,ItQhXBPEfgQyR.",
+                        "@type": "in",
+                        "@referredType": "culpa velit occaecat"
+                    },
+                    {
+                        "id": "sunt dolor sint aliquip",
+                        "href": "aliquip adipisicing amet",
+                        "description": "dolor velit est",
+                        "name": "nulla magna officia nostrud dolor",
+                        "@baseType": "e",
+                        "@schemaLocation": "https://KhEMHceHSHExnkiyaYVURh.fryLZ7x",
+                        "@type": "enim in Lorem eu",
+                        "@referredType": "aliquip in officia"
+                    }
+                ],
+                "relatedParty": {
+                    "@referredType": "sit",
+                    "id": "aliquip magna reprehenderit dolor",
+                    "href": "sit ullamco aute tempor",
+                    "name": "voluptate con",
+                    "role": "culpa pariatur sunt veniam",
+                    "@baseType": "Place",
+                    "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                    "@type": "VendorProductOffering"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z",
+                    "@baseType": "proident ad non labore",
+                    "@schemaLocation": "http://SdJw.bomi4,eDme226EJzBMfx5kdqhDXQhsC71tVHBsAkEnsYYPIFZYUt",
+                    "@type": "laborum"
+                },
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "esse culpa minim dolore labore"
+            },
+            "id": "velit officia consequat",
+            "href": "irure aliquip qui id culpa",
+            "authorizationCode": "reprehenderi",
+            "correlatorId": "fugiat consequat",
+            "description": "exercitation ",
+            "name": "Duis ut",
+            "paymentDate": "2007-09-19T00:48:37.760Z",
+            "status": "sed",
+            "statusDate": "1944-10-06T11:08:25.928Z",
+            "amount": {
+                "unit": "nisi ipsum veniam laborum",
+                "value": 33347722.14081943,
+                "@baseType": "velit et aute ullamco",
+                "@schemaLocation": "https://tDulw.jfLcCavGy1K7tIAkZtvyNJhYBhR756i.G",
+                "@type": "labore"
+            },
+            "channel": {
+                "id": "consequat anim commodo eu",
+                "href": "in exercitation ex anim",
+                "name": "pariatur ad",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "enim Excepteur ut"
+            },
+            "payer": {
+                "@referredType": "Ut irure incididunt",
+                "id": "reprehenderit minim in velit irure",
+                "href": "eu minim non dolor",
+                "name": "ex incididunt sint",
+                "role": "qui aliqua",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering"
+            },
+            "paymentItem": [
+                {
+                    "item": {
+                        "id": "adipisicing proident",
+                        "href": "occaecat enim amet et",
+                        "name": "qui ipsum in",
+                        "@baseType": "Place",
+                        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                        "@type": "VendorProductOffering",
+                        "@referredType": "culpa fugiat"
+                    },
+                    "id": "do id reprehenderit quis",
+                    "amount": {
+                        "unit": "al",
+                        "value": -8269102.637938455,
+                        "@baseType": "nulla Ut dolore",
+                        "@schemaLocation": "https://QbIBUsSUjGysAwmYUUFbZYIAIvurQc.afzxbD-1w6vjV",
+                        "@type": "anim ut elit nulla"
+                    },
+                    "taxAmount": {
+                        "unit": "est culpa non ea",
+                        "value": 14701430.614448309,
+                        "@baseType": "Lorem Excepteur amet",
+                        "@schemaLocation": "http://LwAJfAblKIcfhaasmhxKMyV.rljtVtpZZoo9dPZBlKgUZ,pPiefZuAALDz8KmgZthmcFF0ng",
+                        "@type": "fugiat non esse"
+                    },
+                    "totalAmount": {
+                        "unit": "cillum in",
+                        "value": 8760495.629954606,
+                        "@baseType": "ea enim aliqua",
+                        "@schemaLocation": "http://cOP.mpqgCjjJdGWE",
+                        "@type": "tempor ut id minim exercitation"
+                    },
+                    "@baseType": "laborum",
+                    "@schemaLocation": "https://HhnWGMUmAzO.hccdW4xdcyX61SJYKCI04FidIwtR1X.tdBpkwhmkkB0",
+                    "@type": "aliqua"
+                },
+                {
+                    "item": {
+                        "id": "quis ",
+                        "href": "pariatur officia amet consequat",
+                        "name": "eu laboris",
+                        "@baseType": "Place",
+                        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                        "@type": "VendorProductOffering",
+                        "@referredType": "laborum"
+                    },
+                    "id": "cillum in Lorem nisi",
+                    "amount": {
+                        "unit": "quis ad pariatur id enim",
+                        "value": -24616199.19054438,
+                        "@baseType": "aute velit cupidatat",
+                        "@schemaLocation": "https://cTeNpocrnnkwQlpLUfXrW.unhsRHyuSrO0AFHWryCcXSu.Qi0+itEZyyK7D+-y,z",
+                        "@type": "incididunt sit culpa"
+                    },
+                    "taxAmount": {
+                        "unit": "eu non est",
+                        "value": 64250365.491360694,
+                        "@baseType": "mollit magna",
+                        "@schemaLocation": "http://AAeuZOWV.linh6ta7IrGTrR8",
+                        "@type": "eu in"
+                    },
+                    "totalAmount": {
+                        "unit": "elit Lorem quis",
+                        "value": -58911183.31730687,
+                        "@baseType": "ullamco quis velit",
+                        "@schemaLocation": "http://eiGHJLc.zrumzwF0cp.kjWjnB7,Bunl,uErZUQj.nORTlbQwcyIFmGX",
+                        "@type": "veniam eu ex nulla"
+                    },
+                    "@baseType": "aliqua sunt laborum in nostrud",
+                    "@schemaLocation": "http://WRKZiZcFwdyxttdvAcpbg.xygY24JmSu264toNvwRgWZTnB+rMB39snbV",
+                    "@type": "nostrud en"
+                }
+            ],
+            "taxAmount": {
+                "unit": "in eu",
+                "value": -43587090.60460169,
+                "@baseType": "in exercitation adipisicing",
+                "@schemaLocation": "http://JEszvoPzruQyXNuObWP.lceiCw1xvG-pdFR4WKIM8gTyIAjteQrKQASJvbiNB-BU,dqGN6sT,CeX5DN,f",
+                "@type": "id velit deserunt aliquip eu"
+            },
+            "totalAmount": {
+                "unit": "p",
+                "value": 73526805.47041658,
+                "@baseType": "esse qui l",
+                "@schemaLocation": "http://HCXVxJPlnIpqCSftdKm.jrA,fBcU.mnxuPmSS1m",
+                "@type": "aliquip"
+            },
+            "@baseType": "adipisicing quis",
+            "@schemaLocation": "https://J.cyjIWbgE9Zqe7ts4DH6zo.RfSwre,w7WMhxsli3ZEHY6jYK5nG8dssHk50ILVHz5QrF.rsE2",
+            "@type": "elit"
+        }
+    },
+    "eventId": "fugiat Duis culpa pariatur quis",
+    "eventTime": "2016-01-10T15:16:10.373Z",
+    "eventType": "Lorem incididunt magna",
+    "correlationId": "in anim ea ex dolore",
+    "domain": "enim consectetur non nulla quis",
+    "title": "adipisicing pariatur do",
+    "description": "eiusmod dolore ipsum Excepteur ea",
+    "priority": "Duis",
+    "timeOcurred": "2018-06-26T06:33:42.800Z"
+})
+
+
+// Example of a client listener for receiving the notification RefundCreateEvent
+
+@name("Client listener for entity RefundCreateEvent")
+POST "https://{{baseUrl}}/listener/refundCreateEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "refund": {
+            "account": {
+                "id": "Lorem",
+                "href": "veniam deserunt",
+                "description": "aute in",
+                "name": "aliqua",
+                "@baseType": "de",
+                "@schemaLocation": "https://YYQZYecTRqdnJDBFOizkgEU.gpkrgLu+ImKMdNP",
+                "@type": "et eu",
+                "@referredType": "eiusmod"
+            },
+            "paymentMethod": {
+                "id": "pariatur voluptate",
+                "href": "mollit ut laborum id",
+                "description": "sint magna",
+                "isPreferred": true,
+                "name": "ex",
+                "status": "in non",
+                "statusDate": "2007-07-27T03:35:41.094Z",
+                "account": [
+                    {
+                        "id": "dolore eu incididunt fugiat",
+                        "href": "nostrud adipisicing",
+                        "description": "voluptate ipsum ex ea fugiat",
+                        "name": "voluptate sunt dolor adipisicing",
+                        "@baseType": "dolor",
+                        "@schemaLocation": "https://SOKQafDTZGLJxlFFRZTqDWESLX.umobbQB7,RS4QF3hHt-EsnjzMU7",
+                        "@type": "amet fugiat",
+                        "@referredType": "do Duis"
+                    },
+                    {
+                        "id": "dolore dolor voluptate ad",
+                        "href": "ullamco",
+                        "description": "sed pariatu",
+                        "name": "in q",
+                        "@baseType": "quis elit des",
+                        "@schemaLocation": "http://WBDVzAuyRUJjWhGSA.keHf9T",
+                        "@type": "ad eiusmod in deserunt",
+                        "@referredType": "in dolor dolore adipisicing"
+                    }
+                ],
+                "relatedParty": {
+                    "@referredType": "est occaecat elit esse",
+                    "id": "laborum cupidatat",
+                    "href": "voluptate exercitation commodo veniam",
+                    "name": "ea nisi do",
+                    "role": "aliquip id do",
+                    "@baseType": "Place",
+                    "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                    "@type": "VendorProductOffering"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z",
+                    "@baseType": "deserunt amet incididunt",
+                    "@schemaLocation": "https://NZdzXIRDUjAXWQDhzIfHneO.frqSIYVj.Q8OEwLnmxBG.v7guPN8vKueBcAb8oyJCfblfGC6FimnuCyzUkU2A18BcSn+W4Im",
+                    "@type": "eiusmod enim"
+                },
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "id Duis"
+            },
+            "id": "amet non incididunt elit cupidatat",
+            "href": "ma",
+            "authorizationCode": "commodo cillum",
+            "correlatorId": "incididunt cupidatat",
+            "description": "in cillum",
+            "name": "Lorem pariatur magna in",
+            "refundDate": "1943-11-17T20:15:24.119Z",
+            "status": "cillum ipsum",
+            "statusDate": "1961-06-04T11:00:02.135Z",
+            "amount": {
+                "unit": "ipsum nostrud deserunt tempor",
+                "value": -74991394.72292268,
+                "@baseType": "Duis velit",
+                "@schemaLocation": "https://UOxBAkfaEeMJ.rcziYGs2Mj.S8tgTxjxYiZkf20,udOHuo+",
+                "@type": "deserunt Lorem sunt aliquip sint"
+            },
+            "channel": {
+                "id": "ex fugiat",
+                "href": "quis consequat cupidatat",
+                "name": "voluptate culpa",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "voluptate"
+            },
+            "payment": {
+                "id": "amet aliquip consectetur",
+                "href": "dolore in ex",
+                "name": "in tempor sed cillum",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "do anim consequat culpa est"
+            },
+            "requestor": {
+                "@referredType": "consequat Ut proid",
+                "id": "Excepteur Ut sint",
+                "href": "aute dolore dolore",
+                "name": "voluptate",
+                "role": "eu sunt in",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering"
+            },
+            "taxAmount": {
+                "unit": "id cillum et",
+                "value": 20490076.161369547,
+                "@baseType": "non magna dolore",
+                "@schemaLocation": "https://LIWDlqciMS.ceXq+iNL0WKFlKF+9kBk+ruta,vQn6gSt,JFyzWcp",
+                "@type": "sunt exercitation commodo laboris Duis"
+            },
+            "totalAmount": {
+                "unit": "ipsum in",
+                "value": 38284898.27073255,
+                "@baseType": "occaecat Duis laboris",
+                "@schemaLocation": "https://SVSnuhQRzuxqziTm.fxqRNaMc+TOSzAFVWdobJVMbW3hN3Q6FD4JUdgxq1EdiiiX",
+                "@type": "velit"
+            },
+            "@baseType": "proident sed",
+            "@schemaLocation": "https://GQSMachXrCKmHoLvHMSMO.cuqFhPVflGex1EW5a1INtI289EPlKA8zdATri797jyW3Oks",
+            "@type": "nulla dolor adipisicing consectetur"
+        }
+    },
+    "eventId": "irure cupidatat",
+    "eventTime": "1960-07-05T19:18:22.831Z",
+    "eventType": "ad aute est",
+    "correlationId": "anim aliquip",
+    "domain": "fugiat",
+    "title": "adipisicing ullamco ut eu",
+    "description": "ullamco dolor ex deserunt",
+    "priority": "in culpa",
+    "timeOcurred": "1952-09-03T18:21:00.639Z"
+})
+
+
+// Example of a client listener for receiving the notification RefundAttributeValueChangeEvent
+
+@name("Client listener for entity RefundAttributeValueChangeEvent")
+POST "https://{{baseUrl}}/listener/refundAttributeValueChangeEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "eventId": "ipsum Excepteur",
+    "eventTime": "1975-06-13T05:25:51.634Z",
+    "eventType": "minim enim",
+    "correlationId": "velit nostrud aliqu",
+    "domain": "eu quis aliqua minim",
+    "title": "magna elit eu et",
+    "description": "et laborum e",
+    "priority": "quis veniam Excepteur",
+    "timeOcurred": "1993-12-20T21:50:44.657Z",
+    "fieldPath": "esse officia amet",
+    "event": {
+        "refund": {
+            "account": {
+                "id": "dolore aliqua ut nostrud",
+                "href": "pariatur sit veniam",
+                "description": "ipsum aliqui",
+                "name": "Duis ut est in ex",
+                "@baseType": "sed aute ut labore nulla",
+                "@schemaLocation": "http://EySjhg.tvtzFVdnoI3OTvwoX+gf5TRJsSEU173aVpFRLjVQ5bKKQ6ToMvrna",
+                "@type": "dolor reprehenderit magn",
+                "@referredType": "ad elit eu"
+            },
+            "paymentMethod": {
+                "id": "Duis ea",
+                "href": "magna nulla",
+                "description": "nostrud non nisi quis adipisicing",
+                "isPreferred": false,
+                "name": "aliquip dolor quis elit",
+                "status": "pariatur ut id",
+                "statusDate": "2010-03-29T15:44:18.409Z",
+                "account": [
+                    {
+                        "id": "adipisicing veniam ad",
+                        "href": "esse aliquip ullamco officia",
+                        "description": "magna enim exercitation",
+                        "name": "aute irure quis cillum",
+                        "@baseType": "in laboris eiusmod offi",
+                        "@schemaLocation": "https://NkcnjnjL.gjnnaT2EG.N",
+                        "@type": "et aute dolore ut dolor",
+                        "@referredType": "et anim enim"
+                    },
+                    {
+                        "id": "aliquip officia",
+                        "href": "mollit officia fugiat",
+                        "description": "officia",
+                        "name": "mollit et labore",
+                        "@baseType": "eu",
+                        "@schemaLocation": "https://jSYkyWLwqHuEr.nkrEtsn6oRPk4",
+                        "@type": "irure non",
+                        "@referredType": "ad"
+                    }
+                ],
+                "relatedParty": {
+                    "@referredType": "ipsum proident",
+                    "id": "reprehenderit in dolore ut ad",
+                    "href": "consequat eu aute",
+                    "name": "in officia",
+                    "role": "adipisicing",
+                    "@baseType": "Place",
+                    "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                    "@type": "VendorProductOffering"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z",
+                    "@baseType": "esse",
+                    "@schemaLocation": "http://hTKRBqaZbLIKbdCPJZhMcmsKkVwtO.dpxhgS3yVsecnncdIDE+vgVm2",
+                    "@type": ""
+                },
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "ipsum in tempor"
+            },
+            "id": "minim",
+            "href": "in quis reprehenderit non",
+            "authorizationCode": "nostrud sit esse veniam aliquip",
+            "correlatorId": "occaecat Duis",
+            "description": "enim ut non magna",
+            "name": "do velit veniam la",
+            "refundDate": "1971-11-07T12:35:58.125Z",
+            "status": "dolore",
+            "statusDate": "1987-05-21T13:18:53.723Z",
+            "amount": {
+                "unit": "velit do veniam",
+                "value": 58390167.22082889,
+                "@baseType": "sit voluptate deserunt elit dolor",
+                "@schemaLocation": "http://xvunJRsfyK.vpivVx.ijR,+j-ddRXAAyfmEv7",
+                "@type": "pariatur dolor qui nulla"
+            },
+            "channel": {
+                "id": "aliqua nis",
+                "href": "ad",
+                "name": "amet laboris ad",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "Ut"
+            },
+            "payment": {
+                "id": "eiusmod magna",
+                "href": "non eu laboris cillum aliquip",
+                "name": "pariatur reprehenderit ad ipsum",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "aute adipisicin"
+            },
+            "requestor": {
+                "@referredType": "quis nulla",
+                "id": "et sed do incididunt",
+                "href": "sint exercitation deserunt ex",
+                "name": "ipsum s",
+                "role": "Ut ipsum eiusmod non sint",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering"
+            },
+            "taxAmount": {
+                "unit": "tempor irure reprehenderit ipsum",
+                "value": -32576836.639809683,
+                "@baseType": "ut enim minim id",
+                "@schemaLocation": "https://grEUMFRp.wsmtY2PN9OajOl-JVU",
+                "@type": "quis do in"
+            },
+            "totalAmount": {
+                "unit": "sunt Excepte",
+                "value": -73318108.1015521,
+                "@baseType": "enim tempor non reprehenderit ea",
+                "@schemaLocation": "http://Dv.rhadj9tsvspymCS3W0hc",
+                "@type": "nulla inci"
+            },
+            "@baseType": "aliqua amet elit",
+            "@schemaLocation": "https://EEKYsERkCaylSQLykbjK.muusxOVmg+0h9A.jC-bFKsr,g5XQNmeYNGQ33BvV",
+            "@type": "cupidatat magna"
+        }
+    }
+})
+
+
+// Example of a client listener for receiving the notification RefundStateChangeEvent
+
+@name("Client listener for entity RefundStateChangeEvent")
+POST "https://{{baseUrl}}/listener/refundStateChangeEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "refund": {
+            "account": {
+                "id": "Lorem",
+                "href": "veniam deserunt",
+                "description": "aute in",
+                "name": "aliqua",
+                "@baseType": "de",
+                "@schemaLocation": "https://YYQZYecTRqdnJDBFOizkgEU.gpkrgLu+ImKMdNP",
+                "@type": "et eu",
+                "@referredType": "eiusmod"
+            },
+            "paymentMethod": {
+                "id": "pariatur voluptate",
+                "href": "mollit ut laborum id",
+                "description": "sint magna",
+                "isPreferred": true,
+                "name": "ex",
+                "status": "in non",
+                "statusDate": "2007-07-27T03:35:41.094Z",
+                "account": [
+                    {
+                        "id": "dolore eu incididunt fugiat",
+                        "href": "nostrud adipisicing",
+                        "description": "voluptate ipsum ex ea fugiat",
+                        "name": "voluptate sunt dolor adipisicing",
+                        "@baseType": "dolor",
+                        "@schemaLocation": "https://SOKQafDTZGLJxlFFRZTqDWESLX.umobbQB7,RS4QF3hHt-EsnjzMU7",
+                        "@type": "amet fugiat",
+                        "@referredType": "do Duis"
+                    },
+                    {
+                        "id": "dolore dolor voluptate ad",
+                        "href": "ullamco",
+                        "description": "sed pariatu",
+                        "name": "in q",
+                        "@baseType": "quis elit des",
+                        "@schemaLocation": "http://WBDVzAuyRUJjWhGSA.keHf9T",
+                        "@type": "ad eiusmod in deserunt",
+                        "@referredType": "in dolor dolore adipisicing"
+                    }
+                ],
+                "relatedParty": {
+                    "@referredType": "est occaecat elit esse",
+                    "id": "laborum cupidatat",
+                    "href": "voluptate exercitation commodo veniam",
+                    "name": "ea nisi do",
+                    "role": "aliquip id do",
+                    "@baseType": "Place",
+                    "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                    "@type": "VendorProductOffering"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z",
+                    "@baseType": "deserunt amet incididunt",
+                    "@schemaLocation": "https://NZdzXIRDUjAXWQDhzIfHneO.frqSIYVj.Q8OEwLnmxBG.v7guPN8vKueBcAb8oyJCfblfGC6FimnuCyzUkU2A18BcSn+W4Im",
+                    "@type": "eiusmod enim"
+                },
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "id Duis"
+            },
+            "id": "amet non incididunt elit cupidatat",
+            "href": "ma",
+            "authorizationCode": "commodo cillum",
+            "correlatorId": "incididunt cupidatat",
+            "description": "in cillum",
+            "name": "Lorem pariatur magna in",
+            "refundDate": "1943-11-17T20:15:24.119Z",
+            "status": "cillum ipsum",
+            "statusDate": "1961-06-04T11:00:02.135Z",
+            "amount": {
+                "unit": "ipsum nostrud deserunt tempor",
+                "value": -74991394.72292268,
+                "@baseType": "Duis velit",
+                "@schemaLocation": "https://UOxBAkfaEeMJ.rcziYGs2Mj.S8tgTxjxYiZkf20,udOHuo+",
+                "@type": "deserunt Lorem sunt aliquip sint"
+            },
+            "channel": {
+                "id": "ex fugiat",
+                "href": "quis consequat cupidatat",
+                "name": "voluptate culpa",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "voluptate"
+            },
+            "payment": {
+                "id": "amet aliquip consectetur",
+                "href": "dolore in ex",
+                "name": "in tempor sed cillum",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "do anim consequat culpa est"
+            },
+            "requestor": {
+                "@referredType": "consequat Ut proid",
+                "id": "Excepteur Ut sint",
+                "href": "aute dolore dolore",
+                "name": "voluptate",
+                "role": "eu sunt in",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering"
+            },
+            "taxAmount": {
+                "unit": "id cillum et",
+                "value": 20490076.161369547,
+                "@baseType": "non magna dolore",
+                "@schemaLocation": "https://LIWDlqciMS.ceXq+iNL0WKFlKF+9kBk+ruta,vQn6gSt,JFyzWcp",
+                "@type": "sunt exercitation commodo laboris Duis"
+            },
+            "totalAmount": {
+                "unit": "ipsum in",
+                "value": 38284898.27073255,
+                "@baseType": "occaecat Duis laboris",
+                "@schemaLocation": "https://SVSnuhQRzuxqziTm.fxqRNaMc+TOSzAFVWdobJVMbW3hN3Q6FD4JUdgxq1EdiiiX",
+                "@type": "velit"
+            },
+            "@baseType": "proident sed",
+            "@schemaLocation": "https://GQSMachXrCKmHoLvHMSMO.cuqFhPVflGex1EW5a1INtI289EPlKA8zdATri797jyW3Oks",
+            "@type": "nulla dolor adipisicing consectetur"
+        }
+    },
+    "eventId": "irure cupidatat",
+    "eventTime": "1960-07-05T19:18:22.831Z",
+    "eventType": "ad aute est",
+    "correlationId": "anim aliquip",
+    "domain": "fugiat",
+    "title": "adipisicing ullamco ut eu",
+    "description": "ullamco dolor ex deserunt",
+    "priority": "in culpa",
+    "timeOcurred": "1952-09-03T18:21:00.639Z"
+})
+
+
+// Example of a client listener for receiving the notification RefundDeleteEvent
+
+@name("Client listener for entity RefundDeleteEvent")
+POST "https://{{baseUrl}}/listener/refundDeleteEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "refund": {
+            "account": {
+                "id": "Lorem",
+                "href": "veniam deserunt",
+                "description": "aute in",
+                "name": "aliqua",
+                "@baseType": "de",
+                "@schemaLocation": "https://YYQZYecTRqdnJDBFOizkgEU.gpkrgLu+ImKMdNP",
+                "@type": "et eu",
+                "@referredType": "eiusmod"
+            },
+            "paymentMethod": {
+                "id": "pariatur voluptate",
+                "href": "mollit ut laborum id",
+                "description": "sint magna",
+                "isPreferred": true,
+                "name": "ex",
+                "status": "in non",
+                "statusDate": "2007-07-27T03:35:41.094Z",
+                "account": [
+                    {
+                        "id": "dolore eu incididunt fugiat",
+                        "href": "nostrud adipisicing",
+                        "description": "voluptate ipsum ex ea fugiat",
+                        "name": "voluptate sunt dolor adipisicing",
+                        "@baseType": "dolor",
+                        "@schemaLocation": "https://SOKQafDTZGLJxlFFRZTqDWESLX.umobbQB7,RS4QF3hHt-EsnjzMU7",
+                        "@type": "amet fugiat",
+                        "@referredType": "do Duis"
+                    },
+                    {
+                        "id": "dolore dolor voluptate ad",
+                        "href": "ullamco",
+                        "description": "sed pariatu",
+                        "name": "in q",
+                        "@baseType": "quis elit des",
+                        "@schemaLocation": "http://WBDVzAuyRUJjWhGSA.keHf9T",
+                        "@type": "ad eiusmod in deserunt",
+                        "@referredType": "in dolor dolore adipisicing"
+                    }
+                ],
+                "relatedParty": {
+                    "@referredType": "est occaecat elit esse",
+                    "id": "laborum cupidatat",
+                    "href": "voluptate exercitation commodo veniam",
+                    "name": "ea nisi do",
+                    "role": "aliquip id do",
+                    "@baseType": "Place",
+                    "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                    "@type": "VendorProductOffering"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z",
+                    "@baseType": "deserunt amet incididunt",
+                    "@schemaLocation": "https://NZdzXIRDUjAXWQDhzIfHneO.frqSIYVj.Q8OEwLnmxBG.v7guPN8vKueBcAb8oyJCfblfGC6FimnuCyzUkU2A18BcSn+W4Im",
+                    "@type": "eiusmod enim"
+                },
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "id Duis"
+            },
+            "id": "amet non incididunt elit cupidatat",
+            "href": "ma",
+            "authorizationCode": "commodo cillum",
+            "correlatorId": "incididunt cupidatat",
+            "description": "in cillum",
+            "name": "Lorem pariatur magna in",
+            "refundDate": "1943-11-17T20:15:24.119Z",
+            "status": "cillum ipsum",
+            "statusDate": "1961-06-04T11:00:02.135Z",
+            "amount": {
+                "unit": "ipsum nostrud deserunt tempor",
+                "value": -74991394.72292268,
+                "@baseType": "Duis velit",
+                "@schemaLocation": "https://UOxBAkfaEeMJ.rcziYGs2Mj.S8tgTxjxYiZkf20,udOHuo+",
+                "@type": "deserunt Lorem sunt aliquip sint"
+            },
+            "channel": {
+                "id": "ex fugiat",
+                "href": "quis consequat cupidatat",
+                "name": "voluptate culpa",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "voluptate"
+            },
+            "payment": {
+                "id": "amet aliquip consectetur",
+                "href": "dolore in ex",
+                "name": "in tempor sed cillum",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering",
+                "@referredType": "do anim consequat culpa est"
+            },
+            "requestor": {
+                "@referredType": "consequat Ut proid",
+                "id": "Excepteur Ut sint",
+                "href": "aute dolore dolore",
+                "name": "voluptate",
+                "role": "eu sunt in",
+                "@baseType": "Place",
+                "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+                "@type": "VendorProductOffering"
+            },
+            "taxAmount": {
+                "unit": "id cillum et",
+                "value": 20490076.161369547,
+                "@baseType": "non magna dolore",
+                "@schemaLocation": "https://LIWDlqciMS.ceXq+iNL0WKFlKF+9kBk+ruta,vQn6gSt,JFyzWcp",
+                "@type": "sunt exercitation commodo laboris Duis"
+            },
+            "totalAmount": {
+                "unit": "ipsum in",
+                "value": 38284898.27073255,
+                "@baseType": "occaecat Duis laboris",
+                "@schemaLocation": "https://SVSnuhQRzuxqziTm.fxqRNaMc+TOSzAFVWdobJVMbW3hN3Q6FD4JUdgxq1EdiiiX",
+                "@type": "velit"
+            },
+            "@baseType": "proident sed",
+            "@schemaLocation": "https://GQSMachXrCKmHoLvHMSMO.cuqFhPVflGex1EW5a1INtI289EPlKA8zdATri797jyW3Oks",
+            "@type": "nulla dolor adipisicing consectetur"
+        }
+    },
+    "eventId": "irure cupidatat",
+    "eventTime": "1960-07-05T19:18:22.831Z",
+    "eventType": "ad aute est",
+    "correlationId": "anim aliquip",
+    "domain": "fugiat",
+    "title": "adipisicing ullamco ut eu",
+    "description": "ullamco dolor ex deserunt",
+    "priority": "in culpa",
+    "timeOcurred": "1952-09-03T18:21:00.639Z"
+})
+
+
+

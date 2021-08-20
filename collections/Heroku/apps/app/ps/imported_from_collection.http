@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c5e56645-bf09-4e5c-8f01-15f069cbfb0f.postman_collection.json
+
+// Parameters application ps.
+
+@name("Parameters Application PS")
+GET "https://{{baseUrl}}/apps/:app/ps"
+
+
+// Parameters application ps restart.
+
+@name("Parameters Application PS Restart")
+GET "https://{{baseUrl}}/apps/:app/ps/restart"
+
+
+// Parameters application ps stop.
+
+@name("Parameters Application PS Stop")
+GET "https://{{baseUrl}}/apps/:app/ps/stop"
+
+
+// Parameters application ps scale.
+
+@name("Parameters Application PS Scale")
+GET "https://{{baseUrl}}/apps/:app/ps/scale"
+
+
+

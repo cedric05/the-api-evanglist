@@ -1,0 +1,5 @@
+RiteKit API is based on REST principles.nnAuthentication uses standard OAuth 2.0 processnn##Getting startednn1. Sign up for [RiteKit](https://ritekit.com/)nn1. Go to [developer dashboard](https://ritekit.com/developer/dashboard/)nn1. Click Create a token button to get your **Client ID** and **Client secret**nn1. Study the documentation below (for more info on oAuth go to http://oauth.net/)nn1. When you reach your free limit of calls per month, [upgrade to paid tiers](https://ritekit.com/developer/)nn## Options for authorizing API Callsnn#### A) Using Client ID directlynnYou can directly connect to our API using your **client ID** by sending it as a GET query parameter. This option is simple (no need for oAuth) but it should be used only in case the Client ID is not exposed publicly.nnGET  https://api.ritekit.com/v1/stats/multiple-hashtags?tags=php&client_id=292c6912e7710c838347ae178b4ann#### B) Using Access token (oAuth 2.0)nnOnce you have valid Access token, you can access our API b
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

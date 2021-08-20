@@ -1,0 +1,1 @@
+Testing of the API through a variety of ways including Manual, Automated, Functional/Behavioral, Contract, Performance, Security and other ways to ensure that the API behaves as per requirements. Testing can be done manually or automated as part of a regular build process.

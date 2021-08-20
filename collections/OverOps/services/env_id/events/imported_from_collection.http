@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Force next snapshot for multiple events
+
+@name("Batch Force events snapshots") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/events/force-snapshots"
+"Content-Type": "application/json"
+json({
+    "items": [
+        {
+            "event_id": "ex aliqua mollit commodo esse"
+        },
+        {
+            "event_id": "nulla consequat qui aliqua"
+        }
+    ]
+})
+
+
+// Append/Detach labels to/from events
+
+@name("Batch Add/Remove labels") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/events/labels"
+"Content-Type": "application/json"
+? "force"= "false"
+? "handle_similar_events"= "true"
+json({
+    "items": [
+        {
+            "event_id": "culpa enim ea",
+            "add": [
+                "Critical",
+                "Critical"
+            ],
+            "remove": [
+                "Low",
+                "Low"
+            ]
+        },
+        {
+            "event_id": "enim laborum fug",
+            "add": [
+                "Critical",
+                "Critical"
+            ],
+            "remove": [
+                "Low",
+                "Low"
+            ]
+        }
+    ]
+})
+
+
+

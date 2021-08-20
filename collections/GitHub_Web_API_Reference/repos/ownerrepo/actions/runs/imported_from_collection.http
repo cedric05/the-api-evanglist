@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://developer.github.com/v3/#parameters).
+// 
+// Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+
+@name("List workflow runs for a repository")
+GET "https://{{baseUrl}}/repos/:owner/:repo/actions/runs"
+? "actor"= "<string>"
+? "branch"= "<string>"
+? "event"= "<string>"
+? "status"= "<string>"
+? "per_page"= "30"
+? "page"= "1"
+
+
+

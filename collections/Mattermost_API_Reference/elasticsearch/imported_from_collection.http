@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Test the current Elasticsearch configuration to see if the Elasticsearch server can be contacted successfully.nOptionally provide a configuration in the request body to test. If no valid configuration is present in thenrequest body the current server configuration will be tested.nn__Minimum server version__: 4.1n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Test Elasticsearch configuration")
+POST "https://{{baseUrl}}/elasticsearch/test"
+
+
+// Deletes all Elasticsearch indexes and their contents. After calling this endpoint, it isnnecessary to schedule a new Elasticsearch indexing job to repopulate the indexes.n__Minimum server version__: 4.1n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Purge all Elasticsearch indexes")
+POST "https://{{baseUrl}}/elasticsearch/purge_indexes"
+
+
+

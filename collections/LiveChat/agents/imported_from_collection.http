@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Returns all LiveChat agents list
+
+@name("List all agents")
+GET "https://{{baseUrl}}/agents"
+"X": "<>"
+
+
+// Returns complete details of the agent for the given LOGIN.
+
+@name("Get a single agent details")
+GET "https://{{baseUrl}}/agents/john@public.com"
+"X": "<>"
+
+
+

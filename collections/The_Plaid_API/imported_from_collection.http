@@ -1,0 +1,113 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// The `/auth/get` endpoint returns the bank account and bank identification numbers (such as routing numbers, for US accounts) associated with an Item's checking and savings accounts, along with high-level account data and balances when available.
+// 
+// Note: This request may take some time to complete if `auth` was not specified as an initial product when creating the Item. This is because Plaid must communicate directly with the institution to retrieve the data.
+
+@name("Retrieve auth data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/auth/get"
+"Content-Type": "application/json"
+json({
+    "access_token": "ea deserunt",
+    "client_id": "ut sint",
+    "secret": "magna id",
+    "options": {
+        "account_ids": [
+            "aute Duis occaecat anim",
+            "voluptate laboris cupidatat ad"
+        ]
+    }
+})
+
+
+// Send a request to the `/categories/get`  endpoint to get detailed information on categories returned by Plaid. This endpoint does not require authentication.
+
+@name("Get Categories") : "base-inherit-auth"
+POST "https://{{baseUrl}}/categories/get"
+"Content-Type": "application/json"
+
+
+
+// The `/identity/get` endpoint allows you to retrieve various account holder information on file with the financial institution, including names, emails, phone numbers, and addresses. Only name data is guaranteed to be returned; other fields will be empty arrays if not provided by the institution.
+// 
+// Note: This request may take some time to complete if identity was not specified as an initial product when creating the Item. This is because Plaid must communicate directly with the institution to retrieve the data.
+
+@name("Retrieve identity data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/identity/get"
+"Content-Type": "application/json"
+json({
+    "access_token": "nulla officia",
+    "client_id": "in",
+    "secret": "Lorem velit ex dolor",
+    "options": {
+        "account_ids": [
+            "irure amet veniam",
+            "est tem"
+        ]
+    }
+})
+
+
+// Plaid signs all outgoing webhooks and provides JSON Web Tokens (JWTs) so that you can verify the authenticity of any incoming webhooks to your application. A message signature is included in the `Plaid-Verification` header.
+// 
+// The `/webhook_verification_key/get` endpoint provides a JSON Web Key (JWK) that can be used to verify a JWT.
+
+@name("Get webhook verification key") : "base-inherit-auth"
+POST "https://{{baseUrl}}/webhook_verification_key/get"
+"Content-Type": "application/json"
+json({
+    "key_id": "do culpa dolore",
+    "client_id": "amet consequat elit proident",
+    "secret": "dolor ullamco ut dolor"
+})
+
+
+// The `/liabilities/get` endpoint returns various details about an Item with loan or credit accounts. Liabilities is supported for US and Canada accounts only. Currently supported account types are account type `credit` with account subtype `credit card` or `paypal`, and account type `loan` with account subtype `student` or `mortgage`. To limit accounts listed in Link to types and subtypes supported by Liabilities, you can use the `account_filter` parameter when [creating a Link token](/docs/api/tokens/#linktokencreate).
+// 
+// The types of information returned by Liabilities can include balances and due dates, loan terms, and account details such as original loan amount and guarantor. Data is refreshed approximately once per day; the latest data can be retrieved by calling `/liabilities/get`.
+// 
+// Note: This request may take some time to complete if `liabilities` was not specified as an initial product when creating the Item. This is because Plaid must communicate directly with the institution to retrieve the additional data.
+
+@name("Retrieve Liabilities data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/liabilities/get"
+"Content-Type": "application/json"
+json({
+    "access_token": "consequat aliquip eiusmod",
+    "client_id": "do velit fugiat",
+    "secret": "aliquip exercitation adipisicing",
+    "options": {
+        "account_ids": [
+            "est reprehenderit dolore",
+            "anim in adipisicing et"
+        ]
+    }
+})
+
+
+// `/employers/search` allows you the ability to search Plaid’s database of known employers, for use with Deposit Switch. You can use this endpoint to look up a user's employer in order to confirm that they are supported. Users with non-supported employers can then be routed out of the Deposit Switch flow.
+// 
+// The data in the employer database is currently limited. As the Verification of Income product progresses through the beta period, more employers are being regularly added. Because the employer database is frequently updated, we recommend that you do not cache or store data from this endpoint for more than a day.
+
+@name("Search employer database") : "base-inherit-auth"
+POST "https://{{baseUrl}}/employers/search"
+"Content-Type": "application/json"
+json({
+    "query": "reprehenderit esse veniam occaecat",
+    "products": [
+        "Lorem ea exercitation eiusmod",
+        "dolor do"
+    ],
+    "client_id": "Excepteur consectetur",
+    "secret": "exercitation proident"
+})
+
+
+

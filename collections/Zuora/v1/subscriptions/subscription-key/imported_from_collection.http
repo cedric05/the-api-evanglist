@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This REST API reference describes how to retrieve detailed information about a specified subscription in the latest version.n
+
+@name("Get subscriptions by key")
+GET "https://{{baseUrl}}/v1/subscriptions/:subscription-key"
+? "charge"= "<>"
+
+
+// This REST API reference describes how to cancel an active subscription.nn**Note:** This feature is unavailable if you have the Orders feature enabled. See [Orders Migration Guidance](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AB_Orders_Migration_Guidance) for more information.n
+
+@name("Cancel subscription")
+PUT "https://{{baseUrl}}/v1/subscriptions/:subscription-key/cancel"
+"zuora": "<>"
+
+
+// Renews a termed subscription using existing renewal terms.nn **Note:** This feature is unavailable if you have the Orders feature enabled. See [Orders Migration Guidance](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AB_Orders_Migration_Guidance) for more information.n
+
+@name("Renew subscription")
+PUT "https://{{baseUrl}}/v1/subscriptions/:subscription-key/renew"
+"zuora": "<>"
+
+
+// This REST API reference describes how to resume a suspended subscription. nnThis feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://suport.zuora.com). nn**Note:** This feature is unavailable if you have the Orders feature enabled. See [Orders Migration Guidance](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AB_Orders_Migration_Guidance) for more information. This feature is also unavailable if
+
+@name("Resume subscription")
+PUT "https://{{baseUrl}}/v1/subscriptions/:subscription-key/resume"
+"zuora": "<>"
+
+
+// This REST API reference describes how to suspend an active subscription. nnThis feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://suport.zuora.com).nn**Note:** This feature is unavailable if you have the Orders feature enabled. See [Orders Migration Guidance](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AB_Orders_Migration_Guidance) for more information. This feature is also unavailable if y
+
+@name("Suspend subscription")
+PUT "https://{{baseUrl}}/v1/subscriptions/:subscription-key/suspend"
+"zuora": "<>"
+
+
+// This REST API reference describes how to retrieve detailed information about a specified subscription in a specified version. When you create a subscription amendment, you create a new version of the subscription. You can use this method to retrieve information about a subscription in any version.n
+
+@name("Get subscriptions by key and version")
+GET "https://{{baseUrl}}/v1/subscriptions/:subscription-key/versions/:version"
+? "charge"= "<>"
+
+
+

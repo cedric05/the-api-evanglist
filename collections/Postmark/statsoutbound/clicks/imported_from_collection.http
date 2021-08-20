@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Get click counts")
+GET "https://{{baseUrl}}/stats/outbound/clicks"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get browser usage by family")
+GET "https://{{baseUrl}}/stats/outbound/clicks/browserfamilies"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get clicks by body location")
+GET "https://{{baseUrl}}/stats/outbound/clicks/location"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get browser plaform usage")
+GET "https://{{baseUrl}}/stats/outbound/clicks/platforms"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+

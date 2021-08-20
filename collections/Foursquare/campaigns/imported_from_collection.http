@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /campaigns/{CAMPAIGN_ID}
+
+@name("/campaigns/{CAMPAIGN_ID}")
+POST "https://{{baseUrl}}/campaigns/add"
+? "campaignId"= "<string>"
+? "endAt"= "<string>"
+? "groupId"= "<string>"
+? "specialId"= "<string>"
+? "startAt"= "<string>"
+? "v"= "<string>"
+? "venueId"= "<string>"
+
+
+// /campaigns/add
+
+@name("/campaigns/add")
+GET "https://{{baseUrl}}/campaigns/list"
+? "groupId"= "<string>"
+? "specialId"= "<string>"
+? "status"= "<string>"
+? "v"= "<string>"
+
+
+

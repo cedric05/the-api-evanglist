@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Get all customers with an address in the brazil.
+
+@name("Get all customers with an address in the Brazil")
+GET "https://{{baseUrl}}/admin/customers/search.json"
+"Content": "<>"
+? "query"= "<post>"
+
+
+// Add metafield to an existing customer.
+
+@name("Add metafield to an existing customer")
+PUT "https://{{baseUrl}}/admin/customers/5438892686.json"
+"Content": "<>"
+
+
+// Get a single customer by id.
+
+@name("Get a single customer by ID")
+GET "https://{{baseUrl}}/admin/customers/3989659651.json"
+"Content": "<>"
+
+
+// Get a count of all customers.
+
+@name("Get a count of all customers")
+GET "https://{{baseUrl}}/admin/customers/count.json"
+"Content": "<>"
+
+
+

@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3c66ec54-956d-4108-b61e-3edae334af9d.postman_collection.json
+
+// Get the list of all active ASPSPs supported by the Open Banking Connect platform at this time with possibility to filter by id, name or country. This list is updated regularly as new ASPSPs are connected.
+
+@name("Get list of ASPSPs")
+POST "https://{{baseUrl}}/payments/aspsps"
+"Content-Type": "application/json"
+json({
+    "requestInfo": {
+        "xRequestId": "<string>"
+    },
+    "country": "<string>",
+    "id": "<string>",
+    "name": "<string>",
+    "returnAdditionalData": [
+        "<string>",
+        "<string>"
+    ]
+})
+
+
+// Extracts the original raw consent given by the aspsp
+
+@name("Extracts the original raw consent given by the aspsp")
+POST "https://{{baseUrl}}/payments/consents/raw"
+"Content-Type": "application/json"
+json({
+    "requestInfo": {
+        "aspspId": "<string>",
+        "consentId": "<string>",
+        "xRequestId": "<string>",
+        "merchant": {
+            "id": "<string>",
+            "name": "<string>"
+        }
+    }
+})
+
+
+// Returns the status of each connectivity provider
+
+@name("Returns the status of each connectivity provider")
+GET "https://{{baseUrl}}/payments/health"
+
+
+

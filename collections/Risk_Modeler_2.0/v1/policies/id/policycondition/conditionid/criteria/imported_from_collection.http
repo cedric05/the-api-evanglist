@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates a policy condition criteria
+
+@name("Creates a policy condition criteria") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/policies/:id/policycondition/:conditionid/criteria"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": -99939842,
+    "logic": "aliquip id deserunt exercitation fugiat",
+    "openPar": "aute ex sunt",
+    "field": "dolor ad Duis do amet",
+    "operator": "Lorem minim dolore culpa",
+    "value": "nostrud aute",
+    "closePar": "anim eiusmod par"
+})
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Get crossSell campaigns by filter")
+GET "https://{{baseUrl}}/crosssells"
+? "Enabled"= "<boolean>"
+? "Type"= "<string>"
+? "Page"= "<integer>"
+? "Limit"= "<integer>"
+
+
+@name("/crosssells/settings/")
+POST "https://{{baseUrl}}/crosssells/settings/"
+
+
+

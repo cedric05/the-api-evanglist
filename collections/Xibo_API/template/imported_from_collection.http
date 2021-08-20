@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search templates this user has access to
+
+@name("Template Search")
+GET "https://{{baseUrl}}/template"
+
+
+// Use the provided layout as a base for a new template
+
+@name("Add a template from a Layout")
+POST "https://{{baseUrl}}/template/:layoutId"
+
+
+

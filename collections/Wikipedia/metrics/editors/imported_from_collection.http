@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c039dcb8-c468-46a5-bef2-944b0de198e7.postman_collection.json
+
+// Given a Mediawiki project and a date range, returns a timeseries of its editors counts.nYou can filter by editory-type (all-editor-types, anonymous, group-bot, name-bot, user),npage-type (all-page-types, content or non-content) or activity-level (1..4-edits,n5..24-edits, 25..99-edits or 100..-edits). You can choose between daily and monthlyngranularity as well.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessi
+
+@name("Get editors counts for a project.")
+GET "https://{{baseUrl}}/metrics/editors/aggregate/:project/:editor-type/:page-type/:activity-level/:granularity/:start/:end"
+
+
+// Given a Mediawiki project and a date range, returns a timeseries of the top 100 editors bynabsolute bytes-difference. You can filter by editor-type (all-editor-types, anonymous,ngroup-bot, name-bot, user) or page-type (all-page-types, content or non-content). You cannchoose between daily and monthly granularity as well. The user_id returned is either thenmediawiki user_id if user is registered, or his/her IP if the user is anonymous.nn- Stability: [experimental](https://www.mediawiki.org/wiki/AP
+
+@name("Get top 100 editors by absolute bytes-difference.")
+GET "https://{{baseUrl}}/metrics/editors/top-by-absolute-bytes-difference/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+// Given a Mediawiki project and a date range, returns a timeseries of the top 100 editors bynedits count. You can filter by editor-type (all-editor-types, anonymous, group-bot,nname-bot, user) or page-type (all-page-types, content or non-content). You can choosenbetween daily and monthly granularity as well. The user_id returned is either thenmediawiki user_id if user is registered, or his/her IP if the user is anonymous.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#E
+
+@name("Get top 100 editors by edits count.")
+GET "https://{{baseUrl}}/metrics/editors/top-by-edits/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+// Given a Mediawiki project and a date range, returns a timeseries of the top 100 editors bynnet bytes-difference. You can filter by editor-type (all-editor-types, anonymous, group-bot,nname-bot, user) or page-type (all-page-types, content or non-content). You can choosenbetween daily and monthly granularity as well. The user_id returned is either the mediawikinuser_id if user is registered, or his/her IP if the user is anonymous.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_ver
+
+@name("Get top 100 editors by net bytes-difference.")
+GET "https://{{baseUrl}}/metrics/editors/top-by-net-bytes-difference/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+

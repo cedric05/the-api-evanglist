@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// List of Orphan URLs. URLs which generated visits from the selected source according to Google Analytics data, but were not crawled with by the Botify crawler (either because no links to them were found on the website, or because the crawler was not allowed to follow these links according to the project settings).   For a search engine (medium: origanic; sources: all, aol, ask, baidu, bing, google, naver, yahoo, yandex) or a social network (medium: social; sources: all, facebook, google+, linkedi
+
+@name("List of Orphan URLs")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/ganalytics/orphan_urls/:medium/:source"
+? "page"= "<integer>"
+? "size"= "<integer>"
+
+
+// Get inlinks percentiles
+
+@name("Get inlinks percentiles")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/links/percentiles"
+
+
+// Lost pagerank
+
+@name("Lost pagerank")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/pagerank/lost"
+
+
+// List clicks and impressions per day
+
+@name("List clicks and impressions per day")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/search_console/stats"
+
+
+// List of Orphan URLs. URLs which generated visits from the selected source according to Google Analytics data, but were not crawled with by the Botify crawler (either because no links to them were found on the website, or because the crawler was not allowed to follow these links according to the project settings).   For a search engine (medium: origanic; sources: all, aol, ask, baidu, bing, google, naver, yahoo, yandex) or a social network (medium: social; sources: all, facebook, google+, linkedi
+
+@name("List of Orphan URLs")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/visits/orphan_urls/:medium/:source"
+? "page"= "<integer>"
+? "size"= "<integer>"
+
+
+

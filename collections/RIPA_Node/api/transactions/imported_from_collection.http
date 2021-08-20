@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f6803d-cd9d-44a5-aa66-33a5315babb5.postman_collection.json
+
+// Get all transactions.
+
+@name("Transactions")
+GET "https://{{baseUrl}}/api/transactions"
+? "blockId"= "<get>"
+? "limit"= "<>"
+? "type"= "<get>"
+? "orderBy"= "<>"
+? "offset"= "<>"
+? "senderPublicKey"= "<get>"
+? "vendorField"= "<get>"
+? "ownerPublicKey"= "<>"
+? "ownerAddress"= "<>"
+? "senderId"= "<get>"
+? "recipientId"= "<get>"
+? "amount"= "<get>"
+? "fee"= "<get>"
+
+
+// Get a single transaction.
+
+@name("Transactions Get")
+GET "https://{{baseUrl}}/api/transactions/get"
+? "id"= "<get>"
+
+
+

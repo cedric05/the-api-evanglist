@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets project role list.
+
+@name("Gets project role list")
+GET "https://{{baseUrl}}/projects/:projectid/roles"
+? "includeInherited"= "<>"
+
+
+// Get roles by user.
+
+@name("Get roles by user")
+POST "https://{{baseUrl}}/projects/:projectid/roles/by-users"
+
+
+// Gets inherited project role list.
+
+@name("Gets inherited project role list")
+GET "https://{{baseUrl}}/projects/:projectid/roles/inherited-roles"
+
+
+

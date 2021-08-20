@@ -1,0 +1,116 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get full list of view properties
+
+@name("Get view properties") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/views/:view_id"
+
+
+// Edit view data
+
+@name("Edit view data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/views/:view_id"
+"Content-Type": "application/json"
+json({
+    "type": "boolean",
+    "description": "TBD - NOT YET IMPLEMENTED",
+    "example": false
+})
+
+
+// Delete view
+
+@name("Delete view") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/services/:env_id/views/:view_id"
+
+
+// Fetch entry points data in a selected timeframe
+
+@name("Fetch entry points details") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/views/:view_id/entrypoints"
+? "from"= "e"
+? "to"= "e"
+? "server"= "e"
+? "app"= "e"
+? "deployment"= "e"
+
+
+// Alert on anomalies
+
+@name("Alert on anomalies") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/views/:view_id/anomaly"
+"Content-Type": "application/json"
+json({
+    "desc": "Description",
+    "timeframe": {
+        "from": "2018-02-28T22:47:09.038Z",
+        "to": "2018-03-01T22:47:09.038Z",
+        "name": "Last day"
+    },
+    "anomaly": {
+        "periods": [
+            {
+                "id": "1",
+                "from": "2018-03-01T23:10:00.000Z",
+                "to": "2018-03-01T24:10:00.000Z"
+            },
+            {
+                "id": "1",
+                "from": "2018-03-01T23:10:00.000Z",
+                "to": "2018-03-01T24:10:00.000Z"
+            }
+        ],
+        "contributors": [
+            {
+                "id": 1,
+                "value": 42
+            },
+            {
+                "id": 1,
+                "value": 42
+            }
+        ]
+    }
+})
+
+
+// This call allows to get data about the creation and the last update to the view and provides information about the update initiator and timestamp.
+
+@name("Fetch View History") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/views/:view_id/history"
+
+
+// Send custom alert
+
+@name("Send custom alert") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/views/:view_id/custom-alert"
+"Content-Type": "application/json"
+json({
+    "title": "Logged Warning in Some.File",
+    "body": "A new logged warning has been detected in Staging2! (alert added by 4 members)",
+    "links": [
+        {
+            "pre_link_text": "Duis mollit dolore",
+            "link_text": "Excepteur irure",
+            "post_link_text": "sun",
+            "link": "incididunt sit cupidatat proident"
+        },
+        {
+            "pre_link_text": "pariatur esse non exercitation",
+            "link_text": "conse",
+            "post_link_text": "fugiat voluptate dolore in commodo",
+            "link": "sit aliqua sunt incididunt"
+        }
+    ]
+})
+
+
+

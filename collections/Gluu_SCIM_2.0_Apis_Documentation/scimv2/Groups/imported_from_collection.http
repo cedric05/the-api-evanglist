@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-14eebdc2-8e46-4fcd-8faa-869defe32503.postman_collection.json
+
+// Returns a list of Groups (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4)
+
+@name("List Users")
+GET "https://{{baseUrl}}/scim/v2/Groups"
+? "filter"= "<string>"
+? "sortBy"= "<string>"
+? "sortOrder"= "<string>"
+
+
+// Returns a Group on the basis of provided id as path param (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1)
+
+@name("Find Group by id")
+GET "https://{{baseUrl}}/scim/v2/Groups/:id"
+
+
+

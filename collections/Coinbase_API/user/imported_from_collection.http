@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-07b8f9ff-4fab-4f58-a64e-0549bc880422.postman_collection.json
+
+// Get current useru2019s public information. To get useru2019s email or private information, use permissions wallet:user:email and wallet:user:read.
+
+@name("Show current user")
+GET "https://{{baseUrl}}/user"
+
+
+// Get current useru2019s authorization information including granted scopes and send limits when using OAuth2 authentication.
+
+@name("Show authorization information")
+GET "https://{{baseUrl}}/user/auth"
+
+
+

@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Updates the ruleset with the definition.
+
+@name("Updates a ruleset") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/deployments/traffic-filter/rulesets/:ruleset_id"
+"Content-Type": "application/json"
+json({
+    "include_by_default": true,
+    "name": "ut qui sunt",
+    "region": "aute aliquip incididunt laboris",
+    "rules": [
+        {
+            "source": "cupidatat in sunt null",
+            "id": "ex occaecat",
+            "description": "incididunt Lorem"
+        },
+        {
+            "source": "Ut ad officia",
+            "id": "ut",
+            "description": "exercitation ull"
+        }
+    ],
+    "type": "incididunt",
+    "description": "amet aliquip consequat"
+})
+
+
+// Deletes the ruleset by ID.
+
+@name("Delete a ruleset") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/deployments/traffic-filter/rulesets/:ruleset_id"
+? "ignore_associations"= "false"
+
+
+// Retrieves a list of resources that are associated to the specified ruleset.
+
+@name("Retrieves the ruleset by ID.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/traffic-filter/rulesets/:ruleset_id"
+? "include_associations"= "false"
+
+
+

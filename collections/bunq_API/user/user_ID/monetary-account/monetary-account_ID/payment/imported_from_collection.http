@@ -1,0 +1,116 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get a listing of all Payments performed on a given MonetaryAccount (incoming and outgoing).
+
+@name("List all Payment for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/payment"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create a new Payment.
+
+@name("CREATE Payment for User Monetary Account")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/payment"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "allow_bunqto": "<boolean>",
+    "amount": {
+        "currency": "dolore",
+        "value": "qui officia"
+    },
+    "attachment": [
+        {
+            "id": 7329384,
+            "monetary_account_id": -76440244
+        },
+        {
+            "id": 84541887,
+            "monetary_account_id": 2072755
+        }
+    ],
+    "counterparty_alias": {
+        "avatar": {
+            "anchor_uuid": "aliqua qui amet aute",
+            "image": [
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            ],
+            "uuid": "<string>"
+        },
+        "bunq_me": {
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "type": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "value": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        "country": "nostrud esse ipsum fugiat",
+        "display_name": "ea pariatur aute sint amet",
+        "iban": "commo",
+        "is_light": false,
+        "label_user": {
+            "avatar": {
+                "anchor_uuid": "nostrud ex in",
+                "image": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "uuid": "<string>"
+            },
+            "country": "tempor",
+            "display_name": "ut nulla sed Duis",
+            "public_nick_name": "ipsum Excepteur aliquip cillum",
+            "uuid": "labore voluptate do"
+        },
+        "merchant_category_code": "amet sit",
+        "swift_account_number": "ipsum ut in laboris a",
+        "swift_bic": "labore dolor velit esse",
+        "transferwise_account_number": "Ut",
+        "transferwise_bank_code": "lab"
+    },
+    "description": "<string>",
+    "merchant_reference": "<string>"
+})
+
+
+// Get a specific previous Payment.
+
+@name("READ Payment for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/payment/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+

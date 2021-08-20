@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Add a new scheduled event for a Campaign/Layout to be shown on a Display Group/Display.
+
+@name("Add Schedule Event")
+POST "https://{{baseUrl}}/schedule"
+
+
+@name("Generates the calendar that we draw events on")
+GET "https://{{baseUrl}}/schedule/data/events"
+
+
+@name("Event List")
+GET "https://{{baseUrl}}/schedule/:displayGroupId/events"
+
+
+// Edit a scheduled event for a Campaign/Layout to be shown on a Display Group/Display.
+
+@name("Edit Schedule Event")
+PUT "https://{{baseUrl}}/schedule/:eventId"
+
+
+

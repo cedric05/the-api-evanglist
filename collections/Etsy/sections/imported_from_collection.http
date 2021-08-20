@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Creates a new ShopSection.
+
+@name("Post Sections")
+POST "https://{{baseUrl}}/sections"
+? "title"= "<>"
+? "user_id"= "<>"
+
+
+// Retrieves a ShopSection by id.
+
+@name("Get Sections Shop Section")
+GET "https://{{baseUrl}}/sections/:shop_section_id"
+
+
+

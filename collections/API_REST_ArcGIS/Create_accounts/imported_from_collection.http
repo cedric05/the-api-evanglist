@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// There is no documentation
+
+@name("Create public account")
+POST "https://www.arcgis.com/sharing/rest/community/signup"
+files(
+	("username", "{{username}}"),
+	("password", "{{password}}"),
+	("email", "{{email}}"),
+	("firstName", "John"),
+	("lastName", "Doe"),
+	("securityQuestionIdx", "5"),
+	("securityAnswer", "Lorem ipsum dolor"),
+	("provider", "arcgis"),
+	("usertype", "both"),
+	("referer", "arcgis.com"),
+	("f", "json")
+)
+
+
+@name("Check Usernames")
+POST "https://www.arcgis.com/sharing/rest/community/checkUsernames"
+files(
+	("usernames", "{{username}}"),
+	("f", "json")
+)
+
+
+

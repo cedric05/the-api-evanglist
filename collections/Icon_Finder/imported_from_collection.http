@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c011aa95-27fe-4c01-b46b-399763f84def.postman_collection.json
+
+// Get details about a specific author identified by a unique ID.
+
+@name("Get author details")
+GET "https://{{baseUrl}}/authors/:authorID"
+
+
+// List all categories sorted ascendingly by their identifier.
+
+@name("List all categories")
+GET "https://{{baseUrl}}/categories"
+? "after"= "<>"
+? "count"= "<>"
+
+
+// Search through icons by various criteria. The returned list of icons is ordered descendingly by popularit
+
+@name("Search for icons")
+GET "https://{{baseUrl}}/icons/search"
+? "category"= "<>"
+? "count"= "<>"
+? "license"= "<>"
+? "maximum_size"= "<>"
+? "minimum_size"= "<>"
+? "offset"= "<>"
+? "premium"= "<>"
+? "query"= "<>"
+? "style"= "<>"
+? "vector"= "<>"
+
+
+// Get details about a specific license by its unique ID.
+
+@name("Get license details")
+GET "https://{{baseUrl}}/licenses/:licenseID"
+
+
+// Get details about a specific style identified by its identifier.
+
+@name("Get style details")
+GET "https://{{baseUrl}}/styles/:styleID"
+
+
+// Gets an authenticated user.
+
+@name("Get Authentication User.")
+GET "https://{{baseUrl}}/user"
+
+
+

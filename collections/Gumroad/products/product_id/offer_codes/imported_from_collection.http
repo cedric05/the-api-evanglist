@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-78c6df8c-aca6-4ba0-aa1b-721d91b41fef.postman_collection.json
+
+// Retrieve all of the existing offer codes for a product. Either amount_cents or percent_off will be returned depending if the offer code is a fixed amount off or a percentage off. A universal offer code is one that applies to all products.
+
+@name("Get Products Offer Codes")
+GET "https://{{baseUrl}}/products/:product_id/offer_codes"
+
+
+// Retrieve the details of a specific offer code of a product
+
+@name("Get Products Offer Codes")
+GET "https://{{baseUrl}}/products/:product_id/offer_codes/:id"
+
+
+

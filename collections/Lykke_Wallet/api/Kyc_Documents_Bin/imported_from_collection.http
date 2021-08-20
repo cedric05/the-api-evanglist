@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e04c6fb1-e891-4983-80ec-38175b6c944e.postman_collection.json
+
+// Add api kycdocumentsbin.
+
+@name("Add API Kycdocumentsbin")
+POST "https://{{baseUrl}}/api/KycDocumentsBin"
+"Authorization": "<>"
+? "type"= "<delete>"
+? "ext"= "<delete>"
+? "idType"= "<delete>"
+
+
+// Get api kycdocumentsbin.
+
+@name("Get API Kycdocumentsbin")
+GET "https://{{baseUrl}}/api/KycDocumentsBin/:id"
+"Authorization": "<>"
+? "height"= "<delete>"
+? "width"= "<>"
+
+
+

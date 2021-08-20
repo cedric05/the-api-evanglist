@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fd7d2ea6-a952-4f62-a293-b2e3fbf6a201.postman_collection.json
+
+// The following parameters can be used to validate the user's request.nThe parameters are optional, but the sample code includes email as part of the requestParams.post method.n
+
+@name("Post Registrations")
+POST "https://{{baseUrl}}/v1/registrations"
+
+
+// You can use a registration_id to retrieve the respective registration object.
+
+@name("Get Registrations")
+GET "https://{{baseUrl}}/v1/registrations/:registration_id"
+
+
+

@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Get catalog category.
+
+@name("Get Catalog Category")
+GET "https://{{baseUrl}}/catalog/category/:categoryId"
+? "productLimit"= "<>"
+? "productOffset"= "<>"
+? "subcategoryLimit"= "<>"
+? "subcategoryOffset"= "<>"
+
+
+// Get catalog category active subcategories.
+
+@name("Get Catalog Category Active Subcategories")
+GET "https://{{baseUrl}}/catalog/category/:categoryId/activeSubcategories"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Get catalog category attributes.
+
+@name("Get Catalog Category Attributes")
+GET "https://{{baseUrl}}/catalog/category/:categoryId/attributes"
+
+
+// Get catalog category categories.
+
+@name("Get Catalog Category Categories")
+GET "https://{{baseUrl}}/catalog/category/:categoryId/categories"
+? "limit"= "<>"
+? "offset"= "<>"
+? "active"= "<post>"
+
+
+

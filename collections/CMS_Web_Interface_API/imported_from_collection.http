@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ae419a4f-68f3-40b5-821c-80057f0df0bd.postman_collection.json
+
+// Returns measures that are irregular, including the related beneficiary and submission data.
+
+@name("Returns measures that are irregular, including the related beneficiary and submission data.")
+GET "https://{{baseUrl}}/measures/organization/:id/irregularities"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+? "odd"= "<string>"
+? "name"= "0"
+? "offset"= "0"
+? "limit"= "25"
+
+
+

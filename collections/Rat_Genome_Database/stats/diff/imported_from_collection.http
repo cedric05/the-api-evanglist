@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c06f082c-7c18-4317-b196-8ad07101a2f4.postman_collection.json
+
+@name("Count difference of active objects, by type, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/activeObject/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of gene types, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/geneType/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of objects with given status, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/objectStatus/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of objects with reference sequence(s), by object type, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/objectWithRefSeq/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of objects with reference, by object type, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/objectWithReference/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of objects with external database ids, by database id, for specified species, object type and date range")
+GET "https://{{baseUrl}}/stats/diff/objectWithXdb/:speciesTypeKey/:objectKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of protein interactions, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/proteinInteraction/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of strains, by qtl inheritance type, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/qtlInheritanceType/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of retired objects, by type, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/retiredObject/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of strain types, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/strainType/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of withdrawn objects, by type, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/withdrawnObject/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+@name("Count difference of external database ids, for specified species and date range")
+GET "https://{{baseUrl}}/stats/diff/xdb/:speciesTypeKey/:dateFromYYYYMMDD/:dateToYYYYMMDD"
+
+
+

@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a4df921c-b883-46b3-905b-3f75bb225e98.postman_collection.json
+
+@name("API consultarDetalle")
+POST "https://{{baseUrl}}/consultarDetalle"
+"Ocp-Apim-Trace": "true"
+"Authorization": "tokenprod"
+"token_type": "Bearer"
+"Ocp-Apim-Subscription-Key": "abc"
+"SOrigenCliente": "S"
+"Scanal": "S"
+"SUsuario": "S"
+"Content-Type": "application/json"
+json({
+    "Departure_Station": "BOG",
+    "Customer_Id": "10A222XABCDEFG",
+    "Flight_Carrier": "AV",
+    "Flight_Date": "2018-08-01T00:00:00",
+    "Flight_Id": "36315229",
+    "Flight_Number": "9730"
+})
+
+
+// Consultar lista api pasajeros
+
+@name("consultarLista")
+POST "https://{{baseUrl}}/consultarLista"
+"Ocp-Apim-Trace": "true"
+"Authorization": "TOKENPROD"
+"token_type": "Bearer"
+"Ocp-Apim-Subscription-Key": "ABC123"
+"Scanal": "S"
+"SOrigenCliente": "S"
+"SUsuario": "S"
+"Content-Type": "application/json"
+json({
+    "Departure_Station": "BOG",
+    "Flight_Carrier": "AV",
+    "Flight_Date": "2018-09-12T00:00:00",
+    "Flight_Id": "36358282",
+    "Flight_Number": "9316"
+})
+
+
+

@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List saved queries associated with a dataset. Query definitions will be returned, not the query results. To retrieve query results use `GET:/queries/{id}/results`.
+
+@name("List saved queries") : "base-inherit-auth"
+GET "https://{{baseUrl}}/datasets/:owner/:id/queries"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+
+
+// Create a saved query in a specified dataset.
+
+@name("Create a saved query in a specified dataset.") : "base-inherit-auth"
+POST "https://{{baseUrl}}/datasets/:owner/:id/queries"
+"Content-Type": "application/json"
+json({
+    "content": "non occaecat consequat velit",
+    "name": "irure nulla Excepteur non",
+    "language": "ea dolor culpa Duis elit",
+    "published": true
+})
+
+
+

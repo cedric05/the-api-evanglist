@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Restores a shutdown resource belonging to a given Deployment.
+
+@name("Restores a shutdown resource") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/:resource_kind/:ref_id/_restore"
+? "restore_snapshot"= "false"
+
+
+// Cancels the pending plan of a Resource belonging to a given Deployment.
+
+@name("Cancel resource pending plan") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/deployments/:deployment_id/:resource_kind/:ref_id/plan/pending"
+? "force_delete"= "false"
+? "ignore_missing"= "false"
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d73a1a0-5a05-4d06-ac30-82c90173ac85.postman_collection.json
+
+// To retrieve information about a workspace, an application submits an HTTP GET request to then          workspace resource that represents the workspace.
+
+@name("Retrieving Workspace Information")
+GET "https://{{baseUrl}}/workspace"
+
+
+// To retrieve the contents of a workspace, an application submits an HTTP GET request to the URLn          that represents the workspace contents. Note that the contents of a workspace are the sync folders that are mappedntt  to that workspace in SugarSync.
+
+@name("Retrieving Workspace Contents")
+GET "https://{{baseUrl}}/workspace/"
+? "max"= "<>"
+? "order"= "<>"
+? "start"= "<>"
+? "type"= "<>"
+
+
+

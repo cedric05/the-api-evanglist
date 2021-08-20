@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Create Task Comment") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/task/zeft/comment"
+"Content-Type": "application/json"
+json({
+    "comment_text": "Task comment content",
+    "assignee": 53480,
+    "notify_all": true
+})
+
+
+@name("Get Task Comments") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/task/zeft/comment"
+"Content-Type": "application/json"
+
+
+

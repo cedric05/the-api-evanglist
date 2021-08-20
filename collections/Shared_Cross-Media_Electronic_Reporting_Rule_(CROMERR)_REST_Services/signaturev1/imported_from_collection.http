@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2131e7d-01ce-4512-a5ba-81bbec9b0ac2.postman_collection.json
+
+@name("Sign a document and return a detached signature.")
+POST "https://{{baseUrl}}/signature/v1"
+"Authorization": "<string>"
+"Content-Type": "multipart/form-data"
+files(
+	("signature", "<string>"),
+	("document", "<binary>")
+)
+
+
+@name("Validate a document against the specified detached signature.")
+PUT "https://{{baseUrl}}/signature/v1"
+"Authorization": "<string>"
+"Content-Type": "multipart/form-data"
+files(
+	("signature", "<string>"),
+	("document", "<binary>"),
+	("detachedSignature", "<binary>")
+)
+
+
+

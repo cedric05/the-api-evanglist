@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete a user") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/users/profiles/:user/"
+
+
+@name("Retrieve a user") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/users/profiles/:user/"
+
+
+@name("Update a user") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/users/profiles/:user/"
+"Content-Type": "application/json"
+json({
+    "username": "<string>",
+    "password": "<string>",
+    "profile": {
+        "avatar": "<byte>",
+        "bio": "<string>",
+        "company": "<string>",
+        "location": "<string>",
+        "timezone": "<string>",
+        "url": "<string>"
+    },
+    "email": "<string>",
+    "first_name": "<string>",
+    "last_name": "<string>"
+})
+
+
+

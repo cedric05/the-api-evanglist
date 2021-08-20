@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-87030e81-ee2c-4c09-8477-6fa66d8714cc.postman_collection.json
+
+// Get projects status webhookid.
+
+@name("Get Projects Status Webhookid")
+GET "https://{{baseUrl}}/projects/status/:webhookId"
+
+
+// Get projects status webhookid branch buildbranch.
+
+@name("Get Projects Status Webhookid Branch Buildbranch")
+GET "https://{{baseUrl}}/projects/status/:webhookId/branch/:buildBranch"
+
+
+

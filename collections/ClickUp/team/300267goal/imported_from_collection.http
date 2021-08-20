@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Create a Goal") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/team/300267/goal"
+"Content-Type": "application/json"
+json({
+    "name": "Goal From API V2",
+    "due_date": 1577811600000,
+    "description": "Goal Description",
+    "multiple_owners": true,
+    "owners": [
+        53480
+    ],
+    "color": "#32a852"
+})
+
+
+@name("Get Goals") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/team/300267/goal"
+"Content-Type": "application/json"
+
+
+

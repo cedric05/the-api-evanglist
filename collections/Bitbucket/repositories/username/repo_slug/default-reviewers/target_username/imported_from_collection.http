@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Removes a default reviewer from the repository.
+
+@name("/repositories/:username/:repo_slug/default-reviewers/:target_username")
+DELETE "https://{{baseUrl}}/repositories/:username/:repo_slug/default-reviewers/:target_username"
+
+
+// Returns the specified reviewer.
+// 
+// This can be used to test whether a user is among the repository's
+// default reviewers list. A 404 indicates that that specified user is not
+// a default reviewer.
+
+@name("/repositories/:username/:repo_slug/default-reviewers/:target_username")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/default-reviewers/:target_username"
+
+
+// Adds the specified user to the repository's list of default
+// reviewers.
+// 
+// This method is idempotent. Adding a user a second time has no effect.
+
+@name("/repositories/:username/:repo_slug/default-reviewers/:target_username")
+PUT "https://{{baseUrl}}/repositories/:username/:repo_slug/default-reviewers/:target_username"
+
+
+

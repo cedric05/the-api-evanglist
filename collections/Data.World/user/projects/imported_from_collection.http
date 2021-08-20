@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List projects that the currently authenticated user has access to because he or she is a contributor.
+
+@name("List projects as contributor") : "base-inherit-auth"
+GET "https://{{baseUrl}}/user/projects/contributing"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+
+
+// List projects that the currently authenticated user liked (bookmarked).
+
+@name("List liked (bookmarked) projects") : "base-inherit-auth"
+GET "https://{{baseUrl}}/user/projects/liked"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+
+
+// List projects that the currently authenticated user has access to because he or she is the owner.
+
+@name("List projects owned") : "base-inherit-auth"
+GET "https://{{baseUrl}}/user/projects/own"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+
+
+

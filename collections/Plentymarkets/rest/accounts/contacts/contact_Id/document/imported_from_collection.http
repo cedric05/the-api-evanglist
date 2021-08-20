@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Get a single storage object from contact documents.
+
+@name("Get a single storage object from contact documents")
+GET "https://{{baseUrl}}/rest/accounts/contacts/:contactId/document"
+? "key"= "<post>"
+
+
+// Get a temporary url for a single document.
+
+@name("Get a temporary url for a single document")
+GET "https://{{baseUrl}}/rest/accounts/contacts/:contactId/document/url"
+? "key"= "<post>"
+
+
+

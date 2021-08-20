@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26cd91a2-9b1d-4b13-a446-5962a1db044c.postman_collection.json
+
+// Gets a list of *key* IDs (will only work with non-hashed installations)n
+
+@name("Get Keys")
+GET "https://{{baseUrl}}/tyk/keys/"
+"x": "<>"
+? "api_id"= "<delete>"
+
+
+// Create a new *API token* with the *session object* defined in the bodyn
+
+@name("Create Key")
+POST "https://{{baseUrl}}/tyk/keys/create"
+"x": "<>"
+? "suppress_reset"= "<>"
+
+
+// Update an *API token* with the *session object* defined in the body, this operatin overwrites the existing objectn
+
+@name("Update Key")
+PUT "https://{{baseUrl}}/tyk/keys/:keyId"
+"x": "<>"
+? "suppress_reset"= "<>"
+? "api_id"= "<delete>"
+
+
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This REST API reference describes how to get a notification history for callouts.n
+
+@name("Get callout notification histories")
+GET "https://{{baseUrl}}/v1/notification-history/callout"
+? "endTime"= "<>"
+? "startTime"= "<>"
+? "objectId"= "<>"
+? "failedOnly"= "<>"
+? "eventCategory"= "<put>"
+? "includeResponseContent"= "<>"
+
+
+// This REST API reference describes how to get a notification history for notification emails.nnn## NotesnRequest parameters and their values may be appended with a ? following the HTTPS GET request.  Additional request parameter are separated by &. nnFor example:nn`GET https://rest.zuora.com/v1/notification-history/email?startTime=2015-01-12T00:00:00&endTime=2015-01-15T00:00:00&failedOnly=false&eventCategory=1000&pageSize=1`n
+
+@name("Get email notification histories")
+GET "https://{{baseUrl}}/v1/notification-history/email"
+? "endTime"= "<>"
+? "startTime"= "<>"
+? "objectId"= "<>"
+? "failedOnly"= "<>"
+? "eventCategory"= "<put>"
+
+
+

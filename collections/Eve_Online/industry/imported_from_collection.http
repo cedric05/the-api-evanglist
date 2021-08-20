@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return a list of industry facilities
+// 
+// ---
+// Alternate route: `/dev/industry/facilities/`
+// 
+// Alternate route: `/legacy/industry/facilities/`
+// 
+// Alternate route: `/v1/industry/facilities/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List industry facilities")
+GET "https://{{baseUrl}}/industry/facilities/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Return cost indices for solar systems
+// 
+// ---
+// Alternate route: `/dev/industry/systems/`
+// 
+// Alternate route: `/legacy/industry/systems/`
+// 
+// Alternate route: `/v1/industry/systems/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List solar system cost indices")
+GET "https://{{baseUrl}}/industry/systems/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

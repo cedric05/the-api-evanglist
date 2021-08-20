@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8f2c3301-6af0-4ad2-921e-7df6902543e4.postman_collection.json
+
+// Deletes guide..
+
+@name("Deletes guide.")
+DELETE "https://{{baseUrl}}/guide/:guideId"
+
+
+// Returns guide definition..
+
+@name("Returns guide definition.")
+GET "https://{{baseUrl}}/guide/:guideId/gdl"
+
+
+// Toggles default behaviour of persisting guide execution result..
+
+@name("Toggles default behaviour of persisting guide execution result.")
+PUT "https://{{baseUrl}}/guide/:guideId/toggleGuidePersistence"
+
+
+

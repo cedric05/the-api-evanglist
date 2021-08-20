@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.
+
+@name("Add assignees to an issue")
+POST "https://{{baseUrl}}/repos/:owner/:repo/issues/:issue_number/assignees"
+"Content-Type": "application/json"
+json({
+    "assignees": [
+        "<string>",
+        "<string>"
+    ]
+})
+
+
+// Removes one or more assignees from an issue.
+
+@name("Remove assignees from an issue")
+DELETE "https://{{baseUrl}}/repos/:owner/:repo/issues/:issue_number/assignees"
+"Content-Type": "application/json"
+json({
+    "assignees": [
+        "<string>",
+        "<string>"
+    ]
+})
+
+
+

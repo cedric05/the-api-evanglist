@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aa39848b-48c1-408a-83d6-4de935b6e9c6.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Retrieve the web page
+
+@name("website privacy policy list") : "base-inherit-auth"
+GET "https://{{baseUrl}}/website/privacy_policy/"
+
+
+// Create or update the custom web page
+
+@name("website privacy policy create") : "base-inherit-auth"
+POST "https://{{baseUrl}}/website/privacy_policy/"
+
+
+// Delete the custom web page
+
+@name("website privacy policy delete") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/website/privacy_policy/"
+
+
+

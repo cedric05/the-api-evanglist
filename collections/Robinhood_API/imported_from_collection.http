@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c37e8687-519c-4982-907d-7e4142b84455.postman_collection.json
+
+// API Method Description
+
+@name("Short Summary of API Method")
+GET "https://{{baseUrl}}/fundamentals/:symbol/"
+
+
+// Retrieve basic user info, needs authorization
+
+@name("Retrieve basic info")
+GET "https://{{baseUrl}}/user/basic_info/"
+
+
+// Returns information on markets
+
+@name("Market information")
+GET "https://{{baseUrl}}/markets/"
+
+
+

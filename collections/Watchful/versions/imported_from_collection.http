@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd3bb79e-7d36-49f2-9d90-ac848a0b6d74.postman_collection.json
+
+@name("Get List Of Versions")
+GET "https://{{baseUrl}}/versions"
+? "fields"= "<>"
+
+
+@name("Find A Version By ID")
+GET "https://{{baseUrl}}/versions/:id"
+? "fields"= "<>"
+
+
+

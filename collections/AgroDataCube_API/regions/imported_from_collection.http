@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-df55bd21-8efe-4dae-ac10-923f5911c3f0.postman_collection.json
+
+@name("Return all municipalities (gemeentes), based on the boundaries for 2015.")
+GET "https://{{baseUrl}}/regions/municipalities"
+"token": "{{token}}"
+? "page_size"= "25"
+? "page_offset"= "0"
+? "output_epsg"= "4326"
+
+
+@name("Return the dutch 6-positions postalcode areas.")
+GET "https://{{baseUrl}}/regions/postalcodes"
+"token": "{{token}}"
+? "page_size"= "25"
+? "output_epsg"= "4326"
+? "page_offset"= "0"
+
+
+@name("Return the provinces. These are the boundaries from 2015.")
+GET "https://{{baseUrl}}/regions/provences"
+"token": "{{token}}"
+? "page_size"= "25"
+? "output_epsg"= "4326"
+? "page_offset"= "0"
+
+
+

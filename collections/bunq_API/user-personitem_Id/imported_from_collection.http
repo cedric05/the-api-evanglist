@@ -1,0 +1,116 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get a specific person.
+
+@name("READ User Person")
+GET "https://{{baseUrl}}/user-person/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Modify a specific person object's data.
+
+@name("UPDATE User Person")
+PUT "https://{{baseUrl}}/user-person/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "avatar_uuid": "<string>",
+    "document_type": "<string>",
+    "document_number": "<string>",
+    "document_country_of_issuance": "<string>",
+    "document_front_attachment_id": "<integer>",
+    "legal_guardian_alias": {
+        "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "type": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "value": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+    },
+    "address_main": {
+        "city": "commodo labore ullamco dolore",
+        "country": "minim mollit eiusmod aute",
+        "extra": "qui est laboris Duis nostrud",
+        "house_number": "elit est enim Ut",
+        "mailbox_name": "offi",
+        "po_box": "esse laborum fugiat",
+        "postal_code": "cillum ex minim id",
+        "province": "ullamco in sint ipsum",
+        "street": "par"
+    },
+    "address_postal": {
+        "city": "adipisicing tempor in dolor",
+        "country": "proident qui consequat",
+        "extra": "in",
+        "house_number": "consequat et",
+        "mailbox_name": "dolor anim",
+        "po_box": "ipsum esse aute",
+        "postal_code": "quis Lorem in",
+        "province": "sed Excepteur officia",
+        "street": "sunt ex Lorem"
+    },
+    "country_of_birth": "<string>",
+    "daily_limit_without_confirmation_login": {
+        "currency": "aute ",
+        "value": "mollit "
+    },
+    "date_of_birth": "<string>",
+    "display_name": "<string>",
+    "document_back_attachment_id": "<integer>",
+    "first_name": "<string>",
+    "gender": "<string>",
+    "language": "<string>",
+    "last_name": "<string>",
+    "middle_name": "<string>",
+    "nationality": "<string>",
+    "place_of_birth": "<string>",
+    "public_nick_name": "<string>",
+    "region": "<string>",
+    "session_timeout": "<integer>",
+    "status": "<string>",
+    "sub_status": "<string>",
+    "tax_resident": [
+        {
+            "country": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "status": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "tax_number": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        {
+            "country": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "status": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "tax_number": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        }
+    ]
+})
+
+
+

@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets an object that contains all the details about a specific actor.
+
+@name("Get actor")
+GET "https://{{baseUrl}}/v2/acts/:actorId"
+? "token"= "<string>"
+
+
+// Gets the list of webhooks of a specific actor. The response is a JSON with the list of objects where each objectncontains basic information about a single webhook.nnThe endpoint supports pagination using the `limit` and `offset` parameters and it will not return more than 1000 records.nnBy default, the records are sorted by the `createdAt` field in ascending order,nto sort the records in descending order, use the `desc=1` parameter.
+
+@name("Get list of webhooks")
+GET "https://{{baseUrl}}/v2/acts/:actorId/webhooks"
+? "token"= "<string>"
+? "offset"= "<number>"
+? "limit"= "<number>"
+? "desc"= "<boolean>"
+
+
+// Runs a specific actor and returns its output.nnThe POST payload including its `Content-Type` header is passed as `INPUT` to the actor (usually application/json).nThe HTTP response contains actor's `OUTPUT` record from its default key-value store.nnThe actor is started with the default options; you can override them using various URL query parameters.nIf the actor run exceeds 300 seconds,nthe HTTP response will have status 408 (Request Timeout).
+
+@name("With input")
+POST "https://{{baseUrl}}/v2/acts/:actorId/run-sync"
+? "token"= "<string>"
+? "outputRecordKey"= "<string>"
+? "timeout"= "<string>"
+? "memory"= "<string>"
+? "build"= "<object>"
+? "webhooks"= "<string>"
+
+
+

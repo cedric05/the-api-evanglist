@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method gets all the videos that the specified user has liked.
+
+@name("Get all the videos that a user has liked")
+GET "https://{{baseUrl}}/users/:user_id/likes"
+? "filter"= "<string>"
+? "filter_embeddable"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+// This method causes the specified user to unlike a video that they previously liked.
+
+@name("Cause a user to unlike a video")
+DELETE "https://{{baseUrl}}/users/:user_id/likes/:video_id"
+
+
+

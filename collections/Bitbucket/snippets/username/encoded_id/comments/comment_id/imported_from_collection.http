@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Deletes a snippet comment.
+// 
+// Comments can only be removed by their author.
+
+@name("/snippets/:username/:encoded_id/comments/:comment_id")
+DELETE "https://{{baseUrl}}/snippets/:username/:encoded_id/comments/:comment_id"
+
+
+// Returns the specific snippet comment.
+
+@name("/snippets/:username/:encoded_id/comments/:comment_id")
+GET "https://{{baseUrl}}/snippets/:username/:encoded_id/comments/:comment_id"
+
+
+// Updates a comment.
+// 
+// Comments can only be updated by their author.
+
+@name("/snippets/:username/:encoded_id/comments/:comment_id")
+PUT "https://{{baseUrl}}/snippets/:username/:encoded_id/comments/:comment_id"
+
+
+

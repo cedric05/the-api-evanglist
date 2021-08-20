@@ -1,0 +1,76 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// Fetch the current user (me) identity
+
+@name("Get Me")
+GET "https://{{baseUrl}}/me/"
+
+
+// Clear/destroy an apikey
+
+@name("Delete Me Apikey")
+DELETE "https://{{baseUrl}}/me/apikey"
+
+
+// Upload a new avatar
+
+@name("Add Me Avatar")
+POST "https://{{baseUrl}}/me/avatar"
+
+
+// List all my datasets (including private ones)
+
+@name("Get Me Datasets")
+GET "https://{{baseUrl}}/me/datasets/"
+
+
+// Fetch the current user (me) metrics
+
+@name("Get Me Metrics")
+GET "https://{{baseUrl}}/me/metrics/"
+
+
+// List all community resources related to me and my organizations
+
+@name("Get Me Org Community Resources")
+GET "https://{{baseUrl}}/me/org_community_resources/"
+? "q"= "<>"
+
+
+// List all datasets related to me and my organizations
+
+@name("Get Me Org Datasets")
+GET "https://{{baseUrl}}/me/org_datasets/"
+? "q"= "<>"
+
+
+// List all discussions related to my organizations
+
+@name("Get Me Org Discussions")
+GET "https://{{baseUrl}}/me/org_discussions/"
+? "q"= "<>"
+
+
+// List all issues related to my organizations
+
+@name("Get Me Org Issues")
+GET "https://{{baseUrl}}/me/org_issues/"
+? "q"= "<>"
+
+
+// List all reuses related to me and my organizations
+
+@name("Get Me Org Reuses")
+GET "https://{{baseUrl}}/me/org_reuses/"
+? "q"= "<>"
+
+
+// List all my reuses (including private ones)
+
+@name("Get Me Reuses")
+GET "https://{{baseUrl}}/me/reuses/"
+
+
+

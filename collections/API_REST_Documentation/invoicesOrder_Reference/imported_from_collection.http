@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Extract invoices for specific orders. The output contains the binary code for invoices in the PDF file format, Base64 encoded (Base64 is used to represent binary data in the ASCII string format).")
+GET "https://{{baseUrl}}/invoices/:OrderReference/"
+
+
+@name("Extract invoices for specific refunds. The output contains the binary code for invoices in the PDF file format, Base64 encoded (Base64 is used to represent binary data in the ASCII string format).")
+GET "https://{{baseUrl}}/invoices/:OrderReference/:Type/:Count/"
+
+
+

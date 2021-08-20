@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Delete property by id
+
+@name("Delete property")
+DELETE "https://{{baseUrl}}/api/v1/properties/:propertyId"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Update property by id
+
+@name("Update property")
+PUT "https://{{baseUrl}}/api/v1/properties/:propertyId"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "label": "anim",
+    "description": "in Lorem ipsum",
+    "group": "non commodo",
+    "sourceType": "companies"
+})
+
+
+

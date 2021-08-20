@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01dcf85f-3ef8-448e-9cc1-9e1b0d7335f1.postman_collection.json
+
+// Returns a list of all available lab tests.
+
+@name("Get Lab Tests")
+GET "https://{{baseUrl}}/lab_tests"
+
+
+// Returns details of a single lab test specified by id parameter.
+
+@name("Get Lab Tests")
+GET "https://{{baseUrl}}/lab_tests/:id"
+
+
+

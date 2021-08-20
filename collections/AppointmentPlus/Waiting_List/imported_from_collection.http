@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Returns all customers in the waiting list.
+
+@name("GetList")
+POST "https://{{baseUrl}}/WaitingList/GetList"
+
+
+// Adds a customer to the waiting list.  If you do not send the `location_id`, the customer will be added to the waiting list at the headquarters location.
+
+@name("AddToList")
+POST "https://{{baseUrl}}/WaitingList/AddToList"
+? "customer_id"= "<integer>"
+? "location_id"= "<integer>"
+? "notes"= "<string>"
+
+
+

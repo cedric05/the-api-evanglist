@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+@name("Accept a repository invitation")
+PATCH "https://{{baseUrl}}/user/repository_invitations/:invitation_id"
+
+
+@name("Decline a repository invitation")
+DELETE "https://{{baseUrl}}/user/repository_invitations/:invitation_id"
+
+
+

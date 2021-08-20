@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-baf4a014-6c7b-4f4e-b764-89b8472d3cf4.postman_collection.json
+
+// Create a custodial account.  Returns a 12 digit EOS account name (user’s ORE account name)
+// 
+// View a complete list of the error codes <a href="#error-codes">here.</a>
+
+@name("Custodial - Create Account")
+POST "https://{{baseUrl}}/api/custodial/new-user"
+
+
+// Sign a transaction for a custodial account
+// <br/><br/>
+// 
+// ##### PARAMETERS
+// ---
+// **account** - (Required) The 12-character ORE account name of the user signing the transaction.
+// 
+// **chain_account** - (Required) The 12-character account name associated with the transaction (the transaction actor) for the chain specified by chain_network. Usually the same as the user’s ORE account but can be different for different chains.
+// 
+// **transaction** - (Required) Base64 encoded JSON of the transaction.
+// 
+// **broadca
+
+@name("Custodial - Change Password")
+POST "https://{{baseUrl}}/api/custodial/change-password"
+
+
+// Migrate a user's custodial account type (eg from virtual to native)
+// <br/><br/>
+// 
+// ##### PARAMETERS
+// ---
+// **account** - (Required) The 12-character ORE account name of the user.
+// 
+// **chain_account** - (Required) The 12-character account name on the chain specified by chain_network. Usually the same as the user’s ORE account but can be different for different chains.
+// 
+// **chain_network** - (Required) eos_main, eos_kylin, etc. Valid options can be found in the Get Settings - Chains Config API call result
+
+@name("Custodial - Migrate Account")
+POST "https://{{baseUrl}}/api/custodial/migrate-account"
+
+
+

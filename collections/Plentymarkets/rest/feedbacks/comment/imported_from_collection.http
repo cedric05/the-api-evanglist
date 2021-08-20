@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Creates a feedback comment.
+
+@name("Create a feedback comment")
+POST "https://{{baseUrl}}/rest/feedbacks/comment"
+? "message"= "<post>"
+? "commentRelationTargetTypeId"= "<>"
+? "commentRelationTargetId"= "<>"
+
+
+// Deletes a feedback comment. The ID of the feedback comment must be specified.
+
+@name("Delete a feedback comment")
+DELETE "https://{{baseUrl}}/rest/feedbacks/comment/:commentId"
+? "feedbackCommentId"= "<>"
+
+
+

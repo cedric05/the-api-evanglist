@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// Returns a series records, filtered by the supplied comma-separated list of keys. Query keys can be found at the `/series/{id}/filter/params` route.
+
+@name("/series/:id/filter")
+GET "https://{{baseUrl}}/series/:id/filter"
+? "No Name"= "<string>"
+? "keys"= "<string>"
+
+
+// Returns the list of keys available for the `/series/{id}/filter` route
+
+@name("/series/:id/filter/params")
+GET "https://{{baseUrl}}/series/:id/filter/params"
+? "No Name"= "<string>"
+
+
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-520eedaa-7e93-4d4f-b389-c0bf3c1f2f52.postman_collection.json
+
+// A specific, existing custom field can be updated by making a PUT request on the URL for that custom field. Only the fields provided in the data block will be updated; any unspecified fields will remain unchanged
+
+@name("Put Custom Field")
+PUT "https://{{baseUrl}}/custom_fields/:custom_field_gid"
+
+
+

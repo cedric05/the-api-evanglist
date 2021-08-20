@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-369a549d-7af8-4011-b7a8-bdaaf995e63b.postman_collection.json
+
+// Returns the file with corresponding blnumbers and staynumber..
+
+@name("Returns the file with corresponding blnumbers and staynumber.")
+GET "https://{{baseUrl}}/nxtportdocument/:blnumber/sn/:stayNumber"
+"Ocp": "<>"
+
+
+// Returns the file with corresponding blnumbers and containernumber..
+
+@name("Returns the file with corresponding blnumbers and containernumber.")
+GET "https://{{baseUrl}}/nxtportdocument/:blnumber/cn/:containerNumber"
+"Ocp": "<>"
+
+
+// Returns the file with corresponding blnumbers and senderid..
+
+@name("Returns the file with corresponding blnumbers and senderID.")
+GET "https://{{baseUrl}}/nxtportdocument/:blnumber/ag/:agent"
+"Ocp": "<>"
+
+
+

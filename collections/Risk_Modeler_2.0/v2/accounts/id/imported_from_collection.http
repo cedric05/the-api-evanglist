@@ -1,0 +1,240 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves information on an account specified by its ID.
+
+@name("Get a specified account") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates a account specified by its ID with new information.
+
+@name("Update a specified account") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v2/accounts/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "number": "tempor aliquip mi",
+    "id": 41178655,
+    "name": "L",
+    "status": "aliquip ipsum aliqua dolor",
+    "cedant": {
+        "name": "in velit",
+        "id": "U"
+    },
+    "producer": {
+        "name": "occaecat consectetur adip",
+        "id": "9kEClZ3Jn"
+    },
+    "underwriter": {
+        "name": "laborum cillum",
+        "id": 58146873
+    },
+    "branch": {
+        "name": "Lorem occaecat ut",
+        "id": -16705182
+    },
+    "userId1": "sunt Duis velit qui",
+    "userId2": "amet magna occaecat consectetur",
+    "userId3": "veniam reprehenderit amet fugiat",
+    "userId4": "dolore",
+    "userText1": "Duis et anim",
+    "userText2": "in eiusmod",
+    "createDate": "eu labore incididunt mollit",
+    "stampDate": "voluptate aliquip",
+    "state": "InActive",
+    "linkId": "tempor",
+    "guid": "veniam nisi",
+    "isValid": false,
+    "CustomData": {}
+})
+
+
+// Deletes an account specified by its ID.
+
+@name("Delete a specified account") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v2/accounts/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Places an accounts into a queue, where it waits until the analysis occurs.
+
+@name("Process an account") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/accounts/:id/process"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "currency": {
+        "asOfDate": "sint velit",
+        "code": "do quis",
+        "scheme": "ut eiusmod irure null",
+        "vintage": "in dolor"
+    },
+    "edm": "ipsum est commodo reprehenderit in",
+    "id": 43619583,
+    "exposureType": "ACCOUNT",
+    "modelProfileId": 94100912,
+    "eventRateSchemeId": -23822990,
+    "treaties": [
+        2361110,
+        -17209808
+    ],
+    "jobName": "sJYXFlU_",
+    "outputProfileId": -61505157
+})
+
+
+// Retrieves analyses for account specified by its ID.
+
+@name("Get analyses for a specified account") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id/analyses"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Retrieves validation on an account specified by its ID.
+
+@name("Validate a specified account") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id/validate"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Retrieves account validation file specified by account ID
+
+@name("Get account validation file") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id/validatemedia"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Copies existing multiple accounts within Risk Modeler.
+
+@name("Copy multiple accounts") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/accounts/:id/copy"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "newNumber": "mol",
+    "newName": "ad Duis",
+    "linked": true
+})
+
+
+// Moves an account specified by its ID to user edm.
+
+@name("Move a specified account to user edm") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/accounts/:id/move"
+"Authorization": "Bearer <Bearer Token>"
+? "option"= "20033802"
+? "datasource"= "Excepteur nisi in"
+
+
+// Performs Geocode And/Or Hazard on a account
+
+@name("Performs Geocode And/Or Hazard on a specified account") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/accounts/:id/geohaz"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json([
+    {
+        "engineType": "anim enim exercitation in Lorem",
+        "name": "elit eu ut",
+        "type": "minim magna aliqua in",
+        "version": "commodo dolore ir",
+        "layerOptions": {}
+    },
+    {
+        "engineType": "ullamco non sunt nisi",
+        "name": "fugiat in Lorem non",
+        "type": "dolor cillum amet nulla est",
+        "version": "dolore cillum sint amet nostrud",
+        "layerOptions": {}
+    }
+])
+
+
+// Gets list of countries covered by an account specified by its ID.
+
+@name("Get list of countries covered by a specified account") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id/countries"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Retrieves a list of location coordinates for an account specified by its ID.
+
+@name("Get list of location coordinates for a specified account") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id/coordinates"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Retrieves a coordinate for an account specified by its ID, latitude and longitude.
+
+@name("Get coordinate for a specified account by latitude and longitude") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id/coordinate"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "latitude"= "-61281687.88214854"
+? "longitude"= "-61281687.88214854"
+
+
+// Retrieves location level surplus treaties for an account specified by its ID.
+
+@name("Get location level surplus treaties for a specified account") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id/surplustreatieslocation"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Retrieves a list of site names for an account specified by its ID.
+
+@name("Get site names for a specified account") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id/sites"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Converts the currency of an account specified by its ID.
+
+@name("Convert the currency of a specified account") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/accounts/:id/convertcurrency"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "*/*"
+? "datasource"= "Excepteur nisi in"
+data('{
+    "asOfDate": "pariatur tempor id",
+    "code": "non",
+    "scheme": "commodo",
+    "vintage": "eu voluptat"
+}')
+
+
+// Retrieves metrics for an account specified by its ID.
+
+@name("Get metrics for a specified account") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/accounts/:id/metrics"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

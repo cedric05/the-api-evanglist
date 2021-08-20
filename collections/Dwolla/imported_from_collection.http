@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+@name("Application Access Token")
+POST "https://{{baseUrl}}/token"
+
+
+// Retrieve an uploaded document by its id.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn---------|---------|----------|---------|---------|nid | string | path | yes | Customer unique identifier.
+
+@name("Retrieve A Document")
+GET "https://{{baseUrl}}/documents/:documentId"
+
+
+// Retrieve a mass payment item by its unique identifier. An item can contain _links to: the mass payment the item belongs to, the transfer created from the item, and the destination user.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn----------|--------|--------|----------|----------|nid | string | path | yes | The id of the item to be retrieved in a mass payment.
+
+@name("Retreive A Mass Payment Item")
+GET "https://{{baseUrl}}/mass-payment-items/:massPaymentItemId"
+
+
+@name("Retrieve A Label Ledger Entry")
+GET "https://{{baseUrl}}/ledger-entries/:ledgerEntryId"
+
+
+@name("List Labels For A Customer")
+GET "https://{{baseUrl}}/customer/:VCRCustomerId/labels"
+
+
+// Create an on-demand bank transfer authorization for your Customer. On-demand authorization allows Customers to authorize Dwolla to transfer variable amounts from their bank account using ACH at a later point in time for products or services delivered. This on-demand authorization is supplied along with the Customeru2019s bank details when creating a new Customer funding source.nnWhen on-demand authorization is enabled for your application the Customer is presented with text on a u201cadd bank accoun
+
+@name("Create A New On-demand Authorization")
+POST "https://{{baseUrl}}/on-demand-authorizations"
+
+
+@name("Get Root")
+GET "https://{{baseUrl}}/"
+
+
+

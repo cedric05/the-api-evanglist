@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Service Languages")
+GET "https://{{baseUrl}}/services/:service_id/languages"
+
+
+@name("add Service Language")
+POST "https://{{baseUrl}}/services/:service_id/languages"
+"Content-Type": "application/json"
+json({
+    "id": "tempor velit irure in sit",
+    "service_id": "laborum cillum culpa",
+    "location_id": "laboris",
+    "language": "officia"
+})
+
+
+@name("get Service Language")
+GET "https://{{baseUrl}}/services/:service_id/languages/:language_id"
+
+
+@name("update Service Language")
+PUT "https://{{baseUrl}}/services/:service_id/languages/:language_id"
+"Content-Type": "application/json"
+json({
+    "id": "tempor velit irure in sit",
+    "service_id": "laborum cillum culpa",
+    "location_id": "laboris",
+    "language": "officia"
+})
+
+
+@name("delete Service Language")
+DELETE "https://{{baseUrl}}/services/:service_id/languages/:language_id"
+
+
+

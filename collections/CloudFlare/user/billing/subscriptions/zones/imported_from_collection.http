@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// List all of your zone plan subscriptions
+
+@name("List all of your zone plan subscriptions")
+GET "https://{{baseUrl}}/user/billing/subscriptions/zones"
+"X": "<>"
+? "activated_on"= "<>"
+? "cancelled_on"= "<>"
+? "direction"= "<>"
+? "expired_on"= "<>"
+? "expires_on"= "<>"
+? "match"= "<>"
+? "order"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+? "price"= "<>"
+? "renewed_on"= "<>"
+? "status"= "<>"
+
+
+// Billing subscription details
+
+@name("Billing subscription details")
+GET "https://{{baseUrl}}/user/billing/subscriptions/zones/:identifier"
+
+
+

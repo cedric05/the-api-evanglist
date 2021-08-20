@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search all Campaigns this user has access to
+
+@name("Search Campaigns")
+GET "https://{{baseUrl}}/campaign"
+
+
+// Edit an existing Campaign
+
+@name("Edit Campaign")
+PUT "https://{{baseUrl}}/campaign/:campaignId"
+
+
+// Assign Layouts to a Campaign
+
+@name("Assign Layouts")
+POST "https://{{baseUrl}}/campaign/layout/assign/:campaignId"
+
+
+

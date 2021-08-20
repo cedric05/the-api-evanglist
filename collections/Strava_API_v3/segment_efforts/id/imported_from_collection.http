@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Returns a segment effort from an activity that is owned by the authenticated athlete.
+
+@name("Get Segment Effort")
+GET "https://{{baseUrl}}/segment_efforts/:id"
+
+
+// Returns a set of streams for a segment effort completed by the authenticated athlete. Requires read_all scope.
+
+@name("Get Segment Effort Streams")
+GET "https://{{baseUrl}}/segment_efforts/:id/streams"
+? "keys"= "<array>"
+? "key_by_type"= "<boolean>"
+
+
+

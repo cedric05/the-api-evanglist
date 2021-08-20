@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+@name("Get an organization webhook")
+GET "https://{{baseUrl}}/orgs/:org/hooks/:hook_id"
+
+
+@name("Update an organization webhook")
+PATCH "https://{{baseUrl}}/orgs/:org/hooks/:hook_id"
+"Content-Type": "application/json"
+json({
+    "config": {
+        "url": "<string>",
+        "content_type": "<string>",
+        "secret": "<string>",
+        "insecure_ssl": "<string>"
+    },
+    "events": [
+        "push"
+    ],
+    "active": true,
+    "name": "<string>"
+})
+
+
+@name("Delete an organization webhook")
+DELETE "https://{{baseUrl}}/orgs/:org/hooks/:hook_id"
+
+
+// This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
+
+@name("Ping an organization webhook")
+POST "https://{{baseUrl}}/orgs/:org/hooks/:hook_id/pings"
+
+
+

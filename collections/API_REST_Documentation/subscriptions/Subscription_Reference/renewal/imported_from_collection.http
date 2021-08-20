@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// Retrieve the manual renewal link and the recurring billing status for a subscription.
+
+@name("Retrieve renewal links and recurring billing status")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/renewal/"
+
+
+// Set a custom grace period for an <strong>Active</strong> or <strong>Past Due</strong> subscription.
+// 
+// Use **0** to set the grace period for a subscription to the default value you defined in the per-product or per-account settings.
+// 
+// ***
+// 
+// | Attributes            | Type/Description                                  |
+// |-----------------------|---------------------------------------------------|
+// | **SubscriptionReference** | **Required (string)**                                 |
+// |                    
+
+@name("Set a custom grace period")
+PUT "https://{{baseUrl}}/subscriptions/:SubscriptionReference/renewal/graceperiod/"
+? "Days"= "<number>"
+
+
+// Subscribe shoppers to subscription renewal notifications.
+
+@name("Enable renewal notification")
+POST "https://{{baseUrl}}/subscriptions/:SubscriptionReference/renewal/notification/"
+
+
+// Retrieve pricing details for the next charge necessary to renew a specific subscription.
+
+@name("Retrieve a subscription's next renewal price")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/renewal/price/:Currency/"
+
+
+// Convert a trial to a paid subscription. In the eventuality of a conversion failure, you can attempt the same trial subscription conversion only after you let 24 hours pass since the initial attempt. The 2Checkout system also attempts to automatically convert trials before they expire to full subscriptions, unless you made an attempt that failed less than 24 hours before the scheduled expiration deadline.
+// In case the trial conversion fails due to a transaction issue, the 2Checkout system sends un
+
+@name("Convert a trial")
+PUT "https://{{baseUrl}}/subscriptions/:SubscriptionReference/renewal/trial/"
+? "Currency"= "<string>"
+? "Days"= "<number>"
+? "ExtendSubscription"= "<>"
+? "Price"= "<object>"
+
+
+// Retrieve a subscription's pause information
+
+@name("Retrieve a subscription's pause information")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/renewal/pause/"
+
+
+// This method will schedule the subscription to auto-renew as soon as possible.
+
+@name("Trigger immediate billing for a pay per usage subscription")
+PUT "https://{{baseUrl}}/subscriptions/:SubscriptionReference/renewal/usage/"
+
+
+

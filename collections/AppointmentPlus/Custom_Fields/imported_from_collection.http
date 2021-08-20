@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Retrieves the details of custom fields of type dropdown or radio button.  Valid values for `required_registration`, `required_profile`, and `required_appointment` are R, O and H for required, optional, and hidden, respectively.  Valid values for entity_type are appointment and customer.
+
+@name("GetCustomFieldsDetails")
+POST "https://{{baseUrl}}/CustomFields/GetCustomFieldsDetails"
+? "aux_id"= "<integer>"
+
+
+// Retrieves the list of custom fields defined in the account.  Valid values for `required_registration`, `required_profile`, and `required_appointment` are R, O and H for required, optional, and hidden, respectively.  Valid values for `entity_type` are appointment and customer.
+
+@name("GetCustomFields")
+POST "https://{{baseUrl}}/CustomFields/GetCustomFields"
+? "location_id"= "<integer>"
+? "aux_id"= "<integer>"
+? "field_name"= "<string>"
+? "required_registration"= "<string>"
+? "required_profile"= "<string>"
+? "required_appointment"= "<string>"
+? "entity_type"= "<string>"
+
+
+

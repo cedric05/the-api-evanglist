@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c9013d55-8237-4a7f-b18e-1101ac585e2d.postman_collection.json
+
+// This operation lists the set of products that are available under a given contract. You need a product identifier to create new edge hostnames, CP codes, or properties. The range of rule behaviors available within a property is determined by the assigned product.
+
+@name("List products")
+GET "https://{{baseUrl}}/productz"
+"PAPI-Use-Prefixes": "<string>"
+? "contractId"= "<string>"
+? "query"= "hello"
+
+
+

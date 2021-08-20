@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Create a new place.
+
+@name("Create a place")
+POST "https://{{baseUrl}}/places"
+? "No Name"= "<string>"
+
+
+// Read a place by ID.
+
+@name("Read a place")
+GET "https://{{baseUrl}}/places/:placeId"
+? "No Name"= "<string>"
+
+
+

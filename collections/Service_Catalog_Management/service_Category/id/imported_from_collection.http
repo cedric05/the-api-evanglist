@@ -1,0 +1,84 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c49a34ba-ca49-4e12-bd50-71617960cf26.postman_collection.json
+
+// This operation retrieves a ServiceCategory entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a ServiceCategory by ID")
+GET "https://{{baseUrl}}/serviceCategory/:id"
+? "fields"= "id Ut Excepteur"
+
+
+// This operation updates partially a ServiceCategory entity.
+
+@name("Updates partially a ServiceCategory")
+PATCH "https://{{baseUrl}}/serviceCategory/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "velit incididunt fugiat ipsum",
+    "isRoot": true,
+    "lifecycleStatus": "ipsum irure",
+    "name": "laborum mollit",
+    "parentId": "pariatur consectetur",
+    "version": "sint ipsum qui officia",
+    "category": [
+        {
+            "id": "labore esse",
+            "href": "https://BtithmXdInsViZu.itbSeAdIV-1.WayymhfAHZGI",
+            "name": "voluptate tempor",
+            "version": "cupidatat sunt Lorem",
+            "@baseType": "nisi",
+            "@schemaLocation": "http://BlfSdzRjfllNNOScrSNIPDKLXhT.onwhzAZgfq8TOWGQDptmJne.HWyOfb2",
+            "@type": "labore",
+            "@referredType": "est ut veniam cillum"
+        },
+        {
+            "id": "aliquip sunt",
+            "href": "https://czvgFPQerGwgZoDgaibuhpzHFczSGlwF.evUFbuoWxJM1c",
+            "name": "eu",
+            "version": "elit ut Lorem do",
+            "@baseType": "amet eu dolore",
+            "@schemaLocation": "https://bcou.wmJ.aPvsD86P5b3aDopvWecs.n5WeQo-hHaIb0bXBMcGdSmYnVk",
+            "@type": "quis labore exercitation dolore Ut",
+            "@referredType": "cupidatat sit"
+        }
+    ],
+    "serviceCandidate": [
+        {
+            "id": "laborum",
+            "href": "https://xnqiHmKfG.jxfnP.omktGaTR2f9DSJuOhp.6iiYhxt93QwuIA7FxB.oUo",
+            "name": "culpa",
+            "version": "sit ea elit",
+            "@baseType": "qui enim velit tempor",
+            "@schemaLocation": "http://BmmgoMITqycwPPRvAAPsMNG.pirfgz0Eu9gxm9uryyewmogoYgjneePgfyeumN6ONX",
+            "@type": "nisi tempor est eiusmod",
+            "@referredType": "aliqua "
+        },
+        {
+            "id": "eiusmod enim reprehenderit",
+            "href": "https://vW.tjycDMpmeDK+pebOZo6j7ibijlsvUAUR-xcCO",
+            "name": "dolore mollit ullamco occaeca",
+            "version": "minim adipisicing ad",
+            "@baseType": "sunt non ut eiusmod do",
+            "@schemaLocation": "https://XDTjSqAVcuGsOkBXeRIdPab.bbgqSeceBZXuRZUnYdHXe9v4r18,mRrFMq1zPGcNCRwA6zFDyGN,skwGBNkONc5F",
+            "@type": "nulla commodo",
+            "@referredType": "in ipsum labore dolore labo"
+        }
+    ],
+    "validFor": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@baseType": "in",
+    "@schemaLocation": "http://qjQBGTTgFEfpsZBqUESYnkD.jcddPbjrM5bJ,+CGsNme3jkqXpJkKwM6nYQxOrrY+",
+    "@type": "laboris aliquip eiusmod tempor laborum"
+})
+
+
+// This operation deletes a ServiceCategory entity.
+
+@name("Deletes a ServiceCategory")
+DELETE "https://{{baseUrl}}/serviceCategory/:id"
+
+
+

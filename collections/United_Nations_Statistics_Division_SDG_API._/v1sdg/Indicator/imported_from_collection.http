@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1e167a8f-2de8-4d63-a2ac-1189cfa7a2ce.postman_collection.json
+
+// Returns the list of all Indicators currently published in the latest release. The informaton includes series information and Goal - Target hierarchy
+
+@name("Returns the list of all Indicators available.")
+GET "https://{{baseUrl}}/v1/sdg/Indicator/List"
+
+
+// Returns a list of obeservations filetered by the parameters defined on the call
+
+@name("Returns a list of paginated observations")
+GET "https://{{baseUrl}}/v1/sdg/Indicator/Data"
+? "indicator"= "in quis magna enim"
+? "indicator"= "id voluptate do esse occaecat"
+? "areaCode"= "86606243"
+? "areaCode"= "-31007030"
+? "timePeriod"= "-82415680.42607912"
+? "timePeriod"= "10713607.645734727"
+? "dimensions"= "veniam aliqu"
+? "timePeriodStart"= "20835154.614729986"
+? "timePeriodEnd"= "20835154.614729986"
+? "page"= "28430278"
+? "pageSize"= "28430278"
+
+
+// Returns a list of obeservations pivoted by year filetered by the parameters defined on the call
+
+@name("Returns a list of paginated observations pivoted by year")
+GET "https://{{baseUrl}}/v1/sdg/Indicator/PivotData"
+? "indicator"= "in quis magna enim"
+? "indicator"= "id voluptate do esse occaecat"
+? "areaCode"= "86606243"
+? "areaCode"= "-31007030"
+? "dimensions"= "veniam aliqu"
+? "page"= "28430278"
+? "pageSize"= "28430278"
+
+
+

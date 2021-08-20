@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0d968f48-44c0-4886-b890-607a7e856a91.postman_collection.json
+
+// Obtain driver information for NASCAR.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain driver information for NASCAR.  NOTE:  The ...")
+GET "https://{{baseUrl}}/nascar-ot3/:nascar_series/:year/drivers/list{{format}}"
+
+
+// Obtain schedule for NASCAR.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain schedule for NASCAR.  NOTE:  The 2012 sampl...")
+GET "https://{{baseUrl}}/nascar-ot3/:nascar_series/:year/races/schedule{{format}}"
+
+
+// Obtain standings for drivers, rookies, owners, and manufacturers.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain standings for drivers, rookies, owners, and...")
+GET "https://{{baseUrl}}/nascar-ot3/:nascar_series/:year/standings/{{standings_type}}{{format}}"
+
+
+

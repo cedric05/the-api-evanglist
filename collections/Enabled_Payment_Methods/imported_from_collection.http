@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7bd152da-7aca-471c-9166-a183a6fb29de.postman_collection.json
+
+// Gets the list of enabled payment methods. Default sorting is by payment method, alphabetically from A to Z.
+
+@name("Get All Payment Methods")
+GET "https://{{baseUrl}}/payments/methods"
+? "page"= "<number>"
+? "limit"= "<number>"
+
+
+

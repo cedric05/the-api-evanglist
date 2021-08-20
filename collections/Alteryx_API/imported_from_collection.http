@@ -1,0 +1,95 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0ffc0d7d-bd50-40b1-a8bc-6ffe5e15a9bf.postman_collection.json
+
+// get Alteryx workflows/applications
+
+@name("/getWorkflows")
+GET "https://{{baseUrl}}/getWorkflows"
+"jwt": "incididunt adipisicing"
+
+
+// get questions for an Alteryx workflow application
+
+@name("/getWorkflowQuestions/:appId")
+GET "https://{{baseUrl}}/getWorkflowQuestions/:appId"
+"jwt": "incididunt adipisicing"
+
+
+// get workflow and its questions for an Alteryx workflow name
+
+@name("/getWorkflowByName/:workflowName")
+GET "https://{{baseUrl}}/getWorkflowByName/:workflowName"
+"jwt": "incididunt adipisicing"
+
+
+// start an Alteryx workflow application with question values
+
+@name("/runWorkflow")
+POST "https://{{baseUrl}}/runWorkflow"
+"jwt": "incididunt adipisicing"
+"Content-Type": "application/json"
+json({
+    "appId": "sit occaecat",
+    "questions": [
+        {
+            "name": "ipsum nulla",
+            "value": "amet magna ea aliqua"
+        },
+        {
+            "name": "laboris consequat",
+            "value": "dolor Lorem"
+        }
+    ]
+})
+
+
+// get running jobs for an Alteryx workflow application
+
+@name("/getWorkflowJobs/:appId")
+GET "https://{{baseUrl}}/getWorkflowJobs/:appId"
+"jwt": "incididunt adipisicing"
+
+
+// get job status for an Alteryx workflow application
+
+@name("/getWorkflowJobStatus/:jobId")
+GET "https://{{baseUrl}}/getWorkflowJobStatus/:jobId"
+"jwt": "incididunt adipisicing"
+
+
+// get all data from a table
+
+@name("/getTableData/:tableName")
+GET "https://{{baseUrl}}/getTableData/:tableName"
+"jwt": "incididunt adipisicing"
+
+
+// Generic Alteryx Invoker
+
+@name("/invokeWorkflow")
+POST "https://{{baseUrl}}/invokeWorkflow"
+"jwt": "incididunt adipisicing"
+"Content-Type": "application/json"
+data('"voluptate occaecat dolor"')
+
+
+// Generate Column summary/ Data Profile
+
+@name("/columnSummarizer")
+POST "https://{{baseUrl}}/columnSummarizer"
+"jwt": "incididunt adipisicing"
+"Content-Type": "application/json"
+data('"ut elit occaecat"')
+
+
+// Clean Column using Alteryx
+
+@name("/columnCleaner")
+POST "https://{{baseUrl}}/columnCleaner"
+"jwt": "incididunt adipisicing"
+"Content-Type": "application/json"
+data('"velit consequat dolor"')
+
+
+

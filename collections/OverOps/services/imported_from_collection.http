@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List all environments accessible to the calling user
+
+@name("List all environments") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services"
+? "name"= "e"
+
+
+// Defines a new environment
+
+@name("Generate a new environment key") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services"
+"Content-Type": "application/json"
+json({
+    "name": "commodo"
+})
+
+
+

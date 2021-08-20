@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search this users Commands
+
+@name("Command Search")
+GET "https://{{baseUrl}}/command"
+
+
+// Edit the provided command
+
+@name("Edit Command")
+PUT "https://{{baseUrl}}/command/:commandId"
+
+
+

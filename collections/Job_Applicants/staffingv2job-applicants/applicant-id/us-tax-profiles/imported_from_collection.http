@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-153258a5-a1eb-43c6-ae2b-1378320e86b1.postman_collection.json
+
+// Returns a job applicant US  tax profiles
+
+@name("Job Applicant Tax Profiles")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants/:applicant-id/us-tax-profiles"
+? "No Name"= "<string>"
+
+
+// Returns a job applicant US  tax profiles
+
+@name("Job Applicant Tax Profile Details")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants/:applicant-id/us-tax-profiles/:us-tax-profile-id"
+? "No Name"= "<string>"
+
+
+

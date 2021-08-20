@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Updating a customers postal code.
+
+@name("Updating a customers postal code")
+PUT "https://{{baseUrl}}/admin/customers/3989659651/addresses/5484465742.json"
+"Content": "<>"
+
+
+// Assigning a new default address to a customer.
+
+@name("assigning a new default address to a customer")
+PUT "https://{{baseUrl}}/admin/customers/3989659651/addresses/5436816654/default.json"
+"Content": "<>"
+
+
+// Destroying multiple customer addresses.
+
+@name("destroying multiple customer addresses")
+PUT "https://{{baseUrl}}/admin/customers/3989659651/addresses/set.json"
+"Content": "<>"
+? "address_ids[]"= "<>"
+? "operation"= "<>"
+
+
+// Get a single customers address.
+
+@name("Get a single customers address")
+GET "https://{{baseUrl}}/admin/customers/3989659651/addresses/5436816654.json"
+"Content": "<>"
+
+
+

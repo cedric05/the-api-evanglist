@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Creates a ruleset that consists of a set of rules.
+
+@name("Create a ruleset") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/traffic-filter/rulesets"
+"Content-Type": "application/json"
+json({
+    "include_by_default": false,
+    "name": "aliqua",
+    "region": "eu",
+    "rules": [
+        {
+            "source": "do ut",
+            "id": "occa",
+            "description": "est tempo"
+        },
+        {
+            "source": "id in voluptate enim",
+            "id": "dolore velit labore",
+            "description": "dolore aliquip"
+        }
+    ],
+    "type": "Excepteur dolo",
+    "description": "aliqua"
+})
+
+
+// List all of the traffic filter rulesets.
+
+@name("List traffic filter rulesets") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/traffic-filter/rulesets"
+? "include_associations"= "false"
+? "region"= "minim voluptate"
+
+
+

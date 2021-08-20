@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a list of all status categories.
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Get All Status Categories") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/statuscategory"
+
+
+// Returns a status category. Status categories provided a mechanism for categorizing [statuses](#api-rest-api-3-status-idOrName-get).
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Get Status Category") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/statuscategory/:idOrKey"
+
+
+

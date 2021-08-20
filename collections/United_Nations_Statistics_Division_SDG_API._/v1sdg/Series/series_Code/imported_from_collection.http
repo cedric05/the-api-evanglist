@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1e167a8f-2de8-4d63-a2ac-1189cfa7a2ce.postman_collection.json
+
+// Given a series SDMX code will return a list of M49 code - Name of countries that have observations for that series
+
+@name("Returns a list of geographies that have values on that series")
+GET "https://{{baseUrl}}/v1/sdg/Series/:seriesCode/GeoAreas"
+
+
+// Given a series SDMX code will return a list of dimensions for that series code
+
+@name("Returns a list of dimensions for a series")
+GET "https://{{baseUrl}}/v1/sdg/Series/:seriesCode/Dimensions"
+
+
+// Given a series SDMX code will return a list of attributes for that series code
+
+@name("Returns a list of attributes for a series")
+GET "https://{{baseUrl}}/v1/sdg/Series/:seriesCode/Attributes"
+
+
+// Given a series SDMX code and a M49 code will return a list observations
+
+@name("Returns a timeseires for a specific geography (country / region)")
+GET "https://{{baseUrl}}/v1/sdg/Series/:seriesCode/GeoArea/:geoAreaCode/DataSlice"
+? "dimensions"= "veniam aliqu"
+? "timePeriods"= "veniam aliqu"
+
+
+

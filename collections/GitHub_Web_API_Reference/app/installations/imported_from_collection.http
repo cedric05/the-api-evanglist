@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// You must use a [JWT](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
+// 
+// The permissions the installation has are included under the `permissions` key.
+
+@name("List installations for the authenticated app")
+GET "https://{{baseUrl}}/app/installations"
+? "per_page"= "30"
+? "page"= "1"
+? "since"= "<string>"
+? "outdated"= "<string>"
+
+
+

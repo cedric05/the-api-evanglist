@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-08e60012-84a0-43aa-8ba6-20d6c054c306.postman_collection.json
+
+// ####RequestnThis API call gets the weather at a field location.nnThe default URL will get the last seven days of actual weather observations. You can add dates to the end of the URL to get the weather for a specific range of days, like so: nn`/v2/weather/fields/field1/observations/2015-08-01` gets a single dayn`/v2/weather/fields/field1/observations/2015-08-01,2015-08-15` gets everything from August 1-15nnYou can customize the response payload using query string parameters. Learn more in the [Da
+
+@name("Daily Observations")
+GET "https://{{baseUrl}}/v2/weather/fields/field1/observations"
+
+
+// ####RequestnThis API call gets the forecast at a field location.nnWith the default configuration you'll get the hourly forecast for today +8 days. Add dates to the end of the URL to request only specific days, like so: nn`/v2/weather/fields/field1/forecasts/YYYY-MM-DD` returns a single dayn`/v2/weather/fields/field1/forecasts/YYYY-MM-DD,YYYY-MM-DD` returns a range of daysnnYou can also use query string parameters to customize the payloads. Read the [Forecast Documentation](http://developer.awher
+
+@name("Forecasts")
+GET "https://{{baseUrl}}/v2/weather/fields/field1/forecasts"
+
+
+// ####RequestnUse this API to calculate long-term averages for the weather for any set of days across any set of years (minumum 3). This is a very flexible API, and you're encouraged to review the [Weather Norms Documentation](http://developer.awhere.com/api/reference/weather/norms) for details.nn_Tip: Remember to use a field ID that exists in your account. By default, this collection uses a default field ID of 'field1'_nn####SecuritynThis API call uses the security Access Token that is retrieved 
+
+@name("Norms")
+GET "https://{{baseUrl}}/v2/weather/fields/field1/norms/08-01,08-15/years/2010,2015"
+
+
+// ####RequestnThis API call provides a snapshot of recent weather using the weather station nearest to the field location.nn[Current Conditions Documentation](http://developer.awhere.com/api/reference/weather/current)nn_Tip: Remember to use a field ID that exists in your account. By default, this collection uses a default field ID of 'field1'_nnn####SecuritynThis API call uses the security Access Token that is retrieved with the Get a Token request. If you run that request first, it will save a 
+
+@name("Current Conditions")
+GET "https://{{baseUrl}}/v2/weather/fields/field1/currentconditions"
+
+
+

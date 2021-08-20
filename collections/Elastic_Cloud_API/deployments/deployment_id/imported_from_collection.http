@@ -1,0 +1,713 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Updates a Deployment.
+
+@name("Update Deployment") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/deployments/:deployment_id"
+"Content-Type": "application/json"
+? "hide_pruned_orphans"= "false"
+? "skip_snapshot"= "false"
+? "validate_only"= "false"
+? "version"= "minim voluptate"
+json({
+    "prune_orphans": true,
+    "metadata": {
+        "tags": [
+            {
+                "key": "Ut sint in non",
+                "value": "do in irure"
+            },
+            {
+                "key": "ullamco veniam",
+                "value": "Duis nulla eiusmod"
+            }
+        ]
+    },
+    "settings": {
+        "observability": {
+            "metrics": {
+                "destination": {
+                    "deployment_id": "sit eu irure sint",
+                    "ref_id": "aliqua Ut labore ut"
+                }
+            },
+            "logging": {
+                "destination": {
+                    "deployment_id": "consectetur laboris do ut",
+                    "ref_id": "officia ea aliqua laborum dolor"
+                }
+            }
+        }
+    },
+    "name": "dolore dolore",
+    "resources": {
+        "appsearch": [
+            {
+                "elasticsearch_cluster_ref_id": "quis veniam",
+                "plan": {
+                    "appsearch": {
+                        "user_settings_override_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "system_settings": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_override_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "docker_image": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "cluster_topology": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "transient": {
+                        "plan_configuration": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "strategy": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "ref_id": "ipsum sint",
+                "region": "adipisicing cillum ea",
+                "display_name": "irure",
+                "settings": {
+                    "metadata": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                }
+            },
+            {
+                "elasticsearch_cluster_ref_id": "culpa eu nisi esse Duis",
+                "plan": {
+                    "appsearch": {
+                        "user_settings_override_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "system_settings": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_override_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "docker_image": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "cluster_topology": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "transient": {
+                        "plan_configuration": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "strategy": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "ref_id": "incididunt",
+                "region": "non Excepteur sit",
+                "display_name": "ea laboris ullamco",
+                "settings": {
+                    "metadata": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                }
+            }
+        ],
+        "elasticsearch": [
+            {
+                "plan": {
+                    "cluster_topology": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "elasticsearch": {
+                        "user_settings_override_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "enabled_built_in_plugins": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_plugins": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_bundles": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "curation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "system_settings": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_override_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "docker_image": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "node_attributes": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "autoscaling_enabled": true,
+                    "transient": {
+                        "plan_configuration": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "cluster_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "remote_clusters": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "restore_snapshot": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "strategy": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "deployment_template": {
+                        "id": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "ref_id": "deserunt nulla ad",
+                "region": "sed labore",
+                "settings": {
+                    "monitoring": {
+                        "target_cluster_id": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "curation": {
+                        "specs": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "ccs": {
+                        "remote_clusters": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "ip_filtering": {
+                        "rulesets": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "snapshot": {
+                        "cron_expression": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "interval": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "retention": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "traffic_filter": {
+                        "rulesets": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "trust": {
+                        "accounts": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "external": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "dedicated_masters_threshold": -78361074,
+                    "metadata": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "display_name": "ullamco velit ut"
+            },
+            {
+                "plan": {
+                    "cluster_topology": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "elasticsearch": {
+                        "user_settings_override_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "enabled_built_in_plugins": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_plugins": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_bundles": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "curation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "system_settings": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_override_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "docker_image": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "node_attributes": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "autoscaling_enabled": true,
+                    "transient": {
+                        "plan_configuration": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "cluster_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "remote_clusters": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "restore_snapshot": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "strategy": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "deployment_template": {
+                        "id": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "ref_id": "Ut veniam do occaecat nostrud",
+                "region": "qui irure voluptate",
+                "settings": {
+                    "monitoring": {
+                        "target_cluster_id": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "curation": {
+                        "specs": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "ccs": {
+                        "remote_clusters": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "ip_filtering": {
+                        "rulesets": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "snapshot": {
+                        "cron_expression": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "interval": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "retention": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "traffic_filter": {
+                        "rulesets": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "trust": {
+                        "accounts": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "external": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "dedicated_masters_threshold": -35140101,
+                    "metadata": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "display_name": "magna enim labore anim"
+            }
+        ],
+        "kibana": [
+            {
+                "elasticsearch_cluster_ref_id": "ut non",
+                "plan": {
+                    "kibana": {
+                        "user_settings_override_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "system_settings": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_override_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "docker_image": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "cluster_topology": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "transient": {
+                        "plan_configuration": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "strategy": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "ref_id": "consequat qui id magna",
+                "region": "ex dolore adipisicing enim",
+                "display_name": "tempor Ut",
+                "settings": {
+                    "metadata": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                }
+            },
+            {
+                "elasticsearch_cluster_ref_id": "aute qui velit ad nisi",
+                "plan": {
+                    "kibana": {
+                        "user_settings_override_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "system_settings": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_override_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "docker_image": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "cluster_topology": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "transient": {
+                        "plan_configuration": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "strategy": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "ref_id": "irure esse dolore",
+                "region": "pariatur nulla do commodo",
+                "display_name": "ad irure dolore",
+                "settings": {
+                    "metadata": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                }
+            }
+        ],
+        "apm": [
+            {
+                "elasticsearch_cluster_ref_id": "est dolore in ex",
+                "plan": {
+                    "apm": {
+                        "user_settings_override_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "system_settings": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_override_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "docker_image": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "cluster_topology": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "transient": {
+                        "plan_configuration": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "strategy": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "ref_id": "tempor eu in sint",
+                "region": "est ut veniam",
+                "display_name": "officia veniam",
+                "settings": {
+                    "metadata": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                }
+            },
+            {
+                "elasticsearch_cluster_ref_id": "aute nis",
+                "plan": {
+                    "apm": {
+                        "user_settings_override_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "version": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_json": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "system_settings": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "user_settings_override_yaml": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "docker_image": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "cluster_topology": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "transient": {
+                        "plan_configuration": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "strategy": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                },
+                "ref_id": "laborum culpa est ullamco",
+                "region": "non ad",
+                "display_name": "magna anim",
+                "settings": {
+                    "metadata": {
+                        "name": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+})
+
+
+// Retrieves information about a Deployment.
+
+@name("Get Deployment") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/:deployment_id"
+? "show_security"= "false"
+? "show_metadata"= "false"
+? "show_plans"= "true"
+? "show_plan_logs"= "false"
+? "show_plan_history"= "false"
+? "show_plan_defaults"= "false"
+? "convert_legacy_plans"= "false"
+? "show_system_alerts"= "0"
+? "show_settings"= "false"
+? "enrich_with_template"= "true"
+
+
+// Restores all resources in a Deployment.
+
+@name("Restores a shutdown Deployment") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/_restore"
+? "restore_snapshot"= "false"
+
+
+// Get info about an Enterprise Search Resource belonging to a given Deployment.
+
+@name("Get Deployment Enterprise Search Resource Info") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/:deployment_id/enterprise_search/:ref_id"
+? "show_metadata"= "false"
+? "show_plans"= "true"
+? "show_plan_logs"= "false"
+? "show_plan_history"= "false"
+? "show_plan_defaults"= "false"
+? "show_settings"= "false"
+
+
+// Get info about a Kibana Resource belonging to a given Deployment.
+
+@name("Get Deployment Kibana Resource Info") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/:deployment_id/kibana/:ref_id"
+? "show_metadata"= "false"
+? "show_plans"= "true"
+? "show_plan_logs"= "false"
+? "show_plan_history"= "false"
+? "show_plan_defaults"= "false"
+? "convert_legacy_plans"= "false"
+? "show_settings"= "false"
+
+
+// Shuts down all resources in a Deployment.
+
+@name("Shuts down Deployment") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/_shutdown"
+? "hide"= "true"
+? "skip_snapshot"= "false"
+
+
+// Returns a deployment update request that would transform this deployment from its template to the provided one.
+
+@name("Build Migrate Deployment Template request") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/_migrate"
+? "template"= "minim voluptate"
+
+
+

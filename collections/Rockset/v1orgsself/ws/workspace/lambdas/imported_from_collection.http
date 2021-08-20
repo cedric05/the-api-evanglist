@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// List all Query Lambdas under given workspace.
+
+@name("List Query Lambdas in Workspace")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/lambdas"
+
+
+// Create a Query Lambda in given workspace.
+
+@name("Create Query Lambda")
+POST "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/lambdas"
+"Content-Type": "application/json"
+json({
+    "name": "myQueryLambda",
+    "sql": {
+        "query": "SELECT 'Foo'",
+        "default_parameters": [
+            {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        ]
+    },
+    "description": "production version foo"
+})
+
+
+

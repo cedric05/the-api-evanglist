@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+// This endpoint will also support url's with additional query parameters which provide readability or self-documentation.<br/>
+// e.g. 'rest/DownloadFile/123?reference=11223344' or 'rest/DownloadFile/123?file=sample.pdf'
+
+@name("Download a digital file by its DataStore or ServCat id, formally called a 'Holding Id'.
+
+This endpoint supports pre-conditions specified in the request headers,
+such as 'If-Modified-Since', 'If-Unmodified-Since', 'If-Match', 'If-None-Match'. These pre-")
+GET "https://{{baseUrl}}/rest/DownloadFile/:id"
+
+
+@name("Request metadata headers before downloading a digital file by its DataStore or ServCat id, formally called a 'Holding Id'.
+
+When a 'HEAD' request is received, no file content will be returned, but significant metadata about the file
+will be available i")
+HEAD "https://{{baseUrl}}/rest/DownloadFile/:id"
+
+
+

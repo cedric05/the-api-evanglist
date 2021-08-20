@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2131e7d-01ce-4512-a5ba-81bbec9b0ac2.postman_collection.json
+
+@name("Sign a copy of record against the specified activity and store it in the archive.")
+POST "https://{{baseUrl}}/cor/v1"
+"Authorization": "<string>"
+"Content-Type": "multipart/form-data"
+files(
+	("signature", "<string>"),
+	("document", "<binary>")
+)
+
+
+

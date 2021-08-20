@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Restarts a Stateless Resource. If a Resource is active: this command re-applies the existing plan but applies a "cluster_reboot", which issues a restart command and waits for it to complete. If a Resource is inactive: this command starts it up with the most recent successful plan.
+
+@name("Restart Deployment Stateless Resource") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/:stateless_resource_kind/:ref_id/_restart"
+? "cancel_pending"= "false"
+
+
+// Shut down Stateless Resource belonging to a given Deployment.
+// Kibana cannot be shut down on Elasticsearch Service as it is required for Elasticsearch administrative functions, such as Snapshot Lifecycle Management and version upgrades.
+
+@name("Shutdown Deployment Stateless Resource") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/:stateless_resource_kind/:ref_id/_shutdown"
+? "hide"= "true"
+? "skip_snapshot"= "false"
+
+
+// Upgrades a running cluster.
+
+@name("Upgrade Kibana, APM, AppSearch inside Deployment") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/:stateless_resource_kind/:ref_id/_upgrade"
+? "validate_only"= "false"
+
+
+

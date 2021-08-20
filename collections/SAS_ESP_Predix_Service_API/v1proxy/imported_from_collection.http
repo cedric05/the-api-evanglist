@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0b864055-985c-4878-9728-48e02f094adc.postman_collection.json
+
+// API to retrieve service instance
+
+@name("retrieve service instance")
+GET "https://{{baseUrl}}/v1/proxy/resource"
+
+
+// API to to check health of ESP server.
+
+@name("ESP server health check")
+HEAD "https://{{baseUrl}}/v1/proxy/server"
+
+
+

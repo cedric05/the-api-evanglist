@@ -1,0 +1,98 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3a988849-eb81-4ec1-9b83-d13ae8716910.postman_collection.json
+
+// Add Notification
+
+@name("/addNotification")
+POST "https://{{baseUrl}}/addNotification"
+"jwt": "ex pariatur esse aliquip aute"
+"Content-Type": "application/json"
+json({
+    "objects": [
+        {
+            "value": "enim",
+            "type": "proident ut laborum minim fugiat",
+            "oGuid": [
+                "occaecat Lorem",
+                "et do nisi laboris"
+            ]
+        },
+        {
+            "value": "sed",
+            "type": "aliqua dolor",
+            "oGuid": [
+                "consequat in commodo",
+                "nulla ad ut incididunt cillum"
+            ]
+        }
+    ]
+})
+
+
+// clear notification
+
+@name("/clearNotification")
+POST "https://{{baseUrl}}/clearNotification"
+"jwt": "ex pariatur esse aliquip aute"
+"Content-Type": "application/json"
+data('"ipsum do nostrud dolore"')
+
+
+// Delete One Notification
+
+@name("/deleteNotification")
+POST "https://{{baseUrl}}/deleteNotification"
+"jwt": "ex pariatur esse aliquip aute"
+"Content-Type": "application/json"
+json({
+    "nGuid": "ex pariatur"
+})
+
+
+// edit notification(s)
+
+@name("/editNotification")
+POST "https://{{baseUrl}}/editNotification"
+"jwt": "ex pariatur esse aliquip aute"
+"Content-Type": "application/json"
+json({
+    "objects": [
+        {
+            "nGuid": "Excepteur do",
+            "value": "mi",
+            "type": "eu nostrud"
+        },
+        {
+            "nGuid": "occaecat qui",
+            "value": "quis",
+            "type": "Excepteur do sunt mollit"
+        }
+    ]
+})
+
+
+// Get Notifications by uGuid
+
+@name("/getNotificationByUser")
+POST "https://{{baseUrl}}/getNotificationByUser"
+"jwt": "ex pariatur esse aliquip aute"
+"Content-Type": "application/json"
+data('"id Duis laborum"')
+
+
+// get notification type list
+
+@name("/getNotificationTypes")
+GET "https://{{baseUrl}}/getNotificationTypes"
+"jwt": "ex pariatur esse aliquip aute"
+
+
+// get notification object mapping list by criteria
+
+@name("/getNotificationObjects")
+POST "https://{{baseUrl}}/getNotificationObjects"
+"jwt": "ex pariatur esse aliquip aute"
+
+
+

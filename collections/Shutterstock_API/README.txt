@@ -1,0 +1,1 @@
+Public APIv2 Documentation available at http://api-reference.shutterstock.com

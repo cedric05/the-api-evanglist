@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-adc2da4d-b751-4bf5-9e03-e1950af35609.postman_collection.json
+
+@name("Find all available data for some entities")
+GET "https://{{baseUrl}}/data/v1/availability/"
+"X-App-Token": "<string>"
+? "entity_id"= "<string>"
+? "app_token"= "<string>"
+
+
+@name("Get constraint permutations for entities")
+GET "https://{{baseUrl}}/data/v1/constraint/:variable"
+"X-App-Token": "<string>"
+? "entity_id"= "<string>"
+? "constraint"= "<string>"
+? "app_token"= "<string>"
+
+
+@name("Create a map")
+GET "https://{{baseUrl}}/data/v1/map/new"
+"X-App-Token": "<string>"
+? "variable"= "<string>"
+? "entity_id"= "<string>"
+? "constraint"= "<string>"
+? "app_token"= "<string>"
+
+
+@name("Get values for variables")
+GET "https://{{baseUrl}}/data/v1/values"
+"X-App-Token": "<string>"
+? "variable"= "<string>"
+? "entity_id"= "<string>"
+? "forecast"= "<number>"
+? "describe"= "<boolean>"
+? "format"= "<string>"
+? "app_token"= "<string>"
+
+
+

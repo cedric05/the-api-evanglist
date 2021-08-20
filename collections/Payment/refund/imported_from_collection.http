@@ -1,0 +1,149 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-28605f6b-c6ad-4fa1-a5ff-54d5c520f888.postman_collection.json
+
+// This operation list or find Refund entities
+
+@name("List or find Refund objects")
+GET "https://{{baseUrl}}/refund"
+? "fields"= "in Duis"
+? "offset"= "92531635"
+? "limit"= "92531635"
+
+
+// This operation creates a Refund entity.
+
+@name("Creates a Refund")
+POST "https://{{baseUrl}}/refund"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "account": {
+        "id": "id laboris ad voluptate",
+        "href": "consequat nulla est",
+        "description": "Excepteur minim Duis deserunt in",
+        "name": "quis dolor ullamco",
+        "@baseType": "enim ipsum",
+        "@schemaLocation": "https://YGTacGrtEabEIfwrKDWagiSK.petzFV4zsxl8cyMhpQn62wlCNhJ.+iaF0tzdrUp5DSajkVxmiGQFHI",
+        "@type": "est adipisicing ut cillum",
+        "@referredType": "consectetur tempor"
+    },
+    "paymentMethod": {
+        "id": "quis officia dolore pariatur laborum",
+        "href": "id et commodo",
+        "description": "dolor eiusmod consectetur cupidatat",
+        "isPreferred": false,
+        "name": "laboris elit nisi",
+        "status": "quis",
+        "statusDate": "1975-07-19T12:43:12.904Z",
+        "account": [
+            {
+                "id": "Excepteur",
+                "href": "ut",
+                "description": "non culpa",
+                "name": "magna laborum veniam moll",
+                "@baseType": "do enim laborum consectetur",
+                "@schemaLocation": "http://MZSrqwuPvCCYkwCWecaiczKUz.bukmlapwW+g",
+                "@type": "ipsum cillum",
+                "@referredType": "laborum elit Excepteur"
+            },
+            {
+                "id": "in adipisicing",
+                "href": "consectetur",
+                "description": "Ut ex",
+                "name": "in labore dolor",
+                "@baseType": "deserunt",
+                "@schemaLocation": "https://KVbHKjOlmjlpZIStVgbbMgSV.bukuJs,bVBW04SoYqhIkVFTAfi+6nafoxEUOA,Dxqgz7pVi6zBfPYTcg8ujS",
+                "@type": "irure",
+                "@referredType": "cupidatat dolor dolore"
+            }
+        ],
+        "relatedParty": {
+            "@referredType": "pariatur culpa velit",
+            "id": "co",
+            "href": "consectetur eu",
+            "name": "dolor",
+            "role": "ut laborum in cupidatat mollit",
+            "@baseType": "Place",
+            "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+            "@type": "VendorProductOffering"
+        },
+        "validFor": {
+            "endDateTime": "1985-04-12T23:20:50.52Z",
+            "startDateTime": "1985-04-12T23:20:50.52Z",
+            "@baseType": "dolore ipsum consequat elit",
+            "@schemaLocation": "https://bJVAKrYylTfkKrPOasqLXoQmo.sjwjXd9627TTroI+Kty8Z2sW2fr066VtF",
+            "@type": "mollit conse"
+        },
+        "@baseType": "Place",
+        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+        "@type": "VendorProductOffering",
+        "@referredType": "exercitation consequat magna officia"
+    },
+    "totalAmount": {
+        "unit": "velit Duis nis",
+        "value": -41586493.41884963,
+        "@baseType": "mollit commodo dolor ex",
+        "@schemaLocation": "https://gftirGLLyTysoymqRiCzeXDqcv.vdsUKOQklRqdFuRYDh+LxZahDD9Hj5y5aBCR3yXFaiXkNyEAnuwOJhoS7YzlKDGOc",
+        "@type": "in non"
+    },
+    "authorizationCode": "Duis in proident eiusmod mollit",
+    "correlatorId": "Duis non ut dolor",
+    "description": "minim enim nisi adi",
+    "name": "fugiat enim",
+    "refundDate": "1975-12-15T22:48:47.449Z",
+    "amount": {
+        "unit": "irure ad",
+        "value": 22377913.301129967,
+        "@baseType": "fugiat ullamco dolore",
+        "@schemaLocation": "https://ReCwtZ.mewMMBhXEJjxIZmen8UBChVvxkIN4Yj9aYSy6SfbPpnL8VX8",
+        "@type": "pariatur do"
+    },
+    "channel": {
+        "id": "id fugiat Lorem",
+        "href": "cillum culpa Ut",
+        "name": "est exercitation amet reprehenderit Excepteur",
+        "@baseType": "Place",
+        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+        "@type": "VendorProductOffering",
+        "@referredType": "do ullamco in in"
+    },
+    "payment": {
+        "id": "sunt magna laboris consequat",
+        "href": "qui magna labore ipsum",
+        "name": "commodo cupidatat occaecat",
+        "@baseType": "Place",
+        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+        "@type": "VendorProductOffering",
+        "@referredType": "consectetur sunt Excepteur ipsum"
+    },
+    "requestor": {
+        "@referredType": "ut nisi",
+        "id": "venia",
+        "href": "do Duis magna",
+        "name": "in mollit in Lorem sit",
+        "role": "si",
+        "@baseType": "Place",
+        "@schemaLocation": "http://host/schemas/Subclass.schema.json",
+        "@type": "VendorProductOffering"
+    },
+    "taxAmount": {
+        "unit": "laborum minim",
+        "value": -34819112.71858813,
+        "@baseType": "tempor Lorem pariatur exercitation",
+        "@schemaLocation": "https://DZgzoSOumNlFXQlxQTbMybXEg.pwgkr1k9v0rY4TcyCPVgf2iF2tYmwWBV",
+        "@type": "dolor"
+    },
+    "@baseType": "ea in magna consequat",
+    "@schemaLocation": "http://EQKOsHaECoxykvuEjYzdmkM.ekoUl2Hd.Z8XA.pZc5DG94hz2Zo",
+    "@type": "nisi magna"
+})
+
+
+// This operation retrieves a Refund entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Refund by ID")
+GET "https://{{baseUrl}}/refund/:id"
+? "fields"= "in Duis"
+
+
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// Each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot <hubot@12341234-abab-fefe-8787-fedcba987654>`.
+// 
+// This endpoint and the [Map a commit author](https://developer.github.com/v3/migrations/source_imports/#map-a-commit-author) endpoint allow you to provide correct Git author information.
+
+@name("Get commit authors")
+GET "https://{{baseUrl}}/repos/:owner/:repo/import/authors"
+? "since"= "<string>"
+
+
+// Update an author's identity for the import. Your application can continue updating authors any time before you push new commits to the repository.
+
+@name("Map a commit author")
+PATCH "https://{{baseUrl}}/repos/:owner/:repo/import/authors/:author_id"
+"Content-Type": "application/json"
+json({
+    "email": "<string>",
+    "name": "<string>",
+    "remote_id": "<string>"
+})
+
+
+

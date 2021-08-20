@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+@name("Get a single booking using the external source and reference ID.")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/external/:source/:externalReferenceId"
+
+
+@name("Get a list of future bookings using the external source and given reference Id (grouped by a distinct External Reference Id).")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/external/:source/group/:externalReferenceId"
+
+
+

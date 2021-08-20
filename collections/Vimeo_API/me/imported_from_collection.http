@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns the representation of the authenticated user.
+
+@name("Get a user")
+GET "https://{{baseUrl}}/me"
+
+
+// This method returns all the videos in which the authenticated user has a credited appearance.
+
+@name("Get all the videos in which a user appears")
+GET "https://{{baseUrl}}/me/appearances"
+? "direction"= "<string>"
+? "filter"= "<string>"
+? "filter_embeddable"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+// This method returns all the videos in the authenticated user's feed.
+
+@name("Get all the videos in a user's feed")
+GET "https://{{baseUrl}}/me/feed"
+? "offset"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "type"= "<string>"
+
+
+// This method returns all the followers of the authenticated user.
+
+@name("Get all the followers of a user")
+GET "https://{{baseUrl}}/me/followers"
+? "direction"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+

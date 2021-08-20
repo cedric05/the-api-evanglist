@@ -1,0 +1,73 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Delete an insight.
+
+@name("Delete an insight") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/insights/:projectOwner/:projectId/:id"
+
+
+// Retrieve an insight.
+
+@name("Retrieve an insight") : "base-inherit-auth"
+GET "https://{{baseUrl}}/insights/:projectOwner/:projectId/:id"
+
+
+// Update an insight. Note that only elements included in the request will be updated. All omitted elements will remain untouched.
+
+@name("Update an insight") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/insights/:projectOwner/:projectId/:id"
+"Content-Type": "application/json"
+json({
+    "body": {
+        "embedUrl": "https://PeRqMztHFGYlagFGy.fzlUXa-zLRbDBK02OuDca0ojmZX3Btwc5csrsor8OVvOrLvt6",
+        "imageUrl": "http://Ycu.vcqzSNCNnNVSUoJHFnRUW5gGw9U69E1qN0ploJz",
+        "markdownBody": "labore ex"
+    },
+    "dataSourceLinks": [
+        "http://bfZQMtEDcaKrlfpaPetYnzjmUuBKYytQL.szzjvtFWgjuzIkCDnFbGkUL-hF.VhfCieLySJxITT7P",
+        "https://PQvWmTxjNjojXSGV.yiHNg4vgMA7+-SeZnSFF3+"
+    ],
+    "description": "no",
+    "sourceLink": "http://IDqCauoNwtwj.rvl4dOhBaS4fkCFojR1R2j,.ATBrVtmPSHW8RqoO3pdizoRY",
+    "thumbnail": "https://VGsvdzPkKRRB.czhsK89MoXj3x4MHkw68DIbkolFWAa7LZ02y9K43kdZD-TCsqw0WG4T6eKi",
+    "title": "dolo"
+})
+
+
+// Replace an insight.
+
+@name("Replace an insight") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/insights/:projectOwner/:projectId/:id"
+"Content-Type": "application/json"
+json({
+    "body": {
+        "embedUrl": "http://xYmfaiWVuhLINJSLZAReH.nppkSWkwFFaegPwfCEosk6jec9J,XprhlE4sONGGFWhqfZRdl+2B3+nMyVR,Ps",
+        "imageUrl": "https://vVjcDiGJKUvgPYZSzGeZFGZRgGDbwbTy.clnd7r4Mvyt37FBtG2LJsxYh4i92sTcKA",
+        "markdownBody": "Excepteur ipsum non ut"
+    },
+    "title": "labo",
+    "dataSourceLinks": [
+        "http://QLZnQFOyCBPHsBtFFMrct.oyerHX3wP6Yp1OpDQJJ5I",
+        "https://XFyYYLm.jiSjFV+k4MXNKer8DMe"
+    ],
+    "description": "n",
+    "sourceLink": "http://SNyvsCasiXiKQFnxi.qpgY4aE8QJflj3oKCbEYaVN2NLU.jimBfHYc3qfRN3GBot3JcB1XFdqyt8",
+    "thumbnail": "http://tEle.pemuB2QON0hzJ0gUSbSGV2AFX-.UWx.D8xcZ"
+})
+
+
+// Retrieve an insight version.
+
+@name("Retrieve an insight version") : "base-inherit-auth"
+GET "https://{{baseUrl}}/insights/:projectOwner/:projectId/:id/v/:versionId"
+
+
+

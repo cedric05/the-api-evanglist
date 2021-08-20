@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// List payments.
+
+@name("List Payments")
+GET "https://{{baseUrl}}/api/v1/transactions/:key/payments"
+? "limit"= "<get>"
+? "offset"= "<get>"
+
+
+// Capture payment.
+
+@name("Capture Payment")
+POST "https://{{baseUrl}}/api/v1/transactions/:key/payments/capture"
+
+
+

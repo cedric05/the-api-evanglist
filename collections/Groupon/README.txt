@@ -1,0 +1,1 @@
+Returns the lists of all the discussion posts for the specified deal.

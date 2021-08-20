@@ -1,0 +1,68 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Get contact by id
+
+@name("Get single contact")
+GET "https://{{baseUrl}}/api/v1/contacts/contact/:contactId"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Update contact by id
+
+@name("Update contact")
+PATCH "https://{{baseUrl}}/api/v1/contacts/contact/:contactId"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "properties": [
+        {
+            "property": "velit Duis labore",
+            "value": {}
+        },
+        {
+            "property": "do in",
+            "value": {}
+        }
+    ],
+    "listRelations": [
+        "ut consequat",
+        "enim"
+    ]
+})
+
+
+// Delete contact by id
+
+@name("Delete contact")
+DELETE "https://{{baseUrl}}/api/v1/contacts/contact/:contactId"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Create a new contact-company relations
+
+@name("Add companies to contact")
+POST "https://{{baseUrl}}/api/v1/contacts/contact/:contactId/companies"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "contactId"= "incididunt voluptate"
+json({
+    "companies": [
+        {
+            "companyId": "ad do et",
+            "email": "laborum",
+            "status": "consequat",
+            "position": "est culpa"
+        },
+        {
+            "companyId": "consequat laborum sed",
+            "email": "velit Excepteur consequat eu",
+            "status": "ut in in dolore",
+            "position": "incididunt qui"
+        }
+    ]
+})
+
+
+

@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// ***
+// 
+// **Overview**
+// 
+// Extract information on the price option groups you configured.
+
+@name("Working example: Retrieve price option groups")
+GET "https://{{baseUrl}}/priceoptions/"
+? "Name"= "<string>"
+? "Types"= "<string>"
+? "Limit"= "<integer>"
+? "Page"= "<integer>"
+
+
+// ***
+// 
+// **Overview**
+// 
+// Extract information about a specific price option group that you configured.
+
+@name("Working example: Retrieve a price options group")
+GET "https://{{baseUrl}}/priceoptions/:GroupCode/"
+
+
+

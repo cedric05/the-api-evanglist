@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ce20e6b1-bbe2-4633-bbfd-c4d3fdf33b8a.postman_collection.json
+
+// Get lists movies box office.json.
+
+@name("Get Lists Movies Box Office")
+GET "https://{{baseUrl}}/lists/movies/box_office.json"
+? "limit"= "<>"
+? "country"= "<>"
+
+
+// Get lists movies in theaters.json.
+
+@name("Get Lists Movies In Theaters")
+GET "https://{{baseUrl}}/lists/movies/in_theaters.json"
+? "page_limit"= "<>"
+? "page"= "<>"
+? "country"= "<>"
+
+
+// Get lists movies opening.json.
+
+@name("Get Lists Movies Opening")
+GET "https://{{baseUrl}}/lists/movies/opening.json"
+? "limit"= "<>"
+? "country"= "<>"
+
+
+// Get lists movies upcoming.json.
+
+@name("Get Lists Movies Upcoming")
+GET "https://{{baseUrl}}/lists/movies/upcoming.json"
+? "page_limit"= "<>"
+? "page"= "<>"
+? "country"= "<>"
+
+
+

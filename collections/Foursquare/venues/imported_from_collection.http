@@ -1,0 +1,111 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /venues/{VENUE_ID}
+
+@name("/venues/{VENUE_ID}")
+POST "https://{{baseUrl}}/venues/add"
+? "address"= "<string>"
+? "city"= "<string>"
+? "crossStreet"= "<string>"
+? "description"= "<string>"
+? "ignoreDuplicates"= "<boolean>"
+? "ignoreDuplicatesKey"= "<string>"
+? "ll"= "<string>"
+? "name"= "<string>"
+? "phone"= "<xsd:string>"
+? "primaryCategoryId"= "<string>"
+? "state"= "<string>"
+? "twitter"= "<xsd:string>"
+? "url"= "<string>"
+? "v"= "<string>"
+? "zip"= "<string>"
+
+
+// /venues/add
+
+@name("/venues/add")
+GET "https://{{baseUrl}}/venues/categories"
+? "v"= "<string>"
+
+
+// /venues/categories
+
+@name("/venues/categories")
+GET "https://{{baseUrl}}/venues/explore"
+? "alt"= "<string>"
+? "altAcc"= "<string>"
+? "intent"= "<string>"
+? "limit"= "<integer>"
+? "ll"= "<string>"
+? "llAcc"= "<string>"
+? "novelty"= "<string>"
+? "query"= "<string>"
+? "radius"= "<decimal>"
+? "section"= "<string>"
+? "v"= "<string>"
+
+
+// /venues/explore
+
+@name("/venues/explore")
+GET "https://{{baseUrl}}/venues/managed"
+? "v"= "<string>"
+
+
+// /venues/managed
+
+@name("/venues/managed")
+GET "https://{{baseUrl}}/venues/search"
+? "alt"= "<string>"
+? "altAcc"= "<string>"
+? "categoryId"= "<string>"
+? "intent"= "<string>"
+? "limit"= "<integer>"
+? "linkedId"= "<string>"
+? "ll"= "<string>"
+? "llAcc"= "<string>"
+? "ne"= "<string>"
+? "providerId"= "<string>"
+? "query"= "<string>"
+? "radius"= "<decimal>"
+? "sw"= "<string>"
+? "url"= "<string>"
+? "v"= "<string>"
+
+
+// /venues/search
+
+@name("/venues/search")
+GET "https://{{baseUrl}}/venues/suggestcompletion"
+? "alt"= "<string>"
+? "altAcc"= "<string>"
+? "limit"= "<integer>"
+? "ll"= "<string>"
+? "llAcc"= "<string>"
+? "query"= "<string>"
+? "v"= "<string>"
+
+
+// /venues/suggestcompletion
+
+@name("/venues/suggestcompletion")
+GET "https://{{baseUrl}}/venues/timeseries"
+? "endAt"= "<string>"
+? "startAt"= "<string>"
+? "v"= "<string>"
+? "venueId"= "<string>"
+
+
+// /venues/timeseries
+
+@name("/venues/timeseries")
+GET "https://{{baseUrl}}/venues/trending"
+? "limit"= "<integer>"
+? "ll"= "<string>"
+? "radius"= "<decimal>"
+? "v"= "<string>"
+
+
+

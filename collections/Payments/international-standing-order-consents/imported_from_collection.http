@@ -1,0 +1,120 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create International Standing Order Consents")
+POST "https://{{baseUrl}}/international-standing-order-consents"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "Initiation": {
+            "CreditorAccount": {
+                "Identification": "velit enim laborum aute",
+                "Name": "minim veniam ullamco",
+                "SchemeName": "UK.OBIE.Paym",
+                "SecondaryIdentification": "consequat aliqua"
+            },
+            "CurrencyOfTransfer": "sunt",
+            "FirstPaymentDateTime": "1951-06-30T19:52:54.430Z",
+            "Frequency": "culpa aliquip nostrud occaec",
+            "InstructedAmount": {
+                "Amount": "aliqua proident sed aliquip Lorem",
+                "Currency": "Excepteur "
+            },
+            "ChargeBearer": "Shared",
+            "Creditor": {
+                "PostalAddress": {
+                    "AddressLine": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "AddressType": "Postal",
+                    "BuildingNumber": "dolor laborum",
+                    "Country": "magna nostrud voluptate tempor",
+                    "CountrySubDivision": "aute commodo",
+                    "Department": "ut esse adipisicing magna",
+                    "PostCode": "dolor Excepteur sint sunt commodo",
+                    "StreetName": "sit eu magna",
+                    "SubDepartment": "elit consequat occaecat consectetur",
+                    "TownName": "deserunt cillum"
+                },
+                "Name": "incididunt nisi"
+            },
+            "CreditorAgent": {
+                "Identification": "do Duis eu",
+                "Name": "magna sit quis",
+                "PostalAddress": {
+                    "AddressLine": [
+                        "laboris magna sint e",
+                        "nulla minim est exercitation Excepteur"
+                    ],
+                    "AddressType": "Residential",
+                    "BuildingNumber": "culpa laborum esse ut",
+                    "Country": "exercitation el",
+                    "CountrySubDivision": "ullamco dolor aliquip",
+                    "Department": "laboris cillum",
+                    "PostCode": "sunt dolor magna",
+                    "StreetName": "consequat dolore fugiat irure",
+                    "SubDepartment": "et tempor id consequat enim",
+                    "TownName": "velit cupidatat aute adipisicing"
+                },
+                "SchemeName": "UK.OBIE.Paym"
+            },
+            "FinalPaymentDateTime": "1964-04-07T01:26:27.749Z",
+            "NumberOfPayments": "nisi occaecat Lorem esse Ut",
+            "Purpose": "aliqua tempor pariatur",
+            "Reference": "eu in deserunt",
+            "SupplementaryData": {
+                "LocalInstrument": "UK.OBIE.SEPACreditTransfer"
+            }
+        },
+        "Permission": "Create"
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "ex in qui in",
+            "TownName": "laboris amet aliquip",
+            "AddressLine": [
+                "ad ut",
+                "consectetur nisi"
+            ],
+            "BuildingNumber": "eiusmod irure aute in",
+            "CountrySubDivision": [
+                "consectetur reprehenderit labore voluptate",
+                "dolore sunt quis elit pariatur"
+            ],
+            "PostCode": "nisi magna non amet",
+            "StreetName": "consequat pariatur"
+        },
+        "MerchantCategoryCode": "reprehenderit nostrud Excepteur",
+        "MerchantCustomerIdentification": "consectetur reprehenderit ea laboris voluptate",
+        "PaymentContextCode": "EcommerceGoods"
+    }
+})
+
+
+@name("Get International Standing Order Consents")
+GET "https://{{baseUrl}}/international-standing-order-consents/:ConsentId"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+
+
+

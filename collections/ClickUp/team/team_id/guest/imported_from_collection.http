@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// The type of JSON to fill out:
+// {
+//   "email": "example@gmail.com",
+//   "can_edit_tags": true || false,
+//   "can_see_time_estimated": true || false,
+//   "can_see_time_spent": true || false
+// }
+
+@name("Invite Guest to Workspace") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/team/team_id/guest"
+"Content-Type": "application/json"
+json({
+    "email": "jk+test_staging@clickup.com",
+    "can_edit_tags": true,
+    "can_see_time_estimated": true,
+    "can_see_time_spent": true
+})
+
+
+

@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Clients typically want to store data in their DB like this: `person.gender: 2` and not like this: `Gender`: `female`, yet the labels are needed when displaying the data. This service provides a way to get the appropriate textlabels for all questions/answers in the graph from the API on-demand and in bulk.
+
+@name("Resolve Textlabels") : "base-inherit-auth"
+POST "https://{{baseUrl}}/schema/textlabels/resolve"
+"Content-Type": "application/json"
+? "country"= "it"
+? "locale"= "dolore"
+? "labelformat"= "dolore"
+? "context"= "dolore"
+json({
+    "person.gender": 2,
+    "person.birthdate": "1980-02-03"
+})
+
+
+// This service provides the name and label of questioncategories. Questions returned by `/conversation/questions` might have the string property `questioncategory` set. This is the key for the object returned by this service. So this service can be used to get associated labels, which should be rendered in the frontend as the header of a questioncategory. If the body is left empty all questioncategories will be returned. An array of names can be provided in the body to only return specific questioncategories.
+
+@name("Questioncategories") : "base-inherit-auth"
+POST "https://{{baseUrl}}/schema/textlabels/questioncategories"
+"Content-Type": "application/json"
+? "country"= "it"
+? "locale"= "dolore"
+json({
+    "organization": "",
+    "employee": ""
+})
+
+
+

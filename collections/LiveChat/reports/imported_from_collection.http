@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Shows how long an agent (or a group or the whole account) was available for chatting during a specified period. When querying for one day, the results are shown in minutes per every hour, otherwise in hours for each day.
+
+@name("Availability")
+GET "https://{{baseUrl}}/reports/availability"
+"X": "<>"
+
+
+

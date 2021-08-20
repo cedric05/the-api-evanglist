@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return a list of opportunities tasks
+// 
+// ---
+// Alternate route: `/dev/opportunities/tasks/`
+// 
+// Alternate route: `/legacy/opportunities/tasks/`
+// 
+// Alternate route: `/v1/opportunities/tasks/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get opportunities tasks")
+GET "https://{{baseUrl}}/opportunities/tasks/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Return information of an opportunities task
+// 
+// ---
+// Alternate route: `/dev/opportunities/tasks/{task_id}/`
+// 
+// Alternate route: `/legacy/opportunities/tasks/{task_id}/`
+// 
+// Alternate route: `/v1/opportunities/tasks/{task_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get opportunities task")
+GET "https://{{baseUrl}}/opportunities/tasks/:task_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3a6fa668-19d7-4395-a552-9b7f28cadcb6.postman_collection.json
+
+// When a driver needs to pickup a container, he should send a request to getnauthorization for the pickup. This will return a **temporary pincode**.nIf no authorization is given, http status 403 is returned
+
+@name("Request")
+GET "https://{{baseUrl}}/api/v1/pickup_rights/:id/request"
+? "api_token"= "<>"
+
+
+// Transfer the PickupRight to another Organization (a subcontractor).
+
+@name("Transfer")
+PUT "https://{{baseUrl}}/api/v1/pickup_rights/:id/transfer"
+? "api_token"= "<>"
+
+
+// Assign the PickupRight to a truck driver.
+
+@name("Assign")
+PUT "https://{{baseUrl}}/api/v1/pickup_rights/:id/assign"
+? "api_token"= "<>"
+
+
+// Revoke the current PickupRight assignment. This must be used in case you did an assign of a PickupRight to a driver and you want to cancel this. This action is only possible as long as the PickupRight is not exercised.
+
+@name("Revoke Assignment")
+PUT "https://{{baseUrl}}/api/v1/pickup_rights/:id/revoke_assignment"
+? "api_token"= "<>"
+
+
+// Revoke the current PickupRight transfer. This must be used in case you did a transfer of a PickupRight to another Organization and you want to cancel this. This action is only possible as long as the PickupRight is not assigned.
+
+@name("Revoke Transfer")
+PUT "https://{{baseUrl}}/api/v1/pickup_rights/:id/revoke_transfer"
+? "api_token"= "<>"
+
+
+

@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0df0d40b-bb5f-4ab4-9756-1a85f04bd436.postman_collection.json
+
+// Removes the analytic execution result from the cache. It is highly recommended to clean your old result data to have room for future result data.
+
+@name("Cleanup analytic execution result by request id.")
+DELETE "https://{{baseUrl}}/api/v1/analytic/execution/async/:requestId"
+"Predix": "<>"
+"Authorization": "<>"
+
+
+// Returns the analytic execution result.
+
+@name("Get the analytic execution result by request id.")
+GET "https://{{baseUrl}}/api/v1/analytic/execution/async/:requestId/result"
+"Predix": "<>"
+"Authorization": "<>"
+
+
+// Returns the analytic execution status (one of QUEUED, PROCESSING, COMPLETED, or FAILED).
+
+@name("Get the analytic execution status by request id.")
+GET "https://{{baseUrl}}/api/v1/analytic/execution/async/:requestId/status"
+"Predix": "<>"
+"Authorization": "<>"
+
+
+

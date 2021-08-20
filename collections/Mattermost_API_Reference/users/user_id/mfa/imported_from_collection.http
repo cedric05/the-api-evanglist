@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Activates multi-factor authentication for the user if `activate` is true and a valid `code` is provided. If activate is false, then `code` is not required and multi-factor authentication is disabled for the user.n##### PermissionsnMust be logged in as the user being updated or have the `edit_other_users` permission.n
+
+@name("Update a user's MFA")
+PUT "https://{{baseUrl}}/users/:user_id/mfa"
+
+
+// Generates an multi-factor authentication secret for a user and returns it as a string and as base64 encoded QR code image.n##### PermissionsnMust be logged in as the user or have the `edit_other_users` permission.n
+
+@name("Generate MFA secret")
+POST "https://{{baseUrl}}/users/:user_id/mfa/generate"
+
+
+

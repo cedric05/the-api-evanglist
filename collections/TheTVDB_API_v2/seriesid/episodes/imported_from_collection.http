@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// All episodes for a given series. Paginated with 100 results per page.
+
+@name("/series/:id/episodes")
+GET "https://{{baseUrl}}/series/:id/episodes"
+? "No Name"= "<string>"
+? "page"= "<string>"
+
+
+// Returns a summary of the episodes and seasons available for the series.nn__Note__: Season 0 is for all episodes that are considered to be specials.
+
+@name("/series/:id/episodes/summary")
+GET "https://{{baseUrl}}/series/:id/episodes/summary"
+? "No Name"= "<string>"
+
+
+

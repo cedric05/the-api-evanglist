@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method removes a single video from the specified group.
+
+@name("Get all the videos in a group")
+GET "https://{{baseUrl}}/groups/:group_id/videos"
+? "direction"= "<string>"
+? "filter"= "<string>"
+? "filter_embeddable"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+// This method removes a single video from the specified group.
+
+@name("Remove a video from a group")
+DELETE "https://{{baseUrl}}/groups/:group_id/videos/:video_id"
+
+
+

@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-28b0b94d-ab53-45d3-9161-5250787e3a29.postman_collection.json
+
+// List public events
+
+@name("Search Code")
+GET "https://api.github.com/search/code"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+? "access_token"= "{{github_bearer}}"
+? "q"= "postman"
+
+
+

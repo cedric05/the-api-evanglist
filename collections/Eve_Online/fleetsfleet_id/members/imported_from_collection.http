@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return information about fleet members
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/members/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/members/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/members/`
+// 
+// ---
+// This route is cached for up to 5 seconds
+
+@name("Get fleet members")
+GET "https://{{baseUrl}}/fleets/:fleet_id/members/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+? "token"= "commodo irure"
+
+
+// Invite a character into the fleet. If a character has a CSPA charge set it is not possible to invite them to the fleet using ESI
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/members/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/members/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/members/`
+
+@name("Create fleet invitation")
+POST "https://{{baseUrl}}/fleets/:fleet_id/members/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "character_id": -15300679,
+    "role": "fleet_commander",
+    "squad_id": 35309154,
+    "wing_id": 34020760
+})
+
+
+

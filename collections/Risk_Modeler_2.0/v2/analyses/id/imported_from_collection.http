@@ -1,0 +1,145 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Deletes an Analysis specified by its id
+
+@name("Deletes a specified Analysis") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v2/analyses/:id"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Submits a report generation workflow task and returns a download link to the report when the task is done
+
+@name("Generates a report for this analysis") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/analyses/:id/summary_report"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "perilList": [
+        "ullamco magna voluptate"
+    ],
+    "reportName": "quis nostrud commodo Ut minim"
+})
+
+
+// Places an analysis into a queue, Processes an existing analysis for running a pate engine.
+
+@name("Processes an existing analysis for running a pate engine") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/analyses/:id/pate"
+"Authorization": "Bearer <Bearer Token>"
+? "groupInfoOnly"= "true"
+
+
+// Retrieves report for specified analysis by its ID.
+
+@name("Get report for a specified analysis") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/analyses/:id/elt"
+"Authorization": "Bearer <Bearer Token>"
+? "perspective"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+? "treatyId"= "20033802"
+? "exposureId"= "20033802"
+? "exposureType"= "20033802"
+? "jobUUID"= "Excepteur nisi in"
+
+
+// Retrieves PLT report for specified analysis by its ID.
+
+@name("Get PLT report for a specified analysis") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/analyses/:id/plt"
+"Authorization": "Bearer <Bearer Token>"
+? "perspective"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+? "treatyId"= "20033802"
+? "exposureId"= "20033802"
+? "exposureType"= "20033802"
+? "jobId"= "20033802"
+? "jobUUID"= "Excepteur nisi in"
+
+
+// Retrieves key losses registered for specified analysis by its ID.
+
+@name("Get Key losses for a specified analysis") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/analyses/:id/keylosses"
+"Authorization": "Bearer <Bearer Token>"
+? "perspective"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+? "treatyId"= "20033802"
+? "exposureId"= "20033802"
+? "exposureType"= "20033802"
+? "jobId"= "20033802"
+? "jobUUID"= "Excepteur nisi in"
+
+
+// Retrieves sampled losses registered for specified analysis by its ID.
+
+@name("Get Sampled losses for a specified analysis") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/analyses/:id/sampledlosses"
+"Authorization": "Bearer <Bearer Token>"
+? "perspective"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+? "treatyId"= "20033802"
+? "exposureId"= "20033802"
+? "exposureType"= "20033802"
+? "jobId"= "20033802"
+? "jobUUID"= "Excepteur nisi in"
+? "events"= "Excepteur nisi in"
+
+
+// Retrieves statistics for specified analysis specified by its ID.
+
+@name("Get statistics for a specified analysis") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/analyses/:id/stats"
+"Authorization": "Bearer <Bearer Token>"
+? "perspective"= "Excepteur nisi in"
+? "treatyId"= "20033802"
+? "exposureId"= "20033802"
+? "exposureType"= "20033802"
+? "jobId"= "20033802"
+? "jobUUID"= "Excepteur nisi in"
+
+
+// Retrieves region details for specified analysis specified by its ID.
+
+@name("Get region details for a specified analysis") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/analyses/:id/analysis-region"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Delete given list of treaties
+
+@name("Delete given list of treaties") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v2/analyses/:id/pate-batch"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json([
+    {
+        "treatyId": -51371764,
+        "pateId": 40307956,
+        "groupId": 7057877,
+        "analysisId": 59638444,
+        "treatyType": "commodo et ut"
+    },
+    {
+        "treatyId": 27236273,
+        "pateId": -14694940,
+        "groupId": -78616555,
+        "analysisId": -52500374,
+        "treatyType": "officia Excepteur id esse dolor"
+    }
+])
+
+
+

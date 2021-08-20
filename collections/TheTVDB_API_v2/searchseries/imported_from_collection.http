@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// Allows the user to search for a series based on the following parameters.
+
+@name("/search/series")
+GET "https://{{baseUrl}}/search/series"
+? "No Name"= "<string>"
+? "name"= "<string>"
+? "imdbId"= "<string>"
+? "zap2itId"= "<string>"
+? "slug"= "<string>"
+
+
+// Returns an array of parameters to query by in the `/search/series` route.
+
+@name("/search/series/params")
+GET "https://{{baseUrl}}/search/series/params"
+
+
+

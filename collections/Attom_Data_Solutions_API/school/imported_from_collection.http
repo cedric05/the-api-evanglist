@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d7e889e2-45ea-4b46-badd-0b496c4a983f.postman_collection.json
+
+// Search for all schools that are located within a given radius around a given latitude and longitude.
+
+@name("Return all schools within a defined radius from a point.")
+GET "https://{{baseUrl}}/school/snapshot"
+"apikey": "<>"
+"accept": "<>"
+? "latitude"= "<>"
+? "longitude"= "<>"
+? "radius"= "<>"
+? "filetypetext"= "<>"
+
+
+// Search by school ID to return all of the available details about a school
+
+@name("Return details about a particular school.")
+GET "https://{{baseUrl}}/school/detail"
+"apikey": "<>"
+"accept": "<>"
+? "id"= "<>"
+
+
+// Search by district number to return all of the available details about a school district
+
+@name("Return details about a particular school district.")
+GET "https://{{baseUrl}}/school/districtdetail"
+"apikey": "<>"
+"accept": "<>"
+? "id"= "<>"
+
+
+

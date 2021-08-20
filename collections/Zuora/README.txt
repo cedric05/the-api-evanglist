@@ -1,0 +1,5 @@
+nn# IntroductionnWelcome to the reference for the Zuora REST API!nn<a href=http://en.wikipedia.org/wiki/REST_API target=_blank>REST</a> is a web-service protocol that lends itself to rapid development by using everyday HTTP and JSON technology.nnThe Zuora REST API provides a broad set of operations and resources that:nn  * Enable Web Storefront integration from your website.n  * Support self-service subscriber sign-ups and account management.n  * Process revenue schedules through custom revenue rule models.n  * Enable manipulation of most objects in the Zuora Object Model.n  n  ## Endpointsn  n  The Zuora REST API is provided via the following endpoints.n  | Tenant              | Base URL for REST Endpoints |n  |-------------------------|-------------------------|n  |US Production | https://rest.zuora.com   |n  |US API Sandbox    | https://rest.apisandbox.zuora.com|n  |US Performance Test | https://rest.pt1.zuora.com |n  |EU Production | https://rest.eu.zuora.com |n  |EU Sandbox | 
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete avatar") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/users/:user/avatar/"
+
+
+@name("Retrieve user's avatar") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/users/:user/avatar/"
+
+
+@name("Update a project file") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/users/:user/avatar/"
+
+
+@name("Add user avatar") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/users/:user/avatar/"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns all the users who have access to the specified private video.
+
+@name("Get all the users who can view a private video")
+GET "https://{{baseUrl}}/videos/:video_id/privacy/users"
+? "page"= "<string>"
+? "per_page"= "<string>"
+
+
+// This method prevents a user from being able to view the specified private video.
+
+@name("Restrict a user from viewing a private video")
+DELETE "https://{{baseUrl}}/videos/:video_id/privacy/users/:user_id"
+
+
+

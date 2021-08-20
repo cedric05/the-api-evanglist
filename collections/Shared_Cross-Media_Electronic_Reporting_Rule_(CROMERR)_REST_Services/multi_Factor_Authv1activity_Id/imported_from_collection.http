@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2131e7d-01ce-4512-a5ba-81bbec9b0ac2.postman_collection.json
+
+@name("Retrieve authentication question.")
+GET "https://{{baseUrl}}/multiFactorAuth/v1/:activityId"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "userId": "<string>",
+    "firstName": "<string>",
+    "lastName": "<string>",
+    "middleInitial": "<string>",
+    "role": {
+        "roleName": "do voluptat",
+        "roleId": -74279830
+    },
+    "organization": {
+        "organizationName": "occaecat deserunt commo",
+        "organizationId": 74229674
+    }
+})
+
+
+@name("Answer question.")
+POST "https://{{baseUrl}}/multiFactorAuth/v1/:activityId"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "user": {
+        "userId": "<string>",
+        "firstName": "<string>",
+        "lastName": "<string>",
+        "middleInitial": "<string>",
+        "role": {
+            "roleName": "dolore incididunt dolor",
+            "roleId": 27130632
+        },
+        "organization": {
+            "organizationName": "commodo aute sit non",
+            "organizationId": -61356036
+        }
+    },
+    "answer": {
+        "questionId": "<string>",
+        "answerText": "<string>"
+    }
+})
+
+
+

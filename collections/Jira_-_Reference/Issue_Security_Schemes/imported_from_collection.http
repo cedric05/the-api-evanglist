@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns all [issue security schemes](https://confluence.atlassian.com/x/J4lKLg).
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get Issue Security Schemes") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/issuesecurityschemes"
+
+
+// Returns an issue security scheme along with its security levels.
+// 
+// **[Permissions](#permissions) required:**
+// 
+//  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+//  *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project that uses the requested issue security scheme.
+
+@name("Get Issue Security Scheme") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/issuesecurityschemes/:id"
+
+
+// Returns issue security level members.
+// 
+// Only issue security level members in context of classic projects are returned.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get Issue Security Level Members") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/issuesecurityschemes/:issueSecuritySchemeId/members"
+? "startAt"= "0"
+? "maxResults"= "50"
+? "issueSecurityLevelId"= "<long>"
+? "expand"= "<string>"
+
+
+

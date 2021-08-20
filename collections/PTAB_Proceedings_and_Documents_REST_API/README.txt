@@ -1,0 +1,1 @@
+Public information regarding the Patent Trial and Appeal Board's (PTAB) America Invents Act (AIA) Trials, Appeals & Inteferences and associated documents.

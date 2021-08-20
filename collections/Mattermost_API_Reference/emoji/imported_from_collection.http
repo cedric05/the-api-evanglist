@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Create a custom emoji for the team.n##### PermissionsnMust be authenticated.n
+
+@name("Create a custom emoji")
+POST "https://{{baseUrl}}/emoji"
+
+
+// Get some metadata for a custom emoji using its name.n##### PermissionsnMust be authenticated.nn__Minimum server version__: 4.7n
+
+@name("Get a custom emoji by name")
+GET "https://{{baseUrl}}/emoji/name/:emoji_name"
+
+
+// Search for custom emoji by name based on search criteria provided in the request body. A maximum of 200 results are returned.n##### PermissionsnMust be authenticated.nn__Minimum server version__: 4.7n
+
+@name("Search custom emoji")
+POST "https://{{baseUrl}}/emoji/search"
+
+
+// Get a list of custom emoji with names starting with or matching the provided name. Returns a maximum of 100 results.n##### PermissionsnMust be authenticated.nn__Minimum server version__: 4.7n
+
+@name("Autocomplete custom emoji")
+GET "https://{{baseUrl}}/emoji/autocomplete"
+? "name"= "<post>"
+
+
+

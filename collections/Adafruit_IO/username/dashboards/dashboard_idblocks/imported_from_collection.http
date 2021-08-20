@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b982553e-8975-4962-bc9d-a464c11c5f3a.postman_collection.json
+
+// The Blocks endpoint returns information about the user's blocks.
+
+@name("All blocks for current user")
+GET "https://{{baseUrl}}/:username/dashboards/:dashboard_id/blocks"
+? "No Name"= "<string>"
+
+
+@name("Delete an existing Block")
+DELETE "https://{{baseUrl}}/:username/dashboards/:dashboard_id/blocks/:id"
+? "No Name"= "<string>"
+
+
+

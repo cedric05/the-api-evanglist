@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** The Multi-entity feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnRetrieves information about certain connections for a specified entity. You can specify the entity to retrieve in the `entityId` or `entityName` request header.nnYou can retrieve:n - Inbound connectionsn - Outbound connectionsn - Both inbound and outbound connectionsnn## User Access PermissionnYou can make the call a
+
+@name("Multi-entity: Get connections")
+GET "https://{{baseUrl}}/v1/entity-connections"
+? "type"= "<put>"
+
+
+

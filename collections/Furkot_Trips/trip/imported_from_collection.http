@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f09ba17d-dfcc-4dc7-b4da-083d38e9fa3d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// list user's trips
+
+@name("/trip") : "base-inherit-auth"
+GET "https://{{baseUrl}}/trip"
+
+
+// list stops for a trip identified by {trip_id}
+
+@name("/trip/:trip_id/stop") : "base-inherit-auth"
+GET "https://{{baseUrl}}/trip/:trip_id/stop"
+
+
+

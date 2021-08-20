@@ -1,0 +1,105 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3c66ec54-956d-4108-b61e-3edae334af9d.postman_collection.json
+
+// Redeem the payment which was previously consented by the PSU.
+
+@name("Redeem the payment")
+POST "https://{{baseUrl}}/payments/domestic-credit-transfers"
+"Content-Type": "application/json"
+json({
+    "requestInfo": {
+        "aspspId": "<string>",
+        "authorization": "<string>",
+        "xRequestId": "<string>",
+        "merchant": {
+            "id": "<string>",
+            "name": "<string>"
+        }
+    }
+})
+
+
+// Request Payment Initiation Consent for a domestic credit transfer on behalf of the PSU.
+
+@name("Request consent initiation via redirect")
+POST "https://{{baseUrl}}/payments/domestic-credit-transfers/consents"
+"Content-Type": "application/json"
+json({
+    "payments": {
+        "creditorAccount": {
+            "identification": "<string>",
+            "schemeName": "<string>"
+        },
+        "creditorName": "<string>",
+        "endToEndIdentification": "<string>",
+        "instructedAmount": {
+            "amount": "<double>",
+            "currency": "<string>"
+        },
+        "localInstrument": "<string>",
+        "creditorAddress": {
+            "buildingNumber": "<string>",
+            "city": "<string>",
+            "country": "<string>",
+            "postalCode": "<string>",
+            "street": "<string>",
+            "countrySubDivision": "<string>"
+        },
+        "creditorAgent": {
+            "clearingSystemIdentification": "<string>",
+            "memberIdentification": "<string>"
+        },
+        "debtorAccount": {
+            "identification": "<string>"
+        },
+        "debtorAgent": {
+            "identification": "<string>"
+        },
+        "instructionIdentification": "<string>",
+        "instructionPriority": "<string>",
+        "remittanceInformationReference": "<string>",
+        "remittanceInformationUnstructured": "<string>",
+        "requestedExecutionDate": "<date>",
+        "schedule": {
+            "frequency": "<string>",
+            "startDate": "<date>",
+            "endDate": "<date>"
+        }
+    },
+    "requestInfo": {
+        "aspspId": "<string>",
+        "tppRedirectURI": "<string>",
+        "xRequestId": "<string>",
+        "flags": [
+            "<string>",
+            "<string>"
+        ],
+        "merchant": {
+            "id": "<string>",
+            "name": "<string>"
+        }
+    }
+})
+
+
+// Get the status for an existing domestic credit transfer payment.
+
+@name("Get payment status")
+POST "https://{{baseUrl}}/payments/domestic-credit-transfers/payment-status"
+"Content-Type": "application/json"
+json({
+    "paymentId": "<string>",
+    "requestInfo": {
+        "aspspId": "<string>",
+        "consentId": "<string>",
+        "xRequestId": "<string>",
+        "merchant": {
+            "id": "<string>",
+            "name": "<string>"
+        }
+    }
+})
+
+
+

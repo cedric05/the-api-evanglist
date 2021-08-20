@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0927895a-71a4-4f81-8e6c-0f9b60aa6a63.postman_collection.json
+
+@name("<b>V1</b> - Get a list of catalog documents by filter")
+GET "https://{{baseUrl}}/catalog"
+? "arxiv"= "<string>"
+? "doi"= "<string>"
+? "isbn"= "<string>"
+? "issn"= "<string>"
+? "pmid"= "<string>"
+? "scopus"= "<string>"
+? "filehash"= "<string>"
+? "view"= "<string>"
+
+
+@name("<b>V1</b> - Get a catalog document")
+GET "https://{{baseUrl}}/catalog/:catalogId"
+? "view"= "<string>"
+
+
+

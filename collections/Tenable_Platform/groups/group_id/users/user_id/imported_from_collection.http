@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cf05d8c7-fffb-4a7c-923b-c06517c2b783.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Add a user to the group.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Add user to group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups/:group_id/users/:user_id"
+
+
+// Deletes a user from the group.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Delete user from group") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/groups/:group_id/users/:user_id"
+
+
+

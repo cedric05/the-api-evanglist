@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns details for a user-defined template. User-defined templates can be used to define scan configurations.<p>Requires SCAN OPERATOR [24] user permissions and CAN USE [16] policy permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get user-defined template details") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/user-templates/:user_template_id"
+
+
+// Updates the specified user-defined template.<p>Requires STANDARD [32] user permissions and CAN CONFIGURE [64] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Update user-defined template") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/was/v2/user-templates/:user_template_id"
+"Content-Type": "application/json"
+json({
+    "name": "aliqua ullamco veniam",
+    "owner_id": "b018aed8-554f-4965-9b05-994eaa66d459",
+    "default_permissions": "view",
+    "results_visibility": "dashboard",
+    "permissions": [
+        {
+            "permissions_id": "urn:uuid:23ba3e44-f95d-a7ea-b500-5ba33d0779c2",
+            "entity": "user",
+            "entity_id": "bb5247db-5506-4691-6934-a5388aa83f9e",
+            "level": "configure"
+        },
+        {
+            "permissions_id": "urn:uuid:de36ce42-4251-2139-a1b4-6f44cf5565d7",
+            "entity": "group",
+            "entity_id": "5cd8bfe9-61d5-bfbf-ed8e-b57af29c5e91",
+            "level": "view"
+        }
+    ],
+    "description": "deserunt ullamco tempor"
+})
+
+
+// Deletes the specified user-defined template. You cannot delete a user-defined template if scan configurations currently use the template. You must delete any scan configuration using the template prior to deleting the template. You can delete scan configurations with the [DELETE /was/v2/configs/{config_id}](ref:was-v2-config-delete) endpoint. <p>Requires STANDARD [32] user permissions and CAN CONFIGURE [64] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Delete user-defined template") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/was/v2/user-templates/:user_template_id"
+
+
+

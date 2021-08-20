@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Read key access information for the authenticating key.
+
+@name("Read key access information")
+GET "https://{{baseUrl}}/access"
+
+
+// View rate limit information for the accounts.
+
+@name("View rate limit information")
+GET "https://{{baseUrl}}/rateLimits"
+
+
+// Read the self application of the authenticating Trusted App API Key.
+
+@name("Read self application")
+GET "https://{{baseUrl}}/applications/me"
+
+
+// Identify a 1D or 2D barcode from an uploaded image.
+
+@name("Identify from an image")
+POST "https://{{baseUrl}}/scan/identifications"
+? "No Name"= "<string>"
+
+
+// Batch update Products with a `filter` query parameter.
+
+@name("Update multiple products")
+PUT "https://{{baseUrl}}/products"
+? "filter"= "name=Test*"
+? "No Name"= "<string>"
+
+
+// Read the account-level Redirector.
+
+@name("Read the account Redirector")
+GET "https://{{baseUrl}}/redirector"
+
+
+// Batch update Thngs with a filter query parameter.
+
+@name("Update multiple Thngs")
+PUT "https://{{baseUrl}}/thngs"
+? "filter"= "tags=:tags"
+? "No Name"= "<string>"
+
+
+

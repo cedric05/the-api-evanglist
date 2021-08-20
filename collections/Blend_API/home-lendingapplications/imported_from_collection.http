@@ -1,0 +1,120 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Create a new application in Blend with minimal borrower and application data. This endpoint is usually used to create applications in Blend from CRMs or other central borrower databases.
+
+@name("Post a Home Lending Application") : "base-inherit-auth"
+POST "https://{{baseUrl}}/home-lending/applications"
+"Content-Type": "application/json"
+json({
+    "solutionSubType": "MORTGAGE",
+    "applicationExperienceType": "FULL_APPLICATION",
+    "loanPurposeType": "PURCHASE",
+    "property": {
+        "type": "SINGLE_FAMILY",
+        "searchType": "NOT_STARTED",
+        "usageType": "PRIMARY_RESIDENCE",
+        "value": 120000,
+        "address": {
+            "streetAddressLine1": "101 main st",
+            "streetAddressLine2": "132",
+            "city": "Chicago",
+            "state": "IL",
+            "zipCode": "70007",
+            "zipCodePlusFour": "1000",
+            "countyName": "Cook County"
+        }
+    },
+    "loanAmount": 100000,
+    "communityId": "12345",
+    "leadId": "lead1",
+    "crmId": "crm1",
+    "losId": "los1",
+    "referenceNumber": "12000",
+    "applicationSource": {
+        "type": "LOS",
+        "name": "LOS"
+    },
+    "sendEmailInvite": true,
+    "interestRate": 4.25,
+    "mortgageType": "CONVENTIONAL",
+    "party": {
+        "name": {
+            "firstName": "Tanya",
+            "middleName": "M",
+            "lastName": "Williams",
+            "suffixName": "III"
+        },
+        "email": "twilliams@email.com",
+        "dateOfBirth": "2000-10-03T20:07:27+00:00",
+        "taxpayerIdentifier": {
+            "value": "000113933",
+            "type": "SOCIAL_SECURITY_NUMBER"
+        },
+        "homePhone": "11122223333",
+        "currentAddress": {
+            "streetAddressLine1": "100 main st",
+            "streetAddressLine2": "132",
+            "city": "Chicago",
+            "state": "IL",
+            "zipCode": "70007",
+            "zipCodePlusFour": "1000",
+            "customFields": {
+                "fieldName": "fldValue"
+            }
+        }
+    }
+})
+
+
+// Get a paginated list of active applications sorted by creation date descending. This endpoint also supports a few filtering parameters.
+
+@name("Get Applications") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications"
+? "limit"= "50"
+? "cursor"= "biwxNTIzOTk4Njg1NTc5LGRkYWYwNDY5LTdlNTYtNDRjZS05MDE3LTZkM2VhNjk1Mzc2OA"
+? "losId-exists"= "magna Duis"
+? "crmId-eq"= "crmId1"
+? "party-email-eq"= "borrower@email.com"
+? "losId-eq"= "losId1"
+? "exportable"= "true"
+? "assigneeIds-eq"= "9250f84b-c2a1-4cab-b265-bd720685c361"
+? "solution-sub-type"= "MORTGAGE"
+
+
+// Bulk update a list of applications to specific LOS milestones. Only accepts LOS milestones that have been added to customer configuration. Does not allow applications to transition to previous milestones (e.g. APPROVED --> UNDERWRITING), unless parameter 'override' is set to true.
+
+@name("Post LOS Milestones") : "base-inherit-auth"
+POST "https://{{baseUrl}}/home-lending/applications/los-milestones"
+"Content-Type": "application/json"
+json({
+    "losMilestones": [
+        {
+            "losMilestone": "APPROVED",
+            "applicationId": "aa9fdaa2-7bf3-4411-a836-c2a46117f5c3"
+        },
+        {
+            "losMilestone": "UNDERWRITING",
+            "applicationId": "aa9fdaa2-7bf3-4411-a836-c2a46117f5c3"
+        }
+    ],
+    "override": false
+})
+
+
+// A bulk endpoint to get the export statuses for a list of applications
+
+@name("List Application Export Statuses") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/export-statuses"
+? "ids"= "9250f84b-c2a1-4cab-b265-bd720685c361"
+
+
+

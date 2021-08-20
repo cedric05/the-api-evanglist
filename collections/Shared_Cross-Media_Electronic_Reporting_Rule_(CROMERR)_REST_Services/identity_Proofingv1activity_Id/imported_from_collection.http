@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2131e7d-01ce-4512-a5ba-81bbec9b0ac2.postman_collection.json
+
+@name("Retrieve result.")
+GET "https://{{baseUrl}}/identityProofing/v1/:activityId"
+"Authorization": "<string>"
+
+
+@name("Create request.")
+POST "https://{{baseUrl}}/identityProofing/v1/:activityId"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "userId": "<string>",
+    "firstName": "<string>",
+    "lastName": "<string>",
+    "middleInitial": "<string>",
+    "mailingAddress1": "<string>",
+    "mailingAddress2": "<string>",
+    "city": "<string>",
+    "state": "<string>",
+    "zip": "<string>",
+    "phone": "<string>",
+    "ssnLast4": "<string>",
+    "dob": "<dateTime>",
+    "driverLicenseNumber": "<string>",
+    "driverLicenseState": "<string>"
+})
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Assuming that the given codes are respectively the code of an existing asset, an existing channel and an activated locale if the asset is localizable (it should be equal to "no-locale" otherwise)
+
+@name("asset variation file (2.1 only)")
+GET "https://{{baseUrl}}/rest/v1/assets/paint/variation-files/ecommerce/no-locale"
+
+
+// Assuming that the given codes are respectively the code of an existing asset, an existing channel and an activated locale if the asset is localizable (it should be equal to "no-locale" otherwise)
+
+@name("download asset variation file (2.1 only)")
+GET "https://{{baseUrl}}/rest/v1/assets/paint/variation-files/ecommerce/no-locale/download"
+
+
+

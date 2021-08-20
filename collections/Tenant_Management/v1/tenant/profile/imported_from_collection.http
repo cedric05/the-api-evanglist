@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2fb0962b-7d35-49c0-8ec6-311647bcabe4.postman_collection.json
+
+// Lookup tenant by subdomain.
+
+@name("Lookup Tenant by Subdomain")
+GET "https://{{baseUrl}}/v1/tenant/profile"
+"TMS": "<>"
+
+
+// Lookup tenant service by subdomain.
+
+@name("Lookup Tenant service by Subdomain")
+GET "https://{{baseUrl}}/v1/tenant/profile/service/:serviceName"
+"TMS": "<>"
+
+
+

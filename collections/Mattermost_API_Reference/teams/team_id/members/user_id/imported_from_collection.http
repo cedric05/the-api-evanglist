@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a team member on the system.n##### PermissionsnMust be authenticated and have the `view_team` permission.n
+
+@name("Get a team member")
+GET "https://{{baseUrl}}/teams/:team_id/members/:user_id"
+
+
+// Update a team member roles. Valid team roles are team_user, team_admin or both of them. Overwrites any previously assigned team roles.n##### PermissionsnMust be authenticated and have the `manage_team_roles` permission.n
+
+@name("Update a team member roles")
+PUT "https://{{baseUrl}}/teams/:team_id/members/:user_id/roles"
+
+
+

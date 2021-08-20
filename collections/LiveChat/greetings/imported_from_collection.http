@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Returns the list of all greetings.
+
+@name("List all greetings")
+GET "https://{{baseUrl}}/greetings"
+"X": "<>"
+? "groups"= "<get>"
+
+
+// Use this request to change the name or message of a greeting.
+
+@name("Update greeting")
+PUT "https://{{baseUrl}}/greetings/2491"
+"X": "<>"
+
+
+// Returns the specified greeting.nn
+
+@name("Get a single greeting")
+GET "https://{{baseUrl}}/greetings/ABC123"
+"X": "<>"
+
+
+

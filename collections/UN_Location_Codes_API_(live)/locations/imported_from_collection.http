@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-be73cf41-a4da-47fd-a390-b638c95ebca3.postman_collection.json
+
+// This api will return a (paged) list of locations that match the search parameters (query parameters) ordered by the name without diacritics.
+
+@name("Get Locations")
+GET "https://{{baseUrl}}/locations"
+? "code"= "<get>"
+? "country"= "<object>"
+? "subdiv"= "<get>"
+? "searchterm"= "<>"
+? "page"= "<>"
+? "size"= "<>"
+
+
+// This api will return locations in a certain radius of a point, ordered by distance , not necessarily in the same country
+
+@name("Get Locations Latitude Longitude Radius")
+GET "https://{{baseUrl}}/locations/:latitude/:longitude/:radius"
+? "page"= "<>"
+? "size"= "<>"
+
+
+// Get the details of 1 location based on the locode.
+
+@name("Get Locations Locode")
+GET "https://{{baseUrl}}/locations/:locode"
+
+
+

@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e760486c-f487-465f-b743-146cfe5b92a4.postman_collection.json
+
+// Funding Reversals must be submitted within 30 minutes of the funding transfer request, and should only be submitted for the following conditions:  Funding Transaction must be reversed if payment transaction cannot complete successfully, i.e. the payment transaction is rejected or declined.  Upon a successful reversal of a funding transaction, the refund must be credited to the sending consumer’s Funding Account.
+
+@name("Funding Reversals must be submitted within 30 minutes of the funding transfer request, and should only be submitted for the following conditions:  Funding Transaction must be reversed if payment transaction cannot complete successfully, i.e. the payment t")
+POST "https://{{baseUrl}}/send/v1/partners/:partner-id/transfers/:transfer-id/transactions/:transaction-id/reversals"
+"Content-Type": "application/xml"
+data('"<element>\n <funding_reversal>\n  <reversal_reason>(string)</reversal_reason>\n</funding_reversal>\n</element>"')
+
+
+

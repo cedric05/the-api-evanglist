@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd3bb79e-7d36-49f2-9d90-ac848a0b6d74.postman_collection.json
+
+// Returns a list of tags
+
+@name("Get A List Of Tags")
+GET "https://{{baseUrl}}/tags"
+? "name"= "<get>"
+? "type"= "<get>"
+? "fields"= "<>"
+? "limit"= "<>"
+? "limitstart"= "<>"
+? "order"= "<>"
+
+
+// Returns a list of fields
+
+@name("Get The List Of Fields")
+GET "https://{{baseUrl}}/tags/metadata"
+
+
+

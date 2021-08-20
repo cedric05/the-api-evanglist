@@ -1,0 +1,1 @@
+Shows all resources and endpoints which CDS BP processor currently provides with sample requests/responses, parameter description and other information.

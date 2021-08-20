@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+@name("Get the list of tables in the restaurant")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/tables"
+
+
+@name("Get the list of active tables in the specified area")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/tables/area/:areaId"
+
+
+@name("Get the details of a specific table")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/tables/:tableId"
+
+
+

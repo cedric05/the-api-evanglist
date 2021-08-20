@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Custom Permission Dependency") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/CustomPermissionDependency/"
+
+
+@name("Custom Permission Dependency Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/CustomPermissionDependency/{ID}/"
+
+
+@name("Describe Custom Permission Dependency") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/CustomPermissionDependency/describe/"
+
+
+

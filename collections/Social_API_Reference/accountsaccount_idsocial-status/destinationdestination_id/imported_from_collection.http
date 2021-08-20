@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-564f6841-6dac-40b5-a37d-821543ec87b3.postman_collection.json
+
+// Get the current status of every video which Social ever attempted to distribute to the given destination. 
+
+@name("Get Status of Videos for Destination")
+GET "https://{{baseUrl}}/accounts/:account_id/social-status/destination/:destination_id"
+
+
+// Get the current status of one video with respect to one destination. 
+
+@name("Get Status of Video for Destination")
+GET "https://{{baseUrl}}/accounts/:account_id/social-status/destination/:destination_id/video/:video_id"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b71fd21b-bfe2-48a4-b72e-2e45c80f54e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Lists the available ICD-10 releases") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/release/10"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+
+
+@name("Lists the available ICD-10 releases for the requested category") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/release/10/:code"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+
+
+

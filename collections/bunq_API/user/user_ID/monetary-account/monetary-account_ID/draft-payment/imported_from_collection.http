@@ -1,0 +1,101 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get a listing of all DraftPayments from a given MonetaryAccount.
+
+@name("List all Draft Payment for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/draft-payment"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create a new DraftPayment.
+
+@name("CREATE Draft Payment for User Monetary Account")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/draft-payment"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "entries": [
+        {
+            "alias": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "amount": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "attachment": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "counterparty_alias": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "description": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "id": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "merchant_reference": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "type": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        {
+            "alias": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "amount": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "attachment": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "counterparty_alias": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "description": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "id": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "merchant_reference": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "type": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        }
+    ],
+    "number_of_required_accepts": "<integer>",
+    "previous_updated_timestamp": "<string>",
+    "schedule": {
+        "object": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "recurrence_size": -29907680,
+        "recurrence_unit": "ipsum laborum",
+        "status": "cupidatat sed",
+        "time_end": "commodo ullamco amet",
+        "time_start": "ullamco cillum labore"
+    },
+    "status": "<string>"
+})
+
+
+

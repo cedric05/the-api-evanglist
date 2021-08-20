@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a list of all statuses associated with workflows.
+// 
+// This operation can be accessed anonymously.
+// 
+// **[Permissions](#permissions) required:** None.
+
+@name("Get All Statuses") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/status"
+
+
+// Returns a status. The status must be associated with a workflow to be returned.
+// 
+// If a name is used on more than one status, only the status found first is returned. Therefore, identifying the status by its ID may be preferable.
+// 
+// This operation can be accessed anonymously.
+// 
+// [Permissions](#permissions) required: None.
+
+@name("Get Status") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/status/:idOrName"
+
+
+

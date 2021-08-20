@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2dd3b81c-4b11-4e46-b2e6-83bc9a4638dc.postman_collection.json
+
+// Return a list of all tokens for the current vendor
+
+@name("Tokens list")
+GET "https://{{baseUrl}}/token"
+
+
+// Delete a token by number
+
+@name("Delete token")
+DELETE "https://{{baseUrl}}/token/:tokenNumber"
+
+
+

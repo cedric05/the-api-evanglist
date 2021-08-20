@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2f8419b-de8c-41fd-9165-1ccb194cb158.postman_collection.json
+
+// Get all the expected vessels of BEANR and BEZEE
+
+@name("Get Expected Vessels")
+GET "https://{{baseUrl}}/vessels/expected"
+
+
+// Get all the in-port vessels of BEANR and BEZEE
+
+@name("Get Vessels In Port")
+GET "https://{{baseUrl}}/vessels/in-port"
+
+
+

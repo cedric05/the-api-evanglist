@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7a2dac4c-d2bf-4d80-8e30-474f749b9a58.postman_collection.json
+
+@name("Token Validation (header)")
+GET "https://{{auth-uri}}/oauth/check_token"
+"Authorization": "Bearer {{access-token}}"
+
+
+@name("Token Validation (param)")
+GET "https://{{auth-uri}}/oauth/check_token"
+? "token"= "{{access-token}}"
+
+
+

@@ -1,0 +1,1 @@
+The Payment Account Reference Inquiry API is the unified Mastercard interface for allowing Mastercard Customers involved in payment card acceptance -- whether Merchants, Acquirers, or Digital Activity Customers (DACs) -- to enquire the PAR Vault for getting the PAR, when providing an Account Primary Account Number (PAN) linked to a digitized PAN.

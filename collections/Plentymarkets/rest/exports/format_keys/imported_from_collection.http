@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Shows all format keys registered by plugins in production state
+
+@name("Get format keys")
+GET "https://{{baseUrl}}/rest/exports/format_keys"
+
+
+// Shows all format keys registered by plugins in production state
+
+@name("Get format keys")
+GET "https://{{baseUrl}}/rest/exports/format_keys/:type"
+
+
+

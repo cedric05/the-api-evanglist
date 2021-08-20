@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Deletes an accounting location. The ID of the accounting location must be specified. Standard accounting locations can not be deleted.
+
+@name("Delete an accounting location")
+DELETE "https://{{baseUrl}}/rest/accounting/locations/:locationId"
+
+
+// Get the revenue account configuration of a country. The ID of the accounting location that the country is associated with as well as the ID of the country must be specified.
+
+@name("Get the revenue account configuration of a country")
+GET "https://{{baseUrl}}/rest/accounting/locations/:locationId/countries/:countryId/revenue_accounts"
+
+
+// Gets the debtor account configuration of an accounting location. The ID of the accounting location has to be specified. The debtor account configuration can contain one standard debtor account only or e.g. several accounts for each country of delivery.
+
+@name("Get debtor account configuration of an accounting location")
+GET "https://{{baseUrl}}/rest/accounting/locations/:locationId/debtor_account_configurations"
+
+
+// Lists the debtor accounts of an accounting location by mode. The ID of the accounting location and the mode have to be specified.
+
+@name("Lists the debtor accounts by mode.")
+GET "https://{{baseUrl}}/rest/accounting/locations/:locationId/debtor_accounts/:mode"
+
+
+// Get all posting accounts by locationid.
+
+@name("Get all posting accounts by locationId")
+GET "https://{{baseUrl}}/rest/accounting/locations/:locationId/posting_accounts"
+
+
+// Gets a posting key configuration of an accounting location. The ID of the accounting location has to be specified. The posting key configuration can contain up to 4 posting keys.
+
+@name("Get a posting key configuration of an accounting location")
+GET "https://{{baseUrl}}/rest/accounting/locations/:locationId/posting_key_configurations"
+
+
+// Gets the revenue account configuration of an accounting location. A revenue account location configuration contains several revenue accounts. The ID of the accounting location has to be specified.
+
+@name("Get the revenue account configuration of an accounting location")
+GET "https://{{baseUrl}}/rest/accounting/locations/:locationId/revenue_account_configurations"
+
+
+// Get all posting accounts by locationid and type.
+
+@name("Get all posting accounts by locationId and type")
+GET "https://{{baseUrl}}/rest/accounting/locations/:locationId/:type/posting_accounts"
+
+
+

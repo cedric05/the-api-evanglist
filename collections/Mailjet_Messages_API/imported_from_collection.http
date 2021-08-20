@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-236c527d-f0f2-41aa-b04f-72c7372ecd60.postman_collection.json
+
+// Allows you to list messages.
+
+@name("Message List")
+GET "https://{{baseUrl}}/message/"
+? "Campaign"= "<>"
+? "Contact"= "<>"
+? "MessageState"= "<>"
+? "PlanSubscription"= "<>"
+? "Sender"= "<>"
+
+
+// Returns message state.
+
+@name("Message State")
+GET "https://{{baseUrl}}/messagestate/:id"
+? "id"= "<>"
+
+
+// View the details of a message.
+
+@name("Message Detail")
+GET "https://{{baseUrl}}/message{{id}}"
+
+
+

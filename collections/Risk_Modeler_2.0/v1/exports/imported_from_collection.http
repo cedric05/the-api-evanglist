@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates a export job for EDM or RDM. It also supports exporting the results in CSV or PARQUET format. This endpoint has been deprecated, please use /v2/exports instead. Support for this endpoint will end on [Wed, 10 Nov 2021 00:00:00 GMT].
+
+@name("Creates a new export job and then runs it.") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/exports"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "servername"= "Excepteur nisi in"
+json({
+    "type": "tempor",
+    "exportType": "EDM",
+    "exportFormat": "CSV"
+})
+
+
+// Download the results for a particular analysis
+
+@name("Downloads the results for an analysis") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/exports/downloadresults"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "workflowId": "dolor occaecat",
+    "lossDetails": [
+        {
+            "lossType": "sunt",
+            "outputLevels": [
+                "eiusmod voluptate anim",
+                "id eu dolor"
+            ],
+            "perspectives": [
+                "qui esse",
+                "ex cupidatat velit in"
+            ]
+        },
+        {
+            "lossType": "nisi in",
+            "outputLevels": [
+                "ullamco officia anim",
+                "cillum dolor"
+            ],
+            "perspectives": [
+                "velit quis ullamco anim cillum",
+                "labore ut do"
+            ]
+        }
+    ]
+})
+
+
+

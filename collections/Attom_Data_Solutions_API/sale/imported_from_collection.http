@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d7e889e2-45ea-4b46-badd-0b496c4a983f.postman_collection.json
+
+// Get a list of home sale snapshots within a Onboard GeoID that sold within a date range and specified sale amount.
+
+@name("Returns home sale information for properties within a geography.")
+GET "https://{{baseUrl}}/sale/snapshot"
+"apikey": "<>"
+"accept": "<>"
+? "geoid"= "<>"
+? "minsaleamt"= "<>"
+? "maxsaleamt"= "<>"
+? "startsalesearchdate"= "<>"
+? "endsalesearchdate"= "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+? "radius"= "<>"
+? "propertytype"= "<>"
+
+
+// Get sales information for a specific address.
+
+@name("Returns sale information for a property.")
+GET "https://{{baseUrl}}/sale/detail"
+"apikey": "<>"
+"accept": "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+
+
+

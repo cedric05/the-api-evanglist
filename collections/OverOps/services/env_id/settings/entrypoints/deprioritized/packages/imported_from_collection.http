@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List all packages that should be set as lowest priority entry points (i.e. will be set as entry points only if no other entry points were found in the event call stack)
+
+@name("List all packages associated with deprioritized entry points") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/entrypoints/deprioritized/packages"
+
+
+

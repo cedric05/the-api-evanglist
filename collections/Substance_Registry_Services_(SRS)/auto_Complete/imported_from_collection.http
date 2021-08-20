@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6b84cc71-ce77-48b8-babd-323eb8d670bd.postman_collection.json
+
+// This service returns substance names and basic information by a search string. The service is meant to be used to facilitate auto-complete features. The results will return the first 10 matches. By default this is a ‘begins with’ search.
+
+@name("Get substance names by a search string. For use with auto-complete.")
+GET "https://{{baseUrl}}/autoComplete/casSearch"
+? "listAcronym"= "<string>"
+? "qualifier"= "begins"
+? "term"= "<string>"
+
+
+// This service returns substance names, CAS numbers, and basic information by a search string representing a CAS number. The service is meant to be used to facilitate auto-complete features. The results will return the first 10 matches. By default this is a ‘begins with’ search.
+
+@name("Get substance names and complete CAS by a search string. For use with auto-complete.")
+GET "https://{{baseUrl}}/autoComplete/nameSearch"
+? "listAcronym"= "<string>"
+? "qualifier"= "begins"
+? "term"= "<string>"
+
+
+

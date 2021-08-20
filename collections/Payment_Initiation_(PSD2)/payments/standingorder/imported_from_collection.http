@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7e6f9362-d794-4f68-8889-4b98dbcc6d76.postman_collection.json
+
+// This operation will register a periodic SEPA payment at the bank for further authorization by the account holder through the consent application. For more information, see Authorization and Tutorial sections on developer portal. The access token from the consent can be used in the PUT method to execute the registered standing order.
+
+@name("post Standing Order Payment")
+POST "https://{{baseUrl}}/payments/standingorder"
+
+
+// This operation releases a registered standing order at the bank for further processing. Authorization by the account holder is required through consent to obtain a access token.
+
+@name("put Standing Order Payment")
+PUT "https://{{baseUrl}}/payments/standingorder/:transactionId"
+
+
+

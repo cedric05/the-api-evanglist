@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aa655ea0-f6d4-4615-b1ce-a1873e7cfc4c.postman_collection.json
+
+// Returns a list of articles provided by the specified source
+
+@name("Source Articles")
+GET "https://{{baseUrl}}/source/:GUID/articles/"
+? "access_key"= "<>"
+? "article_filter_mode"= "<>"
+? "article_filter_name"= "<>"
+? "categories"= "<>"
+? "from_date"= "<>"
+? "get_topics"= "<>"
+? "has_images"= "<>"
+? "languages"= "<>"
+? "licensed"= "<>"
+? "media_types"= "<>"
+? "offset"= "<>"
+? "pagesize"= "<>"
+? "sort"= "<>"
+? "topics"= "<>"
+? "topic_filter_mode"= "<>"
+? "topic_filter_name"= "<>"
+? "to_date"= "<>"
+
+
+// Returns a list of topics related to the source specified by the given GUID.
+
+@name("Source Topics")
+GET "https://{{baseUrl}}/source/:GUID/topics/"
+? "access_key"= "<>"
+? "from_date"= "<>"
+? "offset"= "<>"
+? "pagesize"= "<>"
+? "topics"= "<>"
+? "topic_classifications"= "<>"
+? "topic_filter_mode"= "<>"
+? "topic_filter_name"= "<>"
+? "topic_subclassifications"= "<>"
+? "to_date"= "<>"
+
+
+

@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Plaid can provide an Audit Copy of any Asset Report directly to a participating third party on your behalf. For example, Plaid can supply an Audit Copy directly to Fannie Mae on your behalf if you participate in the Day 1 Certainty™ program. An Audit Copy contains the same underlying data as the Asset Report.
+// 
+// To grant access to an Audit Copy, use the `/asset_report/audit_copy/create` endpoint to create an `audit_copy_token` and then pass that token to the third party who needs access. Each third party has its own `auditor_id`, for example `fannie_mae`. You’ll need to create a separate Audit Copy for each third party to whom you want to grant access to the Report.
+
+@name("Create Asset Report Audit Copy") : "base-inherit-auth"
+POST "https://{{baseUrl}}/asset_report/audit_copy/create"
+"Content-Type": "application/json"
+json({
+    "asset_report_token": "veniam incididunt irure",
+    "auditor_id": "officia nostrud nisi",
+    "client_id": "elit officia voluptate",
+    "secret": "sed amet officia es"
+})
+
+
+// The `/asset_report/audit_copy/remove` endpoint allows you to remove an Audit Copy. Removing an Audit Copy invalidates the `audit_copy_token` associated with it, meaning both you and any third parties holding the token will no longer be able to use it to access Report data. Items associated with the Asset Report, the Asset Report itself and other Audit Copies of it are not affected and will remain accessible after removing the given Audit Copy.
+
+@name("Remove Asset Report Audit Copy") : "base-inherit-auth"
+POST "https://{{baseUrl}}/asset_report/audit_copy/remove"
+"Content-Type": "application/json"
+json({
+    "audit_copy_token": "mollit ",
+    "client_id": "aliqua nostrud",
+    "secret": "ut ipsum aliqua mollit"
+})
+
+
+// `/asset_report/audit_copy/get` allows auditors to get a copy of an Asset Report that was previously shared via the `/asset_report/audit_copy/create` endpoint.  The caller of `/asset_report/audit_copy/create` must provide the `audit_copy_token` to the auditor.  This token can then be used to call `/asset_report/audit_copy/create`.
+
+@name("Retrieve an Asset Report Audit Copy") : "base-inherit-auth"
+POST "https://{{baseUrl}}/asset_report/audit_copy/get"
+"Content-Type": "application/json"
+json({
+    "audit_copy_token": "enim adipisicing in cul",
+    "client_id": "dolor qui commodo",
+    "secret": "aliqua reprehenderit qui nostrud"
+})
+
+
+

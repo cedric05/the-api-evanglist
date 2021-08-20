@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search Displays for this User
+
+@name("Display Search")
+GET "https://{{baseUrl}}/display"
+
+
+// Edit a Display
+
+@name("Display Edit")
+PUT "https://{{baseUrl}}/display/:displayId"
+
+
+// Notify the display that the CMS would like a screen shot to be sent.
+
+@name("Request Screen Shot")
+PUT "https://{{baseUrl}}/display/requestscreenshot/:displayId"
+
+
+// Send a Wake On LAN packet to this Display
+
+@name("Issue WOL")
+POST "https://{{baseUrl}}/display/wol/:displayId"
+
+
+// Toggle authorised for the Display.
+
+@name("Toggle authorised")
+POST "https://{{baseUrl}}/display/authorise/:displayId"
+
+
+// Sent the default Layout on this Display
+
+@name("Set Default Layout")
+POST "https://{{baseUrl}}/display/defaultlayout/:displayId"
+
+
+

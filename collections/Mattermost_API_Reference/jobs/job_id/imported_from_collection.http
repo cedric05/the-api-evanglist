@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Gets a single job.n__Minimum server version: 4.1__n##### PermissionsnMust have `manage_jobs` permission.n
+
+@name("Get a job.")
+GET "https://{{baseUrl}}/jobs/:job_id"
+
+
+// Cancel a job.n__Minimum server version: 4.1__n##### PermissionsnMust have `manage_jobs` permission.n
+
+@name("Cancel a job.")
+POST "https://{{baseUrl}}/jobs/:job_id/cancel"
+
+
+

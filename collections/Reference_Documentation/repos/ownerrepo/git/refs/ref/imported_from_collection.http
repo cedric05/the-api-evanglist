@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+@name("Update a reference")
+PATCH "https://{{baseUrl}}/repos/:owner/:repo/git/refs/:ref"
+"Content-Type": "application/json"
+json({
+    "sha": "<string>",
+    "force": false
+})
+
+
+@name("Delete a reference")
+DELETE "https://{{baseUrl}}/repos/:owner/:repo/git/refs/:ref"
+
+
+

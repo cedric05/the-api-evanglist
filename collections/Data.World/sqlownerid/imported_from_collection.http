@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Same as `POST:/sql/{owner}/{id}`
+
+@name("SQL query (via GET)") : "base-inherit-auth"
+GET "https://{{baseUrl}}/sql/:owner/:id"
+? "query"= "et officia pariatur"
+? "includeTableSchema"= "false"
+
+
+// Execute a SQL query against a dataset or data project.
+// 
+// SQL results are available in a variety of formats. By default, `application/json` will be returned. Set the `Accept` header to one of the following values in accordance with your preference:
+// 
+// * `text/csv`
+// * `application/json`
+// * `application/json-l`
+// * `application/x-ndjson`
+// 
+// New to SQL? Check out data.world's [SQL manual](https://docs.data.world/tutorials/dwsql/) .
+
+@name("SQL query") : "base-inherit-auth"
+POST "https://{{baseUrl}}/sql/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "query": "eu mollit laborum sit nostrud",
+    "includeTableSchema": false
+})
+
+
+

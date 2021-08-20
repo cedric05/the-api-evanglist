@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieve an included package
+
+@name("Retrieve an included package") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/code-redaction/include/packages/:package_name"
+
+
+// Add a package to the inclusion list. The body package name must match the resource identifier
+
+@name("Add a package to the inclusion list") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/services/:env_id/settings/code-redaction/include/packages/:package_name"
+"Content-Type": "application/json"
+json({
+    "name": "com.company.package.name"
+})
+
+
+// Remove a package from the inclusion list
+
+@name("Remove a package from the inclusion list") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/services/:env_id/settings/code-redaction/include/packages/:package_name"
+
+
+

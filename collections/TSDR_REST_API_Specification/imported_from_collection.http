@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93f02d77-d29c-4b5c-8f98-5e285995302f.postman_collection.json
+
+// Parameters can be one of the following: rnXXXXXXX for US registration number, snXXXXXXXX for US serial number, refXXXXXXXX and irXXXXXXX for Madrid numbers. Example: https://tsdrapi.uspto.gov/ts/cd/caseMultiStatus/sn?ids=78787878,76767676
+
+@name("Returns case details for multiple cases as a JSON.")
+GET "https://{{baseUrl}}/caseMultiStatus/:type"
+? "from"= "<string>"
+? "to"= "<string>"
+? "ids"= "<string>"
+? "ids"= "<string>"
+
+
+

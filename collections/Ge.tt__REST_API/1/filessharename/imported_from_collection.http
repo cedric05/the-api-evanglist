@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-37b08a1e-666d-477b-b7f8-ac0474a9fcb3.postman_collection.json
+
+// To upload files to Ge.tt you must first create the file under a given share. You do that by posting the filename:
+
+@name("Files Create")
+POST "https://{{baseUrl}}/1/files/:sharename/create"
+? "accesstoken"= "<>"
+
+
+

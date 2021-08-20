@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-236c527d-f0f2-41aa-b04f-72c7372ecd60.postman_collection.json
+
+// List message history resources 
+
+@name("Message History")
+GET "https://{{baseUrl}}/messagehistory/"
+
+
+// Get the history of a message.
+
+@name("Message History")
+GET "https://{{baseUrl}}/messagehistory/:id"
+
+
+

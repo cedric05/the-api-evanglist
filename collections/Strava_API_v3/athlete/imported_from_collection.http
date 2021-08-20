@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Returns the currently authenticated athlete. Tokens with profile:read_all scope will receive a detailed athlete representation; all others will receive a summary representation.
+
+@name("Get Authenticated Athlete")
+GET "https://{{baseUrl}}/athlete"
+
+
+// Returns the the authenticated athlete's heart rate and power zones. Requires profile:read_all.
+
+@name("Get Zones")
+GET "https://{{baseUrl}}/athlete/zones"
+
+
+// Returns the activities of an athlete for a specific identifier. Requires activity:read. Only Me activities will be filtered out unless requested by a token with activity:read_all.
+
+@name("List Athlete Activities")
+GET "https://{{baseUrl}}/athlete/activities"
+? "before"= "<integer>"
+? "after"= "<integer>"
+? "No Name"= "<string>"
+
+
+// Returns a list of the clubs whose membership includes the authenticated athlete.
+
+@name("List Athlete Clubs")
+GET "https://{{baseUrl}}/athlete/clubs"
+? "No Name"= "<string>"
+
+
+

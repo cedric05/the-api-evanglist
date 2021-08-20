@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// Retrieve a Dwolla Account's list of created Customers.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn----------|---------|---------|-----------|------|nlimit | integer | query | no | How many results to returnnoffset | integer | query | no | How many results to skipnsearch | string | query | no | Searches on `firstName`, `lastName`, and `email` fields. (`/customers?search=Smith`)
+
+@name("List And Search Customers")
+GET "https://{{baseUrl}}/customers"
+
+
+@name("Retrieve Beneficial Ownership Status")
+GET "https://{{baseUrl}}/customers/:beneficialOwnerId/beneficial-ownership"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-572303ba-d57b-42f8-9c05-98fcc3c05154.postman_collection.json
+
+// Gets a specific `Policy` object for the authenticated user.n
+
+@name("Get Policies")
+GET "https://{{baseUrl}}/policies/:id"
+? "o"= "<>"
+
+
+// Schedule a policy for immediate remediationn
+
+@name("Post Policies Action")
+POST "https://{{baseUrl}}/policies/:id/action"
+? "o"= "<>"
+
+
+

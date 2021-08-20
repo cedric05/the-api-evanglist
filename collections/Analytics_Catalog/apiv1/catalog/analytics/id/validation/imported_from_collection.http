@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0df0d40b-bb5f-4ab4-9756-1a85f04bd436.postman_collection.json
+
+// This operation FORCE deploys the specified analytic into the Cloud Foundry environment, runs the analytic and responds with the validation request id (generated for the request), and the current request status.  The force deploy usually takes longer than the standard timeout, so the calling process should use the returned validation request id to monitor the request status and to retrieve the validation results.
+
+@name("Validate an analytic by analytic catalog entry id.")
+POST "https://{{baseUrl}}/api/v1/catalog/analytics/:id/validation"
+? "inputId"= "<>"
+
+
+// Returns the analytic validation status (one of 'queued,' 'processing,' or 'completed' and the result from running the analytic (when status is 'completed').
+
+@name("Get the analytic validation status by validation request id.")
+GET "https://{{baseUrl}}/api/v1/catalog/analytics/:id/validation/:validationRequestId"
+
+
+

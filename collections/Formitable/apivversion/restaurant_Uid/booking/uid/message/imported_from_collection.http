@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get a list of messages that occurred for this booking
+
+@name("Get messages of booking")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/:uid/message"
+
+
+// Create a new user message for the restaurant
+
+@name("Create user message")
+POST "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/:uid/message"
+"Content-Type": "application/json"
+json({
+    "content": "et in incididunt"
+})
+
+
+

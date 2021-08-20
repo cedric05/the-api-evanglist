@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get all generated CVC2 codes for a card.
+
+@name("List all Generated Cvc2 for User Card")
+GET "https://{{baseUrl}}/user/:userID/card/:cardID/generated-cvc2"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Generate a new CVC2 code for a card.
+
+@name("CREATE Generated Cvc2 for User Card")
+POST "https://{{baseUrl}}/user/:userID/card/:cardID/generated-cvc2"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "type": "<string>"
+})
+
+
+

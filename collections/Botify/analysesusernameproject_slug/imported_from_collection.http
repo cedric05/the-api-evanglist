@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// List all analyses for a project
+
+@name("List all analyses for a project")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug"
+? "page"= "<integer>"
+? "size"= "<integer>"
+? "only_success"= "<boolean>"
+? "fields"= "<array>"
+
+
+

@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfc666ca-94aa-4d7e-b49b-06193ecb21e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// <p>A PUT request essentially re-writes the schema, therefore the request body must include all fields required to create (POST) a schema. This is especially useful when updating a lot of information in the schema at once.</p>
+
+@name("Update a custom schema by ID.") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/tenant/schemas/:SCHEMA_ID"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+"Content-Type": "application/json"
+data('"{{payload}}"')
+
+
+// <p>The Schema Registry supports all standard JSON Patch operations, including add, remove, and replace, to allow users to modify or update schemas they have defined.</p><br/><p>For more information on JSON Patch, including all available operations, read [the official JSON Patch documentation](http://jsonpatch.com).</p>
+
+@name("Update one or more attributes of a custom schema specified by ID.") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/tenant/schemas/:SCHEMA_ID"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+"Content-Type": "application/json"
+data('"{{payload}}"')
+
+
+// <p>Remove an existing schema by performing a DELETE request to the $id of the schema being removed.</p><br/><p>A successful deletion returns an empty response body and HTTP Status Code 204 (No-content).</p>
+
+@name("Delete a custom schema by ID.") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/tenant/schemas/:SCHEMA_ID"
+"x-api-key": "{{API_KEY}}"
+"x-gw-ims-org-id": "{{IMS_ORG}}"
+"x-sandbox-name": "{{SANDBOX_NAME}}"
+
+
+

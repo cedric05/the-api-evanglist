@@ -1,0 +1,83 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// [Description of the service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Input_XY_locations/02r300000006000000/)
+
+@name("Geoenrich XY location")
+POST "http://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich"
+? 'studyareas'= '[{"geometry":{"x":-117.1956,"y":34.0572}}]'
+? "f"= "pjson"
+? "token"= "{{token}}"
+data({
+    "SingleLine": [
+        "Calle emilio mu\u00f1oz 35, Madrid"
+    ],
+    "categorforStoragey": [
+        "true"
+    ],
+    "outFields": [
+        "*"
+    ],
+    "f": [
+        "pjson"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+// [List of variables you can use to geoenrich](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Get_variables/02r300000266000000/)
+
+@name("Get variables")
+POST "http://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GetVariables/execute"
+? "sourcecountry"= "ES"
+? "f"= "json"
+? "token"= "{{token}}"
+data({
+    "SingleLine": [
+        "Calle emilio mu\u00f1oz 35, Madrid"
+    ],
+    "categorforStoragey": [
+        "true"
+    ],
+    "outFields": [
+        "*"
+    ],
+    "f": [
+        "pjson"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+// [Description of the service](https://developers.arcgis.com/rest/geoenrichment/api-reference/street-address-locations.htm)
+
+@name("Geoenrich Address location")
+POST "http://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich"
+? 'studyareas'= '[{"address":{"text":"Avenida América 45, Madrid"}}]'
+? "f"= "pjson"
+? "token"= "{{token}}"
+data({
+    "SingleLine": [
+        "Calle emilio mu\u00f1oz 35, Madrid"
+    ],
+    "categorforStoragey": [
+        "true"
+    ],
+    "outFields": [
+        "*"
+    ],
+    "f": [
+        "pjson"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+

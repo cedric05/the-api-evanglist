@@ -1,0 +1,454 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba6572bc-3c63-4861-923c-7002a7305149.postman_collection.json
+
+// ### Description
+// The following use cases can be applied:
+// - retrieval of a payment request on behalf of a merchant
+// - retrieval of a transfer request on behalf of the account's owner
+// - retrieval of a standing-order request on behalf of the account's owner
+// 
+// The PISP has previously sent a Request through a POST command.
+// - The ASPSP has registered the Request, updated if necessary the relevant identifiers in order to avoid duplicates and returned the location of the updated Request.
+// - The PISP gets the Request that has been updated with the resource identifiers, and eventually the status of the Payment/Transfer Request and the status of the subsequent credit transfer.
+// 
+// ### Prerequisites
+// - The TPP has been registered by the Registration Authority for the PISP role
+// - The TPP was provided with an OAUTH2 "Client Credential" access token by the ASPSP (cf. § 3.4.2).
+// - The TPP has previously posted a Request which has been saved by the ASPSP (cf. § 4.5.3)
+//   - The ASPSP has answered with a location link to the saved Payment/Transfer Request (cf. § 4.5.4)
+// - The TPP and the ASPSP have successfully processed a mutual check and authentication 
+// - The TPP has presented its "OAUTH2 Client Credential" access token
+// 
+// ### Business flow
+// The PISP asks to retrieve the Payment/Transfer Request that has been saved by the ASPSP. The PISP uses the location link provided by the ASPSP in response of the posting of this request.
+// The ASPSP returns the previously posted Payment/Transfer Request which is enriched with:
+// - The resource identifiers given by the ASPSP
+// - The status information of the Payment Request and of the subsequent credit transfer
+// The status information must be available during at least 30 calendar days after the posting of the Payment Request. However, the ASPSP may increase this availability duration, based on its own rules.
+
+@name("Retrieval of a payment request (PISP)")
+GET "https://{{baseUrl}}/payment-requests/:paymentRequestResourceId"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+
+
+// ### Description
+// The PISP sent a Payment/Transfer Request through a POST command.
+// The ASPSP registered the Payment/Transfer Request, updated if necessary the relevant identifiers in order to avoid duplicates and returned the location of the updated Request.
+// The PISP got the Payment/Transfer Request that has been updated with the resource identifiers, and eventually the status of the Payment/Transfer Request and the status of the subsequent credit transfer.
+// The PISP request for the payment cancellation (global cancellation) or for some payment instructions cancellation (partial cancellation)
+// No other modification of the Payment/Transfer Request is allowed.
+// ### Prerequisites
+// - The TPP was registered by the Registration Authority for the PISP role
+// - The TPP was provided with an OAUTH2 "Client Credential" access token by the ASPSP (cf. § 3.4.2).
+// - The TPP previously posted a Payment/Transfer Request which was saved by the ASPSP (cf. § 4.5.3)
+//   - The ASPSP answered with a location link to the saved Payment/Transfer Request (cf. § 4.5.4)
+//   - The PISP retrieved the saved Payment/Transfer Request (cf. § 4.5.4)
+// - The TPP and the ASPSP successfully processed a mutual check and authentication 
+// - The TPP presented its "OAUTH2 Client Credential" access token.
+// - The TPP presented the payment/transfer request.
+// - The PSU was successfully authenticated.
+// 
+// ### Business flow
+// #### Payment/Transfer request cancellation circumstances
+// The cancellation of a Payment/Transfer request might be triggered by the PISP upon request of the PSU.
+// It can also be triggered by the PISP itself in case of error or fraud detection.
+// Since the consequence of the cancellation will be a rejection of the Payment/Transfer request globally or limited to some of its instructions, the modification of the payment request will focus on setting the relevant status to the value "CANC".
+// This "CANC" status must however be explained through a reason code that can be set with the following values:
+// 
+// | Reason | description |
+// | ------ | ----------- |
+// | DS02 | The PSU ordered the cancellation. |
+// | DUPL | The PISP requests the cancellation for a duplication of a previous Payment/Transfer request |
+// | FRAD | The PISP requests the cancellation for fraudulent origin of the Payment/Transfer request |
+// | TECH | The PISP requests the cancellation for a technical issue on its side |
+// 
+// #### Payment/Transfer request cancellation level
+// - Case of a payment with multiple instructions or a standing order, the PISP asks to cancel the whole Payment/Transfer or Standing Order Request including all non-executed payment instructions by setting the [paymentInformationStatus] and the relevant [statusReasonInformation]  at payment level.
+// - Case of a payment with multiple instructions, the PISP asks to cancel one or several payment instructions by setting the [transactionStatus] and the relevant [statusReasonInformation] at each relevant instruction level.
+// 
+// Since the modification request needs a PSU authentication before committing, the modification request includes:
+// - The specification of the authentication approaches that are supported by the PISP (any combination of "REDIRECT", "EMBEDDED-1-FACTOR" and "DECOUPLED" values).
+// - In case of possible REDIRECT or DECOUPLED authentication approach, one or two call-back URLs to be used by the ASPSP at the finalisation of the authentication and consent process :
+//   - The first call-back URL will be called by the ASPSP if the Transfer Request is processed without any error or rejection by the PSU
+//   - The second call-back URL is to be used by the ASPSP in case of processing error or rejection by the PSU. Since this second URL is optional, the PISP might not provide it. In this case, the ASPSP will use the same URL for any processing result.
+//   - Both call-back URLS must be used in a TLS-secured request.
+// - In case of possible "EMBEDDED-1-FACTOR" or "DECOUPLED" approaches, a PSU identifier that can be processed by the ASPSP for PSU recognition.
+//   
+// - The ASPSP saves the updated Payment/Transfer Request and answers to the PISP. The answer embeds 
+//   - The specification of the chosen authentication approach taking into account both the PISP and the PSU capabilities.
+//   - In case of chosen REDIRECT authentication approach, the URL to be used by the PISP for redirecting the PSU in order to perform an authentication.
+//   
+// Case of the PSU neither gives nor denies his/her consent, the Cancellation Request shall expire and is then rejected to the PISP. The expiration delay is specified by each ASPSP.
+// If any modification of the payment request other than cancellation is applied by the PISP, the ASPSP must rejest the request with HTTP403 without modifying the payment request resource.
+
+@name("Modification of a Payment/Transfer Request (PISP)")
+PUT "https://{{baseUrl}}/payment-requests/:paymentRequestResourceId"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+"Content-Type": "application/json"
+json({
+    "creationDateTime": "1990-03-28T13:01:49.426Z",
+    "creditTransferTransaction": [
+        {
+            "paymentId": {
+                "resourceId": "MyInstrRscId",
+                "instructionId": "MyInstrId",
+                "endToEndId": "MyEndToEndId"
+            },
+            "requestedExecutionDate": "1987-12-14T11:29:43.052Z",
+            "endDate": "1966-02-02T03:09:28.902Z",
+            "executionRule": "FWNG",
+            "frequency": "MNTH",
+            "instructedAmount": {
+                "amount": 19771236.47684507,
+                "currency": "EUR"
+            },
+            "equivalentAmount": {
+                "amount": 58306830.24665636,
+                "currency": "EUR",
+                "currencyOfTransfer": "EUR"
+            },
+            "exchangeRateInformation": {
+                "unitCurrency": "EUR",
+                "exchangeRate": -95370483.79684418,
+                "rateType": "AGRD",
+                "contractIdentification": "vel"
+            },
+            "ultimateDebtor": {
+                "name": "MyPreferredPisp",
+                "postalAddress": {
+                    "country": "FR",
+                    "addressLine": [
+                        "18 rue de la DSP2",
+                        "75008 PARIS"
+                    ]
+                }
+            },
+            "intermediaryAgent": {
+                "agent": {
+                    "name": "MyPreferredPisp",
+                    "postalAddress": {
+                        "country": "FR",
+                        "addressLine": [
+                            "18 rue de la DSP2",
+                            "75008 PARIS"
+                        ]
+                    }
+                },
+                "agentAccount": {
+                    "iban": "YY64COJH41059545330222956960771321"
+                }
+            },
+            "beneficiary": {
+                "isTrusted": true,
+                "creditorAgent": {
+                    "bicFi": "BNKAFRPPXXX"
+                },
+                "creditor": {
+                    "name": "MyPreferredPisp",
+                    "postalAddress": {
+                        "country": "FR",
+                        "addressLine": [
+                            "18 rue de la DSP2",
+                            "75008 PARIS"
+                        ]
+                    }
+                },
+                "creditorAccount": {
+                    "iban": "YY64COJH41059545330222956960771321"
+                }
+            },
+            "ultimateCreditor": {
+                "name": "MyPreferredPisp",
+                "postalAddress": {
+                    "country": "FR",
+                    "addressLine": [
+                        "18 rue de la DSP2",
+                        "75008 PARIS"
+                    ]
+                }
+            },
+            "instructionForCreditorAgent": [
+                {
+                    "code": "PHOB",
+                    "instructionInformation": ""
+                },
+                {
+                    "code": "PHOB",
+                    "instructionInformation": "Lor"
+                }
+            ],
+            "purpose": "CPKC",
+            "regulatoryReportingCodes": [
+                "ECO456",
+                "ECO457"
+            ],
+            "remittanceInformation": {
+                "unstructured": [
+                    "Lor",
+                    "et"
+                ],
+                "structured": [
+                    {
+                        "referredDocumentInformation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "referredDocumentAmount": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "creditorReferenceInformation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "invoicer": {
+                            "name": "MyPreferredPisp",
+                            "postalAddress": {
+                                "country": "FR",
+                                "addressLine": [
+                                    "18 rue de la DSP2",
+                                    "75008 PARIS"
+                                ]
+                            }
+                        },
+                        "invoicee": {
+                            "name": "MyPreferredPisp",
+                            "postalAddress": {
+                                "country": "FR",
+                                "addressLine": [
+                                    "18 rue de la DSP2",
+                                    "75008 PARIS"
+                                ]
+                            }
+                        },
+                        "taxRemittance": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    {
+                        "referredDocumentInformation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "referredDocumentAmount": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "creditorReferenceInformation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "invoicer": {
+                            "name": "MyPreferredPisp",
+                            "postalAddress": {
+                                "country": "FR",
+                                "addressLine": [
+                                    "18 rue de la DSP2",
+                                    "75008 PARIS"
+                                ]
+                            }
+                        },
+                        "invoicee": {
+                            "name": "MyPreferredPisp",
+                            "postalAddress": {
+                                "country": "FR",
+                                "addressLine": [
+                                    "18 rue de la DSP2",
+                                    "75008 PARIS"
+                                ]
+                            }
+                        },
+                        "taxRemittance": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                ]
+            },
+            "transactionStatus": "ACSP",
+            "statusReasonInformation": "FRAD"
+        }
+    ],
+    "initiatingParty": {
+        "name": "MyPreferredPisp",
+        "postalAddress": {
+            "country": "FR",
+            "addressLine": [
+                "18 rue de la DSP2",
+                "75008 PARIS"
+            ]
+        }
+    },
+    "numberOfTransactions": 22112596,
+    "paymentInformationId": "MyPmtInfId",
+    "paymentTypeInformation": {
+        "serviceLevel": "SEPA",
+        "localInstrument": "INST",
+        "categoryPurpose": "DVPM"
+    },
+    "supplementaryData": {
+        "successfulReportUrl": "http://myPisp/PaymentSuccess",
+        "unsuccessfulReportUrl": "http://myPisp/PaymentFailure"
+    },
+    "resourceId": "MyInstrRscId",
+    "batchBooking": true,
+    "acceptDebtorAccountChange": true,
+    "acceptChargeHandlingChange": true,
+    "debtor": {
+        "name": "MyPreferredPisp",
+        "postalAddress": {
+            "country": "FR",
+            "addressLine": [
+                "18 rue de la DSP2",
+                "75008 PARIS"
+            ]
+        }
+    },
+    "debtorAccount": {
+        "iban": "YY64COJH41059545330222956960771321"
+    },
+    "debtorAgent": {
+        "bicFi": "BNKAFRPPXXX"
+    },
+    "beneficiary": {
+        "isTrusted": true,
+        "creditorAgent": {
+            "bicFi": "BNKAFRPPXXX"
+        },
+        "creditor": {
+            "name": "MyPreferredPisp",
+            "postalAddress": {
+                "country": "FR",
+                "addressLine": [
+                    "18 rue de la DSP2",
+                    "75008 PARIS"
+                ]
+            }
+        },
+        "creditorAccount": {
+            "iban": "YY64COJH41059545330222956960771321"
+        }
+    },
+    "chargeBearer": "SLEV",
+    "paymentInformationStatus": "ACSC",
+    "statusReasonInformation": "FRAD",
+    "fundsAvailability": true,
+    "booking": true,
+    "requestedExecutionDate": "1978-02-12T03:50:20.349Z"
+})
+
+
+// ### Description
+// The PISP confirms one of the following requests or modifications
+// - payment request on behalf of a merchant
+// - transfer request on behalf of the account's owner
+// - standing-order request on behalf of the account's owner
+// The ASPSP answers with a status of the relevant request and the subsequent Credit Transfer.
+// 
+// ### Prerequisites
+// -  The TPP has been registered by the Registration Authority for the PISP role
+// -  The TPP was provided with an OAUTH2 "Client Credential" access token by the ASPSP (cf. § 3.4.2).
+// -  The TPP has previously posted a Request which has been saved by the ASPSP (cf. § 4.5.3)
+//   - The ASPSP has answered with a location link to the saved Payment Request (cf. § 4.5.4)
+//   -  The TPP has retrieved the saved request in order to get the relevant resource Ids (cf. § 4.6).
+// -  The TPP and the ASPSP have successfully processed a mutual check and authentication 
+// -  The TPP has presented its "OAUTH2 Client Credential" access token 
+//   
+// ### Business flow
+// Once the PSU has been authenticated using a standard procedure (non OAUTH2), it is the due to the PISP to confirm the Request to the ASPSP in order to complete the process flow.
+// The ASPSP must wait for confirmation before executing the subsequent Credit Tranfer.
+
+@name("Confirmation of a payment request or a modification request using a standard PSU authentication (PISP)")
+POST "https://{{baseUrl}}/payment-requests/:paymentRequestResourceId/confirmation"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+"Content-Type": "application/json"
+json({
+    "psuAuthenticationFactor": "JJKJKJ788GKJKJBK"
+})
+
+
+// ### Description
+// The PISP confirms one of the following requests or modifications:
+// - payment request on behalf of a merchant
+// - transfer request on behalf of the account's owner
+// - standing-order request on behalf of the account's owner
+// The ASPSP answers with a status of the relevant request and the subsequent Credit Transfer.
+// 
+// ### Prerequisites
+// -  The TPP has been registered by the Registration Authority for the PISP role
+// -  The TPP was provided with an OAUTH2 "Client Credential" access token by the ASPSP (cf. § 3.4.2).
+// -  The TPP has previously posted a Request which has been saved by the ASPSP (cf. § 4.5.3)
+//   - The ASPSP has answered with a location link to the saved Payment Request (cf. § 4.5.4)
+//   -  The TPP has retrieved the saved request in order to get the relevant resource Ids (cf. § 4.6).
+// -  The PSU has been authenticated by the ASPSP through an OAUTH2 authorization code grant flow (REDIRECT approach) and the PISP got the relevant token
+// -  The TPP and the ASPSP have successfully processed a mutual check and authentication 
+// -  The TPP has presented its "OAUTH2 Authorization Code" access token 
+//   
+// ### Business flow
+// Once the PSU has been authenticated through an OAUTH2 authorization code grant flow (REDIRECT approach), it is the due to the PISP to confirm the Request to the ASPSP in order to complete the process flow.
+// The ASPSP must wait for confirmation before executing the subsequent Credit Tranfer.
+
+@name("Confirmation of a payment request or a modification request using an OAUTH2 Authorization code grant (PISP)")
+POST "https://{{baseUrl}}/payment-requests/:paymentRequestResourceId/o-confirmation"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+"Content-Type": "application/json"
+json({
+    "psuAuthenticationFactor": "JJKJKJ788GKJKJBK"
+})
+
+
+

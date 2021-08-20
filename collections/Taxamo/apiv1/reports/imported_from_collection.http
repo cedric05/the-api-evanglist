@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Calculate domestic summary.
+
+@name("Calculate Domestic Summary")
+GET "https://{{baseUrl}}/api/v1/reports/domestic/summary"
+? "format"= "<get>"
+? "country_code"= "<get>"
+? "currency_code"= "<get>"
+? "start_month"= "<get>"
+? "end_month"= "<get>"
+? "fx_date_type"= "<get>"
+
+
+// Calculate eu vies report.
+
+@name("Calculate EU VIES Report")
+GET "https://{{baseUrl}}/api/v1/reports/eu/vies"
+? "period_length"= "<get>"
+? "lff_sequence_number"= "<get>"
+? "transformation"= "<get>"
+? "currency_code"= "<get>"
+? "end_month"= "<get>"
+? "tax_id"= "<get>"
+? "start_month"= "<get>"
+? "eu_country_code"= "<get>"
+? "fx_date_type"= "<get>"
+? "format"= "<get>"
+
+
+

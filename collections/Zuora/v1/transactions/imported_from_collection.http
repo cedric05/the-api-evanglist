@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// Retrieves invoices for a specified account. nInvoices are returned in reverse chronological order by **updatedDate**.n
+
+@name("Get invoices")
+GET "https://{{baseUrl}}/v1/transactions/invoices/accounts/:account-key"
+
+
+// Retrieves payments for a specified account. Payments are returned innreverse chronological order by **updatedDate**.n
+
+@name("Get payments")
+GET "https://{{baseUrl}}/v1/transactions/payments/accounts/:account-key"
+
+
+

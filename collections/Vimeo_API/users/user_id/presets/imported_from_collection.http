@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns all the embed presets that belong to the specified user.
+
+@name("Get all the embed presets that a user has created")
+GET "https://{{baseUrl}}/users/:user_id/presets"
+? "page"= "<string>"
+? "per_page"= "<string>"
+
+
+

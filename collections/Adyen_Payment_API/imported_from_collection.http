@@ -1,0 +1,104 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6c267e31-42b0-4a47-aa3d-d1a2d28d7486.postman_collection.json
+
+// Allows you to increase or decrease the authorised amount after the initial authorisation has taken place. This functionality enables tipping, improving the chances your authorisation will be valid, charging the shopper when they have already left the merchant premises, etc.
+// 
+// For more information, refer to [Adjust Authorisation](https://docs.adyen.com/checkout/adjust-authorisation).
+
+@name("Increases or decreases the authorised amount.")
+POST "https://{{baseUrl}}/adjustAuthorisation"
+
+
+// Creates a payment with a unique reference (`pspReference`) and attempts to obtain an authorisation hold. For cards, this amount can be captured or cancelled later. Non-card payment methods typically don't support this and will automatically capture as part of the authorisation.
+// 
+// For more information, refer to [Classic integration](https://docs.adyen.com/classic-integration).
+
+@name("Creates a payment authorisation.")
+POST "https://{{baseUrl}}/authorise"
+
+
+// For an authenticated 3D Secure session, completes the payment authorisation. This endpoint must receive the `md` and `paResponse` parameters that you get from the card issuer after a shopper pays via 3D Secure.
+// 
+// For more information, refer to [3D Secure](https://docs.adyen.com/classic-integration/3d-secure).
+
+@name("Completes a 3D Secure payment authorisation.")
+POST "https://{{baseUrl}}/authorise3d"
+
+
+// For an authenticated 3D Secure 2 session, completes the payment authorisation. This endpoint must receive the `threeDS2Token` and `threeDS2Result` parameters.
+// 
+// For more information, refer to [3D Secure 2](https://docs.adyen.com/checkout/3d-secure/native-3ds2).
+
+@name("Completes a 3D Secure 2 payment authorisation.")
+POST "https://{{baseUrl}}/authorise3ds2"
+
+
+// Cancels the authorisation hold on a payment, returning a unique reference for this request. You can cancel payments after authorisation only for payment methods that support distinct authorisations and captures.
+// 
+// For more information, refer to [Cancel](https://docs.adyen.com/checkout/cancel).
+
+@name("Cancels an authorised payment.")
+POST "https://{{baseUrl}}/cancel"
+
+
+// Cancels a payment if it has not been captured yet, or refunds it if it has already been captured. This is useful when it is not certain if the payment has been captured or not (for example, when using auto-capture).
+// 
+// > Do not use this request for payments that involve (multiple) partial captures.
+// 
+// For more information, refer to [Cancel or refund](https://docs.adyen.com/checkout/cancel-or-refund).
+
+@name("Cancels or refunds a payment.")
+POST "https://{{baseUrl}}/cancelOrRefund"
+
+
+// Captures the authorisation hold on a payment, returning a unique reference for this request. Usually the full authorisation amount is captured, however it's also possible to capture a smaller amount, which results in cancelling the remaining authorisation balance.
+// 
+// Payment methods, which automatically capture as part of authorisation, don't need to be captured, but submitting a capture request on these transactions will not result in double charges. If immediate or delayed auto-capture is enable
+
+@name("Captures an authorised payment.")
+POST "https://{{baseUrl}}/capture"
+
+
+// Return the authentication result after doing a 3D Secure authentication only.
+
+@name("Return the authentication result after doing a 3D Secure authentication only.")
+POST "https://{{baseUrl}}/getAuthenticationResult"
+
+
+// Refunds a payment that has previously been captured, returning a unique reference for this request. Refunding can be done on the full captured amount or a partial amount. Multiple (partial) refunds will be accepted as long as their sum doesn't exceed the captured amount. Payments which have been authorised, but not captured, cannot be refunded, use the /cancel method instead.
+// 
+// > Some payment methods/gateways do not support partial/multiple refunds.
+// > A margin above the captured limit can be conf
+
+@name("Refunds a captured payment.")
+POST "https://{{baseUrl}}/refund"
+
+
+// Retrieves the `threeDS2Result` after doing a 3D Secure 2 authentication only.
+
+@name("Retrieves the `threeDS2Result` after doing a 3D Secure 2 authentication only.")
+POST "https://{{baseUrl}}/retrieve3ds2Result"
+
+
+// This endpoint allows you to cancel a payment if you do not have the PSP reference of the original payment request available.
+// 
+// In your call, refer to the original payment by using the `reference` that you specified in your payment request.
+// 
+// For more information, see [Technical cancel](https://docs.adyen.com/checkout/cancel#technical-cancel).
+
+@name("Cancels a payment using your custom reference.")
+POST "https://{{baseUrl}}/technicalCancel"
+
+
+// This endpoint allows you to cancel the refund request before it has been completed.
+// 
+// In your call, you can refer to the original refund request either by using the `tenderReference`, or the `pspReference`. We recommend implementing based on the `tenderReference`, as this is generated for both offline and online transactions.
+// 
+// For more information, refer to [Cancel a refund](https://docs.adyen.com/point-of-sale/refund-payment/cancel-a-pos-refund-request).
+
+@name("Cancels a POS refund request before it has been completed.")
+POST "https://{{baseUrl}}/voidPendingRefund"
+
+
+

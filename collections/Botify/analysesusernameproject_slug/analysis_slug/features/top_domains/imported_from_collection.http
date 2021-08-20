@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// Top domains
+
+@name("Top domains")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/top_domains/domains"
+? "page"= "<integer>"
+? "size"= "<integer>"
+
+
+// Top subddomains
+
+@name("Top subddomains")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/top_domains/subdomains"
+? "page"= "<integer>"
+? "size"= "<integer>"
+
+
+

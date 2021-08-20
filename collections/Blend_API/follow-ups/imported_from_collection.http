@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Create a follow-up for an applicant on a specific application.
+
+@name("Add a Follow-Up to an Application") : "base-inherit-auth"
+POST "https://{{baseUrl}}/follow-ups"
+"Content-Type": "application/json"
+json({
+    "applicationId": "9250f84b-c2a1-4cab-b265-bd720685c361",
+    "type": "DOCUMENT_REQUEST",
+    "context": {
+        "partyId": "18c3e52a-c7e7-4c6d-a36f-d5bca568613a",
+        "document": {
+            "type": "IRS1120"
+        }
+    }
+})
+
+
+// Get follow-ups on a specific application.
+
+@name("List Follow-Ups for an Application") : "base-inherit-auth"
+GET "https://{{baseUrl}}/follow-ups"
+? "applicationId"= "9250f84b-c2a1-4cab-b265-bd720685c361"
+? "type"= "TAX_TRANSCRIPTS"
+
+
+

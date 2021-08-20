@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Deletes the specified download artifact from the repository.
+
+@name("/repositories/:username/:repo_slug/downloads/:filename")
+DELETE "https://{{baseUrl}}/repositories/:username/:repo_slug/downloads/:filename"
+
+
+// Return a redirect to the contents of a download artifact.
+// 
+// This endpoint returns the actual file contents and not the artifact's
+// metadata.
+// 
+//     $ curl -s -L https://api.bitbucket.org/2.0/repositories/evzijst/git-tests/downloads/hello.txt
+//     Hello World
+
+@name("/repositories/:username/:repo_slug/downloads/:filename")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/downloads/:filename"
+
+
+

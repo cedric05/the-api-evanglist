@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3a6fa668-19d7-4395-a552-9b7f28cadcb6.postman_collection.json
+
+// When the driver has picked up the container, a request should be sent to the server to record (create) the pickup. The server will record the datetime of the pickup.
+
+@name("Create pickup")
+POST "https://{{baseUrl}}/api/v1/pickups"
+? "api_token"= "<>"
+
+
+// When the driver has delivered the container, a request should be sent to the server to record (create) the delivery. Note that a delivery is associated with a PickupRight, because the driver who gets a PickupRight, will automatically get a right to deliver the container. For that reason, the PickupRight must be reported.
+
+@name("Record delivery")
+POST "https://{{baseUrl}}/api/v1/deliveries"
+? "api_token"= "<>"
+
+
+// List all ContainerTypes
+
+@name("List")
+GET "https://{{baseUrl}}/api/v1/container_types"
+? "api_token"= "<>"
+
+
+// List all registered organizations.
+
+@name("List")
+GET "https://{{baseUrl}}/api/v1/organizations"
+? "api_token"= "<>"
+
+
+// List all users registered.
+
+@name("List")
+GET "https://{{baseUrl}}/api/v1/users"
+? "api_token"= "<>"
+
+
+// Used to create an event for a container at a specific location and time.nEach event is defined by a type.nCurrently a limited number of events (pickup and availability) are supported, but this may be extended with e.g. passage events.nThere are 2 ways to refer to a Container: by means of its id as defined in the Blockchain (this requires recording these ids in your app), or by means of a combination of the blNumber and isoNumber. Similarly, locations can be specified in 2 ways: by means of their
+
+@name("Create an Event")
+POST "https://{{baseUrl}}/api/v1/events/"
+? "api_token"= "<>"
+
+
+

@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Retrieve the fixed list of all constraint text used in setting permissions and constraints for a Reference.")
+GET "https://{{baseUrl}}/rest/FixedList/AccessConstraints"
+
+
+@name("Retrieve the fixed list of all valid text values used to set any copyright or distribution restrictions of a Reference.")
+GET "https://{{baseUrl}}/rest/FixedList/AccessConstraints/Distribution"
+
+
+@name("Retrieve the fixed list of all valid text values used to set the 'Quality' of information in a Reference.")
+GET "https://{{baseUrl}}/rest/FixedList/AccessConstraints/Quality"
+
+
+@name("Retrieve the fixed list of all valid text values used to set the 'Sensitivity' of information in a Reference.")
+GET "https://{{baseUrl}}/rest/FixedList/AccessConstraints/Sensitivity"
+
+
+@name("Retrieve the fixed list of all valid text values used to justify the qualification of 'Sensitive' information in a Reference.")
+GET "https://{{baseUrl}}/rest/FixedList/AccessConstraints/SensitivityDetail"
+
+
+

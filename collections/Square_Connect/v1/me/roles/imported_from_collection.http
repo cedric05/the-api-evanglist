@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Provides summary information for all of a business's employee roles.
+
+@name("Get Me Roles")
+GET "https://{{baseUrl}}/v1/me/roles"
+? "order"= "<object>"
+? "limit"= "<integer>"
+? "batch_token"= "<string>"
+
+
+// Provides the details for a single employee role.
+
+@name("Get Me Roles")
+GET "https://{{baseUrl}}/v1/me/roles/:role_id"
+
+
+

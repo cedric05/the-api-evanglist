@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-99b807d0-abac-481e-a509-d69785137b6b.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Update AB Activity") : "base-inherit-auth"
+PUT "https://mc.adobe.io/:tenant/target/activities/xt/181173"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v3+json"
+data('{
+    "name": "xt minimal updated",
+    "options": [
+        {
+            "optionLocalId": 0,
+            "name": "Offer 332379",
+            "offerId": 332379
+        }
+    ],
+    "locations": {
+        "mboxes": [
+            {
+                "locationLocalId": 0,
+                "name": "homePageHero"
+            }
+        ]
+    },
+    "experiences": [
+        {
+            "experienceLocalId": 0,
+            "name": "experienceName",
+            "optionLocations": [
+                {
+                    "locationLocalId": 0,
+                    "optionLocalId": 0
+                }
+            ]
+        }
+    ],
+    "workspace": "37740098",
+    "propertyIds": [
+        195
+    ],
+    "metrics": [
+        {
+            "metricLocalId": 3,
+            "name": "conversion",
+            "conversion": true
+        }
+    ]
+}')
+
+
+@name("Get XT Activity by ID") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/activities/xt/181173"
+"X-Api-Key": "{{api_key}}"
+
+
+

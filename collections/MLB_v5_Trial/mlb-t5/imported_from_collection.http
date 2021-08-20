@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cf55551-2c7b-4b64-b9aa-1a2b870aef17.postman_collection.json
+
+@name("Obtain a profile for a given player.")
+GET "https://{{baseUrl}}/mlb-t5/players/:player_id/profile{{format}}"
+
+
+// Obtain Series Schedule for the MLB for the postseason.
+
+@name("Obtain Series Schedule for the MLB for the postsea...")
+GET "https://{{baseUrl}}/mlb-t5/series/:year/:mlb_season/schedule{{format}}"
+
+
+

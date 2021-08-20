@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba306076-cdaf-4973-a47f-64adefaaa015.postman_collection.json
+
+// Get quotes for all symbols
+
+@name("Get Quotes")
+GET "https://{{baseUrl}}/quotes"
+? "pairs"= ""
+? "api_key"= ""
+
+
+// Get a list of symbols for which we provide real-time quotes
+
+@name("Symbol List")
+GET "https://{{baseUrl}}/symbols"
+? "api_key"= ""
+
+
+// Convert from one currency to another.
+
+@name("Convert")
+GET "https://{{baseUrl}}/convert"
+? "api_key"= ""
+
+
+// Check if the market is open.
+
+@name("Market Status")
+GET "https://{{baseUrl}}/market_status"
+? "api_key"= ""
+
+
+// Check your current usage and remaining quota.
+
+@name("Quota")
+GET "https://{{baseUrl}}/quota"
+? "api_key"= ""
+
+
+

@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aa655ea0-f6d4-4615-b1ce-a1873e7cfc4c.postman_collection.json
+
+// Search for a specific topics.
+
+@name("Search Topics")
+GET "https://{{baseUrl}}/topics/"
+? "access_key"= "<>"
+? "exact"= "<>"
+? "query"= "<>"
+
+
+// Returns a list of topics extracted from the input query.
+
+@name("Extract Related Topics")
+GET "https://{{baseUrl}}/topics/extract/"
+? "access_key"= "<>"
+? "query"= "<>"
+? "topics"= "<>"
+? "topic_classifications"= "<>"
+? "topic_filter_mode"= "<>"
+? "topic_filter_name"= "<>"
+? "topic_subclassifications"= "<>"
+
+
+// Given some search criteria, returns a list of topics related to those criteria.
+
+@name("Related Topics")
+GET "https://{{baseUrl}}/topics/related/"
+? "access_key"= "<>"
+? "from_date, to_date"= "<>"
+? "offset"= "<>"
+? "pagesize"= "<>"
+? "query"= "<>"
+? "topics"= "<>"
+? "topic_classifications"= "<>"
+? "topic_filter_mode"= "<>"
+? "topic_filter_name"= "<>"
+? "topic_subclassifications"= "<>"
+
+
+

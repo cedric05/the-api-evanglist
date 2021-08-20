@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-de18e675-c90e-47ce-9df2-88e1de292d7d.postman_collection.json
+
+// This pulls the authenticated user, retrieves the id, and stores it into an environment variable.
+
+@name("Me")
+GET "https://graph.facebook.com/v8.0/me"
+? "access_token"= "{{access_token}}"
+
+
+// This pulls the authenticated user, retrieves the id, and stores it into an environment variable.
+
+@name("Feed")
+GET "https://graph.facebook.com/v8.0/me/feed"
+? "access_token"= "{{access_token}}"
+
+
+// This pulls the authenticated user, retrieves the id, and stores it into an environment variable.
+
+@name("Feed Copy")
+GET "https://graph.facebook.com/v8.0/me/likes"
+? "access_token"= "{{access_token}}"
+
+
+

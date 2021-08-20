@@ -1,0 +1,221 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Create a new FR detail
+
+@name("Creates a new FR detail") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/locations/:id/locationfrdetail"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": 61082804,
+    "siteLimit": -58817338.17508543,
+    "siteDeduct": 42937550.71948689,
+    "combinedLimit": 61460558.11416602,
+    "combinedDeduct": 17382707.03958036,
+    "yearUpgrade": "ullamco id",
+    "startDate": "exercitation non culpa",
+    "completionDate": "adipisicing enim",
+    "percentComplete": -97351995.07067032,
+    "fireDepartmentRatingModifier": {
+        "id": 29802900,
+        "code": "labore in fugiat irure ea",
+        "name": "incididunt tempor cillu"
+    },
+    "fireDepartmentRating": {
+        "id": 38271528,
+        "code": "velit culpa",
+        "name": "ut est irure"
+    },
+    "sprinklerSystem": {
+        "id": 95554032,
+        "code": "exercitation eiusmod quis ea",
+        "name": "non et do ipsum"
+    },
+    "remoteAlarm": {
+        "id": 15596454,
+        "code": "sit",
+        "name": "consectetur mollit"
+    },
+    "frPackage": {
+        "id": -8416914,
+        "code": "ipsum",
+        "name": "fugiat id"
+    },
+    "frProtect": {
+        "id": -19171347,
+        "code": "sit officia mollit dolor",
+        "name": "quis laborum"
+    },
+    "frSalvage": {
+        "id": -70899746,
+        "code": "consectetur veniam ut ullamco",
+        "name": "ipsum culpa"
+    },
+    "frSpecieStorage": {
+        "id": -82681843,
+        "code": "quis et veniam se",
+        "name": "nostrud"
+    },
+    "frRoofCovering": {
+        "id": 66346313,
+        "code": "ex in",
+        "name": "tempor in officia"
+    },
+    "frRoofGeometry": {
+        "id": -44846303,
+        "code": "ipsum nostrud adipisicing",
+        "name": "anim Ut et"
+    },
+    "frRoofAge": {
+        "id": 85974537,
+        "code": "culpa dolore anim proident",
+        "name": "labore"
+    },
+    "frRoofVent": {
+        "id": -35895128,
+        "code": "voluptate minim",
+        "name": "cupidatat"
+    },
+    "frEmberAccumulator": {
+        "id": -70568085,
+        "code": "in dolor non",
+        "name": "officia id incididunt labore veniam"
+    },
+    "frSuppression": {
+        "id": -8181137,
+        "code": "in consectetur est",
+        "name": "enim dolore"
+    },
+    "frPerformance": {
+        "id": -45233788,
+        "code": "laborum",
+        "name": "consectetur laborum tempor"
+    },
+    "frSetback": {
+        "id": -77191308,
+        "code": "pariatur do laboris",
+        "name": "labore"
+    },
+    "frExterior": {
+        "id": 25036506,
+        "code": "dolor qui eiusmod ",
+        "name": "dolor"
+    },
+    "frResAppurtenant": {
+        "id": -81897463,
+        "code": "dolore laborum",
+        "name": "consectetur nisi qui fugiat ea"
+    },
+    "frComAppurtenant": {
+        "id": 27125252,
+        "code": "ullamco Ut mollit",
+        "name": "sit et adipisicing"
+    },
+    "frDeckType": {
+        "id": -38159616,
+        "code": "anim nulla elit fugiat",
+        "name": "do nostrud ad"
+    },
+    "frHeatResistance": {
+        "id": -98597653,
+        "code": "incididunt",
+        "name": "pariatur "
+    },
+    "frAccessibilityCondition": {
+        "id": 19216819,
+        "code": "qui id",
+        "name": "enim veniam ut minim dolor"
+    },
+    "wildFireHazard": {
+        "id": 25736859,
+        "code": "ut do fugiat deserunt aliqua",
+        "name": "est mollit"
+    },
+    "wildFireSusceptibility": {
+        "id": 24656978,
+        "code": "laboris ut Duis",
+        "name": "labore eu"
+    },
+    "wildFireThreat": {
+        "id": 50963226,
+        "code": "exercitation consectetur Excepteur",
+        "name": "sed ullamco velit"
+    },
+    "wildFireAreaDescription": {
+        "id": -86196756,
+        "code": "Excepteur culpa ",
+        "name": "reprehenderit consectetur ex dolor sed"
+    },
+    "wildFireSurfaceFuelType": {
+        "id": -29193422,
+        "code": "irure eiusmod labore ad",
+        "name": "Lorem dolore"
+    },
+    "wildFireSpecialConditions": "sunt pariatur amet",
+    "wildFireLocalHistory": -70191261.34393069,
+    "wildFireNearbyHistory": 44035898.88789278,
+    "wildFireAccessibility": {
+        "id": 83819970,
+        "code": "esse ea",
+        "name": "consequat adipisicing"
+    },
+    "wildFireMatch": {
+        "id": 72635652,
+        "code": "nulla commodo anim",
+        "name": "anim Duis"
+    },
+    "wildFireSlope": -76782562,
+    "wildFireSlopeFlag": {
+        "id": -53521320,
+        "code": "dolore consec",
+        "name": "dolor ullamco nisi"
+    },
+    "wildFireFuel": {
+        "id": -39520407,
+        "code": "fugiat exercitation Excepteur",
+        "name": "qui ipsum et"
+    },
+    "wildFireFuelFlag": {
+        "id": -63851977,
+        "code": "anim dolor velit non consectetur",
+        "name": "sit pariatur"
+    },
+    "wildFireDistanceToVeg": -2360476,
+    "wildFireDistanceToVegFlag": {
+        "id": -84346001,
+        "code": "sunt sit",
+        "name": "aute ut qui"
+    },
+    "wildFireDistanceToVegUnit": {
+        "id": -10811192,
+        "code": "Excepteur occaecat et mollit",
+        "name": "incididunt nulla reprehenderit officia"
+    },
+    "wildFireSiteHazVer": "eiusmod aute pariatur",
+    "percentageSiteLossDeductibleAmount": 18436300.69339724,
+    "percentageCombinedLossDeductibleAmount": -47425883.766676955,
+    "isFranchiseSiteDeductible": {
+        "id": 96293609,
+        "code": "minim nulla",
+        "name": "aliquip exercitation"
+    },
+    "isFranchiseCombinedDeductible": {
+        "id": 90130081,
+        "code": "reprehenderit ipsum labore in",
+        "name": "Ut aliquip non in"
+    },
+    "isValid": true
+})
+
+
+

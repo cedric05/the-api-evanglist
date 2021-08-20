@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe3a67a8-afd0-43aa-87c4-7d44157077ab.postman_collection.json
+
+// This operation list or find GeographicAddress entities
+
+@name("List or find GeographicAddress objects")
+GET "https://{{baseUrl}}/geographicAddress"
+? "fields"= "Ut eiusmod"
+? "offset"= "-6845752"
+? "limit"= "-6845752"
+
+
+// This operation retrieves a GeographicAddress entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a GeographicAddress by ID")
+GET "https://{{baseUrl}}/geographicAddress/:id"
+? "fields"= "Ut eiusmod"
+
+
+

@@ -1,0 +1,357 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba6572bc-3c63-4861-923c-7002a7305149.postman_collection.json
+
+// ### Description
+// The following use cases can be applied:
+// - payment request on behalf of a merchant
+// - transfer request on behalf of the account's owner
+// - standing-order request on behalf of the account's owner
+// #### Data content
+// A payment request or a transfer request might embed several payment instructions having
+// - one single execution date or multiple execution dates
+//   - case of one single execution date, this date must be set at the payment level
+//   - case of multiple execution dates, those dates must be set at each payment instruction level
+// - one single beneficiary or multiple beneficiaries
+//   - case of one single beneficiary, this beneficiary must be set at the payment level
+//   - case of multiple beneficiaries, those beneficiaries must be set at each payment instruction level
+// Having at the same time multiple beneficiaries and multiple execution date might not be a relevant business case, although it is technically allowed.
+// Each implementation will have to specify which business use cases are actually supported.       
+// A standing order request must embed one single payment instruction and must address one single beneficiary.
+// - The beneficiary must be set at the payment level
+// - The standing order specific characteristics (start date, periodicity...) must be set at the instruction level
+//                    
+// Payment request can rely for execution on different payment instruments:
+// - SEPA Credit Transfer (SCT)
+// - Domestic Credit Transfer in a non-Euro-currency
+// - International payment
+// The following table indicates how to use the different fields, depending on the payment instrument:
+// 
+// | Structure | SEPA payments | Domestic payments in non-euro currency | International payments |
+// | --------- | ------------- | -------------------------------------- | ---------------------- |
+// | PaymentTypeInformation/InstructionPriority (payment level) | "HIGH" for high-priority SCT, "NORM" for other SCT, Ignored for SCTInst | "HIGH" for high-priority CT, "NORM" or ignored for other CT | "HIGH" for high-priority payments, "NORM" or ignored for other payments |
+// | PaymentTypeInformation/ServiceLevel (payment level) | "SEPA" for SCT and SCTInst | ignored | ignored |
+// | PaymentTypeInformation/CategoryPurpose (payment level) | "CASH" for transfer request, "DVPM" for payment request on behalf of a merchant || "CORT" for generic international payments, "INTC" for transfers between two branches within the same company, "TREA" for treasury transfers |
+// | PaymentTypeInformation/LocalInstrument (payment level) | "INST" pour les SCTInst, otherwise ignored | Ignored or valued with ISO20022 external code ||
+// | RequestedExecutionDate (either at payment or transaction level) | Mandatory (indicates the date on debit on the ordering party account) |||
+// | EndToEndIdentification (at transaction level) | Mandatory | Optional ||
+// | UltimateDebtor (at transaction level) | Optional |||
+// | UltimateCreditor (at transaction level) | Optional |||
+// | InstructedAmount (at transaction level) | Mandatory || Mandatory and exclusive use of one of these structures |
+// | EquivalentAmount (at transaction level) | Not used || Mandatory and exclusive use of one of these structures |
+// | ChargeBearer (at transaction level) | "SLEV" for SCT and SCTInst | "SLEV" or "SHAR" | "CRED", "DEBT" or "SHAR" |
+// | Purpose (at transaction level) | Optional |||
+// | RegulatoryReportingCode (at transaction level) | Not used | Mandatory (possibly multiple values) |
+// | InstructionForCreditorAgent (at transaction level) | Not used || Optional (possibly multiple values) |
+// | RemittanceInformation | Mandatory. Structured or unstructured, depending on the local rules and constraints |||
+// | Debtor (at payment level) | Mandatory, 2 address lines only | Mandatory, 4 address lines only | Mandatory. Complete strustured address can be used. |
+// | DebtorAccount (at payment level) | Optional | Optional. Account currency may be specified ||
+// | DebtorAgent (at payment level) | Optional |||
+// | Creditor (either at payment or transaction level) | Mandatory, 2 address lines only | Mandatory, 4 address lines only | Mandatory. Complete strustured address can be used. Date and place of birth must be specified |
+// | CreditorAccount (either at payment or transaction level) | Mandatory | Mandatory. Account currency may be specified ||
+// | CreditorAgent (either at payment or transaction level) | Optional |||
+// | ClearingSystemId et ClearingSystemMemberId (either at payment or transaction level) | Not used || Optional |
+// | IntermediaryAgent et IntermediaryAgentAccount (either at payment or transaction level) | Not used | Optional ||
+//   
+// #### Prerequisites for all use cases
+// - The TPP has been registered by the Registration Authority for the PISP role
+// - The TPP was provided with an OAUTH2 "Client Credential" access token by the ASPSP (cf. § 3.4.2).
+// - The TPP and the ASPSP have successfully processed a mutual check and authentication 
+// - The TPP has presented its "OAUTH2 Client Credential" access token
+// 
+// #### Business flow
+// ##### Payment Request use case
+// The PISP forwards a payment request on behalf of a merchant.
+// The PSU buys some goods or services on an e-commerce website held by a merchant. Among other payment method, the merchant suggests the use of a PISP service. As there is obviously a contract between the merchant and the PISP, there is no need for the ASPSP to check the existence of such a contract between the PSU and this PISP to initiate the process.
+// Case of the PSU that chooses to use the PISP service:
+// - The merchant forwards the requested payment characteristics to the PISP and redirects the PSU to the PISP portal.
+// - The PISP requests from the PSU which ASPSP will be used.
+// - The PISP prepares the Payment Request and sends this request to the ASPSP.
+// - The Request can embed several payment instructions having different requested execution date.
+// - The beneficiary, as being the merchant, is set at the payment level.
+//      
+//   ##### Transfer Request use case
+//   The PISP forwards a transfer request on behalf of the owner of the account.
+//   - The PSU provides the PISP with all information needed for the transfer.
+//   - The PISP prepares the Transfer Request and sends this request to the relevant ASPSP that holds the debtor account.
+//   - The Request can embed several payment instructions having different beneficiaries.
+//   - The requested execution date, as being the same for all instructions, is set at the payment level.
+//      
+//   ##### Standing Order Request use case
+//   The PISP forwards a Standing Order request on behalf of the owner of the account.
+//   - The PSU provides the PISP with all information needed for the Standing Order.
+//   - The PISP prepares the Standing Order Request and sends this request to the relevant ASPSP that holds the debtor account.
+//   - The Request embeds one single payment instruction with
+//     - The requested execution date of the first occurrence
+//     - The requested execution frequency of the payment in order to compute further execution dates
+//     - An execution rule to handle cases when the computed execution dates cannot be processed (e.g. bank holydays)
+//     - An optional end date for closing the standing Order
+//      
+
+@name("Payment request initiation (PISP)")
+POST "https://{{baseUrl}}/payment-requests"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+"Content-Type": "application/json"
+? "ui_locales"= "est"
+json({
+    "creationDateTime": "1990-03-28T13:01:49.426Z",
+    "creditTransferTransaction": [
+        {
+            "paymentId": {
+                "resourceId": "MyInstrRscId",
+                "instructionId": "MyInstrId",
+                "endToEndId": "MyEndToEndId"
+            },
+            "requestedExecutionDate": "1987-12-14T11:29:43.052Z",
+            "endDate": "1966-02-02T03:09:28.902Z",
+            "executionRule": "FWNG",
+            "frequency": "MNTH",
+            "instructedAmount": {
+                "amount": 19771236.47684507,
+                "currency": "EUR"
+            },
+            "equivalentAmount": {
+                "amount": 58306830.24665636,
+                "currency": "EUR",
+                "currencyOfTransfer": "EUR"
+            },
+            "exchangeRateInformation": {
+                "unitCurrency": "EUR",
+                "exchangeRate": -95370483.79684418,
+                "rateType": "AGRD",
+                "contractIdentification": "vel"
+            },
+            "ultimateDebtor": {
+                "name": "MyPreferredPisp",
+                "postalAddress": {
+                    "country": "FR",
+                    "addressLine": [
+                        "18 rue de la DSP2",
+                        "75008 PARIS"
+                    ]
+                }
+            },
+            "intermediaryAgent": {
+                "agent": {
+                    "name": "MyPreferredPisp",
+                    "postalAddress": {
+                        "country": "FR",
+                        "addressLine": [
+                            "18 rue de la DSP2",
+                            "75008 PARIS"
+                        ]
+                    }
+                },
+                "agentAccount": {
+                    "iban": "YY64COJH41059545330222956960771321"
+                }
+            },
+            "beneficiary": {
+                "isTrusted": true,
+                "creditorAgent": {
+                    "bicFi": "BNKAFRPPXXX"
+                },
+                "creditor": {
+                    "name": "MyPreferredPisp",
+                    "postalAddress": {
+                        "country": "FR",
+                        "addressLine": [
+                            "18 rue de la DSP2",
+                            "75008 PARIS"
+                        ]
+                    }
+                },
+                "creditorAccount": {
+                    "iban": "YY64COJH41059545330222956960771321"
+                }
+            },
+            "ultimateCreditor": {
+                "name": "MyPreferredPisp",
+                "postalAddress": {
+                    "country": "FR",
+                    "addressLine": [
+                        "18 rue de la DSP2",
+                        "75008 PARIS"
+                    ]
+                }
+            },
+            "instructionForCreditorAgent": [
+                {
+                    "code": "PHOB",
+                    "instructionInformation": ""
+                },
+                {
+                    "code": "PHOB",
+                    "instructionInformation": "Lor"
+                }
+            ],
+            "purpose": "CPKC",
+            "regulatoryReportingCodes": [
+                "ECO456",
+                "ECO457"
+            ],
+            "remittanceInformation": {
+                "unstructured": [
+                    "Lor",
+                    "et"
+                ],
+                "structured": [
+                    {
+                        "referredDocumentInformation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "referredDocumentAmount": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "creditorReferenceInformation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "invoicer": {
+                            "name": "MyPreferredPisp",
+                            "postalAddress": {
+                                "country": "FR",
+                                "addressLine": [
+                                    "18 rue de la DSP2",
+                                    "75008 PARIS"
+                                ]
+                            }
+                        },
+                        "invoicee": {
+                            "name": "MyPreferredPisp",
+                            "postalAddress": {
+                                "country": "FR",
+                                "addressLine": [
+                                    "18 rue de la DSP2",
+                                    "75008 PARIS"
+                                ]
+                            }
+                        },
+                        "taxRemittance": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    {
+                        "referredDocumentInformation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "referredDocumentAmount": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "creditorReferenceInformation": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "invoicer": {
+                            "name": "MyPreferredPisp",
+                            "postalAddress": {
+                                "country": "FR",
+                                "addressLine": [
+                                    "18 rue de la DSP2",
+                                    "75008 PARIS"
+                                ]
+                            }
+                        },
+                        "invoicee": {
+                            "name": "MyPreferredPisp",
+                            "postalAddress": {
+                                "country": "FR",
+                                "addressLine": [
+                                    "18 rue de la DSP2",
+                                    "75008 PARIS"
+                                ]
+                            }
+                        },
+                        "taxRemittance": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    }
+                ]
+            },
+            "transactionStatus": "ACSP",
+            "statusReasonInformation": "FRAD"
+        }
+    ],
+    "initiatingParty": {
+        "name": "MyPreferredPisp",
+        "postalAddress": {
+            "country": "FR",
+            "addressLine": [
+                "18 rue de la DSP2",
+                "75008 PARIS"
+            ]
+        }
+    },
+    "numberOfTransactions": 22112596,
+    "paymentInformationId": "MyPmtInfId",
+    "paymentTypeInformation": {
+        "serviceLevel": "SEPA",
+        "localInstrument": "INST",
+        "categoryPurpose": "DVPM"
+    },
+    "supplementaryData": {
+        "successfulReportUrl": "http://myPisp/PaymentSuccess",
+        "unsuccessfulReportUrl": "http://myPisp/PaymentFailure"
+    },
+    "resourceId": "MyInstrRscId",
+    "batchBooking": true,
+    "acceptDebtorAccountChange": true,
+    "acceptChargeHandlingChange": true,
+    "debtor": {
+        "name": "MyPreferredPisp",
+        "postalAddress": {
+            "country": "FR",
+            "addressLine": [
+                "18 rue de la DSP2",
+                "75008 PARIS"
+            ]
+        }
+    },
+    "debtorAccount": {
+        "iban": "YY64COJH41059545330222956960771321"
+    },
+    "debtorAgent": {
+        "bicFi": "BNKAFRPPXXX"
+    },
+    "beneficiary": {
+        "isTrusted": true,
+        "creditorAgent": {
+            "bicFi": "BNKAFRPPXXX"
+        },
+        "creditor": {
+            "name": "MyPreferredPisp",
+            "postalAddress": {
+                "country": "FR",
+                "addressLine": [
+                    "18 rue de la DSP2",
+                    "75008 PARIS"
+                ]
+            }
+        },
+        "creditorAccount": {
+            "iban": "YY64COJH41059545330222956960771321"
+        }
+    },
+    "chargeBearer": "SLEV",
+    "paymentInformationStatus": "ACSC",
+    "statusReasonInformation": "FRAD",
+    "fundsAvailability": true,
+    "booking": true,
+    "requestedExecutionDate": "1978-02-12T03:50:20.349Z"
+})
+
+
+

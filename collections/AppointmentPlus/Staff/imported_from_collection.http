@@ -1,0 +1,343 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Updates a Staff Member and returns all of the details for the updated Staff Member.  The `user_group` parameter sets the access level for the new staff member. Note that this does not currently support Custom Access Types. Valid values include:  ha u2013 Headquarters Administration  a u2013 Location Administrato  c u2013 Call Center User  u u2013 Location User  v u2013 View Only User  Valid values for status are u201cactiveu201d or u201cInactiveu201d. Active staff members are available for scheduling appointments
+
+@name("UpdateStaff")
+POST "https://{{baseUrl}}/Staff/UpdateStaff"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "screen_name"= "<string>"
+? "last_name"= "<string>"
+? "first_name"= "<string>"
+? "middle_name"= "<string>"
+? "company"= "<string>"
+? "bio"= "<string>"
+? "notes"= "<string>"
+? "login"= "<string>"
+? "password"= "<string>"
+? "temp_password"= "<string>"
+? "user_group"= "<string>"
+? "email"= "<string>"
+? "type_id"= "<integer>"
+? "display"= "<string>"
+? "sort_order"= "<integer>"
+? "home_phone"= "<string>"
+? "work_phone"= "<string>"
+? "cell_phone"= "<string>"
+? "fax"= "<string>"
+? "tax_number"= "<string>"
+? "address"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zip"= "<string>"
+? "timezone_id"= "<integer>"
+? "bill_rate"= "<number>"
+? "status"= "<string>"
+
+
+// Deletes the regular schedule for the specified employees at the specified locations. This action does not affect templates, exceptions, or days off.  The `weekday` and `start_time` filters only apply to accounts using the Multiple Appointments version of the application. When sending weekday, use integers 1 through 7 to represent Sunday through Saturday. Using this filter will only return the schedule for that day of the week.
+
+@name("DeleteSchedules")
+POST "https://{{baseUrl}}/Staff/DeleteSchedules"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "weekday"= "<integer>"
+? "start_time"= "<integer>"
+
+
+// Returns the details for staff members. If none of the optional POST/GET variables are sent, the service will return all of the staff members for every location.  For `first_name_search`, `last_name_search` and `screen_name_search`, you may enter partial search strings to find customers whose last, first or screen names start with that string (e.g. `first_name_search`=Jo).  If the location you specify is configured to use the Multiple Appointments version of the application, the additional schedu
+
+@name("GetStaff")
+POST "https://{{baseUrl}}/Staff/GetStaff"
+? "response_type"= "<string>"
+? "staff"= "<integer>"
+? "location"= "<integer>"
+? "first_name"= "<string>"
+? "last_name"= "<string>"
+? "first_name_search"= "<string>"
+? "last_name_search"= "<string>"
+? "screen_name_search"= "<string>"
+? "email"= "<string>"
+? "status"= "<string>"
+? "show_deleted"= "<string>"
+? "tax_number"= "<string>"
+? "sort_by"= "<string>"
+? "sort_direction"= "<string>"
+? "include_identifier"= "<boolean>"
+
+
+// Removes a service from a staff members list of available services. This action can not be undone.
+
+@name("DeleteServicesOffered")
+POST "https://{{baseUrl}}/Staff/DeleteServicesOffered"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "service_id"= "<integer>"
+? "location_id"= "<integer>"
+
+
+// Returns all staff types.  Use the sort_order parameter to filer the results to include types equal to or between the given values.  For example `sort_order=100,500` or `sort_order=200`.
+
+@name("GetStaffTypes")
+POST "https://{{baseUrl}}/Staff/GetStaffTypes"
+? "response_type"= "<string>"
+? "sort_order"= "<integer>"
+
+
+// Updates a regular schedule for the specified employees at the specified locations.  Send multiple values in `c_id` and/or multiple values in `employee_id` to update multiple schedules across multiple locations and/or staff members.  If the account is configured to use the Single Appointments version:  You may update the entire weeks schedule or only specific days. If the first_appt_time_ or `last_appt_time` parameters are not sent for any of the weekdays, the schedule will remain the same for th
+
+@name("UpdateSchedules")
+POST "https://{{baseUrl}}/Staff/UpdateSchedules"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "weekday"= "<integer>"
+? "start_time"= "<integer>"
+? "num_appts_per_slot"= "<integer>"
+? "first_appt_time_Sunday"= "<integer>"
+? "last_appt_time_Sunday"= "<integer>"
+? "first_appt_time_Monday"= "<integer>"
+? "last_appt_time_Monday"= "<integer>"
+? "first_appt_time_Tuesday"= "<integer>"
+? "last_appt_time_Tuesday"= "<integer>"
+? "first_appt_time_Wednesday"= "<integer>"
+? "last_appt_time_Wednesday"= "<integer>"
+? "first_appt_time_Thursday"= "<integer>"
+? "last_appt_time_Thursday"= "<integer>"
+? "first_appt_time_Friday"= "<integer>"
+? "last_appt_time_Friday"= "<integer>"
+? "first_appt_time_Saturday"= "<integer>"
+? "last_appt_time_Saturday"= "<integer>"
+? "duration"= "<integer>"
+? "end_time"= "<integer>"
+
+
+// Assigns services to a staff member and additionally specifies the cost and duration of the service.  If you do not want to make the service available on a given day, you do not have to provide the corresponding avail_* parameter. Services may be assigned to a staff member per location. If no location_id is provided, it is assumed that the service will be assigned to the employee at the headquarters location.  If specifying multiple service_ids, each service will be assigned to the staff member u
+
+@name("AddServicesOffered")
+POST "https://{{baseUrl}}/Staff/AddServicesOffered"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "service_id"= "<integer>"
+? "location_id"= "<integer>"
+? "avail_mon"= "<boolean>"
+? "avail_tue"= "<boolean>"
+? "avail_wed"= "<boolean>"
+? "avail_thu"= "<boolean>"
+? "avail_fri"= "<boolean>"
+? "avail_sat"= "<boolean>"
+? "avail_sun"= "<boolean>"
+? "cost"= "<number>"
+? "duration"= "<integer>"
+
+
+// Deletes a Staff Member and returns all of the details for the updated Staff Member.  Once deleted, staff members can be recovered; however, any information about the staff member (schedule parameters, assigned rooms, services, and/or locations, etc) cannot be recovered.
+
+@name("DeleteStaff")
+POST "https://{{baseUrl}}/Staff/DeleteStaff"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+
+
+// Removes an employee from a location.
+
+@name("DeleteAssignedLocations")
+POST "https://{{baseUrl}}/Staff/DeleteAssignedLocations"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+
+
+// Creates a staff member schedule exception at a particular location, date, and time.
+
+@name("CreateScheduleExceptions")
+POST "https://{{baseUrl}}/Staff/CreateScheduleExceptions"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "end_time"= "<integer>"
+
+
+// Returns the regular schedule parameters for a staff member at a specified location. This function does not return the details for overrides for specific dates, i.e. scheduling templates, exceptions, days off, etc.  The weekday filter only applies to accounts using the Multiple Appointments version of the application.  When sending weekday, use integers 1 through 7 to represent Sunday through Saturday. Using this filter will only return the schedule for that day of the week.
+
+@name("GetSchedules")
+POST "https://{{baseUrl}}/Staff/GetSchedules"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "weekday"= "<integer>"
+
+
+// Returns the dates between the start_date and end_date on which the staff member is unavailable, based on the Days Off settings.  The method will accept a list of multiple, comma separated locations (c_id) and return the dates for each of the locations.
+
+@name("GetDaysOff")
+POST "https://{{baseUrl}}/Staff/GetDaysOff"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "start_time"= "<integer>"
+? "end_time"= "<integer>"
+
+
+// Deletes a staff member schedule exception. This cannot be undone.
+
+@name("DeleteScheduleExceptions")
+POST "https://{{baseUrl}}/Staff/DeleteScheduleExceptions"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "end_time"= "<integer>"
+? "exception_id"= "<integer>"
+
+
+// Returns the dates on which the employee is available for scheduling, based on the employees regular schedule, templates, exceptions, and days off settings.  The method will return all available dates between `start_date` + `num_days`. If start_date is not specified, it will default to todays date.
+
+@name("GetOpenDates")
+POST "https://{{baseUrl}}/Staff/GetOpenDates"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "num_days"= "<integer>"
+? "start_date"= "<integer>"
+
+
+// Retrieves the list of locations that an employee is assigned to.
+
+@name("GetAssignedLocations")
+POST "https://{{baseUrl}}/Staff/GetAssignedLocations"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "location_id"= "<integer>"
+
+
+// Creates a regular schedule for the specified employees at the specified locations.  Send multiple values in `c_id` and/or multiple values in `employee_id` to create the same schedule across multiple locations and/or staff members.  If the account is configured to use the Single Appointments version: You must set the schedule for the entire week at once. Send the open and close times for each day of the week. If `first_appt_time` and `last_appt_time` parameters are not sent for a day of the week 
+
+@name("CreateSchedules")
+POST "https://{{baseUrl}}/Staff/CreateSchedules"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "weekday"= "<integer>"
+? "start_time"= "<integer>"
+? "num_appts_per_slot"= "<integer>"
+? "first_appt_time_Sunday"= "<integer>"
+? "last_appt_time_Sunday"= "<integer>"
+? "first_appt_time_Monday"= "<integer>"
+? "last_appt_time_Monday"= "<integer>"
+? "first_appt_time_Tuesday"= "<integer>"
+? "last_appt_time_Tuesday"= "<integer>"
+? "first_appt_time_Wednesday"= "<integer>"
+? "last_appt_time_Wednesday"= "<integer>"
+? "first_appt_time_Thursday"= "<integer>"
+? "last_appt_time_Thursday"= "<integer>"
+? "first_appt_time_Friday"= "<integer>"
+? "last_appt_time_Friday"= "<integer>"
+? "first_appt_time_Saturday"= "<integer>"
+? "last_appt_time_Saturday"= "<integer>"
+
+
+// Removes days off from the staff members calendar (i.e. reopens those days for scheduling).  The method will accept a list of multiple, comma separated locations (c_id), multiple staff members, and multiple dates, and will remove each of the dates for each of the staff members at each of the locations.
+
+@name("DeleteDaysOff")
+POST "https://{{baseUrl}}/Staff/DeleteDaysOff"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "date"= "<integer>"
+
+
+// Creates a new Staff Member and returns all of the details for the new Staff Member.  By default, the staff member is created with a status of Inactive, meaning it has no schedule, no service assignments, and is not available for appointments.  Use Staff/CreateSchedules to create the staff members schedule, then use Staff/UpdateStaff to update the staff members status to Active.  To automatically create Active staff members use the `auto_create_schedule` and `auto_assign_services` parameters. Thi
+
+@name("CreateStaff")
+POST "https://{{baseUrl}}/Staff/CreateStaff"
+? "response_type"= "<string>"
+? "c_id"= "<integer>"
+? "screen_name"= "<string>"
+? "last_name"= "<string>"
+? "first_name"= "<string>"
+? "middle_name"= "<string>"
+? "company"= "<string>"
+? "bio"= "<string>"
+? "notes"= "<string>"
+? "login"= "<string>"
+? "password"= "<string>"
+? "temp_password"= "<string>"
+? "user_group"= "<string>"
+? "email"= "<string>"
+? "type_id"= "<integer>"
+? "display"= "<string>"
+? "sort_order"= "<integer>"
+? "home_phone"= "<string>"
+? "work_phone"= "<string>"
+? "cell_phone"= "<string>"
+? "fax"= "<string>"
+? "tax_number"= "<string>"
+? "address"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zip"= "<string>"
+? "timezone_id"= "<integer>"
+? "bill_rate"= "<number>"
+? "auto_create_schedule"= "<boolean>"
+? "auto_assign_services"= "<boolean>"
+? "auto_assign_rooms"= "<boolean>"
+? "assign_service_id"= "<integer>"
+
+
+// Get a staff members schedule exceptions for a particular location, and optionally, a particular date.  Returns all of the matching exceptions, if any exist.
+
+@name("GetScheduleExceptions")
+POST "https://{{baseUrl}}/Staff/GetScheduleExceptions"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "exception_id"= "<integer>"
+
+
+// Marks date(s) as being a day off on the staffs calendar (i.e. closes the day for scheduling).  The method will accept multiple dates and multiple locations. It will mark each date as a day off at each of the locations.
+
+@name("CreateDaysOff")
+POST "https://{{baseUrl}}/Staff/CreateDaysOff"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "c_id"= "<integer>"
+? "date"= "<integer>"
+
+
+// Returns the details for the services offered by (assigned to) the specified staff member.  If none of the optional POST/GET variables are sent, the service will return all of the assigned services at each location the staff member is assigned to.   The `location_id` parameter is only effective when the account is configured to share staff members across locations. Otherwise, the service returns the services assigned at the staff members home location.
+
+@name("GetServicesOffered")
+POST "https://{{baseUrl}}/Staff/GetServicesOffered"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "location_id"= "<integer>"
+
+
+// Creates new Staff Types and returns all of the details for the new Staff Types.
+
+@name("CreateStaffTypes")
+POST "https://{{baseUrl}}/Staff/CreateStaffTypes"
+? "response_type"= "<string>"
+? "description"= "<string>"
+? "sort_order"= "<integer>"
+
+
+// Assigns an employee to a location.
+
+@name("AddAssignedLocations")
+POST "https://{{baseUrl}}/Staff/AddAssignedLocations"
+? "response_type"= "<string>"
+? "employee_id"= "<integer>"
+? "location_id"= "<integer>"
+? "replace_locations"= "<boolean>"
+
+
+

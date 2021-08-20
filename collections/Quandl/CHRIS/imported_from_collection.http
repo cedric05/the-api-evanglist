@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-49418870-7240-40ed-b5ad-dd946417768e.postman_collection.json
+
+// Pulls pricing for Gold, COMEX Gold Futures.
+
+@name("Get Gold Pricing")
+GET "https://{{baseUrl}}/CHRIS/CME_GC1"
+
+
+// Pulls pricing Silver, COMEX Silver Futures.
+
+@name("Get Silver Pricing")
+GET "https://{{baseUrl}}/CHRIS/CME_SI1"
+
+
+// Pulls pricing Platinum, NYMEX Platinum Futures.
+
+@name("Get Platinum Pricing")
+GET "https://{{baseUrl}}/CHRIS/CME_PL1"
+
+
+// Pulls pricing for Palladium, NYMEX Palladium Futures.
+
+@name("Get Palladium Pricing")
+GET "https://{{baseUrl}}/CHRIS/CME_PA1"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length. 
+
+@name("Get Location Settlements")
+GET "https://{{baseUrl}}/v1/:location_id/settlements"
+? "order"= "<object>"
+? "begin_time"= "<string>"
+? "end_time"= "<string>"
+? "limit"= "<integer>"
+? "status"= "<string>"
+? "batch_token"= "<string>"
+
+
+// Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
+
+@name("Get Location Settlements")
+GET "https://{{baseUrl}}/v1/:location_id/settlements/:settlement_id"
+
+
+

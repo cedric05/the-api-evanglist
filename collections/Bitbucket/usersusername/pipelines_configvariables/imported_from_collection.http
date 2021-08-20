@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Find user level variables.
+
+@name("get Pipeline Variables For User")
+GET "https://{{baseUrl}}/users/:username/pipelines_config/variables/"
+
+
+// Create a user level variable.
+
+@name("create Pipeline Variable For User")
+POST "https://{{baseUrl}}/users/:username/pipelines_config/variables/"
+"Content-Type": "application/json"
+json({
+    "type": "sed ipsum ad",
+    "key": "<string>",
+    "secured": "<boolean>",
+    "uuid": "<string>",
+    "value": "<string>"
+})
+
+
+

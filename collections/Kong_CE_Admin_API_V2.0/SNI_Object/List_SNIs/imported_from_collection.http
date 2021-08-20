@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// # List All SNIs [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-all-snis)
+// * An SNI object represents a many-to-one mapping of hostnames to a certificate. That is, a certificate object can have many hostnames associated with it; when Kong receives an SSL request, it uses the SNI field in the Client Hello to lookup the certificate object based on the SNI associated with the certificate.
+// * SNIs can be both tagged and filtered by tags.
+
+@name("List All SNIs")
+GET "https://{{gateway}}/snis"
+
+
+// # List SNIs Associated to a Specific Certificate [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-snis-associated-to-a-specific-certificate)
+// * An SNI object represents a many-to-one mapping of hostnames to a certificate. That is, a certificate object can have many hostnames associated with it; when Kong receives an SSL request, it uses the SNI field in the Client Hello to lookup the certificate object based on the SNI associated with the certificate.
+// * SNIs can be both tagged and filtered by tags.
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>certificate name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name attribute of the Certificate whose SNIs are to be retrieved. When using this endpoint, only SNIs associated to the specified Certificate will be listed.</td>
+//   </tr>
+// </table>
+
+@name("List SNIs Associated to a Specific Certificate")
+GET "https://{{gateway}}/certificates/:certificateNameOrId/snis"
+
+
+

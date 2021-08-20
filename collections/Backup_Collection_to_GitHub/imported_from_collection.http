@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-567be256-70ce-4246-8004-174f1739b0c1.postman_collection.json
+
+// The `/collections` endpoint returns a list of all [collections](https://www.getpostman.com/docs/collections) that are accessible by you. The list includes your own collections and the collections that you have subscribed to.
+// 
+// The response contains an array of collection information containing the `name`, `id`, `owner` and `uid` of each collection.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("View All Collections")
+GET "https://api.getpostman.com/collections"
+"X-Api-Key": "{{postman_api_key}}"
+
+
+// Access the contents of a collection that is accessible to you using its unique id (`uid`).
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Backup A Single Collection")
+GET "https://api.getpostman.com/collections/:collection_uid"
+"X-Api-Key": "{{postman_api_key}}"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-22a10f2d-8624-488d-95c0-85a6c45216c5.postman_collection.json
+
+// Retrieves the metadata for the active schema definition with thenspecified id.n
+
+@name("Get active schema definition metadata")
+GET "https://{{baseUrl}}/schemas/:schemaId"
+
+
+// Retrieves the content of the active schema definition file with thenspecified id.n
+
+@name("Get the contents of the active schema definition file")
+GET "https://{{baseUrl}}/schemas/:schemaId/content"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search dayparts
+
+@name("Daypart Search")
+GET "https://{{baseUrl}}/daypart"
+
+
+// Add a Daypart
+
+@name("Daypart Add")
+PUT "https://{{baseUrl}}/daypart/:dayPartId"
+
+
+

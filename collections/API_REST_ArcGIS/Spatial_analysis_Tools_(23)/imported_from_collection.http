@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// The Calculate Density task takes known quantities of some phenomenon and spreads these quantities across the map. You can use this task, for example, to show concentrations of lightning strikes or tornados, access to health care facilities, and population densities.
+// 
+// [Read more](https://developers.arcgis.com/rest/analysis/api-reference/calculate-density.htm)
+
+@name("Calculate Density")
+GET "http://analysis.arcgis.com/arcgis/rest/services/tasks/GPServer/CalculateDensity/submitJob"
+? "f"= "json"
+? 'inputLayer'= '{"url":"http://services.arcgis.com/Q6ZFRRvMTlsTTFuP/arcgis/rest/services/Nerja_Food/FeatureServer/0"}'
+? "areaUnits"= "SquareKilometers"
+? "classificationType"= "EqualInterval"
+? "numClasses"= "10"
+? 'OutputName'= '{"serviceProperties":{"name":"Densidad de Nerja Food","serviceUrl":"http://services.arcgis.com/Q6ZFRRvMTlsTTFuP/arcgis/rest/services/Densidad de Nerja Food/FeatureServer"},"itemProperties":{"itemId":"b325b865d9b24cbfafff6ce30049f1e4"}}'
+? 'context'= '{"extent":{"type":"extent","xmin":-3328453.7107606614,"ymin":3061018.7587652337,"xmax":1788546.710760817,"ymax":5575491.241233723,"spatialReference":{"wkid":102100}}}'
+? "returnFeatureCollection"= "false"
+? "token"= "{{token}}"
+
+
+@name("Create Drive-Time Areas")
+POST "https://analysis.arcgis.com/arcgis/rest/services/tasks/GPServer/CreateDriveTimeAreas/submitJob"
+"Origin": "http://{{urlKey}}.maps.arcgis.com"
+"Accept-Encoding": "gzip, deflate, br"
+"Accept-Language": "en-US,en;q=0.9,es;q=0.8"
+"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36"
+"Content-Type": "application/x-www-form-urlencoded"
+"Accept": "*/*"
+"Referer": "http://{{urlKey}}.maps.arcgis.com/home/webmap/viewer.html?useExisting=1"
+"Connection": "keep-alive"
+data({
+    "f": [
+        "json"
+    ],
+    "inputLayer": [
+        "{\"layerDefinition\":{\"objectIdField\":\"OBJECTID\",\"templates\":[],\"type\":\"Feature Layer\",\"drawingInfo\":{\"renderer\":{\"field1\":\"TYPEID\",\"type\":\"uniqueValue\",\"uniqueValueInfos\":[{\"symbol\":{\"height\":24,\"xoffset\":0,\"yoffset\":12,\"width\":24,\"contentType\":\"image/png\",\"type\":\"esriPMS\",\"url\":\"http://static.arcgis.com/images/Symbols/Basic/GreenStickpin.png\"},\"description\":\"\",\"value\":\"0\",\"label\":\"Stickpin\"},{\"symbol\":{\"height\":24,\"xoffset\":2,\"yoffset\":8,\"width\":24,\"contentType\":\"image/png\",\"type\":\"esriPMS\",\"url\":\"http://static.arcgis.com/images/Symbols/Basic/GreenShinyPin.png\"},\"value\":\"1\",\"label\":\"Pushpin\"},{\"symbol\":{\"style\":\"esriSMSCross\",\"color\":[155,187,89,128],\"outline\":{\"style\":\"esriSLSSolid\",\"color\":[115,140,61,255],\"width\":1,\"type\":\"esriSLS\"},\"type\":\"esriSMS\",\"size\":18},\"value\":\"2\",\"label\":\"Cross\"}]}},\"displayField\":\"TITLE\",\"visibilityField\":\"VISIBLE\",\"name\":\"Points\",\"hasAttachments\":false,\"typeIdField\":\"TYPEID\",\"capabilities\":\"Query,Editing,Extract\",\"types\":[{\"id\":0,\"templates\":[{\"drawingTool\":\"esriFeatureEditToolPoint\",\"description\":\"\",\"name\":\"Stickpin\",\"prototype\":{\"attributes\":{\"VISIBLE\":1,\"TITLE\":\"Point\",\"TYPEID\":0}}}],\"domains\":{},\"name\":\"Stickpin\"},{\"id\":1,\"templates\":[{\"drawingTool\":\"esriFeatureEditToolPoint\",\"description\":\"\",\"name\":\"Pushpin\",\"prototype\":{\"attributes\":{\"VISIBLE\":1,\"TITLE\":\"Point\",\"TYPEID\":1}}}],\"domains\":{},\"name\":\"Pushpin\"},{\"id\":2,\"templates\":[{\"drawingTool\":\"esriFeatureEditToolPoint\",\"description\":\"\",\"name\":\"Cross\",\"prototype\":{\"attributes\":{\"VISIBLE\":1,\"TITLE\":\"Point\",\"TYPEID\":2}}}],\"domains\":{},\"name\":\"Cross\"}],\"geometryType\":\"esriGeometryPoint\",\"fields\":[{\"alias\":\"OBJECTID\",\"name\":\"OBJECTID\",\"type\":\"esriFieldTypeOID\",\"editable\":false},{\"alias\":\"Title\",\"name\":\"TITLE\",\"length\":255,\"type\":\"esriFieldTypeString\",\"editable\":true},{\"alias\":\"Visible\",\"name\":\"VISIBLE\",\"type\":\"esriFieldTypeInteger\",\"editable\":true},{\"alias\":\"Description\",\"name\":\"DESCRIPTION\",\"length\":1073741822,\"type\":\"esriFieldTypeString\",\"editable\":true},{\"alias\":\"Image URL\",\"name\":\"IMAGE_URL\",\"length\":255,\"type\":\"esriFieldTypeString\",\"editable\":true},{\"alias\":\"Image Link URL\",\"name\":\"IMAGE_LINK_URL\",\"length\":255,\"type\":\"esriFieldTypeString\",\"editable\":true},{\"alias\":\"DATE\",\"name\":\"DATE\",\"length\":36,\"type\":\"esriFieldTypeDate\",\"editable\":true},{\"alias\":\"Type ID\",\"name\":\"TYPEID\",\"type\":\"esriFieldTypeInteger\",\"editable\":true}]},\"popupInfo\":{\"mediaInfos\":[{\"value\":{\"sourceURL\":\"{IMAGE_URL}\",\"linkURL\":\"{IMAGE_LINK_URL}\"},\"type\":\"image\"}],\"title\":\"{TITLE}\",\"description\":\"{DESCRIPTION}\"},\"featureSet\":{\"geometryType\":\"esriGeometryPoint\",\"features\":[{\"geometry\":{\"x\":-410300.5613175128,\"y\":4928688.273850668,\"spatialReference\":{\"wkid\":102100,\"latestWkid\":3857}},\"attributes\":{\"VISIBLE\":1,\"TITLE\":\"Point\",\"TYPEID\":1,\"OBJECTID\":0}}]},\"nextObjectId\":1,\"name\":\"Map Notes (Points)\"}"
+    ],
+    "breakValues": [
+        "[5]"
+    ],
+    "breakUnits": [
+        "Minutes"
+    ],
+    "overlapPolicy": [
+        "Overlap"
+    ],
+    "travelMode": [
+        "{\"attributeParameterValues\":[{\"parameterName\":\"Restriction Usage\",\"attributeName\":\"Avoid Unpaved Roads\",\"value\":\"AVOID_HIGH\"},{\"parameterName\":\"Restriction Usage\",\"attributeName\":\"Avoid Private Roads\",\"value\":\"AVOID_MEDIUM\"},{\"parameterName\":\"Restriction Usage\",\"attributeName\":\"Driving an Automobile\",\"value\":\"PROHIBITED\"},{\"parameterName\":\"Restriction Usage\",\"attributeName\":\"Through Traffic Prohibited\",\"value\":\"AVOID_HIGH\"},{\"parameterName\":\"Vehicle Maximum Speed (km/h)\",\"attributeName\":\"TravelTime\",\"value\":0},{\"parameterName\":\"Restriction Usage\",\"attributeName\":\"Roads Under Construction Prohibited\",\"value\":\"PROHIBITED\"},{\"parameterName\":\"Restriction Usage\",\"attributeName\":\"Avoid Gates\",\"value\":\"AVOID_MEDIUM\"},{\"parameterName\":\"Restriction Usage\",\"attributeName\":\"Avoid Express Lanes\",\"value\":\"PROHIBITED\"},{\"parameterName\":\"Restriction Usage\",\"attributeName\":\"Avoid Carpool Roads\",\"value\":\"PROHIBITED\"}],\"description\":\"Models the movement of cars and other similar small automobiles, such as pickup trucks, and finds solutions that optimize travel time. Travel obeys one-way roads, avoids illegal turns, and follows other rules that are specific to cars. When you specify a start time, dynamic travel speeds based on traffic are used where it is available.\",\"impedanceAttributeName\":\"TravelTime\",\"simplificationToleranceUnits\":\"esriMeters\",\"uturnAtJunctions\":\"esriNFSBAtDeadEndsAndIntersections\",\"restrictionAttributeNames\":[\"Avoid Unpaved Roads\",\"Avoid Private Roads\",\"Driving an Automobile\",\"Through Traffic Prohibited\",\"Roads Under Construction Prohibited\",\"Avoid Gates\",\"Avoid Express Lanes\",\"Avoid Carpool Roads\"],\"useHierarchy\":true,\"simplificationTolerance\":10,\"timeAttributeName\":\"TravelTime\",\"distanceAttributeName\":\"Kilometers\",\"type\":\"AUTOMOBILE\",\"id\":\"FEgifRtFndKNcJMJ\",\"name\":\"Driving Time\"}"
+    ],
+    "OutputName": [
+        "{\"serviceProperties\":{\"name\":\"DriveTimeLayerUsingPostman\",\"serviceUrl\":\"https://services.arcgis.com/{{orgId}}/arcgis/rest/services/DriveTimeLayerUsingPostman/FeatureServer\"}}"
+    ],
+    "context": [
+        "{\"extent\":{\"type\":\"extent\",\"xmin\":-413367.59707753634,\"ymin\":4927255.079570283,\"xmax\":-406311.50390377507,\"ymax\":4929916.043617531,\"spatialReference\":{\"wkid\":102100,\"latestWkid\":3857}}}"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+

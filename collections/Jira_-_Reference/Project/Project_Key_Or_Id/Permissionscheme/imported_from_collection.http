@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Gets the [permission scheme](https://confluence.atlassian.com/x/yodKLg) associated with the project.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
+
+@name("Get Assigned Permission Scheme") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/project/:projectKeyOrId/permissionscheme"
+? "expand"= "<string>"
+
+
+// Assigns a permission scheme with a project. See [Managing project permissions](https://confluence.atlassian.com/x/yodKLg) for more information about permission schemes.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg)
+
+@name("Assign Permission Scheme") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/rest/api/3/project/:projectKeyOrId/permissionscheme"
+"Content-Type": "application/json"
+? "expand"= "<string>"
+json({
+    "id": "<long>"
+})
+
+
+

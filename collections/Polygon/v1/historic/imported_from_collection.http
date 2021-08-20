@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-818a03fb-de85-44f9-b9ff-91e699ac9756.postman_collection.json
+
+// Get historic aggregations for a symbol.n
+
+@name("Historic Aggregates")
+GET "https://{{baseUrl}}/v1/historic/agg/:size/:symbol/:date"
+? "offset"= "<>"
+? "limit"= "<>"
+
+
+// Get historic ticks for a currency pair. Example for **USD/JPY** the from would be **USD** and to would be **JPY**. The date formatted like **2017-6-22**n
+
+@name("Historic Forex Ticks")
+GET "https://{{baseUrl}}/v1/historic/forex/:from/:to/:date"
+? "offset"= "<>"
+? "limit"= "<>"
+
+
+// Get historic quotes for a symbol.n
+
+@name("Historic Quotes")
+GET "https://{{baseUrl}}/v1/historic/quotes/:symbol/:date"
+? "offset"= "<>"
+? "limit"= "<>"
+
+
+// Get historic trades for a symbol.n
+
+@name("Historic Trades")
+GET "https://{{baseUrl}}/v1/historic/trades/:symbol/:date"
+? "offset"= "<>"
+? "limit"= "<>"
+
+
+

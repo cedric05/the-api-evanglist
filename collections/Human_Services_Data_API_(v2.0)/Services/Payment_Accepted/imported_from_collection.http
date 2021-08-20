@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("get Service Payment Accepted")
+GET "https://{{baseUrl}}/services/:service_id/payment-accepted/:payment_accepted_id"
+
+
+@name("list Service Payments Accepted")
+GET "https://{{baseUrl}}/services/:service_id/payment-accepted"
+
+
+@name("add Service Payment Accepted")
+POST "https://{{baseUrl}}/services/:service_id/payment-accepted"
+"Content-Type": "application/json"
+json({
+    "id": "ut aute culpa",
+    "service_id": "esse irure ullamco tempor",
+    "payment": "eiusmod dolore laboris"
+})
+
+
+@name("update Service Payment Accepted")
+PUT "https://{{baseUrl}}/services/:service_id/payment-accepted/:payment_accepted_id"
+"Content-Type": "application/json"
+json({
+    "id": "ut aute culpa",
+    "service_id": "esse irure ullamco tempor",
+    "payment": "eiusmod dolore laboris"
+})
+
+
+@name("delete Service Payment Accepted")
+DELETE "https://{{baseUrl}}/services/:service_id/payment-accepted/:payment_accepted_id"
+
+
+

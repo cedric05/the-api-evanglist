@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-217f9c35-ccee-43c6-9ff3-d1914e331d6c.postman_collection.json
+
+@name("Get Authorization")
+GET "https://{{baseUrl}}/v1/sandbox/api/oauth/authorize"
+? "client_id"= "aute ullamco"
+? "redirect_uri"= "aute ullamco"
+? "response_type"= "aute ullamco"
+? "request"= "aute ullamco"
+? "scope"= "aute ullamco"
+? "state"= "aute ullamco"
+? "nonce"= "aute ullamco"
+
+
+@name("Create a token")
+POST "https://start.uat.api.svb.com/v1/sandbox/api/oauth/token"
+"Content-Type": "application/json"
+json({
+    "grant_type": "nostrud laboris eiusmod",
+    "client_assertion_type": "exercitation ex velit reprehenderit",
+    "client_assertion": "eu laboris ea",
+    "scope": "dolor in mollit nulla do",
+    "code": "elit laboris culpa",
+    "redirect_uri": "do consequat",
+    "refresh_token": "id laborum"
+})
+
+
+

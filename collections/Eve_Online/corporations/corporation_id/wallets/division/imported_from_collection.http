@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Retrieve the given corporation's wallet journal for the given division going 30 days back
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/wallets/{division}/journal/`
+// 
+// Alternate route: `/v4/corporations/{corporation_id}/wallets/{division}/journal/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+
+@name("Get corporation wallet journal")
+GET "https://{{baseUrl}}/corporations/:corporation_id/wallets/:division/journal/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Get wallet transactions of a corporation
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/wallets/{division}/transactions/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/wallets/{division}/transactions/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/wallets/{division}/transactions/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
+
+@name("Get corporation wallet transactions")
+GET "https://{{baseUrl}}/corporations/:corporation_id/wallets/:division/transactions/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "from_id"= "-26592061"
+? "token"= "commodo irure"
+
+
+

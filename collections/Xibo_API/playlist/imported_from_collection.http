@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Assign Media from the Library to this Playlist
+
+@name("Assign Library Items")
+POST "https://{{baseUrl}}/playlist/library/assign/:playlistId"
+
+
+// Set the order of widgets in the Playlist
+
+@name("Order Widgets")
+POST "https://{{baseUrl}}/playlist/order/:playlistId"
+
+
+

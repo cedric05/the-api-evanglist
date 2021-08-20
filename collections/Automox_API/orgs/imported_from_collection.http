@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-572303ba-d57b-42f8-9c05-98fcc3c05154.postman_collection.json
+
+// Gets all organizations for the api keyn
+
+@name("Get Orgs")
+GET "https://{{baseUrl}}/orgs"
+
+
+// Returns all software packages discovered on all servers (endpoints) of an organizationn
+
+@name("Get Orgs Packages")
+GET "https://{{baseUrl}}/orgs/:id/packages"
+
+
+

@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8cdaa8c-5444-4722-a6fd-181f120d49f3.postman_collection.json
+
+// Search across organizations, locations, services, and contacts
+
+@name("Search")
+GET "https://{{baseUrl}}/search/"
+? "query"= "<string>"
+? "fields"= "<string>"
+? "resources"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "sort_by"= "<string>"
+? "order"= "<string>"
+
+
+

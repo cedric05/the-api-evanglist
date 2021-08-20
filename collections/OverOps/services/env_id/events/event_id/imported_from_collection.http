@@ -1,0 +1,91 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Fetch event data
+
+@name("Fetch event data") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/events/:event_id"
+
+
+// Move the specified event into Inbox
+
+@name("Move to Inbox") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/events/:event_id/inbox"
+? "force"= "false"
+? "handle_similar_events"= "true"
+
+
+// Move the specified event into Trash
+
+@name("Move to Trash") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/events/:event_id/delete"
+? "force"= "false"
+? "handle_similar_events"= "true"
+
+
+// Marks the specified event as resolved
+
+@name("Mark as resolved") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/events/:event_id/resolve"
+? "force"= "false"
+? "handle_similar_events"= "true"
+
+
+// Fetch event snapshot. Fetches the last relevant snapshot for the specific filters provided. All filters are optional.
+
+@name("Fetch event snapshot") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/events/:event_id/snapshot"
+? "from"= "e"
+? "to"= "e"
+? "server"= "e"
+? "app"= "e"
+? "deployment"= "e"
+? "similar_event_id"= "e"
+
+
+// Removes all existing snapshots for an event. All snapshots will be permanently deleted. Event statistics will be kept.
+
+@name("Delete all event snapshots") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/services/:env_id/events/:event_id/snapshots"
+
+
+// Force snapshot for the next time the event occurs
+
+@name("Force Event Snapshot") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/events/:event_id/force-snapshot"
+
+
+// Fetch event actions
+
+@name("Fetch event actions") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/events/:event_id/actions"
+? "type"= "e"
+
+
+// Append and remove label(s) from an event
+
+@name("Add/Remove labels") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/events/:event_id/labels"
+"Content-Type": "application/json"
+? "force"= "false"
+? "handle_similar_events"= "true"
+json({
+    "add": [
+        "Critical",
+        "Critical"
+    ],
+    "remove": [
+        "Low",
+        "Low"
+    ]
+})
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a6b6ee1f-91a1-465e-81a5-5f1ad1e09be4.postman_collection.json
+
+// List all APIs in the directory.nReturns links to OpenAPI specification for each API in the directory.nIf API exist in multiple versions `preferred` one is explicitly marked.nnSome basic info from OpenAPI spec is cached inside each object.nThis allows to generate some simple views without need to fetch OpenAPI spec for each API.n
+
+@name("List all APIs")
+GET "https://{{baseUrl}}/list.json"
+
+
+// Some basic metrics for the entire directory.nJust stunning numbers to put on a front page and are intended purely for WoW effect :)n
+
+@name("Get basic metrics")
+GET "https://{{baseUrl}}/metrics.json"
+
+
+

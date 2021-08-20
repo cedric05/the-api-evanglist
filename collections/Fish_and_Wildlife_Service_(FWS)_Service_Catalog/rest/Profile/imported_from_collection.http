@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+// To limit the response length reasonably, only the first twenty-five References (in numeric order by id) will be returned.
+
+@name("Retrieve a small collection of Reference Profiles.")
+GET "https://{{baseUrl}}/rest/Profile"
+? "q"= "<string>"
+
+
+// Codes are posted as a simply array in the request body.<br/>
+// To limit the response length reasonably, only the first twenty-five References (in numeric order by id) will be returned.
+
+@name("Retrieve a small collection of Reference Profiles.")
+POST "https://{{baseUrl}}/rest/Profile"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "0": [
+        "<integer>"
+    ],
+    "1": [
+        "<integer>"
+    ]
+})
+
+
+@name("Retrieve a Reference Profile by its Reference Code.")
+GET "https://{{baseUrl}}/rest/Profile/:id"
+
+
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Return a collect with a certain id.
+
+@name("Return a collect with a certain id")
+GET "https://{{baseUrl}}/admin/collects/20713233987.json"
+"Content": "<>"
+
+
+// Remove a product from a collection.
+
+@name("Remove a product from a collection")
+DELETE "https://{{baseUrl}}/admin/collects/921728736.json"
+"Content": "<>"
+
+
+// Get a count of all collects.
+
+@name("Get a count of all collects")
+GET "https://{{baseUrl}}/admin/collects/count.json"
+"Content": "<>"
+
+
+

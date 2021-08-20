@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Register a Payment Service Provider and provide credentials
+
+@name("CREATE Payment Service Provider Credential")
+POST "https://{{baseUrl}}/payment-service-provider-credential"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "client_payment_service_provider_certificate": "<string>",
+    "client_payment_service_provider_certificate_chain": "<string>",
+    "client_public_key_signature": "<string>"
+})
+
+
+// Register a Payment Service Provider and provide credentials
+
+@name("READ Payment Service Provider Credential")
+GET "https://{{baseUrl}}/payment-service-provider-credential/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+

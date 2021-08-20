@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a3850ffc-6ee5-4ec4-9d26-3d9868411990.postman_collection.json
+
+// Confirms a previously submitted payout.
+// 
+// To cancel a payout, use the `/declineThirdParty` endpoint.
+
+@name("Confirms a payout.")
+POST "https://{{baseUrl}}/confirmThirdParty"
+
+
+// Cancels a previously submitted payout.
+// 
+// To confirm and send a payout, use the `/confirmThirdParty` endpoint.
+
+@name("Cancels a payout.")
+POST "https://{{baseUrl}}/declineThirdParty"
+
+
+// With this call, you can pay out to your customers, and funds will be made available within 30 minutes on the cardholder's bank account (this is dependent on whether the issuer supports this functionality). Instant card payouts are only supported for Visa and Mastercard cards.
+
+@name("Pay out directly.")
+POST "https://{{baseUrl}}/payout"
+
+
+// Stores payment details under the `PAYOUT` recurring contract. These payment details can be used later to submit a payout via the `/submitThirdParty` call.
+
+@name("Stores payout details.")
+POST "https://{{baseUrl}}/storeDetail"
+
+
+// Submits a payout and stores its details for subsequent payouts.
+// 
+// The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls.
+
+@name("Stores details and submits a payout.")
+POST "https://{{baseUrl}}/storeDetailAndSubmitThirdParty"
+
+
+// Submits a payout using the previously stored payment details. To store payment details, use the `/storeDetail` API call.
+// 
+// The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls.
+
+@name("Submits a payout.")
+POST "https://{{baseUrl}}/submitThirdParty"
+
+
+

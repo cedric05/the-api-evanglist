@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This REST API reference describes how to create a customer account with a credit-card payment method, a bill-to contact, and an optional sold-to contact. Request and response field descriptions and sample code are provided. Use this method to optionally create a subscription, invoice for that subscription, and collect payment through the default payment method. The transaction is atomic; if any part fails for any reason, the entire transaction is rolled back.nnThis API call is CORS Enabled, so y
+
+@name("Create account")
+POST "https://{{baseUrl}}/v1/accounts"
+"zuora": "<>"
+
+
+// Generates draft or posted billing documents for a specified account. You can also generate billing documents for specified subscriptions of a specified account. The billing documents contain invoices and credit memos. To generate credit memos, you must have the Advanced AR Settlement feature enabled.n
+
+@name("Generate billing documents by account")
+POST "https://{{baseUrl}}/v1/accounts/:id/billing-documents/generate"
+
+
+

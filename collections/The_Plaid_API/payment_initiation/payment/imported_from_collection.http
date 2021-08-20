@@ -1,0 +1,74 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// After creating a payment recipient, you can use the `/payment_initiation/payment/create` endpoint to create a payment to that recipient.  Payments can be one-time or standing order (recurring) and can be denominated in either EUR or GBP.  If making domestic GBP-denominated payments, your recipient must have been created with BACS numbers. In general, EUR-denominated payments will be sent via SEPA Credit Transfer and GBP-denominated payments will be sent via the Faster Payments network, but the payment network used will be determined by the institution. Payments sent via Faster Payments will typically arrive immediately, while payments sent via SEPA Credit Transfer will typically arrive in one business day.
+// 
+// Standing orders (recurring payments) must be denominated in GBP and can only be sent to recipients in the UK. Once created, standing order payments will continue indefinitely and cannot be modified or canceled via the API. An end user can cancel or modify a standing order directly on their banking application or website, or by contacting the bank. Standing orders will follow the payment rules of the underlying rails (Faster Payments in UK). Payments can be sent Monday to Friday, excluding bank holidays. If the pre-arranged date falls on a weekend or bank holiday, the payment is made on the next working day. It is not possible to guarantee the exact time the payment will reach the recipient’s account, although at least 90% of standing order payments are sent by 6am.
+
+@name("Create a payment") : "base-inherit-auth"
+POST "https://{{baseUrl}}/payment_initiation/payment/create"
+"Content-Type": "application/json"
+json({
+    "recipient_id": "laborum nulla",
+    "reference": "dolor id",
+    "amount": {
+        "currency": "GBP",
+        "value": 84460609.13496
+    },
+    "client_id": "eiusmod amet ipsum Ut",
+    "secret": "sint aliquip qui",
+    "schedule": {
+        "interval": "magna mollit sint in",
+        "interval_execution_day": -79813130.64593554,
+        "start_date": "sed cupidatat"
+    }
+})
+
+
+// The `/payment_initiation/payment/token/create` endpoint has been deprecated. New Plaid customers will be unable to use this endpoint, and existing customers are encouraged to migrate to the newer, `link_token`-based flow. The recommended flow is to provide the `payment_id` to `/link/token/create`, which returns a `link_token` used to initialize Link.
+// 
+// The `/payment_initiation/payment/token/create` is used to create a `payment_token`, which can then be used in Link initialization to enter a payment initiation flow. You can only use a `payment_token` once. If this attempt fails, the end user aborts the flow, or the token expires, you will need to create a new payment token. Creating a new payment token does not require end user input.
+
+@name("Create payment token") : "base-inherit-auth"
+POST "https://{{baseUrl}}/payment_initiation/payment/token/create"
+"Content-Type": "application/json"
+json({
+    "payment_id": "exercitation tempor fugiat commodo",
+    "client_id": "deserunt ipsum amet est incididunt",
+    "secret": "cillum aliqua minim dolore"
+})
+
+
+// The `/payment_initiation/payment/get` endpoint can be used to check the status of a payment, as well as to receive basic information such as recipient and payment amount. In the case of standing orders, the `/payment_initiation/payment/get` endpoint will provide information about the status of the overall standing order itself; the API cannot be used to retrieve payment status for individual payments within a standing order.
+
+@name("Get payment details") : "base-inherit-auth"
+POST "https://{{baseUrl}}/payment_initiation/payment/get"
+"Content-Type": "application/json"
+json({
+    "payment_id": "enim id ex",
+    "client_id": "irure non exercitation cillum",
+    "secret": "dolore anim eu"
+})
+
+
+// The `/payment_initiation/payment/list` endpoint can be used to retrieve all created payments. By default, the 10 most recent payments are returned. You can request more payments and paginate through the results using the optional `count` and `cursor` parameters.
+
+@name("List payments") : "base-inherit-auth"
+POST "https://{{baseUrl}}/payment_initiation/payment/list"
+"Content-Type": "application/json"
+json({
+    "client_id": "ut irure ut ex",
+    "secret": "dolore officia amet",
+    "count": 10,
+    "cursor": "exercitation"
+})
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-62c6cc63-de15-4694-9302-08ed4981816f.postman_collection.json
+
+// Returns a list of all current conditions for studies.
+
+@name("Get a list of all current conditions for studies.")
+GET "https://{{baseUrl}}/studies/conditions"
+? "sort"= "<>"
+
+
+// Returns a paginated list of studies.
+
+@name("Get a list of all current studies for a given condition.")
+GET "https://{{baseUrl}}/studies/conditions/:conditionSlug"
+? "page"= "<>"
+? "count"= "<get>"
+? "sort"= "<>"
+
+
+

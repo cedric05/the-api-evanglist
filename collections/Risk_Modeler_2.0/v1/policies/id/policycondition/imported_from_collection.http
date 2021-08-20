@@ -1,0 +1,70 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates a condition for a policy specified by its ID.
+
+@name("Create a condition for a specified policy") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/policies/:id/policycondition"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": 68020600,
+    "name": "ut ut",
+    "isPredefined": true,
+    "limit": -29226610.66426024,
+    "deductible": 42843555.38723466,
+    "deductibleType": {
+        "id": 90269114,
+        "code": "Ut voluptate a",
+        "name": "pariatur"
+    },
+    "conditionType": {
+        "id": 41117796,
+        "code": "et deserunt",
+        "name": "ullamco exercitation aliqua mollit"
+    },
+    "parentCondition": {
+        "id": -1140213,
+        "code": "sed consequat qui proident",
+        "name": "laborum proident"
+    },
+    "policyNumber": "do",
+    "policyConditionCriterias": [
+        {
+            "id": -58736323,
+            "logic": "cupidatat in enim",
+            "openPar": "sint no",
+            "field": "veniam in amet",
+            "operator": "ipsum voluptate nulla ",
+            "value": "ut Excepteur",
+            "closePar": "Duis nostrud eu no"
+        },
+        {
+            "id": -99854318,
+            "logic": "do",
+            "openPar": "id non proident sed amet",
+            "field": "proident ullamco dolore veniam dolor",
+            "operator": "fugiat eu proident",
+            "value": "in magna id",
+            "closePar": "nostrud ut"
+        }
+    ],
+    "percentOfLossDeductibleAmount": 43932742.674999535,
+    "isFranchiseDeductible": {
+        "id": -59679584,
+        "code": "et ipsum occaecat",
+        "name": "laboris"
+    }
+})
+
+
+

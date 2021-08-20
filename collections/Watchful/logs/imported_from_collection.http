@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd3bb79e-7d36-49f2-9d90-ac848a0b6d74.postman_collection.json
+
+// Returns a list of logs
+
+@name("Get A List Of Logs")
+GET "https://{{baseUrl}}/logs"
+? "log_type"= "<get>"
+? "log_entry"= "<get>"
+? "from"= "<>"
+? "to"= "<>"
+? "fields"= "<>"
+? "limit"= "<>"
+? "limitstart"= "<>"
+? "order"= "<>"
+
+
+// Returns a file contain the list of logs
+
+@name("Get A CSV Or PDF File Contain The List Of Logs")
+GET "https://{{baseUrl}}/logs/export"
+? "format"= "<>"
+? "site"= "<object>"
+? "filter_type"= "<>"
+? "search"= "<>"
+? "startdate"= "<>"
+? "enddate"= "<>"
+? "limit"= "<>"
+? "startid"= "<>"
+
+
+// Returns a list of fields
+
+@name("Get The List Of Fields")
+GET "https://{{baseUrl}}/logs/metadata"
+
+
+// Returns a list of log types
+
+@name("Get The List Of Log Types")
+GET "https://{{baseUrl}}/logs/types"
+
+
+// Delete a specific log
+
+@name("Delete A Specific Log")
+DELETE "https://{{baseUrl}}/logs/:id"
+
+
+

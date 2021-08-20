@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ad3f73f7-67c3-459b-bad8-3fea2999fe92.postman_collection.json
+
+// Pulls the OpenAPI and loops through aggregating a handful of counts about some of the common elements of an OpenAPI. I will be making it count more and improving the results that get displayed through visualizer. 
+// 
+// *Make sure you click on visualizer to see the results!**
+// 
+// **Notes**
+// 
+// - Need to count all the schema, properties, and other elements.
+// - How should we handle responses? Count each response? By status code? Media Types?
+// - What else should be here?
+// - How can it be made more visually appealing?
+
+@name("Evaluate Scope of API")
+GET "https://{{postman_base_url}}/apis/"
+"x-api-key": "{{postman_api_key}}"
+? "api_name"= "Petstore"
+? "api_version"= "1.0.0"
+
+
+

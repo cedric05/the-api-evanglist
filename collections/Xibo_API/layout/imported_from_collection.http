@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search for Layouts viewable by this user
+
+@name("Search Layouts")
+GET "https://{{baseUrl}}/layout"
+
+
+// Retire a Layout so that it isn't available to Schedule. Existing Layouts will still be played
+
+@name("Retire Layout")
+PUT "https://{{baseUrl}}/layout/retire/:layoutId"
+
+
+// Copy a Layout, providing a new name if applicable
+
+@name("Copy Layout")
+POST "https://{{baseUrl}}/layout/copy/:layoutId"
+
+
+// Calculate the Layout status and return a Layout
+
+@name("Layout Status")
+GET "https://{{baseUrl}}/layout/status/:layoutId"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c9639525-658f-484a-8644-666d58809d44.postman_collection.json
+
+// Get Profile data based on latitude, longitude, azimuth, data source and unit of measurement. Response returned in JSON format.
+
+@name("Get Profile")
+GET "https://{{baseUrl}}/profile.{{format}}"
+? "lat"= ""
+? "lon"= ""
+? "azimuth"= ""
+? "start"= ""
+? "end"= ""
+? "num_points"= ""
+? "src"= "ned"
+? "unit"= "m"
+
+
+

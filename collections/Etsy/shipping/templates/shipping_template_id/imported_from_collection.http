@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Retrieves a ShippingTemplate by id.
+
+@name("Get Shipping Templates Shipping Template")
+GET "https://{{baseUrl}}/shipping/templates/:shipping_template_id"
+
+
+// Retrieves a set of ShippingTemplateEntry objects associated to a ShippingTemplate.
+
+@name("Get Shipping Templates Shipping Template Entries")
+GET "https://{{baseUrl}}/shipping/templates/:shipping_template_id/entries"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

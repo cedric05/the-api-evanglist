@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get a list of graphics
+// 
+// ---
+// Alternate route: `/legacy/universe/graphics/`
+// 
+// Alternate route: `/v1/universe/graphics/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get graphics")
+GET "https://{{baseUrl}}/universe/graphics/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get information on a graphic
+// 
+// ---
+// Alternate route: `/dev/universe/graphics/{graphic_id}/`
+// 
+// Alternate route: `/legacy/universe/graphics/{graphic_id}/`
+// 
+// Alternate route: `/v1/universe/graphics/{graphic_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get graphic information")
+GET "https://{{baseUrl}}/universe/graphics/:graphic_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

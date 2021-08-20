@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a list of the workflow schemes associated with a list of projects. Each returned workflow scheme includes a list of the requested projects associated with it. Any next-gen or non-existent projects in the request are ignored and no errors are returned.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get Workflow Scheme Project Associations") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/workflowscheme/project"
+? "projectId"= "<long>"
+
+
+// Assigns a workflow scheme to a project. This operation is performed only when there are no issues in the project.
+// 
+// Workflow schemes can only be assigned to classic projects.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Assign Workflow Scheme To Project") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/rest/api/3/workflowscheme/project"
+"Content-Type": "application/json"
+json({
+    "projectId": "<string>",
+    "workflowSchemeId": "<string>"
+})
+
+
+

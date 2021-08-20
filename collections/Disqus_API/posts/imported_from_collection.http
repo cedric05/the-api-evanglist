@@ -1,0 +1,115 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-139d2cf6-a45e-49f8-b258-0453deb0a5e1.postman_collection.json
+
+// Posts Spam 
+
+@name("Posts Spam")
+POST "https://{{baseUrl}}/posts/spam.json"
+? "post"= "<string>"
+
+
+// Posts Details 
+
+@name("Posts Details")
+GET "https://{{baseUrl}}/posts/details.json"
+? "post"= "<string>"
+? "related"= "<string>"
+
+
+// Posts Report 
+
+@name("Posts Report")
+POST "https://{{baseUrl}}/posts/report.json"
+? "post"= "<string>"
+
+
+// Posts Create 
+
+@name("Posts Create")
+POST "https://{{baseUrl}}/posts/create.json"
+? "author_email"= "<string>"
+? "author_name"= "<string>"
+? "author_url"= "<string>"
+? "date"= "<string>"
+? "ip_address"= "<string>"
+? "message"= "<string>"
+? "parent"= "<string>"
+? "state"= "<string>"
+? "thread"= "<string>"
+
+
+// Posts GetContext 
+
+@name("Posts GetContext")
+GET "https://{{baseUrl}}/posts/getContext.json"
+? "depth"= "<string>"
+? "post"= "<string>"
+? "related"= "<string>"
+
+
+// Posts Update 
+
+@name("Posts Update")
+POST "https://{{baseUrl}}/posts/update.json"
+? "message"= "<string>"
+? "post"= "<string>"
+
+
+// Posts Restore 
+
+@name("Posts Restore")
+POST "https://{{baseUrl}}/posts/restore.json"
+? "post"= "<string>"
+
+
+// Posts Vote 
+
+@name("Posts Vote")
+POST "https://{{baseUrl}}/posts/vote.json"
+? "post"= "<string>"
+? "vote"= "<string>"
+
+
+// Posts ListPopular 
+
+@name("Posts ListPopular")
+GET "https://{{baseUrl}}/posts/listPopular.json"
+? "category"= "<string>"
+? "forum"= "<string>"
+? "include"= "<string>"
+? "interval"= "<string>"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "order"= "<string>"
+? "organization"= "<string>"
+? "query"= "<string>"
+? "related"= "<string>"
+? "thread"= "<string>"
+
+
+// Posts Remove 
+
+@name("Posts Remove")
+POST "https://{{baseUrl}}/posts/remove.json"
+? "post"= "<string>"
+
+
+// Posts List 
+
+@name("Posts List")
+GET "https://{{baseUrl}}/posts/list.json"
+? "category"= "<string>"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "order"= "<string>"
+? "query"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+? "thread"= "<string>"
+
+
+

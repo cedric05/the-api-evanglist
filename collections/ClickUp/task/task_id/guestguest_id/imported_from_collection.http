@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// JSON Body:
+// {
+//   "permission_level": "read" || "comment" || "edit" || "create"
+// }
+
+@name("Add Guest to Task") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/task/task_id/guest/guest_id"
+"Content-Type": "application/json"
+json({
+    "permission_level": "read"
+})
+
+
+@name("Remove Guest from Task") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/task/task_id/guest/guest_id"
+
+
+

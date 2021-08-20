@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bddbaf5a-26e6-497b-85a9-b22a2a06054d.postman_collection.json
+
+// Accepts username and password Created in API1
+
+@name("User Login")
+POST "http://{{host}}/vapi/api3/loginUser.php"
+data({
+    "username": [
+        "testuser"
+    ],
+    "password": [
+        "test123"
+    ]
+})
+
+
+// Posts a Comment on the Post
+
+@name("Post Comment")
+POST "http://{{host}}/vapi/api3/postComment.php"
+data({
+    "username": [
+        ""
+    ],
+    "deviceid": [
+        ""
+    ],
+    "latitude": [
+        ""
+    ],
+    "longitude": [
+        ""
+    ],
+    "commenttext": [
+        ""
+    ]
+})
+
+
+@name("Get Comments")
+GET "http://{{host}}/vapi/api3/getComments.php"
+
+
+

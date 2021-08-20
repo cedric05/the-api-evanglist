@@ -1,0 +1,56 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Create a Webhook") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/team/team_id/webhook"
+"Content-Type": "application/json"
+json({
+    "endpoint": "https://af4a0f62.ngrok.io",
+    "events": [
+        "taskCreated",
+        "taskUpdated",
+        "taskDeleted",
+        "taskPriorityUpdated",
+        "taskStatusUpdated",
+        "taskAssigneeUpdated",
+        "taskDueDateUpdated",
+        "taskTagUpdated",
+        "taskMoved",
+        "taskCommentPosted",
+        "taskCommentUpdated",
+        "taskTimeEstimateUpdated",
+        "taskTimeTrackedUpdated",
+        "listCreated",
+        "listUpdated",
+        "listDeleted",
+        "folderCreated",
+        "folderUpdated",
+        "folderDeleted",
+        "spaceCreated",
+        "spaceUpdated",
+        "spaceDeleted",
+        "goalCreated",
+        "goalUpdated",
+        "goalDeleted",
+        "keyResultCreated",
+        "keyResultUpdated",
+        "keyResultDelted"
+    ]
+})
+
+
+// Please create another webhook and test afterward
+
+@name("Get Webhooks") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/team/team_id/webhook"
+"Content-Type": "application/json"
+
+
+

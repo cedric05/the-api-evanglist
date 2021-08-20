@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Upload multiple files at once to a dataset.
+// 
+// This endpoint expects requests of type `multipart/form-data` and you can include one or more parts named `file`, each containing a different file to be uploaded.
+// 
+// For example, assuming that you want to upload two local files named `file1.csv` and `file2.csv` to a hypothetical dataset `https://data.world/awesome-user/awesome-dataset`, this is what the cURL command would look like.
+// 
+// ```bash
+// curl \
+//   -H "Authorization: Bearer " \
+//   -F "file=@file1.csv" \
+//   -F "file=@file2.csv" \
+//   https://api.data.world/v0/uploads/awesome-user/awesome-dataset/files
+// ```
+// 
+// Swagger clients may limit this method of upload to one file at a time. Other HTTP clients capable of making multipart/form-data requests can be used to upload multiple files in a single request.
+
+@name("Upload files") : "base-inherit-auth"
+POST "https://{{baseUrl}}/uploads/:owner/:id/files"
+"Content-Type": "multipart/form-data"
+? "expandArchives"= "false"
+files(
+	("file", "sint irure")
+)
+
+
+// Upload one file at a time to a dataset.
+// 
+// This endpoint expects requests of type `application/octet-stream`.
+// 
+// For example, assuming that you want to upload a local file named `file1.csv` to a hypothetical dataset `https://data.world/awesome-user/awesome-dataset` and choose its name on data.world to be `better-name.csv`, this is what the cURL command would look like.
+// 
+// ```bash
+// curl \
+//   -H "Authorization: Bearer " \
+//   -X PUT -H "Content-Type: application/octet-stream" \
+//   --data-binary @file1.csv \
+//   https://api.data.world/v0/uploads/awesome-user/awesome-dataset/files/better-name.csv
+// ```
+// 
+// This method of upload is typically not supported by Swagger clients. Other HTTP clients can be used to supply the contents of the file directly in the body of the request.
+
+@name("Upload a file") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/uploads/:owner/:id/files/:file"
+? "expandArchive"= "false"
+
+
+

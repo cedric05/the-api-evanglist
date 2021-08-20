@@ -1,0 +1,1 @@
+This collection was just used to scrape the original HTML listing and generate the jSON needed to publish as a simple static API.

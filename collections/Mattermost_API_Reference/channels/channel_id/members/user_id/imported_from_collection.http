@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a channel member.n##### Permissionsn`read_channel` permission for the channel.n
+
+@name("Get channel member")
+GET "https://{{baseUrl}}/channels/:channel_id/members/:user_id"
+
+
+// Update a user's roles for a channel.n##### PermissionsnMust have `manage_channel_roles` permission for the channel.n
+
+@name("Update channel roles")
+PUT "https://{{baseUrl}}/channels/:channel_id/members/:user_id/roles"
+
+
+// Update a user's notification properties for a channel. Only the provided fields are updated.n##### PermissionsnMust be logged in as the user or have `edit_other_users` permission.n
+
+@name("Update channel notifications")
+PUT "https://{{baseUrl}}/channels/:channel_id/members/:user_id/notify_props"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("List similar images")
+GET "https://{{baseurl}}/cv/similar/images"
+? "asset_id"= ""
+? "language"= ""
+? "page"= ""
+? "per_page"= ""
+? "view"= ""
+
+
+@name("List similar videos")
+GET "https://{{baseurl}}/cv/similar/videos"
+? "asset_id"= ""
+? "language"= ""
+? "page"= ""
+? "per_page"= ""
+? "view"= ""
+
+
+

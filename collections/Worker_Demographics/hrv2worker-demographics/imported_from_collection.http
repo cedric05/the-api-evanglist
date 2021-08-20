@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-559337c5-9173-47c6-abcc-984101fc257f.postman_collection.json
+
+// Request the list of all available worker demographics that the requester is authorized to view.
+
+@name("Worker Demographics")
+GET "https://{{baseUrl}}/hr/v2/worker-demographics"
+? "No Name"= "<string>"
+
+
+// Returns a worker demographic
+
+@name("Worker Demographic")
+GET "https://{{baseUrl}}/hr/v2/worker-demographics/:aoid"
+? "No Name"= "<string>"
+
+
+// Returns a meta
+
+@name("Worker Demographic Meta")
+GET "https://{{baseUrl}}/hr/v2/worker-demographics/meta"
+? "No Name"= "<string>"
+
+
+

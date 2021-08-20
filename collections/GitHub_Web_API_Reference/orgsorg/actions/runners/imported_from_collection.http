@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+// 
+// Lists all self-hosted runners for an organization. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+
+@name("List self-hosted runners for an organization")
+GET "https://{{baseUrl}}/orgs/:org/actions/runners"
+? "per_page"= "30"
+? "page"= "1"
+
+
+// **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+// 
+// Lists binaries for the runner application that you can download and run. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+
+@name("List runner applications for an organization")
+GET "https://{{baseUrl}}/orgs/:org/actions/runners/downloads"
+
+
+// **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+// 
+// 
+// Returns a token that you can pass to the `config` script. The token expires after one hour. You must authenticate
+// using an access token with the `admin:org` scope to use this endpoint.
+// 
+// #### Example using registration token
+// 
+// Configure your self-hosted runner, replacing `TOKEN` with the registration token provided by this endpoint.
+// 
+// ```
+// ./config.sh --url https://github.com/octo-org --token TOKEN
+// ```
+
+@name("Create a registration token for an organization")
+POST "https://{{baseUrl}}/orgs/:org/actions/runners/registration-token"
+
+
+// **Warning:** The self-hosted runners API for organizations is currently in public beta and subject to change.
+// 
+// 
+// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The
+// token expires after one hour. You must authenticate using an access token with the `admin:org` scope to use this
+// endpoint.
+// 
+// #### Example using remove token
+// 
+// To remove your self-hosted runner from an organization, replace `TOKEN` with the remove token provided by this
+// endpoint.
+// 
+// ```
+// ./config.sh remove --token TOKEN
+// ```
+
+@name("Create a remove token for an organization")
+POST "https://{{baseUrl}}/orgs/:org/actions/runners/remove-token"
+
+
+

@@ -1,0 +1,349 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Get all entries</code> call fetches the list of all the entries of a particular content type. It also returns the content of each entry in JSON format. You can also specify the environment and locale of which you wish to get the entries.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-all-entries>Get all Entries</a> API Reference document
+
+@name("Get all entries")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "locale"= "{{locale}}"
+? "include_workflow"= "false"
+? "include_publish_details"= "true"
+
+
+// <p>The <code>Get a single entry</code> request fetches a particular entry of a content type.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-a-single-entry>Get a Single Entry</a> API Reference document
+
+@name("Get a single entry")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "version"= "2"
+? "locale"= "{{locale}}"
+? "include_workflow"= "true"
+? "include_publish_details"= "true"
+
+
+// <p>The <code>Create an entry</code> call creates a new&nbsp;entry for the selected content type.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#create-an-entry>Create an Entry</a> API Reference document
+
+@name("Create an entry")
+POST "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "locale"= "{{locale}}"
+json({
+    "entry": {
+        "title": "example",
+        "url": "/example"
+    }
+})
+
+
+// <p>The <code>Update an entry</code> call lets you update the content of an existing entry.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#update-an-entry>Update an Entry</a> API Reference document
+
+@name("Update an entry")
+PUT "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "locale"= "{{locale}}"
+json({
+    "entry": {
+        "title": "example",
+        "url": "/example"
+    }
+})
+
+
+// <p>The <code>Delete an entry</code> request allows you to delete a specific entry from a content type. This API request also allows you to delete single and/or multiple&nbsp;localized entries.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#delete-an-entry>Delete an Entry</a> API Reference document
+
+@name("Delete an entry")
+DELETE "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "locale"= "{{locale}}"
+? "delete_all_localized"= "true"
+
+
+
+// <p>The <code>Set Version Name for Entry</code> request allows you to assign a name to a specific version of an entry.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#entry-version-naming>Entry Version Naming</a> API Reference document
+
+@name("Set Version Name for Entry")
+POST "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/versions/{{version_number}}/name"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entry": {
+        "_version_name": "Test version",
+        "locale": "fr-fr",
+        "force": true
+    }
+})
+
+
+// <p>The <code>Get Details of All Versions of an Entry</code> request allows you to retrieve the details of all the versions of an entry.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#entry-version-naming>Entry Version Naming</a> API Reference document
+
+@name("Get Details of All Versions of an Entry")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/versions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "skip"= "1"
+? "limit"= "5"
+? "named"= "false"
+? "include_count"= "false"
+? "locale"= "{{locale}}"
+
+
+// <p>The <code>Delete Version Name of Entry</code> request allows you to delete the name assigned to a specific version of an entry. This request resets the name of the entry version to the version number.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#entry-version-naming>Entry Version Naming</a> API Reference document
+
+@name("Delete Version Name of Entry")
+DELETE "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/versions/{{version_number}}/name"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entry": {
+        "locale": "en-us"
+    }
+})
+
+
+// <p>The <code>Get references of an entry</code> call returns all the entries of content types that are referenced by a particular entry.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#entry-references>Entry References</a> API Reference document
+
+@name("Get references of an entry")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/references"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "locale"= "{{locale}}"
+
+
+// <p>The <code>Get languages of an entry</code> call returns the details of all the languages that an entry exists in.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#entry-languages>Entry Languages</a> API Reference document
+
+@name("Get languages of an entry")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/locales"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Localize an entry</code> request allows you to localize an entry i.e., the entry will cease to fetch data from its fallback language and possess independent content specific to the selected locale.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#localize-an-entry>Localize an Entry</a> API Reference document
+
+@name("Localize an entry")
+PUT "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "locale"= "{{locale}}"
+json({
+    "entry": {
+        "title": "Home",
+        "url": "/home-french",
+        "tags": [],
+        "locale": "en-us",
+        "uid": "bltc123d123b123f91c1",
+        "created_by": "blt55e55d55d5f55555a5b5f",
+        "updated_by": "blt55e55d55d5f55555a5b5f",
+        "created_at": "2017-06-13T12:34:52.083Z",
+        "updated_at": "2018-12-28T06:33:06.752Z",
+        "ACL": {},
+        "_version": 2
+    }
+})
+
+
+// <p>The <code>Unlocalize an entry</code> request is used to unlocalize an existing entry. Read more about <a href="/docs/developers/multilingual-content/unlocalize-an-entry/">Unlocalization</a>.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#unlocalize-entry>Unlocalize Entry</a> API Reference document
+
+@name("Unlocalize an entry")
+POST "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/unlocalize"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "locale"= "{{locale}}"
+
+
+
+// <p>The <code>Export an entry</code> call is used to export an entry. The exported entry data is saved in a downloadable JSON file.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#export-entry>Export Entry</a> API Reference document
+
+@name("Export an entry")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/export"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "locale"= "{{locale}}"
+
+
+// <p>The <code>Import an entry</code> call is used to import an entry. To import an entry, you need to upload a JSON file that has entry data in the format that fits the schema of the content type it is being imported to.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#import-entry>Import Entry</a> API Reference document
+
+@name("Import an entry")
+POST "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/import"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+? "locale"= "{{locale}}"
+? "overwrite"= "false"
+files(
+	("entry", "None")
+)
+
+
+// <p>The <code>Import an existing entry</code> call will import a new version of an existing entry. You can create multiple versions of an entry.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#import-entry>Import Entry</a> API Reference document
+
+@name("Import an existing entry")
+POST "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/import"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+? "locale"= "{{locale}}"
+? "overwrite"= "false"
+files(
+	("entry", "None")
+)
+
+
+// <p>The <code>Publish an entry</code> request lets you publish an entry either immediately or schedule it for a later date/time.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-entry>Publish Entry</a> API Reference document
+
+@name("Publish an entry")
+POST "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/publish"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entry": {
+        "environments": [
+            "development"
+        ],
+        "locales": [
+            "en-us"
+        ]
+    },
+    "locale": "en-us",
+    "version": 1,
+    "scheduled_at": "2019-02-14T18:30:00.000Z"
+})
+
+
+// <p>The <code>Publish an Entry With References</code> request allows you to publish an entry along with all its references at the same time.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-entry>Publish Entry</a> API Reference document
+
+@name("Publish an entry with references")
+POST "https://{{base_url}}/v3/bulk/publish"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "approvals"= "true"
+? "x-bulk-action"= "publish"
+? "skip_workflow_stage_check"= "true"
+json({
+    "entries": [
+        {
+            "uid": "{entry_uid}",
+            "content_type": "{content_type_uid}",
+            "version": 1,
+            "locale": "{entry_locale_code}"
+        }
+    ],
+    "locales": [
+        "{publish_locale}"
+    ],
+    "environments": [
+        "{environment_uid}"
+    ],
+    "publish_with_reference": true,
+    "skip_workflow_stage_check": true
+})
+
+
+// <p>The <code>Unpublish an entry</code> call will unpublish an entry at once, and also, gives you the provision to unpublish an entry automatically at a later date/time.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#unpublish-entry>Unpublish Entry</a> API Reference document
+
+@name("Unpublish an entry")
+POST "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/unpublish"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "entry": {
+        "environments": [
+            "development"
+        ],
+        "locales": [
+            "en-us"
+        ]
+    },
+    "locale": "en-us",
+    "version": 1,
+    "scheduled_at": "2019-02-14T18:30:00.000Z"
+})
+
+
+

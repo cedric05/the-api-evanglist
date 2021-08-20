@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Retrieve a given step of a pipeline.
+
+@name("get Pipeline Step For Repository")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines/:pipeline_uuid/steps/:step_uuid"
+
+
+// Retrieve the log file for a given step of a pipeline.
+// 
+// This endpoint supports (and encourages!) the use of [HTTP Range requests](https://tools.ietf.org/html/rfc7233) to deal with potentially very large log files.
+
+@name("get Pipeline Step Log For Repository")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines/:pipeline_uuid/steps/:step_uuid/log"
+
+
+

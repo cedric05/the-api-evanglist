@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get restaurant by uid if you are authorized to
+
+@name("Get restaurant")
+GET "https://{{baseUrl}}/api/v{{version}}/restaurants/:restaurantUid"
+
+
+// Get a list of reviews for this restaurant
+
+@name("Get reviews")
+GET "https://{{baseUrl}}/api/v{{version}}/restaurants/:restaurantUid/reviews"
+
+
+// Get a summary of reviews for this restaurant.
+
+@name("Get reviews summary")
+GET "https://{{baseUrl}}/api/v{{version}}/restaurants/:restaurantUid/reviewsummary/:dateFrom"
+? "dateFrom"= "1978-03-21T16:08:35.679Z"
+
+
+@name("Gets app and restaurant config. This can only be called by Apps.")
+GET "https://{{baseUrl}}/api/v{{version}}/restaurants/:restaurantUid/restaurantapp/authconfig"
+
+
+@name("Gets app settings of the restaurant. This can only be called by Apps.")
+GET "https://{{baseUrl}}/api/v{{version}}/restaurants/:restaurantUid/appsettings"
+
+
+

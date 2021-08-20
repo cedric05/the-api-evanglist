@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method gets all the videos from the specified album.
+
+@name("Get all the videos in an album")
+GET "https://{{baseUrl}}/users/:user_id/albums/:album_id/videos"
+? "containing_uri"= "<string>"
+? "direction"= "<string>"
+? "filter"= "<string>"
+? "filter_embeddable"= "<string>"
+? "page"= "<string>"
+? "password"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+? "weak_search"= "<string>"
+
+
+

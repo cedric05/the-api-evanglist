@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f922d0e7-961f-4d4f-9e8f-4c3094787e1f.postman_collection.json
+
+// This GET API returns the list of all the searchable field names that are in the enriched_cited_reference_metadata. Please see the 'fields' attribute which returns an array of field names. Each field or a combination of fields can be searched using the syntax options shown below.
+
+@name("Provides the general information about the API and the list of fields that can be used to query the dataset.")
+GET "https://{{baseUrl}}/enriched_cited_reference_metadata/v2/fields"
+
+
+// This API is based on Solr/Lucense Search. The data is indexed using SOLR. This GET API returns the list of all the searchable field names that are in the Solr Index. Please see the 'fields' attribute which returns an array of field names. Each field or a combination of fields can be searched using the Solr/Lucene Syntax. Please refer https://lucene.apache.org/core/3_6_2/queryparsersyntax.html#Overview for the query syntax. List of field names that are searchable can be determined using above GET api.
+
+@name("Provides search capability for the data set with the given search criteria.")
+POST "https://{{baseUrl}}/enriched_cited_reference_metadata/v2/records"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "criteria": [
+        "*:*"
+    ],
+    "start": [
+        "0"
+    ],
+    "rows": [
+        "100"
+    ]
+})
+
+
+

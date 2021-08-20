@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Returns contracts available to a corporation, only if the corporation is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is "in_progress".
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/contracts/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/contracts/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/contracts/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("Get corporation contracts")
+GET "https://{{baseUrl}}/corporations/:corporation_id/contracts/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+

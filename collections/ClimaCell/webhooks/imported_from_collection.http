@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d3f2edc-e0e7-4b26-a712-076a7e2780a4.postman_collection.json
+
+// ### List all WebhooksnPage through a list of all your Webhooks. You can specify the maximum number of results to be retuned, and from which result to start.n
+
+@name("Get Webhooks")
+GET "https://{{baseUrl}}/webhooks"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// ### Retrieve a WebhooknnGet a single Webhook with its information by specifying its ```webhook_id```.n
+
+@name("Get Webhooks Webhook")
+GET "https://{{baseUrl}}/webhooks/:webhook_id"
+
+
+

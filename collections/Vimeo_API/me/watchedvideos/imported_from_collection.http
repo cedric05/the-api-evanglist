@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method deletes the authenticated user's entire watch history.
+
+@name("Delete a user's watch history")
+DELETE "https://{{baseUrl}}/me/watched/videos"
+
+
+// This method deletes the specified video from the authenticated user's watch history.
+
+@name("Delete a specific video from a user's watch history")
+DELETE "https://{{baseUrl}}/me/watched/videos/:video_id"
+
+
+

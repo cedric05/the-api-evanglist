@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieve a package
+
+@name("Retrieve a package") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/data-redaction/packages/:package_name"
+
+
+// Create a package. The body package name must match the resource identifier
+
+@name("Create a package") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/services/:env_id/settings/data-redaction/packages/:package_name"
+"Content-Type": "application/json"
+json({
+    "name": "com.example"
+})
+
+
+// Delete package
+
+@name("Delete package") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/services/:env_id/settings/data-redaction/packages/:package_name"
+
+
+

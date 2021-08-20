@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-54878362-f1e0-480d-8f98-ee993486ed58.postman_collection.json
+
+// Change worker general deduction instruction information
+
+@name("Change Worker General Deduction Instruction")
+POST "https://{{baseUrl}}/events/payroll/v2/worker-general-deduction-instruction.change"
+? "No Name"= "<string>"
+
+
+// Returns an event metadata
+
+@name("Change Worker General Deduction Instruction Meta")
+GET "https://{{baseUrl}}/events/payroll/v2/worker-general-deduction-instruction.change/meta"
+? "No Name"= "<string>"
+
+
+

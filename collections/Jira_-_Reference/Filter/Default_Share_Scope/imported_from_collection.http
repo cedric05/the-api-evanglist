@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns the default sharing settings for new filters and dashboards for a user.
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Get Default Share Scope") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/filter/defaultShareScope"
+
+
+// Sets the default sharing for new filters and dashboards for a user.
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Set Default Share Scope") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/rest/api/3/filter/defaultShareScope"
+"Content-Type": "application/json"
+json({
+    "scope": "<string>"
+})
+
+
+

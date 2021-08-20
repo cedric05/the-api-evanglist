@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// List or search all organizations
+
+@name("Get Organizations")
+GET "https://{{baseUrl}}/organizations/"
+? "sort"= "<>"
+? "datasets"= "<string>"
+? "facets"= "<string>"
+? "page_size"= "<string>"
+? "q"= "<>"
+? "followers"= "<>"
+? "reuses"= "<string>"
+? "permitted_reuses"= "<>"
+? "badge"= "<object>"
+? "page"= "<string>"
+
+
+// List all available organization badges and their labels
+
+@name("Get Organizations Badges")
+GET "https://{{baseUrl}}/organizations/badges/"
+
+
+// Suggest organizations
+
+@name("Get Organizations Suggest")
+GET "https://{{baseUrl}}/organizations/suggest/"
+? "q"= "<>"
+? "size"= "<>"
+
+
+// Unfollow an object given its ID
+
+@name("Delete Organizations  Followers")
+DELETE "https://{{baseUrl}}/organizations/:id/followers/"
+
+
+

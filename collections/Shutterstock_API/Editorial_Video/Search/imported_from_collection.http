@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-02fae580-11a1-41da-afdc-655537d58f8f.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// This endpoint searches for editorial videos. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter. You can also filter search terms out in the `query` parameter by prefixing the term with NOT.
+
+@name("Search editorial video content") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/editorial/videos/search"
+? "query"= "<string>"
+? "sort"= "relevant"
+? "category"= "<string>"
+? "country"= "<country-code-3>"
+? "supplier_code"= "<string>"
+? "date_start"= "<date>"
+? "date_end"= "<date>"
+? "resolution"= "<string>"
+? "fps"= "<number>"
+? "per_page"= "20"
+? "cursor"= "<string>"
+
+
+

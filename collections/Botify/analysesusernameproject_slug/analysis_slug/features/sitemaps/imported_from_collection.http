@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// Get global information of the sitemaps found (sitemaps indexes, invalid sitemaps urls, etc.)
+
+@name("Get global information of the sitemaps found (sitemaps indexes, invalid sitemaps urls, etc")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/sitemaps/report"
+
+
+

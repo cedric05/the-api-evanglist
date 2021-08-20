@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /checkins/{CHECKIN_ID}
+
+@name("/checkins/{CHECKIN_ID}")
+POST "https://{{baseUrl}}/checkins/add"
+? "alt"= "<string>"
+? "altAcc"= "<string>"
+? "broadcast"= "<string>"
+? "eventId"= "<string>"
+? "ll"= "<string>"
+? "llAcc"= "<string>"
+? "shout"= "<string>"
+? "v"= "<string>"
+? "venue"= "<string>"
+? "venueId"= "<string>"
+
+
+// /checkins/add
+
+@name("/checkins/add")
+GET "https://{{baseUrl}}/checkins/recent"
+? "afterTimestamp"= "<string>"
+? "limit"= "<integer>"
+? "ll"= "<string>"
+? "v"= "<string>"
+
+
+

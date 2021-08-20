@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-139d2cf6-a45e-49f8-b258-0453deb0a5e1.postman_collection.json
+
+// Whitelists List 
+
+@name("Whitelists List")
+GET "https://{{baseUrl}}/whitelists/list.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "query"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+? "since_id"= "<string>"
+? "type"= "<string>"
+
+
+// Whitelists Remove 
+
+@name("Whitelists Remove")
+POST "https://{{baseUrl}}/whitelists/remove.json"
+? "email"= "<string>"
+? "forum"= "<string>"
+? "user"= "<string>"
+
+
+

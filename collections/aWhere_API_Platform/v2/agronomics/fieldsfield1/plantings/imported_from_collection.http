@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-08e60012-84a0-43aa-8ba6-20d6c054c306.postman_collection.json
+
+// ####RequestnThis API call retrieves the list of plantings for a specific field in your account. nn[Get Plantings Documentation](http://developer.awhere.com/api/reference/plantings/get-plantings)nnn####SecuritynThis API call uses the security Access Token that is retrieved with the Get a Token request. If you run that request first, it will save a token to Postman and this API will use it automatically. You can also see where the token should normally go by clicking the Headers tab below. The
+
+@name("Get Plantings List for a Field")
+GET "https://{{baseUrl}}/v2/agronomics/fields/field1/plantings"
+
+
+// ####RequestnThis API call shows how to update only a couple of fields in a planting instead of having to update the entire object.nn__Note:__ You probably what to change the date in the request body.nn[Update Planting Documentation](http://developer.awhere.com/api/reference/plantings/update)nnn####SecuritynThis API call uses the security Access Token that is retrieved with the Get a Token request. If you run that request first, it will save a token to Postman and this API will use it automatic
+
+@name("Update Part of a Planting")
+PATCH "https://{{baseUrl}}/v2/agronomics/fields/field1/plantings/current"
+"Content": "<>"
+
+
+

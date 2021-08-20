@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2e3bbcd-4c1a-45f3-8016-86639e868822.postman_collection.json
+
+// Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.
+
+@name("Get User Blog Posts")
+GET "https://{{baseUrl}}/users/:userId/blogs/:blogId/posts"
+? "endDate"= "<>"
+? "fetchBodies"= "<>"
+? "labels"= "<parameters>"
+? "maxResults"= "<>"
+? "orderBy"= "<>"
+? "pageToken"= "<>"
+? "startDate"= "<>"
+? "status"= "<parameters>"
+? "view"= "<>"
+
+
+// Gets one post and user info pair, by post ID and user ID. The post user info contains per-user information about the post, such as access rights, specific to the user.
+
+@name("Get User Blog Post")
+GET "https://{{baseUrl}}/users/:userId/blogs/:blogId/posts/:postId"
+? "maxComments"= "<>"
+
+
+

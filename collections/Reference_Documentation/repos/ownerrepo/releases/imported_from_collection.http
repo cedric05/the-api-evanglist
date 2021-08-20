@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://developer.github.com/v3/repos/#list-repository-tags).
+// 
+// Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.
+
+@name("List releases")
+GET "https://{{baseUrl}}/repos/:owner/:repo/releases"
+? "per_page"= "30"
+? "page"= "1"
+
+
+// Users with push access to the repository can create a release.
+// 
+// This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+
+@name("Create a release")
+POST "https://{{baseUrl}}/repos/:owner/:repo/releases"
+"Content-Type": "application/json"
+json({
+    "tag_name": "<string>",
+    "target_commitish": "<string>",
+    "name": "<string>",
+    "body": "<string>",
+    "draft": false,
+    "prerelease": false
+})
+
+
+// View the latest published full release for the repository.
+// 
+// The latest release is the most recent non-prerelease, non-draft release, sorted by the `created_at` attribute. The `created_at` attribute is the date of the commit used for the release, and not the date when the release was drafted or published.
+
+@name("Get the latest release")
+GET "https://{{baseUrl}}/repos/:owner/:repo/releases/latest"
+
+
+// Get a published release with the specified tag.
+
+@name("Get a release by tag name")
+GET "https://{{baseUrl}}/repos/:owner/:repo/releases/tags/:tag"
+
+
+

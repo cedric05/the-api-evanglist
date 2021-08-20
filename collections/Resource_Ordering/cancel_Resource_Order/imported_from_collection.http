@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-50e36ab5-49e5-4f9b-9066-9e8a9fddaf7d.postman_collection.json
+
+// This operation list or find CancelResourceOrder entities
+
+@name("List or find CancelResourceOrder objects")
+GET "https://{{baseUrl}}/cancelResourceOrder"
+? "fields"= "consect"
+? "offset"= "-72350692"
+? "limit"= "-72350692"
+
+
+// This operation creates a CancelResourceOrder entity.
+
+@name("Creates a CancelResourceOrder")
+POST "https://{{baseUrl}}/cancelResourceOrder"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "resourceOrder": {
+        "id": "fde8c6a47450",
+        "href": "http://host/resourceOrder/fde8c6a47450",
+        "@baseType": "in culpa dolor Duis",
+        "@schemaLocation": "https://onyvEswPORprsyDgCHituvskUOqrpUi.tjvg6GyHUQ",
+        "@type": "ullamco Duis in in",
+        "@referredType": "fugiat"
+    },
+    "cancellationReason": "incididunt in Lorem",
+    "requestedCancellationDate": "1978-07-16T15:09:29.852Z",
+    "@baseType": "nostrud anim in qui",
+    "@schemaLocation": "https://DJmSJL.ayyjXjSyReILil.BZ5yTsfqOJRY,",
+    "@type": "aliquip cupidatat dolore"
+})
+
+
+// This operation retrieves a CancelResourceOrder entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a CancelResourceOrder by ID")
+GET "https://{{baseUrl}}/cancelResourceOrder/:id"
+? "fields"= "consect"
+
+
+

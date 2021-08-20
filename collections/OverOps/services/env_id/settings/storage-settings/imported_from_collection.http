@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// In Hybrid OverOps installation, data collected from your JVMs is locally redacted for PII and encrypted using your private encryption key before it is stored in a server that resides behind your firewall. Use this API call to fetch the current settings of your storage server. Visit OverOps [On-Premises Data Installation](https://doc.overops.com/docs/hybrid-installation) for full information
+
+@name("Get storage settings of an environment") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/storage-settings"
+
+
+// In Hybrid OverOps installation, data collected from your JVMs is locally redacted for PII and encrypted using your private encryption key before it is stored in a server that resides behind your firewall. This API call allows you to configure your storage server as part of your Hybrid OverOps setup. Visit OverOps [On-Premises Data Installation](https://doc.overops.com/docs/hybrid-installation) for full information
+
+@name("Set storage settings for a service") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/settings/storage-settings"
+"Content-Type": "application/json"
+json({
+    "type": "HYBRID",
+    "hostname": "storage.company.com",
+    "frontend_hostname": "123.91.12.100"
+})
+
+
+

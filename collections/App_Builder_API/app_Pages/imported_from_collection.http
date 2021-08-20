@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b6b65b1d-f98b-461e-b5ca-601c12643134.postman_collection.json
+
+// Get App Pages
+
+@name("/appPages")
+GET "https://{{baseUrl}}/appPages"
+"jwt": "esse minim anim"
+"Content-Type": "application/json"
+json({
+    "appPageId": "eu deserunt ut"
+})
+
+
+// Get App Pages
+
+@name("/appPages/:appPageId")
+GET "https://{{baseUrl}}/appPages/:appPageId"
+"jwt": "esse minim anim"
+
+
+

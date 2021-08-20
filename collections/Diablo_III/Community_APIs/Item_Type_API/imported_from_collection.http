@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f953fa-f8c8-4115-9ab9-d70490b97ce6.postman_collection.json
+
+// Returns an index of item types.
+
+@name("Item Type Index")
+GET "https://{{battle-net-host}}/d3/data/item-type"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns a single item type by slug.
+
+@name("Item Type")
+GET "https://{{battle-net-host}}/d3/data/item-type/{{d3.item-type-slug}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+

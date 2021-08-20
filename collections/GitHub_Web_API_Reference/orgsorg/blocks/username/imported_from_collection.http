@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("Check if a user is blocked by an organization")
+GET "https://{{baseUrl}}/orgs/:org/blocks/:username"
+
+
+@name("Block a user from an organization")
+PUT "https://{{baseUrl}}/orgs/:org/blocks/:username"
+
+
+@name("Unblock a user from an organization")
+DELETE "https://{{baseUrl}}/orgs/:org/blocks/:username"
+
+
+

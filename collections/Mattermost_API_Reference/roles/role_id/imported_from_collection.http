@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a role from the provided role id.nn##### PermissionsnRequires an active session but no other permissions.nn__Minimum server version__: 4.9n
+
+@name("Get a role")
+GET "https://{{baseUrl}}/roles/:role_id"
+
+
+// Partially update a role by providing only the fields you want to update. Omitted fields will not be updated. The fields that can be updated are defined in the request body, all other provided fields will be ignored.nn##### Permissionsn`manage_system` permission is required.nn__Minimum server version__: 4.9n
+
+@name("Patch a role")
+PUT "https://{{baseUrl}}/roles/:role_id/patch"
+
+
+

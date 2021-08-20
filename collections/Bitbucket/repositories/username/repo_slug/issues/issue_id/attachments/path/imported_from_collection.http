@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Deletes an attachment.
+
+@name("/repositories/:username/:repo_slug/issues/:issue_id/attachments/:path")
+DELETE "https://{{baseUrl}}/repositories/:username/:repo_slug/issues/:issue_id/attachments/:path"
+
+
+// Returns the contents of the specified file attachment.
+// 
+// Note that this endpoint does not return a JSON response, but instead
+// returns a redirect pointing to the actual file that in turn will return
+// the raw contents.
+// 
+// The redirect URL contains a one-time token that has a limited lifetime.
+// As a result, the link should not be persisted, stored, or shared.
+
+@name("/repositories/:username/:repo_slug/issues/:issue_id/attachments/:path")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/issues/:issue_id/attachments/:path"
+
+
+

@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// Search proposals
+
+@name("Search proposals")
+GET "https://{{baseUrl}}/proposals"
+? "Name"= "<string>"
+? "Email"= "<string>"
+? "UpdatedAfter"= "<string>"
+? "UpdatedBefore"= "<string>"
+? "UpdatedBy"= "<object>"
+? "CreatedBy"= "<object>"
+? "Source"= "<string>"
+? "CreatedAfter"= "<string>"
+? "CreatedBefore"= "<string>"
+? "Locked"= "<object>"
+? "Offset"= "<integer>"
+? "Limit"= "<integer>"
+? "LinkId"= "<string>"
+
+
+

@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return a list of opportunities groups
+// 
+// ---
+// Alternate route: `/dev/opportunities/groups/`
+// 
+// Alternate route: `/legacy/opportunities/groups/`
+// 
+// Alternate route: `/v1/opportunities/groups/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get opportunities groups")
+GET "https://{{baseUrl}}/opportunities/groups/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Return information of an opportunities group
+// 
+// ---
+// Alternate route: `/dev/opportunities/groups/{group_id}/`
+// 
+// Alternate route: `/legacy/opportunities/groups/{group_id}/`
+// 
+// Alternate route: `/v1/opportunities/groups/{group_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get opportunities group")
+GET "https://{{baseUrl}}/opportunities/groups/:group_id/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+

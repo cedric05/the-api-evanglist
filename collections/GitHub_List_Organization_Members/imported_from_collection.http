@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d0099e73-844b-427b-991a-7332ad7c8b6f.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{bearer_token}}"
+
+
+// Lists the members of a GitHub organization.
+
+@name("List Organization Members") : "base-inherit-auth"
+GET "https://api.github.com/orgs/:org/members"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+? "page"= "1"
+
+
+

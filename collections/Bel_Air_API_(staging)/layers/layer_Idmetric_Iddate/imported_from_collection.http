@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0100df38-567e-4c29-9c56-293119ed67af.postman_collection.json
+
+// This operation retrieves city layer data for the specified layer, metric and date combination. The date is passed in the following format: YYYYMMDD. The values for the layerId and metricId can be fetched from the /layers and /metrics operations.
+
+@name("Retrieve the city layer data for the specified layer, metric and date.")
+GET "https://{{baseUrl}}/layers/:layerId/:metricId/:date"
+
+
+// This operation retrieves city layer data for the specified layer, metric and date combination. The date is passed in the following format: YYYYMMDD. The values for the layerId and metricId can be fetched from the /layers and /metrics operations.
+
+@name("Retrieve the city layer data for the specified layer, metric and date.")
+GET "https://{{baseUrl}}/layers/:layerId/:metricId/:date/:hour"
+
+
+

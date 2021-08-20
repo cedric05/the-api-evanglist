@@ -1,0 +1,70 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return a list of the corporation assets
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/assets/`
+// 
+// Alternate route: `/v5/corporations/{corporation_id}/assets/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get corporation assets")
+GET "https://{{baseUrl}}/corporations/:corporation_id/assets/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Return locations for a set of item ids, which you can get from corporation assets endpoint. Coordinates for items in hangars or stations are set to (0,0,0)
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/assets/locations/`
+// 
+// Alternate route: `/v2/corporations/{corporation_id}/assets/locations/`
+// 
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get corporation asset locations")
+POST "https://{{baseUrl}}/corporations/:corporation_id/assets/locations/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json([
+    49866024
+])
+
+
+// Return names for a set of item ids, which you can get from corporation assets endpoint. Only valid for items that can customize names, like containers or ships
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/assets/names/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/assets/names/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/assets/names/`
+// 
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get corporation asset names")
+POST "https://{{baseUrl}}/corporations/:corporation_id/assets/names/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json([
+    -99578153
+])
+
+
+

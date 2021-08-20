@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// Returns a series records that contains all information known about a particular series id.
+
+@name("/series/:id")
+GET "https://{{baseUrl}}/series/:id"
+? "No Name"= "<string>"
+
+
+// Returns actors for the given series id
+
+@name("/series/:id/actors")
+GET "https://{{baseUrl}}/series/:id/actors"
+? "No Name"= "<string>"
+
+
+

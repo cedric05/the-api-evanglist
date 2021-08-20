@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Get bounces")
+GET "https://{{baseUrl}}/bounces"
+? "count"= "<integer>"
+? "offset"= "<integer>"
+? "type"= "<string>"
+? "inactive"= "<boolean>"
+? "emailFilter"= "<string>"
+? "messageID"= "<string>"
+? "tag"= "<string>"
+? "todate"= "<string>"
+? "fromdate"= "<string>"
+
+
+@name("Get bounced tags")
+GET "https://{{baseUrl}}/bounces/tags"
+
+
+

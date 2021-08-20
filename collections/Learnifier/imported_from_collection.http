@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-712034b2-265e-4ffc-a7a7-e49d61c6660a.postman_collection.json
+
+// Lists all global course design templates. Only api callers that have full access can call this method.
+
+@name("Lists all global course design templates")
+GET "https://{{baseUrl}}/coursedesigns"
+
+
+// Returns information about the organization unit with the specified external id.n
+
+@name("Get Organization Unit with External Id")
+GET "https://{{baseUrl}}/extorgunit"
+? "extid"= "<get>"
+
+
+// Gets a participation by external id.
+
+@name("Gets a participation by external id")
+GET "https://{{baseUrl}}/extparticipation"
+? "extid"= "<get>"
+
+
+// Gets an Organization Unit by external id
+
+@name("Gets Organization Unit by external id")
+GET "https://{{baseUrl}}/extproject"
+? "extid"= "<get>"
+
+
+// Gets a user by external id.
+
+@name("Gets a user by external id")
+GET "https://{{baseUrl}}/extuser"
+? "extid"= "<get>"
+
+
+

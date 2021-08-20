@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2e3bbcd-4c1a-45f3-8016-86639e868822.postman_collection.json
+
+// Delete a page by ID.
+
+@name("Delete Blog Page")
+DELETE "https://{{baseUrl}}/blogs/:blogId/pages/:pageId"
+
+
+// Publishes a draft page.
+
+@name("Publish Blog Page")
+POST "https://{{baseUrl}}/blogs/:blogId/pages/:pageId/publish"
+
+
+// Revert a published or scheduled page to draft state.
+
+@name("Revert Blog Page")
+POST "https://{{baseUrl}}/blogs/:blogId/pages/:pageId/revert"
+
+
+

@@ -1,0 +1,103 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Use this call to fetch all active alerts on current environment. admins can use the query parameter to fetch alerts which were set by other member/admin
+
+@name("Fetch Active Alerts for an Environment") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/alerts"
+? "email"= "e"
+
+
+// Use this call to Load ServiceNow tables associated with specific credentials
+
+@name("Fetch ServiceNow Tables") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/alerts/servicenow/tables"
+"Content-Type": "application/json"
+json({
+    "url": "http://servicenow.company.com/hooks",
+    "user_id": "admin",
+    "password": "pa$$1"
+})
+
+
+// This endpoint allows to test alerts settings before applying them to a particular view
+
+@name("Test Alert settings") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/alerts/test"
+"Content-Type": "application/json"
+json({
+    "global": false,
+    "alert_on_new": true,
+    "alert_on_anomaly": true,
+    "periodic_udf_settings": {
+        "library_id": "L6",
+        "function_id": "Relative Threshold",
+        "args": "# Defines a target threshold that if the volume of events within the views exceeds will constitute an anomaly.
+threshold = 100
+
+# A percentage value between 1 and 100 against which the volume of events / throughput is compared.
+rate = 5
+
+# Compare the number of times application threads (e.g. Servlet, Actor, Future,..) containing the events matching the target views have executed  against the number of events occurring. For example, if a Servlet containing the events within the view was invoked a 1000 times and 20 events matching the view’s filter took place, a RATE value above 2 will invoke an alert.
+relative_to = Thread_Calls
+
+# Compare the number of times the application method containing the events was invoked against the number of events which occurred.
+# relative_to = Method_Calls
+
+# Time period to look at, in minutes.
+timespan = 60",
+        "summary": "Threshold(100,5.00% of Thread_Calls)",
+        "period_minutes": 60
+    },
+    "slack_settings": {
+        "enabled": true,
+        "inhook_url": "https://hooks.slack.com/services/xxxxyyyyy/xxxx/sdf123rskfsdf1j"
+    },
+    "hip_chat_settings": {
+        "enabled": false,
+        "token": "dfgdk2342kljsldfjslk2342fsdfkjslkj",
+        "room": "Takipi"
+    },
+    "pager_duty_settings": {
+        "enabled": false,
+        "service_integration_key": "sflk234lkdjflsj12o8312"
+    },
+    "webhook_settings": {
+        "enabled": false,
+        "webhook_url": "http://hooks.company.com/overops1/P1/hook"
+    },
+    "service_now_settings": {
+        "enabled": false,
+        "url": "http://servicenow.company.com/hooks",
+        "user_id": "admin",
+        "password": "pa$$1",
+        "table": "sys_report_layer"
+    },
+    "email_settings": {
+        "is_active": true,
+        "alert_me": true,
+        "alert_all_team_members": false,
+        "alert_admins": true,
+        "alert_additional_emails": false,
+        "additional_emails_to_alert": [
+            "user1@company.com",
+            "user1@company.com"
+        ]
+    },
+    "udf_settings": {
+        "enabled": false,
+        "library_id": "L24",
+        "function_id": "apply-label",
+        "args": "label=sample_label_name"
+    }
+})
+
+
+

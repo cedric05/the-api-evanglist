@@ -1,0 +1,1 @@
+This is a collection that searches for specific topics using Bing web search, and then saves the results to a Github repository for further processing. If you have any questions about this API workflow feel free to leave a comment.

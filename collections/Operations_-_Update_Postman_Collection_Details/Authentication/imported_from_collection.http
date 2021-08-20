@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6231fa2a-fb8a-45f1-96a1-f1a6e235362e.postman_collection.json
+
+// This collection will pull an existing collection using its guid, then uses a test script to loop through the collection, removes auth property so that all requests will inherit from collection auth, and then it publishes back the collection using the API--saving the changes made.
+
+@name("Sets All Authentication to Inherit for Requests")
+GET "https://{{postman_base_url}}/collections/:collection_id"
+"x-api-key": "{{postman_api_key}}"
+? "find"= "{"
+? "replace"= ""
+
+
+

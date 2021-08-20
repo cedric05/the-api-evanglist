@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// List all invitations associated with an organization
+
+@name("List all invitations associated with an organization")
+GET "https://{{baseUrl}}/organizations/:organization_identifier/invites"
+
+
+// Cancel an existing invitation
+
+@name("Cancel an existing invitation")
+DELETE "https://{{baseUrl}}/organizations/:organization_identifier/invites/:identifier"
+
+
+

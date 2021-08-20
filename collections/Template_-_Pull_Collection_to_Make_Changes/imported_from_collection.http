@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1eb1d94c-0f99-444e-bcd7-d0f146c1be8d.postman_collection.json
+
+// This collection will pull an existing collection using it's guid, then uses a test script to manipulate the collection, make changes, and then it publishes back the collection using the API--saving the changes made.
+// 
+// **Notes**
+// 
+// - This is a general wrapper for pulling a collection--it will be used as a base for a variety of other collections.
+
+@name("Pull, Make Changes, Then Save Collection")
+GET "https://{{postman_base_url}}/collections/:collection_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+

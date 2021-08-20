@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Get details for a specified version of a Query Lambda.
+
+@name("Get Query Lambda Version")
+GET "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/lambdas/:queryLambda/versions/:version"
+
+
+// Execute a particular version of a Query Lambda.
+
+@name("Execute Query Lambda")
+POST "https://{{baseUrl}}/v1/orgs/self/ws/:workspace/lambdas/:queryLambda/versions/:version"
+"Content-Type": "application/json"
+json({
+    "parameters": [
+        {
+            "name": "_id",
+            "type": "string",
+            "value": "85beb391"
+        },
+        {
+            "name": "_id",
+            "type": "string",
+            "value": "85beb391"
+        }
+    ],
+    "default_row_limit": 57082307,
+    "generate_warnings": true
+})
+
+
+

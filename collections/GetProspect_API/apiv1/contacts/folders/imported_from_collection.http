@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Add new folder
+
+@name("Create list folder")
+POST "https://{{baseUrl}}/api/v1/contacts/folders"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "name": "in nulla in elit",
+    "parent": "dolor do culpa enim tempor"
+})
+
+
+// Delete multiple folders
+
+@name("Delete folders")
+DELETE "https://{{baseUrl}}/api/v1/contacts/folders"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "folderIds": [
+        "cupidatat consectetur cillum officia",
+        "sint"
+    ]
+})
+
+
+// Get folders tree
+
+@name("Get folders tree")
+GET "https://{{baseUrl}}/api/v1/contacts/folders/tree"
+"Authorization": "Bearer <Bearer Token>"
+
+
+

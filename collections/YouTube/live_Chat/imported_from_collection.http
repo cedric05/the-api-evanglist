@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bdca8cb-a591-4d01-90eb-dc36f5720cac.postman_collection.json
+
+// Delete livechat bans
+
+@name("Delete Live Chat Bans")
+DELETE "https://{{baseUrl}}/liveChat/bans"
+? "id"= "<parameters>"
+
+
+// Delete livechat messages
+
+@name("Delete Live Chat Messages")
+DELETE "https://{{baseUrl}}/liveChat/messages"
+? "id"= "<parameters>"
+
+
+// Delete livechat moderators
+
+@name("Delete Live Chat Moderators")
+DELETE "https://{{baseUrl}}/liveChat/moderators"
+? "id"= "<parameters>"
+
+
+

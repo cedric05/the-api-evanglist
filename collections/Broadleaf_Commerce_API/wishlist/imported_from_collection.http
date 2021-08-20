@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Get wishlist.
+
+@name("Get Wishlist")
+GET "https://{{baseUrl}}/wishlist"
+? "wishlistName"= "<>"
+
+
+// Post wishlist configure item.
+
+@name("Post Wishlist Configure Item")
+POST "https://{{baseUrl}}/wishlist/configure-item"
+? "wishlistName"= "<>"
+
+
+// Post wishlist item.
+
+@name("Post Wishlist Item")
+POST "https://{{baseUrl}}/wishlist/item"
+? "wishlistName"= "<>"
+
+
+

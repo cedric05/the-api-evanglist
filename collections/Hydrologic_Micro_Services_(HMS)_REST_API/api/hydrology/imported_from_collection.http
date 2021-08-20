@@ -1,0 +1,265 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6955ed11-a73c-4307-bb23-5a863194d33b.postman_collection.json
+
+@name("POST method for submitting a request for evapotranspiration data.")
+POST "https://{{baseUrl}}/api/hydrology/evapotranspiration"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "algorithm": "<string>",
+    "albedo": "<double>",
+    "centralLongitude": "<double>",
+    "sunAngle": "<double>",
+    "emissivity": "<double>",
+    "model": "<string>",
+    "zenith": "<double>",
+    "lakeSurfaceArea": "<double>",
+    "lakeDepth": "<double>",
+    "subsurfaceResistance": "<double>",
+    "stomatalResistance": "<double>",
+    "leafWidth": "<double>",
+    "roughnessLength": "<double>",
+    "vegetationHeight": "<double>",
+    "leafAreaIndices": "<object>",
+    "airTemperature": "<object>",
+    "userData": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for soil moisture data.")
+POST "https://{{baseUrl}}/api/hydrology/soilmoisture"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "layers": [
+        "<string>",
+        "<string>"
+    ],
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for subsurface flow data.")
+POST "https://{{baseUrl}}/api/hydrology/subsurfaceflow"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "precipSource": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for surface runoff data.")
+POST "https://{{baseUrl}}/api/hydrology/surfacerunoff"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "precipSource": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for evapotranspiration data.")
+POST "https://{{baseUrl}}/api/hydrology/temperature"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for total flow data.")
+POST "https://{{baseUrl}}/api/hydrology/totalflow"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "geometryType": "<string>",
+    "geometryInput": "<string>",
+    "geometryInputs": "<object>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+

@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d3f2edc-e0e7-4b26-a712-076a7e2780a4.postman_collection.json
+
+// ### List all GroupsnPage through a list of all your groups. You can specify the maximum number of results to be retuned, and from which result to start.n
+
+@name("Get Groups")
+GET "https://{{baseUrl}}/groups"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

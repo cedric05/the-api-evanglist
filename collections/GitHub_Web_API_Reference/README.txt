@@ -1,0 +1,1 @@
+This is generated documentation using [the GitHubs OpenAPI](https://github.blog/2020-07-27-introducing-githubs-openapi-description/), providing portable documentation that can be used as part of the API integration process. 

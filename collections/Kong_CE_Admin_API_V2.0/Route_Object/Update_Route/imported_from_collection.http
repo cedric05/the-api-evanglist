@@ -1,0 +1,409 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// ## Update Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#update-route-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>route name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Route to update.</td>
+//   </tr>
+// </table>
+// 
+// ## Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>optional</td>
+//     <td>The Service name</td>
+//   </tr>
+//   <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the protocols this Route should allow. When set to ["https"], HTTP requests are answered with a request to upgrade to HTTPS. Defaults to ["http", "https"].</td>
+//   </tr>
+//   <tr>
+//     <td>methods</td>
+//     <td>semi-optional</td>
+//     <td>A list of HTTP methods that match this Route.</td>
+//   </tr>
+//    <tr>
+//     <td>hosts</td>
+//     <td>semi-optional</td>
+//     <td>A list of domain names that match this Route. With form-encoded, the notation is hosts[]=example.com&hosts[]=foo.test. With JSON, use an Array.</td>
+//   </tr>
+//    <tr>
+//     <td>paths</td>
+//     <td>semi-optional</td>
+//     <td>A list of paths that match this Route. With form-encoded, the notation is paths[]=/foo&paths[]=/bar. With JSON, use an Array.</td>
+//   </tr>
+//      <tr>
+//     <td>headers</td>
+//     <td>semi-optional</td>
+//     <td>One or more lists of values indexed by header name that will cause this Route to match if present in the request. The Host header cannot be used with this attribute: hosts should be specified using the hosts attribute.</td>
+//   </tr>
+//      <tr>
+//     <td>https_redirect_status_code</td>
+//     <td>required</td>
+//     <td>The status code Kong responds with when all properties of a Route match except the protocol i.e. if the protocol of the request is HTTP instead of HTTPS. Location header is injected by Kong if the field is set to 301, 302, 307 or 308. Accepted values are: 426, 301, 302, 307, 308. Defaults to 426.</td>
+//   </tr>
+//      <tr>
+//     <td>regex_priority</td>
+//     <td>optional</td>
+//     <td>A number used to choose which route resolves a given request when several routes match it using regexes simultaneously. When two routes match the path and have the same regex_priority, the older one (lowest created_at) is used. Note that the priority for non-regex routes is different (longer non-regex routes are matched before shorter ones). Defaults to 0.</td>
+//   </tr>
+//      <tr>
+//     <td>strip_path</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the paths, strip the matching prefix from the upstream request URL. Defaults to true.</td>
+//   </tr>
+//        <tr>
+//     <td>path_handling</td>
+//     <td>optional</td>
+//     <td>Controls how the Service path, Route path and requested path are combined when sending a request to the upstream. See above for a detailed description of each behavior. Accepted values are: "v0", "v1". Defaults to "v0".</td>
+//   </tr>
+//        <tr>
+//     <td>preserve_host</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the hosts domain names, use the request Host header in the upstream request headers. If set to false, the upstream Host header will be that of the Service’s host.</td>
+//   </tr>
+//          <tr>
+//     <td>preserve_host</td>
+//     <td>optional</td>
+//     <td>When matching a Route via one of the hosts domain names, use the request Host header in the upstream request headers. If set to false, the upstream Host header will be that of the Service’s host.</td>
+//   </tr>
+//         <tr>
+//     <td>snis</td>
+//     <td>semi-optional</td>
+//     <td>A list of SNIs that match this Route when using stream routing.</td>
+//   </tr>
+//         <tr>
+//     <td>sources</td>
+//     <td>semi-optional</td>
+//     <td>A list of IP sources of incoming connections that match this Route when using stream routing. Each entry is an object with fields “ip” (optionally in CIDR range notation) and/or “port”.</td>
+//   </tr>
+//         <tr>
+//     <td>destinations</td>
+//     <td>semi-optional</td>
+//     <td>A list of IP destinations of incoming connections that match this Route when using stream routing. Each entry is an object with fields “ip” (optionally in CIDR range notation) and/or “port”.</td>
+//   </tr>
+//          <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Route, for grouping and filtering.</td>
+//   </tr>
+//         <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>The Service this Route is associated to. This is where the Route proxies traffic to. With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+// </table>
+
+@name("Update Route")
+PATCH "https://{{gateway}}/routes/:routeNameOrId"
+"Content-Type": "application/json"
+json({
+    "host": "httpbin.org",
+    "name": "httpbin-api",
+    "retries": 5,
+    "protocol": "https",
+    "port": 443,
+    "path": "/",
+    "connect_timeout": 60000,
+    "write_timeout": 60000,
+    "read_timeout": 60000,
+    "tags": null,
+    "client_certificate": null
+})
+
+
+// ## Update Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#update-service-associated-to-a-specific-certificate)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>certificate id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Certificate to update</td>
+//   </tr>
+//   <tr>
+//     <td>service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Service to update.</td>
+//   </tr>
+// </table>
+// 
+// ## Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>optional</td>
+//     <td>The Service name</td>
+//   </tr>
+//   <tr>
+//     <td>retries</td>
+//     <td>optional</td>
+//     <td>The number of retries to execute upon failure to proxy. Defaults to 5</td>
+//   </tr>
+//   <tr>
+//     <td>protocol</td>
+//     <td>required</td>
+//     <td>The protocol used to communicate with the upstream. Accepted values are: "grpc", "grpcs", "http", "https", "tcp", "tls". Defaults to "http"</td>
+//   </tr>
+//    <tr>
+//     <td>host</td>
+//     <td>required</td>
+//     <td>The host of the upstream server</td>
+//   </tr>
+//    <tr>
+//     <td>port</td>
+//     <td>required</td>
+//     <td>The upstream server port. Defaults to 80</td>
+//   </tr>
+//    <tr>
+//     <td>path</td>
+//     <td>optional</td>
+//     <td>The path to be used in requests to the upstream server.</td>
+//   </tr>
+//      <tr>
+//     <td>connect_timeout</td>
+//     <td>optional</td>
+//     <td>The timeout in milliseconds for establishing a connection to the upstream server. Defaults to 60000.</td>
+//   </tr>
+//      <tr>
+//     <td>write_timeout</td>
+//     <td>optional</td>
+//     <td>The timeout in milliseconds between two successive write operations for transmitting a request to the upstream server. Defaults to 60000.</td>
+//   </tr>
+//      <tr>
+//     <td>read_timeout</td>
+//     <td>optional</td>
+//     <td>The timeout in milliseconds between two successive read operations for transmitting a request to the upstream server. Defaults to 60000.</td>
+//   </tr>
+//      <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Service, for grouping and filtering.</td>
+//   </tr>
+//        <tr>
+//     <td>client_certificate</td>
+//     <td>optional</td>
+//     <td>Certificate to be used as client certificate while TLS handshaking to the upstream server. With form-encoded, the notation is client_certificate.id=<client_certificate id>. With JSON, use “"client_certificate":{"id":"<client_certificate id>"}.</td>
+//   </tr>
+//        <tr>
+//     <td>url</td>
+//     <td>required</td>
+//     <td>Shorthand attribute to set protocol, host, port and path at once. This attribute is write-only (the Admin API never “returns” the url).</td>
+//   </tr>
+// </table>
+
+@name("Update Service Associated to a Specific Certificate")
+PATCH "https://{{gateway}}/certificates/:certificateId/services/:serviceNameOrId"
+"Content-Type": "application/json"
+
+
+// ## Update Service Associated to a Specific Route [konghq](https://docs.konghq.com/2.0.x/admin-api/#update-service-associated-to-a-specific-route)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>route name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Route associated to the Service to be updated</td>
+//   </tr>
+// </table>
+// 
+// ## Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>optional</td>
+//     <td>The Service name</td>
+//   </tr>
+//   <tr>
+//     <td>retries</td>
+//     <td>optional</td>
+//     <td>The number of retries to execute upon failure to proxy. Defaults to 5</td>
+//   </tr>
+//   <tr>
+//     <td>protocol</td>
+//     <td>required</td>
+//     <td>The protocol used to communicate with the upstream. Accepted values are: "grpc", "grpcs", "http", "https", "tcp", "tls". Defaults to "http"</td>
+//   </tr>
+//    <tr>
+//     <td>host</td>
+//     <td>required</td>
+//     <td>The host of the upstream server</td>
+//   </tr>
+//    <tr>
+//     <td>port</td>
+//     <td>required</td>
+//     <td>The upstream server port. Defaults to 80</td>
+//   </tr>
+//    <tr>
+//     <td>path</td>
+//     <td>optional</td>
+//     <td>The path to be used in requests to the upstream server.</td>
+//   </tr>
+//      <tr>
+//     <td>connect_timeout</td>
+//     <td>optional</td>
+//     <td>The timeout in milliseconds for establishing a connection to the upstream server. Defaults to 60000.</td>
+//   </tr>
+//      <tr>
+//     <td>write_timeout</td>
+//     <td>optional</td>
+//     <td>The timeout in milliseconds between two successive write operations for transmitting a request to the upstream server. Defaults to 60000.</td>
+//   </tr>
+//      <tr>
+//     <td>read_timeout</td>
+//     <td>optional</td>
+//     <td>The timeout in milliseconds between two successive read operations for transmitting a request to the upstream server. Defaults to 60000.</td>
+//   </tr>
+//      <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Service, for grouping and filtering.</td>
+//   </tr>
+//        <tr>
+//     <td>client_certificate</td>
+//     <td>optional</td>
+//     <td>Certificate to be used as client certificate while TLS handshaking to the upstream server. With form-encoded, the notation is client_certificate.id=<client_certificate id>. With JSON, use “"client_certificate":{"id":"<client_certificate id>"}.</td>
+//   </tr>
+//        <tr>
+//     <td>url</td>
+//     <td>required</td>
+//     <td>Shorthand attribute to set protocol, host, port and path at once. This attribute is write-only (the Admin API never “returns” the url).</td>
+//   </tr>
+// </table>
+
+@name("Update Service Associated to a Specific Route")
+PATCH "https://{{gateway}}/routes/:routeNameOrId/service"
+"Content-Type": "application/json"
+
+
+// ## Update Service Associated to a Specific Plugin [konghq](https://docs.konghq.com/2.0.x/admin-api/#update-service-associated-to-a-specific-plugin)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>plugin id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Plugin associated to the Service to be updated</td>
+//   </tr>
+// </table>
+// 
+// ## Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>optional</td>
+//     <td>The Service name</td>
+//   </tr>
+//   <tr>
+//     <td>retries</td>
+//     <td>optional</td>
+//     <td>The number of retries to execute upon failure to proxy. Defaults to 5</td>
+//   </tr>
+//   <tr>
+//     <td>protocol</td>
+//     <td>required</td>
+//     <td>The protocol used to communicate with the upstream. Accepted values are: "grpc", "grpcs", "http", "https", "tcp", "tls". Defaults to "http"</td>
+//   </tr>
+//    <tr>
+//     <td>host</td>
+//     <td>required</td>
+//     <td>The host of the upstream server</td>
+//   </tr>
+//    <tr>
+//     <td>port</td>
+//     <td>required</td>
+//     <td>The upstream server port. Defaults to 80</td>
+//   </tr>
+//    <tr>
+//     <td>path</td>
+//     <td>optional</td>
+//     <td>The path to be used in requests to the upstream server.</td>
+//   </tr>
+//      <tr>
+//     <td>connect_timeout</td>
+//     <td>optional</td>
+//     <td>The timeout in milliseconds for establishing a connection to the upstream server. Defaults to 60000.</td>
+//   </tr>
+//      <tr>
+//     <td>write_timeout</td>
+//     <td>optional</td>
+//     <td>The timeout in milliseconds between two successive write operations for transmitting a request to the upstream server. Defaults to 60000.</td>
+//   </tr>
+//      <tr>
+//     <td>read_timeout</td>
+//     <td>optional</td>
+//     <td>The timeout in milliseconds between two successive read operations for transmitting a request to the upstream server. Defaults to 60000.</td>
+//   </tr>
+//      <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Service, for grouping and filtering.</td>
+//   </tr>
+//        <tr>
+//     <td>client_certificate</td>
+//     <td>optional</td>
+//     <td>Certificate to be used as client certificate while TLS handshaking to the upstream server. With form-encoded, the notation is client_certificate.id=<client_certificate id>. With JSON, use “"client_certificate":{"id":"<client_certificate id>"}.</td>
+//   </tr>
+//        <tr>
+//     <td>url</td>
+//     <td>required</td>
+//     <td>Shorthand attribute to set protocol, host, port and path at once. This attribute is write-only (the Admin API never “returns” the url).</td>
+//   </tr>
+// </table>
+
+@name("Update Service Associated to a Specific Plugin")
+PATCH "https://{{gateway}}/plugins/:pluginId/service"
+"Content-Type": "application/json"
+
+
+

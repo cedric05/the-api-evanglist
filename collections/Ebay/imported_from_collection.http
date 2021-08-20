@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-007fb30c-c8ae-4349-8a4c-36e7914a7a99.postman_collection.json
+
+// This call performs an advanced search for items. You can search by keyword, category, eBay product Id (EPID), or gtin. Or a combination of these. Encoding Parameters and Headers As with all query parameter values, the fields parameter value and request header values must be URL encoded. For better readability, the examples in this document omit the encoding. Example: &nbsp;&nbsp;search?q=world cup soccer ball&amp;aspect_filter=categoryId:20863,Brand:{Nike|Wilson} Encoded Example: &nbsp;&nbsp; se
+
+@name("Get Item Summary Search")
+GET "https://{{baseUrl}}/item_summary/search"
+? "aspect_filter"= "<>"
+? "category_ids"= "<>"
+? "epid"= "<get>"
+? "fieldgroups"= "<>"
+? "filter"= "<>"
+? "gtin"= "<get>"
+? "limit"= "<get>"
+? "offset"= "<get>"
+? "q"= "<>"
+? "sort"= "<>"
+
+
+// The Description feed file is generated each day. This call lets you download a daily TSV_GZIP (tab separated value gzip) Description feed file containing the descriptions of all the items that were listed on a specific day in a specific category. To store the complete item details, you would always run the getItemFeed and getItemDescriptionFeed calls with the same parameters. &nbsp;&nbsp;&nbsp; /item?feed_scope=NEWLY_LISTED&amp;category_id=625&amp;date=20170918 &nbsp;&nbsp;&nbsp; /item_descripti
+
+@name("Get Item Description")
+GET "https://{{baseUrl}}/item_description"
+"X": "<>"
+"Range": "<>"
+? "feed_scope"= "<>"
+? "category_id"= "<>"
+? "date"= "<>"
+
+
+// A given eBay marketplace might use multiple category trees, but one of those trees is considered to be the default for that marketplace. This call retrieves a reference to the default category tree associated with the specified eBay marketplace ID. The response includes only the tree's unique identifier and version, which you can use to retrieve more details about the tree, its structure, and its individual category nodes.
+
+@name("Get Get Default Category Tree")
+GET "https://{{baseUrl}}/get_default_category_tree_id"
+? "marketplace_id"= "<>"
+
+
+

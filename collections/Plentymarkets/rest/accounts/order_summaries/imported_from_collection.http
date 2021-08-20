@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// List order summaries.
+
+@name("List order summaries")
+GET "https://{{baseUrl}}/rest/accounts/order_summaries"
+
+
+// Gets an order summary. The ID of the contact must be specified.
+
+@name("Get an order summary by the contact ID")
+GET "https://{{baseUrl}}/rest/accounts/order_summaries/contacts/:contactId"
+
+
+// Gets an order summary. The ID of the address must be specified.
+
+@name("Get an order summary by the address ID")
+GET "https://{{baseUrl}}/rest/accounts/order_summaries/orders/:addressId"
+
+
+// Deletes an order summary. The ID of the order summary must be specified.
+
+@name("Delete an order summary")
+DELETE "https://{{baseUrl}}/rest/accounts/order_summaries/:orderSummaryId"
+
+
+

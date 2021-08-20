@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns a single embed preset that belongs to the specified user.
+
+@name("Get a specific embed preset")
+GET "https://{{baseUrl}}/me/presets/:preset_id"
+
+
+// This method returns all the videos that make use of the specified embed preset.
+
+@name("Get all the videos that have been added to an embed preset")
+GET "https://{{baseUrl}}/me/presets/:preset_id/videos"
+? "page"= "<string>"
+? "per_page"= "<string>"
+
+
+

@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-54878362-f1e0-480d-8f98-ee993486ed58.postman_collection.json
+
+// Request the list of all available payroll instructions that the requester is authorized to view
+
+@name("Worker Payroll Instructions")
+GET "https://{{baseUrl}}/payroll/v1/workers/:aoid/payroll-instructions"
+? "No Name"= "<string>"
+
+
+

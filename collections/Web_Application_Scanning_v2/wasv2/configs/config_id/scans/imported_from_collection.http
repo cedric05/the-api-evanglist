@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Launches a scan using the specified configuration.<p>Requires SCAN OPERATOR [24] user permissions and CAN CONTROL [32] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Launch scan") : "base-inherit-auth"
+POST "https://{{baseUrl}}/was/v2/configs/:config_id/scans"
+
+
+// Lists the filtering capabilities available for scans for endpoints that support scan filtering. <p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List scan filters") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/configs/:config_id/scans/filters"
+
+
+// Returns a list of scans. <p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Search scans") : "base-inherit-auth"
+POST "https://{{baseUrl}}/was/v2/configs/:config_id/scans/search"
+"Content-Type": "application/json"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+json({
+    "AND": [
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        },
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        }
+    ],
+    "OR": [
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        },
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        }
+    ]
+})
+
+
+

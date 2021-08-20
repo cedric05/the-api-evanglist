@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Provides summary information for all of a location's items.
+
+@name("Get Location Items")
+GET "https://{{baseUrl}}/v1/:location_id/items"
+? "batch_token"= "<string>"
+
+
+

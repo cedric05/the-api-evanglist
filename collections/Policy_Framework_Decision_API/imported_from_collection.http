@@ -1,0 +1,118 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f8b2eca-3208-4b6b-ac9b-bee39dc2f65c.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{USER}}", "{{PASSWORD}}")
+
+
+// This is an API to fetch decision using the naming policy deployed in xacml pdp engine.
+
+@name("Xacml Decision - Naming") : "base-inherit-auth"
+POST "https://{{POLICY-XACML-URL}}/policy/pdpx/v1/decision"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "ONAPName": "SDNC",
+    "ONAPComponent": "SNDC-component",
+    "ONAPInstance": "SDNC-component-instance",
+    "requestId": "unique-request-sdnc-1",
+    "action": "naming",
+    "resource": {
+        "policy-type": [
+            "onap.policies.Naming"
+        ]
+    }
+})
+
+
+// This is an API to fetch decision using the monitoring policy deployed in xacml pdp engine.
+
+@name("Xacml Decision - Monitoring  (Using policy-id)") : "base-inherit-auth"
+POST "https://{{POLICY-XACML-URL}}/policy/pdpx/v1/decision"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "ONAPName": "DCAE",
+    "ONAPComponent": "PolicyHandler",
+    "ONAPInstance": "622431a4-9dea-4eae-b443-3b2164639c64",
+    "action": "configure",
+    "resource": {
+        "policy-id": "onap.restart.tca"
+    }
+})
+
+
+// This is an API to fetch decision using the monitoring policy deployed in xacml pdp engine.
+
+@name("Xacml Decision - Monitoring (Using policy-type)") : "base-inherit-auth"
+POST "https://{{POLICY-XACML-URL}}/policy/pdpx/v1/decision"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "ONAPName": "DCAE",
+    "ONAPComponent": "PolicyHandler",
+    "ONAPInstance": "622431a4-9dea-4eae-b443-3b2164639c64",
+    "action": "configure",
+    "resource": {
+        "policy-type": "onap.policies.monitoring.cdap.tca.hi.lo.app"
+    }
+})
+
+
+// This is an API to fetch decision using the optimization policy deployed in xacml pdp engine.
+
+@name("Xacml Decision - Optimization") : "base-inherit-auth"
+POST "https://{{POLICY-XACML-URL}}/policy/pdpx/v1/decision"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "ONAPName": "OOF",
+    "ONAPComponent": "OOF-component",
+    "ONAPInstance": "OOF-component-instance",
+    "action": "optimize",
+    "resource": {
+        "scope": [
+            ""
+        ],
+        "services": [
+            ""
+        ],
+        "resources": [
+            ""
+        ],
+        "geography": [
+            ""
+        ]
+    }
+})
+
+
+// This is an API to fetch decision using the guard policy deployed in xacml pdp engine.
+
+@name("Xacml Decision - Guard") : "base-inherit-auth"
+POST "https://{{POLICY-XACML-URL}}/policy/pdpx/v1/decision"
+"Content-Type": "application/json"
+"Accept": "application/json"
+json({
+    "ONAPName": "Drools",
+    "ONAPComponent": "Drools-frankfurt-controller",
+    "ONAPInstance": "drools-frankfurt-controller-instance1",
+    "requestId": "unique-request-drools-1",
+    "action": "guard",
+    "resource": {
+        "guard": {
+            "actor": "SO",
+            "operation": "VF Module Create",
+            "clname": "ControlLoop-vDNS-6f37f56d-a87d-4b85-b6a9-cc953cf779b3",
+            "target": "e6130d03-56f1-4b0a-9a1d-e1b2ebc30e0e",
+            "vfCount": "1"
+        }
+    }
+})
+
+
+

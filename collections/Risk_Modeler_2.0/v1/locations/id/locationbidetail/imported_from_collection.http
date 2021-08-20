@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Create a new bi detail
+
+@name("Creates a new bi detail") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/locations/:id/locationbidetail"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "id": 34935164,
+    "redundancy": {
+        "id": 46569765,
+        "code": "dolor ullamco consequat",
+        "name": "irure"
+    },
+    "siWaitingPeriod": 14299701.177770078,
+    "siLimit": -67374696.9950046,
+    "preparedness": {
+        "id": 57897669,
+        "code": "est proident",
+        "name": "enim anim consectetur ut"
+    },
+    "serviceInterruption": {
+        "id": -89632259,
+        "code": "eu s",
+        "name": "sint aute"
+    },
+    "isValid": true
+})
+
+
+

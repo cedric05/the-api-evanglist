@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-572303ba-d57b-42f8-9c05-98fcc3c05154.postman_collection.json
+
+// Gets a specific `Server` object for the authenticated user.n
+
+@name("Get Servers")
+GET "https://{{baseUrl}}/servers/:id"
+? "o"= "<>"
+
+
+// Returns the command queue for the specified server (endpoint)n
+
+@name("Get Servers Packages")
+GET "https://{{baseUrl}}/servers/:id/packages"
+? "o"= "<>"
+
+
+// Returns the command queue for the specified server (endpoint)n
+
+@name("Get Servers Queues")
+GET "https://{{baseUrl}}/servers/:id/queues"
+? "o"= "<>"
+
+
+

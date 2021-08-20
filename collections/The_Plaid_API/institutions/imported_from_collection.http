@@ -1,0 +1,84 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns a JSON response containing details on all financial institutions currently supported by Plaid. Because Plaid supports thousands of institutions, results are paginated.
+// 
+// This data changes frequently. If you store it locally on your system, be sure to update it regularly.
+
+@name("Get details of all supported institutions") : "base-inherit-auth"
+POST "https://{{baseUrl}}/institutions/get"
+"Content-Type": "application/json"
+json({
+    "count": -79455843,
+    "offset": -26195191,
+    "country_codes": [
+        "IE"
+    ],
+    "client_id": "officia exercitation cillum",
+    "secret": "anim aute dolore",
+    "options": {
+        "products": [
+            "investments",
+            "liabilities"
+        ],
+        "routing_numbers": [
+            "ut officia voluptate eu esse",
+            "in labore"
+        ],
+        "oauth": false,
+        "include_optional_metadata": false
+    }
+})
+
+
+// Returns a JSON response containing details for institutions that match the query parameters, up to a maximum of ten institutions per query.
+
+@name("Search institutions") : "base-inherit-auth"
+POST "https://{{baseUrl}}/institutions/search"
+"Content-Type": "application/json"
+json({
+    "query": "do ea anim non",
+    "products": [
+        "transactions"
+    ],
+    "country_codes": [
+        "NL",
+        "NL"
+    ],
+    "client_id": "voluptate ea culpa",
+    "secret": "ex nisi esse ut",
+    "options": {
+        "oauth": false,
+        "include_optional_metadata": true
+    }
+})
+
+
+// Returns a JSON response containing details on a specified financial institution currently supported by Plaid.
+
+@name("Get details of an institution") : "base-inherit-auth"
+POST "https://{{baseUrl}}/institutions/get_by_id"
+"Content-Type": "application/json"
+json({
+    "institution_id": "nulla tempor adipisicing dolore nisi",
+    "country_codes": [
+        "CA",
+        "ES"
+    ],
+    "client_id": "voluptate proident cillum ipsum",
+    "secret": "pariatur e",
+    "options": {
+        "include_optional_metadata": false,
+        "include_status": false
+    }
+})
+
+
+

@@ -1,0 +1,1 @@
+This API provides content for financial instutions participating in Mastercard Personalized Offers to use in online and mobile banking applications for cardholders.

@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-96f7548c-485b-4677-99ba-2d47911de0c8.postman_collection.json
+
+// Get list of symbols supported by the spot endpoints.
+
+@name("Get list of symbols supported by the spot endpoints")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/spot/supported"
+? "token"= "<>"
+? "format"= "<>"
+
+
+// Current and daily summary information combined into a single quote
+
+@name("Get latest Spot Summary for requested metals")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/spot/summary"
+? "token"= "<>"
+? "metals"= "<>"
+? "currency"= "<>"
+? "unitofmeasure"= "<>"
+? "format"= "<>"
+? "adjust"= "<>"
+
+
+// Historical OHLC data for the specified period and interval size
+// 
+// The combination of the interval parameter and start and end dates can result in results
+// being truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.
+// 
+// The historicalfx flag is used to determine whether to apply today's fx rates to a historical period, or to apply the historical rates from that same time frame.
+
+@name("Get historical Spot prices for requested metals")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/spot/history"
+? "token"= "<>"
+? "metals"= "<>"
+? "start"= "<get>"
+? "end"= "<get>"
+? "interval"= "<object>"
+? "historicalfx"= "<>"
+? "currency"= "<>"
+? "unitofmeasure"= "<>"
+? "format"= "<>"
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// Lists all open code scanning alerts for the default branch (usually `master`) and protected branches in a repository. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
+
+@name("List code scanning alerts for a repository")
+GET "https://{{baseUrl}}/repos/:owner/:repo/code-scanning/alerts"
+? "state"= "open"
+? "ref"= "<string>"
+
+
+// Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint. GitHub Apps must have the `security_events` read permission to use this endpoint.
+// 
+// The security `alert_id` is found at the end of the security alert's URL. For example, the security alert ID for `https://github.com/Octo-org/octo-repo/security/code-scanning/88` is `88`.
+
+@name("Get a code scanning alert")
+GET "https://{{baseUrl}}/repos/:owner/:repo/code-scanning/alerts/:alert_id"
+
+
+

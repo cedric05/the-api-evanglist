@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Creates a new build status against the specified commit.
+// 
+// If the specified key already exists, the existing status object will
+// be overwritten.
+// 
+// When creating a new commit status, you can use a URI template for the URL.
+// Templates are URLs that contain variable names that Bitbucket will
+// evaluate at runtime whenever the URL is displayed anywhere similar to
+// parameter substitution in
+// [Bitbucket Connect](https://developer.atlassian.com/bitbucket/concepts/context-parameters.html).
+// For example, one could use `https://foo.com/builds/{repository.full_name}`
+// which Bitbucket will turn into `https://foo.com/builds/foo/bar` at render time.
+// The context variables available are `repository` and `commit`.
+
+@name("/repositories/:username/:repo_slug/commit/:node/statuses/build")
+POST "https://{{baseUrl}}/repositories/:username/:repo_slug/commit/:node/statuses/build"
+
+
+

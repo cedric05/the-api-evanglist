@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e04c6fb1-e891-4983-80ec-38175b6c944e.postman_collection.json
+
+// Get api history limit trades.
+
+@name("Get API History Limit Trades")
+GET "https://{{baseUrl}}/api/History/limit/trades"
+"Authorization": "<>"
+? "orderId"= "<delete>"
+
+
+// Get api history limit order.
+
+@name("Get API History Limit Order")
+GET "https://{{baseUrl}}/api/History/limit/order"
+"Authorization": "<>"
+? "orderId"= "<delete>"
+
+
+// Get api history limit history.
+
+@name("Get API History Limit History")
+GET "https://{{baseUrl}}/api/History/limit/history"
+"Authorization": "<>"
+? "orderId"= "<delete>"
+
+
+

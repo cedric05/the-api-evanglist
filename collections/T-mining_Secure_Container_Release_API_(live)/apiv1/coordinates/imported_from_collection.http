@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3a6fa668-19d7-4395-a552-9b7f28cadcb6.postman_collection.json
+
+// Get the coordinates of the location with the given name and type.
+
+@name("Get Coordinates")
+GET "https://{{baseUrl}}/api/v1/coordinates/"
+? "api_token"= "<>"
+? "name"= "<post>"
+? "type"= "<post>"
+
+
+// Get the coordinates of all known locations.
+
+@name("Get all coordinates")
+GET "https://{{baseUrl}}/api/v1/coordinates"
+? "api_token"= "<>"
+
+
+

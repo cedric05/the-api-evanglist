@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Manage the notes for a given user.
+
+@name("List all Note Text for User Monetary Account Switch Service Payment")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/switch-service-payment/:switch-service-paymentID/note-text"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Used to manage text notes.
+
+@name("CREATE Note Text for User Monetary Account Switch Service Payment")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/switch-service-payment/:switch-service-paymentID/note-text"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "content": "<string>"
+})
+
+
+

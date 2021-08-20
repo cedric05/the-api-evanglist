@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Renames a folder for the current user. You cannot rename Tenable-provided scan folders or custom folders that belong to other users (even if your account has administrator privileges). <p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Rename folder") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/was/v2/folders/:folder_id"
+"Content-Type": "application/json"
+json({
+    "name": "ex irure sint non"
+})
+
+
+// Deletes a folder. If you delete a folder that contains scans, Tenable.io Web Application Scanning automatically moves those scans to the Trash folder. You cannot delete Tenable-provided folders or custom folders that belong to other users (even if you use an administrator account). <p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Delete folder") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/was/v2/folders/:folder_id"
+
+
+

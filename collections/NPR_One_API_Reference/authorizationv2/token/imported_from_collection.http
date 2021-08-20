@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92585ca3-4af5-4f55-9f95-f80c9040e561.postman_collection.json
+
+// Please be aware that the required parameters are contingent on the `grant_type` that you select.nnFor the `authorization_code` grant type, you are **required** to pass in the `code` and `redirect_uri` parameters. `service`, `username` and `password` parameters will be ignored.nnFor the `client_credentials` grant type, you do not need to pass in any additional parameters beyond the basic requirements. `code`, `redirect_uri`, `service`, `username` and `password` parameters will be ignored.nnFor th
+
+@name("Create a new OAuth2 access token")
+POST "https://{{baseUrl}}/authorization/v2/token"
+
+
+// Our implementation follows the proposed IETF specification [RFC-7009](https://tools.ietf.org/html/rfc7009).nnIf your client application offers the ability to for a logged-in user to log out, and you have access to a long-livedn`client_credentials` token (i.e. you have generated one that you are storing securely for the lifetime of the entire appninstall), we suggest (but do not require) that you call this endpoint and revoke the access token belonging to thenlogged-in user as part of your logout
+
+@name("Revoke an existing OAuth2 access token")
+POST "https://{{baseUrl}}/authorization/v2/token/revoke"
+"Authorization": "<>"
+
+
+

@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e0da3923-b478-4753-8580-8cb087d6171d.postman_collection.json
+
+// TODO: Add Description
+
+@name("Find Contacts - Job Title")
+GET "https://{{baseUrl}}/search"
+? "domain"= "<>"
+? "title"= "<>"
+? "email"= "<>"
+
+
+// TODO: Add Description
+
+@name("Domain Lookup")
+GET "https://{{baseUrl}}/v2/companies/find"
+? "domain"= "<>"
+
+
+// TODO: Add Description
+
+@name("Find Company by IP Address")
+GET "https://{{baseUrl}}/find"
+? "ip"= "<>"
+
+
+// TODO: Add Description
+
+@name("Company Name to Domain")
+GET "https://{{baseUrl}}/v1/domains/find"
+? "name"= "<>"
+
+
+// TODO: Add Description
+
+@name("By Name")
+GET "https://{{baseUrl}}/entities"
+? "name"= "<>"
+
+
+

@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /venuegroups/{GROUP_ID}/removevenue
+
+@name("/venuegroups/{GROUP_ID}/removevenue")
+GET "https://{{baseUrl}}/checkins/:CHECKIN_ID"
+? "CHECKIN_ID"= "<string>"
+? "signature"= "<string>"
+? "v"= "<string>"
+
+
+// /checkins/recent
+
+@name("/checkins/recent")
+POST "https://{{baseUrl}}/checkins/:CHECKIN_ID/addcomment"
+? "CHECKIN_ID"= "<string>"
+? "text"= "<string>"
+? "v"= "<string>"
+
+
+// /checkins/{CHECKIN_ID}/addcomment
+
+@name("/checkins/{CHECKIN_ID}/addcomment")
+POST "https://{{baseUrl}}/checkins/:CHECKIN_ID/deletecomment"
+? "CHECKIN_ID"= "<string>"
+? "commentId"= "<string>"
+? "v"= "<string>"
+
+
+

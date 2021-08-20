@@ -1,0 +1,1103 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92b4ebd1-35c2-4b92-a70c-9131204ad521.postman_collection.json
+
+// Plans
+
+@name("Create Plan Sanity - Simple")
+POST "https://{{conductor}}/plans"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+json({
+    "name": "vCPE-Sanity1",
+    "template": {
+        "homing_template_version": "2017-10-10",
+        "parameters": {
+            "service_name": "Residential vCPE",
+            "service_id": "vcpe_service_id",
+            "customer_lat": 32.89748,
+            "customer_long": -97.040443,
+            "REQUIRED_MEM": 4,
+            "REQUIRED_DISK": 100,
+            "pnf_id": "some_pnf_id"
+        },
+        "locations": {
+            "customer_loc": {
+                "latitude": {
+                    "get_param": "customer_lat"
+                },
+                "longitude": {
+                    "get_param": "customer_long"
+                }
+            }
+        },
+        "demands": {
+            "vG": [
+                {
+                    "inventory_provider": "aai",
+                    "inventory_type": "cloud"
+                }
+            ]
+        },
+        "constraints": {
+            "constraint_vg_customer": {
+                "type": "distance_to_location",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "distance": "< 100 km",
+                    "location": "customer_loc"
+                }
+            }
+        },
+        "optimization": {
+            "minimize": {
+                "sum": [
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    },
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "timeout": 5,
+    "limit": 3
+})
+
+
+// Plans
+
+@name("Create Plan VIM-fit")
+POST "https://{{conductor}}/plans"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+json({
+    "name": "vCPE-Sanity1",
+    "template": {
+        "homing_template_version": "2017-10-10",
+        "parameters": {
+            "service_name": "Residential vCPE",
+            "service_id": "vcpe_service_id",
+            "customer_lat": 32.89748,
+            "customer_long": -97.040443,
+            "REQUIRED_MEM": 4,
+            "REQUIRED_DISK": 100,
+            "pnf_id": "some_pnf_id"
+        },
+        "locations": {
+            "customer_loc": {
+                "latitude": {
+                    "get_param": "customer_lat"
+                },
+                "longitude": {
+                    "get_param": "customer_long"
+                }
+            }
+        },
+        "demands": {
+            "vG": [
+                {
+                    "inventory_provider": "aai",
+                    "inventory_type": "cloud"
+                }
+            ]
+        },
+        "constraints": {
+            "constraint_vg_customer": {
+                "type": "distance_to_location",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "distance": "< 100 km",
+                    "location": "customer_loc"
+                }
+            },
+            "check_cloud_capacity": {
+                "type": "vim_fit",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "controller": "multicloud",
+                    "request": {
+                        "vCPU": 10,
+                        "Memory": {
+                            "quantity": {
+                                "get_param": "REQUIRED_MEM"
+                            },
+                            "unit": "GB"
+                        },
+                        "Storage": {
+                            "quantity": {
+                                "get_param": "REQUIRED_DISK"
+                            },
+                            "unit": "GB"
+                        }
+                    }
+                }
+            }
+        },
+        "optimization": {
+            "minimize": {
+                "sum": [
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    },
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "timeout": 5,
+    "limit": 3
+})
+
+
+// Plans
+
+@name("Create Plan with HPA")
+POST "https://{{conductor}}/plans"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+json({
+    "name": "vCPE-with-HPA",
+    "template": {
+        "homing_template_version": "2017-10-10",
+        "parameters": {
+            "service_name": "Residential vCPE",
+            "service_id": "vcpe_service_id",
+            "customer_lat": 45.395968,
+            "customer_long": -71.135344,
+            "REQUIRED_MEM": 4,
+            "REQUIRED_DISK": 100,
+            "pnf_id": "some_pnf_id"
+        },
+        "locations": {
+            "customer_loc": {
+                "latitude": {
+                    "get_param": "customer_lat"
+                },
+                "longitude": {
+                    "get_param": "customer_long"
+                }
+            }
+        },
+        "demands": {
+            "vG": [
+                {
+                    "inventory_provider": "aai",
+                    "inventory_type": "cloud"
+                }
+            ]
+        },
+        "constraints": {
+            "constraint_vg_customer": {
+                "type": "distance_to_location",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "distance": "< 100 km",
+                    "location": "customer_loc"
+                }
+            },
+            "hpa_constraint": {
+                "type": "hpa",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "evaluate": [
+                        {
+                            "flavorLabel": "flavor_label_1",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "4",
+                                            "operator": ">="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "4",
+                                            "operator": ">=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "numa",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numaNodes",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "cpuPinning",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "logicalCpuThreadPinningPolicy",
+                                            "hpa-attribute-value": "prefer",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "logicalCpuPinningPolicy",
+                                            "hpa-attribute-value": "dedicated",
+                                            "operator": "="
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "flavorLabel": "flavor_label_2",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "8",
+                                            "operator": ">="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "16",
+                                            "operator": ">=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "numa",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numaNodes",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "ovsDpdk",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "dataProcessingAccelerationLibrary",
+                                            "hpa-attribute-value": "v18.02",
+                                            "operator": "="
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "optimization": {
+            "minimize": {
+                "sum": [
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    },
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "timeout": 5,
+    "limit": 3
+})
+
+
+// Plans
+
+@name("Create Plan with HPA Simple")
+POST "https://{{conductor}}/plans"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+json({
+    "name": "vCPE-with-HPA",
+    "template": {
+        "homing_template_version": "2017-10-10",
+        "parameters": {
+            "service_name": "Residential vCPE",
+            "service_id": "vcpe_service_id",
+            "customer_lat": 45.395968,
+            "customer_long": -71.135344,
+            "REQUIRED_MEM": 4,
+            "REQUIRED_DISK": 100,
+            "pnf_id": "some_pnf_id"
+        },
+        "locations": {
+            "customer_loc": {
+                "latitude": {
+                    "get_param": "customer_lat"
+                },
+                "longitude": {
+                    "get_param": "customer_long"
+                }
+            }
+        },
+        "demands": {
+            "vG": [
+                {
+                    "inventory_provider": "aai",
+                    "inventory_type": "cloud"
+                }
+            ]
+        },
+        "constraints": {
+            "hpa_constraint": {
+                "type": "hpa",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "evaluate": [
+                        {
+                            "flavorLabel": "flavor_label_1",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "32",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "64",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "ovsDpdk",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "dataProcessingAccelerationLibrary",
+                                            "hpa-attribute-value": "v18.02",
+                                            "operator": "="
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "flavorLabel": "flavor_label_2",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "8",
+                                            "operator": ">="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "16",
+                                            "operator": ">=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "optimization": {
+            "minimize": {
+                "sum": [
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    },
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "timeout": 5,
+    "limit": 3
+})
+
+
+// Plans
+
+@name("Create Plan with HPA unmatched requirements")
+POST "https://{{conductor}}/plans"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+json({
+    "name": "vCPE-with-HPA-unmatched-requirements",
+    "template": {
+        "homing_template_version": "2017-10-10",
+        "parameters": {
+            "service_name": "Residential vCPE",
+            "service_id": "vcpe_service_id",
+            "customer_lat": 45.395968,
+            "customer_long": -71.135344,
+            "REQUIRED_MEM": 4,
+            "REQUIRED_DISK": 100,
+            "pnf_id": "some_pnf_id"
+        },
+        "locations": {
+            "customer_loc": {
+                "latitude": {
+                    "get_param": "customer_lat"
+                },
+                "longitude": {
+                    "get_param": "customer_long"
+                }
+            }
+        },
+        "demands": {
+            "vG": [
+                {
+                    "inventory_provider": "aai",
+                    "inventory_type": "cloud"
+                }
+            ]
+        },
+        "constraints": {
+            "constraint_vgmux_customer": {
+                "type": "distance_to_location",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "distance": "< 100 km",
+                    "location": "customer_loc"
+                }
+            },
+            "hpa_constraint": {
+                "type": "hpa",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "evaluate": [
+                        {
+                            "flavorLabel": "flavor_label_1",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "True",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "60",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "64",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "flavorLabel": "flavor_label_2",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "True",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "30",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "128",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "optimization": {
+            "minimize": {
+                "sum": [
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "timeout": 5,
+    "limit": 3
+})
+
+
+// Plans
+
+@name("Create Plan with HPA requirement mandatory")
+POST "https://{{conductor}}/plans"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+json({
+    "name": "vCPE-with-HPA-requirement-mandatory",
+    "template": {
+        "homing_template_version": "2017-10-10",
+        "parameters": {
+            "service_name": "Residential vCPE",
+            "service_id": "vcpe_service_id",
+            "customer_lat": 45.395968,
+            "customer_long": -71.135344,
+            "REQUIRED_MEM": 4,
+            "REQUIRED_DISK": 100,
+            "pnf_id": "some_pnf_id"
+        },
+        "locations": {
+            "customer_loc": {
+                "latitude": {
+                    "get_param": "customer_lat"
+                },
+                "longitude": {
+                    "get_param": "customer_long"
+                }
+            }
+        },
+        "demands": {
+            "vG": [
+                {
+                    "inventory_provider": "aai",
+                    "inventory_type": "cloud"
+                }
+            ]
+        },
+        "constraints": {
+            "constraint_vg_customer": {
+                "type": "distance_to_location",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "distance": "< 100 km",
+                    "location": "customer_loc"
+                }
+            },
+            "hpa_constraint": {
+                "type": "hpa",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "evaluate": [
+                        {
+                            "flavorLabel": "flavor_label_1",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "True",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "64",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "64",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "numa",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "True",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numaNodes",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "flavorLabel": "flavor_label_2",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "True",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "32",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "128",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "ovsDpdk",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "True",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "dataProcessingAccelerationLibrary",
+                                            "hpa-attribute-value": "v18.02",
+                                            "operator": "="
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "optimization": {
+            "minimize": {
+                "sum": [
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "timeout": 5,
+    "limit": 3
+})
+
+
+// Plans
+
+@name("Create Plan with HPA requirement optional")
+POST "https://{{conductor}}/plans"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+json({
+    "name": "vCPE-HPA-Requirement-Optional",
+    "template": {
+        "homing_template_version": "2017-10-10",
+        "parameters": {
+            "service_name": "Residential vCPE",
+            "service_id": "vcpe_service_id",
+            "customer_lat": 45.395968,
+            "customer_long": -71.135344,
+            "REQUIRED_MEM": 4,
+            "REQUIRED_DISK": 100,
+            "pnf_id": "some_pnf_id"
+        },
+        "locations": {
+            "customer_loc": {
+                "latitude": {
+                    "get_param": "customer_lat"
+                },
+                "longitude": {
+                    "get_param": "customer_long"
+                }
+            }
+        },
+        "demands": {
+            "vG": [
+                {
+                    "inventory_provider": "aai",
+                    "inventory_type": "cloud"
+                }
+            ]
+        },
+        "constraints": {
+            "constraint_vg_customer": {
+                "type": "distance_to_location",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "distance": "< 100 km",
+                    "location": "customer_loc"
+                }
+            },
+            "hpa_constraint": {
+                "type": "hpa",
+                "demands": [
+                    "vG"
+                ],
+                "properties": {
+                    "evaluate": [
+                        {
+                            "flavorLabel": "flavor_label_1",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "True",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "4",
+                                            "operator": ">="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "8",
+                                            "operator": ">=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "instructionSetExtensions",
+                                    "hpa-version": "v1",
+                                    "architecture": "Intel64",
+                                    "mandatory": "True",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "instructionSetExtensions",
+                                            "hpa-attribute-value": [
+                                                "aes",
+                                                "sse",
+                                                "avx",
+                                                "smt"
+                                            ],
+                                            "operator": "ALL",
+                                            "unit": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "numa",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "3",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numaNodes",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "flavorLabel": "flavor_label_2",
+                            "flavorProperties": [
+                                {
+                                    "hpa-feature": "basicCapabilities",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "True",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numVirtualCpu",
+                                            "hpa-attribute-value": "4",
+                                            "operator": ">="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "virtualMemSize",
+                                            "hpa-attribute-value": "8",
+                                            "operator": ">=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "ovsDpdk",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "5",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "dataProcessingAccelerationLibrary",
+                                            "hpa-attribute-value": "v18.02",
+                                            "operator": "="
+                                        }
+                                    ]
+                                },
+                                {
+                                    "hpa-feature": "numa",
+                                    "hpa-version": "v1",
+                                    "architecture": "generic",
+                                    "mandatory": "False",
+                                    "score": "3",
+                                    "hpa-feature-attributes": [
+                                        {
+                                            "hpa-attribute-key": "numaNodes",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaCpu-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "="
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-0",
+                                            "hpa-attribute-value": "2",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        },
+                                        {
+                                            "hpa-attribute-key": "numaMem-1",
+                                            "hpa-attribute-value": "4",
+                                            "operator": "=",
+                                            "unit": "GB"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "optimization": {
+            "minimize": {
+                "sum": [
+                    {
+                        "distance_between": [
+                            "customer_loc",
+                            "vG"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "timeout": 5,
+    "limit": 3
+})
+
+
+// Plans
+
+@name("Get Plans")
+GET "https://{{conductor}}/plans/"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+
+
+// Plan
+
+@name("Delete Plan")
+DELETE "https://{{conductor}}/plans/142c84f4-6252-41ad-ac44-98dab343a24a"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+
+
+
+// Plan
+
+@name("Get Plan")
+GET "https://{{conductor}}/plans/{{plan_id}}"
+"X-Auth-Token": "{{auth_token}}"
+"Content-Type": "application/json"
+
+
+

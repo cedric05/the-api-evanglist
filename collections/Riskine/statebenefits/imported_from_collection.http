@@ -1,0 +1,130 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// To calculate the pension you need to specify gender, birthday, profession, income and your highest educational attainment, and maybe additional parameters depending on country specifics. In many countries, there are parameters that are not commonly known to a standard user but make possible a more exact calculation (For example, in Austria,  the current amount in the pension account). These parameters are estimated if omitted but are taken into account if included in the input. 
+// 
+// Specific for `at`.  
+// 
+// If you specify income-dependent children and age of under 50, the pension calculator will take the `Family Bonus Plus` into account in its entirety. If you also specify the children's date of birth and educational status, the `Family Bonus Plus` is only granted to children under 18 or children under 24 who are still in education.
+
+@name("Old Age Pension") : "base-inherit-auth"
+POST "https://{{baseUrl}}/statebenefits/pension"
+"Content-Type": "application/json"
+json({
+    "person.gender": 1,
+    "person.birthdate": "1980-01-01",
+    "person.work.professiontype": 1,
+    "person.work.income.gross.monthly": 2500,
+    "person.education.level": 1,
+    "person.statebenefits.pension.sum": 10345.32,
+    "person.statebenefits.pension.year": 2019,
+    "person.statebenefits.pension.professionaldevelopment": 1,
+    "person.statebenefits.pension.months": 143,
+    "person.family.incomedepending": [
+        2
+    ],
+    "person.statebenefits.pension.increaseinvalue": "today",
+    "person.statebenefits.pension.earliestpensionage": 0
+})
+
+
+// | <div style=width:225px> __Field__ </div> | <div style=width:600px> __description__ </div> |
+// | --- | --- |
+// | `benefitgross` | job incapacity gross sum, monthly, yearly and expected total (until regular retirement) |
+// | `benefitnet` | job incapacity net sum, monthly, yearly and expected total (until regular retirement) |
+// | `lastincomegross` | last gross income before entry into invalidity pension, monthly, yearly and expected total (until regular retirement) |
+// | `lastincomenet` | last net income before entry into invalidity pension, monthly, yearly and expected total (until regular retirement) |
+// | `socialinsurancecontribution` | social insurance contribution of the last income, monthly |
+// | `tax` | tax of the last income, monthly |
+// | `gapgross` | gap between last gross income and gross benefit, monthly, yearly and expected total (until regular retirement) |
+// | `gap` | gap between last net income and net benefit, monthly, yearly and expected total (until regular retirement) |
+// | `retirement` | earliest retirement age, latest retirement age, planned date of retirement, current age years, current age months, years until regular retirement |
+
+@name("Invalidity") : "base-inherit-auth"
+POST "https://{{baseUrl}}/statebenefits/invalidity"
+"Content-Type": "application/json"
+json({
+    "person.gender": 1,
+    "person.birthdate": "1980-01-01",
+    "person.work.professiontype": 1,
+    "person.work.income.gross.monthly": 2500,
+    "person.education.level": 1,
+    "person.statebenefits.pension.sum": 10345.32,
+    "person.statebenefits.pension.year": 2019,
+    "person.statebenefits.pension.professionaldevelopment": 1,
+    "person.statebenefits.pension.months": 143,
+    "person.family.incomedepending": [
+        2
+    ]
+})
+
+
+// To calculate the widow pension the family status is needed in addition to the parameters necessary for the calculation of the pension. For a more precise calculation, you can also specify the duration of the marriage, the date of birth and the income of the partner. For the calculation of the orphans' pension, the dates of birth and the educational level of the children are additionally required.  
+// 
+// | <div style=width:100px> __Field__ </div> | <div style=width:600px> __description__ </div> |
+// | --- | --- |
+// | `widow` | gross/net benefit (monthly), gross/net gap (monthly), information about whether pension is limited or not (1 = unlimited) and date of retirement |
+// | `orphans` | gross/net benefit for all children in total (monthly), grossnet gap (monthly), gross/net benefit for one child (monthly) and date of retirement |
+// | `fullorphans` | same as orhpans, but both parents deceased |
+// | `mean` | monthly mean of gross/net benefit, last gross/net income before entry into pension, social insurance contribution/tax of the last income and gap |
+// | `user` | Information about advised person: net income, children, careerfactor, time in marriage, income of partner, age of partner |
+
+@name("Dependants") : "base-inherit-auth"
+POST "https://{{baseUrl}}/statebenefits/dependants"
+"Content-Type": "application/json"
+json({
+    "person.gender": 1,
+    "person.birthdate": "1980-01-01",
+    "person.work.professiontype": 1,
+    "person.work.income.gross.monthly": 2500,
+    "person.education.level": 1,
+    "person.statebenefits.pension.sum": 10345.32,
+    "person.statebenefits.pension.year": 2019,
+    "person.statebenefits.pension.professionaldevelopment": 1,
+    "person.statebenefits.pension.months": 143,
+    "person.family.incomedepending": [
+        2
+    ],
+    "person.family.partner": 2,
+    "person.children[0].birthdate": "2008-01-01",
+    "person.children[0].education.status": 1,
+    "person.partner.work.income.gross": 1992
+})
+
+
+// There is a varying number of `levels`, e.g. 5 in Germany, 7 in Austria. The response contains the correct number of levels, called `level1`, `level2`, etc.  
+// 
+// | <div style=width:140px> __Field__ </div> | <div style=width:700px> __description__ </div> |
+// | --- | --- |
+// | `calculated-level` | calculated hours depending on care needs |
+// | `calculated-hours` | calculated required hours of care depending on care needs |
+// |`care/level1, care/level2, ...` | Per level in the respective public system - estimated cost, monthly and yearly, net benefit, monthly and yearly, gap, monthly and yearly, estimated cost for outpatient care, monthly and yearly, gap for outpatient care, monthly and yearly, estimated cost for inpatient care, monthly and yearly, gap for inpatient care, monthly and yearly, infotext |
+// | `mean` | mean over all levels. contains the same data points |
+
+@name("Long term care") : "base-inherit-auth"
+POST "https://{{baseUrl}}/statebenefits/care"
+"Content-Type": "application/json"
+json({
+    "person.care.help-needs": [
+        1,
+        2,
+        3
+    ],
+    "person.care.care-needs": [
+        1,
+        4,
+        5
+    ],
+    "person.care.additional-care-needs": 0
+})
+
+
+

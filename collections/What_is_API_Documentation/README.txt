@@ -1,0 +1,1 @@
+Reference guides, how-to documentation, recipes, and other means of communication about how an API actually works.

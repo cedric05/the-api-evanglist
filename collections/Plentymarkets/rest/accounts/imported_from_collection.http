@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// List accounts.
+
+@name("List accounts")
+GET "https://{{baseUrl}}/rest/accounts"
+? "updatedAt"= "<post>"
+? "createdAt"= "<post>"
+
+
+// Deletes an account contact relation. the id of the account contact relation must be specified..
+
+@name("Deletes an account contact relation. The ID of the account contact relation must be specified.")
+DELETE "https://{{baseUrl}}/rest/accounts/contact_relations/:accountContactRelationId"
+
+
+

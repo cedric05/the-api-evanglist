@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Upload a license to enable enterprise features.nn__Minimum server version__: 4.0nn##### PermissionsnMust have `manage_system` permission.n
+
+@name("Upload license file")
+POST "https://{{baseUrl}}/license"
+
+
+// Get a subset of the server license needed by the client.n##### PermissionsnNo permission required but having the `manage_system` permission returns more information.n
+
+@name("Get client license")
+GET "https://{{baseUrl}}/license/client"
+? "format"= "<>"
+
+
+

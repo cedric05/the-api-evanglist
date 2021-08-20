@@ -1,0 +1,143 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+@name("/users/:USER_ID")
+GET "https://{{baseUrl}}/users/:USER_ID"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/venuehistory
+
+@name("/users/{USER_ID}/venuehistory")
+POST "https://{{baseUrl}}/users/:USER_ID/approve"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// users/search (POST)
+
+@name("users/search (POST)")
+GET "https://{{baseUrl}}/users/:USER_ID/badges"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/badges
+
+@name("/users/{USER_ID}/badges")
+GET "https://{{baseUrl}}/users/:USER_ID/checkins"
+? "afterTimestamp"= "<string>"
+? "beforeTimestamp"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<string>"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/approve
+
+@name("/users/{USER_ID}/approve")
+POST "https://{{baseUrl}}/users/:USER_ID/deny"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/checkins
+
+@name("/users/{USER_ID}/checkins")
+GET "https://{{baseUrl}}/users/:USER_ID/friends"
+? "limit"= "<integer>"
+? "offset"= "<string>"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/friends
+
+@name("/users/{USER_ID}/friends")
+GET "https://{{baseUrl}}/users/:USER_ID/lists"
+? "group"= "<string>"
+? "ll"= "<string>"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/lists
+
+@name("/users/{USER_ID}/lists")
+GET "https://{{baseUrl}}/users/:USER_ID/mayorships"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/mayorships
+
+@name("/users/{USER_ID}/mayorships")
+GET "https://{{baseUrl}}/users/:USER_ID/photos"
+? "limit"= "<integer>"
+? "offset"= "<string>"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/deny
+
+@name("/users/{USER_ID}/deny")
+POST "https://{{baseUrl}}/users/:USER_ID/request"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/request
+
+@name("/users/{USER_ID}/request")
+POST "https://{{baseUrl}}/users/:USER_ID/setpings"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+? "value"= "<integer>"
+
+
+// /users/{USER_ID}/photos
+
+@name("/users/{USER_ID}/photos")
+GET "https://{{baseUrl}}/users/:USER_ID/tips"
+? "limit"= "<integer>"
+? "ll"= "<string>"
+? "offset"= "<string>"
+? "sort"= "<string>"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/tips
+
+@name("/users/{USER_ID}/tips")
+GET "https://{{baseUrl}}/users/:USER_ID/todos"
+? "ll"= "<string>"
+? "sort"= "<string>"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/setpings
+
+@name("/users/{USER_ID}/setpings")
+POST "https://{{baseUrl}}/users/:USER_ID/unfriend"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/todos
+
+@name("/users/{USER_ID}/todos")
+GET "https://{{baseUrl}}/users/:USER_ID/venuehistory"
+? "afterTimestamp"= "<string>"
+? "beforeTimestamp"= "<string>"
+? "categoryId"= "<string>"
+? "USER_ID"= "<string>"
+? "v"= "<string>"
+
+
+

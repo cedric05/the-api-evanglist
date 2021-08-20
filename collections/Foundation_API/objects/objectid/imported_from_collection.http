@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets a collection of audit transactions performed on the specified teamforge object.
+
+@name("Gets a collection of audit transactions performed on the specified TeamForge object")
+GET "https://{{baseUrl}}/objects/:objectid/auditlog"
+? "offset"= "<put>"
+? "count"= "<>"
+
+
+// Gets the comments on the given object id.
+
+@name("Gets the comments on the given object id")
+GET "https://{{baseUrl}}/objects/:objectid/comments"
+? "sortby"= "<>"
+? "offset"= "<put>"
+? "count"= "<>"
+
+
+// Gets delivery information for the given object.
+
+@name("Gets delivery information for the given object")
+GET "https://{{baseUrl}}/objects/:objectid/delivery"
+
+
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Creates a new custom folder for the current user.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Create folder") : "base-inherit-auth"
+POST "https://{{baseUrl}}/was/v2/folders"
+"Content-Type": "application/json"
+json({
+    "name": "ex irure sint non"
+})
+
+
+// Lists the current user's custom folders.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List folders") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/folders"
+
+
+

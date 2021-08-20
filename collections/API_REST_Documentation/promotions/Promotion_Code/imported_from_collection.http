@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Working example: Retrieve a promotion")
+GET "https://{{baseUrl}}/promotions/:PromotionCode/"
+
+
+@name("Working example: Update promotion coupon")
+PUT "https://{{baseUrl}}/promotions/:PromotionCode/coupons/"
+
+
+@name("Working example: Add products to a promotion")
+POST "https://{{baseUrl}}/promotions/:PromotionCode/products/"
+
+
+@name("Working example: Add promotion sources")
+POST "https://{{baseUrl}}/promotions/:PromotionCode/sources/"
+
+
+@name("Working example: Add promotion translations")
+PUT "https://{{baseUrl}}/promotions/:PromotionCode/translations/"
+
+
+

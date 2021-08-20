@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-078f0c0e-f03d-4124-bda1-c7d8042a0e64.postman_collection.json
+
+// Creates a new party record in the remote demographics store..
+
+@name("Creates a new party record in the remote demographics store.")
+POST "https://{{baseUrl}}/demographics/party"
+
+
+// Queries the demographics store for matching parties, with the query parameters specified in the url..
+
+@name("Queries the demographics store for matching parties, with the query parameters specified in the URL.")
+GET "https://{{baseUrl}}/demographics/party/query"
+? "maxHits"= "<>"
+? "parameters"= "<>"
+
+
+// Deletes a party record from the remote demographics store..
+
+@name("Deletes a party record from the remote demographics store.")
+DELETE "https://{{baseUrl}}/demographics/party/:partyId"
+
+
+

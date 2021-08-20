@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Retrieves a set of Listing objects associated to a FeaturedListingPicker.
+
+@name("Get Homepages Pickers Featured Listing Picker Listings")
+GET "https://{{baseUrl}}/homepages/pickers/:featured_listing_picker_id/listings"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of Listing objects associated to a FeaturedListingPicker in scope active.
+
+@name("Get Homepages Pickers Featured Listing Picker Listings Active")
+GET "https://{{baseUrl}}/homepages/pickers/:featured_listing_picker_id/listings/active"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

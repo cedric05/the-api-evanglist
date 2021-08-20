@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c039dcb8-c468-46a5-bef2-944b0de198e7.postman_collection.json
+
+// Fetches the list of language pairs the back-end service can translatennStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)n
+
+@name("Lists the language pairs supported by the back-end")
+GET "https://{{baseUrl}}/transform/list/languagepairs/"
+
+
+// Fetches the list of tools that are available for the given pair of languages.nnStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)n
+
+@name("Lists the tools available for a language pair")
+GET "https://{{baseUrl}}/transform/list/pair/:from/:to/"
+
+
+// Fetches the list of tools and all of the language pairs it can translatennStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)n
+
+@name("Lists the tools and language pairs available for the given tool category")
+GET "https://{{baseUrl}}/transform/list/tool/:tool/"
+
+
+

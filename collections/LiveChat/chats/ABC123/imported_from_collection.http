@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Returns a single chat item for the given CHAT_ID.
+
+@name("Get single chat")
+GET "https://{{baseUrl}}/chats/ABC123"
+"X": "<>"
+
+
+// This method updates the tags assigned to a chat.nn
+
+@name("Update chat tags")
+PUT "https://{{baseUrl}}/chats/ABC123/tags"
+"X": "<>"
+
+
+@name("Send chat transcript to e-mail")
+POST "https://{{baseUrl}}/chats/ABC123/send_transcript"
+"X": "<>"
+
+
+

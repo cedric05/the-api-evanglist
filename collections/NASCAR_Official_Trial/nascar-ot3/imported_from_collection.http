@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0d968f48-44c0-4886-b890-607a7e856a91.postman_collection.json
+
+// Obtain track information for NASCAR.  NOTE:  The 2012 sample data is an abbreviated season
+
+@name("Obtain track information for NASCAR.  NOTE:  The 2...")
+GET "https://{{baseUrl}}/nascar-ot3/tracks/list{{format}}"
+
+
+// information on any changes made to race information, race results, driver information, track information, or standings
+
+@name("information on any changes made to race informatio...")
+GET "https://{{baseUrl}}/nascar-ot3/:year/:month/:day/changes{{format}}"
+
+
+

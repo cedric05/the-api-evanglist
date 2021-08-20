@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5bfc6a7a-9723-4bb7-a53c-665f538df741.postman_collection.json
+
+// Get all scenarios
+
+@name("Get Scenarios")
+GET "https://{{baseUrl}}/scenarios"
+
+
+// Reset the state of all scenarios
+
+@name("Post Scenarios Reset")
+POST "https://{{baseUrl}}/scenarios/reset"
+
+
+

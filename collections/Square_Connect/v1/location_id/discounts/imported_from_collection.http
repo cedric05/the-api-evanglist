@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Lists all of a location's discounts.
+
+@name("Get Location Discounts")
+GET "https://{{baseUrl}}/v1/:location_id/discounts"
+
+
+// Deletes an existing discount.
+
+@name("Delete Location Discounts")
+DELETE "https://{{baseUrl}}/v1/:location_id/discounts/:discount_id"
+
+
+

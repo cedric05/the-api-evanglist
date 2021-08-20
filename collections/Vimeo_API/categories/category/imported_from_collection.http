@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method gets a single category.
+
+@name("Get a specific category")
+GET "https://{{baseUrl}}/categories/:category"
+
+
+// This method gets all the channels that belong to a category.
+
+@name("Get all the channels in a category")
+GET "https://{{baseUrl}}/categories/:category/channels"
+? "direction"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+// This method gets all the groups that belong to a category.
+
+@name("Get all the groups in a category")
+GET "https://{{baseUrl}}/categories/:category/groups"
+? "direction"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+

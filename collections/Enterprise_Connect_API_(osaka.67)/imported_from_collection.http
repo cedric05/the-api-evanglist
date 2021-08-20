@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04d7d258-a63d-4960-8bb7-da34acef80a9.postman_collection.json
+
+// Report usage by zoneid
+
+@name("Report usage")
+POST "https://{{baseUrl}}/reports/usage"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// Submit a CSR for a certificate for the EC usage
+
+@name("Request a digital certificate")
+POST "https://{{baseUrl}}/certs"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// Create a EC system account with the CF detailsn
+
+@name("Create an EC system account")
+POST "https://{{baseUrl}}/admin/accounts/:predix-zone-id"
+"Authorization": "<>"
+
+
+

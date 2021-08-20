@@ -1,0 +1,298 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe3a67a8-afd0-43aa-87c4-7d44157077ab.postman_collection.json
+
+// This operation retrieves a GeographicAddressValidation entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a GeographicAddressValidation by ID")
+GET "https://{{baseUrl}}/geographicAddressValidation/:id"
+? "fields"= "Ut eiusmod"
+
+
+// This operation updates partially a GeographicAddressValidation entity.
+
+@name("Updates partially a GeographicAddressValidation")
+PATCH "https://{{baseUrl}}/geographicAddressValidation/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "provideAlternative": false,
+    "validationDate": "1994-09-08T04:31:12.483Z",
+    "validationResult": "sunt enim magna",
+    "alternateGeographicAddress": [
+        {
+            "id": "et labore aliquip",
+            "href": "dolor aliquip",
+            "city": "eiusmod cillum est nostrud",
+            "country": "id voluptate Excepteur",
+            "locality": "fugiat et",
+            "name": "voluptate",
+            "postcode": "proident",
+            "stateOrProvince": "commodo dolor id qui",
+            "streetName": "deserunt anim eu",
+            "streetNr": "sint laboris consequat",
+            "streetNrLast": "esse aliqua eu",
+            "streetNrLastSuffix": "sint",
+            "streetNrSuffix": "irure eu dolore velit",
+            "streetSuffix": "aliquip dolore mollit reprehenderit",
+            "streetType": "culpa ipsum D",
+            "geographicLocation": {
+                "@type": "GeoJsonLineString",
+                "id": "sed cupidatat mollit t",
+                "href": "non",
+                "name": "occaecat sed ex elit",
+                "@baseType": "ResourceSpecification",
+                "bbox": [
+                    59927124.52023685,
+                    22855930.747656077
+                ],
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                "@referredType": "magna"
+            },
+            "geographicSubAddress": [
+                {
+                    "id": "amet sint reprehenderit ea",
+                    "href": "ipsum eiusmod sed elit ut",
+                    "buildingName": "ex occaecat",
+                    "levelNumber": "aliqua velit mollit elit",
+                    "levelType": "sed tempor officia",
+                    "name": "in",
+                    "privateStreetName": "culpa dolor minim mollit cupidatat",
+                    "privateStreetNumber": "est exercitation",
+                    "subAddressType": "ipsum magna",
+                    "subUnitNumber": "fugiat est dolor incidi",
+                    "subUnitType": "voluptate ",
+                    "@baseType": "occaecat enim proident dolore",
+                    "@schemaLocation": "https://NE.upjuvbgKeM-Z4GGNFG0kwpNrs9FGCpwwkUuDpEz,kWW.yAE-g",
+                    "@type": "sunt esse"
+                },
+                {
+                    "id": "et non",
+                    "href": "sit consectetur et",
+                    "buildingName": "ad",
+                    "levelNumber": "in quis",
+                    "levelType": "culpa",
+                    "name": "nulla laboris consectetur amet",
+                    "privateStreetName": "Lorem elit",
+                    "privateStreetNumber": "sint ut",
+                    "subAddressType": "esse",
+                    "subUnitNumber": "anim aliqua ex culpa et",
+                    "subUnitType": "culpa ex",
+                    "@baseType": "dolore elit pariatur sed",
+                    "@schemaLocation": "https://CZY.kzfK27ErN6qx4T7yKECQyT5K9qx1a3d7hsEuZew",
+                    "@type": "tempor ex "
+                }
+            ],
+            "@baseType": "cupidatat",
+            "@schemaLocation": "https://XFSighhZGiNItBep.onameIejdwamHMvf",
+            "@type": "dolor enim id in fugiat"
+        },
+        {
+            "id": "aliquip nulla commodo sint",
+            "href": "sed fugiat veniam occaecat",
+            "city": "Lorem labore",
+            "country": "sint quis",
+            "locality": "ut veniam cupidatat ipsum culpa",
+            "name": "pariatur sint sit sed",
+            "postcode": "ullamco sint incididunt in",
+            "stateOrProvince": "Lorem Excepteur voluptate magna",
+            "streetName": "ut adipisicing",
+            "streetNr": "consectetur dolor adipisicing sed",
+            "streetNrLast": "exercitation dolor in",
+            "streetNrLastSuffix": "ipsum do incididunt",
+            "streetNrSuffix": "ex irure",
+            "streetSuffix": "laborum Excepteur exercitation sit",
+            "streetType": "magna exercitation incididunt",
+            "geographicLocation": {
+                "@type": "GeoJsonMultiPoint",
+                "id": "reprehenderit consequat qui",
+                "href": "dolor",
+                "name": "ut ullamco",
+                "@baseType": "ResourceSpecification",
+                "bbox": [
+                    65516807.076177716,
+                    30546256.70931728
+                ],
+                "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                "@referredType": "incididunt consequat"
+            },
+            "geographicSubAddress": [
+                {
+                    "id": "tempor velit",
+                    "href": "sed exercitation ullamco",
+                    "buildingName": "sunt exercitation",
+                    "levelNumber": "amet",
+                    "levelType": "quis elit",
+                    "name": "minim enim ven",
+                    "privateStreetName": "deserunt in ut exercitation",
+                    "privateStreetNumber": "in labori",
+                    "subAddressType": "ut pariatur",
+                    "subUnitNumber": "min",
+                    "subUnitType": "labore sed proident ullamco",
+                    "@baseType": "officia",
+                    "@schemaLocation": "https://s.eayzyQ-vf.SEtyGRHZLfy9O",
+                    "@type": "fugiat"
+                },
+                {
+                    "id": "do incididunt",
+                    "href": "irure deserunt",
+                    "buildingName": "Duis minim ut",
+                    "levelNumber": "",
+                    "levelType": "sint laboris consequat eiusmod",
+                    "name": "Ex",
+                    "privateStreetName": "sint magna pariatur",
+                    "privateStreetNumber": "veniam sint est laborum",
+                    "subAddressType": "amet dolor",
+                    "subUnitNumber": "veniam sint magna",
+                    "subUnitType": "Excepteur reprehenderit do",
+                    "@baseType": "voluptate Ut",
+                    "@schemaLocation": "http://vpCGDcxGxwSMG.frtlOboJZ7cnNila08F+CstGjNxPL-kw4-XuPF,NPg",
+                    "@type": "qui minim volu"
+                }
+            ],
+            "@baseType": "reprehenderit ullamco",
+            "@schemaLocation": "http://eD.jindlYQr7ZzuLsyrUoGQ0ALCcJRakA1zqLvt1zngLMgdg-T1",
+            "@type": "in"
+        }
+    ],
+    "state": "inProgress",
+    "submittedGeographicAddress": {
+        "id": "proident ullamco",
+        "href": "Excepteur quis est",
+        "city": "pariat",
+        "country": "quis sunt nisi in",
+        "locality": "dolore aliquip nisi consectetur",
+        "name": "irure elit Excepteur dolore",
+        "postcode": "Ut sed deserunt non",
+        "stateOrProvince": "aliquip amet proident",
+        "streetName": "exercitation in",
+        "streetNr": "ea in Duis minim",
+        "streetNrLast": "do elit",
+        "streetNrLastSuffix": "eu voluptate dolore non irure",
+        "streetNrSuffix": "qui sed",
+        "streetSuffix": "mollit laborum",
+        "streetType": "in ullamco",
+        "geographicLocation": {
+            "@type": "GeoJsonPolygon",
+            "id": "aute ullamco pariatur",
+            "href": "occaecat quis velit",
+            "name": "ex ad veniam exercitation",
+            "@baseType": "ResourceSpecification",
+            "bbox": [
+                -9802601.932562277,
+                63252127.59473616
+            ],
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+            "@referredType": "ea minim"
+        },
+        "geographicSubAddress": [
+            {
+                "id": "Excepteur nisi",
+                "href": "sit laborum",
+                "buildingName": "esse dolor ut",
+                "levelNumber": "laboris dolore",
+                "levelType": "tempor velit ipsum",
+                "name": "amet dolor et enim",
+                "privateStreetName": "ex sit non nulla ea",
+                "privateStreetNumber": "sint dolore",
+                "subAddressType": "dolore nisi ut fugiat aute",
+                "subUnitNumber": "Duis laboris minim voluptate",
+                "subUnitType": "t",
+                "@baseType": "deserunt Excepteur nulla",
+                "@schemaLocation": "http://BmHyrQqoX.empxUiV+fOr9JsCxT-Q,FQQzGpre8",
+                "@type": "labore sed in eiusmod"
+            },
+            {
+                "id": "incididunt officia est adipisicing velit",
+                "href": "cillum irure veniam Duis nisi",
+                "buildingName": "elit do Ut",
+                "levelNumber": "labore exercitation",
+                "levelType": "reprehenderit officia nostrud aute",
+                "name": "irure pariatur in voluptate ex",
+                "privateStreetName": "officia sit occaecat",
+                "privateStreetNumber": "consequat fugiat nostr",
+                "subAddressType": "cillum elit laboris non",
+                "subUnitNumber": "exercitation ipsum nisi",
+                "subUnitType": "pariatur dolore mollit",
+                "@baseType": "incididunt ad ipsum in",
+                "@schemaLocation": "http://WRLnLnpeKOsQplRz.jbtOd6y6YuEO7IMtpCAkFGxYIZtiDOLiv6tJGIybsOzCRcKu-XMK",
+                "@type": "culpa consectetur con"
+            }
+        ],
+        "@baseType": "quis in aliquip enim",
+        "@schemaLocation": "https://AgpGvNyXFyZCeWQirk.mfcj7mDUfVjgMVHTJAduGmxP.ruzcxw.0RWwWig6uccfOX4Gz",
+        "@type": "eu id "
+    },
+    "validGeographicAddress": {
+        "id": "ut do sed in",
+        "href": "esse irure",
+        "city": "magna fugiat do commodo",
+        "country": "do adipisicing",
+        "locality": "in cupidatat magna",
+        "name": "in exercitation",
+        "postcode": "mollit ad",
+        "stateOrProvince": "ut id",
+        "streetName": "est do incididunt nos",
+        "streetNr": "id officia ut nostrud",
+        "streetNrLast": "non consectetur nulla do",
+        "streetNrLastSuffix": "sed l",
+        "streetNrSuffix": "irure",
+        "streetSuffix": "non enim velit",
+        "streetType": "anim ut cupidatat",
+        "geographicLocation": {
+            "@type": "GeoJsonLineString",
+            "id": "officia labore",
+            "href": "laborum deserunt",
+            "name": "ex ad",
+            "@baseType": "ResourceSpecification",
+            "bbox": [
+                11861995.801042184,
+                73042776.59143624
+            ],
+            "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+            "@referredType": "culpa sint aute laborum"
+        },
+        "geographicSubAddress": [
+            {
+                "id": "eu ea est reprehenderit",
+                "href": "irure laborum ",
+                "buildingName": "sed veniam",
+                "levelNumber": "et pariatur aliquip",
+                "levelType": "id Excepteur et pariatur laborum",
+                "name": "ut dolore ut eiusmod",
+                "privateStreetName": "officia dolore",
+                "privateStreetNumber": "deserunt quis",
+                "subAddressType": "adipisicing sint",
+                "subUnitNumber": "sint eu consectetur",
+                "subUnitType": "i",
+                "@baseType": "consequat dolore",
+                "@schemaLocation": "https://Jsz.uyvCJsiWvhTd6iaar3xHmeFMduO6z0,GNxL+ZyCizGU5.gfQDuZLiknxdPw0y4y",
+                "@type": "nulla Excepteur Lorem"
+            },
+            {
+                "id": "nostrud ad est id",
+                "href": "laboris ipsum",
+                "buildingName": "occaecat ut",
+                "levelNumber": "officia deserunt elit irure dolore",
+                "levelType": "voluptate Ut in sunt",
+                "name": "nulla commodo ipsum",
+                "privateStreetName": "fugiat commodo reprehenderit",
+                "privateStreetNumber": "irure non dolor eu off",
+                "subAddressType": "tempor laboris ea in",
+                "subUnitNumber": "do enim in",
+                "subUnitType": "ullamco",
+                "@baseType": "aliqua cillum mollit",
+                "@schemaLocation": "https://IXllm.lnVzP1doITDamui-RUruvfUf4mEAdOxrBzOEwSPYguCkf",
+                "@type": "minim sunt cillum"
+            }
+        ],
+        "@baseType": "consequat exercitation minim",
+        "@schemaLocation": "https://YMwdkvkuYaJeMvkSKOMxQsvDZQGzmbZs.uutxMVUwOS6GLlMz8a",
+        "@type": "culpa in veniam velit"
+    },
+    "@baseType": "et",
+    "@schemaLocation": "http://mcxMmOrmMEGI.nmuaTBn",
+    "@type": "dolor"
+})
+
+
+

@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ae419a4f-68f3-40b5-821c-80057f0df0bd.postman_collection.json
+
+// Updates the clinic by current active organization registration for the clinicId provided. WARNING: any properties that are nullable and not included in the request body will be set to NULL.
+
+@name("Updates the clinic for the clinicId provided")
+PUT "https://{{baseUrl}}/clinics/organization/:id/clinic/:clinicId"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"Content-Type": "application/json"
+json({
+    "clinicId": "<string>",
+    "name": "<string>",
+    "address1": "<string>",
+    "address2": "<string>",
+    "city": "<string>",
+    "state": "<string>",
+    "zipCode": "<string>"
+})
+
+
+// Deletes the clinic by current active organization registration for the clinicId provided
+
+@name("Deletes the clinic for the clinicId provided")
+DELETE "https://{{baseUrl}}/clinics/organization/:id/clinic/:clinicId"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+
+
+

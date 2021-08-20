@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-adc2da4d-b751-4bf5-9e03-e1950af35609.postman_collection.json
+
+@name("Get datasets")
+GET "https://{{baseUrl}}/search/v1/dataset"
+"X-App-Token": "<string>"
+? "entity_id"= "<string>"
+? "dataset_id"= "<string>"
+? "limit"= "10"
+? "offset"= "<number>"
+? "app_token"= "<string>"
+
+
+@name("Get questions")
+GET "https://{{baseUrl}}/search/v1/question"
+"X-App-Token": "<string>"
+? "query"= "<string>"
+? "limit"= "10"
+? "offset"= "<number>"
+? "app_token"= "<string>"
+
+
+

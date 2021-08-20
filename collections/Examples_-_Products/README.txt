@@ -1,0 +1,1 @@
+This is just a collection to be used by other collections in here so that we are modifying and playing with an example and not a live collection.

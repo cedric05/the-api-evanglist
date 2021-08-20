@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Creates an address. The ID of the contact must be specified.
+
+@name("Create an address for existing contact and type")
+POST "https://{{baseUrl}}/rest/accounts/contacts/:contactId/addresses"
+? "isPrimary"= "<post>"
+? "typeId"= "<post>"
+
+
+// Lists addresses of the contact. The ID of the contact must be specified.
+
+@name("List addresses that are linked with contacts")
+GET "https://{{baseUrl}}/rest/accounts/contacts/:contactId/addresses/:addressTypeId"
+? ""= "null"
+
+
+

@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("Get a repository webhook")
+GET "https://{{baseUrl}}/repos/:owner/:repo/hooks/:hook_id"
+
+
+@name("Update a repository webhook")
+PATCH "https://{{baseUrl}}/repos/:owner/:repo/hooks/:hook_id"
+"Content-Type": "application/json"
+json({
+    "config": {
+        "url": "<string>",
+        "content_type": "<string>",
+        "secret": "<string>",
+        "insecure_ssl": "<string>",
+        "address": "<string>",
+        "room": "<string>"
+    },
+    "events": [
+        "push"
+    ],
+    "add_events": [
+        "<string>",
+        "<string>"
+    ],
+    "remove_events": [
+        "<string>",
+        "<string>"
+    ],
+    "active": true
+})
+
+
+@name("Delete a repository webhook")
+DELETE "https://{{baseUrl}}/repos/:owner/:repo/hooks/:hook_id"
+
+
+// This will trigger a [ping event](https://developer.github.com/webhooks/#ping-event) to be sent to the hook.
+
+@name("Ping a repository webhook")
+POST "https://{{baseUrl}}/repos/:owner/:repo/hooks/:hook_id/pings"
+
+
+// This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.
+// 
+// **Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
+
+@name("Test the push repository webhook")
+POST "https://{{baseUrl}}/repos/:owner/:repo/hooks/:hook_id/tests"
+
+
+

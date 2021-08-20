@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b61ade0-60b3-4dcc-a6b1-7acb55b522a0.postman_collection.json
+
+// You can only retrieve records for endpoints of backup_instances you have access to
+
+@name("Retrieve a specific record by id for the specified endpoint and backup_instance")
+GET "https://{{baseUrl}}/v1/backup_instances/:backup_instance_id/endpoints/:endpoint_name/records/:record_id"
+"Authorization": "<>"
+
+
+// Retrieve the blob associated with the specified record for the specified endpoint and backup_instance.
+
+@name("Retrieve the blob associated with the specified record for the specified endpoint and backup_instance")
+GET "https://{{baseUrl}}/v1/backup_instances/:backup_instance_id/endpoints/:endpoint_name/records/:record_id/blob"
+"Access": "<>"
+
+
+

@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eabc5422-b0c4-42fc-9bd9-335695a573f1.postman_collection.json
+
+// Provides probabilities for a given match; prematch only
+
+@name("Provides probabilities for a given match; prematch...")
+GET "https://{{baseUrl}}/sport_events/:match_id/probabilities{{format}}"
+
+
+@name("Provides detailed information for a given match")
+GET "https://{{baseUrl}}/sport_events/:match_id/timeline{{format}}"
+
+
+

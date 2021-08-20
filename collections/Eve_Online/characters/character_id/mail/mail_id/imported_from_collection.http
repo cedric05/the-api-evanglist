@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Delete a mail
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mail/{mail_id}/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/mail/{mail_id}/`
+// 
+// Alternate route: `/v1/characters/{character_id}/mail/{mail_id}/`
+
+@name("Delete a mail")
+DELETE "https://{{baseUrl}}/characters/:character_id/mail/:mail_id/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return the contents of an EVE mail
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mail/{mail_id}/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/mail/{mail_id}/`
+// 
+// Alternate route: `/v1/characters/{character_id}/mail/{mail_id}/`
+// 
+// ---
+// This route is cached for up to 30 seconds
+
+@name("Return a mail")
+GET "https://{{baseUrl}}/characters/:character_id/mail/:mail_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Update metadata about a mail
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/mail/{mail_id}/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/mail/{mail_id}/`
+// 
+// Alternate route: `/v1/characters/{character_id}/mail/{mail_id}/`
+
+@name("Update metadata about a mail")
+PUT "https://{{baseUrl}}/characters/:character_id/mail/:mail_id/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "labels": [
+        45929478,
+        2304467
+    ],
+    "read": false
+})
+
+
+

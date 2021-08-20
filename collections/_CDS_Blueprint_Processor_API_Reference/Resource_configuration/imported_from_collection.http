@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d879d2e1-1162-48e4-8e1e-4eef33d41820.postman_collection.json
+
+// Retrieve a config snapshot, identified by its Resource Id and Type. An extra 'format' parameter can be passed to tell what content-type is expected.
+
+@name("Retrieve a resource configuration snapshot")
+GET "http://{{host}}/api/v1/configs"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Retrieve all config snapshots, identified by its Resource Id, ordered by most recently created/modified date.
+
+@name("Retrieve all resource configuration snapshots identified by a given resource_id")
+GET "http://{{host}}/api/v1/configs/allByID"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Retrieve all config snapshots matching a specified Resource Type, ordered by most recently created/modified date.
+
+@name("Retrieve all resource configuration snapshots for a given resource type")
+GET "http://{{host}}/api/v1/configs/allByType"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Store a resource configuration snapshot, identified by its resourceId and resourceType, and optionally its status, either RUNNING or CANDIDATE.
+
+@name("Store a resource configuration snapshot identified by resourceId, resourceType, status")
+POST "http://{{host}}/api/v1/configs/PNF/1/RUNNING"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnnCreates billing preview runs for multiple customer accounts.nnYou can run up to 10 billing previews in batches concurrently. A single batch of customer accounts can only have one billing preview run at a time. So you can have up to 10 batches running at the same time. If you create a billing preview run for all customer batches
+
+@name("Create Billing Preview Run")
+POST "https://{{baseUrl}}/v1/billing-preview-runs"
+
+
+// **Note:** This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnnRetrieves a preview of future invoice items for multiple customer accounts through a billing preview run. If you have the Advanced AR Settlement feature enabled,  you can also retrieve a preview of future credit memo items. The Advanced AR Settlement feature is in **Limited Availability**. If you wish to have access to the fea
+
+@name("Get Billing Preview Run")
+GET "https://{{baseUrl}}/v1/billing-preview-runs/:billingPreviewRunId"
+
+
+

@@ -1,0 +1,1 @@
+This is the initial product of a product API for Union Fashion, allowing all products to be added, retrieved, updated, and removed from the system.

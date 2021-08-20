@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-37b08a1e-666d-477b-b7f8-ac0474a9fcb3.postman_collection.json
+
+// The API is based on oauth with an xauth handshake. The request body looks like this:
+
+@name("Users Login")
+POST "https://{{baseUrl}}/1/users/login"
+
+
+// Returns your user information:
+
+@name("Users Me")
+GET "https://{{baseUrl}}/1/users/me"
+? "accesstoken"= "<>"
+
+
+

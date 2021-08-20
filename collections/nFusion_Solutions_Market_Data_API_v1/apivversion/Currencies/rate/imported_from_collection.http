@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-96f7548c-485b-4677-99ba-2d47911de0c8.postman_collection.json
+
+// Get latest mid rate for requested currency pairs.
+
+@name("Get latest mid rate for requested currency pairs")
+GET "https://{{baseUrl}}/api/v{{version}}/Currencies/rate"
+? "token"= "<>"
+? "pairs"= "<>"
+? "format"= "<>"
+
+
+// Any of the currencies in this list can be paired with any other currency in this list when supplied to the Rate endpoint.
+// For example: USD/CAD,CAD/USD,USD/EUR,EUR/CAD
+
+@name("Get list of currencies supported by the rate endpoint")
+GET "https://{{baseUrl}}/api/v{{version}}/Currencies/rate/supported"
+? "token"= "<>"
+? "format"= "<>"
+
+
+

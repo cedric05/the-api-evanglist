@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets paginated user group list.
+
+@name("Gets paginated user group list")
+GET "https://{{baseUrl}}/groups"
+? "sortby"= "<>"
+? "offset"= "<put>"
+? "count"= "<>"
+
+
+// Gets group data by fullname.
+
+@name("Gets group data by fullname")
+GET "https://{{baseUrl}}/groups/by-name/:name"
+
+
+

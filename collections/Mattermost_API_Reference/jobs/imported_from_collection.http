@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a page of jobs. Use the query parameters to modify the behaviour of this endpoint.n__Minimum server version: 4.1__n##### PermissionsnMust have `manage_jobs` permission.n
+
+@name("Get the jobs.")
+GET "https://{{baseUrl}}/jobs"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Get a page of jobs of the given type. Use the query parameters to modify the behaviour of this endpoint.n__Minimum server version: 4.1__n##### PermissionsnMust have `manage_jobs` permission.n
+
+@name("Get the jobs of the given type.")
+GET "https://{{baseUrl}}/jobs/type/:type"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+

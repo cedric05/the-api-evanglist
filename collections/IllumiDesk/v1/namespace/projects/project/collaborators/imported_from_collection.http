@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Get project collaborators") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/:project/collaborators/"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "ordering"= "<string>"
+
+
+@name("Create project collaborators") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/projects/:project/collaborators/"
+"Content-Type": "application/json"
+json({
+    "member": "<string>",
+    "permissions": "<string>",
+    "owner": "<boolean>"
+})
+
+
+

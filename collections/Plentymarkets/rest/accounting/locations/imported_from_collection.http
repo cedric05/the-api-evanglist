@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Creates an accounting location for a client. The plenty ID of the client must be specified.
+
+@name("Create an accounting location")
+POST "https://{{baseUrl}}/rest/accounting/locations"
+
+
+// Get all unique posting accounts.
+
+@name("Get all unique posting accounts")
+GET "https://{{baseUrl}}/rest/accounting/locations/existing_accounts"
+
+
+// Lists revenue account configurations of a system. The revenue accounts are returned as paginated result. By default 50 revenue accounts are on one page.
+
+@name("List revenue account configurations")
+GET "https://{{baseUrl}}/rest/accounting/locations/revenue_account_configurations"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+
+
+// Get all posting accounts for a country of a webstore.
+
+@name("Get all posting accounts for a country of a webstore")
+GET "https://{{baseUrl}}/rest/accounting/locations/:webstoreId/:countryId/posting_accounts"
+? "$webstoreId"= "<>"
+
+
+

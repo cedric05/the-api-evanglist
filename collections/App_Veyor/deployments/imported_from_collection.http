@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-87030e81-ee2c-4c09-8477-6fa66d8714cc.postman_collection.json
+
+// Post deployments.
+
+@name("Post Deployments")
+POST "https://{{baseUrl}}/deployments"
+
+
+// Delete deployments stop.
+
+@name("Delete Deployments Stop")
+DELETE "https://{{baseUrl}}/deployments/stop"
+
+
+// Get deployments deploymentid.
+
+@name("Get Deployments Deploymentid")
+GET "https://{{baseUrl}}/deployments/:deploymentId"
+
+
+

@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d47c7988-a7de-44ff-ba08-7608a9285ad4.postman_collection.json
+
+// This pulls a photo of the day from NASA, showing a single photo from their collection of space related photos.
+
+@name("Today")
+GET "https://api.nasa.gov/planetary/apod"
+? "api_key"= "{{api_key}}"
+? "date"= "2019-09-13"
+? "hd"= "true"
+
+
+

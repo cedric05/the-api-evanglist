@@ -1,0 +1,513 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-124dd77f-8983-4793-afaa-1c88a654e14f.postman_collection.json
+
+// This operation list or find UnAckAlarms entities
+
+@name("List or find UnAckAlarms objects")
+GET "https://{{baseUrl}}/unAckAlarms"
+? "fields"= "ex anim"
+? "offset"= "4564109"
+? "limit"= "4564109"
+
+
+// This operation creates a UnAckAlarms entity.
+
+@name("Creates a UnAckAlarms")
+POST "https://{{baseUrl}}/unAckAlarms"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "ackSystemId": "sunt",
+    "ackUserId": "nostrud sit anim",
+    "alarmPattern": [
+        {
+            "id": 57115732,
+            "href": "reprehenderit eu fugiat et",
+            "ackState": "id ea consequat do",
+            "ackSystemId": "nulla sit dolore",
+            "ackUserId": "nisi deserunt exercitation",
+            "alarmChangedTime": "2014-03-28T02:44:52.454Z",
+            "alarmClearedTime": "1944-07-29T09:57:06.800Z",
+            "alarmDetails": "deserunt nulla",
+            "alarmEscalation": true,
+            "alarmRaisedTime": "1982-10-27T12:55:14.236Z",
+            "alarmReportingTime": "1956-02-24T16:26:33.678Z",
+            "alarmedObjectType": "nisi Ut",
+            "clearSystemId": "pariatur aute in consequat",
+            "clearUserId": "id nostr",
+            "externalAlarmId": "sed minim",
+            "isRootCause": false,
+            "plannedOutageIndicator": "esse quis commodo",
+            "probableCause": "id est",
+            "proposedRepairedActions": "qui nostrud in irur",
+            "reportingSystemId": "ut labor",
+            "serviceAffecting": true,
+            "sourceSystemId": "eu ad pariatur m",
+            "specificProblem": "adipisicing incididunt nostrud occaecat",
+            "state": "ipsum cillum",
+            "affectedService": [
+                {
+                    "id": "dolore incididunt enim in",
+                    "href": "tempor minim",
+                    "@baseType": "in officia",
+                    "@schemaLocation": "https://oopGbMNMdgJnryqbMHzm.xnjqzxrMCdWB3BKJAAd+gudAoHrWsqK9FFd1uNcqxCFJV9eQrxaoa",
+                    "@type": "laborum deserunt in est"
+                },
+                {
+                    "id": "labore non consectetur",
+                    "href": "fugiat sun",
+                    "@baseType": "tempor",
+                    "@schemaLocation": "http://IxVkLzFidLBRDSR.eeWA7FLKXAYzPeTSZ,UH4iZ3.Y",
+                    "@type": "proident labore sed"
+                }
+            ],
+            "alarmType": "environmentalAlarm",
+            "alarmedObject": {
+                "id": "ut aliqua",
+                "href": "nostrud irure laboris",
+                "@baseType": "mollit nostrud consectetur",
+                "@schemaLocation": "https://mvwtfKKvYaPdToYYaRtvsFhTWHqkzv.kruQQn4oX2QTQqrvza",
+                "@type": "et eiusmod"
+            },
+            "comment": [
+                {
+                    "comment": "sunt",
+                    "systemId": "consequat veniam",
+                    "time": "2011-04-29T17:22:26.588Z",
+                    "userId": "ipsum sint dolore eiusmod Excepteur",
+                    "@baseType": "in dolore consequat aliqua fugiat",
+                    "@schemaLocation": "http://pRxe.owpRHt8srWgASUBj0.6qTn9uz.e1i",
+                    "@type": "mollit dolor"
+                },
+                {
+                    "comment": "eiusmod culpa reprehenderit veni",
+                    "systemId": "dolore non proident magna",
+                    "time": "2018-03-27T08:20:24.284Z",
+                    "userId": "dolor in ut velit",
+                    "@baseType": "nostrud Lorem aliqua ex",
+                    "@schemaLocation": "http://mxTnUwRMDaBuu.fgjygM.t",
+                    "@type": "sint officia"
+                }
+            ],
+            "correlatedAlarm": [
+                {
+                    "id": "culpa",
+                    "href": "http://EzBKIKLpaYjvQnpiIpius.dbink0vw88MupTJK6gVxbn6w",
+                    "name": "Lorem irure in",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "non elit"
+                },
+                {
+                    "id": "minim in occaecat",
+                    "href": "http://SfIYpko.phflQmFnbO8e7",
+                    "name": "Excepteur",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "aliquip ut sint eu"
+                }
+            ],
+            "crossedThresholdInformation": {
+                "direction": "ut",
+                "granularity": "id",
+                "indicatorName": "sunt consectetur tempor",
+                "indicatorUnit": "enim et",
+                "observedValue": "elit nisi laborum proident",
+                "thresholdCrossingDescription": "et ullamco adipisicing",
+                "threshold": {
+                    "id": "nulla laboris",
+                    "href": "http://QlJlCgZWJBOUrwIeLYBIVsYDMMmhdwR.hntEkZ82YBye,3v4cT6+UDWsrfIcS22k5KdaV.rT8PBDPvpgIzi1hD27M.li5N,dUyJEG",
+                    "name": "ipsum aliquip eu",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "quis"
+                },
+                "@baseType": "in ut sint et",
+                "@schemaLocation": "http://OPZONZPoauWu.upeIa6RKChQREP8qkr,gZRyNVvVkpmGnnrDBsqLYyNp+9KDomXkUlPo2CxX8,ztQ1I9VSDzedOBQ",
+                "@type": "qui tempor"
+            },
+            "parentAlarm": [
+                {
+                    "id": "consectetur quis aliqua ut Ut",
+                    "href": "http://nUQglhpAfqHKbFnyshKwh.xhsDx+mm.o.mum6yiQTM",
+                    "name": "nulla irure",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "officia in Lorem"
+                },
+                {
+                    "id": "ad veniam",
+                    "href": "https://iEOIz.hksio9LCdWk1hzgoKeSKerzEgJSO5A-uXxazDl78Rb",
+                    "name": "consectetur officia Duis mollit",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "qui ad exercitation officia"
+                }
+            ],
+            "perceivedSeverity": "major",
+            "place": [
+                {
+                    "role": "in incididunt anim sint",
+                    "id": "sint enim est",
+                    "href": "deserunt magna",
+                    "name": "do ea",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "ad minim ullamco"
+                },
+                {
+                    "role": "reprehenderit do cillum dolor laborum",
+                    "id": "elit",
+                    "href": "aliqua in ut velit",
+                    "name": "Excepteur ut",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "aute in quis in aliqua"
+                }
+            ],
+            "@baseType": "et deserunt ullamco commodo",
+            "@schemaLocation": "quis tempor deserunt",
+            "@type": "adipisicing nulla eiusmod irure"
+        }
+    ],
+    "ackTime": "2012-03-12T10:44:09.030Z",
+    "state": "nulla Lorem amet anim",
+    "unAckedAlarm": [
+        {
+            "id": -49715894,
+            "href": "nostrud sunt reprehenderit quis",
+            "ackState": "officia incididunt",
+            "ackSystemId": "labore dolore in ullamco",
+            "ackUserId": "dolore enim",
+            "alarmChangedTime": "1946-02-15T17:20:17.488Z",
+            "alarmClearedTime": "2021-02-21T02:58:33.277Z",
+            "alarmDetails": "sint velit quis",
+            "alarmEscalation": false,
+            "alarmRaisedTime": "1978-02-09T19:52:11.683Z",
+            "alarmReportingTime": "1967-08-27T05:58:59.776Z",
+            "alarmedObjectType": "aliquip dolor",
+            "clearSystemId": "velit",
+            "clearUserId": "tempor dolore",
+            "externalAlarmId": "est ea velit",
+            "isRootCause": false,
+            "name": "amet ",
+            "plannedOutageIndicator": "id anim do elit",
+            "probableCause": "do et",
+            "proposedRepairedActions": "reprehenderit",
+            "reportingSystemId": "est",
+            "serviceAffecting": false,
+            "sourceSystemId": "eiusmod laboris eu est dolor",
+            "specificProblem": "magna laboris ut occaecat",
+            "state": "eni",
+            "affectedService": [
+                {
+                    "id": "irure eiusmod",
+                    "href": "ad Excepteur nisi reprehenderit amet",
+                    "@baseType": "occaecat ad",
+                    "@schemaLocation": "https://bHGshfQPAuLrpDPouAZpPoXIeAqDRG.uyuXgCfR69p93r+UFXMN-Ikdd3jBn02GhMd6PGJ9.Xr4",
+                    "@type": "dolore sed nostrud cupidatat"
+                },
+                {
+                    "id": "sint dolor",
+                    "href": "ea voluptate ullamco",
+                    "@baseType": "fugiat et",
+                    "@schemaLocation": "https://ulVLtrIkDAkTbchaOdaBGwBUuQAuTNP.zuolmlBCuGqCO2ymAYhtzgtgtBoUVdvZxcpb+F1+1,T",
+                    "@type": "sunt"
+                }
+            ],
+            "alarmType": "securityService",
+            "alarmedObject": {
+                "id": "anim",
+                "href": "occaecat in",
+                "@baseType": "ad sed pa",
+                "@schemaLocation": "https://jzQVbpkCSokQHrouy.duzsiOLG+iqGVmRfxGYR6xd3hhn-dVDgbKT6OrzsT",
+                "@type": "in ut"
+            },
+            "comment": [
+                {
+                    "comment": "Excepteur Lorem sed",
+                    "systemId": "reprehenderit in",
+                    "time": "1962-01-19T07:36:28.019Z",
+                    "userId": "cillum nisi sed est",
+                    "@baseType": "anim",
+                    "@schemaLocation": "https://ksjMEtOSoBbDucOIyJRb.awfnsf6GlYEr9nP+COigcEt,pJ.pOyE5V7sBFRC-LPQ2CfP2G9Eo8FrbVel01NI.d",
+                    "@type": "voluptate anim fugiat et"
+                },
+                {
+                    "comment": "nisi",
+                    "systemId": "qui ali",
+                    "time": "1964-11-05T10:56:36.511Z",
+                    "userId": "consequat sint ad qui",
+                    "@baseType": "laboris nostrud magna sunt deserunt",
+                    "@schemaLocation": "http://mwlneEaMnntqGzO.xuuphcdFRqxtrkedNeTowM3gMEXutG",
+                    "@type": "Lorem commodo in"
+                }
+            ],
+            "correlatedAlarm": [
+                {
+                    "id": "fugiat pariatur consequat elit",
+                    "href": "https://CWcUoYJATNMeYfIWqShOuGs.ohaUQz8bAkMsUKvlD",
+                    "name": "consequat",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "Lorem quis ipsum"
+                },
+                {
+                    "id": "dolor et",
+                    "href": "https://NDAdNvNNSl.oyWQcqNZsOAXFhHV5jk.akkRqro",
+                    "name": "pariatur Dui",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "incididunt in"
+                }
+            ],
+            "crossedThresholdInformation": {
+                "direction": "proi",
+                "granularity": "nostrud",
+                "indicatorName": "sunt voluptate magna",
+                "indicatorUnit": "sunt Excepteur culpa fugiat",
+                "observedValue": "sunt Lorem mollit consequat",
+                "thresholdCrossingDescription": "enim sun",
+                "threshold": {
+                    "id": "enim amet occaecat labore",
+                    "href": "https://xGMSBIrGMUAzMPEaky.pyCw-k34Y,3kl,fLg+LzxWAWRrBlMEuMeZmLj4AfSJ0dll-ckYrjQJrGVSJ",
+                    "name": "id",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "nulla dolore "
+                },
+                "@baseType": "Duis fugiat nulla",
+                "@schemaLocation": "http://GFhTRqszLfNstWcO.zgxSa3.oYvTcDgy8g4YV7GrIvwbjwll69W",
+                "@type": "officia proident ea"
+            },
+            "parentAlarm": [
+                {
+                    "id": "officia dolor voluptate",
+                    "href": "http://fLJiaMRSlxnzWIdXLtx.txdah8.JNCr6yd0ICuwUOLUdCVNbePAqZjdPL-Gofg+abGRSwLDHz1ZT70xDbiV5LK",
+                    "name": "reprehenderit Excepteur aliquip ut",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "Ut mollit occaecat sunt"
+                },
+                {
+                    "id": "deserunt est Ut cillum",
+                    "href": "http://WiggwJw.ksafjRfaZ1pDHSCQWGvei",
+                    "name": "consequat laboris officia ",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "officia elit do in"
+                }
+            ],
+            "perceivedSeverity": "minor",
+            "place": [
+                {
+                    "role": "commodo aute",
+                    "id": "nostrud incididunt ullamco nulla qui",
+                    "href": "deserunt tempor",
+                    "name": "aute",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "sit laboris"
+                },
+                {
+                    "role": "tempor",
+                    "id": "laborum deserunt",
+                    "href": "culpa esse occaecat",
+                    "name": "consectetur non cillum ex",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "vol"
+                }
+            ],
+            "@baseType": "sit nisi esse proident amet",
+            "@schemaLocation": "amet laborum ex",
+            "@type": "ut pariatur sed in Excepteur",
+            "@referredType": "officia irure aute in"
+        },
+        {
+            "id": -68751980,
+            "href": "Duis reprehenderit elit",
+            "ackState": "dolore cillum id sint",
+            "ackSystemId": "pariatu",
+            "ackUserId": "in dolore Ut in proident",
+            "alarmChangedTime": "2009-08-05T19:15:02.417Z",
+            "alarmClearedTime": "1948-06-11T18:05:42.250Z",
+            "alarmDetails": "qu",
+            "alarmEscalation": true,
+            "alarmRaisedTime": "1974-01-16T09:25:32.291Z",
+            "alarmReportingTime": "1996-07-21T22:04:26.168Z",
+            "alarmedObjectType": "in laboris laborum veniam",
+            "clearSystemId": "reprehenderit",
+            "clearUserId": "adipisicing ut ir",
+            "externalAlarmId": "sed ipsum ullamco sit aliquip",
+            "isRootCause": false,
+            "name": "dolore cillu",
+            "plannedOutageIndicator": "adipisicing et pariatur elit",
+            "probableCause": "aliqua officia",
+            "proposedRepairedActions": "anim est ut Ut",
+            "reportingSystemId": "amet cupidat",
+            "serviceAffecting": false,
+            "sourceSystemId": "eu",
+            "specificProblem": "velit Duis dolore",
+            "state": "Duis eiusmod cupidatat",
+            "affectedService": [
+                {
+                    "id": "in anim dolore do",
+                    "href": "ullamco cupidatat mollit minim",
+                    "@baseType": "cillum in",
+                    "@schemaLocation": "https://UA.xhfzztgna1d,0JPtpfl.1HmJluiiQrQ90SWVy3xArHZgw6",
+                    "@type": "officia occaecat"
+                },
+                {
+                    "id": "culpa cupidatat dolore esse occaecat",
+                    "href": "ex irure",
+                    "@baseType": "enim sed",
+                    "@schemaLocation": "https://OdQasMpILgWK.wxswBsIEboB0tmfSRrq0ufd1wt2",
+                    "@type": "sint esse tempor"
+                }
+            ],
+            "alarmType": "qualityOfServiceAlarm",
+            "alarmedObject": {
+                "id": "dolore laboris",
+                "href": "minim elit veniam",
+                "@baseType": "nisi reprehenderit veniam",
+                "@schemaLocation": "https://ycUaLpzwZUqYaADQDUqhc.lqkeaelP+oYJGF70ckrkkWWrOztl0Qpy,Ze1.Uwg138rrJ8tiP1KWMf4",
+                "@type": "mollit culpa consequat et"
+            },
+            "comment": [
+                {
+                    "comment": "officia ex deserunt",
+                    "systemId": "magna Duis amet",
+                    "time": "1976-09-18T10:44:28.114Z",
+                    "userId": "aute fugiat consequat sed aliqua",
+                    "@baseType": "sed in eu",
+                    "@schemaLocation": "https://LrDApDmTRP.eyam7WYTcUi5s4-K7s",
+                    "@type": "sunt minim elit"
+                },
+                {
+                    "comment": "sit qui laborum",
+                    "systemId": "ipsum Duis minim",
+                    "time": "2011-07-06T16:37:25.435Z",
+                    "userId": "quis ullamco in sit",
+                    "@baseType": "Excepteur",
+                    "@schemaLocation": "https://IxjwdTmpnzSphH.tcrdRRb4DUJstYnJGfZwPuEAHpTsKgYBpDtvAN,rRnzalRPB06",
+                    "@type": "cillum fugiat"
+                }
+            ],
+            "correlatedAlarm": [
+                {
+                    "id": "magna voluptate ex Duis",
+                    "href": "https://EeCbleKsiV.yxeHVHgDf.7i3hceriP-v8GuEYsVfsRIG-",
+                    "name": "aliquip",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "ut re"
+                },
+                {
+                    "id": "esse amet ut",
+                    "href": "https://oJvBjbNyxegSmFLdegMfKOqjIAbUA.yarncwTWdNdrlFWp0I1Fim.9TubOXB",
+                    "name": "incididunt ipsum eiusmod",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "cillum ea eu"
+                }
+            ],
+            "crossedThresholdInformation": {
+                "direction": "eiusmod incididunt",
+                "granularity": "sed mollit exercitation cupidatat",
+                "indicatorName": "culpa quis ex",
+                "indicatorUnit": "consequat id magna",
+                "observedValue": "elit exercitation",
+                "thresholdCrossingDescription": "incididunt",
+                "threshold": {
+                    "id": "ut pariatur Lorem",
+                    "href": "https://RBHYqUwSMTFjElFrt.bxzaI21v.XE",
+                    "name": "anim nulla exercitation et",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "nulla aliquip proident reprehende"
+                },
+                "@baseType": "tempor",
+                "@schemaLocation": "http://WksIcKSBmuhKJYYLeAkYtW.ocglfAHdLHWaPGr",
+                "@type": "aliquip non qui in"
+            },
+            "parentAlarm": [
+                {
+                    "id": "aliquip dolor",
+                    "href": "http://vjDVlmXnoXvZgJIp.onbB,V",
+                    "name": "nulla esse",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "qui eu dolore"
+                },
+                {
+                    "id": "voluptate fugiat",
+                    "href": "http://MUNCeWmjfhoMtYw.esMhHQlHgv.v+yiCKb90y0gIwl5VL-toqd76hwe3vQHo8",
+                    "name": "officia nostrud ut laboris",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "veniam minim"
+                }
+            ],
+            "perceivedSeverity": "major",
+            "place": [
+                {
+                    "role": "cupidatat officia",
+                    "id": "ex proident anim eiusmod exercitation",
+                    "href": "ut mollit eli",
+                    "name": "deserunt proident",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "ullamco"
+                },
+                {
+                    "role": "non eiusmod dolo",
+                    "id": "ea Excepteur dolore",
+                    "href": "eiusmod officia",
+                    "name": "sunt deserunt minim aliquip",
+                    "@baseType": "ResourceSpecification",
+                    "@schemaLocation": "https://mycsp.com:8080/tmf-api/schema/Resource/LogicalResourceSpecification.schema.json",
+                    "@type": "LogicalResourceSpecification",
+                    "@referredType": "tempor nostrud am"
+                }
+            ],
+            "@baseType": "commodo enim aliquip qui",
+            "@schemaLocation": "proident Ut consequat ex",
+            "@type": "et",
+            "@referredType": "dolore id sed dolor"
+        }
+    ],
+    "@baseType": "qui proident dolore in",
+    "@schemaLocation": "https://wefQkQAuZHfIoTxAVUH.yhdurnz+DbfVfmgMr,TU9IArBqpLyymcxUX5",
+    "@type": "fugiat velit"
+})
+
+
+// This operation retrieves a UnAckAlarms entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a UnAckAlarms by ID")
+GET "https://{{baseUrl}}/unAckAlarms/:id"
+? "fields"= "ex anim"
+
+
+

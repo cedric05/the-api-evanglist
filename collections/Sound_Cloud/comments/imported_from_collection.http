@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-edf4e52a-d167-4c2f-bb89-c42269bd9481.postman_collection.json
+
+// Returns a comment by comment id
+
+@name("Get Comments")
+GET "https://{{baseUrl}}/comments/{{comment_id}}.json"
+? "consumer_key"= "<>"
+
+
+// Returns a comment by comment id
+
+@name("Get Comments . Format")
+GET "https://{{baseUrl}}/comments/{{comment_id}}.{{format}}"
+? "consumer_key"= "<>"
+? "playlist_id"= "<>"
+
+
+

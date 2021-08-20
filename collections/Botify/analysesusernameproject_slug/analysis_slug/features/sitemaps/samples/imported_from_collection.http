@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// Sample list of URLs which were found in your sitemaps but outside of the crawl perimeter defined for the project, for instance domain/subdomain or protocol (HTTP/HTTPS) not allowed in the crawl settings.
+
+@name("Sample list of URLs which were found in your sitemaps but outside of the")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/sitemaps/samples/out_of_config"
+? "page"= "<integer>"
+? "size"= "<integer>"
+
+
+// Sample list of URLs which were found in your sitemaps, within the project allowed scope (allowed domains/subdomains/protocols), but not found by the Botify crawler.
+
+@name("Sample list of URLs which were found in your sitemaps, within the project")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/features/sitemaps/samples/sitemap_only"
+? "page"= "<integer>"
+? "size"= "<integer>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4727ff8b-21cd-41e7-b532-19284cb5abdf.postman_collection.json
+
+// Returns all local taxes for the selected employee.
+
+@name("Get all local taxes")
+GET "https://{{baseUrl}}/v2/companies/:companyId/employees/:employeeId/localTaxes"
+
+
+// Delete local tax by tax code
+
+@name("Delete local tax by tax code")
+DELETE "https://{{baseUrl}}/v2/companies/:companyId/employees/:employeeId/localTaxes/:taxCode"
+
+
+

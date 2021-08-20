@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List all existing timers
+
+@name("List timers") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/timers"
+
+
+// Create new timer
+
+@name("Create new timer") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/timers"
+"Content-Type": "application/json"
+json({
+    "id": "34",
+    "class_name": "DBManager",
+    "method_name": "SaveWithRetries",
+    "threshold": 8000,
+    "servers": [
+        "na-dotCMS-2",
+        "na-dotCMS-2"
+    ],
+    "applications": [
+        "MyApp",
+        "MyApp"
+    ]
+})
+
+
+

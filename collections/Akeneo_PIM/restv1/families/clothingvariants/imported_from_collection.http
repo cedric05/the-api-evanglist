@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Family variants (2.x only).
+
+@name("family variants (2.x only)")
+GET "https://{{baseUrl}}/rest/v1/families/clothing/variants"
+
+
+// Assuming that the given codes are respectively the code of an existing family and an existing family variant
+
+@name("family variant (2.x only)")
+GET "https://{{baseUrl}}/rest/v1/families/clothing/variants/clothing_colorsize"
+
+
+

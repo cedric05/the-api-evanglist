@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-078f0c0e-f03d-4124-bda1-c7d8042a0e64.postman_collection.json
+
+// Sets the ehr on the session..
+
+@name("Sets the EHR on the session.")
+PUT "https://{{baseUrl}}/session/ehr/:ehrId"
+"Ehr": "<>"
+? "sessionId"= "<get>"
+
+
+// Sets the ehr on the session (via subject namespace and id)..
+
+@name("Sets the EHR on the session (via subject namespace and ID).")
+PUT "https://{{baseUrl}}/session/ehr/:subjectNamespace/:subjectId"
+"Ehr": "<>"
+? "sessionId"= "<get>"
+
+
+

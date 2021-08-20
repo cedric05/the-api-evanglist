@@ -1,0 +1,74 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f4b114e2-448f-4e5a-987c-5ed016683c87.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Create a new project.") : "base-inherit-auth"
+POST "https://{{baseUrl}}/projects/"
+"Content-Type": "application/json"
+json({
+    "authors": "enim",
+    "description": "id i",
+    "name": "SzEq",
+    "owner": "est",
+    "title": "aute",
+    "is_public": true,
+    "long_title": "cupi",
+    "references": [
+        {
+            "label": "cill",
+            "url": "ad incididunt laboris anim"
+        }
+    ],
+    "other": {},
+    "is_approved": false,
+    "unique_identifiers": true,
+    "columns": [
+        {
+            "path": "pariatur ea reprehenderit",
+            "min": -67573266.97455123,
+            "unit": "amet cupidatat",
+            "max": 86843127.12656799
+        },
+        {
+            "path": "deserunt ipsum non et",
+            "min": -90848496.1095303,
+            "unit": "Lorem",
+            "max": 64159594.71032894
+        }
+    ]
+})
+
+
+@name("Filter and retrieve projects.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/projects/"
+? "_fields"= "name"
+? "_fields"= "is_public"
+? "_fields"= "title"
+? "_fields"= "owner"
+? "_fields"= "is_approved"
+? "_fields"= "unique_identifiers"
+? "_order_by"= "sit veniam nostrud aute"
+? "order"= "sit veniam nostrud aute"
+? "name__in"= "veniam eiusmod magna"
+? "name__in"= "sint"
+? "name"= "sit veniam nostrud aute"
+? "name__icontains"= "sit veniam nostrud aute"
+? "is_public"= "true"
+? "title__icontains"= "sit veniam nostrud aute"
+? "long_title__icontains"= "sit veniam nostrud aute"
+? "authors__icontains"= "sit veniam nostrud aute"
+? "description__icontains"= "sit veniam nostrud aute"
+? "owner"= "sit veniam nostrud aute"
+? "owner__in"= "veniam eiusmod magna"
+? "owner__in"= "sint"
+? "is_approved"= "true"
+? "unique_identifiers"= "true"
+
+
+

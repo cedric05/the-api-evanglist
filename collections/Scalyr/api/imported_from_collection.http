@@ -1,0 +1,797 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d9e878a9-81a4-4b38-9a9f-b1070743f9a0.postman_collection.json
+
+// # UPLOAD LOGS
+// [https://www.scalyr.com/api/uploadLogs](https://www.scalyr.com/api/uploadLogs) is a simple API for uploading raw log data to Scalyr servers. It is best suited for lightweight integrations, or uploading individual batches of data from a stateless environment such as Amazon Lambda. For complex use cases, you can also use the addEvents API.
+// 
+// From a traditional server environment, it is usually most convenient write your logs to disk, and use the Scalyr Agent to upload them. We also provide a Java client library.
+// 
+// ## API FORMAT
+// To use this API method, send an HTTPS request with the following fields:
+// 
+//  - URL: https://www.scalyr.com/api/uploadLogs?token={your "write logs" token}
+//  - Method: POST
+//  - Content-Type: text/plain
+// 
+// The token URL parameter is a "Write Logs" API token for your account. You can manage API tokens at [https://www.scalyr.com/keys](https://www.scalyr.com/keys)
+// 
+// The request body should consist of one or more log messages, separated by line breaks (\n, \r, or \r\n). A line break after the last message is optional.
+// 
+// ### Note:
+// This API is not currently intended to ingest more than **10 GB/day**. If you are working with higher log volumes, you should use the Scalyr Agent or addEvents API, or contact us at [support@scalyr.com](support@scalyr.com).
+// 
+// ## SERVER / LOG ATTRIBUTES
+// You can add parameters to the URL, or as an HTTP request header, to tag messages as coming from a specific server and/or log file:
+// 
+// - **host** specifies the server name.
+// 
+// -  **logfile** specifies the log file name.
+// 
+// -  **parser** specifies which parser will be used to parse these messages (see [/help/parsing-logs](https://www.scalyr.com/help/parsing-logs)).
+// 
+// In addition, you can add arbitrary URL parameters or request headers beginning with "server-". For example, specify ``&server-region=us-east-1` to add a server field named "region", with value "us-east-1".
+// 
+// #### NOTE:
+//  - To specify the server name in an HTTP request header, you must create a header named server-host. Creating a header named simply host will cause confusion, since this is a standard HTTP header.
+// 
+// ### RETRIES AND NONCES
+// To protect against double-uploads, you can include a **"Nonce"** header in the HTTPS request. This header may contain any value. Multiple requests with the same nonce in the same (roughly) one-minute period are ignored.
+// 
+// 
+// If you are implementing logic to retry failed requests, it is a good idea to use the Nonce header. Generate a unique value for each request, and re-use the value when retrying a request.
+// 
+// ### EXAMPLE
+//   The following curl command will upload a single log message:
+// 
+//   ```
+//     curl -v 'https://www.scalyr.com/api/uploadLogs?token=BLABLA0RmUusVlr9/zBLABLAzur7hVjKL11w14-' \
+//       -H 'Content-Type: text/plain' -d 'hello, world'
+//   ```
+// 
+//   If you'd like to test with multiple lines of input, note that the curl command tends to remove line breaks. Use curl's --data-binary option to avoid this.
+
+@name("/api/uploadLogs")
+POST "https://{{baseUrl}}/api/uploadLogs"
+"Content-Type": "text/plain"
+? "token"= "aute ullamco pariatur"
+? "host"= "tempor qui"
+? "logfile"= "ullamco et aliqua"
+? "parser"= "ut sunt deserunt adipisicing anim"
+? "Nonce"= "81623047.06323978"
+data('"hello, world"')
+
+
+// This method is used to retrieve events (log records). You can retrieve all events in a specified time range, or only events matching specific criteria
+// 
+// <br>
+// The query API can also be invoked using POST as shown below:
+// 
+// ```
+// Content-Type:  application/json;charset=UTF-8
+// 
+// Body:
+// {
+//   "token":             "xxx",
+//   "queryType":         "log",
+//   "filter":            "...",
+//   "startTime":         "...",
+//   "endTime":           "...",
+//   "maxCount":          nnn,
+//   "pageMode":          "...",
+//   "columns":           "...",
+//   "continuationToken": "...",
+//   "priority":          "..."
+// }
+// ```
+// 
+// <br>You can query using `curl` by passing the parameters using URL encoding:
+// ```
+// curl 'https://www.scalyr.com/api/query?queryType=log&maxCount=1&token=XXX'
+// ```
+// Note: When using GET, remember to encode spaces as %20.
+// 
+// <br>
+// 
+// Try the command-line tool. When invoked with the `--verbose` and `--output=json-pretty` options, the tool will output the raw JSON request and response objects:
+// ```
+// scalyr query --count=5 --verbose --output=json-pretty
+// ```
+// <br>
+// 
+// Here is an example GET query URL:
+// 
+// ```
+// https://www.scalyr.com/api/query?queryType=log&maxCount=5&token=XXX
+// ```
+
+@name("/api/query")
+GET "https://{{baseUrl}}/api/query"
+? "token"= "BLABLA0RmUusVlr9/zBLABLAzur7hVjKL11w14-"
+? "queryType"= "log"
+? "filter"= "$serverHost='server-1'"
+? "startTime"= "magna amet"
+? "endTime"= "magna amet"
+? "maxCount"= "100"
+? "pageMode"= "tail"
+? "columns"= "magna amet"
+? "continuationToken"= "magna amet"
+? "priority"= "low"
+
+
+// ## NUMERIC QUERY
+//   This method is used to retrieve numeric data, e.g. for graphing. You can count the rate of events matching some criterion (e.g. error rate), or retrieve a numeric field (e.g. response size).
+// 
+// <br>
+// 
+//   If you will be be invoking the same query repeatedly, you may want to create a timeseries for the query. This is especially useful if you are using the Scalyr API to feed a home-built dashboard, alerting system, or other automated tool. A timeseries precomputes a numeric query, allowing you to execute queries almost instantaneously, and without exhausting your query execution limit (see below). Use the [createTimeseries](https://www.scalyr.com/help/api?teamToken=GHegMHe4UQtLS%2FiIZsLxxg--#createTimeseries) method to create a [timeseries](https://www.scalyr.com/help/api?teamToken=GHegMHe4UQtLS%2FiIZsLxxg--#timeseriesQuery), and timeseriesQuery to execute queries using a timeseries.
+// 
+// <br>
+// 
+// 
+// #### URL
+// ```
+// https://www.scalyr.com/api/numericQuery
+// ```
+// 
+// <br>
+// 
+// You may also use `POST` to query this instead of `GET` and pass the following in the body.
+// ```
+// {
+//   "token":             "xxx",
+//   "queryType":         "numeric",
+//   "filter":            "...",
+//   "function":          "...",
+//   "startTime":         "...",
+//   "endTime":           "...",
+//   "buckets":           nnn,
+//   "priority":          "..."
+// }
+// ```
+// 
+// <br>
+// 
+// The numericQuery API can also be invoked using GET, passing the parameters using URL encoding:
+// 
+// ```
+// curl 'https://www.scalyr.com/api/numericQuery?queryType=numeric&startTime=1h&token=XXX'
+// ```
+// 
+// When using GET, remember to encode spaces as %20.
+// 
+// <br>
+// 
+// Try the command-line tool. When invoked with the `--verbose` and `--output=json-pretty` options, the tool will output the raw JSON request and response objects:
+// 
+// ```
+// scalyr numeric-query --start 1h --buckets 10 --verbose --output=json-pretty
+// 
+// ```
+// <br>
+// Here is an example GET query URL:
+// 
+// ```
+// https://www.scalyr.com/api/numericQuery?queryType=numeric&startTime=1h&buckets=60&token=XXX
+// ```
+
+@name("/api/numericQuery")
+GET "https://{{baseUrl}}/api/numericQuery"
+? "token"= "BLABLA0RmUusVlr9/zBLABLAzur7hVjKL11w14-"
+? "queryType"= "numeric"
+? "filter"= "magna amet"
+? "function"= "mean(<fieldName>)"
+? "startTime"= "magna amet"
+? "endTime"= "magna amet"
+? "buckets"= "1"
+? "priority"= "low"
+
+
+// ## FACET QUERY
+//   This method is used to retrieve the most common values for a field. For instance, you can find the most common URLs accessed on your site, the most common user-agent strings, or the most common response codes returned.
+// 
+// ### URL
+//   ```
+//   https://www.scalyr.com/api/facetQuery
+//   ```
+// 
+//   <br>
+// 
+//   You may also use `POST` and pass the following in the body in JSON format.
+// 
+//   ```
+//   {
+//     "token":             "xxx",
+//     "queryType":         "facet",
+//     "filter":            "...",
+//     "field":             "...",
+//     "maxCount":          nnn,
+//     "startTime":         "...",
+//     "endTime":           "...",
+//     "priority":          "..."
+//   }
+//   ```
+// 
+// <br>
+// 
+// ### Examples
+// To see the query API in action, try the [command-line](https://github.com/scalyr/scalyr-tool) tool. When invoked with the `--verbose` and `--output=json-pretty` options, the tool will output the raw JSON request and response objects:
+// 
+// ```
+// scalyr facet-query '$dataset="accessLog"' uriPath --start 1h --verbose
+// ```
+// 
+// Here is an example GET query URL:
+// 
+// ```
+// https://www.scalyr.com/api/facetQuery?queryType=facet&field=uriPath&startTime=1h&token=XXX
+// ```
+// 
+// ### Notes
+// If a very large number of events match your filter, the results will be based on a random subsample of matching events. The subsample will contain at least `500,000` events.
+
+@name("/api/facetQuery")
+GET "https://{{baseUrl}}/api/facetQuery"
+? "token"= "BLABLA0RmUusVlr9/zBLABLAzur7hVjKL11w14-"
+? "queryType"= "facet"
+? "filter"= "magna amet"
+? "field"= "magna amet"
+? "maxCount"= "100"
+? "startTime"= "magna amet"
+? "endTime"= "magna amet"
+? "priority"= "low"
+
+
+// ## CREATE TIMESERIES
+// This method is used to create a timeseries. A timeseries precomputes a numeric query, allowing you to execute queries almost instantaneously. This is useful for queries that you execute repeatedly. If you are using the Scalyr API to feed a home-built dashboard, alerting system, or other automated tool, timeseries are for you.
+// 
+// It may take up to half an hour for a timeseries to be fully created. During that time, you can query the timeseries, but queries may not execute as quickly. Recent data is accelerated before older data.
+// 
+// You can create at most 10,000 timeseries. To avoid accidental exhaustion of this limit, creation of new timeseries is limited to 100 per hour, with bursts of up to 100. If you need to create timeseries more rapidly, contact us at support@scalyr.com.
+// 
+// ### URL
+// ```
+// https://www.scalyr.com/api/createTimeseries
+// ```
+// <br>
+// 
+// You may `POST` to this endpoint with the following parameters.
+// 
+// ```
+//   Input
+//   {
+//     "token":             "xxx",
+//     "queryType":         "numeric",
+//     "filter":            "...",
+//     "function":          "..."
+//   }
+// ```
+
+@name("/api/createTimeseries")
+POST "https://{{baseUrl}}/api/createTimeseries"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-log-api-key",
+    "queryType": "numeric",
+    "filter": "$serverHost='server-1'",
+    "function": "mean(<fieldName>)"
+})
+
+
+// ## TIMESERIES QUERY
+// This method is used to retrieve numeric data from a previously defined timeseries. It is similar to the [numericQuery](https://www.scalyr.com/help/api?teamToken=GHegMHe4UQtLS%2FiIZsLxxg--#numericQuery) method, but relies on parameters defined by a previous call to createTimeseries, and usually executes in a few milliseconds (plus network latency of course). The timeseriesQuery method also allows you to execute multiple queries in a single request.
+// 
+// ### URL
+// 
+// ```
+// https://www.scalyr.com/api/timeseriesQuery
+// ```
+// 
+// ### POST parameters
+// 
+// ```
+//    {
+//       "token":             "xxx",
+//       "queries": [
+//         {
+// 
+//               "timeseriesId":      "...",
+//               "filter":            "...",
+//               "function":          "...",
+//               "startTime":         "...",
+//               "endTime":           "...",
+//               "buckets":           nnn,
+//               "priority":          "..."
+//         },
+//         ...
+//       ]
+//     }
+// 
+// ```
+
+@name("/api/timeseriesQuery")
+POST "https://{{baseUrl}}/api/timeseriesQuery"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "read-log-api-key",
+    "queries": [
+        {
+            "timeseriesId": "=GHegMHe224UQtLS%2FiIZsLxxg--",
+            "filter": "$serverHost='server-1'",
+            "function": "mean(<fieldName>)",
+            "startTime": "veniam sint qui nisi",
+            "endTime": "sit voluptate nulla dolore",
+            "buckets": 100,
+            "priority": "low"
+        },
+        {
+            "timeseriesId": "=GHegMHe224UQtLS%2FiIZsLxxg--",
+            "filter": "$serverHost='server-1'",
+            "function": "mean(<fieldName>)",
+            "startTime": "aliqua veniam est",
+            "endTime": "veniam id laborum non",
+            "buckets": 100,
+            "priority": "low"
+        }
+    ]
+})
+
+
+// ## INVITEUSER
+// This method invites a user to a join team and grants them permission to access the team's data. If the user did not have a Scalyr account, an account will be created for them.
+// 
+// ### URL
+// 
+// ```
+// https://www.scalyr.com/api/inviteUser
+// ```
+// 
+// ### Input
+// 
+// ```
+// {
+//     "token":             "xxx",
+//     "emailAddress":      "xxx@xxx.xxx",
+//     "permission":        "full",
+//     "allowedSearch":     "",
+//     "allowedDashboards": [],
+//     "groups":            []
+// }
+// ```
+
+@name("/api/inviteUser")
+POST "https://{{baseUrl}}/api/inviteUser"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-configuration-api-key",
+    "emailAddress": "xxx@xyz.com",
+    "permission": "limited",
+    "allowedSearch": "$serverHost='server-1'",
+    "allowedDashboards": [
+        "dashboard1",
+        "dashboard2"
+    ],
+    "groups": [
+        "group1",
+        "group2"
+    ]
+})
+
+
+// 
+// ## EDITUSERPERMISSIONS
+// This method updates a user's access permissions within a team.
+// 
+// 
+// ### URL
+// ```
+//   https://www.scalyr.com/api/editUserPermissions
+//  ```
+// 
+// <br>
+// 
+// ### Input
+// 
+// ```
+//   {
+//       "token":             "xxx",
+//       "emailAddress":      "xxx@xxx.xxx",
+//       "permission":        "full",
+//       "allowedSearch":     "",
+//       "allowedDashboards": [],
+//       "groups":            []
+//   }
+// ```
+
+@name("/api/editUserPermissions")
+POST "https://{{baseUrl}}/api/editUserPermissions"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-configuration-api-key",
+    "permission": "limited",
+    "emailAddress": "xxx@xxx.xxx",
+    "allowedSearch": "$serverHost='server-1'",
+    "allowedDashboards": [
+        "dashboard1",
+        "dashboard2"
+    ]
+})
+
+
+// 
+// ## REVOKEACCESS
+// This method revokes a user's access.
+// 
+// ### URL
+// ```
+//   https://www.scalyr.com/api/revokeAccess
+// ```
+// ### Input
+// 
+// ```
+//   {
+//       "token":             "xxx",
+//       "emailAddress":      "xxx@xxx.xxx"
+//   }
+// ```
+
+@name("/api/revokeAccess")
+POST "https://{{baseUrl}}/api/revokeAccess"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-configuration-api-key",
+    "emailAddress": "xyz@abc.com"
+})
+
+
+// 
+// ## LISTUSERS
+// This method lists all users with access to the team, with their associated permissions.
+// 
+// ### URL
+// ```
+//   https://www.scalyr.com/api/listUsers
+// ```
+// 
+// <br>
+// 
+// ### Input
+// 
+// ```
+//   {
+//       "token":  "xxx"
+//   }
+// ```
+// 
+// ### Response example
+// 
+// ```
+//   {
+//     "users": [
+//       {
+//         "email": "alice@example.com",
+//         "permissions": "limited",
+//         "allowedSearch": "$serverHost='server-1'", // only relevant for ``limited`` permission
+//         "allowedDashboards": [                     // only relevant for ``limited`` permission
+//           "Log Volume",
+//           "WebServer"
+//         ]
+//       },
+//       {
+//         "email": "bob@example.com",
+//         "permissions": "full"
+//       }
+//     ],
+//     "status": "success"
+//   }
+// ```
+
+@name("/api/listUsers")
+POST "https://{{baseUrl}}/api/listUsers"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "read-configuration-api-key"
+})
+
+
+// 
+// ## ADDGROUP
+// This method creates a permission group. See groups for more information.
+// 
+// ### URL
+// ```
+//   https://www.scalyr.com/api/addGroup
+// ```
+// 
+// <br>
+// 
+// ### Input
+// ```
+//   {
+//       "token":             "xxx",
+//       "name":              "Group Name",
+//       "permission":        "limited",
+//       "allowedSearch":     "",
+//       "allowedDashboards": []
+//   }
+// ```
+
+@name("/api/addGroup")
+POST "https://{{baseUrl}}/api/addGroup"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-configuration-api-key",
+    "name": "My Group 1",
+    "permission": "limited",
+    "allowedSearch": "$serverHost='server-1'",
+    "allowedDashboards": [
+        "dashboard1",
+        "dashboard2"
+    ]
+})
+
+
+// 
+// ## EDITGROUPPERMISSIONS
+// This method updates a group's access permissions within a team.
+// 
+// ### URL
+// ```
+//   https://www.scalyr.com/api/editGroupPermissions
+//  ```
+// 
+// <br>
+// 
+// ### Input
+// 
+// ```
+// {
+//     "token":             "xxx",
+//     "name":              "Group Name",
+//     "permission":        "limited",
+//     "allowedSearch":     "",
+//     "allowedDashboards": []
+// }
+// ```
+
+@name("/api/editGroupPermissions")
+POST "https://{{baseUrl}}/api/editGroupPermissions"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-configuration-api-key",
+    "name": "My Group 1",
+    "permission": "limited",
+    "allowedSearch": "$serverHost='server-1'",
+    "allowedDashboards": [
+        "dashboard1",
+        "dashboard2"
+    ]
+})
+
+
+// 
+// ## REMOVEGROUP
+// This method removes a group from the team.
+// 
+// ### URL
+// ```
+//  https://www.scalyr.com/api/removeGroup
+// ```
+// 
+// <br>
+// 
+// ### Input
+// ```
+//   {
+//       "token":             "xxx",
+//       "name":              "Group Name"
+//   }
+// ```
+
+@name("/api/removeGroup")
+POST "https://{{baseUrl}}/api/removeGroup"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-configuration-api-key",
+    "name": "My Group 1"
+})
+
+
+// 
+// ## LISTGROUPS
+// This method lists all groups with access to the team, with their associated permissions.
+// 
+// 
+// ### URL
+// ```
+//   https://www.scalyr.com/api/listGroups
+// 
+// ```
+// 
+// <br>
+// 
+// ### Input
+// 
+// ```
+//   {
+//       "token":  "xxx"
+//   }
+// ```
+// 
+// ### Response example
+// 
+// ```
+//   {
+//     "groups": [
+//       {
+//         "permissions": "limited",
+//         "name": "Group Name",
+//         "allowedDashboards": [        // only relevant for ``limited`` permission
+//           "Log Volume",
+//           "WebServer"
+//         ],
+//         "allowedSearch": "$serverHost='server-1'"        // only relevant for ``limited`` permission
+//       },
+//       ...
+//     ]
+//     "status": "success"
+//   }
+// ```
+// This contains a list of all groups in this team, with their associated permissions. The schema is the same as in the [/scalyr/logs configuration file](https://www.scalyr.com/help/users#groups), but the response will be pure JSON with no comments or other nonstandard features.
+
+@name("/api/listGroups")
+POST "https://{{baseUrl}}/api/listGroups"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "read-configuration-api-key"
+})
+
+
+// 
+// ## ADDUSERSTOGROUP
+// This method adds one or more users to a group.
+// 
+// 
+// ### URL
+// ```
+//   https://www.scalyr.com/api/addUsersToGroup
+// 
+// ```
+// 
+// <br>
+// 
+// ### Input
+// 
+// ```
+//   {
+//       "token":             "xxx",
+//       "groupName":         "Group Name",
+//       "userEmails":        ["alice@example.com", "bob@example.com"]
+//   }
+// ```
+// 
+// ### Response example
+// 
+// ```
+//   {
+//       "status":        "success",
+//       "updatedUsers":  ["xxx@xxx.xxx", "nnn@nnn.nnn"
+//   }
+// ```
+// An error is indicated by a response object whose status field does not begin with success. See the API Overview section for details. Otherwise, the response should have the following structure:
+
+@name("/api/addUsersToGroup")
+POST "https://{{baseUrl}}/api/addUsersToGroup"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-configuration-api-key",
+    "groupName": "My Group 1",
+    "userEmails": [
+        "xxx@xxx.xxx",
+        "nnn@nnn.nnn"
+    ]
+})
+
+
+// 
+// ## REMOVEUSERSFROMGROUP
+// This method removes one or more users from a group.
+// 
+// 
+// ### URL
+// ```
+//   https://www.scalyr.com/api/removeUsersFromGroup
+// 
+// ```
+// 
+// <br>
+// 
+// ### Input
+// 
+// ```
+//   {
+//       "token":             "xxx",
+//       "groupName":         "Group Name",
+//       "userEmails":        ["alice@example.com", "bob@example.com"]
+//   }
+// ```
+// 
+// ### Response example
+// An error is indicated by a response object whose status field does not begin with success. See the API Overview section for details. Otherwise, the response should have the following structure:
+// 
+// ```
+//   {
+//       "status":        "success",
+//       "updatedUsers":  ["xxx@xxx.xxx", "nnn@nnn.nnn"
+//   }
+// ```
+// An error is indicated by a response object whose status field does not begin with success. See the API Overview section for details. Otherwise, the response should have the following structure:
+
+@name("/api/removeUsersFromGroup")
+POST "https://{{baseUrl}}/api/removeUsersFromGroup"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "write-configuration-api-key",
+    "groupName": "My Group 1",
+    "userEmails": [
+        "xxx@xxx.xxx",
+        "nnn@nnn.nnn"
+    ]
+})
+
+
+// 
+// ## LISTUSERSINGROUP
+// This method lists all users belonging to a group, with their associated permissions.
+// 
+// 
+// ### URL
+// ```
+//   https://www.scalyr.com/api/listUsersInGroup
+// ```
+// 
+// <br>
+// 
+// ### Input
+// 
+// ```
+//   {
+//       "token":              "xxx",
+//       "groupName" :         "nnn"
+//   }
+// ```
+// 
+// ### Response example
+// 
+// ```
+//   {
+//     "users": [
+//       {
+//         "permissions": "xxx",
+//         "email": "xxx@xxx.xxx",
+//         // only available when user has ``limited`` permission
+//         "allowedDashboards": [
+// 
+//           "nnn",
+//           "mmm"
+//         ],
+//         // only available when user has ``limited`` permission
+//         "allowedSearch": "nnn",
+//         "groups": ["nnn"]
+//       }
+//       ...
+//     ]
+//     "status": "success"
+//   }
+// ```
+
+@name("/api/listUsersInGroup")
+POST "https://{{baseUrl}}/api/listUsersInGroup"
+"Content-Type": "application/json;charset=UTF-8"
+json({
+    "token": "read-configuration-api-key",
+    "groupName": "My Group 1"
+})
+
+
+

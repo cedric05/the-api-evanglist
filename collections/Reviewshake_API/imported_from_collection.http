@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a47116cd-30ef-4fb6-9b12-651f6261b11d.postman_collection.json
+
+// Creating orders in Reviewshake allows you to automate the sending of review invitations. You can setup this automation in your dashboard by visiting *Review Invitations* -> *Triggers*.nnSet the *Trigger* as *Order created*, and you can then setup the trigger options such as templates and subject lines to use as well as delays.
+
+@name("Create order")
+POST "https://{{baseUrl}}/order"
+"X": "<>"
+"Content": "<>"
+
+
+

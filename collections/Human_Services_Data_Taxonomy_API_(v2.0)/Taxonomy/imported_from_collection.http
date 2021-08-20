@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe401428-96ce-43c8-99a2-ca13929e71a5.postman_collection.json
+
+// Get all the services for a taxonmy term.
+
+@name("Get Services")
+GET "https://{{baseUrl}}/:taxonomy_name/services/"
+? "page"= "0"
+? "per_page"= "25"
+? "sort_by"= "name"
+? "order"= "asc"
+
+
+// Get all the organizations for a taxonmy term.
+
+@name("Get Organizations")
+GET "https://{{baseUrl}}/:taxonomy_name/organizations/"
+? "page"= "0"
+? "per_page"= "25"
+? "sort_by"= "name"
+? "order"= "asc"
+
+
+// Get all the locations for a taxonmy term.
+
+@name("Get Locations")
+GET "https://{{baseUrl}}/:taxonomy_name/locations/"
+? "page"= "0"
+? "per_page"= "25"
+? "sort_by"= "name"
+? "order"= "asc"
+
+
+

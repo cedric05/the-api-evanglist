@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-818a03fb-de85-44f9-b9ff-91e699ac9756.postman_collection.json
+
+// Get a list of the traded companies that polygon.io streams. Company includes some details about the company which we hope to add more to soon.n
+
+@name("Available Companies")
+GET "https://{{baseUrl}}/v1/companies"
+? "sort"= "<>"
+? "perpage"= "<>"
+? "page"= "<>"
+
+
+// Get a list of the currencies that polygon.io streams.n
+
+@name("Available Currencies")
+GET "https://{{baseUrl}}/v1/currencies"
+
+
+

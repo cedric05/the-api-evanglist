@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Create a posting for a job")
+POST "https://{{baseUrl}}/jobs/:jobId/postings"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "user_id": 64288503,
+    "openings": [
+        {
+            "opening_id": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        {
+            "opening_id": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        }
+    ]
+})
+
+
+@name("Search for postings for a job")
+GET "https://{{baseUrl}}/jobs/:jobId/postings"
+"Authorization": "ad cillum non laborum"
+? "nextPage"= "ad cillum non laborum"
+? "where"= "ad cillum non laborum"
+? "pageSize"= "ad cillum non laborum"
+? "fields"= "ad cillum non laborum"
+
+
+

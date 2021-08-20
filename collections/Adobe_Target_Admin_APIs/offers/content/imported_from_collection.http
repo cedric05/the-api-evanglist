@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-99b807d0-abac-481e-a509-d69785137b6b.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Create Offer") : "base-inherit-auth"
+POST "https://mc.adobe.io/:tenant/target/offers/content"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v2+json"
+data('{
+    "name": "My new offer",
+    "content": "<div>The content of the offer</div>",
+    "workspace": "1234567"
+}')
+
+
+@name("Get Audience by ID") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/offers/content/391902"
+"X-Api-Key": "{{api_key}}"
+
+
+@name("Update Offer by ID") : "base-inherit-auth"
+PUT "https://mc.adobe.io/:tenant/target/offers/content/438180"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v2+json"
+data('{
+    "name": "Your existing offer",
+    "content": "<div>Updated content</div>"
+}')
+
+
+

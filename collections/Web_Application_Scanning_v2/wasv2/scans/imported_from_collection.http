@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns a list of scans. 
+// 
+// **Deprecated:** This endpoint is deprecated. On October 1st, 2021, documentation related to this endpoint will be removed from the Tenable developer portal. Tenable recommends that you use the [POST /was/v2/configs/{config_id}/scans/search](ref:was-v2-scans-search) endpoint instead. Please update any existing integrations that your organization has before 2021-10-01. <p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("List scans") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/scans"
+? "config_id"= "b018aed8-554f-4965-9b05-994eaa66d459"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+
+
+

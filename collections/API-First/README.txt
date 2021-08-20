@@ -1,0 +1,1 @@
+This is a blueprint for what API-first means for business and technical audiences. Providing a framework to think about how we talk about API-first, but actually providing the details of the what and why of doing API-first. Feel free to leave a common on the collection, or fork and submit a pull request with any additional information.

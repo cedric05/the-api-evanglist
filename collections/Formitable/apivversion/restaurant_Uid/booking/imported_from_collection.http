@@ -1,0 +1,99 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Create a new booking for the restaurant
+
+@name("Create booking")
+POST "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking"
+"Content-Type": "application/json"
+json({
+    "bookingDateTime": "1992-04-17T01:28:16.590Z",
+    "bookingDuration": 34882402,
+    "company": true,
+    "culture": "s",
+    "numberOfPeople": 82725088,
+    "companyName": "magna sunt nostrud consequat laboris",
+    "title": "exercit",
+    "firstName": "consequat non eiusmod nisi nulla",
+    "lastName": "Lorem deserunt sed mollit",
+    "telephone": "Excepteur commo",
+    "email": "ty3vtVuD1C7Rs@ksTbxo.xedp",
+    "comments": "incididunt est consequat",
+    "color": "aute sunt deserunt aliquip officia",
+    "tables": [
+        25012156,
+        98924233
+    ],
+    "forceTablePlacement": false,
+    "walkIn": true,
+    "posId": "culpa sit",
+    "productUid": "id ullamco",
+    "externalReferenceId": "laborum ea",
+    "optionExpiresDateTime": "1989-08-07T21:20:07.118Z"
+})
+
+
+// Get the list of future bookings (including the past week) in the given period
+
+@name("Get future bookings")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/:from/:days"
+
+
+// Check-in a booking to notify that the guest has entered the restaurant. Call this method again to undo the check-in
+
+@name("Check-in booking")
+PUT "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/checkin/:uid"
+
+
+// Check-out a booking to notify that the guest has left the restaurant. Call this method again to undo the check-out
+
+@name("Check-out booking")
+PUT "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/checkout/:uid"
+"Content-Type": "application/json"
+json({
+    "id": "ut tempor",
+    "openDateTime": "1972-09-10T15:55:04.802Z",
+    "closeDateTime": "2016-07-20T13:50:28.946Z",
+    "userId": "L",
+    "items": [
+        {
+            "id": "in Ut laboris deserunt",
+            "quantity": 72278770,
+            "title": "dolor",
+            "description": "officia in",
+            "singlePrice": -40888248.99789105,
+            "discount": 28978934.60117826,
+            "vat": -39376668.61192359,
+            "vatPercentage": 42313291.200207055
+        },
+        {
+            "id": "ali",
+            "quantity": -83634813,
+            "title": "sint ad ea",
+            "description": "qui est",
+            "singlePrice": 47336119.9208107,
+            "discount": -86148410.08246268,
+            "vat": 73548024.59285104,
+            "vatPercentage": -34297771.46960808
+        }
+    ]
+})
+
+
+// Choose an interval and filter to get the correct list of bookings.
+
+@name("Get a list of recently accepted, changed or canceled reservations")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/latest/:interval/:filter"
+
+
+@name("Accept the provided option.")
+PUT "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/acceptoption/:bookingUid"
+
+
+@name("Reject the provided option.")
+DELETE "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/booking/rejectoption/:bookingUid"
+? "sendMessage"= "true"
+
+
+

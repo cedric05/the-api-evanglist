@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Get Data for DataSet
+
+@name("DataSet Data")
+GET "https://{{baseUrl}}/dataset/data/:dataSetId"
+
+
+// Edit a row of Data to a DataSet
+
+@name("Edit Row")
+PUT "https://{{baseUrl}}/dataset/data/:dataSetId/:rowId"
+
+
+

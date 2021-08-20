@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-be73cf41-a4da-47fd-a390-b638c95ebca3.postman_collection.json
+
+// Get the details of 1 specific country, specified by the country code in the query parameter. Both the country name and country code are returned in a JSON object. The example response in case of HTTP Status Code 200 contains the result when requested for countryCode BE.
+
+@name("Get Countries Countrycode")
+GET "https://{{baseUrl}}/countries/:countryCode"
+
+
+

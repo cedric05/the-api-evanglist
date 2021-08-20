@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe401428-96ce-43c8-99a2-ca13929e71a5.postman_collection.json
+
+// Associates a specific taxonomy keyword to a service.
+
+@name("Add Taxonomy Keyword to Service")
+POST "https://{{baseUrl}}/services/:service_id/attributes/:taxonomy_name/"
+
+
+// Remove a specific taxonomy keyword from a service.
+
+@name("Delete Taxonomy Keyword to Service")
+DELETE "https://{{baseUrl}}/services/:service_id/attributes/:taxonomy_name/"
+
+
+

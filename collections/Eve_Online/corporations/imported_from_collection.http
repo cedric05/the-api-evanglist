@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get a list of npc corporations
+// 
+// ---
+// Alternate route: `/legacy/corporations/npccorps/`
+// 
+// Alternate route: `/v1/corporations/npccorps/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get npc corporations")
+GET "https://{{baseUrl}}/corporations/npccorps/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

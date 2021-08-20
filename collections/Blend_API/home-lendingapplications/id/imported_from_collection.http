@@ -1,0 +1,92 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get application summary in JSON.
+
+@name("Get Application Data") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/:id"
+
+
+// Delete an application
+
+@name("Delete Application") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/home-lending/applications/:id"
+
+
+// Update some properties on a specific application.
+
+@name("Patch Application Data") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/home-lending/applications/:id"
+"Content-Type": "application/json"
+json({
+    "losId": "losId1",
+    "crmId": "crmId1",
+    "referenceNumber": "refNumber1",
+    "property": {
+        "address": {
+            "streetAddressLine1": "415 Kearny St",
+            "city": "San Francisco",
+            "state": "CA",
+            "zipCode": "94108",
+            "countyName": "San Francisco"
+        }
+    },
+    "tridTriggeredDate": "2018-10-03T20:07:27+00:00",
+    "estimatedClosingDate": "2019-06-02T00:00:00.000Z",
+    "communityId": "12345",
+    "interestRate": 4.25,
+    "mortgageType": "CONVENTIONAL",
+    "appSource": "ORGANIC_LEAD",
+    "realEstateAgentNotificationConsentGiven": true,
+    "customFields": {
+        "fieldName": "fldValue"
+    }
+})
+
+
+// Return the entire MISMO 3.3.1 or Fannie 3.2 file for this application.
+
+@name("Export Application Data") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/:id/file-export"
+? "format"= "fannie"
+
+
+// Update export status on an application
+
+@name("Post Export Status") : "base-inherit-auth"
+POST "https://{{baseUrl}}/home-lending/applications/:id/export-status"
+"Content-Type": "application/json"
+json({
+    "status": "IN_PROGRESS",
+    "reason": "The application export started"
+})
+
+
+// Get a list of all the uploaded and signature complete documents on a specific application, ordered by document creation date.
+
+@name("List Documents for an Application") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/:id/documents"
+? "includeAllDocuments"= "true"
+
+
+// Get a list of all parties on the application (with their econsent status)
+
+@name("List Parties for an Application") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/:id/parties"
+
+
+// Get a list of all underwriting results on the application
+
+@name("List Underwriting Results for an Application") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/:id/underwriting-results"
+
+
+

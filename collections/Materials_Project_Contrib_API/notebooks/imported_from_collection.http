@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f4b114e2-448f-4e5a-987c-5ed016683c87.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Filter and retrieve notebooks.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/notebooks/"
+? "_fields"= "id"
+? "_order_by"= "sit veniam nostrud aute"
+? "order"= "sit veniam nostrud aute"
+? "id__in"= "veniam eiusmod magna"
+? "id__in"= "sint"
+? "id"= "sit veniam nostrud aute"
+? "_skip"= "-63312168"
+? "_limit"= "-63312168"
+? "page"= "-63312168"
+? "per_page"= "-63312168"
+
+
+@name("Retrieve a notebook.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/notebooks/:pk/"
+? "_fields"= "id"
+
+
+

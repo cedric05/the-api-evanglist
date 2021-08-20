@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This REST API reference describes how to create a new subscription for an existing customer account.nn## NotesnThis feature is unavailable if you have the Orders feature enabled. See [Orders Migration Guidance](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AB_Orders_Migration_Guidance) for more information.nnIf invoiceCollect is `true`, the call will not return success = `true` unless the subscription, invoice, and payment are all successful.nnDefault values for **customerA
+
+@name("Create subscription")
+POST "https://{{baseUrl}}/v1/subscriptions"
+"zuora": "<>"
+
+
+// Retrieves all subscriptions associated with the specified account. Zuora only returns the latest version of the subscriptions.nnSubscription data is returned in reverse chronological order based on `updatedDate`.n
+
+@name("Get subscriptions by account")
+GET "https://{{baseUrl}}/v1/subscriptions/accounts/:account-key"
+? "charge"= "<>"
+
+
+// The REST API reference describes how to create a new subscription in preview mode. This call does not require a valid customer account. It can be used to show potential new customers a preview of a subscription with complete details and charges before creating an account, or to let existing customers preview a subscription with all charges before committing.nn## Notesn- This feature is unavailable if you have the Orders feature enabled. See [Orders Migration Guidance](https://knowledgecenter.zuo
+
+@name("Preview subscription")
+POST "https://{{baseUrl}}/v1/subscriptions/preview"
+"zuora": "<>"
+
+
+// **Note:** This feature is only available if you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) feature enabled. We are actively soliciting feedback from a small set of early adopters. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnnUpdates the custom fields of a specified subscription.n
+
+@name("Update subscription custom fields")
+PUT "https://{{baseUrl}}/v1/subscriptions/:subscriptionNumber/customFields"
+
+
+

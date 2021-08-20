@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8f0ef5f1-d82f-47e1-8bde-ff3a9b29d3be.postman_collection.json
+
+@name("Get a column")
+GET "https://{{baseUrl}}/api/rest/v2/schemas/keyspaces/:keyspace-id/tables/:table-id/columns/:column-id"
+"X-Cassandra-Token": "sint dolore"
+? "raw"= "false"
+
+
+@name("Replace a column definition")
+PUT "https://{{baseUrl}}/api/rest/v2/schemas/keyspaces/:keyspace-id/tables/:table-id/columns/:column-id"
+"X-Cassandra-Token": "sint dolore"
+"Content-Type": "application/json"
+json({
+    "name": "emailaddress",
+    "typeDefinition": "text",
+    "static": false
+})
+
+
+@name("Delete a column")
+DELETE "https://{{baseUrl}}/api/rest/v2/schemas/keyspaces/:keyspace-id/tables/:table-id/columns/:column-id"
+"X-Cassandra-Token": "sint dolore"
+
+
+

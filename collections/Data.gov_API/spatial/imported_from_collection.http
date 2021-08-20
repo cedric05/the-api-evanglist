@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// List each zone for a given level with their datasets count
+
+@name("Get Spatial Coverage Level")
+GET "https://{{baseUrl}}/spatial/coverage/:level"
+
+
+// List all known spatial granularities
+
+@name("Get Spatial Granularities")
+GET "https://{{baseUrl}}/spatial/granularities"
+
+
+// List all known levels
+
+@name("Get Spatial Levels")
+GET "https://{{baseUrl}}/spatial/levels"
+
+
+// Fetch a zone
+
+@name("Get Spatial Zone")
+GET "https://{{baseUrl}}/spatial/zone/:id"
+
+
+

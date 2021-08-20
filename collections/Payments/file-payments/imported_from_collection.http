@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create File Payments")
+POST "https://{{baseUrl}}/file-payments"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "ConsentId": "aliqua",
+        "Initiation": {
+            "ControlSum": 14872636.554321736,
+            "FileHash": "fugiat dolore",
+            "FileType": "UK.OBIE.PaymentInitiation.3.1",
+            "LocalInstrument": "UK.OBIE.CHAPS",
+            "NumberOfTransactions": "enim consectetur",
+            "RequestedExecutionDateTime": "1997-10-28T02:03:54.276Z",
+            "DebtorAccount": {
+                "Identification": "Excepteur labore",
+                "SchemeName": "UK.OBIE.IBAN",
+                "Name": "dolor ut ea",
+                "SecondaryIdentification": "pariatur commodo ex aliqua"
+            },
+            "FileReference": "laborum in id nostru"
+        }
+    }
+})
+
+
+@name("Get File Payments")
+GET "https://{{baseUrl}}/file-payments/:FilePaymentId"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+
+
+

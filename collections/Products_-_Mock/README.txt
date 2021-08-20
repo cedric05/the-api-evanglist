@@ -1,0 +1,1 @@
+This is the OpenAPI for the Union Fashion product catalog.

@@ -1,0 +1,79 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4a03fcae-b7ff-4c33-a2b8-074c5a74493f.postman_collection.json
+
+// Returns information on merchants that have been terminated and merchants which have been inquired upon. MATCH can provide the acquiring bank with information, such as, if a Merchant or individual has been terminated by another acquirer already, the reason for termination, the history of fraudulent or risky business practices that led to that termination and the inquiry that was made already on the Merchant or individual by own or another acquiring bank (If opted)
+
+@name("Returns information on merchants that have been terminated and merchants that have inquired upon. Provides the acquiring bank with information, such as, if a Merchant or individual has been terminated by another acquirer already, the reason for terminatio")
+POST "https://{{baseUrl}}/fraud/merchant/v3/termination-inquiry"
+"Content-Type": "application/json"
+? "PageOffset"= "<number>"
+? "PageLength"= "<number>"
+json({
+    "TerminationInquiryRequest": {
+        "AcquirerId": "<string>",
+        "Merchant": {
+            "Name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "AddedByAcquirerID": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "AddedOnDate": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "Address": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "AltPhoneNumber": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "CountrySubdivisionTaxId": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "DoingBusinessAsName": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "NationalTaxId": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "PhoneNumber": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "Principal": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "SearchCriteria": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "ServiceProvDBA": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "ServiceProvLegal": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "TerminationReasonCode": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "Url": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "UrlGroup": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        "TransactionReferenceNumber": "<string>"
+    }
+})
+
+
+// Returns information about Merchants, URLs and up to five principal owners, that have been terminated by an acquiring bank from a previous inquiry. The Inquiry History Results resource displays the inquiry with the option to view either; Possible Merchant Matches or Possible Inquiry Matches.
+
+@name("Returns information about Merchants, URLs and up to five principal owners, that have been terminated by an acquiring bank from a previous inquiry. The Inquiry History Results resource displays the inquiry with the option to view either; Possible Merchant ")
+GET "https://{{baseUrl}}/fraud/merchant/v3/termination-inquiry/:IRN"
+? "PageOffset"= "<number>"
+? "PageLength"= "<number>"
+? "AcquirerId"= "<string>"
+
+
+

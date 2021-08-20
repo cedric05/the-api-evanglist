@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2dd3b81c-4b11-4e46-b2e6-83bc9a4638dc.postman_collection.json
+
+// Return a list of all licenses for the current vendor
+
+@name("Licenses list")
+GET "https://{{baseUrl}}/license"
+
+
+// Delete license by a licenseNumber
+
+@name("Delete license")
+DELETE "https://{{baseUrl}}/license/:licenseNumber"
+
+
+

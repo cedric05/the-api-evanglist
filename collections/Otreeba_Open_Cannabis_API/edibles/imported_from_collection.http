@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-62c6cc63-de15-4694-9302-08ed4981816f.postman_collection.json
+
+// Returns a paginated list of edibles.
+
+@name("Get a list of all current edibles.")
+GET "https://{{baseUrl}}/edibles"
+? "page"= "<>"
+? "count"= "<get>"
+? "sort"= "<>"
+
+
+// Returns a single edible.
+
+@name("Find edible by Open Cannabis Product Code (OCPC).")
+GET "https://{{baseUrl}}/edibles/:ocpc"
+
+
+

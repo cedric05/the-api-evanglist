@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get a collection of QR code information from a given CashRegister
+
+@name("List all Qr Code for User Monetary Account Cash Register")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/qr-code"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create a new QR code for this CashRegister. You can only have one ACTIVE CashRegister QR code at the time.
+
+@name("CREATE Qr Code for User Monetary Account Cash Register")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/qr-code"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "status": "<string>"
+})
+
+
+// Show the raw contents of a QR code
+
+@name("List all Content for User Monetary Account Cash Register Qr Code")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/qr-code/:qr-codeID/content"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+

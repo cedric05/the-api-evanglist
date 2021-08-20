@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-07881e38-7c11-4c85-bc65-e2dab0a92227.postman_collection.json
+
+// Returns a full list of the user's tags along with the number of times they were used.
+
+@name("Get Tags")
+GET "https://{{baseUrl}}/tags/get"
+? "format"= "<string>"
+
+
+// Delete an existing tag.
+
+@name("Deletes Tag")
+GET "https://{{baseUrl}}/tags/delete"
+
+
+// Rename an tag, or fold it in to an existing tag.
+
+@name("Rename Tags")
+GET "https://{{baseUrl}}/tags/rename"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2dd3b81c-4b11-4e46-b2e6-83bc9a4638dc.postman_collection.json
+
+// Return a list of all payment methods for the current vendor
+
+@name("Payment Methods list")
+GET "https://{{baseUrl}}/paymentmethod"
+
+
+// Return a payment method info by paymentMethodNumber
+
+@name("Get payment method")
+GET "https://{{baseUrl}}/paymentmethod/:paymentMethodNumber"
+
+
+

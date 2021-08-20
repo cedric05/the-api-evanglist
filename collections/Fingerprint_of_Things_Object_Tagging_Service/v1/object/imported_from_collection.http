@@ -1,0 +1,85 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-557807f3-ffdc-4693-98ef-85c43df6f5a9.postman_collection.json
+
+// Pre-register object with image.<br> Individual ID must be designated by user.
+
+@name("Object Pre-Register")
+POST "https://{{baseUrl}}/v1/object/preregisterObject"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// Pre-register object with image.<br> Individual ID will be issued from system.
+
+@name("Object Pre-Register without ID")
+POST "https://{{baseUrl}}/v1/object/preregisterObjectWithoutID"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// Delete registered object.
+
+@name("Delete Registered Object")
+POST "https://{{baseUrl}}/v1/object/deleteRegisteredObject"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// Delete pre-registered object.
+
+@name("Delete Pre-Registered Object")
+POST "https://{{baseUrl}}/v1/object/deletePreregisteredObject"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// * DO NOT USE. This API will be deleted.<br>Switch the Apply flag on or off.
+
+@name("Switch Apply Flag")
+POST "https://{{baseUrl}}/v1/object/setObjectDoNotRegisterFlag"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// * DO NOT USE. This API will be deleted.<br>Switch the Apply flag per group
+
+@name("Switch Apply Flag per Group")
+POST "https://{{baseUrl}}/v1/object/setGroupDoNotRegisterFlag"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// Register Object. A registered object can be queried from Query APIs.
+
+@name("Register Object")
+POST "https://{{baseUrl}}/v1/object/registerObject"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// Register Object per Group. A registered object can be queried from Query APIs.
+
+@name("Register Object per Group")
+POST "https://{{baseUrl}}/v1/object/registerGroup"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// List registered Objects.
+
+@name("List Registered Objects")
+POST "https://{{baseUrl}}/v1/object/listObjects"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// Check a score of Pre-Registered Object.
+
+@name("Check Pre-Registered Object")
+POST "https://{{baseUrl}}/v1/object/checkPreregisteredObject"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+

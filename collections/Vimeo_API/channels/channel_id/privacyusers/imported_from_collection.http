@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method gets all the users who have access to the specified private channel.
+
+@name("Get all the users who can view a private channel")
+GET "https://{{baseUrl}}/channels/:channel_id/privacy/users"
+? "direction"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+
+
+// This method prevents a single user from being able to access the specified private channel.
+
+@name("Restrict a user from viewing a private channel")
+DELETE "https://{{baseUrl}}/channels/:channel_id/privacy/users/:user_id"
+
+
+

@@ -1,0 +1,3 @@
+The Tenable.io Managed Security Service Provider (MSSP) Portal API provides a secure and accessible way for MSSP administrators to manage and maintain multiple customer instances of Tenable products. Endpoints in the Tenable.io MSSP Portal API allow you to view and manage your MSSP customer accounts. 
+
+For background information about the Tenable.io MSSP Portal, see the [Tenable.io MSSP Portal User Guide](https://docs.tenable.com/tenableio/mssp/Content/Welcome.htm).

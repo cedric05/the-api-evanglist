@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("License")
+POST "https://{{baseurl}}/audio/licenses"
+"Content-Type": "application/json"
+? "license"= ""
+? "search_id"= ""
+json({
+    "audio": [
+        {
+            "audio_id": "462790",
+            "license": "audio_standard",
+            "metadata": {
+                "purchase_order": "123",
+                "client": "",
+                "job": "",
+                "other": ""
+            }
+        }
+    ]
+})
+
+
+@name("List Licenses")
+GET "https://{{baseurl}}/audio/licenses"
+? "audio_id"= ""
+
+
+@name("Redownload")
+POST "https://{{baseurl}}/audio/licenses/:id/downloads"
+
+
+

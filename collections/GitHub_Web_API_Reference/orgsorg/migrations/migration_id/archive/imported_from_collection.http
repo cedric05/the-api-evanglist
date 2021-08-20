@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// Fetches the URL to a migration archive.
+
+@name("Download an organization migration archive")
+GET "https://{{baseUrl}}/orgs/:org/migrations/:migration_id/archive"
+
+
+// Deletes a previous migration archive. Migration archives are automatically deleted after seven days.
+
+@name("Delete an organization migration archive")
+DELETE "https://{{baseUrl}}/orgs/:org/migrations/:migration_id/archive"
+
+
+

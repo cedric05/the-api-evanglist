@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Working example: Retrieve session for dynamic products")
+PUT "https://{{baseUrl}}/orders/0/"
+
+
+// Retrieve information about the number of installments available for a specific selection of products or services.
+// 
+// 
+// Once the installment information is retreived, it can be used in the POST call on the order resource to place an order with a installments
+
+@name("Retrieve installment settings used to place orders with installments")
+GET "https://{{baseUrl}}/orders/0/installments/"
+
+
+@name("Working example: Retrieve shipping price")
+PUT "https://{{baseUrl}}/orders/0/shipping/"
+
+
+@name("Get order reference by invoice id")
+GET "https://{{baseUrl}}/orders/0/invoice/"
+? "InvoiceId"= "<string>"
+
+
+@name("Extract cost information for a product/subscription plan, based on a specific list of options.")
+PUT "https://{{baseUrl}}/orders/0/price/"
+
+
+

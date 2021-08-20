@@ -1,0 +1,70 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-baf4a014-6c7b-4f4e-b764-89b8472d3cf4.postman_collection.json
+
+// This URL is called from your application in the browser to Authenticate a user. You will need an app_access_token from the Get App Token api call.
+// 
+// Fowards the browser to the ORE ID auth flow. The user will enter a PIN to create or unlock their account. Returns to your callback_url when completed.
+// 
+// If there are errors, there will be information in query parameters on the callback_url
+// 
+// 
+// **Common Errors:**
+// 
+// callback_invalid: The callback_url is not listed in the callback URLs section of the Settin
+
+@name("Browser: Authenticate User")
+GET "https://{{baseUrl}}/auth"
+? "app_access_token"= "<string>"
+? "provider"= "<string>"
+? "callback_url"= "<string>"
+? "background_color"= "<string>"
+? "state"= "<string>"
+
+
+// This URL is called from your application in the browser to sign a transaction.
+// 
+// Forwards the browser to ORE ID where the user will enter a PIN to sign the transaction.
+// 
+// The browser will return to the callback URL when completed.
+// 
+// If there are errors, they will show in the query parameters in the callback.
+// 
+// 
+// **Common Errors:**
+// 
+// callback_invalid: You need to make sure the callback is set and listed in the callback URLs section of the Settings panel at https://oreid.io/developer/app-settings
+// 
+// bad-p
+
+@name("Browser: Sign Transaction")
+GET "https://{{baseUrl}}/sign"
+? "account"= "<string>"
+? "allow_chain_account_selection"= "<string>"
+? "app_access_token"= "<string>"
+? "broadcast"= "<boolean>"
+? "callback_url"= "<string>"
+? "chain_account"= "<string>"
+? "chain_network"= "<string>"
+? "return_signed_transaction"= "<string>"
+? "state"= "<string>"
+? "transaction"= "<string>"
+
+
+// Get information about an an account on the Kylin test net.  You need to include the account_name in the body of the request.
+// 
+// View a complete list of the error codes <a href="#error-codes">here.</a>
+
+@name("Chain Get Account - Kylin")
+GET "https://{{baseUrl}}/chain/get_account"
+
+
+// Get information about an an account on the Kylin test net.  You need to include the account_name in the body of the request.
+// 
+// View a complete list of the error codes <a href="#error-codes">here.</a>
+
+@name("Chain History Get Transaction - Kylin")
+GET "https://{{baseUrl}}/history/get_transaction"
+
+
+

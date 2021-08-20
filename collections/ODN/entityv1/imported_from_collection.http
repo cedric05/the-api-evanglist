@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-adc2da4d-b751-4bf5-9e03-e1950af35609.postman_collection.json
+
+@name("Get Entities")
+GET "https://{{baseUrl}}/entity/v1"
+"X-App-Token": "<string>"
+? "entity_id"= "<string>"
+? "entity_name"= "<string>"
+? "entity_type"= "<string>"
+? "app_token"= "<string>"
+
+
+@name("Find the relatives of an entity")
+GET "https://{{baseUrl}}/entity/v1/:relation"
+"X-App-Token": "<string>"
+? "entity_id"= "<string>"
+? "variable_id"= "<string>"
+? "limit"= "10"
+? "app_token"= "<string>"
+
+
+

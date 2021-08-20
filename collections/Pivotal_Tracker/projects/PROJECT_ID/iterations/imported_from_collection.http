@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-28db29ee-ca8d-4539-8a7a-6cde82dcfb73.postman_collection.json
+
+// Retrieves all iterations, with stories.
+
+@name("Get Projects Project Iterations")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/iterations"
+
+
+// Retrieves iterations from the done group, with stories.
+
+@name("Get Projects Project Iterations Done")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/iterations/done"
+? "offset"= "<>"
+? "limit"= "<>"
+
+
+// Retrieves iterations from the current group, with stories.
+
+@name("Get Projects Project Iterations Current")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/iterations/current"
+
+
+// Retrieves iterations from the backlog group, with stories.
+
+@name("Get Projects Project Iterations Backlog")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/iterations/backlog"
+? "offset"= "<>"
+? "limit"= "<>"
+
+
+// Retrieves iterations from the current and backlog groups, with stories.
+
+@name("Get Projects Project Iterations Current Backlog")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/iterations/current_backlog"
+? "offset"= "<>"
+? "limit"= "<>"
+
+
+

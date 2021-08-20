@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a91970d1-273c-4c28-bee0-96765b693784.postman_collection.json
+
+// Deploy chaincode (smart contract) to Blockchain
+
+@name("Put Chaincodes")
+PUT "https://{{baseUrl}}/v1/chaincodes/:chaincodeName"
+"Authorization": "<>"
+"predix": "<>"
+
+
+// Performs query operation on the chaincode and returns the result
+
+@name("Post Chaincodes Query")
+POST "https://{{baseUrl}}/v1/chaincodes/:chaincodeName/query"
+"Authorization": "<>"
+"predix": "<>"
+
+
+// Performs the invoke or state change operation on chaincode. It invokes the function as specified in the body with given arguments. It returns the transaction id to the user.
+
+@name("Post Chaincodes Invoke")
+POST "https://{{baseUrl}}/v1/chaincodes/:chaincodeName/invoke"
+"Authorization": "<>"
+"predix": "<>"
+
+
+

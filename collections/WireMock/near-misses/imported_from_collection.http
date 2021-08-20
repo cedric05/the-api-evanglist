@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5bfc6a7a-9723-4bb7-a53c-665f538df741.postman_collection.json
+
+// Find at most 3 near misses for closest stub mappings to the specified request
+
+@name("Post Near Misses Request")
+POST "https://{{baseUrl}}/near-misses/request"
+
+
+// Find at most 3 near misses for closest logged requests to the specified request pattern
+
+@name("Post Near Misses Request Pattern")
+POST "https://{{baseUrl}}/near-misses/request-pattern"
+
+
+

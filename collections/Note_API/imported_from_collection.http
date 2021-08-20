@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ad124732-5c4f-4b68-8e24-b7975030f330.postman_collection.json
+
+// Get all Notes
+
+@name("/getNotes")
+POST "https://{{baseUrl}}/getNotes"
+"jwt": "magna Lorem"
+"Content-Type": "application/json"
+data('"consequat ut in officia"')
+
+
+// add note(s)
+
+@name("/addNotes")
+POST "https://{{baseUrl}}/addNotes"
+"jwt": "magna Lorem"
+"Content-Type": "application/json"
+data('"mollit sint dolor nu"')
+
+
+// edit note(s)
+
+@name("/editNotes")
+POST "https://{{baseUrl}}/editNotes"
+"jwt": "magna Lorem"
+"Content-Type": "application/json"
+data('"voluptate d"')
+
+
+// Delete One Note
+
+@name("/deleteNote")
+POST "https://{{baseUrl}}/deleteNote"
+"jwt": "magna Lorem"
+"Content-Type": "application/json"
+json({
+    "nGuid": "in a"
+})
+
+
+// Delete Note List
+
+@name("/deleteNotes")
+POST "https://{{baseUrl}}/deleteNotes"
+"jwt": "magna Lorem"
+"Content-Type": "application/json"
+data('"su"')
+
+
+// get note type list
+
+@name("/getNoteTypes")
+GET "https://{{baseUrl}}/getNoteTypes"
+"jwt": "magna Lorem"
+
+
+

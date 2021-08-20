@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd3bb79e-7d36-49f2-9d90-ac848a0b6d74.postman_collection.json
+
+// Returns a list of Sites
+
+@name("Get A List Of Sites")
+GET "https://{{baseUrl}}/sites"
+? "siteids"= "<>"
+? "name"= "<get>"
+? "access_url"= "<get>"
+? "j_version"= "<get>"
+? "ip"= "<get>"
+? "jUpdate"= "<get>"
+? "canUpdate"= "<get>"
+? "published"= "<get>"
+? "error"= "<get>"
+? "nbUpdates"= "<get>"
+? "up"= "<get>"
+? "fields"= "<>"
+? "limit"= "<>"
+? "limitstart"= "<>"
+? "order"= "<>"
+
+
+// Returns a list of fields
+
+@name("Get The List Of Fields")
+GET "https://{{baseUrl}}/sites/metadata"
+
+
+

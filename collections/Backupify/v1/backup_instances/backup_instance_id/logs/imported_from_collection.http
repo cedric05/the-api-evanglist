@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b61ade0-60b3-4dcc-a6b1-7acb55b522a0.postman_collection.json
+
+// Returns the logs for a given backup instance.
+
+@name("Returns the logs for a given backup instance")
+GET "https://{{baseUrl}}/v1/backup_instances/:backup_instance_id/logs"
+"Authorization": "<>"
+? "date"= "<>"
+
+
+// Returns the logs for a given backup instance.
+
+@name("Returns the logs for a given backup instance")
+GET "https://{{baseUrl}}/v1/backup_instances/:backup_instance_id/logs/:scroll_id"
+"Authorization": "<>"
+
+
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-96f7548c-485b-4677-99ba-2d47911de0c8.postman_collection.json
+
+// Get historical performance for requested metals.
+
+@name("Get Historical Performance for requested metals")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/spot/performance"
+? "token"= "<>"
+? "metals"= "<>"
+? "currency"= "<>"
+? "unitofmeasure"= "<>"
+? "format"= "<>"
+
+
+// Get historical annual performance for requested metals.
+
+@name("Get Historical Annual Performance for requested metals")
+GET "https://{{baseUrl}}/api/v{{version}}/Metals/spot/performance/annual"
+? "token"= "<>"
+? "metals"= "<>"
+? "currency"= "<>"
+? "unitofmeasure"= "<>"
+? "format"= "<>"
+? "years"= "<>"
+
+
+

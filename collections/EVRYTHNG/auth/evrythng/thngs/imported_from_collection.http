@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Create a Device API key for a Thng to manage its own data. A Device API key can only be created by Application Users or Operators. If called multiple times for the same Thng, the existing API key will be returned (a new one will not be generated). If you want to create a new API key for a Thng, you must delete the existing one first.
+
+@name("Create a Device API Key")
+POST "https://{{baseUrl}}/auth/evrythng/thngs"
+? "No Name"= "<string>"
+
+
+// Retrieve a Device API key with a Thng's ID.
+
+@name("Read a Device API Key")
+GET "https://{{baseUrl}}/auth/evrythng/thngs/:thngId"
+? "No Name"= "<string>"
+
+
+

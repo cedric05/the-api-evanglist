@@ -1,0 +1,604 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e04c6fb1-e891-4983-80ec-38175b6c944e.postman_collection.json
+
+// Get api account exist.
+
+@name("Get API Account Exist")
+GET "https://{{baseUrl}}/api/AccountExist"
+? "email"= "<delete>"
+? "partnerId"= "<delete>"
+
+
+// Get api all asset description.
+
+@name("Get API All Asset Description")
+GET "https://{{baseUrl}}/api/AllAssetDescription/:id"
+
+
+// Get api application information.
+
+@name("Get API Application Information")
+GET "https://{{baseUrl}}/api/ApplicationInfo"
+
+
+// Get api application settings.
+
+@name("Get API Application Settings")
+GET "https://{{baseUrl}}/api/AppSettings"
+"Authorization": "<>"
+
+
+// Get api asset categories.
+
+@name("Get API Asset Categories")
+GET "https://{{baseUrl}}/api/assetcategories"
+"Authorization": "<>"
+
+
+// Get api assetdescription.
+
+@name("Get API Assetdescription")
+GET "https://{{baseUrl}}/api/AssetDescription/:id"
+"Authorization": "<>"
+
+
+// Get api assetpair.
+
+@name("Get API Assetpair")
+GET "https://{{baseUrl}}/api/AssetPair/:id"
+"Authorization": "<>"
+
+
+// Get api assetpairdetailedrates.
+
+@name("Get API Assetpairdetailedrates")
+GET "https://{{baseUrl}}/api/AssetPairDetailedRates"
+"Authorization": "<>"
+? "period"= "<>"
+? "assetId"= "<delete>"
+? "points"= "<>"
+? "withBid"= "<>"
+
+
+// Get api assetpairs.
+
+@name("Get API Assetpairs")
+GET "https://{{baseUrl}}/api/AssetPairs"
+"Authorization": "<>"
+
+
+// Add api backup completed.
+
+@name("Add API Backup Completed")
+POST "https://{{baseUrl}}/api/BackupCompleted"
+"Authorization": "<>"
+
+
+// Add api bankcardpaymenturl.
+
+@name("Add API Bankcardpaymenturl")
+POST "https://{{baseUrl}}/api/BankCardPaymentUrl"
+"Authorization": "<>"
+
+
+// Get api bankcardpaymenturlformvalues.
+
+@name("Get API Bankcardpaymenturlformvalues")
+GET "https://{{baseUrl}}/api/BankCardPaymentUrlFormValues"
+"Authorization": "<>"
+
+
+// Add api banktransferrequest.
+
+@name("Add API Banktransferrequest")
+POST "https://{{baseUrl}}/api/BankTransferRequest"
+"Authorization": "<>"
+
+
+// Get api baseasset.
+
+@name("Get API Baseasset")
+GET "https://{{baseUrl}}/api/BaseAsset"
+"Authorization": "<>"
+
+
+// Get api baseassets.
+
+@name("Get API Baseassets")
+GET "https://{{baseUrl}}/api/BaseAssets"
+"Authorization": "<>"
+
+
+// Get api bcntransactionbycashoperation.
+
+@name("Get API Bcntransactionbycashoperation")
+GET "https://{{baseUrl}}/api/BcnTransactionByCashOperation/:id"
+"Authorization": "<>"
+
+
+// Get api bcntransactionbyexchange.
+
+@name("Get API Bcntransactionbyexchange")
+GET "https://{{baseUrl}}/api/BcnTransactionByExchange/:id"
+"Authorization": "<>"
+
+
+// Get api bcntransactionbytransfer.
+
+@name("Get API Bcntransactionbytransfer")
+GET "https://{{baseUrl}}/api/BcnTransactionByTransfer/:id"
+"Authorization": "<>"
+
+
+// Get api blockchaintransaction.
+
+@name("Get API Blockchaintransaction")
+GET "https://{{baseUrl}}/api/BlockchainTransaction"
+"Authorization": "<>"
+? "blockChainHash"= "<delete>"
+
+
+// Add api broadcasttransaction.
+
+@name("Add API Broadcasttransaction")
+POST "https://{{baseUrl}}/api/BroadcastTransaction"
+"Authorization": "<>"
+
+
+// Add api cashout.
+
+@name("Add API Cashout")
+POST "https://{{baseUrl}}/api/CashOut"
+"Authorization": "<>"
+
+
+// Add api cashout swift request.
+
+@name("Add API Cashout Swift Request")
+POST "https://{{baseUrl}}/api/CashOutSwiftRequest"
+"Authorization": "<>"
+
+
+// Add api changepinandpassword.
+
+@name("Add API Changepinandpassword")
+POST "https://{{baseUrl}}/api/ChangePinAndPassword"
+
+
+// Get api checkdocumentstoupload.
+
+@name("Get API Checkdocumentstoupload")
+GET "https://{{baseUrl}}/api/CheckDocumentsToUpload"
+"Authorization": "<>"
+
+
+// Get api checkmobilephone.
+
+@name("Get API Checkmobilephone")
+GET "https://{{baseUrl}}/api/CheckMobilePhone"
+"Authorization": "<>"
+? "phoneNumber"= "<delete>"
+? "code"= "<delete>"
+
+
+// Add api clientfirstnamelastname.
+
+@name("Add API Clientfirstnamelastname")
+POST "https://{{baseUrl}}/api/ClientFirstNameLastName"
+"Authorization": "<>"
+
+
+// Add api clientfullname.
+
+@name("Add API Clientfullname")
+POST "https://{{baseUrl}}/api/ClientFullName"
+"Authorization": "<>"
+
+
+// Add api clientkeys.
+
+@name("Add API Clientkeys")
+POST "https://{{baseUrl}}/api/ClientKeys"
+"Authorization": "<>"
+
+
+// Add api clientlog.
+
+@name("Add API Clientlog")
+POST "https://{{baseUrl}}/api/ClientLog"
+
+
+// Add api clientphone.
+
+@name("Add API Clientphone")
+POST "https://{{baseUrl}}/api/ClientPhone"
+"Authorization": "<>"
+
+
+// Get api clientstate.
+
+@name("Get API Clientstate")
+GET "https://{{baseUrl}}/api/ClientState"
+? "email"= "<delete>"
+? "partnerId"= "<delete>"
+
+
+// Get api countryphonecodes.
+
+@name("Get API Countryphonecodes")
+GET "https://{{baseUrl}}/api/CountryPhoneCodes"
+"Authorization": "<>"
+
+
+// Get api client dialogs.
+
+@name("Get API Client Dialogs")
+GET "https://{{baseUrl}}/api/client/Dialogs"
+"Authorization": "<>"
+
+
+// Add api email privatewalletaddress.
+
+@name("Add API Email Privatewalletaddress")
+POST "https://{{baseUrl}}/api/Email/PrivateWalletAddress"
+"Authorization": "<>"
+
+
+// Add api emailmewalletaddress.
+
+@name("Add API Emailmewalletaddress")
+POST "https://{{baseUrl}}/api/EmailMeWalletAddress"
+"Authorization": "<>"
+
+
+// Get api emailverification.
+
+@name("Get API Emailverification")
+GET "https://{{baseUrl}}/api/EmailVerification"
+? "email"= "<delete>"
+? "code"= "<delete>"
+? "partnerId"= "<delete>"
+
+
+// Add api encodedprivatekey.
+
+@name("Add API Encodedprivatekey")
+POST "https://{{baseUrl}}/api/EncodedPrivateKey"
+"Authorization": "<>"
+
+
+// Get api exchangeinfo.
+
+@name("Get API Exchangeinfo")
+GET "https://{{baseUrl}}/api/ExchangeInfo"
+"Authorization": "<>"
+? "exchangeId"= "<>"
+
+
+// Add api formatcreditvoucherscontent.
+
+@name("Add API Formatcreditvoucherscontent")
+POST "https://{{baseUrl}}/api/FormatCreditVouchersContent"
+"Authorization": "<>"
+
+
+// Add api operations forwardwithdrawal.
+
+@name("Add API Operations Forwardwithdrawal")
+POST "https://{{baseUrl}}/api/operations/ForwardWithdrawal"
+"Authorization": "<>"
+
+
+// Add api generatetransfertransaction.
+
+@name("Add API Generatetransfertransaction")
+POST "https://{{baseUrl}}/api/GenerateTransferTransaction"
+"Authorization": "<>"
+
+
+// Get api graphperiods.
+
+@name("Get API Graphperiods")
+GET "https://{{baseUrl}}/api/GraphPeriods"
+"Authorization": "<>"
+
+
+// Add api hashedpwd.
+
+@name("Add API Hashedpwd")
+POST "https://{{baseUrl}}/api/HashedPwd"
+"Authorization": "<>"
+
+
+// Get api icocoinssold.
+
+@name("Get API Icocoinssold")
+GET "https://{{baseUrl}}/api/IcoCoinsSold"
+
+
+// Add api invertedassetpairs.
+
+@name("Add API Invertedassetpairs")
+POST "https://{{baseUrl}}/api/InvertedAssetPairs"
+"Authorization": "<>"
+
+
+// Get api isalive.
+
+@name("Get API Isalive")
+GET "https://{{baseUrl}}/api/IsAlive"
+
+
+// Get api ispinentered.
+
+@name("Get API Ispinentered")
+GET "https://{{baseUrl}}/api/IsPinEntered"
+"Authorization": "<>"
+
+
+// Get api kycdocuments.
+
+@name("Get API Kycdocuments")
+GET "https://{{baseUrl}}/api/KycDocuments"
+"Authorization": "<>"
+
+
+// Add api kycdocumentupload.
+
+@name("Add API Kycdocumentupload")
+POST "https://{{baseUrl}}/api/KycDocumentUpload"
+"Authorization": "<>"
+? "type"= "<delete>"
+? "idType"= "<delete>"
+
+
+// Get api kycforasset.
+
+@name("Get API Kycforasset")
+GET "https://{{baseUrl}}/api/KycForAsset/:id"
+"Authorization": "<>"
+
+
+// Get api kycstatus.
+
+@name("Get API Kycstatus")
+GET "https://{{baseUrl}}/api/KycStatus"
+"Authorization": "<>"
+
+
+// Get api lastbaseassets.
+
+@name("Get API Lastbaseassets")
+GET "https://{{baseUrl}}/api/LastBaseAssets"
+"Authorization": "<>"
+? "n"= "<>"
+
+
+// Get api lykkenews.
+
+@name("Get API Lykkenews")
+GET "https://{{baseUrl}}/api/LykkeNews"
+? "skip"= "<>"
+? "take"= "<>"
+
+
+// Add api market converter tobase.
+
+@name("Add API Market Converter Tobase")
+POST "https://{{baseUrl}}/api/Market/converter/tobase"
+
+
+// Add api mylykkecashinemail.
+
+@name("Add API Mylykkecashinemail")
+POST "https://{{baseUrl}}/api/MyLykkeCashInEmail"
+"Authorization": "<>"
+
+
+// Get api mylykkeinfo.
+
+@name("Get API Mylykkeinfo")
+GET "https://{{baseUrl}}/api/MyLykkeInfo"
+"Authorization": "<>"
+
+
+// Get api mylykkesettings.
+
+@name("Get API Mylykkesettings")
+GET "https://{{baseUrl}}/api/MyLykkeSettings"
+"Authorization": "<>"
+
+
+// Get api orderbook.
+
+@name("Get API Orderbook")
+GET "https://{{baseUrl}}/api/OrderBook/:id"
+"Authorization": "<>"
+
+
+// Get api personaldata.
+
+@name("Get API Personaldata")
+GET "https://{{baseUrl}}/api/PersonalData"
+"Authorization": "<>"
+
+
+// Get api pinsecurity.
+
+@name("Get API Pinsecurity")
+GET "https://{{baseUrl}}/api/PinSecurity"
+"Authorization": "<>"
+? "pin"= "<delete>"
+
+
+// Get api privatekeyownershipmsg.
+
+@name("Get API Privatekeyownershipmsg")
+GET "https://{{baseUrl}}/api/PrivateKeyOwnershipMsg"
+? "partnerId"= "<delete>"
+? "email"= "<delete>"
+
+
+// Add api privatewalletbackup.
+
+@name("Add API Privatewalletbackup")
+POST "https://{{baseUrl}}/api/PrivateWalletBackup"
+"Authorization": "<>"
+
+
+// Get api privatewalletbalance.
+
+@name("Get API Privatewalletbalance")
+GET "https://{{baseUrl}}/api/PrivateWalletBalance"
+"Authorization": "<>"
+? "address"= "<delete>"
+
+
+// Get api privatewallethistory.
+
+@name("Get API Privatewallethistory")
+GET "https://{{baseUrl}}/api/PrivateWalletHistory"
+"Authorization": "<>"
+? "address"= "<delete>"
+? "assetId"= "<delete>"
+
+
+// Get api pubkeyaddressvalation.
+
+@name("Get API Pubkeyaddressvalation")
+GET "https://{{baseUrl}}/api/PubkeyAddressValidation"
+? "pubkeyAddress"= "<>"
+
+
+// Add api purchaseasset.
+
+@name("Add API Purchaseasset")
+POST "https://{{baseUrl}}/api/PurchaseAsset"
+"Authorization": "<>"
+
+
+// Get api pushsettings.
+
+@name("Get API Pushsettings")
+GET "https://{{baseUrl}}/api/PushSettings"
+"Authorization": "<>"
+
+
+// Add api recoverysmsconfirmation.
+
+@name("Add API Recoverysmsconfirmation")
+POST "https://{{baseUrl}}/api/RecoverySmsConfirmation"
+
+
+// Get api refundaddress.
+
+@name("Get API Refundaddress")
+GET "https://{{baseUrl}}/api/RefundAddress"
+"Authorization": "<>"
+
+
+// Get api refundsettings.
+
+@name("Get API Refundsettings")
+GET "https://{{baseUrl}}/api/RefundSettings"
+"Authorization": "<>"
+
+
+// Get api registration.
+
+@name("Get API Registration")
+GET "https://{{baseUrl}}/api/Registration"
+"Authorization": "<>"
+
+
+// Add api remindpasswordemail.
+
+@name("Add API Remindpasswordemail")
+POST "https://{{baseUrl}}/api/RemindPasswordEmail"
+
+
+// Add api requestvoicecall.
+
+@name("Add API Requestvoicecall")
+POST "https://{{baseUrl}}/api/RequestVoiceCall"
+
+
+// Get api restrictedcountries.
+
+@name("Get API Restrictedcountries")
+GET "https://{{baseUrl}}/api/RestrictedCountries"
+
+
+// Add api sendblockchainemail.
+
+@name("Add API Sendblockchainemail")
+POST "https://{{baseUrl}}/api/SendBlockchainEmail"
+"Authorization": "<>"
+? "assetId"= "<delete>"
+
+
+// Get api servertime.
+
+@name("Get API Servertime")
+GET "https://{{baseUrl}}/api/ServerTime"
+
+
+// Add api settingsignorder.
+
+@name("Add API Settingsignorder")
+POST "https://{{baseUrl}}/api/SettingSignOrder"
+"Authorization": "<>"
+
+
+// Get api signatureverificationtoken keyconfirmation.
+
+@name("Get API Signatureverificationtoken Keyconfirmation")
+GET "https://{{baseUrl}}/api/signatureVerificationToken/KeyConfirmation"
+? "email"= "<delete>"
+
+
+// Get api signrequest.
+
+@name("Get API Signrequest")
+GET "https://{{baseUrl}}/api/SignRequest"
+"Authorization": "<>"
+
+
+// Get api transactions.
+
+@name("Get API Transactions")
+GET "https://{{baseUrl}}/api/Transactions"
+"Authorization": "<>"
+? "assetId"= "<delete>"
+
+
+// Get api transferinfo.
+
+@name("Get API Transferinfo")
+GET "https://{{baseUrl}}/api/TransferInfo"
+"Authorization": "<>"
+? "transferId"= "<delete>"
+
+
+// Add api trustedwallets operation transfer.
+
+@name("Add API Trustedwallets Operation Transfer")
+POST "https://{{baseUrl}}/api/TrustedWallets/:operationId/transfer"
+"Authorization": "<>"
+
+
+// Get api utils isusorcanadanumber phonenumber.
+
+@name("Get API Utils Isusorcanadanumber Phonenumber")
+GET "https://{{baseUrl}}/api/Utils/isUSorCanadaNumber/:phoneNumber"
+
+
+// Add api walletmigration.
+
+@name("Add API Walletmigration")
+POST "https://{{baseUrl}}/api/WalletMigration"
+"Authorization": "<>"
+
+
+

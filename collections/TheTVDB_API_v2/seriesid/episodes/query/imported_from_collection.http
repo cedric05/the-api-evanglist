@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// This route allows the user to query against episodes for the given series. The response is a paginated array of episode records.
+
+@name("/series/:id/episodes/query")
+GET "https://{{baseUrl}}/series/:id/episodes/query"
+? "No Name"= "<string>"
+? "absoluteNumber"= "<integer>"
+? "airedSeason"= "<integer>"
+? "airedEpisode"= "<string>"
+? "dvdSeason"= "<integer>"
+? "dvdEpisode"= "<string>"
+? "imdbId"= "<string>"
+? "page"= "<string>"
+
+
+// Returns the allowed query keys for the `/series/{id}/episodes/query` route
+
+@name("/series/:id/episodes/query/params")
+GET "https://{{baseUrl}}/series/:id/episodes/query/params"
+? "No Name"= "<string>"
+
+
+

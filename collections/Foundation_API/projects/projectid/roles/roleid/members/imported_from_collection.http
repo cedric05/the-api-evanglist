@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets project role members.
+
+@name("Gets project role members")
+GET "https://{{baseUrl}}/projects/:projectid/roles/:roleid/members"
+
+
+// Add user to project role.
+
+@name("Add user to project role")
+PUT "https://{{baseUrl}}/projects/:projectid/roles/:roleid/members/:username"
+
+
+

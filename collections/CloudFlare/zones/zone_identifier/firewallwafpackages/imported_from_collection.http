@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// Retrieve firewall packages for a zone
+
+@name("Retrieve firewall packages for a zone")
+GET "https://{{baseUrl}}/zones/:zone_identifier/firewall/waf/packages"
+"X": "<>"
+? "direction"= "<>"
+? "match"= "<>"
+? "name"= "<>"
+? "order"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Get information about a single firewall package
+
+@name("Get information about a single firewall package")
+GET "https://{{baseUrl}}/zones/:zone_identifier/firewall/waf/packages/:identifier"
+
+
+

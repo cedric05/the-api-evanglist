@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+@name("Get an organization membership for the authenticated user")
+GET "https://{{baseUrl}}/user/memberships/orgs/:org"
+
+
+@name("Update an organization membership for the authenticated user")
+PATCH "https://{{baseUrl}}/user/memberships/orgs/:org"
+"Content-Type": "application/json"
+json({
+    "state": "<string>"
+})
+
+
+

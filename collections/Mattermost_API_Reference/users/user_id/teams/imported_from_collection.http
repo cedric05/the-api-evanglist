@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a list of teams that a user is on.n##### PermissionsnMust be authenticated as the user or have the `manage_system` permission.n
+
+@name("Get a user's teams")
+GET "https://{{baseUrl}}/users/:user_id/teams"
+
+
+// Get a list of team members for a user. Useful for getting the ids of teams the user is on and the roles they have in those teams.n##### PermissionsnMust be logged in as the user or have the `edit_other_users` permission.n
+
+@name("Get team members for a user")
+GET "https://{{baseUrl}}/users/:user_id/teams/members"
+
+
+// Get the count for unread messages and mentions in the teams the user is a member of.n##### PermissionsnMust be logged in.n
+
+@name("Get team unreads for a user")
+GET "https://{{baseUrl}}/users/:user_id/teams/unread"
+? "exclude_team"= "<>"
+
+
+

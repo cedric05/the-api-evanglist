@@ -1,0 +1,481 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Get all custom fields</code> request is used to get the information of all custom fields created in a stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-fields>Custom Fields</a> API Reference document
+
+@name("Get all custom fields")
+GET "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? 'query'= '"type":"field"'
+
+
+// <p>The <code>Get a single custom field</code>&nbsp;request gets the comprehensive details of a specific custom field.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-fields>Custom Fields</a> API Reference document
+
+@name("Get a single custom field")
+GET "https://{{base_url}}/v3/extensions/{{custom_field_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Upload a custom field</code>&nbsp;request is used to upload a custom field&nbsp;to Contentstack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-fields>Custom Fields</a> API Reference document
+
+@name("Upload a custom field")
+POST "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+files(
+	("extension[upload]", "None"),
+	("extension[title]", "None"),
+	("extension[data_type]", "None"),
+	("extension[tags]", "None"),
+	("extension[multiple]", "None"),
+	("extension[type]", "None")
+)
+
+
+// <p>The <code>Create a custom field with source URL</code> call is used to create a&nbsp;custom field that is hosted externally.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-fields>Custom Fields</a> API Reference document
+
+@name("Create a custom field with source URL")
+POST "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "extension": {
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "data_type": "text",
+        "title": "New Custom Field",
+        "src": "https://www.sample.com",
+        "multiple": false,
+        "config": "{}",
+        "type": "field"
+    }
+})
+
+
+// <p>The <code>Create a custom field with source code</code> request is used to create a&nbsp;custom field in Contentstack by providing the source code of the extensions. This source code will be hosted on Contentstack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-fields>Custom Fields</a> API Reference document
+
+@name("Create a custom field with source code")
+POST "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "extension": {
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "data_type": "text",
+        "title": "New Custom Field",
+        "srcdoc": "Source code of the extension",
+        "multiple": false,
+        "config": "{}",
+        "type": "field"
+    }
+})
+
+
+// <p>The <code>Update a custom field</code>&nbsp;request is used to update the details of a&nbsp;custom field.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-fields>Custom Fields</a> API Reference document
+
+@name("Update a custom field")
+PUT "https://{{base_url}}/v3/extensions/{{custom_field_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "extension": {
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "data_type": "text",
+        "title": "Old Extension",
+        "src": "Enter either the source code (use 'srcdoc') or the external hosting link of the extension depending on the hosting method you selected.",
+        "multiple": false,
+        "config": "{}",
+        "type": "field"
+    }
+})
+
+
+// <p>The <code>Delete custom field</code> request is used to delete a specific custom field.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-fields>Custom Fields</a> API Reference document
+
+@name("Delete custom field")
+DELETE "https://{{base_url}}/v3/extensions/{{custom_field_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+
+// <p>The <code>Create Content Type with Extension Field</code> request is used to create a content type that includes a custom field.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-fields>Custom Fields</a> API Reference document
+
+@name("Create Content Type with Extension Field")
+POST "https://{{base_url}}/v3/content_types"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "content_type": {
+        "title": "Sample",
+        "uid": "sample",
+        "schema": [
+            {
+                "display_name": "Title",
+                "uid": "title",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "mandatory": true,
+                "multiple": false
+            },
+            {
+                "display_name": "URL",
+                "uid": "url",
+                "data_type": "text",
+                "field_metadata": {
+                    "_default": true
+                },
+                "unique": false,
+                "multiple": false
+            },
+            {
+                "display_name": "Extension",
+                "uid": "text",
+                "data_type": "json",
+                "extension_uid": "blt002c000ce00b00000",
+                "mandatory": true,
+                "field_metadata": {
+                    "_default": true
+                },
+                "multiple": false,
+                "unique": false
+            }
+        ],
+        "options": {
+            "title": "title",
+            "publishable": true,
+            "is_page": true,
+            "singleton": false,
+            "sub_title": [
+                "url"
+            ],
+            "url_pattern": "/:title",
+            "url_prefix": "/"
+        }
+    }
+})
+
+
+// <p>The <code>Get widgets</code> request is used to get the information of all custom widgets created in a stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-widgets>Custom Widgets</a> API Reference document
+
+@name("Get all widgets")
+GET "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? 'query'= '"type":"widget"'
+
+
+// <p>The <code>Get widgets of a content type</code> request gets the comprehensive details of all widgets that are assigned to a specific content type.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-widgets>Custom Widgets</a> API Reference document
+
+@name("Get widgets of a content type")
+GET "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "scope"= "products"
+
+
+// <p>The <code>Upload a widget</code> request is used to upload a new custom widget to a stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-widgets>Custom Widgets</a> API Reference document
+
+@name("Upload a widget")
+POST "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+files(
+	("extension[upload]", "None"),
+	("extension[title]", "None"),
+	("extension[tags]", "None"),
+	("extension[scope]", "None"),
+	("extension[type]", "None")
+)
+
+
+// <p>The <code>Create Widget with source URL</code> call is used to create a widget that is hosted externally.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-widgets>Custom Widgets</a> API Reference document
+
+@name("Create widget with source URL")
+POST "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "extension": {
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "data_type": "text",
+        "title": "New Widget",
+        "src": "https://www.sample.com",
+        "config": "{}",
+        "type": "widget",
+        "scope": {
+            "content_types": [
+                "$all"
+            ]
+        }
+    }
+})
+
+
+// <p>The <code>Create widget with source code</code> request is used to create a widget in Contentstack by providing the source code. This source code will be hosted on Contentstack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-widgets>Custom Widgets</a> API Reference document
+
+@name("Create widget with source code")
+POST "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "extension": {
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "title": "New Widget",
+        "srcdoc": "Source code of the widget",
+        "config": "{}",
+        "type": "widget",
+        "scope": {
+            "content_types": [
+                "$all"
+            ]
+        }
+    }
+})
+
+
+// <p>The <code>Update a widget</code> request is used to update the details of a widget.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-widgets>Custom Widgets</a> API Reference document
+
+@name("Update a widget")
+PUT "https://{{base_url}}/v3/extensions/{{widget_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "extension": {
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "title": "Widget Updated",
+        "src": "Enter either the source code or the external hosting link of the widget depending on the hosting method you selected.",
+        "config": "{}"
+    }
+})
+
+
+// <p>The <code>Delete a widget</code> call is used to delete a specific custom widget.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#custom-widgets>Custom Widgets</a> API Reference document
+
+@name("Delete a widget")
+DELETE "https://{{base_url}}/v3/extensions/{{widget_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+
+// <p>The <code>Get All Dashboard Widgets</code>&nbsp;request is used to get the information of all the enabled custom dashboard extension.<br><br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#dashboard-widgets>Dashboard Widgets</a> API Reference document
+
+@name("Get All Dashboard Widgets")
+GET "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? 'query'= '"type":"dashboard", "enable": true'
+
+
+// <p>The <code>Upload Dashboard Widget</code> request uploads the widget to the Stack Dashboard.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#dashboard-widgets>Dashboard Widgets</a> API Reference document
+
+@name("Upload Dashboard Widget")
+POST "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+files(
+	("extension[upload]", "None"),
+	("extension[title]", "None"),
+	("extension[tags]", "None"),
+	("extension[type]", "None")
+)
+
+
+// <p>The <code>Create a Dashboard Widget with Source URL</code> request is used to upload an extension hosted externally.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#dashboard-widgets>Dashboard Widgets</a> API Reference document
+
+@name("Create a Dashboard Widget with Source URL")
+POST "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "extension": {
+        "tags": [
+            "tag"
+        ],
+        "title": "New Dashboard Widget",
+        "src": "https://www.sample.com",
+        "config": "{}",
+        "type": "dashboard",
+        "enable": true,
+        "default_width": "half"
+    }
+})
+
+
+// <p>The <code>Create dashboard widget with source code</code> request is used to create a widget in Contentstack by providing the source code. This source code will be hosted on Contentstack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#dashboard-widgets>Dashboard Widgets</a> API Reference document
+
+@name("Create a Dashboard Widget with Source code")
+POST "https://{{base_url}}/v3/extensions"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "extension": {
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "type": "dashboard",
+        "title": "sample 10",
+        "srcdoc": "xyz",
+        "config": "{}",
+        "enable": true,
+        "default_width": "half"
+    }
+})
+
+
+// <p>The <code>Update dashboard widget</code> request is used to update the details of an widget.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#dashboard-widgets>Dashboard Widgets</a> API Reference document
+
+@name("Update the Dashboard Widget")
+PUT "https://{{base_url}}/v3/extensions/{{extension_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "extension": {
+        "tags": [
+            "tag1",
+            "tag2"
+        ],
+        "type": "dashboard",
+        "title": "sample 9",
+        "srcdoc": "xyz",
+        "config": "{}",
+        "enable": true,
+        "default_width": "half"
+    }
+})
+
+
+// <p>The ‘Delete a dashboard widget’ call is used to delete a specific custom dashboard.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#dashboard-widgets>Dashboard Widgets</a> API Reference document
+
+@name("Delete the Dashboard Widget")
+DELETE "https://{{base_url}}/v3/extensions/{{extension_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get the list of restaurants you are authorized to
+
+@name("Get restaurant list")
+GET "https://{{baseUrl}}/api/v{{version}}/restaurants"
+
+
+// Get a list of all the restaurant app settings for the specified app.
+
+@name("Get all restaurant app settings with app installed")
+GET "https://{{baseUrl}}/api/v{{version}}/restaurants/app/:appUid/installed"
+
+
+

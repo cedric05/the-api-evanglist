@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0ecb1010-f881-4853-adb3-27a67386fc06.postman_collection.json
+
+// Returns all the policy sets for the given zone..
+
+@name("Returns all the policy sets for the given zone.")
+GET "https://{{baseUrl}}/v1/policy-set"
+
+
+// Retrieves a policy set for the given zone..
+
+@name("Retrieves a policy set for the given zone.")
+GET "https://{{baseUrl}}/v1/policy-set/:policySetId"
+
+
+

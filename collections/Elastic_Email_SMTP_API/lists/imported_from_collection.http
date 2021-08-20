@@ -1,0 +1,92 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d2eb79d-4cff-4c67-86d1-40ed00bf1510.postman_collection.json
+
+// Add Existing Subscriber To List
+
+@name("Add Existing Subscriber To List")
+GET "https://{{baseUrl}}/lists/add-contact"
+? "api_key"= "<>"
+? "listname"= "<>"
+? "username"= "<>"
+
+
+// Create New Subscriber
+
+@name("Create New Subscriber")
+GET "https://{{baseUrl}}/lists/create-contact"
+? "api_key"= "<>"
+? "birthdate"= "<>"
+? "city"= "<>"
+? "country"= "<>"
+? "email"= "<>"
+? "firstname"= "<>"
+? "gender"= "<>"
+? "lastname"= "<>"
+? "listname"= "<>"
+? "organizationname"= "<>"
+? "phone"= "<>"
+? "postalcode"= "<>"
+? "state"= "<>"
+? "the zip or postal code of the subscriber"= "<>"
+? "title"= "<>"
+
+
+// Create New List
+
+@name("Create New List")
+GET "https://{{baseUrl}}/lists/create-lists"
+? "api_key"= "<>"
+? "listname"= "<>"
+? "username"= "<>"
+
+
+// Delete Existing List
+
+@name("Delete Existing List")
+GET "https://{{baseUrl}}/lists/delete"
+? "api_key"= "<>"
+? "listname"= "<>"
+? "username"= "<>"
+
+
+// Delete Existing Subscriber
+
+@name("Delete Existing Subscriber")
+GET "https://{{baseUrl}}/lists/delete-contact"
+? "api_key"= "<>"
+? "email"= "<>"
+? "username"= "<>"
+
+
+// Remove Existing Subscriber From List
+
+@name("Remove Existing Subscriber From List")
+GET "https://{{baseUrl}}/lists/remove-contact"
+? "api_key"= "<>"
+? "listname"= "<>"
+? "username"= "<>"
+
+
+// Create Multiple Subscriber From CSV File
+
+@name("Create Multiple Subscriber From CSV File")
+GET "https://{{baseUrl}}/lists/upload-contacts"
+? "api_key"= "<>"
+? "birthdate"= "<>"
+? "city"= "<>"
+? "country"= "<>"
+? "email"= "<>"
+? "firstname"= "<>"
+? "gender"= "<>"
+? "lastname"= "<>"
+? "listname"= "<>"
+? "organizationname"= "<>"
+? "phone"= "<>"
+? "postalcode"= "<>"
+? "state"= "<>"
+? "title"= "<>"
+? "username"= "<>"
+
+
+

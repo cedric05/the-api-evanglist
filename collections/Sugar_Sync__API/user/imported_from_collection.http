@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d73a1a0-5a05-4d06-ac30-82c90173ac85.postman_collection.json
+
+// To retrieve information about a SugarSync user, an application submits an HTTP GET request to thenuser resource that represents the user.
+
+@name("Retrieving User Information")
+GET "https://{{baseUrl}}/user"
+? "max"= "<>"
+? "start"= "<>"
+
+
+// One of the elements in the representation of a user resource isn&lt;receivedShares&gt;.nThe element contains a link to a list that describes the shared folders that are owned by other users and to which this user has been granted access privileges by those owners. For example:nnn&lt;?xml version=1.0 encoding=UTF-8?&gt;n&lt;user&gt;n  ...n  &lt;receivedShares&gt;https://api.sugarsync.com/user/5664947/receivedShares/contents&lt;/receivedShares&gt;n  ...n&lt;/user&gt;nnn          To retrieve the li
+
+@name("Retrieving Received Shares List")
+GET "https://{{baseUrl}}/user/"
+? "max"= "<>"
+? "start"= "<>"
+
+
+

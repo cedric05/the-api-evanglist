@@ -1,0 +1,1 @@
+This is a registry of JSON and YAML elements for use in the design and operation of APIs. This provides a mocked version of the registry that can be used to show how this all works, as it is being iterated upon.

@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-544606ee-aae7-4faa-8c74-a6384dfef414.postman_collection.json
+
+@name("Send a company website to receive a list of companies related to them.")
+GET "https://{{baseUrl}}/similar"
+? "link"= "<string>"
+? "page"= "0"
+
+
+@name("Send search terms to receive the most relevant companies along with text snippets.")
+GET "https://{{baseUrl}}/search"
+? "link"= "<string>"
+? "page"= "0"
+
+
+@name("The /contentpro-similar-text endpoint accepts and arbitrary piece of text and returns similar articles and blogs written by companies.")
+POST "https://{{baseUrl}}/contentpro-similar-text"
+"Content-Type": "application/json"
+json({
+    "text": "<string>"
+})
+
+
+@name("Send search terms to receive the most relevant articles and companies.")
+GET "https://{{baseUrl}}/contentpro-search"
+? "link"= "<string>"
+
+
+

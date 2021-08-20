@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-083fa21b-3cf4-4708-97ff-dc1d4c1db32d.postman_collection.json
+
+@name("List of entities in an explicit version of a single code system")
+GET "https://{{baseUrl}}/terminology/codesystem/:codeSystem/entities"
+? "codelist"= "<>"
+? "codesystemversion"= "<get>"
+? "matchvalue"= "<>"
+? "page"= "<>"
+? "pagesize"= "<>"
+
+
+// <p>Resolves a list of entity codes with associated types into a list of actual entity codes<p>Each entity code in the input has an associated type. Depending on the type, the code will resolve to the following:<ul><li>fixed - itself<li>tree - itself and all its children</ul>
+
+@name("Resolves a list of entity codes with associated types into a list of actual entity codes")
+POST "https://{{baseUrl}}/terminology/codesystem/:codeSystem/resolve"
+? "codesystemversion"= "<get>"
+
+
+@name("Validates a list of entity codes in a given code system")
+GET "https://{{baseUrl}}/terminology/codesystem/:codeSystem/validate"
+? "codesystemversion"= "<get>"
+? "entities"= "<>"
+
+
+

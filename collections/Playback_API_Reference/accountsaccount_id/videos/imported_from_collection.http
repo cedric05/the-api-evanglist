@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b5d01f46-c1f0-4f14-b0cc-3bece0333256.postman_collection.json
+
+// Gets a page of video objects. The Playback API allows you to programmatically search for videos in your Video Cloud library. To use the search functionality, you must include a search-enabled Policy Key.      Notes:  When performing a search, you need to use a search-enabled Policy Key. For information on getting policy keys, see the Policy API Overview or the Policy Keys documents.  In general, search-enabled Policy Keys should only be stored on a server and not in a browser player or mobile ap
+
+@name("Get Videos")
+GET "https://{{baseUrl}}/accounts/:account_id/videos"
+? "q"= "<string>"
+? "limit"= "<number>"
+? "offset"= "<number>"
+? "sort"= "<string>"
+? "ad_config_id"= "<string>"
+
+
+

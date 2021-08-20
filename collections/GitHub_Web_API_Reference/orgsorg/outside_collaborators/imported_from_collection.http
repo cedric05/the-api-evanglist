@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// List all users who are outside collaborators of an organization.
+
+@name("List outside collaborators for an organization")
+GET "https://{{baseUrl}}/orgs/:org/outside_collaborators"
+? "filter"= "all"
+? "per_page"= "30"
+? "page"= "1"
+
+
+

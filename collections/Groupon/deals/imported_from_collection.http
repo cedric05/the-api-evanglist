@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ed44571c-3ae9-4463-88b6-01c18b0dfa32.postman_collection.json
+
+// Returns the detailed information about a specified deal.
+
+@name("Get Deals . Format")
+GET "https://{{baseUrl}}/deals/{{id}}.{{format}}"
+
+
+// Returns the lists of all the discussion posts for the specified deal.
+
+@name("Get Deals Deal Adds. Format")
+GET "https://{{baseUrl}}/deals/:deal_id/posts.{{format}}"
+
+
+

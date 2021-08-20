@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// Delete a given post
+
+@name("Delete Post")
+DELETE "https://{{baseUrl}}/posts/:post/"
+
+
+// Upload a new image
+
+@name("Add Post Image")
+POST "https://{{baseUrl}}/posts/:post/image"
+
+
+

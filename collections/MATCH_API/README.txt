@@ -1,0 +1,1 @@
+Helps acquirers identify potentially high-risk merchants before entering to a merchant agreement.

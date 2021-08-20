@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Creates the extension.
+//  The extensions API supports two types of usage patterns.
+//  A). Specify a `download_url`, http or https URL,  where the extension is currently hosted. This will result in extension being copied to elastic repository.
+//  B). Create only the extension metadata using the `POST` endpoint and then use `PUT` to upload the extension file. Leave the `download_url` unspecified in this case.
+
+@name("Create an extension") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/extensions"
+"Content-Type": "application/json"
+json({
+    "extension_type": "plugin",
+    "name": "do nulla nisi amet",
+    "version": "amet",
+    "download_url": "commodo",
+    "description": "pariatur anim reprehenderit adipisicing"
+})
+
+
+// Retrieves all of the available extensions.
+
+@name("List Extensions") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/extensions"
+? "include_deployments"= "false"
+
+
+

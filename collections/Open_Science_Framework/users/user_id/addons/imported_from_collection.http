@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// nA paginated list of authorized user addonsnn#### PermissionsnnUser addons are visible only to the user that authorized the addon.nn#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 addons. Each resource in the array is a separate addon object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nnIf the request is unsuccessful, an `errors` key containing information about t
+
+@name("List all user addons")
+GET "https://{{baseUrl}}/users/:user_id/addons/"
+
+
+

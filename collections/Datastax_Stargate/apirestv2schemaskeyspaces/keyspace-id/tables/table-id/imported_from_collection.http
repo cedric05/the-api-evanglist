@@ -1,0 +1,60 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8f0ef5f1-d82f-47e1-8bde-ff3a9b29d3be.postman_collection.json
+
+@name("Get a table")
+GET "https://{{baseUrl}}/api/rest/v2/schemas/keyspaces/:keyspace-id/tables/:table-id"
+"X-Cassandra-Token": "sint dolore"
+? "raw"= "false"
+
+
+@name("Replace a table definition, except for columns")
+PUT "https://{{baseUrl}}/api/rest/v2/schemas/keyspaces/:keyspace-id/tables/:table-id"
+"X-Cassandra-Token": "sint dolore"
+"Content-Type": "application/json"
+json({
+    "name": "id ex",
+    "columnDefinitions": [
+        {
+            "name": "emailaddress",
+            "typeDefinition": "text",
+            "static": false
+        },
+        {
+            "name": "emailaddress",
+            "typeDefinition": "text",
+            "static": false
+        }
+    ],
+    "primaryKey": {
+        "partitionKey": [
+            "non esse"
+        ],
+        "clusteringKey": [
+            "eu ullamco nulla cillum",
+            "in fugiat id sint"
+        ]
+    },
+    "ifNotExists": false,
+    "tableOptions": {
+        "defaultTimeToLive": 0,
+        "clusteringExpression": [
+            {
+                "column": "in proident exercitation consectetur",
+                "order": "DESC"
+            },
+            {
+                "column": "deserunt in",
+                "order": "ASC"
+            }
+        ]
+    }
+})
+
+
+@name("Delete a table")
+DELETE "https://{{baseUrl}}/api/rest/v2/schemas/keyspaces/:keyspace-id/tables/:table-id"
+"X-Cassandra-Token": "sint dolore"
+
+
+

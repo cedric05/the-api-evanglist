@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets project group admins.
+
+@name("Gets project group admins")
+GET "https://{{baseUrl}}/projectgroups/:projectgroupid/admins"
+
+
+// Adds project group admin.
+
+@name("Adds project group admin")
+PUT "https://{{baseUrl}}/projectgroups/:projectgroupid/admins/:username"
+
+
+

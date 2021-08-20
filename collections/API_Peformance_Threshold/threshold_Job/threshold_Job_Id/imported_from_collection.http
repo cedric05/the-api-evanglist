@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ee1bcca8-1dc2-4d21-9276-24298e87d40c.postman_collection.json
+
+@name("thresholdJobDelete")
+DELETE "https://{{baseUrl}}/thresholdJob/:thresholdJobId"
+
+
+@name("thresholdJobGet")
+GET "https://{{baseUrl}}/thresholdJob/:thresholdJobId"
+? "fields"= "magna non nostrud nisi"
+
+
+@name("thresholdJobUpdate")
+PUT "https://{{baseUrl}}/thresholdJob/:thresholdJobId"
+"Content-Type": "application/json"
+json({
+    "adminState": "0",
+    "creationTime": "1955-05-07T07:26:54.048Z",
+    "executionState": "laborum esse",
+    "id": "culpa reprehenderit sed",
+    "jobPriority": -91426143,
+    "lastModifiedTime": "1972-12-15T22:10:54.773Z",
+    "scheduleDefinition": "amet deserunt adipisicing elit",
+    "performanceThreshold": 71564637,
+    "granularity": "non culpa",
+    "monitoredObjectsCriteria": "ut labore",
+    "trackingRecord": "deserunt"
+})
+
+
+

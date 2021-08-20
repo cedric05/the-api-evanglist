@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Get time entries within a date range") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/team/team_id/time_entries"
+
+
+@name("Stop current time entry") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/team/team_id/time_entries/stop"
+
+
+@name("Update a time entry") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/team/team_id/time_entries/timer_id"
+"Content-Type": "application/json"
+json({
+    "description": "string",
+    "tags": [
+        "string"
+    ],
+    "tag_action": "replace",
+    "start": 0,
+    "end": 0,
+    "tid": "JOSH-720",
+    "billable": true,
+    "duration": 40000,
+    "assignee": 0
+})
+
+
+

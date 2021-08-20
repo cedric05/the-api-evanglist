@@ -1,0 +1,106 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6dd4b6b5-e2d1-4630-9235-6d7bb1d13702.postman_collection.json
+
+// Relationship Cable
+
+@name("Relationship Cable")
+GET "https://{{baseUrl}}/cable/relationship/username/{{COALSID}}.{{format}}"
+
+
+// Cable eeo
+
+@name("Cable eeo")
+GET "https://{{baseUrl}}/cable/eeo/{{groupBy}}.{{format}}"
+? "empUnitId"= "<string>"
+? "empUnitId"= "<string>"
+
+
+// Modify Cable service zip codes
+
+@name("Modify Cable service zip codes")
+POST "https://{{baseUrl}}/cable/serviceZipcodes/update.json"
+"Content-Type": "application/json"
+json({
+    "psid": "<string>",
+    "zipcodes": [
+        "<string>",
+        "<string>"
+    ],
+    "accessToken": "<string>"
+})
+
+
+// Modify Cable service employee units
+
+@name("Modify Cable service employee units")
+POST "https://{{baseUrl}}/cable/empunitid/update.json"
+"Content-Type": "application/json"
+json({
+    "psid": "<string>",
+    "empUnits": [
+        "<string>",
+        "<string>"
+    ],
+    "accessToken": "<string>"
+})
+
+
+// Modify Cable operator address
+
+@name("Modify Cable operator address")
+POST "https://{{baseUrl}}/cable/operatorAddress/update.json"
+"Content-Type": "application/json"
+json({
+    "operatorAddressLine1": "<string>",
+    "operatorAddressLine2": "<string>",
+    "operatorPoBox": "<string>",
+    "operatorCity": "<string>",
+    "operatorZipCode": "<string>",
+    "operatorZipCodeSuffix": "<string>",
+    "operatorState": "<string>",
+    "operatorEmail": "<string>",
+    "operatorWebsite": "<string>",
+    "psid": "<string>",
+    "accessToken": "<string>"
+})
+
+
+// Modify Cable principal address
+
+@name("Modify Cable principal address")
+POST "https://{{baseUrl}}/cable/principalAddress/update.json"
+"Content-Type": "application/json"
+json({
+    "principalAddressInLocalFiles": "<string>",
+    "principalAddressLine1": "<string>",
+    "principalAddressLine2": "<string>",
+    "principalPoBox": "<string>",
+    "principalCity": "<string>",
+    "principalZipCode": "<string>",
+    "principalZipCodeSuffix": "<string>",
+    "principalState": "<string>",
+    "psid": "<string>",
+    "accessToken": "<string>"
+})
+
+
+// Get All
+
+@name("Get All")
+GET "https://{{baseUrl}}/cable/getall.{{format}}"
+
+
+// Cable Details
+
+@name("Cable Details")
+GET "https://{{baseUrl}}/cable/psid/{{psid}}.{{format}}"
+
+
+// Cable Communities
+
+@name("Cable Communities")
+GET "https://{{baseUrl}}/cable/communities/psid/{{psid}}.{{format}}"
+
+
+

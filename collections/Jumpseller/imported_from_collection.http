@@ -1,0 +1,107 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-47bcec16-21a6-42ae-a7dc-e3c1d2799ca3.postman_collection.json
+
+// Retrieve all jumpseller apps..
+
+@name("Get Apps")
+GET "https://{{baseUrl}}/apps.json"
+
+
+// Retrieve all categories..
+
+@name("Get Categories")
+GET "https://{{baseUrl}}/categories.json"
+
+
+// Delete an existing category..
+
+@name("Delete Categories")
+DELETE "https://{{baseUrl}}/categories/{{id}}.json"
+
+
+// Retrieve all checkout custom fields..
+
+@name("Get Checkout Custom Fields")
+GET "https://{{baseUrl}}/checkout_custom_fields.json"
+
+
+// Delete an existing checkoutcustomfield..
+
+@name("Delete Checkout Custom Fields")
+DELETE "https://{{baseUrl}}/checkout_custom_fields/{{id}}.json"
+
+
+// Retrieve all countries..
+
+@name("Get Countries")
+GET "https://{{baseUrl}}/countries.json"
+
+
+// Retrieve all customer categories..
+
+@name("Get Customer Categories")
+GET "https://{{baseUrl}}/customer_categories.json"
+
+
+// Retrieve all customers..
+
+@name("Get Customers")
+GET "https://{{baseUrl}}/customers.json"
+
+
+@name("Get Fields")
+GET "https://{{baseUrl}}/fields.json"
+
+
+@name("Get Hooks")
+GET "https://{{baseUrl}}/hooks.json"
+
+
+@name("Delete Hooks")
+DELETE "https://{{baseUrl}}/hooks/{{id}}.json"
+
+
+@name("Post Jsapps")
+POST "https://{{baseUrl}}/jsapps.json"
+
+
+@name("Delete Jsapps Code")
+DELETE "https://{{baseUrl}}/jsapps/{{code}}.json"
+
+
+@name("Get Orders")
+GET "https://{{baseUrl}}/orders.json"
+
+
+@name("Get Payment Methods")
+GET "https://{{baseUrl}}/payment_methods.json"
+
+
+@name("Get Payment Methods")
+GET "https://{{baseUrl}}/payment_methods/{{id}}.json"
+
+
+@name("Get Products")
+GET "https://{{baseUrl}}/products.json"
+
+
+@name("Get Promotions")
+GET "https://{{baseUrl}}/promotions.json"
+? "limit"= "<>"
+? "page"= "<get>"
+
+
+@name("Delete Promotions")
+DELETE "https://{{baseUrl}}/promotions/{{id}}.json"
+
+
+@name("Post Settings")
+POST "https://{{baseUrl}}/settings.json"
+
+
+@name("Get Settings Name")
+GET "https://{{baseUrl}}/settings/{{name}}.json"
+
+
+

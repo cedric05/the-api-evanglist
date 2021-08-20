@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Adds the provided DisplayGroups to the Display Group
+
+@name("Assign one or more DisplayGroups to a Display Group")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/displayGroup/assign"
+
+
+// Removes the provided DisplayGroups from the Display Group
+
+@name("Unassigns one or more DisplayGroups to a Display Group")
+POST "https://{{baseUrl}}/displaygroup/:displayGroupId/displayGroup/unassign"
+
+
+

@@ -1,0 +1,143 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return a list of current incursions
+// 
+// ---
+// Alternate route: `/dev/incursions/`
+// 
+// Alternate route: `/legacy/incursions/`
+// 
+// Alternate route: `/v1/incursions/`
+// 
+// ---
+// This route is cached for up to 300 seconds
+
+@name("List incursions")
+GET "https://{{baseUrl}}/incursions/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Return available insurance levels for all ship types
+// 
+// ---
+// Alternate route: `/dev/insurance/prices/`
+// 
+// Alternate route: `/legacy/insurance/prices/`
+// 
+// Alternate route: `/v1/insurance/prices/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List insurance levels")
+GET "https://{{baseUrl}}/insurance/prices/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+// Return a single killmail from its ID and hash
+// 
+// ---
+// Alternate route: `/dev/killmails/{killmail_id}/{killmail_hash}/`
+// 
+// Alternate route: `/legacy/killmails/{killmail_id}/{killmail_hash}/`
+// 
+// Alternate route: `/v1/killmails/{killmail_id}/{killmail_hash}/`
+// 
+// ---
+// This route is cached for up to 30758400 seconds
+
+@name("Get a single killmail")
+GET "https://{{baseUrl}}/killmails/:killmail_id/:killmail_hash/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Return a list of offers from a specific corporation's loyalty store
+// 
+// ---
+// Alternate route: `/dev/loyalty/stores/{corporation_id}/offers/`
+// 
+// Alternate route: `/legacy/loyalty/stores/{corporation_id}/offers/`
+// 
+// Alternate route: `/v1/loyalty/stores/{corporation_id}/offers/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("List loyalty store offers")
+GET "https://{{baseUrl}}/loyalty/stores/:corporation_id/offers/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get the systems between origin and destination
+// 
+// ---
+// Alternate route: `/dev/route/{origin}/{destination}/`
+// 
+// Alternate route: `/legacy/route/{origin}/{destination}/`
+// 
+// Alternate route: `/v1/route/{origin}/{destination}/`
+// 
+// ---
+// This route is cached for up to 86400 seconds
+
+@name("Get route")
+GET "https://{{baseUrl}}/route/:origin/:destination/"
+"If-None-Match": "commodo irure"
+? "avoid"= "31538872,73767637"
+? "connections"= "63402087,-28846063,-23357973,-46875370"
+? "datasource"= "tranquility"
+? "flag"= "shortest"
+
+
+// Search for entities that match a given sub-string.
+// 
+// ---
+// Alternate route: `/dev/search/`
+// 
+// Alternate route: `/legacy/search/`
+// 
+// Alternate route: `/v2/search/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Search on a string")
+GET "https://{{baseUrl}}/search/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "categories"= "region"
+? "datasource"= "tranquility"
+? "language"= "en"
+? "search"= "ipsum quis"
+? "strict"= "false"
+
+
+// EVE Server status
+// 
+// ---
+// Alternate route: `/dev/status/`
+// 
+// Alternate route: `/legacy/status/`
+// 
+// Alternate route: `/v1/status/`
+// 
+// Alternate route: `/v2/status/`
+// 
+// ---
+// This route is cached for up to 30 seconds
+
+@name("Retrieve the uptime and player counts")
+GET "https://{{baseUrl}}/status/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

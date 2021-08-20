@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-48590471-e6e8-4681-91ef-a4f12993ed6f.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"token": "{{octopart_api_key}}"
+
+
+@name("Basic Search") : "base-inherit-auth"
+POST "https://{{graphql_url}}/"
+
+
+
+@name("Search with Variables") : "base-inherit-auth"
+POST "https://{{graphql_url}}/"
+
+
+
+@name("Multi-Match") : "base-inherit-auth"
+POST "https://{{graphql_url}}/"
+
+
+
+@name("Pro Only Features") : "base-inherit-auth"
+POST "https://{{graphql_url}}/"
+
+
+
+

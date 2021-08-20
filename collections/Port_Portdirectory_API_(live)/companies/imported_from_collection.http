@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-641ec842-3b40-4667-9ce5-0c732879831b.postman_collection.json
+
+// Get companies where name contains input.
+
+@name("Get Companies")
+GET "https://{{baseUrl}}/companies"
+? "name"= "<get>"
+
+
+// Get a company by its id.
+
+@name("Get Companies")
+GET "https://{{baseUrl}}/companies/:id"
+
+
+// Get a company by its name.
+
+@name("Get Companies Name Name")
+GET "https://{{baseUrl}}/companies/name/:name"
+
+
+// Get a company by its pcs code.
+
+@name("Get Companies Pcs Pcs")
+GET "https://{{baseUrl}}/companies/pcs/:pcs"
+
+
+// Get a company by its vat.
+
+@name("Get Companies Vat Vat")
+GET "https://{{baseUrl}}/companies/vat/:vat"
+
+
+

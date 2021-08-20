@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// nA paginated list of all verified institutions.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of 10 institutions. Each resource in the array is a separate institution object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nnThis request should never return an error.n#### FilteringnYou can optionally request that the response only include institutions that match your filters by 
+
+@name("List all institutions")
+GET "https://{{baseUrl}}/institutions/"
+
+
+

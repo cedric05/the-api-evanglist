@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f6803d-cd9d-44a5-aa66-33a5315babb5.postman_collection.json
+
+// Get all blocks.
+
+@name("Peer Blocks")
+GET "https://{{baseUrl}}/peer/blocks"
+? "address"= "<get>"
+
+
+// Get a list of blocks by ids.
+
+@name("Peer Blocks Common")
+GET "https://{{baseUrl}}/peer/blocks/common"
+? "ids"= "<>"
+
+
+

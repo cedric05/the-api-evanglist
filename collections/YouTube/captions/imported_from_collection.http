@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bdca8cb-a591-4d01-90eb-dc36f5720cac.postman_collection.json
+
+// Deletes a specified caption track.
+
+@name("Delete Captions")
+DELETE "https://{{baseUrl}}/captions"
+? "id"= "<parameters>"
+? "onBehalfOf"= "<>"
+? "onBehalfOfContentOwner"= "<>"
+
+
+// Downloads a caption track. The caption track is returned in its original format unless the request specifies a value for the tfmt parameter and in its original language unless the request specifies a value for the tlang parameter.
+
+@name("Get Captions")
+GET "https://{{baseUrl}}/captions/:id"
+? "onBehalfOf"= "<>"
+? "onBehalfOfContentOwner"= "<>"
+? "tfmt"= "<>"
+? "tlang"= "<>"
+
+
+

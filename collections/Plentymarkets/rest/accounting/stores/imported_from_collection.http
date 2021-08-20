@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// List all accounting locations.
+
+@name("List all accounting locations")
+GET "https://{{baseUrl}}/rest/accounting/stores/locations"
+
+
+// Lists accounting locations of a client. The plenty ID of the client must be specified.
+
+@name("List accounting locations of a client")
+GET "https://{{baseUrl}}/rest/accounting/stores/:plentyId/locations"
+? "locationId"= "<post>"
+
+
+

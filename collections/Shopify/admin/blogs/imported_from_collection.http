@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Update a blog.
+
+@name("Update a blog")
+PUT "https://{{baseUrl}}/admin/blogs/92408974.json"
+"Content": "<>"
+
+
+// Get a single blog by its id.
+
+@name("Get a single blog by its ID")
+GET "https://{{baseUrl}}/admin/blogs/62581763.json"
+"Content": "<>"
+
+
+// Get a count of all blogs.
+
+@name("Get a count of all blogs")
+GET "https://{{baseUrl}}/admin/blogs/count.json"
+"Content": "<>"
+
+
+

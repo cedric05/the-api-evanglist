@@ -1,0 +1,330 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// # Create Plugin [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-plugin)
+// 
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>The name of the Plugin that’s going to be added. Currently the Plugin must be installed in every Kong instance separately.</td>
+//   </tr>
+//   <tr>
+//     <td>route</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via the specified route. Leave unset for the plugin to activate regardless of the Route being used. Defaults to null.With form-encoded, the notation is route.id=<route id> or route.name=<route name>. With JSON, use “"route":{"id":"<route id>"} or "route":{"name":"<route name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via one of the routes belonging to the specified Service. Leave unset for the plugin to activate regardless of the Service being matched. Defaults to null.With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>consumer</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will activate only for requests where the specified has been authenticated. (Note that some plugins can not be restricted to consumers this way.). Leave unset for the plugin to activate regardless of the authenticated consumer. Defaults to null.With form-encoded, the notation is consumer.id=<consumer id> or consumer.username=<consumer username>. With JSON, use “"consumer":{"id":"<consumer id>"} or "consumer":{"username":"<consumer username>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>config</td>
+//     <td>optional</td>
+//     <td>The configuration properties for the Plugin which can be found on the plugins documentation page in the Kong Hub.</td>
+//   </tr>
+//    <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the request protocols that will trigger this plugin. The default value, as well as the possible values allowed on this field, may change depending on the plugin type. For example, plugins that only work in stream mode will only support "tcp" and "tls". Defaults to ["grpc", "grpcs", "http", "https"].</td>
+//   </tr>
+//    <tr>
+//     <td>enabled</td>
+//     <td>optional</td>
+//     <td>Whether the plugin is applied. Defaults to true.</td>
+//   </tr>
+//    <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Plugin, for grouping and filtering.</td>
+//   </tr>
+// </table>
+
+@name("Create Plugin")
+POST "https://{{gateway}}/plugins"
+"Content-Type": "application/json"
+json({
+    "name": "rate-limiting",
+    "route": null,
+    "service": null,
+    "consumer": null,
+    "config": {
+        "hour": 500,
+        "minute": 20
+    },
+    "protocols": [
+        "grpc",
+        "grpcs"
+    ],
+    "enabled": true,
+    "tags": [
+        "admin",
+        "high-priority",
+        "critical"
+    ]
+})
+
+
+// # Create Plugin Associated to a Specific Route [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-plugin-associated-to-a-specific-route)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>route id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Route that should be associated to the newly-created Plugin.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>The name of the Plugin that’s going to be added. Currently the Plugin must be installed in every Kong instance separately.</td>
+//   </tr>
+//   <tr>
+//     <td>route</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via the specified route. Leave unset for the plugin to activate regardless of the Route being used. Defaults to null.With form-encoded, the notation is route.id=<route id> or route.name=<route name>. With JSON, use “"route":{"id":"<route id>"} or "route":{"name":"<route name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via one of the routes belonging to the specified Service. Leave unset for the plugin to activate regardless of the Service being matched. Defaults to null.With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>consumer</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will activate only for requests where the specified has been authenticated. (Note that some plugins can not be restricted to consumers this way.). Leave unset for the plugin to activate regardless of the authenticated consumer. Defaults to null.With form-encoded, the notation is consumer.id=<consumer id> or consumer.username=<consumer username>. With JSON, use “"consumer":{"id":"<consumer id>"} or "consumer":{"username":"<consumer username>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>config</td>
+//     <td>optional</td>
+//     <td>The configuration properties for the Plugin which can be found on the plugins documentation page in the Kong Hub.</td>
+//   </tr>
+//    <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the request protocols that will trigger this plugin. The default value, as well as the possible values allowed on this field, may change depending on the plugin type. For example, plugins that only work in stream mode will only support "tcp" and "tls". Defaults to ["grpc", "grpcs", "http", "https"].</td>
+//   </tr>
+//    <tr>
+//     <td>enabled</td>
+//     <td>optional</td>
+//     <td>Whether the plugin is applied. Defaults to true.</td>
+//   </tr>
+//    <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Plugin, for grouping and filtering.</td>
+//   </tr>
+// </table>
+
+@name("Create Plugin Associated to a Specific Route")
+POST "https://{{gateway}}/routes/:routeId/plugins"
+"Content-Type": "application/json"
+json({
+    "name": "rate-limiting",
+    "service": null,
+    "consumer": null,
+    "config": {
+        "hour": 500,
+        "minute": 20
+    },
+    "protocols": [
+        "https",
+        "http"
+    ],
+    "enabled": true,
+    "tags": [
+        "admin",
+        "high-priority",
+        "critical"
+    ]
+})
+
+
+// # Create Plugin Associated to a Specific Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-plugin-associated-to-a-specific-service)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>service id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Service that should be associated to the newly-created Plugin.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>The name of the Plugin that’s going to be added. Currently the Plugin must be installed in every Kong instance separately.</td>
+//   </tr>
+//   <tr>
+//     <td>route</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via the specified route. Leave unset for the plugin to activate regardless of the Route being used. Defaults to null.With form-encoded, the notation is route.id=<route id> or route.name=<route name>. With JSON, use “"route":{"id":"<route id>"} or "route":{"name":"<route name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via one of the routes belonging to the specified Service. Leave unset for the plugin to activate regardless of the Service being matched. Defaults to null.With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>consumer</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will activate only for requests where the specified has been authenticated. (Note that some plugins can not be restricted to consumers this way.). Leave unset for the plugin to activate regardless of the authenticated consumer. Defaults to null.With form-encoded, the notation is consumer.id=<consumer id> or consumer.username=<consumer username>. With JSON, use “"consumer":{"id":"<consumer id>"} or "consumer":{"username":"<consumer username>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>config</td>
+//     <td>optional</td>
+//     <td>The configuration properties for the Plugin which can be found on the plugins documentation page in the Kong Hub.</td>
+//   </tr>
+//    <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the request protocols that will trigger this plugin. The default value, as well as the possible values allowed on this field, may change depending on the plugin type. For example, plugins that only work in stream mode will only support "tcp" and "tls". Defaults to ["grpc", "grpcs", "http", "https"].</td>
+//   </tr>
+//    <tr>
+//     <td>enabled</td>
+//     <td>optional</td>
+//     <td>Whether the plugin is applied. Defaults to true.</td>
+//   </tr>
+//    <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Plugin, for grouping and filtering.</td>
+//   </tr>
+// </table>
+
+@name("Create Plugin Associated to a Specific Service")
+POST "https://{{gateway}}/services/:serviceId/plugins"
+"Content-Type": "application/json"
+json({
+    "name": "rate-limiting",
+    "service": null,
+    "consumer": null,
+    "config": {
+        "hour": 500,
+        "minute": 20
+    },
+    "protocols": [
+        "https",
+        "http"
+    ],
+    "enabled": true,
+    "tags": [
+        "admin",
+        "high-priority",
+        "critical"
+    ]
+})
+
+
+// # Create Plugin Associated to a Specific Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-plugin-associated-to-a-specific-service)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>service id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Service that should be associated to the newly-created Plugin.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>The name of the Plugin that’s going to be added. Currently the Plugin must be installed in every Kong instance separately.</td>
+//   </tr>
+//   <tr>
+//     <td>route</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via the specified route. Leave unset for the plugin to activate regardless of the Route being used. Defaults to null.With form-encoded, the notation is route.id=<route id> or route.name=<route name>. With JSON, use “"route":{"id":"<route id>"} or "route":{"name":"<route name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via one of the routes belonging to the specified Service. Leave unset for the plugin to activate regardless of the Service being matched. Defaults to null.With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>consumer</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will activate only for requests where the specified has been authenticated. (Note that some plugins can not be restricted to consumers this way.). Leave unset for the plugin to activate regardless of the authenticated consumer. Defaults to null.With form-encoded, the notation is consumer.id=<consumer id> or consumer.username=<consumer username>. With JSON, use “"consumer":{"id":"<consumer id>"} or "consumer":{"username":"<consumer username>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>config</td>
+//     <td>optional</td>
+//     <td>The configuration properties for the Plugin which can be found on the plugins documentation page in the Kong Hub.</td>
+//   </tr>
+//    <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the request protocols that will trigger this plugin. The default value, as well as the possible values allowed on this field, may change depending on the plugin type. For example, plugins that only work in stream mode will only support "tcp" and "tls". Defaults to ["grpc", "grpcs", "http", "https"].</td>
+//   </tr>
+//    <tr>
+//     <td>enabled</td>
+//     <td>optional</td>
+//     <td>Whether the plugin is applied. Defaults to true.</td>
+//   </tr>
+//    <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Plugin, for grouping and filtering.</td>
+//   </tr>
+// </table>
+
+@name("Create Plugin Associated to a Specific Service")
+POST "https://{{gateway}}/services/:consumerId/plugins"
+"Content-Type": "application/json"
+
+
+

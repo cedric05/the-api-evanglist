@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a page of public channels on a team based on query string parameters - page and per_page.n##### PermissionsnMust be authenticated and have the `list_team_channels` permission.n
+
+@name("Get public channels")
+GET "https://{{baseUrl}}/teams/:team_id/channels"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Get a list of public channels on a team by id.n##### Permissionsn`view_team` for the team the channels are on.n
+
+@name("Get a list of channels by ids")
+POST "https://{{baseUrl}}/teams/:team_id/channels/ids"
+
+
+// Get a page of deleted channels on a team based on query string parameters - team_id, page and per_page.nn__Minimum server version__: 3.10nn##### PermissionsnMust be authenticated and have the `manage_team` permission.n
+
+@name("Get deleted channels")
+GET "https://{{baseUrl}}/teams/:team_id/channels/deleted"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Autocomplete public channels on a team based on the search term provided in the request URL.nn__Minimum server version__: 4.7nn##### PermissionsnMust have the `list_team_channels` permission.n
+
+@name("Autocomplete channels")
+GET "https://{{baseUrl}}/teams/:team_id/channels/autocomplete"
+? "name"= "<post>"
+
+
+// Search public channels on a team based on the search term provided in the request body.n##### PermissionsnMust have the `list_team_channels` permission.n
+
+@name("Search channels")
+POST "https://{{baseUrl}}/teams/:team_id/channels/search"
+
+
+// Gets channel from the provided team id and channel name strings.n##### Permissionsn`read_channel` permission for the channel.n
+
+@name("Get a channel by name")
+GET "https://{{baseUrl}}/teams/:team_id/channels/name/:channel_name"
+
+
+

@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get the list of borrower pairs on the application
+
+@name("List Borrower Positions on an Application") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/:id/borrower-positions"
+
+
+// Update the location of borrowers on the application (by 1003/borrower pairing and location in the borrower pair)
+
+@name("Put Borrower Positions on an Application") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/home-lending/applications/:id/borrower-positions"
+"Content-Type": "application/json"
+json({
+    "borrowerPairs": [
+        {
+            "primaryBorrowerId": "9250f84b-c2a1-4cab-b265-bd720685c361",
+            "secondaryBorrowerId": "ba02d4f4-9f4d-4be1-ab62-d1af76d21b1c"
+        }
+    ]
+})
+
+
+

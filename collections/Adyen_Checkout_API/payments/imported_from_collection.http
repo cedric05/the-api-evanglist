@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fbfc7253-f3ea-4627-a2ce-1b011b570e0a.postman_collection.json
+
+// Sends payment parameters (like amount, country, and currency) together with the input details collected from the shopper. The response returns the result of the payment request:
+// * For some payment methods (e.g. Visa, Mastercard, and SEPA Direct Debits) you'll get a final state in the `resultCode` (e.g. `authorised` or `refused`).
+// * For other payment methods, you'll receive `redirectShopper` as `resultCode` together with a `redirectUrl`. In this case, the shopper must finalize the payment on the 
+
+@name("Starts a transaction.")
+POST "https://{{baseUrl}}/payments"
+
+
+// Submits details for a payment created using `/payments`. This step is only needed when no final state has been reached on the `/payments` request (for example for 3D Secure, or when getting redirected back directly from a payment method using an app switch).
+// 
+// The exact details, which need to be sent to this endpoint, are always specified in the response of the associated `/payments` request.
+// 
+// In addition, the endpoint can be used to verify a `payload`, which is returned after coming back from th
+
+@name("Submits details for a payment.")
+POST "https://{{baseUrl}}/payments/details"
+
+
+// Verifies the payment result using the payload returned from the Checkout SDK.
+// 
+// For more information, refer to [How it works](https://docs.adyen.com/checkout#howitworks).
+
+@name("Verifies payment result.")
+POST "https://{{baseUrl}}/payments/result"
+
+
+

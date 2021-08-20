@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a46d9b93-a5ef-45f4-9810-6d7c5c6c81e6.postman_collection.json
+
+// Get artist informationn
+
+@name("Get artist information")
+GET "https://{{baseUrl}}/artists/:artistname"
+? "app_id"= "<string>"
+
+
+// artist eventsn
+
+@name("Get all upcoming artist events or all past and upcoming events within a date range")
+GET "https://{{baseUrl}}/artists/:artistname/events"
+? "app_id"= "<string>"
+? "date"= "<string>"
+
+
+

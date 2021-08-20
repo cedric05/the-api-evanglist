@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a777ea25-0b30-47f8-aa6e-d5a56fefaf53.postman_collection.json
+
+// Pull publishers.
+
+@name("Publisher")
+GET "https://{{baseUrl}}/publisher/"
+? "key"= "<>"
+
+
+// Search news by publisiher.
+
+@name("Publisher")
+GET "https://{{baseUrl}}/publisher/:publisher/:time_period"
+? "key"= "<>"
+? "sort_by"= "<>"
+? "video_only"= "<>"
+
+
+

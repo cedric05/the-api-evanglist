@@ -1,0 +1,117 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c62fda36-438b-4001-993d-1ecca6dc7232.postman_collection.json
+
+@name("Bulk")
+GET "https://api.case.law/v1/bulk/"
+? "name_abbreviation"= "Johnson"
+? "decision_date_min"= ""
+? "decision_date_max"= ""
+? "docket_number"= ""
+? "cite"= ""
+? "reporter"= ""
+? "court"= ""
+? "court_id"= ""
+? "jurisdiction"= ""
+? "search"= ""
+? "cursor"= ""
+? "page_size"= "25"
+
+
+// Use this endpoint to retrieve a single case.
+
+@name("Cases")
+GET "https://api.case.law/v1/cases/"
+? "full_case"= ""
+? "page_size"= "25"
+? "body_format"= ""
+? "format"= ""
+? "cursor"= ""
+
+
+// This will return a list of citations.
+
+@name("Citations")
+GET "https://api.case.law/v1/citations/"
+? "cursor"= ""
+? "page_size"= "25"
+
+
+// This will return a list of courts.
+
+@name("Courts")
+GET "https://api.case.law/v1/courts/"
+? "page_size"= "25"
+? "id"= ""
+? "slug"= ""
+? "name"= ""
+? "name_abbreviation"= ""
+? "jurisdiction"= ""
+? "cursor"= ""
+
+
+// This will return a list of jurisdictions.
+
+@name("Jurisdictions")
+GET "https://api.case.law/v1/jurisdictions/"
+? "page_size"= "25"
+? "id"= ""
+? "name"= ""
+? "name_long"= ""
+? "whitelisted"= ""
+? "slug"= ""
+? "cursor"= ""
+
+
+// For any given term, this endpoint returns a year-by-year list of:
+// 
+//     the number of cases in which that term appears, and the total number of cases
+//     the number of times that term appears in all cases, and the total number of terms
+
+@name("NGrams")
+GET "https://api.case.law/v1/ngrams/"
+? "q"= "raisins"
+? "jurisdiction"= ""
+? "year"= "1984"
+
+
+// This will return a list of reporter series.
+
+@name("Reporters")
+GET "https://api.case.law/v1/reporters/"
+? "page_size"= "25"
+? "full_name"= ""
+? "short_name"= ""
+? "start_year"= ""
+? "end_year"= ""
+? "volume_count"= ""
+? "cursor"= ""
+
+
+// This is the primary endpoint; you use it to browse, search for, and retrieve cases. If you know the numeric ID of your case in our system, you can append it to the path to retrieve a single case.
+
+@name("Search")
+GET "https://api.case.law/v1/cases/"
+? "name_abbreviation"= "Johnson"
+? "decision_date_min"= ""
+? "decision_date_max"= ""
+? "docket_number"= ""
+? "cite"= ""
+? "reporter"= ""
+? "court"= ""
+? "court_id"= ""
+? "jurisdiction"= ""
+? "search"= ""
+? "cursor"= ""
+? "page_size"= "25"
+
+
+// This will return a complete list of volumes.
+
+@name("Volumes")
+GET "https://api.case.law/v1/volumes/"
+? "page_size"= "25"
+? "cursor"= ""
+
+
+

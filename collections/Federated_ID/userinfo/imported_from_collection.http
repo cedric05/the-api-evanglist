@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d70b117e-0b68-4ca4-a883-2f69c70bf116.postman_collection.json
+
+// This operation list or find Userinfo entities
+
+@name("List or find Userinfo objects")
+GET "https://{{baseUrl}}/userinfo"
+? "fields"= "aliqua ipsum est deserunt"
+? "offset"= "-24946650"
+? "limit"= "-24946650"
+
+
+// This operation retrieves a Userinfo entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Userinfo by ID")
+GET "https://{{baseUrl}}/userinfo/:id"
+? "fields"= "aliqua ipsum est deserunt"
+
+
+

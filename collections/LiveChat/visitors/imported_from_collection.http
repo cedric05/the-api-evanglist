@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Returns a list of the visitors on the pages with the tracking code installed.nn
+
+@name("List all visitors")
+GET "https://{{baseUrl}}/visitors"
+"X": "<>"
+? "state"= "<>"
+? "group[]"= "<>"
+
+
+// Displays additional information about a visitor in LiveChat apps.
+
+@name("Add custom visitor details")
+POST "https://{{baseUrl}}/visitors/S1352647457.ac951bfe2e/details"
+"X": "<>"
+
+
+

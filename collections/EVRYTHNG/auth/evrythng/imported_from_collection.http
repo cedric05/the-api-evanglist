@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Authenticate (log in) an existing user using their original `email` and `password` used at creation time.
+
+@name("Log an Application User in")
+POST "https://{{baseUrl}}/auth/evrythng"
+? "No Name"= "<string>"
+
+
+// Create an anonymous Application User. These users are not associated with a real person, and are useful for tracking anonymous interactions.
+
+@name("Create an anonymous user")
+POST "https://{{baseUrl}}/auth/evrythng/users"
+? "anonymous"= "true"
+? "No Name"= "<string>"
+
+
+

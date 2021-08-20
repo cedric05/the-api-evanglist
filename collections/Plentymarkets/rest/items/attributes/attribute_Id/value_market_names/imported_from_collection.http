@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Search attribute value market names.
+
+@name("Search attribute value market names")
+GET "https://{{baseUrl}}/rest/items/attributes/:attributeId/value_market_names"
+? "referenceType"= "<post>"
+? "lang"= "<post>"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+
+
+// Deletes an attribute value market name. The attribute value ID and language must be specified.
+
+@name("Delete an attribute value market name")
+DELETE "https://{{baseUrl}}/rest/items/attributes/:attributeId/value_market_names/:valueId/:lang/:referenceType"
+
+
+

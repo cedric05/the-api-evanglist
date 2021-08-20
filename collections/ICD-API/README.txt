@@ -1,0 +1,1 @@
+ICD-API is a REST API that allows programmatic access to the International Classification of Diseases (ICD)

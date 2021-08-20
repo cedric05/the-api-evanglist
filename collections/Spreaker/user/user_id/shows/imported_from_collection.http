@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f67aecc5-ff45-4de9-97cc-ff8ad045654d.postman_collection.json
+
+@name("GEt Shows By Author")
+GET "https://{{baseUrl}}/user/:user_id/shows/author"
+
+
+// Retrieves the list of shows whose authors are followed by <user_id>.
+
+@name("Get Favorite Shows")
+GET "https://{{baseUrl}}/user/:user_id/shows/fan"
+? "latest_episode"= "<>"
+
+
+

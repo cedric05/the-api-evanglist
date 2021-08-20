@@ -1,0 +1,300 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Returns the details for children of the specified customer.  If none of the optional POST/GET variables are sent, the service will return all of the children for the specified customer.  For first_name_search and last_name_search, you may enter partial search strings to find children whose last or first names start with that string (e.g. first_name_search=Jo).
+
+@name("GetChildren")
+POST "https://{{baseUrl}}/Customers/GetChildren"
+? "customer_id"= "<integer>"
+? "child_id"= "<integer>"
+? "first_name"= "<string>"
+? "last_name"= "<string>"
+? "first_name_search"= "<string>"
+? "last_name_search"= "<string>"
+
+
+// Deletes a customer along with their appointments, notes, pets/children, waiting list entries, assigned packages, and future SMS reminders. Once deleted, the customer record cannot be restored.
+
+@name("DeleteCustomers")
+POST "https://{{baseUrl}}/Customers/DeleteCustomers"
+? "customer_id"= "<integer>"
+
+
+// Creates new pets and returns the details for the new pets.  You must specify the customer to whom the pet will belong.
+
+@name("CreatePets")
+POST "https://{{baseUrl}}/Customers/CreatePets"
+? "customer_id"= "<integer>"
+? "pet_name"= "<string>"
+? "breed"= "<string>"
+? "weight"= "<string>"
+? "color"= "<string>"
+? "gender"= "<string>"
+? "age"= "<string>"
+? "notes"= "<string>"
+? "vac_info"= "<string>"
+? "health_info"= "<string>"
+? "vet_info"= "<string>"
+
+
+// Creates new customer types.
+
+@name("CreateCustomerTypes")
+POST "https://{{baseUrl}}/Customers/CreateCustomerTypes"
+? "description"= "<string>"
+? "sort_order"= "<integer>"
+
+
+// Creates a new customer.  The required c_id field should be the location_id of the location where the customer will be added.  Note that both the login and account fields should be unique. If duplicate entries are found, the record will not be added and an error will be thrown.
+
+@name("CreateCustomers")
+POST "https://{{baseUrl}}/Customers/CreateCustomers"
+? "location_id"= "<integer>"
+? "last_name"= "<string>"
+? "first_name"= "<string>"
+? "employee_id"= "<integer>"
+? "middle_name"= "<string>"
+? "address1"= "<string>"
+? "address2"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zip"= "<string>"
+? "day_phone"= "<string>"
+? "night_phone"= "<string>"
+? "cell_phone"= "<string>"
+? "fax"= "<string>"
+? "email"= "<string>"
+? "other_address1"= "<string>"
+? "other_address2"= "<string>"
+? "other_city"= "<string>"
+? "other_state"= "<string>"
+? "other_zip"= "<string>"
+? "other_phone1"= "<string>"
+? "other_phone2"= "<string>"
+? "login"= "<string>"
+? "password"= "<string>"
+? "customer_type_id"= "<integer>"
+? "contact_okay"= "<string>"
+? "call_okay"= "<string>"
+? "email_okay"= "<string>"
+? "mail_okay"= "<string>"
+? "payment_type_id"= "<integer>"
+? "lead_id"= "<integer>"
+? "rep_id"= "<integer>"
+? "employer"= "<string>"
+? "occupation"= "<string>"
+? "birth_date"= "<integer>"
+? "gender"= "<string>"
+? "status_id"= "<integer>"
+? "allow_login"= "<string>"
+? "account"= "<string>"
+? "needs"= "<string>"
+? "name_title"= "<string>"
+? "referred_by"= "<string>"
+? "alert"= "<string>"
+? "carrier_id"= "<integer>"
+? "timezone_id"= "<integer>"
+
+
+// Updates details of a single or multiple (using XML) children.  Only the fields/values you send to the service will be updated, so you may update any number and combination of fields. If you send a field with no value (empty string), the system will assume you want to clear the value that is currently in the field.  You cannot change the parent customer or the location (c_id) of the child.
+
+@name("UpdateChildren")
+POST "https://{{baseUrl}}/Customers/UpdateChildren"
+? "customer_id"= "<integer>"
+? "child_id"= "<integer>"
+? "first_name"= "<string>"
+? "last_name"= "<string>"
+? "middle_name"= "<string>"
+? "birth_day"= "<string>"
+? "notes"= "<string>"
+? "age"= "<string>"
+
+
+// Returns the number of appointments and waiting list entries for the specified customer.
+
+@name("GetFutureAppointments")
+POST "https://{{baseUrl}}/Customers/GetFutureAppointments"
+? "customer_id"= "<integer>"
+
+
+// Updates the details of an existing customer.
+
+@name("UpdateCustomers")
+POST "https://{{baseUrl}}/Customers/UpdateCustomers"
+? "customer_id"= "<integer>"
+? "location_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "last_name"= "<string>"
+? "first_name"= "<string>"
+? "middle_name"= "<string>"
+? "address1"= "<string>"
+? "address2"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zip"= "<string>"
+? "day_phone"= "<string>"
+? "night_phone"= "<string>"
+? "cell_phone"= "<string>"
+? "fax"= "<string>"
+? "email"= "<string>"
+? "other_address1"= "<string>"
+? "other_address2"= "<string>"
+? "other_city"= "<string>"
+? "other_state"= "<string>"
+? "other_zip"= "<string>"
+? "other_phone1"= "<string>"
+? "other_phone2"= "<string>"
+? "notes"= "<string>"
+? "signup_date"= "<integer>"
+? "customer_type_id"= "<integer>"
+? "contact_okay"= "<string>"
+? "call_okay"= "<string>"
+? "email_okay"= "<string>"
+? "mail_okay"= "<string>"
+? "payment_type_id"= "<integer>"
+? "last_update_id"= "<integer>"
+? "lead_id"= "<integer>"
+? "rep_id"= "<integer>"
+? "employer"= "<string>"
+? "occupation"= "<string>"
+? "birth_date"= "<integer>"
+? "birth_date_noyear"= "<string>"
+? "gender"= "<string>"
+? "status_id"= "<integer>"
+? "allow_login"= "<string>"
+? "account"= "<string>"
+? "needs"= "<string>"
+? "name_title"= "<string>"
+? "primary_insurance"= "<integer>"
+? "primary_insured"= "<string>"
+? "secondary_insurance"= "<string>"
+? "insurance_type"= "<string>"
+? "plan_number"= "<string>"
+? "group_number"= "<string>"
+? "referred_by"= "<string>"
+? "alert"= "<string>"
+? "timezone_id"= "<integer>"
+? "last_login_update"= "<string>"
+? "last_pw_update"= "<string>"
+? "last_info_prompt"= "<string>"
+? "password"= "<string>"
+? "login"= "<string>"
+
+
+// Updates details of a single or multiple (using XML) pets.  Only the fields/values you send to the service will be updated, so you may update any number and combination of fields. If you send a field with no value (empty string), the system will assume you want to clear the value that is currently in the field.  You cannot change the parent customer or the location (c_id) of the pet. Valid values for status are empty string for active pets or u201cDeletedu201d for deleted pets.
+
+@name("UpdatePets")
+POST "https://{{baseUrl}}/Customers/UpdatePets"
+? "customer_id"= "<integer>"
+? "pet_id"= "<integer>"
+? "pet_name"= "<string>"
+? "type_id"= "<integer>"
+? "breed"= "<string>"
+? "weight"= "<string>"
+? "color"= "<string>"
+? "gender"= "<string>"
+? "age"= "<string>"
+? "notes"= "<string>"
+? "vac_info"= "<string>"
+? "health_info"= "<string>"
+? "vet_info"= "<string>"
+? "status"= "<string>"
+
+
+// Creates new Lead Types and returns all of the details for the new Lead Types.
+
+@name("CreateLeadTypes")
+POST "https://{{baseUrl}}/Customers/CreateLeadTypes"
+? "description"= "<string>"
+? "sort_order"= "<integer>"
+
+
+// Returns all customer statuses.
+
+@name("GetCustomerStatuses")
+POST "https://{{baseUrl}}/Customers/GetCustomerStatuses"
+
+
+// Creates new children and returns the details for the new children.  You must specify the customer to whom the child will belong.
+
+@name("CreateChildren")
+POST "https://{{baseUrl}}/Customers/CreateChildren"
+? "customer_id"= "<integer>"
+? "first_name"= "<string>"
+? "last_name"= "<string>"
+? "middle_name"= "<string>"
+? "birth_day"= "<string>"
+? "notes"= "<string>"
+? "age"= "<string>"
+
+
+// Returns all packages assigned to the specified customer, or for all customers.  Use the `updated` parameter to find customers packages that were created or updated after the specified timestamp. The `updated` parameter will accept any valid format for date/time. Unless otherwise specified in the value provided, it will be assumed that the timestamp provided is in the time zone of the location.
+
+@name("GetPackages")
+POST "https://{{baseUrl}}/Customers/GetPackages"
+? "customer_id"= "<integer>"
+? "event_template_id"= "<string>"
+? "service_id"= "<integer>"
+? "updated"= "<string>"
+
+
+// Returns all of the details for the existing Customer Lead Types.
+
+@name("GetLeadTypes")
+POST "https://{{baseUrl}}/Customers/GetLeadTypes"
+
+
+// Returns the details for customers.  If none of the optional parameters are sent, the service will return all of the customers for every location.  For `first_name_search` and `last_name_search`, you may enter partial search strings to find customers whose last or first names start with that string (e.g. `first_name_search=Jo`).  Use the `updated` parameter to find customers that were created or updated after the specified timestamp. The `updated` parameter will accept any valid format for date/t
+
+@name("GetCustomers")
+POST "https://{{baseUrl}}/Customers/GetCustomers"
+? "location_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "first_name"= "<string>"
+? "last_name"= "<string>"
+? "first_name_search"= "<string>"
+? "last_name_search"= "<string>"
+? "account"= "<string>"
+? "email"= "<string>"
+? "status_id"= "<integer>"
+? "updated"= "<string>"
+
+
+// Deletes a customers pets.   Once deleted, the pet record cannot be restored.  Deleting a pet will not remove its associated appointments.
+
+@name("DeletePets")
+POST "https://{{baseUrl}}/Customers/DeletePets"
+? "customer_id"= "<integer>"
+? "pet_id"= "<integer>"
+
+
+// Returns all customer types.
+
+@name("GetCustomerTypes")
+POST "https://{{baseUrl}}/Customers/GetCustomerTypes"
+
+
+// Delete a single or multiple (using XML) children.  Once deleted, the child record cannot be restored. Deleting a child will not remove its associated appointments.
+
+@name("DeleteChildren")
+POST "https://{{baseUrl}}/Customers/DeleteChildren"
+? "customer_id"= "<integer>"
+? "child_id"= "<integer>"
+? "upload_xml"= "<string>"
+
+
+// Returns the details for pets of the specified customer.  If none of the optional POST/GET variables are sent, the service will return all of the pets for the specified customer.  For `pet_name_search` and `breed_search`, you may enter partial search strings to find pets whose name or breed starts with that string (e.g. `pet_name_search=Spar&breed_search=terrier`).  If `include_deleted` is provided, the resultset will include deleted pets. This defaults to FALSE.
+
+@name("GetPets")
+POST "https://{{baseUrl}}/Customers/GetPets"
+? "customer_id"= "<integer>"
+? "pet_id"= "<integer>"
+? "pet_name"= "<string>"
+? "breed"= "<string>"
+? "pet_name_search"= "<string>"
+? "breed_search"= "<string>"
+? "include_deleted"= "<boolean>"
+
+
+

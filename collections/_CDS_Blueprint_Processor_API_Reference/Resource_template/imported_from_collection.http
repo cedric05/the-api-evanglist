@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d879d2e1-1162-48e4-8e1e-4eef33d41820.postman_collection.json
+
+// Store a template for a given CBA's action, identified by its blueprint name, blueprint version, artifact name and resolution key.
+
+@name("Store a resolved template w/ resolution-key")
+POST "http://{{host}}/api/v1/template/baseconfiguration/1.0.0/activate/7cafa9f3-bbc8-49ec-8f25-fcaa6ac3ff08"
+basicauth("ccsdkapps", "ccsdkapps")
+data('PAYLOAD DATA')
+
+
+// Store a template for a given CBA's action, identified by its blueprint name, blueprint version, artifact name, resourceId and resourceType.
+
+@name("Store a resolved template w/ resourceId and resourceType")
+POST "http://{{host}}/api/v1/template/baseconfiguration/1.0.0/activate/test/1"
+basicauth("ccsdkapps", "ccsdkapps")
+data('PAYLOAD DATA')
+
+
+

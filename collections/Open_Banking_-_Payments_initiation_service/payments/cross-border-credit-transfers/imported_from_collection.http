@@ -1,0 +1,102 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3c66ec54-956d-4108-b61e-3edae334af9d.postman_collection.json
+
+@name("Redeem the payment")
+POST "https://{{baseUrl}}/payments/cross-border-credit-transfers"
+"Content-Type": "application/json"
+json({
+    "requestInfo": {
+        "aspspId": "<string>",
+        "authorization": "<string>",
+        "xRequestId": "<string>",
+        "merchant": {
+            "id": "<string>",
+            "name": "<string>"
+        }
+    }
+})
+
+
+@name("Request consent initiation via redirect")
+POST "https://{{baseUrl}}/payments/cross-border-credit-transfers/consents"
+"Content-Type": "application/json"
+json({
+    "payments": {
+        "creditorAccount": {
+            "identification": "<string>",
+            "schemeName": "<string>"
+        },
+        "creditorAgent": {
+            "identification": "<string>",
+            "schemeName": "<string>"
+        },
+        "creditorName": "<string>",
+        "debtorAccount": {
+            "identification": "<string>",
+            "schemeName": "<string>"
+        },
+        "endToEndIdentification": "<string>",
+        "instructedAmount": {
+            "amount": "<double>",
+            "currency": "<string>"
+        },
+        "instructionPriority": "<string>",
+        "localInstrument": "<string>",
+        "creditorAddress": {
+            "buildingNumber": "<string>",
+            "city": "<string>",
+            "country": "<string>",
+            "countrySubDivision": "<string>",
+            "postalCode": "<string>",
+            "street": "<string>"
+        },
+        "debtorAddress": {
+            "buildingNumber": "<string>",
+            "city": "<string>",
+            "country": "<string>",
+            "countrySubDivision": "<string>",
+            "postalCode": "<string>",
+            "street": "<string>"
+        },
+        "debtorName": "<string>",
+        "instructionIdentification": "<string>",
+        "remittanceInformationReference": "<string>",
+        "remittanceInformationUnstructured": "<string>",
+        "requestedExecutionDate": "<date>",
+        "transferCharges": "<string>"
+    },
+    "requestInfo": {
+        "aspspId": "<string>",
+        "tppRedirectURI": "<string>",
+        "xRequestId": "<string>",
+        "flags": [
+            "<string>",
+            "<string>"
+        ],
+        "merchant": {
+            "id": "<string>",
+            "name": "<string>"
+        }
+    }
+})
+
+
+@name("Get payment status")
+POST "https://{{baseUrl}}/payments/cross-border-credit-transfers/payment-status"
+"Content-Type": "application/json"
+json({
+    "paymentId": "<string>",
+    "requestInfo": {
+        "aspspId": "<string>",
+        "consentId": "<string>",
+        "xRequestId": "<string>",
+        "merchant": {
+            "id": "<string>",
+            "name": "<string>"
+        }
+    }
+})
+
+
+

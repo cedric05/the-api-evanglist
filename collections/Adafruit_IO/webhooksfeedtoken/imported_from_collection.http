@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b982553e-8975-4962-bc9d-a464c11c5f3a.postman_collection.json
+
+@name("Send data to a feed via webhook URL.")
+POST "https://{{baseUrl}}/webhooks/feed/:token"
+
+
+// The raw data webhook receiver accepts POST requests and stores the raw request body on your feed. This is useful when you dont have control of the webhook sender. If feed history is turned on, payloads will be truncated at 1024 bytes. If feed history is turned off, payloads will be truncated at 100KB.
+
+@name("Send arbitrary data to a feed via webhook URL.")
+POST "https://{{baseUrl}}/webhooks/feed/:token/raw"
+
+
+

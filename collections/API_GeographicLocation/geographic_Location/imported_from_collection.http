@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-55802a0c-3a00-4043-8c8f-a26229df0ebe.postman_collection.json
+
+// This operation list or find GeographicLocation entities
+
+@name("List or find GeographicLocation objects")
+GET "https://{{baseUrl}}/geographicLocation"
+? "fields"= "ad"
+? "offset"= "-53557827"
+? "limit"= "-53557827"
+
+
+// This operation creates a GeographicLocation entity.
+
+@name("Creates a GeographicLocation")
+POST "https://{{baseUrl}}/geographicLocation"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "@type": "id nulla eiusmod laboris",
+    "name": "est cillu",
+    "@baseType": "adipisicing",
+    "@schemaLocation": "https://DnhkreaSDhsLlYWpdmPINNkKuCazP.vmlaNJkbyOd5TZxGgBAJ-SDsxEFwOYTpAqHlq1iOW6"
+})
+
+
+

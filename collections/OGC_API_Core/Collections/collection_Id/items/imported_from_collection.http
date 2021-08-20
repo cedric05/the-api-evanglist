@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d030c01e-365a-478c-9ecb-a72a38d929b5.postman_collection.json
+
+// Fetch features of the feature collection with id `collectionId`.
+// 
+// Every feature in a dataset belongs to a collection. A dataset may
+// consist of multiple feature collections. A feature collection is often a
+// collection of features of a similar type, based on a common schema.
+// 
+// Use content negotiation to request HTML or GeoJSON.
+
+@name("fetch features")
+GET "https://{{baseUrl}}/collections/:collectionId/items"
+
+
+// Fetch the feature with id `featureId` in the feature collection
+// with id `collectionId`.
+// 
+// Use content negotiation to request HTML or GeoJSON.
+
+@name("fetch a single feature")
+GET "https://{{baseUrl}}/collections/:collectionId/items/:featureId"
+
+
+

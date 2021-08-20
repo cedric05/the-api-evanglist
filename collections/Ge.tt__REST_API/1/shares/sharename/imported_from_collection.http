@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-37b08a1e-666d-477b-b7f8-ac0474a9fcb3.postman_collection.json
+
+// Lists a share.
+
+@name("Shares")
+GET "https://{{baseUrl}}/1/shares/:sharename"
+
+
+// Delete a share and all of its files.
+
+@name("Shares Destroy")
+POST "https://{{baseUrl}}/1/shares/:sharename/destroy"
+? "accesstoken"= "<>"
+
+
+// Updates a share. Currently you can only update the title
+
+@name("Shares Update")
+POST "https://{{baseUrl}}/1/shares/:sharename/update"
+? "accesstoken"= "<>"
+
+
+

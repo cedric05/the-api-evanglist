@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Invoke this endpoint to obtain an FGDC 1998 standards compliant metadata representation of a Reference.
+If the Reference was created from an FGDC metadata xml source, this method will attempt to return the original metadata
+merged with a subset of the l")
+GET "https://{{baseUrl}}/rest/MetadataContent/:id"
+? "xmlSource"= "<boolean>"
+
+
+@name("Invoke this endpoint to obtain an FGDC 1998 standards compliant metadata representation of a Reference.
+If the Reference was created from an FGDC metadata xml source, this method will attempt to return the original metadata
+merged with a subset of the l")
+GET "https://{{baseUrl}}/rest/MetadataDownload/:id"
+? "xmlSource"= "<boolean>"
+
+
+@name("Retrieve the current application version.")
+GET "https://{{baseUrl}}/rest/ServiceVersion"
+
+
+

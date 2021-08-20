@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b61ade0-60b3-4dcc-a6b1-7acb55b522a0.postman_collection.json
+
+// You can only retrieve variables for backup_instances you have access to. Records are returned in ascending order (by id), with a default of 20 per page. Links to the next, previous, first, and last pages can be found in the response headers.
+
+@name("Retrieve a list of variables for the specified backup_instance")
+GET "https://{{baseUrl}}/v1/backup_instances/:backup_instance_id/variables"
+"Authorization": "<>"
+
+
+// You can only retrieve variables for backup_instances you have access to
+
+@name("Retrieve a specific variable by key for the specified backup_instance")
+GET "https://{{baseUrl}}/v1/backup_instances/:backup_instance_id/variables/:key"
+"Authorization": "<>"
+
+
+

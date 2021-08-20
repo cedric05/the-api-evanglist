@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get the information of a specific QR code. To get the RAW content of the QR code use ../qr-code/{id}/content
+
+@name("READ Qr Code for User Monetary Account Cash Register")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/qr-code/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Modify a QR code in a given CashRegister. You can only have one ACTIVE CashRegister QR code at the time.
+
+@name("UPDATE Qr Code for User Monetary Account Cash Register")
+PUT "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/qr-code/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "status": "<string>"
+})
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-739b627d-71d6-45ce-9673-4a36a4003afd.postman_collection.json
+
+// Contacts are members of a Company
+
+@name("Contacts")
+GET "https://{{baseUrl}}/contact"
+? "email"= "<>"
+? "phone"= "<>"
+
+
+// Contacts are members of a Company
+
+@name("Contacts")
+GET "https://{{baseUrl}}/contact/:id"
+
+
+

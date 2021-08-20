@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Fetches the current values of the keystore for the Elasticsearch resource.
+
+@name("Add or remove settings from the Elasticsearch resource keystore") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/keystore"
+"Content-Type": "application/json"
+json({
+    "secrets": {}
+})
+
+
+// Adds the specified values to the Elasticsearch keystore, or removes the keys for the unspecified values.
+
+@name("Get the settings from the Elasticsearch resource keystore") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/keystore"
+
+
+

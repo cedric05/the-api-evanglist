@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d2c214b-77c4-4e90-8dc4-3cd4493a1c9a.postman_collection.json
+
+// Pulls the comments for given object.
+
+@name("Get Comments")
+GET "https://{{baseUrl}}/comments"
+? "commentable_id"= "<>"
+? "commentable_type"= "<>"
+
+
+// Deletes a comment for given object
+
+@name("Delete Comment")
+DELETE "https://{{baseUrl}}/comments/:comment_id"
+
+
+

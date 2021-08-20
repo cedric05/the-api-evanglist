@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-50989257-8fa3-40de-a7b9-4f8f4960bb93.postman_collection.json
+
+// Get raw episode
+
+@name("Get raw episode")
+GET "https://{{baseUrl}}/v1/episodes/:pid"
+
+
+// Get raw ancestors
+
+@name("Get raw ancestors")
+GET "https://{{baseUrl}}/v1/episodes/:pid/ancestors/"
+
+
+// Get raw formats
+
+@name("Get raw formats")
+GET "https://{{baseUrl}}/v1/episodes/:pid/formats/"
+
+
+// Get raw genre groups
+
+@name("Get raw genre groups")
+GET "https://{{baseUrl}}/v1/episodes/:pid/genre_groups/"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0df0d40b-bb5f-4ab4-9756-1a85f04bd436.postman_collection.json
+
+// Update an artifact in the catalog with the contents of the supplied multipart MIME structure. The multipart MIME structure may have any of the following: new file contents tagged as 'file',  a new artifact type tagged as 'type', and  a new description (under 1024 characters) tagged as 'description'. Artifact types can be any string.  Artifacts with the type 'executable' must contain the executable for the analytic.   An analytic can only have 1 artifact labelled as 'executable' (See the document
+
+@name("Update an artifact by id.")
+PUT "https://{{baseUrl}}/api/v1/catalog/artifacts/:id"
+
+
+// The file is downloaded as an octet-stream.
+
+@name("Download an artifact file by id.")
+GET "https://{{baseUrl}}/api/v1/catalog/artifacts/:id/file"
+
+
+

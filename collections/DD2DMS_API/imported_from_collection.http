@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6857ee90-7ab1-4580-9af7-d0e8e4901e57.postman_collection.json
+
+// Convert decimal degree (DD) to degree|minute|second (DMS) format. 
+
+@name("Get DD to DMS conversion")
+GET "https://{{baseUrl}}/dd2dms.{{format}}"
+? "lat"= ""
+? "lon"= ""
+
+
+

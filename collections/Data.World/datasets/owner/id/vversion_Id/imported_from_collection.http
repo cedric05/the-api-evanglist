@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieve a version of a dataset. The definition of the dataset will be returned, not its data.
+
+@name("Retrieve a dataset version") : "base-inherit-auth"
+GET "https://{{baseUrl}}/datasets/:owner/:id/v/:versionId"
+
+
+

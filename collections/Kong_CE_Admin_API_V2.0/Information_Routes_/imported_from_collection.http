@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// ## Retieve generic details about a node [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-node-information)
+// 
+// * node_id: A UUID representing the running Kong node. This UUID is randomly generated when Kong starts, so the node will have a different node_id each time it is restarted.
+// * available_on_server: Names of plugins that are installed on the node.
+// * nabled_in_cluster: Names of plugins that are enabled/configured. That is, the plugins configurations currently in the datastore shared by all Kong nodes.
+
+@name("Retrieve Node Information")
+GET "https://{{gateway}}/"
+
+
+

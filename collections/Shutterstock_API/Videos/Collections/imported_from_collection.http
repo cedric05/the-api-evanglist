@@ -1,0 +1,88 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-02fae580-11a1-41da-afdc-655537d58f8f.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// This endpoint creates one or more collections (clipboxes). To add videos to collections, use `POST /v2/videos/collections/{id}/items`.
+
+@name("Create video collections") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/videos/collections"
+"Content-Type": "application/json"
+json({
+    "name": "<string>"
+})
+
+
+// This endpoint lists your collections of videos and their basic attributes.
+
+@name("List video collections") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/videos/collections"
+? "page"= "1"
+? "per_page"= "100"
+
+
+// This endpoint gets more detailed information about a collection, including the timestamp for its creation and the number of videos in it. To get the videos in collections, use GET /v2/videos/collections/{id}/items.
+
+@name("Get the details of video collections") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/videos/collections/:id"
+
+
+// This endpoint sets a new name for a collection.
+
+@name("Rename video collections") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/videos/collections/:id"
+"Content-Type": "application/json"
+json({
+    "name": "<string>"
+})
+
+
+// This endpoint deletes a collection.
+
+@name("Delete video collections") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v2/videos/collections/:id"
+
+
+// This endpoint adds one or more videos to a collection by video IDs.
+
+@name("Add videos to collections") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/videos/collections/:id/items"
+"Content-Type": "application/json"
+json({
+    "items": [
+        {
+            "id": "<string>",
+            "added_time": "<dateTime>",
+            "media_type": "<string>"
+        },
+        {
+            "id": "<string>",
+            "added_time": "<dateTime>",
+            "media_type": "<string>"
+        }
+    ]
+})
+
+
+// This endpoint lists the IDs of videos in a collection and the date that each was added.
+
+@name("Get the contents of video collections") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/videos/collections/:id/items"
+? "page"= "1"
+? "per_page"= "100"
+? "sort"= "oldest"
+
+
+// This endpoint removes one or more videos from a collection.
+
+@name("Remove videos from collections") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v2/videos/collections/:id/items"
+? "item_id"= "<string>"
+
+
+

@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get Intent to Proceed (ITP) data. This endpoint will return information about the state of ITP on an application once the ITP workflow has been added or ITP has been given.
+
+@name("Get Intent to Proceed") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/:id/itp"
+
+
+// Post Intent to Proceed (ITP). This endpoint will add an ITP workflow to the specified borrower on an application, or mark ITP as complete if `givenAt` is supplied. Returns 409 Conflict if ITP workflow already exists for the specified `borrowerId`, or if ITP has already been given on the application `borrowerId` belongs to.
+
+@name("Post Intent to Proceed") : "base-inherit-auth"
+POST "https://{{baseUrl}}/home-lending/applications/:id/itp"
+"Content-Type": "application/json"
+json({
+    "borrowerId": "52843951-c41f-44b7-a33c-2e499ce75029",
+    "givenAt": "2020-05-03T12:06:21.789Z"
+})
+
+
+

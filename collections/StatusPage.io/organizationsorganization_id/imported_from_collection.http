@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-18af961a-c8f9-4c42-85af-0f2fe7c91aaa.postman_collection.json
+
+// List users
+
+@name("List users")
+GET "https://{{baseUrl}}/organizations/[organization_id]/users.json"
+
+
+// Delete a user
+
+@name("Delete a user")
+DELETE "https://{{baseUrl}}/organizations/[organization_id]/users/[user_id].json"
+
+
+

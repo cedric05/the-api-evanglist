@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Streams tick bars data from a number of bars back, each bar returned separated by interval number of ticks.n
+
+@name("Stream Tick Barsn")
+GET "https://{{baseUrl}}/stream/tickbars/:symbol/:interval/:barsBack"
+? "access_token"= "<string>"
+
+
+

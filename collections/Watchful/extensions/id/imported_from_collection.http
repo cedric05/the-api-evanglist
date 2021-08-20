@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd3bb79e-7d36-49f2-9d90-ac848a0b6d74.postman_collection.json
+
+// Set 'ignore updates' for a given extension / site_id
+
+@name("Set 'ignore Updates' For A Given Extension / Site_id")
+POST "https://{{baseUrl}}/extensions/:id/ignore"
+
+
+// Remove 'ignore updates' for a given extension
+
+@name("Remove 'ignore Updates' For A Given Extension")
+POST "https://{{baseUrl}}/extensions/:id/unignore"
+
+
+// Update the extension on the remote site
+
+@name("Update The Extension On The Remote Site")
+POST "https://{{baseUrl}}/extensions/:id/update"
+
+
+

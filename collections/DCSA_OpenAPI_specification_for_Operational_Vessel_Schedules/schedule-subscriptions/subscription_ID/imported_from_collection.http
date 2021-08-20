@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2f41d21a-2d73-440c-b5a1-d622f612ff71.postman_collection.json
+
+@name("Find schedule subscription by subscription ID")
+GET "https://{{baseUrl}}/schedule-subscriptions/:subscriptionID"
+
+
+@name("Alter a schedule subscription")
+PUT "https://{{baseUrl}}/schedule-subscriptions/:subscriptionID"
+"Content-Type": "application/json"
+json({
+    "callbackUrl": "https://myserver.com/send/callback/here",
+    "subscriptionID": "jlke123j",
+    "vesselIMONumber": "1801323",
+    "carrierVoyageNumber": "2015W",
+    "UNLocationCode": "USNYC"
+})
+
+
+@name("Stop a schedule subscription, using the subscription ID")
+DELETE "https://{{baseUrl}}/schedule-subscriptions/:subscriptionID"
+
+
+

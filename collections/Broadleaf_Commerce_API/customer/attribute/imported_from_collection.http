@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Put customer attribute.
+
+@name("Put Customer Attribute")
+PUT "https://{{baseUrl}}/customer/attribute"
+? "customerId"= "<post>"
+
+
+// Delete customer attribute attributename.
+
+@name("Delete Customer Attribute Attributename")
+DELETE "https://{{baseUrl}}/customer/attribute/:attributeName"
+? "customerId"= "<post>"
+
+
+

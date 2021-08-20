@@ -1,0 +1,83 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0240f223-e2c9-4596-9f5b-4dac1925db82.postman_collection.json
+
+// This resource is used to make a statement credit offer available for redemption.
+
+@name("Make Statement Credit Offer Available Redeemable")
+POST "https://{{baseUrl}}/activatestatementcreditoffer"
+? "FId"= "<string>"
+? "UserToken"= "<string>"
+? "OfferId"= "<string>"
+
+
+// This resource returns offers that are available to the user and conform to the search criteria (if specified).
+
+@name("Returns Matched Offers")
+GET "https://{{baseUrl}}/matchedoffers"
+? "FId"= "<string>"
+? "UserToken"= "<string>"
+? "Lang"= "<string>"
+? "MerchantName"= "<string>"
+? "Category"= "<string>"
+? "OfferType"= "<string>"
+? "PageNumber"= "<integer>"
+? "ItemsPerPage"= "<integer>"
+
+
+// This resource returns extended information for the requested offer, typically used to display a detail view.
+
+@name("Returns Information on an Offer")
+GET "https://{{baseUrl}}/offerdetails"
+? "FId"= "<string>"
+? "UserToken"= "<string>"
+? "OfferId"= "<string>"
+
+
+// This resource returns offers that have been fulfilled by the user.
+
+@name("Returns Redeemed Offers")
+GET "https://{{baseUrl}}/redeemedoffers"
+? "FId"= "<string>"
+? "UserToken"= "<string>"
+? "Lang"= "<string>"
+? "PageNumber"= "<integer>"
+? "ItemsPerPage"= "<integer>"
+
+
+// This resource returns extended information about the specified activated postpaid credit offer.
+
+@name("Returns Information About Redeemable Postpaid Credit Offer")
+GET "https://{{baseUrl}}/statementcreditactivationdetail"
+? "FId"= "<string>"
+? "UserToken"= "<string>"
+? "ActivationId"= "<string>"
+
+
+// This resource allows a user to provide a thumbs-up or a thumbs-down rating of the specified offer. Offer matches that are disliked will be supressed from the results of future calls to Matched Offers.
+
+@name("Provide User Feedback on Offer")
+POST "https://{{baseUrl}}/userfeedback"
+? "FId"= "<string>"
+? "UserToken"= "<string>"
+? "OfferId"= "<string>"
+? "Feedback"= "<integer>"
+
+
+// This resource returns the accumulated and potential savings for a Personalized Offers user.
+
+@name("Returns Savings for the User")
+GET "https://{{baseUrl}}/usersavings"
+? "FId"= "<string>"
+? "UserToken"= "<string>"
+
+
+// This resource creates the user session. It must be called prior to any other API calls for the specified user. The Token value does not expire.
+
+@name("Returns User Session Token")
+GET "https://{{baseUrl}}/usertoken"
+? "FId"= "<string>"
+? "AuthInfo"= "<string>"
+
+
+

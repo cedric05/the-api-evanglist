@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method deletes a group.
+
+@name("Delete a group")
+DELETE "https://{{baseUrl}}/groups/:group_id"
+
+
+// This method returns all the users that belong to the specified group.
+
+@name("Get all the members of a group")
+GET "https://{{baseUrl}}/groups/:group_id/users"
+? "direction"= "<string>"
+? "filter"= "<string>"
+? "page"= "<string>"
+? "per_page"= "<string>"
+? "query"= "<string>"
+? "sort"= "<string>"
+
+
+

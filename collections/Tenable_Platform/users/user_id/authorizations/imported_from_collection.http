@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cf05d8c7-fffb-4a7c-923b-c06517c2b783.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns user authorizations for accessing a Tenable.io instance. Access methods include user name and password, single sign-on (SSO) with SAML, and API.
+// **Note:** All access methods are authorized by default.
+// 
+// For background information about managing user authorizations, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/ManageUserAccessAuthorizations.htm).<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get user authorizations") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users/:user_id/authorizations"
+
+
+// Updates user authorizations for accessing a Tenable.io instance. Use the endpoint to grant and revoke authorizations.
+// 
+// **Note:** You cannot update authorizations for the current user.
+// 
+// For background information about managing user authorizations, see [Tenable.io Vulnerability Management User Guide](https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/ManageUserAccessAuthorizations.htm).<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Update user authorizations") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/users/:user_id/authorizations"
+"Content-Type": "application/json"
+json({
+    "api_permitted": true,
+    "password_permitted": true,
+    "saml_permitted": false
+})
+
+
+

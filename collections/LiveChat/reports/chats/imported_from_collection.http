@@ -1,0 +1,76 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// This report shows you where you get your chats from. They can come from i.e. automatic invitations, manual invitations or the visitors can start the chats by themselves.
+
+@name("Chat engagement")
+GET "https://{{baseUrl}}/reports/chats/engagement"
+"X": "<>"
+? "date_from"= "<>"
+? "date_to"= "<>"
+? "agent"= "<>"
+? "group_by"= "<>"
+
+
+// Returns the u201cgreetings to chats to goalsu201d conversion rates report.nndisplayed is the number of displayed greetings. accepted tells you how many chats resulted from these greetings. goals tells you how many goals resulted from these greetings.nn
+
+@name("Greetings")
+GET "https://{{baseUrl}}/reports/chats/greetings"
+"X": "<>"
+? "date_from"= "<>"
+? "date_to"= "<>"
+? "group_by"= "<>"
+
+
+// The average amount of time it takes the agents to respond to a new chat over a specified period of time.
+
+@name("Chats first response time")
+GET "https://{{baseUrl}}/reports/chats/first_response_time"
+"X": "<>"
+
+
+// Shows how many chats occurred during the specified period.nn
+
+@name("Total chats")
+GET "https://{{baseUrl}}/reports/chats/total_chats"
+"X": "<>"
+? "date_from"= "<>"
+? "date_to"= "<>"
+? "agent"= "<>"
+? "group_by"= "<>"
+
+
+// The average amount of time it takes the agents to respond to a new message in a chat during a specified period.
+
+@name("Chats response time")
+GET "https://{{baseUrl}}/reports/chats/response_time"
+"X": "<>"
+
+
+// Shows the number of reached goals.nn
+
+@name("Goals")
+GET "https://{{baseUrl}}/reports/chats/goals"
+"X": "<>"
+? "date_from"= "<>"
+? "goal"= "<>"
+? "group_by"= "<>"
+
+
+// Shows how much time an agent (or a group) spent on chatting during a specified period. When querying for one day, the results are shown in minutes per every hour, otherwise in hours for each day.
+
+@name("Chatting time")
+GET "https://{{baseUrl}}/reports/chats/chatting_time"
+"X": "<>"
+
+
+// This request shows the maximum number of concurrent chats that happened at the same hour on a particular day.
+
+@name("Number of simultaneous chats")
+GET "https://{{baseUrl}}/reports/chats/agents_occupancy"
+"X": "<>"
+? "weekday"= "<>"
+
+
+

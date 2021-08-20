@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists all manufacturers in the system.nnDisplay a listing of the resource.
+
+@name("List manufacturers")
+GET "https://{{baseUrl}}/rest/items/manufacturers"
+? "updatedAt"= "<post>"
+? "name"= "<post>"
+
+
+

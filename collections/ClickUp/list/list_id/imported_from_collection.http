@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Please paste previously created list_id for continuity
+
+@name("Update a List") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/list/list_id"
+"Content-Type": "application/json"
+json({
+    "name": "Updated List Name",
+    "content": "Updated List Content",
+    "due_date": 1577811600000,
+    "due_date_time": true,
+    "priority": 2,
+    "assignee": "none"
+})
+
+
+// Please paste previously updated list_id for continuity
+
+@name("Delete a List") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/list/list_id"
+"Content-Type": "application/json"
+
+
+@name("Get List") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/list/list_id"
+"Content-Type": "application/json"
+
+
+@name("Get Accessible Custom Fields") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/list/list_id/field"
+"Content-Type": "application/json"
+
+
+@name("Create Task From Template") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/list/list_id/taskTemplate/template_id"
+"Content-Type": "application/json"
+json({
+    "name": "API V2 Test"
+})
+
+
+

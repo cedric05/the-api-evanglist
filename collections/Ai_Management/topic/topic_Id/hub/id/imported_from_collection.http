@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-69935689-abac-4ca3-a7a8-e89ccfe72173.postman_collection.json
+
+// This operation retrieves a Hub entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Hub by ID")
+GET "https://{{baseUrl}}/topic/:topicId/hub/:id"
+? "fields"= "ex ullamco ad"
+
+
+// This operation deletes a Hub entity.
+
+@name("Deletes a Hub")
+DELETE "https://{{baseUrl}}/topic/:topicId/hub/:id"
+
+
+

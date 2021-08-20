@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Retrieve the fixed list of DatePrecision choices (Issued Date and Content Begin/End).")
+GET "https://{{baseUrl}}/rest/FixedList/DatePrecisions"
+
+
+@name("Tags used when designating certain digital file types for offline processing.")
+GET "https://{{baseUrl}}/rest/FixedList/FileProcessingTags"
+
+
+@name("Retrieve the fixed list of Reference Type Groups (Advanced Search option).")
+GET "https://{{baseUrl}}/rest/FixedList/ReferenceTypeGroups"
+
+
+@name("Retrieve the fixed list of Reference Types.")
+GET "https://{{baseUrl}}/rest/FixedList/ReferenceTypes"
+
+
+@name("Retrieve the fixed list of SubjectCategories (Keywords and Category tab).")
+GET "https://{{baseUrl}}/rest/FixedList/SubjectCategories"
+
+
+@name("Retrieve the fixed list of Web Service (Linked Resource) Types.")
+GET "https://{{baseUrl}}/rest/FixedList/WebServiceTypes"
+
+
+

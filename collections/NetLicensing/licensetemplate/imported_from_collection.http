@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2dd3b81c-4b11-4e46-b2e6-83bc9a4638dc.postman_collection.json
+
+// Return a list of all license templates for the current vendor
+
+@name("License Templates list")
+GET "https://{{baseUrl}}/licensetemplate"
+
+
+// Delete a license template by number.
+
+@name("Delete license template")
+DELETE "https://{{baseUrl}}/licensetemplate/:licenseTemplateNumber"
+? "forceCascade"= "<>"
+
+
+

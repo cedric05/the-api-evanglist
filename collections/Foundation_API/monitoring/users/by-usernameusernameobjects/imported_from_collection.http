@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Returns the list of monitoring items for the given username.
+
+@name("Returns the list of monitoring items for the given username")
+GET "https://{{baseUrl}}/monitoring/users/by-username/:username/objects"
+? "projectId"= "<put>"
+? "offset"= "<put>"
+? "count"= "<>"
+
+
+// Monitoring the current object or not for the given username (true / false).
+
+@name("Monitoring the current object or not for the given username (true / false)")
+GET "https://{{baseUrl}}/monitoring/users/by-username/:username/objects/:objectid"
+
+
+

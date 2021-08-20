@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-22a10f2d-8624-488d-95c0-85a6c45216c5.postman_collection.json
+
+// Retrieve the list of draft property mappings for the specified draftnthing type.  A property mapping defines how properties from state updatenevents on aggregated devices or things are mapped to properties definednon a logical interface associated with the thing type.n
+
+@name("Get the list of draft property mappings for the thing type")
+GET "https://{{baseUrl}}/draft/thing/types/:thingTypeId/mappings"
+
+
+// Retrieves the draft property mappings for a specific logical interfacenfor the thing type.n
+
+@name("Get the draft property mappings for a specific logical interface forna thing type.n")
+GET "https://{{baseUrl}}/draft/thing/types/:thingTypeId/mappings/:logicalInterfaceId"
+
+
+

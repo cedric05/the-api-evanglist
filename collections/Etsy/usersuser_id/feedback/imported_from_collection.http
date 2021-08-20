@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Retrieves a set of Feedback objects associated to a User.
+
+@name("Get Users User Feedback As Subject")
+GET "https://{{baseUrl}}/users/:user_id/feedback/as-subject"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of Feedback objects associated to a User.
+
+@name("Get Users User Feedback As Author")
+GET "https://{{baseUrl}}/users/:user_id/feedback/as-author"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of Feedback objects associated to a User.
+
+@name("Get Users User Feedback As Buyer")
+GET "https://{{baseUrl}}/users/:user_id/feedback/as-buyer"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of Feedback objects associated to a User.
+
+@name("Get Users User Feedback As Seller")
+GET "https://{{baseUrl}}/users/:user_id/feedback/as-seller"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

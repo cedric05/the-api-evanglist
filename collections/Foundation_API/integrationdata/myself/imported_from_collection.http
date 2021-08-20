@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets integration data for current user by namespace name.
+
+@name("Gets integration data for current user by namespace name")
+GET "https://{{baseUrl}}/integrationdata/myself/by-name/:namespace"
+? "dataname"= "<>"
+
+
+// Gets integration data for current user by namespace id.
+
+@name("Gets integration data for current user by namespace id")
+GET "https://{{baseUrl}}/integrationdata/myself/:namespaceid"
+? "dataname"= "<>"
+
+
+

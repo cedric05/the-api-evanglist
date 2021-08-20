@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d3f2edc-e0e7-4b26-a712-076a7e2780a4.postman_collection.json
+
+// ## Simple Weather Data (coming soon)nThe ???```simple_weather```??? API call provides an easy way to get weather trends from Now up to 16 days. The information received consists of weather changes that are significant to be mentioned. The information sent back per parameter:n  * Precipitation -n    * 0-6 hours - exact time precipitation starts and ends, including type and accumulation (e.g. 13:23 to 14:55, rain, 0.2 in)n    * Hourly - hours of precipitation and accumulation (e.g. 11:00, rain, 0.
+
+@name("Post Simple Weather")
+POST "https://{{baseUrl}}/simple_weather"
+
+
+@name("Post Historical")
+POST "https://{{baseUrl}}/historical"
+
+
+// ## Current Weather DatanThe ```realtime``` API call provides weather information at the present time, down to the minute, for a specific location. The location can be specified as a geocode, or one of your own defined locations (see ```locations``` API calls). The weather parameters returned are detailed in the __Weather Data__ section.n
+
+@name("Post Realtime")
+POST "https://{{baseUrl}}/realtime"
+
+
+@name("Post Nowcast")
+POST "https://{{baseUrl}}/nowcast"
+
+
+// ## Hourly Forecast Weather Data (Coming Soon)nThe ```???hourly???``` API call provides an hourly forecast, up to 120 hours (5 days) ahead as a time series, for a specific location based on ClimaCell???s proprietary sensing technology and model. The location can be specified as a geocode, or one of your own defined locations (see locations API calls). The weather parameters returned are detailed in the ???__Weather Data???__ section.n
+
+@name("Post Hourly")
+POST "https://{{baseUrl}}/hourly"
+
+
+// ### Daily (Coming Soon)nThe ```???daily???``` API call provides the daily forecast with weather parameter summaries for the next 16 ???days???. The weather data includes daily minimum and maximum values for temperature, feels-like, dew point, pressure, humidity, and visibility, along with accumulated precipitation, list of precipitation types and wind information.n
+
+@name("Post Daily")
+POST "https://{{baseUrl}}/daily"
+
+
+// ## Weather GridnThe ```???weather_grid???``` API call returns weather information for each cell in a ???defined ???grid, for the requested date and time. The call defines the geo???corners of the area and the dimensions of the grid (defaults to a 3x3 grid). Instead of having to calculate sample locations, evenly distributed, across the area, weather_grid ???calculates this information for you and??? allows you to create a rectangle and divide it into equally???-distanced and sized cells. The wea
+
+@name("Post Weather Gr")
+POST "https://{{baseUrl}}/weather_grid"
+
+
+// ## Weather Map Layer (Visual Tiles)nThe ```weather_map``` is a tiled image call compatible with most modern mapping UI libraries:n  * OpenLayers (see ???https://openlayers.org/en/latest/apidoc/ol.source.XYZ.html???)n  * Leafletsn  * MapBoxn  * Google MapsnnThe call displays a precipitation heatmap on your existing geography user interface. You can overlay an actual precipitation layer. In the future, Climacell will support other weather parameter overlays.nnThe tile grid is composed of 256x256 p
+
+@name("Get Weather Map Layer Ts Z X Y .png")
+GET "https://{{baseUrl}}/weather_map_layer/:ts/:z/:x/{{y}}.png"
+
+
+

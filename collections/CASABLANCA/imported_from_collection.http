@@ -1,0 +1,2246 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-636aa5da-2ec8-4f0e-a6fb-9a85d96390ce.postman_collection.json
+
+@name("Update Complex")
+PUT "https://{{aai}}/cloud-infrastructure/complexes/complex/DLLSTX233"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+json({
+    "physical-location-id": "DLLSTX233",
+    "complex-name": "complex1",
+    "physical-location-type": "Mobility",
+    "data-center-code": "example-data-center-code-val-6667",
+    "identity-url": "example-identity-url-val-28399",
+    "street1": "example-street1-val-28399",
+    "street2": "example-street2-val-28399",
+    "elevation": "example-elevation-val-28399",
+    "lata": "example-lata-val-28399",
+    "country": "USA",
+    "latitude": "32.89948",
+    "longitude": "97.045443",
+    "postal-code": "00000",
+    "region": "USA",
+    "city": "Dallas",
+    "state": "TX"
+})
+
+
+@name("PUT Cloud-Region 1")
+PUT "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region1"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+json({
+    "cloud-owner": "HPA-cloud",
+    "cloud-region-id": "Cloud-region1",
+    "cloud-type": "openstack-pike",
+    "owner-defined-type": "example-owner-defined-type-val-848",
+    "cloud-region-version": "example-cloud-region-version-val-75919",
+    "identity-url": "example-identity-url-val-14861",
+    "cloud-zone": "example-cloud-zone-val-4978",
+    "complex-name": "complex1",
+    "sriov-automation": "true",
+    "volume-groups": {
+        "volume-group": {
+            "volume-group-id": "example-volume-group-id-val-66706",
+            "volume-group-name": "example-volume-group-name-val-77554",
+            "heat-stack-id": "example-heat-stack-id-val-70180",
+            "vnf-type": "example-vnf-type-val-87572",
+            "orchestration-status": "example-orchestration-status-val-34971",
+            "model-customization-id": "example-model-customization-id-val-83513",
+            "vf-module-model-customization-id": "example-vf-module-model-customization-id-val-6507"
+        }
+    },
+    "tenants": {
+        "tenant": {
+            "tenant-id": "tenant-id-1",
+            "tenant-name": "tenant-name-1",
+            "tenant-context": "example-tenant-context-val-28442",
+            "vservers": {
+                "vserver": {
+                    "vserver-id": "vserver-1",
+                    "vserver-name": "vserver-name-1",
+                    "vserver-name2": "example-vserver-name2-val-75154",
+                    "prov-status": "example-prov-status-val-62624",
+                    "vserver-selflink": "example-vserver-selflink-val-3687",
+                    "in-maint": "true",
+                    "is-closed-loop-disabled": "true",
+                    "volumes": {
+                        "volume": {
+                            "volume-id": "example-volume-id-val-11970",
+                            "volume-selflink": "example-volume-selflink-val-76166"
+                        }
+                    },
+                    "l-interfaces": {
+                        "l-interface": {
+                            "interface-name": "example-interface-name-val-33353",
+                            "interface-role": "example-interface-role-val-20528",
+                            "v6-wan-link-ip": "example-v6-wan-link-ip-val-39242",
+                            "selflink": "example-selflink-val-69696",
+                            "interface-id": "example-interface-id-val-96451",
+                            "macaddr": "example-macaddr-val-92350",
+                            "network-name": "example-network-name-val-76057",
+                            "management-option": "example-management-option-val-24749",
+                            "interface-description": "example-interface-description-val-61248",
+                            "is-port-mirrored": "true",
+                            "in-maint": "true",
+                            "prov-status": "example-prov-status-val-66068",
+                            "is-ip-unnumbered": "true",
+                            "allowed-address-pairs": "example-allowed-address-pairs-val-97717",
+                            "vlans": {
+                                "vlan": {
+                                    "vlan-interface": "example-vlan-interface-val-69702",
+                                    "vlan-id-inner": "67994473",
+                                    "vlan-id-outer": "93729787",
+                                    "speed-value": "example-speed-value-val-13924",
+                                    "speed-units": "example-speed-units-val-36978",
+                                    "vlan-description": "example-vlan-description-val-33791",
+                                    "backdoor-connection": "example-backdoor-connection-val-17790",
+                                    "vpn-key": "example-vpn-key-val-9875",
+                                    "orchestration-status": "example-orchestration-status-val-56763",
+                                    "in-maint": "true",
+                                    "prov-status": "example-prov-status-val-70388",
+                                    "is-ip-unnumbered": "true",
+                                    "l3-interface-ipv4-address-list": {
+                                        "l3-interface-ipv4-address": "example-l3-interface-ipv4-address-val-11760",
+                                        "l3-interface-ipv4-prefix-length": "56201707",
+                                        "vlan-id-inner": "73451064",
+                                        "vlan-id-outer": "91938369",
+                                        "is-floating": "true",
+                                        "neutron-network-id": "example-neutron-network-id-val-98070",
+                                        "neutron-subnet-id": "example-neutron-subnet-id-val-27472"
+                                    },
+                                    "l3-interface-ipv6-address-list": {
+                                        "l3-interface-ipv6-address": "example-l3-interface-ipv6-address-val-39990",
+                                        "l3-interface-ipv6-prefix-length": "23094280",
+                                        "vlan-id-inner": "45385157",
+                                        "vlan-id-outer": "7251303",
+                                        "is-floating": "true",
+                                        "neutron-network-id": "example-neutron-network-id-val-91087",
+                                        "neutron-subnet-id": "example-neutron-subnet-id-val-43501"
+                                    }
+                                }
+                            },
+                            "sriov-vfs": {
+                                "sriov-vf": {
+                                    "pci-id": "example-pci-id-val-91062",
+                                    "vf-vlan-filter": "example-vf-vlan-filter-val-77261",
+                                    "vf-mac-filter": "example-vf-mac-filter-val-52679",
+                                    "vf-vlan-strip": "true",
+                                    "vf-vlan-anti-spoof-check": "true",
+                                    "vf-mac-anti-spoof-check": "true",
+                                    "vf-mirrors": "example-vf-mirrors-val-39917",
+                                    "vf-broadcast-allow": "true",
+                                    "vf-unknown-multicast-allow": "true",
+                                    "vf-unknown-unicast-allow": "true",
+                                    "vf-insert-stag": "true",
+                                    "vf-link-status": "example-vf-link-status-val-7159",
+                                    "neutron-network-id": "example-neutron-network-id-val-6599"
+                                }
+                            },
+                            "l-interfaces": {
+                                "l-interface": {
+                                    "interface-name": "example-interface-name-val-31463",
+                                    "interface-role": "example-interface-role-val-59891",
+                                    "v6-wan-link-ip": "example-v6-wan-link-ip-val-37795",
+                                    "selflink": "example-selflink-val-8079",
+                                    "interface-id": "example-interface-id-val-7731",
+                                    "macaddr": "example-macaddr-val-4153",
+                                    "network-name": "example-network-name-val-95567",
+                                    "management-option": "example-management-option-val-37882",
+                                    "interface-description": "example-interface-description-val-49246",
+                                    "is-port-mirrored": "true",
+                                    "in-maint": "true",
+                                    "prov-status": "example-prov-status-val-679",
+                                    "is-ip-unnumbered": "true",
+                                    "allowed-address-pairs": "example-allowed-address-pairs-val-51719"
+                                }
+                            },
+                            "l3-interface-ipv4-address-list": {
+                                "l3-interface-ipv4-address": "example-l3-interface-ipv4-address-val-25727",
+                                "l3-interface-ipv4-prefix-length": "72086436",
+                                "vlan-id-inner": "49585016",
+                                "vlan-id-outer": "31295411",
+                                "is-floating": "true",
+                                "neutron-network-id": "example-neutron-network-id-val-60599",
+                                "neutron-subnet-id": "example-neutron-subnet-id-val-63673"
+                            },
+                            "l3-interface-ipv6-address-list": {
+                                "l3-interface-ipv6-address": "example-l3-interface-ipv6-address-val-23230",
+                                "l3-interface-ipv6-prefix-length": "52397550",
+                                "vlan-id-inner": "90366390",
+                                "vlan-id-outer": "74424116",
+                                "is-floating": "true",
+                                "neutron-network-id": "example-neutron-network-id-val-8866",
+                                "neutron-subnet-id": "example-neutron-subnet-id-val-39258"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "flavors": {
+        "flavor": [
+            {
+                "flavor-id": "11f8220b-4d96-4c30-a426-2e9381f3fff2",
+                "flavor-name": "Flavor11",
+                "flavor-vcpus": 2,
+                "flavor-ram": 8,
+                "flavor-disk": 20,
+                "flavor-ephemeral": 4,
+                "flavor-swap": "128",
+                "flavor-is-public": false,
+                "flavor-selflink": "pXtX",
+                "flavor-disabled": false,
+                "hpa-capabilities": {
+                    "hpa-capability": [
+                        {
+                            "hpa-capability-id": "11ac6d4d-7fee-41d8-9e4a-c598feb101ed",
+                            "hpa-feature": "basicCapabilities",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numVirtualCpu",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "virtualMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"8\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13a5615b-1077-42b5-a340-c5be48db2aaa",
+                            "hpa-feature": "hugePages",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "memoryPageSize",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numberOfPages",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "11b3444d-1077-43b5-a340-c5be48db2daa",
+                            "hpa-feature": "localStorage",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "diskSize",
+                                    "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "ephemeralDiskSize",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "swapMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "11cad6a2-7d9c-44f2-9a1b-30e5311b8c66",
+                            "hpa-feature": "numa",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numaCpu-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaCpu-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaNodes",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "flavor-id": "12aa2b2e-3206-41b6-81d5-cf041b098c43",
+                "flavor-name": "Flavor12",
+                "flavor-vcpus": 2,
+                "flavor-ram": 12,
+                "flavor-disk": 20,
+                "flavor-ephemeral": 4,
+                "flavor-swap": "128",
+                "flavor-is-public": false,
+                "flavor-selflink": "pXtX",
+                "flavor-disabled": false,
+                "hpa-capabilities": {
+                    "hpa-capability": [
+                        {
+                            "hpa-capability-id": "12a5615b-1077-4bb5-a240-c5be48db2aaa",
+                            "hpa-feature": "basicCapabilities",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "virtualMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"12\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numVirtualCpu",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13a5615b-1077-4bb5-a330-c5be48db2aaa",
+                            "hpa-feature": "hugePages",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "memoryPageSize",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numberOfPages",
+                                    "hpa-attribute-value": "{\"value\":\"6\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "12b5615d-1077-4bb5-a344-c5be48db2daa",
+                            "hpa-feature": "localStorage",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "diskSize",
+                                    "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "ephemeralDiskSize",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "swapMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "12cad6a2-7d9c-4bf2-9a1b-50e5311b8c66",
+                            "hpa-feature": "numa",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numaCpu-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaCpu-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaNodes",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "12d3fd3d-0b15-11w4-dddd-6610efc6dff9",
+                            "hpa-feature": "sriovNICNetwork",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"3456\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "physicalNetwork",
+                                    "hpa-attribute-value": "{\"value\":\"physnet1\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "flavor-id": "13aa2b2f-4217-53b3-91e6-da1521098c54",
+                "flavor-name": "Flavor13",
+                "flavor-vcpus": 2,
+                "flavor-ram": 12,
+                "flavor-disk": 20,
+                "flavor-ephemeral": 4,
+                "flavor-swap": "128",
+                "flavor-is-public": false,
+                "flavor-selflink": "pXtX",
+                "flavor-disabled": false,
+                "hpa-capabilities": {
+                    "hpa-capability": [
+                        {
+                            "hpa-capability-id": "13a5615b-1077-4bb5-a340-c52e48db2aaa",
+                            "hpa-feature": "basicCapabilities",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "virtualMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"12\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numVirtualCpu",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13a5615b-1077-4bb5-a340-c3be48db2aaa",
+                            "hpa-feature": "hugePages",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "memoryPageSize",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numberOfPages",
+                                    "hpa-attribute-value": "{\"value\":\"6\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13b5615d-1077-4bb5-a340-c5b448db2daa",
+                            "hpa-feature": "localStorage",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "diskSize",
+                                    "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "ephemeralDiskSize",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "swapMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13cad6a2-7d9c-4bf2-9a1b-30e5311b8c56",
+                            "hpa-feature": "numa",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numaCpu-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaCpu-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaNodes",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13d3fd3d-0b15-11w4-eeee-62100op6dff6",
+                            "hpa-feature": "sriovNICNetwork",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"1\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"3456\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "physicalNetwork",
+                                    "hpa-attribute-value": "{\"value\":\"physnet1\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13e7fd3d-0b15-11w4-ffff-6210efc6dff9",
+                            "hpa-feature": "sriovNICNetwork",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"1\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"3456\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "physicalNetwork",
+                                    "hpa-attribute-value": "{\"value\":\"physnet2\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "group-assignments": {
+        "group-assignment": {
+            "group-id": "example-group-id-val-67572",
+            "group-type": "example-group-type-val-91331",
+            "group-name": "example-group-name-val-95940",
+            "group-description": "example-group-description-val-89653"
+        }
+    },
+    "snapshots": {
+        "snapshot": {
+            "snapshot-id": "example-snapshot-id-val-31758",
+            "snapshot-name": "example-snapshot-name-val-32860",
+            "snapshot-architecture": "example-snapshot-architecture-val-2456",
+            "snapshot-os-distro": "example-snapshot-os-distro-val-75068",
+            "snapshot-os-version": "example-snapshot-os-version-val-8641",
+            "application": "example-application-val-6391",
+            "application-vendor": "example-application-vendor-val-52418",
+            "application-version": "example-application-version-val-92869",
+            "snapshot-selflink": "example-snapshot-selflink-val-69763",
+            "prev-snapshot-id": "example-prev-snapshot-id-val-19500"
+        }
+    },
+    "images": {
+        "image": {
+            "image-id": "example-image-id-val-91484",
+            "image-name": "example-image-name-val-86952",
+            "image-architecture": "example-image-architecture-val-21769",
+            "image-os-distro": "example-image-os-distro-val-15267",
+            "image-os-version": "example-image-os-version-val-90601",
+            "application": "example-application-val-41444",
+            "application-vendor": "example-application-vendor-val-50626",
+            "application-version": "example-application-version-val-11318",
+            "image-selflink": "example-image-selflink-val-18790",
+            "metadata": {
+                "metadatum": {
+                    "metaname": "example-metaname-val-39609",
+                    "metaval": "example-metaval-val-62296"
+                }
+            }
+        }
+    },
+    "dvs-switches": {
+        "dvs-switch": {
+            "switch-name": "example-switch-name-val-23942",
+            "vcenter-url": "example-vcenter-url-val-7815"
+        }
+    },
+    "oam-networks": {
+        "oam-network": {
+            "network-uuid": "example-network-uuid-val-1061",
+            "network-name": "example-network-name-val-96413",
+            "cvlan-tag": "20601039",
+            "ipv4-oam-gateway-address": "example-ipv4-oam-gateway-address-val-92545",
+            "ipv4-oam-gateway-address-prefix-length": "9067"
+        }
+    },
+    "availability-zones": {
+        "availability-zone": {
+            "availability-zone-name": "example-availability-zone-name-val-37096",
+            "hypervisor-type": "example-hypervisor-type-val-91298",
+            "operational-status": "example-operational-status-val-4894"
+        }
+    },
+    "vip-ipv4-address-list": {
+        "vip-ipv4-address": "example-vip-ipv4-address-val-9775",
+        "vip-ipv4-prefix-length": "21779008",
+        "vlan-id-inner": "183626",
+        "vlan-id-outer": "7595139",
+        "is-floating": "true",
+        "neutron-network-id": "example-neutron-network-id-val-61916",
+        "neutron-subnet-id": "example-neutron-subnet-id-val-94467"
+    },
+    "vip-ipv6-address-list": {
+        "vip-ipv6-address": "example-vip-ipv6-address-val-71778",
+        "vip-ipv6-prefix-length": "54690289",
+        "vlan-id-inner": "37212492",
+        "vlan-id-outer": "58857577",
+        "is-floating": "true",
+        "neutron-network-id": "example-neutron-network-id-val-2251",
+        "neutron-subnet-id": "example-neutron-subnet-id-val-64440"
+    },
+    "hpa-capabilities": {
+        "hpa-capability": {
+            "hpa-capability-id": "example-hpa-capability-id-val-22082",
+            "hpa-feature": "cloud-specific-hpa",
+            "hpa-version": "example-hpa-version-val-64467",
+            "architecture": "example-architecture-val-82451",
+            "hpa-feature-attributes": {
+                "hpa-attribute-key": "example-hpa-attribute-key-val-28058",
+                "hpa-attribute-value": "example-hpa-attribute-value-val-74993"
+            }
+        }
+    }
+})
+
+
+@name("PUT Cloud-Region 2")
+PUT "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region2"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+json({
+    "cloud-owner": "HPA-cloud",
+    "cloud-region-id": "Cloud-region2",
+    "cloud-type": "openstack-pike",
+    "owner-defined-type": "example-owner-defined-type-val-848",
+    "cloud-region-version": "example-cloud-region-version-val-75919",
+    "identity-url": "example-identity-url-val-14861",
+    "cloud-zone": "example-cloud-zone-val-4978",
+    "complex-name": "complex1",
+    "sriov-automation": "true",
+    "volume-groups": {
+        "volume-group": {
+            "volume-group-id": "example-volume-group-id-val-66706",
+            "volume-group-name": "example-volume-group-name-val-77554",
+            "heat-stack-id": "example-heat-stack-id-val-70180",
+            "vnf-type": "example-vnf-type-val-87572",
+            "orchestration-status": "example-orchestration-status-val-34971",
+            "model-customization-id": "example-model-customization-id-val-83513",
+            "vf-module-model-customization-id": "example-vf-module-model-customization-id-val-6507"
+        }
+    },
+    "tenants": {
+        "tenant": {
+            "tenant-id": "tenant-id-1",
+            "tenant-name": "tenant-name-1",
+            "tenant-context": "example-tenant-context-val-28442",
+            "vservers": {
+                "vserver": {
+                    "vserver-id": "vserver-1",
+                    "vserver-name": "vserver-name-1",
+                    "vserver-name2": "example-vserver-name2-val-75154",
+                    "prov-status": "example-prov-status-val-62624",
+                    "vserver-selflink": "example-vserver-selflink-val-3687",
+                    "in-maint": "true",
+                    "is-closed-loop-disabled": "true",
+                    "volumes": {
+                        "volume": {
+                            "volume-id": "example-volume-id-val-11970",
+                            "volume-selflink": "example-volume-selflink-val-76166"
+                        }
+                    },
+                    "l-interfaces": {
+                        "l-interface": {
+                            "interface-name": "example-interface-name-val-33353",
+                            "interface-role": "example-interface-role-val-20528",
+                            "v6-wan-link-ip": "example-v6-wan-link-ip-val-39242",
+                            "selflink": "example-selflink-val-69696",
+                            "interface-id": "example-interface-id-val-96451",
+                            "macaddr": "example-macaddr-val-92350",
+                            "network-name": "example-network-name-val-76057",
+                            "management-option": "example-management-option-val-24749",
+                            "interface-description": "example-interface-description-val-61248",
+                            "is-port-mirrored": "true",
+                            "in-maint": "true",
+                            "prov-status": "example-prov-status-val-66068",
+                            "is-ip-unnumbered": "true",
+                            "allowed-address-pairs": "example-allowed-address-pairs-val-97717",
+                            "vlans": {
+                                "vlan": {
+                                    "vlan-interface": "example-vlan-interface-val-69702",
+                                    "vlan-id-inner": "67994473",
+                                    "vlan-id-outer": "93729787",
+                                    "speed-value": "example-speed-value-val-13924",
+                                    "speed-units": "example-speed-units-val-36978",
+                                    "vlan-description": "example-vlan-description-val-33791",
+                                    "backdoor-connection": "example-backdoor-connection-val-17790",
+                                    "vpn-key": "example-vpn-key-val-9875",
+                                    "orchestration-status": "example-orchestration-status-val-56763",
+                                    "in-maint": "true",
+                                    "prov-status": "example-prov-status-val-70388",
+                                    "is-ip-unnumbered": "true",
+                                    "l3-interface-ipv4-address-list": {
+                                        "l3-interface-ipv4-address": "example-l3-interface-ipv4-address-val-11760",
+                                        "l3-interface-ipv4-prefix-length": "56201707",
+                                        "vlan-id-inner": "73451064",
+                                        "vlan-id-outer": "91938369",
+                                        "is-floating": "true",
+                                        "neutron-network-id": "example-neutron-network-id-val-98070",
+                                        "neutron-subnet-id": "example-neutron-subnet-id-val-27472"
+                                    },
+                                    "l3-interface-ipv6-address-list": {
+                                        "l3-interface-ipv6-address": "example-l3-interface-ipv6-address-val-39990",
+                                        "l3-interface-ipv6-prefix-length": "23094280",
+                                        "vlan-id-inner": "45385157",
+                                        "vlan-id-outer": "7251303",
+                                        "is-floating": "true",
+                                        "neutron-network-id": "example-neutron-network-id-val-91087",
+                                        "neutron-subnet-id": "example-neutron-subnet-id-val-43501"
+                                    }
+                                }
+                            },
+                            "sriov-vfs": {
+                                "sriov-vf": {
+                                    "pci-id": "example-pci-id-val-91062",
+                                    "vf-vlan-filter": "example-vf-vlan-filter-val-77261",
+                                    "vf-mac-filter": "example-vf-mac-filter-val-52679",
+                                    "vf-vlan-strip": "true",
+                                    "vf-vlan-anti-spoof-check": "true",
+                                    "vf-mac-anti-spoof-check": "true",
+                                    "vf-mirrors": "example-vf-mirrors-val-39917",
+                                    "vf-broadcast-allow": "true",
+                                    "vf-unknown-multicast-allow": "true",
+                                    "vf-unknown-unicast-allow": "true",
+                                    "vf-insert-stag": "true",
+                                    "vf-link-status": "example-vf-link-status-val-7159",
+                                    "neutron-network-id": "example-neutron-network-id-val-6599"
+                                }
+                            },
+                            "l-interfaces": {
+                                "l-interface": {
+                                    "interface-name": "example-interface-name-val-31463",
+                                    "interface-role": "example-interface-role-val-59891",
+                                    "v6-wan-link-ip": "example-v6-wan-link-ip-val-37795",
+                                    "selflink": "example-selflink-val-8079",
+                                    "interface-id": "example-interface-id-val-7731",
+                                    "macaddr": "example-macaddr-val-4153",
+                                    "network-name": "example-network-name-val-95567",
+                                    "management-option": "example-management-option-val-37882",
+                                    "interface-description": "example-interface-description-val-49246",
+                                    "is-port-mirrored": "true",
+                                    "in-maint": "true",
+                                    "prov-status": "example-prov-status-val-679",
+                                    "is-ip-unnumbered": "true",
+                                    "allowed-address-pairs": "example-allowed-address-pairs-val-51719"
+                                }
+                            },
+                            "l3-interface-ipv4-address-list": {
+                                "l3-interface-ipv4-address": "example-l3-interface-ipv4-address-val-25727",
+                                "l3-interface-ipv4-prefix-length": "72086436",
+                                "vlan-id-inner": "49585016",
+                                "vlan-id-outer": "31295411",
+                                "is-floating": "true",
+                                "neutron-network-id": "example-neutron-network-id-val-60599",
+                                "neutron-subnet-id": "example-neutron-subnet-id-val-63673"
+                            },
+                            "l3-interface-ipv6-address-list": {
+                                "l3-interface-ipv6-address": "example-l3-interface-ipv6-address-val-23230",
+                                "l3-interface-ipv6-prefix-length": "52397550",
+                                "vlan-id-inner": "90366390",
+                                "vlan-id-outer": "74424116",
+                                "is-floating": "true",
+                                "neutron-network-id": "example-neutron-network-id-val-8866",
+                                "neutron-subnet-id": "example-neutron-subnet-id-val-39258"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "flavors": {
+        "flavor": [
+            {
+                "flavor-id": "11f8220b-4d96-4c30-a426-2e9382f3fff2",
+                "flavor-name": "Flavor21",
+                "flavor-vcpus": 2,
+                "flavor-ram": 8,
+                "flavor-disk": 20,
+                "flavor-ephemeral": 4,
+                "flavor-swap": "128",
+                "flavor-is-public": false,
+                "flavor-selflink": "pXtX",
+                "flavor-disabled": false,
+                "hpa-capabilities": {
+                    "hpa-capability": [
+                        {
+                            "hpa-capability-id": "22ac6d4d-7fee-48d8-9e4a-c598feb101ed",
+                            "hpa-feature": "basicCapabilities",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numVirtualCpu",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "virtualMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"8\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "1335615b-1077-4bb5-a340-c5be48db2aaa",
+                            "hpa-feature": "hugePages",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "memoryPageSize",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numberOfPages",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "21b4444d-1077-4bb5-a340-c5be48db2daa",
+                            "hpa-feature": "localStorage",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "diskSize",
+                                    "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "ephemeralDiskSize",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "swapMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "21ca56a2-7d9c-4bf2-9a1b-30e5311b8c66",
+                            "hpa-feature": "numa",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numaCpu-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaCpu-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaNodes",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "21d3f63d-0b15-1111-dddd-62108756dff9",
+                            "hpa-feature": "pciePassthrough",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"7890\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "flavor-id": "22aa2b2e-1206-41b6-80d5-cf041b098c43",
+                "flavor-name": "Flavor22",
+                "flavor-vcpus": 2,
+                "flavor-ram": 12,
+                "flavor-disk": 20,
+                "flavor-ephemeral": 4,
+                "flavor-swap": "128",
+                "flavor-is-public": false,
+                "flavor-selflink": "pXtX",
+                "flavor-disabled": false,
+                "hpa-capabilities": {
+                    "hpa-capability": [
+                        {
+                            "hpa-capability-id": "22a5615b-1277-4bb5-a340-c5be48db2aaa",
+                            "hpa-feature": "basicCapabilities",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "virtualMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"12\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numVirtualCpu",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13a5615b-1037-4bb5-a340-c5be48db2aaa",
+                            "hpa-feature": "hugePages",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "memoryPageSize",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numberOfPages",
+                                    "hpa-attribute-value": "{\"value\":\"6\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "22b5615d-1074-4bb5-a340-c5be48db2daa",
+                            "hpa-feature": "localStorage",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "diskSize",
+                                    "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "ephemeralDiskSize",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "swapMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "22cad6a2-7d9c-5bf2-9a1b-30e5311b8c66",
+                            "hpa-feature": "numa",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numaCpu-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaCpu-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaNodes",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "22d3fd3d-0b15-16w4-dddd-6210efc6dff9",
+                            "hpa-feature": "sriovNICNetwork",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"3456\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "physicalNetwork",
+                                    "hpa-attribute-value": "{\"value\":\"physnet1\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "flavor-id": "23aa2b2f-4217-13b3-91e6-da152b098c54",
+                "flavor-name": "Flavor23",
+                "flavor-vcpus": 2,
+                "flavor-ram": 12,
+                "flavor-disk": 20,
+                "flavor-ephemeral": 4,
+                "flavor-swap": "128",
+                "flavor-is-public": false,
+                "flavor-selflink": "pXtX",
+                "flavor-disabled": false,
+                "hpa-capabilities": {
+                    "hpa-capability": [
+                        {
+                            "hpa-capability-id": "23a5615b-1077-42b5-a340-c5be48db2aaa",
+                            "hpa-feature": "basicCapabilities",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "virtualMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"12\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numVirtualCpu",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13a5615b-1077-4b35-a340-c5be48db2aaa",
+                            "hpa-feature": "hugePages",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "memoryPageSize",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numberOfPages",
+                                    "hpa-attribute-value": "{\"value\":\"6\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "23b5615d-1077-4bb4-a340-c5be48db2daa",
+                            "hpa-feature": "localStorage",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "diskSize",
+                                    "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "ephemeralDiskSize",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "swapMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "23cad6a2-7d9c-4bf2-5a1b-30e5311b8c66",
+                            "hpa-feature": "numa",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numaCpu-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaCpu-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaNodes",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "23d3fd3d-0b15-11w4-e6ee-6210okc6dff9",
+                            "hpa-feature": "sriovNICNetwork",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"1\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"7654\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "physicalNetwork",
+                                    "hpa-attribute-value": "{\"value\":\"physnet1\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "23e3fd3d-0b15-11w4-ff7f-6260efc6dff9",
+                            "hpa-feature": "sriovNICNetwork",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"1\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"3456\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "physicalNetwork",
+                                    "hpa-attribute-value": "{\"value\":\"physnet2\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "group-assignments": {
+        "group-assignment": {
+            "group-id": "example-group-id-val-67572",
+            "group-type": "example-group-type-val-91331",
+            "group-name": "example-group-name-val-95940",
+            "group-description": "example-group-description-val-89653"
+        }
+    },
+    "snapshots": {
+        "snapshot": {
+            "snapshot-id": "example-snapshot-id-val-31752",
+            "snapshot-name": "example-snapshot-name-val-32860",
+            "snapshot-architecture": "example-snapshot-architecture-val-2456",
+            "snapshot-os-distro": "example-snapshot-os-distro-val-75068",
+            "snapshot-os-version": "example-snapshot-os-version-val-8641",
+            "application": "example-application-val-6391",
+            "application-vendor": "example-application-vendor-val-52418",
+            "application-version": "example-application-version-val-92869",
+            "snapshot-selflink": "example-snapshot-selflink-val-69763",
+            "prev-snapshot-id": "example-prev-snapshot-id-val-19500"
+        }
+    },
+    "images": {
+        "image": {
+            "image-id": "example-image-id-val-91484",
+            "image-name": "example-image-name-val-86952",
+            "image-architecture": "example-image-architecture-val-21769",
+            "image-os-distro": "example-image-os-distro-val-15267",
+            "image-os-version": "example-image-os-version-val-90601",
+            "application": "example-application-val-41444",
+            "application-vendor": "example-application-vendor-val-50626",
+            "application-version": "example-application-version-val-11318",
+            "image-selflink": "example-image-selflink-val-18790",
+            "metadata": {
+                "metadatum": {
+                    "metaname": "example-metaname-val-39609",
+                    "metaval": "example-metaval-val-62296"
+                }
+            }
+        }
+    },
+    "dvs-switches": {
+        "dvs-switch": {
+            "switch-name": "example-switch-name-val-23942",
+            "vcenter-url": "example-vcenter-url-val-7815"
+        }
+    },
+    "oam-networks": {
+        "oam-network": {
+            "network-uuid": "example-network-uuid-val-1061",
+            "network-name": "example-network-name-val-96413",
+            "cvlan-tag": "20601039",
+            "ipv4-oam-gateway-address": "example-ipv4-oam-gateway-address-val-92545",
+            "ipv4-oam-gateway-address-prefix-length": "9067"
+        }
+    },
+    "availability-zones": {
+        "availability-zone": {
+            "availability-zone-name": "example-availability-zone-name-val-37096",
+            "hypervisor-type": "example-hypervisor-type-val-91298",
+            "operational-status": "example-operational-status-val-4894"
+        }
+    },
+    "vip-ipv4-address-list": {
+        "vip-ipv4-address": "example-vip-ipv4-address-val-9775",
+        "vip-ipv4-prefix-length": "21779008",
+        "vlan-id-inner": "183626",
+        "vlan-id-outer": "7595139",
+        "is-floating": "true",
+        "neutron-network-id": "example-neutron-network-id-val-61916",
+        "neutron-subnet-id": "example-neutron-subnet-id-val-94467"
+    },
+    "vip-ipv6-address-list": {
+        "vip-ipv6-address": "example-vip-ipv6-address-val-71778",
+        "vip-ipv6-prefix-length": "54690289",
+        "vlan-id-inner": "37212492",
+        "vlan-id-outer": "58857577",
+        "is-floating": "true",
+        "neutron-network-id": "example-neutron-network-id-val-2251",
+        "neutron-subnet-id": "example-neutron-subnet-id-val-64440"
+    },
+    "hpa-capabilities": {
+        "hpa-capability": {
+            "hpa-capability-id": "example-hpa-capability-id-val-22082",
+            "hpa-feature": "cloud-specific-hpa",
+            "hpa-version": "example-hpa-version-val-64467",
+            "architecture": "example-architecture-val-82451",
+            "hpa-feature-attributes": {
+                "hpa-attribute-key": "example-hpa-attribute-key-val-28058",
+                "hpa-attribute-value": "example-hpa-attribute-value-val-74993"
+            }
+        }
+    }
+})
+
+
+@name("PUT Cloud-Region 3")
+PUT "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+json({
+    "cloud-owner": "HPA-cloud",
+    "cloud-region-id": "Cloud-region3",
+    "cloud-type": "openstack-pike",
+    "owner-defined-type": "example-owner-defined-type-val-848",
+    "cloud-region-version": "example-cloud-region-version-val-75919",
+    "identity-url": "example-identity-url-val-14861",
+    "cloud-zone": "example-cloud-zone-val-4978",
+    "complex-name": "complex1",
+    "sriov-automation": "true",
+    "resource-version": "1540952208179",
+    "volume-groups": {
+        "volume-group": {
+            "volume-group-id": "example-volume-group-id-val-66706",
+            "volume-group-name": "example-volume-group-name-val-77554",
+            "heat-stack-id": "example-heat-stack-id-val-70180",
+            "vnf-type": "example-vnf-type-val-87572",
+            "orchestration-status": "example-orchestration-status-val-34971",
+            "model-customization-id": "example-model-customization-id-val-83513",
+            "vf-module-model-customization-id": "example-vf-module-model-customization-id-val-6507"
+        }
+    },
+    "tenants": {
+        "tenant": {
+            "tenant-id": "tenant-id-1",
+            "tenant-name": "tenant-name-1",
+            "tenant-context": "example-tenant-context-val-28442",
+            "vservers": {
+                "vserver": {
+                    "vserver-id": "vserver-1",
+                    "vserver-name": "vserver-name-1",
+                    "vserver-name2": "example-vserver-name2-val-75154",
+                    "prov-status": "example-prov-status-val-62624",
+                    "vserver-selflink": "example-vserver-selflink-val-3687",
+                    "in-maint": "true",
+                    "is-closed-loop-disabled": "true",
+                    "volumes": {
+                        "volume": {
+                            "volume-id": "example-volume-id-val-11970",
+                            "volume-selflink": "example-volume-selflink-val-76166"
+                        }
+                    },
+                    "l-interfaces": {
+                        "l-interface": {
+                            "interface-name": "example-interface-name-val-33353",
+                            "interface-role": "example-interface-role-val-20528",
+                            "v6-wan-link-ip": "example-v6-wan-link-ip-val-39242",
+                            "selflink": "example-selflink-val-69696",
+                            "interface-id": "example-interface-id-val-96451",
+                            "macaddr": "example-macaddr-val-92350",
+                            "network-name": "example-network-name-val-76057",
+                            "management-option": "example-management-option-val-24749",
+                            "interface-description": "example-interface-description-val-61248",
+                            "is-port-mirrored": "true",
+                            "in-maint": "true",
+                            "prov-status": "example-prov-status-val-66068",
+                            "is-ip-unnumbered": "true",
+                            "allowed-address-pairs": "example-allowed-address-pairs-val-97717",
+                            "vlans": {
+                                "vlan": {
+                                    "vlan-interface": "example-vlan-interface-val-69702",
+                                    "vlan-id-inner": "67994473",
+                                    "vlan-id-outer": "93729787",
+                                    "speed-value": "example-speed-value-val-13924",
+                                    "speed-units": "example-speed-units-val-36978",
+                                    "vlan-description": "example-vlan-description-val-33791",
+                                    "backdoor-connection": "example-backdoor-connection-val-17790",
+                                    "vpn-key": "example-vpn-key-val-9875",
+                                    "orchestration-status": "example-orchestration-status-val-56763",
+                                    "in-maint": "true",
+                                    "prov-status": "example-prov-status-val-70388",
+                                    "is-ip-unnumbered": "true",
+                                    "l3-interface-ipv4-address-list": {
+                                        "l3-interface-ipv4-address": "example-l3-interface-ipv4-address-val-11760",
+                                        "l3-interface-ipv4-prefix-length": "56201707",
+                                        "vlan-id-inner": "73451064",
+                                        "vlan-id-outer": "91938369",
+                                        "is-floating": "true",
+                                        "neutron-network-id": "example-neutron-network-id-val-98070",
+                                        "neutron-subnet-id": "example-neutron-subnet-id-val-27472"
+                                    },
+                                    "l3-interface-ipv6-address-list": {
+                                        "l3-interface-ipv6-address": "example-l3-interface-ipv6-address-val-39990",
+                                        "l3-interface-ipv6-prefix-length": "23094280",
+                                        "vlan-id-inner": "45385157",
+                                        "vlan-id-outer": "7251303",
+                                        "is-floating": "true",
+                                        "neutron-network-id": "example-neutron-network-id-val-91087",
+                                        "neutron-subnet-id": "example-neutron-subnet-id-val-43501"
+                                    }
+                                }
+                            },
+                            "sriov-vfs": {
+                                "sriov-vf": {
+                                    "pci-id": "example-pci-id-val-91062",
+                                    "vf-vlan-filter": "example-vf-vlan-filter-val-77261",
+                                    "vf-mac-filter": "example-vf-mac-filter-val-52679",
+                                    "vf-vlan-strip": "true",
+                                    "vf-vlan-anti-spoof-check": "true",
+                                    "vf-mac-anti-spoof-check": "true",
+                                    "vf-mirrors": "example-vf-mirrors-val-39917",
+                                    "vf-broadcast-allow": "true",
+                                    "vf-unknown-multicast-allow": "true",
+                                    "vf-unknown-unicast-allow": "true",
+                                    "vf-insert-stag": "true",
+                                    "vf-link-status": "example-vf-link-status-val-7159",
+                                    "neutron-network-id": "example-neutron-network-id-val-6599"
+                                }
+                            },
+                            "l-interfaces": {
+                                "l-interface": {
+                                    "interface-name": "example-interface-name-val-31463",
+                                    "interface-role": "example-interface-role-val-59891",
+                                    "v6-wan-link-ip": "example-v6-wan-link-ip-val-37795",
+                                    "selflink": "example-selflink-val-8079",
+                                    "interface-id": "example-interface-id-val-7731",
+                                    "macaddr": "example-macaddr-val-4153",
+                                    "network-name": "example-network-name-val-95567",
+                                    "management-option": "example-management-option-val-37882",
+                                    "interface-description": "example-interface-description-val-49246",
+                                    "is-port-mirrored": "true",
+                                    "in-maint": "true",
+                                    "prov-status": "example-prov-status-val-679",
+                                    "is-ip-unnumbered": "true",
+                                    "allowed-address-pairs": "example-allowed-address-pairs-val-51719"
+                                }
+                            },
+                            "l3-interface-ipv4-address-list": {
+                                "l3-interface-ipv4-address": "example-l3-interface-ipv4-address-val-25727",
+                                "l3-interface-ipv4-prefix-length": "72086436",
+                                "vlan-id-inner": "49585016",
+                                "vlan-id-outer": "31295411",
+                                "is-floating": "true",
+                                "neutron-network-id": "example-neutron-network-id-val-60599",
+                                "neutron-subnet-id": "example-neutron-subnet-id-val-63673"
+                            },
+                            "l3-interface-ipv6-address-list": {
+                                "l3-interface-ipv6-address": "example-l3-interface-ipv6-address-val-23230",
+                                "l3-interface-ipv6-prefix-length": "52397550",
+                                "vlan-id-inner": "90366390",
+                                "vlan-id-outer": "74424116",
+                                "is-floating": "true",
+                                "neutron-network-id": "example-neutron-network-id-val-8866",
+                                "neutron-subnet-id": "example-neutron-subnet-id-val-39258"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "flavors": {
+        "flavor": [
+            {
+                "flavor-id": "21f8220b-4d96-4c30-a426-2e9382f3fff2",
+                "flavor-name": "Flavor31",
+                "flavor-vcpus": 2,
+                "flavor-ram": 8,
+                "flavor-disk": 20,
+                "flavor-ephemeral": 4,
+                "flavor-swap": "128",
+                "flavor-is-public": false,
+                "flavor-selflink": "pXtX",
+                "flavor-disabled": false,
+                "hpa-capabilities": {
+                    "hpa-capability": [
+                        {
+                            "hpa-capability-id": "33ac6d4d-7fee-48d8-9e4a-c598feb101ed",
+                            "hpa-feature": "basicCapabilities",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numVirtualCpu",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "virtualMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"8\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "1345615b-1077-4bb5-a340-c5be48db2aaa",
+                            "hpa-feature": "hugePages",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "memoryPageSize",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numberOfPages",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "31b5444d-1077-4bb5-a340-c5be48db2daa",
+                            "hpa-feature": "localStorage",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "diskSize",
+                                    "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "ephemeralDiskSize",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "swapMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "31ca66a2-7d9c-4bf2-9a1b-30e5311b8c66",
+                            "hpa-feature": "numa",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numaCpu-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaCpu-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaNodes",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "21d37d3d-0b15-1111-dddd-6210efc6dff9",
+                            "hpa-feature": "pciePassthrough",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"7890\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "flavor-id": "323a2b2e-3206-41b6-80d5-cf041b098c43",
+                "flavor-name": "Flavor32",
+                "flavor-vcpus": 2,
+                "flavor-ram": 8,
+                "flavor-disk": 20,
+                "flavor-ephemeral": 4,
+                "flavor-swap": "128",
+                "flavor-is-public": false,
+                "flavor-selflink": "pXtX",
+                "flavor-disabled": false,
+                "hpa-capabilities": {
+                    "hpa-capability": [
+                        {
+                            "hpa-capability-id": "32a4615b-1077-4bb5-a340-c5be48db2aaa",
+                            "hpa-feature": "basicCapabilities",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "virtualMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"8\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numVirtualCpu",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13a5515b-1077-4bb5-a340-c5be48db2aaa",
+                            "hpa-feature": "hugePages",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "memoryPageSize",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numberOfPages",
+                                    "hpa-attribute-value": "{\"value\":\"8\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "32b5665d-1077-4bb5-a340-c5be48db2daa",
+                            "hpa-feature": "localStorage",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "diskSize",
+                                    "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "ephemeralDiskSize",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "swapMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "32cad672-7d9c-4bf2-9a1b-30e5311b8c66",
+                            "hpa-feature": "numa",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numaCpu-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaCpu-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaNodes",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "flavor-id": "33a92b2f-4217-53b3-91e6-da152b098c54",
+                "flavor-name": "Flavor33",
+                "flavor-vcpus": 2,
+                "flavor-ram": 12,
+                "flavor-disk": 20,
+                "flavor-ephemeral": 4,
+                "flavor-swap": "128",
+                "flavor-is-public": false,
+                "flavor-selflink": "pXtX",
+                "flavor-disabled": false,
+                "hpa-capabilities": {
+                    "hpa-capability": [
+                        {
+                            "hpa-capability-id": "33a8615b-1077-4bb5-a340-c5be48db2aaa",
+                            "hpa-feature": "basicCapabilities",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "virtualMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"12\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numVirtualCpu",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "33b5715d-1077-4bb5-a340-c5be48db2daa",
+                            "hpa-feature": "localStorage",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "diskSize",
+                                    "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "ephemeralDiskSize",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "swapMemSize",
+                                    "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "13a5665b-1077-4bb5-a340-c5be48db2aaa",
+                            "hpa-feature": "hugePages",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "memoryPageSize",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numberOfPages",
+                                    "hpa-attribute-value": "{\"value\":\"6\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "33cad5a2-7d9c-4bf2-9a1b-30e5311b8c66",
+                            "hpa-feature": "numa",
+                            "hpa-version": "v1",
+                            "architecture": "generic",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "numaCpu-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-0",
+                                    "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaCpu-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaMem-1",
+                                    "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                                },
+                                {
+                                    "hpa-attribute-key": "numaNodes",
+                                    "hpa-attribute-value": "{\"value\":\"2\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "33d3fd34-0b15-11w4-eeee-6210efc6dff9",
+                            "hpa-feature": "sriovNICNetwork",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"1\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"3456\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "physicalNetwork",
+                                    "hpa-attribute-value": "{\"value\":\"physnet4\"}"
+                                }
+                            ]
+                        },
+                        {
+                            "hpa-capability-id": "33e3fd3d-3b15-11w4-ffff-6270efc6dff9",
+                            "hpa-feature": "sriovNICNetwork",
+                            "hpa-version": "v1",
+                            "architecture": "Intel64",
+                            "hpa-feature-attributes": [
+                                {
+                                    "hpa-attribute-key": "pciCount",
+                                    "hpa-attribute-value": "{\"value\":\"1\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciVendorId",
+                                    "hpa-attribute-value": "{\"value\":\"1234\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "pciDeviceId",
+                                    "hpa-attribute-value": "{\"value\":\"3456\"}"
+                                },
+                                {
+                                    "hpa-attribute-key": "physicalNetwork",
+                                    "hpa-attribute-value": "{\"value\":\"physnet3\"}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "group-assignments": {
+        "group-assignment": {
+            "group-id": "example-group-id-val-67572",
+            "group-type": "example-group-type-val-91331",
+            "group-name": "example-group-name-val-95940",
+            "group-description": "example-group-description-val-89653"
+        }
+    },
+    "snapshots": {
+        "snapshot": {
+            "snapshot-id": "example-snapshot-id-val-31755",
+            "snapshot-name": "example-snapshot-name-val-32860",
+            "snapshot-architecture": "example-snapshot-architecture-val-2456",
+            "snapshot-os-distro": "example-snapshot-os-distro-val-75068",
+            "snapshot-os-version": "example-snapshot-os-version-val-8641",
+            "application": "example-application-val-6391",
+            "application-vendor": "example-application-vendor-val-52418",
+            "application-version": "example-application-version-val-92869",
+            "snapshot-selflink": "example-snapshot-selflink-val-69763",
+            "prev-snapshot-id": "example-prev-snapshot-id-val-19500"
+        }
+    },
+    "images": {
+        "image": {
+            "image-id": "example-image-id-val-91484",
+            "image-name": "example-image-name-val-86952",
+            "image-architecture": "example-image-architecture-val-21769",
+            "image-os-distro": "example-image-os-distro-val-15267",
+            "image-os-version": "example-image-os-version-val-90601",
+            "application": "example-application-val-41444",
+            "application-vendor": "example-application-vendor-val-50626",
+            "application-version": "example-application-version-val-11318",
+            "image-selflink": "example-image-selflink-val-18790",
+            "metadata": {
+                "metadatum": {
+                    "metaname": "example-metaname-val-39609",
+                    "metaval": "example-metaval-val-62296"
+                }
+            }
+        }
+    },
+    "dvs-switches": {
+        "dvs-switch": {
+            "switch-name": "example-switch-name-val-23942",
+            "vcenter-url": "example-vcenter-url-val-7815"
+        }
+    },
+    "oam-networks": {
+        "oam-network": {
+            "network-uuid": "example-network-uuid-val-1061",
+            "network-name": "example-network-name-val-96413",
+            "cvlan-tag": "20601039",
+            "ipv4-oam-gateway-address": "example-ipv4-oam-gateway-address-val-92545",
+            "ipv4-oam-gateway-address-prefix-length": "9067"
+        }
+    },
+    "availability-zones": {
+        "availability-zone": {
+            "availability-zone-name": "example-availability-zone-name-val-37096",
+            "hypervisor-type": "example-hypervisor-type-val-91298",
+            "operational-status": "example-operational-status-val-4894"
+        }
+    },
+    "vip-ipv4-address-list": {
+        "vip-ipv4-address": "example-vip-ipv4-address-val-9775",
+        "vip-ipv4-prefix-length": "21779008",
+        "vlan-id-inner": "183626",
+        "vlan-id-outer": "7595139",
+        "is-floating": "true",
+        "neutron-network-id": "example-neutron-network-id-val-61916",
+        "neutron-subnet-id": "example-neutron-subnet-id-val-94467"
+    },
+    "vip-ipv6-address-list": {
+        "vip-ipv6-address": "example-vip-ipv6-address-val-71778",
+        "vip-ipv6-prefix-length": "54690289",
+        "vlan-id-inner": "37212492",
+        "vlan-id-outer": "58857577",
+        "is-floating": "true",
+        "neutron-network-id": "example-neutron-network-id-val-2251",
+        "neutron-subnet-id": "example-neutron-subnet-id-val-64440"
+    },
+    "hpa-capabilities": {
+        "hpa-capability": {
+            "hpa-capability-id": "example-hpa-capability-id-val-22082",
+            "hpa-feature": "cloud-specific-hpa",
+            "hpa-version": "example-hpa-version-val-64467",
+            "architecture": "example-architecture-val-82451",
+            "hpa-feature-attributes": {
+                "hpa-attribute-key": "example-hpa-attribute-key-val-28058",
+                "hpa-attribute-value": "example-hpa-attribute-value-val-74993"
+            }
+        }
+    }
+})
+
+
+@name("PUT complex1-cloud-region-1 relationship")
+PUT "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region1/relationship-list/relationship"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+json({
+    "related-to": "complex",
+    "related-link": "/aai/v14/cloud-infrastructure/complexes/complex/DLLSTX233",
+    "relationship-data": [
+        {
+            "relationship-key": "complex.physical-location-id",
+            "relationship-value": "DLLSTX233"
+        }
+    ]
+})
+
+
+@name("PUT complex2-cloud-region-2 relationship")
+PUT "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region2/relationship-list/relationship"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+json({
+    "related-to": "complex",
+    "related-link": "/aai/v14/cloud-infrastructure/complexes/complex/DLLSTX233",
+    "relationship-data": [
+        {
+            "relationship-key": "complex.physical-location-id",
+            "relationship-value": "DLLSTX233"
+        }
+    ]
+})
+
+
+@name("PUT complex-cloud-region-3 relationship")
+PUT "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3/relationship-list/relationship"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+json({
+    "related-to": "complex",
+    "related-link": "/aai/v14/cloud-infrastructure/complexes/complex/DLLSTX233",
+    "relationship-data": [
+        {
+            "relationship-key": "complex.physical-location-id",
+            "relationship-value": "DLLSTX233"
+        }
+    ]
+})
+
+
+@name("GET Cloud-Region1")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region1"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+? "depth"= "all"
+
+
+@name("GET Cloud-Region2")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region2"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+? "depth"= "all"
+
+
+@name("GET Cloud-Region3")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+? "depth"= "all"
+
+
+@name("GET Cloud-Region4")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/Intel/ONAP-POD-01-Rail-06"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+? "depth"= "all"
+
+
+@name("GET Flavors Cloud-Region1")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region1/flavors/"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+? "depth"= "all"
+? "nodes-only"= "true"
+
+
+@name("PUT Flavors Cloud-Region1")
+PUT "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/Intel/ONAP-POD-01-Rail-06/flavors/flavor/11f8220b-4d96-4c30-a426-2e9381f3fff2"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+"Content-Type": "application/json"
+? "depth"= "all"
+? "nodes-only"= "true"
+? "resource-version"= "1540957289338"
+json({
+    "flavor-id": "11f8220b-4d96-4c30-a426-2e9381f3fff2",
+    "flavor-name": "Flavor11",
+    "flavor-vcpus": 2,
+    "flavor-ram": 8,
+    "flavor-disk": 20,
+    "flavor-ephemeral": 4,
+    "flavor-swap": "128",
+    "flavor-is-public": false,
+    "flavor-selflink": "pXtX",
+    "flavor-disabled": false,
+    "hpa-capabilities": {
+        "hpa-capability": [
+            {
+                "hpa-capability-id": "11ac6d4d-7fee-41d8-9e4a-c598feb101ed",
+                "hpa-feature": "basicCapabilities",
+                "hpa-version": "v1",
+                "architecture": "generic",
+                "hpa-feature-attributes": [
+                    {
+                        "hpa-attribute-key": "numVirtualCpu",
+                        "hpa-attribute-value": "{\"value\":\"2\"}"
+                    },
+                    {
+                        "hpa-attribute-key": "virtualMemSize",
+                        "hpa-attribute-value": "{\"value\":\"8\", \"unit\":\"MB\" }"
+                    }
+                ]
+            },
+            {
+                "hpa-capability-id": "13a5615b-1077-42b5-a340-c5be48db2aaa",
+                "hpa-feature": "hugePages",
+                "hpa-version": "v1",
+                "architecture": "generic",
+                "hpa-feature-attributes": [
+                    {
+                        "hpa-attribute-key": "memoryPageSize",
+                        "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"MB\" }"
+                    },
+                    {
+                        "hpa-attribute-key": "numberOfPages",
+                        "hpa-attribute-value": "{\"value\":\"4\"}"
+                    }
+                ]
+            },
+            {
+                "hpa-capability-id": "11b3444d-1077-43b5-a340-c5be48db2daa",
+                "hpa-feature": "localStorage",
+                "hpa-version": "v1",
+                "architecture": "generic",
+                "hpa-feature-attributes": [
+                    {
+                        "hpa-attribute-key": "diskSize",
+                        "hpa-attribute-value": "{\"value\":\"20\", \"unit\":\"GB\" }"
+                    },
+                    {
+                        "hpa-attribute-key": "ephemeralDiskSize",
+                        "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                    },
+                    {
+                        "hpa-attribute-key": "swapMemSize",
+                        "hpa-attribute-value": "{\"value\":\"128\", \"unit\":\"MB\" }"
+                    }
+                ]
+            },
+            {
+                "hpa-capability-id": "11cad6a2-7d9c-44f2-9a1b-30e5311b8c66",
+                "hpa-feature": "numa",
+                "hpa-version": "v1",
+                "architecture": "generic",
+                "hpa-feature-attributes": [
+                    {
+                        "hpa-attribute-key": "numaCpu-0",
+                        "hpa-attribute-value": "{\"value\":\"2\"}"
+                    },
+                    {
+                        "hpa-attribute-key": "numaMem-0",
+                        "hpa-attribute-value": "{\"value\":\"2\", \"unit\":\"GB\" }"
+                    },
+                    {
+                        "hpa-attribute-key": "numaCpu-1",
+                        "hpa-attribute-value": "{\"value\":\"4\"}"
+                    },
+                    {
+                        "hpa-attribute-key": "numaMem-1",
+                        "hpa-attribute-value": "{\"value\":\"4\", \"unit\":\"GB\" }"
+                    },
+                    {
+                        "hpa-attribute-key": "numaNodes",
+                        "hpa-attribute-value": "{\"value\":\"2\"}"
+                    }
+                ]
+            }
+        ]
+    }
+})
+
+
+@name("GET Flavors Cloud-Region2")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region2/flavors/"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+? "depth"= "all"
+? "nodes-only"= "true"
+
+
+@name("GET Flavors Cloud-Region3")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3/flavors/"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+? "depth"= "all"
+? "nodes-only"= "true"
+
+
+@name("GET HPA Capabilities Cloud-Region3")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3/flavors/flavor/323a2b2e-3206-41b6-80d5-cf041b098c43/hpa-capabilities"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+? "depth"= "all"
+? "nodes-only"= "true"
+
+
+@name("UPGRADE HPA Capabilities Cloud-Region3")
+PUT "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3/flavors/flavor/323a2b2e-3206-41b6-80d5-cf041b098c43/hpa-capabilities/hpa-capability/13a5515b-1077-4bb5-a340-c5be48db2aaa"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+"Content-Type": "application/json"
+? "depth"= "all"
+? "resource-version"= "1540952208382"
+json({
+    "hpa-capability-id": "13a5515b-1077-4bb5-a340-c5be48db2aaa",
+    "hpa-feature": "hugePages",
+    "hpa-version": "v1",
+    "architecture": "generic",
+    "hpa-feature-attributes": [
+        {
+            "hpa-attribute-key": "numberOfPages",
+            "hpa-attribute-value": "{\"value\":\"8\"}"
+        },
+        {
+            "hpa-attribute-key": "memoryPageSize",
+            "hpa-attribute-value": "{\"value\":\"1\", \"unit\":\"GB\" }"
+        }
+    ]
+})
+
+
+@name("DELETE HPA Capabilities Cloud-Region3")
+DELETE "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3/flavors/flavor/323a2b2e-3206-41b6-80d5-cf041b098c43/hpa-capabilities/hpa-capability/13a5515b-1077-4bb5-a340-c5be48db2aaa"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+"Content-Type": "application/json"
+? "depth"= "all"
+? "resource-version"= "1540952208382"
+
+
+
+@name("GET complex-cloud-region-3 relationship")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3/relationship-list/relationship"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+
+
+@name("DELETE complex-cloud-region-3 relationship")
+DELETE "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3/relationship-list/relationship"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+? "resource-version"= "1540963764960"
+json({
+    "related-to": "complex",
+    "related-link": "/aai/v14/cloud-infrastructure/complexes/complex/DLLSTX233",
+    "relationship-data": [
+        {
+            "relationship-key": "complex.physical-location-id",
+            "relationship-value": "DLLSTX233"
+        }
+    ]
+})
+
+
+@name("Get Complex")
+GET "https://{{aai}}/cloud-infrastructure/complexes/"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Content-Type": "application/json"
+"Accept": "application/json"
+
+
+@name("TestD")
+GET "https://{{aai}}/cloud-infrastructure/cloud-regions"
+
+
+@name("DELETE Cloud-Region3")
+DELETE "https://{{aai}}/cloud-infrastructure/cloud-regions/cloud-region/HPA-cloud/Cloud-region3"
+"X-TransactionId": "9999"
+"X-FromAppId": "jimmy-postman"
+"Real-Time": "true"
+"Authorization": "Basic QUFJOkFBSQ=="
+"Accept": "application/json"
+? "depth"= "all"
+? "resource-version"= "1540963764960"
+
+
+
+

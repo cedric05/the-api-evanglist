@@ -1,0 +1,1 @@
+This collection lists all the Administration API's supported by ONAP Policy Framework. These API's are used to perform administrative operations for managing policies, groups, statistics & health information for all registered PDP engines.

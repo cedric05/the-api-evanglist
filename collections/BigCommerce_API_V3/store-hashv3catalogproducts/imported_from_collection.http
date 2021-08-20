@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6e90ddfd-d8be-45c2-9615-f4a24a1dd00f.postman_collection.json
+
+// Shows full product data with a single GET request
+
+@name("Retrieve all products with expanded sub-resources")
+GET "https://{{baseUrl}}/:store-hash/v3/catalog/products"
+? "include"= "<>"
+
+
+

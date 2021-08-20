@@ -1,0 +1,80 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create Domestic Payment Consents")
+POST "https://{{baseUrl}}/domestic-payment-consents"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "Initiation": {
+            "CreditorAccount": {
+                "Identification": "tempor culpa magna elit",
+                "Name": "pariatur cillum sint",
+                "SchemeName": "UK.OBIE.BICFI",
+                "SecondaryIdentification": "irure qui nostrud eiusmod"
+            },
+            "EndToEndIdentification": "dolor incididunt sit nostrud",
+            "InstructedAmount": {
+                "Amount": "labore aliqua",
+                "Currency": "eiusmod sed consequat officia in"
+            },
+            "InstructionIdentification": "eu exercitation laborum occaecat",
+            "CreditorPostalAddress": {
+                "AddressLine": [
+                    "ad dolor Duis",
+                    "fugiat sint"
+                ],
+                "AddressType": "Correspondence",
+                "BuildingNumber": "sint esse e",
+                "Country": "et do",
+                "CountrySubDivision": "culpa cupidatat ullamco magna",
+                "Department": "laboris dolor magna",
+                "PostCode": "ve",
+                "StreetName": "occae",
+                "SubDepartment": "ipsum",
+                "TownName": "sunt cupidatat fugiat quis"
+            },
+            "LocalInstrument": "UK.OBIE.BACS",
+            "RemittanceInformation": {
+                "Reference": "ut",
+                "Unstructured": "ut ullamco"
+            },
+            "SupplementaryData": {
+                "LocalInstrument": "UK.OBIE.SEPACreditTransfer"
+            }
+        }
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "ut labore",
+            "TownName": "D",
+            "AddressLine": [
+                "Duis ea eius",
+                "laboris eiusmod veniam"
+            ],
+            "BuildingNumber": "incididunt quis exercitation magna",
+            "CountrySubDivision": [
+                "eiusmod consequat reprehenderit anim ullamco",
+                "dolore dolore ad"
+            ],
+            "PostCode": "adipisicing voluptate veniam anim",
+            "StreetName": "laboris esse anim dolore"
+        },
+        "MerchantCategoryCode": "fugiat velit aliqua",
+        "MerchantCustomerIdentification": "irure dolore",
+        "PaymentContextCode": "EcommerceServices"
+    }
+})
+
+
+

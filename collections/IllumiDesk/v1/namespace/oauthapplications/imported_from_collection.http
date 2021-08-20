@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Retrieve oauth applications") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/oauth/applications/"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "ordering"= "<string>"
+
+
+@name("Create a new OAuth2 application") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/oauth/applications/"
+"Content-Type": "application/json"
+json({
+    "client_type": "<string>",
+    "authorization_grant_type": "<string>",
+    "name": "<string>",
+    "redirect_uris": "<string>"
+})
+
+
+

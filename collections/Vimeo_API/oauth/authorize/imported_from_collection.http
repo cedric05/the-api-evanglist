@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// For information on utilizing OAuth client authorization, see ourn[authentication](/api/authentication#generate-unauthenticated-tokens) documentation or then[Client Credentials Grant](https://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.4) section of then[OAuth spec](https://tools.ietf.org/html/draft-ietf-oauth-v2-31.
+
+@name("Authorize a client with OAuth")
+POST "https://{{baseUrl}}/oauth/authorize/client"
+
+
+// This method exchanges a legacy Advanced API OAuth 1 token for an APIv3 OAuth 2 token.
+
+@name("Convert OAuth 1 access tokens to OAuth 2 access tokens")
+POST "https://{{baseUrl}}/oauth/authorize/vimeo_oauth1"
+
+
+

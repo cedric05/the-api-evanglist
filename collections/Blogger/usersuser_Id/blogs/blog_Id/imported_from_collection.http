@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2e3bbcd-4c1a-45f3-8016-86639e868822.postman_collection.json
+
+// Gets one blog and user info pair by blogId and userId.
+
+@name("Get User Blog")
+GET "https://{{baseUrl}}/users/:userId/blogs/:blogId"
+? "maxPosts"= "<>"
+
+
+

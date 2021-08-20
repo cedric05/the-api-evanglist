@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Update the password for a user using a one-use, timed recovery code tied to the user's account. Only works for non-SSO users.n##### PermissionsnNo permissions required.n
+
+@name("Reset password")
+POST "https://{{baseUrl}}/users/password/reset"
+
+
+// Send an email containing a link for resetting the user's password. The link will contain a one-use, timed recovery code tied to the user's account. Only works for non-SSO users.n##### PermissionsnNo permissions required.n
+
+@name("Send password reset email")
+POST "https://{{baseUrl}}/users/password/reset/send"
+
+
+

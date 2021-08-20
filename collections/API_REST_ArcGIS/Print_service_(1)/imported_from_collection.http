@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// [Export webmap task](http://resources.arcgis.com/en/help/rest/apiref/gp_exportwebmaptask.html)
+
+@name("Get static image (using print service)")
+POST "http://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task/execute"
+files(
+	("Web_Map_as_JSON", "{     "mapOptions": {         "showAttribution": true,         "extent": {             "xmin": -10212866.663781697,             "ymin": 3600493.212559925,             "xmax": -9987836.052510148,             "ymax": 3829804.2974154423,             "spatialReference": {                 "wkid": 102100,                 "latestWkid": 3857             }         },         "spatialReference": {             "wkid": 102100,             "latestWkid": 3857         }     },     "operationalLayers": [         {             "id": "Ocean",             "title": "Ocean",             "opacity": 1,             "minScale": 591657527.591555,             "maxScale": 9027.977411,             "url": "http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer"         }                  ],     "exportOptions": {         "outputSize": [             800,             1100         ],         "dpi": 96     } }"),
+	("f", "json"),
+	("Format", "PNG32"),
+	("Layout_Template", "MAP_ONLY")
+)
+
+
+

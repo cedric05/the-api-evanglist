@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Creates an item modifier option and adds it to a modifier list.
+
+@name("Post Location Modifier Lists Modifier List Modifier Options")
+POST "https://{{baseUrl}}/v1/:location_id/modifier-lists/:modifier_list_id/modifier-options"
+
+
+// Deletes an existing item modifier option from a modifier list.
+
+@name("Delete Location Modifier Lists Modifier List Modifier Options Modifier Option")
+DELETE "https://{{baseUrl}}/v1/:location_id/modifier-lists/:modifier_list_id/modifier-options/:modifier_option_id"
+
+
+

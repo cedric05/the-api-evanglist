@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1f22e2cb-c653-40b3-ae3e-8b9e732d13bc.postman_collection.json
+
+// Crew clock punch event instance
+
+@name("Crew Clock Punch")
+POST "https://{{baseUrl}}/events/time/v1/crew-clock.punch"
+? "No Name"= "<string>"
+
+
+// Retrieve event metadata
+
+@name("Crew Clock Punch Meta")
+GET "https://{{baseUrl}}/events/time/v1/crew-clock.punch/meta"
+? "No Name"= "<string>"
+
+
+

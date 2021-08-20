@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets the association information for the given object id.
+
+@name("Gets the association information for the given object id")
+GET "https://{{baseUrl}}/objects/:objectid/associations"
+? "depth"= "<>"
+? "includeDependencies"= "<>"
+? "includeEvents"= "<>"
+? "includePhantoms"= "<>"
+? "limit"= "<>"
+
+
+// Creates association.
+
+@name("Creates association")
+PUT "https://{{baseUrl}}/objects/:objectid/associations/:targetid"
+
+
+

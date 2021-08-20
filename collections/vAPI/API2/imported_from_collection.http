@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bddbaf5a-26e6-497b-85a9-b22a2a06054d.postman_collection.json
+
+@name("User Login")
+POST "http://{{host}}/vapi/api2/loginUser.php"
+data({
+    "email": [
+        "savanna48@ortiz.com"
+    ],
+    "password": [
+        "zTyBwV/9"
+    ]
+})
+
+
+@name("Get User")
+GET "http://{{host}}/vapi/api2/getUser.php"
+"Auth-Key": "{{api2_auth}}"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d4cf5606-be3b-4e27-b14f-77855e9137ad.postman_collection.json
+
+// Download the latest translation package. You must have given a /package call beforehand and wait until the packaging status is 'completed'.
+
+@name("Download the latest translation package.")
+POST "https://{{baseUrl}}/projects/:id/download"
+
+
+// Download only the translation package of this language. You must have given a /package call beforehand and wait until the packaging status is 'completed'.
+
+@name("Download the latest translation package.")
+POST "https://{{baseUrl}}/projects/:id/download/:language"
+
+
+

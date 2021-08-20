@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("Get a project card")
+GET "https://{{baseUrl}}/projects/columns/cards/:card_id"
+
+
+@name("Update an existing project card")
+PATCH "https://{{baseUrl}}/projects/columns/cards/:card_id"
+"Content-Type": "application/json"
+json({
+    "note": "<string>",
+    "archived": "<boolean>"
+})
+
+
+@name("Delete a project card")
+DELETE "https://{{baseUrl}}/projects/columns/cards/:card_id"
+
+
+@name("Move a project card")
+POST "https://{{baseUrl}}/projects/columns/cards/:card_id/moves"
+"Content-Type": "application/json"
+json({
+    "position": "<string>",
+    "column_id": "<integer>"
+})
+
+
+

@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba80ce9d-d693-46bf-bec0-4eded04ac428.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("An endpoint that provides a HTTP 302 redirect to this documentation through an internal DNS name") : "base-inherit-auth"
+GET "https://{{baseUrl}}/synthetic-data"
+
+
+@name("returns reserved scenarios") : "base-inherit-auth"
+GET "https://{{baseUrl}}/synthetic-data/list"
+
+
+@name("reserve a scenario template") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/synthetic-data/reserve"
+"Content-Type": "application/json"
+json({
+    "customDescription": "<string>",
+    "customName": "<string>",
+    "password": "<string>",
+    "scenarioType": "<string>"
+})
+
+
+@name("returns the list of available scenario templates") : "base-inherit-auth"
+GET "https://{{baseUrl}}/synthetic-data/scenarios"
+
+
+

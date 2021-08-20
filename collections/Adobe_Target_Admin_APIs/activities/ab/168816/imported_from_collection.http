@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-99b807d0-abac-481e-a509-d69785137b6b.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Update Activity State") : "base-inherit-auth"
+PUT "https://mc.adobe.io/:tenant/target/activities/ab/168816/state"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v1+json"
+data('{
+    "state": "deactivated"
+}')
+
+
+@name("Update Activity Priority") : "base-inherit-auth"
+PUT "https://mc.adobe.io/:tenant/target/activities/ab/168816/priority"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v1+json"
+data('{
+    "priority": "110"
+}')
+
+
+@name("Update Activity Schedule") : "base-inherit-auth"
+PUT "https://mc.adobe.io/:tenant/target/activities/ab/168816/schedule"
+"X-Api-Key": "{{api_key}}"
+"Content-Type": "application/vnd.adobe.target.v1+json"
+data('{
+    "startsAt": "2017-05-01T08:00Z",
+    "endsAt": "2017-09-01T07:59:59.000Z"
+}')
+
+
+

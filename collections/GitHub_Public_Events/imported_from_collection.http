@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-61e1dae4-2abc-4360-8034-c96e3a65ba25.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{bearer_token}}"
+
+
+// List public events
+
+@name("List Public Events") : "base-inherit-auth"
+GET "https://api.github.com/events"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+
+
+

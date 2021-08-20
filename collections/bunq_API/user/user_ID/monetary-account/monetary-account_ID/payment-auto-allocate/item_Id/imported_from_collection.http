@@ -1,0 +1,91 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Manage a users automatic payment auto allocated settings.
+
+@name("DELETE Payment Auto Allocate for User Monetary Account")
+DELETE "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/payment-auto-allocate/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Manage a users automatic payment auto allocated settings.
+
+@name("READ Payment Auto Allocate for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/payment-auto-allocate/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Manage a users automatic payment auto allocated settings.
+
+@name("UPDATE Payment Auto Allocate for User Monetary Account")
+PUT "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/payment-auto-allocate/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "payment_id": "<integer>",
+    "type": "<string>",
+    "definition": [
+        {
+            "type": "<string>",
+            "amount": {
+                "currency": "esse aliqua ad minim",
+                "value": "quis elit cupidatat"
+            },
+            "counterparty_alias": {
+                "name": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "type": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "value": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "description": "<string>",
+            "fraction": "<integer>"
+        },
+        {
+            "type": "<string>",
+            "amount": {
+                "currency": "",
+                "value": "commodo volupt"
+            },
+            "counterparty_alias": {
+                "name": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "type": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "value": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "description": "<string>",
+            "fraction": "<integer>"
+        }
+    ]
+})
+
+
+

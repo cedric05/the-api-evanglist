@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c943980b-661f-4048-933f-76da45d62852.postman_collection.json
+
+// You can specify the comma separated list of application and patent numbers. Once you submit the pacakge request, the systems sends an email to confirm the subscription of receiving email notifications. Once you confirm the subscription, you will be receiving the email once the package is ready to download. Confirming subscription needs to be done only once for a given email address. Please note that this API returns the tracker ID once you submit the pacakge request. Tracker ID can be used to query the status of the package. Package request will be usually processed within minutes, but based on the number of applications submitted in the request and the order in which it received the package availability could vary.
+
+@name("Package API allows requesting for customized zip of the applications.")
+POST "https://{{baseUrl}}/v1/patent/package"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "applicationNumbers": [
+        "<string>"
+    ],
+    "email": [
+        "<string>"
+    ],
+    "includePedData": [
+        "false"
+    ]
+})
+
+
+// Return the package status by tracker id.
+
+@name("Package Status API allows verifying the status of the package request submitted previously.")
+GET "https://{{baseUrl}}/v1/patent/package/:packageTrackerId"
+
+
+

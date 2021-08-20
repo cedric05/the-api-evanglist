@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets preferences by user id.
+
+@name("Gets preferences by user id")
+GET "https://{{baseUrl}}/users/:userid/preferences"
+
+
+// Gets preference by user id.
+
+@name("Gets preference by user id")
+GET "https://{{baseUrl}}/users/:userid/preferences/:preference"
+
+
+

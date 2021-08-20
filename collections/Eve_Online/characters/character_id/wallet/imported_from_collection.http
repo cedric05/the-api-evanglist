@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Returns a character's wallet balance
+// 
+// ---
+// Alternate route: `/legacy/characters/{character_id}/wallet/`
+// 
+// Alternate route: `/v1/characters/{character_id}/wallet/`
+// 
+// ---
+// This route is cached for up to 120 seconds
+// 
+// ---
+// [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)
+
+@name("Get a character's wallet balance")
+GET "https://{{baseUrl}}/characters/:character_id/wallet/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Retrieve the given character's wallet journal going 30 days back
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/wallet/journal/`
+// 
+// Alternate route: `/v6/characters/{character_id}/wallet/journal/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get character wallet journal")
+GET "https://{{baseUrl}}/characters/:character_id/wallet/journal/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Get wallet transactions of a character
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/wallet/transactions/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/wallet/transactions/`
+// 
+// Alternate route: `/v1/characters/{character_id}/wallet/transactions/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get wallet transactions")
+GET "https://{{baseUrl}}/characters/:character_id/wallet/transactions/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "from_id"= "-26592061"
+? "token"= "commodo irure"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bccf5d55-a2df-4783-8125-6d0355865ae6.postman_collection.json
+
+// Returns list of Twitter influencers for a given hashtag
+
+@name("Influencers for a Hashtag")
+GET "https://{{baseUrl}}/v1/influencers/hashtag/:hashtag"
+
+
+// Returns list of hashtags currently trending on Twitter
+
+@name("Trending Hashtags")
+GET "https://{{baseUrl}}/v1/search/trending"
+? "green"= "<boolean>"
+? "latin"= "<boolean>"
+
+
+

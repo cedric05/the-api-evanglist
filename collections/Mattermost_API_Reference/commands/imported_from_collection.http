@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Create a command for a team.n##### Permissionsn`manage_slash_commands` for the team the command is in.n
+
+@name("Create a command")
+POST "https://{{baseUrl}}/commands"
+
+
+// Execute a command on a team.n##### PermissionsnMust have `use_slash_commands` permission for the team the command is in.n
+
+@name("Execute a command")
+POST "https://{{baseUrl}}/commands/execute"
+
+
+

@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Returns a list of events for the given query parameters with a maximum of 250 events per call.
+
+@name("List Event Summaries") : "base-inherit-auth"
+GET "https://{{baseUrl}}/events"
+"bons-profile": "default"
+? "limit"= "25"
+? "status"= "EMITTED"
+? "created-at-max"= "2018-08-30T19:31:38.902Z"
+? "created-at-min"= "2018-08-30T19:31:38.902Z"
+
+
+// Get the set of all events available in the provided version, their available decorators, and optionally their schemas.
+
+@name("Describe Event Schemas") : "base-inherit-auth"
+GET "https://{{baseUrl}}/events/describe"
+? "version"= "v1"
+? "schema"= "true"
+
+
+

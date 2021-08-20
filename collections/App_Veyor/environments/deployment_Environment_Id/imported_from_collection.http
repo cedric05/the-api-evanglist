@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-87030e81-ee2c-4c09-8477-6fa66d8714cc.postman_collection.json
+
+// Delete environments deploymentenvironmentid.
+
+@name("Delete Environments Deploymentenvironmentid")
+DELETE "https://{{baseUrl}}/environments/:deploymentEnvironmentId"
+
+
+// Get environments deploymentenvironmentid deployments.
+
+@name("Get Environments Deploymentenvironmentid Deployments")
+GET "https://{{baseUrl}}/environments/:deploymentEnvironmentId/deployments"
+
+
+// Get environments deploymentenvironmentid settings.
+
+@name("Get Environments Deploymentenvironmentid Settings")
+GET "https://{{baseUrl}}/environments/:deploymentEnvironmentId/settings"
+
+
+

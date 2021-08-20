@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get a webhook subscription with given unique identifier for restaurant.
+
+@name("Get a specific webhook subscription")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/webhook/:webhookUid"
+
+
+// Unsubscribe to a webhook.
+
+@name("Delete a webhook subscription")
+DELETE "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/webhook/:webhookUid"
+
+
+

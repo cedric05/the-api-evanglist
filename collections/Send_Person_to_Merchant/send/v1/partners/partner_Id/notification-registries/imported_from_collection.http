@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e760486c-f487-465f-b743-146cfe5b92a4.postman_collection.json
+
+// This service allows Mastercard Merchant QR originating and receiving partners to register a PAN and service provider to receive notifications on an inbound Merchant Refund or Merchant Payment Transaction.
+
+@name("This service allows Mastercard Merchant QR originating and receiving partners to register a PAN and service provider to receive notifications on an inbound Merchant Refund or Merchant Payment Transaction.")
+POST "https://{{baseUrl}}/send/v1/partners/:partnerId/notification-registries"
+"Content-Type": "application/json"
+json({
+    "accountregistration": {
+        "account_uri": "<string>",
+        "notification_partner_id": "<string>"
+    }
+})
+
+
+

@@ -1,0 +1,87 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// The `/processor/auth/get` endpoint returns the bank account and bank identification number (such as the routing number, for US accounts), for a checking or savings account that's associated with a given `processor_token`. The endpoint also returns high-level account data and balances when available.
+
+@name("Retrieve Auth data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/processor/auth/get"
+"Content-Type": "application/json"
+json({
+    "processor_token": "dolore aute culpa qui",
+    "client_id": "do Excepteur incididunt",
+    "secret": "fugiat veniam"
+})
+
+
+// The `/processor/identity/get` endpoint allows you to retrieve various account holder information on file with the financial institution, including names, emails, phone numbers, and addresses.
+
+@name("Retrieve Identity data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/processor/identity/get"
+"Content-Type": "application/json"
+json({
+    "processor_token": "nulla officia",
+    "client_id": "ut cillum commodo do consectetur",
+    "secret": "cupidatat eiusmod commodo"
+})
+
+
+// The `/processor/balance/get` endpoint returns the real-time balance for each of an Item's accounts. While other endpoints may return a balance object, only `/processor/balance/get` forces the available and current balance fields to be refreshed rather than cached. 
+
+@name("Retrieve Balance data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/processor/balance/get"
+"Content-Type": "application/json"
+json({
+    "processor_token": "elit occaecat non",
+    "client_id": "Lorem ut",
+    "secret": "laborum aliqua"
+})
+
+
+// Used to create a token suitable for sending to one of Plaid's partners to enable integrations. Note that Stripe partnerships use bank account tokens instead; see `/processor/stripe/bank_account_token/create` for creating tokens for use with Stripe integrations.
+
+@name("Create processor token") : "base-inherit-auth"
+POST "https://{{baseUrl}}/processor/token/create"
+"Content-Type": "application/json"
+json({
+    "access_token": "anim est ea",
+    "account_id": "laborum in",
+    "processor": "dolor in nisi ipsum ma",
+    "client_id": "dolore Ut voluptate incididunt officia",
+    "secret": "sint"
+})
+
+
+// Used to create a token suitable for sending to Stripe to enable Plaid-Stripe integrations.
+
+@name("Create Stripe bank account token") : "base-inherit-auth"
+POST "https://{{baseUrl}}/processor/stripe/bank_account_token/create"
+"Content-Type": "application/json"
+json({
+    "access_token": "m",
+    "account_id": "sunt Excepteur ex",
+    "client_id": "magna occaecat nisi",
+    "secret": "adipis"
+})
+
+
+// Used to create a token suitable for sending to Apex to enable Plaid-Apex integrations.
+
+@name("Create Apex bank account token") : "base-inherit-auth"
+POST "https://{{baseUrl}}/processor/apex/processor_token/create"
+"Content-Type": "application/json"
+json({
+    "access_token": "aute ut consectetur",
+    "account_id": "adipisicing consectetur dolore",
+    "client_id": "et laboris aute",
+    "secret": "proident occaecat consequat"
+})
+
+
+

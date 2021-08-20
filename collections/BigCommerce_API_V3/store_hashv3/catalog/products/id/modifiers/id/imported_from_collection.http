@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6e90ddfd-d8be-45c2-9615-f4a24a1dd00f.postman_collection.json
+
+@name("Retrieve a product modifier")
+GET "https://{{baseUrl}}/:store_hash/v3/catalog/products/:id/modifiers/:id"
+
+
+// Add an image to a modifier value that will show on the storefront when itu2019s selected
+
+@name("Add an image to a modifier value")
+POST "https://{{baseUrl}}/:store_hash/v3/catalog/products/:id/modifiers/:id/values/:id/image"
+
+
+

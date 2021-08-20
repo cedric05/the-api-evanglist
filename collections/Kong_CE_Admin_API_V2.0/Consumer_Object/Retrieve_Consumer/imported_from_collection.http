@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// ## Retrieve Consumer [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-consumer-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>consumer username or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the username of the Consumer to retrieve.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Consumer")
+GET "https://{{gateway}}/consumers/:consumerUsernameOrID"
+
+
+// ## Retrieve Consumer Associated to a Specific Plugin [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-consumer-associated-to-a-specific-plugin)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>https://docs.konghq.com/2.0.x/admin-api/#retrieve-consumer-associated-to-a-specific-plugin</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the username of the Consumer to retrieve.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Consumer Associated to a Specific Plugin")
+GET "https://{{gateway}}/plugins/:pluginId/consumer"
+
+
+

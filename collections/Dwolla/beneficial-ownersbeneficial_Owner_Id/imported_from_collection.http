@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+@name("Retrieve A Beneficial Owner")
+GET "https://{{baseUrl}}/beneficial-owners/:beneficialOwnerId"
+
+
+// Create a document for a Customer pending verification by uploading a photo of the document. This requires a multipart form-data POST request. The file must be either a .jpg, .jpeg, .png, .tif, or .pdf up to 10MB in size.nn### Resourcesn[Article - Handling document verification status](https://developers.dwolla.com/resources/customer-verification/handling-verification-statuses.html)nn|Form Field| Data type | Required | Description|n|---------|----------|----------|--------------|n| documentType |
+
+@name("Create A Document For A Beneficial Owner")
+POST "https://{{baseUrl}}/beneficial-owners/:beneficialOwnerId/documents"
+
+
+

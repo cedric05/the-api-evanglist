@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-98caec76-a229-4ed0-af3d-c9cfb0704e34.postman_collection.json
+
+@name("Current Objects")
+GET "https://schema.org/version/latest/schemaorg-current-https.jsonld"
+? "object"= "Review"
+
+
+@name("Import")
+POST "https://api.getpostman.com/import/openapi"
+"x-api-key": "{{postman_key}}"
+data('{{body}}')
+
+
+// Before we can add our collection to this workspace we need to pull the snapshot of the workspace, so we can append our new collection.
+
+@name("Pull Workspace")
+GET "https://api.getpostman.com/workspaces/{{workspace_id}}"
+"x-api-key": "{{postman_api_key}}"
+
+
+// This takes the updated workspace definition with our new collection and updates it using the Postman API. You should now be able to see your collection in your workspace--sometimes you have to refresh first. ;-)
+
+@name("Add API to Workspace")
+PUT "https://api.getpostman.com/workspaces/{{workspace_id}}"
+"x-api-key": "{{postman_api_key}}"
+"Content-Type": "application/json"
+data('{{workspace_publish}}')
+
+
+

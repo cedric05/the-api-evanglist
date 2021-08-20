@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Retrieve all users for an organization.
+
+@name("List Users")
+GET "https://{{baseUrl}}/v1/orgs/self/users"
+
+
+// Create a new user for an organization.
+
+@name("Create User")
+POST "https://{{baseUrl}}/v1/orgs/self/users"
+"Content-Type": "application/json"
+json({
+    "email": "hello@rockset.com",
+    "roles": [
+        "qui adipisicing mollit magna",
+        "nulla amet sit quis"
+    ]
+})
+
+
+

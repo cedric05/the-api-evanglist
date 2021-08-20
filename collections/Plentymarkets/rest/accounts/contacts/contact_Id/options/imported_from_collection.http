@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Deletes a contact option for an existing contact. The ID of the contact must be specified.
+
+@name("Delete a contact option by the contact ID")
+DELETE "https://{{baseUrl}}/rest/accounts/contacts/:contactId/options"
+
+
+// validates a contact option by a given value
+
+@name("Validate a contact option by a given value")
+GET "https://{{baseUrl}}/rest/accounts/contacts/:contactId/options/validate"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// List all scheduled jobs
+
+@name("Get Workers Jobs")
+GET "https://{{baseUrl}}/workers/jobs/"
+
+
+// List all schedulable jobs
+
+@name("Get Workers Jobs Schedulables")
+GET "https://{{baseUrl}}/workers/jobs/schedulables"
+
+
+// Delete a single scheduled job
+
+@name("Delete Workers Jobs")
+DELETE "https://{{baseUrl}}/workers/jobs/:id"
+
+
+

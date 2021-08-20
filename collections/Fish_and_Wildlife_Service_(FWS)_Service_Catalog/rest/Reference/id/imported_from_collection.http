@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Retrieve the access and usage constraints for the given Reference.")
+GET "https://{{baseUrl}}/rest/Reference/:id/AccessConstraints"
+
+
+@name("Retrieve the list of Units associated with the given Reference.")
+GET "https://{{baseUrl}}/rest/Reference/:id/Units"
+
+
+@name("Retrieve the list of geographic bounding box coordinates associated with the given Reference.")
+GET "https://{{baseUrl}}/rest/Reference/:id/BoundingBoxes"
+
+
+

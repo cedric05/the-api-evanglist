@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Get list of all available EDMs from DB instances
+
+@name("Get list of all available EDMs from DB instances.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/data-bridge/:serverId/databases"
+"Authorization": "Bearer <Bearer Token>"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// De-register Data Bridge EDMs from RM
+
+@name("De-register Data Bridge EDMs from RM.") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/data-bridge/de-register/:datasourcename"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// register Data Bridge EDMs with RM
+
+@name("register Data Bridge EDMs with RM.") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/data-bridge/register"
+"Authorization": "Bearer <Bearer Token>"
+? "datasourcename"= "Excepteur nisi in"
+
+
+

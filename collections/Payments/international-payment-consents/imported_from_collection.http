@@ -1,0 +1,115 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create International Payment Consents")
+POST "https://{{baseUrl}}/international-payment-consents"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "Initiation": {
+            "CreditorAccount": {
+                "Identification": "qui do",
+                "Name": "nostrud voluptate aliqua exercitation",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+                "SecondaryIdentification": "anim sed exercitation nulla dolore"
+            },
+            "CurrencyOfTransfer": "Excepteur eiusmod",
+            "EndToEndIdentification": "elit fugiat",
+            "InstructedAmount": {
+                "Amount": "ad cupidatat est ut",
+                "Currency": "dolore"
+            },
+            "InstructionIdentification": "labore Ut ut consectetur",
+            "ChargeBearer": "BorneByDebtor",
+            "Creditor": {
+                "PostalAddress": {
+                    "AddressLine": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "AddressType": "DeliveryTo",
+                    "BuildingNumber": "ipsum dolore",
+                    "Country": "dolore",
+                    "CountrySubDivision": "officia",
+                    "Department": "fugiat nulla voluptate eu adipisicing",
+                    "PostCode": "deserunt esse cillum sunt est",
+                    "StreetName": "eiusmod ullamco laboris",
+                    "SubDepartment": "magna do ut",
+                    "TownName": "in est labore"
+                },
+                "Name": "exercitation Ut proident"
+            },
+            "CreditorAgent": {
+                "Identification": "id minim",
+                "Name": "velit commodo",
+                "PostalAddress": {
+                    "AddressLine": [
+                        "in eiusmod Ut ea",
+                        "consequat Excepteur"
+                    ],
+                    "AddressType": "Business",
+                    "BuildingNumber": "quis Ut aliquip",
+                    "Country": "Ut Excepteur",
+                    "CountrySubDivision": "et ex eu ipsum",
+                    "Department": "mollit",
+                    "PostCode": "cillum non culpa officia",
+                    "StreetName": "laborum tempor in",
+                    "SubDepartment": "in culpa velit",
+                    "TownName": "dolore ea velit dolor"
+                },
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "ExchangeRateInformation": {
+                "RateType": "Actual",
+                "UnitCurrency": "esse"
+            },
+            "InstructionPriority": "Urgent",
+            "LocalInstrument": "UK.OBIE.CHAPS",
+            "Purpose": "ad",
+            "RemittanceInformation": {
+                "Reference": "proident et consectetur reprehenderit",
+                "Unstructured": "ea nostrud Lorem quis"
+            },
+            "SupplementaryData": {
+                "LocalInstrument": "UK.OBIE.SWIFT"
+            }
+        }
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "dolore",
+            "TownName": "incididunt sit",
+            "AddressLine": [
+                "eiusmod ut adipisicing irure",
+                "amet elit"
+            ],
+            "BuildingNumber": "Lorem in ad mollit sed",
+            "CountrySubDivision": [
+                "proident exercitation pariatur",
+                "laboris cillum"
+            ],
+            "PostCode": "officia in",
+            "StreetName": "deserunt eu dolore sint"
+        },
+        "MerchantCategoryCode": "culpa",
+        "MerchantCustomerIdentification": "veniam consequat",
+        "PaymentContextCode": "PartyToParty"
+    }
+})
+
+
+

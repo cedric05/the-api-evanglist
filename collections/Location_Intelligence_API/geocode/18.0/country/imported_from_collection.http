@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c482753d-6677-4bf3-8016-18d78f3fecc5.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Query the country reference table") : "base-inherit-auth"
+GET "https://{{baseUrl}}/geocode/18.0/country"
+? "countryFips"= "ipsum eiusmod dolore aliqua"
+? "countryName"= "ipsum eiusmod dolore aliqua"
+? "limit"= "100"
+? "offset"= "0"
+
+
+@name("Query the country reference table by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/geocode/18.0/country/:id"
+
+
+

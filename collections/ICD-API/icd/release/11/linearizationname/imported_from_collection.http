@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b71fd21b-bfe2-48a4-b72e-2e45c80f54e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("This endpoint returns basic information on the linearization such as MMS together with the list of 
+available releases") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/release/11/:linearizationname"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+
+
+

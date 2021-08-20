@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// Create a new badge for a given reuse
+
+@name("Add Reuses Reuse Badges")
+POST "https://{{baseUrl}}/reuses/:reuse/badges/"
+
+
+// Delete a badge for a given reuse
+
+@name("Delete Reuses Reuse Badges Badge Kind")
+DELETE "https://{{baseUrl}}/reuses/:reuse/badges/:badge_kind/"
+
+
+

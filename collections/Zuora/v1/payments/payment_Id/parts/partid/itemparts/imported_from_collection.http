@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** The Invoice Item Settlement feature is in **Limited Availability**, and it must be used together with other Advanced AR Settlement features (Unapplied Payments, and Credit and Debit memos). If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnRetrieves the information about all items of a payment part. A payment part item is a single line item in a payment part. A payment part can consist of several different types of items
+
+@name("Get payment part items")
+GET "https://{{baseUrl}}/v1/payments/:paymentId/parts/:partid/itemparts"
+
+
+// **Note:** The Invoice Item Settlement feature is in **Limited Availability**, and it must be used together with other Advanced AR Settlement features (Unapplied Payments, and Credit and Debit memos). If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnRetrieves the information about a specific payment part item. A payment part item is a single line item in a payment part. A payment part can consist of several different types of items
+
+@name("Get payment part item")
+GET "https://{{baseUrl}}/v1/payments/:paymentId/parts/:partid/itemparts/:itempartid"
+
+
+

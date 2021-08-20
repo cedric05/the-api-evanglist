@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// [DEPRECATED - use /share-invite-monetary-account-response] Get the details of a specific share inquiry.
+
+@name("READ Share Invite Monetary Account Inquiry for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/share-invite-monetary-account-inquiry/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// [DEPRECATED - use /share-invite-monetary-account-response] Update the details of a share. This includes updating status (revoking or cancelling it), granted permission and validity period of this share.
+
+@name("UPDATE Share Invite Monetary Account Inquiry for User Monetary Account")
+PUT "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/share-invite-monetary-account-inquiry/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "counter_user_alias": {
+        "avatar": {
+            "anchor_uuid": "enim nulla fugiat aliq",
+            "image": [
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            ],
+            "uuid": "<string>"
+        },
+        "country": "exercitation Ut adipisicing aliqua",
+        "display_name": "tempor enim reprehenderit exercitation ad",
+        "public_nick_name": "sit Duis in",
+        "uuid": "tempor Excepteur aliqua labore aliquip"
+    },
+    "draft_share_invite_bank_id": "<integer>",
+    "end_date": "<string>",
+    "relationship": "<string>",
+    "share_detail": {
+        "draft_payment": {
+            "make_draft_payments": false,
+            "view_balance": false,
+            "view_new_events": true,
+            "view_old_events": false
+        },
+        "payment": {
+            "budget": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "make_draft_payments": false,
+            "make_payments": false,
+            "view_balance": true,
+            "view_new_events": false,
+            "view_old_events": false
+        },
+        "read_only": {
+            "view_balance": true,
+            "view_new_events": true,
+            "view_old_events": false
+        }
+    },
+    "share_type": "<string>",
+    "start_date": "<string>",
+    "status": "<string>"
+})
+
+
+

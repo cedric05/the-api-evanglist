@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Sets a contact address per address type as the primary address. The ID of the contact, the ID of the address and the ID of the address type must be specified. A primary address is also definable if you create or update a contact address.
+
+@name("Set a contact address per address type as the primary address")
+PUT "https://{{baseUrl}}/rest/accounts/contacts/:contactId/addresses/:addressId/types/:addressTypeId/primary"
+
+
+// Resets a contact primary address. The ID of the contact, the ID of the address and the ID of the address type must be specified.
+
+@name("Resets a contact primary address")
+PUT "https://{{baseUrl}}/rest/accounts/contacts/:contactId/addresses/:addressId/types/:addressTypeId/reset_primary"
+
+
+

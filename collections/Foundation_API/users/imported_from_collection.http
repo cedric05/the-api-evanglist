@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets paginated user list.
+
+@name("Gets paginated user list")
+GET "https://{{baseUrl}}/users"
+? "sortby"= "<>"
+? "ids"= "<>"
+? "names"= "<>"
+? "search"= "<>"
+? "status"= "<put>"
+? "offset"= "<put>"
+? "count"= "<>"
+
+
+// Gets user data by email.
+
+@name("Gets user data by email")
+GET "https://{{baseUrl}}/users/by-email/:email"
+
+
+

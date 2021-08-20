@@ -1,0 +1,134 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /tips/{TIP_ID}/unmark
+
+@name("/tips/{TIP_ID}/unmark")
+GET "https://{{baseUrl}}/lists/:LIST_ID"
+? "limit"= "<integer>"
+? "LIST_ID"= "<string>"
+? "offset"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/suggestvenues
+
+@name("/lists/{LIST_ID}/suggestvenues")
+POST "https://{{baseUrl}}/lists/:LIST_ID/additem"
+? "itemId"= "<string>"
+? "listId"= "<string>"
+? "LIST_ID"= "<string>"
+? "text"= "<string>"
+? "tipId"= "<string>"
+? "url"= "<string>"
+? "v"= "<string>"
+? "venueId"= "<string>"
+
+
+// /lists/{LIST_ID}/additem
+
+@name("/lists/{LIST_ID}/additem")
+POST "https://{{baseUrl}}/lists/:LIST_ID/deleteitem"
+? "itemId"= "<string>"
+? "LIST_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/deleteitem
+
+@name("/lists/{LIST_ID}/deleteitem")
+POST "https://{{baseUrl}}/lists/:LIST_ID/follow"
+? "LIST_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/add
+
+@name("/lists/add")
+GET "https://{{baseUrl}}/lists/:LIST_ID/followers"
+? "LIST_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/follow
+
+@name("/lists/{LIST_ID}/follow")
+POST "https://{{baseUrl}}/lists/:LIST_ID/moveitem"
+? "afterId"= "<xsd:string>"
+? "beforeId"= "<xsd:string>"
+? "itemId"= "<string>"
+? "LIST_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/moveitem
+
+@name("/lists/{LIST_ID}/moveitem")
+POST "https://{{baseUrl}}/lists/:LIST_ID/share"
+? "broadcast"= "<string>"
+? "LIST_ID"= "<string>"
+? "message"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/followers
+
+@name("/lists/{LIST_ID}/followers")
+GET "https://{{baseUrl}}/lists/:LIST_ID/suggestphoto"
+? "itemId"= "<string>"
+? "LIST_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/suggestphoto
+
+@name("/lists/{LIST_ID}/suggestphoto")
+GET "https://{{baseUrl}}/lists/:LIST_ID/suggesttip"
+? "itemId"= "<string>"
+? "LIST_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/suggesttip
+
+@name("/lists/{LIST_ID}/suggesttip")
+GET "https://{{baseUrl}}/lists/:LIST_ID/suggestvenues"
+? "LIST_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/share
+
+@name("/lists/{LIST_ID}/share")
+POST "https://{{baseUrl}}/lists/:LIST_ID/unfollow"
+? "LIST_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/unfollow
+
+@name("/lists/{LIST_ID}/unfollow")
+POST "https://{{baseUrl}}/lists/:LIST_ID/update"
+? "collaborative"= "<boolean>"
+? "description"= "<string>"
+? "LIST_ID"= "<string>"
+? "name"= "<string>"
+? "photoId"= "<string>"
+? "v"= "<string>"
+
+
+// /lists/{LIST_ID}/update
+
+@name("/lists/{LIST_ID}/update")
+POST "https://{{baseUrl}}/lists/:LIST_ID/updateitem"
+? "itemId"= "<string>"
+? "LIST_ID"= "<string>"
+? "photoId"= "<string>"
+? "text"= "<string>"
+? "tipId"= "<string>"
+? "url"= "<string>"
+? "v"= "<string>"
+
+
+

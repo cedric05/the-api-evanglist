@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// List all discussions on a team's page. OAuth access tokens require the `read:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+// 
+// **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions`.
+
+@name("List discussions")
+GET "https://{{baseUrl}}/orgs/:org/teams/:team_slug/discussions"
+? "direction"= "desc"
+? "per_page"= "30"
+? "page"= "1"
+
+
+// Creates a new discussion post on a team's page. OAuth access tokens require the `write:discussion` [scope](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+// 
+// This endpoint triggers [notifications](https://help.github.com/articles/about-notifications/). Creating content too quickly using this endpoint may result in abuse rate limiting. See "[Abuse rate limits](https://developer.github.com/v3/#abuse-rate-limits)" and "[Dealing with abuse rate limits](https://developer.github.com/v3/guides/best-practices-for-integrators/#dealing-with-abuse-rate-limits)" for details.
+// 
+// **Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/{org_id}/team/{team_id}/discussions`.
+
+@name("Create a discussion")
+POST "https://{{baseUrl}}/orgs/:org/teams/:team_slug/discussions"
+"Content-Type": "application/json"
+json({
+    "title": "<string>",
+    "body": "<string>",
+    "private": false
+})
+
+
+

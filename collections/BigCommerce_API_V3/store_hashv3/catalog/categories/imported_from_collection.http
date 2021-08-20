@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6e90ddfd-d8be-45c2-9615-f4a24a1dd00f.postman_collection.json
+
+// Returns a paginated categories collection from the BigCommerce Catalogn
+
+@name("Retrieve categories")
+GET "https://{{baseUrl}}/:store_hash/v3/catalog/categories"
+? "is_visible"= "<post>"
+
+
+@name("Retrieve category structure/tree")
+GET "https://{{baseUrl}}/:store_hash/v3/catalog/categories/tree"
+
+
+

@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a20fb60d-0c32-4736-ba71-ca8dec82969c.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{bearer_token}}"
+
+
+@name("Pull Twitter Followers") : "base-inherit-auth"
+GET "https://api.twitter.com/1.1/followers/list.json"
+? "max_id"= ""
+? "since_id"= ""
+? "screen_name"= "kinlane"
+? "count"= "100"
+? "cursor"= "{{next_cursor}}"
+
+
+@name("Save to Github") : "base-inherit-auth"
+PUT "https://api.github.com/repos/:owner/:repo/contents/:path"
+"Authorization": "Bearer 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"
+"Content-Type": "application/json"
+json({
+    "message": "Updating the News",
+    "committer": {
+        "name": "Kin Lane",
+        "email": "kinlane@gmail.com"
+    },
+    "content": "{{followers_encoded}}"
+})
+
+
+

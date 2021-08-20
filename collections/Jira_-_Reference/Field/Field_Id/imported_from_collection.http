@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a [paginated](#pagination) list of the contexts a field is used in. Deprecated, use [ Get custom field contexts](#api-rest-api-3-field-fieldId-context-get).
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get Contexts For A Field") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/field/:fieldId/contexts"
+? "startAt"= "0"
+? "maxResults"= "20"
+
+
+// Returns a [paginated](#pagination) list of the screens a field is used in.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get Screens For A Field") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/field/:fieldId/screens"
+? "startAt"= "0"
+? "maxResults"= "100"
+
+
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8f0ef5f1-d82f-47e1-8bde-ff3a9b29d3be.postman_collection.json
+
+@name("Search a table")
+GET "https://{{baseUrl}}/v2/keyspaces/:keyspace-id/:table-id"
+"X-Cassandra-Token": "sint dolore"
+? "fields"= "sint dolore"
+? "page-size"= "-15651504"
+? "page-state"= "sint dolore"
+? "firstName"= "asc"
+? "age"= "desc"
+? "raw"= "false"
+
+
+@name("Add rows")
+POST "https://{{baseUrl}}/v2/keyspaces/:keyspace-id/:table-id"
+"X-Cassandra-Token": "sint dolore"
+"Content-Type": "application/json"
+json({
+    "pk": "e73c77ec-002d-457a-8b65-8ce7cfb15fc7",
+    "age": "30",
+    "name": "John"
+})
+
+
+

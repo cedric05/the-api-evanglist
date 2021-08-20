@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eebe2b77-bc21-4c11-b32e-e737757a52b2.postman_collection.json
+
+// Get theme information
+
+@name("Get theme information for a tenant")
+GET "https://{{baseUrl}}/themes"
+
+
+// Get the registered theme infromation for the given uri
+
+@name("Get the registered theme by uri")
+GET "https://{{baseUrl}}/themes/:uuid"
+
+
+

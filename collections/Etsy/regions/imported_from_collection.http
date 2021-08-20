@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Finds all Region.
+
+@name("Get Regions")
+GET "https://{{baseUrl}}/regions"
+
+
+// Retrieves a Region by id.
+
+@name("Get Regions Region")
+GET "https://{{baseUrl}}/regions/:region_id"
+
+
+

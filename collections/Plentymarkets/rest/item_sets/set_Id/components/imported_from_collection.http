@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Delete item set components.
+
+@name("Delete item set components")
+DELETE "https://{{baseUrl}}/rest/item_sets/:setId/components"
+
+
+// Deletes an item set component. The item set component ID of the item set component must be specified.
+
+@name("Delete an item set component")
+DELETE "https://{{baseUrl}}/rest/item_sets/:setId/components/:id"
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Retrieve all Linked Resources for the specified Reference.")
+GET "https://{{baseUrl}}/rest/Reference/:referenceId/LinkedResources"
+
+
+@name("Retrieve the list of Keywords associated with the given Reference.")
+GET "https://{{baseUrl}}/rest/Reference/:referenceId/Keywords"
+
+
+@name("Retrieve the collection of Subject Categories associated with the given Reference.")
+GET "https://{{baseUrl}}/rest/Reference/:referenceId/Subjects"
+
+
+@name("Retrieve the collection of taxa associated with the given Reference.")
+GET "https://{{baseUrl}}/rest/Reference/:referenceId/Taxa"
+
+
+

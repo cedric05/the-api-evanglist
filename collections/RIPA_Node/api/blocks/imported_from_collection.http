@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a7f6803d-cd9d-44a5-aa66-33a5315babb5.postman_collection.json
+
+// Get all blocks.
+
+@name("Blocks")
+GET "https://{{baseUrl}}/api/blocks"
+? "limit"= "<>"
+? "orderBy"= "<>"
+? "offset"= "<>"
+? "generatorPublicKey"= "<get>"
+? "totalAmount"= "<get>"
+? "totalFee"= "<get>"
+? "reward"= "<get>"
+? "previousBlock"= "<get>"
+? "height"= "<get>"
+
+
+// Get block by id.
+
+@name("Blocks Get")
+GET "https://{{baseUrl}}/api/blocks/get"
+? "id"= "<get>"
+
+
+// Get the blockchain epoch.
+
+@name("Blocks Get Epoch")
+GET "https://{{baseUrl}}/api/blocks/getEpoch"
+
+
+// Get the blockchain height.
+
+@name("Blocks Get Height")
+GET "https://{{baseUrl}}/api/blocks/getHeight"
+
+
+// Get the blockchain nethash.
+
+@name("Blocks Get Nethash")
+GET "https://{{baseUrl}}/api/blocks/getNethash"
+
+
+// Get the transaction fee for sending normal transactions.
+
+@name("Blocks Get Fee")
+GET "https://{{baseUrl}}/api/blocks/getFee"
+
+
+// Get the network fees.
+
+@name("Blocks Get Fees")
+GET "https://{{baseUrl}}/api/blocks/getFees"
+
+
+// Get the blockchain milestone.
+
+@name("Blocks Get Milestone")
+GET "https://{{baseUrl}}/api/blocks/getMilestone"
+
+
+// Get the blockchain reward.
+
+@name("Blocks Get Reward")
+GET "https://{{baseUrl}}/api/blocks/getReward"
+
+
+// Get the blockchain supply.
+
+@name("Blocks Get Supply")
+GET "https://{{baseUrl}}/api/blocks/getSupply"
+
+
+// Get the blockchain status.
+
+@name("Blocks Get Status")
+GET "https://{{baseUrl}}/api/blocks/getStatus"
+
+
+

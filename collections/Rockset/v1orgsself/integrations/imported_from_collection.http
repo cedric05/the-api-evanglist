@@ -1,0 +1,80 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// List all integrations in an organization.
+
+@name("List Integrations")
+GET "https://{{baseUrl}}/v1/orgs/self/integrations"
+
+
+// Create a new integration.
+
+@name("Create Integration")
+POST "https://{{baseUrl}}/v1/orgs/self/integrations"
+"Content-Type": "application/json"
+json({
+    "name": "event-logs",
+    "description": "AWS account with event data for the data science team.",
+    "s3": {
+        "aws_access_key": {
+            "aws_access_key_id": "AKIAIOSFODNN7EXAMPLE",
+            "aws_secret_access_key": "wJal...."
+        },
+        "aws_role": {
+            "aws_role_arn": "arn:aws:iam::2378964092:role/rockset-role"
+        }
+    },
+    "kinesis": {
+        "aws_access_key": {
+            "aws_access_key_id": "AKIAIOSFODNN7EXAMPLE",
+            "aws_secret_access_key": "wJal...."
+        },
+        "aws_role": {
+            "aws_role_arn": "arn:aws:iam::2378964092:role/rockset-role"
+        }
+    },
+    "dynamodb": {
+        "aws_access_key": {
+            "aws_access_key_id": "AKIAIOSFODNN7EXAMPLE",
+            "aws_secret_access_key": "wJal...."
+        },
+        "aws_role": {
+            "aws_role_arn": "arn:aws:iam::2378964092:role/rockset-role"
+        }
+    },
+    "redshift": {
+        "host": "test.yuyugt.us-west-2.redshift.amazonaws.com",
+        "password": "pswd....",
+        "port": 5439,
+        "s3_bucket_path": "s3://redshift-unload",
+        "username": "awsuser",
+        "aws_access_key": {
+            "aws_access_key_id": "AKIAIOSFODNN7EXAMPLE",
+            "aws_secret_access_key": "wJal...."
+        }
+    },
+    "gcs": {
+        "gcp_service_account": {
+            "service_account_key_file_json": "magna incididunt aliqua ea tempor"
+        }
+    },
+    "segment": {
+        "connection_string": "dolore ut in deserunt"
+    },
+    "kafka": {
+        "kafka_data_format": "AVRO",
+        "kafka_topic_names": [
+            "sint mollit consectetur",
+            "in nisi"
+        ],
+        "source_status_by_topic": {},
+        "connection_string": "magna do deserunt"
+    },
+    "mongodb": {
+        "connection_uri": "mongodb+srv://<username>:<password>@server.example.com/"
+    }
+})
+
+
+

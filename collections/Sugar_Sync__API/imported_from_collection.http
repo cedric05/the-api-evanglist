@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d73a1a0-5a05-4d06-ac30-82c90173ac85.postman_collection.json
+
+// To retrieve information about an album, an application submits an HTTP GET request to then          album resource that represents the album.
+
+@name("Retrieving Album Information")
+GET "https://{{baseUrl}}/album/"
+? "max"= "<>"
+? "order"= "<>"
+? "start"= "<>"
+
+
+// An application needs to be authorized to access a users SugarSync resources through the Platform API.nTo do that, the app needs to create a refresh token. When a user first runs the application, it creates a refresh tokennby submitting a POST request that includes the users credentials to the API.nIf the request is successful, the SugarSync service grants the application permission to access the users account and returns a refresh token.n
+
+@name("Creating a Refresh Token")
+POST "https://{{baseUrl}}/app-authorization"
+"Content": "<>"
+"Host": "<>"
+"User": "<>"
+
+
+// An application needs to be authorized to access a users SugarSync resources through the Platform API. To do that,nthe app needs to create an access token, which allows the app to access files, folders,nand other resources within a users account. After the token is created, the app needs to specify it in the HTTP request header when it makes a request through the API to access a resource.
+
+@name("Creating an Access Token")
+POST "https://{{baseUrl}}/authorization"
+"Content": "<>"
+"Host": "<>"
+"User": "<>"
+
+
+// A contact represents another SugarSync user who has shared a folder or folders with this user.n          To retrieve information about a contact, an application submits an HTTP GET request to then          contact resource.
+
+@name("Retrieving Contact Information")
+GET "https://{{baseUrl}}/contact/"
+
+
+// To retrieve information about a received share (that is, a shared folder owned by another user and to whichnthis user has been granted access privileges by the owner), an application submits an HTTP GET request to the URLnthat represents the received share resource. The URL is referenced in the &lt;receivedShare&gt; element for the received share in the received shares list.nSee Retrieving the Received Shares List.
+
+@name("Retrieving Received Share Information")
+GET "https://{{baseUrl}}/receivedShare/"
+
+
+

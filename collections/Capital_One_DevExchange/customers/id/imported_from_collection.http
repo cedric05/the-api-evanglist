@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1eafd448-a35c-467b-bb97-09ace45ef013.postman_collection.json
+
+// Returns the customer with the specific id
+
+@name("Get customer by id")
+GET "https://{{baseUrl}}/customers/:id"
+
+
+// Creates an account for the customer with the id provided
+
+@name("Create an account")
+POST "https://{{baseUrl}}/customers/:id/accounts"
+
+
+// Returns the bills associated with the specific customer
+
+@name("Get bills by customer id")
+GET "https://{{baseUrl}}/customers/:id/bills"
+
+
+

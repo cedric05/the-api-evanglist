@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Create a conversation and interact with it in a stateful manner. Give answers and ask for the next questions bit by bit.
+
+@name("Create a Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversation/:id"
+"Content-Type": "application/json"
+json({
+    "person.name.first": "Max",
+    "person.birthdate": "1980-01-01"
+})
+
+
+// Give the next answers to the open conversation according to the last specified questions and receive back the next statements and/or questions.
+
+@name("Give Answers") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversation/:id/answer"
+"Content-Type": "application/json"
+json({
+    "initial-question": "Was wird durch meine Haushaltsversicherung abgedeckt?"
+})
+
+
+

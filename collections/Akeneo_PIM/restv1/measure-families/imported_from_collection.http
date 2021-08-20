@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Measure families (2.x only).
+
+@name("measure families (2.x only)")
+GET "https://{{baseUrl}}/rest/v1/measure-families"
+
+
+// Assuming that the given code is the code of an existing measure family
+
+@name("measure family (2.x only)")
+GET "https://{{baseUrl}}/rest/v1/measure-families/area"
+
+
+

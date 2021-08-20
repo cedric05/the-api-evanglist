@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cfbeaf2-0501-4ada-b318-94f62ae95a10.postman_collection.json
+
+@name("Venues, landmarks, regions, these are all places to search.")
+GET "https://{{baseUrl}}/places"
+? "category"= "<array>"
+? "function"= "<array>"
+? "ambience"= "<array>"
+? "tag"= "<array>"
+? "type"= "<string>"
+? "name"= "<string>"
+? "exact"= "<boolean>"
+? "capacity_min"= "<number>"
+? "capacity_max"= "<number>"
+? "street"= "<string>"
+? "locality"= "<string>"
+? "region"= "<string>"
+? "postal_code"= "<string>"
+? "country"= "<string>"
+? "center"= "<string>"
+? "radius"= "<integer>"
+? "bbox"= "<array>"
+? "polygon"= "<array>"
+? "within"= "<string>"
+? "offset"= "<integer>"
+? "limit"= "<integer>"
+? "fieldset"= "<string>"
+
+
+@name("Get specific place details")
+GET "https://{{baseUrl}}/places/:id"
+? "fieldset"= "<string>"
+
+
+

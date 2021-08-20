@@ -1,0 +1,375 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Updates details of an appointment or reserve, or of multiple appointments/reserves if passing a comma separates list of appt_ids.  If the parameter send_notifications=yes is included, any active notifications associated with the action will be triggered.  Only the fields/values you send to the service will be updated, so you may update any number and combination of fields. Sending no data will simply update the last_timestamp field with the current timestamp. If you send a field with no value, t
+
+@name("UpdateAppointments")
+POST "https://{{baseUrl}}/Appointments/UpdateAppointments"
+? "appt_id"= "<string>"
+? "location_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "service_id"= "<integer>"
+? "type_id"= "<integer>"
+? "room_id"= "<integer>"
+? "addons"= "<string>"
+? "end_time"= "<integer>"
+? "customer_notes"= "<string>"
+? "employee_notes"= "<string>"
+? "rep_id"= "<integer>"
+? "cost"= "<number>"
+? "tip"= "<number>"
+? "payment_type_id"= "<integer>"
+? "customer_package_id"= "<integer>"
+? "spots"= "<integer>"
+? "reason"= "<string>"
+? "creation_emp_id"= "<integer>"
+? "last_emp_id"= "<integer>"
+? "po_number"= "<string>"
+? "coupon_code"= "<string>"
+? "make_id"= "<integer>"
+? "model_id"= "<integer>"
+? "model_year"= "<integer>"
+? "other_vehicle"= "<string>"
+? "vin"= "<string>"
+? "odometer"= "<string>"
+? "dealer_address"= "<string>"
+? "dealer_name"= "<string>"
+? "salvage_reason"= "<string>"
+? "cert_number"= "<string>"
+? "aces_year"= "<integer>"
+? "aces_make"= "<string>"
+? "aces_model"= "<string>"
+? "aces_submodel"= "<string>"
+? "override_aces_submodel"= "<boolean>"
+? "override"= "<boolean>"
+
+
+// Creates an appointment.  If the parameter send_notifications=yes is included, any active notifications associated with the action will be triggered.  The c_id field should contain the location_id of the location where you want to book the appointment.  The start_time and end_time fields should be represented by the number of minutes past 12:00am. For example, 8:00am should be sent as 480 (8hrs x 60min = 480min) and 5:00pm should be sent as 1020 (17hrs x 60min = 1020min). If you dont send an end_
+
+@name("CreateAppointments")
+POST "https://{{baseUrl}}/Appointments/CreateAppointments"
+? "location_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "service_id"= "<integer>"
+? "type_id"= "<integer>"
+? "room_id"= "<integer>"
+? "addons"= "<string>"
+? "end_time"= "<integer>"
+? "customer_notes"= "<string>"
+? "employee_notes"= "<string>"
+? "rep_id"= "<integer>"
+? "cost"= "<number>"
+? "tip"= "<number>"
+? "payment_type_id"= "<integer>"
+? "customer_package_id"= "<integer>"
+? "spots"= "<integer>"
+? "reason"= "<string>"
+? "creation_emp_id"= "<integer>"
+? "last_emp_id"= "<integer>"
+? "po_number"= "<string>"
+? "coupon_code"= "<string>"
+? "make_id"= "<integer>"
+? "model_id"= "<integer>"
+? "model_year"= "<integer>"
+? "other_vehicle"= "<string>"
+? "vin"= "<string>"
+? "odometer"= "<string>"
+? "dealer_address"= "<string>"
+? "dealer_name"= "<string>"
+? "salvage_reason"= "<string>"
+? "cert_number"= "<string>"
+? "aces_year"= "<integer>"
+? "aces_make"= "<string>"
+? "aces_model"= "<string>"
+? "aces_submodel"= "<string>"
+? "override_aces_submodel"= "<boolean>"
+? "override"= "<boolean>"
+
+
+// Removes a reserve from the specified time slot. Once deleted, the record cannot be restored.  You must specify either an `employee_id` or `room_id`, along with either an `appt_id` or both a `date` and `start_time` in order properly identify what time should be unreserved.  If you do not specify a `location_id` for the reserved time, the method will assume the headquarters location.  The method will return the details of the reserved time that was removed.  NOTE: A u201creserved timeu201d is simply a
+
+@name("DeleteReserves")
+POST "https://{{baseUrl}}/Appointments/DeleteReserves"
+? "employee_id"= "<integer>"
+? "room_id"= "<integer>"
+? "appt_id"= "<string>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+
+
+// Creates a set of recurring appointments. Unless the `override` flag is set to `TRUE`, the system will only create the appointments that fit within the specified schedule. The errors element of the response will contain details of the appointments that were not created.
+
+@name("CreateRecurringAppointments")
+POST "https://{{baseUrl}}/Appointments/CreateRecurringAppointments"
+? "recur_on"= "<integer>"
+? "recur_at"= "<integer>"
+? "recur_start"= "<integer>"
+? "recur_end"= "<integer>"
+? "location_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "service_id"= "<integer>"
+? "room_id"= "<integer>"
+? "addons"= "<string>"
+? "end_time"= "<integer>"
+? "customer_notes"= "<string>"
+? "employee_notes"= "<string>"
+? "rep_id"= "<integer>"
+? "cost"= "<number>"
+? "tip"= "<number>"
+? "payment_type_id"= "<integer>"
+? "customer_package_id"= "<integer>"
+? "spots"= "<integer>"
+? "reason"= "<string>"
+? "creation_emp_id"= "<integer>"
+? "last_emp_id"= "<integer>"
+? "po_number"= "<string>"
+? "coupon_code"= "<string>"
+? "make_id"= "<integer>"
+? "model_id"= "<integer>"
+? "model_year"= "<integer>"
+? "other_vehicle"= "<string>"
+? "vin"= "<string>"
+? "odometer"= "<string>"
+? "aces_year"= "<integer>"
+? "aces_make"= "<string>"
+? "aces_model"= "<string>"
+? "aces_submodel"= "<string>"
+? "override _aces_submodel"= "<boolean>"
+? "override"= "<boolean>"
+
+
+// Updates details of an existing reserve.  Only the fields/values you send to the service will be updated, so you may update any number and combination of fields. Sending no data will simply update the last_timestamp field with the current timestamp. If you send a field with no value, the system will assume you want to clear the value that is currently in the field.
+
+@name("UpdateReserves")
+POST "https://{{baseUrl}}/Appointments/UpdateReserves"
+? "appt_id"= "<string>"
+? "employee_id"= "<integer>"
+? "room_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "end_time"= "<integer>"
+? "status_id"= "<integer>"
+? "reason"= "<string>"
+? "creation_emp_id"= "<integer>"
+? "last_emp_id"= "<integer>"
+
+
+// Returns all appointment statuses.
+
+@name("GetAppointmentStatuses")
+POST "https://{{baseUrl}}/Appointments/GetAppointmentStatuses"
+
+
+// Creates a reserve in a time slot.  The c_id field should contain the location_id of the location where you want to book the appointment.  Only one of either room_id or employeed_id is required, depending on which you want to reserve.  The start_time and end_time fields should be represented by the number of minutes past 12:00am. For example, 8:00am should be sent as 480 (8hrs x 60min = 480min) and 5:00pm should be sent as 1020 (17hrs x 60min = 1020min). If you dont send an end_time, the system w
+
+@name("CreateReserves")
+POST "https://{{baseUrl}}/Appointments/CreateReserves"
+? "location_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "room_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "status_id"= "<integer>"
+? "end_time"= "<integer>"
+? "reason"= "<string>"
+? "creation_emp_id"= "<integer>"
+? "last_emp_id"= "<integer>"
+
+
+// Updates a set of recurring appointments. Unless the `override` flag is set to `TRUE`, the system will only create/update the appointments that fit within the specified schedule.
+
+@name("UpdateRecurringAppointments")
+POST "https://{{baseUrl}}/Appointments/UpdateRecurringAppointments"
+? "recur_id"= "<integer>"
+? "recur_on"= "<integer>"
+? "recur_at"= "<integer>"
+? "recure_start"= "<integer>"
+? "recur_end"= "<integer>"
+? "location_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "service_id"= "<integer>"
+? "room_id"= "<integer>"
+? "addons"= "<string>"
+? "end_time"= "<integer>"
+? "customer_notes"= "<string>"
+? "employee_notes"= "<string>"
+? "rep_id"= "<integer>"
+? "cost"= "<number>"
+? "tip"= "<number>"
+? "payment_type_id"= "<integer>"
+? "customer_package_id"= "<integer>"
+? "spots"= "<integer>"
+? "reason"= "<string>"
+? "creation_emp_id"= "<integer>"
+? "last_emp_id"= "<integer>"
+? "po_number"= "<string>"
+? "coupon_code"= "<string>"
+? "make_id"= "<integer>"
+? "model_id"= "<integer>"
+? "model_year"= "<integer>"
+? "other_vehicle"= "<string>"
+? "vin"= "<string>"
+? "odometer"= "<string>"
+? "aces_year"= "<integer>"
+? "aces_make"= "<string>"
+? "aces_model"= "<string>"
+? "aces_submodel"= "<string>"
+? "override _aces_submodel"= "<boolean>"
+? "override"= "<boolean>"
+
+
+// Returns the audit trail(s) for the selected appointment(s).
+
+@name("GetAuditTrails")
+POST "https://{{baseUrl}}/Appointments/GetAuditTrails"
+? "location_id"= "<integer>"
+? "appt_id"= "<string>"
+
+
+// Returns all available time slots for `num_days` number of days after the `start_date` date.  Using the `num_days` variable allows you to specify how many days of open time slots to return. Additionally, you can further limit the resultset using the `num_slots` variable, to only return that number of time slots.  The `location_id`, `employee_id`, `room_id`, `service_id`, and `addons` variables will filter the results to only include time slots where each of those is available. The filter will fin
+
+@name("GetOpenSlots")
+POST "https://{{baseUrl}}/Appointments/GetOpenSlots"
+? "store_number"= "<string>"
+? "start_date"= "<integer>"
+? "start_time"= "<integer>"
+? "num_days"= "<integer>"
+? "num_slots"= "<integer>"
+? "location_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "service_id"= "<integer>"
+? "addons"= "<string>"
+? "show_duplicates"= "<string>"
+? "randomize"= "<string>"
+? "room_id"= "<integer>"
+? "limit_end_time"= "<integer>"
+? "limit_start_time"= "<integer>"
+? "include_time_zone"= "<boolean>"
+
+
+// Creates a set of recurring reserves in a time slot.  Only one of either `room_id` or `employeed_id` is required, depending on which you want to reserve.
+
+@name("CreateRecurringReserves")
+POST "https://{{baseUrl}}/Appointments/CreateRecurringReserves"
+? "recur_on"= "<integer>"
+? "recur_at"= "<integer>"
+? "recure_start"= "<integer>"
+? "recur_end"= "<integer>"
+? "location_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "date"= "<integer>"
+? "start_time"= "<integer>"
+? "room_id"= "<integer>"
+? "end_time"= "<integer>"
+? "reason"= "<string>"
+? "creation_emp_id"= "<integer>"
+? "last_emp_id"= "<integer>"
+
+
+// Analogous to /Staff/GetOpenDates: takes in similar parameters as /Appointments/GetOpenSlots, but returns a response similar to /Staff/GetOpenDates.
+
+@name("GetOpenDates")
+POST "https://{{baseUrl}}/Appointments/GetOpenDates"
+? "location_id"= "<integer>"
+? "store_number"= "<string>"
+? "start_date"= "<integer>"
+? "start_time"= "<integer>"
+? "employee_id"= "<integer>"
+? "num_days"= "<integer>"
+? "open_days"= "<integer>"
+? "room_id"= "<integer>"
+? "service_id"= "<integer>"
+? "limit_start_time"= "<integer>"
+? "limit_end_time"= "<integer>"
+? "addons"= "<string>"
+? "duration"= "<integer>"
+
+
+// Creates a new appointment status.
+
+@name("CreateAppointmentStatuses")
+POST "https://{{baseUrl}}/Appointments/CreateAppointmentStatuses"
+? "description"= "<string>"
+? "color"= "<string>"
+? "display"= "<string>"
+
+
+// Updates details of an appointment status.  Note that this is different from updating the status of an appointment, which is done by using `UpdateAppointment` and sending a new `status_id`.
+
+@name("UpdateAppointmentStatuses")
+POST "https://{{baseUrl}}/Appointments/UpdateAppointmentStatuses"
+? "status_id"= "<integer>"
+? "description"= "<string>"
+? "color"= "<string>"
+? "display"= "<string>"
+
+
+// Returns the details for appointments.  If none of the optional POST parameters are sent, the service will return all of the appointments for the current day.  Note that `start_date` and `end_date` must be used in tandem to return all appointments within that date range.  Using `updated` and `created` will filter the resultset to only include appointments that have been updated or created since the given timestamp.  **Custom Fields**  If using Custom Fields, the following field is returned: custo
+
+@name("GetAppointments")
+POST "https://{{baseUrl}}/Appointments/GetAppointments"
+? "date"= "<integer>"
+? "start_date"= "<integer>"
+? "end_date"= "<integer>"
+? "appt_id"= "<string>"
+? "customer_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "service_id"= "<integer>"
+? "location_id"= "<integer>"
+? "status_id"= "<integer>"
+? "first_name"= "<string>"
+? "last_name"= "<string>"
+? "updated"= "<string>"
+? "updated_gmt"= "<string>"
+? "created"= "<string>"
+? "created_gmt"= "<string>"
+? "status_type"= "<string>"
+? "exclude_status_id"= "<string>"
+? "exclude_status_type"= "<string>"
+? "po_number_search"= "<string>"
+? "other_vehicle_search"= "<string>"
+? "vin_search"= "<string>"
+? "odometer_search"= "<string>"
+? "dealer_address_search"= "<string>"
+? "dealer_name_search"= "<string>"
+? "salvage_reason_search"= "<string>"
+
+
+// Deletes future recurring reserves from a set of recurring reserves. This action cannot be undone.
+
+@name("DeleteRecurringReserves")
+POST "https://{{baseUrl}}/Appointments/DeleteRecurringReserves"
+? "recur_id"= "<integer>"
+
+
+// Cancels the specified appointment. Once canceled, the appointment will be removed from the appointment grid, but the record will still be available in the customers appointment history, showing the canceled status.  If the parameter send_notifications=yes is included, any active notifications associated with the action will be triggered.  You may optionally provide a reason for the cancellation. You may also specify the staff member performing the cancellation using last_emp_id.
+
+@name("CancelAppointments")
+POST "https://{{baseUrl}}/Appointments/CancelAppointments"
+? "appt_id"= "<string>"
+? "reason"= "<string>"
+? "last_emp_id"= "<integer>"
+
+
+// Deletes **future** appointments from a set of recurring appointments. This action cannot be undone.  If the parameter `send_notifications=yes` is included, any active notifications associated with the action will be triggered.
+
+@name("DeleteRecurringAppointments")
+POST "https://{{baseUrl}}/Appointments/DeleteRecurringAppointments"
+? "recur_id"= "<integer>"
+
+
+

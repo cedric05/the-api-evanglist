@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e7284ee4-fd9b-45f9-a31d-197af3b48c31.postman_collection.json
+
+// Get all Query Ontology
+
+@name("Get all Query Ontology")
+GET "https://{{baseUrl}}/query-ontology/rest/query-ontology/"
+
+
+// Create a Query Ontology
+
+@name("Create a Query Ontology")
+POST "https://{{baseUrl}}/query-ontology/rest/query-ontology/"
+
+
+// Activate the given Query Ontology
+
+@name("Activate the given Query Ontology")
+PATCH "https://{{baseUrl}}/query-ontology/rest/query-ontology/activate/:id/"
+
+
+// Download Query Ontology
+
+@name("Download Query Ontology")
+GET "https://{{baseUrl}}/query-ontology/rest/query-ontology/download/:id/"
+
+
+

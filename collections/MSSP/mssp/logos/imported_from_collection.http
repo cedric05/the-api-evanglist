@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fc06b48f-b548-47f5-91a1-9548e7a612e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Adds a logo to the Tenable.io MSSP Portal. After you add a logo to the Tenable.io MSSP Portal, use the [PUT /mssp/accounts/logos](ref:io-mssp-logos-assign) endpoint to assign the logo to a customer account.<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Add logo") : "base-inherit-auth"
+POST "https://{{baseUrl}}/mssp/logos"
+"Content-Type": "multipart/form-data"
+files(
+	("logo", "eu esse minim ex"),
+	("name", "in fugiat amet nulla mollit")
+)
+
+
+// Returns a list of logos you have uploaded to the Tenable.io MSSP Portal. <p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List logos") : "base-inherit-auth"
+GET "https://{{baseUrl}}/mssp/logos"
+
+
+

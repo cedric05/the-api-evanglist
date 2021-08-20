@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81cd636e-2898-40de-a451-37a5f3d0be39.postman_collection.json
+
+// Generates available domain suggestions that are related to a query string
+
+@name("Domain Suggestions")
+GET "https://{{baseUrl}}/domain-suggestions/"
+? "query"= "<string>"
+
+
+

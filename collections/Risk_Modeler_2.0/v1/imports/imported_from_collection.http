@@ -1,0 +1,113 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates a new import job and then runs it.
+
+@name("Create and run a new import job") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/imports"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "validate"= "true"
+json({
+    "bucketId": 19856312,
+    "dataSourceName": "Ut in",
+    "delimiter": "SEMICOLON",
+    "accountsFileId": -53504634,
+    "locationsFileId": -13486739,
+    "reinsuranceFileId": -92038715,
+    "mappingFileId": -29615358,
+    "locale": "ut nostrud",
+    "skipLines": 96758638,
+    "appendLocations": false,
+    "geoHaz": true,
+    "portfolioId": 69498565,
+    "importType": "MRI",
+    "portfolioIds": [
+        22166549,
+        -74497966
+    ]
+})
+
+
+@name("Extract data from MRI file") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/imports/extractsample/:bucketId/:fileId"
+"Authorization": "Bearer <Bearer Token>"
+? "delimiter"= "SEMICOLON"
+
+
+@name("Extract column data from MRI location file") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/imports/extractaccountsfromlocationfile/:bucketId/:fileId"
+"Authorization": "Bearer <Bearer Token>"
+? "delimiter"= "SEMICOLON"
+
+
+// Retrieves data from a mapping file specified by its ID in a bucket specified by its ID.
+
+@name("Get data from a specified mapping file") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/imports/extractmapping/:bucketId/:fileId"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates the mapping file, mapping the columns in the file to the database fields, as needed by MRI.
+
+@name("Create the mapping file needed by MRI") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/imports/createmapping/:bucketId"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "accountItems": [
+        {
+            "source": "ut occaecat",
+            "destination": "labore nulla "
+        },
+        {
+            "source": "do Lorem consequat mollit ut",
+            "destination": "quis in dolore ea occaecat"
+        }
+    ],
+    "locationItems": [
+        {
+            "source": "sint e",
+            "destination": "fug"
+        },
+        {
+            "source": "mollit amet",
+            "destination": "Ut proident sunt nisi incididunt"
+        }
+    ],
+    "mapFileName": "anim in nulla",
+    "reinsuranceItems": [
+        {
+            "source": "dolore cillum",
+            "destination": "et"
+        },
+        {
+            "source": "officia esse cupidatat",
+            "destination": "Lorem culpa aute magna"
+        }
+    ]
+})
+
+
+// Creates an account file for a bucket specified by its ID that is needed by MRI for running the import of account data.
+
+@name("Create an account file that is needed by MRI for running the import of account data") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/imports/createaccount/:bucketId"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "delimiter"= "SEMICOLON"
+json({
+    "name": "pariatur dolor proident fugiat in",
+    "number": "amet id culpa sint"
+})
+
+
+

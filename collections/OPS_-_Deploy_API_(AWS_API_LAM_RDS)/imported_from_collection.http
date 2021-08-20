@@ -1,0 +1,300 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9ed91d9c-8687-4f36-8966-ad87a1d2a986.postman_collection.json
+
+// The pulls an API from Postman based upon name, then finds the underlying version, and OpenAPI schema--then loads that OpenAPI into the environment so it can be used throughout this collection without making 3 separate API calls. Keeping the OpenAPI in the environment to minimize round trips to the Postman API.
+
+@name("1. Pull OpenAPI (Postman)")
+GET "https://api.getpostman.com/apis/"
+"x-api-key": "{{postman_api_key}}"
+? "workspace_name"= "API Specification Toolbox"
+? "api_name"= "Open Source Tooling"
+? "api_version"= "V1.0.0"
+
+
+// This runs a Lambda function to create our RDS table because there is no way to create an RDS tasble within a database using the RDS API. This is an emphemeral Lambda function that will be cleaned up once it is executed.
+
+@name("2. Create Table Function (Lambda)")
+POST "https://{{aws_lambda_base_url}}/2015-03-31/functions/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lambda_service}}", region="{{aws_lambda_region}}")
+data('{
+  "Code": {
+      "S3Bucket": "api-deployment-lambdas",
+      "S3Key": "create_item_table.zip"
+  },
+  "Description": "This is autogenerating.",
+  "Environment": {
+    "Variables": {
+      "host": "{{aws_rds_host}}",
+      "database": "{{aws_rds_database}}",
+      "user": "{{aws_rds_user}}",
+      "password": "{{aws_rds_password}}",
+      "create_table_statement": "{{create_table_statement}}"
+    }
+  },
+  "FunctionName": "temp_create_resource_table",
+  "Handler": "index.handler",
+  "MemorySize": 128,
+  "Publish": true,
+  "Role": "{{aws_iam_role}}",
+  "Runtime": "nodejs12.x",
+  "Tags": {
+    "string": "postman-generated"
+  },
+  "Timeout": 3,
+  "TracingConfig": {
+    "Mode": "PassThrough"
+  }
+}')
+
+
+// This runs the AWS Lambda function that was just generated with the last request, creating a SQL table using values passed in as part of environment variables for this function.
+
+@name("3. Run Function (Lambda)")
+POST "https://{{aws_lambda_base_url}}/2015-03-31/functions/:functionName/invocations"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lambda_service}}", region="{{aws_lambda_region}}")
+data('{
+"table_name": "{{aws_rds_table_name}}",
+"fields": "{{aws_rds_table_fields}}"
+}')
+
+
+// This cleans up the AWS Lambda function we generated to create the AWS RDS table. It is no longer needed as part of this deployment process.
+
+@name("4. Remove Function (Lambda)")
+DELETE "https://{{aws_lambda_base_url}}/2015-03-31/functions/:functionName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lambda_service}}", region="{{aws_lambda_region}}")
+
+
+// This Lambda layer contains all the Node.js dependencies needed by the Lambda functions that will be deployed to power each individual API method.
+
+@name("5. Lambda Layer for RDS")
+POST "https://{{aws_lambda_base_url}}/2018-10-31/layers/mysql_basic/versions"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lambda_service}}", region="{{aws_lambda_region}}")
+data('{
+   "CompatibleRuntimes": ["nodejs12.x"],
+   "Content": { 
+      "S3Bucket": "api-deployment-lambdas",
+      "S3Key": "mysql_layer.zip"      
+   },
+   "Description": "This is a basic layer for using for APIs that use MySQL as a backend."
+}')
+
+
+// This will dynamically generate a index.js script for each individual API method defined as part of the OpenAPI. This script will be packaged up for deployment as a Lambda function later on in this deployment process.
+
+@name("6. Method Index.js")
+PUT "https://{{aws_s3_base_url}}/{{aws_s3_bucket}}/{{aws_s3_object_key}}"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_s3_service}}", region="{{aws_s3_region}}")
+"Content-Type": "text/javascript"
+data('{{aws_s3_content}}')
+
+
+// This will dynamically generate a package.json file for each individual API method defined as part of the OpenAPI. This script will be packaged up for deployment as a Lambda function later on in this deployment process.
+
+@name("7. Method Package.json")
+PUT "https://{{aws_s3_base_url}}/{{aws_s3_bucket}}/{{aws_s3_object_key}}"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_s3_service}}", region="{{aws_s3_region}}")
+"Content-Type": "text/javascript"
+data('{{aws_s3_content}}')
+
+
+// This will create a Lambda function that we will use to package up the index.js, and package.json scripts we just created, applying the base Lambda layer needed for Node.js depenencies. This is an ephemeral AWS Lambda function that will be cleaned up once it has been run.
+
+@name("8. Packaging Function (Lambda)")
+POST "https://{{aws_lambda_base_url}}/2015-03-31/functions/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lambda_service}}", region="{{aws_lambda_region}}")
+data('{
+  "Code": {
+      "S3Bucket": "api-deployment-lambdas",
+      "S3Key": "zip_lambda_package_to_s3.zip"
+  },
+  "Description": "This is building a lambda function for packaging up the files generated while building an each API.",
+  "FunctionName": "zip-lambda-packages-for-api",
+  "Handler": "index.handler",
+  "MemorySize": 128,
+  "Publish": true,
+  "Role": "{{aws_iam_role}}",
+  "Runtime": "nodejs12.x",
+  "Tags": {
+    "string": "postman-generated"
+  },
+  "Timeout": 3,
+  "TracingConfig": {
+    "Mode": "PassThrough"
+  }
+}')
+
+
+// This runs the AWS Lambda function we just created, packaging up the scripts we just dynamically generated for each API method, producing a zipped AWS Lambda deployment package we can use to deploy each individual Lambda function needed to actually power each individual API method.
+
+@name("9. Run Function (Lambda)")
+POST "https://{{aws_lambda_base_url}}/2015-03-31/functions/:functionName/invocations"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lambda_service}}", region="{{aws_lambda_region}}")
+data('{
+  "region": "{{aws_lambda_region}}",
+  "bucket": "api-deployment-lambdas",
+  "folder": "{{aws_lambda_package_folder}}",
+  "files": "index.js,package.json",
+  "zipFileName": "{{aws_lambda_package_zip_file_name}}"
+}')
+
+
+// This cleans up the serverless packaging AWS Lambda we created to build the deployment packages. This function will not be needed at any other stop in this deployment package.
+
+@name("10. Remove Function (Lambda)")
+DELETE "https://{{aws_lambda_base_url}}/2015-03-31/functions/:functionName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lambda_service}}", region="{{aws_lambda_region}}")
+
+
+// This will actually deploy each of the individual deployment packages that have been created, generating a Lambda function that will be used to power each individual API method in the API we are deploying.
+
+@name("12. Method Functions (Lambda)")
+POST "https://{{aws_lambda_base_url}}/2015-03-31/functions/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lambda_service}}", region="{{aws_lambda_region}}")
+data('{
+  "Code": {
+      "S3Bucket": "api-deployment-lambdas",
+      "S3Key": "{{build_function}}"
+  },
+  "Description": "This is autogenerating.",
+  "Environment": {
+    "Variables": {
+      "host": "{{aws_rds_host}}",
+      "database": "{{aws_rds_database}}",
+      "user": "{{aws_rds_user}}",
+      "password": "{{aws_rds_password}}"
+    }
+  },
+   "Layers": ["{{layer_arn}}"],  
+  "FunctionName": "{{build_function_name}}",
+  "Handler": "index.handler",
+  "MemorySize": 128,
+  "Publish": true,
+  "Role": "{{aws_iam_role}}",
+  "Runtime": "nodejs12.x",
+  "Tags": {
+    "string": "postman-generated"
+  },
+  "Timeout": 3,
+  "TracingConfig": {
+    "Mode": "PassThrough"
+  }
+}')
+
+
+// This actually takes the OpenAPI for the API in Postman and builds an OpenAPI version of it for deploying to AWS API Gateway, complete with all of the integration bindings needed to connect to each of the individual AWS Lambda functions that were just created. Producing an OpenAPI that contains all the AWS API Gateway specific vendor extensions needed to actually publish this API to the gateway.
+
+@name("15. Prepare OpenAPI")
+GET "https://{{postman_base_url}}/apis/"
+"x-api-key": "{{postman_api_key}}"
+"Content-Type": "application/json"
+? "workspace_name"= "APIs - Products"
+? "api_name"= "Products"
+? "api_version"= "V1"
+
+
+// This takes the OpenAPI stored in the environment, complete with integration bindings, and then publishes to AWS API Gateway using the API. Which publishes all paths and models defined in the OpenAPI, and wires up the integration with AWS Lambda using the integration extension published as part of the OpenAPI definition. Making the API available within the AWS API Gateway for deployment to a specific stage.
+
+@name("16. Publish OpenAPI ( (AWS API Gateway))")
+POST "https://{{aws_api_gateway_base_url}}/restapis"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "failonwarnings"= "false"
+? "mode"= "import"
+? "failonwarning"= "false"
+? "basepath"= "ignore"
+data('{{openapi_build}}')
+
+
+// This actually takes the OpenAPI definition that was generated from the Postman API and deploys it to AWS API Gateway. This is the final step of the process, which will make the API accessible via a URL. It will still need to be made available via a usage plan, and have key generated and associated, but should produce a usable API at this point.
+
+@name("17. Deploy to Stage (AWS API Gateway)")
+POST "https://{{aws_api_gateway_base_url}}/restapis/:api_id/deployments"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+data('{
+  "stageName" : "development",
+  "stageDescription" : "Deploying a development copy of the API.",
+  "description" : "Automating the deployment from Postman."
+}')
+
+
+// This adds a usage plan to the AWS API Gateway, and sets the envioronment with the id for the usage plan so it can be associated with the key and other aspects of operations. Ensuring that ALL APIs operate within defined constraints that are appropriate for each API and its consumers.
+
+@name("18. Usage Plan (AWS API Gateway)")
+POST "https://{{aws_api_gateway_base_url}}/usageplans/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+data('{
+  "name": "{{postman_api_name}}",
+  "description": "The primary usage plan for the {{postman_api_name}} API.",
+  "quota": {
+    "period": "DAY",
+    "offset": 0,
+    "limit": 500
+  },
+  "apiStages": [ {
+    "stage": "{{aws_api_gateway_stage_name}}",
+    "apiId": "{{aws_api_gateway_api_id}}"
+  }],  
+  "throttle": {
+    "rateLimit": 100,
+    "burstLimit": 200
+  }
+}')
+
+
+// This adds am API key to the AWS API Gateway, and sets the envioronment with the id. Establishing a single unique key for accessing the API(s) being deployed, which can be used as part of the deployment process and by operational level integrations for accessing the API. Each other consumer should obtain their API key as part of a well defined on-boarding process.
+
+@name("20. API Key (AWS API Gateway)")
+POST "https://{{aws_api_gateway_base_url}}/apikeys/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+data('{
+  "name" : "{{postman_api_name}}",
+  "description" : "This is a description of my key",
+  "enabled" : "true"
+}')
+
+
+// Now that we have a key and a usage plan we actually have to associate them so that they know about each other. Ensuring that each key belongs to one or more API usage plans that have been defined for each API or application.
+
+@name("21. Add Key to Plan (AWS API Gateway)")
+POST "https://{{aws_api_gateway_base_url}}/usageplans/:usage_plan_id/keys"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+data('{
+  "keyId" : "{{aws_api_gateway_key}}",
+  "keyType" : "API_KEY"
+}')
+
+
+// This actually makes a call to the API, pulling any records that are available. Making sure the API that has just been deployed is actually up and running, operating as expected.
+
+@name("22. Test Request")
+GET "https://{{aws_api_gateway_invoke_url}}/{{aws_rds_table_name}}"
+"x-api-key": "{{aws_api_gateway_key}}"
+
+
+// This actually adds an entry to the API we have deployed, adding a record to the backend database. Making sure we can add items to the API, allowing us to then retrieve, update, and delete as needed.
+
+@name("23. Add Request")
+POST "https://{{aws_api_gateway_invoke_url}}/{{aws_rds_table_name}}"
+"x-api-key": "{{aws_api_gateway_key}}"
+"Content-Type": "application/json"
+json({
+    "name": "Product Test 1",
+    "description": "Test",
+    "image": "Test",
+    "url": "Test",
+    "brand": "Test",
+    "category": "Test",
+    "color": "Test",
+    "manufacturer": "Test",
+    "material": "Test",
+    "releaseDate": "Test",
+    "sku": "Test",
+    "width": "Test",
+    "weight": "Test",
+    "depth": "Test",
+    "height": "Test"
+})
+
+
+

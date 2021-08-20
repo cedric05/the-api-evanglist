@@ -1,0 +1,79 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Retrieves a User by id.
+
+@name("Get Users User")
+GET "https://{{baseUrl}}/users/:user_id"
+
+
+// Get a user's Treasuries
+
+@name("Get Users User Treasuries")
+GET "https://{{baseUrl}}/users/:user_id/treasuries"
+? "sort_on"= "<>"
+? "sort_order"= "<>"
+? "maturity"= "<>"
+? "detail_level"= "<>"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of Shop objects associated to a User.
+
+@name("Get Users User Shops")
+GET "https://{{baseUrl}}/users/:user_id/shops"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of FavoriteUser objects associated to a User.
+
+@name("Get Users User Favored By")
+GET "https://{{baseUrl}}/users/:user_id/favored-by"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of Order objects associated to a User.
+
+@name("Get Users User Orders")
+GET "https://{{baseUrl}}/users/:user_id/orders"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of Receipt objects associated to a User.
+
+@name("Get Users User Receipts")
+GET "https://{{baseUrl}}/users/:user_id/receipts"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of Transaction objects associated to a User.
+
+@name("Get Users User Transactions")
+GET "https://{{baseUrl}}/users/:user_id/transactions"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of BillCharge objects associated to a User.
+
+@name("Get Users User Charges")
+GET "https://{{baseUrl}}/users/:user_id/charges"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Retrieves a set of ShippingTemplate objects associated to a User.
+
+@name("Get Users User Shipping Templates")
+GET "https://{{baseUrl}}/users/:user_id/shipping/templates"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

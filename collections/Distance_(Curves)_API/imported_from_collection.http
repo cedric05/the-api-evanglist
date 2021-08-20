@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f4ec5656-a70f-48b3-9d05-214b35e3c9f1.postman_collection.json
+
+// Get CURVES data based on HAAT, ERP, and curve type. Response returned in JSON format.
+
+@name("Get Distance")
+GET "https://{{baseUrl}}/distance.{{format}}"
+? "computationMethod"= "<string>"
+? "serviceType"= ""
+? "haat"= ""
+? "channel"= ""
+? "field"= ""
+? "erp"= ""
+? "distance"= ""
+? "curve"= "0"
+? "outputcache"= "true"
+
+
+

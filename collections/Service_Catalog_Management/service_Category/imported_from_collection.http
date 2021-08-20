@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c49a34ba-ca49-4e12-bd50-71617960cf26.postman_collection.json
+
+// This operation list or find ServiceCategory entities
+
+@name("List or find ServiceCategory objects")
+GET "https://{{baseUrl}}/serviceCategory"
+? "fields"= "id Ut Excepteur"
+? "offset"= "256391"
+? "limit"= "256391"
+
+
+// This operation creates a ServiceCategory entity.
+
+@name("Creates a ServiceCategory")
+POST "https://{{baseUrl}}/serviceCategory"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "name": "velit ex",
+    "description": "qui ex incididunt",
+    "isRoot": true,
+    "lastUpdate": "1958-10-14T17:46:00.393Z",
+    "lifecycleStatus": "in adipisicing",
+    "parentId": "in proident nisi Lorem",
+    "version": "in minim labore sed Ut",
+    "category": [
+        {
+            "id": "quis Lorem",
+            "href": "https://DgGmTCKwrljAYOBtY.qzafW8bbkk5cvWo8",
+            "name": "ex cillum adipisicing in ad",
+            "version": "ex irure voluptate dolor",
+            "@baseType": "ad irure enim sint qui",
+            "@schemaLocation": "http://wfzMWRXcHFHyhbvizJNivnGmbxYuJdbMM.linN,50pxTvqXV8MjUHk4J1ALrkg",
+            "@type": "quis in",
+            "@referredType": "dolore sunt"
+        },
+        {
+            "id": "dolore veniam dolor nisi",
+            "href": "https://xmHbQjlFkbqTEpKiTXLieYhwvjiSIbVvc.hjeFZM-sQ9E",
+            "name": "enim pariatur",
+            "version": "ea cupidatat eu",
+            "@baseType": "aliqua non",
+            "@schemaLocation": "https://qXBMGZQjBU.typhmIyXB3S5CDe",
+            "@type": "cupidatat esse Excepteur magna",
+            "@referredType": "culpa consectetur mollit exercitation"
+        }
+    ],
+    "serviceCandidate": [
+        {
+            "id": "do Lorem ad aliquip",
+            "href": "https://rEcpRejCKxSoHvSjFMIDJdzGF.xgqmllQe.tJ",
+            "name": "dolore id adipi",
+            "version": "occaecat in ullamco enim",
+            "@baseType": "dolor mollit",
+            "@schemaLocation": "https://OYLxZYjIVWdGqhYAtqvZChvpYZkbcR.xpjgg3f8vmPvGL+vbyBdq0FKVpakn",
+            "@type": "commodo incididunt",
+            "@referredType": "et Except"
+        },
+        {
+            "id": "aliquip non eiusmod",
+            "href": "https://ksaf.ixgH5ivxhTbj6wmJwAovZ",
+            "name": "anim laborum elit",
+            "version": "labore ea",
+            "@baseType": "magna et laborum",
+            "@schemaLocation": "http://TBLyPrAiZRINxnfggVU.qhhsN.apAMSUn5eIE85rGhJJuEBKKDsWhWJ56x,PI+uDop-uxXfSHE9",
+            "@type": "sint",
+            "@referredType": "eiusmod anim tempor enim"
+        }
+    ],
+    "validFor": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@baseType": "esse eu aute sunt",
+    "@schemaLocation": "https://CNtFSbCqUdOcgoFakOu.pfvty9lObIzzadY",
+    "@type": "quis sed in elit"
+})
+
+
+

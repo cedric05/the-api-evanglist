@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Overwrites or creates the remote clusters for the elasticsearch resource.
+
+@name("Set remote clusters") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/remote-clusters"
+"Content-Type": "application/json"
+json({
+    "resources": [
+        {
+            "alias": "sit anim",
+            "deployment_id": "voluptate ex proident nostrud cillum",
+            "elasticsearch_ref_id": "cupidatat adipisicing dolore occaecat",
+            "info": {
+                "compatible": false,
+                "connected": false,
+                "healthy": true,
+                "trusted": false,
+                "trusted_back": false
+            },
+            "skip_unavailable": false
+        },
+        {
+            "alias": "in quis in officia",
+            "deployment_id": "dolore Ut veniam",
+            "elasticsearch_ref_id": "in est ullamco enim exercitation",
+            "info": {
+                "compatible": true,
+                "connected": true,
+                "healthy": false,
+                "trusted": false,
+                "trusted_back": false
+            },
+            "skip_unavailable": true
+        }
+    ]
+})
+
+
+// Returns the list of remote clusters for the elasticsearch resource.
+
+@name("Get remote clusters") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/remote-clusters"
+
+
+

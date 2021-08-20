@@ -1,0 +1,3 @@
+## TMF API Reference : TMF675 - Geographic Location
+### Release : 19.5
+A GeographicLocation is a pure-virtual super-class to the GeoJSON-aligned sub-types of Point (addresses and locations), MultiPoint, LineString (streets, highways and boundaries), MultiLineString and Polygon (countries, provinces, tracts of land). Use the @type attribute to specify which of these is being specified by the geometry attribute.

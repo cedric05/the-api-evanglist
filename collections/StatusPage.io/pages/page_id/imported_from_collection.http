@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-18af961a-c8f9-4c42-85af-0f2fe7c91aaa.postman_collection.json
+
+// Get a list of all components
+
+@name("Get a list of all components")
+GET "https://{{baseUrl}}/pages/[page_id]/components.json"
+
+
+// Get a list of all incidents
+
+@name("Get a list of all incidents")
+GET "https://{{baseUrl}}/pages/[page_id]/incidents.json"
+
+
+// Delete a subscriber
+
+@name("Delete a subscriber")
+DELETE "https://{{baseUrl}}/pages/[page_id]/subscribers/[subscriber_id].json"
+
+
+// Get a list of metric providers linked to your page
+
+@name("Get a list of metric providers linked to your page")
+GET "https://{{baseUrl}}/pages/[page_id]/metrics_providers.json"
+
+
+// Get a list of metrics created for a linked metrics provider
+
+@name("Get a list of metrics created for a linked metrics provider")
+GET "https://{{baseUrl}}/pages/[page_id]/metrics_providers/[metrics_provider_id]/metrics.json"
+
+
+// Submit data for a custom metric
+
+@name("Submit data for a custom metric")
+POST "https://{{baseUrl}}/pages/[page_id]/metrics/[metric_id]/data.json"
+
+
+// Retrieve a list of users
+
+@name("Retrieve a list of users")
+GET "https://{{baseUrl}}/pages/[page_id]/page_access_users.json"
+? "email"= "<string>"
+
+
+// Retrieve a list of groups
+
+@name("Retrieve a list of groups")
+GET "https://{{baseUrl}}/pages/[page_id]/page_access_groups.json"
+
+
+

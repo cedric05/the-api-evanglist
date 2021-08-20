@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Delete cart checkout payment paymentid.
+
+@name("Delete Cart Checkout Payment Paymentid")
+DELETE "https://{{baseUrl}}/cart/checkout/payment/:paymentId"
+? "cartId"= "<>"
+
+
+// Put cart checkout payment paymentid transaction.
+
+@name("Put Cart Checkout Payment Paymentid Transaction")
+PUT "https://{{baseUrl}}/cart/checkout/payment/:paymentId/transaction"
+? "cartId"= "<>"
+
+
+

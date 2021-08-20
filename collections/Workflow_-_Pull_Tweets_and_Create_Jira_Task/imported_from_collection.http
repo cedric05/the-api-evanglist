@@ -1,0 +1,69 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b310ec3-4f43-4cdc-9120-529419539895.postman_collection.json
+
+// Searches Twitter based upon the parameters set for each request. All parameters are turned on by default, and you should uncheck the ones you do not need.
+
+@name("Pull Tweets")
+GET "https://api.twitter.com/2/tweets/search/recent"
+"Authorization": "Bearer {{twitter_token}}"
+? "query"= "@getpostman"
+? "tweet.fields"= "created_at"
+? "user.fields"= "username"
+? "place.fields"= "client_credentials"
+? "start_time"= ""
+? "since_id"= ""
+? "end_time"= ""
+? "expansions"= "author_id"
+? "media.fields"= ""
+? "poll.fields"= ""
+? "next_token"= ""
+? "max_results"= "10"
+
+
+// Creates an issue or, where the option to create subtasks is enabled in Jira, a subtask. A transition may be applied, to move the issue or subtask to a workflow step other than the default start step, and issue properties set.
+// 
+// The content of the issue or subtask is defined using `update` and `fields`. The fields that can be set in the issue or subtask are determined using the [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get). These are the same fields that appear on the issue's create screen. Note that the `description`, `environment`, and any `textarea` type custom fields (multi-line text fields) take Atlassian Document Format content. Single line custom fields (`textfield`) accept a string and don't handle Atlassian Document Format content.
+// 
+// Creating a subtask differs from creating an issue as follows:
+// 
+//  *  `issueType` must be set to a subtask issue type (use [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get) to find subtask issue types).
+//  *  `parent` must contain the ID or key of the parent issue.
+// 
+// In a next-gen project any issue may be made a child providing that the parent and child are members of the same project. In a classic project the parent field is only valid for subtasks.
+// 
+// **[Permissions](#permissions) required:** *Browse projects* and *Create issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project in which the issue or subtask is created.
+
+@name("Create Jira Task")
+POST "https://{{baseUrl}}/rest/api/3/issue"
+"Content-Type": "application/json"
+? "updateHistory"= "false"
+json({
+    "fields": {
+        "project": {
+            "key": "{{jira_project}}"
+        },
+        "summary": "{{name}} - {{username}}",
+        "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "{{message}}"
+                        }
+                    ]
+                }
+            ]
+        },
+        "issuetype": {
+            "name": "Task"
+        }
+    }
+})
+
+
+

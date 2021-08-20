@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// Access your billing history object
+
+@name("Access your billing history object")
+GET "https://{{baseUrl}}/user/billing/history"
+"X": "<>"
+? "action"= "<>"
+? "occured_at"= "<>"
+? "order"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+? "type"= "<>"
+
+
+// Access your billing profile object
+
+@name("Access your billing profile object")
+GET "https://{{baseUrl}}/user/billing/profile"
+
+
+

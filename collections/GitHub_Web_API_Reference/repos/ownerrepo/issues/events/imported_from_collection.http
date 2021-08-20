@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("List issue events for a repository")
+GET "https://{{baseUrl}}/repos/:owner/:repo/issues/events"
+? "per_page"= "30"
+? "page"= "1"
+
+
+@name("Get an issue event")
+GET "https://{{baseUrl}}/repos/:owner/:repo/issues/events/:event_id"
+
+
+

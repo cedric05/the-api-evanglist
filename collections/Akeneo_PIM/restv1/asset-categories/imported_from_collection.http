@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Asset categories (2.1 only).
+
+@name("asset categories (2.1 only)")
+GET "https://{{baseUrl}}/rest/v1/asset-categories"
+? "limit"= "<>"
+? "with_count"= "<>"
+
+
+// Assuming that the given code is the code of an existing asset category
+
+@name("asset category (2.1 only)")
+GET "https://{{baseUrl}}/rest/v1/asset-categories/asset_main_catalog"
+
+
+// Asset category (2.1 only).
+
+@name("asset category (2.1 only)")
+PATCH "https://{{baseUrl}}/rest/v1/asset-categories/new_asset_category"
+"Content": "<>"
+
+
+

@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("Authorize application")
+GET "https://{{baseurl}}/oauth/authorize"
+? "client_id"= ""
+? "realm"= "customer"
+? "redirect_uri"= ""
+? "response_type"= "code"
+? "scope"= "user.view user.edit collections.view collections.edit licenses.view licenses.create earnings.view media.upload media.submit media.edit purchases.view reseller.view reseller.purchase"
+? "state"= ""
+
+
+@name("Get access token")
+POST "https://{{baseurl}}/oauth/access_token"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "client_id": [
+        ""
+    ],
+    "client_secret": [
+        ""
+    ],
+    "code": [
+        ""
+    ],
+    "grant_type": [
+        "authorization_code"
+    ],
+    "realm": [
+        "customer"
+    ]
+})
+
+
+

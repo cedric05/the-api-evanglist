@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Fetch reliability settings JSON which defines all the thresholds and preferences for OverOps reliability tools - Grafana dashboards, Jenkins plugin, etc.
+
+@name("Fetch reliability settings JSON") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/reliability-settings"
+
+
+// Upload reliability settings JSON which defines all the thresholds and preferences for OverOps reliability tools - Grafana dashboards, Jenkins plugin, etc.
+
+@name("Upload reliability settings JSON") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/settings/reliability-settings"
+"Content-Type": "application/json"
+json({
+    "reliability_settings_json": "consequat ex"
+})
+
+
+

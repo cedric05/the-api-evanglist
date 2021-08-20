@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Updates a trust relationship.
+
+@name("Update trust relationship") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/platform/configuration/trust-relationships/:trust_relationship_id"
+"Content-Type": "application/json"
+json({
+    "trust_by_default": false,
+    "installation_id": "anim dolor enim aute",
+    "name": "Lorem",
+    "public_ca_cert": "dolore laboris exercitation",
+    "account_ids": [
+        {
+            "value": "nisi dolore Lorem officia dolore"
+        },
+        {
+            "value": "in sint irure tempor"
+        }
+    ]
+})
+
+
+// Deletes a trust relationship.
+
+@name("Delete trust relationship") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/platform/configuration/trust-relationships/:trust_relationship_id"
+? "version"= "6831834"
+
+
+// Retrieves information about a trust relationship. `local` can be used as the ID to obtain the local trust relationship.
+
+@name("Get trust relationship") : "base-inherit-auth"
+GET "https://{{baseUrl}}/platform/configuration/trust-relationships/:trust_relationship_id"
+? "include_certificate"= "false"
+
+
+

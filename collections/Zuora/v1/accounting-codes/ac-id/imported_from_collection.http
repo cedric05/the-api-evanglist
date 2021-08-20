@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This reference describes how to delete an accounting code through the REST API.n## PrerequisitesnIf you have Zuora Finance enabled on your tenant, then you must have the Delete Unused Accounting Code permission.n## LimitationsnYou can only delete accounting codes that have never been associated with any transactions. An accounting code must be deactivated before you can delete it.n
+
+@name("Delete accounting code")
+DELETE "https://{{baseUrl}}/v1/accounting-codes/:ac-id"
+
+
+// This reference describes how to activate an accounting code through the REST API.nnPrerequisitesn-------------nIf you have Zuora Finance enabled on your tenant, you must have the Manage Accounting Code permission. n
+
+@name("Activate accounting code")
+PUT "https://{{baseUrl}}/v1/accounting-codes/:ac-id/activate"
+
+
+// This reference describes how to deactivate an accounting code through the REST API.nn## PrerequisitesnIf you have Zuora Finance enabled on your tenant, you must have the Manage Accounting Code permission.n## LimitationsnYou can only deactivate accounting codes that are not associated with any transactions. nYou cannot disable accounting codes of type AccountsReceivable.n
+
+@name("Deactivate accounting code")
+PUT "https://{{baseUrl}}/v1/accounting-codes/:ac-id/deactivate"
+
+
+

@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Updates the current account.
+
+@name("Updates the current account") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/account"
+"Content-Type": "application/json"
+json({
+    "trust": {
+        "trust_all": false
+    }
+})
+
+
+// Updates the current account.
+
+@name("Updates the current account") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/account"
+"Content-Type": "application/json"
+data('"minim voluptate"')
+
+
+// Fetch current account information.
+
+@name("Fetch current account information") : "base-inherit-auth"
+GET "https://{{baseUrl}}/account"
+
+
+

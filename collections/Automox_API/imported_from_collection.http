@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-572303ba-d57b-42f8-9c05-98fcc3c05154.postman_collection.json
+
+// Gets all `Policy Set` objects for authenticated usern
+
+@name("Get Policysets")
+GET "https://{{baseUrl}}/policysets"
+? "o"= "<>"
+
+
+// Gets all `Policy Stats` objects for authenticated usern
+
+@name("Get Policystats")
+GET "https://{{baseUrl}}/policystats"
+? "o"= "<>"
+
+
+// Retrieves software packages and patches for an organization, specific policy, or just those that need [approval | attention | exceptions | pending update].n
+
+@name("Get Software Version")
+GET "https://{{baseUrl}}/software_version"
+? "o"= "<>"
+? "policyId"= "<>"
+? "needsApproval"= "<get>"
+? "needsAttention"= "<get>"
+? "exceptions"= "<>"
+? "pendingUpdate"= "<>"
+? "l"= "<>"
+? "p"= "<>"
+
+
+// Retrieves software packages and patches for an organization, allows filtering the list of software by namen
+
+@name("Get Software")
+GET "https://{{baseUrl}}/software"
+? "o"= "<>"
+? "name"= "<get>"
+? "limit"= "<>"
+? "groupID"= "<get>"
+
+
+// Update a manual approval record. Set `manual_approval` attribute of `approval` object to `true` to approve a patch; set it to `false` to reject a patchn
+
+@name("Put Approvals")
+PUT "https://{{baseUrl}}/approvals/:id"
+
+
+

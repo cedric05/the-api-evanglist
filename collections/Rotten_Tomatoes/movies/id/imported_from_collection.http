@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ce20e6b1-bbe2-4633-bbfd-c4d3fdf33b8a.postman_collection.json
+
+// Get movies cast.json.
+
+@name("Get Movies Cast")
+GET "https://{{baseUrl}}/movies/:id/cast.json"
+
+
+// Get movies clips.json.
+
+@name("Get Movies Clips")
+GET "https://{{baseUrl}}/movies/:id/clips.json"
+
+
+// Get movies reviews.json.
+
+@name("Get Movies Reviews")
+GET "https://{{baseUrl}}/movies/:id/reviews.json"
+? "review_type"= "<>"
+? "page_limit"= "<>"
+? "page"= "<>"
+? "country"= "<>"
+
+
+// Get movies similar.json.
+
+@name("Get Movies Similar")
+GET "https://{{baseUrl}}/movies/:id/similar.json"
+? "limit"= "<>"
+
+
+

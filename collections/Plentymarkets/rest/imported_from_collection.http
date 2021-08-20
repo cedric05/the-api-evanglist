@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Gets an authorized user. This call returns a JSON object with information about the user after login. This information is used for correctly displaying the plentymarkets back end.
+
+@name("Get authorized user")
+GET "https://{{baseUrl}}/rest/authorized_user"
+
+
+// Pass several operations into a single HTTP request.
+
+@name("Make batch requests")
+GET "https://{{baseUrl}}/rest/batch"
+
+
+// Searches the delete log.
+
+@name("Search the delete log")
+GET "https://{{baseUrl}}/rest/delete_log"
+? "referenceType"= "<post>"
+? "userId"= "<post>"
+? "updatedBetween"= "<>"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+
+
+// Downloads the content of a document. The ID of the document must be specified.
+
+@name("Download the content of a document")
+GET "https://{{baseUrl}}/rest/documents/:documentId"
+
+
+

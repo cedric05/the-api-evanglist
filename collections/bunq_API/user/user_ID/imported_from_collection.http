@@ -1,0 +1,391 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get all subscription billing contract for the authenticated user.
+
+@name("List all Billing Contract Subscription for User")
+GET "https://{{baseUrl}}/user/:userID/billing-contract-subscription"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Used to update multiple cards in a batch.
+
+@name("CREATE Card Batch for User")
+POST "https://{{baseUrl}}/user/:userID/card-batch"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "cards": [
+        {
+            "id": "<integer>",
+            "card_limit": {
+                "currency": "non ipsum",
+                "value": "Exce"
+            },
+            "card_limit_atm": {
+                "currency": "in magna nulla Ut",
+                "value": "aute Excepteur elit incididunt culpa"
+            },
+            "country_permission": [
+                {
+                    "country": "exercitation ea",
+                    "expiry_time": "eiusmod sint",
+                    "id": -93765605
+                },
+                {
+                    "country": "sunt",
+                    "expiry_time": "nisi nostrud irure",
+                    "id": -51111876
+                }
+            ],
+            "monetary_account_id_fallback": "<integer>",
+            "status": "<string>"
+        },
+        {
+            "id": "<integer>",
+            "card_limit": {
+                "currency": "ex sit",
+                "value": "enim dolore conse"
+            },
+            "card_limit_atm": {
+                "currency": "sunt deserunt culpa dolor Lorem",
+                "value": "exercitation et esse"
+            },
+            "country_permission": [
+                {
+                    "country": "eu ad",
+                    "expiry_time": "esse voluptate",
+                    "id": 88901922
+                },
+                {
+                    "country": "Ut consectetur occaecat i",
+                    "expiry_time": "dolore in",
+                    "id": 86846269
+                }
+            ],
+            "monetary_account_id_fallback": "<integer>",
+            "status": "<string>"
+        }
+    ]
+})
+
+
+// Create a new credit card request.
+
+@name("CREATE Card Credit for User")
+POST "https://{{baseUrl}}/user/:userID/card-credit"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "second_line": "<string>",
+    "name_on_card": "<string>",
+    "type": "<string>",
+    "alias": {
+        "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "type": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "value": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+    },
+    "monetary_account_id_fallback": "<integer>",
+    "pin_code_assignment": [
+        {
+            "monetary_account_id": 40484003,
+            "type": "sed laborum con"
+        },
+        {
+            "monetary_account_id": -94010902,
+            "type": "enim ex exercitation aute deserunt"
+        }
+    ],
+    "product_type": "<string>"
+})
+
+
+// Create a new debit card request.
+
+@name("CREATE Card Debit for User")
+POST "https://{{baseUrl}}/user/:userID/card-debit"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "second_line": "<string>",
+    "name_on_card": "<string>",
+    "type": "<string>",
+    "alias": {
+        "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "type": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "value": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+    },
+    "monetary_account_id_fallback": "<integer>",
+    "pin_code_assignment": [
+        {
+            "monetary_account_id": 37485284,
+            "type": "labore eu do quis tempor"
+        },
+        {
+            "monetary_account_id": 70938721,
+            "type": "nisi irure"
+        }
+    ],
+    "product_type": "<string>"
+})
+
+
+// Return all the accepted card names for a specific user.
+
+@name("List all Card Name for User")
+GET "https://{{baseUrl}}/user/:userID/card-name"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Get the raw content of a specific attachment.
+
+@name("List all Content for User Chat Conversation Attachment")
+GET "https://{{baseUrl}}/user/:userID/chat-conversation/:chat-conversationID/attachment/:attachmentID/content"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Used to confirm availability of funds on an account.
+
+@name("CREATE Confirmation Of Funds for User")
+POST "https://{{baseUrl}}/user/:userID/confirmation-of-funds"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "pointer_iban": {
+        "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "type": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "value": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+    },
+    "amount": {
+        "currency": "veniam",
+        "value": "ad officia qui deserunt"
+    }
+})
+
+
+// view for updating the feature display.
+
+@name("READ Feature Announcement for User")
+GET "https://{{baseUrl}}/user/:userID/feature-announcement/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Used to get insights about transactions between given time range.
+
+@name("List all Insights for User")
+GET "https://{{baseUrl}}/user/:userID/insights"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Used to get events based on time and insight category.
+
+@name("List all Insights Search for User")
+GET "https://{{baseUrl}}/user/:userID/insights-search"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Endpoint for getting available legal names that can be used by the user.
+
+@name("List all Legal Name for User")
+GET "https://{{baseUrl}}/user/:userID/legal-name"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Get all limits for the authenticated user.
+
+@name("List all Limit for User")
+GET "https://{{baseUrl}}/user/:userID/limit"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Aggregation of how many card payments have been done with a Green Card in the current calendar month.
+
+@name("List all Mastercard Action Green Aggregation for User")
+GET "https://{{baseUrl}}/user/:userID/mastercard-action-green-aggregation"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// List a users automatic payment auto allocated settings.
+
+@name("List all Payment Auto Allocate for User")
+GET "https://{{baseUrl}}/user/:userID/payment-auto-allocate"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Get a collection of scheduled definition for all accessible monetary accounts of the user. You can add the parameter type to filter the response. When type={SCHEDULE_DEFINITION_PAYMENT,SCHEDULE_DEFINITION_PAYMENT_BATCH} is provided only schedule definition object that relate to these definitions are returned.
+
+@name("List all Schedule for User")
+GET "https://{{baseUrl}}/user/:userID/schedule"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create a request from an ideal transaction.
+
+@name("CREATE Token Qr Request Ideal for User")
+POST "https://{{baseUrl}}/user/:userID/token-qr-request-ideal"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "token": "<string>"
+})
+
+
+// Create a request from an SOFORT transaction.
+
+@name("CREATE Token Qr Request Sofort for User")
+POST "https://{{baseUrl}}/user/:userID/token-qr-request-sofort"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "token": "<string>"
+})
+
+
+// Used to get a list of supported currencies for Transferwise.
+
+@name("List all Transferwise Currency for User")
+GET "https://{{baseUrl}}/user/:userID/transferwise-currency"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// See how many trees this user has planted.
+
+@name("List all Tree Progress for User")
+GET "https://{{baseUrl}}/user/:userID/tree-progress"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+

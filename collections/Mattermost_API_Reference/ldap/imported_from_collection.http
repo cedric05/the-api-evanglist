@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Synchronize any user attribute changes in the configured AD/LDAP server with Mattermost.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Sync with LDAP")
+POST "https://{{baseUrl}}/ldap/sync"
+
+
+// Test the current AD/LDAP configuration to see if the AD/LDAP server can be contacted successfully.n##### PermissionsnMust have `manage_system` permission.n
+
+@name("Test LDAP configuration")
+POST "https://{{baseUrl}}/ldap/test"
+
+
+

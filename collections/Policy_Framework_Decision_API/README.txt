@@ -1,0 +1,1 @@
+This collection lists all the Decision API's supported by XACML PDP engine in ONAP Policy Framework. These API's are used to perform various decisions based on configured xacml policies. For example - guard, optimization, naming etc.

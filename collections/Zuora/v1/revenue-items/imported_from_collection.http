@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This REST API reference describes how to get the details for each revenue item in a charge revenue summary by specifying the charge revenue summary number. Request and response field descriptions and sample code are provided.n
+
+@name("Get revenue items by charge revenue summary number")
+GET "https://{{baseUrl}}/v1/revenue-items/charge-revenue-summaries/:crs-number"
+
+
+// This REST API reference describes how to get the details of each revenue item in a revenue event by specifying the revenue event number. Request and response field descriptions and sample code are provided.n
+
+@name("Get revenue items by revenue event number")
+GET "https://{{baseUrl}}/v1/revenue-items/revenue-events/:event-number"
+
+
+// This REST API reference describes how to get the details for each revenue items in a revenue schedule by specifying the revenue schedule number. Request and response field descriptions and sample code are provided.n
+
+@name("Get revenue items by revenue schedule")
+GET "https://{{baseUrl}}/v1/revenue-items/revenue-schedules/:rs-number"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Set a solar system as autopilot waypoint
+// 
+// ---
+// Alternate route: `/dev/ui/autopilot/waypoint/`
+// 
+// Alternate route: `/legacy/ui/autopilot/waypoint/`
+// 
+// Alternate route: `/v2/ui/autopilot/waypoint/`
+
+@name("Set Autopilot Waypoint")
+POST "https://{{baseUrl}}/ui/autopilot/waypoint/"
+? "add_to_beginning"= "false"
+? "clear_other_waypoints"= "false"
+? "datasource"= "tranquility"
+? "destination_id"= "-26592061"
+? "token"= "commodo irure"
+
+
+

@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0cebdac9-00f7-423f-bedf-3c8eec346b90.postman_collection.json
+
+// Returns the details for an issue.
+// 
+// The issue is identified by its ID or key, however, if the identifier doesn't match an issue, a case-insensitive search and check for moved issues is performed. If a matching issue is found its details are returned, a 302 or other redirect is **not** returned. The issue key returned in the response is the key of the issue found.
+// 
+// This operation can be accessed anonymously.
+// 
+// **[Permissions](#permissions) required:**
+// 
+//  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
+//  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
+
+@name("Pull Issue")
+GET "https://{{atlassian_base_url}}/rest/api/3/issue/:issueIdOrKey"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+? "fields"= "*all"
+? "fieldsByKeys"= "false"
+? "expand"= "<string>"
+? "properties"= "null"
+? "updateHistory"= "false"
+
+
+// Sends a message to a channel.
+
+@name("Postman to Slack")
+POST "https://{{baseUrl}}/chat.postMessage"
+"Content-Type": "application/json"
+json({
+    "channel": "{{channel_id}}",
+    "text": "{{message}}"
+})
+
+
+

@@ -1,0 +1,1 @@
+This is OpenAPI for the directory of API specification extensions, from the [API Specification Toolbox](http://api.specificationtoolbox.com/).

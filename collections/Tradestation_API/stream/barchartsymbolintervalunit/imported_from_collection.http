@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Streams barchart data starting from a number of days back from last date, each bar filling interval of unit.n
+
+@name("Stream BarChart - Days Backn")
+GET "https://{{baseUrl}}/stream/barchart/:symbol/:interval/:unit"
+? "access_token"= "<string>"
+? "SessionTemplate"= "<string>"
+? "daysBack"= "<integer>"
+? "lastDate"= "<string>"
+
+
+// Streams barchart data starting from a number of bars back from last date, each bar filling interval of unit.n
+
+@name("Stream BarChart - Bars Backn")
+GET "https://{{baseUrl}}/stream/barchart/:symbol/:interval/:unit/:barsBack/:lastDate/..."
+? "access_token"= "<string>"
+? "SessionTemplate"= "<string>"
+
+
+

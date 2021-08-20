@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cf55551-2c7b-4b64-b9aa-1a2b870aef17.postman_collection.json
+
+// Obtain the pitch types, player statuses, pitch outcomes, runner outcomes, game status and postseason game IDs.
+
+@name("Obtain the pitch types, player statuses, pitch out...")
+GET "https://{{baseUrl}}/mlb-t5/league/glossary{{format}}"
+
+
+// Obtain information concerning all current injuries across the league.
+
+@name("Obtain information concerning all current injuries...")
+GET "https://{{baseUrl}}/mlb-t5/league/injuries{{format}}"
+
+
+@name("Obtain league depth charts for MLB.")
+GET "https://{{baseUrl}}/mlb-t5/league/depth_charts{{format}}"
+
+
+@name("Obtain list of MLB teams.")
+GET "https://{{baseUrl}}/mlb-t5/league/hierarchy{{format}}"
+
+
+@name("Obtain list of active rosters.")
+GET "https://{{baseUrl}}/mlb-t5/league/active_rosters{{format}}"
+
+
+@name("Obtain list of full rosters.")
+GET "https://{{baseUrl}}/mlb-t5/league/full_rosters{{format}}"
+
+
+@name("Obtain venue data for the current season.")
+GET "https://{{baseUrl}}/mlb-t5/league/venues{{format}}"
+
+
+

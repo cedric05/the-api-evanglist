@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1034843a-863c-45e2-b2a3-cab514508af8.postman_collection.json
+
+@name("Provides the seasons for a given Tournament")
+GET "https://{{baseUrl}}/tournaments/:tournament_id/seasons{{format}}"
+
+
+// Provides a list of Competitors from a given Tournament
+
+@name("Provides a list of Competitors from a given Tourna...")
+GET "https://{{baseUrl}}/tournaments/:tournament_id/info{{format}}"
+
+
+// Provides the live standings for a given Tournament
+
+@name("Provides the live standings for a given Tournament...")
+GET "https://{{baseUrl}}/tournaments/:tournament_id/live_standings{{format}}"
+
+
+@name("Provides the results for a given tournament")
+GET "https://{{baseUrl}}/tournaments/:tournament_id/results{{format}}"
+
+
+@name("Provides the schedule for a given Tournament")
+GET "https://{{baseUrl}}/tournaments/:tournament_id/schedule{{format}}"
+
+
+@name("Provides the standings for a given Tournament")
+GET "https://{{baseUrl}}/tournaments/:tournament_id/standings{{format}}"
+
+
+

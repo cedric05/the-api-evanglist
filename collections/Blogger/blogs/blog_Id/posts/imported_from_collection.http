@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2e3bbcd-4c1a-45f3-8016-86639e868822.postman_collection.json
+
+// Retrieves a list of posts, possibly filtered.
+
+@name("Get Blog Posts")
+GET "https://{{baseUrl}}/blogs/:blogId/posts"
+? "endDate"= "<>"
+? "fetchBodies"= "<>"
+? "fetchImages"= "<>"
+? "labels"= "<parameters>"
+? "maxResults"= "<>"
+? "orderBy"= "<>"
+? "pageToken"= "<>"
+? "startDate"= "<>"
+? "status"= "<parameters>"
+? "view"= "<>"
+
+
+// Retrieve a Post by Path.
+
+@name("Get Blog Post by Path")
+GET "https://{{baseUrl}}/blogs/:blogId/posts/bypath"
+? "path"= "<>"
+? "maxComments"= "<>"
+? "view"= "<>"
+
+
+// Search for a post.
+
+@name("Search Blog Post")
+GET "https://{{baseUrl}}/blogs/:blogId/posts/search"
+? "q"= "<>"
+? "fetchBodies"= "<>"
+? "orderBy"= "<>"
+
+
+

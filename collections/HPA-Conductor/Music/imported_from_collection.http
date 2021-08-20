@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92b4ebd1-35c2-4b92-a70c-9131204ad521.postman_collection.json
+
+@name("PLANS table")
+GET "https://{{music}}/MUSIC/rest/keyspaces/conductor/tables/plans/rows/"
+? "id"= "{{plan_id}}"
+
+
+@name("PLANS table All Rows")
+GET "https://{{music}}/MUSIC/rest/keyspaces/conductor/tables/plans/rows"
+
+
+@name("Version Test")
+GET "https://{{music}}/MUSIC/rest/version"
+
+
+

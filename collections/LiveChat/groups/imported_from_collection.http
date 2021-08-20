@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Returns all created groups.nn
+
+@name("List all groups")
+GET "https://{{baseUrl}}/groups"
+"X": "<>"
+
+
+// Updates the specified group by setting the values of the parameters passed. Any parameters not provided will be left unchanged.nn
+
+@name("Update a group")
+PUT "https://{{baseUrl}}/groups/ABC123"
+"X": "<>"
+
+
+// Returns group details for the given GROUP_ID.n
+
+@name("Get a single group details")
+GET "https://{{baseUrl}}/groups/:group_id"
+"X": "<>"
+
+
+

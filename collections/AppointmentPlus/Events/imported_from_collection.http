@@ -1,0 +1,160 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// This method will not allow deleting event templates that have event instances assigned.
+
+@name("DeleteEventTemplates")
+POST "https://{{baseUrl}}/Events/DeleteEventTemplates"
+? "event_template_id"= "<string>"
+
+
+// Returns the details of all events or a single event specified by `service_id`. t If you do not specify a `location_id` for the location of the event, the method will return events from all locations.  Use the `start_date` and `end_date` parameters to filter the resultset to only include events that have dates within the specified range. Use the `hide_unavailable` parameter to only include events that have availability in future dates.  Valid values for `event_date.status` are: * 0 = active * 1 =
+
+@name("GetEvents")
+POST "https://{{baseUrl}}/Events/GetEvents"
+? "location_id"= "<integer>"
+? "service_id"= "<integer>"
+? "event_template_id"= "<string>"
+? "room_id"= "<integer>"
+? "employee_id"= "<integer>"
+? "hide_unavailable"= "<boolean>"
+? "include_time_zone"= "<boolean>"
+? "start_date"= "<integer>"
+? "end_date"= "<integer>"
+
+
+// Returns the details of all participants of a single event specified by `service_id`. t If the event is not a multi-day event, then the `date` parameter becomes required.  If using the `event_template_id` parameter, the `service_id` parameter is optional.
+
+@name("GetParticipants")
+POST "https://{{baseUrl}}/Events/GetParticipants"
+? "service_id"= "<integer>"
+? "location_id"= "<integer>"
+? "date"= "<integer>"
+? "customer_id"= "<integer>"
+? "event_template_id"= "<string>"
+
+
+// Creates a new event template. The `name` parameter is the name of the event template, not the name to be applied to the event instances. The `event_*` parameters are used to set the default parameters of the event instances.  Values for `status` are: * 1 = active * 2 = inactive * 3 = deleted
+
+@name("CreateEventTemplates")
+POST "https://{{baseUrl}}/Events/CreateEventTemplates"
+? "location_id"= "<integer>"
+? "name"= "<string>"
+? "sort_order"= "<integer>"
+? "event_title"= "<string>"
+? "event_display"= "<string>"
+? "event_multi_day"= "<string>"
+? "event_description"= "<string>"
+? "event_category_id"= "<integer>"
+? "event_code"= "<string>"
+
+
+// Returns details of event templates.  You can specify multiple `location_id`s or multiple `event_template_id`s to filter the response. Otherwise, the method will return all event templates from all locations.  Unless specified with the `status` parameter, the method will return deleted and inactive event templates.  Values for `status` are: * 1 = active * 2 = inactive * 3 = deleted
+
+@name("GetEventTemplates")
+POST "https://{{baseUrl}}/Events/GetEventTemplates"
+? "location_id"= "<integer>"
+? "event_templae_id"= "<string>"
+? "name"= "<string>"
+? "status"= "<string>"
+
+
+// If the event is not a multi-day event, then the `date` parameter becomes required.
+
+@name("UpdateParticipants")
+POST "https://{{baseUrl}}/Events/UpdateParticipants"
+? "service_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "location_id"= "<integer>"
+? "date"= "<integer>"
+? "spots"= "<integer>"
+? "cost"= "<number>"
+? "tip"= "<number>"
+? "payment_type_id"= "<integer>"
+? "special_instructions"= "<string>"
+? "employee_notes"= "<string>"
+? "status_id"= "<integer>"
+? "customer_package_id"= "<integer>"
+
+
+// Cancels dates within an event. Passing multiple `service_id`s will remove the same dates from each event, and apply the same cancel reason to each date in each event.
+
+@name("CancelEventDates")
+POST "https://{{baseUrl}}/Events/CancelEventDates"
+? "service_id"= "<integer>"
+? "dates"= "<string>"
+? "cancel_reason_id"= "<integer>"
+
+
+@name("UpdateEventTemplates")
+POST "https://{{baseUrl}}/Events/UpdateEventTemplates"
+? "event_template_id"= "<string>"
+? "name"= "<string>"
+? "sort_order"= "<integer>"
+? "event_title"= "<string>"
+? "event_display"= "<string>"
+? "event_multi_day"= "<string>"
+? "event_description"= "<string>"
+? "event_category_id"= "<integer>"
+? "event_code"= "<string>"
+
+
+// Creates a new event, either standalone or from an event template.  If the `event_template_id` parameter is included, the method will override the following parameters and use the defaults from the template: `description`, `display`, `category_id`, `code`, `span_dates`.
+
+@name("CreateEvents")
+POST "https://{{baseUrl}}/Events/CreateEvents"
+? "location_id"= "<integer>"
+? "title"= "<string>"
+? "display"= "<string>"
+? "duration"= "<integer>"
+? "event_dates"= "<string>"
+? "start_time"= "<integer>"
+? "span_dates"= "<string>"
+? "event_template_id"= "<string>"
+? "employee_id"= "<integer>"
+? "room_id"= "<integer>"
+? "description"= "<string>"
+? "cost"= "<number>"
+? "max_participants"= "<integer>"
+? "sort_order"= "<integer>"
+? "category_id"= "<integer>"
+? "code"= "<string>"
+? "taxable"= "<string>"
+
+
+// If the event is not a multi-day event, then the `date` parameter becomes required.  If the parameter `send_notifications=yes` is included, any active notifications associated with the action will be triggered.
+
+@name("CreateParticipants")
+POST "https://{{baseUrl}}/Events/CreateParticipants"
+? "service_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "location_id"= "<integer>"
+? "date"= "<integer>"
+? "spots"= "<integer>"
+? "cost"= "<number>"
+? "tip"= "<number>"
+? "payment_type_id"= "<integer>"
+? "special_instructions"= "<string>"
+? "employee_notes"= "<string>"
+? "status_id"= "<integer>"
+? "customer_package_id"= "<integer>"
+
+
+// Returns the predefined event date cancellation reasons.
+
+@name("GetCancelReasons")
+POST "https://{{baseUrl}}/Events/GetCancelReasons"
+? "location_id"= "<integer>"
+
+
+// Removes a participant from an event (cancels the appointments).  If the event is not a multi-day event, then the `date` parameter becomes required.
+
+@name("DeleteParticipants")
+POST "https://{{baseUrl}}/Events/DeleteParticipants"
+? "service_id"= "<integer>"
+? "customer_id"= "<integer>"
+? "date"= "<integer>"
+
+
+

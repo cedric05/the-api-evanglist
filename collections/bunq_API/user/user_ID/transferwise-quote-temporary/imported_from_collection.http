@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Used to get temporary quotes from Transferwise. These cannot be used to initiate payments
+
+@name("CREATE Transferwise Quote Temporary for User")
+POST "https://{{baseUrl}}/user/:userID/transferwise-quote-temporary"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "currency_source": "<string>",
+    "currency_target": "<string>",
+    "amount_source": {
+        "currency": "ea",
+        "value": "do nulla est"
+    },
+    "amount_target": {
+        "currency": "nostrud irure",
+        "value": "et mag"
+    }
+})
+
+
+// Used to get temporary quotes from Transferwise. These cannot be used to initiate payments
+
+@name("READ Transferwise Quote Temporary for User")
+GET "https://{{baseUrl}}/user/:userID/transferwise-quote-temporary/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+

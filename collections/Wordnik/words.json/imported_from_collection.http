@@ -1,0 +1,84 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba1cdcb3-6e1e-442c-bb37-51af59111040.postman_collection.json
+
+// Returns a single random wordobject.
+
+@name("Returns a single random WordObject")
+GET "https://{{baseUrl}}/words.json/randomWord"
+? "hasDictionaryDef"= "<>"
+? "includePartOfSpeech"= "<>"
+? "excludePartOfSpeech"= "<>"
+? "minCorpusCount"= "<>"
+? "maxCorpusCount"= "<>"
+? "minDictionaryCount"= "<>"
+? "maxDictionaryCount"= "<>"
+? "minLength"= "<>"
+? "maxLength"= "<>"
+
+
+// Returns an array of random wordobjects.
+
+@name("Returns an array of random WordObjects")
+GET "https://{{baseUrl}}/words.json/randomWords"
+? "hasDictionaryDef"= "<>"
+? "includePartOfSpeech"= "<>"
+? "excludePartOfSpeech"= "<>"
+? "minCorpusCount"= "<>"
+? "maxCorpusCount"= "<>"
+? "minDictionaryCount"= "<>"
+? "maxDictionaryCount"= "<>"
+? "minLength"= "<>"
+? "maxLength"= "<>"
+? "sortBy"= "<>"
+? "sortOrder"= "<>"
+? "limit"= "<>"
+
+
+// Reverse dictionary search.
+
+@name("Reverse dictionary search")
+GET "https://{{baseUrl}}/words.json/reverseDictionary"
+? "query"= "<>"
+? "findSenseForWord"= "<>"
+? "includeSourceDictionaries"= "<>"
+? "excludeSourceDictionaries"= "<>"
+? "includePartOfSpeech"= "<>"
+? "excludePartOfSpeech"= "<>"
+? "minCorpusCount"= "<>"
+? "maxCorpusCount"= "<>"
+? "minLength"= "<>"
+? "maxLength"= "<>"
+? "expandTerms"= "<>"
+? "includeTags"= "<>"
+? "sortBy"= "<>"
+? "sortOrder"= "<>"
+? "skip"= "<>"
+? "limit"= "<>"
+
+
+// Searches words.
+
+@name("Searches words")
+GET "https://{{baseUrl}}/words.json/search/:query"
+? "caseSensitive"= "<>"
+? "includePartOfSpeech"= "<>"
+? "excludePartOfSpeech"= "<>"
+? "minCorpusCount"= "<>"
+? "maxCorpusCount"= "<>"
+? "minDictionaryCount"= "<>"
+? "maxDictionaryCount"= "<>"
+? "minLength"= "<>"
+? "maxLength"= "<>"
+? "skip"= "<>"
+? "limit"= "<>"
+
+
+// Returns a specific wordoftheday.
+
+@name("Returns a specific WordOfTheDay")
+GET "https://{{baseUrl}}/words.json/wordOfTheDay"
+? "date"= "<>"
+
+
+

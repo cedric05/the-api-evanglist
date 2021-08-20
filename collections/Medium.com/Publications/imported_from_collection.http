@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73882450-9386-4470-9e60-63304fcf26ba.postman_collection.json
+
+// This endpoint returns a list of contributors for a given publication. In other words, a list of Medium users who are allowed to publish under a publication, as well as a description of their exact role in the publication (for now, either an editor or a writer).
+
+@name("Contributors of Publication")
+GET "https://{{baseUrl}}/publications/:publicationId/contributors"
+
+
+// creating a post and associating it with a publication on Medium. The request also shows this association, considering posts a collection of resources under a publicationnnThere are additional rules around publishing that each request to this API must respect:n  - If the authenticated user is an 'editor' for the publication, they can create posts with any publish status. Posts published as 'public' or 'unlisted' will appear in collection immediately, while posts created as 'draft' will remain in 
+
+@name("Create Publication Post")
+POST "https://{{baseUrl}}/publications/:publicationId/posts"
+
+
+

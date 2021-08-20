@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d879d2e1-1162-48e4-8e1e-4eef33d41820.postman_collection.json
+
+// Retrieve all config snapshots matching a specified Resource Type, ordered by most recently created/modified date.
+
+@name("Get all resolved resources using the resolution key")
+GET "http://{{host}}/api/v1/resources"
+basicauth("ccsdkapps", "ccsdkapps")
+? "bpVersion"= "1.0.0"
+? "artifactName"= "activate"
+? "bpName"= "baseconfiguration"
+? "resolutionKey"= "7cafa9f3-bbc8-49ec-8f25-fcaa6ac3ff08"
+
+
+// Delete all the resources associated to a resolution-key using blueprint metadata, artifact name and the resolution-key.
+
+@name("Delete resources using resolution key")
+DELETE "http://{{host}}/api/v1/resources"
+basicauth("ccsdkapps", "ccsdkapps")
+? "bpVersion"= "1.0.0"
+? "artifactName"= "activate"
+? "bpName"= "baseconfiguration"
+? "resolutionKey"= "7cafa9f3-bbc8-49ec-8f25-fcaa6ac3ff08"
+
+
+// Retrieve a stored resource value using the blueprint metadata, artifact name, resolution-key along with the name of the resource value to retrieve.
+
+@name("Fetch a resource value using resolution key")
+GET "http://{{host}}/api/v1/resources/api/v1/resources/resource"
+basicauth("ccsdkapps", "ccsdkapps")
+? "bpVersion"= "1.0.0"
+? "artifactName"= "activate"
+? "bpName"= "baseconfiguration"
+? "resolutionKey"= "7cafa9f3-bbc8-49ec-8f25-fcaa6ac3ff08"
+? "name"= "test"
+
+
+

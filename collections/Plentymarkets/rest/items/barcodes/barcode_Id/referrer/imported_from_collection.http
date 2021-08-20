@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Activate a referrer for a barcode.
+
+@name("Activate a referrer")
+POST "https://{{baseUrl}}/rest/items/barcodes/:barcodeId/referrer"
+
+
+// Deactivate a referrer for a barcode. The ID of the barcode and the ID of the referrer must be specified.
+
+@name("Deactivate a referrer")
+DELETE "https://{{baseUrl}}/rest/items/barcodes/:barcodeId/referrer/:referrerId"
+
+
+

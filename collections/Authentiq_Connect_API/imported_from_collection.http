@@ -1,0 +1,69 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34a38a08-9881-4c51-9aa4-0e19e7bc1d51.postman_collection.json
+
+// Start a session with Authentiq Connect to authenticate a user.
+// 
+// ```
+// GET https://connect.authentiq.io/authorize?client_id=<your-client-id>&response_type=code+id_token&scope=openid+email&redirect_uri=<your-redirect-uri>&state=0123456789
+// ```
+// 
+// This endpoint also supports the POST method.
+
+@name("Authenticate a user")
+GET "https://{{baseUrl}}/authorize"
+? "client_id"= "<string>"
+? "response_type"= "<string>"
+? "scope"= "<string>"
+? "redirect_uri"= "<string>"
+? "state"= "<string>"
+? "response_mode"= "<string>"
+? "nonce"= "<string>"
+? "display"= "page"
+? "prompt"= "login"
+? "max_age"= "0"
+? "ui_locales"= "<string>"
+
+
+// Exchange en authorization code for an ID Token or Access Token.
+// 
+// This endpoint supports both `client_secret_basic` (default) and `client_secret_basic` authentication methods, as specified by the client's `token_endpoint_auth_method`.
+
+@name("Obtain an ID Token")
+POST "https://{{baseUrl}}/token"
+"Authorization": "<string>"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "client_id": [
+        "<string>"
+    ],
+    "client_secret": [
+        "<password>"
+    ],
+    "grant_type": [
+        "<string>"
+    ],
+    "code": [
+        "<string>"
+    ],
+    "redirect_uri": [
+        "<string>"
+    ]
+})
+
+
+// Use this endpoint to retrieve a user's profile in case you are unable to parse an ID Token or you've not already obtained enough details from the ID Token via the Token Endpoint.
+
+@name("Retrieve a user profile")
+GET "https://{{baseUrl}}/userinfo"
+
+
+// An OpenID Connect Session Management iframe to facilitate e.g. single sign-on or remote logouts.
+// 
+// The iframe implements the OIDC postMessage-based [change notification protocol](http://openid.net/specs/openid-connect-session-1_0.html#ChangeNotification) via which a client can receive notifications about session state changes.
+
+@name("Include a session iframe")
+GET "https://{{baseUrl}}/:client_id/iframe"
+
+
+

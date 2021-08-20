@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// ***
+// 
+// **Overview**
+// 
+// Extract information on the pricing configurations you set for a subscription plan/product.
+
+@name("Working example: Retrieve pricing configurations")
+GET "https://{{baseUrl}}/products/:ProductCode/pricingconfigurations/"
+
+
+// ***
+// 
+// **Overview**
+// Retrieve a product's SKU details.
+
+@name("Working example: Retrieve SKU details")
+GET "https://{{baseUrl}}/products/:ProductCode/pricingconfigurations/:PricingConfigurationCode/sku/:SKUCode/"
+
+
+

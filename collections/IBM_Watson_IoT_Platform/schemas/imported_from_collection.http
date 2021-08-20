@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-22a10f2d-8624-488d-95c0-85a6c45216c5.postman_collection.json
+
+// Schemas are used to define the structure of Events, Device State andnThing State in the Watson IoT Platform.nn  - For Events, they define the structure of the payload of the eventsn    that are published to the platform by devices.nn  - For Device and Thing State, they define the structure of the staten    that is stored by the platform.nnThe **schemas** endpoint returns the list of all of the active schema ndefinitions for the organization in the Watson IoT Platform.  Variousnquery parameters c
+
+@name("Query active schema definitions")
+GET "https://{{baseUrl}}/schemas"
+
+
+

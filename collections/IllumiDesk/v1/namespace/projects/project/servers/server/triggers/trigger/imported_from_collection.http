@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete a server trigger") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/triggers/:trigger/"
+
+
+@name("Get a server trigger") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/triggers/:trigger/"
+
+
+@name("Update a server trigger") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/triggers/:trigger/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "operation": "<string>",
+    "webhook": {
+        "url": "<string>",
+        "payload": "<object>"
+    }
+})
+
+
+@name("Replace a server trigger") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/:namespace/projects/:project/servers/:server/triggers/:trigger/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "operation": "<string>",
+    "webhook": {
+        "url": "<string>",
+        "payload": "<object>"
+    }
+})
+
+
+

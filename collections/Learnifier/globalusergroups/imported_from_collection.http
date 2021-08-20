@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-712034b2-265e-4ffc-a7a7-e49d61c6660a.postman_collection.json
+
+// Returns a list of Global User Groups. Global User Groups are set up for the realm, and will generate groups that can be used on the client level.n
+
+@name("List Global User Groups.")
+GET "https://{{baseUrl}}/globalusergroups"
+
+
+// Returns a list of all members in User Groups that are based on the Global Group with this groupid.n
+
+@name("List of all users in group.")
+GET "https://{{baseUrl}}/globalusergroups/:groupid/members"
+
+
+

@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://developer.github.com/v3/activity/watching/#get-a-repository-subscription).
+// 
+// Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
+
+@name("Get a thread subscription for the authenticated user")
+GET "https://{{baseUrl}}/notifications/threads/:thread_id/subscription"
+
+
+// If you are watching a repository, you receive notifications for all threads by default. Use this endpoint to ignore future notifications for threads until you comment on the thread or get an **@mention**.
+// 
+// You can also use this endpoint to subscribe to threads that you are currently not receiving notifications for or to subscribed to threads that you have previously ignored.
+// 
+// Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://developer.github.com/v3/activity/notifications/#delete-a-thread-subscription) endpoint.
+
+@name("Set a thread subscription")
+PUT "https://{{baseUrl}}/notifications/threads/:thread_id/subscription"
+"Content-Type": "application/json"
+json({
+    "ignored": false
+})
+
+
+// Mutes all future notifications for a conversation until you comment on the thread or get an **@mention**. If you are watching the repository of the thread, you will still receive notifications. To ignore future notifications for a repository you are watching, use the [Set a thread subscription](https://developer.github.com/v3/activity/notifications/#set-a-thread-subscription) endpoint and set `ignore` to `true`.
+
+@name("Delete a thread subscription")
+DELETE "https://{{baseUrl}}/notifications/threads/:thread_id/subscription"
+
+
+

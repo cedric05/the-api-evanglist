@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+// Get the list of ticket products.
+
+@name("Get tickets")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/product/ticket"
+? "includePrivateShifts"= "false"
+
+
+// Get the list of ticket products based on a date and number of people.
+
+@name("Get tickets based on a date and number of people.")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/product/ticket/search/:date/:partySize/:culture"
+
+
+

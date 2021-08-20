@@ -1,0 +1,1 @@
+You can pull all of the workspaces listed as part of the Postman Open Technologies specifications project site using this API.

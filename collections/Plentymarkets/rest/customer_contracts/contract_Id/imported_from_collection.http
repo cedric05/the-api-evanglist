@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Returns a single contract.
+
+@name("Returns a single contract")
+GET "https://{{baseUrl}}/rest/customer_contracts/:contractId"
+
+
+// Starts download of contract document.
+
+@name("Starts download of contract document")
+GET "https://{{baseUrl}}/rest/customer_contracts/:contractId/document"
+
+
+

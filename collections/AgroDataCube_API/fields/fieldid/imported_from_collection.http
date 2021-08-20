@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-df55bd21-8efe-4dae-ac10-923f5911c3f0.postman_collection.json
+
+@name("Retrieve the geometry and crop information for a specific crop field.")
+GET "https://{{baseUrl}}/fields/:fieldid"
+"token": "{{token}}"
+? "output_epsg"= "4326"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+// Return the zonal statistics for the selected fieldid and AHN. In case of a multipolygon multiple rows can be returned, one for each polygon
+
+@name("Retrieve altitude zonal statistics (in cm) based on AHN for a specific field.")
+GET "https://{{baseUrl}}/fields/:fieldid/ahn"
+"token": "{{token}}"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+@name("Retrieve a list of the nearest meteostations to a specific field, ranked by distance.")
+GET "https://{{baseUrl}}/fields/:fieldid/meteostations"
+"token": "{{token}}"
+? "output_epsg"= "4326"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+@name("Retrieve the available NDVI (Normalized Difference Vegetation Index) values for a specific field and time period.")
+GET "https://{{baseUrl}}/fields/:fieldid/ndvi"
+"token": "{{token}}"
+? "output_epsg"= "4326"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+@name("Retrieve the spatial intersections of a field with the soil physical parameters geometries (for more detailed information see http://content.alterra.wur.nl/Webdocs/PDFFiles/Alterrarapporten/AlterraRapport2387.pdf). The soilparamid returned can be used to")
+GET "https://{{baseUrl}}/fields/:fieldid/soilparams"
+"token": "{{token}}"
+? "output_epsg"= "4326"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+@name("Retrieve the spatial intersections of the field with the geometries of the soilmap 1 : 50.000. The soilid returned is the objectid in the shapefile as provided by PDOK.")
+GET "https://{{baseUrl}}/fields/:fieldid/soiltypes"
+"token": "{{token}}"
+? "output_epsg"= "4326"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+

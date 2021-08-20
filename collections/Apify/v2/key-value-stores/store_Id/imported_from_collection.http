@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets an object that contains all the details about a specific key-value store.
+
+@name("Get store")
+GET "https://{{baseUrl}}/v2/key-value-stores/:storeId"
+? "token"= "<string>"
+
+
+// Returns a list of objects describing keys of a given key-value store, as well as some information about the values (e.g. size).nThis endpoint is paginated using `exclusiveStartKey` and `limit` parameters - see [Pagination](#introduction/response-structure) for more details.
+
+@name("Get list of keys")
+GET "https://{{baseUrl}}/v2/key-value-stores/:storeId/keys"
+? "exclusiveStartKey"= "<string>"
+? "limit"= "<number>"
+? "token"= "<string>"
+
+
+

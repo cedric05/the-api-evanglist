@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6e9c2354-32bd-442c-8e9d-f6e7a32fd29f.postman_collection.json
+
+// Test the hash between a message and public key. If the test is passed, a cookie is stored. The parameters of this request are gotten from MetaMask
+
+@name("Cookie authentication")
+POST "https://{{baseUrl}}/sign"
+
+
+// Get all the addresses sorted by rank. The ranking is gotten from the Ethereum score
+
+@name("Get the list of all addresses sorted by rank")
+GET "https://{{baseUrl}}/rank"
+
+
+// Simple authenticated method to determine if user is properly authenticated.
+
+@name("Test if user is properly authenticated")
+GET "https://{{baseUrl}}/auth"
+
+
+// Manage unsign proccess. Delete cookie with header set-cookie
+
+@name("Unsign http client for the current user")
+POST "https://{{baseUrl}}/unsign"
+
+
+// Update the profile of the current user
+
+@name("Update the profile of the current user")
+POST "https://{{baseUrl}}/updateuser"
+
+
+// Get the image profile
+
+@name("Get the image profile")
+GET "https://{{baseUrl}}/profile-image"
+? "image"= "<>"
+
+
+// Upload Image
+
+@name("Upload image")
+POST "https://{{baseUrl}}/upload-profile"
+
+
+

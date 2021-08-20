@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("This endpoint should not be used.
+It's sole purpose is to support compatibility with the pre-2016 url format that included a holding code as a query parameter.
+e.g. 'rest/DownloadFile?code=123'")
+GET "https://{{baseUrl}}/rest/DownloadFile"
+? "code"= "<integer>"
+
+
+@name("This endpoint should not be used.
+It's sole purpose is to support compatibility with the pre-2016 url format that included a holding code as a query parameter.
+e.g. 'rest/DownloadFile?code=123'")
+HEAD "https://{{baseUrl}}/rest/DownloadFile"
+? "code"= "<integer>"
+
+
+@name("Retrieve the Reference(s) to which one or more Digital File Id's belong using a GET request with the query string containing the file id's,
+yielding Reference results with composite detail.")
+GET "https://{{baseUrl}}/rest/DownloadFile/Metadata"
+? "q"= "<string>"
+
+
+

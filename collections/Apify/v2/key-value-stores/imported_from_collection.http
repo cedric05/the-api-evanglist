@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Gets the list of key-value stores owned by the user.nThe response is a list of objects where each objects contains a basic information about a single key-value store.nnThe endpoint supports pagination using the `limit` and `offset` parameters and it will not return more than 1000narray elements.nnBy default, the records are sorted by the `createdAt` field in ascending order,ntherefore you can use pagination to incrementally fetch all key-value stores while newnones are still being created. To so
+
+@name("Get list of key-value stores")
+GET "https://{{baseUrl}}/v2/key-value-stores"
+? "token"= "<string>"
+? "offset"= "<number>"
+? "limit"= "<number>"
+? "desc"= "<boolean>"
+? "unnamed"= "<string>"
+? "name"= "<string>"
+
+
+

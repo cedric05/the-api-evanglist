@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return information about wings in a fleet
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/wings/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/wings/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/wings/`
+// 
+// ---
+// This route is cached for up to 5 seconds
+
+@name("Get fleet wings")
+GET "https://{{baseUrl}}/fleets/:fleet_id/wings/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+? "token"= "commodo irure"
+
+
+// Create a new wing in a fleet
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/wings/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/wings/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/wings/`
+
+@name("Create fleet wing")
+POST "https://{{baseUrl}}/fleets/:fleet_id/wings/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

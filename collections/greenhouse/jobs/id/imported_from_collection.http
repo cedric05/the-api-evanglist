@@ -1,0 +1,103 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Update a job")
+PATCH "https://{{baseUrl}}/jobs/:id"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "user_id": 27615258,
+    "custom_fields": [
+        {
+            "delete_value": "cupidatat in e",
+            "id": -59076077,
+            "max_value": -65922022,
+            "min_value": -29875878,
+            "name_key": "laborum",
+            "unit": "in culpa pariatur est",
+            "value": "sint"
+        },
+        {
+            "delete_value": "sint incididunt adipisicing Lorem nostrud",
+            "id": 1022881,
+            "max_value": -57986778,
+            "min_value": -17619180,
+            "name_key": "ea",
+            "unit": "est et enim",
+            "value": "in laboris consequat"
+        }
+    ],
+    "department_id": 62506562,
+    "how_to_sell_this_job": "veniam officia ullamco",
+    "id": 40943170,
+    "name": "dolore consequat",
+    "notes": "ut in",
+    "office_ids": [
+        1781022,
+        54502491
+    ],
+    "requisition_id": "amet dolor veniam Ut dolore",
+    "team_and_responsibilities": "nisi"
+})
+
+
+@name("Retrieve a job")
+GET "https://{{baseUrl}}/jobs/:id"
+"Authorization": "ad cillum non laborum"
+
+
+@name("Replace a hiring team for a job")
+PUT "https://{{baseUrl}}/jobs/:id"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "user_id": -92776227,
+    "coordinators": [
+        {
+            "user_id": 9802165,
+            "responsible_for_inactive_candidates": false,
+            "responsible_for_active_candidates": false,
+            "responsible_for_future_candidates": false
+        },
+        {
+            "user_id": 6002028,
+            "responsible_for_inactive_candidates": false,
+            "responsible_for_active_candidates": false,
+            "responsible_for_future_candidates": true
+        }
+    ],
+    "hiring_managers": [
+        {
+            "user_id": 88825265
+        },
+        {
+            "user_id": 9346748
+        }
+    ],
+    "recruiters": [
+        {
+            "user_id": 36414284,
+            "responsible_for_inactive_candidates": false,
+            "responsible_for_active_candidates": false,
+            "responsible_for_future_candidates": false
+        },
+        {
+            "user_id": 66097833,
+            "responsible_for_inactive_candidates": false,
+            "responsible_for_active_candidates": false,
+            "responsible_for_future_candidates": true
+        }
+    ],
+    "sourcers": [
+        {
+            "user_id": -65549097
+        },
+        {
+            "user_id": 87859128
+        }
+    ]
+})
+
+
+

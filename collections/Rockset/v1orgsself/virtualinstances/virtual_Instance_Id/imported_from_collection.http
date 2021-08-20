@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// Get details about a virtual instance.
+
+@name("Get Virtual Instance")
+GET "https://{{baseUrl}}/v1/orgs/self/virtualinstances/:virtualInstanceId"
+
+
+// Update the size of a virtual instance.
+
+@name("Update Virtual Instance")
+POST "https://{{baseUrl}}/v1/orgs/self/virtualinstances/:virtualInstanceId"
+"Content-Type": "application/json"
+json({
+    "new_size": "LARGE",
+    "new_type": "XLARGE2"
+})
+
+
+

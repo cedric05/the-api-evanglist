@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-47bcec16-21a6-42ae-a7dc-e3c1d2799ca3.postman_collection.json
+
+@name("Get Products Fields")
+GET "https://{{baseUrl}}/products/:id/fields.json"
+
+
+@name("Get Products Fields Count")
+GET "https://{{baseUrl}}/products/:id/fields/count.json"
+
+
+@name("Get Products Images")
+GET "https://{{baseUrl}}/products/:id/images.json"
+
+
+@name("Get Products Options")
+GET "https://{{baseUrl}}/products/:id/options.json"
+
+
+@name("Get Products Variants")
+GET "https://{{baseUrl}}/products/:id/variants.json"
+
+
+

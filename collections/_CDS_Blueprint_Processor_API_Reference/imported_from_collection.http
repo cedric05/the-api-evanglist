@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d879d2e1-1162-48e4-8e1e-4eef33d41820.postman_collection.json
+
+// Lists all available endpoints from blueprints processor API.
+
+@name("List all endpoints")
+GET "http://{{host}}/actuator/mappings"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+

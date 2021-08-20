@@ -1,0 +1,114 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-11596e0a-c915-4ed2-821b-e98a8d5b6d31.postman_collection.json
+
+// Returns a list of financial institutions.
+
+@name("Get Financial Institutions")
+GET "https://{{baseUrl}}/institutions"
+? "filters"= "STALP:IA AND ACTIVE:1"
+? "search"= "non aliquip"
+? "fields"= "ZIP,OFFDOM,CITY,COUNTY,STNAME,STALP,NAME,ACTIVE,CERT,CBSA,ASSET,NETINC,DEP,DEPDOM,ROE,ROA,DATEUPDT,OFFICES"
+? "sort_by"= "OFFICES"
+? "sort_order"= "DESC"
+? "limit"= "10"
+? "offset"= "0"
+? "format"= "json"
+? "download"= "true"
+? "filename"= "data_file"
+
+
+// Returns locations/branches of financial institutions.
+
+@name("Get Institution Locations")
+GET "https://{{baseUrl}}/locations"
+? "filters"= "STNAME:Oregon AND SERVTYPE:11"
+? "fields"= "NAME,UNINUM,SERVTYPE,RUNDATE,CITY,STNAME,ZIP,COUNTY"
+? "sort_by"= "NAME"
+? "sort_order"= "DESC"
+? "limit"= "10"
+? "offset"= "0"
+? "format"= "json"
+? "download"= "true"
+? "filename"= "data_file"
+
+
+// Returns aggregate financial and structure data, subtotaled by year, regarding finanical institutions.
+
+@name("Get Historical Aggregate Data by Year")
+GET "https://{{baseUrl}}/summary"
+? 'filters'= 'STNAME:"Alabama"'
+? "fields"= "STNAME,YEAR,INTINC,EINTEXP,NIM,NONII,NONIX,ELNATR,ITAXR,IGLSEC,ITAX,EXTRA,NETINC"
+? "sort_by"= "YEAR"
+? "sort_order"= "DESC"
+? "limit"= "10"
+? "offset"= "0"
+? "agg_by"= "non aliquip"
+? "agg_term_fields"= "non aliquip"
+? "agg_sum_fields"= "non aliquip"
+? "agg_limit"= "5553"
+? "format"= "json"
+? "download"= "true"
+? "filename"= "data_file"
+
+
+// Returns details on failed financial institutions.
+
+@name("Get detail on historical bank failures from 1934 to present.")
+GET "https://{{baseUrl}}/failures"
+? 'filters'= 'FAILYR:["2014" TO "2015"]'
+? "fields"= "NAME,CERT,FIN,CITYST,FAILDATE,SAVR,RESTYPE,RESTYPE1,QBFDEP,QBFASSET,COST"
+? "sort_by"= "FAILDATE"
+? "sort_order"= "DESC"
+? "limit"= "10"
+? "offset"= "0"
+? "total_fields"= "QBFDEP,QBFASSET,COST"
+? "subtotal_by"= "RESTYPE"
+? "agg_by"= "FAILYR"
+? "agg_term_fields"= "RESTYPE"
+? "agg_sum_fields"= "QBFASSET,QBFDEP,COST"
+? "agg_limit"= "10"
+? "format"= "json"
+? "download"= "true"
+? "filename"= "data_file"
+
+
+// Returns details on structure change events
+
+@name("Get Detail on Structure Change Events")
+GET "https://{{baseUrl}}/history"
+? 'filters'= 'STATE:"VIRGINIA"'
+? "search"= "non aliquip"
+? "fields"= "INSTNAME,CERT,PCITY,PSTALP,PZIP5"
+? "sort_by"= "PROCDATE"
+? "sort_order"= "DESC"
+? "limit"= "10"
+? "offset"= "0"
+? "agg_by"= "non aliquip"
+? "agg_term_fields"= "non aliquip"
+? "agg_limit"= "10"
+? "format"= "json"
+? "download"= "true"
+? "filename"= "data_file"
+
+
+// Returns financial information for financial institutions
+
+@name("Get Financial Information for FDIC Insured Institutions")
+GET "https://{{baseUrl}}/financials"
+? "filters"= "CERT:14"
+? "fields"= "CERT,REPDTE,ASSET,DEP"
+? "sort_by"= "REPDTE"
+? "sort_order"= "DESC"
+? "limit"= "10"
+? "offset"= "0"
+? "agg_by"= "CERT"
+? "agg_term_fields"= "REPDTE"
+? "agg_sum_fields"= "ASSET"
+? "agg_limit"= "1"
+? "format"= "json"
+? "download"= "true"
+? "filename"= "data_file"
+
+
+

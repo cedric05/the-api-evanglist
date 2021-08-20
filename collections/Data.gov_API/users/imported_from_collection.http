@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// List all objects
+
+@name("Get Users")
+GET "https://{{baseUrl}}/users/"
+? "sort"= "<>"
+? "datasets"= "<string>"
+? "facets"= "<string>"
+? "page_size"= "<string>"
+? "q"= "<>"
+? "reuses"= "<string>"
+? "organization"= "<object>"
+? "page"= "<string>"
+
+
+// Suggest users
+
+@name("Get Users Suggest")
+GET "https://{{baseUrl}}/users/suggest/"
+? "q"= "<>"
+? "size"= "<>"
+
+
+// Unfollow an object given its ID
+
+@name("Delete Users  Followers")
+DELETE "https://{{baseUrl}}/users/:id/followers/"
+
+
+// Delete a given object
+
+@name("Delete Users User")
+DELETE "https://{{baseUrl}}/users/:user/"
+
+
+

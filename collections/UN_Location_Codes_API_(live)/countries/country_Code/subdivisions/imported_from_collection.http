@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-be73cf41-a4da-47fd-a390-b638c95ebca3.postman_collection.json
+
+// Get a list of all the subdivisions of a certain country, specified by the country code in the query parameter. The example response contains a subset of the output when requested for BE.
+
+@name("Get Countries Code Subdivisions")
+GET "https://{{baseUrl}}/countries/:countryCode/subdivisions"
+
+
+// Get the details of 1 specific subdivision, based on the countryCode and subdivisionCode in the query parameters.
+
+@name("Get Countries Country Code Subdivisions Code")
+GET "https://{{baseUrl}}/countries/:countryCode/subdivisions/:subdivisionCode"
+
+
+

@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d4cf5606-be3b-4e27-b14f-77855e9137ad.postman_collection.json
+
+// The root endpoint will provide you a JSON Swagger definition.n
+
+@name("Available endpoints")
+GET "https://{{baseUrl}}/"
+
+
+// Get a list of supported formats for documents, style guides and extensions.n
+
+@name("Get a list of supported formats")
+GET "https://{{baseUrl}}/formats"
+
+
+// Download your corporate account's global glossary. This endpoint is available only for corporate account customers.
+
+@name("Download the global glossary.")
+GET "https://{{baseUrl}}/glossary"
+
+
+// Get a list of supported languages
+
+@name("Get a list of supported languages")
+GET "https://{{baseUrl}}/languages"
+
+
+@name("Get your account information and summary.")
+GET "https://{{baseUrl}}/me"
+
+
+// Download your corporate account's global style guide. This endpoint is available only for corporate account customers.
+
+@name("Download the global style guide.")
+GET "https://{{baseUrl}}/styleguide"
+
+
+// MotaWord API is using OAuth2 procedures when authenticating or authorizing your API call. Currently, we only allow Client Credential type flow.n
+
+@name("Retrieve an access token to interact with the API.")
+POST "https://{{baseUrl}}/token"
+
+
+

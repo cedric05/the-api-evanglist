@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Suggests symbols semantically based upon partial input of symbol name,ncompany name, or descriptionn
+
+@name("Suggest Symbolsn")
+GET "https://{{baseUrl}}/data/symbols/suggest/:text"
+? "$top"= "<integer>"
+? "$filter"= "<string>"
+? "access_token"= "<string>"
+
+
+// Searches symbols based upon input criteria including Name, Category andnCountry.n
+
+@name("Search for Symbolsn")
+GET "https://{{baseUrl}}/data/symbols/search/:criteria"
+? "access_token"= "<string>"
+
+
+

@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bdca8cb-a591-4d01-90eb-dc36f5720cac.postman_collection.json
+
+// Lists reports created by a specific job.nReturns NOT_FOUND if the job does not exist.
+
+@name("Get Jobs Job Reports")
+GET "https://{{baseUrl}}/v1/jobs/:jobId/reports"
+? "createdAfter"= "<>"
+? "onBehalfOfContentOwner"= "<>"
+? "pageSize"= "<>"
+? "pageToken"= "<>"
+? "startTimeAtOrAfter"= "<>"
+? "startTimeBefore"= "<>"
+
+
+// Gets the metadata of a specific report.
+
+@name("Get Jobs Job Reports Report")
+GET "https://{{baseUrl}}/v1/jobs/:jobId/reports/:reportId"
+? "onBehalfOfContentOwner"= "<>"
+
+
+

@@ -1,0 +1,186 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Get all organizations</code> call lists all organizations related to the system user in the order that they were created.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-all-organizations>Get All Organizations</a> API Reference document
+
+@name("Get all Organizations")
+GET "https://{{base_url}}/v3/organizations"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+? "limit"= "1"
+? "skip"= "1"
+? "asc"= "created_at"
+? "desc"= "update_at"
+? "include_count"= "true"
+? "typeahead"= "Contentstack"
+
+
+// <p>The <code>Get a single organization</code> call gets the comprehensive details of a specific organization related to the system user.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-single-organization>Get Single Organization</a> API Reference document
+
+@name("Get a single Organization")
+GET "https://{{base_url}}/v3/organizations/{{organization_uid}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+? "include_plan"= "true"
+
+
+// <p>The <code>Get all roles in an organization</code> call&nbsp;gives the details of all the roles that are set to users in an Organization.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#organization-roles>Organization Roles</a> API Reference document
+
+@name("Get all roles in an Organization")
+GET "https://{{base_url}}/v3/organizations/{{organization_uid}}/roles"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+? "limit"= "limit_value"
+? "skip"= "skip_value"
+? "asc"= "field_uid"
+? "desc"= "field_uid"
+? "include_count"= "false"
+? "include_stack_roles"= "false"
+
+
+// <p>The <code>Add users to organization</code> call allows you to send invitations to add users to your organization. Only the owner or the admin of the organization can add users.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#organization-users>Organization Users</a> API Reference document
+
+@name("Add users to Organization")
+POST "https://{{base_url}}/v3/organizations/{{organization_uid}}/share"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "share": {
+        "users": {
+            "abc@sample.com": [
+                "{{orgAdminRoleUid}}"
+            ],
+            "xyz@sample.com": [
+                "{{orgMemberRoleUid}}"
+            ]
+        },
+        "stacks": {
+            "abc@sample.com": {
+                "{{apiKey}}": [
+                    "{{stackRoleUid1}}"
+                ]
+            },
+            "xyz@sample.com": {
+                "blta1ed1f11111c1eb1": [
+                    "blt111d1b110111e1f1"
+                ],
+                "bltf0c00caa0f0000f0": [
+                    "bltcea22222d2222222",
+                    "blt333f33cb3e33ffde"
+                ]
+            }
+        },
+        "message": "Invitation message"
+    }
+})
+
+
+// <p>The <code>Remove users from organization</code> request allows you to remove existing users from your organization.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#organization-users>Organization Users</a> API Reference document
+
+@name("Remove users from organization")
+DELETE "https://{{base_url}}/v3/organizations/{{organization_uid}}/share"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "emails": [
+        "abc@sample.com",
+        "xyz@sample.com"
+    ]
+})
+
+
+// <p>The <code>Resend pending organization invitation</code> call allows you to resend Organization invitations to users who have not yet accepted the earlier invitation. Only the owner or the admin of the Organization can resend the invitation to add users to an Organization.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#organization-users>Organization Users</a> API Reference document
+
+@name("Resend pending Organization invitation")
+GET "https://{{base_url}}/v3/organizations/{{organization_uid}}/share/{{share_uid}}/resend_invitation"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Get all organization invitations</code> call gives you a list of all the Organization invitations. Only the owner or the admin of the Organization can resend the invitation to add users to an Organization.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#organization-users>Organization Users</a> API Reference document
+
+@name("Get all Organization invitations")
+GET "https://{{base_url}}/v3/organizations/{{organization_uid}}/share"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+? "limit"= "1"
+? "skip"= "2"
+? "asc"= "created_at"
+? "desc"= "update_at"
+? "include_count"= "true"
+? "include_roles"= "true"
+? "include_invited_by"= "true"
+? "include_user_details"= "true"
+? "typeahead"= "Aravind"
+
+
+// <p>The <code>Transfer organization ownership</code> call transfers the ownership of an Organization to another user. When the call is executed, an email invitation for accepting the ownership of a particular Organization is sent to the specified user.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#transfer-organization-ownership>Transfer Organization Ownership</a> API Reference document
+
+@name("Transfer Organization ownership")
+POST "https://{{base_url}}/v3/organizations/{{organization_uid}}/transfer-ownership"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "transfer_to": "abc@sample.com"
+})
+
+
+// <p>The <code>Get all stacks in an organization</code> call fetches the list of all stacks in an Organization.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#organization-stacks>Organization Stacks</a> API Reference document
+
+@name("Get all stacks in an Organization")
+GET "https://{{base_url}}/v3/organizations/{{organization_uid}}/stacks"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+? "limit"= "limit_value"
+? "skip"= "skip_value"
+? "asc"= "field_uid"
+? "desc"= "field_uid"
+? "include_count"= "false"
+? "typeahead"= "Aravind"
+
+
+// <p>The <span class="code">Get organization log details</span> request is used to retrieve the audit log details of an organization. <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#organization-logs>Organization Logs</a> API Reference document
+
+@name("Get organization log details")
+GET "https://{{base_url}}/v3/organizations/{{organization_uid}}/logs"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+
+
+// <p>The <span class="code">Get organization log item</span> request is used to retrieve a specific item from the audit log of an organization.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#organization-logs>Organization Logs</a> API Reference document
+
+@name("Get organization log item")
+GET "https://{{base_url}}/v3/organizations/{{organization_uid}}/logs/{{log_uid}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+
+
+

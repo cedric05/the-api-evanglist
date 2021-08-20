@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-edf4e52a-d167-4c2f-bb89-c42269bd9481.postman_collection.json
+
+// Adds the given track to the given user's list of favorites.
+
+@name("Put Users Favorites Track")
+PUT "https://{{baseUrl}}/users/:user_id/favorites/{{track_id}}.json"
+
+
+// Adds the given track to the given user's list of favorites.
+
+@name("Put Users Favorites Track . Format")
+PUT "https://{{baseUrl}}/users/:user_id/favorites/{{track_id}}.{{format}}"
+
+
+

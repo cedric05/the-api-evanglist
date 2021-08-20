@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6b84cc71-ce77-48b8-babd-323eb8d670bd.postman_collection.json
+
+// Gets Generic Substance objects. This service returns one or more substances by accession number. By default, the provided accession number is searched by exact match. This can be changed to begins using the qualifier query parameter.
+
+@name("Get generic substances by Accession Number.")
+GET "https://{{baseUrl}}/generic_substance/accession_number/:accNum"
+? "qualifier"= "exact"
+
+
+// Gets Generic Substance objects. This service returns one or more substances by generic name. By default, the provided generic name is searched by exact match. This can be changed to begins using the qualifier query parameter.
+
+@name("Get generic substances by Generic Name.")
+GET "https://{{baseUrl}}/generic_substance/generic_name/:generic_name"
+? "qualifier"= "exact"
+
+
+// Gets Generic Substance objects. This service returns one or more substances by PMN number. By default, the provided PMN is searched by exact match. This can be changed to begins using the qualifier query parameter.
+
+@name("Get generic substances by PMN.")
+GET "https://{{baseUrl}}/generic_substance/pmn/:pmn"
+? "activeStatus"= "<string>"
+? "qualifier"= "exact"
+
+
+// Gets Generic Substance objects. This service returns a list of substances by bulk list of PMNs or accession numbers. The ids parameter should be provided as a pipe-delimited list of PMNs or accession numbers. The ids are searched by exact match only.
+
+@name("Get generic substances by list of identifiers.")
+GET "https://{{baseUrl}}/generic_substance/pmnacc"
+? "pmnaccList"= "<string>"
+
+
+

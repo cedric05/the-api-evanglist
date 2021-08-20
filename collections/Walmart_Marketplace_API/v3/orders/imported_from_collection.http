@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b04ade5-8838-4197-b3c0-06861796932d.postman_collection.json
+
+@name("getAllOrders")
+GET "https://{{baseUrl}}/v3/orders"
+? "createdStartDate"= "<string>"
+
+
+@name("getAllReleasedOrders")
+GET "https://{{baseUrl}}/v3/orders/released"
+? "createdStartDate"= "<string>"
+? "createdEndDate"= "<string>"
+
+
+@name("cancelOrderLine")
+POST "https://{{baseUrl}}/v3/orders/2793302065989/cancel"
+
+
+@name("refundOrderLine")
+POST "https://{{baseUrl}}/v3/orders/2577453162650/refund"
+
+
+@name("shippingOrderLine")
+POST "https://{{baseUrl}}/v3/orders/1577424042579/shipping"
+
+
+

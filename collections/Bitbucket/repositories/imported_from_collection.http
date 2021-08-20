@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns a paginated list of all public repositories.
+// 
+// This endpoint also supports filtering and sorting of the results. See
+// [filtering and sorting](../meta/filtering) for more details.
+
+@name("/repositories")
+GET "https://{{baseUrl}}/repositories"
+? "after"= "<string>"
+
+
+

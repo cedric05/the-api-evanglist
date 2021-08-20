@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves a LineOfBusiness by id in a specified data source.
+
+@name("Get LineOfBusiness by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/lobs/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates existing LineOfBusiness in a specified data source.
+
+@name("Updates existing LineOfBusiness ") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/lobs/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "name": "no",
+    "id": -8958729
+})
+
+
+// Deletes existing LineOfBusiness in a specified data source.
+
+@name("Deletes existing LineOfBusiness ") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/lobs/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

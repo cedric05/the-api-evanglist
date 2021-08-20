@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List all existing labels
+
+@name("List labels") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/labels"
+
+
+// Create a new label. Labels are used to tag events with custom classifications. Labels help support use cases such as classifying an event as severe / regressed, assign it to a specific developer or team (e.g prod-team-A) or any other user defined categorization.
+
+@name("Create new label") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/labels"
+"Content-Type": "application/json"
+json({
+    "name": "HighPriority",
+    "type": "USER",
+    "color": "RED",
+    "created_on": "2018-02-28T22:47:09.038Z",
+    "created_by": "John Doe"
+})
+
+
+

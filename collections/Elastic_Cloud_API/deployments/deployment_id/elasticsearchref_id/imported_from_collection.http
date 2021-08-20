@@ -1,0 +1,159 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get info about an Elasticsearch Resource belonging to a given Deployment.
+
+@name("Get Deployment Elasticsearch Resource Info") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id"
+? "show_security"= "false"
+? "show_metadata"= "false"
+? "show_plans"= "true"
+? "show_plan_logs"= "false"
+? "show_plan_history"= "false"
+? "show_plan_defaults"= "false"
+? "convert_legacy_plans"= "false"
+? "show_system_alerts"= "0"
+? "show_settings"= "false"
+? "enrich_with_template"= "true"
+
+
+// Shutdown Elasticsearch Resource belonging to a given Deployment.
+
+@name("Shutdown Deployment Elasticsearch Resource") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/_shutdown"
+? "hide"= "false"
+? "skip_snapshot"= "false"
+
+
+// Restarts an Elasticsearch Resource. If a Resource is active: this command re-applies the existing plan but applies a "cluster_reboot", which issues a restart command and waits for it to complete. If a Resource is inactive: this command starts it up with the most recent successful plan.
+
+@name("Restart Deployment Elasticsearch Resource") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/_restart"
+? "restore_snapshot"= "true"
+? "skip_snapshot"= "true"
+? "cancel_pending"= "false"
+? "group_attribute"= "__zone__"
+? "shard_init_wait_time"= "600"
+
+
+// Migrates the specified Elasticsearch resource to use SLM.
+
+@name("Migrate Elasticsearch resource to use SLM") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/_enable-slm"
+? "validate_only"= "false"
+
+
+// Resets the password of the 'elastic' user.
+
+@name("Reset 'elastic' user password") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/_reset-password"
+
+
+// Migrates the specified Elasticsearch resource and its associated Kibana to enable CCR (if supported).
+
+@name("Migrate Elasticsearch and associated Kibana resources to enable CCR") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/_enable-ccr"
+? "validate_only"= "false"
+
+
+// Returns the list of deployments which contain eligible remote clusters for the elasticsearch resource.
+
+@name("Get eligible remote clusters") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/eligible-remote-clusters"
+"Content-Type": "application/json"
+json({
+    "query": {
+        "match_all": {},
+        "exists": {
+            "field": "exercitation nostrud sunt elit laboris"
+        },
+        "term": {},
+        "nested": {
+            "path": "dolore id mollit",
+            "query": {
+                "value": "<Circular reference to #/components/schemas/QueryContainer detected>"
+            },
+            "score_mode": "avg"
+        },
+        "prefix": {},
+        "bool": {
+            "filter": [
+                {
+                    "value": "<Circular reference to #/components/schemas/QueryContainer detected>"
+                },
+                {
+                    "value": "<Circular reference to #/components/schemas/QueryContainer detected>"
+                }
+            ],
+            "minimum_should_match": 14488014,
+            "should": [
+                {
+                    "value": "<Circular reference to #/components/schemas/QueryContainer detected>"
+                },
+                {
+                    "value": "<Circular reference to #/components/schemas/QueryContainer detected>"
+                }
+            ],
+            "must_not": [
+                {
+                    "value": "<Circular reference to #/components/schemas/QueryContainer detected>"
+                },
+                {
+                    "value": "<Circular reference to #/components/schemas/QueryContainer detected>"
+                }
+            ],
+            "must": [
+                {
+                    "value": "<Circular reference to #/components/schemas/QueryContainer detected>"
+                },
+                {
+                    "value": "<Circular reference to #/components/schemas/QueryContainer detected>"
+                }
+            ]
+        },
+        "query_string": {
+            "query": "incididunt",
+            "default_operator": "ea pariatur",
+            "default_field": "in quis dolore",
+            "allow_leading_wildcard": true,
+            "analyzer": "sit labore cupidatat a"
+        },
+        "range": {},
+        "match_none": {},
+        "match": {}
+    },
+    "from": 94242569,
+    "size": -40975460
+})
+
+
+// Migrates the specified Elasticsearch resource to use ILM.
+
+@name("Migrate Elasticsearch resource to use ILM") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/:deployment_id/elasticsearch/:ref_id/_enable-ilm"
+"Content-Type": "application/json"
+? "validate_only"= "false"
+json({
+    "index_patterns": [
+        {
+            "index_pattern": "deserunt dolore",
+            "policy_name": "culpa sed irure est",
+            "node_attributes": {}
+        },
+        {
+            "index_pattern": "quis dolore ut aute",
+            "policy_name": "do cillum culpa velit ut",
+            "node_attributes": {}
+        }
+    ]
+})
+
+
+

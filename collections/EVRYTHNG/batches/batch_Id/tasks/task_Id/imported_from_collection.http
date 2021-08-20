@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Read a single task for a given batch.
+
+@name("Read a batch task")
+GET "https://{{baseUrl}}/batches/:batchId/tasks/:taskId"
+? "No Name"= "<string>"
+
+
+// Read the error logs, if any, for a given task. If not errors occured, there will be no logs.
+
+@name("Read task error logs")
+GET "https://{{baseUrl}}/batches/:batchId/tasks/:taskId/logs"
+? "No Name"= "<string>"
+
+
+

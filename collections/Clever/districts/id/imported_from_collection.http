@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-83d768b1-950f-434d-8ea8-e2e63edbcbef.postman_collection.json
+
+// Returns a specific district
+
+@name("get District")
+GET "https://{{baseUrl}}/districts/:id"
+? "include"= "<string>"
+
+
+// Returns the admins for a district
+
+@name("get Admins For District")
+GET "https://{{baseUrl}}/districts/:id/admins"
+
+
+// Returns the schools for a district
+
+@name("get Schools For District")
+GET "https://{{baseUrl}}/districts/:id/schools"
+? "limit"= "<integer>"
+? "starting_after"= "<string>"
+? "ending_before"= "<string>"
+? "where"= "<string>"
+
+
+// Returns the sections for a district
+
+@name("get Sections For District")
+GET "https://{{baseUrl}}/districts/:id/sections"
+? "limit"= "<integer>"
+? "starting_after"= "<string>"
+? "ending_before"= "<string>"
+? "where"= "<string>"
+
+
+// Returns the status of the district
+
+@name("get District Status")
+GET "https://{{baseUrl}}/districts/:id/status"
+
+
+// Returns the students for a district
+
+@name("get Students For District")
+GET "https://{{baseUrl}}/districts/:id/students"
+? "limit"= "<integer>"
+? "starting_after"= "<string>"
+? "ending_before"= "<string>"
+? "where"= "<string>"
+
+
+// Returns the teachers for a district
+
+@name("get Teachers For District")
+GET "https://{{baseUrl}}/districts/:id/teachers"
+? "limit"= "<integer>"
+? "starting_after"= "<string>"
+? "ending_before"= "<string>"
+? "where"= "<string>"
+
+
+

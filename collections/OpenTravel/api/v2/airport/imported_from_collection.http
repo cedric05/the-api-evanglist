@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-87f9f9dc-5401-4018-97ec-abc123495be8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("fetchAllAirportsAndInstantiateMongoDB") : "base-inherit-auth"
+GET "https://{{baseUrl}}/api/v2/airport/fetch"
+
+
+@name("searchAirports") : "base-inherit-auth"
+GET "https://{{baseUrl}}/api/v2/airport/search"
+? "query"= "ex commodo culpa"
+
+
+

@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Creates a trust relationship.
+
+@name("Create trust relationship") : "base-inherit-auth"
+POST "https://{{baseUrl}}/platform/configuration/trust-relationships"
+"Content-Type": "application/json"
+json({
+    "name": "ullamco elit nisi",
+    "public_ca_cert": "Excepteu",
+    "trust_by_default": true,
+    "installation_id": "voluptate labore",
+    "account_ids": [
+        {
+            "value": "dolor exercitation ad reprehenderit fugiat"
+        },
+        {
+            "value": "deserunt ut dolor fugiat"
+        }
+    ]
+})
+
+
+// List trust relationships.
+
+@name("List trust relationships") : "base-inherit-auth"
+GET "https://{{baseUrl}}/platform/configuration/trust-relationships"
+? "include_certificate"= "false"
+
+
+

@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af6221c8-ec0e-4985-a5d7-c06cfc0b8fae.postman_collection.json
+
+@name("Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. ")
+GET "https://{{baseUrl}}/api2/json/parseName/:nameFull"
+
+
+@name("Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.")
+GET "https://{{baseUrl}}/api2/json/parseName/:nameFull/:countryIso2"
+
+
+

@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Add Dependency") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/task/task_id/dependency"
+"Content-Type": "application/json"
+json({
+    "depends_on": "task_id"
+})
+
+
+@name("Remove Dependency") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/task/task_id/dependency"
+? "depends_on"= "task_id"
+? "dependency_of"= "task_id"
+
+
+

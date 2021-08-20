@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0df0d40b-bb5f-4ab4-9756-1a85f04bd436.postman_collection.json
+
+// Upload a single artifact file in a multipart MIME structure and attach it to an analytic catalog entry. The multipart MIME structure must have the catalog entry id tagged as 'catalogEntryId',  the file contents tagged as 'file',  the artifact type tagged as 'type', and  a description (under 1024 characters) tagged as 'description'. Artifact types can be any string.  Artifacts with the type 'executable' must contain the executable for the analytic.   An analytic can only have 1 artifact labelled 
+
+@name("Upload an artifact and attach it to an analytic catalog entry.")
+POST "https://{{baseUrl}}/api/v1/catalog/artifacts"
+
+
+

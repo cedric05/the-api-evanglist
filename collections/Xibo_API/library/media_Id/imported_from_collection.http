@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Edit a Media Item in the Library
+
+@name("Edit Media")
+PUT "https://{{baseUrl}}/library/:mediaId"
+
+
+// Tag a Media with one or more tags
+
+@name("Tag Media")
+POST "https://{{baseUrl}}/library/:mediaId/tag"
+
+
+// Untag a Media with one or more tags
+
+@name("Untag Media")
+POST "https://{{baseUrl}}/library/:mediaId/untag"
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-78c6df8c-aca6-4ba0-aa1b-721d91b41fef.postman_collection.json
+
+// Create a new variant of a product.
+
+@name("Post Products Variant Categories Variant Category Variants")
+POST "https://{{baseUrl}}/products/:product_id/variant_categories/:variant_category_id/variants"
+? "max_purchase_count"= "<>"
+? "name"= "<>"
+? "price_difference_cents"= "<>"
+? "variant"= "<>"
+
+
+// Permanently delete a variant of a product.
+
+@name("Delete Products Variant Categories Variant Category Variants")
+DELETE "https://{{baseUrl}}/products/:product_id/variant_categories/:variant_category_id/variants/:id"
+
+
+

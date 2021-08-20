@@ -1,0 +1,78 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Creates a new Room and returns all its details.  The rooms schedule will be the same as the locations schedule.
+
+@name("CreateRooms")
+POST "https://{{baseUrl}}/Rooms/CreateRooms"
+
+
+// Returns all the offered services for the selected room(s).
+
+@name("GetServicesOffered")
+POST "https://{{baseUrl}}/Rooms/GetServicesOffered"
+? "room_id"= "<integer>"
+? "service_id"= "<integer>"
+? "location_id"= "<integer>"
+
+
+@name("UpdateOfferedServices")
+POST "https://{{baseUrl}}/Rooms/UpdateOfferedServices"
+
+
+// Returns the details for rooms.  If none of the optional parameters are sent, the service will return the details for all rooms.
+
+@name("GetRooms")
+POST "https://{{baseUrl}}/Rooms/GetRooms"
+
+
+@name("AddOfferedServices")
+POST "https://{{baseUrl}}/Rooms/AddOfferedServices"
+
+
+@name("DeleteOfferedServices")
+POST "https://{{baseUrl}}/Rooms/DeleteOfferedServices"
+
+
+// Returns all the days off between start and end dates of the room(s)
+
+@name("GetDaysOff")
+POST "https://{{baseUrl}}/Rooms/GetDaysOff"
+? "room_id"= "<integer>"
+? "start_date"= "<integer>"
+? "end_date"= "<integer>"
+? "location_id"= "<integer>"
+
+
+// Updates the schedule for the room and returns the details of the updated schedule.  `first_appt_time_xxxx` (int) - holds the start time of the day, in minutes-since-midnight.  `last_appt_time_xxxx` (int) - holds the close time of the day, in minutes-since-midnight.   `off_xxxx` (boolean) - accepts (1, yes, on, true) If any value is passed other than these 4 values, it is considered as off.  Where xxxx is the weekday: (monday, tuesday, wednesday, thursday, friday, saturday, sunday)
+
+@name("UpdateSchedules")
+POST "https://{{baseUrl}}/Rooms/UpdateSchedules"
+
+
+@name("UpdateRooms")
+POST "https://{{baseUrl}}/Rooms/UpdateRooms"
+
+
+@name("Delete daysOff")
+POST "https://{{baseUrl}}/Rooms/DeleteDaysOff"
+
+
+@name("DeleteRooms")
+POST "https://{{baseUrl}}/Rooms/DeleteRooms"
+
+
+@name("CreateDaysOff")
+POST "https://{{baseUrl}}/Rooms/CreateDaysOff"
+
+
+// Returns the schedule details of the room(s).
+
+@name("GetSchedules")
+POST "https://{{baseUrl}}/Rooms/GetSchedules"
+? "room_id"= "<integer>"
+? "location_id"= "<integer>"
+
+
+

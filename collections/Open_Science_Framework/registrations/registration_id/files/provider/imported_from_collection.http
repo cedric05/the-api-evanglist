@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// List of all the registration's files/folders for a given storage provider.nn####ReturnsnnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of files. Each resource in the array is a separate file object and contains the full representation of the file.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).nn####FilteringnnYou can optionally request that the response only include files that match your f
+
+@name("List all files")
+GET "https://{{baseUrl}}/registrations/:registration_id/files/:provider/"
+
+
+// Retrieves the details of a registration file for the given storage provider.n####ReturnsnReturns a JSON object with a `data` key containing the representation of the requested registration file object, if the request is successful.nnIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
+
+@name("Retrieve a file")
+GET "https://{{baseUrl}}/registrations/:registration_id/files/:provider/:path/"
+
+
+

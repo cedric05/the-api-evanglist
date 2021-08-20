@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Returns signing of a contract.
+
+@name("Returns signing of a contract")
+GET "https://{{baseUrl}}/rest/customer_contracts/:contractId/sign"
+
+
+// Starts download of signed contract document.
+
+@name("Starts download of signed contract document")
+GET "https://{{baseUrl}}/rest/customer_contracts/:contractId/sign/document"
+
+
+

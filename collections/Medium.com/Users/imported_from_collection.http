@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73882450-9386-4470-9e60-63304fcf26ba.postman_collection.json
+
+// Creates a post on the authenticated user???s profile.
+
+@name("Create User Post")
+POST "https://{{baseUrl}}/users/:authorId/posts"
+
+
+// Returns a full list of publications that the user is related to in some way. This includes all publications the user is subscribed to, writes to, or edits.
+
+@name("User's publications")
+GET "https://{{baseUrl}}/users/:userId/publications"
+
+
+

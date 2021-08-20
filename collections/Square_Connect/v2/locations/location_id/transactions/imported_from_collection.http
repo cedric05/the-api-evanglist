@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Lists transactions for a particular location.nnWhen making a request to this endpoint, your request body **must** include either the `cursor` parameter, or it mustninclude both `begin_time` and `end_time` with an optional `sort_order`.
+
+@name("Get Locations Transactions")
+GET "https://{{baseUrl}}/v2/locations/:location_id/transactions"
+? "begin_time"= "<string>"
+? "end_time"= "<string>"
+? "sort_order"= "<string>"
+? "cursor"= "<string>"
+
+
+

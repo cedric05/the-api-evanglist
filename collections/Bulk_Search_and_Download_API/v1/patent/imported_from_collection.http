@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c943980b-661f-4048-933f-76da45d62852.postman_collection.json
+
+@name("get Status 1")
+GET "https://{{baseUrl}}/v1/patent/apistatus"
+
+
+// Return the Metadata by archive file name.
+
+@name("metadata api allows to Return the file size and posting date for zip file ")
+GET "https://{{baseUrl}}/v1/patent/pair/metadata"
+? "arcFilePath"= "PAIRIndex.zip"
+
+
+// Return the application by application number and various other parameters.
+
+@name("Return the applications by applcation number and various other parameters.")
+GET "https://{{baseUrl}}/v1/patent/application"
+? "searchText"= "<string>"
+? "criteriaSearchText"= "<string>"
+? "documentType"= "<string>"
+? "applicationType"= "<string>"
+? "publicationFromDate"= "<string>"
+? "publicationToDate"= "<string>"
+? "documentId"= "<string>"
+? "applicationNumber"= "<string>"
+? "applicationFromDate"= "<string>"
+? "applicationToDate"= "<string>"
+? "title"= "<string>"
+? "patentNumber"= "<string>"
+? "assignee"= "<string>"
+? "applicant"= "<string>"
+? "inventor"= "<string>"
+? "start"= "0"
+? "rows"= "100"
+? "sortField"= "<string>"
+? "sortOrder"= "<string>"
+
+
+

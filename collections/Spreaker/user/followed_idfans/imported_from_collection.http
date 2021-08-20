@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f67aecc5-ff45-4de9-97cc-ff8ad045654d.postman_collection.json
+
+// Get List of Followers
+
+@name("Get List of Followers")
+GET "https://{{baseUrl}}/user/:followed_id/fans"
+
+
+// Unfollow User
+
+@name("Unfollow User")
+DELETE "https://{{baseUrl}}/user/:followed_id/fans/:follower_id"
+
+
+

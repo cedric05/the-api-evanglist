@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// List all members of a organization
+
+@name("List all members of a organization")
+GET "https://{{baseUrl}}/organizations/:organization_identifier/members"
+
+
+// Remove a member from an organization
+
+@name("Remove a member from an organization")
+DELETE "https://{{baseUrl}}/organizations/:organization_identifier/members/:identifier"
+
+
+

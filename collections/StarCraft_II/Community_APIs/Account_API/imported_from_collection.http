@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d90fe3bc-a342-4867-915e-44120619da60.postman_collection.json
+
+// Returns metadata for an individual's account.
+
+@name("Player")
+GET "https://{{battle-net-host}}/sc2/player/{{sc2.account-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+

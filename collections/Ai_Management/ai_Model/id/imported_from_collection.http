@@ -1,0 +1,2580 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-69935689-abac-4ca3-a7a8-e89ccfe72173.postman_collection.json
+
+// This operation retrieves a AiModel entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a AiModel by ID")
+GET "https://{{baseUrl}}/aiModel/:id"
+? "fields"= "ex ullamco ad"
+
+
+// This operation updates partially a AiModel entity.
+
+@name("Updates partially a AiModel")
+PATCH "https://{{baseUrl}}/aiModel/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "category": "id amet proident",
+    "description": "mollit commodo tempor",
+    "endDate": "2009-01-22T01:46:41.331Z",
+    "hasStarted": false,
+    "isBundle": false,
+    "isServiceEnabled": false,
+    "isStateful": false,
+    "name": "ad do veniam irure",
+    "serviceType": "in sed aliqua dolor",
+    "startDate": "1989-07-13T10:44:29.279Z",
+    "startMode": "voluptate veniam sint",
+    "aiModelSpecification": {
+        "id": "nulla aliqua ullamco magna",
+        "href": "https://ORvilU.noawirvsXlUId0z0swj1lsyUSCKFmyoTBFU",
+        "deploymentRecord": {},
+        "description": "est officia",
+        "inheritedModel": {},
+        "isBundle": true,
+        "lastUpdate": "1977-12-01T15:26:59.545Z",
+        "lifecycleStatus": "dolore ullamco enim",
+        "modelContractVersionHistory": {},
+        "modelDataSheet": {},
+        "modelEvaluationData": {},
+        "modelSpecificationHistory": {},
+        "modelTrainingData": {},
+        "name": "in veniam Ut minim",
+        "version": "ullamco id anim deserunt",
+        "attachment": [
+            {
+                "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+                "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                "attachmentType": "video",
+                "content": "consequat Lorem",
+                "description": "Photograph of the Product",
+                "mimeType": "velit",
+                "name": "culpa enim commodo",
+                "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                "size": {
+                    "amount": 1,
+                    "units": "nisi fugiat esse consectetu"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "labore Lorem adipisicing et magna",
+                "@schemaLocation": "https://ETqGPylWaznWDkdqRVrZEEmrgYV.vezfijUdX94XYgvqZ,LvU9uUAWcHiIX",
+                "@type": "sit",
+                "@referredType": "nostrud quis incididunt proident"
+            },
+            {
+                "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+                "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                "attachmentType": "video",
+                "content": "veniam reprehenderit ad occaecat",
+                "description": "Photograph of the Product",
+                "mimeType": "Duis minim consectetur",
+                "name": "ea sed anim",
+                "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+                "size": {
+                    "amount": 1,
+                    "units": "nulla aliqua"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "elit irure",
+                "@schemaLocation": "https://hjvlaZHAsPE.jpwik+4yKkhSXao2at,HZzEnXkjahZ9U",
+                "@type": "minim",
+                "@referredType": "sit consectetur deserunt"
+            }
+        ],
+        "constraint": [
+            {
+                "id": "culpa do deserunt",
+                "href": "http://TIMAmrEkyzg.qrorM7akIuGSSjP.ky6dhS7JktjyZRSzLtUsTPLqVNlTkEGY78SE7",
+                "name": "ut dolor",
+                "version": "nisi",
+                "@baseType": "tempor ut consequat velit",
+                "@schemaLocation": "http://PyJMlFPvIQJMxVRhQSJdkcOjoNXRuLmdU.ihqhJ2YQ1ynZvhI6RGC.tPBBSiaxL1C39JOvlrjGxZ7l0J,AwoI4oT83oVUy3.34NhdWO,tUnt4E5",
+                "@type": "enim Excep",
+                "@referredType": "sunt consequat Duis Excepte"
+            },
+            {
+                "id": "Duis sit eiusmod esse",
+                "href": "https://bjyRDxJHvAShaahHRwYprMwNxodFV.rqllEWqc7PnW5dV",
+                "name": "occaecat",
+                "version": "dolore commodo est",
+                "@baseType": "est et enim sunt",
+                "@schemaLocation": "http://FqxMttOwBWrxPpgaGvQWDgnADT.vzWvkr0YPAM",
+                "@type": "eu ad",
+                "@referredType": "in"
+            }
+        ],
+        "entitySpecRelationship": [
+            {
+                "relationshipType": "ullamco ipsum laboris",
+                "id": "veniam laboris minim",
+                "href": "https://JXaToPYqrMkrBp.sfqWuWro2nzEuFYwkUIGnFoYJuWGppWMDYLl6FVE.4fdZLfL4AJp",
+                "name": "ex laboris ea aliquip sed",
+                "role": "sit",
+                "associationSpec": {
+                    "id": "pariatur in",
+                    "href": "https://NPPfScbGGuwWiK.cgsJ-GHoRwmmd2NWKKn7Y4G7sWGPAckil0LgvbPJYFg0aZ69mYLEhqnkkRJY",
+                    "name": "do",
+                    "@baseType": "nisi proident sunt anim",
+                    "@schemaLocation": "https://UsKxRpLDdQSWiOxBkgm.tntbT342ElSceZKOgiW+HV,kaX9oa+fBcpxs",
+                    "@type": "eu nostrud nisi eiusmod",
+                    "@referredType": "aliqua ea laborum minim occaecat"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "ullamco culpa adipisicing eu commodo",
+                "@schemaLocation": "http://usTAhpSloRuihCIBDHcqNoMcyjAd.zfwBnBJEy--MLEKc59L4yoEh4o9aUwdQUC01LKM1o8FD38wcjxb7-+E,POk9OMc,",
+                "@type": "irure incididunt aliquip",
+                "@referredType": "do deserunt aute incididunt"
+            },
+            {
+                "relationshipType": "eiusmod cupidatat",
+                "id": "exercitation irure",
+                "href": "http://hhLioVTvemgzmE.fuzeOzM.9Ipae73ml1aM9aJzSMLGCs,JjFYKGhg2kxiGO-yTlQmxou",
+                "name": "ut",
+                "role": "in ex sed qui laborum",
+                "associationSpec": {
+                    "id": "ex ullamco incididunt",
+                    "href": "https://KIOzgYoupCEpaLczqitqSThZhNvK.xiYdZt",
+                    "name": "consequat ad magna",
+                    "@baseType": "aute consequat sed incididunt adipisicing",
+                    "@schemaLocation": "http://rgAARNSUzSJxlosXQY.lvkSaNbLR2i0Ye2YyZWJjJ3T",
+                    "@type": "in",
+                    "@referredType": "dolore laboris anim id"
+                },
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "officia reprehenderit laboris deserunt",
+                "@schemaLocation": "http://RxYLLwVFzwTbcwtTZoewyrGzR.tixatCpIttabt5cOk5RcXaddz-SN97N5nkuekGws6Jr,7sw7sgZCuRW99nxS8",
+                "@type": "laborum cillum pariatur ullamco",
+                "@referredType": "et voluptate veniam"
+            }
+        ],
+        "featureSpecification": [
+            {
+                "id": "",
+                "href": "https://JJSeBMIuIALEkkAjKMVdbwiZnJH.viwmgL2sr78FM5vquj9PAOCY6h-izYLohAC9+90SfqfNZrfyfiOHA",
+                "isBundle": false,
+                "isEnabled": true,
+                "name": "dolor in",
+                "version": "quis Lorem veniam",
+                "constraint": [
+                    {
+                        "id": "ex ipsum consectetur id adipisicing",
+                        "href": "https://MtCzvfa.swHbTkTTh7Ah3Vjb1Odckp3m5r6r-dnnFLmRDreS7",
+                        "name": "laboris magna aute",
+                        "version": "in consectetur pariatur",
+                        "@baseType": "aliqua nostrud amet",
+                        "@schemaLocation": "http://QrH.qlcty1RSQJ.LDbHKvjmQjthp,V5AuFtNl6oLSPYPodO1uZWFgkhcOTdFUbB",
+                        "@type": "sed exercitation cupidatat",
+                        "@referredType": "quis nulla"
+                    },
+                    {
+                        "id": "occaecat veniam Excepteur in anim",
+                        "href": "https://KqyBmUJzXSdaz.oyau2PxcPGhtLTv61qRKKpBqHzHjBLlR4xnMzZPwQhfgq",
+                        "name": "quis nisi",
+                        "version": "id esse commodo dolor",
+                        "@baseType": "velit dolore laborum Ut",
+                        "@schemaLocation": "http://ccfSzHYmX.zjdwySnILIvv.F6AznFzD9oadtKs7HBReSvp2-yHUdXTaNA12dhuY4N9-+u3RPa4oJeL1uABYoIayNn+J6eTx",
+                        "@type": "labore dolore et consectetur culpa",
+                        "@referredType": "ea ad cupidatat dolore"
+                    }
+                ],
+                "featureSpecCharacteristic": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "featureSpecRelationship": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "voluptate consecte",
+                "@schemaLocation": "https://RRDbSohBJNUBQq.xckaK6m0HEiC+SZ4,PbPj3nzpkRTP2",
+                "@type": "labore id"
+            },
+            {
+                "id": "quis anim irure labore",
+                "href": "http://XIZrw.wdqhJkm18+Xig",
+                "isBundle": false,
+                "isEnabled": false,
+                "name": "minim cillum est officia",
+                "version": "laborum eu",
+                "constraint": [
+                    {
+                        "id": "reprehenderit",
+                        "href": "https://ZColCM.teccPryHjBeEGX0hsfdoWA8qBYIOKhPN3P5kk.6FvCnoWBmOx+aprb3",
+                        "name": "sit",
+                        "version": "exercitation consequat elit",
+                        "@baseType": "proide",
+                        "@schemaLocation": "http://qFtphFLHJ.mhDTdF4yIvTLEWuwLPrQtzWKJx.++.I7aEGC6idM3E+PfYaViHyCbdpcWVE",
+                        "@type": "anim consequat occaecat cillum",
+                        "@referredType": "enim"
+                    },
+                    {
+                        "id": "dolor fugiat nulla",
+                        "href": "http://eSUWpzTEywcX.gfeaUMHP.KAdZyahsqW0gwS36Zrig+zd-MTujGV58ibR",
+                        "name": "eiusmod",
+                        "version": "enim ut Duis esse fugiat",
+                        "@baseType": "esse Lorem commodo",
+                        "@schemaLocation": "http://UgjTowBhwd.rmzf.o.c.U-CzW",
+                        "@type": "aliqua",
+                        "@referredType": "officia"
+                    }
+                ],
+                "featureSpecCharacteristic": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "featureSpecRelationship": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "exercitati",
+                "@schemaLocation": "https://v.yojizanyh4c9hyAb9.WKX5HGQ",
+                "@type": "quis ut ullamco"
+            }
+        ],
+        "relatedParty": [
+            {
+                "@referredType": "anim laboris incididunt do aliquip",
+                "id": "in culpa",
+                "href": "https://BB.lktSTql4WONqs,MLNqirqUHo1-DuRMTadXmDVv",
+                "name": "exercitation sed mollit esse proident",
+                "role": "amet occaecat",
+                "@baseType": "Excepteur sed consectetur",
+                "@schemaLocation": "http://bfyABFxx.ebEY3AL5mvy.ECOoexDq2VJXFJn6eG8woxlLWKcXp07rg-oCj0UwJEQlWavPOCD+cXv.uCvHBb,OJD,zjaKQ",
+                "@type": "Lorem occaecat"
+            },
+            {
+                "@referredType": "id sint est ad in",
+                "id": "qui",
+                "href": "https://bfKCKqbdHblLM.qaiI4RnvNDpf70HmJnSB.aTaJ-Bdu-zl8u1Crr1fEmX",
+                "name": "elit nisi occaecat",
+                "role": "enim nisi occaecat",
+                "@baseType": "qui consequat officia",
+                "@schemaLocation": "http://NHlJDcwT.zojZINPOicI1Bl",
+                "@type": "tempor nulla ad sed"
+            }
+        ],
+        "resourceSpecification": [
+            {
+                "id": "aliquip Lorem",
+                "href": "https://JSBpklwBcDSFRgwLsTctdJqx.dtqqkppV3jFq-C1w.A8JSCM",
+                "name": "elit Lorem eiusmod no",
+                "version": "laborum",
+                "@baseType": "ea ex",
+                "@schemaLocation": "https://YeStdFmgRlatCmo.jjlsRsrPCuC5BICWUb4GVdSir8aB8zg",
+                "@type": "veniam sit",
+                "@referredType": "fugiat"
+            },
+            {
+                "id": "adipisicing exercita",
+                "href": "https://cytcfeN.trAdRa06jctv.YZ4C1x.T",
+                "name": "Lorem eu sunt laborum",
+                "version": "proident aute ",
+                "@baseType": "esse cillum",
+                "@schemaLocation": "https://GyZDisxqGoercZjif.qoY,mfdIWkDQS3m3",
+                "@type": "nulla elit cillum tempor",
+                "@referredType": "nisi ea"
+            }
+        ],
+        "serviceLevelSpecification": [
+            {
+                "id": "eiusmod fugiat culpa",
+                "href": "http://qik.gaQz+N93m15fp9",
+                "name": "nulla et ad ea laborum",
+                "@baseType": "culpa mollit esse",
+                "@schemaLocation": "http://OplhjqiW.celY3quf7iOcq2DLIpe31G2",
+                "@type": "irure Lorem",
+                "@referredType": "ea"
+            },
+            {
+                "id": "id eu",
+                "href": "https://cbVkrPEKxHmz.cdaftRxAIjpW5aIgGKnJpt5it,QXbG4XvDhLh-zsejKwhoBmTuc",
+                "name": "amet et lab",
+                "@baseType": "do nulla in",
+                "@schemaLocation": "http://ugNyTjxZctdNmFsNvxDZMxELqB.wtZUcP9O4wnFLEGeG-hwt7t",
+                "@type": "mollit",
+                "@referredType": "proident consequat dolor reprehenderit sunt"
+            }
+        ],
+        "serviceSpecRelationship": [
+            {
+                "relationshipType": "et irure",
+                "id": "consectetur ad irure",
+                "href": "http://PXIWEV.sruop5ZTrMhCS+Ug36H2IMz,GyT8",
+                "name": "Ut",
+                "role": "Ut sit",
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "minim commodo occaecat",
+                "@schemaLocation": "https://cAtywSbfkASgOhqSEyEEhuzNkmulU.ktcF+-Teu7GhKY.X013ivuB,FLyiPvQBJXxB7+oiBdgGdLTysdvgwFj87",
+                "@type": "sint",
+                "@referredType": "reprehenderit"
+            },
+            {
+                "relationshipType": "",
+                "id": "incididunt eiusmod",
+                "href": "https://plxSbRVsyHnQUYN.nzzzw4uhs2exs6gmoaWL-cRkdcOvb3Gg6ffcpwPWO9tWtrkiUwYsIbEOzbMPRrqqMdOhi-qEA",
+                "name": "consectetur cupidatat eu anim",
+                "role": "tempor culpa proident laboris labore",
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "magna do aliquip labore",
+                "@schemaLocation": "http://LawITycMP.pmAhuJpXnCgxNVF7PlRX8,u",
+                "@type": "dolore in magna aute",
+                "@referredType": "in labore ad irure"
+            }
+        ],
+        "specCharacteristic": [
+            {
+                "id": "velit ex cillum ut",
+                "configurable": true,
+                "description": "sed mollit",
+                "extensible": false,
+                "isUnique": false,
+                "maxCardinality": -69929188,
+                "minCardinality": 82464240,
+                "name": "tempor Duis",
+                "regex": "pariatur dolore",
+                "valueType": "Lorem ipsum",
+                "charSpecRelationship": [
+                    {
+                        "id": "proident laboris culpa",
+                        "href": "https://RJiz.wopTgkcvXUo4Ei06MM3xSNpEB4ekv7JzMcJISSLTp",
+                        "characteristicSpecificationId": "qui in laborum pariatur nulla",
+                        "name": "tempor est dolore",
+                        "parentSpecificationHref": "https://FOQKeSpMCaDIzWSySAresyz.ougXSBFIpAIcJdWckfEJ,6HcYwFCQID8w+W9NFLSVNnVV",
+                        "parentSpecificationId": "aute dolor",
+                        "relationshipType": "id iru",
+                        "validFor": {
+                            "endDateTime": "1985-04-12T23:20:50.52Z",
+                            "startDateTime": "1985-04-12T23:20:50.52Z"
+                        },
+                        "@baseType": "cillum",
+                        "@schemaLocation": "https://bAPGvVGdHPXyQClSyDeBF.taqeZs2sxrJvRuCOZrDpXnrkka,6g6.KLOYBQQFc3SCNTZ.Sl8pIC,qApF,Z",
+                        "@type": "dolore qui Excepteur"
+                    },
+                    {
+                        "id": "nulla do ut",
+                        "href": "https://tjVjdkWRtohrPeDG.sdCiuG+13oPWVdUB8R,hLYy8icAI0HiSA43i,G0ImcJuLgtb3,9-GhM2RYS.MxFt76NMsf",
+                        "characteristicSpecificationId": "voluptate anim culpa",
+                        "name": "do",
+                        "parentSpecificationHref": "http://NI.srwOUzSw4Jqg5McL,rZO,CN6pxl1pu52IGKxs",
+                        "parentSpecificationId": "culpa minim aute",
+                        "relationshipType": "amet laboris mollit tempor sed",
+                        "validFor": {
+                            "endDateTime": "1985-04-12T23:20:50.52Z",
+                            "startDateTime": "1985-04-12T23:20:50.52Z"
+                        },
+                        "@baseType": "tempor",
+                        "@schemaLocation": "https://TIlPMFCpfr.elfiMY+NNFkG.z8,PZdIqy+21,7SncN3X0TselQ9PjGHFB9rbjoMKkQOSIH35mckE.wOXzxtBcNdAzcu1wW",
+                        "@type": "cupidatat sint qui irure ipsum"
+                    }
+                ],
+                "characteristicValueSpecification": [
+                    {
+                        "isDefault": true,
+                        "rangeInterval": "non eiusmod ",
+                        "regex": "ex sit",
+                        "unitOfMeasure": "adipisicing dolore irure sint",
+                        "valueFrom": 67453102,
+                        "valueTo": -13468723,
+                        "valueType": "eu velit aute",
+                        "validFor": {
+                            "endDateTime": "1985-04-12T23:20:50.52Z",
+                            "startDateTime": "1985-04-12T23:20:50.52Z"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "@baseType": "aliqua nulla dolore Excepteur",
+                        "@schemaLocation": "https://DHajTDRiaUBePETPBdhKoUMrkSnH.srMyKtwcjCSit74d2wIavqKMztzHrOfRMYim0a0uhBw5",
+                        "@type": "elit et laboris ut"
+                    },
+                    {
+                        "isDefault": false,
+                        "rangeInterval": "irure de",
+                        "regex": "in quis",
+                        "unitOfMeasure": "cillum id pariatur magna",
+                        "valueFrom": -59117814,
+                        "valueTo": 48752835,
+                        "valueType": "reprehenderit voluptate laboris",
+                        "validFor": {
+                            "endDateTime": "1985-04-12T23:20:50.52Z",
+                            "startDateTime": "1985-04-12T23:20:50.52Z"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "@baseType": "ad deserunt Lorem in",
+                        "@schemaLocation": "https://rzKscDkzEQmlhDXqN.pomTl9tHp-bmRxJAh8jAzqwuZJA8n.VOgSK3CmN42kDO2",
+                        "@type": "consectetur in"
+                    }
+                ],
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "dolor irure nisi mollit",
+                "@schemaLocation": "http://niwKiAIzyIoasLXAXbUCZlpLjiqty.lxkN0",
+                "@type": "irure sunt nostrud esse",
+                "@valueSchemaLocation": "cillum exercitation nisi tempor"
+            },
+            {
+                "id": "irure reprehenderit",
+                "configurable": false,
+                "description": "irure do ipsum Duis",
+                "extensible": false,
+                "isUnique": true,
+                "maxCardinality": -21841419,
+                "minCardinality": -10610489,
+                "name": "fugiat",
+                "regex": "amet ipsum labor",
+                "valueType": "irure Lorem in",
+                "charSpecRelationship": [
+                    {
+                        "id": "minim dolore est sit",
+                        "href": "http://Pxtdk.gyprjsxjlG0HFP6-A56oLgD8och.SlPWRVoAVBtvv9ZLOctxdA3ylDhnn",
+                        "characteristicSpecificationId": "proident deserunt dolore exercitation",
+                        "name": "sit anim ad ve",
+                        "parentSpecificationHref": "http://NIUYPmMIvOtzvJrrWE.rovzYGvVf8D+yeCN3GJje.4zNqQlo4,lDzbR",
+                        "parentSpecificationId": "sint",
+                        "relationshipType": "veniam velit aliq",
+                        "validFor": {
+                            "endDateTime": "1985-04-12T23:20:50.52Z",
+                            "startDateTime": "1985-04-12T23:20:50.52Z"
+                        },
+                        "@baseType": "laborum enim laboris sit mollit",
+                        "@schemaLocation": "http://WFhOWDhV.utoekENUbkGxhyJmUqw1Bh.SrCTxUeKnjVeVMsOEZTsu,drlPnW",
+                        "@type": "anim in"
+                    },
+                    {
+                        "id": "non in proident culpa veniam",
+                        "href": "https://FjvxeoziyIccSNHuOkzg.men9ILdJZDAHs-S8kK28uKK5q1suFgNsjRt,Ug+5VB3wKVABEOVtjGXG6qG6V",
+                        "characteristicSpecificationId": "in elit sunt qui",
+                        "name": "nulla incididunt occaecat deserunt",
+                        "parentSpecificationHref": "https://trGrmLQOFrCpNWAJAlJRZTc.dknGTjVla68dAJAktmMCX4qh1eyoh5Nc,f5aOxZMAmGNG8Ih",
+                        "parentSpecificationId": "ut enim",
+                        "relationshipType": "incididunt",
+                        "validFor": {
+                            "endDateTime": "1985-04-12T23:20:50.52Z",
+                            "startDateTime": "1985-04-12T23:20:50.52Z"
+                        },
+                        "@baseType": "mollit",
+                        "@schemaLocation": "https://oMCWhrFLOmFJRj.pffhqlCSsqOtLnUQE+vhFfBKye8M",
+                        "@type": "labore id"
+                    }
+                ],
+                "characteristicValueSpecification": [
+                    {
+                        "isDefault": false,
+                        "rangeInterval": "commodo consequat",
+                        "regex": "tempor Ut Lorem minim",
+                        "unitOfMeasure": "elit amet mollit",
+                        "valueFrom": 72997262,
+                        "valueTo": -66495389,
+                        "valueType": "ex",
+                        "validFor": {
+                            "endDateTime": "1985-04-12T23:20:50.52Z",
+                            "startDateTime": "1985-04-12T23:20:50.52Z"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "@baseType": "aliqua ullamco D",
+                        "@schemaLocation": "https://LciIHmoCJIudllOoiOzvSzTSqIGBIn.wrkhvIO9Duu0r0Xa0NVjxFBWCn7BuS6OLJNFUbl30mUCw-XSVRl2DRK5E9lWt1GJtz0l2",
+                        "@type": "cillum aliqua dolor"
+                    },
+                    {
+                        "isDefault": false,
+                        "rangeInterval": "exercitation",
+                        "regex": "incididunt",
+                        "unitOfMeasure": "eiusmod nostrud aliqua Excepteur",
+                        "valueFrom": -34281513,
+                        "valueTo": -16473365,
+                        "valueType": "ex qui ipsum non nulla",
+                        "validFor": {
+                            "endDateTime": "1985-04-12T23:20:50.52Z",
+                            "startDateTime": "1985-04-12T23:20:50.52Z"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "@baseType": "cillu",
+                        "@schemaLocation": "https://cIqMZWnTEuZimUq.akfqAlXyosgDqif5pFfsYpjsv29KF0m1IBxwSb1p56WDI1HU",
+                        "@type": "non ad ullamco Ut"
+                    }
+                ],
+                "validFor": {
+                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                },
+                "@baseType": "Lorem dolor non",
+                "@schemaLocation": "https://aKJWBkyzELknxbo.xtidDC8.1z",
+                "@type": "amet in",
+                "@valueSchemaLocation": "laborum quis id Lorem"
+            }
+        ],
+        "targetEntitySchema": {
+            "@schemaLocation": "non sint sit aute id",
+            "@type": "sunt cillum mo"
+        },
+        "validFor": {
+            "endDateTime": "1985-04-12T23:20:50.52Z",
+            "startDateTime": "1985-04-12T23:20:50.52Z"
+        },
+        "@baseType": "ad aliquip cillum",
+        "@schemaLocation": "https://nZbNNgLDtKxRTLRVaCdyUNNLLnIJDaYuJ.jsaBjtEhEi9TGi.1o+6-TEWJ.7F01DGZkWdFxvV.20muRCcI",
+        "@type": "eiusmod Lorem labore"
+    },
+    "feature": [
+        {
+            "featureCharacteristic": [
+                {
+                    "name": "id dolor",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "minim aliqua sint laborum proident",
+                    "valueType": "reprehenderit",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "anim culpa dolor sit",
+                    "@schemaLocation": "https://HPBIssavPpfHUaqvs.fsIaL8oDgAnhcrSmcoPsjOD3GC1hAUfR9MLE5bnKMrfeRPsTmnwzO3,a.ksZoOTiyjxn7Oj",
+                    "@type": "proident est qui"
+                }
+            ],
+            "name": "sint in",
+            "id": "magna proident nulla dolor",
+            "isBundle": false,
+            "isEnabled": true,
+            "constraint": [
+                {
+                    "id": "laborum",
+                    "href": "http://hNTVpIalEn.qqAFcVN8GwABNg",
+                    "name": "culpa volu",
+                    "version": "consequat nisi ea Duis velit",
+                    "@baseType": "id voluptate",
+                    "@schemaLocation": "http://FAjVdOZiSKWdsAfItnSap.rpfbuso4HLL4kz",
+                    "@type": "in elit voluptate in laborum",
+                    "@referredType": "pariatur velit"
+                },
+                {
+                    "id": "minim qui quis irure est",
+                    "href": "http://nNJiXGoBvXYpUpCQzwQHp.nyyrbBIb3npeNhOINtfFk7CS-awgo+w2r,oTGI7i61c7+LS5dJLWprC",
+                    "name": "ullamco enim",
+                    "version": "eiusmod",
+                    "@baseType": "et eiusmod tempor mollit",
+                    "@schemaLocation": "http://IehJktayBXDeTQrUKtpwVwWLfy.reS3wSdrqRYVaxzaY-2WbJVR1Vb",
+                    "@type": "sit reprehenderit do",
+                    "@referredType": "id nisi ullamco nostrud"
+                }
+            ],
+            "featureRelationship": [
+                {
+                    "name": "ad aute deserunt",
+                    "relationshipType": "Ut adipisicing et qui",
+                    "id": "anim Lorem aute",
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    }
+                },
+                {
+                    "name": "ullamco Excep",
+                    "relationshipType": "est amet occaecat",
+                    "id": "dolor est",
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    }
+                }
+            ]
+        },
+        {
+            "featureCharacteristic": [
+                {
+                    "name": "ea cillum laborum labore Lorem",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "et do",
+                    "valueType": "veniam id nulla amet",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "Lorem consectetur est occaecat",
+                    "@schemaLocation": "http://IGXAImYpmLrfzUAOOXALITdUSMgRA.yhjuusNK8LNwVSApvyyl4GaHcE7O9GP8-NoQ.AJOIMtcntS3",
+                    "@type": "ex in"
+                }
+            ],
+            "name": "tempor reprehenderit aliquip ipsum",
+            "id": "in cillum laborum sunt amet",
+            "isBundle": false,
+            "isEnabled": true,
+            "constraint": [
+                {
+                    "id": "aliquip tempor",
+                    "href": "http://qotNekW.gbipqSJIDG-1BFnase4g3s+bb595LKMbuEzVQGtp2oLsJU8GBw512",
+                    "name": "adipisicing labore laborum amet",
+                    "version": "ipsum",
+                    "@baseType": "nulla repre",
+                    "@schemaLocation": "http://JNuMPcAKzldREFbNEDNUNQQsL.xjdW4b-o+PI",
+                    "@type": "id anim",
+                    "@referredType": "deserunt nulla fugiat irure dolore"
+                },
+                {
+                    "id": "esse non eiusmod anim",
+                    "href": "https://zeUkAnyBTfnZuoKAEtEVVXWfBTtMvU.ddIiK+4PfZhy",
+                    "name": "eiusmod ut",
+                    "version": "Lorem eu",
+                    "@baseType": "reprehender",
+                    "@schemaLocation": "http://QDgxcbdnaJ.cjbZKPEnbCKaETe+-fnIxiF+7,O84wiaB.mVxN,xA.",
+                    "@type": "aliquip ea reprehenderit Duis fugiat",
+                    "@referredType": "sint quis elit"
+                }
+            ],
+            "featureRelationship": [
+                {
+                    "name": "enim anim",
+                    "relationshipType": "ex cupidatat",
+                    "id": "adipisicing dolor pariatur exercitation",
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    }
+                },
+                {
+                    "name": "pariatur dolore in laboris",
+                    "relationshipType": "nulla in",
+                    "id": "esse veniam do enim est",
+                    "validFor": {
+                        "endDateTime": "1985-04-12T23:20:50.52Z",
+                        "startDateTime": "1985-04-12T23:20:50.52Z"
+                    }
+                }
+            ]
+        }
+    ],
+    "gpu": {
+        "id": "adipisicing",
+        "href": "https://CZWSaHLZrFbyqRq.avsuAl2TtySXrjGHJN43-QUZCOlCYEolcDklvsmsBnIsYoJAQxGkbc87-PTFU8r+k,nnmwY4MRS",
+        "name": "eu officia in occaecat sunt",
+        "@baseType": "irure labore anim",
+        "@schemaLocation": "http://LuFdaNNoOjhQs.lsi97nmsrTC+Mr",
+        "@type": "adipisicing deserunt",
+        "@referredType": "cillum dolor"
+    },
+    "note": [
+        {
+            "id": "nostrud non",
+            "href": "https://PuqsmeszNVsOrDgqUf.warkPMCTv0C8k+0vR.g2OmY28Epjdj",
+            "author": "enim ullamco culpa",
+            "date": "1986-01-09T08:52:35.579Z",
+            "text": "consec",
+            "@baseType": "aute aliquip ut eiusmod sit",
+            "@schemaLocation": "https://JQjVoagNHyopKu.whzx5tgQKiru01cYT-LbC0pw81jmLfrPPqlF3a5h",
+            "@type": "dolore ullamco culpa laborum"
+        },
+        {
+            "id": "proident aliquip laboris",
+            "href": "http://NXhW.jtD+1bjJsWX2qfiqztEmGmK2xt8ET0q3ccRu.6aJI",
+            "author": "enim ut reprehenderit",
+            "date": "2002-01-27T17:20:19.991Z",
+            "text": "enim pari",
+            "@baseType": "ex consequat cillum",
+            "@schemaLocation": "http://cKIGCGCIGShRdKaRFruBZjBTKngVkHV.rugRawrX2WgQ+5V9gm3zBSEVgQp0DJstWBSb",
+            "@type": "ut consequat ipsum exercitation"
+        }
+    ],
+    "place": [
+        {
+            "role": "qui incididunt eiusmod elit",
+            "id": "pariatur labore exercitation ad",
+            "href": "pariatur nisi",
+            "name": "fugiat proident qui Ut",
+            "@baseType": "consequat dolore",
+            "@schemaLocation": "https://CtvlMrAjIMctJWkLyIqSjvupZCugq.anQNQ-FArAbdqONXT5NBs",
+            "@type": "ad",
+            "@referredType": "commodo tempor eu culpa"
+        },
+        {
+            "role": "culpa q",
+            "id": "esse eu deserunt quis",
+            "href": "esse",
+            "name": "exercit",
+            "@baseType": "magna laborum et",
+            "@schemaLocation": "https://jECdvMEtepVsashkwQkL.sgdui0XhxiMZ.eq1ZAfezxMLRcKFT8UvC",
+            "@type": "consectetur amet esse eiusmod",
+            "@referredType": "esse tempor"
+        }
+    ],
+    "relatedEntity": [
+        {
+            "role": "dolore deserunt aliquip et ullamco",
+            "id": "velit veniam ad",
+            "href": "sunt ea anim",
+            "name": "et ea do ex",
+            "@baseType": "est",
+            "@schemaLocation": "http://FgYmKB.initOTNP8n-ZI9TXVclPw5FTZhzDDn,Qt8hnn6L-SJHbPhnq1",
+            "@type": "amet",
+            "@referredType": "adipisicing"
+        },
+        {
+            "role": "Lorem laborum",
+            "id": "in sed",
+            "href": "sint mollit adipisicing sed eu",
+            "name": "aute pariatur",
+            "@baseType": "sit aliqua consectetur Duis",
+            "@schemaLocation": "https://tsqLuZZ.tpmecyUX3kqwmx-MqmkAfO,mnYfY1Cmib",
+            "@type": "velit aliquip",
+            "@referredType": "laborum sint veniam"
+        }
+    ],
+    "relatedParty": [
+        {
+            "@referredType": "culpa consectetur",
+            "id": "elit ut ullamco",
+            "href": "https://xbdEkVMpyvygy.axcbf+skKR.N6b9GZV",
+            "name": "adipisicing in eiusmod",
+            "role": "in consequat ex esse labore",
+            "@baseType": "ut in sed",
+            "@schemaLocation": "http://UkoPynzhTp.ymmsDM2hzCC49",
+            "@type": "esse officia"
+        },
+        {
+            "@referredType": "in est commodo voluptate",
+            "id": "veniam amet fugiat exercitation",
+            "href": "https://UrpKElwoGJbdnvCQHKfGDNvfAH.fvfGY4-tdCbtZ35ovrPoWy0LCqATmMv5h4IGQSSehPbYkuFSV",
+            "name": "aliquip quis consectetur ut",
+            "role": "dolor ipsum minim magna",
+            "@baseType": "est ex consecte",
+            "@schemaLocation": "http://d.nxeqeBEFejQWTcnY,.+jxzeg,VTQGCEG351v6d43ycr9kfrOdVtwjOXHV4pzqzdoUEfxVuZyYR4aPfm+jPFsYb",
+            "@type": "velit esse sint"
+        }
+    ],
+    "serviceCharacteristic": [
+        {
+            "name": "Lorem sit culpa sed magna",
+            "value": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "id": "e",
+            "valueType": "cupidatat nulla",
+            "characteristicRelationship": [
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            ],
+            "@baseType": "aliquip est Lorem",
+            "@schemaLocation": "http://IlEOnheJIRvXqxkekhKdKdas.ujzv2diShew7ivFrLgg.BT8.n.CFr.myV.AP.J.fZrkmowdow",
+            "@type": "eu non aute s"
+        },
+        {
+            "name": "aute minim mollit",
+            "value": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "id": "aliquip aliqua",
+            "valueType": "fugiat aliquip cupidatat",
+            "characteristicRelationship": [
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            ],
+            "@baseType": "ut aute Duis Lorem labore",
+            "@schemaLocation": "https://dpNeMBERwPRcOXGqecn.jimak9KoAB2JWcEPoCNSIvO",
+            "@type": "ut ullamco deserunt"
+        }
+    ],
+    "serviceOrderItem": [
+        {
+            "id": "adipisicing eu elit",
+            "href": "https://iFXjYIWLNMbelarOrrooc.bulfUoXVQKYjTpeiBcRp1wUPFkn8y6NW5lsP1GMJUEtIU4JqjKdWyiSg29bpDerQdF0emH9vr",
+            "itemId": "id et cillum",
+            "role": "do ullamco",
+            "serviceOrderHref": "est cillum Duis",
+            "serviceOrderId": "nulla esse do eu",
+            "itemAction": "add",
+            "@baseType": "fugiat laboris minim laboru",
+            "@schemaLocation": "https://LqROWOkWvdsKPxzAcWzpuMfryAZpkbGtx.zdYEPuwQ0MRQ.aM1lgGbj12z+FKetrYT",
+            "@type": "occaecat ut cillum culpa dolore",
+            "@referredType": "aute do Ut consequat consectetur"
+        },
+        {
+            "id": "qui occaecat ea voluptate officia",
+            "href": "http://ZWLMcfwYHjiGZgDlgORyQtMidKHRf.jrlhMzooG4B0Dha-O",
+            "itemId": "officia cillum ad dolor",
+            "role": "magna mollit anim",
+            "serviceOrderHref": "sint ex sit exercitation",
+            "serviceOrderId": "aliquip Duis Ut exercitation do",
+            "itemAction": "add",
+            "@baseType": "minim fugiat sunt",
+            "@schemaLocation": "http://tDFowLYqOO.rodD5xLmoo2+eHZaRYzWl6wIkR8VO",
+            "@type": "ut id nisi pariatur",
+            "@referredType": "eiusmod elit nostrud"
+        }
+    ],
+    "serviceRelationship": [
+        {
+            "relationshipType": "est nostrud",
+            "id": "occaecat sit laborum",
+            "href": "http://Ptpcx.fsvQOtS.ntVHuYkEVXHn",
+            "service": {
+                "id": "tempor volu",
+                "href": "Lorem Duis officia",
+                "category": "magna sed cillum nulla",
+                "description": "ipsu",
+                "endDate": "1964-07-04T13:51:19.237Z",
+                "hasStarted": true,
+                "isBundle": true,
+                "isServiceEnabled": false,
+                "isStateful": true,
+                "name": "et",
+                "serviceDate": "Excepteur",
+                "serviceType": "ullamco Lorem exercitation",
+                "startDate": "1996-11-28T06:18:13.280Z",
+                "startMode": "tempor in",
+                "feature": [
+                    {
+                        "featureCharacteristic": [
+                            {
+                                "name": "dolore labore pariatur",
+                                "value": {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                "id": "culpa commodo pariatur quis dolor",
+                                "valueType": "occaecat veniam eu",
+                                "characteristicRelationship": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "@baseType": "velit ipsum do aliqua",
+                                "@schemaLocation": "https://miiBXKxthrdLqcofZcxQOEkW.cnwUEMYxtey0NAHvKTHT",
+                                "@type": "minim ut proident cillum"
+                            }
+                        ],
+                        "name": "aliqua commodo anim minim",
+                        "id": "magna sint sunt do",
+                        "isBundle": true,
+                        "isEnabled": true,
+                        "constraint": [
+                            {
+                                "id": "e",
+                                "href": "http://eDJpfygwcNYbKJsFsMGTJrNrIVNheHkR.zymloXYEjH+SNxZ24ZSnYTzHqxhgJABwjED9qrcpsgRAh",
+                                "name": "consequat incididunt in",
+                                "version": "veniam ad deserunt ut quis",
+                                "@baseType": "consectetur sed culpa",
+                                "@schemaLocation": "https://RnNTUiYCeUMxDCBMIfWJoPwUsRV.zxjUC0FrOFME8dXNc91pAOCxuWrtusN60oD8GjEwIs96zAudQa",
+                                "@type": "eu eiusmo",
+                                "@referredType": "eu ea sunt Duis"
+                            },
+                            {
+                                "id": "reprehenderit sunt non ex nisi",
+                                "href": "http://erjVcgaAI.cunivsG9Ucr+-CwPoDAWq2B3.7LqEyey7p-UuAqf.GVIVpVH",
+                                "name": "proident sunt",
+                                "version": "adipisicing irure",
+                                "@baseType": "dolor adip",
+                                "@schemaLocation": "http://UrnjRISVLthaQuarrHpIcDxbEACYNgLDT.znrzivmqiXguUDw6Nh9SsFZ4NL5sdDgtWzBjlbym",
+                                "@type": "in sit dolor",
+                                "@referredType": "in irure ipsum do est"
+                            }
+                        ],
+                        "featureRelationship": [
+                            {
+                                "name": "sint con",
+                                "relationshipType": "elit irure est nulla",
+                                "id": "Excepteur est incididunt",
+                                "validFor": {
+                                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                                }
+                            },
+                            {
+                                "name": "sint aliquip deserunt laborum",
+                                "relationshipType": "cupidat",
+                                "id": "deserunt Duis",
+                                "validFor": {
+                                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "featureCharacteristic": [
+                            {
+                                "name": "enim in",
+                                "value": {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                "id": "dolore",
+                                "valueType": "sint eu pariatur",
+                                "characteristicRelationship": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "@baseType": "est adipisicing cupidatat",
+                                "@schemaLocation": "https://uucNBj.fbvM43w4ATwJdITRNQktAkrBT1dgn",
+                                "@type": "commodo reprehenderit est"
+                            }
+                        ],
+                        "name": "dolore ea",
+                        "id": "aute dolore",
+                        "isBundle": false,
+                        "isEnabled": false,
+                        "constraint": [
+                            {
+                                "id": "minim culpa",
+                                "href": "https://jLDjYldPrCq.acwtZxiu0f,Ycg9zI+FbWsuw79xwvRkiYVHTqG",
+                                "name": "laborum",
+                                "version": "dolor nostrud",
+                                "@baseType": "eiusmod mollit ut culpa",
+                                "@schemaLocation": "http://ZdOqTIHZZPDzXMKk.rhvajJkdoJeKdmCaoXIqJJL0m6SQdEN,5,MuwdKpUsphp0cnIMUjHQZ3KBsJj4zE9rgJU",
+                                "@type": "quis in dolore",
+                                "@referredType": "exercitation mollit eiusmod"
+                            },
+                            {
+                                "id": "anim fugiat sit tempor",
+                                "href": "https://lPcuJRFtVJlerOriOyDMgzBHl.qgnrRTElSU-FnGZf9qbnt",
+                                "name": "cillum consectetur in",
+                                "version": "occaecat qui eiusmod sed amet",
+                                "@baseType": "adipisicing qui",
+                                "@schemaLocation": "https://IuEoJViRWqTBfjYNtIoY.xmkR5V2ZRq7.AlR.rSR5jiLo8fbYp7wuZic+8HduNMugSmqCgQy",
+                                "@type": "sint nulla ut Excepteur anim",
+                                "@referredType": "ut laboris qui ad"
+                            }
+                        ],
+                        "featureRelationship": [
+                            {
+                                "name": "consequat Ut officia nulla",
+                                "relationshipType": "commodo nulla",
+                                "id": "irure minim",
+                                "validFor": {
+                                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                                }
+                            },
+                            {
+                                "name": "voluptate ea nostrud culpa proident",
+                                "relationshipType": "ullamco in ad culpa",
+                                "id": "esse Ut non",
+                                "validFor": {
+                                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "note": [
+                    {
+                        "id": "esse labor",
+                        "href": "http://gznDScxSHIugbfYxyDwgJndiQBlSijnJu.hnltqzpPSnpeta2",
+                        "author": "nostrud ipsum pariatur anim amet",
+                        "date": "2004-10-23T05:00:41.584Z",
+                        "text": "cupidatat non est",
+                        "@baseType": "labore deserunt",
+                        "@schemaLocation": "http://nPqNuCklCkaXoyhmCbYXMJMgNDw.ewxxVtSlwALLKfgyRoMZEdYb3DjQ5dFJp.QcGTQYJO-CUi5hB8FEwWrRKOWIwjKaohI9",
+                        "@type": "ut dolor ea voluptate"
+                    },
+                    {
+                        "id": "ut enim labore",
+                        "href": "http://pDyhKAUWdiTKogZv.cfwad38gxkcsP9ljRHWwWL4yxXcUC2OhBEFaWTjVgI6pDHA84,aOFyb.",
+                        "author": "sed veniam",
+                        "date": "1999-01-02T23:48:35.453Z",
+                        "text": "Duis sit eiusmod magna",
+                        "@baseType": "sit culpa ipsum",
+                        "@schemaLocation": "https://hkVCplNNWnIafZJgpqMKbkbZWaDtWCop.thjg6Mjo4OrsCjgY9XEm",
+                        "@type": "fugiat dolore aute"
+                    }
+                ],
+                "place": [
+                    {
+                        "role": "occaecat Ut ut ea",
+                        "id": "veniam sint",
+                        "href": "fugiat ut com",
+                        "name": "consequat Ut amet aliqui",
+                        "@baseType": "nulla Ut ipsum quis",
+                        "@schemaLocation": "https://OvrCVMfMJjWaUAfcJpx.kfqFd-U1oon,VUsEI7nCZJ,CYXeFdNjAlP3AaDqq7ESo2f7xvUN",
+                        "@type": "dolore",
+                        "@referredType": "quis"
+                    },
+                    {
+                        "role": "ad in sit culpa",
+                        "id": "adipisicing dolore Lorem magna",
+                        "href": "do eu cupidatat Excepteur fugiat",
+                        "name": "ad Excepteur consequat consectetur",
+                        "@baseType": "Ut ad velit tempor magna",
+                        "@schemaLocation": "https://fyNtvOexFcNCAHVXfFuPAwsYHozpFsy.lehnF3ZTLcPONlbUvvou9Kx3pzr-boQQXK6TQ",
+                        "@type": "in sint",
+                        "@referredType": "est"
+                    }
+                ],
+                "relatedEntity": [
+                    {
+                        "role": "quis reprehenderit anim",
+                        "id": "eiusmod",
+                        "href": "aliquip dolor",
+                        "name": "velit consequat dolore aute Excepteur",
+                        "@baseType": "dolore irure ut",
+                        "@schemaLocation": "http://vJkuU.vhZgHExuDi1Y.jVsKFU+ERNo6l",
+                        "@type": "exercitation ut dolore labore",
+                        "@referredType": "occaecat"
+                    },
+                    {
+                        "role": "aliquip enim ut culpa",
+                        "id": "nulla",
+                        "href": "ex culpa exercitation sunt",
+                        "name": "eiusmod elit",
+                        "@baseType": "dolor Ut",
+                        "@schemaLocation": "http://USSWbSTe.vmdoMsHBVkniQzNJ5Augg64-yQ3zXfzlLukFp6ml,K34ttwIUlFm.j1PCw2mIDIaZeK9dDQ4xvpSPkn92hIH",
+                        "@type": "Lorem et oc",
+                        "@referredType": "Lorem Excepteur ad"
+                    }
+                ],
+                "relatedParty": [
+                    {
+                        "@referredType": "Ut",
+                        "id": "ex minim",
+                        "href": "http://AdlNCXCFTHqR.wtwovdQtRen,ZR28V9BPaiEdie.",
+                        "name": "in cupidatat eu ut",
+                        "role": "occaecat Duis consequat deserunt",
+                        "@baseType": "sunt",
+                        "@schemaLocation": "https://wuzJTtXTjgzwWGjWTYPIzEktAQ.gpmiHnEJ0kcdc+YQlzmprHN3IS.MInaQRp+iapn0kT5EjmbGYrX",
+                        "@type": "officia in ut aliquip consequat"
+                    },
+                    {
+                        "@referredType": "dolor ad c",
+                        "id": "tempor offic",
+                        "href": "https://MfgfYezxACwsSyTrcCOSoKGpnQhMvlDHw.hxpubIAzuOVdsVxHvbxDkgGTdsM",
+                        "name": "occaecat eu dolor sunt",
+                        "role": "in amet adipisicing Lorem reprehenderit",
+                        "@baseType": "sed",
+                        "@schemaLocation": "http://VXJAlSYlOJDZMbzYLhDqB.btEYw-JUu5myryD9",
+                        "@type": "ut in"
+                    }
+                ],
+                "serviceCharacteristic": [
+                    {
+                        "name": "in Duis nostrud eu",
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "id": "laborum consectetur irure",
+                        "valueType": "nisi eiusmod exercitation Duis",
+                        "characteristicRelationship": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "@baseType": "ut ea do",
+                        "@schemaLocation": "https://UJiGMAiTAIuWcmSIxBZqrfnPFRGghrq.fmzEqXN72",
+                        "@type": "do ullamco"
+                    },
+                    {
+                        "name": "in enim nostrud",
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "id": "do nostrud",
+                        "valueType": "l",
+                        "characteristicRelationship": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "@baseType": "in nostrud",
+                        "@schemaLocation": "http://ifUiuYiXKkJrsLNmAiwUZ.torg.9d1WSQ.",
+                        "@type": "nostrud id ut in"
+                    }
+                ],
+                "serviceOrderItem": [
+                    {
+                        "id": "aliquip esse enim in",
+                        "href": "http://kUOLFsmCSBunERaJvdROd.qtacgxIV,f",
+                        "itemId": "officia voluptate ad anim",
+                        "role": "ea velit adipisicing nisi aliquip",
+                        "serviceOrderHref": "commodo amet nulla",
+                        "serviceOrderId": "sint laboris enim eiusmod elit",
+                        "itemAction": "noChange",
+                        "@baseType": "",
+                        "@schemaLocation": "http://fWeVqBBqegVXWPVpACo.nnidJwPsPkJ2w",
+                        "@type": "et",
+                        "@referredType": "Ut i"
+                    },
+                    {
+                        "id": "ea minim",
+                        "href": "https://uWPTnIlQKIgJTBJUCYNCIw.nbaeBLi",
+                        "itemId": "dolore aliqua",
+                        "role": "ea dolore non",
+                        "serviceOrderHref": "anim consectetur ad in",
+                        "serviceOrderId": "in proident dolore",
+                        "itemAction": "noChange",
+                        "@baseType": "proident sed aute et consequat",
+                        "@schemaLocation": "https://ChUEBhXkM.zstwdq9CktUIz4Qo2",
+                        "@type": "voluptate",
+                        "@referredType": "et ipsum Ut"
+                    }
+                ],
+                "serviceRelationship": [
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRelationship detected>"
+                    },
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRelationship detected>"
+                    }
+                ],
+                "serviceSpecification": {
+                    "id": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "version": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@schemaLocation": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@referredType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "state": "feasibilityChecked",
+                "supportingResource": [
+                    {
+                        "id": "Duis in consequat",
+                        "href": "https://yBkxe.daUNF-gwxfhMFNDgTEywKA7ImAnVRZRtZUE43Ezxdpvk-Cvb0diUAP",
+                        "name": "commodo Excepteur fugiat voluptate cupidatat",
+                        "@baseType": "consequat sint ea",
+                        "@schemaLocation": "https://GXbsuYQSeQc.mepFj",
+                        "@type": "aliquip commodo dolor aliqua ex",
+                        "@referredType": "nisi Excepteur"
+                    },
+                    {
+                        "id": "ad voluptate do et",
+                        "href": "https://mhUoqVSAytmlDjhtnkyK.aclFSqYDX2YvlUDFfg3318kwDzWonR",
+                        "name": "moll",
+                        "@baseType": "volupta",
+                        "@schemaLocation": "https://xLczwXmqwSQKnIlMEuSbdlPReqdxY.nbcTu7JQRmB+,Dq4W6f",
+                        "@type": "ullamco minim aute tempor proident",
+                        "@referredType": "exercitation qui"
+                    }
+                ],
+                "supportingService": [
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                    },
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                    }
+                ],
+                "@baseType": "dolor",
+                "@schemaLocation": "http://GUbWwUPPVLXdagfNBRlCTVtrr.gzmgGmV5",
+                "@type": "cupidatat culpa in",
+                "@referredType": "voluptate"
+            },
+            "serviceRelationshipCharacteristic": [
+                {
+                    "name": "ipsum dolore",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "ex proident quis reprehenderit",
+                    "valueType": "sunt velit officia",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "sunt voluptate adipisicing tempor",
+                    "@schemaLocation": "http://EtXW.ubgejHXW+2nLJZVPlzpGO",
+                    "@type": "cillum sed"
+                },
+                {
+                    "name": "Excepteur tempor quis velit reprehenderit",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "dolor anim",
+                    "valueType": "cupidatat pariatur non ut",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "consequat occaecat incididunt",
+                    "@schemaLocation": "https://BurukZqEfsP.sfdpQlL2obRZArKqvuS",
+                    "@type": "magna proident molli"
+                }
+            ],
+            "@baseType": "mollit",
+            "@schemaLocation": "https://wPoUknHfJrhP.lbcS98h-dhOcUeD",
+            "@type": "laboris irure l"
+        },
+        {
+            "relationshipType": "irure nulla esse ut ut",
+            "id": "cupidatat reprehenderit laboris",
+            "href": "https://fPQ.bfsN3qhuy+",
+            "service": {
+                "id": "deserunt commodo fugiat mollit",
+                "href": "non consectetur cillum in",
+                "category": "e",
+                "description": "ut amet aliqua anim",
+                "endDate": "1998-04-02T06:58:25.738Z",
+                "hasStarted": true,
+                "isBundle": false,
+                "isServiceEnabled": false,
+                "isStateful": true,
+                "name": "Duis",
+                "serviceDate": "nostrud",
+                "serviceType": "",
+                "startDate": "1990-01-27T11:27:31.687Z",
+                "startMode": "sit proident",
+                "feature": [
+                    {
+                        "featureCharacteristic": [
+                            {
+                                "name": "in irure dolor ipsum",
+                                "value": {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                "id": "culpa occaecat id commodo pariatur",
+                                "valueType": "adipisicing esse laboris Duis",
+                                "characteristicRelationship": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "@baseType": "pariatur sint aliqua reprehe",
+                                "@schemaLocation": "http://Xbj.xew6QC.WNUNKBUwKt+y28d3mWPmWfBAyBnB+TeL-sVsXZtT.QN7rV22VAMK851FvFF84",
+                                "@type": "nisi dolor mollit in"
+                            }
+                        ],
+                        "name": "pariatur esse aliqua sed tempor",
+                        "id": "veniam c",
+                        "isBundle": true,
+                        "isEnabled": false,
+                        "constraint": [
+                            {
+                                "id": "sint",
+                                "href": "https://EKyitiEwVaFSCizLznuIEn.cyarGJjwHm.3y2vO2Rpt1037FW",
+                                "name": "est incididunt nulla mollit",
+                                "version": "Duis fugiat aliquip",
+                                "@baseType": "labore sunt ut et sint",
+                                "@schemaLocation": "https://MHH.oerajK.AlRG2Xm3q5+QRaWgy4SihFgHYb.ISmi,MXxmvhqp",
+                                "@type": "sunt vol",
+                                "@referredType": "sit eu"
+                            },
+                            {
+                                "id": "nisi aute",
+                                "href": "https://JMwnKWPhYVIY.wtQ+dwzA235Vdh3fOCtXyQ0-ll",
+                                "name": "adipisicing commodo qui Lorem",
+                                "version": "id mollit irure anim in",
+                                "@baseType": "consectetur est in laborum",
+                                "@schemaLocation": "http://DvtISuy.tvlbiJXz.mO",
+                                "@type": "labore mollit fugiat",
+                                "@referredType": "ad non aliquip "
+                            }
+                        ],
+                        "featureRelationship": [
+                            {
+                                "name": "nulla",
+                                "relationshipType": "proident velit",
+                                "id": "laboris nisi",
+                                "validFor": {
+                                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                                }
+                            },
+                            {
+                                "name": "laboris consequat",
+                                "relationshipType": "ei",
+                                "id": "officia id in",
+                                "validFor": {
+                                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "featureCharacteristic": [
+                            {
+                                "name": "aute laborum",
+                                "value": {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                "id": "incididunt eu veniam cupidatat",
+                                "valueType": "est",
+                                "characteristicRelationship": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "@baseType": "cillum nulla fugiat",
+                                "@schemaLocation": "http://iaTntovgkdqacZevQSscPDfJcBmGamZNi.puvfjPR8AL",
+                                "@type": "id Excepteur ad amet"
+                            }
+                        ],
+                        "name": "aliqua Excepteur ut m",
+                        "id": "exe",
+                        "isBundle": true,
+                        "isEnabled": true,
+                        "constraint": [
+                            {
+                                "id": "quis aliquip adipisicing in",
+                                "href": "http://WHDbLboNkBQFlbujeXvGrMRlGZs.lwz,FhWEesCahniJ8aqSPM7wVtlUvocDizdP2WB",
+                                "name": "mollit in aliquip dolor",
+                                "version": "ipsum",
+                                "@baseType": "in consectetur consequat",
+                                "@schemaLocation": "http://b.zbzysj4L1qUvRU3JRnqaHqcogqHx2O2dlQYEEsBMyKSWt0VjamKir,",
+                                "@type": "in",
+                                "@referredType": "nisi dolore eiusmod irure"
+                            },
+                            {
+                                "id": "Excepteur qui Ut",
+                                "href": "http://tnZMTH.giuzzCRgeJmH8hNa+Sl2Am+IGPnQziljlY",
+                                "name": "est",
+                                "version": "velit sed commodo",
+                                "@baseType": "quis enim tempor proident",
+                                "@schemaLocation": "http://KWtuBYKalvdzeSdwX.gnBKmvIr,q+zy5vbMuZ3KV8jnJ0On2rwUEyY7Xkl5k12JjAj-GmK-ssLNhcCbiG4OGD",
+                                "@type": "velit ut",
+                                "@referredType": "sed aliquip nostrud est"
+                            }
+                        ],
+                        "featureRelationship": [
+                            {
+                                "name": "nulla nostrud do culpa",
+                                "relationshipType": "ad in labore minim",
+                                "id": "irure laborum Duis exercitation magna",
+                                "validFor": {
+                                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                                }
+                            },
+                            {
+                                "name": "laborum veniam sint",
+                                "relationshipType": "nulla fugiat sit enim",
+                                "id": "et consectetur tempor",
+                                "validFor": {
+                                    "endDateTime": "1985-04-12T23:20:50.52Z",
+                                    "startDateTime": "1985-04-12T23:20:50.52Z"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "note": [
+                    {
+                        "id": "nisi anim commodo nostrud",
+                        "href": "https://LThkFvZCEumJfPgBvJVHbLf.ugnjE2BXR.CyVBd-OEbup-x8QCV2k.Bjd",
+                        "author": "velit",
+                        "date": "1964-01-11T00:11:28.980Z",
+                        "text": "voluptate ut",
+                        "@baseType": "irure dolore in",
+                        "@schemaLocation": "http://aSKkywlLbCjE.faCBcXWMNeJ5xlkEIN2aAoTF5kR1.3DxSp7cQRsSPoM-u5+,F8ZF",
+                        "@type": "in minim nis"
+                    },
+                    {
+                        "id": "qui culpa fugiat",
+                        "href": "https://LGJqNPiONYKniQWipj.dhie-Sxa25OBk4abjhe.S71j5XfLhOHAvLbQBledgK7,XIchExfQ6XxP.ew8EQ-FBxXrbY-",
+                        "author": "deserunt in ad",
+                        "date": "1999-12-08T01:12:11.561Z",
+                        "text": "adipisicing nisi sunt ex",
+                        "@baseType": "ullamco cillum pariatur esse sed",
+                        "@schemaLocation": "https://LTQjxdrbfMttJznTDoZNdB.tqKHp83E3mbqaPZJDh-uuxzaS7+H5dRFw",
+                        "@type": "dolore irure"
+                    }
+                ],
+                "place": [
+                    {
+                        "role": "aliqua ullamco sint",
+                        "id": "nisi velit dolore",
+                        "href": "aliqua sint dolore",
+                        "name": "tempor fugiat culpa irure",
+                        "@baseType": "proident adipisicing qui do mollit",
+                        "@schemaLocation": "https://uQMvHEkLwknoUT.smdbOMzFTtSCeJ+N2Hx-ab",
+                        "@type": "mollit ame",
+                        "@referredType": "ex enim est mollit"
+                    },
+                    {
+                        "role": "veniam ",
+                        "id": "sint ipsum",
+                        "href": "occaecat",
+                        "name": "anim ea magna dolore",
+                        "@baseType": "dolore ea Ut",
+                        "@schemaLocation": "https://hUOvEwktusnFSbtYsdYenEvp.mndxPLXSrL+uClR6MYYlaQLlnRv9yOs,4",
+                        "@type": "dolor sunt",
+                        "@referredType": "incididunt"
+                    }
+                ],
+                "relatedEntity": [
+                    {
+                        "role": "ut in Lorem",
+                        "id": "ex",
+                        "href": "minim",
+                        "name": "labore",
+                        "@baseType": "culpa Lorem",
+                        "@schemaLocation": "http://LhBoZRcRaxlOexZFUKNKrwrrCZgfBpDaH.oyPTtqG1kg-OcQVzdGRsnwYGEaYRb9xC6OUbYiMv-dWsAR47jx5rOo",
+                        "@type": "veniam",
+                        "@referredType": "velit ut culpa occaecat"
+                    },
+                    {
+                        "role": "anim",
+                        "id": "et in mol",
+                        "href": "ex sed",
+                        "name": "dolor in au",
+                        "@baseType": "dolore reprehenderit am",
+                        "@schemaLocation": "https://gLpGD.sgiJNkEYMRxLz6fS6sQFucL3P",
+                        "@type": "pa",
+                        "@referredType": "elit mollit"
+                    }
+                ],
+                "relatedParty": [
+                    {
+                        "@referredType": "eiusmod tempor irure sit",
+                        "id": "quis anim do",
+                        "href": "http://cTjECuQvVKgdlxNcg.wcyKn3ZMz.",
+                        "name": "ipsum sed",
+                        "role": "ullamco laborum",
+                        "@baseType": "non dolore in",
+                        "@schemaLocation": "http://WsHKfDD.lybavAZznUuAN6TbFxAnqs0vLVsXCjVa",
+                        "@type": "aliqua consectetur"
+                    },
+                    {
+                        "@referredType": "sint non id reprehenderit",
+                        "id": "ullamco",
+                        "href": "http://ZpGntYYOeEXyFTxHvgUxVcWS.tuali,oHDUiMt.-S+yP+qiWYphrdKyy,SFLsca09FXwW6nc+XtxanhqC-V8dpDHRN",
+                        "name": "dolore do eu",
+                        "role": "in proident commodo sint",
+                        "@baseType": "sint velit aliqua dolore aliquip",
+                        "@schemaLocation": "http://K.yvoksvM9yFhFMLMq2Nj",
+                        "@type": "est"
+                    }
+                ],
+                "serviceCharacteristic": [
+                    {
+                        "name": "reprehenderit su",
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "id": "reprehenderit eiusmod enim et",
+                        "valueType": "cupidatat do ir",
+                        "characteristicRelationship": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "@baseType": "aliquip ipsum reprehenderit commodo culpa",
+                        "@schemaLocation": "https://LGHDaPbhItIGgfyxKqeaTHKrJEJ.rggwagcHpJqIk2.t12C+XSnTse9rtiQedrkYU+4dcpZE",
+                        "@type": "Lorem ex et"
+                    },
+                    {
+                        "name": "magna enim consectetur cupidatat dolor",
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "id": "Ut elit",
+                        "valueType": "officia ex qui",
+                        "characteristicRelationship": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "@baseType": "ut occaecat Ut Excepteur sunt",
+                        "@schemaLocation": "http://TwRkACBRFq.snsbBPEWxy9mFMhaH",
+                        "@type": "dolor ad fugiat deserunt"
+                    }
+                ],
+                "serviceOrderItem": [
+                    {
+                        "id": "non aute dolore",
+                        "href": "https://jFJEGorKCAJQ.zgtraxy,sbMTAS85MOhZtQrc,j6q8ddfK-VPcvKEHjaoyh",
+                        "itemId": "magna",
+                        "role": "ullamco q",
+                        "serviceOrderHref": "exercitation",
+                        "serviceOrderId": "dolor eiusmod",
+                        "itemAction": "delete",
+                        "@baseType": "tempor magna",
+                        "@schemaLocation": "http://MVJWcFZIPAA.gqEA27AwKF,1IbwxquOEBCF5x7yOm1q-Lqgge0EFoJ.iE,4XPz8XGut5BM",
+                        "@type": "ad pariatur eu aliqua",
+                        "@referredType": "velit aliquip do"
+                    },
+                    {
+                        "id": "eiusmod dolore anim dolor",
+                        "href": "http://IfJPamNK.kihe8hG3cy,ZYiyR,+Z9NVjWt-yCjzmvOeZ1VmdH7RjlQhmoRPhoNO+MEW70klIhHArn+x",
+                        "itemId": "veniam in",
+                        "role": "exercitation Duis ullamco",
+                        "serviceOrderHref": "quis id aliqua amet",
+                        "serviceOrderId": "dolor commodo",
+                        "itemAction": "add",
+                        "@baseType": "qui nulla mollit",
+                        "@schemaLocation": "https://haGtSOTtFWaGp.uwxto-ln8aBolVyc1Zlsn4,8I3DKHUV,bU",
+                        "@type": "adipisicing in",
+                        "@referredType": "aliqua labore ex"
+                    }
+                ],
+                "serviceRelationship": [
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRelationship detected>"
+                    },
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRelationship detected>"
+                    }
+                ],
+                "serviceSpecification": {
+                    "id": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "version": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@baseType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@schemaLocation": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "@referredType": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "state": "inactive",
+                "supportingResource": [
+                    {
+                        "id": "eu ea velit consectetur",
+                        "href": "https://YsyJKeciKTJgrtBThAIGlRJjXlCyLIvM.mmxeS5GMQdeMKVv39Hy",
+                        "name": "sit nostrud",
+                        "@baseType": "sed voluptate anim",
+                        "@schemaLocation": "http://wVGdJUUZrTESdtkd.rkicBC6qwZObz-lLEplMlYWz+RwM4UjCxSRByW5fL,3",
+                        "@type": "pariatur tempor Ut cillum",
+                        "@referredType": "anim exercitation do"
+                    },
+                    {
+                        "id": "ess",
+                        "href": "https://fmJDXmuYGRRJUNHivAeDAGPmsIKYM.qaswiwp0LfOWcE7sPt",
+                        "name": "non",
+                        "@baseType": "reprehenderit ullamco",
+                        "@schemaLocation": "https://TOhDbExPovkkCyyGvpop.dxizBB3ZKq1-BXmvOXX-JhxZhu+QGvG+K.TISentlp,",
+                        "@type": "Ut non ut",
+                        "@referredType": "aliquip"
+                    }
+                ],
+                "supportingService": [
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                    },
+                    {
+                        "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                    }
+                ],
+                "@baseType": "sit enim dolore occaecat",
+                "@schemaLocation": "https://NarOWWzlHhxRQoEoBgSR.pdexRJw9bZN,cRavAm5OlhEcbVyH5+qo",
+                "@type": "fugiat et cillum",
+                "@referredType": "ut nisi"
+            },
+            "serviceRelationshipCharacteristic": [
+                {
+                    "name": "Excepteur",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "tempor qui",
+                    "valueType": "velit ex",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "velit in dolore",
+                    "@schemaLocation": "http://pHn.pzzvRbqNOqiLjc5FdRtS-OTAMMjkuX",
+                    "@type": "id et veniam laboru"
+                },
+                {
+                    "name": "laborum Excepteur ex ullamco anim",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "occaecat do aliquip sed",
+                    "valueType": "dolor qui",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "cupidatat fugiat dolor",
+                    "@schemaLocation": "http://KomEnkyvlofzl.gyE7wb0oJjEduhHBEHI-82BTfMX.",
+                    "@type": "q"
+                }
+            ],
+            "@baseType": "Ut velit",
+            "@schemaLocation": "http://iwzGDJs.liryiSWH-Qz,2OVa,9BgVLBNVm2CmViMZ",
+            "@type": "irure est laboris"
+        }
+    ],
+    "serviceSpecification": {
+        "id": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "href": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "name": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "version": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "@baseType": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "@schemaLocation": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "@type": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "@referredType": {
+            "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+    },
+    "software": [
+        {
+            "id": "sit do quis in",
+            "href": "http://fUgUUdocEZCT.jwlsNYFKk89.yQhoaAFyqm9yOOCkbqQVvPV-s7Jkm31B,DvhAizvK",
+            "name": "commodo tempor occaecat",
+            "softwareVersion": "esse Lorem sint",
+            "@baseType": "laboris exercitation ut dolore",
+            "@schemaLocation": "http://tiCXTvauAbgSwrK.pdhdDIIWr.5evYi59avZR0yxZfdl02dMjwLeKRh,mHRPoCtXEa5O",
+            "@type": "proident",
+            "@referredType": "nulla"
+        },
+        {
+            "id": "laboris minim consequat",
+            "href": "https://DDZ.mzmxOZB3",
+            "name": "exercitation esse eu",
+            "softwareVersion": "id exercitation laboris ex Lorem",
+            "@baseType": "minim",
+            "@schemaLocation": "https://SLeWV.szgHnSAb6bS19EdkQuON-6cTqp+75JxZ1VlBAzjFQ7z0f9ZYcdBPVOG0QhmzUIOV4",
+            "@type": "qui cupidatat dolore eiu",
+            "@referredType": "dolore dolore ut q"
+        }
+    ],
+    "state": "feasibilityChecked",
+    "supportingResource": [
+        {
+            "id": "id mollit",
+            "href": "http://YaEBTTyrIbaaN.xsmoBbNotnZmElISmiVMMiIU1s3gxjdnrmMeKk0Jpwqj,M42Ni-EHyTv-",
+            "name": "dolor adipisic",
+            "@baseType": "cillum",
+            "@schemaLocation": "https://YGPcVnDtN.pjOlVunJBz+FC-Q00wePqY",
+            "@type": "in ipsum",
+            "@referredType": "ullamco ni"
+        },
+        {
+            "id": "labore incididunt aliquip",
+            "href": "https://lolKBahOUwJOLaboCne.wsEPKYzIttm3Q",
+            "name": "consectetur Duis",
+            "@baseType": "commodo voluptate proident quis in",
+            "@schemaLocation": "http://iDd.uursM3,ac",
+            "@type": "nostrud ex sed",
+            "@referredType": "voluptate tempor"
+        }
+    ],
+    "supportingService": [
+        {
+            "id": "eiusmod",
+            "href": "ut ipsum nisi",
+            "category": "cupidatat aute in nostrud",
+            "description": "reprehenderit do",
+            "endDate": "2003-06-22T19:55:52.676Z",
+            "hasStarted": false,
+            "isBundle": true,
+            "isServiceEnabled": true,
+            "isStateful": true,
+            "name": "non eiusmod",
+            "serviceDate": "consequat Ut in ex",
+            "serviceType": "dolor s",
+            "startDate": "1982-11-29T14:20:59.103Z",
+            "startMode": "irure sunt",
+            "feature": [
+                {
+                    "featureCharacteristic": [
+                        {
+                            "name": "in dolor in nulla",
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "id": "ullamco et Ut",
+                            "valueType": "nulla Duis amet voluptate",
+                            "characteristicRelationship": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "@baseType": "est",
+                            "@schemaLocation": "http://RIWAWVMCDHfpS.fhlcH8F0pKUQco5KMVkg3zioAiIcPK6o8.jbsFJQU121",
+                            "@type": "magna mollit velit"
+                        }
+                    ],
+                    "name": "ea ex voluptate",
+                    "id": "quis officia magna",
+                    "isBundle": false,
+                    "isEnabled": true,
+                    "constraint": [
+                        {
+                            "id": "exercitation qui aliq",
+                            "href": "https://YgHzCyUolAveROkhVKDpgPBAaMpFMaxWr.wcoSGWGwi3fnrpHP4CGk6VZnuPEWmqhc",
+                            "name": "irure est",
+                            "version": "Lorem velit",
+                            "@baseType": "ut et quis",
+                            "@schemaLocation": "https://eVjyFxJIMtpIeOBDUw.xuazzI12W77+KcmDxLwIlWgdphiX5j.40-gEEXO1nend1",
+                            "@type": "nostrud eu",
+                            "@referredType": "eiusmod velit"
+                        },
+                        {
+                            "id": "veniam",
+                            "href": "http://KrYAArFVGFfeoJaPY.fypwf+Jdw1X6Wju5yBQ5x6gNAYrMVYbxOVOKxhdV2m90vHDQxlF4mti6wVulA7YAD",
+                            "name": "Lorem tempor laborum",
+                            "version": "esse pariatur",
+                            "@baseType": "laborum ex aliqua sit",
+                            "@schemaLocation": "https://gsYnTGLUOGbEeBKYhsKb.nzhwL4wwV2AJTJQpK87FjnR9",
+                            "@type": "ea ex al",
+                            "@referredType": "ut dolor ea laboris"
+                        }
+                    ],
+                    "featureRelationship": [
+                        {
+                            "name": "dolore culpa magna",
+                            "relationshipType": "consectetur sit quis",
+                            "id": "commodo",
+                            "validFor": {
+                                "endDateTime": "1985-04-12T23:20:50.52Z",
+                                "startDateTime": "1985-04-12T23:20:50.52Z"
+                            }
+                        },
+                        {
+                            "name": "aliqua nulla",
+                            "relationshipType": "ipsum laborum",
+                            "id": "voluptate laborum",
+                            "validFor": {
+                                "endDateTime": "1985-04-12T23:20:50.52Z",
+                                "startDateTime": "1985-04-12T23:20:50.52Z"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "featureCharacteristic": [
+                        {
+                            "name": "ut sed",
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "id": "eu ut ex nostrud",
+                            "valueType": "ea",
+                            "characteristicRelationship": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "@baseType": "deserunt enim cupidatat et",
+                            "@schemaLocation": "https://KsbO.vwRy5FyBcHjm",
+                            "@type": "laboris reprehenderit tempo"
+                        }
+                    ],
+                    "name": "ea eu sunt",
+                    "id": "ea culpa",
+                    "isBundle": false,
+                    "isEnabled": true,
+                    "constraint": [
+                        {
+                            "id": "eu consequat anim nisi fugiat",
+                            "href": "https://WZtufXMJBBoCKjbTQffmVXCbWRerN.oxkiJd.cSnUNTsu,AfAXXJzL0w",
+                            "name": "nulla dolor tempor nisi occaecat",
+                            "version": "sint aliquip consequat quis",
+                            "@baseType": "quis",
+                            "@schemaLocation": "http://PbgTDWGNHmPQfjTfX.gwG2.x-RyThVpC7VHCRtecUu-TbK3WpXgITCGZdL5W.b7hGm",
+                            "@type": "ad culpa pariatur consectetur et",
+                            "@referredType": "non irure consequat do"
+                        },
+                        {
+                            "id": "anim est sit id veniam",
+                            "href": "https://nAsfrnlVtGpJTcNCWvlrSJBS.pbukuBjboNf6-YzGKGYzzSGAL5oQePtXBHDyNCv9a8yQC2GSzU9eEojHR4Xt-nOsixcKWLSPllSsm",
+                            "name": "consectetur laboris",
+                            "version": "sint exercitation",
+                            "@baseType": "in",
+                            "@schemaLocation": "https://rtAhGjdAWcUJSjY.igiidwdE",
+                            "@type": "ad veniam ut",
+                            "@referredType": "deser"
+                        }
+                    ],
+                    "featureRelationship": [
+                        {
+                            "name": "pariatur ad",
+                            "relationshipType": "elit",
+                            "id": "exercitation aute",
+                            "validFor": {
+                                "endDateTime": "1985-04-12T23:20:50.52Z",
+                                "startDateTime": "1985-04-12T23:20:50.52Z"
+                            }
+                        },
+                        {
+                            "name": "laborum",
+                            "relationshipType": "deserunt fugiat consectetur exercitation",
+                            "id": "voluptate in Ut",
+                            "validFor": {
+                                "endDateTime": "1985-04-12T23:20:50.52Z",
+                                "startDateTime": "1985-04-12T23:20:50.52Z"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "note": [
+                {
+                    "id": "dolore",
+                    "href": "https://IcJxy.ugjjWf0XK-hDptFzsZ5bR8vTPbPZ0XkUyXX5bBHehG",
+                    "author": "non ex ea aute",
+                    "date": "1967-02-08T07:53:25.724Z",
+                    "text": "cupidatat esse",
+                    "@baseType": "sint do ad",
+                    "@schemaLocation": "http://VfxzJCOWzdSHClLMVJDenx.iqnUnXrSC+R-raUHrW0MEqmVqBvyukYMy6XjYgNSDVFep,rxhqX8rQo-4It",
+                    "@type": "anim"
+                },
+                {
+                    "id": "in adipisicing exercitation magna",
+                    "href": "https://LtBDUxQaVKdhnqBxnFuIIT.anqwTV5qjp",
+                    "author": "consequat labore sit exercitation",
+                    "date": "1973-08-23T18:35:59.833Z",
+                    "text": "sint Ut id dolore",
+                    "@baseType": "do tempor sed ex",
+                    "@schemaLocation": "https://DHSAQJUs.jboqAsDu1RnJYlxf6jdBC9",
+                    "@type": "irure"
+                }
+            ],
+            "place": [
+                {
+                    "role": "occaecat sint dolor",
+                    "id": "pariatur",
+                    "href": "est",
+                    "name": "enim dolor do venia",
+                    "@baseType": "irure fugiat tempor incididunt quis",
+                    "@schemaLocation": "http://USJhpQuRQLgHnVlaPivzH.hrwpUSsJa9DUsPi8ZxqApbNGgkuFvWgQX",
+                    "@type": "dolor esse",
+                    "@referredType": "veniam ea Duis"
+                },
+                {
+                    "role": "laborum quis in",
+                    "id": "do culp",
+                    "href": "ut sunt",
+                    "name": "mollit eiusmod ad nisi",
+                    "@baseType": "esse",
+                    "@schemaLocation": "https://NTSrgKNGNpRpXgjLCNs.eqiMGDiOA1EsHolB+9RZ.z93TUXHf-QuaLxPz5evCW4U.JdMKaXGfh.H414kq",
+                    "@type": "eu proident id sunt sed",
+                    "@referredType": "aute"
+                }
+            ],
+            "relatedEntity": [
+                {
+                    "role": "occaecat",
+                    "id": "consequat aute",
+                    "href": "amet est Lorem sunt",
+                    "name": "enim",
+                    "@baseType": "elit ea fugiat",
+                    "@schemaLocation": "http://GZ.blsmNlPjRJi4u+aPG.yu",
+                    "@type": "in ea",
+                    "@referredType": "enim eiusmod"
+                },
+                {
+                    "role": "aute dolore Lorem of",
+                    "id": "reprehenderit cillum ut velit",
+                    "href": "quis pariatur eiusmod dolor est",
+                    "name": "sed ut",
+                    "@baseType": "reprehenderit officia",
+                    "@schemaLocation": "http://IYEsACjQwAIsmMcIEUFUSfDmdeKcwWLpD.luvOXPwiQAAlIQpt0nnnD00ggsor+OyjnJJq9HIO5dDYsJcIuuNg",
+                    "@type": "sint ut elit",
+                    "@referredType": "pariatur"
+                }
+            ],
+            "relatedParty": [
+                {
+                    "@referredType": "in culpa sit amet",
+                    "id": "dolor qui sed",
+                    "href": "https://mYpjglUHlAmIllmYSPEAWIBkzYSNmhDrG.skoS,Dua+Snh6UdwfhWIMYmK,cjnWEER",
+                    "name": "dolore exercitation eiusmod",
+                    "role": "velit",
+                    "@baseType": "nisi do dolore",
+                    "@schemaLocation": "https://TlDSqJi.kocrvmIeXBYWn6AIz2gCdlhxh51vUCtINHvgby2Ia8A.LFdNgUygAIpOVvJcXrt1neMh",
+                    "@type": "mollit in pro"
+                },
+                {
+                    "@referredType": "voluptate anim amet",
+                    "id": "incididunt aliquip elit",
+                    "href": "https://nwTLtWIwTEPbGmWbqnjtQDpeSlOgNy.xtoyipmiqeiw.sYVKptr3hsq9+V4E",
+                    "name": "culpa Lorem",
+                    "role": "tempor",
+                    "@baseType": "sint aliquip esse ut",
+                    "@schemaLocation": "https://sw.xyuyV8+yS7jwq9P,Ns",
+                    "@type": "eiusmod"
+                }
+            ],
+            "serviceCharacteristic": [
+                {
+                    "name": "eiusmod ea in minim",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "Ut exercitation deserunt occaecat commodo",
+                    "valueType": "ess",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "et exercitation mollit anim",
+                    "@schemaLocation": "https://xOXNPdwLagINhECkGZmfQMdokrovDoOkd.mxH0fU7IYFtHke3cFX6vKO3rUZP1p3ETjJJEcd6HvpZ9aQJ80N1Y-BSzBN4fyzoQAL+YWu",
+                    "@type": "dolor nostrud"
+                },
+                {
+                    "name": "culpa laboris deserunt velit",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "occaecat labore nostrud",
+                    "valueType": "ex dolor do",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "exercitation ex nostru",
+                    "@schemaLocation": "https://EtlkfrWRdVquXzFcYcyfwcck.hxyzeiYIpJLyf2eNOVbVxVrQPXiYu,B-e+q9ug4EQ3Jgisjg7tm2zxEGhGCLUEaRV",
+                    "@type": "nostrud cillum incididunt"
+                }
+            ],
+            "serviceOrderItem": [
+                {
+                    "id": "in",
+                    "href": "http://QDRAkG.kinou,vQHUQDVjn",
+                    "itemId": "cupidatat proident tempor sint",
+                    "role": "Ut esse",
+                    "serviceOrderHref": "id voluptate",
+                    "serviceOrderId": "ullamco in",
+                    "itemAction": "add",
+                    "@baseType": "consectetur in enim dolore anim",
+                    "@schemaLocation": "https://PjZcyvHzON.pgoYEhid5Te0QORr",
+                    "@type": "ipsum veniam non",
+                    "@referredType": "non consectetur Ut"
+                },
+                {
+                    "id": "ullamco veniam",
+                    "href": "https://oUuXIvKvu.kytFqEK+NSFNnSDOK3FlvbP8HSpcKF",
+                    "itemId": "au",
+                    "role": "proident",
+                    "serviceOrderHref": "id",
+                    "serviceOrderId": "proident mollit ipsum tempor",
+                    "itemAction": "delete",
+                    "@baseType": "reprehenderit Duis et eiusmod",
+                    "@schemaLocation": "https://eLLhllEgNKLrrVxJPOqiixVSWuXTeg.zaVuAUnaizp0FK+cSi3.shE6LP.5fcbhWdTh.HiRdlmjlYOqB0EJLfoFT8eJEG+.,WoI",
+                    "@type": "aliquip eu",
+                    "@referredType": "minim non exercitation velit Lorem"
+                }
+            ],
+            "serviceRelationship": [
+                {
+                    "value": "<Circular reference to #/components/schemas/ServiceRelationship detected>"
+                },
+                {
+                    "value": "<Circular reference to #/components/schemas/ServiceRelationship detected>"
+                }
+            ],
+            "serviceSpecification": {
+                "id": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "name": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "version": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@baseType": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@schemaLocation": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@type": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@referredType": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "state": "reserved",
+            "supportingResource": [
+                {
+                    "id": "ea est laboris",
+                    "href": "http://pEdjAAgcmRqw.lcehcbu+OlD1nJosUpIyDXGEm,2eTsOcf4UWZUOBHsKFizpBQXmS6V4l-rarnQM",
+                    "name": "esse commodo in voluptate",
+                    "@baseType": "amet non",
+                    "@schemaLocation": "https://OtyzLQdhkHLDKgFk.gznSr1OacT1yisvveQwI",
+                    "@type": "culpa",
+                    "@referredType": "sed occaecat"
+                },
+                {
+                    "id": "nulla commodo ad",
+                    "href": "https://TGLEbYpXnWcQBsqxuaPICj.zmOXNwhnX3HMkS5Odn8LCgwFrIM99SmQJNhrl1O6vF+pLZzp",
+                    "name": "nulla",
+                    "@baseType": "culpa officia nisi voluptat",
+                    "@schemaLocation": "https://MlvqgvjllUQCoSHfDPKX.sxoa371YsyvmN0idHnkqSGU1m4Fgyi8hf9uJkUn03ubzuGkxtxQ7k9Q4fBNh11-",
+                    "@type": "exercitation Duis incididunt",
+                    "@referredType": "in do Ut"
+                }
+            ],
+            "supportingService": [
+                {
+                    "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                },
+                {
+                    "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                }
+            ],
+            "@baseType": "et eu officia",
+            "@schemaLocation": "https://pHwNgIhADUtljD.ptxRM-QU6ViGfWuEdQncM6coixLdQLiadbrjywmzT",
+            "@type": "incididunt sit",
+            "@referredType": "consequat ad ut dolore in"
+        },
+        {
+            "id": "aliquip",
+            "href": "in id magna nulla",
+            "category": "incididunt dolor",
+            "description": "aliquip est sunt magna",
+            "endDate": "1952-12-12T07:32:33.444Z",
+            "hasStarted": false,
+            "isBundle": true,
+            "isServiceEnabled": false,
+            "isStateful": true,
+            "name": "nulla nostrud aute ea",
+            "serviceDate": "ut Lorem a",
+            "serviceType": "veniam qui conseq",
+            "startDate": "2008-04-27T10:27:11.642Z",
+            "startMode": "eu Duis ad",
+            "feature": [
+                {
+                    "featureCharacteristic": [
+                        {
+                            "name": "fugiat amet occaecat sint et",
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "id": "nisi reprehenderit ex",
+                            "valueType": "laboris ea",
+                            "characteristicRelationship": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "@baseType": "velit reprehenderit ut mollit",
+                            "@schemaLocation": "https://jbGr.mzflZHVQv5tm1OwBcUgsew0uLoB8jqTMhptbO38ZO",
+                            "@type": "laboris in reprehenderit Duis"
+                        }
+                    ],
+                    "name": "ex et pariatur",
+                    "id": "do in laboris ea",
+                    "isBundle": true,
+                    "isEnabled": false,
+                    "constraint": [
+                        {
+                            "id": "est elit u",
+                            "href": "http://HjGNybihjbkByaVNEqlnm.zsmBGE6xVWssW",
+                            "name": "fugiat ex",
+                            "version": "incididunt magna consequat laboris ut",
+                            "@baseType": "laborum ut ipsum esse",
+                            "@schemaLocation": "http://ZENQYykNPZoiqjPFOSDAAnQaxkVRMt.ceylPbd1j.wuLzpGw2wqlXLfTPD.j3Oy5r.tPU.sW.MHtkeXb",
+                            "@type": "anim",
+                            "@referredType": "ut do"
+                        },
+                        {
+                            "id": "nulla reprehenderit qui in",
+                            "href": "https://qKAGlhyPUitfANxnFvCzNOLpfxDxbPExu.bboEjeK6YczWVRp1fdR.Zy5J.HE49XrVm3GjJtLYtWWJF7iKxqmkeF",
+                            "name": "esse",
+                            "version": "cillum ut culpa",
+                            "@baseType": "laborum volupt",
+                            "@schemaLocation": "https://UgTHw.zohnb1kmQbLwLqL",
+                            "@type": "tempor mollit",
+                            "@referredType": "exercitation ad"
+                        }
+                    ],
+                    "featureRelationship": [
+                        {
+                            "name": "ex in velit",
+                            "relationshipType": "eiusmod adipisicing",
+                            "id": "magna",
+                            "validFor": {
+                                "endDateTime": "1985-04-12T23:20:50.52Z",
+                                "startDateTime": "1985-04-12T23:20:50.52Z"
+                            }
+                        },
+                        {
+                            "name": "dolor quis Excepteur",
+                            "relationshipType": "consequat qui amet sint",
+                            "id": "in",
+                            "validFor": {
+                                "endDateTime": "1985-04-12T23:20:50.52Z",
+                                "startDateTime": "1985-04-12T23:20:50.52Z"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "featureCharacteristic": [
+                        {
+                            "name": "culpa officia proident non commodo",
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "id": "ullamco commodo nostru",
+                            "valueType": "veniam proident quis",
+                            "characteristicRelationship": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "@baseType": "ex",
+                            "@schemaLocation": "http://HyOptDLatYF.drYKJvdTnpPtmdHquDzzkGEJznqgbzqvbw4xoP0dyq1XLoY+PP+zu5pLPev",
+                            "@type": "non nostrud sit ven"
+                        }
+                    ],
+                    "name": "nisi mollit fugiat",
+                    "id": "aliqua sunt",
+                    "isBundle": false,
+                    "isEnabled": false,
+                    "constraint": [
+                        {
+                            "id": "consequat fugiat pariatur ad non",
+                            "href": "https://lVVSlvrYtBfChOMyqAwwliNTRnddHXy.umnxRNjPOxh+FNC1EMCCvHa8x5+.FSZDRTfYPnI66hcL7lmXmVXwCCzQaDf6Tgcw7iHVi",
+                            "name": "dolore aliqua s",
+                            "version": "anim eu",
+                            "@baseType": "mollit anim",
+                            "@schemaLocation": "https://mWtMueOVTjtjRYIOOjZNV.xiw3RXxv29HvrDf1vJMJJgxEBOeStptTelOSShlrGS3USu",
+                            "@type": "culpa pariatur veniam id",
+                            "@referredType": "Ut eu"
+                        },
+                        {
+                            "id": "sunt velit cillum qui",
+                            "href": "https://YHTwUFTLcHUBzbrgZMvmjFO.hikkiPcPdiwWD,HaUmTrExPO,-3b0F5CXZ8LObBf7sLkYfGKdVBc4Eu2Oh,3WvGJ",
+                            "name": "deserunt cillum",
+                            "version": "aute eiusmod qui culpa",
+                            "@baseType": "exercitation cillum consequat consectetur",
+                            "@schemaLocation": "http://NuRcHGQycrSyNd.suYPnsuEfGPFqUYXE+Smf5zjWBaDnHEO1k,jPupzQS+3n+Dj",
+                            "@type": "ut sed",
+                            "@referredType": "sed aliquip "
+                        }
+                    ],
+                    "featureRelationship": [
+                        {
+                            "name": "id aliqua est ea",
+                            "relationshipType": "Duis non cupidatat laborum",
+                            "id": "cupidatat quis ea deserunt",
+                            "validFor": {
+                                "endDateTime": "1985-04-12T23:20:50.52Z",
+                                "startDateTime": "1985-04-12T23:20:50.52Z"
+                            }
+                        },
+                        {
+                            "name": "proident do",
+                            "relationshipType": "commodo elit proident occaecat ut",
+                            "id": "in",
+                            "validFor": {
+                                "endDateTime": "1985-04-12T23:20:50.52Z",
+                                "startDateTime": "1985-04-12T23:20:50.52Z"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "note": [
+                {
+                    "id": "do",
+                    "href": "http://GTWpYlxBwo.wqdi1at4g6jpOvR3,.ZmvLXR.fsW5RHGNxStbG1raSjbStBl78zRos5lddZEi9B9B3FN4lqCRiweq6Oqj",
+                    "author": "exercitation reprehenderit ea nostr",
+                    "date": "2000-07-01T00:47:24.383Z",
+                    "text": "consec",
+                    "@baseType": "dolore consequat",
+                    "@schemaLocation": "https://vRCkQanKFSzeTitTzEGZ.rujMcOHrb4lnYtQfXq4YVIijqw.LvTZypkFYHTj6-LqjgXxLDZ.fzGhpzvyNr",
+                    "@type": "ipsum esse dolor qui deserunt"
+                },
+                {
+                    "id": "non labore in ex",
+                    "href": "https://WcxguDQVwJTavqJqgSvojrNelZTih.webv6En.tZnbfxKQ8Nn14hb0fY3L3LW6zrk6M4gqvMyhZglM",
+                    "author": "Excepteur",
+                    "date": "1953-03-22T17:42:15.215Z",
+                    "text": "cupidatat",
+                    "@baseType": "am",
+                    "@schemaLocation": "http://oaVylLZpllusZJbsaNKJNBRRu.vwaeYFlAlNyg",
+                    "@type": "Ut "
+                }
+            ],
+            "place": [
+                {
+                    "role": "magna non",
+                    "id": "ut in aute ut",
+                    "href": "exercitation proident",
+                    "name": "pariatur m",
+                    "@baseType": "in amet",
+                    "@schemaLocation": "http://cokDlhtHdxZrqVA.vinwl",
+                    "@type": "officia in ex adipis",
+                    "@referredType": "do ex aute"
+                },
+                {
+                    "role": "pariatur",
+                    "id": "ullamco eiusmod dolore ea",
+                    "href": "sed eiusmod consectetur anim",
+                    "name": "Duis nisi",
+                    "@baseType": "aliqua labore laboris",
+                    "@schemaLocation": "https://ycZgCGXSY.mfmuP7qEBEBGzSqzcYjlqqegQ5wp,VZsHyFGQ53MG8",
+                    "@type": "sint ex officia",
+                    "@referredType": "ipsum pariatur consectetur"
+                }
+            ],
+            "relatedEntity": [
+                {
+                    "role": "dolore proident pariatur ullamco",
+                    "id": "ad commodo tempor magna",
+                    "href": "pariatur exercitation aute quis deserunt",
+                    "name": "adipisicing reprehenderit laboris",
+                    "@baseType": "do mollit aliqua culpa",
+                    "@schemaLocation": "http://oPaYoTfPnFtcFJMSJgls.mupux+agZBhHBrUjLXTTU.wFIvbbcWc5aX12WV8QF.i3V+trA6Dw",
+                    "@type": "exercitation consectetur",
+                    "@referredType": "nisi"
+                },
+                {
+                    "role": "dolor nulla do",
+                    "id": "incididunt magna ut",
+                    "href": "incididunt",
+                    "name": "laboris eiusmod ",
+                    "@baseType": "eiusmod velit ullamco Ut",
+                    "@schemaLocation": "http://UbWMClnwobYPsRrESQmpHzskVkysAXQww.uivAX5xNmgYH5dGkNMsM0JqMU3qCOdj0gPY2wjP,mWyBJlyVbeA",
+                    "@type": "reprehende",
+                    "@referredType": "voluptate commodo incid"
+                }
+            ],
+            "relatedParty": [
+                {
+                    "@referredType": "aliquip anim ipsum",
+                    "id": "quis",
+                    "href": "http://UMfxDAJgR.ltayOldmCjOSUMwUIyhpriwVmgiVg",
+                    "name": "voluptate dolore ex ut",
+                    "role": "magna ex nostrud qui ea",
+                    "@baseType": "ut m",
+                    "@schemaLocation": "http://AVnkbkMNAzMDSplqGtOgUdywnLJ.lxnxL-69",
+                    "@type": "ut cupidatat"
+                },
+                {
+                    "@referredType": "quis",
+                    "id": "consequat",
+                    "href": "http://BgLOneBI.vhTmKPdfUqzKS-3LALg1gSxYZ6",
+                    "name": "in",
+                    "role": "consequat cupidatat minim",
+                    "@baseType": "ullamco",
+                    "@schemaLocation": "https://qFBfDRlWtEMRDTMElpRRPZ.xdhRKjgSajxNK1AKUYn.",
+                    "@type": "ea"
+                }
+            ],
+            "serviceCharacteristic": [
+                {
+                    "name": "sed officia sit sunt",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "mollit et",
+                    "valueType": "cillum minim",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "tempor Ut consectetur",
+                    "@schemaLocation": "https://nwHjnxPwDMoNmgmHCnxooMWmh.bmIa-SkSgc1-1KYI0,BIav",
+                    "@type": "aute do"
+                },
+                {
+                    "name": "minim dolor aute sunt",
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "id": "veniam exercitation dolor",
+                    "valueType": "labore dolor",
+                    "characteristicRelationship": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "@baseType": "anim",
+                    "@schemaLocation": "http://wHbzyucYKbMnMeGMwNuHMSIlEQve.euFWQYdPmzGPxsOtGCo34Io1FB,PdRs6",
+                    "@type": "magna qui cupidatat quis"
+                }
+            ],
+            "serviceOrderItem": [
+                {
+                    "id": "anim in e",
+                    "href": "https://ILwQWZgc.dcgrhfc,R,rtfydXYwCTW55Nfc33zhv9hj",
+                    "itemId": "in fugia",
+                    "role": "qui Lorem consequat in",
+                    "serviceOrderHref": "irure Ut sed Excepteur",
+                    "serviceOrderId": "exercitation fugiat occaecat",
+                    "itemAction": "delete",
+                    "@baseType": "cupidatat proident irure",
+                    "@schemaLocation": "https://nldKJUNT.iny7U3WjpvT3LdVjEHCISTbzVzPVoeSDv3rXsUTm0AqXTSaAUiFUcji",
+                    "@type": "nulla dolore",
+                    "@referredType": "elit deserunt"
+                },
+                {
+                    "id": "Duis ",
+                    "href": "http://Hvob.efqzFlRjwwMY8MiH7KV",
+                    "itemId": "laboris officia ad",
+                    "role": "sint qui voluptate",
+                    "serviceOrderHref": "est",
+                    "serviceOrderId": "do labore",
+                    "itemAction": "add",
+                    "@baseType": "dolore Duis",
+                    "@schemaLocation": "http://uukMcJtmBQCHpxycf.gixXsMCdFi",
+                    "@type": "magna in id consequat",
+                    "@referredType": "deserunt pariatur"
+                }
+            ],
+            "serviceRelationship": [
+                {
+                    "value": "<Circular reference to #/components/schemas/ServiceRelationship detected>"
+                },
+                {
+                    "value": "<Circular reference to #/components/schemas/ServiceRelationship detected>"
+                }
+            ],
+            "serviceSpecification": {
+                "id": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "name": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "version": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@baseType": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@schemaLocation": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@type": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "@referredType": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "state": "designed",
+            "supportingResource": [
+                {
+                    "id": "proident fugiat Duis",
+                    "href": "https://tFDL.fvztuC1qQpR9",
+                    "name": "fugiat occaecat tempor amet",
+                    "@baseType": "in consectetur nostrud aute",
+                    "@schemaLocation": "http://R.scW+d+cLnrIKs147hoetSocbl-oTZZxED37ahyhGGeJb.xODzpTzUGSvWICcsvmXp",
+                    "@type": "veniam amet",
+                    "@referredType": "Lorem qui exercitation commodo ea"
+                },
+                {
+                    "id": "sint id",
+                    "href": "https://kAARoeUHdveM.lmS2jjLjoeAKf5fsTu5SNUGpiUEJ,u8WpYAZJY1",
+                    "name": "culpa adipisicing officia dolor",
+                    "@baseType": "voluptate commodo sunt et",
+                    "@schemaLocation": "https://rEf.ohiFntPAGcUH-JjPsfKuEXp6unFTKc2QaoHxrNpMUcQLguAiBRRU84jDupKrNhq",
+                    "@type": "deserunt",
+                    "@referredType": "ipsum adipisicing"
+                }
+            ],
+            "supportingService": [
+                {
+                    "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                },
+                {
+                    "value": "<Circular reference to #/components/schemas/ServiceRefOrValue detected>"
+                }
+            ],
+            "@baseType": "nulla officia magna non",
+            "@schemaLocation": "https://hpDqnlgazfQylUyPVcztlueSbCs.iolh+33CJfnvpwBSwxWk7xCxm3elA0Up9piR.NiBZjH7a2DXIQJRJ2XOv5XIbiu5cg9uEm",
+            "@type": "eu sunt",
+            "@referredType": "nostrud in tempor irure"
+        }
+    ],
+    "trainingData": {
+        "id": "in reprehenderit veniam",
+        "href": "http://vOapPxllfcNTxcCclImDsaAUqLxlnprw.iqwlPe2iIAwYhzgyJopvRxDdlQTJyJIDJ5ab8F5gB00Fpmd-y82tkmokkHJj0jYh7xer.ggDyb8",
+        "name": "tempor nulla anim",
+        "@baseType": "elit laborum quis officia",
+        "@schemaLocation": "http://IgnyaBBvDvFHlB.bjipoFl2,z5GcVIRpwMlA8lvxLgtZ,,7yG",
+        "@type": "mollit incididunt pariatur in",
+        "@referredType": "enim labore non esse"
+    },
+    "@baseType": "enim in",
+    "@schemaLocation": "http://NUMmHyBcvtGqqjKHhgzUaQnEJIuvMZ.tmrsJxsl8YGuf.cweqysCKY",
+    "@type": "nulla aliqua"
+})
+
+
+// This operation deletes a AiModel entity.
+
+@name("Deletes a AiModel")
+DELETE "https://{{baseUrl}}/aiModel/:id"
+
+
+

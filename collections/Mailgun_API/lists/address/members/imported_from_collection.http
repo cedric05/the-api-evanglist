@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f95c71f8-440c-4354-8978-2a8659a376a0.postman_collection.json
+
+// Adds a member to the mailing list.
+
+@name("Add To List")
+GET "https://{{baseUrl}}/lists/:address/members"
+? "address"= "<>"
+? "name"= "<>"
+? "subscribed"= "<>"
+? "upsert"= "<>"
+? "vars"= "<>"
+
+
+// Fetches the list of mailing list members.
+
+@name("List Members")
+GET "https://{{baseUrl}}/lists/:address/members/"
+? "limit"= "<>"
+? "skip"= "<>"
+? "subscribed"= "<>"
+
+
+// Retrieves a mailing list member.
+
+@name("List Member")
+GET "https://{{baseUrl}}/lists/:address/members/:member_address"
+? "address"= "<>"
+? "member_address"= "<>"
+
+
+

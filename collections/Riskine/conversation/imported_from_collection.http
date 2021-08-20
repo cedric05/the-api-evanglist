@@ -1,0 +1,132 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Service to dynamically supply the content of a customer journey / dynamic question or decision tree. This service delivers a list of all parameters (and therefore next questions to be asked) in a schematic/descriptive way as well as meta-information like ordering. With each user interaction, the list is adapted and grows as the end-user is guided through a smart process that is supposed to extract information in an optimal way.  
+// 
+// Features are  
+// 
+//  * Flavoring of question text as a result of interaction: e.g. Do you have to ask the user politely or in a humorous way to best get your result?  
+// 
+//  * Integration of rules (e.g. tariff recommendation rules for persons of different age)  
+// 
+//  * Webhooks to use other services for rules or displaying information  
+// 
+// This service is intended to be the main access point for all of the dynamic front end applications using the riskine API. The resource structure supports integration with different front-ends, e.g. sequential questionnaires, forms, chatbot views and voice.  
+// 
+// Customization for institutional clients includes predefining the questions as well as adapting the definition format to the specific product needs. In the following, you'll find a description of the resource tags respectively the features of the API. Below, you'll find an example interaction flow.  
+// 
+// The service needs one additional input from the client:  
+// 
+// | <div style=width:100px> __tag__ </div> | <div style=width:700px> __Description__ </div> |
+// | --- | --- |
+// | `path` | Workflow id. E.g. `main` for the entry path/initial D&N analysis (Bedarfsanalyse). All other paths, a list of all paths will be provided for each client separately, work the same way. |  
+// 
+// The response can contain the following tags. Note that the service omits redundant tags (`null`, `false`, `[]`) in the response to reduce load:  
+// 
+// | <div style=width:140px> __tag__ </div> | <div style=width:700px> __Description__ </div> |
+// | --- | --- |
+// | `params` | Parameter list to include all parameters to be collected from the user. |
+// | `type` | Rendering type of the control in the front-end. `radio` are radiobuttons, `multi` are multiselect buttons, `ddown` are dropdowns, `date` are date fields, ` text` are freeform inputs, `inline-text` are readonly-texts, `hidden` are hidden forms and finally `group` are grouped controls which recursively contain a `params` tag. |
+// | `validate` | A [JSON Schema v7](http://json-schema.org) to schematize the expected user answer. This always concurs with the schema of the fields in the general __riskine API__ resource |
+// | `label` | Textlabel to display as question text. Contains `raw` for raw text and, if needed `md` for markdown-formatted text. Also contains `gluemiddle` and `gluelast` for mapping the user's answer to a fully conversational answer. See section on [Chatbot view](#chatbot) below |
+// | `required` | Boolean describing whether the answer is required from the user or no |
+// | `pos` | Position in the Parameter list |
+// | `schemanode` | If `true`, the list needs to be regenerated after the client has a valid answer from the user. It means that there is more than one branch in the model and the correct path is decided after this question. A new request has to be done. Only needed for sequential questionnaire |
+// | `dependencynode` | If `true`, the list needs to be regenerated after the client has a valid answer from the user. It means that there is more than one branch in the model and the correct path is decided based upon this question. Only needed when the questionnaire is shown in form-style (all questions at once) |
+// | `showonce` | If `true`, show this question only if the client does not yet have a valid answer from the user. This serves to minimize questions by not showing questions often asked in various different paths. Although the questions were not asked again the will remain, and not crossed out, in the path filled up already. |
+// | `reset` | Array of parameters to be reset (deleted) after the client got a valid answer to this question. Empty in most cases. |
+// | `dependencies` | Array of parameters. Show the question tagged with `dependency` only when there is a valid answers from the user to all dependencies, otherwise hide it |
+// | `booldependencies` | Array of other questions. The tagged question should only be shown when all questions in the array are answered with a `1` |
+// | `placeholder` | Text to be shown as a normal placeholder in freeform questions |
+// | `override` | Text to be shown as a normal placeholder in freeform questions |
+// | `options` | Will be given for `radio`, `multi`, and `ddown` questions. Contains the possible options complete with a `label`, `longlabel` (see [Chatbot view](#chatbot) for more), `value` (which is the value the __riskine API__ expects back), `exclusive` and an `alwaysselected` tag. The `exclusive` tag will always be `true` for `radio` questions, but can vary for `multi` questions |
+// | `exclusive` | Always `true` for `radio` options. For `multi` options, can be either `true` (deselect all other options), `<identifier>` (deselect all other options with the same identifier) or `false` (don't deselect any other options) |
+// | `alwaysselected` | Tag for options. If `true`, the option should always be selected and the user should be unable to deselect the option |
+// | `infotext` | Contains a textlabel for either smallprint under the question title or tooltip text etc. |
+// | `fieldwrap` | Contains a textlabel to wrap around the question field where a `$` delimits the field position in the text |
+// | `suggest` | a value to be prefilled in case there is no answer from the user yet. Always a valid JSON according to the `validate` schema of the question |
+// | `format` | Contains format instructions. E.g. `money` for integers that need to be displayed in currency style |
+// | `autofill` | Servicehook for asking into a domain. This tag is a JSON containing a micro service description to get the needed suggestions from the __riskine API__ |
+// | `fillother` | Servicehook for filling other fields with calculation results. This tag is a JSON containing a micro service description to get the needed suggestions from the __riskine API__ |  
+// 
+//  ### Chatbot view  
+// 
+// To support chatbot-like front-ends we include additional textlabels that serve to mimic conversation flow, e.g. when asked the gender, user picks `male` yet the chatbot view prints out `I am male`. This textcontent also varies based on rules and different user inputs. The functionality is achieved by tagging questions and options with `longlabels` as described in the following table:  
+// 
+// | <div style=width:100px> __tag__ </div> | <div style=width:200px> __Description__ </div> | <div style=width:400px> __example__ </div> |
+// | --- | --- | --- |
+// | `longlabel` inside textlabel of freeform question | Should be filled in with the user's answer at the `$` | `I was born on the $` -> `I was born on the 22.10.1989` |
+// | `longlabel` inside radio option | Complete answer - can simply be printed out | `label`: `yes`, `longlabel`: `Yes please, I need additional coverage for my second motorcycle` |
+// | `longlabel` inside multi option | To be used with the `gluemiddle` and `gluelast` parameters given at question level. The long answer needs to be built like _first answer_ + `gluemiddle` + _second answer_ + `gluemiddle` + ... + `gluelast` + _last answer_ | first answer `longlabel`: `My partner`, second answer `longlabel`: `3 kids`, Third answer `longlabel`: `other persons`, `gluemiddle`: ``, ``, `gluelast`: `and` -> `My partner, 3 kids and other persons` |
+// | `gluemiddle` inside multi question textlabel | See above | first answer `longlabel`: `My partner`, second answer `longlabel`: `3 kids`, Third answer `longlabel`: `other persons`, `gluemiddle`: ``, ``, `gluelast`: `and` -> `My partner, 3 kids and other persons` |
+// | `gluelast` inside multi question textlabel | See above | first answer `longlabel`: `My partner`, second answer `longlabel`: `3 kids`, Third answer `longlabel`: `other persons`, `gluemiddle`: ``, ``, `gluelast`: `and` -> `My partner, 3 kids and other persons` |
+
+@name("Questions") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversation/questions"
+"Content-Type": "application/json"
+json({
+    "path": "main"
+})
+
+
+// After finishing a specific path of a product, results will be shown as a summary of the previous questions. This summary includes all relevant information concerning the personal data, wishes and needs of the customer. /pathresults contains exactly one `category` which is hierarchically divided as follows  
+// 
+// A category contains the following fields  
+// 
+// | <div style=width:120px> __type__ </div> | <div style=width:400px> __description__ </div> | <div style=width:150px> __example__ </div> |
+// | --- | --- | --- |
+// | `name` | name of the category | `Life and Living` |
+// | `id` | ID of the category | `lifeliving` |
+// | `productgroup` | a productgroup contains reasons and optional modules | `` |  
+// 
+// A productgroup contains the following fields  
+// 
+// | <div style=width:120px> __type__ </div> | <div style=width:250px> __description__ </div> | <div style=width:300px> __example__ </div> |
+// | --- | --- | --- |
+// | `name` | name of the product | `Livestock/pet owner liability` |
+// | `id` | ID of the propduct group | `tier` |
+// | `products` | products of the insurance | `` |  
+// 
+// A product contains the following fields  
+// 
+// | <div style=width:120px> __type__ </div> | <div style=width:250px> __description__ </div> | <div style=width:300px> __example__ </div> |
+// | --- | --- | --- |
+// | `name` | name of the product | `Animal insurance` |
+// | `id` | ID of the module | `tierstd` |
+// | `reasons` | list of all reasons of the product | `Covers any damages caused by your cat(s).` |
+// | `modules` | a specification of one product. Modules usually contain different components. | `` |  
+// 
+// A module contains the following fields  
+// 
+// | <div style=width:120px> __type__ </div> | <div style=width:250px> __description__ </div> | <div style=width:300px> __example__ </div> |
+// | --- | --- | --- |
+// | `name` | name of the module | `Dog Liability Insurance` |
+// | `id` | ID of the module | `hund`` |
+// | `parameter` | contains the parsed label | `Date of birth dog: 01.01.2010` |
+
+@name("Results") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversation/results"
+"Content-Type": "application/json"
+json({
+    "country": "ch",
+    "path": "animal-liability",
+    "object.animal[0].type.radio": 1,
+    "object.animal.dog[0].birthdate": "2010-01-01",
+    "object.animal[0].looper": 1,
+    "object.animal[1].type.radio": 2,
+    "object.animal.cat[1].birthdate": "2012-04-02",
+    "object.animal[1].looper": 2,
+    "recommendation.animal-liability.startdate": "2018-01-01",
+    "recommendation.animal-liability.comments": "Insurance for cat need to be for 3 cats."
+})
+
+
+

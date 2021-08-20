@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method removed multiple videos from the specified project.
+
+@name("Remove a list of videos from a project")
+DELETE "https://{{baseUrl}}/me/projects/:project_id/videos"
+? "should_delete_clips"= "<string>"
+? "uris"= "<string>"
+
+
+// This method removes a single video from the specified project.
+
+@name("Remove a specific video from a project")
+DELETE "https://{{baseUrl}}/me/projects/:project_id/videos/:video_id"
+
+
+

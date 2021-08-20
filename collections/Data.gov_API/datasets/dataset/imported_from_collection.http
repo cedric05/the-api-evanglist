@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// Delete a dataset given its identifier
+
+@name("Delete Datasets Dataset")
+DELETE "https://{{baseUrl}}/datasets/:dataset/"
+
+
+// Unmark the dataset as featured
+
+@name("Delete Datasets Dataset Featured")
+DELETE "https://{{baseUrl}}/datasets/:dataset/featured/"
+
+
+// Get a dataset given its identifier
+
+@name("Get Datasets Dataset Full")
+GET "https://{{baseUrl}}/datasets/:dataset/full/"
+
+
+

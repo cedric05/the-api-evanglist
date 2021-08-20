@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b3a2d760-0850-44a8-a054-b81d03f9fcb6.postman_collection.json
+
+// Request a time entry configuration
+
+@name("Time Entry Configuration")
+GET "https://{{baseUrl}}/time/v1/workers/:aoid/time-entry-details"
+? "fields"= "<string>"
+? "No Name"= "<string>"
+
+
+// Time Entry Read
+
+@name("Time Entry Read")
+GET "https://{{baseUrl}}/time/v1/workers/:aoid/time-entries/:time-entry-id"
+? "No Name"= "<string>"
+
+
+

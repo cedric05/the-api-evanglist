@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cdb56144-caaa-4d88-bf69-74da565813ea.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. Use the [GET /container-security/api/v2/images/{repository}/{image}/{tag}](ref:container-security-v2-get-image-report) endpoint instead.
+// Returns a report in JSON format for a container that you specify by ID. Note: If you do not have the container_id, you can call the list-containers endpoint.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get container report") : "base-inherit-auth"
+GET "https://{{baseUrl}}/container-security/api/v1/reports/show"
+? "container_id"= "18528013"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. Use the [GET /container-security/api/v2/images/{repository}/{image}/{tag}](ref:container-security-v2-get-image-report) endpoint instead.
+// Returns a report in JSON format for an image that you specify by ID. Note: If you do not have the image_id, you can call the list-images endpoint.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get image report") : "base-inherit-auth"
+GET "https://{{baseUrl}}/container-security/api/v1/reports/by_image"
+? "image_id"= "Lorem id ipsum amet in"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. Use the [GET /container-security/api/v2/images/{repository}/{image}/{tag}](ref:container-security-v2-get-image-report) endpoint instead.
+// Returns a report in JSON format for an image digest.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get image digest report") : "base-inherit-auth"
+GET "https://{{baseUrl}}/container-security/api/v1/reports/by_image_digest"
+? "image_digest"= "Lorem id ipsum amet in"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. Use the [GET /container-security/api/v2/images/{repository}/{image}/{tag}](ref:container-security-v2-get-image-report) endpoint instead.
+// Returns a Nessus report for a container that you specify by ID. Note: If you do not have the container_id, you can call the list-containers endpoint.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get Nessus report for container") : "base-inherit-auth"
+GET "https://{{baseUrl}}/container-security/api/v1/reports/nessus/show"
+? "id"= "18528013"
+
+
+

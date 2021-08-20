@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d7983dde-939d-40dc-b6dd-dc594d2c6781.postman_collection.json
+
+// Remove the dataset under the given ID.
+
+@name("/datasets/:id")
+DELETE "https://{{baseUrl}}/datasets/:id"
+"If-Match": '"!\K"'
+
+
+// Get the dataset identified by id.
+
+@name("/datasets/:id")
+GET "https://{{baseUrl}}/datasets/:id"
+"If-None-Match": "dolor enim pariatur laborum"
+
+
+// Upload a dataset under the given ID.
+
+@name("/datasets/:id")
+PUT "https://{{baseUrl}}/datasets/:id"
+"If-Match": '"!\K"'
+"If-None-Match": "*"
+"Content-Type": "application/json"
+json({
+    "dct:title": "}H }H",
+    "dct:description": "est ut quis esse dolore",
+    "ams:status": "gepland",
+    "dcat:distribution": [],
+    "overheidds:doel": "qui laborum in irure ad",
+    "ams:temporalUnit": "na",
+    "dct:language": "lang1:nl",
+    "ams:owner": "]O||V\\",
+    "dcat:contactPoint": {
+        "vcard:fn": "xb'Qbfe]m![YzctFW/n",
+        "vcard:hasEmail": "Aj3dr9I0pziV@SnGmABfaFudbTgTbrcua.dizu",
+        "vcard:hasURL": "http://ChvAwWUlNGgfWXbsSeevKRcL.dhnvbYdI2CxnQT0,bFUSygrdWmaJV03mcv9j"
+    },
+    "dct:publisher": {
+        "foaf:name": "H H H H",
+        "foaf:homepage": "http://UhzxtUjdKt.sugttW0",
+        "foaf:mbox": "WKoe6LV@EFJxWbggzzPWmVoKngf.cuzu"
+    },
+    "dcat:theme": [],
+    "dcat:keyword": [],
+    "ams:license": "unspec",
+    "ams:spatialDescription": "YP|zyo",
+    "ams:spatialUnit": "na",
+    "dcat:landingPage": "http://VtjcxjvZkNlCGhoBICej.tywlNxJQtQ48ZkDnwrz3lst7MUvxtgFyM9HIjNukmAJuL56APjQr",
+    "dct:accrualPeriodicity": "unknown",
+    "dct:source": "http://uHjZFeHOtcYQnDsKgUzkDqMxEUOdePN.gySL3rn-nfW7FcyS+guj8Hhg2i2UFz9JBi+1TrnbzGNCFZyFXw",
+    "dct:spatial": "Z%%ROI40zy#20FK})",
+    "dct:temporal": {
+        "time:hasBeginning": "0631-12-21T08:11:02",
+        "time:hasEnd": "4343-06-07T03:57:08Z"
+    },
+    "overheid:grondslag": "reprehenderit"
+})
+
+
+

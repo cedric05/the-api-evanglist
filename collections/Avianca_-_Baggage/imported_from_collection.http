@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fccf0d62-358f-4617-9c73-015db236c860.postman_collection.json
+
+@name("consultarDetalleDPR_AHL")
+POST "https://{{baseUrl}}/consultarDetalleDPR_AHL"
+"Ocp-Apim-Subscription-Key": "123456abc"
+"SOrigenCliente": "h"
+"Scanal": "w"
+"SUsuario": "w"
+"token_type": "Bearer"
+"Authorization": "tokenprod"
+"Ocp-Apim-Trace": "true"
+"Content-Type": "application/json"
+json({
+    "uniqueIdBHS": "1381733"
+})
+
+
+

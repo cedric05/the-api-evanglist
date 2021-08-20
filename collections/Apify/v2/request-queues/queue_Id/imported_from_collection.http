@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Returns queue object for given queue ID.
+
+@name("Get request queue")
+GET "https://{{baseUrl}}/v2/request-queues/:queueId"
+? "token"= "<string>"
+
+
+// Returns given number of first requests from the queue.nnThe response contains the `hadMultipleClients` boolean field which indicates that the queue was accessed by more than one client (with unique or empty `clientKey`).nThis field is used by [Apify SDK](https://sdk.apify.com) to determine whether the local cache is consistent with the request queue, and thus optimize performance of certain operations.
+
+@name("Get head")
+GET "https://{{baseUrl}}/v2/request-queues/:queueId/head"
+? "limit"= "<number>"
+? "token"= "<string>"
+? "clientKey"= "<string>"
+
+
+

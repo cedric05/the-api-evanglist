@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-96f7548c-485b-4677-99ba-2d47911de0c8.postman_collection.json
+
+// Historical OHLC data for the specified period and interval size
+// 
+// The combination of the interval parameter and start and end dates can result in results
+// being truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.
+
+@name("Get historical prices for requested currency pairs")
+GET "https://{{baseUrl}}/api/v{{version}}/Currencies/history"
+? "token"= "<>"
+? "pairs"= "<>"
+? "start"= "<get>"
+? "end"= "<get>"
+? "interval"= "<object>"
+? "format"= "<>"
+
+
+// Only the currency pairs in the direction noted can be used with the history endpoint.
+// For example: USD/CAD is not the same as CAD/USD
+
+@name("Get list of currency pairs supported by the history endpoint")
+GET "https://{{baseUrl}}/api/v{{version}}/Currencies/history/supported"
+? "token"= "<>"
+? "format"= "<>"
+
+
+

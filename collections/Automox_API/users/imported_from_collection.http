@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-572303ba-d57b-42f8-9c05-98fcc3c05154.postman_collection.json
+
+// Gets all `User` objects for the authenticated user.n
+
+@name("Get Users")
+GET "https://{{baseUrl}}/users"
+? "o"= "<>"
+
+
+// Gets all commands executed for specified user idn
+
+@name("Get Users Queues")
+GET "https://{{baseUrl}}/users/:id/queues"
+
+
+

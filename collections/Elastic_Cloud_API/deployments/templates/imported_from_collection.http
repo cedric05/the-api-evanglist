@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieves all deployment templates.
+
+@name("Get deployment templates") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/templates"
+? "metadata"= "minim voluptate"
+? "stack_version"= "minim voluptate"
+? "region"= "minim voluptate"
+
+
+// Retrieves a deployment template by id.
+
+@name("Get deployment template") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/templates/:template_id"
+? "stack_version"= "minim voluptate"
+? "region"= "minim voluptate"
+
+
+

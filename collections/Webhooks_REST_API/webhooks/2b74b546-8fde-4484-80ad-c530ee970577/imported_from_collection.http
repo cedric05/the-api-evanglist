@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bf74026e-fdcf-4044-965e-7c82870aadc8.postman_collection.json
+
+@name("Get a Webhook")
+GET "https://{{baseUrl}}/webhooks/2b74b546-8fde-4484-80ad-c530ee970577"
+
+
+@name("Send a Test Notification")
+POST "https://{{baseUrl}}/webhooks/2b74b546-8fde-4484-80ad-c530ee970577/pings"
+
+
+

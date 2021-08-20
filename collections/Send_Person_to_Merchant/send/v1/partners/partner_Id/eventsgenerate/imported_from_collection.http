@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e760486c-f487-465f-b743-146cfe5b92a4.postman_collection.json
+
+// Client can simulate a Mastercard Merchant Presented QR Payment notification to the registered URL endpoint. 
+
+@name("Client can simulate a Mastercard Merchant Presented QR Payment notification to the registered URL endpoint. ")
+POST "https://{{baseUrl}}/send/v1/partners/:partnerId/events/generate/payment"
+"Content-Type": "application/xml"
+data('"<element>\n <notification_request>\n  <additional_message>(string)</additional_message>\n  <mastercard_assigned_id>(string)</mastercard_assigned_id>\n  <merchant_category_code>(string)</merchant_category_code>\n  <payment_facilitator_id>(string)</payment_facilitator_id>\n  <payment_type>(string)</payment_type>\n  <recipient>\n   <address>(string)</address>\n   <name_on_account>(string)</name_on_account>\n</recipient>\n  <recipient_account_uri>(string)</recipient_account_uri>\n  <transaction_amount>\n   <currency>(string)</currency>\n   <value>(string)</value>\n</transaction_amount>\n  <transfer_status>(string)</transfer_status>\n</notification_request>\n</element>"')
+
+
+// Client can simulate a Mastercard Merchant Presented QR Refund notification to the registered URL endpoint. 
+
+@name("Client can simulate a Mastercard Merchant Presented QR Refund notification to the registered URL endpoint. ")
+POST "https://{{baseUrl}}/send/v1/partners/:partnerId/events/generate/refund"
+"Content-Type": "application/xml"
+data('"<element>\n <notification_request>\n  <additional_message>(string)</additional_message>\n  <mastercard_assigned_id>(string)</mastercard_assigned_id>\n  <merchant_category_code>(string)</merchant_category_code>\n  <payment_facilitator_id>(string)</payment_facilitator_id>\n  <payment_type>(string)</payment_type>\n  <recipient>\n   <address>(string)</address>\n   <name_on_account>(string)</name_on_account>\n</recipient>\n  <recipient_account_uri>(string)</recipient_account_uri>\n  <transaction_amount>\n   <currency>(string)</currency>\n   <value>(string)</value>\n</transaction_amount>\n  <transfer_status>(string)</transfer_status>\n</notification_request>\n</element>"')
+
+
+

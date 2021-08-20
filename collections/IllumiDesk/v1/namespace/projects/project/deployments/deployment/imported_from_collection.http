@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete a deployment") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/:namespace/projects/:project/deployments/:deployment/"
+
+
+@name("Retrieve a deployment") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/:project/deployments/:deployment/"
+
+
+@name("Update a deployment") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/:namespace/projects/:project/deployments/:deployment/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "config": {
+        "files": [
+            "<string>",
+            "<string>"
+        ],
+        "handler": "<string>"
+    },
+    "runtime": "<string>",
+    "framework": "<string>"
+})
+
+
+@name("Replace a deployment") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/:namespace/projects/:project/deployments/:deployment/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "config": {
+        "files": [
+            "<string>",
+            "<string>"
+        ],
+        "handler": "<string>"
+    },
+    "runtime": "<string>",
+    "framework": "<string>"
+})
+
+
+@name("Deploy an existing model") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/projects/:project/deployments/:deployment/deploy/"
+
+
+

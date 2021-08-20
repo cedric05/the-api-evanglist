@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// This method returns the appointments that match ALL criteria in the request object (i.e. performs an `AND` versus an `OR`).  If none of the properties are sent in the request object, the method will return no data.  Note that `startDate` and `endDate` must be used in tandem to return all appointments within the specified date range.  Using `createdAfter` and `updatedAfter` will filter the resultset to only include appointments that have been updated or created since the given timestamp. Note tha
+
+@name("GetAppointments")
+POST "https://{{baseUrl}}/MultipleResourceAppointments/GetAppointments"
+
+
+// Cancels the specified appointment. Once canceled, the appointment will be removed from the appointment grid, but the record will still be available in the customers appointment history, showing a canceled status.  Unlike the other MultipleResourceAppointment method, this does not require a MultipleResourceAppointment object in the request. However, a successful response will always include the MultipleResourceAppointment object.
+
+@name("CancelAppointments")
+POST "https://{{baseUrl}}/MultipleResourceAppointments/CancelAppointments"
+
+
+// Updates details of an appointment.  You must send the enitre #model:muq7DrRhLsaFufwuX object in the request. The data sent in the request object will overwrite the existing appointment data.  To add additional `appointmentService`, `appointmentServiceEmployee`,  `appointmentServiceRoom`, or `appointmentServiceAddon` objects, you must pass the appropriate objects in the request with an `id` value of `NULL`.  To remove `appointmentService`, `appointmentServiceEmployee`,  `appointmentServiceRoom`, 
+
+@name("UpdateAppointments")
+POST "https://{{baseUrl}}/MultipleResourceAppointments/UpdateAppointments"
+
+
+// Returns all available time slots between the `startTimestamp` and `endTimestamp`. Additionally, you can further limit the resultset using the `maxNumberOfSlots` variable, to only return that number of time slots.  By default, the method will return u201cduplicateu201d time slots, if the request data results in more than one option for the same time slots. For example, both Employee 1 and Employee 2 are available to perform Service 1 at 8:00am and Service 2 at 9:00am, you will receive two objects rep
+
+@name("GetOpenSlots")
+POST "https://{{baseUrl}}/MultipleResourceAppointments/GetOpenSlots"
+
+
+// Creates a new appointment.  The startTimestamp and endTimestamp fields should be sent in ISO 8601 format as GMT, or should include the time zone offset information.  If the appointment does not fit into the selected schedule (based on date/time, location, employee, room, or service) the method will throw an error. You can bypass these availability checks and force the appointment to be booked by providing the `override=true` parameter.  When providing ACES vehicle fields, the year, make, and mod
+
+@name("CreateAppointments")
+POST "https://{{baseUrl}}/MultipleResourceAppointments/CreateAppointments"
+
+
+

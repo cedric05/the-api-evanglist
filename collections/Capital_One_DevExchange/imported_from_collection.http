@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1eafd448-a35c-467b-bb97-09ace45ef013.postman_collection.json
+
+// Returns the bill with the specific id
+
+@name("Get bill by id")
+GET "https://{{baseUrl}}/bills/:billId"
+
+
+// This endpoint deletes any data associated with your API key and of the type passed in as query parameters.  If you do not specify any type to delete, no data will be deleted.
+
+@name("Delete data associated with your API key.")
+DELETE "https://{{baseUrl}}/data"
+? "type"= "<delete>"
+
+
+// Returns the deposit with the specific id
+
+@name("Get deposit by id")
+GET "https://{{baseUrl}}/deposits/:id"
+
+
+// Returns the loan with the specific id
+
+@name("Get loan by id")
+GET "https://{{baseUrl}}/loans/:id"
+
+
+// Returns the purchase with the specific id
+
+@name("Get purchase by id")
+GET "https://{{baseUrl}}/purchases/:id"
+
+
+// Returns the transfer with the specific id
+
+@name("Get transfer by id")
+GET "https://{{baseUrl}}/transfers/:transferId"
+
+
+// Returns the withdrawal with the specific id
+
+@name("Get withdrawal by id")
+GET "https://{{baseUrl}}/withdrawals/:id"
+
+
+

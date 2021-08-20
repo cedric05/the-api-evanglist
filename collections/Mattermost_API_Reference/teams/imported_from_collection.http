@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Create a new team on the system.n##### PermissionsnMust be authenticated and have the `create_team` permission.n
+
+@name("Create a team")
+POST "https://{{baseUrl}}/teams"
+
+
+// Search teams based on search term provided in the request body.n##### PermissionsnLogged in user only shows open teamsnLogged in user with manage_system permission shows all teamsn
+
+@name("Search teams")
+POST "https://{{baseUrl}}/teams/search"
+
+
+// Using either an invite id or hash/data pair from an email invite link, add a user to a team.n##### PermissionsnMust be authenticated.n
+
+@name("Add user to team from invite")
+POST "https://{{baseUrl}}/teams/members/invite"
+? "hash"= "<>"
+? "data"= "<post>"
+? "invite_id"= "<post>"
+
+
+// Get the `name`, `display_name`, `description` and `id` for a team from the invite id.nn__Minimum server version__: 4.0nn##### PermissionsnNo authentication required.n
+
+@name("Get invite info for a team")
+GET "https://{{baseUrl}}/teams/invite/:invite_id"
+
+
+

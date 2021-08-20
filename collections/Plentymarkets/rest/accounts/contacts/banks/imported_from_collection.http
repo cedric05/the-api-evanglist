@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Create a bank account.
+
+@name("Create a bank account")
+POST "https://{{baseUrl}}/rest/accounts/contacts/banks"
+
+
+// Deletes a bank account. The ID of the bank account must be specified.
+
+@name("Delete a bank account")
+DELETE "https://{{baseUrl}}/rest/accounts/contacts/banks/:contactBankId"
+
+
+

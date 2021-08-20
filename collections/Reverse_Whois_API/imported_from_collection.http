@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4ffb78ca-7511-4202-af15-1d4438d8eca9.postman_collection.json
+
+// Provides a list of domain names with Whois records that match a specific query
+
+@name("Reverse Whois")
+GET "https://{{baseUrl}}/reverse-whois/"
+? "terms"= "<string>"
+? "exclude"= "<string>"
+? "scope"= "<string>"
+? "mode"= "<string>"
+
+
+

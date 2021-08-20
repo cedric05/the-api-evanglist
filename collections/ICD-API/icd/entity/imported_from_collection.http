@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b71fd21b-bfe2-48a4-b72e-2e45c80f54e3.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("This endpoint returns basic information on the latest release of the ICD-11 Foundation together with the top level Foundation entities.") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/entity"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+? "releaseId"= "ut amet aliquip nostrud"
+
+
+@name("This endpoint provides you information on a specific ICD-11 foundation entity") : "base-inherit-auth"
+GET "https://{{baseUrl}}/icd/entity/:id"
+"API-Version": "Duis"
+"Accept-Language": "Duis"
+? "releaseId"= "ut amet aliquip nostrud"
+
+
+

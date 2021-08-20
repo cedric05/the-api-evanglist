@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0ecb1010-f881-4853-adb3-27a67386fc06.postman_collection.json
+
+// Retrieves the list of all resources for the given zone..
+
+@name("Retrieves the list of all resources for the given zone.")
+GET "https://{{baseUrl}}/v1/resource"
+
+
+// Retrieves the resource for the given zone. the resourceidentifier must be url encoded in application/x-www-form-urlencoded format with utf-8..
+
+@name("Retrieves the resource for the given zone. The resourceIdentifier must be URL encoded in application/x-www-form-urlencoded format with UTF-8.")
+GET "https://{{baseUrl}}/v1/resource/:resourceIdentifier"
+? "includeInheritedAttributes"= "<>"
+
+
+

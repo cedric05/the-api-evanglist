@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6e90ddfd-d8be-45c2-9615-f4a24a1dd00f.postman_collection.json
+
+@name("Retrieve a brand")
+GET "https://{{baseUrl}}/:store_hash/v3/catalog/brands/:id"
+
+
+@name("Upload an image for a brand")
+POST "https://{{baseUrl}}/:store_hash/v3/catalog/brands/:id/image"
+
+
+

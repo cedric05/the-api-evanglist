@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// When the state of a resource changes, we create a new event resource to record the change. For instance, if a Customeru2019s status changes to verified, a customer_verified event will be created. When an Event is created, a Webhook will be created to deliver the Event to any URLs specified by your active Webhook Subscriptions.nnRetrieve a list of events for the authorized application.
+
+@name("List Events")
+GET "https://{{baseUrl}}/events"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+// When the state of a resource changes, we create a new event resource to record the change. For instance, if a Customeru2019s status changes to verified, a customer_verified event will be created. When an Event is created, a Webhook will be created to deliver the Event to any URLs specified by your active Webhook Subscriptions.nnRetrieve an event by id.nn### Request parametersnParameter | Data Type | Parameter Type | Required | Descriptionn---------|--------|---------|----------|----------|nid | st
+
+@name("Retrieve An Event")
+GET "https://{{baseUrl}}/events/:eventId"
+
+
+

@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-28db29ee-ca8d-4539-8a7a-6cde82dcfb73.postman_collection.json
+
+// Retrieves all stories for a project, or those matching filter(s)
+
+@name("Get Projects Project Stories")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/stories"
+? "filter"= "<>"
+? "offset"= "<>"
+? "limit"= "<>"
+
+
+// Takes all finished stories and marks them as delivered. This could be used to automate a demo deploy process. The updated stories are returned as the result.
+
+@name("Post Projects Project Stories Deliver All Finished")
+POST "https://{{baseUrl}}/projects/:PROJECT_ID/stories/deliver_all_finished"
+
+
+

@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c25d627-86e8-4072-b0fa-98946e646a2c.postman_collection.json
+
+// <p>The <code>Get all entries</code> request fetches the list of all the entries of a particular content type. It returns the content of each entry in JSON format. You need to specify the environment and locale of which you want to get the entries.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#all-entries>All Entries</a> API Reference document
+
+@name("Get all entries")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "include_fallback"= "true"
+
+
+// <p>The <code>Get a single entry</code> request fetches a particular entry of a content type.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#single-entry>Single Entry</a> API Reference document
+
+@name("Get a single entry")
+GET "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+? "version"= "2"
+? "environment"= "{{environment}}"
+? "locale"= "{{locale}}"
+? "include_fallback"= "true"
+
+
+

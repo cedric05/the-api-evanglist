@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2e3bbcd-4c1a-45f3-8016-86639e868822.postman_collection.json
+
+// Delete a comment by ID.
+
+@name("Delete Blog Post Comments")
+DELETE "https://{{baseUrl}}/blogs/:blogId/posts/:postId/comments/:commentId"
+
+
+// Marks a comment as not spam.
+
+@name("Update Blog Post Comment")
+POST "https://{{baseUrl}}/blogs/:blogId/posts/:postId/comments/:commentId/approve"
+
+
+// Removes the content of a comment.
+
+@name("Update Blog Post Comment")
+POST "https://{{baseUrl}}/blogs/:blogId/posts/:postId/comments/:commentId/removecontent"
+
+
+// Marks a comment as spam.
+
+@name("Update Blog Post Comment SPAM")
+POST "https://{{baseUrl}}/blogs/:blogId/posts/:postId/comments/:commentId/spam"
+
+
+

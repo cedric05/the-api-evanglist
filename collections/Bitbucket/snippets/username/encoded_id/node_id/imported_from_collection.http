@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Deletes the snippet.
+// 
+// Note that this only works for versioned URLs that point to the latest
+// commit of the snippet. Pointing to an older commit results in a 405
+// status code.
+// 
+// To delete a snippet, regardless of whether or not concurrent changes
+// are being made to it, use `DELETE /snippets/{encoded_id}` instead.
+
+@name("/snippets/:username/:encoded_id/:node_id")
+DELETE "https://{{baseUrl}}/snippets/:username/:encoded_id/:node_id"
+
+
+// Identical to `GET /snippets/encoded_id`, except that this endpoint
+// can be used to retrieve the contents of the snippet as it was at an
+// older revision, while `/snippets/encoded_id` always returns the
+// snippet's current revision.
+// 
+// Note that only the snippet's file contents are versioned, not its
+// meta data properties like the title.
+// 
+// Other than that, the two endpoints are identical in behavior.
+
+@name("/snippets/:username/:encoded_id/:node_id")
+GET "https://{{baseUrl}}/snippets/:username/:encoded_id/:node_id"
+
+
+// Identical to `UPDATE /snippets/encoded_id`, except that this endpoint
+// takes an explicit commit revision. Only the snippet's "HEAD"/"tip"
+// (most recent) version can be updated and requests on all other,
+// older revisions fail by returning a 405 status.
+// 
+// Usage of this endpoint over the unrestricted `/snippets/encoded_id`
+// could be desired if the caller wants to be sure no concurrent
+// modifications have taken place between the moment of the UPDATE
+// request and the original GET.
+// 
+// This can be considered a so-called "Compare And Swap", or CAS
+// operation.
+// 
+// Other than that, the two endpoints are identical in behavior.
+
+@name("/snippets/:username/:encoded_id/:node_id")
+PUT "https://{{baseUrl}}/snippets/:username/:encoded_id/:node_id"
+
+
+// Retrieves the raw contents of a specific file in the snippet. The
+// `Content-Disposition` header will be "attachment" to avoid issues with
+// malevolent executable files.
+// 
+// The file's mime type is derived from its filename and returned in the
+// `Content-Type` header.
+// 
+// Note that for text files, no character encoding is included as part of
+// the content type.
+
+@name("/snippets/:username/:encoded_id/:node_id/files/:path")
+GET "https://{{baseUrl}}/snippets/:username/:encoded_id/:node_id/files/:path"
+
+
+

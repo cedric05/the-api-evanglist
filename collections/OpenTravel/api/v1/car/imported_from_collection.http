@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-87f9f9dc-5401-4018-97ec-abc123495be8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("searchCarRentalAvailability") : "base-inherit-auth"
+GET "https://{{baseUrl}}/api/v1/car/availability"
+? "brand"= "ex commodo culpa"
+? "chainCode"= "ex commodo culpa"
+? "countryCode"= "ex commodo culpa"
+? "dropoffDate"= "ex commodo culpa"
+? "dropoffLocation"= "ex commodo culpa"
+? "dropoffTime"= "ex commodo culpa"
+? "pickupDate"= "ex commodo culpa"
+? "pickupLocation"= "ex commodo culpa"
+? "pickupTime"= "ex commodo culpa"
+
+
+@name("searchCarRentalLocations") : "base-inherit-auth"
+GET "https://{{baseUrl}}/api/v1/car/location"
+? "brand"= "ex commodo culpa"
+? "chainCode"= "ex commodo culpa"
+? "keyword"= "ex commodo culpa"
+
+
+@name("searchCarInventory") : "base-inherit-auth"
+GET "https://{{baseUrl}}/api/v1/car/search"
+? "brand"= "ex commodo culpa"
+? "endDate"= "ex commodo culpa"
+? "locationKeyword"= "ex commodo culpa"
+? "startDate"= "ex commodo culpa"
+
+
+

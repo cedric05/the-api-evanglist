@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+@name("Check if a repository is starred by the authenticated user")
+GET "https://{{baseUrl}}/user/starred/:owner/:repo"
+
+
+// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
+
+@name("Star a repository for the authenticated user")
+PUT "https://{{baseUrl}}/user/starred/:owner/:repo"
+
+
+@name("Unstar a repository for the authenticated user")
+DELETE "https://{{baseUrl}}/user/starred/:owner/:repo"
+
+
+

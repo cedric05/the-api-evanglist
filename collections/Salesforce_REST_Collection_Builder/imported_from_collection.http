@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Lists summary information about each Salesforce version currently available, including the version, label, and a link to each version's root.
+
+@name("List All Versions") : "base-inherit-auth"
+GET "https://{{host}}/services/data/"
+
+
+// Lists all of the available objects for an organization within a specific version of Salesforce.
+
+@name("List All Objects For Version") : "base-inherit-auth"
+GET "https://{{host}}/services/data/{{version}}/sobjects/"
+
+
+// Lists all of the available objects for an organization within a specific version of Salesforce.
+
+@name("Build Collection") : "base-inherit-auth"
+GET "https://{{host}}/services/data/{{version}}/sobjects/"
+
+
+

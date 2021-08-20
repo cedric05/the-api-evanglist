@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-28db29ee-ca8d-4539-8a7a-6cde82dcfb73.postman_collection.json
+
+// Get projects project stories story tasks.
+
+@name("Get Projects Project Stories Story Tasks")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/stories/:STORY_ID/tasks"
+
+
+// Get projects project stories story tasks task.
+
+@name("Get Projects Project Stories Story Tasks Task")
+GET "https://{{baseUrl}}/projects/:PROJECT_ID/stories/:STORY_ID/tasks/:TASK_ID"
+
+
+

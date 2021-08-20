@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6955ed11-a73c-4307-bb23-5a863194d33b.postman_collection.json
+
+@name("/api/contaminantloader")
+POST "https://{{baseUrl}}/api/contaminantloader"
+"Content-Type": "application/json"
+json({
+    "contaminantType": "<string>",
+    "contaminantInputType": "<string>",
+    "contaminantInput": "<string>"
+})
+
+
+@name("Checks endpoints for all datasets.")
+GET "https://{{baseUrl}}/api/utilities/status"
+
+
+

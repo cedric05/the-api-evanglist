@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// An Account represents your Dwolla Master Account that was established on dwolla.com. Retrieve account information belonging to the authorized user account that owns the API application. Retrieve an account id by calling the root of the API.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn---------|---------|-------|----------|-----------|nid | string | path | yes | Account unique identifier.
+
+@name("Retrieve Account Details")
+GET "https://{{baseUrl}}/accounts/:accountId"
+
+
+// An Account represents your Dwolla Master Account that was established on dwolla.com.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn---------|--------|--------|-----------|-----------|nid | string | path | yes | Account's unique identifier.nremoved | boolean | query | no | Filter removed funding sources. Defaults to `true`. Set to `false` to filter out removed funding sources from list (i.e. - /accounts/{id}/funding-sources?removed=false).
+
+@name("List Funding Sources For An Account")
+GET "https://{{baseUrl}}/accounts/:accountId/funding-sources"
+? "removed"= "<boolean>"
+
+
+// Retrieve an Account's list of previously created mass payments. Mass payments are returned ordered by date created, with most recent mass payments appearing first.nn### Request parametersnn| Parameter | Data Type | Parameter Type | Required | Description |n| ---------|--------|---------|--------|----------|n| id | string | path | yes | Account unique identifier to get mass payments for. |n| limit | integer | query | no | How many results to return. Defaults to 25. |n| offset | integer | query | 
+
+@name("List Mass Payments For An Account")
+GET "https://{{baseUrl}}/accounts/:accountId/mass-payments"
+
+
+// Retrieve an Account's list of transfers. Transaction search is supported by passing in optional querystring parameters such as: `search` which represents a term to search on, `startAmount`, `endAmount`, `startDate`, and `endDate`.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn--------|---------|---------|---------|----------|nid | string | path | yes | Account unique identifier to get transfers for.nsearch | string | query | no | A string to be matched 
+
+@name("List And Search Transfers For An Account")
+GET "https://{{baseUrl}}/accounts/:accountId/transfers"
+
+
+

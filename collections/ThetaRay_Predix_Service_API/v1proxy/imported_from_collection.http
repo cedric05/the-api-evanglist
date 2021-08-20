@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-38980b40-c6a1-4b92-9424-04cc9f2f63e8.postman_collection.json
+
+// Get list of Analyses
+
+@name("Analyses List")
+GET "https://{{baseUrl}}/v1/proxy/analyses"
+
+
+// Retrieves Anomalies Report
+
+@name("Anomalies Report")
+GET "https://{{baseUrl}}/v1/proxy/anomalies/report"
+? "analysisId"= "<post>"
+? "dataSourceName"= "<post>"
+? "numOfTopFeatures"= "<>"
+? "fromAnomaly"= "<>"
+? "toAnomaly"= "<>"
+
+
+// Get Clusters report
+
+@name("Clusters Report")
+GET "https://{{baseUrl}}/v1/proxy/clusters/report"
+? "analysisId"= "<post>"
+? "dataSourceName"= "<post>"
+? "withMinClusterSize"= "<>"
+? "fromAnomaly"= "<>"
+? "toAnomaly"= "<>"
+? "filterOnlyUsedToCluster"= "<>"
+
+
+

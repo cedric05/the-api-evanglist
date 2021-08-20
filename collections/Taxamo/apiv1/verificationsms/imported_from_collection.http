@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Create sms token.
+
+@name("Create SMS Token")
+POST "https://{{baseUrl}}/api/v1/verification/sms"
+
+
+// Verify sms token.
+
+@name("Verify SMS Token")
+GET "https://{{baseUrl}}/api/v1/verification/sms/:token"
+
+
+

@@ -1,0 +1,228 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Get a single stack</code>&nbsp;call fetches comprehensive details of a specific stack.<br><br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-single-stack>Get Single Stack</a> API Reference document
+
+@name("Get a single stack")
+GET "https://{{base_url}}/v3/stacks"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"organization_uid": "{{organization_uid}}"
+"Content-Type": "application/json"
+? "include_collaborators"= "false"
+? "include_stack_variables"= "false"
+? "include_discrete_variables"= "false"
+? "include_count"= "false"
+
+
+// <p>The <code>Get all stacks</code> call fetches the list of all stacks owned by and shared with a particular user account.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-all-stacks>Get All Stacks</a> API Reference document
+
+@name("Get all stacks")
+GET "https://{{base_url}}/v3/stacks"
+"authtoken": "{{authtoken}}"
+"organization_uid": "{{organization_uid}}"
+"Content-Type": "application/json"
+? "include_collaborators"= "false"
+? "include_stack_variables"= "false"
+? "include_discrete_variables"= "false"
+? "include_count"= "false"
+
+
+// <p>The <code>Create stack</code> call creates a new stack in your Contentstack account.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#create-stack>Create Stack</a> API Reference document
+
+@name("Create stack")
+POST "https://{{base_url}}/v3/stacks"
+"authtoken": "{{authtoken}}"
+"organization_uid": "{{organization_uid}}"
+"Content-Type": "application/json"
+json({
+    "stack": {
+        "name": "My New Stack",
+        "description": "My new test stack",
+        "master_locale": "en-us"
+    }
+})
+
+
+// <p>The <code>Update stack</code> call lets you update the name and description of an existing stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#update-stack>Update Stack</a> API Reference document
+
+@name("Update stack")
+PUT "https://{{base_url}}/v3/stacks"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "stack": {
+        "name": "My New Stack",
+        "description": "My new test stack"
+    }
+})
+
+
+// <p>The <code>Delete stack</code> call is used to delete an existing stack permanently from your Contentstack account.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#delete-stack>Delete stack</a> API Reference document
+
+@name("Delete stack")
+DELETE "https://{{base_url}}/v3/stacks"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+
+
+
+// <p>The <code>Get all users of a stack</code> call fetches the list of all users of a particular stack
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-all-users>Get all users</a> API Reference document
+
+@name("Get all users of a stack")
+GET "https://{{base_url}}/v3/stacks"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+? "include_collaborators"= "true"
+
+
+// <p>The <code>Update User Role</code> API Request updates the roles of an existing user account. This API Request will override the existing roles assigned to a user. For example, we have an existing user with the "Developer" role, and if you execute this API request with "Content Manager" role, the user role will lose "Developer" rights and the user role&nbsp;be updated to just "Content Manager".<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#update-existing-user-role>Update Existing User Role</a> API Reference document
+
+@name("Update User Role")
+POST "https://{{base_url}}/v3/stacks/users/roles"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "users": {
+        "user_uid": [
+            "role_uid1",
+            "role_uid2"
+        ]
+    }
+})
+
+
+// <p>The <code>Transfer stack ownership to other users</code> call sends the specified user an email invitation for accepting the ownership of a particular stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#transfer-stack-ownership>Transfer Stack Ownership</a> API Reference document
+
+@name("Transfer stack ownership to other users")
+POST "https://{{base_url}}/v3/stacks/transfer_ownership"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "transfer_to": "manager@example.com"
+})
+
+
+// <p>The <code>Accept stack owned by other user</code> call allows a user to accept the ownership of a particular stack via an email invitation.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#accept-stack-ownership>Accept Stack Ownership</a> API Reference document
+
+@name("Accept stack owned by other user")
+GET "https://{{base_url}}/v3/stacks/accept_ownership/{{ownership_token}}"
+"Content-Type": "application/json"
+? "api_key"= "{{api_key}}"
+? "uid"= "Enter_your_user_uid"
+
+
+// <p>The <code>Get stack settings</code> call retrieves the configuration settings of an existing stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#stack-settings>Stack Settings</a> API Reference document
+
+@name("Get stack settings")
+GET "https://{{base_url}}/v3/stacks/settings"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Add stack settings</code> request lets you add additional settings for your existing stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#stack-settings>Stack Settings</a> API Reference document
+
+@name("Add stack settings")
+POST "https://{{base_url}}/v3/stacks/settings"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "stack_settings": {
+        "stack_variables": {
+            "enforce_unique_urls": true,
+            "sys_rte_allowed_tags": "style | figure | script"
+        },
+        "rte": {
+            "cs_only_breakline": true
+        }
+    }
+})
+
+
+// <p>The <code>Reset stack settings</code> call resets your stack to default settings, and additionally, lets you add parameters to or modify the settings of an existing stack.<br><br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#stack-settings>Stack Settings</a> API Reference document
+
+@name("Reset stack settings")
+POST "https://{{base_url}}/v3/stacks/settings"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "stack_settings": {
+        "discrete_variables": {},
+        "stack_variables": {}
+    }
+})
+
+
+// <p>The <code>Share a stack</code> call shares a stack with the specified user to collaborate on the stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#share-stack>Share Stack</a> API Reference document
+
+@name("Share a stack")
+POST "https://{{base_url}}/v3/stacks/share"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "emails": [
+        "manager@example.com"
+    ],
+    "roles": {
+        "manager@example.com": [
+            "abcdefhgi1234567890"
+        ]
+    }
+})
+
+
+// <p>The <code>Unshare a stack</code> call unshares a stack with a user and removes the user account from the list of collaborators. Once this call is executed, the user will not be able to view the stack in their account.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#unshare-stack>Unshare Stack</a> API Reference document
+
+@name("Unshare a stack")
+POST "https://{{base_url}}/v3/stacks/unshare"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+json({
+    "email": "manager@example.com"
+})
+
+
+

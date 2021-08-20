@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-77b9e26c-075d-429f-817d-a74ef109fb90.postman_collection.json
+
+// Start Phonecall
+
+@name("Post Calls")
+POST "https://{{baseUrl}}/Calls"
+
+
+// Delete Call from history
+
+@name("Delete Calls")
+DELETE "https://{{baseUrl}}/Calls/:id"
+
+
+

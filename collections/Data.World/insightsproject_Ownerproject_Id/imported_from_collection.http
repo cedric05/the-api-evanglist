@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List insights associated with a project.
+
+@name("List insights") : "base-inherit-auth"
+GET "https://{{baseUrl}}/insights/:projectOwner/:projectId"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+
+
+// Create a new insight.
+
+@name("Create an insight") : "base-inherit-auth"
+POST "https://{{baseUrl}}/insights/:projectOwner/:projectId"
+"Content-Type": "application/json"
+json({
+    "body": {
+        "embedUrl": "https://JtehjwrbuYkbHubMjM.zkT1vpV.hRJbSkXitbaR-OxGP6MxuLotYBgavfX7N0PGQY+okKFnAA9ODfIC+WQI",
+        "imageUrl": "http://BGs.xkuGpyKPmQmpZk9kTrMh3",
+        "markdownBody": "enim quis veniam Lorem d"
+    },
+    "title": "Duis",
+    "dataSourceLinks": [
+        "https://i.zzXdMMoE+GYI4",
+        "https://asRwuEIqTpF.anwwZVvXq0f,NCptIpxZX3XVigTjz0cdPqe81+SAAFgWzqIjm0ffEsnQq05aSU9nrp9Kbj"
+    ],
+    "description": "ani",
+    "sourceLink": "https://PMvBEJxErCCborTpBDeymEROhAIoskI.tfkXOyyIHcNXjN9rjLYd8iMP,FAxNZkZZ1FzWb5v3+Dpiy0iku,NsbNeuq",
+    "thumbnail": "http://aQhryoTquuHwRV.oazdbusHuag2DOsege3fm8tpv"
+})
+
+
+

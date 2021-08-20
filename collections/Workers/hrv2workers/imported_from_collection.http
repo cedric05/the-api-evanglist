@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-088ce1e1-1400-4c38-9591-d8665a931e87.postman_collection.json
+
+// Request the list of all available workers that the requester is authorized to view
+
+@name("Workers")
+GET "https://{{baseUrl}}/hr/v2/workers"
+? "No Name"= "<string>"
+
+
+// Returns a meta
+
+@name("Worker Meta")
+GET "https://{{baseUrl}}/hr/v2/workers/meta"
+? "No Name"= "<string>"
+
+
+

@@ -1,0 +1,68 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Returns a query string that can be used to search for locations
+
+@name("Convert a policy condition criteria into a query string") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/utils/convert/criteriatoquery"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json([
+    {
+        "id": -59697632,
+        "logic": "dolore quis",
+        "openPar": "nisi exercitation",
+        "field": "anim sed minim",
+        "operator": "reprehenderit qui commodo",
+        "value": "dolor esse tempor mollit nostrud",
+        "closePar": "in proident"
+    },
+    {
+        "id": -16368178,
+        "logic": "eiusmod sunt",
+        "openPar": "culpa",
+        "field": "in dol",
+        "operator": "sed occaecat anim incididunt",
+        "value": "incididunt quis id sunt",
+        "closePar": "elit ut"
+    }
+])
+
+
+// Returns a query string that can be used to search for locations
+
+@name("Convert a policy condition criteria into a query string") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/utils/convert/portfoliocriteriatoquery"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json([
+    {
+        "id": -59697632,
+        "logic": "dolore quis",
+        "openPar": "nisi exercitation",
+        "field": "anim sed minim",
+        "operator": "reprehenderit qui commodo",
+        "value": "dolor esse tempor mollit nostrud",
+        "closePar": "in proident"
+    },
+    {
+        "id": -16368178,
+        "logic": "eiusmod sunt",
+        "openPar": "culpa",
+        "field": "in dol",
+        "operator": "sed occaecat anim incididunt",
+        "value": "incididunt quis id sunt",
+        "closePar": "elit ut"
+    }
+])
+
+
+

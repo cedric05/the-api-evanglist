@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Get Authorized Teams") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/team"
+
+
+@name("Create a time entry") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/team/300687/time_entries"
+"Content-Type": "application/json"
+json({
+    "description": "from api",
+    "tags": [
+        {
+            "name": "josh1",
+            "tag_bg": "#BF55EC",
+            "tag_fg": "#BF55EC"
+        }
+    ],
+    "start": 1595282645000,
+    "created_with": "string",
+    "billable": true,
+    "duration": 50000,
+    "assignee": 300528
+})
+
+
+

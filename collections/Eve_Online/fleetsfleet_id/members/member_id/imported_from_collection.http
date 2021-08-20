@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Kick a fleet member
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/members/{member_id}/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/members/{member_id}/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/members/{member_id}/`
+
+@name("Kick fleet member")
+DELETE "https://{{baseUrl}}/fleets/:fleet_id/members/:member_id/"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Move a fleet member around
+// 
+// ---
+// Alternate route: `/dev/fleets/{fleet_id}/members/{member_id}/`
+// 
+// Alternate route: `/legacy/fleets/{fleet_id}/members/{member_id}/`
+// 
+// Alternate route: `/v1/fleets/{fleet_id}/members/{member_id}/`
+
+@name("Move fleet member")
+PUT "https://{{baseUrl}}/fleets/:fleet_id/members/:member_id/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+json({
+    "role": "wing_commander",
+    "squad_id": 15034538,
+    "wing_id": 33687236
+})
+
+
+

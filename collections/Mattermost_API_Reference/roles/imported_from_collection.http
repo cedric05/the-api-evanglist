@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a role from the provided role name.nn##### PermissionsnRequires an active session but no other permissions.nn__Minimum server version__: 4.9n
+
+@name("Get a role")
+GET "https://{{baseUrl}}/roles/name/:role_name"
+
+
+// Get a list of roles from their names.nn##### PermissionsnRequires an active session but no other permissions.nn__Minimum server version__: 4.9n
+
+@name("Get a list of roles by name")
+POST "https://{{baseUrl}}/roles/names"
+
+
+

@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2e3bbcd-4c1a-45f3-8016-86639e868822.postman_collection.json
+
+// Retrieves the pages for a blog, optionally including non-LIVE statuses.
+
+@name("Get Blog Pages")
+GET "https://{{baseUrl}}/blogs/:blogId/pages"
+? "fetchBodies"= "<>"
+? "maxResults"= "<>"
+? "pageToken"= "<>"
+? "status"= "<parameters>"
+? "view"= "<>"
+
+
+

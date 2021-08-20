@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f1aa5674-d4d3-460d-b323-7d6513ac3ab2.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"X-API-KEY": "{{open_states_api_key}}"
+
+
+// Get list of supported Jurisdictions, a Jurisdiction is a state or municipality.
+
+@name("Jurisdiction List") : "base-inherit-auth"
+GET "https://{{open_states_base_url}}/jurisdictions"
+"x-api-key": "Excepteur"
+? "classification"= "country"
+? "page"= "1"
+? "per_page"= "52"
+? "apikey"= "null"
+
+
+// Get details on a single Jurisdiction (e.g. state or municipality). 
+
+@name("Jurisdiction Detail") : "base-inherit-auth"
+GET "https://{{open_states_base_url}}/jurisdictions/:jurisdiction_id"
+"x-api-key": "Excepteur"
+? "apikey"= "null"
+
+
+

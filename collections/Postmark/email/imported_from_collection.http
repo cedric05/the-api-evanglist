@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Send a single email")
+POST "https://{{baseUrl}}/email"
+
+
+@name("Send a batch of emails")
+POST "https://{{baseUrl}}/email/batch"
+
+
+@name("Send a batch of email using templates.")
+POST "https://{{baseUrl}}/email/batchWithTemplates"
+
+
+@name("Send an email using a Template")
+POST "https://{{baseUrl}}/email/withTemplate"
+
+
+

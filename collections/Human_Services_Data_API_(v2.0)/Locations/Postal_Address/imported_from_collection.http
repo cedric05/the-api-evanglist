@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Location Postal Addresses")
+GET "https://{{baseUrl}}/locations/:location_id/postal-address"
+
+
+@name("add Location Postal Address")
+POST "https://{{baseUrl}}/locations/:location_id/postal-address"
+"Content-Type": "application/json"
+json({
+    "address_1": "est cillum elit dolore",
+    "city": "enim culpa",
+    "country": "pariatur ea qui",
+    "id": "commodo voluptate ut tempor Lorem",
+    "postal_code": "sit dolor ullamco",
+    "state_province": "id et eu officia",
+    "location_id": "reprehenderit sit",
+    "attention": "veniam",
+    "address_2": "eu qui sed",
+    "address_3": "pariatur dolore enim Excepteur",
+    "address_4": "velit dolore",
+    "region": "cupidatat"
+})
+
+
+@name("get Location Postal Address")
+GET "https://{{baseUrl}}/locations/:location_id/postal-address/:postal_address_id"
+
+
+@name("update Location Postal Address")
+PUT "https://{{baseUrl}}/locations/:location_id/postal-address/:postal_address_id"
+"Content-Type": "application/json"
+json({
+    "address_1": "est cillum elit dolore",
+    "city": "enim culpa",
+    "country": "pariatur ea qui",
+    "id": "commodo voluptate ut tempor Lorem",
+    "postal_code": "sit dolor ullamco",
+    "state_province": "id et eu officia",
+    "location_id": "reprehenderit sit",
+    "attention": "veniam",
+    "address_2": "eu qui sed",
+    "address_3": "pariatur dolore enim Excepteur",
+    "address_4": "velit dolore",
+    "region": "cupidatat"
+})
+
+
+@name("delete Location Postal Address")
+DELETE "https://{{baseUrl}}/locations/:location_id/postal-address/:postal_address_id"
+
+
+

@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3beba34b-de4f-461e-84f9-8a677b9e3fd9.postman_collection.json
+
+// Fetches a list of basket names managed by service. Require master token.
+
+@name("Get baskets")
+GET "https://{{baseUrl}}/baskets"
+? "max"= "<>"
+? "skip"= "<>"
+? "q"= "<>"
+
+
+

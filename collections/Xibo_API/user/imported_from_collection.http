@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search users
+
+@name("User Search")
+GET "https://{{baseUrl}}/user"
+
+
+// Get my details
+
+@name("Get Me")
+GET "https://{{baseUrl}}/user/me"
+
+
+// Permission data for the Entity and Object Provided.
+
+@name("Permission Data")
+GET "https://{{baseUrl}}/user/permissions/:entity/:objectId"
+
+
+// User preferences for non-state information, such as Layout designer zoom levels
+
+@name("Retrieve User Preferences")
+GET "https://{{baseUrl}}/user/pref"
+
+
+

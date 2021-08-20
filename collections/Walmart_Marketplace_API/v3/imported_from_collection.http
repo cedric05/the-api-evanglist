@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b04ade5-8838-4197-b3c0-06861796932d.postman_collection.json
+
+@name("updateInventory")
+PUT "https://{{baseUrl}}/v3/inventory"
+? "sku"= "<string>"
+
+
+@name("updatePrice")
+PUT "https://{{baseUrl}}/v3/price"
+
+
+@name("setupCAPskuAll")
+POST "https://{{baseUrl}}/v3/cppreference"
+
+
+@name("getPromoPrice")
+GET "https://{{baseUrl}}/v3/promo/sku/97964_KFTest"
+
+
+@name("getLagtime")
+GET "https://{{baseUrl}}/v3/lagtime"
+? "sku"= "<string>"
+
+
+@name("getItemReport")
+GET "https://{{baseUrl}}/v3/getReport"
+? "type"= "<string>"
+
+
+

@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Gets the array of users currently assigned to the application
+
+@name("List the Assigned Users on an Application") : "base-inherit-auth"
+GET "https://{{baseUrl}}/home-lending/applications/:id/assignees"
+
+
+// Adds assignees to the specified application.
+
+@name("Patch the Assigned Users on an Application") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/home-lending/applications/:id/assignees"
+"Content-Type": "application/json"
+json({
+    "assignees": [
+        {
+            "userId": "3f345acb-6ac4-4bd0-b04a-dc0b9ad76e70",
+            "role": "PRIMARY_ASSIGNEE"
+        },
+        {
+            "userId": "3f345acb-6ac4-4bd0-b04a-dc0b9ad76e70",
+            "role": "PRIMARY_ASSIGNEE"
+        }
+    ]
+})
+
+
+// Completely overwrites current set of assigned users with provided users
+
+@name("Override All Current Assignees on an Application") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/home-lending/applications/:id/assignees"
+"Content-Type": "application/json"
+? "autoAssignLoanTeam"= "true"
+json({
+    "assignees": [
+        {
+            "userId": "3f345acb-6ac4-4bd0-b04a-dc0b9ad76e70",
+            "role": "PRIMARY_ASSIGNEE"
+        },
+        {
+            "userId": "3f345acb-6ac4-4bd0-b04a-dc0b9ad76e70",
+            "role": "PRIMARY_ASSIGNEE"
+        }
+    ]
+})
+
+
+

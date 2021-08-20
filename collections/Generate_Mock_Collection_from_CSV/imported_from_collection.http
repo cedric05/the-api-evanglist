@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04f42a0a-be66-4351-9793-f6d057aebd4e.postman_collection.json
+
+// This pulls a CSV file that you set in the environment for this collection.
+
+@name("Pull CSV")
+GET "https://{{csv_url}}/"
+
+
+// This will create a brand new collection and put the JSON obtained by pulled CSV file in as an example response, using the collection as a store.
+
+@name("Create Collection")
+POST "https://api.getpostman.com/collections/"
+"x-api-key": "{{postman_api_key}}"
+"Content-Type": "application/json"
+data('{{collection_json}}')
+
+
+// Before we can add our collection to this workspace we need to pull the snapshot of the workspace, so we can append our new collection.
+
+@name("Pull Workspace")
+GET "https://api.getpostman.com/workspaces/{{workspace_id}}"
+"x-api-key": "{{postman_api_key}}"
+
+
+// This takes the updated workspace definition with our new collection and updates it using the Postman API. You should now be able to see your collection in your workspace--sometimes you have to refresh first. ;-)
+
+@name("Add Collection Workspace")
+PUT "https://api.getpostman.com/workspaces/{{workspace_id}}"
+"x-api-key": "{{postman_api_key}}"
+"Content-Type": "application/json"
+data('{{workspace_publish}}')
+
+
+

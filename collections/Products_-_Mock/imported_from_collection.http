@@ -1,0 +1,77 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-49d5ace6-97f5-4aca-92b5-e28c0ee5e762.postman_collection.json
+
+// Retrieves a single product.
+
+@name("Get Product")
+GET "https://{{baseUrl}}/products/:productId"
+
+
+// Pulls a list of all product
+
+@name("Get Products")
+GET "https://{{baseUrl}}/products"
+
+
+// Supports either full or partial updates.
+
+@name("Update")
+PUT "https://{{baseUrl}}/products/:productId"
+"Content-Type": "application/json"
+json({
+    "identifier": "<string>",
+    "name": "<string>",
+    "description": "<string>",
+    "image": "<string>",
+    "url": "<string>",
+    "brand": "<string>",
+    "category": "<string>",
+    "color": "<string>",
+    "logo": "<string>",
+    "manufacturer": "<string>",
+    "material": "<string>",
+    "model": "<string>",
+    "releaseDate": "<string>",
+    "sku": "<string>",
+    "width": "<string>",
+    "weight": "<string>",
+    "depth": "<string>",
+    "height": "<string>"
+})
+
+
+// Delete an individual product.
+
+@name("Delete")
+DELETE "https://{{baseUrl}}/products/:productId"
+
+
+// Creates a new productz.
+
+@name("Add Product")
+POST "https://{{baseUrl}}/products"
+"Content-Type": "application/json"
+json({
+    "identifier": "<string>",
+    "name": "<string>",
+    "description": "<string>",
+    "image": "<string>",
+    "url": "<string>",
+    "brand": "<string>",
+    "category": "<string>",
+    "color": "<string>",
+    "logo": "<string>",
+    "manufacturer": "<string>",
+    "material": "<string>",
+    "model": "<string>",
+    "releaseDate": "<string>",
+    "sku": "<string>",
+    "width": "<string>",
+    "weight": "<string>",
+    "depth": "<string>",
+    "height": "<string>"
+})
+
+
+

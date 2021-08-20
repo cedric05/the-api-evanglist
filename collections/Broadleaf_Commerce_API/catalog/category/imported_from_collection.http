@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Get catalog category.
+
+@name("Get Catalog Category")
+GET "https://{{baseUrl}}/catalog/category"
+? "searchParameter"= "<>"
+? "productLimit"= "<>"
+? "productOffset"= "<>"
+? "subcategoryLimit"= "<>"
+? "subcategoryOffset"= "<>"
+
+
+// Get catalog category media.
+
+@name("Get Catalog Category Media")
+GET "https://{{baseUrl}}/catalog/category/:id/media"
+
+
+

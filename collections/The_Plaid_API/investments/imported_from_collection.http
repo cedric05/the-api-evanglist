@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// The `/investments/holdings/get` endpoint allows developers to receive user-authorized stock position data for `investment`-type accounts.
+
+@name("Get Investment holdings") : "base-inherit-auth"
+POST "https://{{baseUrl}}/investments/holdings/get"
+"Content-Type": "application/json"
+json({
+    "access_token": "Excepteur proident nisi",
+    "client_id": "velit m",
+    "secret": "sunt Ut labore nisi",
+    "options": {
+        "account_ids": [
+            "in",
+            "magna laborum officia"
+        ]
+    }
+})
+
+
+// The `/investments/transactions/get` endpoint allows developers to retrieve user-authorized transaction data for investment accounts.
+// 
+// Transactions are returned in reverse-chronological order, and the sequence of transaction ordering is stable and will not shift.
+// 
+// Due to the potentially large number of investment transactions associated with an Item, results are paginated. Manipulate the count and offset parameters in conjunction with the `total_investment_transactions` response body field to fetch all available investment transactions.
+
+@name("Get investment transactions") : "base-inherit-auth"
+POST "https://{{baseUrl}}/investments/transactions/get"
+"Content-Type": "application/json"
+json({
+    "access_token": "Ut L",
+    "start_date": "2003-05-26",
+    "end_date": "1964-01-15",
+    "client_id": "cupidatat",
+    "secret": "sunt amet",
+    "options": {
+        "account_ids": [
+            "cillum dolor sunt",
+            "in commodo"
+        ],
+        "count": 100,
+        "offset": 0
+    }
+})
+
+
+

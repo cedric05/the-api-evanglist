@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c482753d-6677-4bf3-8016-18d78f3fecc5.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Geocode address") : "base-inherit-auth"
+POST "https://{{baseUrl}}/geocode/18.0"
+"Content-Type": "application/json"
+json({
+    "countryCode": "US",
+    "countryScheme": "ISO2A",
+    "admin1Code": "CA",
+    "postalCode": "94560",
+    "streetAddress": "7575 GATEWAY BLVD"
+})
+
+
+

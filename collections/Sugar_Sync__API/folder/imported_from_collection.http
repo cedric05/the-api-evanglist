@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d73a1a0-5a05-4d06-ac30-82c90173ac85.postman_collection.json
+
+// To retrieve information about a folder, an application submits an HTTP GET request to then          folder resource that represents the folder.
+
+@name("Retrieving Folder Information")
+GET "https://{{baseUrl}}/folder"
+
+
+// An application can permanantly delete a folder by issuing an HTTP DELETE request to the URL of thenfolder resource.nIts a good idea to precede DELETE requests like this with a caution note in your applications user interface.n          
+
+@name("Deleting a Folder")
+DELETE "https://{{baseUrl}}/folder/"
+
+
+

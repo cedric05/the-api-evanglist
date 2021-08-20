@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Adds a user to a group.
+// 
+// **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
+
+@name("Add User To Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/rest/api/3/group/user"
+"Content-Type": "application/json"
+? "groupname"= "<string>"
+json({
+    "name": "<string>",
+    "accountId": "<string>"
+})
+
+
+// Removes a user from a group.
+// 
+// **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
+
+@name("Remove User From Group") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/rest/api/3/group/user"
+? "groupname"= "<string>"
+? "username"= "<string>"
+? "accountId"= "<string>"
+
+
+

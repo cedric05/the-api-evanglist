@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e7284ee4-fd9b-45f9-a31d-197af3b48c31.postman_collection.json
+
+// Get all account requests
+
+@name("Get all account requests")
+GET "https://{{baseUrl}}/website/user-requests/"
+
+
+// Create a new account request
+
+@name("Create a new account request")
+POST "https://{{baseUrl}}/website/user-requests/"
+
+
+

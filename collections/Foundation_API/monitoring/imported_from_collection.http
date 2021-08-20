@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Returns the list of monitoring users for the object(folder/item)..
+
+@name("Returns the list of monitoring users for the object(Folder/Item).")
+GET "https://{{baseUrl}}/monitoring/objects/:objectid/users"
+? "offset"= "<put>"
+? "count"= "<>"
+
+
+

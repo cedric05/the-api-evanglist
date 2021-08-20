@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+
+@name("List subscriptions for the authenticated user")
+GET "https://{{baseUrl}}/user/marketplace_purchases"
+? "per_page"= "30"
+? "page"= "1"
+
+
+// Lists the active subscriptions for the authenticated user. You must use a [user-to-server OAuth access token](https://developer.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/#identifying-users-on-your-site), created for a user who has authorized your GitHub App, to access this endpoint. . OAuth Apps must authenticate using an [OAuth token](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/).
+
+@name("List subscriptions for the authenticated user (stubbed)")
+GET "https://{{baseUrl}}/user/marketplace_purchases/stubbed"
+? "per_page"= "30"
+? "page"= "1"
+
+
+

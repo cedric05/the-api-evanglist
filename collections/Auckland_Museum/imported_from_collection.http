@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7adf1b21-03d3-43ad-8394-653202b44086.postman_collection.json
+
+// Use this endpoint to perform simple search queries for finding information and subjects you may be interested innnSearches performed via this endpoint run against an [Elastic](www.elastic.co) server. This endpoint mirrors the Elastic search API documented [here](https://www.elastic.co/guide/en/elasticsearch/reference/1.5/search-search.html)nnUse then  - `collectionsonline` index to perform searches over other allnCollections datan  - `cenotaph` index to perform searches over Cenotaph datan
+
+@name("Perform simple search queries over Auckland Museum Collections and Cenotaph data")
+GET "https://{{baseUrl}}/search/:index/:operation"
+? "q"= "<string>"
+
+
+// You can execute your [SPARQL](http://www.w3.org/TR/rdf-sparql-query/) queries against this endpoint.nnThe sparql query should be provided as the value of the request parameter `query`.nSet the `Accept` header to `application/sparql-results+xml` to get results in XML. Set it to `application/sparql-results+json` to get results in JSON. nn**Note:** This endpoints supports [JSON-P](http://json-p.org/). In order to get a JSON-P response, set the query parameter `callback` to your preferred callback f
+
+@name("Auckland Museum SPARQL endpoint")
+GET "https://{{baseUrl}}/sparql"
+? "query"= "<string>"
+? "callback"= "<string>"
+? "infer"= "<boolean>"
+
+
+

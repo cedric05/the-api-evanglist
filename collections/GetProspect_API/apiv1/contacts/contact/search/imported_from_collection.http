@@ -1,0 +1,89 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Search contacts by filter
+
+@name("Search contacts")
+POST "https://{{baseUrl}}/api/v1/contacts/contact/search"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "order"= "incididunt voluptate"
+? "sort"= "incididunt voluptate"
+? "pageNumber"= "56827440.204882234"
+? "pageSize"= "56827440.204882234"
+json({
+    "filters": [
+        {
+            "operator": "enim et ",
+            "property": "reprehenderit velit eiusmod",
+            "value": "nostrud in ut",
+            "included": {
+                "operator": "proident cupidatat dolor",
+                "value": {}
+            }
+        },
+        {
+            "operator": "velit exercitation Ut in enim",
+            "property": "Duis cupidatat dolor",
+            "value": "quis ut irure",
+            "included": {
+                "operator": "mollit",
+                "value": {}
+            }
+        }
+    ],
+    "search": {
+        "value": "et sed dolore dolor",
+        "properties": [
+            "et proident incididunt",
+            "labore ad dolore"
+        ]
+    },
+    "includeRelations": false
+})
+
+
+// Search contacts by filter
+
+@name("Search contacts")
+POST "https://{{baseUrl}}/api/v1/contacts/contact/search/count"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "order"= "incididunt voluptate"
+? "sort"= "incididunt voluptate"
+? "pageNumber"= "56827440.204882234"
+? "pageSize"= "56827440.204882234"
+json({
+    "filters": [
+        {
+            "operator": "reprehenderit sit voluptate",
+            "property": "mi",
+            "value": "sunt consectetur",
+            "included": {
+                "operator": "et ea",
+                "value": {}
+            }
+        },
+        {
+            "operator": "minim ex",
+            "property": "ipsum",
+            "value": "quis commodo",
+            "included": {
+                "operator": "laborum est anim magna",
+                "value": {}
+            }
+        }
+    ],
+    "search": {
+        "value": "Lorem Excepteur cupidatat ut",
+        "properties": [
+            "quis",
+            "quis lab"
+        ]
+    },
+    "includeRelations": false
+})
+
+
+

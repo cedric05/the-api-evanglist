@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// Members of an organization can choose to have their membership publicized or not.
+
+@name("List public organization members")
+GET "https://{{baseUrl}}/orgs/:org/public_members"
+? "per_page"= "30"
+? "page"= "1"
+
+
+

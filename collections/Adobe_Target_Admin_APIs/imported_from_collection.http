@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-99b807d0-abac-481e-a509-d69785137b6b.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Exchange JWT for Access token") : "base-inherit-auth"
+POST "https://ims-na1.adobelogin.com/ims/exchange/jwt"
+? "client_id"= "77128b9bb9e447ea832c52d012691d31"
+? "client_secret"= "99e4250e-5ddb-4a94-a6b5-a4168130f6a4"
+? "jwt_token"= "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MDA0ODIzMTQsImlzcyI6IkI4QTA1NEQ5NTg4MDdGNzcwQTQ5NURENkBBZG9iZU9yZyIsInN1YiI6IjJENDcxQUFFNTg5MjdCQTcwQTQ5NUNDMkB0ZWNoYWNjdC5hZG9iZS5jb20iLCJhdWQiOiJodHRwczovL2ltcy1uYTEuYWRvYmVsb2dpbi5jb20vYy83NzEyOGI5YmI5ZTQ0N2VhODMyYzUyZDAxMjY5MWQzMSIsImh0dHBzOi8vaW1zLW5hMS5hZG9iZWxvZ2luLmNvbS9zL2VudF9tYXJrZXRpbmdfc2RrIjp0cnVlfQ.WPEQO6RtnDSqqSPCuni5CG77bM0VUACCFrLftOTHAr6CQLaYeXo3gzvTHDBqLe2R0TkyNpMuXOBpsSjtMxbLOM4MaI5TThqQYg11f6IPsXpFztDCT53wuBdgxpge7tA8B7_Uiql5fKb1_N1diK5XeImut00FF1zDr32POSgIVdKILonG0RK_nqt49Nobi6TfAfu5ml6isnB2DVr4b49Qtr2X5Es_wHkg_sZNYGY_XRlF4HiPZBZewmcpY3oomLbHDxIMApIDcWK4-lMEDn8m0_iwdqTLVwPNIWSlq6zge6aWDSJ0bRDCD-IZHWI1f0-z7mpYCMOsxyNRlHY4WBWgkA"
+
+
+@name("List mboxes") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/mboxes"
+"X-Api-Key": "{{api_key}}"
+? "limit"= "5"
+
+
+@name("List mbox parameters") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/mbox/a1-mobile-mboxparams"
+"X-Api-Key": "{{api_key}}"
+? "limit"= "5"
+
+
+@name("List profile parameters") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/profileattributes/mbox"
+"X-Api-Key": "{{api_key}}"
+
+
+@name("Get Environments") : "base-inherit-auth"
+GET "https://mc.adobe.io/:tenant/target/environments"
+"X-Api-Key": "{{api_key}}"
+
+
+

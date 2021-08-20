@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method adds a timeline event thumbnail to the specified video.
+
+@name("Add a new timeline event thumbnail to a video")
+POST "https://{{baseUrl}}/videos/:video_id/timelinethumbnails"
+
+
+// This method returns a single timeline event thumbnail that belongs to the specified video.
+
+@name("Get a timeline event thumbnail")
+GET "https://{{baseUrl}}/videos/:video_id/timelinethumbnails/:thumbnail_id"
+
+
+

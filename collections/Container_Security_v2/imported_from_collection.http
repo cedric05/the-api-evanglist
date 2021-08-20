@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3c2b6188-a531-47ed-9d8d-d16b3bb80232.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns a vulnerability report for the specified image.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Get image report") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reports/:repository/:image/:tag"
+
+
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-22a10f2d-8624-488d-95c0-85a6c45216c5.postman_collection.json
+
+// Physical interfaces are used to model the interfaces between physicalndevices and the Watson IoT Platform.  A physical interface referencesnevent types.  Devices that implement a physical interface publish thesenevents to the platform.nnThe event types are referenced via a mapping that maps an event id tonthe id of an event type.  The event id corresponds to the MQTT topicnthat the event is published to by a device.nnThe **/draft/physicalinterfaces** endpoint returns the list of all of nthe draf
+
+@name("Query draft phyiscal interfaces")
+GET "https://{{baseUrl}}/draft/physicalinterfaces"
+
+
+

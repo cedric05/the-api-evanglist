@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Submits 1 or more ordersn
+
+@name("Submit Ordern")
+POST "https://{{baseUrl}}/orders"
+? "access_token"= "<string>"
+
+
+// Returns estimated cost and commission information for an order without the order actually being placed. The fields that are returned in the response depend on the order type.nThe following shows the different fields that will be returned.nn**Base Confirmation**  (All confirmations will have these fields)n* Routen* Durationn* Accountn* SummaryMessagen* OrderConfirmIdnn**Equity Confirmation** (Base Confirmation fields + the following)n* EstimatedPricen* EstimatedPriceDisplayn* EstimatedCostn* Esti
+
+@name("Confirm Ordern")
+POST "https://{{baseUrl}}/orders/confirm"
+? "access_token"= "<string>"
+
+
+// Cancels an open order. You cannot cancel an order that has been filled.n
+
+@name("Cancel Ordern")
+DELETE "https://{{baseUrl}}/orders/:order_id"
+? "access_token"= "<string>"
+
+
+

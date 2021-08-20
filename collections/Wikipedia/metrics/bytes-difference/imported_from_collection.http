@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c039dcb8-c468-46a5-bef2-944b0de198e7.postman_collection.json
+
+// Given a Mediawiki project and a date range, returns a timeseries of absolute bytesndifference sums. You can filter by editors-type (all-editor-types, anonymous, group-bot,nname-bot, user) and page-type (all-page-types, content, non-content). You can choosenbetween daily and monthly granularity as well.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 lice
+
+@name("Get the sum of absolute value of text bytes difference between current edit andnprevious one.n")
+GET "https://{{baseUrl}}/metrics/bytes-difference/absolute/aggregate/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+// Given a Mediawiki project and a date range, returns a timeseries of bytes difference netnsums. You can filter by editors-type (all-editor-types, anonymous, group-bot, name-bot,nuser) and page-type (all-page-types, content or non-content). You can choose betweenndaily and monthly granularity as well.nn- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 license
+
+@name("Get the sum of net text bytes difference between current edit and previous one.")
+GET "https://{{baseUrl}}/metrics/bytes-difference/net/aggregate/:project/:editor-type/:page-type/:granularity/:start/:end"
+
+
+

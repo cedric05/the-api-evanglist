@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns the specified attachment file for a vulnerability detected by a Tenable.io Web Application Scanning scan. Attachments provide additional details for a detected vulnerability.
+// 
+//  **Note:** The `transfer-encoding` header value of the response stream is set to `chunked`. <p>Requires BASIC [16] user permissions and CAN VIEW [16] scan permissions. See [Permissions](doc:permissions).</p>
+
+@name("Download attachment") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/attachments/:attachment_id"
+
+
+

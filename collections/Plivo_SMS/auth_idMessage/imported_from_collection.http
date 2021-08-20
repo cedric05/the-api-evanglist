@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-20828d19-bf6b-4957-9f5b-08bcee1f939e.postman_collection.json
+
+// Get details of a message.
+
+@name("Messages")
+GET "https://{{baseUrl}}/:auth_id/Message/"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Get details of a single message.
+
+@name("Message")
+GET "https://{{baseUrl}}/:auth_id/Message/:message_uuid/"
+? "auth_id"= "<>"
+
+
+

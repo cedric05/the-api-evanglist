@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// nUse the amend call to change a subscription, such as upgrading the subscription.nn## Notesn* This feature is unavailable if you have the Orders feature enabled. See [Orders Migration Guidance](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AB_Orders_Migration_Guidance) for more information.n* If you do not have the Orders feature enabled, Zuora recommends that you use [Update subscription](https://www.zuora.com/developer/api-reference/#operation/PUT_Subscription) to amend s
+
+@name("Amend")
+POST "https://{{baseUrl}}/v1/action/amend"
+
+
+// Use the create call to create one or more objects of a specific type. You can specify different types in different create calls, but each create call must apply to only one type of object.nn## Limitsnn### Objects per Callnn50 objects are supported in a single call.nnnn## How to Use this CallnnYou can call create on an array of one or more zObjects. It returns an array of SaveResults, indicating the success or failure of creating each object. The following information applies to this call:nn* You
+
+@name("Create")
+POST "https://{{baseUrl}}/v1/action/create"
+
+
+// Deletes one or more objects of the same type. You can specify different types in different delete calls, but each delete call must apply only to one type of object.nnThe following information applies to this call:nn* You will need to first determine the IDs for the objects you wish to delete.n* You cannot pass in any null IDs.n* All objects in a specific delete call must be of the same type.nnn### Objects per Calln50 objects are supported in a single call.n
+
+@name("Delete")
+POST "https://{{baseUrl}}/v1/action/delete"
+
+
+// Use the execute call to execute a process to split an invoice into multiple invoices. The original invoice must be in draft status. The resulting invoices are called split invoices.nn**Note:** This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com). nnTo split a draft invoice into multiple split invoices:nn1. Use the create call to create a separate InvoiceSplitItem object for each split invoice 
+
+@name("Execute")
+POST "https://{{baseUrl}}/v1/action/execute"
+
+
+// Generates an on-demand invoice for a specific customer. This is similar to creating an ad-hoc bill run for a specific customer account in the Zuora UI.nn* Supported objects: Invoicen* Asynchronous process: yesnnThe ID of the generated invoice is returned in the response. If multiple invoices are generated, only the id of the first invoice generated is returned. This occurs when an account has multiple subscriptions with the [invoice subscription separately](https://knowledgecenter.zuora.com/BC_S
+
+@name("Generate")
+POST "https://{{baseUrl}}/v1/action/generate"
+
+
+// The query call sends a query expression by specifying the object to query, the fields to retrieve from that object, and any filters to determine whether a given object should be queried.nnnYou can use [Zuora Object Query Language](https://knowledgecenter.zuora.com/DC_Developers/K_Zuora_Object_Query_Language) (ZOQL) to construct those queries, passing them through the `queryString`.nnnOnce the call is made, the API executes the query against the specified object and returns a query response objec
+
+@name("Query")
+POST "https://{{baseUrl}}/v1/action/query"
+
+
+// Use queryMore to request additional results from a previous query call. If your initial query call returns more than 2000 results, you can use queryMore to query for the additional results.nnnAny `queryLocator` results greater than 2,000, will only be stored by Zuora for 5 days before it is deleted.nnn This call sends a request for additional results from an initial query call. If the initial query call returns more than 2000 results, you can use the `queryLocator` returned from query to request
+
+@name("QueryMore")
+POST "https://{{baseUrl}}/v1/action/queryMore"
+
+
+// nThis call performs many actions.  Use the subscribe call to bundle information required to create at least one new subscription.nn**Note:** This feature is unavailable if you have the Orders feature enabled. See [Orders Migration Guidance](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AB_Orders_Migration_Guidance) for more information.nnThe call takes in an array of SubscribeRequests. Because it takes an array, you can submit a batch of subscription requests at once. You c
+
+@name("Subscribe")
+POST "https://{{baseUrl}}/v1/action/subscribe"
+
+
+// nUpdates the information in one or more objects of the same type. You can specify different types of objects in different update calls, but each specific update call must apply to only one type of object.nnYou can update an array of one or more zObjects. It returns an array of SaveResults, indicating the success or failure of updating each object. The following information applies to this call:nn* You cannot pass in null zObjects.n* You can pass in a maximum of 50 zObjects at a time.n* All objec
+
+@name("Update")
+POST "https://{{baseUrl}}/v1/action/update"
+
+
+

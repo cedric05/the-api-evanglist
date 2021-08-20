@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97c6871f-8a54-42bd-a4f1-a3ada62aa1b0.postman_collection.json
+
+// List all API keys for any user in your organization. Accessible to Admin users only.
+
+@name("List API Keys (any user)")
+GET "https://{{baseUrl}}/v1/orgs/self/users/:user/apikeys"
+
+
+// Create a new API key for any user in your organization. Accessible to Admin users only.
+
+@name("Create API Key (any user)")
+POST "https://{{baseUrl}}/v1/orgs/self/users/:user/apikeys"
+"Content-Type": "application/json"
+json({
+    "name": "event-logger"
+})
+
+
+// Delete an API key for any user in your organization. Accessible to Admin users only.
+
+@name("Delete API Key (any user)")
+DELETE "https://{{baseUrl}}/v1/orgs/self/users/:user/apikeys/:name"
+
+
+

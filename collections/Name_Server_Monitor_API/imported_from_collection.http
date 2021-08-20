@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fa647e64-f161-4f34-bcfe-5a3d35524c2a.postman_collection.json
+
+// Receive notification when there are new and/or deleted domains on a given Domain Name Server
+
+@name("Name Server Monitor")
+GET "https://{{baseUrl}}/name-server-monitor/"
+? "query"= "<string>"
+? "days_back"= "<string>"
+? "page"= "<string>"
+
+
+

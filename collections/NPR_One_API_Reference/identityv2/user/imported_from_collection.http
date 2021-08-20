@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92585ca3-4af5-4f55-9f95-f80c9040e561.postman_collection.json
+
+// After a successful login, the client should send a `GET` call approximately once an hour to refresh the user data.
+
+@name("Get the latest state information about the logged-in user")
+GET "https://{{baseUrl}}/identity/v2/user"
+
+
+// This can and should only be used by clients who have access to the `temporary_user` grant type.n    Third-party developers do not have access to this grant type by default, and will not need this endpoint.
+
+@name("Copy listening data from a temporary user account to the logged-in user's account")
+POST "https://{{baseUrl}}/identity/v2/user/inherit"
+? "temp_user"= "<>"
+
+
+

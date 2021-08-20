@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4ff70fc9-8539-43e5-b513-382f49f2c6a5.postman_collection.json
+
+// This operation retrieves a TestCaseExecution entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a TestCaseExecution by ID")
+GET "https://{{baseUrl}}/testCaseExecution/:id"
+? "fields"= "ex aute dolore dolore"
+
+
+// This operation deletes a TestCaseExecution entity.
+
+@name("Deletes a TestCaseExecution")
+DELETE "https://{{baseUrl}}/testCaseExecution/:id"
+
+
+

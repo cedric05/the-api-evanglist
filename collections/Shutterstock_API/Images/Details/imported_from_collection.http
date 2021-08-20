@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-97b3c9c3-b021-464a-93c9-937f3062fa25.postman_collection.json
+
+@name("Get details")
+GET "https://{{baseurl}}/images/:ids"
+? "view"= ""
+
+
+@name("List details")
+GET "https://{{baseurl}}/images"
+? "id"= "123"
+? "view"= "full"
+
+
+

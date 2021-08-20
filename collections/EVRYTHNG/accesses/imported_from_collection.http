@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Create a new access for another Application User.
+
+@name("Create a new access")
+POST "https://{{baseUrl}}/accesses"
+? "No Name"= "<string>"
+
+
+// Delete an existing Application User access to revoke it. Either the granting or receiving user can do this.
+
+@name("Delete an access")
+DELETE "https://{{baseUrl}}/accesses/:accessId"
+? "No Name"= "<string>"
+
+
+

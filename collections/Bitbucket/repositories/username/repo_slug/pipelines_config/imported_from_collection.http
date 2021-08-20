@@ -1,0 +1,136 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Retrieve the repository pipelines configuration.
+
+@name("get Repository Pipeline Config")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config"
+
+
+// Update the pipelines configuration for a repository.
+
+@name("update Repository Pipeline Config")
+PUT "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config"
+"Content-Type": "application/json"
+json({
+    "type": "minim",
+    "enabled": "<boolean>",
+    "repository": {
+        "type": "consectetur voluptate",
+        "created_on": "1972-01-31T01:31:33.279Z",
+        "description": "",
+        "fork_policy": "no_public_forks",
+        "full_name": "quis",
+        "has_issues": true,
+        "has_wiki": true,
+        "is_private": false,
+        "language": "labore laborum ut et officia",
+        "links": {
+            "avatar": {
+                "href": "https://FFQoebnzFkZZnqIwADnPwNlRKNTOzU.ypjfgNXP3Rp4leqjXbs1jAIxRSHohlnYsg0H7Lse6aQVWOPAGXt97"
+            },
+            "clone": {
+                "href": "https://SwTX.kgwmOoHW5JohSyVKUki05gmCtBNzAhG8OMrCefZ"
+            },
+            "commits": {
+                "href": "http://yhwiVPcuSqdiikAcsEq.ddaNBDFTLMq"
+            },
+            "downloads": {
+                "href": "https://Tyt.tbhKWPG-KLBCPriBYuJZxOl3JcN+efRB0R64NbTp2KuQa4jZ6z"
+            },
+            "forks": {
+                "href": "http://nkSwoXzyXZZPDwpfeDOu.qcdzpv5cA3zNFDcUkUx"
+            },
+            "hooks": {
+                "href": "http://QwoAoDmxiRgIIEwVZM.jyewBfS9uJBRF,1g.1SDUgUIWUVdPbKbTJTKhIr4wZIZWAtvhzaxca"
+            },
+            "html": {
+                "href": "http://YBwVhvQYrPdxrgegvPUQMC.upA.WJ+Dg.CtWkvYk5fPuSQo4s"
+            },
+            "pullrequests": {
+                "href": "http://UdDxednXuUccRyHHroGpQoZdiVLc.nxim5fyfNyfpzqCu8pae9xp.O74H"
+            },
+            "self": {
+                "href": "http://dGJjANTxcCYBruIZBlVpulynGj.uhvrAQnH+I-.txhJ63732FRksow.aItmg,u7GrthaMA.dpbChJdW52iHeEk"
+            },
+            "watchers": {
+                "href": "http://kVCffIq.ijjB4Fhj9YOUNF-w4mtU3"
+            }
+        },
+        "name": "l",
+        "owner": {
+            "created_on": "1984-08-19T04:09:26.831Z",
+            "display_name": "ullamco",
+            "links": {
+                "avatar": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "followers": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "following": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "html": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "repositories": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "self": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            },
+            "username": "_NA3y-UH",
+            "uuid": "pariatur eu ex est",
+            "website": "commodo esse id"
+        },
+        "parent": {
+            "value": "<Circular reference to #/components/schemas/repository detected>"
+        },
+        "project": {
+            "created_on": "1948-01-19T01:11:16.260Z",
+            "description": "nulla ullamco laboris esse",
+            "is_private": true,
+            "key": "non dolore nostrud",
+            "links": {
+                "avatar": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "html": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            },
+            "name": "est velit voluptate eiusmod",
+            "owner": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "updated_on": "2016-06-01T16:09:46.902Z",
+            "uuid": "l"
+        },
+        "scm": "git",
+        "size": 10491251,
+        "updated_on": "1991-10-30T03:08:51.549Z",
+        "uuid": "ea esse"
+    }
+})
+
+
+

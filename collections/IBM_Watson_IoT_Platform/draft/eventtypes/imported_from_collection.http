@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-22a10f2d-8624-488d-95c0-85a6c45216c5.postman_collection.json
+
+// Event types are used to model the events that are published to thenWatson IoT Platform.  An event type must be created in an organizationnbefore more complex processing can be performed on the native event.nnThe **/draft/event/types** endpoint returns the list of all of the draftnevent types that have been defined for the organization in the WatsonnIoT Platform.  Various query parameters can be used to filter, sort andnpage through the list of draft event types that are returned.n
+
+@name("Query draft event types")
+GET "https://{{baseUrl}}/draft/event/types"
+
+
+// Retrieve the draft event type with the specified id.n
+
+@name("Get a draft event type")
+GET "https://{{baseUrl}}/draft/event/types/:eventTypeId"
+
+
+

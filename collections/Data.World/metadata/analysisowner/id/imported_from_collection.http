@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get an analysis resource by id
+
+@name("Get an analysis resource by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/metadata/analysis/:owner/:id"
+
+
+// Overwrite an existing analysis resource
+
+@name("Overwrite an existing analysis resource") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/metadata/analysis/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "Aid Option"
+    ],
+    "title": "crypto.snowflake",
+    "typeLabel": "Tableau dashboard",
+    "description": "Aid given to charity is an option that can be exercised by individuals and corporations",
+    "tags": [
+        "sensitive"
+    ],
+    "properties": {}
+})
+
+
+// Delete an analysis resource
+
+@name("Delete an analysis resource") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/metadata/analysis/:owner/:id"
+
+
+// Update an existing analysis resource
+
+@name("Update an existing analysis resource") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/metadata/analysis/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "Aid Option"
+    ],
+    "title": "crypto.snowflake",
+    "typeLabel": "Tableau dashboard",
+    "description": "Aid given to charity is an option that can be exercised by individuals and corporations",
+    "tags": [
+        "sensitive"
+    ],
+    "properties": {}
+})
+
+
+

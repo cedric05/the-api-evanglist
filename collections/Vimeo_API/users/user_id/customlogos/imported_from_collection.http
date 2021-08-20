@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns all the custom logos that belong to the specified user.
+
+@name("Get all the custom logos that belong to a user")
+GET "https://{{baseUrl}}/users/:user_id/customlogos"
+
+
+// This method returns a single custom logo belonging to the specified user.
+
+@name("Get a specific custom logo")
+GET "https://{{baseUrl}}/users/:user_id/customlogos/:logo_id"
+
+
+

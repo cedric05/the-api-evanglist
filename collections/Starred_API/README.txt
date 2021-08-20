@@ -1,0 +1,5 @@
+![Starred API][starred-api-intro]nnStarred provides REST APIs to help our clients automate feedback process. With Starred API, organizations can send survey invites, generate survey links or get the summary of survey forms. Starred Webhook allows your to subscribe to feedback notifications in real time with feedback data.nnThe easiest way to start using the Starred API is by clicking the Run in Postman button above. Postman is a free tool which helps developers run and debug API requests. Every endpoint you see documented here is readily available by running our Postman collection.nn## TLS 1.0 DeprecatednStarred has deprecated support for Transport Layer Security (TLS) 1.0 because of the security issues. This means we only support Transport Layer Security (TLS) 1.1 and TLS 1.2nnIf your programming language requires you to define security protocol then please use TLS 1.1 or above.nn## Need help?nThe Starred team is always around to answer your questions. Send your questions to [api@star
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

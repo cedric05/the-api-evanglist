@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-02fae580-11a1-41da-afdc-655537d58f8f.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// This endpoint lists the instruments that you can include in computer audio. If you specify more than one search parameter, the API uses an AND condition.
+
+@name("List computer audio instruments") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/ai/audio/instruments"
+? "id"= "<string>"
+? "per_page"= "20"
+? "page"= "1"
+? "name"= "<string>"
+? "tag"= "<string>"
+
+
+// This endpoint lists the descriptors that you can use in the audio regions in an audio render.
+
+@name("List computer audio descriptors") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/ai/audio/descriptors"
+? "render_speed_over"= "<number>"
+? "band_id"= "<string>"
+? "band_name"= "<string>"
+? "page"= "1"
+? "per_page"= "20"
+? "id"= "<string>"
+? "instrument_name"= "<string>"
+? "instrument_id"= "<string>"
+? "tempo"= "<number>"
+? "tempo_to"= "<number>"
+? "tempo_from"= "<number>"
+? "name"= "<string>"
+? "tag"= "<string>"
+
+
+

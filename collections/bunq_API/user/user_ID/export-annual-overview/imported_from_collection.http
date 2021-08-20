@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// List all the annual overviews for a user.
+
+@name("List all Export Annual Overview for User")
+GET "https://{{baseUrl}}/user/:userID/export-annual-overview"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create a new annual overview for a specific year. An overview can be generated only for a past year.
+
+@name("CREATE Export Annual Overview for User")
+POST "https://{{baseUrl}}/user/:userID/export-annual-overview"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "year": "<integer>"
+})
+
+
+// Used to retrieve the raw content of an annual overview.
+
+@name("List all Content for User Export Annual Overview")
+GET "https://{{baseUrl}}/user/:userID/export-annual-overview/:export-annual-overviewID/content"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+

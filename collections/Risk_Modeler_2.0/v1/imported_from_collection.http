@@ -1,0 +1,66 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Process Data Bridge notification.
+
+@name("Process Data Bridge event notification.") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/notify"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "*/*"
+data('{
+    "objectType": "non veniam proident",
+    "eventType": "Excepteur aliqua et exercitation proident",
+    "key": "Lorem"
+}')
+
+
+// Retrieves information for a policy condition specified by its ID.
+
+@name("Get information for a specified policy condition") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/conditions/:id"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Batch operation a list of portfolios. This endpoint has been deprecated, please use /v2/exposurebatches instead. Support for this endpoint will end on Wed, 15 Dec 2021 00:00:00 GMT
+
+@name("Batch operation for list of portfolios") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/exposurebatches"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "operation"= "Excepteur nisi in"
+json([
+    {
+        "method": "commodo ut aliquip eu",
+        "path": "aute incididunt",
+        "body": "officia ipsum consequat ullamco"
+    },
+    {
+        "method": "aute consequat",
+        "path": "labor",
+        "body": "incididunt sed"
+    }
+])
+
+
+// Retrieves all policy conditions in the EDM.
+
+@name("Get all policy conditions") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/policyconditions"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+@name("get") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/simplehealthcheck"
+
+
+

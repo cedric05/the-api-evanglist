@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+@name("Get the list of areas of the restaurant")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/areas"
+
+
+@name("Get the details of a specific area")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/areas/:areaId"
+
+
+

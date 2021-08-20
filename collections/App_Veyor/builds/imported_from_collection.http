@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-87030e81-ee2c-4c09-8477-6fa66d8714cc.postman_collection.json
+
+// Post builds.
+
+@name("Post Builds")
+POST "https://{{baseUrl}}/builds"
+
+
+// Delete builds accountname projectslug buildversion.
+
+@name("Delete Builds Accountname Projectslug Buildversion")
+DELETE "https://{{baseUrl}}/builds/:accountName/:projectSlug/:buildVersion"
+
+
+

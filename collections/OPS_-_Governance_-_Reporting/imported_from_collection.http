@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5936cabd-2be9-42bb-8041-c57974577cfe.postman_collection.json
+
+// This outputs the outline of this life cycle collection to the visualizer for using elsewhere.
+
+@name("Visualize the governance outline")
+GET "https://api.getpostman.com/collections/"
+"X-Api-Key": "{{postman_api_key}}"
+? "environment_name"= "PROD - Govern"
+
+
+

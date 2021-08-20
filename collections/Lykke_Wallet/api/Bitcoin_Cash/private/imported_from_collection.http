@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e04c6fb1-e891-4983-80ec-38175b6c944e.postman_collection.json
+
+// Get api bitcoincash private balance.
+
+@name("Get API Bitcoincash Private Balance")
+GET "https://{{baseUrl}}/api/BitcoinCash/private/balance"
+"Authorization": "<>"
+? "address"= "<delete>"
+
+
+// Get api bitcoincash private transaction.
+
+@name("Get API Bitcoincash Private Transaction")
+GET "https://{{baseUrl}}/api/BitcoinCash/private/transaction"
+"Authorization": "<>"
+? "sourceAddress"= "<delete>"
+? "destinationAddress"= "<delete>"
+? "fee"= "<delete>"
+
+
+

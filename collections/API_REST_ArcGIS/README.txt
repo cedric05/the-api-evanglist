@@ -1,0 +1,1 @@
+[Full documentation](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r300000054000000)

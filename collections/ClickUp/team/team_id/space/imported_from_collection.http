@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Create a Space") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/team/team_id/space"
+"Content-Type": "application/json"
+json({
+    "name": "New Space From API V2",
+    "multiple_assignees": true,
+    "features": {
+        "due_dates": {
+            "enabled": true,
+            "start_date": false,
+            "remap_due_dates": true,
+            "remap_closed_due_date": false
+        },
+        "time_tracking": {
+            "enabled": false
+        },
+        "tags": {
+            "enabled": true
+        },
+        "time_estimates": {
+            "enabled": true
+        },
+        "checklists": {
+            "enabled": true
+        },
+        "custom_fields": {
+            "enabled": true
+        },
+        "remap_dependencies": {
+            "enabled": true
+        },
+        "dependency_warning": {
+            "enabled": true
+        },
+        "portfolios": {
+            "enabled": true
+        }
+    }
+})
+
+
+@name("Get Spaces") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/team/team_id/space"
+"Content-Type": "application/json"
+
+
+

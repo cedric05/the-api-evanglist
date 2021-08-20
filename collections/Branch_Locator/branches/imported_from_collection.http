@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a34e9882-2d5f-40f8-aa75-08b8cada1aa7.postman_collection.json
+
+// Gets a list of all `Branch` objects.
+
+@name("/branches")
+GET "https://{{baseUrl}}/branches"
+"If-Modified-Since": "proident sit mollit reprehenderit"
+"If-None-Match": "proident sit mollit reprehenderit"
+
+
+// Gets header information on the current set of `Branch` data
+
+@name("/branches")
+HEAD "https://{{baseUrl}}/branches"
+"If-Modified-Since": "proident sit mollit reprehenderit"
+"If-None-Match": "proident sit mollit reprehenderit"
+
+
+

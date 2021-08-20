@@ -1,0 +1,253 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0d6f32d5-414a-4547-afec-4a55641aa2c1.postman_collection.json
+
+// Links a callback url to a user.
+
+@name("addwebhook")
+GET "https://{{baseUrl}}/addwebhook"
+? "url"= "<string>"
+? "app_type"= "<string>"
+
+
+// The method createnewschedule creates a new schedule stored in the backup list.
+
+@name("createnewschedule")
+POST "https://{{baseUrl}}/createnewschedule"
+"Content-Type": "text/plain"
+? "device_id"= "<string>"
+? "module_id"= "<string>"
+data('{
+    "name": "<string>",
+    "program_id": "<string>",
+    "selected": "<boolean>",
+    "timetable": [
+        {
+            "id": "<integer>",
+            "m_offset": "<integer>"
+        },
+        {
+            "id": "<integer>",
+            "m_offset": "<integer>"
+        }
+    ],
+    "zones": [
+        {
+            "id": "<integer>",
+            "name": "<string>",
+            "temp": "<float>",
+            "type": "<integer>"
+        },
+        {
+            "id": "<integer>",
+            "name": "<string>",
+            "temp": "<float>",
+            "type": "<integer>"
+        }
+    ]
+}')
+
+
+// The method devicelist returns the list of devices owned by the user, and their modules.
+// A device is identified by its _id (which is its mac address) and each device may have one, several or no modules, also identified by an _id.
+
+@name("devicelist")
+GET "https://{{baseUrl}}/devicelist"
+? "app_type"= "<string>"
+? "device_id"= "<string>"
+? "get_favorites"= "false"
+
+
+// Dissociates a webhook from a user.
+
+@name("dropwebhook")
+GET "https://{{baseUrl}}/dropwebhook"
+? "app_type"= "<string>"
+
+
+// Returns the snapshot associated to an event.
+
+@name("getcamerapicture")
+GET "https://{{baseUrl}}/getcamerapicture"
+? "image_id"= "<string>"
+? "key"= "<string>"
+
+
+// Returns the snapshot associated to an event.
+
+@name("geteventsuntil")
+GET "https://{{baseUrl}}/geteventsuntil"
+? "home_id"= "<string>"
+? "event_id"= "<string>"
+
+
+// The method gethomecoachsdata Returns data from a user Healthy Home Coach Station (measures and device specific data).
+
+@name("gethomecoachsdata")
+GET "https://{{baseUrl}}/gethomecoachsdata"
+? "device_id"= "<string>"
+
+
+// Returns information about users homes and cameras.
+
+@name("gethomedata")
+GET "https://{{baseUrl}}/gethomedata"
+? "home_id"= "<string>"
+? "size"= "<integer>"
+
+
+// Returns most recent events.
+
+@name("getlasteventof")
+GET "https://{{baseUrl}}/getlasteventof"
+? "home_id"= "<string>"
+? "person_id"= "<string>"
+? "offset"= "<integer>"
+
+
+// The method getmeasure returns the measurements of a device or a module.
+
+@name("getmeasure")
+GET "https://{{baseUrl}}/getmeasure"
+? "device_id"= "<string>"
+? "module_id"= "<string>"
+? "scale"= "<string>"
+? "type"= "<string>,<string>"
+? "date_begin"= "<integer>"
+? "date_end"= "<string>"
+? "limit"= "<integer>"
+? "optimize"= "<boolean>"
+? "real_time"= "<boolean>"
+
+
+// Returns previous events.
+
+@name("getnextevents")
+GET "https://{{baseUrl}}/getnextevents"
+? "home_id"= "<string>"
+? "event_id"= "<string>"
+? "size"= "<integer>"
+
+
+// Retrieves publicly shared weather data from Outdoor Modules within a predefined area.
+
+@name("getpublicdata")
+GET "https://{{baseUrl}}/getpublicdata"
+? "lat_ne"= "<integer>"
+? "lon_ne"= "<integer>"
+? "lat_sw"= "<integer>"
+? "lon_sw"= "<integer>"
+? "required_data"= "<string>,<string>"
+? "filter"= "<boolean>"
+
+
+// The method getstationsdata Returns data from a user's Weather Stations (measures and device specific data).
+
+@name("getstationsdata")
+GET "https://{{baseUrl}}/getstationsdata"
+? "device_id"= "<string>"
+? "get_favorites"= "false"
+
+
+// The method getthermostatsdata returns information about user's thermostats such as their last measurements.
+
+@name("getthermostatsdata")
+GET "https://{{baseUrl}}/getthermostatsdata"
+? "device_id"= "<string>"
+
+
+// The method getthermstate returns the last Thermostat measurements, its current weekly schedule, and, if present, its current manual temperature setpoint.
+
+@name("getthermstate")
+GET "https://{{baseUrl}}/getthermstate"
+? "device_id"= "<string>"
+? "module_id"= "<string>"
+
+
+// The method getuser returns information about a user such as prefered language, prefered units, and list of devices.
+
+@name("getuser")
+GET "https://{{baseUrl}}/getuser"
+
+
+// The method partnerdevices returns the list of device_id to which your partner application has access to.
+
+@name("partnerdevices")
+GET "https://{{baseUrl}}/partnerdevices"
+
+
+// Sets a person as 'Away' or the Home as 'Empty'. The event will be added to the user’s timeline.
+
+@name("setpersonsaway")
+POST "https://{{baseUrl}}/setpersonsaway"
+? "home_id"= "<string>"
+? "person_id"= "<string>"
+
+
+// Sets a person as 'At home'.
+
+@name("setpersonshome")
+POST "https://{{baseUrl}}/setpersonshome"
+? "home_id"= "<string>"
+? "person_ids"= "<string>"
+
+
+// The method setthermpoint changes the Thermostat manual temperature setpoint.
+
+@name("setthermpoint")
+POST "https://{{baseUrl}}/setthermpoint"
+? "device_id"= "<string>"
+? "module_id"= "<string>"
+? "setpoint_mode"= "<string>"
+? "setpoint_endtime"= "<integer>"
+? "setpoint_temp"= "<float>"
+
+
+// The method switchschedule switches the Thermostat's schedule to another existing schedule.
+
+@name("switchschedule")
+POST "https://{{baseUrl}}/switchschedule"
+? "device_id"= "<string>"
+? "module_id"= "<string>"
+? "schedule_id"= "<string>"
+
+
+// The method syncschedule changes the Thermostat weekly schedule.
+
+@name("syncschedule")
+POST "https://{{baseUrl}}/syncschedule"
+"Content-Type": "text/plain"
+? "device_id"= "<string>"
+? "module_id"= "<string>"
+data('{
+    "name": "<string>",
+    "program_id": "<string>",
+    "selected": "<boolean>",
+    "timetable": [
+        {
+            "id": "<integer>",
+            "m_offset": "<integer>"
+        },
+        {
+            "id": "<integer>",
+            "m_offset": "<integer>"
+        }
+    ],
+    "zones": [
+        {
+            "id": "<integer>",
+            "name": "<string>",
+            "temp": "<float>",
+            "type": "<integer>"
+        },
+        {
+            "id": "<integer>",
+            "name": "<string>",
+            "temp": "<float>",
+            "type": "<integer>"
+        }
+    ]
+}')
+
+
+

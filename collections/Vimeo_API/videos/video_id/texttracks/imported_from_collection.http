@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04551e11-ae48-4759-9d58-fef6a7b17230.postman_collection.json
+
+// This method returns all the text tracks of the specified video.
+
+@name("Get all the text tracks of a video")
+GET "https://{{baseUrl}}/videos/:video_id/texttracks"
+
+
+// This method deletes the specified text track from a video.
+
+@name("Delete a text track")
+DELETE "https://{{baseUrl}}/videos/:video_id/texttracks/:texttrack_id"
+
+
+

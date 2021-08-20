@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04d7d258-a63d-4960-8bb7-da34acef80a9.postman_collection.json
+
+// Get your EC Gateway settings detailsn
+
+@name("Get EC Gateway settings")
+GET "https://{{baseUrl}}/api/settings"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+// Validate the oauth2 token for the gateway usagen
+
+@name("Validate the oauth2 token")
+POST "https://{{baseUrl}}/api/token/validate"
+"Authorization": "<>"
+"Predix": "<>"
+
+
+

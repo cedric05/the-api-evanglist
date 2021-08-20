@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Add Thngs to a collection. The maximum number of Thngs that can be added to a collection is 10,000 per request.
+
+@name("Add Thngs to a collection")
+PUT "https://{{baseUrl}}/collections/:collectionId/thngs"
+? "No Name"= "<string>"
+
+
+// Remove a Thng from a collection. There is a limit of 500 Thngs removed per API call on collections. If your collection contains more than 500 elements you should consider an iterative solution.
+
+@name("Remove a Thng from a collection")
+DELETE "https://{{baseUrl}}/collections/:collectionId/thngs/:thngId"
+? "No Name"= "<string>"
+
+
+

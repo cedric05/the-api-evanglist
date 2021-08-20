@@ -1,0 +1,1 @@
+For use in OpenAPI 3.0 documents

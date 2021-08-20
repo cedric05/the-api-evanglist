@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0844b16b-d5bd-4114-8004-1fa248b2dcfc.postman_collection.json
+
+// The Price Estimates endpoint returns an estimated price range for each product offered at a given location. The price estimate is provided as a formatted string with the full price range and the localized currency symbol.<br><br>The response also includes low and high estimates, and the [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) currency code for situations requiring currency conversion. When surge is active for a particular product, its surge_multiplier will be greater than 1, but the pr
+
+@name("Price Estimates")
+GET "https://{{baseUrl}}/estimates/price"
+? "start_latitude"= "<>"
+? "start_longitude"= "<>"
+? "end_latitude"= "<>"
+? "end_longitude"= "<>"
+
+
+// The Time Estimates endpoint returns ETAs for all products offered at a given location, with the responses expressed as integers in seconds. We recommend that this endpoint be called every minute to provide the most accurate, up-to-date ETAs.
+
+@name("Time Estimates")
+GET "https://{{baseUrl}}/estimates/time"
+? "start_latitude"= "<>"
+? "start_longitude"= "<>"
+? "customer_uuid"= "<>"
+? "product_id"= "<get>"
+
+
+

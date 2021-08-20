@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-df55bd21-8efe-4dae-ac10-923f5911c3f0.postman_collection.json
+
+@name("Retrieve a list of all possible soilcodes.")
+GET "https://{{baseUrl}}/codes/soilcodes"
+"token": "{{token}}"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+@name("Retrieve details for a specific soilcode.")
+GET "https://{{baseUrl}}/codes/soilcodes/:soilcode"
+"token": "{{token}}"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+

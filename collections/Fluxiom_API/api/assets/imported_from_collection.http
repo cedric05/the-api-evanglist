@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-171a8c67-fca5-43a5-8135-dc521868bfb3.postman_collection.json
+
+// Get assets
+
+@name("Get assets")
+GET "https://{{baseUrl}}/api/assets"
+? "page"= "<>"
+? "per_page"= "<>"
+? "query"= "<>"
+? "tags"= "<>"
+
+
+// Download asset
+
+@name("Download asset")
+GET "https://{{baseUrl}}/api/assets/download/:id"
+
+
+// Delete asset
+
+@name("Delete asset")
+DELETE "https://{{baseUrl}}/api/assets/:id"
+
+
+

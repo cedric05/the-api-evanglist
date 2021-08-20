@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9ba7a214-d210-425d-b1ff-9d5f9f4bbe8d.postman_collection.json
+
+@name("Import new version via Url")
+POST "https://{{baseUrl}}/api-groups/:apiGroupId/api-entities"
+
+
+@name("Get Api Group Docs Guide Section Settings")
+GET "https://{{baseUrl}}/api-groups/:apiGroupId/docs/guide-section-settings"
+
+
+

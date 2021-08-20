@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8060093f-11e6-4ef3-8d37-3611cbfcffdf.postman_collection.json
+
+// API Compensaciones CRM
+
+@name("ConsultarCompensacionesEmitidas")
+POST "https://{{baseUrl}}/ConsultarCompensacionesEmitidas"
+"Cache-Control": "no-cache"
+"Ocp-Apim-Trace": "true"
+"Ocp-Apim-Subscription-Key": "1234567890ABC"
+"operationName": "getIssueCompensationSACSVC"
+"Scanal": "S"
+"Authorization": "{{tokenprod}}"
+"SUsuario": "S"
+"SOrigenCliente": "S"
+"token-type": "Bearer"
+"Content-Type": "application/json"
+json({
+    "lName": "PULIDO",
+    "fName": "MARTIN",
+    "flightNumber": "AV 0022",
+    "sDate": "2018/08/15",
+    "eDate": "2018/08/20",
+    "paxCode": "8408018"
+})
+
+
+@name("ConsultarEMD")
+POST "https://{{baseUrl}}/ConsultarEMD"
+"Ocp-Apim-Trace": "true"
+"Authorization": "{{tokenprod}}"
+"token_type": "Bearer"
+"Ocp-Apim-Subscription-Key": "123456789ABC"
+"SOrigenCliente": "s"
+"Scanal": "s"
+"SUsuario": "s"
+"Content-Type": "application/json"
+json({
+    "emdNumber": "1348204099718"
+})
+
+
+@name("ConsultarPasajerosCompensados")
+POST "https://{{baseUrl}}/ConsultarPasajerosCompensados"
+"Ocp-Apim-Trace": "true"
+"Authorization": "{{tokenprod}}"
+"token_type": "Bearer"
+"Ocp-Apim-Subscription-Key": "123456789ABC"
+"SOrigenCliente": "S"
+"Scanal": "S"
+"SUsuario": "S"
+"Content-Type": "application/json"
+json({
+    "lName": "CASTILLO",
+    "fName": "",
+    "pnr": "",
+    "sDate": "04MAY2018",
+    "eDate": "04MAY2018",
+    "fqtv": ""
+})
+
+
+

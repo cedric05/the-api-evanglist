@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1cfda923-efc3-47df-ba8a-7d6273778741.postman_collection.json
+
+// Request the list of all event notification messages that the request is authorized to view
+
+@name("Event Notification Messages")
+GET "https://{{baseUrl}}/core/v1/event-notification-messages"
+? "No Name"= "<string>"
+
+
+// Delete the event notification message once the consumer has processed it successfully. The DELETE Acknowledges successful receipt and processing of the request.
+
+@name("Event Notification Message")
+DELETE "https://{{baseUrl}}/core/v1/event-notification-messages/:adp-msg-msgid"
+? "No Name"= "<string>"
+
+
+

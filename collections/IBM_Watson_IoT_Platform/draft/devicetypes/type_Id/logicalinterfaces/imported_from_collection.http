@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-22a10f2d-8624-488d-95c0-85a6c45216c5.postman_collection.json
+
+// Retrieve the list of draft logical interfaces that have beennassociated with the device type.  At least one active logicalninterface must be associated with the device type before any mappingsncan be defined that will generate state for the device.n
+
+@name("Get the list of draft logical interfaces associated with the devicentypen")
+GET "https://{{baseUrl}}/draft/device/types/:typeId/logicalinterfaces"
+
+
+// Disassociates the draft logical interface  with the specified idnfrom the device type.nnPlease note the the delete will fail if the draft logical interfacenbeing removed from the device type is referenced in the propertynmappings for the device type.n
+
+@name("Disassociate a draft logical interface from the device type")
+DELETE "https://{{baseUrl}}/draft/device/types/:typeId/logicalinterfaces/:logicalInterfaceId"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2e4fc519-a42b-4b90-bb17-fc7dde3aa9e4.postman_collection.json
+
+// Create a new Funding Source for a Master Dwolla Account. nn### Request ParametersnnParameter | Data Type | Parameter Type | Required | Descriptionn---------|---------|--------|----------|---------|naccountNumber | string | body | yes | The bank account number.nroutingNumber | string | body | yes | The bank account's routing number.nbankAccountType | string | body | yes | Type of bank account: `checking` or `savings`.nname | string | body | yes | Arbitrary nickname for the funding source.
+
+@name("Create A Funding Source For A Master Dwolla Account")
+POST "https://{{baseUrl}}/funding-sources"
+
+
+// Retrieve the amount for the `balance` funding source. The funding source type `balance` only exists for Verified Customer accounts and represents a balance held in the Dwolla network.nn### Request parametersnnParameter | Data Type | Parameter Type | Required | Descriptionn---------|---------|----------|--------|---------|nid | string | path | yes | id of funding source to retrieve.
+
+@name("Retrieve A Funding Source Balance")
+GET "https://{{baseUrl}}/funding-sources/:VCRBalanceFundingSourceId/balance"
+
+
+

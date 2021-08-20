@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-88ee331c-0a14-45bb-b673-2d6b931ef0b1.postman_collection.json
+
+// Sets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.
+
+@name("Register a listener")
+POST "https://{{baseUrl}}/hub"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "callback": "velit irure culpa",
+    "query": "sint"
+})
+
+
+// Resets the communication endpoint address the service instance must use to deliver information about its health state, execution state, failures and metrics.
+
+@name("Unregister a listener")
+DELETE "https://{{baseUrl}}/hub/:id"
+
+
+

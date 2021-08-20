@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ce20e6b1-bbe2-4633-bbfd-c4d3fdf33b8a.postman_collection.json
+
+// Get lists dvds current releases.json.
+
+@name("Get Lists Dvds Current Releases")
+GET "https://{{baseUrl}}/lists/dvds/current_releases.json"
+? "page_limit"= "<>"
+? "page"= "<>"
+? "country"= "<>"
+
+
+// Get lists dvds new releases.json.
+
+@name("Get Lists Dvds New Releases")
+GET "https://{{baseUrl}}/lists/dvds/new_releases.json"
+? "page_limit"= "<>"
+? "page"= "<>"
+? "country"= "<>"
+
+
+// Get lists dvds top rentals.json.
+
+@name("Get Lists Dvds Top Rentals")
+GET "https://{{baseUrl}}/lists/dvds/top_rentals.json"
+? "limit"= "<>"
+? "country"= "<>"
+
+
+// Get lists dvds upcoming.json.
+
+@name("Get Lists Dvds Upcoming")
+GET "https://{{baseUrl}}/lists/dvds/upcoming.json"
+? "page_limit"= "<>"
+? "page"= "<>"
+? "country"= "<>"
+
+
+

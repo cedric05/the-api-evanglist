@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// List all templates available to pass as an option when [creating a repository](https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user).
+
+@name("Get all gitignore templates")
+GET "https://{{baseUrl}}/gitignore/templates"
+
+
+// The API also allows fetching the source of a single template.
+// Use the raw [media type](https://developer.github.com/v3/media/) to get the raw contents.
+
+@name("Get a gitignore template")
+GET "https://{{baseUrl}}/gitignore/templates/:name"
+
+
+

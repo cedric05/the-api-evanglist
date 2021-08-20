@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Activate a one-time charge.
+
+@name("Activate a one-time charge")
+POST "https://{{baseUrl}}/admin/application_charges/675931192/activate.json"
+"Content": "<>"
+
+
+// Retrieve one-time application charge.
+
+@name("Retrieve one-time application charge")
+GET "https://{{baseUrl}}/admin/application_charges/1.json"
+"Content": "<>"
+
+
+

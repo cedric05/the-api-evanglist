@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1496d86f-2ecc-4608-b252-72a09b88c525.postman_collection.json
+
+// Add a transaction entry for your application to the blockchain. Note thatnthis entry must be a valid message according to the application configurationnthat you set up.n
+
+@name("Put Entry")
+PUT "https://{{baseUrl}}/entry"
+"MCWSSAML": "<>"
+
+
+// Returns full detail of the value of the blockchain entrynreferenced by the specified key, if it has been previously recordednby your node's key-value store (database).n
+
+@name("Get Entry Key")
+GET "https://{{baseUrl}}/entry/:key"
+"MCWSSAML": "<>"
+
+
+

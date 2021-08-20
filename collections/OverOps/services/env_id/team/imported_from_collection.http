@@ -1,0 +1,69 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List team members with access to this environment
+
+@name("List environment team members") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/team"
+? "email"= "e"
+
+
+// Add new members
+
+@name("Add new members") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/team"
+"Content-Type": "application/json"
+json([
+    {
+        "email": "jane.doe@company.com",
+        "role": "admin"
+    },
+    {
+        "email": "jane.doe@company.com",
+        "role": "admin"
+    }
+])
+
+
+// Delete members from an environment. This call requires admin role
+
+@name("Delete members from an environment") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/services/:env_id/team"
+"Content-Type": "application/json"
+json([
+    {
+        "email": "jane.doe@company.com",
+        "role": "admin"
+    },
+    {
+        "email": "jane.doe@company.com",
+        "role": "admin"
+    }
+])
+
+
+// Edit roles for selected group of users
+
+@name("Edit roles") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/team/change-role"
+"Content-Type": "application/json"
+json([
+    {
+        "email": "jane.doe@company.com",
+        "role": "admin"
+    },
+    {
+        "email": "jane.doe@company.com",
+        "role": "admin"
+    }
+])
+
+
+

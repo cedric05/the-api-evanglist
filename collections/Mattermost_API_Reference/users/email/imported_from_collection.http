@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a user object by providing a user email. Sensitive information will be sanitized out.n##### PermissionsnRequires an active session but no other permissions.n
+
+@name("Get a user by email")
+GET "https://{{baseUrl}}/users/email/:email"
+
+
+

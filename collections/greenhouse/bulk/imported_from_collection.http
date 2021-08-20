@@ -1,0 +1,67 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Create a new bulk download job (asynchronous)")
+POST "https://{{baseUrl}}/bulk/download"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "objectName": "amet commodo laboris",
+    "format": "application/json",
+    "apiLimit": 3448594,
+    "continueFromJobId": -43931761,
+    "docsHubDetails": {
+        "instanceId": "laboris in",
+        "path": "tempor in"
+    },
+    "filterDateField": "ut commodo veniam",
+    "filterNulls": false,
+    "from": "1948-05-01T02:28:46.663Z",
+    "limit": -39574857,
+    "notificationUrl": "ad voluptate Lorem",
+    "pageSize": 96936974,
+    "query": {
+        "anyKey": "ad labore pariatur"
+    },
+    "selectFields": "Ut est ut",
+    "to": "1944-11-17T00:32:30.547Z",
+    "where": "in Excepteur voluptate eiusmod occaecat"
+})
+
+
+@name("Fetch all the bulk jobs for an instance")
+GET "https://{{baseUrl}}/bulk/jobs"
+"Authorization": "ad cillum non laborum"
+? "where"= "ad cillum non laborum"
+? "nextPage"= "ad cillum non laborum"
+? "pageSize"= "-9551490"
+? "fields"= "ad cillum non laborum"
+
+
+@name("Create an asynchronous bulk query job.")
+POST "https://{{baseUrl}}/bulk/query"
+"Authorization": "ad cillum non laborum"
+"Elements-Async-Callback-Url": "ad cillum non laborum"
+"Content-Type": "multipart/form-data"
+? "q"= "ad cillum non laborum"
+? "lastRunDate"= "ad cillum non laborum"
+? "from"= "ad cillum non laborum"
+? "to"= "ad cillum non laborum"
+files(
+	("metaData", "dolore")
+)
+
+
+@name("Upload a file of objects to be bulk uploaded to the provider.")
+POST "https://{{baseUrl}}/bulk/:objectName"
+"Authorization": "ad cillum non laborum"
+"Elements-Async-Callback-Url": "ad cillum non laborum"
+"Content-Type": "multipart/form-data"
+files(
+	("metaData", "tempor"),
+	("file", "magna dolor non")
+)
+
+
+

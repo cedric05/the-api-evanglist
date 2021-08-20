@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Please paste previously created folder_id for continuity
+
+@name("Update a Folder") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/folder/folder_id"
+"Content-Type": "application/json"
+json({
+    "name": "Updated Folder Name"
+})
+
+
+// Please paste previously updated folder_id for continuity
+
+@name("Delete a Folder") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/folder/folder_id"
+"Content-Type": "application/json"
+
+
+@name("Get Folder") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/folder/folder_id"
+"Content-Type": "application/json"
+
+
+@name("Create a List") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/folder/folder_id/list"
+"Content-Type": "application/json"
+json({
+    "name": "New List Name",
+    "content": "Sent from API V2",
+    "due_date": 1577811600000,
+    "due_date_time": false,
+    "priority": 1,
+    "assignee": 53480,
+    "status": "red"
+})
+
+
+

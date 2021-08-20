@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Create new export
+
+@name("Create export")
+POST "https://{{baseUrl}}/api/v1/export"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "name": "aliqua laboris culpa consequat",
+    "includeProperties": "columns_only",
+    "fileFormat": "csv",
+    "filters": [
+        {
+            "operator": "aute mollit ullamco nostrud",
+            "property": "magna",
+            "value": "dolore do magna",
+            "included": {
+                "operator": "proident et Ut fugiat",
+                "value": {}
+            }
+        },
+        {
+            "operator": "cupidatat ex",
+            "property": "tempor eu irure adipisicing",
+            "value": "veniam laborum velit sint",
+            "included": {
+                "operator": "adipisicing mollit",
+                "value": {}
+            }
+        }
+    ],
+    "sourceType": "company",
+    "sort": {
+        "column": "oc",
+        "order": "ASC"
+    },
+    "itemIds": [
+        "dolor officia",
+        "enim mollit eiusmod nisi qui"
+    ]
+})
+
+
+

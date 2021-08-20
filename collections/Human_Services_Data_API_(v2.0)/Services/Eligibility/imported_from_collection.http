@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Service Eligibilities")
+GET "https://{{baseUrl}}/services/:service_id/eligibility"
+
+
+@name("add Service Eligibility")
+POST "https://{{baseUrl}}/services/:service_id/eligibility"
+"Content-Type": "application/json"
+json({
+    "id": "nostrud et",
+    "service_id": "quis velit laboris non"
+})
+
+
+@name("get Service Eligibility")
+GET "https://{{baseUrl}}/services/:service_id/eligibility/:eligibility_id"
+
+
+@name("update Service Eligibility")
+PUT "https://{{baseUrl}}/services/:service_id/eligibility/:eligibility_id"
+"Content-Type": "application/json"
+json({
+    "id": "nostrud et",
+    "service_id": "quis velit laboris non"
+})
+
+
+@name("delete Service Eligibility")
+DELETE "https://{{baseUrl}}/services/:service_id/eligibility/:eligibility_id"
+
+
+

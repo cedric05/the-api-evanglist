@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4bcffb0e-62a8-42b3-8b56-ed7c660c3000.postman_collection.json
+
+// Creates a [*Wishlist*](/api-reference/customer-subscribers/wishlist-api/models/wishlist) and [*Wishlist Item*](/api-reference/customer-subscribers/wishlist-api/models/wishlistitem). More than one item can be added in the POST.nn**Required Fields**n* namen* customer_id
+
+@name("Create a Wishlist")
+POST "https://{{baseUrl}}/wishlists"
+
+
+

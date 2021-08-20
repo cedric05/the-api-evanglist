@@ -1,0 +1,389 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-538b4bae-014b-4e31-9e7e-f206b0a4dc0c.postman_collection.json
+
+// Example of a client listener for receiving the notification EntityCreateEvent
+
+@name("Client listener for entity EntityCreateEvent")
+POST "https://{{baseUrl}}/listener/entityCreateEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "entity": {
+            "id": "ex amet",
+            "href": "http://NWCcxvpfCoFLYdVSZqpDcgQMTtDe.gzxkbAIS1hs.BNGG9e5QdTXKXSAbUbK3KCDUKzrUaHbeFwhDFQ",
+            "@baseType": "eu commodo laborum",
+            "@schemaLocation": "https://hOJiVbpUXpvddEtxSCbguATTEGCYfUSX.pjuL4XH",
+            "@type": "officia adipisicing eiusmod"
+        }
+    },
+    "eventId": "cupidatat n",
+    "eventTime": "2007-10-14T14:18:31.825Z",
+    "eventType": "Lorem ut",
+    "correlationId": "id",
+    "domain": "incididunt amet consectet",
+    "title": "dolore laborum",
+    "description": "dolor ipsum esse dolor",
+    "priority": "et magna esse est",
+    "timeOcurred": "1988-01-31T00:05:33.866Z"
+})
+
+
+// Example of a client listener for receiving the notification EntityChangeEvent
+
+@name("Client listener for entity EntityChangeEvent")
+POST "https://{{baseUrl}}/listener/entityChangeEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "entity": {
+            "id": "ex amet",
+            "href": "http://NWCcxvpfCoFLYdVSZqpDcgQMTtDe.gzxkbAIS1hs.BNGG9e5QdTXKXSAbUbK3KCDUKzrUaHbeFwhDFQ",
+            "@baseType": "eu commodo laborum",
+            "@schemaLocation": "https://hOJiVbpUXpvddEtxSCbguATTEGCYfUSX.pjuL4XH",
+            "@type": "officia adipisicing eiusmod"
+        }
+    },
+    "eventId": "cupidatat n",
+    "eventTime": "2007-10-14T14:18:31.825Z",
+    "eventType": "Lorem ut",
+    "correlationId": "id",
+    "domain": "incididunt amet consectet",
+    "title": "dolore laborum",
+    "description": "dolor ipsum esse dolor",
+    "priority": "et magna esse est",
+    "timeOcurred": "1988-01-31T00:05:33.866Z"
+})
+
+
+// Example of a client listener for receiving the notification EntityDeleteEvent
+
+@name("Client listener for entity EntityDeleteEvent")
+POST "https://{{baseUrl}}/listener/entityDeleteEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "entity": {
+            "id": "ex amet",
+            "href": "http://NWCcxvpfCoFLYdVSZqpDcgQMTtDe.gzxkbAIS1hs.BNGG9e5QdTXKXSAbUbK3KCDUKzrUaHbeFwhDFQ",
+            "@baseType": "eu commodo laborum",
+            "@schemaLocation": "https://hOJiVbpUXpvddEtxSCbguATTEGCYfUSX.pjuL4XH",
+            "@type": "officia adipisicing eiusmod"
+        }
+    },
+    "eventId": "cupidatat n",
+    "eventTime": "2007-10-14T14:18:31.825Z",
+    "eventType": "Lorem ut",
+    "correlationId": "id",
+    "domain": "incididunt amet consectet",
+    "title": "dolore laborum",
+    "description": "dolor ipsum esse dolor",
+    "priority": "et magna esse est",
+    "timeOcurred": "1988-01-31T00:05:33.866Z"
+})
+
+
+// Example of a client listener for receiving the notification AssociationCreateEvent
+
+@name("Client listener for entity AssociationCreateEvent")
+POST "https://{{baseUrl}}/listener/associationCreateEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "association": {
+            "description": "id exercitation ipsum qui dolore",
+            "lastUpdate": "1951-01-16T12:21:06.801Z",
+            "lifecycleStatus": "exercitation cupidatat",
+            "name": "cupidatat id",
+            "validFor": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z"
+            },
+            "version": "cupidatat dolor",
+            "associationSpec": {
+                "id": "ad sed nulla eiusmod",
+                "href": "https://ZOECzfdTwvzADbqoW.diihw",
+                "name": "dolor esse",
+                "@baseType": "nisi in eu consequat nulla",
+                "@schemaLocation": "https://bjjVv.ghkYBxY3lEw,cydW7v",
+                "@type": "deserunt",
+                "@referredType": "mollit tempor quis"
+            },
+            "associationRole": [
+                {
+                    "entity": {
+                        "id": "est elit nisi Duis sint",
+                        "href": "https://SZHQ.mmebRf+u,MDCQ2h",
+                        "name": "dolore exercitation incididunt",
+                        "@baseType": "velit",
+                        "@schemaLocation": "https://iTGLNhLtjehMYLscFcmKFvzPswEobh.altgXw.VQgpHhCqg+bK",
+                        "@type": "magna sunt dolor",
+                        "@referredType": "aute "
+                    },
+                    "role": "enim occaecat exercitation",
+                    "isSource": false,
+                    "@baseType": "veniam",
+                    "@schemaLocation": "http://KGqtUMJjRSNuJTs.ulsV3RPkrHdeh77lxK1pMHR",
+                    "@type": "occaecat ut"
+                },
+                {
+                    "entity": {
+                        "id": "nulla minim adipisicing",
+                        "href": "http://zJs.mfoaAOvh24udldD,n372I0yqsjcZdNFi,wN,yYs",
+                        "name": "sunt sint aute",
+                        "@baseType": "pariatur",
+                        "@schemaLocation": "https://sqpHmoKsUzRAamMbbWyt.cmufl7JQpfY",
+                        "@type": "do irure adipisicing tempor",
+                        "@referredType": "qui cillum"
+                    },
+                    "role": "ipsum",
+                    "isSource": false,
+                    "@baseType": "in sint",
+                    "@schemaLocation": "https://acgNmqCXGaqsGnEugEgYtaMseP.czWD8pIOsS0KL0DQ9fdbQMLSU",
+                    "@type": "tempor et officia deserunt ad"
+                }
+            ],
+            "constraint": [
+                {
+                    "id": "proident",
+                    "href": "https://hHzRRqUwCWAznaixOjCNSO.tmgnJoPs5QPH9gnO3uDcheDmzikH0dmTaUf4VOcmnMhQ8CGff",
+                    "name": "laborum",
+                    "version": "dolor Excepteur laborum",
+                    "@baseType": "sed deserunt consectetur nulla",
+                    "@schemaLocation": "http://GDWxMBPXSJWKjrzxbqsNVaSspkvHwDl.snvBC+Tle.3OBsGiO48KmFpwjBhJhIXWX,VSyi+LvP",
+                    "@type": "ut volupt",
+                    "@referredType": "dolore dolore dolor Excepteur mollit"
+                },
+                {
+                    "id": "adi",
+                    "href": "https://UzZEPxpMafFgZIQHQgtZfzUrVo.kssf0W7yt3eyhhiY3O5zKmeFkKGwaMtkdUnYwwH+MgDMqkaPdmT1",
+                    "name": "aute",
+                    "version": "dolor adipisicing mo",
+                    "@baseType": "in laborum sunt dolor non",
+                    "@schemaLocation": "https://iRxzOOruaxAeZhsNekuK.pnxqD-CcEKAxANfwN67MEhWpS.uhihh,CGEB1UL",
+                    "@type": "ex et dolore quis",
+                    "@referredType": "reprehenderit dolor culpa"
+                }
+            ],
+            "href": "http://MjFQLZWYdFHDmoqomHj.ioLuHE4sbeEDQyzHrO63SBwzv3D8pvW",
+            "id": "enim",
+            "@baseType": "esse consectetur eu",
+            "@schemaLocation": "http://vODoZnCfknJdcrNeLRKJIBCyvOMIcKDH.qjyoTa.OE2O+dnsUlUSv.NFwfxoByIfayX-sc0DmfFZ7pBfpINQ3E.pbjJ",
+            "@type": "commodo quis adipisicing"
+        }
+    },
+    "eventId": "Excepteur",
+    "eventTime": "1985-11-17T21:05:53.707Z",
+    "eventType": "tempor commodo",
+    "correlationId": "reprehenderit non tempor",
+    "domain": "elit voluptate ut",
+    "title": "ea mollit dolor sed exercitation",
+    "description": "aliquip Duis officia",
+    "priority": "est Excepteur",
+    "timeOcurred": "1979-03-31T01:55:05.230Z"
+})
+
+
+// Example of a client listener for receiving the notification AssociationChangeEvent
+
+@name("Client listener for entity AssociationChangeEvent")
+POST "https://{{baseUrl}}/listener/associationChangeEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "association": {
+            "description": "id exercitation ipsum qui dolore",
+            "lastUpdate": "1951-01-16T12:21:06.801Z",
+            "lifecycleStatus": "exercitation cupidatat",
+            "name": "cupidatat id",
+            "validFor": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z"
+            },
+            "version": "cupidatat dolor",
+            "associationSpec": {
+                "id": "ad sed nulla eiusmod",
+                "href": "https://ZOECzfdTwvzADbqoW.diihw",
+                "name": "dolor esse",
+                "@baseType": "nisi in eu consequat nulla",
+                "@schemaLocation": "https://bjjVv.ghkYBxY3lEw,cydW7v",
+                "@type": "deserunt",
+                "@referredType": "mollit tempor quis"
+            },
+            "associationRole": [
+                {
+                    "entity": {
+                        "id": "est elit nisi Duis sint",
+                        "href": "https://SZHQ.mmebRf+u,MDCQ2h",
+                        "name": "dolore exercitation incididunt",
+                        "@baseType": "velit",
+                        "@schemaLocation": "https://iTGLNhLtjehMYLscFcmKFvzPswEobh.altgXw.VQgpHhCqg+bK",
+                        "@type": "magna sunt dolor",
+                        "@referredType": "aute "
+                    },
+                    "role": "enim occaecat exercitation",
+                    "isSource": false,
+                    "@baseType": "veniam",
+                    "@schemaLocation": "http://KGqtUMJjRSNuJTs.ulsV3RPkrHdeh77lxK1pMHR",
+                    "@type": "occaecat ut"
+                },
+                {
+                    "entity": {
+                        "id": "nulla minim adipisicing",
+                        "href": "http://zJs.mfoaAOvh24udldD,n372I0yqsjcZdNFi,wN,yYs",
+                        "name": "sunt sint aute",
+                        "@baseType": "pariatur",
+                        "@schemaLocation": "https://sqpHmoKsUzRAamMbbWyt.cmufl7JQpfY",
+                        "@type": "do irure adipisicing tempor",
+                        "@referredType": "qui cillum"
+                    },
+                    "role": "ipsum",
+                    "isSource": false,
+                    "@baseType": "in sint",
+                    "@schemaLocation": "https://acgNmqCXGaqsGnEugEgYtaMseP.czWD8pIOsS0KL0DQ9fdbQMLSU",
+                    "@type": "tempor et officia deserunt ad"
+                }
+            ],
+            "constraint": [
+                {
+                    "id": "proident",
+                    "href": "https://hHzRRqUwCWAznaixOjCNSO.tmgnJoPs5QPH9gnO3uDcheDmzikH0dmTaUf4VOcmnMhQ8CGff",
+                    "name": "laborum",
+                    "version": "dolor Excepteur laborum",
+                    "@baseType": "sed deserunt consectetur nulla",
+                    "@schemaLocation": "http://GDWxMBPXSJWKjrzxbqsNVaSspkvHwDl.snvBC+Tle.3OBsGiO48KmFpwjBhJhIXWX,VSyi+LvP",
+                    "@type": "ut volupt",
+                    "@referredType": "dolore dolore dolor Excepteur mollit"
+                },
+                {
+                    "id": "adi",
+                    "href": "https://UzZEPxpMafFgZIQHQgtZfzUrVo.kssf0W7yt3eyhhiY3O5zKmeFkKGwaMtkdUnYwwH+MgDMqkaPdmT1",
+                    "name": "aute",
+                    "version": "dolor adipisicing mo",
+                    "@baseType": "in laborum sunt dolor non",
+                    "@schemaLocation": "https://iRxzOOruaxAeZhsNekuK.pnxqD-CcEKAxANfwN67MEhWpS.uhihh,CGEB1UL",
+                    "@type": "ex et dolore quis",
+                    "@referredType": "reprehenderit dolor culpa"
+                }
+            ],
+            "href": "http://MjFQLZWYdFHDmoqomHj.ioLuHE4sbeEDQyzHrO63SBwzv3D8pvW",
+            "id": "enim",
+            "@baseType": "esse consectetur eu",
+            "@schemaLocation": "http://vODoZnCfknJdcrNeLRKJIBCyvOMIcKDH.qjyoTa.OE2O+dnsUlUSv.NFwfxoByIfayX-sc0DmfFZ7pBfpINQ3E.pbjJ",
+            "@type": "commodo quis adipisicing"
+        }
+    },
+    "eventId": "Excepteur",
+    "eventTime": "1985-11-17T21:05:53.707Z",
+    "eventType": "tempor commodo",
+    "correlationId": "reprehenderit non tempor",
+    "domain": "elit voluptate ut",
+    "title": "ea mollit dolor sed exercitation",
+    "description": "aliquip Duis officia",
+    "priority": "est Excepteur",
+    "timeOcurred": "1979-03-31T01:55:05.230Z"
+})
+
+
+// Example of a client listener for receiving the notification AssociationDeleteEvent
+
+@name("Client listener for entity AssociationDeleteEvent")
+POST "https://{{baseUrl}}/listener/associationDeleteEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "association": {
+            "description": "id exercitation ipsum qui dolore",
+            "lastUpdate": "1951-01-16T12:21:06.801Z",
+            "lifecycleStatus": "exercitation cupidatat",
+            "name": "cupidatat id",
+            "validFor": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z"
+            },
+            "version": "cupidatat dolor",
+            "associationSpec": {
+                "id": "ad sed nulla eiusmod",
+                "href": "https://ZOECzfdTwvzADbqoW.diihw",
+                "name": "dolor esse",
+                "@baseType": "nisi in eu consequat nulla",
+                "@schemaLocation": "https://bjjVv.ghkYBxY3lEw,cydW7v",
+                "@type": "deserunt",
+                "@referredType": "mollit tempor quis"
+            },
+            "associationRole": [
+                {
+                    "entity": {
+                        "id": "est elit nisi Duis sint",
+                        "href": "https://SZHQ.mmebRf+u,MDCQ2h",
+                        "name": "dolore exercitation incididunt",
+                        "@baseType": "velit",
+                        "@schemaLocation": "https://iTGLNhLtjehMYLscFcmKFvzPswEobh.altgXw.VQgpHhCqg+bK",
+                        "@type": "magna sunt dolor",
+                        "@referredType": "aute "
+                    },
+                    "role": "enim occaecat exercitation",
+                    "isSource": false,
+                    "@baseType": "veniam",
+                    "@schemaLocation": "http://KGqtUMJjRSNuJTs.ulsV3RPkrHdeh77lxK1pMHR",
+                    "@type": "occaecat ut"
+                },
+                {
+                    "entity": {
+                        "id": "nulla minim adipisicing",
+                        "href": "http://zJs.mfoaAOvh24udldD,n372I0yqsjcZdNFi,wN,yYs",
+                        "name": "sunt sint aute",
+                        "@baseType": "pariatur",
+                        "@schemaLocation": "https://sqpHmoKsUzRAamMbbWyt.cmufl7JQpfY",
+                        "@type": "do irure adipisicing tempor",
+                        "@referredType": "qui cillum"
+                    },
+                    "role": "ipsum",
+                    "isSource": false,
+                    "@baseType": "in sint",
+                    "@schemaLocation": "https://acgNmqCXGaqsGnEugEgYtaMseP.czWD8pIOsS0KL0DQ9fdbQMLSU",
+                    "@type": "tempor et officia deserunt ad"
+                }
+            ],
+            "constraint": [
+                {
+                    "id": "proident",
+                    "href": "https://hHzRRqUwCWAznaixOjCNSO.tmgnJoPs5QPH9gnO3uDcheDmzikH0dmTaUf4VOcmnMhQ8CGff",
+                    "name": "laborum",
+                    "version": "dolor Excepteur laborum",
+                    "@baseType": "sed deserunt consectetur nulla",
+                    "@schemaLocation": "http://GDWxMBPXSJWKjrzxbqsNVaSspkvHwDl.snvBC+Tle.3OBsGiO48KmFpwjBhJhIXWX,VSyi+LvP",
+                    "@type": "ut volupt",
+                    "@referredType": "dolore dolore dolor Excepteur mollit"
+                },
+                {
+                    "id": "adi",
+                    "href": "https://UzZEPxpMafFgZIQHQgtZfzUrVo.kssf0W7yt3eyhhiY3O5zKmeFkKGwaMtkdUnYwwH+MgDMqkaPdmT1",
+                    "name": "aute",
+                    "version": "dolor adipisicing mo",
+                    "@baseType": "in laborum sunt dolor non",
+                    "@schemaLocation": "https://iRxzOOruaxAeZhsNekuK.pnxqD-CcEKAxANfwN67MEhWpS.uhihh,CGEB1UL",
+                    "@type": "ex et dolore quis",
+                    "@referredType": "reprehenderit dolor culpa"
+                }
+            ],
+            "href": "http://MjFQLZWYdFHDmoqomHj.ioLuHE4sbeEDQyzHrO63SBwzv3D8pvW",
+            "id": "enim",
+            "@baseType": "esse consectetur eu",
+            "@schemaLocation": "http://vODoZnCfknJdcrNeLRKJIBCyvOMIcKDH.qjyoTa.OE2O+dnsUlUSv.NFwfxoByIfayX-sc0DmfFZ7pBfpINQ3E.pbjJ",
+            "@type": "commodo quis adipisicing"
+        }
+    },
+    "eventId": "Excepteur",
+    "eventTime": "1985-11-17T21:05:53.707Z",
+    "eventType": "tempor commodo",
+    "correlationId": "reprehenderit non tempor",
+    "domain": "elit voluptate ut",
+    "title": "ea mollit dolor sed exercitation",
+    "description": "aliquip Duis officia",
+    "priority": "est Excepteur",
+    "timeOcurred": "1979-03-31T01:55:05.230Z"
+})
+
+
+

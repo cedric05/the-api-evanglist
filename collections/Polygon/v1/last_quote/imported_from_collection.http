@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-818a03fb-de85-44f9-b9ff-91e699ac9756.postman_collection.json
+
+// Get Last Quote Tick for a Currency Pair.n
+
+@name("Last Quote for a Currency Pair")
+GET "https://{{baseUrl}}/v1/last_quote/currencies/:from/:to"
+
+
+// Get the last quote tick for a given stock.n
+
+@name("Last Quote for a Symbol")
+GET "https://{{baseUrl}}/v1/last_quote/stocks/:symbol"
+
+
+

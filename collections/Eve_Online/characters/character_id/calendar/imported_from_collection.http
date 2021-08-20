@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/calendar/`
+// 
+// Alternate route: `/legacy/characters/{character_id}/calendar/`
+// 
+// Alternate route: `/v1/characters/{character_id}/calendar/`
+// 
+// Alternate route: `/v2/characters/{character_id}/calendar/`
+// 
+// ---
+// This route is cached for up to 5 seconds
+
+@name("List calendar event summaries")
+GET "https://{{baseUrl}}/characters/:character_id/calendar/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "from_event"= "-26592061"
+? "token"= "commodo irure"
+
+
+

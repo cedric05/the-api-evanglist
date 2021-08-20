@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// Search, sort, and filter rules within a package
+
+@name("Search, sort, and filter rules within a package")
+GET "https://{{baseUrl}}/zones/:zone_id/firewall/waf/packages/:package_id/rules"
+"X": "<>"
+? "description"= "<>"
+? "direction"= "<>"
+? "group_id"= "<>"
+? "match"= "<>"
+? "mode"= "<>"
+? "order"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+? "priority"= "<>"
+
+
+// Individual information about a rule
+
+@name("Individual information about a rule")
+GET "https://{{baseUrl}}/zones/:zone_id/firewall/waf/packages/:package_id/rules/:identifier"
+
+
+

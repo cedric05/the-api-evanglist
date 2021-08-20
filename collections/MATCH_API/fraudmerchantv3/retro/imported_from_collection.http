@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4a03fcae-b7ff-4c33-a2b8-074c5a74493f.postman_collection.json
+
+// Returns detailed information about Merchants, URLs and up to five principal owners, that have been terminated by an acquiring bank after the inquiry was made.  This MATCH resource assists acquirer's ability to consider the merchants terminated after the inquiry was made. If an initial inquiry does not result in a possible match, it is still possible that the merchant listing could appear sometime in the next 360 days. This may occur when another acquirer enters the merchant into the MATCH database. The system will automatically continue to search the MATCH system for 360 days. To view these notifications, acquirers must use the Retroactive Inquiry Summary service. This resource can be used to obtain detailed information, such as, if a Merchant or individual has been terminated by another acquirer after an inquiry was made, the reason for termination, and the history of fraudulent or risky business practices that led to that termination.
+
+@name("Returns detailed information about Merchants, URLs and up to five principal owners, that have been terminated by an acquiring bank after the inquiry was made.  This MATCH resource assists acquirer's ability to consider the merchants terminated after the i")
+POST "https://{{baseUrl}}/fraud/merchant/v3/retro/retro-inquiry-details"
+"Content-Type": "application/json"
+? "AcquirerId"= "<string>"
+json({
+    "RetroInquiryRequest": {
+        "InquiryReferenceNumber": "<string>"
+    }
+})
+
+
+// Returns the summary of Retro matches for the given Acquirer Id. This resource will return the summary of Retroactive Inquiry matches for the given Acquirer ID/ICA. If an initial inquiry does not result in a possible match, it is still possible that the merchant listing could appear sometime in the next 360 days. This may occur when another acquirer enters the merchant into the MATCH database. The system will automatically continue to search the MATCH system for 360 days. To view these notifications, acquirers must use the Retroactive Inquiry service.
+
+@name("Returns the summary of Retro matches for the given Acquirer Id. This resource will return the summary of Retroactive Inquiry matches for the given Acquirer ID/ICA. If an initial inquiry does not result in a possible match, it is still possible that the me")
+POST "https://{{baseUrl}}/fraud/merchant/v3/retro/retro-list"
+"Content-Type": "application/json"
+json({
+    "RetroRequest": {
+        "AcquirerId": "<string>"
+    }
+})
+
+
+

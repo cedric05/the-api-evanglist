@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b633ec3-0d8e-4860-9b42-73c08cee7190.postman_collection.json
+
+// This list accounts operation provides information regarding the authorization to a resource that an access token provides. The access token "represents" the consent granted by the account holder or resource owner to an account or resource. The information returned contains information about the granted scopes, account numbers or transaction id. Currently consent for only a single account is supported, so only a single account will be returned.
+
+@name("Get Consentinfo")
+GET "https://{{baseUrl}}/consentinfo"
+
+
+

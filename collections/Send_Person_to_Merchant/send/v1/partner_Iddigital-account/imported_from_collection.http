@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e760486c-f487-465f-b743-146cfe5b92a4.postman_collection.json
+
+// Used to create a digital account reference number from Incontrol 
+
+@name("Used to create a digital account reference number from Incontrol ")
+POST "https://{{baseUrl}}/send/v1/:partnerId/digital-account"
+"Content-Type": "application/json"
+json({
+    "digital_account": {
+        "reference": "<string>",
+        "account_uri": "<string>",
+        "account_type": "<string>"
+    }
+})
+
+
+// Used to retreive a digital account reference list from Incontrol 
+
+@name("Used to retreive a digital account reference list from Incontrol ")
+POST "https://{{baseUrl}}/send/v1/:partnerId/digital-account/search"
+"Content-Type": "application/json"
+json({
+    "digital_account": {
+        "reference": "<string>",
+        "account_uri": "<string>",
+        "account_type": "<string>"
+    }
+})
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-be4a5181-521c-480d-a9e2-a53cb6b4dec5.postman_collection.json
+
+// Access Tokens never expire so once you have it, it's yours for the life of your PredictHQ API subscription.nnHowever, if you think your token may have been compromised, you have the power to revoke it at any time.n
+
+@name("Revoking an Access Token")
+POST "https://{{baseUrl}}/oauth2/revoke/"
+
+
+// When requesting an Access Token, use the `client_credentials` grant type, then request the scope or scopes you wish to have access to.nnThese scopes can be any or all of the following, separated by a space:n  - `account` Grants access to the account endpoint.n  - `events` Grants access to the events endpoint.n  - `places` Grants access to the places endpoint.n  - `signals` Grants access to the signals endpoint.nnPlease note that Access Tokens requested via the client_credentials grant type never
+
+@name("Requesting an Access Token")
+POST "https://{{baseUrl}}/oauth2/token/"
+
+
+

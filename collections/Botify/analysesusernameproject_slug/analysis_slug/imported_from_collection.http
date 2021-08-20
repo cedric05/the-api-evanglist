@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// Get an Analysis detail
+
+@name("Get an Analysis detail")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug"
+? "previous_crawl"= "<string>"
+
+
+

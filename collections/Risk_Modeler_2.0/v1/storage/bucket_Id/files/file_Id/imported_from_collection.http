@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves the media information for a file specified by its ID for a storage bucket specified by its ID.
+
+@name("Get information on the media for a specified file") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/storage/:bucketId/files/:fileId/media"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves list of aggregate exposure by resolution values.
+
+@name("Get list of aggregate exposure") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/storage/:bucketId/files/:fileId/aggregate-exposures-lists"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "*/*"
+? "delimiter"= "SEMICOLON"
+data('{
+    "countryCode": "culpa id",
+    "resolution": "ipsum do mollit",
+    "resolutionConversionFrom": "eiusmod labore elit",
+    "resolutionConversionTo": "ex nulla",
+    "columnMapping": {},
+    "dataRowStart": 81806500,
+    "dependencyResolution": "amet mollit"
+}')
+
+
+

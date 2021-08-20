@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists feedback comments.
+
+@name("List feedback comments")
+GET "https://{{baseUrl}}/rest/feedbacks/comments"
+
+
+// Deletes multiple feedbacks. A list with IDs of feedbacks must be specified.
+
+@name("Delete multiple feedbacks")
+DELETE "https://{{baseUrl}}/rest/feedbacks/delete_feedbacks/:feedbackIds"
+
+
+// Lists feedbacks. The reference type and the reference value must be specified (e.g. the reference type is 'order' and the reference value is the ID of the order).
+
+@name("List feedbacks")
+GET "https://{{baseUrl}}/rest/feedbacks/feedbacks"
+
+
+// Updates the visibility of multiple feedbacks. A list with IDs of feedbacks must be specified.
+
+@name("Update the visibility of multiple feedbacks")
+PUT "https://{{baseUrl}}/rest/feedbacks/feedbacks_visibility"
+? "feedbackIds"= "<>"
+? "isVisible"= "<post>"
+
+
+// Migrate legacy feedbacks.
+
+@name("Migrate legacy feedbacks")
+POST "https://{{baseUrl}}/rest/feedbacks/migrate"
+
+
+// Lists feedback ratings.
+
+@name("List feedback ratings")
+GET "https://{{baseUrl}}/rest/feedbacks/ratings"
+
+
+

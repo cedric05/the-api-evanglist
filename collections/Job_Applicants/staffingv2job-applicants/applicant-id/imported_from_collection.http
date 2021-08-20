@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-153258a5-a1eb-43c6-ae2b-1378320e86b1.postman_collection.json
+
+// Returns a job applicant
+
+@name("Job Applicant")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants/:applicant-id"
+? "No Name"= "<string>"
+
+
+// Returns a job applicant's KSAOCs
+
+@name("Job Applicant KSAOCs")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants/:applicant-id/applicant-ksaocs"
+? "No Name"= "<string>"
+
+
+

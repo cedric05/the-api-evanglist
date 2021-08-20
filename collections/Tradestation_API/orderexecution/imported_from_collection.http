@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// To place orders with activation triggers, a valid TriggerKey must be sent with the order.  This resource provides the available trigger methods with their corresponding key.n
+
+@name("nRequest Available Activation Triggersn")
+GET "https://{{baseUrl}}/orderexecution/activationtriggers"
+? "access_token"= "<string>"
+
+
+// Returns a list of valid exchanges that a client can specify when posting an order.n
+
+@name("Request Available Exchangesn")
+GET "https://{{baseUrl}}/orderexecution/exchanges"
+? "access_token"= "<string>"
+
+
+

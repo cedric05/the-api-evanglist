@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Fetch agents live processes report
+
+@name("List agents") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/overops-status/agents"
+? "connected"= "true"
+
+
+// Batch update for group of agents. NOTE - The filter should contain **at least** one server, application or agent.
+
+@name("Batch update for group of agents") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/overops-status/agents"
+"Content-Type": "application/json"
+? "server"= "e"
+? "app"= "e"
+? "agent"= "e"
+json({
+    "monitoring_enabled": true
+})
+
+
+

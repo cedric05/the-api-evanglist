@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5ec82b9b-49c0-43d1-afae-0c464adbb6ee.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{bearer_token}}"
+
+
+// This pulls a list of the authenticated users events.
+
+@name("Events") : "base-inherit-auth"
+GET "https://api.github.com/events"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+
+
+// This pulls a list of the authenticated users notifications.
+
+@name("Notifications") : "base-inherit-auth"
+GET "https://api.github.com/notifications"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+
+
+// List public events
+
+@name("Starring") : "base-inherit-auth"
+GET "https://api.github.com/stargazers"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+
+
+

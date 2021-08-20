@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-078f0c0e-f03d-4124-bda1-c7d8042a0e64.postman_collection.json
+
+// Creates a new openehr composition..
+
+@name("Creates a new OpenEhr composition.")
+POST "https://{{baseUrl}}/composition"
+? "committerId"= "<>"
+? "committerName"= "<>"
+? "ehrId"= "<get>"
+? "format"= "<get>"
+? "templateId"= "<get>"
+
+
+// Deletes an existing openehr composition..
+
+@name("Deletes an existing OpenEhr composition.")
+DELETE "https://{{baseUrl}}/composition/:uid"
+? "committerId"= "<>"
+? "committerName"= "<>"
+
+
+

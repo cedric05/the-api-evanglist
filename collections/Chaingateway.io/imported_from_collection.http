@@ -1,0 +1,260 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d6aa2d9c-33bb-4ed6-9722-c0dd4d564fa8.postman_collection.json
+
+// Sends all available ethereum funds of an address to a specified receiver address.
+
+@name("clearAddress")
+POST "https://{{baseUrl}}/clearAddress"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "ethereumaddress": "<string>",
+    "newaddress": "<string>",
+    "password": "<string>"
+})
+
+
+// Deletes an existing ethereum address. Be careful when using this function.
+
+@name("deleteAddress")
+POST "https://{{baseUrl}}/deleteAddress"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "ethereumaddress": "<string>",
+    "password": "<string>"
+})
+
+
+// Returns all ethereum addresses created with an account.
+
+@name("exportAddress")
+POST "https://{{baseUrl}}/exportAddress"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "ethaddress": "<string>",
+    "password": "<string>"
+})
+
+
+// Returns information of an ethereum block with or without transactions
+
+@name("getBlock")
+POST "https://{{baseUrl}}/getBlock"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "block": "<string>"
+})
+
+
+// Returns the ethereum balance of a given address.
+
+@name("getEthereumBalance")
+POST "https://{{baseUrl}}/getEthereumBalance"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "ethereumaddress": "<string>"
+})
+
+
+// Returns the current Ethereum price in Euro or US Dollar.
+
+@name("getExchangeRate")
+POST "https://{{baseUrl}}/getExchangeRate"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "currency": "<string>"
+})
+
+
+// Returns the current gas price in GWEI.
+
+@name("getGasPrice")
+POST "https://{{baseUrl}}/getGasPrice"
+"Content-Type": "<string>"
+"Authorization": "<string>"
+
+
+// Returns the block number of the last mined ethereum block.
+
+@name("getLastBlockNumber")
+POST "https://{{baseUrl}}/getLastBlockNumber"
+"Content-Type": "<string>"
+"Authorization": "<string>"
+
+
+// Returns information about a specific ERC20 token like name, symbol, decimal places and total supply.
+
+@name("getToken")
+POST "https://{{baseUrl}}/getToken"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "contractaddress": "<string>"
+})
+
+
+// Returns the token balance of a given address.
+
+@name("getTokenBalance")
+POST "https://{{baseUrl}}/getTokenBalance"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "contractaddress": "<string>",
+    "ethereumaddress": "<string>"
+})
+
+
+// Returns information like confirmations, token contract address, amount, gas price and more of a given transaction.
+
+@name("getTransactions")
+POST "https://{{baseUrl}}/getTransactions"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "txid": "<string>"
+})
+
+
+// Returns all ethereum addresses created with an account.
+
+@name("importAddress")
+POST "https://{{baseUrl}}/importAddress"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "filename": "<string>",
+    "content": {
+        "version": "<integer>",
+        "id": "<string>",
+        "address": "<string>",
+        "crypto": {
+            "ciphertext": "<string>",
+            "cipherparams": {
+                "iv": "<string>"
+            },
+            "cipher": "<string>",
+            "kdf": "<string>",
+            "kdfparams": {
+                "dklen": "<integer>",
+                "salt": "<string>",
+                "n": "<integer>",
+                "r": "<integer>",
+                "p": "<integer>"
+            },
+            "mac": "<string>"
+        }
+    },
+    "password": "<string>"
+})
+
+
+// Returns all ethereum addresses created with an account.
+
+@name("listAddresses")
+POST "https://{{baseUrl}}/listAddresses"
+"Content-Type": "<string>"
+"Authorization": "<string>"
+
+
+// Returns all subscriptions/IPNs created with an account.
+
+@name("listFailedIPNs")
+POST "https://{{baseUrl}}/listFailedIPNs"
+"Content-Type": "<string>"
+"Authorization": "<string>"
+
+
+// Returns all subscriptions/IPNs created with an account.
+
+@name("listSubscribedAddresses")
+POST "https://{{baseUrl}}/listSubscribedAddresses"
+"Content-Type": "<string>"
+"Authorization": "<string>"
+
+
+// Generates a new ethereum addresses you can use to send or receive funds. Do not lose the password! We can't restore access to an address if you lose it.
+
+@name("newAddress")
+POST "https://{{baseUrl}}/newAddress"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "password": "<string>"
+})
+
+
+// Returns all subscriptions/IPNs created with an account.
+
+@name("resendFailedIPN")
+POST "https://{{baseUrl}}/resendFailedIPN"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "id": "<integer>"
+})
+
+
+// Sends ethereum from an address controlled by the account to a specified receiver address.
+
+@name("sendEthereum")
+POST "https://{{baseUrl}}/sendEthereum"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "from": "<string>",
+    "to": "<string>",
+    "password": "<string>",
+    "amount": "<number>"
+})
+
+
+// Sends ERC20 tokens from an address controlled by the account to a specified receiver address. The token contract address is needed to specify the token. The use of the identifier parameter is recommend and awaits an unique string. Whenever a transaction is beeing sent, the identifier is checked and the transaction gets dropped if there is one with that identifier already.
+
+@name("sendToken")
+POST "https://{{baseUrl}}/sendToken"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "contractaddress": "<string>",
+    "from": "<string>",
+    "to": "<string>",
+    "password": "<string>",
+    "amount": "<integer>",
+    "identifier": "<string>"
+})
+
+
+// Creates a new subscription/IPN for the given address (and contractaddress). You will receive a notification to the given url every time a deposit is received. Unsubscribe the address before sending tokens/ETH from it or you won't get reliable notifications anymore.
+
+@name("subscribeAddress")
+POST "https://{{baseUrl}}/subscribeAddress"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "ethereumaddress": "<string>",
+    "contractaddress": "<string>",
+    "url": "<string>"
+})
+
+
+// Deletes an existing subscription/IPN for the given address (and contractaddress).
+
+@name("unsubscribeAddress")
+POST "https://{{baseUrl}}/unsubscribeAddress"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "ethereumaddress": "<string>",
+    "contractaddress": "<string>",
+    "url": "<string>"
+})
+
+
+

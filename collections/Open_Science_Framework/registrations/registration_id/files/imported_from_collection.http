@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// A paginated list of storage providers enabled on the registrationnnUsers of the OSF may access their data on a [number of cloud-storage services](https://api.osf.io/v2/#storage-providers) that have integrations with the OSF. We call these **providers**. By default, every node has access to the OSF-provided storage but may use as many of the supported providers as desired.nnn####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 files. 
+
+@name("List all storage providers")
+GET "https://{{baseUrl}}/registrations/:registration_id/files/"
+
+
+

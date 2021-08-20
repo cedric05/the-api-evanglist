@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+@name("List organization memberships for the authenticated user")
+GET "https://{{baseUrl}}/user/memberships/orgs"
+? "state"= "<string>"
+? "per_page"= "30"
+? "page"= "1"
+
+
+

@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ae419a4f-68f3-40b5-821c-80057f0df0bd.postman_collection.json
+
+// Returns a list containing all matching providers whose organization id provided by current active organization registration.
+
+@name("Returns a list containing all matching providers whose organization id provided")
+GET "https://{{baseUrl}}/providers/organization/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"qpp-npi": "<byte>"
+"qpp-first-name": "<byte>"
+"qpp-last-name": "<byte>"
+"qpp-ein": "<byte>"
+"qpp-q": "<byte>"
+? "providerId"= "<number>"
+? "fields"= "<string>"
+? "assigned"= "<boolean>"
+? "sort"= "<string>"
+? "offset"= "0"
+? "limit"= "25"
+
+
+// Creates a new provider. Unique compositeIndex on npi and organizationId.
+
+@name("Creates a new provider")
+POST "https://{{baseUrl}}/providers/organization/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"Content-Type": "application/json"
+json({
+    "npi": "<string>",
+    "ein": "<string>",
+    "firstName": "<string>",
+    "lastName": "<string>",
+    "credentials": "<string>",
+    "organizationId": "<string>"
+})
+
+
+

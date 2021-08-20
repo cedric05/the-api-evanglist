@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Transaction stats.
+
+@name("Transaction Stats")
+GET "https://{{baseUrl}}/api/v1/stats/transactions"
+? "date_from"= "<get>"
+? "date_to"= "<get>"
+? "interval"= "<get>"
+
+
+// Settlement by country.
+
+@name("Settlement By Country")
+GET "https://{{baseUrl}}/api/v1/stats/transactions/by_country"
+? "global_currency_code"= "<get>"
+? "date_from"= "<get>"
+? "date_to"= "<get>"
+
+
+

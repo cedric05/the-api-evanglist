@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c34e1268-51e0-4c47-9993-e9f389540a91.postman_collection.json
+
+@name("/couriers")
+GET "https://{{baseUrl}}/couriers"
+
+
+@name("/couriers/all")
+GET "https://{{baseUrl}}/couriers/all"
+
+
+@name("/couriers/detect")
+POST "https://{{baseUrl}}/couriers/detect"
+
+
+

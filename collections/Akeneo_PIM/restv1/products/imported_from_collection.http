@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-81e3517b-5c56-4500-b086-0e52eb5d86ca.postman_collection.json
+
+// Products.
+
+@name("products")
+GET "https://{{baseUrl}}/rest/v1/products"
+"Content": "<>"
+"Cookie": "<>"
+
+
+// Assuming that the given identifier is the identifier of an existing product
+
+@name("product")
+GET "https://{{baseUrl}}/rest/v1/products/AKNSTK"
+
+
+// Assuming that the given identifier is the identifier of an existing product
+
+@name("product")
+DELETE "https://{{baseUrl}}/rest/v1/products/AKNTS_BPXS"
+"Content": "<>"
+
+
+

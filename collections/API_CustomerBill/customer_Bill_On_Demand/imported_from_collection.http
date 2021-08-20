@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-70cbed27-4ba9-4a22-82b9-822ae0e61858.postman_collection.json
+
+// This operation list or find CustomerBillOnDemand entities
+
+@name("List or find CustomerBillOnDemand objects")
+GET "https://{{baseUrl}}/customerBillOnDemand"
+? "fields"= "veniam aliqua"
+? "offset"= "-66130548"
+? "limit"= "-66130548"
+
+
+// This operation creates a CustomerBillOnDemand entity.
+
+@name("Creates a CustomerBillOnDemand")
+POST "https://{{baseUrl}}/customerBillOnDemand"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "anim ad",
+    "lastUpdate": "labo",
+    "name": "sint minim dolor Excepteur laboris",
+    "billingAccount": {
+        "id": "laboris elit id est",
+        "href": "et adipisicing",
+        "name": "si",
+        "@baseType": "consequat occaecat ven",
+        "@schemaLocation": "http://jdideudkldLZOSyCaMCzzsQWNXSNLnI.orddIjFkXvdgh7JOqc8XqSLgv0Ci5tB-B",
+        "@type": "labore et amet",
+        "@referredType": "ut sed commodo ad fugiat"
+    },
+    "customerBill": {
+        "id": "aliqua aliquip",
+        "href": "pariatur elit minim",
+        "name": "est Excepteur",
+        "@baseType": "exercitation eu tempor ut",
+        "@schemaLocation": "https://QDNTmCeyNVfGuanapIVXyRyFc.rqziD.X0vNSoSRWaYY0ZeIekrvPNo9-uVB,ZAIaB.7MNVghj+eTJ1iRNj3coCCWVSXy",
+        "@type": "deserunt in ut",
+        "@referredType": "nisi est"
+    },
+    "relatedParty": {
+        "@referredType": "laborum in",
+        "id": "ipsum",
+        "href": "laboris consectetur ea Ut id",
+        "name": "consectetur",
+        "role": "veniam amet id",
+        "@baseType": "irure ut",
+        "@schemaLocation": "https://IqSwmQZbTAWlpwkLEwFFhukPnfcSdR.trFUc6EuGPc-vjbNorcMt2Nxe51Fj2zAzQuo1Y.ey",
+        "@type": "et esse minim"
+    },
+    "state": "inProgress",
+    "@baseType": "elit reprehenderit in labore incididunt",
+    "@schemaLocation": "http://yhOUVpHRAXRgSppVL.iftJB84vNaqcmh50",
+    "@type": "est"
+})
+
+
+// This operation retrieves a CustomerBillOnDemand entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a CustomerBillOnDemand by ID")
+GET "https://{{baseUrl}}/customerBillOnDemand/:id"
+? "fields"= "veniam aliqua"
+
+
+

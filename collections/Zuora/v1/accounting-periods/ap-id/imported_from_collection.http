@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// nDeletes an accounting period.nnPrerequisitesn-------------nn * You must have Zuora Finance enabled on your tenant.nn * You must have the Delete Accounting Period user permission. See [Finance Roles](https://knowledgecenter.zuora.com/CF_Users_and_Administrators/A_Administrator_Settings/User_Roles/f_Finance_Roles).nnnLimitationsn-----------nnThe accounting period to be deleted:nn* Must be the most recent accounting periodnn* Must be an open accounting periodnn* Must have no revenue distributed in
+
+@name("Delete accounting period")
+DELETE "https://{{baseUrl}}/v1/accounting-periods/:ap-id"
+
+
+// Close an accounting period by accounting period ID.nnPrerequisitesn-------------nYou must have Zuora Finance enabled on your tenant. You must have the Manage Close Process and Run Trial Balance user permissions.nnLimitationsn-----------n* The accounting period cannot already be closed.n* The accounting period cannot be in the process of running a trial balance.n* All earlier accounting periods must be closed.n* There must be no required action items for the accounting period. See Reconcile Trans
+
+@name("Close accounting period")
+PUT "https://{{baseUrl}}/v1/accounting-periods/:ap-id/close"
+
+
+// Sets an accounting period to pending close.nnnPrerequisitesn-------------nn* You must have Zuora Finance enabled on your tenant.n* You must have the Manage Close Process and Run Trial Balance user permissions.nn            nLimitations n -----------n n * The accounting period cannot be closed or pending close.n n * The accounting period cannot be in the process of running a trial balance.n n * All earlier accounting periods must be closed.n n nNotesn-----nWhen you set an accounting period to pen
+
+@name("Set accounting period to pending close")
+PUT "https://{{baseUrl}}/v1/accounting-periods/:ap-id/pending-close"
+
+
+// Re-opens an accounting period.nPrerequisitesn-------------n* You must have Zuora Finance enabled on your tenant.n* You must have the Manage Close Process and Run Trial Balance user permissions.nnLimitationsn-----------n* The accounting period must be closed or pending close.n* You can only re-open an accounting period that is immediately previous to an open period.
+
+@name("Re-open accounting period")
+PUT "https://{{baseUrl}}/v1/accounting-periods/:ap-id/reopen"
+
+
+// Runs the trial balance for an accounting period. nnPrerequisitesn-------------nn* You must have Zuora Finance enabled on your tenant.nn* You must have the Manage Close Process and Run Trial Balance user permissions. See [Finance Roles](https://knowledgecenter.zuora.com/CF_Users_and_Administrators/A_Administrator_Settings/User_Roles/f_Finance_Roles).nn          nLimitations n-----------n n * The accounting period must be open.n n * The accounting period cannot already be in the process of running
+
+@name("Run trial balance")
+PUT "https://{{baseUrl}}/v1/accounting-periods/:ap-id/run-trial-balance"
+
+
+

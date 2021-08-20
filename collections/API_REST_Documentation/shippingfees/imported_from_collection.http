@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Get all shipping fees")
+GET "https://{{baseUrl}}/shippingfees/"
+
+
+@name("Get shipping fee")
+GET "https://{{baseUrl}}/shippingfees/:ShippingFeeCode/"
+
+
+

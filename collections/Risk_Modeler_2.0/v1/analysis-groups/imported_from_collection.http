@@ -1,0 +1,74 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves list of Analysis Groups.
+
+@name("Get a list of Analysis Groups") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analysis-groups"
+"Authorization": "Bearer <Bearer Token>"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Triggers a job to create an Analysis Group, then returns job ID
+
+@name("Create an Analysis Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/analysis-groups"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "groupId": 61987657,
+    "propagateDetailedLosses": false,
+    "analysisIds": [
+        -48803696,
+        59069251
+    ],
+    "rateSchemes": [
+        {
+            "modelRegionCode": "dolo",
+            "perilCode": "ve",
+            "modelVersion": "occaecat cillum consequat Lorem incididunt",
+            "eventRateSchemeName": "ad eu",
+            "eventRateSchemeId": 38887506,
+            "isDefault": true,
+            "isActive": false
+        },
+        {
+            "modelRegionCode": "cons",
+            "perilCode": "oc",
+            "modelVersion": "amet Duis tempor et",
+            "eventRateSchemeName": "dolor sed et irure",
+            "eventRateSchemeId": 31780285,
+            "isDefault": true,
+            "isActive": false
+        }
+    ],
+    "name": "ipsum reprehenderit ea",
+    "description": "adipisicing ullamco",
+    "currency": "enim e"
+})
+
+
+// Returns inconsistent treaties for group
+
+@name("Validates the group before processing") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/analysis-groups/validate"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json([
+    45831674,
+    2250844
+])
+
+
+

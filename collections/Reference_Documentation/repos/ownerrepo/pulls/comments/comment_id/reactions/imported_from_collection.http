@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// List the reactions to a [pull request review comment](https://developer.github.com/v3/pulls/comments/).
+
+@name("List reactions for a pull request review comment")
+GET "https://{{baseUrl}}/repos/:owner/:repo/pulls/comments/:comment_id/reactions"
+? "content"= "<string>"
+? "per_page"= "30"
+? "page"= "1"
+
+
+// Create a reaction to a [pull request review comment](https://developer.github.com/v3/pulls/comments/). A response with a `Status: 200 OK` means that you already added the reaction type to this pull request review comment.
+
+@name("Create reaction for a pull request review comment")
+POST "https://{{baseUrl}}/repos/:owner/:repo/pulls/comments/:comment_id/reactions"
+"Content-Type": "application/json"
+json({
+    "content": "<string>"
+})
+
+
+// **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`
+// 
+// Delete a reaction to a [pull request review comment](https://developer.github.com/v3/pulls/comments/).
+
+@name("Delete a pull request comment reaction")
+DELETE "https://{{baseUrl}}/repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id"
+
+
+

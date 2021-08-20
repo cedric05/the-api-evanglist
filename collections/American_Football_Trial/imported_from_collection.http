@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af2f73d6-96cf-46d7-a9a8-7e4e19ca898b.postman_collection.json
+
+@name("Provides player profile information")
+GET "https://{{baseUrl}}/players/:player_id1/profile{{format}}"
+
+
+@name("Provides a list of all tournaments")
+GET "https://{{baseUrl}}/tournaments{{format}}"
+
+
+@name("Provides venue information for a stadium")
+GET "https://{{baseUrl}}/venues/:venue_id/summary{{format}}"
+
+
+

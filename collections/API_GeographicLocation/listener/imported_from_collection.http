@@ -1,0 +1,90 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-55802a0c-3a00-4043-8c8f-a26229df0ebe.postman_collection.json
+
+// Example of a client listener for receiving the notification GeographicLocationCreateEvent
+
+@name("Client listener for entity GeographicLocationCreateEvent")
+POST "https://{{baseUrl}}/listener/geographicLocationCreateEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "geographicLocation": {
+            "id": "anim commodo dolor elit",
+            "href": "in culpa et incididunt",
+            "name": "fugiat",
+            "@baseType": "labore occaecat",
+            "@schemaLocation": "http://VJVFpyJNqRzItthC.brnLypYUdcbQz-BGR3hsVLaX0ubQVGnYvZeB3JGbxN6ablm+w",
+            "@type": "cupidatat dolore quis"
+        }
+    },
+    "eventId": "mollit laborum veniam labore",
+    "eventTime": "1953-01-11T06:13:22.879Z",
+    "eventType": "magna adipisicing",
+    "correlationId": "voluptate Duis esse",
+    "domain": "Ut ipsum anim",
+    "title": "in adipisicing tempor ullamco",
+    "description": "sit labore reprehenderit te",
+    "priority": "labore nostrud incididunt",
+    "timeOcurred": "1984-12-13T01:40:02.283Z"
+})
+
+
+// Example of a client listener for receiving the notification GeographicLocationAttributeValueChangeEvent
+
+@name("Client listener for entity GeographicLocationAttributeValueChangeEvent")
+POST "https://{{baseUrl}}/listener/geographicLocationAttributeValueChangeEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "eventId": "irure culpa nostrud quis",
+    "eventTime": "1998-06-20T11:26:39.622Z",
+    "eventType": "cillum consectetur ex dolore sit",
+    "correlationId": "eu et dolor ex",
+    "domain": "Ut in",
+    "title": "Excepteur ad",
+    "description": "Lorem elit dolor Excepteur",
+    "priority": "occaecat non consectetur voluptate elit",
+    "timeOcurred": "1983-10-25T05:07:23.061Z",
+    "fieldPath": "incididunt minim ad commodo esse",
+    "event": {
+        "geographicLocation": {
+            "id": "sed",
+            "href": "mollit cillum amet dolor",
+            "name": "elit occaecat do",
+            "@baseType": "minim deserunt Duis quis",
+            "@schemaLocation": "http://JXfeDBPTyizraEHftifbLYsIgKUyoyQfm.vwTEVu.JDwZGxL.IEAtAXXxd",
+            "@type": "sint sunt"
+        }
+    }
+})
+
+
+// Example of a client listener for receiving the notification GeographicLocationDeleteEvent
+
+@name("Client listener for entity GeographicLocationDeleteEvent")
+POST "https://{{baseUrl}}/listener/geographicLocationDeleteEvent"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "event": {
+        "geographicLocation": {
+            "id": "anim commodo dolor elit",
+            "href": "in culpa et incididunt",
+            "name": "fugiat",
+            "@baseType": "labore occaecat",
+            "@schemaLocation": "http://VJVFpyJNqRzItthC.brnLypYUdcbQz-BGR3hsVLaX0ubQVGnYvZeB3JGbxN6ablm+w",
+            "@type": "cupidatat dolore quis"
+        }
+    },
+    "eventId": "mollit laborum veniam labore",
+    "eventTime": "1953-01-11T06:13:22.879Z",
+    "eventType": "magna adipisicing",
+    "correlationId": "voluptate Duis esse",
+    "domain": "Ut ipsum anim",
+    "title": "in adipisicing tempor ullamco",
+    "description": "sit labore reprehenderit te",
+    "priority": "labore nostrud incididunt",
+    "timeOcurred": "1984-12-13T01:40:02.283Z"
+})
+
+
+

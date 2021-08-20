@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e9c4a16e-bb34-4909-8b6c-2c0d1bb0d112.postman_collection.json
+
+// Instead of uploading a CSV file, you can also set one recipient per API call by using the following parameters to the URL.nn### Request Parametersnn| Parameter | Required | Description |n| ------ | ------ | ------ |n| `form` | Required | ID of the form that will be sent out |n| `from` | Required | Email address of the sender, must be a registered email |n| `recipient` | Required | Email address of the recipient |n| `firstName` | Required | First name to address the recipient with |n| `lastName` 
+
+@name("Send Single Invitation")
+POST "https://{{baseUrl}}/sendinvitations"
+
+
+// With the /sendinvitations call you can link your CRM system to Starred so invitations are sent automatically. This will no longer require any manual action. nnYou can also import additional characteristics directly from your CRM so you can start analyzing results for different client groups. nnThe parameters on the right are mandatory to make the request succeed.nn### Request Parametersnn| Parameter | Required | Description |n| ------ | ------ | ------ |n| `form` | Required | ID of the form that
+
+@name("Send Invitation CSV")
+POST "https://{{baseUrl}}/sendinvitations/csv"
+
+
+

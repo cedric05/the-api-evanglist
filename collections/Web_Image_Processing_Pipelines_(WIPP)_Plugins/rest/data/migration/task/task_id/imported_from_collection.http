@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aa39848b-48c1-408a-83d6-4de935b6e9c6.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get the progress of the migration / validation async task
+
+@name("rest data migration task progress list") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/data/migration/task/:task_id/progress/"
+
+
+// Get the result of the migration / validation async task
+
+@name("rest data migration task result list") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/data/migration/task/:task_id/result/"
+
+
+

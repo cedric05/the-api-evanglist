@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-585a2d49-6eb1-4045-8898-5ab8d446bc39.postman_collection.json
+
+// Ticker list for all symbols.
+
+@name("Ticker List For All Symbols")
+GET "https://{{baseUrl}}/public/ticker"
+
+
+// Ticker for symbol.
+
+@name("Ticker For Symbol")
+GET "https://{{baseUrl}}/public/ticker/:symbol"
+
+
+

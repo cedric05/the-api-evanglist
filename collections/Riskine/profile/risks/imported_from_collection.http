@@ -1,0 +1,70 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// This service calculates the yearly probabilities for suffering from one of 8 life risks. It accepts any input from the empty object `{}` to the fully specified resource. When not specified, a parameter will range over all possible values. For example, posting the empty object `{}` will result in the average probability for the specified country. As demonstrated in the [riskine analysis](https://pro.riskine.com), this could be used in a customer journey to start from the average probabilities and individualize them step-by-step as the user specifies their parameters.  
+// 
+// The additional scale parameter indicates a maximum `scale` value against which all the risks fit nicely in a bars UI, e.g.
+
+@name("Yearly Probabilities") : "base-inherit-auth"
+POST "https://{{baseUrl}}/profile/risks/probabilities"
+
+
+// This service is the big brother of the service `/profile/risks/probabilities`. It takes into account the full resource (although not every parameter needs to be specified) and calculates yearly probabilities for the 8 life risks as well as the constituting sub risks and moreover various damage numbers like expected natural disaster damage or expected loss in income at retirement.  
+// 
+// The additional `scale` parameter indicates a maximum scale value against which all the risks fit nicely in a bars UI, e.g.
+
+@name("Details") : "base-inherit-auth"
+POST "https://{{baseUrl}}/profile/risks/details"
+"Content-Type": "application/json"
+json({
+    "person.address": "Linke Wienzeile 10/4"
+})
+
+
+// This service uses the core riskine algorithm to calculate impact evaluations for the 8 life risks. On a discrete scale from 0 to 6, each of the 8 life risks is assigned a ranking or prioritization based upon their respective financial impacts. As in the riskine analysis, this can be used complementary to the life risk probability values. For example, death may have a seemingly insignificant probability in younger years, yet the financial impact can be enormous for income-dependent persons. Thus, although the risk probability values may be low, this service still indicates a possible danger and need to insure  
+// 
+// There is a way to ensure that all relevant parameters for the calculation were sent in the request by including the URL parameter unlock=soft|hard. A locked risk has all null entries. When unlock=soft, the risks unlock with the first relevant parameter, When unlock=hard, the risks unlock only with all relevant parameters.
+
+@name("Prioritization") : "base-inherit-auth"
+POST "https://{{baseUrl}}/profile/risks/prioritization"
+
+
+// Available for all countries, this service analyzes real-time trends in media, social networks, and other data sources about life-risk-related topics. It serves to give a real-time indication about what is on the mind of a general or specific user. Example: During a cluster of media events about accident-related topics, a strong trend is registered and the probability that a user has the topic present on their mind is increased to `30%` from under `10%` normally. 
+// 
+// Use cases include:  
+// 
+//  * timing of campaigns  
+// 
+//  * empowering advisors to talk about the right topics at the right time  
+// 
+// The 8 life risks are the 8 main topics (ids the same as in the `/profile/risks` endpoint) - accident, illness, pension gap, natural catastrophe, unemployment, crime, death, and legal. Every element in the response consists of these parameters:  
+// 
+// | <div style=width:270px>__Sentiment Parameter__</div> | <div style=width:500px>__Description__</div> |
+// | --- | --- |
+// | `id` | The id of the risk |
+// | `label` | Human readable label of the risk |
+// | `trend-strength` | Indicator of trend strength. `0` = no trend, `1` = weak trend, `2` = strong trend. Strong trend means multiple of 3x over standard deviation |
+// | `probability-cognitive-presence` | Estimated probability that the topic is on the mind of one user. Higher for stronger trends |
+// | `top-subtopics` | Some keywords that represent most present topics in the trend |  
+// 
+//  **overview - how does a trend work?**  
+// 
+//  * a trend is a cumulation of media and social media events over 2-5 days  
+// 
+//  * there are about 5 trends per month and country  
+// 
+//  * during a trend, it is about on average 3 times more probable that a topic is on the mind of a user. Ex: 30% instead of 10%
+
+@name("Risk Sentiment") : "base-inherit-auth"
+GET "https://{{baseUrl}}/profile/risks/sentiment"
+
+
+

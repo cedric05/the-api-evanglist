@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92585ca3-4af5-4f55-9f95-f80c9040e561.postman_collection.json
+
+// This endpoint provides a list of recommendations from a category of content from  an organization.
+
+@name("Get a list of recommendations from a category of content from an organization")
+GET "https://{{baseUrl}}/listening/v2/organizations/:orgId/categories/:category/recommendations"
+
+
+// This endpoint provides a variety of details about an organization including various lists of recent audio items.
+
+@name("Get a variety of details about an organization including various lists of recent audio items")
+GET "https://{{baseUrl}}/listening/v2/organizations/:orgId/recommendations"
+
+
+

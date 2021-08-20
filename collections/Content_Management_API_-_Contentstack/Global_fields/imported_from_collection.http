@@ -1,0 +1,152 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Get all global fields</code> call returns comprehensive information of all the global fields available in a particular stack in your account.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-all-global-fields>Get All Global Fields</a> API Reference document
+
+@name("Get all global fields")
+GET "https://{{base_url}}/v3/global_fields"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Get a single global field</code> request allows you to fetch comprehensive details of a specific global field.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-single-global-field>Get Single Global Field</a> API Reference document
+
+@name("Get a single global field")
+GET "https://{{base_url}}/v3/global_fields/{{global_field_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Create a global field</code> request allows you to create a new global field in a particular stack of your Contentstack account. You can use this global field in any content type within your stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#create-global-field>Create Global Field</a> API Reference document
+
+@name("Create a global field")
+POST "https://{{base_url}}/v3/global_fields"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "global_field": {
+        "title": "Servlet",
+        "uid": "servlet",
+        "schema": [
+            {
+                "display_name": "Name",
+                "uid": "name",
+                "data_type": "text"
+            },
+            {
+                "data_type": "text",
+                "display_name": "Rich text editor",
+                "uid": "description",
+                "field_metadata": {
+                    "allow_rich_text": true,
+                    "description": "",
+                    "multiline": false,
+                    "rich_text_type": "advanced",
+                    "options": [],
+                    "version": 3
+                },
+                "multiple": false,
+                "mandatory": false,
+                "unique": false
+            }
+        ]
+    }
+})
+
+
+// <p>The <code>Update a global field</code> request allows you to update the schema of an existing global field.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#update-global-field>Update Global Field</a> API Reference document
+
+@name("Update a global field")
+PUT "https://{{base_url}}/v3/global_fields/{{global_field_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "global_field": {
+        "title": "Servlet",
+        "uid": "servlet",
+        "schema": [
+            {
+                "display_name": "Name",
+                "uid": "name",
+                "data_type": "text"
+            },
+            {
+                "data_type": "text",
+                "display_name": "Rich text editor",
+                "uid": "description",
+                "field_metadata": {
+                    "allow_rich_text": true,
+                    "description": "",
+                    "multiline": false,
+                    "rich_text_type": "advanced",
+                    "options": [],
+                    "version": 3
+                },
+                "multiple": false,
+                "mandatory": false,
+                "unique": false
+            }
+        ]
+    }
+})
+
+
+// <p>The <code>Delete global field</code> request allows you to delete a specific global field.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#delete-global-field>Delete Global Field</a> API Reference document
+
+@name("Delete global field")
+DELETE "https://{{base_url}}/v3/global_fields/{{global_field_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "force"= "true"
+
+
+
+// <p>The <code>Import a global field</code> call imports a global field into a stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#import-global-field>Import Global Field</a> API Reference document
+
+@name("Import a global field")
+POST "https://{{base_url}}/v3/global_fields/import"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "multipart/form-data"
+files(
+	("global_field", "None")
+)
+
+
+// <p>This request is used to export a specific global field and its schema. The data is exported in JSON format.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#export-global-field>Export Global Field</a> API Reference document
+
+@name("Export a global field")
+GET "https://{{base_url}}/v3/global_fields/{{global_field_uid}}/export"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+

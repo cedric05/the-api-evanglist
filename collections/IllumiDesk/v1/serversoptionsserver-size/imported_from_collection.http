@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Retrieve available server sizes") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/servers/options/server-size/"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "ordering"= "<string>"
+
+
+// Only super users with on-premises version have acceess to this endpoint.
+
+@name("Create a new server size item") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/servers/options/server-size/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "cpu": "<integer>",
+    "memory": "<integer>",
+    "active": "<boolean>"
+})
+
+
+

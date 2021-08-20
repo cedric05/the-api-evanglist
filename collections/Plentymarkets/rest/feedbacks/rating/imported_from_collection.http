@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Creates a feedback rating.
+
+@name("Create a feedback rating")
+POST "https://{{baseUrl}}/rest/feedbacks/rating"
+? "ratingValue"= "<post>"
+? "ratingRelationTargetTypeId"= "<>"
+? "ratingRelationTargetId"= "<>"
+
+
+// Deletes a feedback rating. The ID of the feedback rating must be specified.
+
+@name("Delete a feedback rating")
+DELETE "https://{{baseUrl}}/rest/feedbacks/rating/:ratingId"
+? "feedbackRatingId"= "<>"
+
+
+

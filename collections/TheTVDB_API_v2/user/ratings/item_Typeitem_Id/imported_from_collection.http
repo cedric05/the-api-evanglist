@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// This route deletes a given rating of a given type.
+
+@name("/user/ratings/:itemType/:itemId")
+DELETE "https://{{baseUrl}}/user/ratings/:itemType/:itemId"
+? "No Name"= "<string>"
+
+
+// This route updates a given rating of a given type.
+
+@name("/user/ratings/:itemType/:itemId/:itemRating")
+PUT "https://{{baseUrl}}/user/ratings/:itemType/:itemId/:itemRating"
+? "No Name"= "<string>"
+
+
+

@@ -1,0 +1,106 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// This service calculates a recommendation ranking for insurance products, based on the risk impact evaluations as in `/profile/risks/prioritization`. The ranking is discrete, ranging from `3` indicating `'absolutely recommended'` down to `0` indicating `'not recommended'` (e.g. pet insurance for persons without pets). The product list is subject to configuration.  
+// 
+// Productgroup list for Austria (subject to configuration)  
+// 
+// | <div style=width:180px> __product__ </div> | <div style=width:350px> __description__ </div> |
+// | --- | --- |
+// | `termlife` | Term life insurance |
+// | `outpatient` | Supplementary health insurance (ambulant) |
+// | `cash-reserve` | Liquidity reserve |
+// | `invalidity` | Disability insurance |
+// | `home` | Home (homeowners insurance) |
+// | `landowner-liability` | Landowner liability |
+// | `household` | Household insurance |
+// | `animal-liability` | Livestock/pet owner liability |
+// | `car-liability` | Motor vehicle liability |
+// | `car-comprehensive` | Motor vehicle own-damage |
+// | `car-legal` | Motor legal protection |
+// | `inpatient` | Supplementary health insurance (for hospital) |
+// | `dailybenefit` | Daily benefits insurance |
+// | `care` | Nursing care insurance |
+// | `private-liability` | Private liability |
+// | `legal` | Legal protection |
+// | `travel` | Travel insurance |
+// | `accident` | Accident insurance |
+// | `pension` | Private pension insurance |  
+// 
+// Productgroup list for Germany (subject to configuration)  
+// 
+// | <div style=width:180px> __product__ </div> | <div style=width:250px> __description__ </div> |
+// | --- | --- |
+// | `accident` | Accident insurance |
+// | `private-liability` | Private liability |
+// | `landowner-liability` | Landowner liability |
+// | `invalidity` | Disability insurance |
+// | `car-liability` | Motor vehicle liability |
+// | `animal-liability` | Livestock/pet owner liability |
+// | `life` | Life insurance 3rd column |
+// | `home` | Home (homeowners insurance) |
+// | `termlife` | Term life insurance |
+// | `car-comprehensive` | Motor vehicle own-damage |
+// | `household` | Household insurance |
+// | `legal` | Legal protection |
+// | `dailybenefit` | Daily benefits insurance |
+// | `travel` | Travel insurance |
+// | `care` | Nursing care insurance |
+// | `health-private` | Private health insurance |
+// | `health-supplementary` | Supplementary health insurance |
+// | `pension-riester` | Riester pension |
+// | `pension-rurup` | Rürup pension |
+// | `principal-liability` | Builders liability |
+// | `health-public` | Statutory health insurance |
+// | `invalidity-child` | Children invalidity insurance |
+// | `funeral` | Funeral expense insurance |  
+// 
+// Productgroup list for Switzerland (subject to configuration)  
+// 
+// | <div style=width:180px> __product__ </div> | <div style=width:250px> __description__ </div> |
+// | --- | --- |
+// | `accident` | Accident insurance |
+// | `private-liability` | Private liability |
+// | `car` | Motor vehicle insurance |
+// | `animal-liability` | Livestock/pet owner liability |
+// | `life` | Life insurance 3rd column |
+// | `home` | Home (homeowners insurance) |
+// | `household` | Household insurance |
+// | `legal` | Legal protection |
+// | `travel` | Travel insurance |
+// | `health-public` | Statutory health insurance |
+
+@name("Prioritization") : "base-inherit-auth"
+POST "https://{{baseUrl}}/productgroups/prioritization"
+? "country"= "it"
+? "accountType"= "sme"
+? "unlock"= "hard"
+
+
+// Shows the results of the general demands and needs analysis for private clients. The results contain per productgroup/path a description text including the calculated amount of coverage and additional, optional, info text  
+// 
+// | <div style=width:100px> __type__ </div> | <div style=width:275px> __description__ </div> | <div style=width:445px> __example__ </div> |
+// | --- | --- | --- |
+// | `description` | description of the details (can be empty) | `The insured sum should correlate with your car's value.` |
+// | `id` | path information | `kfzkasko` |
+// | `title` | title of recommendation | `Motor vehicle own-damage` |
+// | `info` | additional information of the details (can be empty) | `null` |
+
+@name("Prioritization Details") : "base-inherit-auth"
+POST "https://{{baseUrl}}/productgroups/prioritization/details"
+"Content-Type": "application/json"
+json({
+    "country": "de",
+    "path": "pathvorsorge"
+})
+
+
+

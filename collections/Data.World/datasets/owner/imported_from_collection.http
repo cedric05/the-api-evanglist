@@ -1,0 +1,96 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List datasets that the currently authenticated user has access to, for the specified owner; when the dataset is open, private (but discoverable by the authenticated user) or the authenticated user is a contributor with discover visibility
+
+@name("List datasets for a specified owner") : "base-inherit-auth"
+GET "https://{{baseUrl}}/datasets/:owner"
+? "limit"= "et officia pariatur"
+? "next"= "et officia pariatur"
+
+
+// Create a new dataset.
+
+@name("Create a dataset") : "base-inherit-auth"
+POST "https://{{baseUrl}}/datasets/:owner"
+"Content-Type": "application/json"
+json({
+    "title": "veni",
+    "visibility": "DISCOVERABLE",
+    "description": "in c",
+    "files": [
+        {
+            "name": "WRO ",
+            "source": {
+                "authorization": {
+                    "type": "#(",
+                    "credentials": "kRol"
+                },
+                "credentials": {
+                    "user": "s",
+                    "password": "ma"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "3---",
+                    "site": "tzyp",
+                    "id": "cb67e674-bc3c-6050-bcc5-3637d1365b5c"
+                },
+                "requestEntity": "ex",
+                "requestHeaders": {},
+                "url": "ftp:"
+            },
+            "description": "non ",
+            "labels": [
+                "raw data",
+                "report"
+            ]
+        },
+        {
+            "name": "<]SB",
+            "source": {
+                "authorization": {
+                    "type": "YtU*",
+                    "credentials": "H F="
+                },
+                "credentials": {
+                    "user": "e",
+                    "password": "r"
+                },
+                "expandArchive": false,
+                "method": "GET",
+                "oauthToken": {
+                    "owner": "p-7-",
+                    "site": "cc6r",
+                    "id": "urn:uuid:f34266dc-c4f0-a78d-5dc1-fa2886a3fa16"
+                },
+                "requestEntity": "c",
+                "requestHeaders": {},
+                "url": "ftp:"
+            },
+            "description": "Ut e",
+            "labels": [
+                "raw data",
+                "report"
+            ]
+        }
+    ],
+    "license": "ODC-BY",
+    "summary": "aliq",
+    "tags": [
+        "I ww",
+        ""
+    ],
+    "properties": {}
+})
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a91970d1-273c-4c28-bee0-96765b693784.postman_collection.json
+
+// Registers a new user with blockchain. It sets the attribute 'zone' for the user to 'tenantId' as specified in predix-zone-id header
+
+@name("Put User")
+PUT "https://{{baseUrl}}/v1/users/:userId"
+"Authorization": "<>"
+"predix": "<>"
+
+
+// Enrolls the blockchain user by downloading its certificates and storing it in Vault. It also maps the oauth user with the blockchain user. This is the very first operation that must be performed.
+
+@name("Post Users Userid Enroll")
+POST "https://{{baseUrl}}/v1/users/:userId/enroll"
+"Authorization": "<>"
+"predix": "<>"
+
+
+

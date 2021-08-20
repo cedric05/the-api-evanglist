@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fc06b48f-b548-47f5-91a1-9548e7a612e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns a list of customer accounts in the Tenable.io MSSP Portal. <p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List customer accounts") : "base-inherit-auth"
+GET "https://{{baseUrl}}/mssp/accounts"
+
+
+// Assigns a logo to one or more customer accounts in the Tenable.io MSSP Portal. <p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Assign logo") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/mssp/accounts/logos"
+"Content-Type": "application/json"
+json({
+    "logo_uuid": "dolore aute",
+    "account_uuids": [
+        "nostrud",
+        "et voluptate"
+    ]
+})
+
+
+

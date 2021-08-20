@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0dcd926c-3e6d-4661-98ba-48011b6b4a5c.postman_collection.json
+
+// Create a custom ingest profile for the account. Note that you can also do this through Video Cloud Studio 
+
+@name("Create Ingest Profile")
+POST "https://{{baseUrl}}/accounts/:account_id/profiles"
+
+
+// Delete an ingest profile 
+
+@name("Delete Ingest Profile")
+DELETE "https://{{baseUrl}}/accounts/:account_id/profiles/:profile_id"
+
+
+

@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves list of accounts in portfolio, filtered by the specified parameters.
+
+@name("Get list of accounts in portfolio") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/portfolios/:id/accounts"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+
+
+// Manage accounts in an already existing portfolio.
+
+@name("Manage accounts in an already existing portfolio") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/portfolios/:id/accounts"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "accountsToAdd": [
+        -94914259,
+        -9882645
+    ],
+    "accountsToRemove": [
+        63374789,
+        48885681
+    ]
+})
+
+
+

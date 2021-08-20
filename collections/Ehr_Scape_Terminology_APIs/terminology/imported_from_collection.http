@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-083fa21b-3cf4-4708-97ff-dc1d4c1db32d.postman_collection.json
+
+// Only the newest version of each code system will be returned
+
+@name("Lists code systems matching a criteria")
+GET "https://{{baseUrl}}/terminology/codesystems"
+? "codelist"= "<>"
+? "matchvalue"= "<>"
+? "page"= "<>"
+? "pagesize"= "<>"
+
+
+

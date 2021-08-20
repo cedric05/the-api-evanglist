@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34a38a08-9881-4c51-9aa4-0e19e7bc1d51.postman_collection.json
+
+// Delete a previously registered client.
+
+@name("Delete a client")
+DELETE "https://{{baseUrl}}/client/:client_id"
+
+
+// Retrieve the configuration of a previously registered client.
+
+@name("View a client")
+GET "https://{{baseUrl}}/client/:client_id"
+
+
+// Update the configuration of a previously registered client.
+
+@name("Update a client")
+PUT "https://{{baseUrl}}/client/:client_id"
+"Content-Type": "multipart/form-data"
+files(
+	("client_name", "<string>"),
+	("client_uri", "<string>"),
+	("application_type", "<string>"),
+	("client_id", "<string>"),
+	("contacts", "["<string>","<string>"]"),
+	("default_max_age", "<integer>"),
+	("default_scopes", "["<string>","<string>"]"),
+	("grant_types", "["<string>","<string>"]"),
+	("logo_uri", "<string>"),
+	("policy_uri", "<string>"),
+	("redirect_uris", "["<string>","<string>"]"),
+	("response_types", "["<string>","<string>"]"),
+	("tos_uri", "<string>")
+)
+
+
+

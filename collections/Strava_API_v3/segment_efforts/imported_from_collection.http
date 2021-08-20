@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// Returns a set of the authenticated athletes segment efforts for a given segment.  Requires subscription.
+
+@name("List Segment Efforts")
+GET "https://{{baseUrl}}/segment_efforts"
+? "segment_id"= "<integer>"
+? "start_date_local"= "<datetime>"
+? "end_date_local"= "<string>"
+? "No Name"= "<string>"
+? "No Name"= "<string>"
+
+
+

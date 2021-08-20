@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-df55bd21-8efe-4dae-ac10-923f5911c3f0.postman_collection.json
+
+@name("Retrieve zonal statistics for altitude using the supplied geometry. If no epsg is provided epsg = 28992 (RD) is assumed. Currently only EPSGs 28992 (Dutch RD) and 4326 (WGS 84) are supported.")
+GET "https://{{baseUrl}}/ahn"
+"token": "{{token}}"
+? "geometry"= "{{geometry}}"
+? "epsg"= "4326"
+
+
+@name("Return all the information for the given soilparamid.")
+GET "https://{{baseUrl}}/soilparams/:soilparamid"
+"token": "{{token}}"
+? "page_size"= "25"
+? "page_offset"= "0"
+
+
+

@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Retrieve a Result
+
+@name("explore common rest result list") : "base-inherit-auth"
+GET "https://{{baseUrl}}/explore/common/rest/result"
+
+
+

@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List all packages and classes that will be set as entry points in highest priority
+
+@name("List all prioritized entry points") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/entrypoints/prioritized"
+
+
+// Add a bulk of classes and packages that should bet set as entry points in highest priority
+
+@name("Add a bulk of prioritized entry points") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/settings/entrypoints/prioritized"
+"Content-Type": "application/json"
+json({
+    "classes": [
+        "com.company.ClassName",
+        "com.company.ClassName"
+    ],
+    "packages": [
+        "com.company.package.name",
+        "com.company.package.name"
+    ]
+})
+
+
+

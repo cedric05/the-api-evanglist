@@ -1,0 +1,82 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c49a34ba-ca49-4e12-bd50-71617960cf26.postman_collection.json
+
+// This operation retrieves a ServiceCatalog entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a ServiceCatalog by ID")
+GET "https://{{baseUrl}}/serviceCatalog/:id"
+? "fields"= "id Ut Excepteur"
+
+
+// This operation updates partially a ServiceCatalog entity.
+
+@name("Updates partially a ServiceCatalog")
+PATCH "https://{{baseUrl}}/serviceCatalog/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "reprehenderit mollit id do",
+    "lifecycleStatus": "est Ut",
+    "name": "commodo voluptate incididunt nulla",
+    "version": "Lorem et amet minim",
+    "category": [
+        {
+            "id": "",
+            "href": "http://XKDDjgvG.gnjvWVRmrF1HZQefDrFoUA5MM",
+            "name": "adipisicing in",
+            "version": "qui ad Excepteur ex",
+            "@baseType": "in dolor",
+            "@schemaLocation": "http://kAqCUFdyVNkISSgqafJCoOpHjYOQF.udxsP",
+            "@type": "est ipsum",
+            "@referredType": "pariatur Ut labore sint"
+        },
+        {
+            "id": "consequat non",
+            "href": "https://o.fcaMAu.VAu1cRRc7iDi1+yc7NG5LbaZedBW5WWsNjdYcx",
+            "name": "laboris pariatur",
+            "version": "proident aute dolor",
+            "@baseType": "adipisicing sed pariatur",
+            "@schemaLocation": "http://BAAZEyxonjVPIKtBnyWssMjZkqIYmOuz.vwxaqVNbGjWX",
+            "@type": "qui sint in nostrud occaecat",
+            "@referredType": "Lorem mollit"
+        }
+    ],
+    "relatedParty": [
+        {
+            "@referredType": "Lorem aute",
+            "id": "sint",
+            "href": "http://EVavMecXzGctcB.frzpA-KZk.I5WGAvyWiDyLrcgeGg9cFbjw48avG",
+            "name": "occaecat consectetur est sed",
+            "role": "sint culpa",
+            "@baseType": "cillum aliquip sint",
+            "@schemaLocation": "https://nZVnKLfkqbgnhaVoRNzBuaSKmJGqw.uomQzDk",
+            "@type": "in in Ut"
+        },
+        {
+            "@referredType": "nulla aliqua irure",
+            "id": "tempor",
+            "href": "http://esdwVlfLGhTqEJgPLeW.jcmeEFsIEXonrn.WfQ7o5tcNJuKjHF6heAoqgdGPD7tn8Kd0X",
+            "name": "veniam enim nisi proident",
+            "role": "dolore",
+            "@baseType": "mollit dolor",
+            "@schemaLocation": "https://BSlbcyYuepdTCdYldfKsjzK.bxZnC3H4-3D+QgVPmRNxJm2OiX5jxucV-W4e2nalzlhvw4",
+            "@type": "Excepteur"
+        }
+    ],
+    "validFor": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@baseType": "nulla dolore qui",
+    "@schemaLocation": "http://VNDHvaZpLKDPNhlXWqx.uultUhbU3KwlcVCvKbOzhW2H.AT2wdpUGRpbKTD+9MnTewv3o+2",
+    "@type": "id labore qui officia "
+})
+
+
+// This operation deletes a ServiceCatalog entity.
+
+@name("Deletes a ServiceCatalog")
+DELETE "https://{{baseUrl}}/serviceCatalog/:id"
+
+
+

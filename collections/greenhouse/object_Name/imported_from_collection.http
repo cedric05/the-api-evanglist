@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Search for {objectName}")
+GET "https://{{baseUrl}}/:objectName"
+"Authorization": "ad cillum non laborum"
+? "where"= "ad cillum non laborum"
+? "pageSize"= "-9551490"
+? "nextPage"= "ad cillum non laborum"
+? "fields"= "ad cillum non laborum"
+
+
+@name("Create an {objectName}")
+POST "https://{{baseUrl}}/:objectName"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "objectField": "laborum exercitatio"
+})
+
+
+

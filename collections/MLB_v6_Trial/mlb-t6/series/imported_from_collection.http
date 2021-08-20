@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-20eaed55-6256-4049-a8c9-74a7e5e0ac65.postman_collection.json
+
+// Obtain Series Schedule for the MLB for the postseason.
+
+@name("Obtain Series Schedule for the MLB for the postsea...")
+GET "https://{{baseUrl}}/mlb-t6/series/:year/:mlb_season/schedule{{format}}"
+
+
+

@@ -1,0 +1,1 @@
+Bulk data search and download API exposes an API to search published patent grants and applications across various fields, and to request a custom zip package for the given patent or application ids. Download up to 100 application numbers at a time. Wait time can vary based on the number of requests being processed.

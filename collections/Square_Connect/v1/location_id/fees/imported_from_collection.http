@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Lists all of a location's fees (taxes).
+
+@name("Get Location Fees")
+GET "https://{{baseUrl}}/v1/:location_id/fees"
+
+
+// Deletes an existing fee (tax).
+
+@name("Delete Location Fees")
+DELETE "https://{{baseUrl}}/v1/:location_id/fees/:fee_id"
+
+
+

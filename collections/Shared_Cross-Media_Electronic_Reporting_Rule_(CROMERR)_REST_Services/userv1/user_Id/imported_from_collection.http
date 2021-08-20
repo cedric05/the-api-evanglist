@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2131e7d-01ce-4512-a5ba-81bbec9b0ac2.postman_collection.json
+
+@name("Retrieve user.")
+GET "https://{{baseUrl}}/user/v1/:userId"
+"Authorization": "<string>"
+
+
+@name("Change a user's knowledge-based questions and answers, and also resets their number of answer attempts.")
+PUT "https://{{baseUrl}}/user/v1/:userId/answers"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json([
+    {
+        "questionId": "<string>",
+        "answerText": "<string>"
+    },
+    {
+        "questionId": "<string>",
+        "answerText": "<string>"
+    }
+])
+
+
+@name("Update user password.")
+PUT "https://{{baseUrl}}/user/v1/:userId/password"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+data('"<string>"')
+
+
+@name("Update user status.")
+PUT "https://{{baseUrl}}/user/v1/:userId/status"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+data('"<string>"')
+
+
+

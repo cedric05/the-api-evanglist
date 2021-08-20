@@ -1,0 +1,1 @@
+API Mocking allows developers to build a working version of the API without writing any code.

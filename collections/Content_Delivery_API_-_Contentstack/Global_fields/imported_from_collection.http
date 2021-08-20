@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c25d627-86e8-4072-b0fa-98946e646a2c.postman_collection.json
+
+// <p>This call returns comprehensive information of all the global fields available in a particular stack in your account.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#all-global-fields>All Global Fields</a> API Reference document
+
+@name("Get all global fields")
+GET "https://{{base_url}}/v3/global_fields"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+
+
+// <p>This request allows you to fetch comprehensive details of a specific global field.<br><p>To use the API Request, you'll need to use the <a href="https://www.contentstack.com/docs/developers/create-tokens/about-delivery-tokens">Delivery Token</a> of the respective environment.<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-delivery-api/#authentication">Authentication</a>.
+// </p><br>
+//                         For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-delivery-api/#single-global-field>Single Global Field</a> API Reference document
+
+@name("Get a single global field")
+GET "https://{{base_url}}/v3/global_fields/{{global_field_uid}}"
+"api_key": "{{api_key}}"
+"access_token": "{{delivery_token}}"
+
+
+

@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Please paste goal_id from previously created Goal for continuity
+
+@name("Update a Goal") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/goal/goal_id"
+"Content-Type": "application/json"
+json({
+    "name": "Updated Goal Name",
+    "due_date": 1577811600000,
+    "description": "Updated Goal Description",
+    "rem_owners": [
+        53480
+    ],
+    "add_owners": [
+        53480
+    ],
+    "color": "#32a852"
+})
+
+
+// Please paste goal_id from previously updated Goal for continuity
+
+@name("Delete a Goal") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/goal/goal_id"
+"Content-Type": "application/json"
+
+
+// Please paste goal_id after creating another Goal for continuity. 
+
+@name("Get Goal") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/goal/goal_id"
+"Content-Type": "application/json"
+
+
+// Please use previously created goal_id created before "Get Goal" for continuity
+
+@name("Create a Key Result") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/goal/goal_id/key_result"
+"Content-Type": "application/json"
+json({
+    "name": "New Key Result From API V2",
+    "owners": [
+        53480
+    ],
+    "type": "number",
+    "steps_start": 0,
+    "steps_end": 10,
+    "unit": "km",
+    "task_ids": [],
+    "list_ids": []
+})
+
+
+

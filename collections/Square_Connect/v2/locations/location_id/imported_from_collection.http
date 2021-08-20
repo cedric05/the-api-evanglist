@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Lists refunds for one of a business's locations.
+
+@name("Get Locations Refunds")
+GET "https://{{baseUrl}}/v2/locations/:location_id/refunds"
+? "begin_time"= "<string>"
+? "end_time"= "<string>"
+? "sort_order"= "<string>"
+? "cursor"= "<string>"
+
+
+// Creates a [Checkout](#type-checkout) response that links an`checkoutId` and `checkout_page_url` that customers can be directed to innorder to provide their payment information using a payment processingnworkflow hosted on connect.squareup.com.
+
+@name("Post Locations Checkouts")
+POST "https://{{baseUrl}}/v2/locations/:location_id/checkouts"
+
+
+

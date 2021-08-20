@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Flow Stage Relation") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/FlowStageRelation/"
+
+
+@name("Flow Stage Relation Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/FlowStageRelation/{ID}/"
+
+
+@name("Describe Flow Stage Relation") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/FlowStageRelation/describe/"
+
+
+

@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-007fb30c-c8ae-4349-8a4c-36e7914a7a99.postman_collection.json
+
+// The Item feed file is generated each day. This call lets you download a daily TSV_GZIP (tab separated value gzip) Item feed file of all the items that were listed on a specific day in a specific category. For each item, all the item details are returned, except for the item description. The description of each item is excluded because these can be huge and items in an item group (an item with variations, such as size and color) can share the same description. The item descriptions are returned i
+
+@name("Get Item")
+GET "https://{{baseUrl}}/item"
+"X": "<>"
+"Range": "<>"
+? "feed_scope"= "<>"
+? "category_id"= "<>"
+? "date"= "<>"
+
+
+// This call is a bridge between the eBay legacy APIs, such as Trading, Shopping, and Finding and the eBay Buy APIs. There are differences between how legacy APIs and RESTful APIs return the identifier of an &quot;item&quot;. There is also a difference in what the item Id represents and in the format of the item Id value returned. This call lets you use the legacy item Ids retrieve the details of a specific item, such as description, price, and other information the buyer needs to make a purchasing
+
+@name("Get Item Get Item By Legacy")
+GET "https://{{baseUrl}}/item/get_item_by_legacy_id"
+? "fieldgroups"= "<>"
+? "legacy_item_id"= "<>"
+? "legacy_variation_id"= "<>"
+? "legacy_variation_sku"= "<>"
+
+
+// This call retrieves the details of the individual items in an item group. An item group is an item that has various aspect differences, such as color, size, storage capacity, etc. You pass in the item group Id as a URI parameter. You use this call to show the item details of items with multiple aspects, such as color, size, storage capacity, etc. This call returns two main containers; items and commonDescriptions. The items container has an array of containers with the details of each item in th
+
+@name("Get Item Get Items By Item Group")
+GET "https://{{baseUrl}}/item/get_items_by_item_group"
+? "item_group_id"= "<>"
+
+
+// This call retrieves the details of a specific item, such as description, price, category, all item aspects, condition, return policies, seller feedback and score, shipping options, shipping costs, estimated delivery, and other information the buyer needs to make a purchasing decision. The Buy APIs are designed to let you create an eBay shopping experience in your app or website. This means you will need to know when something, such as the availability, quantity, etc., has changed in any eBay ite
+
+@name("Get Item Item")
+GET "https://{{baseUrl}}/item/:item_id"
+? "fieldgroups"= "<>"
+
+
+

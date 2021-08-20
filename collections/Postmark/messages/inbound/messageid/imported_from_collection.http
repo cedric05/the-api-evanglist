@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Bypass rules for a blocked inbound message")
+PUT "https://{{baseUrl}}/messages/inbound/:messageid/bypass"
+
+
+@name("Inbound message details")
+GET "https://{{baseUrl}}/messages/inbound/:messageid/details"
+
+
+@name("Retry a failed inbound message for processing")
+PUT "https://{{baseUrl}}/messages/inbound/:messageid/retry"
+
+
+

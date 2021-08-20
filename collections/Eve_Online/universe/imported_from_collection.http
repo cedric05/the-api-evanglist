@@ -1,0 +1,260 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Get all character ancestries
+// 
+// ---
+// Alternate route: `/legacy/universe/ancestries/`
+// 
+// Alternate route: `/v1/universe/ancestries/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get ancestries")
+GET "https://{{baseUrl}}/universe/ancestries/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+// Get information on an asteroid belt
+// 
+// ---
+// Alternate route: `/legacy/universe/asteroid_belts/{asteroid_belt_id}/`
+// 
+// Alternate route: `/v1/universe/asteroid_belts/{asteroid_belt_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get asteroid belt information")
+GET "https://{{baseUrl}}/universe/asteroid_belts/:asteroid_belt_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get a list of bloodlines
+// 
+// ---
+// Alternate route: `/legacy/universe/bloodlines/`
+// 
+// Alternate route: `/v1/universe/bloodlines/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get bloodlines")
+GET "https://{{baseUrl}}/universe/bloodlines/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+// Get a list of factions
+// 
+// ---
+// Alternate route: `/dev/universe/factions/`
+// 
+// Alternate route: `/v2/universe/factions/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get factions")
+GET "https://{{baseUrl}}/universe/factions/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+// Resolve a set of names to IDs in the following categories: agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems. Only exact matches will be returned. All names searched for are cached for 12 hours
+// 
+// ---
+// Alternate route: `/dev/universe/ids/`
+// 
+// Alternate route: `/legacy/universe/ids/`
+// 
+// Alternate route: `/v1/universe/ids/`
+
+@name("Bulk names to IDs")
+POST "https://{{baseUrl}}/universe/ids/"
+"Accept-Language": "en"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+? "language"= "en"
+json([
+    "CCP Zoetrope"
+])
+
+
+// Get information on a moon
+// 
+// ---
+// Alternate route: `/legacy/universe/moons/{moon_id}/`
+// 
+// Alternate route: `/v1/universe/moons/{moon_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get moon information")
+GET "https://{{baseUrl}}/universe/moons/:moon_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types, Factions
+// 
+// ---
+// Alternate route: `/dev/universe/names/`
+// 
+// Alternate route: `/v3/universe/names/`
+
+@name("Get names and categories for a set of IDs")
+POST "https://{{baseUrl}}/universe/names/"
+"Content-Type": "application/json"
+? "datasource"= "tranquility"
+json([
+    95465499,
+    30000142
+])
+
+
+// Get information on a planet
+// 
+// ---
+// Alternate route: `/legacy/universe/planets/{planet_id}/`
+// 
+// Alternate route: `/v1/universe/planets/{planet_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get planet information")
+GET "https://{{baseUrl}}/universe/planets/:planet_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get a list of character races
+// 
+// ---
+// Alternate route: `/dev/universe/races/`
+// 
+// Alternate route: `/legacy/universe/races/`
+// 
+// Alternate route: `/v1/universe/races/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get character races")
+GET "https://{{baseUrl}}/universe/races/"
+"Accept-Language": "en"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "language"= "en"
+
+
+// Get information on a planetary factory schematic
+// 
+// ---
+// Alternate route: `/dev/universe/schematics/{schematic_id}/`
+// 
+// Alternate route: `/legacy/universe/schematics/{schematic_id}/`
+// 
+// Alternate route: `/v1/universe/schematics/{schematic_id}/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get schematic information")
+GET "https://{{baseUrl}}/universe/schematics/:schematic_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get information on a stargate
+// 
+// ---
+// Alternate route: `/legacy/universe/stargates/{stargate_id}/`
+// 
+// Alternate route: `/v1/universe/stargates/{stargate_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get stargate information")
+GET "https://{{baseUrl}}/universe/stargates/:stargate_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get information on a star
+// 
+// ---
+// Alternate route: `/legacy/universe/stars/{star_id}/`
+// 
+// Alternate route: `/v1/universe/stars/{star_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get star information")
+GET "https://{{baseUrl}}/universe/stars/:star_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get information on a station
+// 
+// ---
+// Alternate route: `/dev/universe/stations/{station_id}/`
+// 
+// Alternate route: `/v2/universe/stations/{station_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get station information")
+GET "https://{{baseUrl}}/universe/stations/:station_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed
+// 
+// ---
+// Alternate route: `/legacy/universe/system_jumps/`
+// 
+// Alternate route: `/v1/universe/system_jumps/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get system jumps")
+GET "https://{{baseUrl}}/universe/system_jumps/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed
+// 
+// ---
+// Alternate route: `/v2/universe/system_kills/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get system kills")
+GET "https://{{baseUrl}}/universe/system_kills/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

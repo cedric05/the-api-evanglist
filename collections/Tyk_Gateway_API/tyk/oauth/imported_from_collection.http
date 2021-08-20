@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26cd91a2-9b1d-4b13-a446-5962a1db044c.postman_collection.json
+
+// The final request from an authorising party for a redirect URI during the Tyk OAuth flown
+
+@name("OAuth Authorize Client")
+POST "https://{{baseUrl}}/tyk/oauth/authorize-client/"
+"x": "<>"
+
+
+// Invalidate a refresh tokenn
+
+@name("Invalidate Key")
+DELETE "https://{{baseUrl}}/tyk/oauth/refresh/:keyId"
+"x": "<>"
+? "apiID"= "<>"
+
+
+

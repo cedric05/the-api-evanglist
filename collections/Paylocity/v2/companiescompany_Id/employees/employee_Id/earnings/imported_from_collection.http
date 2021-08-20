@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4727ff8b-21cd-41e7-b532-19284cb5abdf.postman_collection.json
+
+// Get All Earnings returns all earnings for the selected employee.
+
+@name("Get All Earnings")
+GET "https://{{baseUrl}}/v2/companies/:companyId/employees/:employeeId/earnings"
+
+
+

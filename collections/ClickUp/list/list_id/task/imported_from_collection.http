@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Create a Task") : "base-inherit-auth"
+POST "https://api.clickup.com/api/v2/list/list_id/task"
+"Content-Type": "application/json"
+json({
+    "name": "adipisicing non aliquip irure",
+    "description": "cupidatat nostrud deserunt ex",
+    "assignees": [
+        23850375,
+        -26749838
+    ],
+    "tags": [
+        "voluptate",
+        "cons"
+    ],
+    "status": "fugiat minim non ut",
+    "priority": 61911120,
+    "due_date": -71780852,
+    "due_date_time": false,
+    "time_estimate": -81446702,
+    "start_date": -62361176,
+    "start_date_time": false,
+    "notify_all": false,
+    "parent": "dolore irure ut ipsum",
+    "links_to": "quis esse proident",
+    "custom_fields": [
+        {
+            "id": "Excepteur Duis magna",
+            "value": -59924627
+        },
+        {
+            "id": "exercitation aliqua est laborum",
+            "value": 71736962
+        }
+    ]
+})
+
+
+@name("Get Tasks") : "base-inherit-auth"
+GET "https://api.clickup.com/api/v2/list/list_id/task"
+"Content-Type": "application/json"
+
+
+

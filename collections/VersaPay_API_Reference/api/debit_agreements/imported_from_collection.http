@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c0b81c98-7930-4b6a-9b69-98d8407da2e9.postman_collection.json
+
+// Create an agreement.
+
+@name("Create an Agreement")
+POST "https://{{baseUrl}}/api/debit_agreements"
+
+
+// View sent agreements.
+
+@name("View Sent Agreements")
+GET "https://{{baseUrl}}/api/debit_agreements/sent"
+? "page"= "<>"
+
+
+// View received agreements.
+
+@name("View Received Agreements")
+GET "https://{{baseUrl}}/api/debit_agreements/received"
+? "page"= "<>"
+
+
+

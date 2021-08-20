@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-862a20a3-d7a0-4801-b547-7a33f7169136.postman_collection.json
+
+// Delayed Queue
+
+@name("Delayed Queue")
+POST "https://{{baseUrl}}/keywords"
+
+
+// Priority Queue
+
+@name("Priority Queue")
+POST "https://{{baseUrl}}/keywords/priority"
+
+
+// Search Results
+
+@name("Search Results")
+GET "https://{{baseUrl}}/keywords/:keyword"
+
+
+

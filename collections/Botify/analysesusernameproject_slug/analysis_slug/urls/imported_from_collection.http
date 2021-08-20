@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-34e0cf85-ed0f-4317-a045-7d42ea3dc836.postman_collection.json
+
+// Gets an Analysis datamodel
+
+@name("Gets an Analysis datamodel")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/urls/datamodel"
+? "area"= "<integer>"
+
+
+// Gets the detail of an URL for an analysis
+
+@name("Gets the detail of an URL for an analysis")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/urls/:url"
+? "area"= "<integer>"
+? "fields"= "<array>"
+
+
+// Gets Analysis Datasets
+
+@name("Gets Analysis Datasets")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/urls/datasets"
+? "area"= "<integer>"
+? "deprecated_fields"= "<boolean>"
+
+
+// Gets the HTML of an URL for an analysis
+
+@name("Gets the HTML of an URL for an analysis")
+GET "https://{{baseUrl}}/analyses/:username/:project_slug/:analysis_slug/urls/html/:url"
+
+
+

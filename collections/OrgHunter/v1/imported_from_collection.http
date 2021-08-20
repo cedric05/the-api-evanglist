@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-df8c3e9b-5dcc-4109-8c21-5762cec80298.postman_collection.json
+
+// <p>This operation provides a list of categories.</p>
+
+@name("Charity Categories")
+POST "https://{{baseUrl}}/v1/categories"
+
+
+// <p>This operation detail data.</p>
+
+@name("Charity Basic")
+POST "https://{{baseUrl}}/v1/charitybasic"
+? "ein"= "<string>"
+
+
+// <p>This operation detail data.</p>
+
+@name("Charity Financial")
+POST "https://{{baseUrl}}/v1/charityfinancial"
+? "ein"= "<string>"
+
+
+// <p>This operation detail data.</p>
+
+@name("Charity Geo Location")
+POST "https://{{baseUrl}}/v1/charitygeolocation"
+? "ein"= "<string>"
+
+
+// <p>This operation detail data.</p>
+
+@name("Charity Premium")
+POST "https://{{baseUrl}}/v1/charitypremium"
+? "ein"= "<string>"
+
+
+// <p>This operation provides summary data.</p>
+
+@name("Charity Search")
+POST "https://{{baseUrl}}/v1/charitysearch"
+? "ein"= "<string>"
+? "searchTerm"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zipCode"= "<string>"
+? "category"= "<string>"
+? "eligible"= "<string>"
+? "start"= "<string>"
+? "rows"= "<string>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// nA paginated list of addon accounts authorized by this user.nn#### PermissionsnnAddon accounts are visible only to the user that authorized the account.nn#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of at most 10 addon account objects. Each resource in the array is a separate  addon account object and contains the full representation of the addon account.nnThe `links` key contains a dictionary of links that can be used for [pagination](
+
+@name("List all addon accounts")
+GET "https://{{baseUrl}}/users/:user_id/addons/:provider/accounts/"
+
+
+// Retrieves the details of an addon accountnn#### PermissionsnnAddon accounts are visible only to the user that authorized the account.nn####ReturnsnReturns a JSON object with a `data` key containing the representation of the requested addon account, if the request was successful.nnIf the request is unsuccessful, an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes) to understand why this request may have failed.
+
+@name("Retrieve an addon account")
+GET "https://{{baseUrl}}/users/:user_id/addons/:provider/accounts/:account_id/"
+
+
+

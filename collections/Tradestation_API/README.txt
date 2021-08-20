@@ -1,0 +1,5 @@
+This document describes the resources that make up the official TradeStationnAPI. If you have any problems or requests please contact [support](mailto:webapi@tradestation.com).nnOverviewn========nnThe TradeStation API is reachable at the base-url:n```nhttps://api.tradestation.com/v2n```nnCurrent Versionn---------------nnThe latest version is 20160101, but currently we are in transition, so byndefault all requests receive the 20101026 version for backwards compatibility.nnAlways explicitly request this version by adding the `APIVersion`nquerystring parameter as shown below:nn```nhttps://api.tradestation.com/v2/data/quote/msft?APIVersion=20160101n```nnNote: This will ensure your application will not be broken when we deprecatenthe 20101026 version in favor of 20160101 or newer versions.nnSIM vs LIVEn-----------nnWe also offer a Simulator(SIM) API for Paper Trading that is identicalnto the Live API in all ways except it uses fake trading accounts seeded withnfake money and orders are no
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

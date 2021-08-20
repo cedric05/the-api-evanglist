@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Clicks for a all messages")
+GET "https://{{baseUrl}}/messages/outbound/clicks"
+? "count"= "<integer>"
+? "offset"= "<integer>"
+? "recipient"= "<string>"
+? "tag"= "<string>"
+? "client_name"= "<string>"
+? "client_company"= "<string>"
+? "client_family"= "<string>"
+? "os_name"= "<string>"
+? "os_family"= "<string>"
+? "os_company"= "<string>"
+? "platform"= "<string>"
+? "country"= "<string>"
+? "region"= "<string>"
+? "city"= "<string>"
+
+
+@name("Retrieve Message Clicks")
+GET "https://{{baseUrl}}/messages/outbound/clicks/:messageid"
+? "count"= "<integer>"
+? "offset"= "<integer>"
+
+
+

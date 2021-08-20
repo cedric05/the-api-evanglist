@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Same as `POST:/sparql`.
+
+@name("SPARQL query (via GET)") : "base-inherit-auth"
+GET "https://{{baseUrl}}/sparql/:owner/:id"
+? "query"= "et officia pariatur"
+
+
+// Execute a SPARQL query against a dataset or data project.
+// 
+// SPARQL results are available in a variety of formats. By default, `application/sparql-results+json` will be returned. Set the `Accept` header to one of the following values in accordance with your preference:
+// 
+// - `application/sparql-results+xml`
+// - `application/sparql-results+json`
+// - `application/rdf+json`
+// - `application/rdf+xml`
+// - `text/csv`
+// - `text/tab-separated-values`
+// - `text/turtle`
+// 
+// New to SPARQL? Check out data.world's [SPARQL tutorial](https://docs.data.world/tutorials/sparql/).
+
+@name("SPARQL query") : "base-inherit-auth"
+POST "https://{{baseUrl}}/sparql/:owner/:id"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "query": [
+        "ea sint"
+    ]
+})
+
+
+

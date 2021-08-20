@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists the documents of a category. The ID of the category must be specified.
+
+@name("List documents of a category")
+GET "https://{{baseUrl}}/rest/categories/:categoryId/documents"
+
+
+// Downloads the documents of a category as a zip file. The ID of the category must be specified.
+
+@name("Download category documents")
+GET "https://{{baseUrl}}/rest/categories/:categoryId/documents/downloads"
+
+
+// Deletes a category document. the id of the document must be specified..
+
+@name("Deletes a category document. The ID of the document must be specified.")
+DELETE "https://{{baseUrl}}/rest/categories/:categoryId/documents/:documentId"
+
+
+

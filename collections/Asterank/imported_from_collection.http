@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-29310990-2823-4987-816f-545fc6086924.postman_collection.json
+
+// The Asterank database is a thin layer over the NASA/JPL Small Body Database, merged with JPL delta-v data, published asteroid mass data, and our own calculations. 
+
+@name("Asterank")
+GET "https://www.asterank.com/api/asterank"
+? 'query'= '{"e":{"$lt":0.1},"i":{"$lt":4},"a":{"$lt":1.5}}'
+? "limit"= "10"
+
+
+// Asterank offers a database API for the Minor Planet Center's MPCORB.DAT data files. This API is a simple way to quickly apply constraints to a set of over 600,000 asteroids. Users can construct queries with specific constraints across all data attributes recorded by the MPC. Information is updated nightly from the MPC's MPCORB.dat dataset.
+
+@name("Minor Planet Center")
+GET "https://www.asterank.com/api/mpc"
+? 'query'= '{"e":{"$lt":0.1},"i":{"$lt":4},"a":{"$lt":1.5}}'
+? "limit"= "10"
+
+
+// Asterank offers a basic queryable database for NASA's Kepler Project. It is a simple way to quickly apply constraints to a set of over 2,000 exoplanets and unconfirmed "objects of interest." The database supports comparators and specific criteria for all attributes provided by the Kepler Data Explorer.
+
+@name("Kepler Project")
+GET "https://www.asterank.com/api/kepler"
+? 'query'= '{"TPLANET":{"$lt":320,"$gt":290}}'
+? "limit"= "10"
+
+
+// This API wraps NASA's SkyMorph archive in a RESTful JSON interface. Currently, it provides observation and image data from the NEAT survey.
+
+@name("SkyMorph/NEAT")
+GET "https://www.asterank.com/api/skymorph/search"
+? "target"= "J99TS7A"
+
+
+// This API wraps NASA's SkyMorph archive in a RESTful JSON interface. Currently, it provides observation and image data from the NEAT survey.
+
+@name("SkyMorph/NEAT Copy")
+GET "https://www.asterank.com/api/skymorph/image"
+? "key"= "|001204124410|51882.530787037|129.062741402712|4.64001695570385|128.337645|4.0726|20.70|-4.28|-11.08|n.a.|n.a.|n.a.|71.9154214757038|547.287989060186|y|"
+
+
+

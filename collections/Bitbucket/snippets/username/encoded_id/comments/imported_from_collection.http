@@ -1,0 +1,115 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Used to retrieve a paginated list of all comments for a specific
+// snippet.
+// 
+// This resource works identical to commit and pull request comments.
+// 
+// The default sorting is oldest to newest and can be overridden with
+// the `sort` query parameter.
+
+@name("/snippets/:username/:encoded_id/comments")
+GET "https://{{baseUrl}}/snippets/:username/:encoded_id/comments"
+
+
+// Creates a new comment.
+// 
+// The only required field in the body is `content.raw`.
+// 
+// To create a threaded reply to an existing comment, include `parent.id`.
+
+@name("/snippets/:username/:encoded_id/comments")
+POST "https://{{baseUrl}}/snippets/:username/:encoded_id/comments"
+"Content-Type": "application/json"
+json({
+    "type": "nisi dolore nulla",
+    "created_on": "<dateTime>",
+    "creator": {
+        "created_on": "1970-01-23T12:26:50.676Z",
+        "display_name": "irure adipisicing",
+        "links": {
+            "avatar": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "followers": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "following": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "html": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "repositories": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "self": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        },
+        "username": "U2",
+        "uuid": "consequat magna commodo mollit",
+        "website": "quis enim eu officia"
+    },
+    "id": "<integer>",
+    "is_private": "<boolean>",
+    "owner": {
+        "created_on": "1990-03-15T16:35:18.352Z",
+        "display_name": "cillum sit",
+        "links": {
+            "avatar": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "followers": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "following": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "html": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "repositories": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "self": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        },
+        "username": "Jb7HN5OHcoW",
+        "uuid": "esse",
+        "website": "elit sed"
+    },
+    "scm": "<string>",
+    "title": "<string>",
+    "updated_on": "<dateTime>"
+})
+
+
+

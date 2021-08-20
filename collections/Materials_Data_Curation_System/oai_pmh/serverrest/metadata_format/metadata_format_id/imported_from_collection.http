@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get a MetadataFormat
+
+@name("oai pmh server rest metadata format read") : "base-inherit-auth"
+GET "https://{{baseUrl}}/oai_pmh/server/rest/metadata_format/:metadata_format_id/"
+
+
+// Update a MetadataFormat
+
+@name("oai pmh server rest metadata format partial update") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/oai_pmh/server/rest/metadata_format/:metadata_format_id/"
+
+
+// Delete a MetadataFormat
+
+@name("oai pmh server rest metadata format delete") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/oai_pmh/server/rest/metadata_format/:metadata_format_id/"
+
+
+

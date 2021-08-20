@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e99a603f-d951-49f8-9b4c-a4299963f087.postman_collection.json
+
+// Returns a list of banks
+
+@name("Find banks")
+GET "https://{{baseUrl}}/banks"
+? "name"= "consequat offic"
+? "assets"= "consequat offic"
+
+
+// Returns a single bank
+
+@name("Find bank by ID using the FED_RSSD identifier.")
+GET "https://{{baseUrl}}/banks/:bankId"
+
+
+

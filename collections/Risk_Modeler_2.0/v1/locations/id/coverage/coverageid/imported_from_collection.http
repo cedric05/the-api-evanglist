@@ -1,0 +1,71 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Gets a location coverage
+
+@name("Gets a location coverage") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/locations/:id/coverage/:coverageid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates coverage
+
+@name("Updates coverage") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/locations/:id/coverage/:coverageid"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "waitingPeriod": 36534499.86094239,
+    "id": -17158985,
+    "label": {
+        "id": -83488410,
+        "code": "consequat",
+        "name": "aliquip irure dolore fugiat sunt"
+    },
+    "eqslModifier": -79175246,
+    "lossType": "Building",
+    "percentSprinkler": -8204956.815995291,
+    "value": 51338171.390343726,
+    "biPoi": 43554253.61973518,
+    "deductible": -67826029.31645556,
+    "coverageModifier": {
+        "id": -66416386,
+        "code": "voluptate Excepteur nisi",
+        "name": "reprehenderit magna commo"
+    },
+    "accumulation": "Bi",
+    "limit": -25404071.414910987,
+    "peril": {
+        "id": -72941282,
+        "code": "quis reprehenderit officia",
+        "name": "in culpa ut et"
+    },
+    "percentageLossDeductibleAmount": -42523340.27184834,
+    "isFranchiseDeductible": {
+        "id": -88753531,
+        "code": "Lorem elit nisi",
+        "name": "la"
+    },
+    "isValid": true
+})
+
+
+// Deletes a location coverage
+
+@name("Deletes a location coverage") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/locations/:id/coverage/:coverageid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

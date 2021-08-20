@@ -1,0 +1,305 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-50989257-8fa3-40de-a7b9-4f8f4960bb93.postman_collection.json
+
+// Get API definition
+
+@name("Get API definition")
+GET "https://{{baseUrl}}/"
+
+
+// Discover details of on-demand availability for programmes and their versions
+
+@name("Discover details of on-demand availability for programmes and their versions")
+GET "https://{{baseUrl}}/availabilities"
+? "sort"= "<object>"
+? "sort_direction"= "<get>"
+? "availability"= "<object>"
+? "descendants_of"= "<string>"
+? "media_set"= "<get>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "territory"= "<get>"
+? "debug"= "<string>"
+
+
+// Fetch metadata about linear Broadcasts and Services, allowing the generation of Television and Radio schedules and other datasets for broadcast items. Use /schedules instead of this feed as it is more efficient. Broadcasts will be deprecated in the future.
+
+@name("Build schedules and find metadata for TV and radio broadcasts")
+GET "https://{{baseUrl}}/broadcasts"
+? "sort"= "<object>"
+? "sort_direction"= "<get>"
+? "mixin"= "<object>"
+? "authority"= "<get>"
+? "descendants_of"= "<string>"
+? "end_from"= "<string>"
+? "end_to"= "<string>"
+? "format"= "<object>"
+? "genre"= "<object>"
+? "id"= "<get>"
+? "item"= "<object>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "people"= "<string>"
+? "pid"= "<string>"
+? "q"= "<string>"
+? "schedule_day"= "<string>"
+? "schedule_day_from"= "<string>"
+? "schedule_day_to"= "<string>"
+? "service_master_brand"= "<string>"
+? "sid"= "<get>"
+? "start_from"= "<string>"
+? "start_to"= "<string>"
+? "version"= "<get>"
+
+
+// Long-lived curated collections of programmes and more, including Collections, Seasons, Franchises and Galleries
+
+@name("Find metadata for curated groups: seasons, collections, galleries or franchises")
+GET "https://{{baseUrl}}/groups"
+? "sort"= "<object>"
+? "sort_direction"= "<get>"
+? "mixin"= "<object>"
+? "for_descendants_of"= "<string>"
+? "for_programme"= "<object>"
+? "group"= "<string>"
+? "group_type"= "<string>"
+? "member"= "<string>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "pid"= "<string>"
+? "q"= "<string>"
+? "embargoed"= "<string>"
+
+
+// Find metadata for images, particularly those in galleries
+
+@name("Find metadata for images")
+GET "https://{{baseUrl}}/images"
+? "sort"= "<object>"
+? "sort_direction"= "<get>"
+? "group"= "<string>"
+? "image_type"= "<string>"
+? "is_alternate_image_for"= "<string>"
+? "is_image_for"= "<string>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "pid"= "<string>"
+? "q"= "<string>"
+? "embargoed"= "<string>"
+
+
+// Look inside programmes to find segments: chapters, tracks and more
+
+@name("Look inside programmes to find segments: chapters, tracks and more")
+GET "https://{{baseUrl}}/items"
+? "sort"= "<object>"
+? "sort_direction"= "<get>"
+? "mixin"= "<object>"
+? "authority"= "<get>"
+? "id"= "<get>"
+? "id_type"= "<string>"
+? "item_type"= "<string>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "people"= "<string>"
+? "pid"= "<string>"
+? "programme"= "<string>"
+? "q"= "<string>"
+? "segment_event"= "<string>"
+
+
+// List all Master Brands
+
+@name("List all Master Brands")
+GET "https://{{baseUrl}}/master_brands"
+? "sort"= "<object>"
+? "sort_direction"= "<get>"
+? "mixin"= "<object>"
+? "mid"= "<string>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "q"= "<string>"
+
+
+// The People feed allows you to search for the people and groups that contribute to programmes. This is the starting point for cast and crew credits, as well as finding contributors using external IDs (such as Wikipedia URLs)
+
+@name("Find the people behind and in programmes: cast, crew, guests and more")
+GET "https://{{baseUrl}}/people"
+? "authority"= "<get>"
+? "has_external_id"= "<string>"
+? "id"= "<get>"
+? "id_type"= "<string>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "pid"= "<string>"
+? "programme"= "<string>"
+? "q"= "<string>"
+
+
+// Look inside pips entities
+
+@name("Look inside pips entities")
+GET "https://{{baseUrl}}/pips"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "q"= "<string>"
+
+
+// Exposes programme information for a single pid
+
+@name("Exposes programme information for a single pid")
+GET "https://{{baseUrl}}/programme_details"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_pid"= "<string>"
+? "pid"= "<string>"
+
+
+// Fetch metadata about Programmes (brands, series, episodes, clips). By applying different filter restrictions this feed can be used in many ways, for example to retrieve all series belonging to a brand, all the episodes and/or clips for a specific series, or any TLEO objects for a masterbrand. Other filters permit restricting to specific formats and/or genres, and you can request specific versions (for example Signed or Audio-Described). Parameters may be combined in any way suitable for your app
+
+@name("Start here for programmes metadata: Brands, Series, Episodes and Clips")
+GET "https://{{baseUrl}}/programmes"
+? "sort"= "<object>"
+? "sort_direction"= "<get>"
+? "mixin"= "<object>"
+? "audio_described"= "<string>"
+? "availability"= "<object>"
+? "availability_entity_type"= "<string>"
+? "availability_from"= "<string>"
+? "availability_type"= "<string>"
+? "children_of"= "<string>"
+? "descendants_of"= "<string>"
+? "duration"= "<get>"
+? "entity_type"= "<string>"
+? "format"= "<object>"
+? "genre"= "<object>"
+? "group"= "<string>"
+? "initial_letter"= "<string>"
+? "initial_letter_end"= "<string>"
+? "initial_letter_start"= "<string>"
+? "initial_letter_strict"= "<string>"
+? "item"= "<object>"
+? "master_brand"= "<object>"
+? "media_set"= "<get>"
+? "media_type"= "<string>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "payment_type"= "<string>"
+? "people"= "<string>"
+? "pid"= "<string>"
+? "promoted_for"= "<string>"
+? "q"= "<string>"
+? "signed"= "<string>"
+? "tag_name"= "<string>"
+? "tag_scheme"= "<string>"
+? "tleo"= "<string>"
+? "version"= "<get>"
+? "embargoed"= "<string>"
+
+
+// Details of short-term editorially curated promotions, for instance those programmes featured on iPlayer today
+
+@name("Discover metadata for content promotions")
+GET "https://{{baseUrl}}/promotions"
+? "mixin"= "<object>"
+? "context"= "<object>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "pid"= "<string>"
+? "promoted_by"= "<string>"
+? "promoted_for"= "<string>"
+? "q"= "<string>"
+? "status"= "<string>"
+
+
+// Dates, Times, Schedules: when and where are programmes being shown?
+
+@name("Build schedules and find metadata for TV and radio broadcasts and webcasts")
+GET "https://{{baseUrl}}/schedules"
+? "sort"= "<object>"
+? "sort_direction"= "<get>"
+? "mixin"= "<object>"
+? "authority"= "<get>"
+? "descendants_of"= "<string>"
+? "end_from"= "<string>"
+? "end_to"= "<string>"
+? "format"= "<object>"
+? "genre"= "<object>"
+? "group"= "<string>"
+? "id"= "<get>"
+? "id_type"= "<string>"
+? "item"= "<object>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "people"= "<string>"
+? "pid"= "<string>"
+? "q"= "<string>"
+? "repeat"= "<string>"
+? "schedule_day"= "<string>"
+? "schedule_day_from"= "<string>"
+? "schedule_day_to"= "<string>"
+? "service_master_brand"= "<string>"
+? "sid"= "<get>"
+? "start_from"= "<string>"
+? "start_to"= "<string>"
+? "version"= "<get>"
+
+
+// Get Schema definition
+
+@name("Get Schema definition")
+GET "https://{{baseUrl}}/schema"
+
+
+// The services feed exposes the linear broadcast services from PIPs. These are the actual services which broadcast programmes (eg bbc_one_oxford is the service for BBC One in Oxford).
+
+@name("Information about the linear services used for broadcast transmissions")
+GET "https://{{baseUrl}}/services"
+? "end_from"= "<string>"
+? "end_to"= "<string>"
+? "mid"= "<string>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "q"= "<string>"
+? "service_type"= "<string>"
+? "sid"= "<get>"
+? "start_from"= "<string>"
+? "start_to"= "<string>"
+
+
+// The versions feed exposes editorial Versions of programmes. These are concepts used to capture different presentations of an overall programme: for example, versions of a programme may include one with sign language, one with audio description, one edited for content and more. Versions are also important to understand for broadcasts: a linear broadcast or an ondemand is always of a specific version, not merely of a programme.
+
+@name("Metadata on editorial programme versions: original, signed, audio-described, etc")
+GET "https://{{baseUrl}}/versions"
+? "availability"= "<object>"
+? "descendants_of"= "<string>"
+? "media_set"= "<get>"
+? "page"= "<get>"
+? "page_size"= "<get>"
+? "partner_id"= "<string>"
+? "partner_pid"= "<string>"
+? "payment_type"= "<string>"
+? "pid"= "<string>"
+? "embargoed"= "<string>"
+
+
+

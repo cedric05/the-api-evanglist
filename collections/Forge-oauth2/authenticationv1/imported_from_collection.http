@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca33a76-32ee-4ece-82de-9c2b44a7a53d.postman_collection.json
+
+// Get a two-legged access token by providing your app's client ID and secret.n
+
+@name("POST authenticate")
+POST "https://{{baseUrl}}/authentication/v1/authenticate"
+? "No Name"= "<string>"
+
+
+// This is the browser URL to redirect an end user to in order to acquire the useru2019s consent for your app to access the specified resources.nNote: You do not call this URL directly in your server code. See the Get a 3-Legged Token tutorial for more information on how to use this endpoint.n
+
+@name("GET authorize")
+GET "https://{{baseUrl}}/authentication/v1/authorize"
+? "No Name"= "<string>"
+
+
+// Exchange an authorization code extracted from a GET authorize callback for a three-legged access token.n
+
+@name("POST gettoken")
+POST "https://{{baseUrl}}/authentication/v1/gettoken"
+? "No Name"= "<string>"
+
+
+// Acquire a new access token by using the refresh token provided by the POST gettoken endpoint.nSee the Field Guide for more information about refresh tokens.n
+
+@name("POST refreshtoken")
+POST "https://{{baseUrl}}/authentication/v1/refreshtoken"
+? "No Name"= "<string>"
+
+
+

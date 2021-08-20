@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-baf4a014-6c7b-4f4e-b764-89b8472d3cf4.postman_collection.json
+
+// This endpoint allows you to get the users information record.
+// 
+// ## Errors:
+// 
+// ```
+// Code: 400 Bad Request
+// {
+//     "message": "Problem handling /user request",
+//     "error": "Error: User not found"
+// }
+// ```
+// 
+// View a complete list of the error codes <a href="#error-codes">here.</a>
+
+@name("Get User")
+GET "https://{{baseUrl}}/api/account/user"
+? "account"= "<string>"
+
+
+// Add a public key to a user's existing OREID account. This is useful to track a user's blockchain keys. The eos-auth library will add a public key using this API if the user signs a transction with an EOS key stored in a user's wallet (e.g. Scatter). In this way, your app can help the user find his keys regardless of what wallet they are stored in. 
+// Note: If a permission with this name already exists, the transaction will fail.
+// 
+// View a complete list of the error codes <a href="#error-codes">here.
+
+@name("Add Permission")
+GET "https://{{baseUrl}}/api/account/add-permission"
+? "account"= "<string>"
+? "permission"= "<object>"
+? "parent-permission"= "<string>"
+? "wallet-type"= "<string>"
+? "chain_account"= "<string>"
+? "chain_network"= "<string>"
+? "public-key"= "<string>"
+
+
+// There are two ways of performing a passwordless login using an email or phone number.
+// 
+// The most  common way is to use our auth endpoint and use either 'phone' or 'email' as the provider.  The auth flow will send the user an email or sms message, and prompt them to enter the returned code.  If the code is valid, the users account will be created and they will be logged in.
+// 
+// The second way is to call one endpoint to send a code to the user, and another to verify the code.  Then once you have the c
+
+@name("Passwordless Login - Send Code")
+GET "https://{{baseUrl}}/api/account/login-passwordless-send-code"
+? "provider"= "<string>"
+? "email"= "<string>"
+
+
+// This will verify a code entered by the user on your website.
+// 
+// View a complete list of the error codes <a href="#error-codes">here.</a>
+
+@name("Passwordless Login - Verify Code")
+GET "https://{{baseUrl}}/api/account/login-passwordless-verify-code"
+? "email"= "<string>"
+? "provider"= "<string>"
+? "code"= "<string>"
+
+
+

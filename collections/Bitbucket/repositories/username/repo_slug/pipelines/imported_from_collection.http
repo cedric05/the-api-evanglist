@@ -1,0 +1,283 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Find pipelines
+
+@name("get Pipelines For Repository")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines/"
+
+
+// Endpoint to create and initiate a pipeline. 
+// There are a couple of different options to initiate a pipeline, where the payload of the request will determine which type of pipeline will be instantiated.
+// # Trigger a Pipeline for a branch or tag
+// One way to trigger pipelines is by specifying the reference for which you want to trigger a pipeline (e.g. a branch or tag). 
+// The specified reference will be used to determine which pipeline definition from the `bitbucket-pipelines.yml` file will be applied to initiate the pipeline. The pipeline will then do a clone of the repository and checkout the latest revision of the specified reference.
+// 
+// ### Example
+// 
+// ```
+// $ curl -X POST -is -u username:password \
+//   -H 'Content-Type: application/json' \
+//  https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \
+//   -d '
+//   {
+//     "target": {
+//       "ref_type": "branch", 
+//       "type": "pipeline_ref_target", 
+//       "ref_name": "master"
+//     }
+//   }'
+// ```
+// # Trigger a Pipeline for a commit on a branch or tag
+// You can initiate a pipeline for a specific commit and in the context of a specified reference (e.g. a branch, tag or bookmark).
+// The specified reference will be used to determine which pipeline definition from the bitbucket-pipelines.yml file will be applied to initiate the pipeline. The pipeline will clone the repository and then do a checkout the specified reference. 
+// 
+// The following reference types are supported:
+// 
+// * `branch` 
+// * `named_branch`
+// * `bookmark` 
+//  * `tag`
+// 
+// ### Example
+// 
+// ```
+// $ curl -X POST -is -u username:password \
+//   -H 'Content-Type: application/json' \
+//   https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \
+//   -d '
+//   {
+//     "target": {
+//       "commit": {
+//         "type": "commit", 
+//         "hash": "ce5b7431602f7cbba007062eeb55225c6e18e956"
+//       }, 
+//       "ref_type": "branch", 
+//       "type": "pipeline_ref_target", 
+//       "ref_name": "master"
+//     }
+//   }'
+// ```
+// # Trigger a specific pipeline definition for a commit
+// You can trigger a specific pipeline that is defined in your `bitbucket-pipelines.yml` file for a specific commit. 
+// In addition to the commit revision, you specify the type and pattern of the selector that identifies the pipeline definition. The resulting pipeline will then clone the repository and checkout the specified revision.
+// 
+// ### Example
+// 
+// ```
+// $ curl -X POST -is -u username:password \
+//   -H 'Content-Type: application/json' \
+//  https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \
+//  -d '
+//   {
+//      "target": {
+//       "commit": {
+//          "hash":"a3c4e02c9a3755eccdc3764e6ea13facdf30f923",
+//          "type":"commit"
+//        },
+//         "selector": {
+//            "type":"custom",
+//               "pattern":"Deploy to production"
+//           },
+//         "type":"pipeline_commit_target"
+//    }
+//   }'
+// ```
+// # Trigger a specific pipeline definition for a commit on a branch or tag
+// You can trigger a specific pipeline that is defined in your `bitbucket-pipelines.yml` file for a specific commit in the context of a specified reference. 
+// In addition to the commit revision, you specify the type and pattern of the selector that identifies the pipeline definition, as well as the reference information. The resulting pipeline will then clone the repository a checkout the specified reference.
+// 
+// ### Example
+// 
+// ```
+// $ curl -X POST -is -u username:password \
+//   -H 'Content-Type: application/json' \
+//  https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \
+//  -d '
+//   {
+//      "target": {
+//       "commit": {
+//          "hash":"a3c4e02c9a3755eccdc3764e6ea13facdf30f923",
+//          "type":"commit"
+//        },
+//        "selector": {
+//           "type": "custom",
+//           "pattern": "Deploy to production"
+//        },
+//        "type": "pipeline_ref_target",
+//        "ref_name": "master",
+//        "ref_type": "branch"
+//      }
+//   }'
+// ```
+
+@name("create Pipeline For Repository")
+POST "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines/"
+"Content-Type": "application/json"
+json({
+    "type": "Excepteur commodo dolore laboris magna",
+    "build_seconds_used": "<integer>",
+    "completed_on": "<dateTime>",
+    "created_on": "<dateTime>",
+    "creator": {
+        "created_on": "1967-05-25T19:14:50.143Z",
+        "display_name": "elit amet dolor mollit",
+        "links": {
+            "avatar": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "followers": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "following": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "html": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "repositories": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "self": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        },
+        "username": "xv8",
+        "uuid": "par",
+        "website": "amet adipisicing"
+    },
+    "repository": {
+        "type": "sit commodo reprehenderit laborum magna",
+        "created_on": "1963-07-30T11:37:13.542Z",
+        "description": "ex ut",
+        "fork_policy": "allow_forks",
+        "full_name": "labore Excepteur",
+        "has_issues": false,
+        "has_wiki": true,
+        "is_private": true,
+        "language": "nulla dolore et",
+        "links": {
+            "avatar": {
+                "href": "http://TXLFubmnMCPW.yckLBMuDGFh2Ux7.c-vtJvcRgmllm"
+            },
+            "clone": {
+                "href": "https://ycGfpUgkVIbTSvFzpvajMRUGBSohK.ozY6NukgZXsLlyzAT+ycR1Qi"
+            },
+            "commits": {
+                "href": "http://WTWVBfdzTYDqgh.yrHXVUnssS63amblbOXihQeNmG1TFUuTwiGlYD7CmaXjKqOCQ2IouguNkItUoPi-DFgkhG7EW"
+            },
+            "downloads": {
+                "href": "http://R.twdwy46sba3N0eZ7hHrJp8q"
+            },
+            "forks": {
+                "href": "http://ONlnP.khzmAZoDtW5PlHuxKy"
+            },
+            "hooks": {
+                "href": "http://V.kefORnzEJPhyrPTpsRG+2,mrvxj8lbyPywjWU+k"
+            },
+            "html": {
+                "href": "http://ZNasTVOiNsYGHZcAfsdktZIYy.lclzEPzzDTC-rrwZBM-RYzo6w7roDqC"
+            },
+            "pullrequests": {
+                "href": "https://PUXDcZynsOjBMoHJTjKgmYvUnNMUI.anaFYzMImGH-Q2yhNqRPsmZgATCe+YKH.6AVL"
+            },
+            "self": {
+                "href": "https://UjJtv.jcsYAanlDM1"
+            },
+            "watchers": {
+                "href": "http://EDLzlRaUlrYlCdpGXQmPY.uzxzA20ByQNqeGoikB"
+            }
+        },
+        "name": "elit nostrud et",
+        "owner": {
+            "created_on": "1992-09-25T09:59:17.489Z",
+            "display_name": "consectetur non Ut",
+            "links": {
+                "avatar": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "followers": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "following": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "html": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "repositories": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "self": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            },
+            "username": "Kfgds4kAyo",
+            "uuid": "incididunt reprehenderit",
+            "website": "sed"
+        },
+        "parent": {
+            "value": "<Circular reference to #/components/schemas/repository detected>"
+        },
+        "project": {
+            "created_on": "1955-05-18T08:41:12.995Z",
+            "description": "i",
+            "is_private": false,
+            "key": "ex anim",
+            "links": {
+                "avatar": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "html": {
+                    "href": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            },
+            "name": "fugiat cupidatat aliqui",
+            "owner": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "updated_on": "1994-12-18T07:40:24.220Z",
+            "uuid": "eu laborum amet elit sed"
+        },
+        "scm": "git",
+        "size": -54650195,
+        "updated_on": "1983-09-08T02:19:03.827Z",
+        "uuid": "velit labore sunt"
+    },
+    "state": {},
+    "target": {},
+    "trigger": {},
+    "uuid": "<string>"
+})
+
+
+

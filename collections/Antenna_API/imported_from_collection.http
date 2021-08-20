@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c3d9b0d5-78c2-43f8-8e23-a1da6f149a0f.postman_collection.json
+
+// Get the antenna coordinates based on serviceType (TV or FM), by passing serviceType and either applicationId, facilityId, or callsign. 
+
+@name("Get antenna coordinates")
+GET "https://{{baseUrl}}/antenna.{{format}}"
+? "serviceType"= "<string>"
+? "callsign"= ""
+? "facilityId"= ""
+? "applicationId"= ""
+
+
+

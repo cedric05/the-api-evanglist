@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d2c214b-77c4-4e90-8dc4-3cd4493a1c9a.postman_collection.json
+
+// Get likes
+
+@name("Get Likes")
+GET "https://{{baseUrl}}/likes"
+? "likable_id"= "<>"
+? "likable_type"= "<>"
+
+
+// Delete Like
+
+@name("Delete Like")
+DELETE "https://{{baseUrl}}/likes/:like_id"
+? "likable_type"= "<>"
+
+
+

@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fbfc7253-f3ea-4627-a2ce-1b011b570e0a.postman_collection.json
+
+// Creates a payment link to our hosted payment form where shoppers can pay. The list of payment methods presented to the shopper depends on the `currency` and `country` parameters sent in the request.
+// 
+// For more information, refer to [Pay by Link documentation](https://docs.adyen.com/checkout/pay-by-link#create-payment-links-through-api).
+
+@name("Creates a payment link.")
+POST "https://{{baseUrl}}/paymentLinks"
+
+
+// Queries the available payment methods for a transaction based on the transaction context (like amount, country, and currency). Besides giving back a list of the available payment methods, the response also returns which input details you need to collect from the shopper (to be submitted to `/payments`).
+// 
+// Although we highly recommend using this endpoint to ensure you are always offering the most up-to-date list of payment methods, its usage is optional. You can, for example, also cache the `/paym
+
+@name("Returns available payment methods.")
+POST "https://{{baseUrl}}/paymentMethods"
+
+
+// Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.
+// 
+// For more information, refer to [How it works](https://docs.adyen.com/checkout#howitworks).
+
+@name("Creates a payment session.")
+POST "https://{{baseUrl}}/paymentSession"
+
+
+

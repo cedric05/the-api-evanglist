@@ -1,0 +1,1 @@
+Discovery of previously undocumented APIs through scanning applications, infrastructure, or any other artifact.

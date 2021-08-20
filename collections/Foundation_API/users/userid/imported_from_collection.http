@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets user data by user id.
+
+@name("Gets user data by user id")
+GET "https://{{baseUrl}}/users/:userid"
+
+
+// Gets alternative license types by userid..
+
+@name("Gets alternative license types by userid.")
+GET "https://{{baseUrl}}/users/:userid/alternative-licensetypes"
+
+
+// Gets authorization keys by user id.
+
+@name("Gets authorization keys by user id")
+GET "https://{{baseUrl}}/users/:userid/authorization-keys"
+
+
+// Resets user password by userid.
+
+@name("Resets user password by userid")
+PATCH "https://{{baseUrl}}/users/:userid/password"
+
+
+// Uploads and sets profile picture by user id.
+
+@name("Uploads and sets profile picture by user id")
+POST "https://{{baseUrl}}/users/:userid/profile-picture"
+
+
+

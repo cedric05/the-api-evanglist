@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// List, search, sort, and filter all of your custom SSL certificates
+
+@name("List, search, sort, and filter all of your custom SSL certificates")
+GET "https://{{baseUrl}}/zones/:zone_identifier/custom_certificates"
+"X": "<>"
+? "direction"= "<>"
+? "match"= "<>"
+? "order"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+? "status"= "<>"
+
+
+//  Delete an SSL certificate permission needed: #ssl:editntt  
+
+@name("Delete an SSL certificate permission needed: #ssl:edit")
+DELETE "https://{{baseUrl}}/zones/:zone_identifier/custom_certificates/:identifier"
+
+
+// If a zone has multiple SSL certificates, you can set the order in which they should be used during a request
+
+@name("If a zone has multiple SSL certificates, you can set the order in which they should be used during a request")
+PUT "https://{{baseUrl}}/zones/:zone_identifier/custom_certificates/prioritize"
+"X": "<>"
+? "certificates"= "<>"
+
+
+

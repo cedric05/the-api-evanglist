@@ -1,0 +1,98 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+@name("/teams/:owner/projects/:project_key")
+DELETE "https://{{baseUrl}}/teams/:owner/projects/:project_key"
+
+
+@name("/teams/:owner/projects/:project_key")
+GET "https://{{baseUrl}}/teams/:owner/projects/:project_key"
+
+
+// Since this endpoint can be used to both update and to create a
+// project, the request body depends on the intent.
+// 
+// ### Creation
+// 
+// See the POST documentation for the project collection for an
+// example of the request body.
+// 
+// Note: The `key` should not be specified in the body of request
+// (since it is already present in the URL). The `name` is required,
+// everything else is optional.
+// 
+// ### Update
+// 
+// See the POST documentation for the project collection for an
+// example of the request body.
+// 
+// Note: The key is not required in the body (since it is already in
+// the URL). The key may be specified in the body, if the intent is
+// to change the key itself. In such a scenario, the location of the
+// project is changed and is returned in the `Location` header of the
+// response.
+
+@name("/teams/:owner/projects/:project_key")
+PUT "https://{{baseUrl}}/teams/:owner/projects/:project_key"
+"Content-Type": "application/json"
+json({
+    "type": "sunt est",
+    "created_on": "<dateTime>",
+    "description": "<string>",
+    "is_private": "<boolean>",
+    "key": "<string>",
+    "links": {
+        "avatar": {
+            "href": "<uri>"
+        },
+        "html": {
+            "href": "<uri>"
+        }
+    },
+    "name": "<string>",
+    "owner": {
+        "created_on": "1982-04-12T22:25:45.182Z",
+        "display_name": "ea reprehenderit e",
+        "links": {
+            "avatar": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "followers": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "following": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "html": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "repositories": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "self": {
+                "href": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        },
+        "username": "qm",
+        "uuid": "in Ut sunt et",
+        "website": "quis ut commodo pariatur"
+    },
+    "updated_on": "<dateTime>",
+    "uuid": "<string>"
+})
+
+
+

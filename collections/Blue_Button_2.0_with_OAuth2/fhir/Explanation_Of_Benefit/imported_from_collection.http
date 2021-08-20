@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c75719e6-6a0a-49ec-bec2-5816e656b79f.postman_collection.json
+
+@name("/fhir/ExplanationOfBenefit")
+GET "https://{{baseUrl}}/fhir/ExplanationOfBenefit"
+? "patient"= "<string>"
+? "startIndex"= "0"
+? "_count"= "10"
+? "count"= "<integer>"
+? "_format"= "application/fhir+json"
+
+
+@name("/fhir/ExplanationOfBenefit/:id")
+GET "https://{{baseUrl}}/fhir/ExplanationOfBenefit/:id"
+? "_format"= "application/fhir+json"
+
+
+

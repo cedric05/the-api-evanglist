@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-49418870-7240-40ed-b5ad-dd946417768e.postman_collection.json
+
+// Pulls pricing for Gold, Shanghai Gold Futures.
+
+@name("Get Gold Pricing")
+GET "https://{{baseUrl}}/SHFE/AUV2013"
+
+
+// Pulls pricing for Silver, Shanghai Silver Futures.
+
+@name("Get Silver Pricing")
+GET "https://{{baseUrl}}/SHFE/AGV2013"
+
+
+

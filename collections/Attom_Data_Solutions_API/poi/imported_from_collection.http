@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d7e889e2-45ea-4b46-badd-0b496c4a983f.postman_collection.json
+
+// This search returns a list of Points of Interest in proximity to the centroid of a zip code.
+
+@name("Returns POIs based on zip code.")
+GET "https://{{baseUrl}}/poi/geography"
+"apikey": "<>"
+"accept": "<>"
+? "PostalCodeKey"= "<>"
+? "SearchDistance"= "<>"
+? "RecordLimit"= "<>"
+? "Sort"= "<>"
+
+
+// This search returns a list of POI in proximity to a latitude/longitude.
+
+@name("Returns POIs based on point.")
+GET "https://{{baseUrl}}/poi/point"
+"apikey": "<>"
+"accept": "<>"
+? "Point"= "<>"
+? "SearchDistance"= "<>"
+? "RecordLimit"= "<>"
+? "BusinessCategory"= "<>"
+? "Sort"= "<>"
+
+
+// This search returns a list of POI in proximity to an address.
+
+@name("Returns POIs based on an address.")
+GET "https://{{baseUrl}}/poi/street+address"
+"apikey": "<>"
+"accept": "<>"
+? "StreetAddress"= "<>"
+? "SearchDistance"= "<>"
+? "RecordLimit"= "<>"
+? "Sort"= "<>"
+
+
+

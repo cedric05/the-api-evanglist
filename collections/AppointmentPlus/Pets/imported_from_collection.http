@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Updates the details of an existing pet breed.  The `type_id` parameter should be a valid Pet Type defined in the account.
+
+@name("UpdateBreeds")
+POST "https://{{baseUrl}}/Pets/UpdateBreeds"
+? "breed_id"= "<integer>"
+? "type_id"= "<integer>"
+? "description"= "<string>"
+
+
+// Creates a new pet breed.  The `type_id` parameter should be a valid Pet Type defined in the account.  Pet breeds are automatically created at the headquarters location.
+
+@name("CreateBreeds")
+POST "https://{{baseUrl}}/Pets/CreateBreeds"
+? "type_id"= "<integer>"
+? "description"= "<string>"
+
+
+// Retrieves the details of existing pet breeds.  The `type_id` parameter should be a valid Pet Type defined in the account.
+
+@name("GetBreeds")
+POST "https://{{baseUrl}}/Pets/GetBreeds"
+? "breed_id"= "<integer>"
+? "type_id"= "<integer>"
+
+
+// Deletes an existing pet breed. This can not be reversed.  If the breed is associated with any existing pets, the breed can not be deleted.
+
+@name("DeleteBreeds")
+POST "https://{{baseUrl}}/Pets/DeleteBreeds"
+? "breed_id"= "<integer>"
+? "type_id"= "<integer>"
+
+
+// Returns all of the details for the existing Pet Types.
+
+@name("GetPetTypes")
+POST "https://{{baseUrl}}/Pets/GetPetTypes"
+
+
+

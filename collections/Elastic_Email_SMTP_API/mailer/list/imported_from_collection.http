@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d2eb79d-4cff-4c67-86d1-40ed00bf1510.postman_collection.json
+
+// This api will return you the list of email addresses which are currently in your block list. 
+
+@name("Bounced")
+GET "https://{{baseUrl}}/mailer/list/bounced"
+? "api_key"= "<>"
+? "username"= "<>"
+
+
+// This api will return you the list of email addresses which are currently in your block list. 
+
+@name("Complaint")
+GET "https://{{baseUrl}}/mailer/list/complaint"
+? "api_key"= "<>"
+? "username"= "<>"
+
+
+

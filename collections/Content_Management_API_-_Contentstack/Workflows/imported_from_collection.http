@@ -1,0 +1,419 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c68e2fa9-6659-44c8-b526-051d761f5037.postman_collection.json
+
+// <p>The <code>Get all Workflows</code> request retrieves the details of all the Workflows of a stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-all-workflows>Get All Workflows</a> API Reference document
+
+@name("Get all workflows")
+GET "https://{{base_url}}/v3/workflows"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Get a Single Workflow</code> request retrieves the comprehensive details of a specific Workflow of a stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#get-a-single-workflow>Get a Single Workflow</a> API Reference document
+
+@name("Get a single workflow")
+GET "https://{{base_url}}/v3/workflows/{{workflow_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Create a Workflow</code> request allows you to create a Workflow.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#create-a-workflow>Create a Workflow</a> API Reference document
+
+@name("Create a workflow")
+POST "https://{{base_url}}/v3/workflows"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "workflow": {
+        "workflow_stages": [
+            {
+                "color": "#2196f3",
+                "SYS_ACL": {
+                    "roles": {
+                        "uids": []
+                    },
+                    "users": {
+                        "uids": [
+                            "$all"
+                        ]
+                    },
+                    "others": {}
+                },
+                "next_available_stages": [
+                    "$all"
+                ],
+                "allStages": true,
+                "allUsers": true,
+                "specificStages": false,
+                "specificUsers": false,
+                "entry_lock": "$none",
+                "name": "Review"
+            },
+            {
+                "color": "#74ba76",
+                "SYS_ACL": {
+                    "roles": {
+                        "uids": []
+                    },
+                    "users": {
+                        "uids": [
+                            "$all"
+                        ]
+                    },
+                    "others": {}
+                },
+                "allStages": true,
+                "allUsers": true,
+                "specificStages": false,
+                "specificUsers": false,
+                "next_available_stages": [
+                    "$all"
+                ],
+                "entry_lock": "$none",
+                "name": "Complete"
+            }
+        ],
+        "admin_users": {
+            "users": []
+        },
+        "name": "Workflow",
+        "enabled": true,
+        "content_types": [
+            "$all"
+        ]
+    }
+})
+
+
+// <p>The <code>Add or Update Workflow</code> request allows you to add a workflow stage or update the details of the existing stages of a workflow.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#add-or-update-workflow-details>Add or Update Workflow Details</a> API Reference document
+
+@name("Add or update workflow details")
+PUT "https://{{base_url}}/v3/workflows/{{workflow_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "workflow": {
+        "workflow_stages": [
+            {
+                "color": "#2196f3",
+                "SYS_ACL": {
+                    "roles": {
+                        "uids": []
+                    },
+                    "users": {
+                        "uids": [
+                            "$all"
+                        ]
+                    },
+                    "others": {}
+                },
+                "next_available_stages": [
+                    "$all"
+                ],
+                "allStages": true,
+                "allUsers": true,
+                "specificStages": false,
+                "specificUsers": false,
+                "entry_lock": "$none",
+                "name": "Review"
+            },
+            {
+                "color": "#74ba76",
+                "SYS_ACL": {
+                    "roles": {
+                        "uids": []
+                    },
+                    "users": {
+                        "uids": [
+                            "$all"
+                        ]
+                    },
+                    "others": {}
+                },
+                "allStages": true,
+                "allUsers": true,
+                "specificStages": false,
+                "specificUsers": false,
+                "next_available_stages": [
+                    "$all"
+                ],
+                "entry_lock": "$none",
+                "name": "Complete"
+            }
+        ],
+        "admin_users": {
+            "users": []
+        },
+        "name": "Workflow",
+        "enabled": true,
+        "content_types": [
+            "$all"
+        ]
+    }
+})
+
+
+// <p>The <code>Disable Workflow</code> request allows you to disable a workflow.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#disable-workflow>Disable Workflow</a> API Reference document
+
+@name("Disable workflow")
+GET "https://{{base_url}}/v3/workflows/{{workflow_uid}}/disable"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Enable Workflow</code> request allows you to enable a workflow.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#enable-workflow>Enable Workflow</a> API Reference document
+
+@name("Enable workflow")
+GET "https://{{base_url}}/v3/workflows/{{workflow_uid}}/enable"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The <code>Delete Workflow</code> request allows you to delete a workflow.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#delete-workflow>Delete Workflow</a> API Reference document
+
+@name("Delete workflow")
+DELETE "https://{{base_url}}/v3/workflows/{{workflow_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+
+// <p>The <code>Set Entry Workflow Stage</code> request allows you to either set a particular workflow stage of an entry or update the workflow stage details of an entry.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#entry-workflow-stages>Entry Workflow Stages</a> API Reference document
+
+@name("Set entry workflow stage")
+POST "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/workflow"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "locale_code"= "en-us"
+json({
+    "workflow": {
+        "workflow_stage": {
+            "comment": "Workflow Comment",
+            "due_date": "Thu Dec 01 2018",
+            "notify": false,
+            "uid": "workflow_stage_uid",
+            "assigned_to": [
+                {
+                    "uid": "user_uid",
+                    "name": "Username",
+                    "email": "user_email_id"
+                }
+            ],
+            "assigned_by_roles": [
+                {
+                    "uid": "role_uid",
+                    "name": "Role name"
+                }
+            ]
+        }
+    }
+})
+
+
+// <p>The <code>Create Publish Rules</code> request allows you to create publish rules for the&nbsp;workflow&nbsp;of a stack.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-rules-collection>Publish Rules Collection</a> API Reference document
+
+@name("Create publish rules")
+POST "https://{{base_url}}/v3/workflows/publishing_rules"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "publishing_rule": {
+        "workflow": "workflow_uid",
+        "actions": [],
+        "content_types": [
+            "$all"
+        ],
+        "locales": [
+            "en-us"
+        ],
+        "environment": "environment_uid",
+        "approvers": {
+            "users": [
+                "user_uids"
+            ],
+            "roles": [
+                "role_uids"
+            ]
+        },
+        "workflow_stage": "workflow_stage_uid",
+        "disable_approver_publishing": false
+    }
+})
+
+
+// <p>The <code>Add or Update Publish Rules</code> request allows you to add a publish rule&nbsp;or update the details of the existing publish rules&nbsp;of a workflow.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-rules-collection>Publish Rules Collection</a> API Reference document
+
+@name("Update publish rules")
+PUT "https://{{base_url}}/v3/workflows/publishing_rules/{{rule_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+json({
+    "publishing_rule": {
+        "workflow": "workflow_uid",
+        "actions": [],
+        "content_types": [
+            "$all"
+        ],
+        "locales": [
+            "en-us"
+        ],
+        "environment": "environment_uid",
+        "approvers": {
+            "users": [
+                "user_uid"
+            ],
+            "roles": [
+                "role_uid"
+            ]
+        },
+        "workflow_stage": "workflow_stage_uid",
+        "disable_approver_publishing": false
+    }
+})
+
+
+// <p>The <code>Delete Publish Rules</code>&nbsp;request allows you to delete an existing publish rule.&nbsp;
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-rules-collection>Publish Rules Collection</a> API Reference document
+
+@name("Delete publish rules")
+DELETE "https://{{base_url}}/v3/workflows/publishing_rules/{{rule_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+
+// <p>The <code>Get all Publish Rules</code>&nbsp;request retrieves the details of all the Publish rules of a workflow.&nbsp;
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-rules-collection>Publish Rules Collection</a> API Reference document
+
+@name("Get all publish rules")
+GET "https://{{base_url}}/v3/workflows/publishing_rules"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "content_types"= "{{content_type_uid1,content_type_uid2,...}}"
+? "limit"= "10"
+? "include_count"= "true"
+
+
+// <p>The <code>Get a Single Publish Rule</code> request retrieves the comprehensive details of a specific publish rule of a Workflow.
+// <br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-rules-collection>Publish Rules Collection</a> API Reference document
+
+@name("Get a single publish rule")
+GET "https://{{base_url}}/v3/workflows/publishing_rules/{{rule_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+
+
+// <p>The&nbsp;<code style="font-size: 12.6px;">Get Publish Rules by Content Types</code>&nbsp;request allows you to retrieve details of a Publish&nbsp;Rule applied to a specific content type of your stack.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-rules-by-content-types>Publish Rules by Content Types</a> API Reference document
+
+@name("Get publish rules by content types")
+GET "https://{{base_url}}/v3/workflows/content_type/{{content_type_uid}}"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"authorization": "{{management_token}}"
+"Content-Type": "application/json"
+? "action"= "publish/unpublish"
+? "locale"= "{{locale}}"
+? "environment_name"= "{{environment_name}}"
+? "environment"= "production"
+
+
+// <p><span style="background-color: initial;">This multipurpose request allows you to either send a publish request or accept/reject a received publish&nbsp;request.</span><br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#publish-request-approval>Publish Request Approval</a> API Reference document
+
+@name("Request/Accept/Reject Entry Publish Request")
+POST "https://{{base_url}}/v3/content_types/{{content_type_uid}}/entries/{{entry_uid}}/workflow"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+? "locale"= "{{locale}}"
+json({
+    "workflow": {
+        "publishing_rule": {
+            "uid": "blt9b9253297f117e84",
+            "action": "publish",
+            "status": 1,
+            "notify": false,
+            "comment": "Please review this."
+        }
+    }
+})
+
+
+// <p>The&nbsp;<code style="font-size: 12.6px;">Get all Tasks</code>&nbsp;request retrieves a list of all tasks assigned to you.<br><p>To use the API Request, you will need to authenticate yourself either with a&nbsp;<a href="https://www.contentstack.com/docs/developers/create-tokens/about-management-tokens">Management Token (highly recommended)</a>&nbsp;or an <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#how-to-get-authtoken">Authtoken.</a>&nbsp;<br>Read more about it in <a href="https://www.contentstack.com/docs/developers/apis/content-management-api/#authentication">Authentication.</a>
+// </p><br>
+//                           For more information, refer to the <a href=www.contentstack.com/docs/developers/apis/content-management-api/#workflow-tasks>Workflow Tasks</a> API Reference document
+
+@name("Get all Tasks")
+GET "https://{{base_url}}/v3/user/assignments"
+"api_key": "{{api_key}}"
+"authtoken": "{{authtoken}}"
+"Content-Type": "application/json"
+? 'query'= '{"type":"workflow_stage"}'
+? "sort"= "{“assigned_at”: “desc”}"
+? "limit"= "5"
+? "skip"= "5"
+
+
+

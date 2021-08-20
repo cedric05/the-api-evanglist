@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// Documentation: [Create Map Area](https://developers.arcgis.com/rest/packaging/api-reference/create-map-area.htm)
+
+@name("Create Map Area")
+POST "https://packaging.arcgis.com/arcgis/rest/services/OfflinePackaging/GPServer/CreateMapArea/submitJob"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "mapItemId": [
+        "4965122d0a9c4ea187fa643cda58c670"
+    ],
+    "f": [
+        "json"
+    ],
+    "extent": [
+        "{ \"xmin\": -13184900, \"ymin\": 3988556, \"xmax\": -13004945, \"ymax\": 4061479, \"spatialReference\": { \"wkid\": 102100 }}"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+// [Checking job status](https://developers.arcgis.com/rest/analysis/api-reference/checking-job-status.htm)
+
+@name("Checking Map Area Job Status")
+GET "https://packaging.arcgis.com/arcgis/rest/services/OfflinePackaging/GPServer/CreateMapArea/jobs/{{jobId}}"
+? "f"= "json"
+? "token"= "{{token}}"
+
+
+

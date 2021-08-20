@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// A paginated list of registrations on the OSF to which the user has access.nnThe returned registrations are those which are public or which the user has access to view.nnNon-registered nodes cannot be accessed through this endpoint (use the [nodes](#Nodes_nodes_list) endpoints instead).nn#### RegistrationsnA registration on the OSF creates a frozen, time-stamped version of a project that cannot be edited or deleted. The *original project* can still be edited, while the registered version cannot.n
+
+@name("List all registrations")
+GET "https://{{baseUrl}}/registrations/"
+
+
+

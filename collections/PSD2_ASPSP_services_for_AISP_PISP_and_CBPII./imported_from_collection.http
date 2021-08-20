@@ -1,0 +1,171 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba6572bc-3c63-4861-923c-7002a7305149.postman_collection.json
+
+// ### Description
+// In the mixed detailed consent on accounts
+// - the AISP captures the consent of the PSU
+// - then it forwards this consent to the ASPSP
+// This consent replaces any prior consent that was previously sent by the AISP.
+// ### Prerequisites
+// - The TPP has been registered by the Registration Authority for the AISP role.
+// - The TPP and the PSU have a contract that has been enrolled by the ASPSP
+//   - At this step, the ASPSP has delivered an OAUTH2 "Authorization Code" or "Resource Owner Password" access token to the TPP (cf. § 3.4.2).
+// - The TPP and the ASPSP have successfully processed a mutual check and authentication
+// - The TPP has presented its OAUTH2 "Authorization Code" or "Resource Owner Password" access token which allows the ASPSP to identify the relevant PSU and retrieve the linked PSU context (cf. § 3.4.2) if any.
+// - The ASPSP takes into account the access token that establishes the link between the PSU and the AISP.
+// ### Business Flow
+// The PSU specifies to the AISP which of his/her accounts will be accessible and which functionalities should be available.
+// The AISP forwards these settings to the ASPSP.
+// The ASPSP answers by HTTP201 return code.
+
+@name("Forwarding the PSU consent (AISP)")
+PUT "https://{{baseUrl}}/consents"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+"Content-Type": "application/json"
+json({
+    "balances": [
+        {
+            "iban": "YY64COJH41059545330222956960771321"
+        }
+    ],
+    "psuIdentity": false,
+    "transactions": [
+        {
+            "iban": "YY64COJH41059545330222956960771321"
+        }
+    ],
+    "trustedBeneficiaries": false
+})
+
+
+// ### Description
+// This call returns the identity of the PSU (end-user).
+// ### Prerequisites
+// - The TPP has been registered by the Registration Authority for the AISP role.
+// - The TPP and the PSU have a contract that has been enrolled by the ASPSP
+//     - At this step, the ASPSP has delivered an OAUTH2 "Authorization Code" or "Resource Owner Password" access token to the TPP (cf. § 3.4.2).
+// - The TPP and the ASPSP have successfully processed a mutual check and authentication
+// - The TPP has presented its OAUTH2 "Authorization Code" or "Resource Owner Password" access token which allows the ASPSP to identify the relevant PSU and retrieve the linked PSU context (cf. § 3.4.2) if any.
+// - The ASPSP takes into account the access token that establishes the link between the PSU and the AISP.
+// ### Business Flow
+//   The AISP asks for the identity of the PSU.
+//   The ASPSP answers with the identity, i.e. first and last names of the end-user.
+
+@name("Retrieval of the identity of the end-user (AISP)")
+GET "https://{{baseUrl}}/end-user-identity"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+
+
+// ### Description
+// This call returns all trusted beneficiaries that have been set by the PSU.
+// Those beneficiaries can benefit from an SCA exemption during payment initiation.
+// The result may be subject to pagination (i.e. retrieving a partial result in case of having too many results) through a set of pages by the ASPSP. Thereafter, the AISP may ask for the first, next, previous or last page of results.
+// ### Prerequisites
+// - The TPP has been registered by the Registration Authority for the AISP role.
+// - The TPP and the PSU have a contract that has been enrolled by the ASPSP
+//     - At this step, the ASPSP has delivered an OAUTH2 "Authorization Code" or "Resource Owner Password" access token to the TPP (cf. § 3.4.2).
+// - The TPP and the ASPSP have successfully processed a mutual check and authentication
+// - The TPP has presented its OAUTH2 "Authorization Code" or "Resource Owner Password" access token which allows the ASPSP to identify the relevant PSU and retrieve the linked PSU context (cf. § 3.4.2) if any.
+// - The ASPSP takes into account the access token that establishes the link between the PSU and the AISP.
+// ### Business Flow
+// The AISP asks for the trusted beneficiaries list.
+// The ASPSP answers with a list of beneficiary details structure.
+
+@name("Retrieval of the trusted beneficiaries list (AISP)")
+GET "https://{{baseUrl}}/trusted-beneficiaries"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+
+
+// ### Description
+// The CBPII can ask an ASPSP to check if a given amount can be covered by the liquidity that is available on a PSU cash account or payment card.
+// ### Prerequisites
+// - The TPP has been registered by the Registration Authority for the CBPII role
+// - The TPP and the PSU have a contract that has been registered by the ASPSP
+//   - At this step, the ASPSP has delivered an "Authorization Code", a "Resource Owner Password" or a "Client Credential" OAUTH2 access token to the TPP (cf. § 3.4.2).
+//   - Each ASPSP has to implement either the "Authorization Code"/"Resource Owner Password" or the "Client Credential" OAUTH2 access token model.
+//   - Doing this, it will edit the [security] section on this path in order to specify which model it has chosen
+// - The TPP and the ASPSP have successfully processed a mutual check and authentication 
+// - The TPP has presented its OAUTH2 "Authorization Code", "Resource Owner Password" or "Client Credential" access token which allows the ASPSP to identify the relevant PSU.
+// ### Business flow
+// The CBPII requests the ASPSP for a payment coverage check against either a bank account or a card primary identifier.
+// The ASPSP answers with a structure embedding the original request and the result as a Boolean.      
+
+@name("Payment coverage check request (CBPII)")
+POST "https://{{baseUrl}}/funds-confirmations"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+"Content-Type": "application/json"
+json({
+    "accountId": {
+        "iban": "YY64COJH41059545330222956960771321"
+    },
+    "instructedAmount": {
+        "amount": 1781963.8277671784,
+        "currency": "EUR"
+    },
+    "paymentCoverageRequestId": "aut",
+    "payee": "Lo"
+})
+
+
+

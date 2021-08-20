@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Canceling an order.
+
+@name("Canceling an Order")
+POST "https://{{baseUrl}}/admin/orders/4554953422/cancel.json"
+"Content": "<>"
+
+
+// Close a processed order.
+
+@name("Close a processed order")
+POST "https://{{baseUrl}}/admin/orders/4554953422/close.json"
+"Content": "<>"
+
+
+// Get all the events from a particular order.
+
+@name("Get all the events from a particular order")
+GET "https://{{baseUrl}}/admin/orders/4554953422/events.json"
+"Content": "<>"
+
+
+// Get all refunds from a specific order.
+
+@name("Get all refunds from a specific order")
+GET "https://{{baseUrl}}/admin/orders/4554953422/refunds.json"
+"Content": "<>"
+
+
+// Re-opening a closed order.
+
+@name("Re-opening a closed Order")
+POST "https://{{baseUrl}}/admin/orders/4554953422/open.json"
+"Content": "<>"
+
+
+// Get all transactions for an order.
+
+@name("Get all transactions for an order")
+GET "https://{{baseUrl}}/admin/orders/4554953422/transactions.json"
+"Content": "<>"
+
+
+

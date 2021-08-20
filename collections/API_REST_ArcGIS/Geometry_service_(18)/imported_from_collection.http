@@ -1,0 +1,330 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+// The result of this operation is an array of projected geometries. This resource projects an array of input geometries from an input spatial reference to an output spatial reference.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/project.html)
+
+@name("Project")
+GET "https://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer/project"
+? "inSR"= "4326"
+? "outSR"= "102113"
+? 'geometries'= '{"geometryType":"esriGeometryPoint","geometries":[{"x":-117,"y":34}]}'
+? "f"= "pjson"
+
+
+//  Simplify permanently alters the input geometry so that the geometry becomes topologically consistent. This resource applies the ArcGIS simplify operation to each geometry in the input array. For more information, see ITopologicalOperator.Simplify Method and IPolyline.SimplifyNetwork Method.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/simplify.html)
+
+@name("Simplify")
+GET "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer/simplify"
+? "sr"= "4326"
+? 'geometries'= '{
+"geometryType"+:+"esriGeometryPolygon",
+"geometries"+:+[
++{
++"rings"+:+[[+
+++[-117,34],[-115,36],[-115,33],[-117,36],[-117,34]
++]]
+}
+]
+}'
+? "f"= "pjson"
+
+
+// The result of this operation is buffer polygons at the specified distances for the input geometry array. An option is available to union buffers at each distance.
+// 
+// [Readmore](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/buffer.html)
+
+@name("Buffer")
+GET "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer/buffer"
+? "geometries"= "-117,34"
+? "inSR"= "4326"
+? "outSR"= "4326"
+? "bufferSR"= "102113"
+? "distances"= "1000"
+? "unit"= ""
+? "unionResults"= "false"
+? "f"= "pjson"
+
+
+//  This operation calculates areas and perimeter lengths for each polygon specified in the input array.
+//  
+//  [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/areasandlengths.html)
+
+@name("Areas and Lengths")
+GET "http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer/areasAndLengths"
+? "sr"= "102009"
+? 'polygons'= '[{"rings"+:+[[[-628833.344099998,206205.236200001],[-630269.659900002,192298.906100001],[-631848.233800001,173991.394400001],[-616471.690300003,341822.557500001],[-620213.661300004,301450.162799999],[-625923.431999996,237538.0579],[-628833.344099998,206205.236200001]]]}
+]
+'
+? "lengthUnit"= "9035"
+? 'areaUnit'= '{"areaUnit"+:+"esriAcres"}'
+? "f"= "pjson"
+
+
+// This operation calculates the lengths of each polyline specified in the input array.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/lengths.html)
+
+@name("Lengths ")
+GET "http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer/lengths"
+? "sr"= "4269"
+? 'polylines'= '[
++{
+++"paths"+:+[
++++[[-117,34],[-116,34],[-117,33]],
++++[[-115,44],[-114,43],[-115,43]]
+++]
++},
++{
+++"paths"+:+[
++++[[32.49,17.83],[31.96,17.59],[30.87,17.01],[30.11,16.86]]
+++]
++}
+]
+
+'
+? "lengthUnit"= "9036"
+? "geodesic"= "true"
+? "f"= "pjson"
+
+
+// This operation determines the pairs of geometries from the input geometry arrays that participate in the specified spatial relation.
+// 
+// This operation computes the set of pairs of geometries from geometries1 and geometries2 that belong to the specified relation. Both arrays are assumed to be in the spatial reference specified by sr, which is a required parameter. The relations are evaluated in 2D. Z coordinates are not used. Geometry types cannot be mixed within an array.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/relation.html)
+
+@name("Relation ")
+GET "http://sampleserver1.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/relation"
+? "sr"= "4326"
+? 'geometries1'= '{"geometryType"+:+"esriGeometryPoint","geometries"+:+[{"x":-104.53,"y":34.74},{"x":-63.53,"y":10.23}]}'
+? 'geometries2'= '{"geometryType"+:+"esriGeometryPolygon","geometries"+:+[{"rings":[[[-105,34],[-104,34],[-104,35],[-105,35],[-105,34]]]}]}'
+? "relation"= "esriGeometryRelationWithin"
+? "relationParam"= ""
+? "f"= "pjson"
+
+
+//  This operation calculates an interior point for each polygon specified in the input array. These interior points can be used by clients for labeling the polygons.
+//  
+//  [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/labelpoints.html)
+
+@name("Label Points")
+GET "http://sampleserver1.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/labelPoints"
+? "sr"= "4326"
+? 'polygons'= '[{"rings":[[[-105,34],[-104,34],[-104,35],[-105,35],[-105,34]]]}]'
+? "f"= "pjson"
+
+
+// The AutoComplete operation simplifies the process of constructing new polygons that are adjacent to other polygons. It constructs polygons that fill in the gaps between existing polygons and a set of polylines.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/autoComplete.html)
+
+@name("Auto Complete")
+GET "http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/autoComplete"
+? "sr"= "4269"
+? 'polygons'= '[{"rings":[[[0,0],[110,0],[110,-60],[0,-60],[0,0]],[[120,0],[180,0],[180,-60],[120,-60],[120,0]]]}]'
+? 'polylines'= '[{"paths":[[[109,0],[121,0]],[[109,-60],[121,-60]]]}]'
+? "f"= "pjson"
+
+
+// It returns the convex hull of the input geometry. The input geometry can be a point, multipoint, polyline or polygon. The hull is typically a polygon but can also be a polyline or point in degenerate cases.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/convexHull.html)
+
+@name("Convex Hull")
+GET "http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer/convexHull"
+? "sr"= "4326"
+? 'geometries'= '{"geometryType":"esriGeometryPoint","geometries":[{"type":"point","x":-117.2332208251953,"y":34.086152645433316,"spatialReference":{"wkid":4326}},{"type":"point","x":-117.21536804199218,"y":34.0854659999255,"spatialReference":{"wkid":4326}},{"type":"point","x":-117.22498107910155,"y":34.06623992570675,"spatialReference":{"wkid":4326}}]}'
+? "f"= "pjson"
+
+
+// This operation splits the input polyline or polygon where it crosses a cutting polyline
+
+@name("Cut")
+GET "http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/cut"
+? "sr"= "2229"
+? 'target'= '{"geometryType"+:+"esriGeometryPolyline","spatialReference"+:{"wkid"+:+2229},"geometries"+:[{"paths"+:+[[[6805743.810634688,1843230.507057026],
+[6805740.688921779,1843619.888168022],
+[6802621.935316771,1843581.5805018544],[6805496.38855736,1844963.0199961811]]]}]}'
+? 'cutter'= '{"paths"+:+[[[6805210,1843869],[6805842,1843529],[6805259,1843173]]]}'
+? "f"= "pjson"
+
+
+// This operation densifies geometries by plotting points between existing vertices.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/densify.html)
+
+@name("Densify")
+GET "http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer/densify"
+? "sr"= "3395"
+? 'geometries'= '{
+"geometryType"+:+"esriGeometryPolyline",
+"geometries"+:+[
+{"paths"+:+[[[-17313284.793,2209625.866],[-17312808.186926104,+2210504.3164105085],[-17308518.732261017,2218410.3701050845],
+[-17260185.82890302,2310809.9320710143],
+[-17307752.671522036,2223194.8742101695],
+[-14501308.957,7392483.288],[-13773503.446,6003036.405+]]]}]}'
+? "maxSegmentLength"= "10000"
+? "geodesic"= "false"
+? "lengthUnit"= ""
+? "f"= "pjson"
+
+
+// This operation constructs the set-theoretic difference between an array of geometries and another geometry.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/difference.html)
+
+@name("Difference ")
+GET "http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/difference"
+? "sr"= "4269"
+? 'geometries'= '{"geometryType"+:+"esriGeometryPolygon","spatialReference"+:{"wkid"+:+4269},"geometries"+:[{"rings"+:+[[[-75.48928066099995,39.714858219000064],[-75.4759742679999,39.720084384000074],[-75.47476845699993,39.741832093000085],[-75.46039411899994,39.763362027000085],[-74.73882472699995,40.17772564400008],[-74.9166543419999,39.17063854200006],[-75.01440707699993,39.198363837000045],[-75.11995811199995,39.18469178100008],[-75.4156722749999,39.374971842000036],[-75.55276303999995,39.49051430700007],[-75.5166888839999,39.56656841600005],[-75.57023418699993,39.61773496300009],[-75.48928066099995,39.714858219000064]]]}]}
+'
+? 'geometry'= '{"geometryType"+:+"esriGeometryPolygon","spatialReference"+:{"wkid"+:+4269},"geometry"+:{"rings"+:+[[[-75.46039411899994,39.763362027000085],[-74.73882472699995,40.17772564400008],[-75.46039411899994,39.763362027000085]]]}}'
+? "f"= "pjson"
+
+
+//  It returns generalized (Douglas-Poiker) versions of the input geometries.
+//  
+//  [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/generalize.html)
+
+@name("Generalize")
+GET "http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/generalize"
+? "sr"= "4326"
+? 'geometries'= '{"geometryType":"esriGeometryPolygon","spatialReference":{"wkid":4326},"geometries":[{"rings":[[[-87.099342820011174,40.228084543758385],[-87.100223146960218,40.381421968321966],[-87.101720814594017,40.480793699969276],[-87.100295810761097,40.57694817663144],[-86.777024960686575,40.576769365423601],[-86.700217232694484,40.574640906530412],[-86.700551416568786,40.443071019286172],[-86.704228938064603,40.225843915639118],[-87.099342820011174,40.228084543758385]]]}]}'
+? "maxDeviation"= "0.01"
+? "deviationUnit"= ""
+? "f"= "pjson"
+
+
+// This operation constructs the set-theoretic intersection between an array of geometries and another geometry
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/intersect.html)
+
+@name("Intersect")
+GET "http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/intersect"
+? "sr"= "4269"
+? 'geometries'= '{"geometryType"+:+"esriGeometryPolygon","spatialReference"+:{"wkid"+:+4269},"geometries"+:[{"rings"+:+[[[-75.48928066099995,39.714858219000064],[-75.4759742679999,39.720084384000074],[-75.47476845699993,39.741832093000085],[-75.46039411899994,39.763362027000085],[-74.73882472699995,40.17772564400008],[-74.9166543419999,39.17063854200006],[-75.01440707699993,39.198363837000045],[-75.11995811199995,39.18469178100008],[-75.4156722749999,39.374971842000036],[-75.55276303999995,39.49051430700007],[-75.5166888839999,39.56656841600005],[-75.57023418699993,39.61773496300009],[-75.48928066099995,39.714858219000064]]]}]}'
+? 'geometry'= '{"geometryType"+:+"esriGeometryPolygon","spatialReference"+:{"wkid"+:+4269},"geometry"+:{"rings"+:+[[[-75.48928066099995,39.714858219000064],[-75.4759742679999,39.720084384000074],[-75.47476845699993,39.741832093000085],[-75.46039411899994,39.763362027000085],[-74.73882472699995,40.17772564400008],[-75.48928066099995,39.714858219000064]]]}}'
+? "f"= "pjson"
+
+
+// Offset constructs the offset of the given input geometries. If the offset parameter is positive the constructed offset will be on the right side of the geometry. (Left side offsets are constructed with negative parameters.) Tracing the geometry from it's first vertex to the last will give you a direction along the geometry. It is to the right and left perspective of this direction that the positive and negative parameters will dictate where the offset is contructed. In these terms it is simple to infer where the offset of even horizontal geometries will be constructed. The offsetHow parameter determines how outer corners between segments are handled. Rounded offset rounds the corner between extended offsets. Bevelled offset squares off the corner after a given ratio distance. Mitered offset attempts to allow extended offsets to naturally intersect, but if that intersection occurs too far from the corner, the corner is eventually bevelled off at a fixed distance.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/offset.html)
+
+@name("Offset")
+GET "http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/offset"
+? "sr"= "2229"
+? 'geometries'= '{"geometryType":"esriGeometryPolyline","spatialReference":{"wkid":2229},"geometries":[{"paths":[[[6805566.1574656013,1846311.2154481949],[6805527.5463925907,1847577.0219133438],[6805567.9057296626,1846206.4173309559],[6805566.1574656013,1846311.2154481949],[6805489.2513970956,1845286.8614968264],[6805567.9057296626,1846206.4173309559]]]},{"paths":[[[6805493.9062097641,1845121.674091635],[6805489.2513970956,1845286.8614968264],[6805496.3884592885,1844963.0200417505],[6805493.9062097641,1845121.674091635],[6805512.6586404499,1843725.7847297059],[6805496.3884592885,1844963.0200417505],[6805514.211678369,1843607.5195617655],[6805512.6586404499,1843725.7847297059],[6805523.8066700343,1842901.206113206],[6805514.211678369,1843607.5195617655],[6805532.3821443468,1842246.5626597235],[6805523.8066700343,1842901.206113206]]]}]}'
+? "offsetDistance"= "1"
+? "offsetUnit"= "9001"
+? "offsetHow"= "esriGeometryOffsetMitered"
+? "bevelRatio"= "2"
+? "simplifyResult"= "false"
+? "f"= "pjson"
+
+
+//  It reshapes a polyline or a part of a polygon using a reshaping line.
+//  
+//  [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/reshape.html)
+
+@name("Reshape")
+GET "http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/reshape"
+? "sr"= "2229"
+? 'target'= '{"geometryType"+:+"esriGeometryPolygon","spatialReference"+:{"wkid"+:+2229},"geometry"+:{"rings"+:+[[[6807691.607592106,1841423.2521413565],[6807403.895241022,1841226.589476943],[6807330.383577019,1841176.5013225228],[6807144.497465864,1841049.4458023459],[6806716.6797519475,1840757.4020951092],[6806479.870514274,1840595.731486693],[6806183.101422772,1840393.1846476793],[6806075.24238652,1840319.1683915257],[6805779.309579447,1840125.002769351],[6805524.879970193,1839930.444431439],[6804797.212462276,1841029.5203172714],[6804973.141244277,1841152.8425771892],[6805745.21122244,1841695.4566494375],[6806023.85141319,1841890.9388700128],[6806319.65692395,1842098.571656853],[6806763.038583115,1842410.1881596],[6806913.661969528,1842516.0485121906],[6807150.782230198,1842187.7000875175],[6807308.85212402,1841967.8783486933],[6807691.258839533,1841423.802665189]]]}}'
+? 'reshaper'= '{"paths"+:+[[[6804973.141244277,1841152.8425771892],[6804797.212462276,1841029.5203172714],[6804463.906370357,1841533.088863939],[6804224.755601943,1841930.77901344],[6804233.406175196,1842251.835129857],[6804206.368171528,1843554.492957607],[6805395.769992188,1843570.1779655963],[6805514.211684436,1843607.5194263458],[6805740.688921779,1843619.888168022],[6806080.253859445,1843657.1859936863],[6806290.270171687,1843380.829262942],[6806717.911376774,1842787.4210009426],[6806913.661969528,1842516.0485121906],[6806763.038583115,1842410.1881596],[6806319.65692395,1842098.571656853],[6806027.585329607,1841887.9188629389],[6805745.21122244,1841695.4566494375],[6804969.741316691,1841150.3071491867]]]}'
+? "f"= "pjson"
+
+
+// This operation trims / extends each polyline specified in the input array, using the user specified guide polylines. When trimming features, the part to the left of the oriented cutting line is preserved in the output and the other part is discarded. An empty polyline is added to the output array if the corresponding input polyline is neither cut nor extended.
+// 
+// [Read more](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/trimExtend.html)
+
+@name("Trim / Extend")
+GET "http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/trimExtend"
+? "sr"= "2229"
+? 'polylines'= '[{"paths"+:+[[[6805512.658537939,1843725.7846097648],[6805496.38855736,1844963.0199961811]]]},{"paths"+:+[[[6805532.382251769,1842246.5625026077],[6805523.806809604,1842901.206206441]]]}]'
+? 'trimExtendTo'= '{"paths"+:+[[[6804206.368171528,1843554.492957607],[6805395.769992188,1843570.1779655963],[6805514.211684436,1843607.5194263458],[6805740.688921779,1843619.888168022]]]}'
+? "extendHow"= "2"
+? "f"= "pjson"
+
+
+// This operation constructs the set-theoretic union of the geometries in the input array. All inputs must be of the same type.
+// 
+// [Readme](http://tasks.arcgisonline.com/ArcGIS/SDK/REST/union.html)
+
+@name("Union")
+GET "http://sampleserver3.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer/union"
+? "sr"= "102113"
+? 'geometries'= '{"geometryType":+"esriGeometryMultipoint",
++"spatialReference":+{"wkid":+102113},
++++"geometries":+[{"points":+[
++++[
+++++-8418433.3989,
+++++5262954.0867
++++],
++++[
+++++-8353363.717800001,
+++++5381714.5528
++++],
++++[
+++++-8250336.7228,
+++++5337002.1307
++++],
++++[
+++++-8250336.7228,
+++++5509587.154700004
++++]
+++]},
+++{"points":+[
++++++[
+++++++-1.37211748048E7,
+++++++4991906.4582
++++++],
++++++[
+++++++-1.35126474057E7,
+++++++4800770.159900002
++++++],
++++++[
+++++++-1.35126474057E7,
+++++++4991906.4582
++++++],
++++++[
+++++++-1.3470941925900001E7,
+++++++4468209.699000001
++++++],
++++++[
+++++++-1.32936936367E7,
+++++++4494424.728500001
++++++],
++++++[
+++++++-1.31998563072E7,
+++++++4133116.2506000027
++++++],
++++++[
+++++++-1.3126871717500001E7,
+++++++4260779.642999999
++++++],
++++++[
+++++++-1.29391970583E7,
+++++++4044613.1774000004
++++++],
++++++[
+++++++-1.29183443184E7,
+++++++4222325.328299999
++++++],
++++++[
+++++++-1.28870652086E7,
+++++++3906909.467299998
++++++]
+++++]}]
+
+}'
+? "f"= "pjson"
+
+
+

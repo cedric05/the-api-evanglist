@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b982553e-8975-4962-bc9d-a464c11c5f3a.postman_collection.json
+
+// The Permissions endpoint returns information about the user's permissions.
+
+@name("All permissions for current user and type")
+GET "https://{{baseUrl}}/:username/:type/:type_id/acl"
+? "No Name"= "<string>"
+
+
+@name("Delete an existing Permission")
+DELETE "https://{{baseUrl}}/:username/:type/:type_id/acl/:id"
+? "No Name"= "<string>"
+
+
+

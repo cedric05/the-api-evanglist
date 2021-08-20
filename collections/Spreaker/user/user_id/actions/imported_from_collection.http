@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f67aecc5-ff45-4de9-97cc-ff8ad045654d.postman_collection.json
+
+// Retrieves the user actions settings
+
+@name("Get User Actions")
+GET "https://{{baseUrl}}/user/:user_id/actions"
+? "EPISODE_BROADCAST"= "<>"
+? "FACEBOOK"= "<>"
+? "RADIO_FOLLOW"= "<>"
+? "RADIO_MESSAGE"= "<>"
+? "SHOW_FOLLOW"= "<>"
+? "SHOW_MESSAGE"= "<>"
+? "TWITTER"= "<>"
+? "USER_FOLLOW"= "<>"
+? "user_id"= "<>"
+
+
+// Edit facebook share settings.
+
+@name("Facebook Settings")
+GET "https://{{baseUrl}}/user/:user_id/actions/facebook"
+? "EPISODE_BROADCAST"= "<>"
+? "RADIO_FOLLOW"= "<>"
+? "RADIO_MESSAGE"= "<>"
+? "SHOW_FOLLOW"= "<>"
+? "SHOW_MESSAGE"= "<>"
+? "USER_FOLLOW"= "<>"
+
+
+// Edit twitter share settings.
+
+@name("Twitter Settings")
+PUT "https://{{baseUrl}}/user/:user_id/actions/twitter"
+? "EPISODE_BROADCAST"= "<>"
+? "RADIO_FOLLOW"= "<>"
+? "SHOW_FOLLOW"= "<>"
+? "USER_FOLLOW"= "<>"
+
+
+

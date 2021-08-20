@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f95c71f8-440c-4354-8978-2a8659a376a0.postman_collection.json
+
+// This API allows you to programmatically download the list of recipients who have unsubscribed from your emails. 
+
+@name("Unsubscribes")
+GET "https://{{baseUrl}}/unsubscribes/"
+? "limit"= "<>"
+? "skip"= "<>"
+
+
+// Removes an address from the unsubscribes table. Address defines which events to delete.
+
+@name("Delete Unsubscribe")
+DELETE "https://{{baseUrl}}/unsubscribes/:address"
+? "address"= "<>"
+
+
+

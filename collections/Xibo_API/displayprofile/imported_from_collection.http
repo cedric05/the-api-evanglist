@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-67d4db18-8ace-40cd-b64c-3d2159129d95.postman_collection.json
+
+// Search this users Display Profiles
+
+@name("Display Profile Search")
+GET "https://{{baseUrl}}/displayprofile"
+
+
+// Edit a Display Profile
+
+@name("Edit Display Profile")
+PUT "https://{{baseUrl}}/displayprofile/:displayProfileId"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-083fa21b-3cf4-4708-97ff-dc1d4c1db32d.postman_collection.json
+
+@name("Returns details about a single entity")
+GET "https://{{baseUrl}}/terminology/codesystem/:codeSystem/entity/:entity"
+? "codesystemversion"= "<get>"
+
+
+@name("List of all children of a single entity")
+GET "https://{{baseUrl}}/terminology/codesystem/:codeSystem/entity/:entity/children"
+? "codelist"= "<>"
+? "codesystemversion"= "<get>"
+? "matchvalue"= "<>"
+? "page"= "<>"
+? "pagesize"= "<>"
+
+
+

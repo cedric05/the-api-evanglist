@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Get a page team members list based on query string parameters - team id, page and per page.n##### PermissionsnMust be authenticated and have the `view_team` permission.n
+
+@name("Get team members")
+GET "https://{{baseUrl}}/teams/:team_id/members"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Add a number of users to the team by user_id.n##### PermissionsnMust be authenticated. Authenticated user must have the `add_user_to_team` permission.n
+
+@name("Add multiple users to team")
+POST "https://{{baseUrl}}/teams/:team_id/members/batch"
+
+
+// Get a list of team members based on a provided array of user ids.n##### PermissionsnMust have `view_team` permission for the team.n
+
+@name("Get team members by ids")
+POST "https://{{baseUrl}}/teams/:team_id/members/ids"
+
+
+

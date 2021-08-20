@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b982553e-8975-4962-bc9d-a464c11c5f3a.postman_collection.json
+
+// Delete all your activities.
+
+@name("All activities for current user")
+DELETE "https://{{baseUrl}}/:username/activities"
+? "No Name"= "<string>"
+
+
+// The Activities endpoint returns information about the user's activities.
+
+@name("Get activities by type for current user")
+GET "https://{{baseUrl}}/:username/activities/:type"
+? "No Name"= "<string>"
+
+
+

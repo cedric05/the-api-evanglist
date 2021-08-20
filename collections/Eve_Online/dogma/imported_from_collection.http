@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Returns info about a dynamic item resulting from mutation with a mutaplasmid.
+// 
+// ---
+// Alternate route: `/dev/dogma/dynamic/items/{type_id}/{item_id}/`
+// 
+// Alternate route: `/legacy/dogma/dynamic/items/{type_id}/{item_id}/`
+// 
+// Alternate route: `/v1/dogma/dynamic/items/{type_id}/{item_id}/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("Get dynamic item information")
+GET "https://{{baseUrl}}/dogma/dynamic/items/:type_id/:item_id/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6dd4b6b5-e2d1-4630-9235-6d7bb1d13702.postman_collection.json
+
+// Relationship FRN
+
+@name("Relationship FRN")
+GET "https://{{baseUrl}}/:serviceType/relationship/frn/{{frn}}.{{format}}"
+
+
+// Entity Applications
+
+@name("Entity Applications")
+GET "https://{{baseUrl}}/:serviceType/applications/facility/{{entityID}}.{{format}}"
+
+
+// Entity EEO
+
+@name("Entity EEO")
+GET "https://{{baseUrl}}/:serviceType/eeo/facilityid/{{entityID}}.{{format}}"
+
+
+// Entity Ownership
+
+@name("Entity Ownership")
+GET "https://{{baseUrl}}/:serviceType/ownership/facilityid/{{entityID}}.{{format}}"
+
+
+

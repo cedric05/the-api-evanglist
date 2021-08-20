@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-356c884a-9b59-41ad-ade4-45c71008d027.postman_collection.json
+
+// Screen order for payment fraud.
+
+@name("V1OrderScreen_POST")
+POST "https://{{baseUrl}}/v1/order/screen"
+? "ip"= "<>"
+? "key"= "<>"
+? "format"= "<>"
+? "last_name"= "<>"
+? "first_name"= "<>"
+? "bill_addr"= "<>"
+? "bill_city"= "<>"
+? "bill_state"= "<>"
+? "bill_country"= "<>"
+? "bill_zip_code"= "<>"
+? "ship_addr"= "<>"
+? "ship_city"= "<>"
+? "ship_state"= "<>"
+? "ship_country"= "<>"
+? "ship_zip_code"= "<>"
+? "email_domain"= "<>"
+? "user_phone"= "<>"
+? "email"= "<>"
+? "email_hash"= "<>"
+? "username_hash"= "<>"
+? "password_hash"= "<>"
+? "bin_no"= "<>"
+? "card_hash"= "<>"
+? "avs_result"= "<>"
+? "cvv_result"= "<>"
+? "user_order_id"= "<>"
+? "user_order_memo"= "<>"
+? "amount"= "<>"
+? "quantity"= "<>"
+? "currency"= "<>"
+? "department"= "<>"
+? "payment_mode"= "<>"
+? "flp_checksum"= "<>"
+
+
+// Feedback the status of an order transaction.
+
+@name("V1OrderFeedback_POST")
+POST "https://{{baseUrl}}/v1/order/feedback"
+? "id"= "<>"
+? "key"= "<>"
+? "action"= "<>"
+? "format"= "<>"
+? "notes"= "<>"
+
+
+

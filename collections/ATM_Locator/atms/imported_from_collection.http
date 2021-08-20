@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3304fba5-47ff-4373-a587-e254dabc9c42.postman_collection.json
+
+// Gets a list of all `ATM` objects.
+
+@name("/atms")
+GET "https://{{baseUrl}}/atms"
+"If-Modified-Since": "dolor aliquip"
+"If-None-Match": "dolor aliquip"
+
+
+// Gets header information on the current set of `ATM` data
+
+@name("/atms")
+HEAD "https://{{baseUrl}}/atms"
+"If-Modified-Since": "dolor aliquip"
+"If-None-Match": "dolor aliquip"
+
+
+

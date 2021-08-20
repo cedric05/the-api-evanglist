@@ -1,0 +1,97 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6b84cc71-ce77-48b8-babd-323eb8d670bd.postman_collection.json
+
+// This service returns substances by CAS numbers in bulk.
+
+@name("Get substances by a list of CAS numbers.")
+GET "https://{{baseUrl}}/substances/cas"
+? "casList"= "<string>"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "listAcronym"= "<string>"
+? "pageNum"= "<string>"
+? "pageSize"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns substances by characteristic.
+
+@name("Get substances by characteristic.")
+GET "https://{{baseUrl}}/substances/characteristic/:characteristic"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "pageNum"= "<string>"
+? "pageSize"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns substances by classification.
+
+@name("Get substances by classification.")
+GET "https://{{baseUrl}}/substances/classification/:classification"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "pageNum"= "<string>"
+? "pageSize"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns substances by EPAID numbers in bulk.
+
+@name("Get substances by a list of EPAID numbers.")
+GET "https://{{baseUrl}}/substances/epaid"
+? "epaIdList"= "<string>"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "pageNum"= "<string>"
+? "pageSize"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns substances by ITN numbers in bulk.
+
+@name("Get substances by a list of internal tracking numbers (ITNs).")
+GET "https://{{baseUrl}}/substances/itn"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "itnList"= "<string>"
+? "pageNum"= "<string>"
+? "pageSize"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns substances by a substance list, using the list’s acronym.
+
+@name("Get substances by substance list acronym.")
+GET "https://{{baseUrl}}/substances/list_acronym/:substanceListAcronym"
+? "effectiveDate"= "<string>"
+? "endDate"= "<string>"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "pageNum"= "<string>"
+? "pageSize"= "<string>"
+? "qualifier"= "exact"
+
+
+// This service returns substances matching the list of comma separated substance names.
+
+@name("Get substances by a list of substance/synonym names.")
+GET "https://{{baseUrl}}/substances/name"
+? "excludeSynonyms"= "<string>"
+? "includeOtherCas"= "<string>"
+? "includeOtherTsn"= "<string>"
+? "listAcronym"= "<string>"
+? "nameList"= "<string>"
+? "pageNum"= "<string>"
+? "pageSize"= "<string>"
+? "qualifier"= "exact"
+
+
+

@@ -1,0 +1,124 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+@name("Execute an Advanced Search from a POST request that includes all search criteria in its body and paging parameters in the uri query.")
+POST "https://{{baseUrl}}/rest/AdvancedSearch"
+"Content-Type": "application/x-www-form-urlencoded"
+? "top"= "<integer>"
+? "page"= "<integer>"
+? "orderby"= "<string>"
+? "sort"= "<string>"
+data({
+    "quickSearch": [
+        "<string>"
+    ],
+    "visibility": [
+        "<string>"
+    ],
+    "legacy": [
+        "<string>"
+    ],
+    "version": [
+        "<string>"
+    ],
+    "regions": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\"}]"
+    ],
+    "units": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\",\"linked\":\"<boolean>\",\"approved\":\"<boolean>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\",\"linked\":\"<boolean>\",\"approved\":\"<boolean>\"}]"
+    ],
+    "textFields": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"}]"
+    ],
+    "dates": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"filter\":\"<string>\",\"startDate\":\"<dateTime>\",\"endDate\":\"<dateTime>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"filter\":\"<string>\",\"startDate\":\"<dateTime>\",\"endDate\":\"<dateTime>\"}]"
+    ],
+    "referenceTypes": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"referenceType\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"referenceType\":\"<string>\"}]"
+    ],
+    "referenceGroups": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"group\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"group\":\"<string>\"}]"
+    ],
+    "rectangles": [
+        "[\"<string>\",\"<string>\"]"
+    ],
+    "subjectCategories": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"subjectCategory\":\"<integer>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"subjectCategory\":\"<integer>\"}]"
+    ],
+    "digitalResources": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"type\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"type\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"}]"
+    ],
+    "physicalCopies": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\",\"searchText\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\",\"searchText\":\"<string>\"}]"
+    ],
+    "collections": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"collection\":\"<integer>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"collection\":\"<integer>\"}]"
+    ],
+    "people": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"}]"
+    ]
+})
+
+
+@name("Execute an Advanced Search from a POST request that includes all search criteria in its body and paging parameters in the uri query,
+yielding results with additional composite detail.")
+POST "https://{{baseUrl}}/rest/AdvancedSearch/Composite"
+"Content-Type": "application/x-www-form-urlencoded"
+? "top"= "<integer>"
+? "page"= "<integer>"
+? "orderby"= "<string>"
+? "sort"= "<string>"
+data({
+    "quickSearch": [
+        "<string>"
+    ],
+    "visibility": [
+        "<string>"
+    ],
+    "legacy": [
+        "<string>"
+    ],
+    "version": [
+        "<string>"
+    ],
+    "regions": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\"}]"
+    ],
+    "units": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\",\"linked\":\"<boolean>\",\"approved\":\"<boolean>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\",\"linked\":\"<boolean>\",\"approved\":\"<boolean>\"}]"
+    ],
+    "textFields": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"}]"
+    ],
+    "dates": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"filter\":\"<string>\",\"startDate\":\"<dateTime>\",\"endDate\":\"<dateTime>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"filter\":\"<string>\",\"startDate\":\"<dateTime>\",\"endDate\":\"<dateTime>\"}]"
+    ],
+    "referenceTypes": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"referenceType\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"referenceType\":\"<string>\"}]"
+    ],
+    "referenceGroups": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"group\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"group\":\"<string>\"}]"
+    ],
+    "rectangles": [
+        "[\"<string>\",\"<string>\"]"
+    ],
+    "subjectCategories": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"subjectCategory\":\"<integer>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"subjectCategory\":\"<integer>\"}]"
+    ],
+    "digitalResources": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"type\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"type\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"}]"
+    ],
+    "physicalCopies": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\",\"searchText\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"unitCode\":\"<string>\",\"searchText\":\"<string>\"}]"
+    ],
+    "collections": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"collection\":\"<integer>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"collection\":\"<integer>\"}]"
+    ],
+    "people": [
+        "[{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"},{\"order\":\"<integer>\",\"logicOperator\":\"<string>\",\"fieldName\":\"<string>\",\"searchText\":\"<string>\"}]"
+    ]
+})
+
+
+

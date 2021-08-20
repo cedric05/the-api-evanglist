@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// The API provides this service to perform complex validations which are validations involving 2 parameters or more. When the field `validate-complex` is populated, the client is expected to call the validation service before calling the `/questions` service again. The service url `service` and the expected parameters `parameters` will be provided - the result of the validation call can be either a success response with empty body or an error response with the appropriate validation message to show to the user.  
+// 
+// The path parameter `{paramname}` is required. The paramname of the Question that triggered the validation must be supplied.
+
+@name("Complex Validation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/schema/questions/:question/validation"
+"Content-Type": "application/json"
+? "country"= "it"
+? "locale"= "dolore"
+? "path"= "dolore"
+? "context"= "dolore"
+json({
+    "object.vehicle.driver.age": "30",
+    "object.vehicle.driver.license.age": "29"
+})
+
+
+

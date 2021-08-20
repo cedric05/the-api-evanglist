@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ae419a4f-68f3-40b5-821c-80057f0df0bd.postman_collection.json
+
+// Endpoint for retrieving a list of beneficiaries
+
+@name("Endpoint for retrieving a list of beneficiaries")
+GET "https://{{baseUrl}}/beneficiaries/organization/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"qpp-first-name": "<byte>"
+"qpp-last-name": "<byte>"
+"qpp-beneficiary-id": "<byte>"
+"qpp-clinic-name": "<byte>"
+"qpp-clinic-id": "<byte>"
+"qpp-provider-name": "<byte>"
+"qpp-npi": "<byte>"
+"qpp-beneficiary-name": "<byte>"
+"qpp-medical-record-number": "<byte>"
+"qpp-q": "<byte>"
+? "status"= "<string>"
+? "startAtBeneficiaryId"= "<string>"
+? "firstIncomplete"= "<string>"
+? "gender"= "<string>"
+? "fields"= "<string>"
+? "providers"= "false"
+? "measures"= "false"
+? "submissions"= "false"
+? "clinic"= "false"
+? "sort"= "<string>"
+? "offset"= "0"
+? "limit"= "25"
+
+
+// Update all demographic, medical record, and measure information for a given set of beneficiaries. This endpoint is the main entry point into updating beneficaries for a given organization. Using PATCH semantics only information provided in the request body will be updated. To set a field to null you must explicitly send a null value for the field you wish to update. Not all fields are nullable so please refer to the model documentation as a reference.
+
+@name("Update all beneficiary and measure information for a given set of beneficiaries")
+PATCH "https://{{baseUrl}}/beneficiaries/organization/:id"
+"Authorization": "Bearer <Bearer Token>"
+"Accept": "<string>"
+"X-HTTP-Method-Override": "<string>"
+"Content-Type": "application/json"
+? "_method"= "<string>"
+data('null')
+
+
+

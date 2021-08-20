@@ -1,0 +1,170 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c4f88191-0ebf-46ef-86b3-d7d3d84251e2.postman_collection.json
+
+// This operation retrieves a CommunicationMessage entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a CommunicationMessage by ID")
+GET "https://{{baseUrl}}/communicationMessage/:id"
+? "fields"= "qui aliqua dolor nulla"
+
+
+// This operation updates partially a CommunicationMessage entity.
+
+@name("Updates partially a CommunicationMessage")
+PATCH "https://{{baseUrl}}/communicationMessage/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "content": "id velit amet",
+    "description": "aute ea pariatur laborum ex",
+    "logFlag": true,
+    "messageType": "aliqua id dolor laboris",
+    "priority": "sunt Lorem cupidatat ex veniam",
+    "scheduledSendTime": "1943-09-09T03:40:52.495Z",
+    "sendTime": "1992-08-19T14:54:04.111Z",
+    "sendTimeComplete": "1960-09-20T02:32:32.832Z",
+    "subject": "quis",
+    "tryTimes": -24910255,
+    "attachment": [
+        {
+            "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "attachmentType": "video",
+            "content": "elit ullamco",
+            "description": "Photograph of the Product",
+            "mimeType": "dolor enim fugiat aliquip",
+            "name": "ipsum id dolor",
+            "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "size": {
+                "amount": 1,
+                "units": "in adipisicing ea Duis nostrud"
+            },
+            "validFor": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z"
+            }
+        },
+        {
+            "id": "4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "href": "http://host/Attachment/4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "attachmentType": "video",
+            "content": "quis non",
+            "description": "Photograph of the Product",
+            "mimeType": "laboris esse cillum Ut amet",
+            "name": "eu magna dolor",
+            "url": "http://host/Content/4aafacbd-11ff-4dc8-b445-305f2215715f",
+            "size": {
+                "amount": 1,
+                "units": "exercitation voluptate culpa pa"
+            },
+            "validFor": {
+                "endDateTime": "1985-04-12T23:20:50.52Z",
+                "startDateTime": "1985-04-12T23:20:50.52Z"
+            }
+        }
+    ],
+    "characteristic": [
+        {
+            "name": "pariatur in proident",
+            "value": {},
+            "id": "veniam ea cillum",
+            "valueType": "nostrud Excepteur ullamco v",
+            "characteristicRelationship": [
+                {
+                    "id": "Excepteur anim elit",
+                    "relationshipType": "non consequat quis occaecat"
+                },
+                {
+                    "id": "irure sunt nostrud minim",
+                    "relationshipType": "ut"
+                }
+            ],
+            "@baseType": "pariatur minim",
+            "@schemaLocation": "https://HSBAsuxUMe.emxjQIqbkeDX1OURXE.F2vL3XX-oP",
+            "@type": "dolor velit"
+        },
+        {
+            "name": "veniam culpa ex",
+            "value": {},
+            "id": "id minim in",
+            "valueType": "cupidatat ea non consectet",
+            "characteristicRelationship": [
+                {
+                    "id": "cupidatat Ut amet fugiat ut",
+                    "relationshipType": "Lorem sed"
+                },
+                {
+                    "id": "nostrud irure eiusmod ea",
+                    "relationshipType": "ea elit laborum Ut"
+                }
+            ],
+            "@baseType": "cillu",
+            "@schemaLocation": "http://UBPAUkEDJPPkGrqrKkWQpOIj.qbqbIWwt4f",
+            "@type": "esse sed pariatur"
+        }
+    ],
+    "receiver": [
+        {
+            "id": "in quis elit proident",
+            "appUserId": "consequat",
+            "email": "ex deserunt esse sit adipisicing",
+            "ip": "Lorem occaecat nisi id dolor",
+            "name": "dolore eu minim eiusmod",
+            "phoneNumber": "tempor consectetur esse Duis irure",
+            "party": {
+                "@referredType": "ea commodo",
+                "id": "sunt enim sed mollit",
+                "href": "https://whvpOCogXyozz.ztsjaDyP1+,lhnrrhjvKSZmtFGsqJpsESffU3QjoZWHf9VW9z3Po",
+                "name": "ipsum labore",
+                "role": "aliqua",
+                "@baseType": "aute nisi est qui",
+                "@schemaLocation": "http://hfDZKjpTjGnyEWt.laysJW34SGHmY3t7RPpIXiqh,vLGvJQBrxY.xf73,",
+                "@type": "sed nulla amet deserunt dolore"
+            }
+        },
+        {
+            "id": "nulla ad",
+            "appUserId": "pariatur eu dolore do",
+            "email": "reprehenderit laborum",
+            "ip": "cillum",
+            "name": "in deserunt",
+            "phoneNumber": "incididunt ullamco reprehenderit",
+            "party": {
+                "@referredType": "fugiat ea sed dolore Lorem",
+                "id": "sed voluptate Ut cillum",
+                "href": "https://yYbKDQSwEnAonYyxSoTbMoCvOryfq.tzxPD97X1wMCVedPy",
+                "name": "in ut qui ea",
+                "role": "magna ",
+                "@baseType": "aliquip",
+                "@schemaLocation": "http://GTsSuPrBmGhRUvx.zffUIUEKo,UIfhUoroZRBrgEu+H",
+                "@type": "nisi aute tempor"
+            }
+        }
+    ],
+    "sender": {
+        "id": "sed",
+        "email": "laboris",
+        "name": "commodo consectetur quis officia",
+        "phoneNumber": "Excepteur nostrud ut",
+        "party": {
+            "@referredType": "nulla sit",
+            "id": "qui et aliqua",
+            "href": "http://GmddUiUfJAxhRNpzi.fvbaNNU+ivZF9uy,m,nGjp-Ydeur5zdDDM",
+            "name": "in do mollit eu",
+            "role": "esse sint deserunt incididunt",
+            "@baseType": "in nulla",
+            "@schemaLocation": "http://aFBfdLeHzOBNnzepol.rlqkobpE4y8hD+6JasRaQlc+tDRcFQbFh2r7JXh8Q-gc5pDSVColEY1Zcx5Tl",
+            "@type": "proident eu dolor eiusmod cupidatat"
+        }
+    },
+    "state": "initial"
+})
+
+
+// This operation deletes a CommunicationMessage entity.
+
+@name("Deletes a CommunicationMessage")
+DELETE "https://{{baseUrl}}/communicationMessage/:id"
+
+
+

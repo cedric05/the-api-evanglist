@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Logs in to the online store with front end user credentials. The login call returns a JSON object that contains information, such as the access token and the refresh token.
+
+@name("Login")
+POST "https://{{baseUrl}}/rest/account/login"
+
+
+// Refreshes the access token using the refresh token. The refresh token is part of the login call response.
+
+@name("Refresh")
+POST "https://{{baseUrl}}/rest/account/login/refresh"
+
+
+

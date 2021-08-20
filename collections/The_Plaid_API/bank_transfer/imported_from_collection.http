@@ -1,0 +1,109 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// The `/bank_transfer/get` fetches information about the bank transfer corresponding to the given `bank_transfer_id`.
+
+@name("Retrieve a bank transfer") : "base-inherit-auth"
+POST "https://{{baseUrl}}/bank_transfer/get"
+"Content-Type": "application/json"
+json({
+    "bank_transfer_id": "irure fugiat cupidatat occ",
+    "client_id": "Duis ut deserunt veniam Ut",
+    "secret": "aute Lorem ut aliqua"
+})
+
+
+// Use the `/bank_transfer/create` endpoint to initiate a new bank transfer.
+
+@name("Create a bank transfer") : "base-inherit-auth"
+POST "https://{{baseUrl}}/bank_transfer/create"
+"Content-Type": "application/json"
+json({
+    "idempotency_key": "quis Duis aliq",
+    "access_token": "Ut sed quis minim commodo",
+    "account_id": "sint cupidatat",
+    "type": "credit",
+    "network": "same-day-ach",
+    "amount": "esse",
+    "iso_currency_code": "Excepteur veniam",
+    "description": "",
+    "user": {
+        "legal_name": "enim ut",
+        "email_address": "incididunt pariatur"
+    },
+    "client_id": "cillum reprehenderit consequat anim",
+    "secret": "culpa",
+    "ach_class": "cor",
+    "custom_tag": "e",
+    "metadata": {},
+    "origination_account_id": "adipisicing officia aliquip elit"
+})
+
+
+// Use the `/bank_transfer/list` endpoint to see a list of all your bank transfers and their statuses. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired bank transfers.
+
+@name("List bank transfers") : "base-inherit-auth"
+POST "https://{{baseUrl}}/bank_transfer/list"
+"Content-Type": "application/json"
+json({
+    "client_id": "in ullamco",
+    "secret": "enim esse cillum",
+    "start_date": "1972-02-04T03:14:51.005Z",
+    "end_date": "1955-07-04T05:30:14.120Z",
+    "count": 25,
+    "offset": 0,
+    "origination_account_id": "ea in dolore nostrud",
+    "direction": "outbound"
+})
+
+
+// Use the `/bank_transfer/cancel` endpoint to cancel a bank transfer.  A transfer is eligible for cancelation if the `cancellable` property returned by `/bank_transfer/get` is `true`.
+
+@name("Cancel a bank transfer") : "base-inherit-auth"
+POST "https://{{baseUrl}}/bank_transfer/cancel"
+"Content-Type": "application/json"
+json({
+    "bank_transfer_id": "consectetur in aliqua aute",
+    "client_id": "reprehenderit ipsum do Lorem",
+    "secret": "Excepteur ullamco est ea"
+})
+
+
+// Use the `/bank_transfer/balance/get` endpoint to see the available balance in your bank transfer account. Debit transfers increase this balance once their status is posted. Credit transfers decrease this balance when they are created.
+// 
+// The transactable balance shows the amount in your account that you are able to use for transfers, and is essentially your available balance minus your minimum balance.
+// 
+// Note that this endpoint can only be used with FBO accounts, when using Bank Transfers in the Full Service configuration. It cannot be used on your own account when using Bank Transfers in the BTS Platform configuration.
+
+@name("Get balance of your Bank Transfer account") : "base-inherit-auth"
+POST "https://{{baseUrl}}/bank_transfer/balance/get"
+"Content-Type": "application/json"
+json({
+    "client_id": "mol",
+    "secret": "est quis esse ",
+    "origination_account_id": "irure dolore"
+})
+
+
+// As an alternative to adding Items via Link, you can also use the `/bank_transfer/migrate_account` endpoint to migrate known account and routing numbers to Plaid Items.  Note that Items created in this way are not compatible with endpoints for other products, such as `/accounts/balance/get`, and can only be used with Bank Transfer endpoints.  If you require access to other endpoints, create the Item through Link instead.  Access to `/bank_transfer/migrate_account` is not enabled by default; to obtain access, contact your Plaid Account Manager.
+
+@name("Migrate account into Bank Transfers") : "base-inherit-auth"
+POST "https://{{baseUrl}}/bank_transfer/migrate_account"
+"Content-Type": "application/json"
+json({
+    "account_number": "esse consectetur",
+    "routing_number": "mollit consectetur",
+    "account_type": "eu do ullamco veniam",
+    "client_id": "dolore in labore",
+    "secret": "minim quis ea eiusmod"
+})
+
+
+

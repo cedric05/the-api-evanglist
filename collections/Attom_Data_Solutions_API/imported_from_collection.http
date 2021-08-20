@@ -1,0 +1,92 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d7e889e2-45ea-4b46-badd-0b496c4a983f.postman_collection.json
+
+// Get a detail of all the events on a specific property based on its address.
+
+@name("Returns all the events that have occurred on a specific address.")
+GET "https://{{baseUrl}}/allevents/detail"
+"apikey": "<>"
+"accept": "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+
+
+// Get a full detail of property characteristics and assessment history information for a specific property.
+
+@name("Returns assessment history and property details.")
+GET "https://{{baseUrl}}/assessmenthistory/detail"
+"apikey": "<>"
+"accept": "<>"
+? "id"= "<>"
+
+
+// Get Attomized AVM and other property details for a specific address.
+
+@name("Returns the Attomized AVM and other property details .")
+GET "https://{{baseUrl}}/attomavm/detail"
+"apikey": "<>"
+"accept": "<>"
+? "attomid"= "<>"
+
+
+// Get the average sale price, median sale price, and count of sales for the past 2 years in yearly intervals.
+
+@name("Returns sales trends for a given zip code in yearly intervals")
+GET "https://{{baseUrl}}/salestrend/snapshot"
+"apikey": "<>"
+"accept": "<>"
+? "geoid"= "<>"
+? "interval"= "<>"
+? "startyear"= "<>"
+? "endyear"= "<>"
+? "startmonth"= "<>"
+? "endmonth"= "<>"
+
+
+// This method allows you to pass a latitude and longitude point and geo type to retrieve a list of geographies that point falls within. Required input is a valid WKT (Well Known Text) point.
+
+@name("Returns all boundaries a point falls within.")
+GET "https://{{baseUrl}}/hierarchy/lookup"
+"apikey": "<>"
+"accept": "<>"
+? "WKTString"= "<>"
+? "geoType"= "<>"
+? "latitude"= "<>"
+? "longitude"= "<>"
+
+
+// This lookup is used to obtain a full list of Business Categories.
+
+@name("Returns business categories.")
+GET "https://{{baseUrl}}/business+category/lookup"
+"apikey": "<>"
+"accept": "<>"
+
+
+// This lookup can be used to show the full list of Lines of Businesses (LOB), and which categories they belong to.
+
+@name("Returns lines of business categories.")
+GET "https://{{baseUrl}}/lob/lookup"
+"apikey": "<>"
+"accept": "<>"
+
+
+// This search returns community information for a specific geography.
+
+@name("Returns community information.")
+GET "https://{{baseUrl}}/area/full"
+"apikey": "<>"
+"accept": "<>"
+? "AreaId"= "<>"
+
+
+// This lookup returns the full list of over 375 data fields that are available in the Community API.
+
+@name("Returns available data fields.")
+GET "https://{{baseUrl}}/attribute/lookup"
+"apikey": "<>"
+"accept": "<>"
+
+
+

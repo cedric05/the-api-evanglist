@@ -1,0 +1,191 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-139d2cf6-a45e-49f8-b258-0453deb0a5e1.postman_collection.json
+
+// Users ListFollowingChannels 
+
+@name("Users ListFollowingChannels")
+GET "https://{{baseUrl}}/users/listFollowingChannels.json"
+? "cursor"= "<string>"
+? "excludeModerated"= "<string>"
+? "excludeOwned"= "<string>"
+? "includeFollowedPrimaryForums"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+? "user"= "<string>"
+
+
+// Users ListActiveForums 
+
+@name("Users ListActiveForums")
+GET "https://{{baseUrl}}/users/listActiveForums.json"
+? "cursor"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+? "user"= "<string>"
+
+
+// Users ListPosts 
+
+@name("Users ListPosts")
+GET "https://{{baseUrl}}/users/listPosts.json"
+? "cursor"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+? "user"= "<string>"
+
+
+// Users ListModeratedChannels 
+
+@name("Users ListModeratedChannels")
+GET "https://{{baseUrl}}/users/listModeratedChannels.json"
+? "cursor"= "<string>"
+? "excludeOwned"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+? "user"= "<string>"
+
+
+// Users UpdateProfile 
+
+@name("Users UpdateProfile")
+POST "https://{{baseUrl}}/users/updateProfile.json"
+? "about"= "<string>"
+? "location"= "<string>"
+? "name"= "<string>"
+? "url"= "<string>"
+
+
+// Users Unfollow 
+
+@name("Users Unfollow")
+POST "https://{{baseUrl}}/users/unfollow.json"
+? "target"= "<string>"
+
+
+// Users ListActivity 
+
+@name("Users ListActivity")
+GET "https://{{baseUrl}}/users/listActivity.json"
+? "anon_user"= "<string>"
+? "cursor"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "query"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+? "user"= "<string>"
+
+
+// Users ListForums 
+
+@name("Users ListForums")
+GET "https://{{baseUrl}}/users/listForums.json"
+? "cursor"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+? "user"= "<string>"
+
+
+// Users RemoveFollower 
+
+@name("Users RemoveFollower")
+POST "https://{{baseUrl}}/users/removeFollower.json"
+? "follower"= "<string>"
+
+
+// Users ListFollowing 
+
+@name("Users ListFollowing")
+GET "https://{{baseUrl}}/users/listFollowing.json"
+? "cursor"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+? "user"= "<string>"
+
+
+// Users Follow 
+
+@name("Users Follow")
+POST "https://{{baseUrl}}/users/follow.json"
+? "target"= "<string>"
+
+
+// Users ListFollowingForums 
+
+@name("Users ListFollowingForums")
+GET "https://{{baseUrl}}/users/listFollowingForums.json"
+? "cursor"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+? "user"= "<string>"
+
+
+// Users ListFollowers 
+
+@name("Users ListFollowers")
+GET "https://{{baseUrl}}/users/listFollowers.json"
+? "cursor"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+? "user"= "<string>"
+
+
+// Users ListOwnedChannels 
+
+@name("Users ListOwnedChannels")
+GET "https://{{baseUrl}}/users/listOwnedChannels.json"
+? "cursor"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "since_id"= "<string>"
+? "user"= "<string>"
+
+
+// Users Details 
+
+@name("Users Details")
+GET "https://{{baseUrl}}/users/details.json"
+? "user"= "<string>"
+
+
+// Users ListActiveThreads 
+
+@name("Users ListActiveThreads")
+GET "https://{{baseUrl}}/users/listActiveThreads.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+? "user"= "<string>"
+
+
+// Users ListMostActiveForums 
+
+@name("Users ListMostActiveForums")
+GET "https://{{baseUrl}}/users/listMostActiveForums.json"
+? "limit"= "<string>"
+? "user"= "<string>"
+
+
+// Users InterestingUsers 
+
+@name("Users InterestingUsers")
+GET "https://{{baseUrl}}/users/interestingUsers.json"
+? "limit"= "<string>"
+
+
+

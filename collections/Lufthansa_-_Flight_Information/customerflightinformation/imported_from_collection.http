@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d2286a4d-0aaf-4b24-ab3d-705d0620bae8.postman_collection.json
+
+// Get customerflightinformation By Airport Arrival
+
+@name("GetFlightStatusByAirportArrival")
+GET "https://{{baseUrl}}/customerflightinformation/arrivals/:airportCode/:startDateTime"
+? "limit"= "labore incididunt dolor"
+? "offset"= "labore incididunt dolor"
+
+
+// Get customerflightinformation By Airport Departure
+
+@name("GetFlightStatusByAirportDeparture")
+GET "https://{{baseUrl}}/customerflightinformation/departures/:airportCode/:startDateTime"
+? "limit"= "labore incididunt dolor"
+? "offset"= "labore incididunt dolor"
+
+
+// Get customerflightinformation By Origin and Destination
+
+@name("GetFlightStatusByOandD")
+GET "https://{{baseUrl}}/customerflightinformation/route/:departureAirport/:arrivalAirport/:departureDate"
+? "limit"= "labore incididunt dolor"
+? "offset"= "labore incididunt dolor"
+
+
+// Get customerflightinformation By FlightNumber and Departure Date
+
+@name("GetFlightStatusByFlightNumberAndDepartureDate")
+GET "https://{{baseUrl}}/customerflightinformation/:flightNumber/:departureDate"
+? "limit"= "labore incididunt dolor"
+? "offset"= "labore incididunt dolor"
+
+
+

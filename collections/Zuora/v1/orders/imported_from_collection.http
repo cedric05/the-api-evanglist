@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** This feature is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/Orders_Generation_for_Subscriptions_and_Amendments) feature enabled. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). We will investigate your use cases and data before enabling this feature for you. If you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) 
+
+@name("Get all orders")
+GET "https://{{baseUrl}}/v1/orders"
+? "page"= "<>"
+? "dateFilterOption"= "<>"
+? "startDate"= "<put>"
+? "endDate"= "<put>"
+
+
+// **Note:** This feature is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/Orders_Generation_for_Subscriptions_and_Amendments) feature enabled. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). We will investigate your use cases and data before enabling this feature for you. If you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) 
+
+@name("Get orders by invoice owner")
+GET "https://{{baseUrl}}/v1/orders/invoiceOwner/:accountNumber"
+? "page"= "<>"
+? "dateFilterOption"= "<>"
+? "startDate"= "<put>"
+? "endDate"= "<put>"
+
+
+// **Note:** This feature is only available if you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) feature enabled. We are actively soliciting feedback from a small set of early adopters. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnnRetrieves the preview of the charge metrics and invoice items of a specified order. This operation is only an order preview and no order is created.n
+
+@name("Preview order")
+POST "https://{{baseUrl}}/v1/orders/preview"
+
+
+// **Note:** This feature is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/Orders_Generation_for_Subscriptions_and_Amendments) feature enabled. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). We will investigate your use cases and data before enabling this feature for you. If you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) 
+
+@name("Get orders by subscription number")
+GET "https://{{baseUrl}}/v1/orders/subscription/:subscriptionNumber"
+? "page"= "<>"
+? "dateFilterOption"= "<>"
+? "startDate"= "<put>"
+? "endDate"= "<put>"
+
+
+// **Note:** This feature is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/Orders_Generation_for_Subscriptions_and_Amendments) feature enabled. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). We will investigate your use cases and data before enabling this feature for you. If you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) 
+
+@name("Get orders by subscription owner")
+GET "https://{{baseUrl}}/v1/orders/subscriptionOwner/:accountNumber"
+? "page"= "<>"
+? "dateFilterOption"= "<>"
+? "startDate"= "<put>"
+? "endDate"= "<put>"
+
+
+// **Note:** This feature is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/Orders_Generation_for_Subscriptions_and_Amendments) feature enabled. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). We will investigate your use cases and data before enabling this feature for you. If you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders) 
+
+@name("Get term information for subscription")
+GET "https://{{baseUrl}}/v1/orders/term/:subscriptionNumber"
+? "version"= "<put>"
+? "page"= "<>"
+
+
+

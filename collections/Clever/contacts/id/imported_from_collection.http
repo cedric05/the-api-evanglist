@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-83d768b1-950f-434d-8ea8-e2e63edbcbef.postman_collection.json
+
+// Returns a specific student contact
+
+@name("get Contact")
+GET "https://{{baseUrl}}/contacts/:id"
+
+
+// Returns the district for a student contact
+
+@name("get District For Student Contact")
+GET "https://{{baseUrl}}/contacts/:id/district"
+
+
+// Returns the student for a student contact
+
+@name("get Student For Contact")
+GET "https://{{baseUrl}}/contacts/:id/student"
+
+
+

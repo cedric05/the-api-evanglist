@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// A list of your corporation's bookmarks
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/bookmarks/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/bookmarks/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/bookmarks/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List corporation bookmarks")
+GET "https://{{baseUrl}}/corporations/:corporation_id/bookmarks/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// A list of your corporation's bookmark folders
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/bookmarks/folders/`
+// 
+// Alternate route: `/legacy/corporations/{corporation_id}/bookmarks/folders/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/bookmarks/folders/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("List corporation bookmark folders")
+GET "https://{{baseUrl}}/corporations/:corporation_id/bookmarks/folders/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+

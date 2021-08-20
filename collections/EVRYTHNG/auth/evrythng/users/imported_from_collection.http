@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Create a new unactivated Application User with a unique email address. The response contains an `activationCode` that must be returned to the API (See 'Activate an Application User') before it can access the API. This gives the client application an opportunity to ensure the email address has been validated.
+
+@name("Create an Application User")
+POST "https://{{baseUrl}}/auth/evrythng/users"
+? "No Name"= "<string>"
+
+
+// Activate a new Application User using the `activationCode` provided in the 'Create an Application User' step.
+
+@name("Activate an Application User")
+POST "https://{{baseUrl}}/auth/evrythng/users/:evrythngUser/validate"
+? "No Name"= "<string>"
+
+
+

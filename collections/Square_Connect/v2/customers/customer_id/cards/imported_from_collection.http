@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Adds a card on file to an existing customer.
+
+@name("Post Customers Cards")
+POST "https://{{baseUrl}}/v2/customers/:customer_id/cards"
+
+
+// Removes a card on file from a customer.
+
+@name("Delete Customers Cards")
+DELETE "https://{{baseUrl}}/v2/customers/:customer_id/cards/:card_id"
+
+
+

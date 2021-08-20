@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-40be81f8-7274-4c84-8bfe-169178404859.postman_collection.json
+
+// Takes a list of HTML tags, with different sizes applied, and turns into a visual tag cloud.
+
+@name("Visualizer Tag Cloud")
+POST "https://postman-echo.com/post"
+"Content-Type": "application/json"
+data('{
+	"content":
+	[
+	 {{$randomInt}},
+	 {{$randomInt}},
+	 {{$randomInt}},
+	 {{$randomInt}}
+		
+	]
+}')
+
+
+

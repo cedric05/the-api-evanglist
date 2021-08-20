@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete an email address") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/users/:user/emails/:email_id/"
+
+
+@name("Retrieve a user's email addresses") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/users/:user/emails/:email_id/"
+
+
+@name("Update an email address") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/users/:user/emails/:email_id/"
+"Content-Type": "application/json"
+json({
+    "address": "<string>",
+    "public": "<boolean>",
+    "unsubscribed": "<boolean>"
+})
+
+
+@name("Replace an email address") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/users/:user/emails/:email_id/"
+"Content-Type": "application/json"
+json({
+    "address": "<string>",
+    "public": "<boolean>",
+    "unsubscribed": "<boolean>"
+})
+
+
+

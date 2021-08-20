@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6955ed11-a73c-4307-bb23-5a863194d33b.postman_collection.json
+
+@name("GET request for retrieving the default output values for the GCSolar module, 
+this is equivalent to selecting the third option from the start menu of the desktop application.")
+GET "https://{{baseUrl}}/api/water-quality/solar/run"
+
+
+@name("POST request for retrieving solar data using custom values from the GCSolar module,
+this is equivalent to selecting the second option from the start menu of the desktop application.")
+POST "https://{{baseUrl}}/api/water-quality/solar/run"
+"Content-Type": "application/json"
+json({
+    "input": "<object>"
+})
+
+
+

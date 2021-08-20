@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Get email open counts")
+GET "https://{{baseUrl}}/stats/outbound/opens"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get email client usage")
+GET "https://{{baseUrl}}/stats/outbound/opens/emailclients"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get email platform usage")
+GET "https://{{baseUrl}}/stats/outbound/opens/platforms"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+@name("Get email read times")
+GET "https://{{baseUrl}}/stats/outbound/opens/readtimes"
+? "tag"= "<string>"
+? "fromdate"= "<string>"
+? "todate"= "<string>"
+
+
+

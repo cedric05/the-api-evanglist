@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This reference describes how to delete a journal run using the REST API.n                      n You can only delete journal runs that have already been canceled.n                      n You must have the Delete Cancelled Journal Run Zuora Finance user permission enabled to delete journal runs.n
+
+@name("Delete journal run")
+DELETE "https://{{baseUrl}}/v1/journal-runs/:jr-number"
+
+
+// This reference describes how to cancel a journal run using the REST API.n          nThe summary journal entries in the journal run are canceled asynchronously. See the Example section below for details.n          nYou must have the Cancel Journal Run Zuora Finance user permission enabled to cancel journal runs.nn## NotesnWhen you cancel a journal run, the summary journal entries associated with that journal run are canceled asynchronously. A response of `{ success: true }` means only that 
+
+@name("Cancel journal run")
+PUT "https://{{baseUrl}}/v1/journal-runs/:jr-number/cancel"
+
+
+

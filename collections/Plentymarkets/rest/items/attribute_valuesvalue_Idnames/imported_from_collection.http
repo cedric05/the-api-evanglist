@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Gets name and language for an attribute value ID. The attribute value ID must be specified.
+
+@name("Get name and language for an attribute value ID")
+GET "https://{{baseUrl}}/rest/items/attribute_values/:valueId/names"
+
+
+// Deletes an attribute value name. The attribute value ID and language must be specified.
+
+@name("Delete an attribute value name")
+DELETE "https://{{baseUrl}}/rest/items/attribute_values/:valueId/names/:lang"
+
+
+

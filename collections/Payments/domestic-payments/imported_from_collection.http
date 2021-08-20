@@ -1,0 +1,92 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create Domestic Payments")
+POST "https://{{baseUrl}}/domestic-payments"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "ConsentId": "minim commodo elit",
+        "Initiation": {
+            "CreditorAccount": {
+                "Identification": "est ut",
+                "Name": "ut consectetur fugiat",
+                "SchemeName": "UK.OBIE.Paym",
+                "SecondaryIdentification": "id et amet ad Excepteur"
+            },
+            "EndToEndIdentification": "laborum aliquip tempor minim aliqua",
+            "InstructedAmount": {
+                "Amount": "fugiat irure Ut aute",
+                "Currency": "Lorem in"
+            },
+            "InstructionIdentification": "labore tempor proident",
+            "CreditorPostalAddress": {
+                "AddressLine": [
+                    "tempor aliquip",
+                    "mollit minim aliquip velit nostrud"
+                ],
+                "AddressType": "MailTo",
+                "BuildingNumber": "dolore dolore eiusmod",
+                "Country": "laboris pariatur nisi aute",
+                "CountrySubDivision": "eu reprehenderit",
+                "Department": "ea quis ex fugiat",
+                "PostCode": "amet eu ut id",
+                "StreetName": "sit fugiat dolore",
+                "SubDepartment": "adipisicing magna eu ipsum",
+                "TownName": "deserunt"
+            },
+            "LocalInstrument": "UK.OBIE.SWIFT",
+            "RemittanceInformation": {
+                "Reference": "Lorem magna",
+                "Unstructured": "proident commodo esse do minim"
+            },
+            "SupplementaryData": {
+                "LocalInstrument": "UK.OBIE.FPS"
+            }
+        }
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "voluptate",
+            "TownName": "dolor adipisicing dolor anim",
+            "AddressLine": [
+                "ipsum incididunt adipisicing sunt",
+                "irure proident"
+            ],
+            "BuildingNumber": "Duis",
+            "CountrySubDivision": [
+                "nisi commodo Lorem est",
+                "magna id sed aliqua"
+            ],
+            "PostCode": "ut cupidatat laboris",
+            "StreetName": "nulla do adipisicing Duis cu"
+        },
+        "MerchantCategoryCode": "laboris sit",
+        "MerchantCustomerIdentification": "fugiat mollit ipsum et",
+        "PaymentContextCode": "Other"
+    }
+})
+
+
+@name("Get Domestic Payments")
+GET "https://{{baseUrl}}/domestic-payments/:DomesticPaymentId"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+
+
+

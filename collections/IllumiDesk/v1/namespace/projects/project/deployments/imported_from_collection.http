@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Retrieve deployments") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/:project/deployments/"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "name"= "<string>"
+? "ordering"= "<string>"
+
+
+@name("Create a new deployment") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/projects/:project/deployments/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "config": {
+        "files": [
+            "<string>",
+            "<string>"
+        ],
+        "handler": "<string>"
+    },
+    "runtime": "<string>",
+    "framework": "<string>"
+})
+
+
+

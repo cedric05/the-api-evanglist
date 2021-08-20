@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-176e2ba7-20b8-4a6a-a915-03b5fba2051f.postman_collection.json
+
+@name("Obtain complete league leader information.")
+GET "https://{{baseUrl}}/nfl-ngs-t1/seasontd/:year/:nfl_season/leaders{{format}}"
+
+
+@name("Obtain complete team leader information.")
+GET "https://{{baseUrl}}/nfl-ngs-t1/seasontd/:year/:nfl_season/:team_id/leaders{{format}}"
+
+
+@name("Obtain weekly leader information.")
+GET "https://{{baseUrl}}/nfl-ngs-t1/seasontd/:year/:nfl_season/:week/leaders{{format}}"
+
+
+

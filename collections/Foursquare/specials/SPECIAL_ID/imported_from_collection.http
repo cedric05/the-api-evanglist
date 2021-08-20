@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /settings/{SETTING_ID}/set
+
+@name("/settings/{SETTING_ID}/set")
+GET "https://{{baseUrl}}/specials/:SPECIAL_ID"
+? "SPECIAL_ID"= "<string>"
+? "v"= "<string>"
+? "venueId"= "<string>"
+
+
+// /specials/search
+
+@name("/specials/search")
+GET "https://{{baseUrl}}/specials/:SPECIAL_ID/configuration"
+? "SPECIAL_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /specials/{ID}/flag
+
+@name("/specials/{ID}/flag")
+POST "https://{{baseUrl}}/specials/:SPECIAL_ID/retire"
+? "SPECIAL_ID"= "<string>"
+? "v"= "<string>"
+
+
+

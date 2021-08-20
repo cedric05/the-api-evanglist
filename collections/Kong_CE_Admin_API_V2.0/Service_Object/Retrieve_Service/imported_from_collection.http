@@ -1,0 +1,93 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// ## Retrieve Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-service-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>Service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Service to retrieve.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Service")
+GET "https://{{gateway}}/services/:serviceNameOrID"
+
+
+// ## Retrieve Service Associated to a Specific Certificate [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-service-associated-to-a-specific-certificate)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>certificate id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Certificate to retrieve.</td>
+//   </tr>
+//   <tr>
+//     <td>service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Service to retrieve.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Service Associated to a Specific Certificate")
+GET "https://{{gateway}}/certificates/:certificateId/services/:serviceNameOrId"
+
+
+// ## Retrieve Service Associated to a Specific Route [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-service-associated-to-a-specific-route)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>route name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Route associated to the Service to be retrieved.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Service Associated to a Specific Route")
+GET "https://{{gateway}}/routes/:routeNameOrId/service"
+
+
+// ## Retrieve Service Associated to a Specific Plugin [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-service-associated-to-a-specific-plugin)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>plugin id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Plugin associated to the Service to be retrieved.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Service Associated to a Specific Plugin")
+GET "https://{{gateway}}/plugins/:pluginId/service"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-22a10f2d-8624-488d-95c0-85a6c45216c5.postman_collection.json
+
+// Retrieve the list of active property mappings for the specified devicentype.  A property mapping defines how properties from inbound events arenmapped to properties defined on an logical interface associated withnthe device type.n
+
+@name("Get the list of active property mappings for the device type")
+GET "https://{{baseUrl}}/device/types/:typeId/mappings"
+
+
+// Retrieves the active property mappings for a specific logicalninterface for the device type.n
+
+@name("Get the active property mappings for a specific logical interfacenfor a device type.n")
+GET "https://{{baseUrl}}/device/types/:typeId/mappings/:logicalInterfaceId"
+
+
+

@@ -1,0 +1,105 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// bunq.me tabs allows you to create a payment request and share the link through e-mail, chat, etc. Multiple persons are able to respond to the payment request and pay through bunq, iDeal or SOFORT.
+
+@name("READ Bunqme Tab for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/bunqme-tab/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// bunq.me tabs allows you to create a payment request and share the link through e-mail, chat, etc. Multiple persons are able to respond to the payment request and pay through bunq, iDeal or SOFORT.
+
+@name("UPDATE Bunqme Tab for User Monetary Account")
+PUT "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/bunqme-tab/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "bunqme_tab_entry": {
+        "alias": {
+            "avatar": {
+                "anchor_uuid": "voluptate cillum",
+                "image": [
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                ],
+                "uuid": "<string>"
+            },
+            "bunq_me": {
+                "name": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "type": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "value": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "country": "laboris",
+            "display_name": "aute ut",
+            "iban": "Lorem",
+            "is_light": true,
+            "label_user": {
+                "avatar": {
+                    "anchor_uuid": "reprehenderit dolor",
+                    "image": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "uuid": "<string>"
+                },
+                "country": "sint in exercitation enim",
+                "display_name": "sun",
+                "public_nick_name": "amet fugiat Ut non Duis",
+                "uuid": "velit "
+            },
+            "merchant_category_code": "ex dolor ",
+            "swift_account_number": "voluptate",
+            "swift_bic": "consectetur cupidatat consequat sed",
+            "transferwise_account_number": "sint culpa Excepteur",
+            "transferwise_bank_code": "anim ullamco Ut"
+        },
+        "amount_inquired": {
+            "currency": "aliquip mollit",
+            "value": "mollit dolore aliqua"
+        },
+        "description": "sint tempor cillum anim",
+        "merchant_available": [
+            {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        ],
+        "redirect_url": "veniam ipsum",
+        "status": "eu tempor",
+        "uuid": "mag"
+    },
+    "status": "<string>"
+})
+
+
+

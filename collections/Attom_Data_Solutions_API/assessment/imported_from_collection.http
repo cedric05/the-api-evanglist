@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d7e889e2-45ea-4b46-badd-0b496c4a983f.postman_collection.json
+
+// Get snapshots of the properties within a radius of a property that have a total market value within a specified range.
+
+@name("Returns assessment details for properties within a radius.")
+GET "https://{{baseUrl}}/assessment/snapshot"
+"apikey": "<>"
+"accept": "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+? "radius"= "<>"
+? "minmktttlvalue"= "<>"
+? "maxmktttlvalue"= "<>"
+
+
+// Get assessment details for properties within a zip code. Use propertytpe to select a specific property type for your search.
+
+@name("Returns assessment details for properties within a zip code.")
+GET "https://{{baseUrl}}/assessment/detail"
+"apikey": "<>"
+"accept": "<>"
+? "postalcode"= "<>"
+? "propertytype"= "<>"
+
+
+

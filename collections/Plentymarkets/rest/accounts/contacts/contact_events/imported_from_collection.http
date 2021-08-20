@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists contact events.
+
+@name("List contact events")
+GET "https://{{baseUrl}}/rest/accounts/contacts/contact_events"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+
+
+// Deletes a contact event. The ID of the contact event must be specified.
+
+@name("Delete a contact event")
+DELETE "https://{{baseUrl}}/rest/accounts/contacts/contact_events/:contactEventId"
+
+
+

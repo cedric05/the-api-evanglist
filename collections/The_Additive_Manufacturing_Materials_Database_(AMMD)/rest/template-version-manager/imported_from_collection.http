@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e7284ee4-fd9b-45f9-a31d-197af3b48c31.postman_collection.json
+
+// Get template version managers
+// 
+// Url Parameters:
+// 
+//     template: template_id
+//     title: document_title
+
+@name("Get template version managers")
+GET "https://{{baseUrl}}/rest/template-version-manager/global/"
+
+
+// Create a TemplateVersion
+
+@name("Create a TemplateVersion")
+POST "https://{{baseUrl}}/rest/template-version-manager/:id/version/"
+
+
+

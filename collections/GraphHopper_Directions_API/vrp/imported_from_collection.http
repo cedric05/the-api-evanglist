@@ -1,0 +1,854 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f1494990-6b2e-4273-b056-b290ffedd5ef.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// 
+// To get started with the Route Optimization API see the [introduction](#tag/Route-Optimization-API).
+// 
+// The Route Optimization endpoint is used with a POST request towards
+// `https://graphhopper.com/api/1/vrp?key=<your_key>`. Then you'll find the solution in the JSON response.
+// Please note that for problems that take longer than 10 seconds a bad request error is returned.
+// In this case please use the asynchronous [Batch Route Optimization Endpoint](#operation/asyncVRP) instead.
+
+@name("POST Route Optimization Endpoint") : "base-inherit-auth"
+POST "https://{{baseUrl}}/vrp"
+"Content-Type": "application/json"
+json({
+    "algorithm": {
+        "objective": "<string>",
+        "problem_type": "<string>"
+    },
+    "configuration": {
+        "routing": {
+            "calc_points": false,
+            "consider_traffic": false,
+            "curbside_strictness": "soft",
+            "fail_fast": true,
+            "network_data_provider": "openstreetmap",
+            "return_snapped_waypoints": false,
+            "snap_preventions": [
+                "<string>",
+                "<string>"
+            ]
+        }
+    },
+    "cost_matrices": [
+        {
+            "data": {
+                "distances": [
+                    [
+                        "<double>",
+                        "<double>"
+                    ]
+                ],
+                "info": {
+                    "copyrights": [
+                        "<string>",
+                        "<string>"
+                    ],
+                    "took": "<double>"
+                },
+                "times": [
+                    [
+                        "<long>",
+                        "<long>"
+                    ]
+                ]
+            },
+            "location_ids": [
+                "<string>",
+                "<string>"
+            ],
+            "profile": "<string>",
+            "type": "<string>"
+        },
+        {
+            "data": {
+                "distances": [
+                    [
+                        "<double>",
+                        "<double>"
+                    ]
+                ],
+                "info": {
+                    "copyrights": [
+                        "<string>",
+                        "<string>"
+                    ],
+                    "took": "<double>"
+                },
+                "times": [
+                    [
+                        "<long>",
+                        "<long>"
+                    ]
+                ]
+            },
+            "location_ids": [
+                "<string>",
+                "<string>"
+            ],
+            "profile": "<string>",
+            "type": "<string>"
+        }
+    ],
+    "objectives": [
+        {
+            "type": "min",
+            "value": "transport_time"
+        },
+        {
+            "type": "min",
+            "value": "transport_time"
+        }
+    ],
+    "relations": [
+        {
+            "type": "<string>",
+            "ids": [
+                "<string>",
+                "<string>"
+            ],
+            "vehicle_id": "<string>"
+        },
+        {
+            "type": "<string>",
+            "ids": [
+                "<string>",
+                "<string>"
+            ],
+            "vehicle_id": "<string>"
+        }
+    ],
+    "services": [
+        {
+            "id": "<string>",
+            "address": {
+                "location_id": "<string>",
+                "lon": "<double>",
+                "lat": "<double>",
+                "curbside": "any",
+                "name": "<string>",
+                "street_hint": "<string>"
+            },
+            "allowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "disallowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "duration": 0,
+            "group": "<string>",
+            "max_time_in_vehicle": 9223372036854776000,
+            "name": "<string>",
+            "preparation_time": 0,
+            "priority": 2,
+            "required_skills": [
+                "<string>",
+                "<string>"
+            ],
+            "size": [
+                0
+            ],
+            "time_windows": [
+                {
+                    "earliest": 0,
+                    "latest": 9223372036854776000
+                },
+                {
+                    "earliest": 0,
+                    "latest": 9223372036854776000
+                }
+            ],
+            "type": "service"
+        },
+        {
+            "id": "<string>",
+            "address": {
+                "location_id": "<string>",
+                "lon": "<double>",
+                "lat": "<double>",
+                "curbside": "any",
+                "name": "<string>",
+                "street_hint": "<string>"
+            },
+            "allowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "disallowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "duration": 0,
+            "group": "<string>",
+            "max_time_in_vehicle": 9223372036854776000,
+            "name": "<string>",
+            "preparation_time": 0,
+            "priority": 2,
+            "required_skills": [
+                "<string>",
+                "<string>"
+            ],
+            "size": [
+                0
+            ],
+            "time_windows": [
+                {
+                    "earliest": 0,
+                    "latest": 9223372036854776000
+                },
+                {
+                    "earliest": 0,
+                    "latest": 9223372036854776000
+                }
+            ],
+            "type": "service"
+        }
+    ],
+    "shipments": [
+        {
+            "id": "<string>",
+            "pickup": {
+                "address": {
+                    "location_id": "<string>",
+                    "lon": "<double>",
+                    "lat": "<double>",
+                    "curbside": "any",
+                    "name": "<string>",
+                    "street_hint": "<string>"
+                },
+                "duration": 0,
+                "group": "<string>",
+                "preparation_time": 0,
+                "time_windows": [
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    },
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    }
+                ]
+            },
+            "delivery": {
+                "address": {
+                    "location_id": "<string>",
+                    "lon": "<double>",
+                    "lat": "<double>",
+                    "curbside": "any",
+                    "name": "<string>",
+                    "street_hint": "<string>"
+                },
+                "duration": 0,
+                "group": "<string>",
+                "preparation_time": 0,
+                "time_windows": [
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    },
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    }
+                ]
+            },
+            "allowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "disallowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "max_time_in_vehicle": 9223372036854776000,
+            "name": "<string>",
+            "priority": 2,
+            "required_skills": [
+                "<string>",
+                "<string>"
+            ],
+            "size": [
+                0
+            ]
+        },
+        {
+            "id": "<string>",
+            "pickup": {
+                "address": {
+                    "location_id": "<string>",
+                    "lon": "<double>",
+                    "lat": "<double>",
+                    "curbside": "any",
+                    "name": "<string>",
+                    "street_hint": "<string>"
+                },
+                "duration": 0,
+                "group": "<string>",
+                "preparation_time": 0,
+                "time_windows": [
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    },
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    }
+                ]
+            },
+            "delivery": {
+                "address": {
+                    "location_id": "<string>",
+                    "lon": "<double>",
+                    "lat": "<double>",
+                    "curbside": "any",
+                    "name": "<string>",
+                    "street_hint": "<string>"
+                },
+                "duration": 0,
+                "group": "<string>",
+                "preparation_time": 0,
+                "time_windows": [
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    },
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    }
+                ]
+            },
+            "allowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "disallowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "max_time_in_vehicle": 9223372036854776000,
+            "name": "<string>",
+            "priority": 2,
+            "required_skills": [
+                "<string>",
+                "<string>"
+            ],
+            "size": [
+                0
+            ]
+        }
+    ],
+    "vehicle_types": [
+        {
+            "type_id": "<string>",
+            "capacity": [
+                0
+            ],
+            "consider_traffic": false,
+            "cost_per_activation": "<double>",
+            "cost_per_meter": "<double>",
+            "cost_per_second": "<double>",
+            "network_data_provider": "openstreetmap",
+            "profile": {
+                "value": "<Error: Could not resolve allOf schema"
+            },
+            "service_time_factor": 1,
+            "speed_factor": 1
+        },
+        {
+            "type_id": "<string>",
+            "capacity": [
+                0
+            ],
+            "consider_traffic": false,
+            "cost_per_activation": "<double>",
+            "cost_per_meter": "<double>",
+            "cost_per_second": "<double>",
+            "network_data_provider": "openstreetmap",
+            "profile": {
+                "value": "<Error: Could not resolve allOf schema"
+            },
+            "service_time_factor": 1,
+            "speed_factor": 1
+        }
+    ],
+    "vehicles": [
+        {
+            "vehicle_id": "<string>",
+            "start_address": {
+                "location_id": "<string>",
+                "lon": "<double>",
+                "lat": "<double>",
+                "curbside": "any",
+                "name": "<string>",
+                "street_hint": "<string>"
+            },
+            "break": {
+                "earliest": "<long>",
+                "latest": "<long>",
+                "duration": "<long>"
+            },
+            "earliest_start": 0,
+            "end_address": {
+                "location_id": "<string>",
+                "lon": "<double>",
+                "lat": "<double>",
+                "curbside": "any",
+                "name": "<string>",
+                "street_hint": "<string>"
+            },
+            "latest_end": 9223372036854776000,
+            "max_activities": "<integer>",
+            "max_distance": "<long>",
+            "max_driving_time": "<long>",
+            "max_jobs": "<integer>",
+            "move_to_end_address": "<boolean>",
+            "return_to_depot": true,
+            "skills": [
+                "<string>",
+                "<string>"
+            ],
+            "type_id": "default-type"
+        }
+    ]
+})
+
+
+// 
+// Prefer the [synchronous endpoint](#operation/solveVRP) and use this Batch Route Optimization endpoint for
+// long running problems only. The work flow is asynchronous:
+// 
+// - send a POST request towards `https://graphhopper.com/api/1/vrp/optimize?key=<your_key>` and fetch the job_id.
+// - poll the solution every 500ms until it gives `status=finished`. Do this with a GET request 
+//   towards `https://graphhopper.com/api/1/vrp/solution/<job_id>?key=<your_key>`.        
+
+@name("Batch Route Optimization Endpoint") : "base-inherit-auth"
+POST "https://{{baseUrl}}/vrp/optimize"
+"Content-Type": "application/json"
+json({
+    "algorithm": {
+        "objective": "<string>",
+        "problem_type": "<string>"
+    },
+    "configuration": {
+        "routing": {
+            "calc_points": false,
+            "consider_traffic": false,
+            "curbside_strictness": "soft",
+            "fail_fast": true,
+            "network_data_provider": "openstreetmap",
+            "return_snapped_waypoints": false,
+            "snap_preventions": [
+                "<string>",
+                "<string>"
+            ]
+        }
+    },
+    "cost_matrices": [
+        {
+            "data": {
+                "distances": [
+                    [
+                        "<double>",
+                        "<double>"
+                    ]
+                ],
+                "info": {
+                    "copyrights": [
+                        "<string>",
+                        "<string>"
+                    ],
+                    "took": "<double>"
+                },
+                "times": [
+                    [
+                        "<long>",
+                        "<long>"
+                    ]
+                ]
+            },
+            "location_ids": [
+                "<string>",
+                "<string>"
+            ],
+            "profile": "<string>",
+            "type": "<string>"
+        },
+        {
+            "data": {
+                "distances": [
+                    [
+                        "<double>",
+                        "<double>"
+                    ]
+                ],
+                "info": {
+                    "copyrights": [
+                        "<string>",
+                        "<string>"
+                    ],
+                    "took": "<double>"
+                },
+                "times": [
+                    [
+                        "<long>",
+                        "<long>"
+                    ]
+                ]
+            },
+            "location_ids": [
+                "<string>",
+                "<string>"
+            ],
+            "profile": "<string>",
+            "type": "<string>"
+        }
+    ],
+    "objectives": [
+        {
+            "type": "min",
+            "value": "transport_time"
+        },
+        {
+            "type": "min",
+            "value": "transport_time"
+        }
+    ],
+    "relations": [
+        {
+            "type": "<string>",
+            "ids": [
+                "<string>",
+                "<string>"
+            ],
+            "vehicle_id": "<string>"
+        },
+        {
+            "type": "<string>",
+            "ids": [
+                "<string>",
+                "<string>"
+            ],
+            "vehicle_id": "<string>"
+        }
+    ],
+    "services": [
+        {
+            "id": "<string>",
+            "address": {
+                "location_id": "<string>",
+                "lon": "<double>",
+                "lat": "<double>",
+                "curbside": "any",
+                "name": "<string>",
+                "street_hint": "<string>"
+            },
+            "allowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "disallowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "duration": 0,
+            "group": "<string>",
+            "max_time_in_vehicle": 9223372036854776000,
+            "name": "<string>",
+            "preparation_time": 0,
+            "priority": 2,
+            "required_skills": [
+                "<string>",
+                "<string>"
+            ],
+            "size": [
+                0
+            ],
+            "time_windows": [
+                {
+                    "earliest": 0,
+                    "latest": 9223372036854776000
+                },
+                {
+                    "earliest": 0,
+                    "latest": 9223372036854776000
+                }
+            ],
+            "type": "service"
+        },
+        {
+            "id": "<string>",
+            "address": {
+                "location_id": "<string>",
+                "lon": "<double>",
+                "lat": "<double>",
+                "curbside": "any",
+                "name": "<string>",
+                "street_hint": "<string>"
+            },
+            "allowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "disallowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "duration": 0,
+            "group": "<string>",
+            "max_time_in_vehicle": 9223372036854776000,
+            "name": "<string>",
+            "preparation_time": 0,
+            "priority": 2,
+            "required_skills": [
+                "<string>",
+                "<string>"
+            ],
+            "size": [
+                0
+            ],
+            "time_windows": [
+                {
+                    "earliest": 0,
+                    "latest": 9223372036854776000
+                },
+                {
+                    "earliest": 0,
+                    "latest": 9223372036854776000
+                }
+            ],
+            "type": "service"
+        }
+    ],
+    "shipments": [
+        {
+            "id": "<string>",
+            "pickup": {
+                "address": {
+                    "location_id": "<string>",
+                    "lon": "<double>",
+                    "lat": "<double>",
+                    "curbside": "any",
+                    "name": "<string>",
+                    "street_hint": "<string>"
+                },
+                "duration": 0,
+                "group": "<string>",
+                "preparation_time": 0,
+                "time_windows": [
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    },
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    }
+                ]
+            },
+            "delivery": {
+                "address": {
+                    "location_id": "<string>",
+                    "lon": "<double>",
+                    "lat": "<double>",
+                    "curbside": "any",
+                    "name": "<string>",
+                    "street_hint": "<string>"
+                },
+                "duration": 0,
+                "group": "<string>",
+                "preparation_time": 0,
+                "time_windows": [
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    },
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    }
+                ]
+            },
+            "allowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "disallowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "max_time_in_vehicle": 9223372036854776000,
+            "name": "<string>",
+            "priority": 2,
+            "required_skills": [
+                "<string>",
+                "<string>"
+            ],
+            "size": [
+                0
+            ]
+        },
+        {
+            "id": "<string>",
+            "pickup": {
+                "address": {
+                    "location_id": "<string>",
+                    "lon": "<double>",
+                    "lat": "<double>",
+                    "curbside": "any",
+                    "name": "<string>",
+                    "street_hint": "<string>"
+                },
+                "duration": 0,
+                "group": "<string>",
+                "preparation_time": 0,
+                "time_windows": [
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    },
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    }
+                ]
+            },
+            "delivery": {
+                "address": {
+                    "location_id": "<string>",
+                    "lon": "<double>",
+                    "lat": "<double>",
+                    "curbside": "any",
+                    "name": "<string>",
+                    "street_hint": "<string>"
+                },
+                "duration": 0,
+                "group": "<string>",
+                "preparation_time": 0,
+                "time_windows": [
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    },
+                    {
+                        "earliest": 0,
+                        "latest": 9223372036854776000
+                    }
+                ]
+            },
+            "allowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "disallowed_vehicles": [
+                "<string>",
+                "<string>"
+            ],
+            "max_time_in_vehicle": 9223372036854776000,
+            "name": "<string>",
+            "priority": 2,
+            "required_skills": [
+                "<string>",
+                "<string>"
+            ],
+            "size": [
+                0
+            ]
+        }
+    ],
+    "vehicle_types": [
+        {
+            "type_id": "<string>",
+            "capacity": [
+                0
+            ],
+            "consider_traffic": false,
+            "cost_per_activation": "<double>",
+            "cost_per_meter": "<double>",
+            "cost_per_second": "<double>",
+            "network_data_provider": "openstreetmap",
+            "profile": {
+                "value": "<Error: Could not resolve allOf schema"
+            },
+            "service_time_factor": 1,
+            "speed_factor": 1
+        },
+        {
+            "type_id": "<string>",
+            "capacity": [
+                0
+            ],
+            "consider_traffic": false,
+            "cost_per_activation": "<double>",
+            "cost_per_meter": "<double>",
+            "cost_per_second": "<double>",
+            "network_data_provider": "openstreetmap",
+            "profile": {
+                "value": "<Error: Could not resolve allOf schema"
+            },
+            "service_time_factor": 1,
+            "speed_factor": 1
+        }
+    ],
+    "vehicles": [
+        {
+            "vehicle_id": "<string>",
+            "start_address": {
+                "location_id": "<string>",
+                "lon": "<double>",
+                "lat": "<double>",
+                "curbside": "any",
+                "name": "<string>",
+                "street_hint": "<string>"
+            },
+            "break": {
+                "earliest": "<long>",
+                "latest": "<long>",
+                "duration": "<long>"
+            },
+            "earliest_start": 0,
+            "end_address": {
+                "location_id": "<string>",
+                "lon": "<double>",
+                "lat": "<double>",
+                "curbside": "any",
+                "name": "<string>",
+                "street_hint": "<string>"
+            },
+            "latest_end": 9223372036854776000,
+            "max_activities": "<integer>",
+            "max_distance": "<long>",
+            "max_driving_time": "<long>",
+            "max_jobs": "<integer>",
+            "move_to_end_address": "<boolean>",
+            "return_to_depot": true,
+            "skills": [
+                "<string>",
+                "<string>"
+            ],
+            "type_id": "default-type"
+        }
+    ]
+})
+
+
+// This endpoint returns the solution of a vehicle routing problems submitted to the [Batch Route Optimization endpoint](#operation/asyncVRP).
+// You can fetch it with the job_id, you have been sent.
+
+@name("GET Batch Solution Endpoint") : "base-inherit-auth"
+GET "https://{{baseUrl}}/vrp/solution/:jobId"
+
+
+

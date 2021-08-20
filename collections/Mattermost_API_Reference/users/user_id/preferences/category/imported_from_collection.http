@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Lists the current user's stored preferences in the given category.n##### PermissionsnMust be logged in as the user being updated or have the `edit_other_users` permission.n
+
+@name("List a user's preferences by category")
+GET "https://{{baseUrl}}/users/:user_id/preferences/:category"
+
+
+// Gets a single preference for the current user with the given category and name.n##### PermissionsnMust be logged in as the user being updated or have the `edit_other_users` permission.n
+
+@name("Get a specific user preference")
+GET "https://{{baseUrl}}/users/:user_id/preferences/:category/name/:preference_name"
+
+
+

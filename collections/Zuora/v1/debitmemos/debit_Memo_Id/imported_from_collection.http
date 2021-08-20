@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** The Advanced AR Settlement feature is in **Limited Availability**. This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnDeletes a debit memo. Only debit memos with the Cancelled status can be deleted. nnYou can delete a debit memo only if you have the user permission. See [Billing Roles](https://knowledgecenter.zuora.com/CF_Users_a
+
+@name("Delete debit memo")
+DELETE "https://{{baseUrl}}/v1/debitmemos/:debitMemoId"
+
+
+// **Note:** The Advanced AR Settlement feature is in **Limited Availability**. This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnCancels a debit memo. Only debit memos with the Draft status can be cancelled. nnYou can cancel a debit memo only if you have the user permission. See [Billing Roles](https://knowledgecenter.zuora.com/CF_Users_and
+
+@name("Cancel debit memo")
+PUT "https://{{baseUrl}}/v1/debitmemos/:debitMemoId/cancel"
+
+
+// **Note:** The Advanced AR Settlement feature is in **Limited Availability**. This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnSends a posted debit memo to the specified email addresses manually.nnnn## Notesn  - You must activate the **Email Debit Memo | Manually email Debit Memo** notification before emailing debit memos. To include the 
+
+@name("Email debit memo")
+POST "https://{{baseUrl}}/v1/debitmemos/:debitMemoId/emails"
+
+
+// **Note:** The Advanced AR Settlement feature is in **Limited Availability**. This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnCreates PDF for a specified debit memo. To access the generated PDF, you can download it by clicking **View PDF** on the detailed debit memo page through the Zuora UI.n
+
+@name("Create debit memo PDF")
+POST "https://{{baseUrl}}/v1/debitmemos/:debitMemoId/pdfs"
+
+
+// **Note:** The Advanced AR Settlement feature is in **Limited Availability**. This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnPosts a debit memo to activate it. You can post debit memos only if you have the [Billing permissions](https://knowledgecenter.zuora.com/CF_Users_and_Administrators/A_Administrator_Settings/User_Roles/d_Billing_Ro
+
+@name("Post debit memo")
+PUT "https://{{baseUrl}}/v1/debitmemos/:debitMemoId/post"
+
+
+// **Note:** This feature is only available if you have the Advanced AR Settlement feature enabled. The Advanced AR Settlement feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnCreates taxation items for a debit memo.n
+
+@name("Create taxation items for debit memo")
+POST "https://{{baseUrl}}/v1/debitmemos/:debitMemoId/taxationitems"
+
+
+

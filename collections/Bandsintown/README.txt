@@ -1,0 +1,5 @@
+# What is the Bandsintown API?nThe Bandsintown API is designed for enterprise partners and artists with websites, media players, and/or mobile applications that would like to list an artist's events and provide their users with the ability to buy tickets and RSVP to these events.nnIt offers read-only access to artist info and artist events:n- artist info: returns the link to the Bandsintown artist page, the link to the artist photo, the current number of trackers and moren- artist events: returns the list of upcoming events including their date and time, venue name and location, ticket links, lineup, description and the link to the Bandsintown event pagennNote you can also search for events on a given date or within a given date range, including past dates.nn# Getting Startedn- In order to use the Bandsintown API, you must have written consent from Bandsintown Inc. Any other use of the Bandsintown API is prohibited. [Contact Bandsintown](http://help.bandsintown.com/) to tell us what yo
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

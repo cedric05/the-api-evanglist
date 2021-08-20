@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7d2c214b-77c4-4e90-8dc4-3cd4493a1c9a.postman_collection.json
+
+// Get Startup
+
+@name("Get Startup")
+GET "https://{{baseUrl}}/startups/:startup_id"
+
+
+// Get Startup Comments
+
+@name("Get Startup Comments")
+GET "https://{{baseUrl}}/startups/:startup_id/comments"
+
+
+// Get Startup Roles
+
+@name("Get Startup Roles")
+GET "https://{{baseUrl}}/startups/:startup_id/roles"
+
+
+

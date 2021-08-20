@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cf55551-2c7b-4b64-b9aa-1a2b870aef17.postman_collection.json
+
+@name("Obtain leaders for a given year.")
+GET "https://{{baseUrl}}/mlb-t5/seasontd/:year/:mlb_season/leaders/statistics{{format}}"
+
+
+// Obtain league and division rank for each team, including post season clinching status (available beginning with 2014 season)
+
+@name("Obtain league and division rank for each team, inc...")
+GET "https://{{baseUrl}}/mlb-t5/seasontd/:year/:mlb_season/rankings{{format}}"
+
+
+// Obtain Standings for the MLB for a given season. Standing data is not valid for 2012 as we do not have a full season available.
+
+@name("Obtain Standings for the MLB for a given season. S...")
+GET "https://{{baseUrl}}/mlb-t5/seasontd/:year/:mlb_season/standings{{format}}"
+
+
+

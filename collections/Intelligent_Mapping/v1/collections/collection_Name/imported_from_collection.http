@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-940631ab-b80d-496e-a8ee-7bdf98c1ca94.postman_collection.json
+
+// Returns the full GeoJSON FeatureCollection uploaded for this collection.nAll GeoJSON Features will be as originally uploaded with the addition ofna featureId attribute that uniquely identifies the feature across allnyour collections.n
+
+@name("Return all data for a collection")
+GET "https://{{baseUrl}}/v1/collections/:collectionName"
+
+
+// Returns GeoJSON of type FeatureCollection containing all GeoJSON featuresnfrom the named collection with a matching GeoJSON id.n
+
+@name("Return feature")
+GET "https://{{baseUrl}}/v1/collections/:collectionName/features"
+
+
+// Returns the size of the specified collection to decide whether to use the whole collection for spatial querynor not.n
+
+@name("Return the size of a collection.")
+GET "https://{{baseUrl}}/v1/collections/:collectionName/collectionSize"
+
+
+// Returns GeoJSON of type FeatureCollection containing all GeoJSON features from the named collection that matchnthe supplied search string.nnThe search text consists of one or more strings that can be space or comma separated. A match with a givennfeature occurs only if an exact match can be found for each of the strings in the search text amongst anconcatenation of the values of child members of the top level 'properties' member of the feature,ntogether with the value of its GeoJSON id. The matc
+
+@name("Free text search of a feature collection")
+GET "https://{{baseUrl}}/v1/collections/:collectionName/text"
+? "q"= "<>"
+
+
+// Returns Clustering data for the specified collection that exist fullyn or partially within the specified bounding box. The bounding box isn defined by two coordinates in the EPSG:4326 (WGS84)n (for further details see http://epsg.io/4326):n * left (longitude), bottom (latitude)n * right (longitude), top (latitude)n
+
+@name("Returns clustering data for collection features in specified bounding box")
+GET "https://{{baseUrl}}/v1/collections/:collectionName/cluster"
+
+
+

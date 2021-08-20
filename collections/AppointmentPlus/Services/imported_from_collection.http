@@ -1,0 +1,87 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Retrieve a list of locations that offer the specific service.
+
+@name("GetAssignedLocations")
+POST "https://{{baseUrl}}/Services/GetAssignedLocations"
+? "service_id"= "<integer>"
+
+
+// Returns the details for all services, including regular services, addon services, and events.  If none of the optional parameters are sent, the method will return the details for all services at all locations.
+
+@name("GetServices")
+POST "https://{{baseUrl}}/Services/GetServices"
+? "service_id"= "<integer>"
+? "location_id"= "<integer>"
+? "title"= "<string>"
+? "service_type"= "<string>"
+? "product_code"= "<string>"
+? "include_translations"= "<boolean>"
+
+
+// Deletes a service or addon service.  This action cannot be undone. This will not delete any associated appointments.
+
+@name("DeleteServices")
+POST "https://{{baseUrl}}/Services/DeleteServices"
+? "service_id"= "<integer>"
+
+
+// Returns the details for addon services.  To retrieve the details for a single addon service, use the `addon_service_id` parameter.  If your account is using the preference to enable assigning addons to services, you can send send the `service_id` to find only the addons that are assigned to the specified service.  If `include_translations` is true, then a sub-object containing language-translation information will be returned in the response.
+
+@name("GetAddons")
+POST "https://{{baseUrl}}/Services/GetAddons"
+? "location_id"= "<integer>"
+? "addon_service_id"= "<integer>"
+? "service_id"= "<integer>"
+? "include_translations"= "<boolean>"
+
+
+// Updates a service or addon service.
+
+@name("UpdateServices")
+POST "https://{{baseUrl}}/Services/UpdateServices"
+? "service_id"= "<integer>"
+? "location_id"= "<integer>"
+? "title"= "<string>"
+? "type"= "<integer>"
+? "duration"= "<integer>"
+? "description"= "<string>"
+? "cost"= "<number>"
+? "display"= "<string>"
+? "spots"= "<integer>"
+? "product_code"= "<string>"
+? "sort_order"= "<integer>"
+? "taxable"= "<string>"
+? "internal_description"= "<string>"
+
+
+// Retrieve a list of staff members who offer a specific service at a given location.  Use the status parameter to filter the results to staff members of the given status. Valid values are active or inactive.
+
+@name("GetAssignedStaff")
+POST "https://{{baseUrl}}/Services/GetAssignedStaff"
+? "location_id"= "<integer>"
+? "service_id"= "<integer>"
+? "status"= "<string>"
+
+
+// Creates a service or addon service.
+
+@name("CreateServices")
+POST "https://{{baseUrl}}/Services/CreateServices"
+? "location_id"= "<integer>"
+? "title"= "<string>"
+? "type"= "<integer>"
+? "duration"= "<integer>"
+? "description"= "<string>"
+? "cost"= "<number>"
+? "display"= "<string>"
+? "spots"= "<integer>"
+? "product_code"= "<string>"
+? "sort_order"= "<integer>"
+? "taxable"= "<string>"
+? "internal_description"= "<string>"
+
+
+

@@ -1,0 +1,68 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-51a922a3-552d-4075-ac95-f80fd77c5d4c.postman_collection.json
+
+// Returns valid deep links for the provided input parameters
+
+@name("Deep Links")
+GET "https://{{baseUrl}}/offers/fares/deeplink"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "trackingid"= "<>"
+? "country"= "<>"
+? "lang"= "<>"
+? "origin"= "<>"
+? "destination"= "<>"
+? "travel"= "<>"
+? "return"= "<>"
+? "cabin"= "<>"
+? "outbound"= "<>"
+? "travelers"= "<>"
+? "fare"= "<>"
+? "net"= "<>"
+? "partnerid"= "<>"
+? "encryption"= "<>"
+
+
+// Returns valid LH deep links (FFP - links to flight selection screen on LH.COM)
+
+@name("LH Deep Links - FFP")
+GET "https://{{baseUrl}}/offers/fares/deeplink/ffp"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "origin"= "<>"
+? "destination"= "<>"
+? "travel"= "<>"
+? "trackingid"= "<>"
+? "country"= "<>"
+? "lang"= "<>"
+? "return"= "<>"
+? "cabin"= "<>"
+? "travelers"= "<>"
+? "partnerid"= "<>"
+? "encryption"= "<>"
+
+
+// Returns valid LH deep links (ITCO - links to shopping cart on LH.COM)
+
+@name("LH Deep Links - ITCO")
+GET "https://{{baseUrl}}/offers/fares/deeplink/itco"
+"Accept": "<>"
+? "catalogues"= "<>"
+? "origin"= "<>"
+? "destination"= "<>"
+? "travel"= "<>"
+? "outbound"= "<>"
+? "fare"= "<>"
+? "trackingid"= "<>"
+? "country"= "<>"
+? "lang"= "<>"
+? "return"= "<>"
+? "cabin"= "<>"
+? "travelers"= "<>"
+? "net"= "<>"
+? "partnerid"= "<>"
+? "encryption"= "<>"
+
+
+

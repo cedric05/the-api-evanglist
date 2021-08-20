@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Create a new channel.n##### PermissionsnIf creating a public channel, `create_public_channel` permission is required. If creating a private channel, `create_private_channel` permission is required.n
+
+@name("Create a channel")
+POST "https://{{baseUrl}}/channels"
+
+
+// Create a new direct message channel between two users.n##### PermissionsnMust be one of the two users and have `create_direct_channel` permission. Having the `manage_system` permission voids the previous requirements.n
+
+@name("Create a direct message channel")
+POST "https://{{baseUrl}}/channels/direct"
+
+
+// Create a new group message channel to group of users. If the logged in user's id is not included in the list, it will be appended to the end.n##### PermissionsnMust have `create_group_channel` permission.n
+
+@name("Create a group message channel")
+POST "https://{{baseUrl}}/channels/group"
+
+
+// Perform all the actions involved in viewing a channel. This includes marking channels as read, clearing push notifications, and updating the active channel.n##### PermissionsnMust be logged in as user or have `edit_other_users` permission.nn__Response only includes `last_viewed_at_times` in Mattermost server 4.3 and newer.__n
+
+@name("View channel")
+POST "https://{{baseUrl}}/channels/members/:user_id/view"
+
+
+

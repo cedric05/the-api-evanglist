@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba6572bc-3c63-4861-923c-7002a7305149.postman_collection.json
+
+// ### Description
+// This call returns all payment accounts that are relevant the PSU on behalf of whom the AISP is connected.
+// Thanks to HYPERMEDIA, each account is returned with the links aiming to ease access to the relevant transactions and balances.
+// The result may be subject to pagination (i.e. retrieving a partial result in case of having too many results) through a set of pages by the ASPSP. Thereafter, the AISP may ask for the first, next, previous or last page of results.
+// 
+// ### Prerequisites
+//   
+// - The TPP has been registered by the Registration Authority for the AISP role.
+// - The TPP and the PSU have a contract that has been enrolled by the ASPSP            
+//     - At this step, the ASPSP has delivered an OAUTH2 "Authorization Code" or "Resource Owner Password" access token to the TPP (cf. § 3.4.2).
+// - The TPP and the ASPSP have successfully processed a mutual check and authentication
+// - The TPP has presented its OAUTH2 "Authorization Code" or "Resource Owner Password" access token which allows the ASPSP to identify the relevant PSU and retrieve the linked PSU context (cf. § 3.4.2) if any.
+// - The ASPSP takes into account the access token that establishes the link between the PSU and the AISP.
+//   
+// ### Business Flow
+// The TPP sends a request to the ASPSP for retrieving the list of the PSU payment accounts.
+// The ASPSP computes the relevant PSU accounts and builds the answer as an accounts list. 
+// The result may be subject to pagination in order to avoid an excessive result set. 
+// Each payment account will be provided with its characteristics.
+
+@name("Retrieval of the PSU accounts (AISP)")
+GET "https://{{baseUrl}}/accounts"
+"Authorization": "veniam nostrud mollit"
+"PSU-IP-Address": "veniam nostrud mollit"
+"PSU-IP-Port": "veniam nostrud mollit"
+"PSU-HTTP-Method": "veniam nostrud mollit"
+"PSU-Date": "veniam nostrud mollit"
+"PSU-GEO-Location": "veniam nostrud mollit"
+"PSU-User-Agent": "veniam nostrud mollit"
+"PSU-Referer": "veniam nostrud mollit"
+"PSU-Accept": "veniam nostrud mollit"
+"PSU-Accept-Charset": "veniam nostrud mollit"
+"PSU-Accept-Encoding": "veniam nostrud mollit"
+"PSU-Accept-Language": "veniam nostrud mollit"
+"PSU-Device-ID": "veniam nostrud mollit"
+"Digest": "veniam nostrud mollit"
+"Signature": "veniam nostrud mollit"
+"X-Request-ID": "pro"
+
+
+

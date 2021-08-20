@@ -1,0 +1,9 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c06f082c-7c18-4317-b196-8ad07101a2f4.postman_collection.json
+
+@name("Return a list of pathways based on search term and species type.  3=rat 4=chinchilla")
+GET "https://{{baseUrl}}/phenotype/phenominer/chart/:speciesTypeKey/:termString"
+
+
+

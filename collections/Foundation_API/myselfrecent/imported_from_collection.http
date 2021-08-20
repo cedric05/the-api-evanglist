@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets recent object list for the current user.
+
+@name("Gets recent object list for the current user")
+GET "https://{{baseUrl}}/myself/recent/objects"
+? "count"= "<>"
+
+
+// Gets recent project list for the current user.
+
+@name("Gets recent project list for the current user")
+GET "https://{{baseUrl}}/myself/recent/projects"
+? "count"= "<>"
+
+
+

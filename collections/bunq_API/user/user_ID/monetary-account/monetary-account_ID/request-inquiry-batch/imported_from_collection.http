@@ -1,0 +1,1698 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Return all the request batches for a monetary account.
+
+@name("List all Request Inquiry Batch for User Monetary Account")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/request-inquiry-batch"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create a request batch by sending an array of single request objects, that will become part of the batch.
+
+@name("CREATE Request Inquiry Batch for User Monetary Account")
+POST "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/request-inquiry-batch"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "event_id": "<integer>",
+    "request_inquiries": [
+        {
+            "address_billing": {
+                "city": "aute ex",
+                "country": "sint in ut",
+                "extra": "cillum velit aute",
+                "house_number": "occaecat cupidatat adipisicing reprehe",
+                "mailbox_name": "non in labore",
+                "po_box": "voluptate",
+                "postal_code": "non reprehenderit proident sit",
+                "province": "in Ut",
+                "street": "ipsum"
+            },
+            "address_shipping": {
+                "city": "labore occaecat",
+                "country": "dolor",
+                "extra": "dolore labore exercitation dolor",
+                "house_number": "esse in in",
+                "mailbox_name": "voluptate laboris exercitation qui",
+                "po_box": "ea sunt irure reprehenderit ullamco",
+                "postal_code": "cillum in",
+                "province": "pariatur cupidatat",
+                "street": "elit cillum officia"
+            },
+            "amount_inquired": {
+                "currency": "sit pariatur",
+                "value": "ni"
+            },
+            "amount_responded": {
+                "currency": "et magna",
+                "value": "dolor ipsum adipisicing ea"
+            },
+            "attachment": [
+                {
+                    "id": -95609871
+                },
+                {
+                    "id": -73468815
+                }
+            ],
+            "batch_id": 79864718,
+            "bunqme_share_url": "qui",
+            "counterparty_alias": {
+                "avatar": {
+                    "anchor_uuid": "dolor quis labore consectetur ad",
+                    "image": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "uuid": "<string>"
+                },
+                "bunq_me": {
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "country": "Exc",
+                "display_name": "ipsum",
+                "iban": "cupidatat deserunt",
+                "is_light": true,
+                "label_user": {
+                    "avatar": {
+                        "anchor_uuid": "eiusm",
+                        "image": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "uuid": "<string>"
+                    },
+                    "country": "est minim",
+                    "display_name": "anim",
+                    "public_nick_name": "sed laborum Duis",
+                    "uuid": "cupidatat elit ut tempor"
+                },
+                "merchant_category_code": "aliquip a",
+                "swift_account_number": "esse",
+                "swift_bic": "tempor dolore",
+                "transferwise_account_number": "incididunt elit enim mollit",
+                "transferwise_bank_code": "dolor dolore ut ut sunt"
+            },
+            "created": "dolor tempor amet laboris reprehenderit",
+            "description": "<string>",
+            "geolocation": {
+                "altitude": 1893628,
+                "latitude": 45967268,
+                "longitude": -53786306,
+                "radius": -5436175
+            },
+            "id": 90409923,
+            "merchant_reference": "<string>",
+            "minimum_age": "<integer>",
+            "monetary_account_id": 73841213,
+            "redirect_url": "<string>",
+            "reference_split_the_bill": {
+                "BillingInvoice": {
+                    "address": {
+                        "city": "esse minim elit",
+                        "country": "in",
+                        "extra": "occaecat eiusmod in enim",
+                        "house_number": "non qui",
+                        "mailbox_name": "proident irure in nostrud",
+                        "po_box": "sit nostrud incididunt ullamco",
+                        "postal_code": "in",
+                        "province": "commodo sed deserunt",
+                        "street": "reprehenderit adipis"
+                    },
+                    "alias": {
+                        "avatar": {
+                            "anchor_uuid": "nulla irure",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "mollit ullamco culpa",
+                        "display_name": "culpa commodo",
+                        "iban": "et exercitation",
+                        "is_light": false,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "in",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "amet quis sed sit dolore",
+                            "display_name": "anim",
+                            "public_nick_name": "ut et labore dolore",
+                            "uuid": "irure minim quis"
+                        },
+                        "merchant_category_code": "exercitation l",
+                        "swift_account_number": "reprehenderit in",
+                        "swift_bic": "ad",
+                        "transferwise_account_number": "enim quis",
+                        "transferwise_bank_code": "ex eu"
+                    },
+                    "category": "velit consequat",
+                    "chamber_of_commerce_number": "in",
+                    "counterparty_address": {
+                        "city": "ad",
+                        "country": "ad Duis",
+                        "extra": "ut",
+                        "house_number": "commodo minim aliqua",
+                        "mailbox_name": "eiusmod officia ipsum sunt et",
+                        "po_box": "dolore velit eu Duis enim",
+                        "postal_code": "dolor enim in",
+                        "province": "cillum fugiat aliquip veniam amet",
+                        "street": "aliquip esse tempor veniam"
+                    },
+                    "counterparty_alias": {
+                        "avatar": {
+                            "anchor_uuid": "sit elit",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "in ullamco",
+                        "display_name": "consectetu",
+                        "iban": "ex sit",
+                        "is_light": false,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "sit in do et",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "enim i",
+                            "display_name": "in dolor laboris aliquip enim",
+                            "public_nick_name": "aliquip nulla dolor et",
+                            "uuid": "eu aliquip nulla ex"
+                        },
+                        "merchant_category_code": "in",
+                        "swift_account_number": "exercitation dolore officia eu enim",
+                        "swift_bic": "eu anim dolor",
+                        "transferwise_account_number": "deserunt proident",
+                        "transferwise_bank_code": "dolore qui"
+                    },
+                    "created": "commodo nulla mollit incididunt irure",
+                    "group": [
+                        {
+                            "instance_description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "item": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "product_vat_exclusive": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "product_vat_inclusive": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type_description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type_description_translated": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "instance_description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "item": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "product_vat_exclusive": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "product_vat_inclusive": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type_description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type_description_translated": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "id": 73643042,
+                    "invoice_date": "in voluptate",
+                    "invoice_number": "dolore eu ad",
+                    "request_reference_split_the_bill": [
+                        {
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "status": "cillum amet Duis",
+                    "total_vat": {
+                        "currency": "sit occaecat eiusmod",
+                        "value": "adipisici"
+                    },
+                    "total_vat_exclusive": {
+                        "currency": "dolore",
+                        "value": "aliquip"
+                    },
+                    "total_vat_inclusive": {
+                        "currency": "Duis nostrud",
+                        "value": "commodo Lorem enim"
+                    },
+                    "updated": "consequat esse deserunt",
+                    "vat_number": "cillum magna id"
+                },
+                "DraftPayment": {
+                    "entries": [
+                        {
+                            "alias": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "amount": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "attachment": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "counterparty_alias": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "merchant_reference": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "alias": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "amount": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "attachment": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "counterparty_alias": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "merchant_reference": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "schedule": {
+                        "object": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "recurrence_size": 90075498,
+                        "recurrence_unit": "tempor sint mollit",
+                        "status": "culpa aliquip ex",
+                        "time_end": "eiusmod Lorem",
+                        "time_start": "aliquip esse elit eiusmod"
+                    },
+                    "status": "<string>"
+                },
+                "MasterCardAction": {
+                    "alias": {
+                        "avatar": {
+                            "anchor_uuid": "eiusmod ut velit veniam",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "repre",
+                        "display_name": "tempor nostrud occaecat eiusmod aliqua",
+                        "iban": "occaecat minim nisi sint",
+                        "is_light": true,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "cillum incididunt",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "exercitation qui",
+                            "display_name": "tempor amet",
+                            "public_nick_name": "esse incididun",
+                            "uuid": "laborum nostrud es"
+                        },
+                        "merchant_category_code": "culpa non est",
+                        "swift_account_number": "amet veniam",
+                        "swift_bic": "ad ut est fugiat dolor",
+                        "transferwise_account_number": "non amet",
+                        "transferwise_bank_code": "consequat cupidatat elit"
+                    },
+                    "amount_billing": {
+                        "currency": "velit non",
+                        "value": "qui"
+                    },
+                    "amount_converted": {
+                        "currency": "Lorem",
+                        "value": "dolor"
+                    },
+                    "amount_fee": {
+                        "currency": "nisi aliqua",
+                        "value": "et"
+                    },
+                    "amount_local": {
+                        "currency": "ipsum",
+                        "value": "nostrud do consequat ut"
+                    },
+                    "amount_original_billing": {
+                        "currency": "Duis in in irure nul",
+                        "value": "nulla"
+                    },
+                    "amount_original_local": {
+                        "currency": "ut ullamco esse",
+                        "value": "enim"
+                    },
+                    "applied_limit": "non",
+                    "authorisation_status": "dolore anim nostrud",
+                    "authorisation_type": "laboris incididunt elit",
+                    "card_authorisation_id_response": "sint velit elit non consectetur",
+                    "card_id": 87254053,
+                    "city": "mollit in est velit",
+                    "clearing_expiry_time": "quis dolore incididunt",
+                    "clearing_status": "adipisicing sint dolore",
+                    "counterparty_alias": {
+                        "avatar": {
+                            "anchor_uuid": "officia qui aute",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "eu pariatur non",
+                        "display_name": "non",
+                        "iban": "eiusmod mollit aute ",
+                        "is_light": true,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "tempor",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "anim",
+                            "display_name": "ut laborum d",
+                            "public_nick_name": "occaecat officia culpa voluptate",
+                            "uuid": "anim veniam"
+                        },
+                        "merchant_category_code": "Excepteur ea consectetur dolor",
+                        "swift_account_number": "sunt cupidatat nulla",
+                        "swift_bic": "sed deserunt ex velit",
+                        "transferwise_account_number": "ut labo",
+                        "transferwise_bank_code": "Lorem ipsum"
+                    },
+                    "decision": "exercitation reprehenderit laboris",
+                    "decision_description": "sit sed velit reprehenderit",
+                    "decision_description_translated": "nulla ex officia elit",
+                    "description": "sit",
+                    "id": -88775003,
+                    "label_card": {
+                        "expiry_date": "ipsum dolore",
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "mollit nisi",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "consequat aliquip",
+                            "display_name": "reprehenderit dolor laborum ame",
+                            "public_nick_name": "labore culpa ullamco nisi",
+                            "uuid": "consectetur ex"
+                        },
+                        "second_line": "eu dolore Excepteur",
+                        "status": "nisi labore nostrud",
+                        "type": "ea",
+                        "uuid": "deserunt officia nulla dolor"
+                    },
+                    "maturity_date": "et ",
+                    "monetary_account_id": 59542539,
+                    "pan_entry_mode_user": "enim mollit magna",
+                    "payment_status": "in in",
+                    "request_reference_split_the_bill": [
+                        {
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "reservation_expiry_time": "reprehenderit Lorem",
+                    "secure_code_id": -51104641,
+                    "settlement_status": "Lorem elit culpa",
+                    "token_status": "ut Duis eiusmod Excepteur",
+                    "wallet_provider_id": "incidi"
+                },
+                "Payment": {
+                    "address_billing": {
+                        "city": "sit exercitation",
+                        "country": "dolor dolore",
+                        "extra": "cillum dolor aute ea",
+                        "house_number": "ullamco tempor anim proident",
+                        "mailbox_name": "voluptate",
+                        "po_box": "do et adipisicing",
+                        "postal_code": "eu cupidatat incididunt",
+                        "province": "Lorem tempor ut laborum",
+                        "street": "dolor nisi"
+                    },
+                    "address_shipping": {
+                        "city": "ut do Duis eiusmod",
+                        "country": "dolore ipsum esse",
+                        "extra": "occaecat laboris consectetur",
+                        "house_number": "sunt Duis in",
+                        "mailbox_name": "in",
+                        "po_box": "commodo in ut sunt consequat",
+                        "postal_code": "ut",
+                        "province": "Duis f",
+                        "street": "Ut"
+                    },
+                    "alias": {
+                        "avatar": {
+                            "anchor_uuid": "id officia",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "labore in",
+                        "display_name": "nisi Lorem in",
+                        "iban": "dolore ipsum Duis",
+                        "is_light": false,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "ad qui anim consectetur elit",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "dolor dolore elit",
+                            "display_name": "exercitation consequat amet",
+                            "public_nick_name": "nisi commodo incididunt in",
+                            "uuid": "ut"
+                        },
+                        "merchant_category_code": "sunt fugiat consectetur",
+                        "swift_account_number": "dolore proident",
+                        "swift_bic": "nisi labore voluptate",
+                        "transferwise_account_number": "proident sunt dolore in",
+                        "transferwise_bank_code": "irure reprehenderit aliqua"
+                    },
+                    "amount": {
+                        "currency": "dolore non in exercitation",
+                        "value": "Duis et minim adipisicing Lorem"
+                    },
+                    "attachment": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "balance_after_mutation": {
+                        "currency": "quis officia",
+                        "value": "ad sed ipsum fugiat"
+                    },
+                    "batch_id": -55206668,
+                    "bunqto_expiry": "magna Lorem in reprehenderit",
+                    "bunqto_share_url": "cillum officia sed amet",
+                    "bunqto_status": "enim",
+                    "bunqto_sub_status": "consequat sint pariatur",
+                    "bunqto_time_responded": "sed pariatur ea",
+                    "counterparty_alias": {
+                        "avatar": {
+                            "anchor_uuid": "deserunt culpa",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "incididunt dolor consequat",
+                        "display_name": "occaecat Duis aute",
+                        "iban": "in Duis commodo ut reprehenderit",
+                        "is_light": false,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "anim in nulla dolore",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "cupidatat tempor",
+                            "display_name": "tempor veniam anim",
+                            "public_nick_name": "deserunt nisi laboris tempor aliquip",
+                            "uuid": "in sit ut"
+                        },
+                        "merchant_category_code": "qui",
+                        "swift_account_number": "id do elit",
+                        "swift_bic": "Excepteur adipisicing culpa",
+                        "transferwise_account_number": "eu aliqua dolor",
+                        "transferwise_bank_code": "fugiat exercitation officia"
+                    },
+                    "created": "velit Excepteur i",
+                    "description": "<string>",
+                    "geolocation": {
+                        "altitude": -8096492,
+                        "latitude": -95030383,
+                        "longitude": 33373604,
+                        "radius": -1435963
+                    },
+                    "id": -93414925,
+                    "merchant_reference": "<string>",
+                    "monetary_account_id": 44389704,
+                    "request_reference_split_the_bill": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "scheduled_id": 13133241,
+                    "sub_type": "quis elit",
+                    "type": "sunt dolore non nisi reprehenderit",
+                    "updated": "eu"
+                },
+                "PaymentBatch": {
+                    "payments": {
+                        "Payment": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    }
+                },
+                "RequestResponse": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ScheduleInstance": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "TabResultResponse": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "TransferwisePayment": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "WhitelistResult": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "require_address": "<string>",
+            "scheduled_id": 58916530,
+            "status": "<string>",
+            "time_expiry": "labore",
+            "time_responded": "aute in",
+            "updated": "esse",
+            "user_alias_created": {
+                "avatar": {
+                    "anchor_uuid": "in",
+                    "image": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "uuid": "<string>"
+                },
+                "country": "fugiat",
+                "display_name": "officia dolor",
+                "public_nick_name": "magna",
+                "uuid": "incididunt anim"
+            },
+            "user_alias_revoked": {
+                "avatar": {
+                    "anchor_uuid": "elit",
+                    "image": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "uuid": "<string>"
+                },
+                "country": "sit nulla cillum",
+                "display_name": "ea ut dolore",
+                "public_nick_name": "eiusmod cupidatat incididunt ad",
+                "uuid": "nisi sint dolore amet do"
+            }
+        },
+        {
+            "address_billing": {
+                "city": "eu nostrud aliqua cillum",
+                "country": "et laborum",
+                "extra": "fugiat consequat D",
+                "house_number": "nostrud",
+                "mailbox_name": "labore velit in",
+                "po_box": "in Lorem",
+                "postal_code": "velit in",
+                "province": "id irure voluptate dolore officia",
+                "street": "cupidatat Lorem"
+            },
+            "address_shipping": {
+                "city": "nisi in irure ut",
+                "country": "in qui voluptate",
+                "extra": "elit esse tempor ipsum",
+                "house_number": "Excepteur consequat incididunt",
+                "mailbox_name": "est ex exercitation",
+                "po_box": "non ut",
+                "postal_code": "et pariatur in aute enim",
+                "province": "commod",
+                "street": "in nisi deserunt esse"
+            },
+            "amount_inquired": {
+                "currency": "occaecat ad voluptate sint",
+                "value": "anim in ni"
+            },
+            "amount_responded": {
+                "currency": "dolore quis proident do",
+                "value": "anim ut mollit nisi deserunt"
+            },
+            "attachment": [
+                {
+                    "id": -51337673
+                },
+                {
+                    "id": 20605029
+                }
+            ],
+            "batch_id": 88040780,
+            "bunqme_share_url": "veniam in Excepteur",
+            "counterparty_alias": {
+                "avatar": {
+                    "anchor_uuid": "enim consequat laborum sint",
+                    "image": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "uuid": "<string>"
+                },
+                "bunq_me": {
+                    "name": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "type": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                "country": "ad non in nisi",
+                "display_name": "occaecat qui",
+                "iban": "fugiat id",
+                "is_light": false,
+                "label_user": {
+                    "avatar": {
+                        "anchor_uuid": "mollit ipsum",
+                        "image": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "uuid": "<string>"
+                    },
+                    "country": "esse consectetur quis adipisicing",
+                    "display_name": "est pariatur esse deserunt Duis",
+                    "public_nick_name": "commodo cillum",
+                    "uuid": "velit qui occaecat"
+                },
+                "merchant_category_code": "in minim",
+                "swift_account_number": "nostrud consectetur cupidatat minim",
+                "swift_bic": "ess",
+                "transferwise_account_number": "magna minim officia",
+                "transferwise_bank_code": "mollit deserunt nulla"
+            },
+            "created": "laborum ex Lorem mollit",
+            "description": "<string>",
+            "geolocation": {
+                "altitude": -19051773,
+                "latitude": -4201199,
+                "longitude": 55062851,
+                "radius": 39125128
+            },
+            "id": -32491769,
+            "merchant_reference": "<string>",
+            "minimum_age": "<integer>",
+            "monetary_account_id": -17050255,
+            "redirect_url": "<string>",
+            "reference_split_the_bill": {
+                "BillingInvoice": {
+                    "address": {
+                        "city": "fugiat tempor aliqua",
+                        "country": "irure culpa",
+                        "extra": "qui",
+                        "house_number": "velit voluptate deserunt cillum",
+                        "mailbox_name": "officia dolore irure ipsum",
+                        "po_box": "reprehenderit fugiat dolor",
+                        "postal_code": "nisi consequat qui do",
+                        "province": "laborum elit consectetur anim",
+                        "street": "consectetur cul"
+                    },
+                    "alias": {
+                        "avatar": {
+                            "anchor_uuid": "nisi consequat",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "nulla cons",
+                        "display_name": "do adi",
+                        "iban": "in minim id ad",
+                        "is_light": false,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "qui do esse ex",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "velit eu dolore esse quis",
+                            "display_name": "ea",
+                            "public_nick_name": "elit aliquip",
+                            "uuid": "Excepteur m"
+                        },
+                        "merchant_category_code": "culpa officia dolor in",
+                        "swift_account_number": "id Lorem tempor in",
+                        "swift_bic": "elit in magna ea minim",
+                        "transferwise_account_number": "sunt nulla in sit",
+                        "transferwise_bank_code": "tempor fugiat"
+                    },
+                    "category": "nisi",
+                    "chamber_of_commerce_number": "id cillu",
+                    "counterparty_address": {
+                        "city": "ullamco",
+                        "country": "ipsum Lorem",
+                        "extra": "ad dolor adipisicing non",
+                        "house_number": "amet quis",
+                        "mailbox_name": "magna",
+                        "po_box": "sint anim",
+                        "postal_code": "qui nisi fugiat",
+                        "province": "sed cillum non nostrud eu",
+                        "street": "sunt sed dolore"
+                    },
+                    "counterparty_alias": {
+                        "avatar": {
+                            "anchor_uuid": "occaecat in",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "in laboris reprehen",
+                        "display_name": "ut commodo minim est dolore",
+                        "iban": "incididunt tempor laboris",
+                        "is_light": true,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "ullamco aliquip",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "incididunt pariatur do sint esse",
+                            "display_name": "sed Lorem",
+                            "public_nick_name": "ut deserunt do",
+                            "uuid": "proident deserunt reprehenderit"
+                        },
+                        "merchant_category_code": "irure id occaecat",
+                        "swift_account_number": "enim labore esse ea",
+                        "swift_bic": "ea reprehenderit Ut do quis",
+                        "transferwise_account_number": "nulla incididunt",
+                        "transferwise_bank_code": "dolore est id"
+                    },
+                    "created": "fugiat sit sed",
+                    "group": [
+                        {
+                            "instance_description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "item": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "product_vat_exclusive": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "product_vat_inclusive": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type_description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type_description_translated": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "instance_description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "item": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "product_vat_exclusive": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "product_vat_inclusive": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type_description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type_description_translated": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "id": -15549234,
+                    "invoice_date": "Lorem cupidatat reprehen",
+                    "invoice_number": "proident qui Duis",
+                    "request_reference_split_the_bill": [
+                        {
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "status": "amet qui",
+                    "total_vat": {
+                        "currency": "sunt id velit deserunt mollit",
+                        "value": "dolor dolore velit Ut"
+                    },
+                    "total_vat_exclusive": {
+                        "currency": "est qui",
+                        "value": "ad amet mollit qui"
+                    },
+                    "total_vat_inclusive": {
+                        "currency": "aute do id",
+                        "value": "incididunt ullamco"
+                    },
+                    "updated": "anim sunt mollit",
+                    "vat_number": "aute labore dolore ut aliqua"
+                },
+                "DraftPayment": {
+                    "entries": [
+                        {
+                            "alias": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "amount": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "attachment": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "counterparty_alias": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "merchant_reference": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "alias": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "amount": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "attachment": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "counterparty_alias": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "description": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "merchant_reference": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "schedule": {
+                        "object": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "recurrence_size": 12159532,
+                        "recurrence_unit": "adipisicing elit culpa magna",
+                        "status": "ad officia",
+                        "time_end": "elit esse",
+                        "time_start": "et anim mollit"
+                    },
+                    "status": "<string>"
+                },
+                "MasterCardAction": {
+                    "alias": {
+                        "avatar": {
+                            "anchor_uuid": "voluptate",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "non Ut cupidatat",
+                        "display_name": "proident reprehenderit dolore sed",
+                        "iban": "voluptate sunt irure officia",
+                        "is_light": false,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "cup",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "quis id",
+                            "display_name": "qui culpa consequat ea laboris",
+                            "public_nick_name": "conseq",
+                            "uuid": "culpa est incididunt"
+                        },
+                        "merchant_category_code": "sed dolore aliqua",
+                        "swift_account_number": "ad adipisicing incididunt sed dolore",
+                        "swift_bic": "dolor commodo tempor id est",
+                        "transferwise_account_number": "ipsum nisi pariatur do",
+                        "transferwise_bank_code": "in"
+                    },
+                    "amount_billing": {
+                        "currency": "irure elit",
+                        "value": "eu ex voluptate"
+                    },
+                    "amount_converted": {
+                        "currency": "enim culpa sed Duis",
+                        "value": "Excepteur occaecat"
+                    },
+                    "amount_fee": {
+                        "currency": "irur",
+                        "value": "ea ullamco"
+                    },
+                    "amount_local": {
+                        "currency": "commodo nulla",
+                        "value": "dolor Ut sed"
+                    },
+                    "amount_original_billing": {
+                        "currency": "commodo eu officia in",
+                        "value": "quis reprehenderit enim ea"
+                    },
+                    "amount_original_local": {
+                        "currency": "ven",
+                        "value": "dolor incididunt officia"
+                    },
+                    "applied_limit": "mollit",
+                    "authorisation_status": "non ad elit deserunt veniam",
+                    "authorisation_type": "exercitation",
+                    "card_authorisation_id_response": "anim et ",
+                    "card_id": -35634420,
+                    "city": "consectetur sint dolore",
+                    "clearing_expiry_time": "ali",
+                    "clearing_status": "elit commodo laboris Duis",
+                    "counterparty_alias": {
+                        "avatar": {
+                            "anchor_uuid": "exercitation es",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "do minim",
+                        "display_name": "elit aute",
+                        "iban": "esse",
+                        "is_light": false,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "sint dolore in",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "dolore do reprehenderit Excepteur",
+                            "display_name": "esse",
+                            "public_nick_name": "ipsum fugiat aliqua",
+                            "uuid": "ipsum"
+                        },
+                        "merchant_category_code": "voluptate sunt i",
+                        "swift_account_number": "elit Ut aute ipsum",
+                        "swift_bic": "eu et",
+                        "transferwise_account_number": "minim incididunt enim",
+                        "transferwise_bank_code": "pariatur deserunt et id"
+                    },
+                    "decision": "ut labore pariatur aliqua",
+                    "decision_description": "do dolor consequat",
+                    "decision_description_translated": "et nostrud laborum",
+                    "description": "dolor proident Ut",
+                    "id": 31388938,
+                    "label_card": {
+                        "expiry_date": "sunt voluptate nostrud laborum",
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "esse nulla exercitation voluptate",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "enim te",
+                            "display_name": "Lorem",
+                            "public_nick_name": "culpa ea pariatur",
+                            "uuid": "proident Ut"
+                        },
+                        "second_line": "mollit",
+                        "status": "sint eu et deserunt",
+                        "type": "irure sint",
+                        "uuid": "consectetur voluptate ex"
+                    },
+                    "maturity_date": "consectetur sunt amet qui",
+                    "monetary_account_id": -49248342,
+                    "pan_entry_mode_user": "fugiat",
+                    "payment_status": "amet Duis pariatur",
+                    "request_reference_split_the_bill": [
+                        {
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        {
+                            "id": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        }
+                    ],
+                    "reservation_expiry_time": "ea dolore proident sint commodo",
+                    "secure_code_id": -76659490,
+                    "settlement_status": "ut sed",
+                    "token_status": "ad",
+                    "wallet_provider_id": "ea"
+                },
+                "Payment": {
+                    "address_billing": {
+                        "city": "dolore nisi quis",
+                        "country": "est Duis",
+                        "extra": "in dolore adipisicing eiusmod",
+                        "house_number": "aute",
+                        "mailbox_name": "esse cillum",
+                        "po_box": "Duis magna",
+                        "postal_code": "culpa est amet",
+                        "province": "incididunt consequat",
+                        "street": "sunt Excepteur"
+                    },
+                    "address_shipping": {
+                        "city": "irure non",
+                        "country": "eu non ut in",
+                        "extra": "nulla d",
+                        "house_number": "do ex esse",
+                        "mailbox_name": "est ut deserunt mollit",
+                        "po_box": "labore in",
+                        "postal_code": "commodo dolore qui nisi",
+                        "province": "tempor consequat ea nulla",
+                        "street": "ea anim"
+                    },
+                    "alias": {
+                        "avatar": {
+                            "anchor_uuid": "nisi incididunt",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "irure",
+                        "display_name": "Ut esse",
+                        "iban": "ullamco laborum cupidatat eu",
+                        "is_light": true,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "incididunt velit sunt ut esse",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "ut culpa in aliquip",
+                            "display_name": "qui occaecat anim iru",
+                            "public_nick_name": "mollit sint officia sed enim",
+                            "uuid": "nulla et"
+                        },
+                        "merchant_category_code": "sint qui ipsum commodo",
+                        "swift_account_number": "sint mollit veniam",
+                        "swift_bic": "proident dolor",
+                        "transferwise_account_number": "ex consequat ipsum quis",
+                        "transferwise_bank_code": "pariatur"
+                    },
+                    "amount": {
+                        "currency": "in officia nulla esse s",
+                        "value": "pariatur sunt ex proident"
+                    },
+                    "attachment": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "balance_after_mutation": {
+                        "currency": "commodo repreh",
+                        "value": "ex eiusmod"
+                    },
+                    "batch_id": -51059201,
+                    "bunqto_expiry": "adipisicing aliqua cupidatat",
+                    "bunqto_share_url": "exercitation dolor aliqua tempor",
+                    "bunqto_status": "Duis pariatur occaecat irure id",
+                    "bunqto_sub_status": "tempor Lorem consectetur",
+                    "bunqto_time_responded": "in nulla veniam",
+                    "counterparty_alias": {
+                        "avatar": {
+                            "anchor_uuid": "Ut pariatur cillum",
+                            "image": [
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                },
+                                {
+                                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                                }
+                            ],
+                            "uuid": "<string>"
+                        },
+                        "bunq_me": {
+                            "name": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "type": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            "value": {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        },
+                        "country": "ipsum quis reprehenderit officia ullamco",
+                        "display_name": "in amet",
+                        "iban": "esse",
+                        "is_light": true,
+                        "label_user": {
+                            "avatar": {
+                                "anchor_uuid": "mollit",
+                                "image": [
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    },
+                                    {
+                                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                                    }
+                                ],
+                                "uuid": "<string>"
+                            },
+                            "country": "magna consectetur",
+                            "display_name": "cupidatat nulla tempor",
+                            "public_nick_name": "ullamco veniam dolor eiusmod",
+                            "uuid": "proident"
+                        },
+                        "merchant_category_code": "consequat officia",
+                        "swift_account_number": "magna",
+                        "swift_bic": "officia pariatur est irure",
+                        "transferwise_account_number": "ea deserunt ut",
+                        "transferwise_bank_code": "laboris aliquip ex Duis"
+                    },
+                    "created": "culpa mollit amet",
+                    "description": "<string>",
+                    "geolocation": {
+                        "altitude": 51541260,
+                        "latitude": 2539407,
+                        "longitude": -33903943,
+                        "radius": 70901456
+                    },
+                    "id": -11672583,
+                    "merchant_reference": "<string>",
+                    "monetary_account_id": 91318702,
+                    "request_reference_split_the_bill": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "scheduled_id": -17113745,
+                    "sub_type": "cillum do",
+                    "type": "qui incididunt cillum laboris reprehenderit",
+                    "updated": "sed"
+                },
+                "PaymentBatch": {
+                    "payments": {
+                        "Payment": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    }
+                },
+                "RequestResponse": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "ScheduleInstance": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "TabResultResponse": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "TransferwisePayment": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "WhitelistResult": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            "require_address": "<string>",
+            "scheduled_id": -78115546,
+            "status": "<string>",
+            "time_expiry": "laboris dolor et labore",
+            "time_responded": "ea fugiat commodo esse dolore",
+            "updated": "magna nostrud",
+            "user_alias_created": {
+                "avatar": {
+                    "anchor_uuid": "mollit in",
+                    "image": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "uuid": "<string>"
+                },
+                "country": "ut nisi",
+                "display_name": "est id",
+                "public_nick_name": "cupidatat minim sunt in",
+                "uuid": "minim sunt la"
+            },
+            "user_alias_revoked": {
+                "avatar": {
+                    "anchor_uuid": "tempor veniam consequat in",
+                    "image": [
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    ],
+                    "uuid": "<string>"
+                },
+                "country": "cupidatat sunt",
+                "display_name": "minim nisi laboris",
+                "public_nick_name": "nisi deserunt aliqua",
+                "uuid": "magna laborum"
+            }
+        }
+    ],
+    "status": "<string>",
+    "total_amount_inquired": {
+        "currency": "occaecat cupidatat sunt aute labore",
+        "value": "anim non voluptate irure"
+    }
+})
+
+
+

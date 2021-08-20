@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// Upload a new dataset resource
+
+@name("Add Datasets Dataset Upload")
+POST "https://{{baseUrl}}/datasets/:dataset/upload/"
+
+
+// Upload a new community resource
+
+@name("Add Datasets Dataset Upload Community")
+POST "https://{{baseUrl}}/datasets/:dataset/upload/community/"
+
+
+

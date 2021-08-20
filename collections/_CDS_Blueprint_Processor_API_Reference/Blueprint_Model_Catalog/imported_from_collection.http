@@ -1,0 +1,177 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d879d2e1-1162-48e4-8e1e-4eef33d41820.postman_collection.json
+
+// Lists all blueprint models which are saved in CDS.
+
+@name("List all Blueprint Models")
+GET "http://{{host}}/api/v1/blueprint-model"
+basicauth("ccsdkapps", "ccsdkapps")
+
+
+// Saves a blueprint model by the given file input. There is no validation of the attached CBA happening when this API is called.
+
+@name("Save a Blueprint Model")
+POST "http://{{host}}/api/v1/blueprint-model"
+basicauth("ccsdkapps", "ccsdkapps")
+files(
+	("file", "None")
+)
+
+
+// Loads all Model Types, Resource Dictionaries and blueprint models which are included in CDS by default.Before starting to work with CDS, bootstrap should be called to load all the basic models that each orginization might support.Parameter values can be set as false to skip loading e.g. the Resource Dictionaries but this is not recommended.
+
+@name("Bootstrap CDS")
+POST "http://{{host}}/api/v1/blueprint-model/bootstrap"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+json({
+    "loadModelType": true,
+    "loadResourceDictionary": true,
+    "loadCBA": true
+})
+
+
+// Get Meta-Data of a Blueprint Model by its name and version.
+
+@name("Get a Blueprint Model by Name and Version")
+GET "http://{{host}}/api/v1/blueprint-model/by-name/pnf_netconf/version/1.0.0"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+json({
+    "loadModelType": true,
+    "loadResourceDictionary": true,
+    "loadCBA": true
+})
+
+
+// Gets the CBA of a blueprint model by its name and version. Response can be saved to a file to download the CBA.
+
+@name("Download a Blueprint Model")
+GET "http://{{host}}/api/v1/blueprint-model/download/by-name/pnf_netconf/version/1.0.0"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+
+
+// Gets the CBA of a blueprint model by its ID. Response can be saved to a file to download the CBA.
+
+@name("Download a Blueprint Model by ID")
+GET "http://{{host}}/api/v1/blueprint-model/download/44471683-4446-4ed9-8b27-fac6a8f81e5e"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+
+
+// Enriches the attached CBA and returns the enriched CBA zip file in the response.The enrichment process will complete the package by providing all the definition of types used.
+
+@name("Enrich a Blueprint Model")
+POST "http://{{host}}/api/v1/blueprint-model/enrich"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+files(
+	("file", "None")
+)
+
+
+// Enriches the attached CBA, validates it and saves it in CDS if validation was successful.
+
+@name("Enrich and publish a Blueprint Model")
+POST "http://{{host}}/api/v1/blueprint-model/enrichandpublish"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+files(
+	("file", "None")
+)
+
+
+// Lists all blueprint models by a matching keyword in any of the meta-data of the blueprint models.Blueprint models are just returned if a whole keyword is matching, not just parts of it. Not case-sensitive.Used by CDS UI.
+
+@name("Search for Blueprints by a Keyword")
+GET "http://{{host}}/api/v1/blueprint-model/meta-data/pnf_netconf"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+
+
+// Delete a blueprint model identified by its name and version from CDS.
+
+@name("Delete a Blueprint Model by Name")
+DELETE "http://{{host}}/api/v1/blueprint-model/name/pnf_netconf/version/1.0.0"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+
+
+// Lists all blueprint models which are saved in CDS in an ordered mode.
+
+@name("Get Blueprints ordered")
+GET "http://{{host}}/api/v1/blueprint-model/paged"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+? "limit"= "5"
+? "sort"= "DATE"
+
+
+// Lists all blueprint models by a matching keyword in any of the meta-data of the blueprint models in an ordered mode. Blueprint models are just returned if a whole keyword is matching, not just parts of it. Not case-sensitive. Used by CDS UI.
+
+@name("Search for Blueprints by a Keyword in an ordered mode")
+GET "http://{{host}}/api/v1/blueprint-model/paged/meta-data/test"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+? "limit"= "5"
+? "sort"= "DATE"
+
+
+// Validates the attached CBA file and saves it in CDS if validation was successful. CBA needs to be already enriched.
+
+@name("Publish a Blueprint Model")
+POST "http://{{host}}/api/v1/blueprint-model/publish"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+files(
+	("file", "None")
+)
+
+
+// Searches for all blueprint models which contain the specified input parameter in their tags. Blueprint models which contain just parts of the searched word in their tags are also returned.
+
+@name("Search for a Blueprint by Tag")
+GET "http://{{host}}/api/v1/blueprint-model/search/test"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+
+
+// Get the workflow of a blueprint identified by Blueprint and workflow name. Inputs, outputs and data types of workflow is returned.
+
+@name("Get Workflow Specification")
+POST "http://{{host}}/api/v1/blueprint-model/workflow-spec"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+json({
+    "blueprintName": "vLB_CDS_KOTLIN",
+    "workflowName": "config-assign"
+})
+
+
+// Get all available workflows of a Blueprint by its name and version.
+
+@name("Get Workflows of a Blueprint")
+GET "http://{{host}}/api/v1/blueprint-model/workflows/blueprint-name/vLB_CDS_KOTLIN/version/1.0.0"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+
+
+// Get a blueprint model by its internally created ID.
+
+@name("Get a Blueprint Model by ID")
+GET "http://{{host}}/api/v1/blueprint-model/416f241d-3ef9-4cb6-8834-956ae4f70b07"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+
+
+// Delete a blueprint model a a given ID. ID is the internally created ID of blueprint, not the name of blueprint.
+
+@name("Delete a Blueprint Model by its ID")
+DELETE "http://{{host}}/api/v1/blueprint-model/416f241d-3ef9-4cb6-8834-956ae4f70b07"
+basicauth("ccsdkapps", "ccsdkapps")
+"Content-Type": "application/json"
+
+
+

@@ -1,0 +1,165 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-02fae580-11a1-41da-afdc-655537d58f8f.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// This endpoint creates rendered audio from timeline data. It returns a render ID that you can use to download the finished audio when it is ready. The render ID is valid for up to 48 hours.
+
+@name("Create rendered audio") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v2/ai/audio/renders"
+"Content-Type": "application/json"
+json({
+    "audio_renders": [
+        {
+            "preset": "<string>",
+            "timeline": {
+                "spans": [
+                    {
+                        "span_type": "<string>",
+                        "time": "<integer>",
+                        "id": "<number>",
+                        "tempo": "<integer>",
+                        "regions": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "instrument_groups": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "tempo_changes": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    },
+                    {
+                        "span_type": "<string>",
+                        "time": "<integer>",
+                        "id": "<number>",
+                        "tempo": "<integer>",
+                        "regions": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "instrument_groups": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "tempo_changes": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "filename": "<string>"
+        },
+        {
+            "preset": "<string>",
+            "timeline": {
+                "spans": [
+                    {
+                        "span_type": "<string>",
+                        "time": "<integer>",
+                        "id": "<number>",
+                        "tempo": "<integer>",
+                        "regions": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "instrument_groups": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "tempo_changes": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    },
+                    {
+                        "span_type": "<string>",
+                        "time": "<integer>",
+                        "id": "<number>",
+                        "tempo": "<integer>",
+                        "regions": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "instrument_groups": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "tempo_changes": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "filename": "<string>"
+        }
+    ]
+})
+
+
+// This endpoint shows the status of one or more audio renders, including download links for completed audio.
+
+@name("Get details about audio renders") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v2/ai/audio/renders"
+? "id"= "<string>"
+
+
+

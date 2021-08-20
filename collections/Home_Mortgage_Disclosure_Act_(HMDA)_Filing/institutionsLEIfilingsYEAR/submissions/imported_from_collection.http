@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-757d4aaa-44cc-4551-a83e-60f7b5a141f8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("Create a submission") : "base-inherit-auth"
+POST "https://{{baseUrl}}/institutions/:LEI/filings/:YEAR/submissions"
+
+
+@name("Show latest submission") : "base-inherit-auth"
+GET "https://{{baseUrl}}/institutions/:LEI/filings/:YEAR/submissions/latest"
+"Content-Type": "<string>"
+
+
+

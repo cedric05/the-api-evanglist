@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Get a single article by its id and the id of the parent blog.
+
+@name("Get a single article by its ID and the ID of the parent blog")
+GET "https://{{baseUrl}}/admin/blogs/62581763/articles/196805774.json"
+"Content": "<>"
+
+
+// Get a count of all articles from a certain blog.
+
+@name("Get a count of all articles from a certain blog")
+GET "https://{{baseUrl}}/admin/blogs/62581763/articles/count.json"
+"Content": "<>"
+
+
+// Delete an article of a blog tags of articles.
+
+@name("Delete an article of a blog tags of articles")
+DELETE "https://{{baseUrl}}/admin/blogs/62581763/articles/197247246.json"
+"Content": "<>"
+
+
+

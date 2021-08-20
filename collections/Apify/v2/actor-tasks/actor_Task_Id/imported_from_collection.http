@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Get an object that contains all the details about a task.
+
+@name("Get task")
+GET "https://{{baseUrl}}/v2/actor-tasks/:actorTaskId"
+? "token"= "<string>"
+
+
+// Returns the input of a given task.
+
+@name("Get task input")
+GET "https://{{baseUrl}}/v2/actor-tasks/:actorTaskId/input"
+? "token"= "<string>"
+
+
+// Gets the list of webhooks of a specific actor task. The response is a JSON with the list of objects where each objectncontains basic information about a single webhook.nnThe endpoint supports pagination using the `limit` and `offset` parameters and it will not return more than 1000 records.nnBy default, the records are sorted by the `createdAt` field in ascending order,nto sort the records in descending order, use the `desc=1` parameter.
+
+@name("Get list of webhooks")
+GET "https://{{baseUrl}}/v2/actor-tasks/:actorTaskId/webhooks"
+? "token"= "<string>"
+? "offset"= "<number>"
+? "limit"= "<number>"
+? "desc"= "<boolean>"
+
+
+// Get a list of runs of a specific task. The response is a list of objects where each objectncontains essential information about a single task run.nnThe endpoint supports pagination using the `limit` and `offset` parameters, and it does not return more than a 1000narray elements.nnBy default, the records are sorted by the `startedAt` field in ascending order;ntherefore you can use pagination to incrementally fetch all records while newnones are still being created. To sort the records in descendi
+
+@name("Get list of task runs")
+GET "https://{{baseUrl}}/v2/actor-tasks/:actorTaskId/runs"
+? "token"= "<string>"
+? "offset"= "<number>"
+? "limit"= "<number>"
+? "desc"= "<boolean>"
+? "waitForFinish"= "<string>"
+? "webhooks"= "<string>"
+
+
+// Runs an actor task and synchronously returns its output.nThe run must finish in 300 seconds otherwise the API endpoint returns a timeout error.nnOptionally, you can override the actor input configuration by passing a JSON object as the POST payloadnand setting the `Content-Type: application/json` HTTP header.nNote that if the object in the POST payload does not define a particular input property,nthe actor run uses the default value defined by the task (or ac
+
+@name("Run task synchronously (POST)")
+POST "https://{{baseUrl}}/v2/actor-tasks/:actorTaskId/run-sync"
+? "token"= "<string>"
+? "timeout"= "<string>"
+? "memory"= "<string>"
+? "build"= "<object>"
+? "outputRecordKey"= "<string>"
+? "webhooks"= "<string>"
+
+
+

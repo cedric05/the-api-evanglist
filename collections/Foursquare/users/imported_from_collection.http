@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /users/{USER_ID}
+
+@name("/users/{USER_ID}")
+GET "https://{{baseUrl}}/users/leaderboard"
+? "neighbors"= "<string>"
+? "v"= "<string>"
+
+
+// /users/leaderboard
+
+@name("/users/leaderboard")
+GET "https://{{baseUrl}}/users/requests"
+? "v"= "<string>"
+
+
+// /users/requests
+
+@name("/users/requests")
+GET "https://{{baseUrl}}/users/search"
+? "email"= "<xsd:string>"
+? "fbid"= "<xsd:string>"
+? "name"= "<string>"
+? "phone"= "<xsd:string>"
+? "twitter"= "<xsd:string>"
+? "twitterSource"= "<xsd:string>"
+? "v"= "<string>"
+
+
+// /users/{USER_ID}/unfriend
+
+@name("/users/{USER_ID}/unfriend")
+POST "https://{{baseUrl}}/users/self/update"
+? "Content-Type"= "<string>"
+? "photo"= "<string>"
+? "v"= "<string>"
+
+
+

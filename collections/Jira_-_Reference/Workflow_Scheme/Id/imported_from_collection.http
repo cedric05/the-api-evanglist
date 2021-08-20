@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a workflow scheme.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Get Workflow Scheme") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/workflowscheme/:id"
+? "returnDraftIfExists"= "false"
+
+
+// Updates a workflow scheme, including the name, default workflow, issue type to project mappings, and more. If the workflow scheme is active (that is, being used by at least one project), then a draft workflow scheme is created or updated instead, provided that `updateDraftIfNeeded` is set to `true`.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Update Workflow Scheme") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/rest/api/3/workflowscheme/:id"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "description": "<string>",
+    "defaultWorkflow": "<string>",
+    "issueTypeMappings": "<object>",
+    "updateDraftIfNeeded": "<boolean>"
+})
+
+
+// Deletes a workflow scheme. Note that a workflow scheme cannot be deleted if it is active (that is, being used by at least one project).
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Delete Workflow Scheme") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/rest/api/3/workflowscheme/:id"
+
+
+// Create a draft workflow scheme from an active workflow scheme, by copying the active workflow scheme. Note that an active workflow scheme can only have one draft workflow scheme.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Create Draft Workflow Scheme") : "base-inherit-auth"
+POST "https://{{baseUrl}}/rest/api/3/workflowscheme/:id/createdraft"
+
+
+

@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This reference describes how to perform a mass action through the REST API. nnUsing this API method, you send a multipart/form-data request containing a `.csv` file with data about the mass action you want to perform. Zuora returns a key and then asynchronously processes the mass action. You can use the key to get details about the result of the mass action.n
+
+@name("Perform mass action")
+POST "https://{{baseUrl}}/v1/bulk"
+"Content": "<>"
+
+
+

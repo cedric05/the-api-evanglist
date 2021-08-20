@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9ba7a214-d210-425d-b1ff-9d5f9f4bbe8d.postman_collection.json
+
+@name("Download Description")
+GET "https://{{baseUrl}}/api-entities/:apiEntityId/api-description"
+? "format"= "swagger20"
+
+
+@name("Update Api Docs Package Deployment Information For Api Entity")
+PUT "https://{{baseUrl}}/api-entities/:apiEntityId/docs/package-deployment-information"
+
+
+

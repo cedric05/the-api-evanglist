@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e7284ee4-fd9b-45f9-a31d-197af3b48c31.postman_collection.json
+
+// Retrieve a Account Request
+
+@name("Retrieve a Account Request")
+GET "https://{{baseUrl}}/website/user-requests/:id/"
+
+
+// Deny or Accept
+
+@name("Deny or Accept")
+PATCH "https://{{baseUrl}}/website/user-requests/:id/accept/"
+
+
+// Deny or Accept
+
+@name("Deny or Accept")
+PATCH "https://{{baseUrl}}/website/user-requests/:id/deny/"
+
+
+

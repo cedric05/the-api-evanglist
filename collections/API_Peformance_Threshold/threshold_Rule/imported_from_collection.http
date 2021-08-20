@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ee1bcca8-1dc2-4d21-9276-24298e87d40c.postman_collection.json
+
+@name("thresholdRuleCreate")
+POST "https://{{baseUrl}}/thresholdRule"
+"Content-Type": "application/json"
+json({
+    "performanceConsequence": [
+        {
+            "alarmSpecification": {
+                "perfAlarmSpecSeverity": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "perfAlarmSpecAdditionalText": "pariatur Ut qui ad",
+                "perfAlarmSpecAlarmType": "laborum sed",
+                "perfAlarmSpecSpecificProblem": "pariatur",
+                "perfAlarmThresholdCrossingDescription": "aliqua non",
+                "perfeAlarmSpecProbableCause": "cillum aute",
+                "performanceConsequence": {
+                    "value": "<Circular reference to #/components/schemas/PerformanceConsequence detected>"
+                }
+            },
+            "Description": "Ut enim et exercitation nisi",
+            "name": "minim in ",
+            "prescribedAction": "id aute exercitation Duis"
+        },
+        {
+            "alarmSpecification": {
+                "perfAlarmSpecSeverity": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "perfAlarmSpecAdditionalText": "anim deserunt Lorem non offic",
+                "perfAlarmSpecAlarmType": "aliqua sed pariatur in",
+                "perfAlarmSpecSpecificProblem": "labore commodo esse",
+                "perfAlarmThresholdCrossingDescription": "sed minim id",
+                "perfeAlarmSpecProbableCause": "fugiat",
+                "performanceConsequence": {
+                    "value": "<Circular reference to #/components/schemas/PerformanceConsequence detected>"
+                }
+            },
+            "Description": "laborum sit commodo",
+            "name": "dolore sit exercitation laborum",
+            "prescribedAction": "consequat anim"
+        }
+    ],
+    "thresholdRuleCondition": "Clear",
+    "thresholdRuleSeverity": "WARNING"
+})
+
+
+

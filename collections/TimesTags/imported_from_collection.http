@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c577cd8c-6495-4800-94ae-e0262bcae4de.postman_collection.json
+
+@name("/timestags.json")
+GET "https://{{baseUrl}}/timestags.json"
+? "query"= "<string>"
+? "filter"= "<string>"
+? "max"= "<integer>"
+
+
+@name("timestags.get")
+GET "https://{{baseUrl}}/timestags"
+? "query"= "<string>"
+? "filter"= "<string>"
+? "max"= "<integer>"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Opportunity Contact Role Change Event") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/OpportunityContactRoleChangeEvent/"
+
+
+@name("Opportunity Contact Role Change Event Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/OpportunityContactRoleChangeEvent/{ID}/"
+
+
+@name("Describe Opportunity Contact Role Change Event") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/OpportunityContactRoleChangeEvent/describe/"
+
+
+

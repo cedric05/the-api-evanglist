@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves information for a coverage based on its ID for a policy specified by its ID.
+
+@name("Get details on a specified policy coverage") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/policies/:id/coverage/:coverageid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+// Updates a coverage specified by its ID for a policy specified by its ID.
+
+@name("Update a specified policy coverage") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/policies/:id/coverage/:coverageid"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "label": {
+        "id": -18346517,
+        "code": "ad p",
+        "name": "cillum"
+    },
+    "lossType": "Contents",
+    "peril": {
+        "id": 47141586,
+        "code": "occaecat fugiat labore",
+        "name": "commodo adipisicing"
+    },
+    "id": 89807985,
+    "premium": 93930010.4141613,
+    "limit": 77341966.91429046,
+    "deductible": 51478044.82480255,
+    "accumulation": -97780324,
+    "isValid": true,
+    "percentOfLossDeductibleAmount": -84035311.4971188,
+    "isFranchiseDeductible": {
+        "id": 23854096,
+        "code": "laboris dolor et laborum",
+        "name": "aliqua fugiat pariatur ut"
+    }
+})
+
+
+// Deletes a coverage specified by its ID for a policy specified by its ID.
+
+@name("Delete a specified policy coverage") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/policies/:id/coverage/:coverageid"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+
+
+

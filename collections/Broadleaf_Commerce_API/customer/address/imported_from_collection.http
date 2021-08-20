@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Get customer address.
+
+@name("Get Customer Address")
+GET "https://{{baseUrl}}/customer/address"
+? "addressName"= "<post>"
+? "customerId"= "<post>"
+
+
+// Put customer address addressid.
+
+@name("Put Customer Address Addressid")
+PUT "https://{{baseUrl}}/customer/address/:addressId"
+? "customerId"= "<post>"
+
+
+// Delete customer address addressname.
+
+@name("Delete Customer Address Addressname")
+DELETE "https://{{baseUrl}}/customer/address/:addressName"
+? "customerId"= "<post>"
+
+
+

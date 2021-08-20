@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("List Email Change Event") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/ListEmailChangeEvent/"
+
+
+@name("List Email Change Event Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/ListEmailChangeEvent/{ID}/"
+
+
+@name("Describe List Email Change Event") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/ListEmailChangeEvent/describe/"
+
+
+

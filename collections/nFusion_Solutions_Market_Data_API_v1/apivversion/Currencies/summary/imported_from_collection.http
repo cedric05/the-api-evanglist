@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-96f7548c-485b-4677-99ba-2d47911de0c8.postman_collection.json
+
+// Current and daily summary information combined into a single quote
+
+@name("Get latest Summary for requested currency pairs")
+GET "https://{{baseUrl}}/api/v{{version}}/Currencies/summary"
+? "token"= "<>"
+? "pairs"= "<>"
+? "format"= "<>"
+
+
+// Only the currency pairs in the direction noted can be used with the Summary endpoint.
+// For example: USD/CAD is not the same as CAD/USD
+
+@name("Get list of currency pairs supported by the Summary endpoint")
+GET "https://{{baseUrl}}/api/v{{version}}/Currencies/summary/supported"
+? "token"= "<>"
+? "format"= "<>"
+
+
+

@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-83d768b1-950f-434d-8ea8-e2e63edbcbef.postman_collection.json
+
+// Returns a specific teacher
+
+@name("get Teacher")
+GET "https://{{baseUrl}}/teachers/:id"
+? "include"= "<string>"
+
+
+// Returns the district for a teacher
+
+@name("get District For Teacher")
+GET "https://{{baseUrl}}/teachers/:id/district"
+
+
+// Returns the grade levels for sections a teacher teaches
+
+@name("get Grade Levels For Teacher")
+GET "https://{{baseUrl}}/teachers/:id/grade_levels"
+
+
+// Retrieves school info for a teacher.
+
+@name("get School For Teacher")
+GET "https://{{baseUrl}}/teachers/:id/school"
+
+
+// Returns the sections for a teacher
+
+@name("get Sections For Teacher")
+GET "https://{{baseUrl}}/teachers/:id/sections"
+? "limit"= "<integer>"
+? "starting_after"= "<string>"
+? "ending_before"= "<string>"
+
+
+// Returns the students for a teacher
+
+@name("get Students For Teacher")
+GET "https://{{baseUrl}}/teachers/:id/students"
+? "limit"= "<integer>"
+? "starting_after"= "<string>"
+? "ending_before"= "<string>"
+
+
+

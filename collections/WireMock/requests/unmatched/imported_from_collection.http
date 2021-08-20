@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5bfc6a7a-9723-4bb7-a53c-665f538df741.postman_collection.json
+
+// Get details of logged requests that weren't matched by any stub mapping
+
+@name("Get Requests Unmatched")
+GET "https://{{baseUrl}}/requests/unmatched"
+
+
+// Retrieve near-misses for all unmatched requests
+
+@name("Get Requests Unmatched Near Misses")
+GET "https://{{baseUrl}}/requests/unmatched/near-misses"
+
+
+

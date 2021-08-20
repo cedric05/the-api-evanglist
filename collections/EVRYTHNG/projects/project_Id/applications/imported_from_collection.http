@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Create an application within a project. The object returned contains the `appApiKey` parameter, which is an Application API key that must be used within an external application to issue calls to the API. However, because this API key can be hard coded within external applications (e.g. mobile/JS) and is visible to anyone, it can be used only for a very limited set of operations (create users, read a product, send actions etc.).
+
+@name("Create an application")
+POST "https://{{baseUrl}}/projects/:projectId/applications"
+? "No Name"= "<string>"
+
+
+

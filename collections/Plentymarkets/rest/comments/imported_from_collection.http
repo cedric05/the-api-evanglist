@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Creates a comment.
+
+@name("Create a comment")
+POST "https://{{baseUrl}}/rest/comments"
+
+
+// Deletes a comment. The ID of the comment must be specified.
+
+@name("Delete a comment")
+DELETE "https://{{baseUrl}}/rest/comments/:commentId"
+
+
+// Lists comments. The reference type and the reference value must be specified (e.g. the reference type is 'order' and the reference value is the ID of the order).
+
+@name("List comments")
+GET "https://{{baseUrl}}/rest/comments/:referenceType/:referenceValue"
+? "userId"= "<post>"
+? "isVisibleForContact"= "<post>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists all item availabilities.
+
+@name("List item availabilities")
+GET "https://{{baseUrl}}/rest/availabilities"
+
+
+// Gets an item availability. The ID of the availability must be specified.
+
+@name("Get an item availability")
+GET "https://{{baseUrl}}/rest/availabilities/:id"
+
+
+

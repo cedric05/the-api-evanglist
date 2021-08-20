@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Detailed refunds.
+
+@name("Detailed Refunds")
+GET "https://{{baseUrl}}/api/v1/settlement/detailed_refunds"
+? "format"= "<get>"
+? "country_codes"= "<get>"
+? "date_from"= "<get>"
+? "date_to"= "<get>"
+? "limit"= "<get>"
+? "offset"= "<get>"
+
+
+// Fetch refunds.
+
+@name("Fetch Refunds")
+GET "https://{{baseUrl}}/api/v1/settlement/refunds"
+? "format"= "<get>"
+? "moss_country_code"= "<get>"
+? "tax_region"= "<get>"
+? "date_from"= "<get>"
+
+
+// Fetch summary.
+
+@name("Fetch Summary")
+GET "https://{{baseUrl}}/api/v1/settlement/summary/:quarter"
+? "moss_country_code"= "<get>"
+? "tax_region"= "<get>"
+? "start_month"= "<get>"
+? "end_month"= "<get>"
+
+
+// Fetch settlement.
+
+@name("Fetch Settlement")
+GET "https://{{baseUrl}}/api/v1/settlement/:quarter"
+? "moss_tax_id"= "<get>"
+? "currency_code"= "<get>"
+? "end_month"= "<get>"
+? "tax_id"= "<get>"
+? "refund_date_kind_override"= "<get>"
+? "start_month"= "<get>"
+? "moss_country_code"= "<get>"
+? "format"= "<get>"
+? "tax_country_code"= "<get>"
+
+
+

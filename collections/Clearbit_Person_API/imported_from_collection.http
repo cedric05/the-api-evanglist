@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0bc53b29-6b19-4556-beb9-4aa4fd1046b3.postman_collection.json
+
+// Retrieves a person and company by email address.
+
+@name("Retrieves a person and company by email address")
+GET "https://{{baseUrl}}/combined/find"
+? "email"= "<string>"
+
+
+

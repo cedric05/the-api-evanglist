@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c446a4c9-8dd6-45c4-99f2-688a96fe76ae.postman_collection.json
+
+// Fetches the URL to download the migration archive as a `tar.gz` file. Depending on the resources your repository uses, the migration archive can contain JSON files with data for these objects:
+// 
+// *   attachments
+// *   bases
+// *   commit\_comments
+// *   issue\_comments
+// *   issue\_events
+// *   issues
+// *   milestones
+// *   organizations
+// *   projects
+// *   protected\_branches
+// *   pull\_request\_reviews
+// *   pull\_requests
+// *   releases
+// *   repositories
+// *   review\_comments
+// *   schema
+// *   users
+// 
+// The archive will also contain an `attachments` directory that includes all attachment files uploaded to GitHub.com and a `repositories` directory that contains the repository's Git data.
+
+@name("Download a user migration archive")
+GET "https://{{baseUrl}}/user/migrations/:migration_id/archive"
+
+
+// Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://developer.github.com/v3/migrations/users/#list-user-migrations) and [Get a user migration status](https://developer.github.com/v3/migrations/users/#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
+
+@name("Delete a user migration archive")
+DELETE "https://{{baseUrl}}/user/migrations/:migration_id/archive"
+
+
+

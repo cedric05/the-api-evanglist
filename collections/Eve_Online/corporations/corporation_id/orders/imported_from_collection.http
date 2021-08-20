@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// List open market orders placed on behalf of a corporation
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/orders/`
+// 
+// Alternate route: `/v3/corporations/{corporation_id}/orders/`
+// 
+// ---
+// This route is cached for up to 1200 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Accountant, Trader
+
+@name("List open orders from a corporation")
+GET "https://{{baseUrl}}/corporations/:corporation_id/orders/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// List cancelled and expired market orders placed on behalf of a corporation up to 90 days in the past.
+// 
+// ---
+// Alternate route: `/dev/corporations/{corporation_id}/orders/history/`
+// 
+// Alternate route: `/v2/corporations/{corporation_id}/orders/history/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Accountant, Trader
+
+@name("List historical orders from a corporation")
+GET "https://{{baseUrl}}/corporations/:corporation_id/orders/history/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+

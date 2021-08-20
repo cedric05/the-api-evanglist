@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-153258a5-a1eb-43c6-ae2b-1378320e86b1.postman_collection.json
+
+// Returns applicant recruiting documents
+
+@name("Job Applicant Documents")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants/:applicant-id/documents"
+? "No Name"= "<string>"
+
+
+// Returns applicant recruiting document
+
+@name("Job Applicant Document")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants/:applicant-id/documents/:document-id"
+? "No Name"= "<string>"
+
+
+

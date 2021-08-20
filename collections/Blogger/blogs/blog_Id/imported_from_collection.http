@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2e3bbcd-4c1a-45f3-8016-86639e868822.postman_collection.json
+
+// Gets one blog by ID.
+
+@name("Get Blog")
+GET "https://{{baseUrl}}/blogs/:blogId"
+? "maxPosts"= "<>"
+? "view"= "<>"
+
+
+// Retrieves the comments for a blog, across all posts, possibly filtered.
+
+@name("Get Blog Comments")
+GET "https://{{baseUrl}}/blogs/:blogId/comments"
+? "endDate"= "<>"
+? "fetchBodies"= "<>"
+? "maxResults"= "<>"
+? "pageToken"= "<>"
+? "startDate"= "<>"
+? "status"= "<parameters>"
+
+
+// Retrieve pageview stats for a Blog.
+
+@name("Get Blog Page Views")
+GET "https://{{baseUrl}}/blogs/:blogId/pageviews"
+? "range"= "<>"
+
+
+

@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List analysis resources by owner
+
+@name("List analysis resources by owner") : "base-inherit-auth"
+GET "https://{{baseUrl}}/metadata/analysis/:owner"
+? "typelabel"= "et officia pariatur"
+? "typeiri"= "et officia pariatur"
+? "size"= "et officia pariatur"
+? "from"= "et officia pariatur"
+? "sort"= "et officia pariatur"
+
+
+// Create a new analysis resource
+
+@name("Create a new analysis resource") : "base-inherit-auth"
+POST "https://{{baseUrl}}/metadata/analysis/:owner"
+"Content-Type": "application/json"
+json({
+    "collections": [
+        "Aid Option"
+    ],
+    "title": "crypto.snowflake",
+    "typeLabel": "Tableau dashboard",
+    "description": "Aid given to charity is an option that can be exercised by individuals and corporations",
+    "tags": [
+        "sensitive"
+    ],
+    "properties": {}
+})
+
+
+

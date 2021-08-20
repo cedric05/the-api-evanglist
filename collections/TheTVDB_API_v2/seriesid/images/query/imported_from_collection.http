@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// Query images for the given series ID.
+
+@name("/series/:id/images/query")
+GET "https://{{baseUrl}}/series/:id/images/query"
+? "No Name"= "<string>"
+? "keyType"= "<string>"
+? "resolution"= "<string>"
+? "subKey"= "<string>"
+
+
+// Returns the allowed query keys for the `/series/{id}/images/query` route. Contains a parameter record for each unique `keyType`, listing values that will return results.
+
+@name("/series/:id/images/query/params")
+GET "https://{{baseUrl}}/series/:id/images/query/params"
+? "No Name"= "<string>"
+
+
+

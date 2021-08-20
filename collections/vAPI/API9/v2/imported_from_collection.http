@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bddbaf5a-26e6-497b-85a9-b22a2a06054d.postman_collection.json
+
+@name("Login")
+POST "http://{{host}}/vapi/api9/v2/login.php"
+data({
+    "username": [
+        "admin"
+    ],
+    "password": [
+        ""
+    ]
+})
+
+
+

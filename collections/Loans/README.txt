@@ -1,0 +1,1 @@
+Latest Swagger specification for OpenData Unsecured SME Loan

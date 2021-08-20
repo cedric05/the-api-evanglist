@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Delete the repository SSH key pair.
+
+@name("delete Repository Pipeline Key Pair")
+DELETE "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config/ssh/key_pair"
+
+
+// Retrieve the repository SSH key pair excluding the SSH private key. The private key is a write only field and will never be exposed in the logs or the REST API.
+
+@name("get Repository Pipeline Ssh Key Pair")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config/ssh/key_pair"
+
+
+// Create or update the repository SSH key pair. The private key will be set as a default SSH identity in your build container.
+
+@name("update Repository Pipeline Key Pair")
+PUT "https://{{baseUrl}}/repositories/:username/:repo_slug/pipelines_config/ssh/key_pair"
+"Content-Type": "application/json"
+json({
+    "type": "et in aliquip",
+    "private_key": "<string>",
+    "public_key": "<string>"
+})
+
+
+

@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d47c7988-a7de-44ff-ba08-7608a9285ad4.postman_collection.json
+
+// Performing a search by satellite name
+
+@name("Search")
+GET "http://data.ivanstanojevic.me/api/tle"
+? "search"= "c"
+
+
+// Performing a search by satellite name
+
+@name("Satellite")
+GET "http://data.ivanstanojevic.me/api/tle/:satelliteId"
+
+
+

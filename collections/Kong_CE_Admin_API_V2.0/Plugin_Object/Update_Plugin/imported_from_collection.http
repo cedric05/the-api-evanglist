@@ -1,0 +1,436 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// # Update Plugin [konghq](https://docs.konghq.com/2.0.x/admin-api/#update-plugin)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>plugin  id</td>
+//     <td>required</td>
+//     <td>The unique identifier of the Plugin to update.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>The name of the Plugin that’s going to be added. Currently the Plugin must be installed in every Kong instance separately.</td>
+//   </tr>
+//   <tr>
+//     <td>route</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via the specified route. Leave unset for the plugin to activate regardless of the Route being used. Defaults to null.With form-encoded, the notation is route.id=<route id> or route.name=<route name>. With JSON, use “"route":{"id":"<route id>"} or "route":{"name":"<route name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via one of the routes belonging to the specified Service. Leave unset for the plugin to activate regardless of the Service being matched. Defaults to null.With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>consumer</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will activate only for requests where the specified has been authenticated. (Note that some plugins can not be restricted to consumers this way.). Leave unset for the plugin to activate regardless of the authenticated consumer. Defaults to null.With form-encoded, the notation is consumer.id=<consumer id> or consumer.username=<consumer username>. With JSON, use “"consumer":{"id":"<consumer id>"} or "consumer":{"username":"<consumer username>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>config</td>
+//     <td>optional</td>
+//     <td>The configuration properties for the Plugin which can be found on the plugins documentation page in the Kong Hub.</td>
+//   </tr>
+//    <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the request protocols that will trigger this plugin. The default value, as well as the possible values allowed on this field, may change depending on the plugin type. For example, plugins that only work in stream mode will only support "tcp" and "tls". Defaults to ["grpc", "grpcs", "http", "https"].</td>
+//   </tr>
+//    <tr>
+//     <td>enabled</td>
+//     <td>optional</td>
+//     <td>Whether the plugin is applied. Defaults to true.</td>
+//   </tr>
+//    <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Plugin, for grouping and filtering.</td>
+//   </tr>
+// </table>
+
+@name("Update Plugin")
+PATCH "https://{{gateway}}/plugins/:pluginId"
+"Content-Type": "application/json"
+json({
+    "config": {
+        "minute": 20,
+        "policy": "cluster",
+        "month": null,
+        "redis_timeout": 2000,
+        "limit_by": "consumer",
+        "hide_client_headers": false,
+        "second": null,
+        "day": null,
+        "redis_password": null,
+        "year": null,
+        "redis_database": 0,
+        "hour": 500,
+        "redis_port": 6379,
+        "redis_host": null,
+        "fault_tolerant": true
+    },
+    "service": null,
+    "enabled": true,
+    "protocols": [
+        "https",
+        "http"
+    ],
+    "name": "rate-limiting",
+    "consumer": null,
+    "route": {
+        "id": "875973fd-ba3f-4c7b-8301-e9263013e6d2"
+    },
+    "tags": [
+        "admin",
+        "high-priority",
+        "critical"
+    ]
+})
+
+
+// # Update Plugin Associated to a Specific Route [konghq](https://docs.konghq.com/2.0.x/admin-api/#update-plugin-associated-to-a-specific-route)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>route name or id</td>
+//     <td>required</td>
+//     <td>The unique identifier or the name of the Route to update.</td>
+//   </tr>
+//   <tr>
+//     <td>plugin  id</td>
+//     <td>required</td>
+//     <td>The unique identifier of the Plugin to update.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>The name of the Plugin that’s going to be added. Currently the Plugin must be installed in every Kong instance separately.</td>
+//   </tr>
+//   <tr>
+//     <td>route</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via the specified route. Leave unset for the plugin to activate regardless of the Route being used. Defaults to null.With form-encoded, the notation is route.id=<route id> or route.name=<route name>. With JSON, use “"route":{"id":"<route id>"} or "route":{"name":"<route name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via one of the routes belonging to the specified Service. Leave unset for the plugin to activate regardless of the Service being matched. Defaults to null.With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>consumer</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will activate only for requests where the specified has been authenticated. (Note that some plugins can not be restricted to consumers this way.). Leave unset for the plugin to activate regardless of the authenticated consumer. Defaults to null.With form-encoded, the notation is consumer.id=<consumer id> or consumer.username=<consumer username>. With JSON, use “"consumer":{"id":"<consumer id>"} or "consumer":{"username":"<consumer username>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>config</td>
+//     <td>optional</td>
+//     <td>The configuration properties for the Plugin which can be found on the plugins documentation page in the Kong Hub.</td>
+//   </tr>
+//    <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the request protocols that will trigger this plugin. The default value, as well as the possible values allowed on this field, may change depending on the plugin type. For example, plugins that only work in stream mode will only support "tcp" and "tls". Defaults to ["grpc", "grpcs", "http", "https"].</td>
+//   </tr>
+//    <tr>
+//     <td>enabled</td>
+//     <td>optional</td>
+//     <td>Whether the plugin is applied. Defaults to true.</td>
+//   </tr>
+//    <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Plugin, for grouping and filtering.</td>
+//   </tr>
+// </table>
+
+@name("Update Plugin Associated to a Specific Route")
+PATCH "https://{{gateway}}/routes/:routeNameOrId/plugins/:pluginId"
+"Content-Type": "application/json"
+json({
+    "config": {
+        "minute": 20,
+        "policy": "cluster",
+        "month": null,
+        "redis_timeout": 2000,
+        "limit_by": "consumer",
+        "hide_client_headers": false,
+        "second": null,
+        "day": null,
+        "redis_password": null,
+        "year": null,
+        "redis_database": 0,
+        "hour": 500,
+        "redis_port": 6379,
+        "redis_host": null,
+        "fault_tolerant": true
+    },
+    "service": null,
+    "enabled": true,
+    "protocols": [
+        "https",
+        "http"
+    ],
+    "name": "rate-limiting",
+    "consumer": null,
+    "route": {
+        "id": "875973fd-ba3f-4c7b-8301-e9263013e6d2"
+    },
+    "tags": [
+        "admin",
+        "high-priority",
+        "critical"
+    ]
+})
+
+
+// # Update Plugin Associated to a Specific Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#update-plugin-associated-to-a-specific-service)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>service name or id</td>
+//     <td>required</td>
+//     <td>The unique identifier or the name of the Service to update.</td>
+//   </tr>
+//   <tr>
+//     <td>plugin  id</td>
+//     <td>required</td>
+//     <td>The unique identifier of the Plugin to update.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>The name of the Plugin that’s going to be added. Currently the Plugin must be installed in every Kong instance separately.</td>
+//   </tr>
+//   <tr>
+//     <td>route</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via the specified route. Leave unset for the plugin to activate regardless of the Route being used. Defaults to null.With form-encoded, the notation is route.id=<route id> or route.name=<route name>. With JSON, use “"route":{"id":"<route id>"} or "route":{"name":"<route name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via one of the routes belonging to the specified Service. Leave unset for the plugin to activate regardless of the Service being matched. Defaults to null.With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>consumer</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will activate only for requests where the specified has been authenticated. (Note that some plugins can not be restricted to consumers this way.). Leave unset for the plugin to activate regardless of the authenticated consumer. Defaults to null.With form-encoded, the notation is consumer.id=<consumer id> or consumer.username=<consumer username>. With JSON, use “"consumer":{"id":"<consumer id>"} or "consumer":{"username":"<consumer username>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>config</td>
+//     <td>optional</td>
+//     <td>The configuration properties for the Plugin which can be found on the plugins documentation page in the Kong Hub.</td>
+//   </tr>
+//    <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the request protocols that will trigger this plugin. The default value, as well as the possible values allowed on this field, may change depending on the plugin type. For example, plugins that only work in stream mode will only support "tcp" and "tls". Defaults to ["grpc", "grpcs", "http", "https"].</td>
+//   </tr>
+//    <tr>
+//     <td>enabled</td>
+//     <td>optional</td>
+//     <td>Whether the plugin is applied. Defaults to true.</td>
+//   </tr>
+//    <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Plugin, for grouping and filtering.</td>
+//   </tr>
+// </table>
+
+@name("Update Plugin Associated to a Specific Service")
+PATCH "https://{{gateway}}/services/:serviceNameOrId/plugins/:pluginId"
+"Content-Type": "application/json"
+json({
+    "config": {
+        "minute": 20,
+        "policy": "cluster",
+        "month": null,
+        "redis_timeout": 2000,
+        "limit_by": "consumer",
+        "hide_client_headers": false,
+        "second": null,
+        "day": null,
+        "redis_password": null,
+        "year": null,
+        "redis_database": 0,
+        "hour": 500,
+        "redis_port": 6379,
+        "redis_host": null,
+        "fault_tolerant": true
+    },
+    "service": null,
+    "enabled": true,
+    "protocols": [
+        "https",
+        "http"
+    ],
+    "name": "rate-limiting",
+    "consumer": null,
+    "route": {
+        "id": "875973fd-ba3f-4c7b-8301-e9263013e6d2"
+    },
+    "tags": [
+        "admin",
+        "high-priority",
+        "critical"
+    ]
+})
+
+
+// # Update Plugin Associated to a Specific Consumer [konghq](https://docs.konghq.com/2.0.x/admin-api/#update-plugin-associated-to-a-specific-consumer)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>consumer username or id</td>
+//     <td>required</td>
+//     <td>The unique identifier or the username of the Consumer to update.</td>
+//   </tr>
+//   <tr>
+//     <td>plugin  id</td>
+//     <td>required</td>
+//     <td>The unique identifier of the Plugin to update.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>The name of the Plugin that’s going to be added. Currently the Plugin must be installed in every Kong instance separately.</td>
+//   </tr>
+//   <tr>
+//     <td>route</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via the specified route. Leave unset for the plugin to activate regardless of the Route being used. Defaults to null.With form-encoded, the notation is route.id=<route id> or route.name=<route name>. With JSON, use “"route":{"id":"<route id>"} or "route":{"name":"<route name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>service</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via one of the routes belonging to the specified Service. Leave unset for the plugin to activate regardless of the Service being matched. Defaults to null.With form-encoded, the notation is service.id=<service id> or service.name=<service name>. With JSON, use “"service":{"id":"<service id>"} or "service":{"name":"<service name>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>consumer</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will activate only for requests where the specified has been authenticated. (Note that some plugins can not be restricted to consumers this way.). Leave unset for the plugin to activate regardless of the authenticated consumer. Defaults to null.With form-encoded, the notation is consumer.id=<consumer id> or consumer.username=<consumer username>. With JSON, use “"consumer":{"id":"<consumer id>"} or "consumer":{"username":"<consumer username>"}.</td>
+//   </tr>
+//    <tr>
+//     <td>config</td>
+//     <td>optional</td>
+//     <td>The configuration properties for the Plugin which can be found on the plugins documentation page in the Kong Hub.</td>
+//   </tr>
+//    <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the request protocols that will trigger this plugin. The default value, as well as the possible values allowed on this field, may change depending on the plugin type. For example, plugins that only work in stream mode will only support "tcp" and "tls". Defaults to ["grpc", "grpcs", "http", "https"].</td>
+//   </tr>
+//    <tr>
+//     <td>enabled</td>
+//     <td>optional</td>
+//     <td>Whether the plugin is applied. Defaults to true.</td>
+//   </tr>
+//    <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>An optional set of strings associated with the Plugin, for grouping and filtering.</td>
+//   </tr>
+// </table>
+
+@name("Update Plugin Associated to a Specific Consumer")
+PATCH "https://{{gateway}}/consumers/:consumerUsernameOrd}/plugins/:pluginId"
+"Content-Type": "application/json"
+json({
+    "config": {
+        "minute": 20,
+        "policy": "cluster",
+        "month": null,
+        "redis_timeout": 2000,
+        "limit_by": "consumer",
+        "hide_client_headers": false,
+        "second": null,
+        "day": null,
+        "redis_password": null,
+        "year": null,
+        "redis_database": 0,
+        "hour": 500,
+        "redis_port": 6379,
+        "redis_host": null,
+        "fault_tolerant": true
+    },
+    "service": null,
+    "enabled": true,
+    "protocols": [
+        "https",
+        "http"
+    ],
+    "name": "rate-limiting",
+    "consumer": null,
+    "route": {
+        "id": "875973fd-ba3f-4c7b-8301-e9263013e6d2"
+    },
+    "tags": [
+        "admin",
+        "high-priority",
+        "critical"
+    ]
+})
+
+
+

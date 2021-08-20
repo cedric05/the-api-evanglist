@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// Search, sort, and filter IP/country access rules
+
+@name("Search, sort, and filter IP/country access rules")
+GET "https://{{baseUrl}}/user/firewall/access_rules/rules"
+"X": "<>"
+? "configuration_target"= "<>"
+? "configuration_value"= "<>"
+? "direction"= "<>"
+? "match"= "<>"
+? "mode"= "<>"
+? "order"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Remove an access rule so it is no longer evaluated during requests
+
+@name("Remove an access rule so it is no longer evaluated during requests")
+DELETE "https://{{baseUrl}}/user/firewall/access_rules/rules/:identifier"
+
+
+

@@ -1,0 +1,93 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6a833df1-a1a1-4ba1-b641-eb1a29c22573.postman_collection.json
+
+@name("Create Domestic Scheduled Payments")
+POST "https://{{baseUrl}}/domestic-scheduled-payments"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-idempotency-key": "sint Excepteur"
+"x-jws-signature": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "Data": {
+        "ConsentId": "eiusmod in anim commodo",
+        "Initiation": {
+            "CreditorAccount": {
+                "Identification": "",
+                "Name": "incididunt eu",
+                "SchemeName": "UK.OBIE.PAN",
+                "SecondaryIdentification": "aliquip"
+            },
+            "InstructedAmount": {
+                "Amount": "non",
+                "Currency": "veniam laboris cillum"
+            },
+            "InstructionIdentification": "fugiat mollit",
+            "RequestedExecutionDateTime": "1942-09-26T07:05:24.685Z",
+            "CreditorPostalAddress": {
+                "AddressLine": [
+                    "officia ea",
+                    "enim qui tempor"
+                ],
+                "AddressType": "MailTo",
+                "BuildingNumber": "magna laborum",
+                "Country": "dolor ex aliquip deserunt et",
+                "CountrySubDivision": "sed et",
+                "Department": "aliquip officia sunt ea dolore",
+                "PostCode": "ad dolore",
+                "StreetName": "fugiat et eu",
+                "SubDepartment": "in pariatur",
+                "TownName": "consequat esse ea"
+            },
+            "EndToEndIdentification": "sunt occaecat culpa aliquip",
+            "LocalInstrument": "UK.OBIE.BACS",
+            "RemittanceInformation": {
+                "Reference": "anim voluptate ipsum occaecat culpa",
+                "Unstructured": "et anim Duis"
+            },
+            "SupplementaryData": {
+                "LocalInstrument": "UK.OBIE.FPS"
+            }
+        }
+    },
+    "Risk": {
+        "DeliveryAddress": {
+            "Country": "fugiat qui in velit labore",
+            "TownName": "tempor nostrud nulla",
+            "AddressLine": [
+                "et ut",
+                "culpa in deseru"
+            ],
+            "BuildingNumber": "amet Lorem in pariatur",
+            "CountrySubDivision": [
+                "dolor tempor",
+                "adipisicing exercitation ea deserunt"
+            ],
+            "PostCode": "mollit",
+            "StreetName": "consequat"
+        },
+        "MerchantCategoryCode": "eu voluptate dolo",
+        "MerchantCustomerIdentification": "aliqua nisi exercitation",
+        "PaymentContextCode": "PartyToParty"
+    }
+})
+
+
+@name("Get Domestic Scheduled Payments")
+GET "https://{{baseUrl}}/domestic-scheduled-payments/:DomesticScheduledPaymentId"
+"Authorization": "sint Excepteur"
+"x-fapi-financial-id": "sint Excepteur"
+"x-consumer-key": "sint Excepteur"
+"x-customer-user-agent": "sint Excepteur"
+"x-fapi-customer-ip-address": "sint Excepteur"
+"x-fapi-customer-last-logged-time": "sint Excepteur"
+"x-fapi-interaction-id": "sint Excepteur"
+
+
+

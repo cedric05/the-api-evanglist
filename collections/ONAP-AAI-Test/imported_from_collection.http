@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-697e3d88-d133-462a-99f4-9d0e8085ad5e.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("AAI", "AAI")
+
+
+@name("VServersByName") : "base-inherit-auth"
+GET "https://10.12.5.63/aai/v14/cloud-infrastructure/cloud-regions/cloud-region/CloudOwner/RegionOne/tenants/tenant/087050388b204c73a3e418dd2c1fe30b/vservers/"
+"X-FromAppId": "AAI"
+"X-TransactionId": "get_aai_subscr"
+"Accept": "application/json"
+"Content-Type": "application/json"
+? "vserver-name"= "vofwl01vfw4407"
+
+
+@name("Tenants") : "base-inherit-auth"
+GET "https://10.12.5.63/aai/v14/cloud-infrastructure/cloud-regions/cloud-region/CloudOwner/RegionOne/tenants/tenant/087050388b204c73a3e418dd2c1fe30b/vservers/"
+"X-FromAppId": "AAI"
+"X-TransactionId": "get_aai_subscr"
+"Accept": "application/json"
+"Content-Type": "application/json"
+? "vserver-name"= "vofwl01vfw4407"
+
+
+@name("GenericVNFById") : "base-inherit-auth"
+GET "https://10.12.5.63/aai/v14/network/generic-vnfs/generic-vnf/2d125b4d-e120-4815-a0c7-4c4bec6c89f9"
+"X-FromAppId": "AAI"
+"X-TransactionId": "get_aai_subscr"
+"Accept": "application/json"
+"Content-Type": "application/json"
+
+
+

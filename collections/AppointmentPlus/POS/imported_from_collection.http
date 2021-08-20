@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2a81f130-370e-41fa-ab00-9112802569c8.postman_collection.json
+
+// Deletes the specified coupon. Once deleted, the coupon cannot be restored. t Only one of the above parameters are required (`code` or `coupon_id`) to identify the coupon.
+
+@name("DeleteCoupons")
+POST "https://{{baseUrl}}/POS/DeleteCoupons"
+? "coupon_id"= "<integer>"
+? "code"= "<string>"
+
+
+// Updates the details of a package and returns the details.  Only one of either `code` or `coupon_id` is required to identify the coupon.  If any of the parameters above are not sent, the current value will be preserved. If any of the parameters are sent containing an empty string, the value will be cleared.
+
+@name("UpdateCoupons")
+POST "https://{{baseUrl}}/POS/UpdateCoupons"
+? "location_id"= "<integer>"
+? "description"= "<string>"
+? "type"= "<integer>"
+? "amount"= "<number>"
+? "start_date"= "<integer>"
+? "exp_date"= "<integer>"
+? "code"= "<string>"
+? "sort_order"= "<integer>"
+
+
+// Returns the details for coupons.  If none of the optional parameters are sent, the service will return the details for all coupons at the headquarters location.
+
+@name("GetCoupons")
+POST "https://{{baseUrl}}/POS/GetCoupons"
+? "location_id"= "<integer>"
+? "coupon_id"= "<integer>"
+? "code"= "<string>"
+? "start_date"= "<integer>"
+? "exp_date"= "<integer>"
+
+
+// Creates a new coupon and returns the details of the new coupon.  If you do not specify a `location_id` the new coupon will be created at the headquarters location.  Coupons with type=1 are percentage coupons and the amount value should be a whole number between 1 and 100. Coupons with type=2 are flat amount coupons and the amount value can be any positive decimal value.  Coupon `code` must be unique. Attempting to create a coupon with a duplicate `code` will result in an error.
+
+@name("CreateCoupons")
+POST "https://{{baseUrl}}/POS/CreateCoupons"
+? "location_id"= "<integer>"
+? "description"= "<string>"
+? "type"= "<integer>"
+? "amount"= "<number>"
+? "start_date"= "<integer>"
+? "exp_date"= "<integer>"
+? "code"= "<string>"
+? "sort_order"= "<integer>"
+
+
+

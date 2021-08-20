@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Delete an {objectName}")
+DELETE "https://{{baseUrl}}/:objectName/:objectId"
+"Authorization": "ad cillum non laborum"
+
+
+@name("Retrieve an {objectName}")
+GET "https://{{baseUrl}}/:objectName/:objectId"
+"Authorization": "ad cillum non laborum"
+
+
+@name("Update an {objectName}")
+PATCH "https://{{baseUrl}}/:objectName/:objectId"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "objectField": "laborum exercitatio"
+})
+
+
+@name("Update an {objectName}")
+PUT "https://{{baseUrl}}/:objectName/:objectId"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "objectField": "laborum exercitatio"
+})
+
+
+

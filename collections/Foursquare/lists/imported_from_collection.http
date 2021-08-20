@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /lists/{LIST_ID}
+
+@name("/lists/{LIST_ID}")
+POST "https://{{baseUrl}}/lists/add"
+? "collaborative"= "<boolean>"
+? "description"= "<string>"
+? "name"= "<string>"
+? "photoId"= "<string>"
+? "v"= "<string>"
+
+
+

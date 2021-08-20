@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Get available projects") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "private"= "<string>"
+? "name"= "<string>"
+? "ordering"= "<string>"
+
+
+@name("Create a new project") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/projects/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "description": "<string>",
+    "private": "<boolean>"
+})
+
+
+@name("Check if you are able to copy a project to your account.") : "base-inherit-auth"
+HEAD "https://{{baseUrl}}/v1/:namespace/projects/project-copy-check/"
+"Content-Type": "application/json"
+json({
+    "project": "<string>"
+})
+
+
+@name("Copy a project to your own account.") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/:namespace/projects/project-copy/"
+"Content-Type": "application/json"
+json({
+    "project": "<string>",
+    "name": "<string>"
+})
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ca17582-750f-4cd3-b08b-1a95b973bd23.postman_collection.json
+
+// Submits a group order such as Bracket and OCO Orders.nn#### Order Cancels Order (OCO)nAn OCO order is a group of orders whereby if one of the orders is fillednor partially-filled, then all of the other orders in the group arencancelled.nn#### Bracket OCO OrdersnA bracket order is a special instance of an OCO (Order Cancel Order).nBracket orders are used to exit an existing position. They are designednto limit loss and lock in profit by u201cbracketingu201d an order with ansimultaneous stop and limit
+
+@name("Submit Group Ordern")
+POST "https://{{baseUrl}}/orders/groups"
+? "access_token"= "<string>"
+
+
+// Returns estimated cost and commission information for a group of orders (OCO, BRK) without the orders actually being placednn**Base Confirmation**  (All confirmations will have these fields)n* Routen* Durationn* Accountn* SummaryMessagen* OrderConfirmIdnn**Equity Confirmation** (Base Confirmation fields + the following)n* EstimatedPricen* EstimatedPriceDisplayn* EstimatedCostn* EstimatedCostDisplayn* EstimatedCommissionn* EstimatedCommissionDisplaynn**Forex Confirmation** (Base Confirmation fiel
+
+@name("Confirm Group Ordern")
+POST "https://{{baseUrl}}/orders/groups/confirm"
+? "access_token"= "<string>"
+
+
+

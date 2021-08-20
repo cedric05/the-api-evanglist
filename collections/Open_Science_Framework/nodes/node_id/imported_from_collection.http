@@ -1,0 +1,71 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// nPermanently deletes a node. This action cannot be undone.n#### PermissionsnOnly project administrators may delete a node. Attempting to delete a node for which you are not an administrator will result in a **403 Forbidden** response.n#### ReturnsnIf the request is successful, no content is returned.nnIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes) to unders
+
+@name("Delete a node")
+DELETE "https://{{baseUrl}}/nodes/:node_id/"
+
+
+// nA paginated list of the next level child nodes for the given node. The returned nodes are sorted by their `date_modified`, with the most recently updated child nodes appearing first.nnThe list will include child nodes that are public, as well as child nodes that are private, if the authenticated user has permission to view them.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 child nodes. If the given node has zero child nodes
+
+@name("List all child nodes")
+GET "https://{{baseUrl}}/nodes/:node_id/children/"
+
+
+// nA paginated list of comments related to a given node.nnThe returned comments are sorted by their creation date, with the most recent comments appearing first.n####PermissionsnComments on public nodes are given read-only access to everyone.nnIf the node comment-level is `private`, only contributors have permission to comment.nnIf the comment-level is `public`, any logged-in OSF user can comment.nnComments on private nodes are only visible to contributors and administrators on the parent node.n##
+
+@name("List all comments")
+GET "https://{{baseUrl}}/nodes/:node_id/comments/"
+
+
+// nA paginated list of the current node's forks. The returned fork nodes are sorted by their `forked_date`, with the most recently forked nodes appearing first.nnForking a project creates a copy of an existing node and all of its contents. The fork always points back to the original node, forming a network of nodes.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 forked nodes. If the current node has zero forked nodes, the `data`
+
+@name("List all forks of this node")
+GET "https://{{baseUrl}}/nodes/:node_id/forks/"
+
+
+// List all identifiers associated with a given node.n####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of identifiers. Each resource in the array is a separate identifier object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).n####FilteringnnYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://a
+
+@name("List all identifiers")
+GET "https://{{baseUrl}}/nodes/:node_id/identifiers/"
+
+
+// List of all institutions affiliated with this node.n####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 affilited institutions. Each resource in the array is a separate institution object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
+
+@name("List all institutions")
+GET "https://{{baseUrl}}/nodes/:node_id/institutions/"
+
+
+// List of all nodes linked to the given node.n####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 nodes. Each resource in the array is a separate node object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).n####FilteringnYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io/v
+
+@name("List all linked nodes")
+GET "https://{{baseUrl}}/nodes/:node_id/linked_nodes/"
+
+
+// A paginated list of all logs associated with a given node.nnThe returned logs are sorted by their `date`, with the most recents logs appearing first.nnThis list includes the logs of the specified node as well as the logs of that node's children to which the current user has read-only access.nn####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 logs. Each resource in the array is a separate logs object.nnThe `links` key contains a di
+
+@name("List all logs")
+GET "https://{{baseUrl}}/nodes/:node_id/logs/"
+
+
+// A paginated list of preprints related to a given node. The returned preprints are sorted by their creation date, with the most recent preprints appearing first.nn**Note: This API endpoint is under active development, and is subject to change in the future.**n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 preprints. Each resource in the array is a separate preprint object.nnThe `links` key contains a dictionary of links that ca
+
+@name("List all preprints")
+GET "https://{{baseUrl}}/nodes/:node_id/preprints/"
+
+
+// List of all registrations of the given node.n####ReturnsnnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 registrations. Each resource in the array is a separate registrations object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).n####FilteringnnYou can optionally request that the response only include registrations that match your filters by utilizing the filter query parameter,
+
+@name("List all registrations")
+GET "https://{{baseUrl}}/nodes/:node_id/registrations/"
+
+
+// List of wiki pages on a node.n####ReturnsnPaginated list of the node's current wiki page versions ordered by their date_modified. Each resource contains the full representation of the wiki, meaning additional requests to an individual wiki's detail view are not necessary.nnNote that if an anonymous view_only key is being used, the user relationship will not be exposed.nnIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. R
+
+@name("List all wikis")
+GET "https://{{baseUrl}}/nodes/:node_id/wikis/"
+
+
+

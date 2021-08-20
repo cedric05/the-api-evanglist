@@ -1,0 +1,186 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-139d2cf6-a45e-49f8-b258-0453deb0a5e1.postman_collection.json
+
+// Threads Unsubscribe 
+
+@name("Threads Unsubscribe")
+POST "https://{{baseUrl}}/threads/unsubscribe.json"
+? "email"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads Restore 
+
+@name("Threads Restore")
+POST "https://{{baseUrl}}/threads/restore.json"
+? "forum"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads Create 
+
+@name("Threads Create")
+POST "https://{{baseUrl}}/threads/create.json"
+? "category"= "<string>"
+? "date"= "<string>"
+? "forum"= "<string>"
+? "identifier"= "<string>"
+? "message"= "<string>"
+? "slug"= "<string>"
+? "title"= "<string>"
+? "url"= "<string>"
+
+
+// Threads Update 
+
+@name("Threads Update")
+POST "https://{{baseUrl}}/threads/update.json"
+? "author"= "<string>"
+? "category"= "<string>"
+? "forum"= "<string>"
+? "identifier"= "<string>"
+? "message"= "<string>"
+? "old_identifier"= "<string>"
+? "slug"= "<string>"
+? "thread"= "<string>"
+? "title"= "<string>"
+? "url"= "<string>"
+
+
+// Threads ListHot 
+
+@name("Threads ListHot")
+GET "https://{{baseUrl}}/threads/listHot.json"
+? "author"= "<string>"
+? "category"= "<string>"
+? "forum"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "related"= "<string>"
+
+
+// Threads Spam 
+
+@name("Threads Spam")
+POST "https://{{baseUrl}}/threads/spam.json"
+? "forum"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads Open 
+
+@name("Threads Open")
+POST "https://{{baseUrl}}/threads/open.json"
+? "forum"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads Subscribe 
+
+@name("Threads Subscribe")
+POST "https://{{baseUrl}}/threads/subscribe.json"
+? "email"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads Details 
+
+@name("Threads Details")
+GET "https://{{baseUrl}}/threads/details.json"
+? "attach"= "<string>"
+? "forum"= "<string>"
+? "related"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads List 
+
+@name("Threads List")
+GET "https://{{baseUrl}}/threads/list.json"
+? "attach"= "<string>"
+? "author"= "<string>"
+? "category"= "<string>"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads Close 
+
+@name("Threads Close")
+POST "https://{{baseUrl}}/threads/close.json"
+? "forum"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads ListPopular 
+
+@name("Threads ListPopular")
+GET "https://{{baseUrl}}/threads/listPopular.json"
+? "category"= "<string>"
+? "forum"= "<string>"
+? "interval"= "<string>"
+? "limit"= "<string>"
+? "related"= "<string>"
+? "with_top_post"= "<string>"
+
+
+// Threads Set 
+
+@name("Threads Set")
+GET "https://{{baseUrl}}/threads/set.json"
+? "attach"= "<string>"
+? "forum"= "<string>"
+? "related"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads ListUsersVotedThread 
+
+@name("Threads ListUsersVotedThread")
+GET "https://{{baseUrl}}/threads/listUsersVotedThread.json"
+? "limit"= "<string>"
+? "prioritize_followed"= "<string>"
+? "thread"= "<string>"
+? "vote"= "<string>"
+
+
+// Threads Remove 
+
+@name("Threads Remove")
+POST "https://{{baseUrl}}/threads/remove.json"
+? "forum"= "<string>"
+? "thread"= "<string>"
+
+
+// Threads Vote 
+
+@name("Threads Vote")
+POST "https://{{baseUrl}}/threads/vote.json"
+? "forum"= "<string>"
+? "thread"= "<string>"
+? "vote"= "<string>"
+
+
+// Threads ListPosts 
+
+@name("Threads ListPosts")
+GET "https://{{baseUrl}}/threads/listPosts.json"
+? "cursor"= "<string>"
+? "forum"= "<string>"
+? "include"= "<string>"
+? "limit"= "<string>"
+? "order"= "<string>"
+? "query"= "<string>"
+? "related"= "<string>"
+? "since"= "<string>"
+? "thread"= "<string>"
+
+
+

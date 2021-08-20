@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-33af5de4-dc9a-486d-b92d-1eaf85678dac.postman_collection.json
+
+// Worker on leave.  Worker's status changed to on leave effective on such and such a date
+
+@name("Worker On Leave")
+POST "https://{{baseUrl}}/events/hr/v1/worker.on-leave"
+? "No Name"= "<string>"
+
+
+// Returns an event metadata
+
+@name("Worker On Leave Meta")
+GET "https://{{baseUrl}}/events/hr/v1/worker.on-leave/meta"
+? "No Name"= "<string>"
+
+
+

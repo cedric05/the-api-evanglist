@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// List address contact relations.
+
+@name("List address contact relations")
+GET "https://{{baseUrl}}/rest/accounts/addresses/contact_relations"
+? "id"= "<post>"
+? "contactId"= "<post>"
+? "typeId"= "<post>"
+? "addressId"= "<post>"
+? "isPrimary"= "<post>"
+? "page"= "<post>"
+? "itemsPerPage"= "<>"
+? "with"= "<>"
+
+
+// Deletes an address contact relation. The ID of the relation must be specified.
+
+@name("Delete an address contact relation")
+DELETE "https://{{baseUrl}}/rest/accounts/addresses/contact_relations/:addressContactRelationId"
+
+
+

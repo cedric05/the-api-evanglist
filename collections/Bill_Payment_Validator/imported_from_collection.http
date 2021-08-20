@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-08b68e88-b063-4be5-a58c-ade91702d176.postman_collection.json
+
+// Bill Payment Validator performs real time transaction validation against the specified Biller ID's account masks, account check digits and all other registered RPPS processing parameters.
+
+@name("Bill Payment Validator service returns the processing status for a potential RPPS transaction")
+POST "https://{{baseUrl}}/isRoutingValid"
+"Content-Type": "application/JSON"
+json({
+    "BillPayAccountValidation": {
+        "AccountNumber": "<string>",
+        "BillerId": "<string>",
+        "CustomerIdentifier1": "<string>",
+        "CustomerIdentifier2": "<string>",
+        "CustomerIdentifier3": "<string>",
+        "CustomerIdentifier4": "<string>",
+        "ResponseString": "<string>",
+        "RppsId": "<string>",
+        "TransactionAmount": "<string>"
+    }
+})
+
+
+

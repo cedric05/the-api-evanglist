@@ -1,0 +1,1 @@
+Use LI API data to access RMS model insights in a flexible, scalable, and programmable way. The suite of layers includes exposure enhancement, geocoding, hazard, risk scoring, and loss costs to provide information for key decisions in the underwriting workflow, including screening, selection, and pricing.

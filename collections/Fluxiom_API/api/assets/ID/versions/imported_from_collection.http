@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-171a8c67-fca5-43a5-8135-dc521868bfb3.postman_collection.json
+
+// Get asset versions
+
+@name("Get asset versions")
+GET "https://{{baseUrl}}/api/assets/ID/versions"
+
+
+// Get single asset version
+
+@name("Get single asset version")
+GET "https://{{baseUrl}}/api/assets/ID/versions/VID"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Returns the goal details for the given GOAL_ID.
+
+@name("Get a single goal details")
+GET "https://{{baseUrl}}/goals/ABC123"
+"X": "<>"
+
+
+// The GOAL_ID is obtained from the goals list.
+
+@name("Mark a goal as successful")
+POST "https://{{baseUrl}}/goals/ABC123/mark_as_successful"
+"X": "<>"
+
+
+

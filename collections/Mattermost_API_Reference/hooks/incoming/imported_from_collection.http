@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4cff9dbd-dc9e-457a-8421-41b9b4a7bdef.postman_collection.json
+
+// Create an incoming webhook for a channel.n##### Permissionsn`manage_webhooks` for the channel the webhook is in.n
+
+@name("Create an incoming webhook")
+POST "https://{{baseUrl}}/hooks/incoming"
+
+
+// Get an incoming webhook given the hook id.n##### Permissionsn`manage_webhooks` for system or `manage_webhooks` for the specific team or `manage_webhooks` for the channel.n
+
+@name("Get an incoming webhook")
+GET "https://{{baseUrl}}/hooks/incoming/:hook_id"
+
+
+

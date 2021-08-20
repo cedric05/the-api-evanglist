@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c06f082c-7c18-4317-b196-8ad07101a2f4.postman_collection.json
+
+@name("Return a list of genes for an affymetrix ID")
+GET "https://{{baseUrl}}/genes/affyId/:affyId/:speciesTypeKey"
+
+
+@name("Return a list of genes for an alias and species")
+GET "https://{{baseUrl}}/genes/alias/:aliasSymbol/:speciesTypeKey"
+
+
+@name("Return a list of gene alleles")
+GET "https://{{baseUrl}}/genes/allele/:rgdId"
+
+
+@name("Return a list of genes annotated to an ontology term")
+GET "https://{{baseUrl}}/genes/annotation/:accId/:speciesTypeKey"
+
+
+@name("Return a list of genes by keyword and species type key")
+GET "https://{{baseUrl}}/genes/keyword/:keyword/:speciesTypeKey"
+
+
+@name("Return a list of all genes with position information for an assembly")
+GET "https://{{baseUrl}}/genes/map/:mapKey"
+
+
+@name("Return a list of gene orthologs")
+GET "https://{{baseUrl}}/genes/ortholog/:rgdId"
+
+
+@name("Return a list of all genes for a species in RGD")
+GET "https://{{baseUrl}}/genes/species/:speciesTypeKey"
+
+
+@name("Return a list of genes position and map key")
+GET "https://{{baseUrl}}/genes/:chr/:start/:stop/:mapKey"
+
+
+@name("Get a gene record by RGD ID")
+GET "https://{{baseUrl}}/genes/:rgdId"
+
+
+@name("Get a gene record by symbol and species type key")
+GET "https://{{baseUrl}}/genes/:symbol/:speciesTypeKey"
+
+
+

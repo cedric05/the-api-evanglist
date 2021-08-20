@@ -1,0 +1,101 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d3c96cc-956a-44d5-9cdb-114ad7d90bde.postman_collection.json
+
+// Returns the file information for the specified file id.
+
+@name("Get File Details")
+GET "https://{{baseUrl}}/file/id/{{fileId}}.{{format}}"
+? "entityId"= "<string>"
+
+
+// Lists files that were modified.
+
+@name("List changed files")
+GET "https://{{baseUrl}}/file/history.{{format}}"
+? "count"= "<integer>"
+? "entityId"= "<string>"
+? "startDate"= "<date>"
+? "endDate"= "<date>"
+? "offset"= "<int332>"
+? "status"= "<string>"
+
+
+// Count files that were modified.
+
+@name("Count of Files changes")
+GET "https://{{baseUrl}}/file/historyCount.json"
+? "entityId"= "{{entityId}}"
+? "entityId"= "<string>"
+
+
+// Upload file.
+
+@name("Upload file")
+POST "https://{{baseUrl}}/file/upload.{{format}}"
+"accessToken": "<string>"
+"Content-Type": "multipart/form-data"
+files(
+	("upload", "<binary>"),
+	("parentFolderId", "<string>"),
+	("entityId", "<string>"),
+	("serviceCode", "<string>")
+)
+
+
+// Rename the file with specified file name.
+
+@name("Rename File ")
+PUT "https://{{baseUrl}}/file/rename.{{format}}"
+"accessToken": "<string>"
+"Content-Type": "application/json"
+json({
+    "fileId": "<string>",
+    "fileName": "<string>",
+    "entityId": "<string>",
+    "serviceCode": "<string>"
+})
+
+
+// Move the file to a new folder location.
+
+@name("Move File ")
+PUT "https://{{baseUrl}}/file/move.{{format}}"
+"accessToken": "<string>"
+"Content-Type": "application/json"
+json({
+    "fileId": "<string>",
+    "newFolderId": "<string>",
+    "entityId": "<string>",
+    "serviceCode": "<string>"
+})
+
+
+// Restore the file with the specified id.
+
+@name("Restore File ")
+PUT "https://{{baseUrl}}/file/restore.{{format}}"
+"accessToken": "<string>"
+"Content-Type": "application/json"
+json({
+    "fileId": "<string>",
+    "entityId": "<string>",
+    "serviceCode": "<string>"
+})
+
+
+// Mark file as deleted.
+
+@name("Remove File")
+DELETE "https://{{baseUrl}}/file/remove/:fileId/:entityId/{{serviceCode}}.{{format}}"
+"accessToken": "<string>"
+
+
+// Mark file as purged.
+
+@name("Purge File")
+DELETE "https://{{baseUrl}}/file/purge/:fileId/:entityId/{{serviceCode}}.{{format}}"
+"accessToken": "<string>"
+
+
+

@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Create a payment recipient for payment initiation.  The recipient must be in Europe, within a country that is a member of the Single Euro Payment Area (SEPA).  For a standing order (recurring) payment, the recipient must be in the UK.
+// 
+// The endpoint is idempotent: if a developer has already made a request with the same payment details, Plaid will return the same `recipient_id`.
+// 
+// In the Sandbox environment, you can use the `/payment_initiation/recipient/create` endpoint to generate recipients. Programmatic recipient creation in the Development and Production environments can be done after approval by Plaid's Compliance team. [Contact Sales](https://plaid.com/contact/)for approval.
+
+@name("Create payment recipient") : "base-inherit-auth"
+POST "https://{{baseUrl}}/payment_initiation/recipient/create"
+"Content-Type": "application/json"
+json({
+    "name": "do Lorem in laborum aute",
+    "client_id": "do in pariatur incididunt",
+    "secret": "consectetur ut",
+    "iban": "sunt",
+    "bacs": {
+        "account": "commodo esse ut",
+        "sort_code": "id minim mollit"
+    },
+    "address": {
+        "street": [
+            "velit ipsum nostrud do elit"
+        ],
+        "city": "reprehenderit",
+        "postal_code": "deserunt nisi pariatur nostrud",
+        "country": "irure sit"
+    }
+})
+
+
+// Get details about a payment recipient you have previously created.
+
+@name("Get payment recipient") : "base-inherit-auth"
+POST "https://{{baseUrl}}/payment_initiation/recipient/get"
+"Content-Type": "application/json"
+json({
+    "recipient_id": "aute dolor",
+    "client_id": "adipisicing qui Lorem voluptate incididunt",
+    "secret": "sunt adipisicing ex"
+})
+
+
+// The `/payment_initiation/recipient/list` endpoint list the payment recipients that you have previously created.
+
+@name("List payment recipients") : "base-inherit-auth"
+POST "https://{{baseUrl}}/payment_initiation/recipient/list"
+"Content-Type": "application/json"
+json({
+    "client_id": "ad non irure",
+    "secret": "aliquip adipisicing veniam"
+})
+
+
+

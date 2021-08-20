@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d4cf5606-be3b-4e27-b14f-77855e9137ad.postman_collection.json
+
+// Delete the glossary
+
+@name("Delete the glossary")
+DELETE "https://{{baseUrl}}/projects/:projectId/glossaries/:glossaryId"
+
+
+// Download a glossary
+
+@name("Download a glossary")
+GET "https://{{baseUrl}}/projects/:projectId/glossaries/:glossaryId/download"
+
+
+

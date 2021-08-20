@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-41382166-1614-47fb-a602-ac8f7d14dffe.postman_collection.json
+
+// Gets a list of all `Commerical Credit Card` objects.
+
+@name("/commercial-credit-cards")
+GET "https://{{baseUrl}}/commercial-credit-cards"
+"If-Modified-Since": "incididunt nostrud aute"
+"If-None-Match": "incididunt nostrud aute"
+
+
+// Gets header information on the current set of `Commerical Credit Card` data
+
+@name("/commercial-credit-cards")
+HEAD "https://{{baseUrl}}/commercial-credit-cards"
+"If-Modified-Since": "incididunt nostrud aute"
+"If-None-Match": "incididunt nostrud aute"
+
+
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f031a746-26b6-43ae-92fe-af9fc0fd34d8.postman_collection.json
+
+@name("Search")
+GET "https://octopart.com/api/v4/rest/parts/search"
+? "apikey"= "{{octopart_api_key}}"
+? "q"= "resistor"
+
+
+

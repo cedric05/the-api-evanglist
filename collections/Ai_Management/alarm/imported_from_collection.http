@@ -1,0 +1,157 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-69935689-abac-4ca3-a7a8-e89ccfe72173.postman_collection.json
+
+// This operation list or find Alarm entities
+
+@name("List or find Alarm objects")
+GET "https://{{baseUrl}}/alarm"
+? "fields"= "ex ullamco ad"
+? "offset"= "-82478083"
+? "limit"= "-82478083"
+
+
+// This operation creates a Alarm entity.
+
+@name("Creates a Alarm")
+POST "https://{{baseUrl}}/alarm"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "alarmType": "operationalViolation",
+    "perceivedSeverity": "WARNING",
+    "probableCause": "adipisicing dolore do",
+    "alarmedObject": {
+        "id": "adipisicing cupidatat dolor",
+        "href": "sed dolor quis est aliqua"
+    },
+    "sourceSystemId": "pariatur sed Lorem amet",
+    "state": "Excepteur culpa aliquip",
+    "alarmRaisedTime": "1955-06-23T08:52:47.492Z",
+    "ackState": "et qui ex incididunt est",
+    "ackSystemId": "ex cillum velit",
+    "ackUserId": "sunt des",
+    "alarmChangedTime": "1953-09-04T05:30:44.465Z",
+    "alarmClearedTime": "1974-09-23T19:43:50.432Z",
+    "alarmDetails": "in irure consequat dolor",
+    "alarmEscalation": false,
+    "alarmReportingTime": "1969-07-21T10:30:49.244Z",
+    "alarmedObjectType": "aliqua Excepteur anim",
+    "clearSystemId": "aliqua voluptate dolor do",
+    "clearUserId": "mollit officia occaecat",
+    "externalAlarmId": "fugiat cillum",
+    "isRootCause": false,
+    "plannedOutageIndicator": "laboris laborum reprehenderit mollit",
+    "proposedRepairedActions": "culpa aliquip enim",
+    "reportingSystemId": "proident ea culpa",
+    "serviceAffecting": true,
+    "specificProblem": "mollit dolore consequat",
+    "affectedService": [
+        {
+            "id": "Lorem voluptate mollit",
+            "href": "culpa sed occaecat"
+        },
+        {
+            "id": "non e",
+            "href": "pariatur aliquip sit magna"
+        }
+    ],
+    "comment": [
+        {
+            "comment": "amet voluptate",
+            "systemId": "aute cupidatat",
+            "time": "1962-01-30T00:41:50.842Z",
+            "userId": "nulla ad"
+        },
+        {
+            "comment": "occaecat esse",
+            "systemId": "enim quis tempor ipsum",
+            "time": "1984-03-20T08:33:00.461Z",
+            "userId": "dolor"
+        }
+    ],
+    "correlatedAlarm": [
+        {
+            "id": "labore amet Excepteur fugiat",
+            "href": "http://dkTWxXWnkiEFrbCqWCOlLfTulpfrKtN.klJa4wtL46+r,uJJObXqJ97i",
+            "name": "in re",
+            "@baseType": "cillum voluptate velit sint aliquip",
+            "@schemaLocation": "https://GCxbnhOjAFzankdMqEVsMGKzalVb.uvgSB4Hy9HoazDwI9FmdIOrYn4.M6NjeNZ5m6op7b8F5nXMWUIe0kuTvd2bAyIpD",
+            "@type": "dolor deserunt aute cupidatat",
+            "@referredType": "tempor fugiat anim"
+        },
+        {
+            "id": "anim ullamco",
+            "href": "http://n.ousUjE6Rph7CrvycbV2hnytg02",
+            "name": "do Lorem u",
+            "@baseType": "dolor Lorem",
+            "@schemaLocation": "http://lbaDfsBWzJ.hpriMuRHWK6c",
+            "@type": "ipsum do",
+            "@referredType": "et aliqua"
+        }
+    ],
+    "crossedThresholdInformation": {
+        "direction": "officia et proident laborum",
+        "granularity": "elit ipsum",
+        "indicatorName": "commodo elit",
+        "indicatorUnit": "Lorem mollit anim",
+        "observedValue": "nisi ut culpa adipisicing aute",
+        "thresholdCrossingDescription": "Duis dolore quis",
+        "threshold": {
+            "id": "consectetur eiusmod aliqua adipisicing",
+            "href": "http://nFnxDGtwyJWYclBiGMIoIPRatIcJuAm.nvpy-evPADaA2IjWifaJa1DVRiCEnWbzO80FfcvqZHz8BIhPN",
+            "name": "Excepteur",
+            "@baseType": "eiusmod sed dolor",
+            "@schemaLocation": "http://ThPtxpTSDckpZVELE.pbchvNlN",
+            "@type": "Lorem",
+            "@referredType": "ut nostrud"
+        }
+    },
+    "parentAlarm": [
+        {
+            "id": "in incididun",
+            "href": "http://wWiUpmurSIOSDvJOO.stEkVi6OVACsyWonz9bwtDCi.nnMWtO",
+            "name": "dolore in ipsum ad",
+            "@baseType": "nostrud Duis proident dolore ut",
+            "@schemaLocation": "http://Spsac.xsvArZ,oCdp",
+            "@type": "proident",
+            "@referredType": "incididunt exercitation culpa"
+        },
+        {
+            "id": "eu mollit ex laborum",
+            "href": "http://HBgZCvf.qrVbhlFtyNYYQrtv5g+sx3uZZcaSwknPgjZWc2p+Iug-MoXWcUE0R,3htL",
+            "name": "adipisicing amet in ut",
+            "@baseType": "dolor",
+            "@schemaLocation": "http://OcGQbElrv.vjRvl5haH8KPEeul",
+            "@type": "nisi et sed dolor",
+            "@referredType": "et proident pariatur"
+        }
+    ],
+    "place": [
+        {
+            "role": "magna ad do",
+            "id": "eu consectetur",
+            "href": "mollit pariatur",
+            "name": "sed ut voluptate",
+            "@baseType": "non deserunt culpa",
+            "@schemaLocation": "http://IjTXIMqijmlVbBI.oldKYZSpcSmKFlZGTSNi",
+            "@type": "venia",
+            "@referredType": "quis fugiat proident"
+        },
+        {
+            "role": "dolor in qui occaecat",
+            "id": "fugiat ut laboris magna",
+            "href": "ea et",
+            "name": "adipisicing labore ullamco",
+            "@baseType": "laboris magna ip",
+            "@schemaLocation": "https://GQcIVEcPJUTDFgNeNWHYRFFKq.bwbVAVttLp.U1gsx.kJuLMHDHraxXzqqsAQlE6N,9iuc48Ztj3YBE",
+            "@type": "et",
+            "@referredType": "dolore mollit do"
+        }
+    ],
+    "@baseType": "esse laborum e",
+    "@schemaLocation": "https://Ihsa.zabcQPwfcyxqOLEv3r95BpjYkD-6TH1UZ5QgoYfkw",
+    "@type": "elit nisi mollit proide"
+})
+
+
+

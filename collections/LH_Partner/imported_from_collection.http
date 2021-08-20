@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-51a922a3-552d-4075-ac95-f80fd77c5d4c.postman_collection.json
+
+// Retrieve passenger trip, contact and baggage details. This service is only accessible for LH privileged partners
+
+@name("Baggage Trip and Contact")
+GET "https://{{baseUrl}}/baggage/baggagetripandcontact/:searchID"
+"Accept": "<>"
+
+
+// Retrieve order by ID and optionally name. This service is only accessible for LH privileged partners
+
+@name("Orders")
+GET "https://{{baseUrl}}/orders/orders/:orderID/:name"
+"Accept": "<>"
+
+
+// Trigger an automatic check-in given a ticket number. This service is only accessible for LH privileged partners
+
+@name("Auto Check-In")
+PUT "https://{{baseUrl}}/preflight/autocheckin/:ticketnumber"
+"Accept": "<>"
+? "emailAddress"= "<>"
+
+
+// Retrieve a best price offer given an origin and destination.
+
+@name("Price Offers")
+GET "https://{{baseUrl}}/promotions/priceoffers/flights/ond/:origin/:destination"
+? "departureDate"= "<>"
+? "returnDate"= "<>"
+? "service"= "<>"
+
+
+// A description of all available seat details by aircraft type. You can retrieve the full set or details for a particular aircraft type.
+
+@name("Seat Details")
+GET "https://{{baseUrl}}/references/seatdetails/:aircraftCode/:cabinCode"
+"Accept": "<>"
+? "lang"= "<>"
+
+
+

@@ -1,0 +1,95 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b72aa038-8bb4-4673-ad3d-58fffe1c4130.postman_collection.json
+
+// Allows issuers to display customized messages per token within the Apple Pay wallet, below the digitized image of the card.
+
+@name("/accountholdermessaging")
+POST "https://{{baseUrl}}/accountholdermessaging"
+"Content-Type": "application/json"
+json({
+    "AccountHolderMessagingRequest": {
+        "TokenUniqueReference": "<string>",
+        "MessageIdentifier": "<string>",
+        "IssuerApplicationMessageDisplay": "<string>",
+        "MessageText": "<string>",
+        "MessageExpiration": "<string>",
+        "MessageLanguageCode": "<string>",
+        "AuditInfo": {
+            "UserId": "<string>",
+            "UserName": "<string>",
+            "Organization": "<string>",
+            "Phone": "<string>"
+        }
+    }
+})
+
+
+// Provides the ability to search for tokens based on Account PAN, Alternate Account Identifier, Token Unique Reference, Token, Payment App Instance Id or Comment Id. Returns all of the tokens associated with an account according to the scope of the indicated search request criteria. The response includes key state and informational data for each token, including the Token Unique Reference which is needed for subsequent token lifecycle management activities.<br><br>_Notes:_ The Search API request MUST include only one of the available search methods Account PAN, Token Unique Reference, Token, Payment App Instance Id, Comment Id, or Alternate Account Identifier. They cannot be used together in a single request.<br> Moreover, this function only retrieves results if the search criteria matches a current value from the token vault. In other words, if the search criteria is a PAN that has been replaced, the system will not retrieve any data. 
+
+@name("/search")
+POST "https://{{baseUrl}}/search"
+"Content-Type": "application/json"
+json({
+    "SearchRequest": {
+        "AuditInfo": {
+            "UserId": "<string>",
+            "UserName": "<string>",
+            "Organization": "<string>",
+            "Phone": "<string>"
+        },
+        "AccountPan": "<string>",
+        "AlternateAccountIdentifier": "<string>",
+        "CommentId": "<string>",
+        "ExcludeDeletedIndicator": "<string>",
+        "PaymentAppInstanceId": "<string>",
+        "Token": "<string>",
+        "TokenUniqueReference": "<string>"
+    }
+})
+
+
+// Returns the overall system status of the Mastercard Digital Enablement Service.
+
+@name("/systemstatus")
+GET "https://{{baseUrl}}/systemstatus"
+
+
+// Used to retrieve transactions performed by a token. It only returns transactions performed within the last 30 days, to help identify a particular token, or to identify a particular recent transaction. It is not intended to provide the full transaction history of a token or Account PAN.<br><br>_Notes:_ The Transaction History API response is not supported for static Card on File (CoF) tokens.<br>If a set of tokens has been re-mapped to a new FPAN, all digital transactions will be made available before or after the FPAN has been updated. MDES does not return the value of the FPAN which was mapped to the particular token at the time of the transaction. However, MDES will return the history of all transactions performed on that particular token in the last 30 days, based on old and/or new FPAN.
+
+@name("/transactions")
+POST "https://{{baseUrl}}/transactions"
+"Content-Type": "application/json"
+json({
+    "TransactionsRequest": {
+        "TokenUniqueReference": "<string>",
+        "AuditInfo": {
+            "UserId": "<string>",
+            "UserName": "<string>",
+            "Organization": "<string>",
+            "Phone": "<string>"
+        }
+    }
+})
+
+
+// Used after an issuer has performed additional cardholder authentication to indicate an increased level of token assurance. It will only be applied to tokens that actually have a Token Assurance Level, and those that are in ACTIVE or SUSPENDED state.
+
+@name("/updatetokenassurance")
+POST "https://{{baseUrl}}/updatetokenassurance"
+"Content-Type": "application/json"
+json({
+    "UpdateTokenAssuranceRequest": {
+        "TokenUniqueReference": "<string>",
+        "AuditInfo": {
+            "UserId": "<string>",
+            "UserName": "<string>",
+            "Organization": "<string>",
+            "Phone": "<string>"
+        },
+        "CommentText": "<string>"
+    }
+})
+
+
+

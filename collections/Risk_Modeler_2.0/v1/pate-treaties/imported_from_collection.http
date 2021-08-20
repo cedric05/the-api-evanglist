@@ -1,0 +1,131 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Creates a PATE treaty, then returns the URL location of the new created PATE Treaty.
+
+@name("Create a PATE treaty") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/pate-treaties"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "cedant": {
+        "name": "proiden",
+        "id": "n"
+    },
+    "treatyNumber": "sunt in deserunt qui",
+    "treatyId": 17437168,
+    "treatyName": "laborum culpa id sed eiusmod",
+    "producer": {
+        "name": "au",
+        "id": "Rpdre3F7TS"
+    },
+    "treatyType": {
+        "id": 27545814,
+        "code": "minim",
+        "name": "in laboris commodo incididunt"
+    },
+    "currency": {
+        "id": -23885627,
+        "code": "culpa ad ullamco",
+        "name": "anim sed"
+    },
+    "attachBasis": {
+        "id": 41016799,
+        "code": "nulla velit sit",
+        "name": "sit pariatur incididunt sed"
+    },
+    "attachLevel": {
+        "id": 41855167,
+        "code": "velit",
+        "name": "Excepteu"
+    },
+    "premium": 1988528.5230116844,
+    "occurLimit": -33668636.870958,
+    "attachPt": -42080278.856263086,
+    "riskLimit": 34414216.21699497,
+    "retentAmt": -53509411.40289702,
+    "pcntPlaced": -18092775.06160143,
+    "effectDate": "consequat laborum velit",
+    "expireDate": "magna mollit est qui",
+    "pcntRetent": 55799585.6525023,
+    "pcntRiShare": 64298871.72245774,
+    "pcntCovered": 30538361.728097647,
+    "priority": 60302283,
+    "numOfReinst": -78094064,
+    "reinstCharge": -80909124.88319257,
+    "maolAmount": 21325257.364305735,
+    "isValid": false,
+    "userId1": "Ut eiusmod minim nostrud",
+    "userId2": "enim ipsum",
+    "lobs": [
+        {
+            "name": "minim do labor",
+            "id": 93980972
+        },
+        {
+            "name": "aute in",
+            "id": 85877885
+        }
+    ],
+    "aggregateDeductible": 90154238.08347028,
+    "aggregateLimit": -61721263.54448033,
+    "lossOccurrences": [
+        {
+            "treatyId": 67809419,
+            "id": -72289397,
+            "regionPeril": {
+                "id": 48350733,
+                "code": "magna ad",
+                "name": "nostrud laboris"
+            },
+            "lossOccurrenceTime": 72012733,
+            "lossOccurrenceRadius": 88033393,
+            "radiusUnit": {
+                "id": 52628908,
+                "code": "ipsum minim ex",
+                "name": "occaecat eiusmod fugiat ullamco"
+            },
+            "multiLossOccurrence": {
+                "id": -27095361,
+                "code": "cillum",
+                "name": "dolore incididunt non"
+            }
+        },
+        {
+            "treatyId": -63541311,
+            "id": -37452424,
+            "regionPeril": {
+                "id": 19882156,
+                "code": "dolor enim cupidatat",
+                "name": "deserunt officia a"
+            },
+            "lossOccurrenceTime": -12163849,
+            "lossOccurrenceRadius": -46053382,
+            "radiusUnit": {
+                "id": -83990517,
+                "code": "elit E",
+                "name": "Lorem nisi labor"
+            },
+            "multiLossOccurrence": {
+                "id": 93422734,
+                "code": "proident eiusmod ea occa",
+                "name": "nisi labore aute"
+            }
+        }
+    ],
+    "analysisId": -46535700,
+    "pateId": 61682070,
+    "operationType": "UPDATE",
+    "groupId": -667854
+})
+
+
+

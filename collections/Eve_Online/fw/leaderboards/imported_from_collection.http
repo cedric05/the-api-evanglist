@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday
+// 
+// ---
+// Alternate route: `/dev/fw/leaderboards/`
+// 
+// Alternate route: `/legacy/fw/leaderboards/`
+// 
+// Alternate route: `/v1/fw/leaderboards/`
+// 
+// Alternate route: `/v2/fw/leaderboards/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("List of the top factions in faction warfare")
+GET "https://{{baseUrl}}/fw/leaderboards/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday
+// 
+// ---
+// Alternate route: `/dev/fw/leaderboards/characters/`
+// 
+// Alternate route: `/legacy/fw/leaderboards/characters/`
+// 
+// Alternate route: `/v1/fw/leaderboards/characters/`
+// 
+// Alternate route: `/v2/fw/leaderboards/characters/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("List of the top pilots in faction warfare")
+GET "https://{{baseUrl}}/fw/leaderboards/characters/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+// Top 10 leaderboard of corporations for kills and victory points separated by total, last week and yesterday
+// 
+// ---
+// Alternate route: `/dev/fw/leaderboards/corporations/`
+// 
+// Alternate route: `/legacy/fw/leaderboards/corporations/`
+// 
+// Alternate route: `/v1/fw/leaderboards/corporations/`
+// 
+// Alternate route: `/v2/fw/leaderboards/corporations/`
+// 
+// ---
+// This route expires daily at 11:05
+
+@name("List of the top corporations in faction warfare")
+GET "https://{{baseUrl}}/fw/leaderboards/corporations/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+
+
+

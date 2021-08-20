@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c82464a2-fcdd-46d3-a590-d76b1557b2bf.postman_collection.json
+
+// Submits a request for quote for an FX outright.
+
+@name("Post Quote")
+POST "https://{{baseUrl}}/quotes"
+
+
+// Returns the FX Quote that was requested earlier.
+
+@name("Get Quote")
+GET "https://{{baseUrl}}/quotes/:quoteId"
+
+
+

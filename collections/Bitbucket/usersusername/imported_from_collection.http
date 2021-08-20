@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Gets the public information associated with a user account.
+// 
+// If the user's profile is private, `location`, `website` and
+// `created_on` elements are omitted.
+
+@name("/users/:username")
+GET "https://{{baseUrl}}/users/:username"
+
+
+// Returns the list of accounts that are following this team.
+
+@name("/users/:username/followers")
+GET "https://{{baseUrl}}/users/:username/followers"
+
+
+// Returns the list of accounts this user is following.
+
+@name("/users/:username/following")
+GET "https://{{baseUrl}}/users/:username/following"
+
+
+// All repositories owned by a user/team. This includes private
+// repositories, but filtered down to the ones that the calling user has
+// access to.
+
+@name("/users/:username/repositories")
+GET "https://{{baseUrl}}/users/:username/repositories"
+
+
+

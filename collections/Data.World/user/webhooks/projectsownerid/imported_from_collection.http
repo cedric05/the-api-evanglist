@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Delete webhook subscription associated with the currently authenticated user and to a given data project.
+
+@name("Unsubscribe from data project") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/user/webhooks/projects/:owner/:id"
+
+
+// Retrieve webhook subscription associated with the currently authenticated user and to a given data project.
+
+@name("Retrieve data project subscription") : "base-inherit-auth"
+GET "https://{{baseUrl}}/user/webhooks/projects/:owner/:id"
+
+
+// Create webhook subscription associated with the currently authenticated user and to a given data project.
+
+@name("Subscribe to data project") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/user/webhooks/projects/:owner/:id"
+"Content-Type": "application/json"
+json({
+    "events": [
+        "ALL"
+    ]
+})
+
+
+

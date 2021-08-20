@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-940631ab-b80d-496e-a8ee-7bdf98c1ca94.postman_collection.json
+
+// For the layer identified by the map and layer identifiers, returns thenlayer details (identifier, name, Uniform Resource Identifier (URI), andnvisibility).n
+
+@name("Return layer details")
+GET "https://{{baseUrl}}/v1/maps/:mapId/layers/:layerId"
+
+
+// Retrieve style data for the layer identified by the specified map andnlayer identifiers.n
+
+@name("Retrieves style data for a layer")
+GET "https://{{baseUrl}}/v1/maps/:mapId/layers/:layerId/style"
+
+
+

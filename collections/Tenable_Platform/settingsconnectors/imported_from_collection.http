@@ -1,0 +1,140 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cf05d8c7-fffb-4a7c-923b-c06517c2b783.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Creates a connector.<ul>**Note:** The workflow for creating AWS connectors is as follows:<li>First, [get the available AWS cloudtrails for the account](#connectors-get-aws-cloudtrails)</li><li>Then use the cloudtrail(s) as a required input parameter to create the AWS connector.</li></ul></br><p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("Create connector") : "base-inherit-auth"
+POST "https://{{baseUrl}}/settings/connectors"
+"Content-Type": "application/json"
+json({
+    "name": "ullamco dolor nisi non commodo",
+    "type": "azure",
+    "params": {
+        "access_key": "dolor",
+        "secret_key": "in occaecat",
+        "trails": [
+            {
+                "arn": "ipsum dolor laboris",
+                "name": "commodo labore",
+                "region": {
+                    "name": "sunt ut",
+                    "friendly_name": "reprehenderit occaecat"
+                },
+                "availability": "error"
+            },
+            {
+                "arn": "quis nulla consectetur ad",
+                "name": "consectetur voluptate esse dolore",
+                "region": {
+                    "name": "eiusmod minim",
+                    "friendly_name": "consequat Excepteur"
+                },
+                "availability": "success"
+            }
+        ],
+        "sub_accounts": [
+            {
+                "role_arn": "veniam ad",
+                "external_id": "magna Ut incididunt",
+                "trails": [
+                    {
+                        "arn": "Ut aute exercitation est",
+                        "name": "laboris labore aute in",
+                        "region": {
+                            "name": "veniam proident i",
+                            "friendly_name": "laboris occaecat incididunt aute ut"
+                        },
+                        "availability": "error"
+                    },
+                    {
+                        "arn": "nulla in",
+                        "name": "Duis in nostrud",
+                        "region": {
+                            "name": "in officia voluptate ullamco",
+                            "friendly_name": "exercitation nisi veniam ipsum"
+                        },
+                        "availability": "success"
+                    }
+                ],
+                "incremental_mode": false
+            },
+            {
+                "role_arn": "in consequat non",
+                "external_id": "dolor sint enim Ut",
+                "trails": [
+                    {
+                        "arn": "ipsum",
+                        "name": "minim pariatur officia",
+                        "region": {
+                            "name": "aliquip eu",
+                            "friendly_name": "Lorem id aliqua irure Duis"
+                        },
+                        "availability": "success"
+                    },
+                    {
+                        "arn": "esse",
+                        "name": "eu in deserunt veniam Excepteur",
+                        "region": {
+                            "name": "laborum sit eiusmod ex et",
+                            "friendly_name": "sit laborum"
+                        },
+                        "availability": "error"
+                    }
+                ],
+                "incremental_mode": true
+            }
+        ],
+        "application_id": "in exercitation",
+        "tenant_id": "commodo sint",
+        "subscription_id": "nisi ex minim",
+        "service_account_key": "amet"
+    },
+    "network_uuid": "00000000-0000-0000-0000-000000000000",
+    "schedule": {
+        "units": "tempor sit",
+        "value": 59874390
+    }
+})
+
+
+// Returns a list of connectors.<p>For information about connector error codes, see [Connectors](doc:io-connectors).</p><p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List connectors") : "base-inherit-auth"
+GET "https://{{baseUrl}}/settings/connectors"
+? "limit"= "-4228726"
+? "offset"= "-4228726"
+? "sort"= "cillum do"
+
+
+// Returns a list of available AWS cloudtrails. You can then use the cloudtrails to [create an AWS connector](ref:connectors-create-connector).<p>Requires ADMINISTRATOR [64] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List AWS cloudtrails") : "base-inherit-auth"
+POST "https://{{baseUrl}}/settings/connectors/aws/cloudtrails"
+"Content-Type": "application/json"
+json({
+    "region": [
+        {
+            "name": "ullamco velit",
+            "friendly_name": "velit"
+        },
+        {
+            "name": "in",
+            "friendly_name": "aliqua laborum Excepteur"
+        }
+    ],
+    "credentials": {
+        "access_key": "aliquip cons",
+        "secret_key": "do eiusmod labore"
+    },
+    "account_id": "aute proident ut eu est"
+})
+
+
+

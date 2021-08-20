@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-78c0dc33-e726-4d39-9b71-5a066250bed7.postman_collection.json
+
+// Retrieves published posts.
+
+@name("Get Blog Base Hostname Adds Type")
+GET "https://{{baseUrl}}/blog/:base-hostname/posts/:type"
+? "id"= "<>"
+? "tag"= "<>"
+? "limit"= "<>"
+? "offset"= "<>"
+? "reblog_info"= "<>"
+? "notes_info"= "<>"
+? "format"= "<>"
+
+
+// Retrieves queued posts.
+
+@name("Get Blog Base Hostname Adds Queue")
+GET "https://{{baseUrl}}/blog/:base-hostname/posts/queue"
+
+
+// Retrieves draft posts.
+
+@name("Get Blog Base Hostname Adds Draft")
+GET "https://{{baseUrl}}/blog/:base-hostname/posts/draft"
+
+
+// Retrieves submission posts.
+
+@name("Get Blog Base Hostname Adds Submission")
+GET "https://{{baseUrl}}/blog/:base-hostname/posts/submission"
+
+
+

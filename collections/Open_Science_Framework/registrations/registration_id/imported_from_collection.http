@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fea163a7-948d-4076-bc08-6fdcc26865e0.postman_collection.json
+
+// Retrieve the details of a given registration.n#### PermissionsnOnly project contributors may retrieve the details of a registration that is embargoed, or has not yet been made public. Attempting to retrieve a private registration for which you are not a contributor will result in a **403 Forbidden** response.nnAuthentication is not required to view the details of a public registration, as public registrations give read-only access to everyone.n#### RegistrationsnA registration on the OSF creates
+
+@name("Retrieve a registration")
+GET "https://{{baseUrl}}/registrations/:registration_id/"
+
+
+// nA paginated list of children of a registration.nnThe list consists of the next level child registrations for the given registration. The returned registrations are sorted by their `date_modified`, with the most recently updated child registrations appearing first.nnThe list will include child registrations that are public, as well as child registrations that are private, if the authenticated user has permission to view them.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.
+
+@name("List all child registrations")
+GET "https://{{baseUrl}}/registrations/:registration_id/children/"
+
+
+// nA paginated list of the registration's comments.nnThe returned comments are sorted by their creation date, with the most recent comments appearing first.n####PermissionsnComments of public registrations are given read-only access to everyone.nnIf the comment-level is `private`, only registration contributors have permission to comment.nnIf the comment-level is `public`, any logged-in OSF user can comment.nnComments of private registrations are only visible to contributors and administrators on 
+
+@name("List all comments")
+GET "https://{{baseUrl}}/registrations/:registration_id/comments/"
+
+
+// nA paginated list of the registration???s forksnnThe returned forks are sorted by their `forked_date`, with the most recent forks appearing first.nnForking a registration creates a copy of an existing registration and all of its contents.n#### ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 forks. If the current registration has no fork, the `data` key will contain an empty array. Each resource in the array is a separate registratio
+
+@name("List all forks")
+GET "https://{{baseUrl}}/registrations/:registration_id/forks/"
+
+
+// A paginated list of the registration's identifiers.n####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of identifiers. Each resource in the array is a separate identifier object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).n####FilteringnnYou can optionally request that the response only include registrations that match your filters by utilizing the `filter` query parameter, e.g. 
+
+@name("List all identifiers")
+GET "https://{{baseUrl}}/registrations/:registration_id/identifiers/"
+
+
+// A paginated list of institutions affiliated with the registration.n####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 affiliated institutions. Each resource in the array is a separate institution object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).
+
+@name("List all institutions")
+GET "https://{{baseUrl}}/registrations/:registration_id/institutions/"
+
+
+// List of all nodes linked to the registration.n####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 nodes. Each resource in the array is a separate node object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).n####FilteringnYou can optionally request that the response only include nodes that match your filters by utilizing the `filter` query parameter, e.g. https://api.osf.io
+
+@name("List all linked nodes")
+GET "https://{{baseUrl}}/registrations/:registration_id/linked_nodes/"
+
+
+// A paginated list of the registration's logs.nnThe returned logs are sorted by their `date`, with the most recents logs appearing first.nn####ReturnsnReturns a JSON object containing `data` and `links` keys.nnThe `data` key contains an array of up to 10 logs. Each resource in the array is a separate logs object.nnThe `links` key contains a dictionary of links that can be used for [pagination](#Introduction_pagination).n####FilteringnYou can optionally request that the response only include logs t
+
+@name("List all logs")
+GET "https://{{baseUrl}}/registrations/:registration_id/logs/"
+
+
+// A paginated list of the registration's wiki pagesn####ReturnsnA list of all registration's current wiki page versions ordered by their date_modified. Each resource contains the full representation of the wiki, meaning additional requests to an individual wiki's detail view are not necessary.nnIf the request is unsuccessful, a JSON object with an `errors` key containing information about the failure will be returned. Refer to the [list of error codes](#Introduction_error_codes) to understand why 
+
+@name("List all wikis")
+GET "https://{{baseUrl}}/registrations/:registration_id/wikis/"
+
+
+

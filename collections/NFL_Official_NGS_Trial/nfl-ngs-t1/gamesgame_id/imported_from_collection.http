@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-176e2ba7-20b8-4a6a-a915-03b5fba2051f.postman_collection.json
+
+@name("Obtain complete leader information for a game.")
+GET "https://{{baseUrl}}/nfl-ngs-t1/games/:game_id/leaders{{format}}"
+
+
+@name("Obtain complete play-by-play narrative.")
+GET "https://{{baseUrl}}/nfl-ngs-t1/games/:game_id/pbp{{format}}"
+
+
+// Obtain complete play-by-play narrative and tracking information.
+
+@name("Obtain complete play-by-play narrative and trackin...")
+GET "https://{{baseUrl}}/nfl-ngs-t1/games/:game_id/tracked_pbp{{format}}"
+
+
+@name("Obtain team and player level statistics.")
+GET "https://{{baseUrl}}/nfl-ngs-t1/games/:game_id/statistics{{format}}"
+
+
+

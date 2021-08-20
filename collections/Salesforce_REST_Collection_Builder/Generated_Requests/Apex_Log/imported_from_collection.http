@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Apex Log") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/ApexLog/"
+
+
+@name("Apex Log Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/ApexLog/{ID}/"
+
+
+@name("Describe Apex Log") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/ApexLog/describe/"
+
+
+

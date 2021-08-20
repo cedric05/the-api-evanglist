@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Deletes an address. The ID of the address must be specified.
+
+@name("Delete an address")
+DELETE "https://{{baseUrl}}/rest/accounts/addresses/:addressId"
+
+
+// Deletes an address option. The ID of the address must be specified.
+
+@name("Delete an address option by the address ID")
+DELETE "https://{{baseUrl}}/rest/accounts/addresses/:addressId/options"
+
+
+// Find address data by address id.
+
+@name("Find address data by address id")
+GET "https://{{baseUrl}}/rest/accounts/addresses/:addressId/related_data"
+
+
+

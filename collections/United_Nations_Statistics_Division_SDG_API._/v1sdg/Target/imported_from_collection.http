@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1e167a8f-2de8-4d63-a2ac-1189cfa7a2ce.postman_collection.json
+
+// Returns the list of all Targets currently published in the latest release. You can include all the Targets, Indicator and series description using includechildren
+
+@name("Returns the list of all Target available.")
+GET "https://{{baseUrl}}/v1/sdg/Target/List"
+? "includechildren"= "true"
+
+
+// Returns a list of obeservations filetered by the parameters defined on the call
+
+@name("Returns a list of paginated observations")
+GET "https://{{baseUrl}}/v1/sdg/Target/Data"
+? "target"= "in quis magna enim"
+? "target"= "id voluptate do esse occaecat"
+? "areaCode"= "86606243"
+? "areaCode"= "-31007030"
+? "timePeriod"= "-82415680.42607912"
+? "timePeriod"= "10713607.645734727"
+? "dimensions"= "veniam aliqu"
+? "timePeriodStart"= "20835154.614729986"
+? "timePeriodEnd"= "20835154.614729986"
+? "page"= "28430278"
+? "pageSize"= "28430278"
+
+
+// Returns a list of obeservations pivoted by year filetered by the parameters defined on the call
+
+@name("Returns a list of paginated observations pivoted by year")
+GET "https://{{baseUrl}}/v1/sdg/Target/PivotData"
+? "target"= "in quis magna enim"
+? "target"= "id voluptate do esse occaecat"
+? "areaCode"= "86606243"
+? "areaCode"= "-31007030"
+? "dimensions"= "veniam aliqu"
+? "page"= "28430278"
+? "pageSize"= "28430278"
+
+
+

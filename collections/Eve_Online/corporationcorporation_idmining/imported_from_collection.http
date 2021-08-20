@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.
+// 
+// 
+// ---
+// Alternate route: `/dev/corporation/{corporation_id}/mining/extractions/`
+// 
+// Alternate route: `/legacy/corporation/{corporation_id}/mining/extractions/`
+// 
+// Alternate route: `/v1/corporation/{corporation_id}/mining/extractions/`
+// 
+// ---
+// This route is cached for up to 1800 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Station_Manager
+
+@name("Moon extraction timers")
+GET "https://{{baseUrl}}/corporation/:corporation_id/mining/extractions/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+

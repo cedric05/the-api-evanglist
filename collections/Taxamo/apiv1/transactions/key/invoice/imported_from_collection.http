@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Email credit note.
+
+@name("Email Credit Note")
+POST "https://{{baseUrl}}/api/v1/transactions/:key/invoice/refunds/:refund_note_number/send_email"
+
+
+// Email invoice.
+
+@name("Email Invoice")
+POST "https://{{baseUrl}}/api/v1/transactions/:key/invoice/send_email"
+
+
+

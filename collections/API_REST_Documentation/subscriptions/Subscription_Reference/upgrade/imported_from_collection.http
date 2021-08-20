@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// Retrieve the upgrade options available for a specific subscription.
+
+@name("Retrieve upgrade options for a subscription")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/upgrade/"
+
+
+// Retrieve the upgrade price available for a specific subscription. The response will contain the upgrade price for quantity = 1.
+
+@name("Retrieve product upgrade price for a subscription")
+GET "https://{{baseUrl}}/subscriptions/:SubscriptionReference/upgrade/price/:ProductReference/:CurrencyCode/"
+? "Options"= "<object>"
+? "Quantity"= "<integer>"
+? "CalculateProratedPrice"= "<string>"
+
+
+

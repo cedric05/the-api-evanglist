@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4d3c96cc-956a-44d5-9cdb-114ad7d90bde.postman_collection.json
+
+// Upload logo file in jpeg/jpg, png or gif or tiff format.
+
+@name("Upload logo")
+POST "https://{{baseUrl}}/entity/logo/upload"
+"accessToken": "<string>"
+"Content-Type": "multipart/form-data"
+files(
+	("image", "<binary>"),
+	("entityId", "<string>"),
+	("serviceCode", "<string>")
+)
+
+
+// Search for files and folders based on specified searchKey
+
+@name("Search for files and folders")
+GET "https://{{baseUrl}}/search/key/{{searchKey}}.{{format}}"
+? "entityId"= "<string>"
+
+
+// Downloads a converted File based on Folder ID and File Manager ID
+
+@name("Dowload converted File")
+GET "https://{{baseUrl}}/download/:folderID/{{fileManagerID}}.pdf"
+
+
+

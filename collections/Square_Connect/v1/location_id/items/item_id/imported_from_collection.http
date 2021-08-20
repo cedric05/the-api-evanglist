@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Deletes an existing item and all item variations associated with it.
+
+@name("Delete Location Items")
+DELETE "https://{{baseUrl}}/v1/:location_id/items/:item_id"
+
+
+// Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+
+@name("Delete Location Items Fees")
+DELETE "https://{{baseUrl}}/v1/:location_id/items/:item_id/fees/:fee_id"
+
+
+// Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+
+@name("Delete Location Items Modifier Lists Modifier List")
+DELETE "https://{{baseUrl}}/v1/:location_id/items/:item_id/modifier-lists/:modifier_list_id"
+
+
+

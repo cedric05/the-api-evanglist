@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-52d5e6de-1810-40a8-bdcd-b528e6645a8d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Returns a paginated list of user-defined templates that are available to be used for scan configurations. 
+// 
+// **Deprecated:** This endpoint is deprecated. On October 1st, 2021, documentation related to this endpoint will be removed from the Tenable developer portal. Tenable recommends that you use the [POST /was/v2/user-templates/search](ref:was-v2-user-templates-search) endpoint instead. Please update any existing integrations that your organization has before 2021-10-01. <p>Requires SCAN OPERATOR [24] user permissions and CAN USE [16] policy permissions. See [Permissions](doc:permissions).</p>
+
+@name("List user-defined templates") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/user-templates"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+
+
+// Lists the filtering capabilities available for user-defined templates for endpoints that support user-defined template filtering. <p>Requires SCAN OPERATOR [24] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List user-defined template filters") : "base-inherit-auth"
+GET "https://{{baseUrl}}/was/v2/user-templates/filters"
+
+
+// Returns a paginated list of user-defined templates that are available to be used for scan configurations.<p>Requires SCAN OPERATOR [24] user permissions and CAN USE [16] policy permissions. See [Permissions](doc:permissions).</p>
+
+@name("Search user-defined templates") : "base-inherit-auth"
+POST "https://{{baseUrl}}/was/v2/user-templates/search"
+"Content-Type": "application/json"
+? "limit"= "-54086346"
+? "offset"= "-54086346"
+? "sort"= "last_seen:desc,ipv4:asc"
+json({
+    "AND": [
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        },
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        }
+    ],
+    "OR": [
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        },
+        {
+            "field": "folder_name",
+            "operator": "match",
+            "value": "My Scans"
+        }
+    ]
+})
+
+
+

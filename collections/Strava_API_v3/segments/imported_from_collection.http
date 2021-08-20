@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-180f91eb-1001-48c8-8579-83b031bdc301.postman_collection.json
+
+// List of the authenticated athlete's starred segments. Private segments are filtered out unless requested by a token with read_all scope.
+
+@name("List Starred Segments")
+GET "https://{{baseUrl}}/segments/starred"
+? "No Name"= "<string>"
+? "No Name"= "<string>"
+? "No Name"= "<string>"
+
+
+// Returns the top 10 segments matching a specified query.
+
+@name("Explore segments")
+GET "https://{{baseUrl}}/segments/explore"
+? "bounds"= "<array>"
+? "activity_type"= "<string>"
+? "min_cat"= "<integer>"
+? "max_cat"= "<integer>"
+? "bounds"= "<array>"
+? "activity_type"= "<string>"
+? "min_cat"= "<integer>"
+? "max_cat"= "<integer>"
+
+
+

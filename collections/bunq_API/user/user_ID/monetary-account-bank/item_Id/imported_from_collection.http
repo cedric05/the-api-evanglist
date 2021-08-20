@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Get a specific MonetaryAccountBank.
+
+@name("READ Monetary Account Bank for User")
+GET "https://{{baseUrl}}/user/:userID/monetary-account-bank/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Update a specific existing MonetaryAccountBank.
+
+@name("UPDATE Monetary Account Bank for User")
+PUT "https://{{baseUrl}}/user/:userID/monetary-account-bank/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "currency": "<string>",
+    "avatar_uuid": "<string>",
+    "daily_limit": {
+        "currency": "aliqua officia",
+        "value": "elit pariatur laborum eu"
+    },
+    "description": "<string>",
+    "display_name": "<string>",
+    "reason": "<string>",
+    "reason_description": "<string>",
+    "setting": {
+        "color": "in id nulla",
+        "default_avatar_status": "sint tempor",
+        "icon": "dolor anim incididunt eiusmod",
+        "restriction_chat": "D"
+    },
+    "status": "<string>",
+    "sub_status": "<string>"
+})
+
+
+

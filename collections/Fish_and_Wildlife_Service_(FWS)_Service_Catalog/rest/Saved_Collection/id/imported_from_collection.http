@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9cd3d393-331a-43bc-b306-c5d3f7618e89.postman_collection.json
+
+// No Restricted References are returned, even if the current user is owner of the Collection.<br/>
+// Internal users will see both Public and Internal References.<br/>
+// Public users will see Public References.
+
+@name("Retrieve the References belonging to a Saved Collection using a GET request with the collection's id.")
+GET "https://{{baseUrl}}/rest/SavedCollection/:id"
+
+
+@name("Retrieve the References belonging to a Saved Collection using a POST request
+where the collection is filtered by one or more unit codes as submitted in the request body.")
+POST "https://{{baseUrl}}/rest/SavedCollection/:id"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "0": [
+        "<string>"
+    ],
+    "1": [
+        "<string>"
+    ]
+})
+
+
+

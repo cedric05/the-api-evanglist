@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ef95e879-62d7-4623-b3ac-258396f73cf6.postman_collection.json
+
+// Get Connections
+
+@name("/getConnections")
+POST "https://{{baseUrl}}/getConnections"
+"jwt": "in"
+"Content-Type": "application/json"
+data('"qui"')
+
+
+// Add Project Connection
+
+@name("/addProjectConnection")
+POST "https://{{baseUrl}}/addProjectConnection"
+"jwt": "in"
+"Content-Type": "application/json"
+data('"enim proident minim ut cupidatat"')
+
+
+// Edit Connection
+
+@name("/editConnection")
+POST "https://{{baseUrl}}/editConnection"
+"jwt": "in"
+"Content-Type": "application/json"
+data('"quis nostrud elit officia"')
+
+
+// Delete Connection
+
+@name("/deleteConnection")
+POST "https://{{baseUrl}}/deleteConnection"
+"jwt": "in"
+"Content-Type": "application/json"
+json({
+    "cGuid": "in irure enim magna veniam"
+})
+
+
+// Get all Templates
+
+@name("/getTemplates")
+GET "https://{{baseUrl}}/getTemplates"
+"jwt": "in"
+
+
+// Add Template
+
+@name("/addTemplate")
+POST "https://{{baseUrl}}/addTemplate"
+"jwt": "in"
+"Content-Type": "application/json"
+data('"in do aliqua"')
+
+
+

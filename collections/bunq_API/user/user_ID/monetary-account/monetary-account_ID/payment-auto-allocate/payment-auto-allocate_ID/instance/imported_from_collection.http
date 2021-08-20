@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// List all the times a users payment was automatically allocated.
+
+@name("List all Instance for User Monetary Account Payment Auto Allocate")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/payment-auto-allocate/:payment-auto-allocateID/instance"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// List all the times a users payment was automatically allocated.
+
+@name("READ Instance for User Monetary Account Payment Auto Allocate")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/payment-auto-allocate/:payment-auto-allocateID/instance/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+

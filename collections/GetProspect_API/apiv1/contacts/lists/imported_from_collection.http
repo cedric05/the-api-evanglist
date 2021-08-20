@@ -1,0 +1,85 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Get all contacts lists
+
+@name("Get all lists")
+GET "https://{{baseUrl}}/api/v1/contacts/lists"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Add new contact list
+
+@name("Create new list")
+POST "https://{{baseUrl}}/api/v1/contacts/lists"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "name": "qui dolor"
+})
+
+
+// Delete multiple lists
+
+@name("Delete lists")
+DELETE "https://{{baseUrl}}/api/v1/contacts/lists"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "listsIds": [
+        "adipisicing minim",
+        "tempor officia in"
+    ],
+    "deleteContacts": false
+})
+
+
+// Get lists count dy list id
+
+@name("Get count")
+POST "https://{{baseUrl}}/api/v1/contacts/lists/lists-count"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+
+
+
+// Update list by id
+
+@name("Update list")
+PATCH "https://{{baseUrl}}/api/v1/contacts/lists/:listId"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "name": "qui dolor"
+})
+
+
+// Get all lists tree
+
+@name("Get list tree")
+GET "https://{{baseUrl}}/api/v1/contacts/lists/tree"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Get paginated lists results
+
+@name("Get paginated lists results")
+GET "https://{{baseUrl}}/api/v1/contacts/lists/paginated"
+"Authorization": "Bearer <Bearer Token>"
+? "order"= "incididunt voluptate"
+? "sort"= "incididunt voluptate"
+? "pageNumber"= "56827440.204882234"
+? "pageSize"= "56827440.204882234"
+
+
+// Search through lists by name
+
+@name("Search through lists by name")
+POST "https://{{baseUrl}}/api/v1/contacts/lists/search"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// Deletes a payment run. Only payment runs with the Canceled or Error status can be deleted.n
+
+@name("Delete payment run")
+DELETE "https://{{baseUrl}}/payment-runs/:paymentRunId"
+
+
+// Retrives the summary of a payment run.n
+
+@name("Get payment run summary")
+GET "https://{{baseUrl}}/payment-runs/:paymentRunId/summary"
+
+
+

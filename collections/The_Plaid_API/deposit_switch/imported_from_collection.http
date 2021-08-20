@@ -1,0 +1,79 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-85036b5c-969b-49fd-9dfd-6423d5dbc971.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// This endpoint creates a deposit switch entity that will be persisted throughout the lifecycle of the switch.
+
+@name("Create a deposit switch") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deposit_switch/create"
+"Content-Type": "application/json"
+json({
+    "target_access_token": "anim veniam s",
+    "target_account_id": "aliquip ut tempor",
+    "client_id": "aute fugiat irure cillum",
+    "secret": "aliquip nisi"
+})
+
+
+// In order for the end user to take action, you will need to create a public token representing the deposit switch. This token is used to initialize Link. It can be used one time and expires after 30 minutes.
+
+@name("Create a deposit switch token") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deposit_switch/token/create"
+"Content-Type": "application/json"
+json({
+    "deposit_switch_id": "ad aliqua aliquip eu ex",
+    "client_id": "minim pariatur",
+    "secret": "do dolor tempor"
+})
+
+
+// This endpoint returns information related to how the user has configured their payroll allocation and the state of the switch. You can use this information to build logic related to the user's direct deposit allocation preferences.
+
+@name("Retrieve a deposit switch") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deposit_switch/get"
+"Content-Type": "application/json"
+json({
+    "deposit_switch_id": "minim ea ut mollit officia",
+    "client_id": "dolore deserunt laboris sunt",
+    "secret": "occaecat Lorem consequat"
+})
+
+
+// This endpoint provides an alternative to `/deposit_switch/create` for customers who have not yet fully integrated with Plaid Exchange. Like `/deposit_switch/create`, it created a deposit switch entity that will be persisted throughout the lifecycle of the switch.
+
+@name("Create a deposit switch when not using Plaid Exchange.'") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deposit_switch/alt/create"
+"Content-Type": "application/json"
+json({
+    "target_account": {
+        "account_number": "esse occaecat ex officia in",
+        "routing_number": "Lorem Ut veniam",
+        "account_name": "Ut",
+        "account_subtype": "savings"
+    },
+    "target_user": {
+        "given_name": "aliqua ad qui nisi",
+        "family_name": "sit culpa id et deserunt",
+        "phone": "irure ea",
+        "email": "non",
+        "address": {
+            "street": "esse ut",
+            "city": "sit cupidatat ut qui",
+            "region": "commodo Ut tempor ",
+            "postal_code": "ut quis dolore",
+            "country": "sit cupidatat"
+        },
+        "tax_payer_id": "mollit dolor"
+    },
+    "client_id": "consequat anim dolor",
+    "secret": "magna enim aute culpa"
+})
+
+
+

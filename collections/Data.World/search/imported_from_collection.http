@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Advanced search on resources
+
+@name("Advanced search on resources") : "base-inherit-auth"
+POST "https://{{baseUrl}}/search"
+"Content-Type": "application/json"
+? "size"= "et officia pariatur"
+? "from"= "et officia pariatur"
+? "sort"= "et officia pariatur"
+json({
+    "query": "qui et",
+    "category": [
+        "catalogBusinessTerm",
+        "datatable"
+    ],
+    "resourceId": [
+        "dolor ad quis incididunt ",
+        "ut sunt cupidatat sit"
+    ],
+    "type": [
+        "dolore amet ullamco labore",
+        "mollit Ut dolore minim culpa"
+    ],
+    "owner": [
+        "ut Excepteur dolor",
+        "Duis ullamco"
+    ],
+    "minAccessLevel": "WRITE",
+    "tag": [
+        "pariatur ex reprehenderit veniam eu",
+        "nisi cupidatat anim laboris"
+    ],
+    "visibility": "PRIVATE",
+    "createdRange": {
+        "endDate": "magna qui ex",
+        "startDate": ""
+    },
+    "updatedRange": {
+        "endDate": "non aliqua fugiat",
+        "startDate": "in culpa dolore fugiat voluptate"
+    }
+})
+
+
+// Simple search is a light weight API implementation exposing similar search capabilities as our main platform search UI.
+// 
+// By default, the search response will return mixed result types including metadata resources, datasets, projects, queries, insights, tables, and comments.
+// 
+// A free-text search term is required. Simple search does not support complex keyword or logical operator grammar.
+// Light weight filters for resource owner and resource category are supported. You may optionally specify the includeCommunityResults param to query for resources in the data.world open data community.
+
+@name("Simple search on resources") : "base-inherit-auth"
+POST "https://{{baseUrl}}/search/resources"
+"Content-Type": "application/json"
+? "size"= "et officia pariatur"
+? "from"= "et officia pariatur"
+? "sort"= "et officia pariatur"
+json({
+    "query": "dolore laboris Ut elit",
+    "owner": [
+        "id fugiat",
+        "sunt nostrud laboris aute"
+    ],
+    "category": [
+        "catalogDataset",
+        "collection"
+    ],
+    "includeCommunityResults": false
+})
+
+
+

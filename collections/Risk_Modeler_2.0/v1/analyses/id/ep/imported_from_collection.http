@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves EP Metrics for a specified analysis, specified by its ID.
+
+@name("Get EP Metrics for a specified analysis") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analyses/:id/ep"
+"Authorization": "Bearer <Bearer Token>"
+? "perspective"= "Excepteur nisi in"
+? "treatyId"= "20033802"
+? "exposureId"= "20033802"
+? "exposureType"= "20033802"
+? "jobId"= "20033802"
+? "jobUUID"= "Excepteur nisi in"
+
+
+// Retrieves EP Interpolation data for the given metric input values
+
+@name("Get EP Interpolation results") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/analyses/:id/ep/interpolate"
+"Authorization": "Bearer <Bearer Token>"
+? "perspective"= "Excepteur nisi in"
+? "treatyId"= "20033802"
+? "exposureId"= "20033802"
+? "exposureType"= "20033802"
+? "jobId"= "20033802"
+? "key"= "Excepteur nisi in"
+? "value"= "-61281687.88214854"
+? "metricType"= "Excepteur nisi in"
+
+
+

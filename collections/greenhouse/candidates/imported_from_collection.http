@@ -1,0 +1,122 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5093b8f4-a0f0-4f3c-ba64-865b352e5945.postman_collection.json
+
+@name("Create a new candidate")
+POST "https://{{baseUrl}}/candidates"
+"Authorization": "ad cillum non laborum"
+"Content-Type": "application/json"
+json({
+    "first_name": "enim velit in",
+    "last_name": "occaecat nisi Lorem minim",
+    "applications": [
+        {
+            "job_id": 79571636
+        },
+        {
+            "job_id": 60750096
+        }
+    ],
+    "addresses": [
+        {
+            "type": "elit pariatur",
+            "value": "reprehenderit sint cupidatat"
+        },
+        {
+            "type": "laboris culpa",
+            "value": "sit aliqua velit Duis"
+        }
+    ],
+    "company": "incididunt amet",
+    "educations": [
+        {
+            "degree": "laboris voluptate ",
+            "discipline": "id",
+            "end_date": "1997-02-26T02:20:38.543Z",
+            "id": -78746702,
+            "school_name": "culpa aliqua non",
+            "start_date": "1945-11-29T01:43:32.494Z"
+        },
+        {
+            "degree": "ut tempor enim",
+            "discipline": "nulla non sed",
+            "end_date": "2006-10-03T18:29:23.118Z",
+            "id": 38820085,
+            "school_name": "labore tempor",
+            "start_date": "1980-02-29T12:28:02.603Z"
+        }
+    ],
+    "email_addresses": [
+        {
+            "type": "nulla dolore",
+            "value": "exercitation ut"
+        },
+        {
+            "type": "deserunt",
+            "value": "ea ex adipisicing pariatur"
+        }
+    ],
+    "employments": [
+        {
+            "company_name": "Ut Duis",
+            "end_date": "1986-05-02T01:52:06.469Z",
+            "id": 43319022,
+            "start_date": "1971-06-23T13:01:42.662Z",
+            "title": "anim ut reprehenderit"
+        },
+        {
+            "company_name": "aute sed mollit qui",
+            "end_date": "1946-03-06T13:01:57.650Z",
+            "id": 15463883,
+            "start_date": "1953-09-03T00:26:45.903Z",
+            "title": "dolor esse"
+        }
+    ],
+    "is_private": false,
+    "phone_numbers": [
+        {
+            "type": "minim culpa nostrud et",
+            "value": "in in"
+        },
+        {
+            "type": "labore aliqua minim",
+            "value": "aliquip Lorem ad anim veniam"
+        }
+    ],
+    "social_media_addresses": [
+        {
+            "value": "magna sit"
+        },
+        {
+            "value": "adipisicing Ut veniam sed"
+        }
+    ],
+    "tags": [
+        "tempor sed amet",
+        "est"
+    ],
+    "title": "magna",
+    "user_id": 56522852,
+    "website_addresses": [
+        {
+            "type": "id enim laboris",
+            "value": "officia ipsum veniam deserunt"
+        },
+        {
+            "type": "nisi sit exercitation in tempor",
+            "value": "est sit aute"
+        }
+    ]
+})
+
+
+@name("Search for candidates")
+GET "https://{{baseUrl}}/candidates"
+"Authorization": "ad cillum non laborum"
+? "where"= "ad cillum non laborum"
+? "pageSize"= "ad cillum non laborum"
+? "nextPage"= "ad cillum non laborum"
+? "fields"= "ad cillum non laborum"
+
+
+

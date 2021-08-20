@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6b84cc71-ce77-48b8-babd-323eb8d670bd.postman_collection.json
+
+// Provides all the alternate ID types for use with getting substances by Alternate ID.
+
+@name("Get full list of alternate ID types.")
+GET "https://{{baseUrl}}/reference/alt_id_type"
+
+
+// Provides all the substance lists available in SRS.
+
+@name("Get full list of substance lists available in SRS.")
+GET "https://{{baseUrl}}/reference/substance_lists"
+
+
+

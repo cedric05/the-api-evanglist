@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Countries.
+
+@name("Countries")
+GET "https://{{baseUrl}}/api/v1/dictionaries/countries"
+? "tax_supported"= "<get>"
+
+
+// Currencies.
+
+@name("Currencies")
+GET "https://{{baseUrl}}/api/v1/dictionaries/currencies"
+
+
+// Product types.
+
+@name("Product Types")
+GET "https://{{baseUrl}}/api/v1/dictionaries/product_types"
+
+
+

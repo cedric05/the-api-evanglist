@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// Search, list, and sort rule groups contained within a package
+
+@name("Search, list, and sort rule groups contained within a package")
+GET "https://{{baseUrl}}/zones/:zone_identifier/firewall/waf/packages/:package_identifier/groups"
+"X": "<>"
+? "direction"= "<>"
+? "match"= "<>"
+? "mode"= "<>"
+? "name"= "<>"
+? "order"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+? "rules_count"= "<>"
+
+
+// Get a single rule group
+
+@name("Get a single rule group")
+GET "https://{{baseUrl}}/zones/:zone_identifier/firewall/waf/packages/:package_identifier/groups/:identifier"
+
+
+

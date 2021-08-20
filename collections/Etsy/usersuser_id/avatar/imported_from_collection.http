@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Upload a new user avatar image
+
+@name("Post Users User Avatar")
+POST "https://{{baseUrl}}/users/:user_id/avatar"
+? "src"= "<>"
+? "image"= "<>"
+
+
+// Get avatar image source
+
+@name("Get Users User Avatar Src")
+GET "https://{{baseUrl}}/users/:user_id/avatar/src"
+
+
+

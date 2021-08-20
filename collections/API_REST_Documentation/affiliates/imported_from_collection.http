@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+@name("Search Affiliates")
+GET "https://{{baseUrl}}/affiliates"
+? "AffiliateCode"= "<string>"
+? "Name"= "<string>"
+? "Status"= "<string>"
+? "RequestDateStart"= "<string>"
+? "RequestDateEnd"= "<string>"
+? "Country"= "<string>"
+? "TargetCountry"= "<string>"
+? "CommissionList"= "<object>"
+? "Type"= "<string>"
+? "Page"= "<integer>"
+? "Limit"= "<integer>"
+
+
+@name("Get Affiliate")
+GET "https://{{baseUrl}}/affiliates/:AffiliateCode"
+
+
+

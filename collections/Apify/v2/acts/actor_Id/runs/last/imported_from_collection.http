@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// This is not a single endpoint, but an entire group of endpoints that lets you tonretrieve and manage the last run of given actor or any of its default storages.nAll the endpoints require an authentication token.nnThe endpoints accept the same HTTP methods and query parameters asnthe respective storage endpoints.nThe base path represents the last actor run object is:nn`/v2/acts/{actorId}/runs/last{?token,status}`nnUsing the `status` parameter you can filter a run with certain statusn(e.g. `SUCCEE
+
+@name("Get last run")
+GET "https://{{baseUrl}}/v2/acts/:actorId/runs/last/{{subPath}}{{token,status}}"
+
+
+// This is not a single endpoint, but an entire group of endpoints that lets you tonretrieve and manage the last run of given actor task or any of its default storages.nAll the endpoints require an authentication token.nnThe endpoints accept the same HTTP methods and query parameters asnthe respective storage endpoints.nThe base path represents the last actor task run object is:nn`/v2/actor-tasks/{actorTaskId}/runs/last{?token,status}`nnUsing the `status` parameter you can filter a run with certain
+
+@name("Get last run")
+GET "https://{{baseUrl}}/v2/acts/:actorId/runs/last/{{subPath}}{{token,status,actorTaskId}}"
+
+
+

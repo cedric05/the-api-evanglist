@@ -1,0 +1,66 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5469d2a1-2893-4482-9c0f-50d862996bf0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// This service lets you access a comprehensive overview of all product recommendations. It contains product prioritization, recommendation reasons, owned status, and other information. Whether the recommendation is for a person or business is controlled via URL parameter.
+
+@name("Products") : "base-inherit-auth"
+POST "https://{{baseUrl}}/productgroups"
+? "country"= "it"
+? "accountType"= "sme"
+
+
+// As in the service `/productgroups/prioritization`, this addresses the optimal insurance portfolio and calculates recommended coverages for certain products. The business logic has been initially developed and is continually improved together with neutral experts. The rules are subject to configuration.
+
+@name("Coverages") : "base-inherit-auth"
+POST "https://{{baseUrl}}/productgroups/coverages"
+? "country"= "it"
+
+
+// This service gives a recommendation on which product to focus on next, for the optimal improvement of the customer's insurance portfolio. The recommendation is based on two components:  
+// 
+//  1. the `riskine customer algorithm` - what is the most recommended based on estimated financial impact? (as in the service `/productgroups/recommendation`)  
+// 
+//  2. the `riskine product recommendation models` based on machine learning models - which products are customers most likely to want/need? (as in the service `/productgroups/nextprobable`)  
+// 
+// The recommendation is structured in 3 parts:  
+// 
+//  1. the recommended productgroup - given by productgroup id  
+// 
+//  2. the reason for the recommendation  
+// 
+//  3. the ranking of the other productgroups following the recommended one
+
+@name("Next Best Product") : "base-inherit-auth"
+POST "https://{{baseUrl}}/productgroups/products/nextbest"
+"Content-Type": "application/json"
+json({
+    "person.birthdate": "1980-01-01",
+    "person.work.income.net.monthly": 1920,
+    "person.family.incomedepending": [
+        1,
+        2
+    ],
+    "object.home.type": 1,
+    "person.family.partner": 1
+})
+
+
+// This service is the access point to the `riskine product recommendation models`.  
+// 
+// This service gives the productgroups ordered by the probability that a user is interested in them. Based on machine learning models trained on anonymized user profiles. In the request, a specific user is specified with age, gender, profession, etc. as in the other services. The response contains all productgroups with their respective probability of interest, ordered from the most probable to the least probable. An optional input is the list of all productgroups that the user already has - if included in the request, the response is filtered to include only those products that the user does not already have.
+
+@name("Next Probable Product") : "base-inherit-auth"
+POST "https://{{baseUrl}}/productgroups/nextprobable"
+"Content-Type": "application/json"
+
+
+
+

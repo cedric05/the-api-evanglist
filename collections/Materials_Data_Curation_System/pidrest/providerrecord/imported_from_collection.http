@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Retrieve the local data of a given handle record
+
+@name("pid rest read") : "base-inherit-auth"
+GET "https://{{baseUrl}}/pid/rest/:provider/:record"
+
+
+// Create a handle record
+
+@name("pid rest create") : "base-inherit-auth"
+POST "https://{{baseUrl}}/pid/rest/:provider/:record"
+
+
+// Update the value of a given handle record
+
+@name("pid rest update") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/pid/rest/:provider/:record"
+
+
+// Delete a handle record
+
+@name("pid rest delete") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/pid/rest/:provider/:record"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b61ade0-60b3-4dcc-a6b1-7acb55b522a0.postman_collection.json
+
+// You can only retrieve exports for backup_instances you have access to
+
+@name("Retrieve a specific export for the specified backup_instance")
+GET "https://{{baseUrl}}/v1/backup_instances/:backup_instance_id/exports/:export_id"
+"Authorization": "<>"
+
+
+// Retrieve an updated exported_data_url for a specific export for the specified backup_instance.
+
+@name("Retrieve an updated exported_data_url for a specific export for the specified backup_instance")
+POST "https://{{baseUrl}}/v1/backup_instances/:backup_instance_id/exports/:export_id/reauth"
+"Authorization": "<>"
+
+
+

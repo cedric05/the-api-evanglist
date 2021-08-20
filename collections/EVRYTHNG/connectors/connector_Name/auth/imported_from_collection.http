@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3abc9a78-733b-4c0c-8e67-86b81dc5a077.postman_collection.json
+
+// Authenticate the connector service through redirection.
+
+@name("Authenticate through connector")
+GET "https://{{baseUrl}}/connectors/:connectorName/auth"
+? "No Name"= "<string>"
+
+
+// Authenticate with the connector service using an existing OAuth token.
+
+@name("Authenticate with an existing token")
+POST "https://{{baseUrl}}/connectors/:connectorName/auth/token"
+? "No Name"= "<string>"
+
+
+

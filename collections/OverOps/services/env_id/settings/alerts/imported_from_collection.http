@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Use this call to fetch default alert settings for selected environment
+
+@name("Fetch Default Alert Settings") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/alerts"
+
+
+// Use this call to update default alert settings for selected environment which will be used as initial settings for every new alert opened in this environment. 
+
+@name("Update Default Alert Settings") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/settings/alerts"
+"Content-Type": "application/json"
+json({
+    "email": {
+        "alert_me": true,
+        "alert_all_team_members": false,
+        "alert_additional_emails": false,
+        "additional_emails_to_alert": [
+            "user1@company.com",
+            "user1@company.com"
+        ]
+    },
+    "slack": {
+        "inhook_url": "https://hooks.slack.com/services/xxxxyyyyy/xxxx/sdf123rskfsdf1j"
+    },
+    "pager_duty": {
+        "service_integration_key": "sflk234lkdjflsj12o8312"
+    },
+    "service_now": {
+        "url": "http://servicenow.company.com/hooks",
+        "user_id": "admin",
+        "password": "pa$$1",
+        "table": "sys_report_layer"
+    },
+    "hip_chat": {
+        "token": "dfgdk2342kljsldfjslk2342fsdfkjslkj",
+        "room": "Takipi"
+    },
+    "webhook": {
+        "webhook_url": "http://hooks.company.com/overops1/P1/hook"
+    }
+})
+
+
+

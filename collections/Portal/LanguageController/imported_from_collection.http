@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c919d560-a914-41d7-ae8f-0b4e0947e68d.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("demo", "4Gl6WL1bmwviYm+XZa6pS1vC0qKXWtn9wcZWdLx61L0=")
+
+
+@name("localhost:8080/auxapi/languageSetting/user/2") : "base-inherit-auth"
+GET "https://localhost/auxapi/languageSetting/user/2"
+basicauth("demo", "4Gl6WL1bmwviYm+XZa6pS1vC0qKXWtn9wcZWdLx61L0=")
+
+
+@name("localhost:8080/auxapi/language") : "base-inherit-auth"
+GET "https://localhost/auxapi/language"
+
+
+@name("localhost:8080/auxapi/language") : "base-inherit-auth"
+POST "https://localhost/auxapi/language"
+basicauth("demo", "4Gl6WL1bmwviYm+XZa6pS1vC0qKXWtn9wcZWdLx61L0=")
+"Content-Type": "application/json"
+json({
+    "languageName": "PL",
+    "languageAlias": "Polish"
+})
+
+
+// XSS test
+
+@name("localhost:8080/auxapi/language") : "base-inherit-auth"
+POST "https://localhost/auxapi/language"
+basicauth("demo", "4Gl6WL1bmwviYm+XZa6pS1vC0qKXWtn9wcZWdLx61L0=")
+"Content-Type": "application/json"
+json({
+    "languageName": "PL",
+    "languageAlias": "<script>alert(“XSS”)</script>"
+})
+
+
+

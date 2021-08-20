@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Deletes an existing Favorites page and all of its cells.
+
+@name("Delete Location Pages")
+DELETE "https://{{baseUrl}}/v1/:location_id/pages/:page_id"
+
+
+// Deletes a cell from a Favorites page in Square Register.
+
+@name("Delete Location Pages Cells")
+DELETE "https://{{baseUrl}}/v1/:location_id/pages/:page_id/cells"
+? "row"= "<integer>"
+? "column"= "<integer>"
+
+
+

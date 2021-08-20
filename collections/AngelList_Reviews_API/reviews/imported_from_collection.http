@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2d62ae65-7d78-4610-a1df-cd7df1f50709.postman_collection.json
+
+// Get Reviews
+
+@name("Get Reviews")
+GET "https://{{baseUrl}}/reviews"
+? "user_id"= "<string>"
+
+
+// Get Review
+
+@name("Get Review")
+GET "https://{{baseUrl}}/reviews/:review_id"
+? "startup_id"= "<string>"
+
+
+

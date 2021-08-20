@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-153b1edc-7cd0-4f1f-a8a3-bd5fb65bc144.postman_collection.json
+
+@name("Collection")
+GET "https://{{baseUrl}}/collections/:collectionsId"
+? "api_key"= "<integer>"
+
+
+@name("Collection Projects")
+GET "https://{{baseUrl}}/collections/:collectionsId/projects"
+? "api_key"= "<integer>"
+
+
+

@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns the versions that have been defined in the issue tracker.
+// 
+// This resource is only available on repositories that have the issue
+// tracker enabled.
+
+@name("/repositories/:username/:repo_slug/versions")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/versions"
+
+
+// Returns the specified issue tracker version object.
+
+@name("/repositories/:username/:repo_slug/versions/:version_id")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/versions/:version_id"
+
+
+

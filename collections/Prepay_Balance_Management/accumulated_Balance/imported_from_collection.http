@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7871656e-e03d-47bc-b756-528d4b913bbd.postman_collection.json
+
+// This operation list or find AccumulatedBalance entities
+
+@name("List or find AccumulatedBalance objects")
+GET "https://{{baseUrl}}/accumulatedBalance"
+? "fields"= "id voluptate"
+? "offset"= "6696224"
+? "limit"= "6696224"
+
+
+// This operation retrieves a AccumulatedBalance entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a AccumulatedBalance by ID")
+GET "https://{{baseUrl}}/accumulatedBalance/:id"
+? "fields"= "id voluptate"
+
+
+

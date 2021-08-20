@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17776046-ece2-4e9f-8598-d00e62122c30.postman_collection.json
+
+// Doctor search
+
+@name("Doctor search")
+GET "https://{{baseUrl}}/doctors"
+? "name"= "<get>"
+? "first_name"= "<get>"
+? "last_name"= "<get>"
+? "query"= "<>"
+? "specialty_uid"= "<>"
+? "insurance_uid"= "<>"
+? "practice_uid"= "<>"
+? "location"= "<object>"
+? "user_location"= "<>"
+? "gender"= "<get>"
+? "sort"= "<>"
+? "fields"= "<>"
+? "skip"= "<get>"
+? "limit"= "<get>"
+? "user_key"= "<>"
+
+
+// Returns a doctor object based on an uid or a slug
+
+@name("Retrieve a specific doctor description")
+GET "https://{{baseUrl}}/doctors/:uid"
+? "fields"= "<>"
+? "user_key"= "<>"
+
+
+// Returns a doctor object using NPI
+
+@name("Retrieve a specific doctor description using NPI")
+GET "https://{{baseUrl}}/doctors/npi/:npi"
+? "fields"= "<>"
+? "user_key"= "<>"
+
+
+

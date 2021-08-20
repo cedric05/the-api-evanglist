@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6dd4b6b5-e2d1-4630-9235-6d7bb1d13702.postman_collection.json
+
+// Get All
+
+@name("Get All")
+GET "https://{{baseUrl}}/dbs/getall.{{format}}"
+
+
+// DBS Entity Details
+
+@name("DBS Entity Details")
+GET "https://{{baseUrl}}/dbs/frn/{{frn}}.{{format}}"
+
+
+// Update licensee address
+
+@name("Update licensee address")
+POST "https://{{baseUrl}}/dbs/licenseeAddress/update.json"
+"Content-Type": "application/json"
+json({
+    "licensee": "<string>",
+    "addressLine1": "<string>",
+    "addressLine2": "<string>",
+    "city": "<string>",
+    "state": "<string>",
+    "zipCode": "<string>",
+    "zipExt": "<string>",
+    "phone": "<string>",
+    "email": "<string>",
+    "website": "<string>",
+    "facilityId": "<string>",
+    "accessToken": "<string>"
+})
+
+
+// DBS EEO
+
+@name("DBS EEO")
+GET "https://{{baseUrl}}/dbs/eeo/facility/{{facilityID}}.{{format}}"
+
+
+

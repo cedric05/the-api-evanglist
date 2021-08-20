@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Checks to see if the current user is authenticated with Blend. Primarily for integration use cases to avoid retries downstream in the workflow.
+
+@name("Get Authentication Status") : "base-inherit-auth"
+GET "https://{{baseUrl}}/authentication-status"
+
+
+// Gets Tax Transcripts structured data for a particular 4506T document
+
+@name("Gets Tax Transcripts structured data for a particular 4506T document") : "base-inherit-auth"
+GET "https://{{baseUrl}}/tax-transcripts"
+? "documentId"= "300c9f4c-c90b-40a4-94d4-f2a718b9be61"
+
+
+// Add realtor to application
+
+@name("Add a Realtor to a Specific Application") : "base-inherit-auth"
+POST "https://{{baseUrl}}/realtors"
+"Content-Type": "application/json"
+json({
+    "applicationId": "9250f84b-c2a1-4cab-b265-bd720685c361",
+    "name": {
+        "firstName": "Danielle",
+        "lastName": "Realtor"
+    },
+    "contact": {
+        "email": "danielle@realtor.com",
+        "phoneNumber": 2225557878
+    }
+})
+
+
+

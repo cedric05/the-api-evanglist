@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-585a2d49-6eb1-4045-8898-5ab8d446bc39.postman_collection.json
+
+// Withdraw crypro.
+
+@name("Withdraw Crypro")
+POST "https://{{baseUrl}}/account/crypto/withdraw"
+
+
+// Commit withdraw crypro.
+
+@name("Commit Withdraw Crypro")
+PUT "https://{{baseUrl}}/account/crypto/withdraw/:id"
+
+
+

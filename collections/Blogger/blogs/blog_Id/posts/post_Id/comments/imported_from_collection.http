@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a2e3bbcd-4c1a-45f3-8016-86639e868822.postman_collection.json
+
+// Retrieves the comments for a post, possibly filtered.
+
+@name("Get Blog Post Comments")
+GET "https://{{baseUrl}}/blogs/:blogId/posts/:postId/comments"
+? "endDate"= "<>"
+? "fetchBodies"= "<>"
+? "maxResults"= "<>"
+? "pageToken"= "<>"
+? "startDate"= "<>"
+? "status"= "<parameters>"
+? "view"= "<>"
+
+
+

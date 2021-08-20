@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-18af961a-c8f9-4c42-85af-0f2fe7c91aaa.postman_collection.json
+
+// Change information for a group
+
+@name("Change information for a group")
+PATCH "https://{{baseUrl}}/pages/[page_id]/page_access_groups/[page_access_group_id].json"
+? "page_access_group[name]"= "<string>"
+? "page_access_group[external_identifier]"= "<string>"
+? "page_access_group[page_access_user_ids][]"= "<string>"
+? "page_access_group[component_ids][]"= "<string>"
+? "page_access_group[metric_ids][]"= "<string>"
+
+
+// Assign components to a page access group (overwrites existing components)
+
+@name("Assign components to a page access group (overwrites existing components)")
+POST "https://{{baseUrl}}/pages/[page_id]/page_access_groups/[page_access_group_id]/components.json"
+? "component_ids[]"= "<string>"
+
+
+

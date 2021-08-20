@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Post shipping group fulfillmentgroupid item.
+
+@name("Post Shipping Group Fulfillmentgroupid Item")
+POST "https://{{baseUrl}}/shipping/:cartId/group/:fulfillmentGroupId/item"
+? "priceOrder"= "<>"
+
+
+// Delete shipping group fulfillmentgroupid item.
+
+@name("Delete Shipping Group Fulfillmentgroupid Item")
+DELETE "https://{{baseUrl}}/shipping/:cartId/group/:fulfillmentGroupId/item/:itemId"
+
+
+

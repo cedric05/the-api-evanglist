@@ -1,0 +1,93 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-078f0c0e-f03d-4124-bda1-c7d8042a0e64.postman_collection.json
+
+// Gets allergies for a patient.
+
+@name("Gets allergies for a patient")
+GET "https://{{baseUrl}}/view/:ehrId/allergy"
+? "limit"= "<>"
+
+
+// Gets recorded blood pressures for a patient.
+
+@name("Gets recorded blood pressures for a patient")
+GET "https://{{baseUrl}}/view/:ehrId/blood_pressure"
+? "from"= "<>"
+? "limit"= "<>"
+? "to"= "<>"
+
+
+// Gets recorded body temperatures for a patient.
+
+@name("Gets recorded body temperatures for a patient")
+GET "https://{{baseUrl}}/view/:ehrId/body_temperature"
+? "from"= "<>"
+? "limit"= "<>"
+? "to"= "<>"
+
+
+// Gets recorded heights for a patient.
+
+@name("Gets recorded heights for a patient")
+GET "https://{{baseUrl}}/view/:ehrId/height"
+? "from"= "<>"
+? "limit"= "<>"
+? "to"= "<>"
+
+
+// Lab results.
+
+@name("Lab results")
+GET "https://{{baseUrl}}/view/:ehrId/labs"
+? "from"= "<>"
+? "limit"= "<>"
+? "to"= "<>"
+
+
+// Gets medications prescribed for a a patient.
+
+@name("Gets medications prescribed for a a patient")
+GET "https://{{baseUrl}}/view/:ehrId/medication"
+? "from"= "<>"
+? "limit"= "<>"
+? "to"= "<>"
+
+
+// Gets problems/diagnoses for a patient.
+
+@name("Gets problems/diagnoses for a patient")
+GET "https://{{baseUrl}}/view/:ehrId/problem"
+? "from"= "<>"
+? "limit"= "<>"
+? "to"= "<>"
+
+
+// Gets pulse measurements for a patient.
+
+@name("Gets pulse measurements for a patient")
+GET "https://{{baseUrl}}/view/:ehrId/pulse"
+? "from"= "<>"
+? "limit"= "<>"
+? "to"= "<>"
+
+
+// Gets spo2 measurements for a patient.
+
+@name("Gets SpO2 measurements for a patient")
+GET "https://{{baseUrl}}/view/:ehrId/spO2"
+? "from"= "<>"
+? "limit"= "<>"
+? "to"= "<>"
+
+
+// Gets recorded weights for a patient.
+
+@name("Gets recorded weights for a patient")
+GET "https://{{baseUrl}}/view/:ehrId/weight"
+? "from"= "<>"
+? "limit"= "<>"
+? "to"= "<>"
+
+
+

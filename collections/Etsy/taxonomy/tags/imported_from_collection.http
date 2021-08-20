@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3659b137-52c3-4941-8c35-36a1a993a79b.postman_collection.json
+
+// Retrieves all related tags for the given tag set.
+
+@name("Get Taxonomy Tags")
+GET "https://{{baseUrl}}/taxonomy/tags"
+? "limit"= "<>"
+
+
+// Retrieves all related tags for the given tag set.
+
+@name("Get Taxonomy Tags Tags")
+GET "https://{{baseUrl}}/taxonomy/tags/:tags"
+? "limit"= "<>"
+
+
+

@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Returns the specified closing.
+
+@name("Get a Specific Closing") : "base-inherit-auth"
+GET "https://{{baseUrl}}/close/closings/:id"
+
+
+// Updates a closing for a given loan. This endpoint can update multiple elements at once.
+
+@name("Update a Specific Closing") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/close/closings/:id"
+"Content-Type": "application/json"
+json({
+    "closingType": "RON",
+    "closingStart": "2019-10-29T00:00:00-04:00",
+    "closingEnd": "2019-10-29T23:59:59-04:00",
+    "scheduledCeremonyTime": "2019-10-29T04:00:00-04:00",
+    "timezone": "America/New_York",
+    "closingParties": [
+        {
+            "email": "johnhernandez@mail.com",
+            "partyType": "TITLE",
+            "firstName": "John",
+            "lastName": "Hernandez",
+            "phoneNumber": "4153334444",
+            "agencyName": "Title Co."
+        },
+        {
+            "email": "johnhernandez@mail.com",
+            "partyType": "TITLE",
+            "firstName": "John",
+            "lastName": "Hernandez",
+            "phoneNumber": "4153334444",
+            "agencyName": "Title Co."
+        }
+    ],
+    "specialInstructions": "Please wet-sign the Closing Disclosure."
+})
+
+
+// Submits or Resubmits a closing.
+
+@name("Submit Closing") : "base-inherit-auth"
+POST "https://{{baseUrl}}/close/closings/:id/send"
+"Content-Type": "application/json"
+json({
+    "sourceType": "LENDER"
+})
+
+
+// Places submitted closing back into a draft state so that changes can be made.
+
+@name("Initiate Closing Redraw") : "base-inherit-auth"
+POST "https://{{baseUrl}}/close/closings/:id/redraw"
+
+
+// Adds an ENote from a vault managed outside of blend.
+
+@name("Add Externally Managed ENote") : "base-inherit-auth"
+POST "https://{{baseUrl}}/close/closings/:id/external-enote"
+"Content-Type": "application/json"
+json({
+    "vaultData": {
+        "eOriginal": {
+            "transactionId": "11180467"
+        }
+    }
+})
+
+
+

@@ -1,0 +1,5 @@
+This collection helps you manage the OpenAPIs you have stored for each API within Postman. This collection pull an OpenAPI by name, then loops through the paths, parameters, and other elements, counting all of them to better summarize the scope of an OpenAPI. Helping developers get a handle on what is going on across each OpenAPI they are developing.
+
+To use this collection you will need a Postman API key, which you can pull from your [Postman user account settings](https://go.postman.co/integrations/services/pm_pro_api). The collection just makes calls to the Postman API on your behalf to obtain the OpenAPI from the Postman API schema API. The current process takes three separate API calls, and this request will abstract away all of that for you.
+
+If you have any questions about this collection leave a comment, or email info@apievangelist.com. If there are counts you'd like to see included but aren't, feel free to add as a comment on this collection, or feel free to fork and submit.

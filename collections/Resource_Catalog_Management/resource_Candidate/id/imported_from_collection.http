@@ -1,0 +1,71 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-175bce79-8928-437d-8db8-aad1709514f2.postman_collection.json
+
+// This operation retrieves a ResourceCandidate entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a ResourceCandidate by ID")
+GET "https://{{baseUrl}}/resourceCandidate/:id"
+? "fields"= "tempor sint Ut"
+
+
+// This operation updates partially a ResourceCandidate entity.
+
+@name("Updates partially a ResourceCandidate")
+PATCH "https://{{baseUrl}}/resourceCandidate/:id"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "description": "consequat aliquip est eiusmod",
+    "lastUpdate": "1990-06-14T17:56:03.597Z",
+    "lifecycleStatus": "ex ullamco occaecat nulla",
+    "name": "labore consequat nisi tempor pariatur",
+    "version": "elit Excepteur aliquip",
+    "category": [
+        {
+            "id": "nulla minim incididunt",
+            "href": "mollit",
+            "name": "qui dolor eu occaecat",
+            "version": "veniam in incididunt consequat",
+            "@baseType": "",
+            "@schemaLocation": "https://xaWTnNbayMXpTYcqnAAkELFllfoD.rdewikcCSqLCVlOsYLM6nm8.l5-FWEuCPnvllw83",
+            "@type": "enim nulla labore",
+            "@referredType": "dolore voluptate aute quis"
+        },
+        {
+            "id": "in officia occaecat dolor",
+            "href": "in Duis fugiat",
+            "name": "ut reprehenderit est Duis",
+            "version": "in",
+            "@baseType": "dolore",
+            "@schemaLocation": "http://pIWMRIfvqWKCwcqsE.gtOMR1jo2Fjvyj",
+            "@type": "ea aliqua",
+            "@referredType": "dolor ex deserunt culpa ut"
+        }
+    ],
+    "resourceSpecification": {
+        "id": "sit nisi cill",
+        "href": "enim ea adipisicing veniam",
+        "name": "magna",
+        "version": "Lorem veniam incididunt",
+        "@baseType": "sed sunt dolore anim",
+        "@schemaLocation": "http://QsaOmzheVLmXHXiH.llwz4OBqbWycrb7HrL.CTI--Y1Hex",
+        "@type": "sed",
+        "@referredType": "proident enim"
+    },
+    "validFor": {
+        "endDateTime": "1985-04-12T23:20:50.52Z",
+        "startDateTime": "1985-04-12T23:20:50.52Z"
+    },
+    "@baseType": "irure",
+    "@schemaLocation": "http://mEGlWjApxBnwAPFdqnxbulVb.ceziZ-",
+    "@type": "Ut mollit"
+})
+
+
+// This operation deletes a ResourceCandidate entity.
+
+@name("Deletes a ResourceCandidate")
+DELETE "https://{{baseUrl}}/resourceCandidate/:id"
+
+
+

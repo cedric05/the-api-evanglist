@@ -1,0 +1,87 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// Manually emails all the billing documents that are generated from a specified bill run to your customers. nnnBill runs can generate invoices and credit memos based on your [invoice and credit memo generation rule](https://knowledgecenter.zuora.com/CB_Billing/Advanced_AR_Settlement/Credit_and_Debit_Memos/Rules_for_Generating_Invoices_and_Credit_Memos). Credit memos are only available if you have the Advanced AR Settlement feature enabled.nnnUsing this API operation, the billing documents are sent
+
+@name("Email billing documents generated from bill run")
+POST "https://{{baseUrl}}/v1/bill-runs/:billRunId/emails"
+
+
+// Retrieves the information about all billing documents associated with a specified account. The billing documents contain invoices, credit memos, and debit memos. nnTo retrieve information about credit memos and debit memos, you must have the Advanced AR Settlement feature enabled. n
+
+@name("Get billing documents")
+GET "https://{{baseUrl}}/v1/billing-documents"
+? "accountId"= "<put>"
+? "documentDate"= "<put>"
+? "status"= "<put>"
+? "sort"= "<>"
+
+
+// Establishes a connection to the Zuora REST API service based on a valid user credentials.nnThis call authenticates the user and returns an API session cookie that's used to authorize subsequent calls to the REST API. A call to `connections` is a required first step before using the Zuora REST API to access data.nnThe credentials must belong to a user account that has permission to access the API service.nnAs noted elsewhere, it's strongly recommended that an account used for Zuora API activity i
+
+@name("Establish connection to Zuora REST API service")
+POST "https://{{baseUrl}}/v1/connections"
+"apiAccessKeyId": "<>"
+"apiSecretAccessKey": "<>"
+"Content": "<>"
+
+
+// This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). nnThis reference describes how to query custom foreign exchange rates from Zuora. You can use this API method to query exchange rates only if you use a custom exchange rate provider and upload rates with the Import Foreign Exchange Rates mass action. n
+
+@name("Get custom foreign currency exchange rates")
+GET "https://{{baseUrl}}/v1/custom-exchange-rates/:currency"
+? "startDate"= "<put>"
+? "endDate"= "<put>"
+
+
+// Provides a reference listing of each object that is available in your Zuora tenant.nnThe information returned by this call is useful if you are using [CRUD: Create Export](https://www.zuora.com/developer/api-reference/#operation/Object_POSTExport) or the [AQuA API](https://knowledgecenter.zuora.com/DC_Developers/T_Aggregate_Query_API) to create a data source export. See [Export ZOQL](https://knowledgecenter.zuora.com/DC_Developers/M_Export_ZOQL) for more information.nn## ResponsenThe response co
+
+@name("Describe object")
+GET "https://{{baseUrl}}/v1/describe/:object"
+
+
+// Retrieve a file by specifying its file ID. You can retrieve accounting period reports, such as the Revenue Detail report, as well as other files such as invoice PDFs.nn## Examplenn```curlncurl -i -k -H apiAccessKeyId:$USER_NAME -H apiSecretAccessKey:$PASSWORDn-H Accept:application/pdfn-X GET https://rest.zuora.com/v1/files/2c92c08c55534cf00155581fb474314dn-o /Users/jsmith/Downloads/invoiceFile1.pdfn```nThe invoice PDF is downloaded to /Users/jsmith/Downloads and named invoiceFile1.pdf.nn##
+
+@name("Get files")
+GET "https://{{baseUrl}}/v1/files/:file-id"
+
+
+// This REST API reference describes how to return unique signature and token values that used to process a CORS enabled API call.n
+
+@name("Return HMAC signatures")
+POST "https://{{baseUrl}}/v1/hmac-signatures"
+
+
+// The hostedpages call returns the Payment Pages configuration metadata,nspecifically, page ID, page version, payment method type.nnThe following are the version-specific and general REST requests for Payment Pages:nn* The request for Payment Pages 1.0 configuration information: `GET <BaseURL>/hostedpages?version=1`n* The request for Payment Pages 2.0 configuration information: `GET <BaseURL>/hostedpages?version=2`n* The request for all versions of Payment Pages configuration information: `GET <Ba
+
+@name("Return hosted pages")
+GET "https://{{baseUrl}}/v1/hostedpages"
+? "versionNumber"= "<put>"
+
+
+// Retrieves the basic information about all the payment gateways.n
+
+@name("Get payment gateways")
+GET "https://{{baseUrl}}/v1/paymentgateways"
+
+
+// The `document` call generates a quote document and returns the generated document URL. You can directly access the generated quote file through the returned URL.nnThe `document` call should be only used from Zuora Quotes. nn## File Size Limitation nThe maximum export file size is 2047MB. If you have large data requests that go over this limit, you will get the following 403 HTTP response code from Zuora:n`security:max-object-size>2047MB</security:max-object-size>`nnSubmit a request at [Zuora Glo
+
+@name("Generate quotes document")
+POST "https://{{baseUrl}}/v1/quotes/document"
+
+
+// This REST API reference describes how to get the revenue automation start date. Request and response field descriptions and sample code are provided.n
+
+@name("Get the revenue automation start date")
+GET "https://{{baseUrl}}/v1/settings/finance/revenue-automation-start-date"
+
+
+// Deletes a specific taxation item by ID.n
+
+@name("Delete taxation item")
+DELETE "https://{{baseUrl}}/v1/taxationitems/:id"
+
+
+

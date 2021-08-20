@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// **Note:** This feature is only available if you have the Advanced AR Settlement feature enabled. The Advanced AR Settlement feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).nnRetrieves the details about all revenue schedules of a product rate plan charge by specifying the charge ID and billing account ID.n
+
+@name("Get all revenue schedules of product charge by charge ID and billing account IDn")
+GET "https://{{baseUrl}}/v1/revenue-schedules/product-charges/:charge-key/:account-key"
+
+
+// Retrieves the revenue schedule details by specifying subscription charge ID. Request and response field descriptions and sample code are providedn
+
+@name("Get revenue schedule by subscription charge")
+GET "https://{{baseUrl}}/v1/revenue-schedules/subscription-charges/:charge-key"
+
+
+

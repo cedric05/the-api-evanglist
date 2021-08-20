@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Get collections owned by specified owner
+
+@name("Get collections owned by specified owner") : "base-inherit-auth"
+GET "https://{{baseUrl}}/metadata/collections/:owner"
+? "size"= "et officia pariatur"
+? "from"= "et officia pariatur"
+? "sort"= "et officia pariatur"
+
+
+// Create a new collection
+
+@name("Create a new collection") : "base-inherit-auth"
+POST "https://{{baseUrl}}/metadata/collections/:owner"
+"Content-Type": "application/json"
+json({
+    "title": "sint",
+    "description": "aliq",
+    "tags": [
+        {
+            "value": "\tZDB"
+        },
+        {
+            "value": " \f3I"
+        }
+    ]
+})
+
+
+

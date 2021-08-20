@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc55377d-fed1-4794-9820-0104cc846f55.postman_collection.json
+
+// Simple tax.
+
+@name("Simple Tax")
+GET "https://{{baseUrl}}/api/v1/tax/calculate"
+? "product_type"= "<get>"
+? "invoice_address_city"= "<get>"
+? "buyer_credit_card_prefix"= "<get>"
+? "currency_code"= "<get>"
+? "invoice_address_region"= "<get>"
+? "unit_price"= "<get>"
+? "quantity"= "<get>"
+? "buyer_tax_number"= "<get>"
+? "force_country_code"= "<get>"
+? "order_date"= "<get>"
+? "amount"= "<get>"
+? "billing_country_code"= "<get>"
+? "invoice_address_postal_code"= "<get>"
+? "total_amount"= "<get>"
+? "tax_deducted"= "<get>"
+
+
+// Calculate location.
+
+@name("Calculate Location")
+GET "https://{{baseUrl}}/api/v1/tax/location/calculate"
+? "billing_country_code"= "<get>"
+? "buyer_credit_card_prefix"= "<get>"
+
+
+// Validate vat number.
+
+@name("Validate VAT Number")
+GET "https://{{baseUrl}}/api/v1/tax/vat_numbers/:tax_number/validate"
+? "country_code"= "<get>"
+
+
+

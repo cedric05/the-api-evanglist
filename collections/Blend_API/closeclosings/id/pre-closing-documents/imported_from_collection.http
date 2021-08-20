@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Adds draft pre-closing documents to a closing or updates their document type if it has changed since their last addition. After successful completion of this request, the document references that were added to this closing will have a `closingDesignation` of `DRAFT_PRE_CLOSING` and a `sourceType` of `LENDER`. In addition, any pre-closing document references with a `sourceType` of `LENDER` that were previously sent to the settlement agent using the `POST close/closings/{id}/pre-closing-documents/send` endpoint will be automatically duplicated with a `closingDesignation` of `DRAFT_PRE_CLOSING`.
+
+@name("Add or Update Draft Pre-closing Documents") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/close/closings/:id/pre-closing-documents"
+"Content-Type": "application/json"
+json({
+    "documents": [
+        {
+            "documentID": "b2006a70-a19b-4b7f-973d-3a561e159060"
+        },
+        {
+            "documentID": "b2006a70-a19b-4b7f-973d-3a561e159060"
+        }
+    ]
+})
+
+
+// Moves any pre-closing documents out of a draft state and sends them to the settlement agent.
+
+@name("Send or Re-Send Pre-Closing Documents") : "base-inherit-auth"
+POST "https://{{baseUrl}}/close/closings/:id/pre-closing-documents/send"
+
+
+

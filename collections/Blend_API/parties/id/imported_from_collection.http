@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Update a party's details.
+
+@name("Update a Party's Details") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/parties/:id"
+"Content-Type": "application/json"
+json({
+    "name": {
+        "firstName": "James",
+        "middleName": "William",
+        "lastName": "Horton",
+        "suffixName": "3rd"
+    },
+    "email": "james@email.com",
+    "verificationData": {
+        "code": "4321",
+        "hint": "Different verification hint"
+    },
+    "losPartyId": "losParty2",
+    "econsent": {
+        "status": "Accepted",
+        "ip": "0.0.0.0",
+        "date": "2018-08-30T19:31:38.902Z"
+    },
+    "customFields": {
+        "fieldName": "fldValue"
+    }
+})
+
+
+// Delete party from a specific application.
+
+@name("Remove a Party from a Specific Application") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/parties/:id"
+
+
+

@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bb47693c-cb5d-4c67-9555-2ec7317f9794.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Applies the ruleset to the specified deployment.
+
+@name("Create ruleset association") : "base-inherit-auth"
+POST "https://{{baseUrl}}/deployments/traffic-filter/rulesets/:ruleset_id/associations"
+"Content-Type": "application/json"
+json({
+    "entity_type": "consequat",
+    "id": "Excepteur magna adipisicing"
+})
+
+
+// Retrieves a list of deployments that are associated to the specified ruleset.
+
+@name("Get associated deployments") : "base-inherit-auth"
+GET "https://{{baseUrl}}/deployments/traffic-filter/rulesets/:ruleset_id/associations"
+
+
+// Deletes the traffic rules in the ruleset from the deployment.
+
+@name("Delete ruleset association") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/deployments/traffic-filter/rulesets/:ruleset_id/associations/:association_type/:associated_entity_id"
+
+
+

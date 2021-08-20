@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6765e1cc-2c5d-40bb-8932-494c6fbb000a.postman_collection.json
+
+// Get company by id
+
+@name("Get single company")
+GET "https://{{baseUrl}}/api/v1/companies/company/:companyId"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Update company by id
+
+@name("Update company")
+PATCH "https://{{baseUrl}}/api/v1/companies/company/:companyId"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+json({
+    "properties": {
+        "property": "velit enim",
+        "value": {}
+    }
+})
+
+
+// Delete company by id
+
+@name("Delete company")
+DELETE "https://{{baseUrl}}/api/v1/companies/company/:companyId"
+"Authorization": "Bearer <Bearer Token>"
+
+
+

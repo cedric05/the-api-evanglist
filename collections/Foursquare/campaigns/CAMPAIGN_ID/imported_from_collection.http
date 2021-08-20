@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6851f218-fa13-4c7b-b9c5-0b98d83479d7.postman_collection.json
+
+// /specials/{SPECIAL_ID}/retire
+
+@name("/specials/{SPECIAL_ID}/retire")
+GET "https://{{baseUrl}}/campaigns/:CAMPAIGN_ID"
+? "CAMPAIGN_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /campaigns/{CAMPAIGN_ID}/timeseries
+
+@name("/campaigns/{CAMPAIGN_ID}/timeseries")
+POST "https://{{baseUrl}}/campaigns/:CAMPAIGN_ID/delete"
+? "CAMPAIGN_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /campaigns/{CAMPAIGN_ID}/delete
+
+@name("/campaigns/{CAMPAIGN_ID}/delete")
+POST "https://{{baseUrl}}/campaigns/:CAMPAIGN_ID/end"
+? "CAMPAIGN_ID"= "<string>"
+? "v"= "<string>"
+
+
+// /campaigns/{CAMPAIGN_ID}/end
+
+@name("/campaigns/{CAMPAIGN_ID}/end")
+POST "https://{{baseUrl}}/campaigns/:CAMPAIGN_ID/start"
+? "CAMPAIGN_ID"= "<string>"
+? "startAt"= "<string>"
+? "v"= "<string>"
+
+
+// /campaigns/list
+
+@name("/campaigns/list")
+GET "https://{{baseUrl}}/campaigns/:CAMPAIGN_ID/timeseries"
+? "CAMPAIGN_ID"= "<string>"
+? "endAt"= "<string>"
+? "startAt"= "<string>"
+? "v"= "<string>"
+
+
+

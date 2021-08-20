@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-572303ba-d57b-42f8-9c05-98fcc3c05154.postman_collection.json
+
+// Gets all `Event` objects for the authenticated user.n
+
+@name("Get Events")
+GET "https://{{baseUrl}}/events"
+
+
+// Gets a specific `Event` object for the authenticated user.n
+
+@name("Get Events")
+GET "https://{{baseUrl}}/events/:id"
+
+
+

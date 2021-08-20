@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Get value for specified configuration property.
+
+@name("Get value for specified configuration property")
+GET "https://{{baseUrl}}/appconfiguration/by-name/:configname"
+
+
+// Updates the configuration value.
+
+@name("Updates the configuration value")
+PATCH "https://{{baseUrl}}/appconfiguration/by-name/:configname/value"
+
+
+

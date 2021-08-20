@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-18af961a-c8f9-4c42-85af-0f2fe7c91aaa.postman_collection.json
+
+// Unresolved Only
+
+@name("Unresolved Only")
+GET "https://{{baseUrl}}/pages/[page_id]/incidents/unresolved.json"
+
+
+// Scheduled Only
+
+@name("Scheduled Only")
+GET "https://{{baseUrl}}/pages/[page_id]/incidents/scheduled.json"
+
+
+// Update an incident (only applies to realtime and scheduled incidents)
+
+@name("Update an incident (only applies to realtime and scheduled incidents)")
+PATCH "https://{{baseUrl}}/pages/[page_id]/incidents/[incident_id].json"
+? "at the same time to avoid two separate incident updates being generated."= "<string>"
+? "ENDPOINT"= "<string>"
+? "PATCH /pages/[page_id]/incidents/[incident_id].json"= "<string>"
+? "MUTABLE"= "<string>"
+? "incident[name]"= "<string>"
+? "incident[status]"= "<string>"
+? "incident[message]"= "<string>"
+? "incident[wants_twitter_update]"= "<string>"
+? "incident[impact_override]"= "<string>"
+? "incident[component_ids]"= "<string>"
+
+
+// Tune an Incident Update
+
+@name("Tune an Incident Update")
+PATCH "https://{{baseUrl}}/pages/[page_id]/incidents/[incident_id]/incident_updates/[incident_update_id].json"
+? "incident_update[body]"= "<string>"
+? "incident_update[display_at]"= "<string>"
+
+
+

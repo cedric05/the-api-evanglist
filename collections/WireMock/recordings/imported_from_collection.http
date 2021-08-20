@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5bfc6a7a-9723-4bb7-a53c-665f538df741.postman_collection.json
+
+// Take a snapshot recording
+
+@name("Post Recordings Snapshot")
+POST "https://{{baseUrl}}/recordings/snapshot"
+
+
+// Start recording stub mappings
+
+@name("Post Recordings Start")
+POST "https://{{baseUrl}}/recordings/start"
+
+
+// Get the recording status (started or stopped)
+
+@name("Get Recordings Status")
+GET "https://{{baseUrl}}/recordings/status"
+
+
+// Stop recording stub mappings
+
+@name("Post Recordings Stop")
+POST "https://{{baseUrl}}/recordings/stop"
+
+
+

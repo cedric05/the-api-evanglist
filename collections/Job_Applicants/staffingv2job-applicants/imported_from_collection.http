@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-153258a5-a1eb-43c6-ae2b-1378320e86b1.postman_collection.json
+
+// Request the list of all available job applicants that the requester is authorized to view
+
+@name("Job Applicants")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants"
+? "No Name"= "<string>"
+
+
+// Returns a meta
+
+@name("Job Applicant Meta")
+GET "https://{{baseUrl}}/staffing/v2/job-applicants/meta"
+? "No Name"= "<string>"
+
+
+

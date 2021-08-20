@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("update Organization Location")
+PUT "https://{{baseUrl}}/organizations/:organization_id/locations/:location_id"
+"Content-Type": "application/json"
+json({
+    "id": "Lorem et",
+    "organization_id": "mollit ullamco non",
+    "name": "enim dolor eu",
+    "alternate_name": "aliquip",
+    "description": "irure in cillum culpa",
+    "transportation": "tempor irure et",
+    "latitude": 1432219.1224350035,
+    "longitude": 96905040.98879495
+})
+
+
+@name("list Organization Locations")
+GET "https://{{baseUrl}}/organizations/:organization_id/locations"
+
+
+@name("add Organization Location")
+POST "https://{{baseUrl}}/organizations/:organization_id/locations"
+"Content-Type": "application/json"
+json({
+    "id": "Lorem et",
+    "organization_id": "mollit ullamco non",
+    "name": "enim dolor eu",
+    "alternate_name": "aliquip",
+    "description": "irure in cillum culpa",
+    "transportation": "tempor irure et",
+    "latitude": 1432219.1224350035,
+    "longitude": 96905040.98879495
+})
+
+
+@name("get Organization Location")
+GET "https://{{baseUrl}}/organizations/:organization_id/locations/:location_id"
+
+
+@name("delete Organization Location")
+DELETE "https://{{baseUrl}}/organizations/:organization_id/locations/:location_id"
+
+
+

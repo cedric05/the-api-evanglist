@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b1ef51ed-217b-4e12-9b7d-73036eb19d8a.postman_collection.json
+
+@name("list Locations")
+GET "https://{{baseUrl}}/locations"
+? "sort_by"= "c"
+? "query"= "c"
+? "order"= "c"
+? "resources"= "c"
+? "fields"= "c"
+? "page"= "c"
+? "per_page"= "c"
+
+
+@name("add Location")
+POST "https://{{baseUrl}}/locations"
+"Content-Type": "application/json"
+json({
+    "id": "Lorem et",
+    "organization_id": "mollit ullamco non",
+    "name": "enim dolor eu",
+    "alternate_name": "aliquip",
+    "description": "irure in cillum culpa",
+    "transportation": "tempor irure et",
+    "latitude": 1432219.1224350035,
+    "longitude": 96905040.98879495
+})
+
+
+@name("get Location")
+GET "https://{{baseUrl}}/locations/:location_id"
+
+
+

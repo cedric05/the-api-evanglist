@@ -1,0 +1,1 @@
+This is a simple collection to help onboard with the GitHub Web API without being overhwelmed by all of the available API methods.

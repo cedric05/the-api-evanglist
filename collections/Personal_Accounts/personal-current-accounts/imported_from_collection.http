@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9e88221e-8d61-485d-a9df-e28881c90b4f.postman_collection.json
+
+// Gets a list of all `Personal Current Account` objects.
+
+@name("/personal-current-accounts")
+GET "https://{{baseUrl}}/personal-current-accounts"
+"If-Modified-Since": "cillum occaecat"
+"If-None-Match": "cillum occaecat"
+
+
+// Gets header information on the current set of `Personal Current Account` data
+
+@name("/personal-current-accounts")
+HEAD "https://{{baseUrl}}/personal-current-accounts"
+"If-Modified-Since": "cillum occaecat"
+"If-None-Match": "cillum occaecat"
+
+
+

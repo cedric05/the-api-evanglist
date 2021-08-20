@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// Returns an array of ratings for a given user that match the query.
+
+@name("/user/ratings/query")
+GET "https://{{baseUrl}}/user/ratings/query"
+? "No Name"= "<string>"
+? "itemType"= "<string>"
+
+
+// Returns a list of query params for use in the `/user/ratings/query` route.
+
+@name("/user/ratings/query/params")
+GET "https://{{baseUrl}}/user/ratings/query/params"
+
+
+

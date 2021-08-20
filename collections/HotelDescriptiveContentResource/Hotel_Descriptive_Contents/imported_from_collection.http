@@ -1,0 +1,102 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-05938bbe-be32-478c-92d6-bdd01e6df7b0.postman_collection.json
+
+@name("HotelDescriptiveContentResource - Get")
+GET "https://{{baseUrl}}/HotelDescriptiveContents"
+? "displayCurrency"= "eTu"
+? "maxResponses"= "34862714"
+? "summaryResultsInd"= "true"
+? "code"= "sed sit ex occaeca"
+? "chainCode"= "sed sit ex occaeca"
+? "brandCode"= "sed sit ex occaeca"
+? "cityCode"= "sed sit ex occaeca"
+? "areaID"= "nulla quis anim in"
+? "hotelCode_TTI"= "64271101"
+
+
+@name("HotelDescriptiveContentResource - Notification")
+POST "https://{{baseUrl}}/HotelDescriptiveContents/Notifications"
+"Content-Type": "application/json"
+json({
+    "@type": "culpa nisi incididunt",
+    "objID": "exercitation consectetur qui occaecat esse",
+    "DescriptiveContentRef": "Ut proident elit dolor do",
+    "Identifier": {
+        "value": "esse sint eu eiusmod",
+        "url": "culpa",
+        "system": "sint reprehenderit m",
+        "organization": "non sit"
+    }
+})
+
+
+@name("HotelDescriptiveContentResource - Query")
+POST "https://{{baseUrl}}/HotelDescriptiveContents/Query"
+"Content-Type": "application/json"
+json({
+    "@type": "dolor adipisicing",
+    "ProcessingInfo": {
+        "displayCurrency": "RXM",
+        "maxResponses": 45489915,
+        "summaryResultsInd": true
+    },
+    "HotelDescriptiveRequestInfo": {
+        "@type": "elit",
+        "languageRequested": "reprehenderit",
+        "BasicPropertyInfo": [
+            {
+                "@type": "minim",
+                "code": "occaecat in aliq",
+                "name": "incididunt labore eu do",
+                "chainCode": "non mollit nulla consectetur q",
+                "brandCode": "occaecat in esse",
+                "cityCode": "eu ad dolor cupidatat",
+                "ExtensionPoint_Summary": {}
+            },
+            {
+                "@type": "magna ut",
+                "code": "",
+                "name": "eiusmod sit Ut",
+                "chainCode": "ut minim irure",
+                "brandCode": "et l",
+                "cityCode": "in commodo",
+                "ExtensionPoint_Summary": {}
+            }
+        ],
+        "HotelRequestInfo": {
+            "@type": "id sit",
+            "hotelStatus": "ex tempor dolore",
+            "HotelStatusCode": {
+                "value": "Deflagged",
+                "extension": "ullamco qui culpa"
+            },
+            "sendDataInd": true,
+            "ExtensionPoint": {}
+        },
+        "FacilityRequestInfo": {
+            "sendMeetingRoomsInd": true,
+            "sendGuestRoomsInd": false,
+            "sendRestaurantsInd": true
+        },
+        "PolicyRequestInfo": {
+            "sendPoliciesInd": false
+        },
+        "AreaRequestInfo": {
+            "sendRefPointsInd": true,
+            "sendAttractionsInd": false,
+            "sendRecreationsInd": true
+        },
+        "AffiliationRequestInfo": {
+            "sendDistribSystemsInd": false,
+            "sendBrandInd": false,
+            "sendLoyalProgramsInd": true,
+            "sendAwardsInd": true
+        },
+        "ExtensionPoint": {}
+    },
+    "ExtensionPoint": {}
+})
+
+
+

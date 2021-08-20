@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7871656e-e03d-47bc-b756-528d4b913bbd.postman_collection.json
+
+// This operation retrieves a Bucket entity. Attribute selection is enabled for all first level attributes.
+
+@name("Retrieves a Bucket by ID")
+GET "https://{{baseUrl}}/bucket/:id"
+? "fields"= "id voluptate"
+
+
+// This operation deletes a Bucket entity.
+
+@name("Deletes a Bucket")
+DELETE "https://{{baseUrl}}/bucket/:id"
+
+
+

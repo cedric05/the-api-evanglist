@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26eaa23c-a1e4-4b97-b672-be5007b2b77e.postman_collection.json
+
+// Retrieve a proposal
+
+@name("Retrieve a proposal")
+GET "https://{{baseUrl}}/proposals/:proposalId"
+
+
+// Execute an action on the proposal
+
+@name("Execute an action on the proposal")
+POST "https://{{baseUrl}}/proposals/:proposalId/action"
+
+
+

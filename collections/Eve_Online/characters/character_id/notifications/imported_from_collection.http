@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Return character notifications
+// 
+// ---
+// Alternate route: `/dev/characters/{character_id}/notifications/`
+// 
+// Alternate route: `/v5/characters/{character_id}/notifications/`
+// 
+// Alternate route: `/v6/characters/{character_id}/notifications/`
+// 
+// ---
+// This route is cached for up to 600 seconds
+
+@name("Get character notifications")
+GET "https://{{baseUrl}}/characters/:character_id/notifications/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+// Return notifications about having been added to someone's contact list
+// 
+// ---
+// Alternate route: `/legacy/characters/{character_id}/notifications/contacts/`
+// 
+// Alternate route: `/v1/characters/{character_id}/notifications/contacts/`
+// 
+// ---
+// This route is cached for up to 600 seconds
+
+@name("Get new contact notifications")
+GET "https://{{baseUrl}}/characters/:character_id/notifications/contacts/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "token"= "commodo irure"
+
+
+

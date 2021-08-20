@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd3bb79e-7d36-49f2-9d90-ac848a0b6d74.postman_collection.json
+
+// Delete a specific tag
+
+@name("Delete A Specific Tag")
+DELETE "https://{{baseUrl}}/tags/:id"
+
+
+// Returns a list of sites based with a specific tag id
+
+@name("Find Sites By Tag ID")
+GET "https://{{baseUrl}}/tags/:id/sites"
+? "name"= "<get>"
+? "access_url"= "<get>"
+? "j_version"= "<get>"
+? "ip"= "<get>"
+? "jUpdate"= "<get>"
+? "published"= "<get>"
+? "error"= "<get>"
+? "nbUpdates"= "<get>"
+? "up"= "<get>"
+? "fields"= "<>"
+? "limit"= "<>"
+? "limitstart"= "<>"
+? "order"= "<>"
+
+
+

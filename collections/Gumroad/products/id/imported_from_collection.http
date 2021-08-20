@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-78c6df8c-aca6-4ba0-aa1b-721d91b41fef.postman_collection.json
+
+// Permanently delete a product.
+
+@name("Delete Products")
+DELETE "https://{{baseUrl}}/products/:id"
+
+
+// Enable an existing product.
+
+@name("Put Products Enable")
+PUT "https://{{baseUrl}}/products/:id/enable"
+
+
+

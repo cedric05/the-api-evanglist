@@ -1,0 +1,228 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-eeb5c58e-a3ae-451b-973e-47795ac8aab9.postman_collection.json
+
+@name("Check if an App is Registered")
+POST "https://www.arcgis.com/sharing/rest/content/users/{{username}}/items/{{item_id}}/registeredAppInfo"
+data({
+    "token": [
+        "{{token}}"
+    ],
+    "f": [
+        "json"
+    ],
+    "username": [
+        "{{username}}"
+    ],
+    "items": [
+        "{{item_id}}"
+    ]
+})
+
+
+@name("Register App")
+POST "https://www.arcgis.com/sharing/oauth2/registerApp"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "itemid": [
+        "{{item_id}}"
+    ],
+    "appType": [
+        "browser"
+    ],
+    "f": [
+        "json"
+    ],
+    "token": [
+        "{{token}}"
+    ],
+    "redirect_uris": [
+        "[\"https://www.getpostman.com/oauth2/callback\"]"
+    ]
+})
+
+
+//  The searches are performed against a high performance index that indexes the most popular fields of an item. See the [Search reference](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000mn000000.htm) page for information on the fields and the syntax of the query.
+// 
+// [Read more](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Search/02r3000000mp000000/)
+
+@name("Search on ArcGIS Online")
+GET "http://www.arcgis.com/sharing/rest/search"
+? "q"= "madrid"
+? "f"= "pjson"
+
+
+//  A user resource representing a registered user of the portal.
+// Personal details of the user, such as e-mail and groups, are returned only to the user or the administrator of the user's organization (the properties in the Response Properties table below).
+// 
+// [Read more](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User/02r3000000m2000000/)
+
+@name("Get public user  info")
+GET "https://www.arcgis.com/sharing/rest/community/users/{{username}}"
+? "f"= "json"
+
+
+// A user resource representing a registered user of the portal.
+// Personal details of the user, such as e-mail and groups, are returned only to the user or the administrator of the user's organization (the properties in the Response Properties table below).
+// 
+// Administration token is needed
+// 
+// [Read more](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User/02r3000000m2000000/)
+
+@name("Get private user  info")
+GET "https://www.arcgis.com/sharing/rest/community/users/{{username}}"
+? "f"= "json"
+? "token"= "{{token}}"
+
+
+// Map Journal, /share and /update item URL is required (with the returned item id)
+// 
+// **Share**: Something like this:
+// everyone:true
+// org:false
+// items:16818d5144cb44c89bafb86b38ca5468
+// 
+// **Update** Something like this:
+// url = http://{{username}}.maps.arcgis.com/apps/MapJournal/index.html?appid=<item-id>
+// id = <item-id>
+
+@name("Add item (Ready to use - Configurable WebApp)")
+POST "http://www.arcgis.com/sharing/rest/content/users/{{username}}/addItem"
+data({
+    "type": [
+        "Web Mapping Application"
+    ],
+    "typeKeywords": [
+        "Web Map, Map, Online Map, Mapping Site, JavaScript, Ready To Use ,selfConfigured"
+    ],
+    "item": [
+        "Servicios Sanitarios de Galicia8"
+    ],
+    "thumbnailURL": [
+        "http://static.arcgis.com/imageshttp://static.arcgis.com/imageshttp://static\u2026=http://hhkaos2.maps.arcgis.com/apps/MapJournal/index.html"
+    ],
+    "url": [
+        "http://{{username}}.maps.arcgis.com/apps/MapJournal/index.html"
+    ],
+    "title": [
+        "Servicios Sanitarios de Galicia8"
+    ],
+    "tags": [
+        "servicios,sanitarios,galicia"
+    ],
+    "snippet": [
+        ""
+    ],
+    "wabType": [
+        "HTML"
+    ],
+    "sharing": [
+        "false"
+    ],
+    "webMapId": [
+        "5855a4382c1a4148bbd329b0515332a0"
+    ],
+    "shareWithWebMap": [
+        "true"
+    ],
+    "text": [
+        "{\"source\":\"da029c7670514be1b5a10b60825cd8da\",\"folderId\":null,\"values\":{\"webmap\":\"5855a4382c1a4148bbd329b0515332a0\"}}"
+    ],
+    "f": [
+        "json"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+// [Example item](http://hhkaos2.maps.arcgis.com/home/item.html?id=0df1fdf5a87144e590c518c6fe7d5872#)
+// 
+// [Read more](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Add_Comment/02r300000090000000/)
+
+@name("Add a comment to an item")
+POST "http://hhkaos2.maps.arcgis.com/sharing/rest/content/items/0df1fdf5a87144e590c518c6fe7d5872/addComment"
+data({
+    "f": [
+        "json"
+    ],
+    "comment": [
+        "Sending a commnet from postman"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+@name("Delete item")
+POST "https://www.arcgis.com/sharing/rest/content/users/{{username}}/deleteItems"
+files(
+	("token", "{{token}}"),
+	("items", "{{item_id}}"),
+	("f", "json")
+)
+
+
+// 
+// https://{{root_url}}/sharing/rest/content/items/<item-id>?f=json
+
+@name("Get item metadata")
+GET "https://www.arcgis.com/sharing/rest/content/items/{{item_id}}"
+? "f"= "json"
+
+
+@name("Invite an user to an Organization")
+POST "https://{{urlKey}}.maps.arcgis.com/sharing/rest/portals/self/invite"
+"origin": "https://{{urlKey}}.maps.arcgis.com"
+"content-type": "application/x-www-form-urlencoded"
+"referer": "https://{{urlKey}}.maps.arcgis.com/home/inviteusers.html"
+"authority": "{{urlKey}}.maps.arcgis.com"
+data({
+    "subject": [
+        "Invitation to join an ArcGIS Online organization"
+    ],
+    "html": [
+        "<html><body><p>XXXX has invited you to join an ArcGIS Online Organization, Map GeoGeeks from Spain.</p>\n\n<p>Please click this link to finish setting up your account and establish your password: <a href=\"https://www.arcgis.com/home/newuser.html?invitation=@@invitation.id@@\">https://www.arcgis.com/home/newuser.html?invitation=@@invitation.id@@</a></p>\n\n<p>Note that your account has already been created for you with the username, <strong>@@touser.username@@</strong>.  </p>\n\n<p>If you have difficulty signing in, please contact Ra\u00fal Jim\u00e9nez (raul.jimenez@esri.es). Be sure to include a description of the problem, the error message, and a screenshot.</p>\n\n<p>For your reference, you can access the home page of the organization here: <br>https://geogeeks.maps.arcgis.com/home/</p>\n\n<p>This link will expire in two weeks.</p>\n\n<p style=\"color:gray;\">This is an automated email. Please do not reply.</p>\n\n</body></html>"
+    ],
+    "invitationList": [
+        "{\"invitations\":[{\"username\":\"USERNAME\",\"password\":\"PASSWORD\",\"firstname\":\"FNAME\",\"lastname\":\"LNAME\",\"fullname\":\"FNAME RJO\",\"email\":\"EMAIL\",\"role\":\"account_user\",\"level\":\"2\",\"userType\":\"arcgisonly\"}]}"
+    ],
+    "f": [
+        "json"
+    ],
+    "token": [
+        "{{token}}"
+    ]
+})
+
+
+@name("Add item (Document Link)")
+POST "https://www.arcgis.com/sharing/rest/content/users/{{username}}/addItem"
+data({
+    "f": [
+        "json"
+    ],
+    "token": [
+        "{{token}}"
+    ],
+    "type": [
+        "Document Link"
+    ],
+    "typeKeywords": [
+        "Data, Document, hhkaos"
+    ],
+    "url": [
+        "https://esri-es.github.io/awesome-arcgis/arcgis/products/extensions/3d-analyst/"
+    ],
+    "title": [
+        "ArcGIS 3D Analyst"
+    ],
+    "tags": [
+        "products"
+    ]
+})
+
+
+

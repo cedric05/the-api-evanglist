@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a96221e2-b43c-4973-9be0-3ec0566f4cd9.postman_collection.json
+
+// Cancel a fulfillment..
+
+@name("Cancel a fulfillment.")
+POST "https://{{baseUrl}}/admin/orders/4528049998/fulfillments/3770145678/cancel.json"
+"Content": "<>"
+
+
+// Complete a fulfillment..
+
+@name("Complete a fulfillment.")
+POST "https://{{baseUrl}}/admin/orders/4528049998/fulfillments/3770145678/complete.json"
+"Content": "<>"
+
+
+// Fetch a fulfillment event..
+
+@name("Fetch a fulfillment event.")
+GET "https://{{baseUrl}}/admin/orders/4528049998/fulfillments/3770145678/events/"
+"Content": "<>"
+
+
+// Transition a fulfillment from pending to open..
+
+@name("Transition a fulfillment from pending to open.")
+POST "https://{{baseUrl}}/admin/orders/4528049998/fulfillments/3770145678/open.json"
+"Content": "<>"
+
+
+// Get a list of all fulfillment events for a fulfillment.
+
+@name("Get a list of all fulfillment events for a fulfillment")
+GET "https://{{baseUrl}}/admin/orders/4528049998/fulfillments/3770145678/events.json"
+"Content": "<>"
+
+
+

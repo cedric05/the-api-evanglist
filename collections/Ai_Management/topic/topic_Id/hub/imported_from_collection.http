@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-69935689-abac-4ca3-a7a8-e89ccfe72173.postman_collection.json
+
+// This operation list or find Hub entities
+
+@name("List or find Hub objects")
+GET "https://{{baseUrl}}/topic/:topicId/hub"
+? "fields"= "ex ullamco ad"
+? "offset"= "-82478083"
+? "limit"= "-82478083"
+
+
+// This operation creates a Hub entity.
+
+@name("Creates a Hub")
+POST "https://{{baseUrl}}/topic/:topicId/hub"
+"Content-Type": "application/json;charset=utf-8"
+json({
+    "callback": "http://host/resource/id/listener",
+    "query": "status=active",
+    "@baseType": "minim ",
+    "@schemaLocation": "http://nWAQilgV.sijraIOXcDVNgHiqsDbe-rC2LoyZkGJ-fAS7ScUkMs+WT2u",
+    "@type": "consectetur sint qui"
+})
+
+
+

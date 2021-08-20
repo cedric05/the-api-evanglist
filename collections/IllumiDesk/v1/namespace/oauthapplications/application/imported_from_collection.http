@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete an application by id") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/:namespace/oauth/applications/:application/"
+
+
+@name("Get an application by id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/oauth/applications/:application/"
+
+
+@name("Update an application by id") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/:namespace/oauth/applications/:application/"
+"Content-Type": "application/json"
+json({
+    "client_type": "<string>",
+    "authorization_grant_type": "<string>",
+    "name": "<string>",
+    "redirect_uris": "<string>"
+})
+
+
+@name("Replace an application by id") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/:namespace/oauth/applications/:application/"
+"Content-Type": "application/json"
+json({
+    "client_type": "<string>",
+    "authorization_grant_type": "<string>",
+    "name": "<string>",
+    "redirect_uris": "<string>"
+})
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-edf4e52a-d167-4c2f-bb89-c42269bd9481.postman_collection.json
+
+// Checks if the user with contact_id is a follower of the given user.
+
+@name("Get Users Followers Contact")
+GET "https://{{baseUrl}}/users/:user_id/followers/{{contact_id}}.json"
+? "consumer_key"= "<>"
+
+
+// Checks if the user with contact_id is a follower of the given user.
+
+@name("Get Users Followers Contact . Format")
+GET "https://{{baseUrl}}/users/:user_id/followers/{{contact_id}}.{{format}}"
+? "consumer_key"= "<>"
+
+
+

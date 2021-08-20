@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-621de426-1737-4682-b98b-7b35089aadcd.postman_collection.json
+
+// Mastercard rePower empowers consumers to instantly add money to eligible Mastercard cards. Money is available immediately for expenditures anywhere Mastercard prepaid account is accepted. The ease with which cardholders can convert cash to prepaid card funds turns their reloadable prepaid cards into valuable and practical financial tools. Making the reload process simple and accessible provides merchants with an opportunity to increase cardholder traffic. Unlike other top-up services, merchants have the flexibility to set their own reload fees.  This resource streamlines development efforts to offer Mastercard rePower services, through quick and convenient web services with the following benefits: 1)Savings in development and operational costs associated with implementing a standard MIP connection.  2)Requires support for only a single acquiring interface.  3)Leverages existing processing messages and transaction codes  4)Mastercard provides a net settlement guarantee for each reload transaction  5)Supports EMV, PayPass & MDES transactions.  This resource facilitates the ability for cardholders to reload their prepaid cards easily and securely. 
+// 
+
+@name("repower Post2")
+POST "https://{{baseUrl}}/repower/v2/repower"
+"Content-Type": "application/xml"
+data('"<element>\n <RepowerRequest>\n  <AdditionalSenderInformation>(string)</AdditionalSenderInformation>\n  <CardAcceptor>\n   <City>(string)</City>\n   <Country>(string)</Country>\n   <Name>(string)</Name>\n   <PostalCode>(string)</PostalCode>\n   <State>(string)</State>\n</CardAcceptor>\n  <CardNumber>(string)</CardNumber>\n  <CardSequenceNumber>(string)</CardSequenceNumber>\n  <Channel>(string)</Channel>\n  <ICA>(string)</ICA>\n  <ICCEMVData>(string)</ICCEMVData>\n  <LocalDate>(string)</LocalDate>\n  <LocalTime>(string)</LocalTime>\n  <MerchantType>(string)</MerchantType>\n  <POSCardDataTerminalInputCapabilityIndicator>(string)</POSCardDataTerminalInputCapabilityIndicator>\n  <PaymentInitiationChannel>(string)</PaymentInitiationChannel>\n  <PaymentPosEntryMode>(string)</PaymentPosEntryMode>\n  <ProcessorId>(string)</ProcessorId>\n  <ReceiverTrack2Data>(string)</ReceiverTrack2Data>\n  <RoutingAndTransitNumber>(string)</RoutingAndTransitNumber>\n  <TransactionAmount>\n   <Currency>(string)</Currency>\n   <Value>(string)</Value>\n</TransactionAmount>\n  <TransactionFee>\n   <Currency>(string)</Currency>\n   <Value>(string)</Value>\n</TransactionFee>\n  <TransactionReference>(string)</TransactionReference>\n</RepowerRequest>\n</element>"')
+
+
+// A Transfer Reversal is a request to reverse a previously submitted Mastercard rePower Transfer, and is only available in extremely limited circumstances.  Reversal Processing : A rePower transaction reversal may be submitted in the event of a documented clerical error. The rePower transaction reversal must be submitted within 15 minutes of the time the original rePower transaction was authorized.  Use this resource to reverse a previously submitted rePower Transfer. 
+
+@name("repower Reversal Post2")
+POST "https://{{baseUrl}}/repower/v2/repowerreversal"
+"Content-Type": "application/xml"
+data('"<element>\n <RepowerReversalRequest>\n  <ICA>(string)</ICA>\n  <ReversalReason>(string)</ReversalReason>\n  <TransactionReference>(string)</TransactionReference>\n</RepowerReversalRequest>\n</element>"')
+
+
+

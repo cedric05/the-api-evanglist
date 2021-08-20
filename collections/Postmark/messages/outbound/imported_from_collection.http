@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8889aaa0-3c86-4bfd-a9ec-ee9a804fa1d1.postman_collection.json
+
+@name("Outbound message search")
+GET "https://{{baseUrl}}/messages/outbound"
+? "count"= "<integer>"
+? "offset"= "<integer>"
+? "recipient"= "<string>"
+? "fromemail"= "<string>"
+? "tag"= "<string>"
+? "status"= "<string>"
+? "todate"= "<string>"
+? "fromdate"= "<string>"
+
+
+

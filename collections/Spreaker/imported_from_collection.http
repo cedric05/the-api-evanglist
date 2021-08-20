@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f67aecc5-ff45-4de9-97cc-ff8ad045654d.postman_collection.json
+
+// Retrieves all categories in Spreaker
+
+@name("Get Categories")
+GET "https://{{baseUrl}}/categories/flat"
+
+
+// Retrieves all live episodes at the moment of the request
+
+@name("Get Live Episodes")
+GET "https://{{baseUrl}}/episodes/live"
+? "show_id"= "<>"
+
+
+// This API returns information and items of a specific category. The response contains two properties at root level:
+
+@name("Explore Category Items")
+GET "https://{{baseUrl}}/explore/:category_id"
+? "explore_category"= "<>"
+? "items"= "<>"
+
+
+// Retrieves live episodes sorted by rank
+
+@name("Get Top Live Episodes")
+GET "https://{{baseUrl}}/lives/top"
+? "I"= "<>"
+
+
+// Retrieves a Media by unique identifier.
+
+@name("Get Media")
+GET "https://{{baseUrl}}/media/:media_id"
+
+
+// Search users, shows and episodes
+
+@name("Search users, shows and episodes")
+GET "https://{{baseUrl}}/search/:query"
+
+
+// Create a new Show.
+
+@name("Create Show")
+POST "https://{{baseUrl}}/shows"
+? "title"= "<>"
+
+
+// This API allows to find users. 
+
+@name("Search Users")
+GET "https://{{baseUrl}}/users/search/:query"
+
+
+// Retrieves information about the authenticated user.
+
+@name("Get Authenticated User")
+GET "https://{{baseUrl}}/whoami"
+
+
+

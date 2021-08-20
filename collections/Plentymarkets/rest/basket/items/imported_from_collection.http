@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5af4ed67-4654-4363-a86d-3c7bcff23c51.postman_collection.json
+
+// Lists all items in the shopping cart for the current customer session.
+
+@name("List basket items")
+GET "https://{{baseUrl}}/rest/basket/items"
+
+
+// Find a basket item by it's id.
+
+@name("Find a basket item by it's ID")
+GET "https://{{baseUrl}}/rest/basket/items/:id"
+
+
+

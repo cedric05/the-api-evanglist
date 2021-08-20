@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8973d6d-37b8-4b9d-8325-f0cbcd4e67dc.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Get a paginated list of documents
+
+@name("List Documents") : "base-inherit-auth"
+GET "https://{{baseUrl}}/documents"
+? "cursor"= "biwxNTI0MTcwNDEwMTAwLDI2OTU0N2ZmLWY2NDMtNDA0ZC1hYTQzLTEzOGI2NTA2OTdjMg"
+? "limit"= "25"
+? "exported"= "false"
+? "uploadedAfter"= "2018-10-03T20:07:27+00:00"
+? "uploadedBefore"= "2018-10-03T20:07:27+00:00"
+? "statusIncludes"= "READY"
+
+
+// Create a document on a specific application with a file and related metadata.
+
+@name("Attach a Document to an Application") : "base-inherit-auth"
+POST "https://{{baseUrl}}/documents"
+"Content-Type": "multipart/form-data"
+files(
+	("applicationId", "aa9fdaa2-7bf3-4411-a836-c2a46117f5c3"),
+	("file", "JVBERi0xLjMKJcfsj6IKMzAgMCBvYmoKPDwvTGVuZ3RoIDMxIDAgUi9GaWx0ZXIgL0ZsYXRlRGVjb2RlPj4Kc3RyZWFtCnic7X3dkyW3be/7/BVT9yVOVfa4+U0mTzeJ45uUXXFspZKHvNgrS3K8K9mSJcf56y9+ALqbPY2ew9N"),
+	("type", "HOA_BILL"),
+	("losType", "Verification_of_Income_type"),
+	("losTypeId", "123123"),
+	("partyIds", "["82479d45-e4c9-4e1a-bfb5-28a7c6160f67","82479d45-e4c9-4e1a-bfb5-28a7c6160f67"]"),
+	("name", "VerificationOfIncome.pdf"),
+	("status", "SIGNATURE_REQUESTED"),
+	("shareWithAllParties", "false"),
+	("customFields", "fieldName")
+)
+
+
+

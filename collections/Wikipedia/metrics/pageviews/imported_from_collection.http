@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c039dcb8-c468-46a5-bef2-944b0de198e7.postman_collection.json
+
+// Given a date range, returns a timeseries of pageview counts. You can filter by project,naccess method and/or agent type. You can choose between daily and hourly granularitynas well.nn- Stability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).n
+
+@name("Get pageview counts for a project.")
+GET "https://{{baseUrl}}/metrics/pageviews/aggregate/:project/:access/:agent/:granularity/:start/:end"
+
+
+// Given a Mediawiki article and a date range, returns a daily timeseries of its pageviewncounts. You can also filter by access method and/or agent type.nn- Stability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).n
+
+@name("Get pageview counts for a page.")
+GET "https://{{baseUrl}}/metrics/pageviews/per-article/:project/:access/:agent/:article/:granularity/:start/:end"
+
+
+// Lists the pageviews to this project, split by country of origin for a given month.nBecause of privacy reasons, pageviews are given in a bucketed format, and countriesnwith less than 100 views do not get reported.nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).n
+
+@name("Get pageviews by country and access method.")
+GET "https://{{baseUrl}}/metrics/pageviews/top-by-country/:project/:access/:year/:month"
+
+
+// Lists the 1000 most viewed articles for a given project and timespan (month or day).nYou can filter by access method.nn- Stability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable)n- Rate limit: 100 req/sn- License: Data accessible via this endpoint is available under then  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).n
+
+@name("Get the most viewed articles for a project.")
+GET "https://{{baseUrl}}/metrics/pageviews/top/:project/:access/:year/:month/:day"
+
+
+

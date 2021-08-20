@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-73f434f4-ed4e-4c94-87a0-83dd941103cd.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("<Basic Auth Username>", "<Basic Auth Password>")
+
+
+// Retrieve a Contact Message
+
+@name("website messages read") : "base-inherit-auth"
+GET "https://{{baseUrl}}/website/messages/:id/"
+
+
+// Delete a Contact Message
+
+@name("website messages delete") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/website/messages/:id/"
+
+
+

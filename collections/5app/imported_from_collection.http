@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-74289624-4535-4aae-bb86-b67cfab90918.postman_collection.json
+
+// Exchange username (email) and password for an Access Token.
+
+@name("Request Token")
+GET "https://{{baseUrl}}/auth/login"
+
+
+// Gets the users playlist progress.
+
+@name("Get Playlist")
+GET "https://{{baseUrl}}/v2/service/api/userCollections"
+? "fields"= ""
+? "format"= ""
+? "limit"= ""
+? "filter"= ""
+
+
+

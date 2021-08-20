@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5f0de24a-12d4-4bb7-a222-68e7bfdfd2e8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// List all code exclusions
+
+@name("List all code exclusions") : "base-inherit-auth"
+GET "https://{{baseUrl}}/services/:env_id/settings/code-redaction/exclude"
+
+
+// Add a bulk of code exclusions
+
+@name("Add a bulk of code exclusions") : "base-inherit-auth"
+POST "https://{{baseUrl}}/services/:env_id/settings/code-redaction/exclude"
+"Content-Type": "application/json"
+json({
+    "classes": [
+        "com.company.ClassName",
+        "com.company.ClassName"
+    ],
+    "packages": [
+        "com.company.package.name",
+        "com.company.package.name"
+    ]
+})
+
+
+

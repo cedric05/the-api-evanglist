@@ -1,0 +1,86 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b6675f2c-2163-4993-a727-33cd8a974bdb.postman_collection.json
+
+// Get all Attributes
+
+@name("/getAttributes")
+GET "https://{{baseUrl}}/getAttributes"
+"jwt": "eiusmod"
+
+
+// add attribute(s)
+
+@name("/addAttributes")
+POST "https://{{baseUrl}}/addAttributes"
+"jwt": "eiusmod"
+"Content-Type": "application/json"
+data('"ut amet nostrud"')
+
+
+// edit attribute(s)
+
+@name("/editAttributes")
+POST "https://{{baseUrl}}/editAttributes"
+"jwt": "eiusmod"
+"Content-Type": "application/json"
+data('"Lorem eiusmod elit"')
+
+
+// Delete One Attribute
+
+@name("/deleteAttribute")
+POST "https://{{baseUrl}}/deleteAttribute"
+"jwt": "eiusmod"
+"Content-Type": "application/json"
+json({
+    "aGuid": "laboris occaecat ex"
+})
+
+
+// get attribute type list
+
+@name("/getAttributeType")
+GET "https://{{baseUrl}}/getAttributeType"
+"jwt": "eiusmod"
+
+
+// Get Attribute Objects
+
+@name("/getAttributeObjects")
+POST "https://{{baseUrl}}/getAttributeObjects"
+"jwt": "eiusmod"
+"Content-Type": "application/json"
+data('"consequat aliquip Duis quis"')
+
+
+// add attribute object(s)
+
+@name("/addAttributeObjects")
+POST "https://{{baseUrl}}/addAttributeObjects"
+"jwt": "eiusmod"
+"Content-Type": "application/json"
+data('"Ut aliqua non"')
+
+
+// Delete One Attribute Object
+
+@name("/deleteAttributeObject")
+POST "https://{{baseUrl}}/deleteAttributeObject"
+"jwt": "eiusmod"
+"Content-Type": "application/json"
+json({
+    "guid": "cupidatat "
+})
+
+
+// add attribute to object
+
+@name("/addAttributesToObject")
+POST "https://{{baseUrl}}/addAttributesToObject"
+"jwt": "eiusmod"
+"Content-Type": "application/json"
+data('"ea off"')
+
+
+

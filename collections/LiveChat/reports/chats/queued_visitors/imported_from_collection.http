@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4531eb2-42b9-4ec7-921b-fb9521157b2f.postman_collection.json
+
+// Shows how many visitors waited in the queue and how many abandoned the queue or proceeded to chats
+
+@name("Queued visitors")
+GET "https://{{baseUrl}}/reports/chats/queued_visitors"
+"X": "<>"
+? "date_from"= "<>"
+? "group"= "<object>"
+
+
+// Shows the Minimum, Average and Maximum waiting time.
+
+@name("Queue waiting times")
+GET "https://{{baseUrl}}/reports/chats/queued_visitors/waiting_times"
+"X": "<>"
+? "date_from"= "<>"
+? "group"= "<object>"
+
+
+

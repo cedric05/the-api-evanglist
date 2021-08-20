@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d90fe3bc-a342-4867-915e-44120619da60.postman_collection.json
+
+// Returns ladder data for the current season's grandmaster leaderboard.
+
+@name("Grandmaster Leaderboard")
+GET "https://{{battle-net-host}}/sc2/ladder/grandmaster/{{sc2.region-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+// Returns data about the current season.
+
+@name("Season")
+GET "https://{{battle-net-host}}/sc2/ladder/season/{{sc2.region-id}}"
+? "locale"= "{{locale}}"
+? "access_token"= "{{access-token}}"
+
+
+

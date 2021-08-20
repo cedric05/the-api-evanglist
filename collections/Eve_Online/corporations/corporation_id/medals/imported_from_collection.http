@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c081086-8dbf-4804-b7c8-4341ba1c240d.postman_collection.json
+
+// Returns a corporation's medals
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/medals/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/medals/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+
+@name("Get corporation medals")
+GET "https://{{baseUrl}}/corporations/:corporation_id/medals/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+// Returns medals issued by a corporation
+// 
+// ---
+// Alternate route: `/legacy/corporations/{corporation_id}/medals/issued/`
+// 
+// Alternate route: `/v1/corporations/{corporation_id}/medals/issued/`
+// 
+// ---
+// This route is cached for up to 3600 seconds
+// 
+// ---
+// Requires one of the following EVE corporation role(s): Director
+
+@name("Get corporation issued medals")
+GET "https://{{baseUrl}}/corporations/:corporation_id/medals/issued/"
+"If-None-Match": "commodo irure"
+? "datasource"= "tranquility"
+? "page"= "1"
+? "token"= "commodo irure"
+
+
+

@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns all the authenticated user's email addresses. Both
+// confirmed and unconfirmed.
+
+@name("/user/emails")
+GET "https://{{baseUrl}}/user/emails"
+
+
+// Returns details about a specific one of the authenticated user's
+// email addresses.
+// 
+// Details describe whether the address has been confirmed by the user and
+// whether it is the user's primary address or not.
+
+@name("/user/emails/:email")
+GET "https://{{baseUrl}}/user/emails/:email"
+
+
+

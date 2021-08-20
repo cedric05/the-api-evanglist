@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-be73cf41-a4da-47fd-a390-b638c95ebca3.postman_collection.json
+
+// Get a list of all the countries. The API will return the complete list of the existing countries with their country name and 2-character country code in JSON format. The example output for a HTTP Status code 200 contains a subset of the possible outcome.
+
+@name("Get Countries")
+GET "https://{{baseUrl}}/countries"
+
+
+

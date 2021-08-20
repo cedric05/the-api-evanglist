@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-915791f2-3848-4b1a-8980-931a3ff18cd1.postman_collection.json
+
+// Get catalog product attributes.
+
+@name("Get Catalog Product Attributes")
+GET "https://{{baseUrl}}/catalog/product/:productId/attributes"
+
+
+// Get catalog product categories.
+
+@name("Get Catalog Product Categories")
+GET "https://{{baseUrl}}/catalog/product/:productId/categories"
+
+
+// Get catalog product crosssale.
+
+@name("Get Catalog Product Crosssale")
+GET "https://{{baseUrl}}/catalog/product/:productId/crosssale"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Get catalog product default sku.
+
+@name("Get Catalog Product Default sku")
+GET "https://{{baseUrl}}/catalog/product/:productId/defaultSku"
+
+
+// Get catalog product media.
+
+@name("Get Catalog Product Media")
+GET "https://{{baseUrl}}/catalog/product/:productId/media"
+
+
+// Get catalog product skus.
+
+@name("Get Catalog Product Skus")
+GET "https://{{baseUrl}}/catalog/product/:productId/skus"
+
+
+// Get catalog product upsale.
+
+@name("Get Catalog Product Upsale")
+GET "https://{{baseUrl}}/catalog/product/:productId/upsale"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+

@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Delete a specific TabItem from a Tab.
+
+@name("DELETE Tab Item for User Monetary Account Cash Register Tab")
+DELETE "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/tab/:tabUUID/tab-item/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Get a specific TabItem from a given Tab.
+
+@name("READ Tab Item for User Monetary Account Cash Register Tab")
+GET "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/tab/:tabUUID/tab-item/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Modify a TabItem from a given Tab.
+
+@name("UPDATE Tab Item for User Monetary Account Cash Register Tab")
+PUT "https://{{baseUrl}}/user/:userID/monetary-account/:monetary-accountID/cash-register/:cash-registerID/tab/:tabUUID/tab-item/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "amount": {
+        "currency": "laborum est cillum",
+        "value": "dolore nisi voluptate"
+    },
+    "avatar_attachment_uuid": "<string>",
+    "description": "<string>",
+    "ean_code": "<string>",
+    "quantity": "<integer>",
+    "tab_attachment": [
+        "<object>",
+        "<object>"
+    ]
+})
+
+
+

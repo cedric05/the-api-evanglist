@@ -1,0 +1,69 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af938bfe-d636-455e-9182-83ae080c0f19.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+// Retrieves list of accounts filtered by the specified parameters.
+
+@name("Get list of accounts with total account count") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/accounts"
+"Authorization": "Bearer <Bearer Token>"
+? "datasource"= "Excepteur nisi in"
+? "q"= "Excepteur nisi in"
+? "sort"= "Excepteur nisi in"
+? "limit"= "20033802"
+? "offset"= "20033802"
+? "portfoliofilter"= "true"
+
+
+// Creates a new account in Risk Modeler.
+
+@name("Create a new account") : "base-inherit-auth"
+POST "https://{{baseUrl}}/v1/accounts"
+"Authorization": "Bearer <Bearer Token>"
+"Content-Type": "application/json"
+? "datasource"= "Excepteur nisi in"
+json({
+    "number": "tempor aliquip mi",
+    "id": 41178655,
+    "name": "L",
+    "status": "aliquip ipsum aliqua dolor",
+    "cedant": {
+        "name": "in velit",
+        "id": "U"
+    },
+    "producer": {
+        "name": "occaecat consectetur adip",
+        "id": "9kEClZ3Jn"
+    },
+    "underwriter": {
+        "name": "laborum cillum",
+        "id": 58146873
+    },
+    "branch": {
+        "name": "Lorem occaecat ut",
+        "id": -16705182
+    },
+    "userId1": "sunt Duis velit qui",
+    "userId2": "amet magna occaecat consectetur",
+    "userId3": "veniam reprehenderit amet fugiat",
+    "userId4": "dolore",
+    "userText1": "Duis et anim",
+    "userText2": "in eiusmod",
+    "createDate": "eu labore incididunt mollit",
+    "stampDate": "voluptate aliquip",
+    "state": "InActive",
+    "linkId": "tempor",
+    "guid": "veniam nisi",
+    "isValid": false,
+    "CustomData": {}
+})
+
+
+

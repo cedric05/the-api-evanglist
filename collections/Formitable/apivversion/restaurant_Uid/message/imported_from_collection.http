@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9876bee9-39f3-4f65-888c-2127fc6d667c.postman_collection.json
+
+@name("Gets the messages of the specified booking.")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/message/booking/:bookingUid"
+
+
+@name("Message Get Messages Of Order")
+GET "https://{{baseUrl}}/api/v{{version}}/:restaurantUid/message/order/:orderUid"
+
+
+

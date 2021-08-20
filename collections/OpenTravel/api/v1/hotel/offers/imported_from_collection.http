@@ -1,0 +1,512 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-87f9f9dc-5401-4018-97ec-abc123495be8.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("retrieveOffersWithSimplifiedParameters") : "base-inherit-auth"
+GET "https://{{baseUrl}}/api/v1/hotel/offers"
+? "chain"= "ex commodo culpa"
+? "code"= "ut re"
+? "code"= "adipisicing et nostrud"
+? "end"= "ex commodo culpa"
+? "guestcounts"= "1"
+? "name"= "ex commodo culpa"
+? "roomquantity"= "1"
+? "start"= "ex commodo culpa"
+
+
+@name("retrieveOffersByFacilityCodesOrLocation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/api/v1/hotel/offers"
+"Content-Type": "application/json"
+? "name"= "ex commodo culpa"
+json({
+    "baseHospitalityFacilityQuery": {
+        "dateTimeSpan": {
+            "end": {
+                "day": -66543945,
+                "eon": 51262151,
+                "eonAndYear": -78928896,
+                "fractionalSecond": 46745014.23676479,
+                "hour": -85062685,
+                "millisecond": -96725227,
+                "minute": 34604641,
+                "month": 6746040,
+                "second": -22665836,
+                "timezone": -95237339,
+                "valid": false,
+                "xmlschemaType": {
+                    "localPart": "ipsum incididunt Ut amet",
+                    "namespaceURI": "cupidatat",
+                    "prefix": "est aliqua"
+                },
+                "year": -55492304
+            },
+            "start": {
+                "day": 66534400,
+                "eon": -21314918,
+                "eonAndYear": 8097323,
+                "fractionalSecond": 561636.2510183901,
+                "hour": -97026420,
+                "millisecond": -31748662,
+                "minute": -33409829,
+                "month": 98983897,
+                "second": 83194906,
+                "timezone": -77077204,
+                "valid": false,
+                "xmlschemaType": {
+                    "localPart": "enim laboris",
+                    "namespaceURI": "occaecat quis non pariatur",
+                    "prefix": "Duis deserunt"
+                },
+                "year": -83664724
+            },
+            "value": "exercitation ea minim ex"
+        },
+        "detailedHotelSearchCriteria": {
+            "adaCompliantInd": false,
+            "adacompliantInd": false,
+            "adultsOnlyInd": false,
+            "bedType": {
+                "extension": "id eiusmod tempor pariatur",
+                "value": "DORM_BED"
+            },
+            "exactMatchInd": true,
+            "extensionPoint": {},
+            "featureAccessibility": [
+                {
+                    "accessibilityFeature": {
+                        "extension": "qui cillum pariatur deserunt",
+                        "value": "EMERGENCY_EXIT_SIGNS_IN_BRAILLE"
+                    },
+                    "description": {
+                        "dateTimeStamp": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "extensionPoint": {},
+                        "imageSubGrp": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "name": "occaecat aute eiusmod",
+                        "number": -45459699,
+                        "paragraphListItem": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "text": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "url": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    },
+                    "extensionPoint": {},
+                    "extensionPointShared": {},
+                    "proximity": {
+                        "extension": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "quantity": 14514843
+                },
+                {
+                    "accessibilityFeature": {
+                        "extension": "commodo Duis id",
+                        "value": "VALET_PARKING_ACCEPTS_AND_PARKS_VEHICLES_OUTFITTED_FOR_WHEELCHAIR_USERS"
+                    },
+                    "description": {
+                        "dateTimeStamp": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "extensionPoint": {},
+                        "imageSubGrp": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "name": "aliquip adipisicing ut minim",
+                        "number": -31502066,
+                        "paragraphListItem": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "text": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "url": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    },
+                    "extensionPoint": {},
+                    "extensionPointShared": {},
+                    "proximity": {
+                        "extension": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "quantity": 19336063
+                }
+            ],
+            "featureSecurity": [
+                {
+                    "description": {
+                        "dateTimeStamp": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "extensionPoint": {},
+                        "imageSubGrp": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "name": "laborum d",
+                        "number": 59234674,
+                        "paragraphListItem": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "text": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "url": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    },
+                    "extensionPoint": {},
+                    "extensionPointShared": {},
+                    "proximity": {
+                        "extension": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "quantity": -86447448,
+                    "securityFeature": {
+                        "extension": "aute Ut officia sed",
+                        "value": "ut proident in offic"
+                    }
+                },
+                {
+                    "description": {
+                        "dateTimeStamp": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "extensionPoint": {},
+                        "imageSubGrp": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "name": "exercitation",
+                        "number": -66204788,
+                        "paragraphListItem": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "text": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ],
+                        "url": [
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            },
+                            {
+                                "value": "<Error: Too many levels of nesting to fake this schema>"
+                            }
+                        ]
+                    },
+                    "extensionPoint": {},
+                    "extensionPointShared": {},
+                    "proximity": {
+                        "extension": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        },
+                        "value": {
+                            "value": "<Error: Too many levels of nesting to fake this schema>"
+                        }
+                    },
+                    "quantity": 54275406,
+                    "securityFeature": {
+                        "extension": "pariatur proident ut dolor fugiat",
+                        "value": "aute ut"
+                    }
+                }
+            ],
+            "hotelAmenity": [
+                {
+                    "codeContext": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "description": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "listURI": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "quantity": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                {
+                    "codeContext": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "description": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "listURI": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "quantity": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            ],
+            "hotelCodeContext": "id",
+            "petsAllowedInd": true,
+            "rating": 22276302.854872704,
+            "roomAmenities": [
+                {
+                    "codeContext": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "description": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "listURI": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "quantity": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                },
+                {
+                    "codeContext": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "description": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "listURI": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "quantity": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    },
+                    "value": {
+                        "value": "<Error: Too many levels of nesting to fake this schema>"
+                    }
+                }
+            ],
+            "smokingRoomsInd": false,
+            "ttIcode": -15296856,
+            "tticode": -84378083
+        },
+        "extensionPoint": {},
+        "guestCount": [
+            {
+                "age": -1878403,
+                "ageQualifyingCode": "sint",
+                "value": -49853263
+            },
+            {
+                "age": 26704285,
+                "ageQualifyingCode": "anim quis laboris nostrud velit",
+                "value": 29416007
+            }
+        ],
+        "numberOfRooms": -56411941,
+        "ratePlanCode": [
+            {
+                "promotionCode": "est dolor",
+                "promotionVendorCode": [
+                    "amet nisi dolor",
+                    "enim exercitation Duis aliquip"
+                ],
+                "ratePlanCategory": "aliqua exercitation et voluptate",
+                "ratePlanID": "et sint",
+                "ratePlanQualifierInd": true,
+                "ratePlanType": "CONTRACT",
+                "ratePlanTypeExtension": "dolore",
+                "value": "est officia proident"
+            },
+            {
+                "promotionCode": "eiusmod incididunt Excepteur officia",
+                "promotionVendorCode": [
+                    "exercitation velit voluptate dolore",
+                    "ullamco nostrud"
+                ],
+                "ratePlanCategory": "amet",
+                "ratePlanID": "incididunt commodo aliquip",
+                "ratePlanQualifierInd": true,
+                "ratePlanType": "LAST_ROOM_AVAILABLE",
+                "ratePlanTypeExtension": "culpa dolor consectetur",
+                "value": "m"
+            }
+        ],
+        "rateRange": {
+            "currencyCode": "consectetur ipsum Lorem ex",
+            "fixedRate": -99402394.69518653,
+            "maxRate": 3874658.108647868,
+            "minRate": 56304632.87524918,
+            "rateTimeUnit": "HOUR",
+            "value": "ea ex"
+        },
+        "roomTypeCode": [
+            {
+                "codeContext": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "description": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "listURI": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "quantity": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "value": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            },
+            {
+                "codeContext": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "description": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "listURI": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "quantity": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                },
+                "value": {
+                    "value": "<Error: Too many levels of nesting to fake this schema>"
+                }
+            }
+        ]
+    },
+    "basicPropertyInfo": [
+        {
+            "areaID": "mollit quis sed",
+            "brandCode": "tempor Duis elit enim",
+            "brandName": "sunt id eiusmod do",
+            "chainCode": "adipisicing eiusmod",
+            "chainName": "amet voluptate ullamco nulla dolore",
+            "cityCode": "qui",
+            "code": "commodo incididunt quis",
+            "extensionPoint": {},
+            "hotelCodeContext": "cupidatat",
+            "hotelCodeTTI": -14297787,
+            "name": "in officia sed aliquip veniam",
+            "nameShort": "proident pariatur dolor aute"
+        },
+        {
+            "areaID": "eiusmod irure nisi mollit ad",
+            "brandCode": "Duis consequat in",
+            "brandName": "esse quis proident",
+            "chainCode": "velit elit incididunt laborum esse",
+            "chainName": "esse eu ex",
+            "cityCode": "dolor ad id",
+            "code": "sed sint in Duis",
+            "extensionPoint": {},
+            "hotelCodeContext": "ad consequat quis",
+            "hotelCodeTTI": -63966189,
+            "name": "consectetur culpa",
+            "nameShort": "velit dolor"
+        }
+    ],
+    "extensionPoint": {}
+})
+
+
+

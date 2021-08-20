@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bc9332c4-d7ba-4398-b9a9-51c6aaf5271c.postman_collection.json
+
+// Accept user membership to a given organization
+
+@name("Add Organizations Org Membership  Accept")
+POST "https://{{baseUrl}}/organizations/:org/membership/:id/accept/"
+
+
+// Refuse user membership to a given organization
+
+@name("Add Organizations Org Membership  Refuse")
+POST "https://{{baseUrl}}/organizations/:org/membership/:id/refuse/"
+
+
+

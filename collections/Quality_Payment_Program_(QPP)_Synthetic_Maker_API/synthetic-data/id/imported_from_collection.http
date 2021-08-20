@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ba80ce9d-d693-46bf-bec0-4eded04ac428.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer <Bearer Token>"
+
+
+@name("update dataSet") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/synthetic-data/:id"
+"Content-Type": "application/json"
+json({
+    "customDescription": "<string>",
+    "customName": "<string>"
+})
+
+
+@name("discard a reserved scenario") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/synthetic-data/:id/discard"
+
+
+@name("set the mfa status of a scenario test user") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/synthetic-data/:id/mfa"
+"Content-Type": "application/json"
+json({
+    "login": "<string>",
+    "mfaRequired": "<boolean>"
+})
+
+
+@name("reset the password of a scenario test user") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/synthetic-data/:id/resetPassword"
+"Content-Type": "application/json"
+json({
+    "login": "<string>",
+    "password": "<string>"
+})
+
+
+@name("reset the reserved scenario to the template defaults") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/synthetic-data/:id/setUserDefaults"
+"Content-Type": "application/json"
+json({
+    "password": "<string>"
+})
+
+
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bd1a5667-9165-48e8-9c3c-1bd94c10517b.postman_collection.json
+
+// Returns a list of download links associated with the repository.
+
+@name("/repositories/:username/:repo_slug/downloads")
+GET "https://{{baseUrl}}/repositories/:username/:repo_slug/downloads"
+
+
+// Upload new download artifacts.
+// 
+// To upload files, perform a `multipart/form-data` POST containing one
+// or more `files` fields:
+// 
+//     $ echo Hello World > hello.txt
+//     $ curl -s -u evzijst -X POST https://api.bitbucket.org/2.0/repositories/evzijst/git-tests/downloads -F files=@hello.txt
+// 
+// When a file is uploaded with the same name as an existing artifact,
+// then the existing file will be replaced.
+
+@name("/repositories/:username/:repo_slug/downloads")
+POST "https://{{baseUrl}}/repositories/:username/:repo_slug/downloads"
+
+
+

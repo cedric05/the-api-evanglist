@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a22798b7-3c6b-491d-8678-9cd202d52d22.postman_collection.json
+
+// This reference describes how to delete a summary journal entry using the REST API.nnYou must have the Delete Cancelled Journal Entry user permission enabled to delete summary journal entries.nnA summary journal entry must be canceled before it can be deleted.n
+
+@name("Delete summary journal entry")
+DELETE "https://{{baseUrl}}/v1/journal-entries/:je-number"
+
+
+// nThis REST API reference describes how to update the basic information of a summary journal entry. Request and response field descriptions and sample code are provided.n
+
+@name("Update basic information of a summary journal entry")
+PUT "https://{{baseUrl}}/v1/journal-entries/:je-number/basic-information"
+
+
+// nThis reference describes how to cancel a summary journal entry using the REST API.nnYou must have the Cancel Journal Entry user permission enabled to cancel summary journal entries.nnA summary journal entry cannot be canceled if its Transferred to Accounting status is Yes or Processing.n
+
+@name("Cancel summary journal entry")
+PUT "https://{{baseUrl}}/v1/journal-entries/:je-number/cancel"
+
+
+

@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-178fc640-5e4f-4587-914e-5f17643b7e07.postman_collection.json
+
+// Use this service to retrieve the consumer's payment card, and shipping details from Masterpass. New or existing Brazil merchants looking for the house number and street name as separate fields should leverage these two additional extension points in their Masterpass checkout integration. Line 4 will provide the house number and line 5 will provide the street name. Brazil merchants should first look for data in lines 4 and 5, and in the case that no data is found there, merchants should then look
+
+@name("Payment Data Service")
+GET "https://{{baseUrl}}/masterpass/paymentdata/:transactionId"
+? "checkoutId"= "<string>"
+? "cartId"= "<string>"
+? "pspId"= "<string>"
+? "externalData"= "<string>"
+
+
+// Use this service to retrieve the encrypted consumer's payment card, and shipping details from Masterpass. API URL: /masterpass/encrypted-paymentdata/{transactionId}n
+
+@name("Encrypted Payment Data Service")
+GET "https://{{baseUrl}}/masterpass/encrypted-paymentdata/:transactionId"
+? "checkoutId"= "<string>"
+? "cartId"= "<string>"
+
+
+// This is the final step in the transaction and reports the result of their transactions to Masterpass. Postback is required for all transactions (abandoned transactions do not need to be reported). The postback service returns HTTP response code 204 for successful response. Request method: POST. API URL: /masterpass/postbackn
+
+@name("Postback Service")
+POST "https://{{baseUrl}}/masterpass/postback"
+
+
+// Use this service to get a consumer?s pairing identifier from Masterpass when they choose to share the payment and shipping information from their Masterpass wallet for future use in an Express Checkout. Request method: GET. API URL: /masterpass/pairingidn
+
+@name("PairingId Service")
+GET "https://{{baseUrl}}/masterpass/pairingid"
+? "pairingTransactionId"= "<string>"
+? "userId"= "<string>"
+
+
+// Use the consumer?s pairingID to retrieve their shipping and payment information prior to complete an Express Checkout.  You can use the data returned from this service to confirm the user?s payment selections before completing the checkout. Request method: GET. API URL: /masterpass/precheckoutdata/{pairingId}n
+
+@name("Pre-Checkout Service")
+GET "https://{{baseUrl}}/masterpass/precheckoutdata/:pairingId"
+
+
+// This service is used to retrieve the consumer's full payment card, shipping address, and recipient personal information from Masterpass when performing an Express Checkout. If the merchant is PCI-compliant, then this API will return the complete payload.  If the merchant is not PCI-compliant, then this API will only return non-PCI data. In both cases, a new pairingId will be returned to the merchant. Request method: POST. API URL: /masterpass/expresscheckoutn
+
+@name("Express Checkout Service")
+POST "https://{{baseUrl}}/masterpass/expresscheckout"
+
+
+// Service to request consumer's full payment card information during a checkout. Request method: GET. API URL: /masterpass/psp-paymentdata/{transactionId}n
+
+@name("Payment Data Service")
+GET "https://{{baseUrl}}/masterpass/psp-paymentdata/:transactionId"
+
+
+

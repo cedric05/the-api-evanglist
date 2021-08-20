@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d2749b14-071b-4784-9ef7-0d341c97bf5c.postman_collection.json
+
+@name("Returns merchant descriptor and locator information based on the criteria you provide.
+Information returned includes merchant DBA name, merchant category code (MCC), street address, city, state, postal code, country, and sales channels.")
+GET "https://{{baseUrl}}/merchant-ids"
+? "merchant_id"= ""
+? "type"= "ExactMatch"
+
+
+

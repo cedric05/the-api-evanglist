@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-20eaed55-6256-4049-a8c9-74a7e5e0ac65.postman_collection.json
+
+// Obtain Daily Boxscores for MLB for a given season. NOTE: The 2012 sample data is an abbreviated season.
+
+@name("Obtain Daily Boxscores for MLB for a given season....")
+GET "https://{{baseUrl}}/mlb-t6/games/:year/:month/:day/boxscore{{format}}"
+
+
+// Obtain Schedule for the MLB for a given day. NOTE: The 2012 sample data is an abbreviated season.
+
+@name("Obtain Schedule for the MLB for a given day. NOTE:...")
+GET "https://{{baseUrl}}/mlb-t6/games/:year/:month/:day/schedule{{format}}"
+
+
+// Obtain Daily Summary for the MLB for a given day. NOTE: The 2012 sample data is an abbreviated season.
+
+@name("Obtain Daily Summary for the MLB for a given day. ...")
+GET "https://{{baseUrl}}/mlb-t6/games/:year/:month/:day/summary{{format}}"
+
+
+

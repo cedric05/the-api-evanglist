@@ -1,0 +1,206 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6955ed11-a73c-4307-bb23-5a863194d33b.postman_collection.json
+
+@name("POST method for submitting a request for delineation compare data.
+Source parameter must contain a value, but value is not used.")
+POST "https://{{baseUrl}}/api/workflow/timeoftravel"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "contaminantInflow": [
+        [
+            "<object>",
+            "<object>"
+        ],
+        [
+            "<object>",
+            "<object>"
+        ]
+    ],
+    "inflowSource": "<string>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for getting workflow compare data.
+Source parameter must contain a value, but value is not used.")
+POST "https://{{baseUrl}}/api/workflow/watershed"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "runoffSource": "<string>",
+    "streamHydrology": "<string>",
+    "aggregation": "<boolean>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for precip comparison data.
+Source parameter must contain a value, but value is not used.")
+POST "https://{{baseUrl}}/api/workflow/precip_compare"
+"Content-Type": "application/json"
+json({
+    "dataset": "<string>",
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "sourceList": [
+        "<string>",
+        "<string>"
+    ],
+    "weighted": "<boolean>",
+    "extremeDaily": "<double>",
+    "extremeTotal": "<double>",
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method for submitting a request for precip extraction data.
+Source parameter must contain a value, but value is not used.")
+POST "https://{{baseUrl}}/api/workflow/precip_data_extraction"
+"Content-Type": "application/json"
+json({
+    "dateTimeSpan": {
+        "startDate": "<dateTime>",
+        "endDate": "<dateTime>",
+        "dateTimeFormat": "<string>"
+    },
+    "geometry": {
+        "description": "<string>",
+        "comID": "<integer>",
+        "hucID": "<string>",
+        "stationID": "<string>",
+        "point": {
+            "latitude": "<double>",
+            "longitude": "<double>"
+        },
+        "geometryMetadata": "<object>",
+        "timezone": {
+            "name": "<string>",
+            "offset": "<double>",
+            "dls": "<boolean>"
+        }
+    },
+    "source": "<string>",
+    "dataset": "<string>",
+    "sourceList": [
+        "<string>",
+        "<string>"
+    ],
+    "dataValueFormat": "<string>",
+    "temporalResolution": "<string>",
+    "timeLocalized": "<boolean>",
+    "units": "<string>",
+    "outputFormat": "<string>",
+    "baseURL": [
+        "<string>",
+        "<string>"
+    ],
+    "inputTimeSeries": "<object>"
+})
+
+
+@name("POST method to submit a request for water quality data.
+dataSource can be 'nldas' or 'ncei', which will pull data from GHCND:US1NCCM0006")
+POST "https://{{baseUrl}}/api/workflow/waterquality"
+"Content-Type": "application/json"
+json({
+    "taskID": "<string>",
+    "dataSource": "<string>",
+    "minNitrate": "<integer>",
+    "maxNitrate": "<integer>",
+    "minAmmonia": "<integer>",
+    "maxAmmonia": "<integer>"
+})
+
+
+

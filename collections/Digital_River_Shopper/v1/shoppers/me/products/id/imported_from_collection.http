@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-baa21855-56c4-411b-b54e-86741f2e4115.postman_collection.json
+
+// Get shoppers me products.
+
+@name("Get Shoppers Me Products")
+GET "https://{{baseUrl}}/v1/shoppers/me/products/:id"
+
+
+// Get shoppers me products point of promotions popid offers.
+
+@name("Get Shoppers Me Products Point Of Promotions Popid Offers")
+GET "https://{{baseUrl}}/v1/shoppers/me/products/:id/point-of-promotions/:popId/offers"
+
+
+// Post shoppers me products purchase.
+
+@name("Post Shoppers Me Products Purchase")
+POST "https://{{baseUrl}}/v1/shoppers/me/products/:id/purchase"
+
+
+// Get shoppers me products variations.
+
+@name("Get Shoppers Me Products Variations")
+GET "https://{{baseUrl}}/v1/shoppers/me/products/:id/variations"
+
+
+

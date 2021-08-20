@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-be4a5181-521c-480d-a9e2-a53cb6b4dec5.postman_collection.json
+
+// Use the below parameters to search and filter all events that are available to your account.
+
+@name("Retrieve All Events")
+GET "https://{{baseUrl}}/v1/events/"
+
+
+// This endpoint accepts the same parameters as the ones described in Retrieve All Events and can be used to get a calendar view of all matching events that are available to your account.nnEach day in the calendar contains aggregate counts of all _active_ events for that day.n
+
+@name("Retrieve Events Calendar")
+GET "https://{{baseUrl}}/v1/events/calendar/"
+
+
+// This endpoint accepts the same parameters as the ones described in Retrieve All Events and can be used to get aggregated counts of all matching events that are available to your account.
+
+@name("Retrieve Events Count")
+GET "https://{{baseUrl}}/v1/events/count/"
+
+
+

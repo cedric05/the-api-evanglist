@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-baf4a014-6c7b-4f4e-b764-89b8472d3cf4.postman_collection.json
+
+// Returns an app_access_token which is needed for authenticating users and signing transactions.
+// 
+// <br/><br/>
+// 
+// ##### PARAMETERS (Optional)
+// ---
+// **newAccountPassword** - (Optional) - User's new password during account creation.
+// 
+// **currentAccountPassword** - (Optional) - User's current password prior to a password reset flow
+// 
+// **secrets** - (Optional) - An array of values {‘mySecretType1’: ‘mySecretValue’} needed by a backend process (depends on specific flow).
+// 
+// <br/>
+// 
+// ##### RESPONSE
+// ---
+// 
+// **app
+
+@name("Get App Token")
+POST "https://{{baseUrl}}/api/app-token"
+
+
+// Get the list of blockchain names and urls. This is the value used for the chainAccount parameter in several APIs.
+// 
+// View a complete list of the error codes <a href="#error-codes">here.</a>
+
+@name("Get Settings - Chains Config")
+GET "https://{{baseUrl}}/api/services/config"
+? "type"= "<string>"
+
+
+// Send your tokens to an account on the chain.  Returns the transaction Id of the transfer.
+// The token to be sent and the account to send from (aka 'Funding Account') must be pre-defined in the ORE ID app registration portal (oreid.io/developer). The total amount of tokens that can be transferred every day is capped.
+// 
+// <br/><br/>
+// 
+// ##### PARAMETERS
+// ---
+// **amount** - (Required) - A string representing the quantity of tokens to send (e.g. '.000001234'). The unit depends on the token. For chain currency 
+
+@name("Token - Airdrop")
+POST "https://{{baseUrl}}/api/token/airdrop"
+
+
+

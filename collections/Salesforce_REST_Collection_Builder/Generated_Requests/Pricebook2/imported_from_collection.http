@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-582f30d6-554e-4cb2-a58f-34f9aa631c05.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Pricebook2") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/Pricebook2/"
+
+
+@name("Pricebook2 Detail") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/Pricebook2/{ID}/"
+
+
+@name("Describe Pricebook2") : "base-inherit-auth"
+GET "https://{{host}}/services/data/v47.0/sobjects/Pricebook2/describe/"
+
+
+

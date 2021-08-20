@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-712034b2-265e-4ffc-a7a7-e49d61c6660a.postman_collection.json
+
+// Deletes the project. The project can only be deleted if the project do not contain any participants.n
+
+@name("Deletes the project")
+DELETE "https://{{baseUrl}}/orgunits/:orgid/projects/:projectid"
+
+
+// Returns the project team members. A team member is a ....n
+
+@name("Project team members")
+GET "https://{{baseUrl}}/orgunits/:orgid/projects/:projectid/teammembers"
+
+
+

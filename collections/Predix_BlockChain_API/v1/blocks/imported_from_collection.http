@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a91970d1-273c-4c28-bee0-96765b693784.postman_collection.json
+
+// Get current blockchain root info
+
+@name("Get Blocks")
+GET "https://{{baseUrl}}/v1/blocks"
+"Authorization": "<>"
+"predix": "<>"
+
+
+// Get a single blockchain info
+
+@name("Get Blocks Blocknumber")
+GET "https://{{baseUrl}}/v1/blocks/:blockNumber"
+"Authorization": "<>"
+"predix": "<>"
+
+
+

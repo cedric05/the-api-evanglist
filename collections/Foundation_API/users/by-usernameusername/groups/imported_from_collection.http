@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3b0d7f32-a990-42e1-8346-61957d7dfc30.postman_collection.json
+
+// Gets a user's group list by username.
+
+@name("Gets a user's group list by username")
+GET "https://{{baseUrl}}/users/by-username/:username/groups"
+
+
+// Add user to a user group by user name.
+
+@name("Add user to a user group by user name")
+PUT "https://{{baseUrl}}/users/by-username/:username/groups/:groupid"
+
+
+

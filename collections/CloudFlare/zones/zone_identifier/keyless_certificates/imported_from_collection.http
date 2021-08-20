@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d76987fb-f2f9-425d-9645-ecebd487c07d.postman_collection.json
+
+// List all Keyless SSL configurations for a given zone
+
+@name("List all Keyless SSL configurations for a given zone")
+GET "https://{{baseUrl}}/zones/:zone_identifier/keyless_certificates"
+
+
+//  Delete Keyless configuration permission needed: #ssl:editntt  
+
+@name("Delete Keyless configuration permission needed: #ssl:edit")
+DELETE "https://{{baseUrl}}/zones/:zone_identifier/keyless_certificates/:identifier"
+
+
+

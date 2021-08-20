@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-26cd91a2-9b1d-4b13-a446-5962a1db044c.postman_collection.json
+
+// Gets the health check values for an API if it is being recordedn
+
+@name("Check Health")
+GET "https://{{baseUrl}}/tyk/health/"
+"x": "<>"
+? "api_id"= "<delete>"
+
+
+

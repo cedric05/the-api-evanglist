@@ -1,0 +1,5 @@
+API v2 targets v1 functionality with a few minor additions. The API is accessible via https://api.thetvdb.com and provides the following REST endpoints in JSON format.nnnHow to use this API documentationn----------------nnnYou may browse the API routes without authentication, but if you wish to send requests to the API and see response data, then you must authenticate.n1. Obtain a JWT token by `POST`ing  to the `/login` route in the `Authentication` section with your API key and credentials.n1. Paste the JWT token from the response into the JWT Token field at the top of the page and click the 'Add Token' button.nnnYou will now be able to use the remaining routes to send requests to the API and get a response.nnnLanguage Selectionn----------------nnnLanguage selection is done via the `Accept-Language` header. At the moment, you may only pass one language abbreviation in the header at a time. Valid language abbreviations can be found at the `/languages` route..nnnAuthenticationn-------
+
+Contact Support:
+ Name: No Contact
+ Email: email@example.com

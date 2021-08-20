@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4c76a2b0-692e-4eea-af5c-b7b9ed4e629c.postman_collection.json
+
+// Adds request to the queue. Response contains ID of the request and info if request was already present in the queue or handled.nnIf request with same `uniqueKey` was already present in the queue then returns an ID of existing request.
+
+@name("Add request")
+POST "https://{{baseUrl}}/v2/request-queues/:queueId/requests"
+? "forefront"= "<string>"
+? "token"= "<string>"
+? "clientKey"= "<string>"
+
+
+// Returns request from queue.
+
+@name("Get request")
+GET "https://{{baseUrl}}/v2/request-queues/:queueId/requests/:requestId"
+? "token"= "<string>"
+? "forefront"= "<string>"
+? "clientKey"= "<string>"
+
+
+

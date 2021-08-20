@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1f22e2cb-c653-40b3-ae3e-8b9e732d13bc.postman_collection.json
+
+// Returns the list of clock entries for a worker
+
+@name("Clock Entries")
+GET "https://{{baseUrl}}/time/v2/workers/:aoid/clock-entries"
+? "No Name"= "<string>"
+
+
+

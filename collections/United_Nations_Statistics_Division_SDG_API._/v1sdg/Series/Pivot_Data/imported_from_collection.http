@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1e167a8f-2de8-4d63-a2ac-1189cfa7a2ce.postman_collection.json
+
+// Returns a list of obeservations pivoted by year filetered by the parameters defined on the call
+
+@name("Returns a list of paginated observations pivoted by year")
+GET "https://{{baseUrl}}/v1/sdg/Series/PivotData"
+? "seriesCode"= "in quis magna enim"
+? "seriesCode"= "id voluptate do esse occaecat"
+? "releaseCode"= "veniam aliqu"
+? "areaCode"= "86606243"
+? "areaCode"= "-31007030"
+? "dimensions"= "veniam aliqu"
+? "page"= "28430278"
+? "pageSize"= "28430278"
+
+
+// Returns a list of obeservations pivoted by year filetered by the parameters defined on the call
+
+@name("Returns a list of paginated observations pivoted by year")
+POST "https://{{baseUrl}}/v1/sdg/Series/PivotData"
+"Content-Type": "application/x-www-form-urlencoded"
+data({
+    "seriesCode": [
+        "[\"est nostrud qui\",\"incididunt magna proident\"]"
+    ],
+    "releaseCode": [
+        "ut et ipsum laborum cupidatat"
+    ],
+    "areaCode": [
+        "[43427307,-41349539]"
+    ],
+    "dimensions": [
+        "aute sint dolor ipsum"
+    ],
+    "page": [
+        "93582509"
+    ],
+    "pageSize": [
+        "-79345612"
+    ]
+})
+
+
+

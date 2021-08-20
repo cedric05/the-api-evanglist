@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d7e889e2-45ea-4b46-badd-0b496c4a983f.postman_collection.json
+
+// Get a sales history snapshot of a property based on an Onboard property ID.
+
+@name("Returns sales history for a property.")
+GET "https://{{baseUrl}}/saleshistory/snapshot"
+"apikey": "<>"
+"accept": "<>"
+? "id"= "<>"
+
+
+// Get the basic transaction and loan history on a property for a specific address.
+
+@name("Returns basic transaction and loan history on a property.")
+GET "https://{{baseUrl}}/saleshistory/basichistory"
+"apikey": "<>"
+"accept": "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+
+
+// Get the detailed transaction, pre-foreclosure and loan history on a property for a specific address.
+
+@name("Returns detailed transaction, pre-foreclosure and loan history on a property.")
+GET "https://{{baseUrl}}/saleshistory/expandedhistory"
+"apikey": "<>"
+"accept": "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+
+
+// Get a sales history snapshot of a property based on an address.
+
+@name("Returns sales history for a property.")
+GET "https://{{baseUrl}}/saleshistory/detail"
+"apikey": "<>"
+"accept": "<>"
+? "address1"= "<>"
+? "address2"= "<>"
+
+
+

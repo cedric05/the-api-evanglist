@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b04ade5-8838-4197-b3c0-06861796932d.postman_collection.json
+
+@name("getAllRules")
+GET "https://{{baseUrl}}/v3/rules"
+
+
+@name("getARules")
+GET "https://{{baseUrl}}/v3/rules/39/status/:ruleStatus"
+
+
+@name("createItemRule")
+POST "https://{{baseUrl}}/v3/rules/create"
+
+
+@name("updateShippingAreasToRules")
+PUT "https://{{baseUrl}}/v3/rules/actions"
+
+
+@name("inactivateRule")
+PUT "https://{{baseUrl}}/v3/rules/inactivate"
+
+
+@name("createOverrideExceptions")
+POST "https://{{baseUrl}}/v3/rules/exceptions"
+
+
+@name("changeAssortmentType")
+PUT "https://{{baseUrl}}/v3/rules/assortment"
+? "enable"= "<string>"
+
+
+@name("downloadExceptions")
+GET "https://{{baseUrl}}/v3/rules/downloadexceptions"
+
+
+@name("getAllSubCategories")
+GET "https://{{baseUrl}}/v3/rules/subcategories"
+
+
+@name("getAllAreas")
+GET "https://{{baseUrl}}/v3/rules/areas"
+
+
+

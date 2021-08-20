@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-60e93ec1-23e9-4691-8a86-2d833dc2b896.postman_collection.json
+
+// Returns a single metadata entry
+
+@name("Get Metadata")
+GET "https://{{baseUrl}}/metadata/:metadata_id/"
+
+
+// Returns a list of all metadata.
+
+@name("Get Metadata")
+GET "https://{{baseUrl}}/metadata/"
+? "query"= "<string>"
+? "fields"= "<string>"
+? "page"= "<number>"
+? "per_page"= "<number>"
+? "sort_by"= "<string>"
+? "order"= "<string>"
+? "format"= "<string>"
+
+
+// Creates a new metadata entry.
+
+@name("Add Metadata")
+POST "https://{{baseUrl}}/metadata/"
+
+
+// Updates an existing metadata entry using its id.
+
+@name("Update Metadata")
+PUT "https://{{baseUrl}}/metadata/:metadata_id/"
+
+
+// Deletes a metadata by Id
+
+@name("Delete metadata")
+DELETE "https://{{baseUrl}}/metadata/:metadata_id/"
+
+
+

@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1e167a8f-2de8-4d63-a2ac-1189cfa7a2ce.postman_collection.json
+
+// Returns the list of all Targets for an specific Goal currently published in the latest release, you can include all the Targets, Indicator and series description using includechildren
+
+@name("Returns the list of all Targets available for a Goal.")
+GET "https://{{baseUrl}}/v1/sdg/Goal/:goalCode/Target/List"
+? "includechildren"= "true"
+
+
+// Given a goal code will return a list of M49 code - Name of countries that have observations for that series
+
+@name("Returns a list of geographies that have values on that Goal")
+GET "https://{{baseUrl}}/v1/sdg/Goal/:goalCode/GeoAreas"
+
+
+// Given a series SDMX code will return a list of dimensions for that series code
+
+@name("Returns a list of dimensions for a series")
+GET "https://{{baseUrl}}/v1/sdg/Goal/:goalCode/Dimensions"
+
+
+// Given a series SDMX code will return a list of dimensions for that series code
+
+@name("Returns a list of attributes for a series")
+GET "https://{{baseUrl}}/v1/sdg/Goal/:goalCode/Attributes"
+
+
+

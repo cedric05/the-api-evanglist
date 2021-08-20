@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cdb56144-caaa-4d88-bf69-74da565813ea.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. Use the [GET /container-security/api/v2/images](ref:container-security-v2-list-images) endpoint instead.
+// Lists all containers.<p>Requires BASIC [16] user permissions. See [Permissions](doc:permissions).</p>
+
+@name("List containers") : "base-inherit-auth"
+GET "https://{{baseUrl}}/container-security/api/v1/container/list"
+
+
+// **Deprecated!** Tenable.io Container Security API v1 is deprecated. Use the [GET /container-security/api/v2/images](ref:container-security-v2-list-images) endpoint instead.
+// Returns an inventory of an image by ID.<p>Requires BASIC [16] user permissions. See [Permissions](docs/permissions).</p>
+
+@name("Get image inventory") : "base-inherit-auth"
+GET "https://{{baseUrl}}/container-security/api/v1/container/:imageID/status"
+
+
+

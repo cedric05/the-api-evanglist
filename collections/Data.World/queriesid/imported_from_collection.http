@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b03a023f-71a0-4ba1-9905-b5580a2efba0.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Retrieve a saved query. Query definitions will be returned, not query results. To retrieve query results use `GET:/queries/{id}/results`.
+
+@name("Retrieve a saved query") : "base-inherit-auth"
+GET "https://{{baseUrl}}/queries/:id"
+
+
+// Retrieve a version of a saved query. Query definitions will be returned, not query results.
+
+@name("Retrieve a saved query version") : "base-inherit-auth"
+GET "https://{{baseUrl}}/queries/:id/v/:versionId"
+
+
+

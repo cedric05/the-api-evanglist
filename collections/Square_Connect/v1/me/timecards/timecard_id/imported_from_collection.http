@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dd87bfa6-db1a-4bc7-933b-f90982450ad5.postman_collection.json
+
+// Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
+
+@name("Delete Me Timecards")
+DELETE "https://{{baseUrl}}/v1/me/timecards/:timecard_id"
+
+
+// Provides summary information for all events associated with a particular timecard.
+
+@name("Get Me Timecards Events")
+GET "https://{{baseUrl}}/v1/me/timecards/:timecard_id/events"
+
+
+

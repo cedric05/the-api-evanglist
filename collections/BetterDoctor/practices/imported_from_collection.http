@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17776046-ece2-4e9f-8598-d00e62122c30.postman_collection.json
+
+// Results are provider service locations, commonly referred as practices or doctor's offices.
+
+@name("Practice Search")
+GET "https://{{baseUrl}}/practices"
+? "name"= "<get>"
+? "location"= "<object>"
+? "user_location"= "<>"
+? "sort"= "<>"
+? "fields"= "<>"
+? "skip"= "<get>"
+? "limit"= "<get>"
+? "user_key"= "<>"
+
+
+

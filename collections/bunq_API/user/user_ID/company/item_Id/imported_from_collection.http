@@ -1,0 +1,86 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3de643e0-77af-41e6-9270-0b386f4ca61d.postman_collection.json
+
+// Create and manage companies.
+
+@name("READ Company for User")
+GET "https://{{baseUrl}}/user/:userID/company/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+
+
+// Create and manage companies.
+
+@name("UPDATE Company for User")
+PUT "https://{{baseUrl}}/user/:userID/company/:itemId"
+"Cache-Control": "<string>"
+"User-Agent": "<string>"
+"X-Bunq-Language": "<string>"
+"X-Bunq-Region": "<string>"
+"X-Bunq-Client-Request-Id": "<string>"
+"X-Bunq-Geolocation": "<string>"
+"X-Bunq-Client-Authentication": "<string>"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "address_main": {
+        "city": "sed Ut Duis elit",
+        "country": "consequat incididunt do",
+        "extra": "adipisicing tempor et incididunt",
+        "house_number": "commodo nisi",
+        "mailbox_name": "sed esse",
+        "po_box": "proident",
+        "postal_code": "non anim",
+        "province": "s",
+        "street": "ipsum do voluptate"
+    },
+    "address_postal": {
+        "city": "laboris ex",
+        "country": "esse est non",
+        "extra": "in ut proident",
+        "house_number": "in commodo reprehenderit",
+        "mailbox_name": "in ea",
+        "po_box": "in officia esse exercitation culpa",
+        "postal_code": "qui in",
+        "province": "irure proident enim",
+        "street": "dolor nostrud"
+    },
+    "country": "<string>",
+    "legal_form": "<string>",
+    "avatar_uuid": "<string>",
+    "chamber_of_commerce_number": "<string>",
+    "subscription_type": "<string>",
+    "ubo": [
+        {
+            "date_of_birth": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "nationality": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        },
+        {
+            "date_of_birth": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "name": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            },
+            "nationality": {
+                "value": "<Error: Too many levels of nesting to fake this schema>"
+            }
+        }
+    ]
+})
+
+
+

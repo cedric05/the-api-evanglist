@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-153258a5-a1eb-43c6-ae2b-1378320e86b1.postman_collection.json
+
+// Applicant created a new profile
+
+@name("Add Applicant Profile")
+POST "https://{{baseUrl}}/events/staffing/v1/job-applicant-profile.add"
+? "No Name"= "<string>"
+
+
+// Returns an event metadata
+
+@name("Add Applicant Profile Meta")
+GET "https://{{baseUrl}}/events/staffing/v1/job-applicant-profile.add/meta"
+? "No Name"= "<string>"
+
+
+

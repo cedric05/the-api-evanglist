@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-72e604f5-6257-4d0e-8b1c-bfbf148e0789.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+// Please paste comment_id from original task comment created for continuity
+
+@name("Update Comment") : "base-inherit-auth"
+PUT "https://api.clickup.com/api/v2/comment/comment_id"
+"Content-Type": "application/json"
+json({
+    "comment_text": "Updated comment text",
+    "assignee": 53480,
+    "resolved": true
+})
+
+
+// Please paste comment_id from original task comment created for continuity
+
+@name("Delete Comment") : "base-inherit-auth"
+DELETE "https://api.clickup.com/api/v2/comment/comment_id"
+"Content-Type": "application/json"
+
+
+

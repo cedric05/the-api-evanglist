@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c8161683-162b-464d-93d4-c3362e384b6c.postman_collection.json
+
+// Returns the full information for a given episode id. __Deprecation Warning:__ The _director_ key will be deprecated in favor of the new _directors_ key in a future release.
+
+@name("episodes.id.get")
+GET "https://{{baseUrl}}/episodes/:id"
+? "No Name"= "<string>"
+
+
+// Returns a session token to be included in the rest of the requests. Note that API key authentication is required for all subsequent requests and user auth is required for routes in the `User` section
+
+@name("login.post")
+POST "https://{{baseUrl}}/login"
+
+
+// Refreshes your current, valid JWT token and returns a new token. Hit this route so that you do not have to post to `/login` with your API key and credentials once you have already been authenticated.
+
+@name("/refresh_token")
+GET "https://{{baseUrl}}/refresh_token"
+
+
+

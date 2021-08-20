@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ac6561cd-0334-4ee5-8280-57b4086d4c3d.postman_collection.json
+
+// Commit Comments use [these custom media types](https://developer.github.com/v3/repos/comments/#custom-media-types). You can read more about the use of media types in the API [here](https://developer.github.com/v3/media/).
+// 
+// Comments are ordered by ascending ID.
+
+@name("List commit comments for a repository")
+GET "https://{{baseUrl}}/repos/:owner/:repo/comments"
+? "per_page"= "30"
+? "page"= "1"
+
+
+

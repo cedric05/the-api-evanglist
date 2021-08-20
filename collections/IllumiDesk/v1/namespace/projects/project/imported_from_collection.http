@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-dbaaeac4-235b-44c3-ba85-7fe9c62e50ba.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+
+
+@name("Delete a project") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/v1/:namespace/projects/:project/"
+
+
+@name("Get a project") : "base-inherit-auth"
+GET "https://{{baseUrl}}/v1/:namespace/projects/:project/"
+
+
+@name("Update a project") : "base-inherit-auth"
+PATCH "https://{{baseUrl}}/v1/:namespace/projects/:project/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "description": "<string>",
+    "private": "<boolean>"
+})
+
+
+@name("Replace a project") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/v1/:namespace/projects/:project/"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "description": "<string>",
+    "private": "<boolean>"
+})
+
+
+

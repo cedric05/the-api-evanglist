@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-71dc10b3-f029-4b25-babb-89e812c0b947.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{bearer_token}}"
+
+
+// Search for GitHub issues.
+
+@name("Search Issues") : "base-inherit-auth"
+GET "https://api.github.com/search/issues"
+"Accept": "application/json"
+"User-Agent": "API-Evangelist-Network"
+? "q"= "postman"
+
+
+

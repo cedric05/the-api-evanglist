@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92585ca3-4af5-4f55-9f95-f80c9040e561.postman_collection.json
+
+// This endpoint has two main use cases:nn- If no query parameters passed in, it returns a list of stations that are geographically closest to the calling client (based on GeoIP information)n- If one or more query parameters are passed in, it performs a search of NPR stations that match those search criteria (not taking into account the client's physical location)nnClients wanting to implement a 'Change Station' UI should use this endpoint to power their search. In most cases, you'll want to build 
+
+@name("List stations close to you or filter by search criteria")
+GET "https://{{baseUrl}}/stationfinder/v3/stations"
+? "q"= "<>"
+? "city"= "<get>"
+? "state"= "<get>"
+? "lat"= "<get>"
+? "lon"= "<get>"
+
+
+// This endpoint retrieves information about a given station, based on its numeric ID, which is consistent across all of NPR's APIs.nnA typical use case for this data is for clients who want to create a dropdown menu, modal/pop-up or dedicated page displaying more information about the station the client is localized to, including, for example, links to the station's homepage and donation (pledge) page.
+
+@name("Retrieve metadata for the station with the given numeric ID")
+GET "https://{{baseUrl}}/stationfinder/v3/stations/:stationId"
+
+
+

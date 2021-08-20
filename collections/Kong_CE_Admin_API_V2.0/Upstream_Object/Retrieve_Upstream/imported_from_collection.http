@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7220de83-d124-4fe7-bf21-ae3a128a5b57.postman_collection.json
+
+// # Retrieve Upstream [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-upstream-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>upstream name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Upstream to retrieve.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Upstream")
+GET "https://{{gateway}}/upstreams/:upstreamNameOrId"
+
+
+// # Retrieve Upstream Associated to a Specific Target [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-upstream-associated-to-a-specific-target)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>target host:port or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the host:port of the Target associated to the Upstream to be retrieved.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Upstream Associated to a Specific Target")
+GET "https://{{gateway}}/targets/:targetHost:portOrId/upstream"
+
+
+

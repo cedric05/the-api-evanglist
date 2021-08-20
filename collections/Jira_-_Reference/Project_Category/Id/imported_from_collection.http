@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc40b3de-1093-44e1-94c4-498c2fe3c9bb.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+basicauth("{{atlassian_email}}", "{{atlassian_token}}")
+
+
+// Returns a project category.
+// 
+// **[Permissions](#permissions) required:** Permission to access Jira.
+
+@name("Get Project Category By Id") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rest/api/3/projectCategory/:id"
+
+
+// Updates a project category.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Update Project Category") : "base-inherit-auth"
+PUT "https://{{baseUrl}}/rest/api/3/projectCategory/:id"
+"Content-Type": "application/json"
+json({
+    "name": "<string>",
+    "description": "<string>"
+})
+
+
+// Deletes a project category.
+// 
+// **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
+
+@name("Delete Project Category") : "base-inherit-auth"
+DELETE "https://{{baseUrl}}/rest/api/3/projectCategory/:id"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-da56505c-d9c4-439c-8d65-62c4dc15cbbc.postman_collection.json
+
+// Get a summary report of engagement for the account. Note:  Engagement reports are only available for periods within the past 32 days. Requests outside that range will return an error The only parameters supported for Engagement reports are from and to Engagement reports are available for single accounts only - reports on multiple accounts will not work  
+
+@name("Get Account Engagement")
+GET "https://{{baseUrl}}/engagement/accounts/:account_id"
+
+
+// Get a summary report of engagement for a player. Note:  Engagement reports are only available for periods within the past 32 days. Requests outside that range will return an error The only parameters supported for Engagement reports are from and to Engagement reports are available for single accounts only - reports on multiple accounts will not work  
+
+@name("Get Player Engagement")
+GET "https://{{baseUrl}}/engagement/accounts/:account_id/players/:player_id"
+
+
+// Get a summary report of engagement for a video. Note:  Engagement reports are only available for periods within the past 32 days. Requests outside that range will return an error The only parameters supported for Engagement reports are from and to Engagement reports are available for single accounts only - reports on multiple accounts will not work  
+
+@name("Get Video Engagement")
+GET "https://{{baseUrl}}/engagement/accounts/:account_id/videos/:video_id"
+
+
+

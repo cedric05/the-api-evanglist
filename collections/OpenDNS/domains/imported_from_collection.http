@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fced5fea-e845-4ddb-a1c4-08a1c4724c29.postman_collection.json
+
+// To gather the lists of domains already added to the shared customer???s domain list, run a GET request against the domains endpoint of the API.
+
+@name("Get Domains")
+GET "https://{{baseUrl}}/domains"
+
+
+// This API method returns the domain status, which the quickest and easiest way to know whether a domain has been flagged as malicious by the OpenDNS Security Labs team (score of -1 for status), if it is believed to be safe (score of 1), or if it has yet to be given a status (score of 0). 
+
+@name("Domain Status and Categorization")
+GET "https://{{baseUrl}}/domains/categories/"
+
+
+// This API method is the quickest and easiest way to know whether a domain has been flagged as malicious by the OpenDNS security team (score of -1), if it is believed to be safe (score of 1), or if it hasn't been categorized yet (score of 0).
+
+@name("Domain Scores")
+GET "https://{{baseUrl}}/domains/score/:domain"
+
+
+// This endpoint returns the date range when the domain being queried was a part of the OpenDNS block list. A common use case is to find how long a domain has been in the block list for domains being blocked currently. However it will also show a record of the history of the domain in the OpenDNS blocklis
+
+@name("Tagging")
+GET "https://{{baseUrl}}/domains/:name/latest_tags"
+
+
+

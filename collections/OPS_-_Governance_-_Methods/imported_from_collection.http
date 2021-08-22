@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c3d25b31-7e45-4c5d-bcfb-f030bd598da1.postman_collection.json
+
+// Checks to see if all methods have summaries written for them.
+
+@name("Do all methods have summaries?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// Make sure all methods have some tags.
+
+@name("Do all methods have tags?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// Checks to see if all methods have descriptions written for them, and checks the length.
+
+@name("Do all methods have descriptions?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// Checks to see if all methods have operationIds written for them.
+
+@name("Do all methods have operation ids?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+

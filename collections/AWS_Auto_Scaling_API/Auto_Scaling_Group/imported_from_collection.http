@@ -1,0 +1,71 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4daf4441-eb91-41fe-b023-1dfb7909acdb.postman_collection.json
+
+@name("Create Auto Scaling Group")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AutoScalingGroupName"= ""
+? "AvailabilityZones.member.N"= ""
+? "DefaultCooldown"= ""
+? "DesiredCapacity"= ""
+? "HealthCheckGracePeriod"= ""
+? "HealthCheckType"= ""
+? "InstanceId"= ""
+? "LaunchConfigurationName"= ""
+? "LaunchTemplate"= ""
+? "LifecycleHookSpecificationList.member.N"= ""
+? "LoadBalancerNames.member.N"= ""
+? "MaxSize"= ""
+? "MinSize"= ""
+? "MixedInstancesPolicy"= ""
+? "NewInstancesProtectedFromScaleIn"= ""
+? "PlacementGroup"= ""
+? "ServiceLinkedRoleARN"= ""
+? "Tags.member.N"= ""
+? "TargetGroupARNs.member.N"= ""
+? "TerminationPolicies.member.N"= ""
+? "VPCZoneIdentifier"= ""
+? "Action"= "CreateAutoScalingGroup"
+
+
+@name("Delete Auto Scaling Group")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AutoScalingGroupName"= ""
+? "ForceDelete"= ""
+? "Action"= "DeleteAutoScalingGroup"
+
+
+@name("Describe Auto Scaling Groups")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AutoScalingGroupNames.member.N"= ""
+? "MaxRecords"= ""
+? "NextToken"= ""
+? "Action"= "DescribeAutoScalingGroups"
+
+
+@name("Update Auto Scaling Group")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AutoScalingGroupName"= ""
+? "AvailabilityZones.member.N"= ""
+? "DefaultCooldown"= ""
+? "DesiredCapacity"= ""
+? "HealthCheckGracePeriod"= ""
+? "HealthCheckType"= ""
+? "LaunchConfigurationName"= ""
+? "LaunchTemplate"= ""
+? "MaxSize"= ""
+? "MinSize"= ""
+? "MixedInstancesPolicy"= ""
+? "NewInstancesProtectedFromScaleIn"= ""
+? "PlacementGroup"= ""
+? "ServiceLinkedRoleARN"= ""
+? "TerminationPolicies.member.N"= ""
+? "VPCZoneIdentifier"= ""
+? "Action"= "UpdateAutoScalingGroup"
+
+
+

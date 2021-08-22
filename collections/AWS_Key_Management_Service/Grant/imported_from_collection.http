@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3df65b62-a809-4d01-884b-b673ce0b5a70.postman_collection.json
+
+@name("Create Grant")
+POST "https://{{aws_key_management_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_key_management_service_service}}", region="{{aws_key_management_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "TrentService.CreateGrant"
+? "Version"= "2014-11-01"
+data('{"Constraints":{"EncryptionContextEquals":{"string":"string"},"EncryptionContextSubset":{"string":"string"}},"GranteePrincipal":"string","GrantTokens":["string"],"KeyId":"string","Name":"string","Operations":["string"],"RetiringPrincipal":"string"}')
+
+
+@name("List Grants")
+POST "https://{{aws_key_management_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_key_management_service_service}}", region="{{aws_key_management_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "TrentService.ListGrants"
+? "Version"= "2014-11-01"
+data('{"KeyId":"string","Limit":42,"Marker":"string"}')
+
+
+@name("Retire Grant")
+POST "https://{{aws_key_management_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_key_management_service_service}}", region="{{aws_key_management_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "TrentService.RetireGrant"
+? "Version"= "2014-11-01"
+data('{"GrantId":"string","GrantToken":"string","KeyId":"string"}')
+
+
+@name("Revoke Grant")
+POST "https://{{aws_key_management_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_key_management_service_service}}", region="{{aws_key_management_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "TrentService.RevokeGrant"
+? "Version"= "2014-11-01"
+data('{"GrantId":"string","KeyId":"string"}')
+
+
+

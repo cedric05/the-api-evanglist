@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Browse regions by country.
+
+@name("Get Tv Media Regions")
+GET "https://{{baseUrl}}/TvMedia/lineups/browse/:CountryID"
+? "TvMediaApiKey"= "<get>"
+
+
+

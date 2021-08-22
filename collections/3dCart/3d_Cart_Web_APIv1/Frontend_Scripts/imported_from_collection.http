@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all Frontend Scripts
+
+@name("Get all Frontend Scripts")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/FrontendScripts"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+
+
+@name("This method is used to update a single frontend script record in the database. The {frontendscriptid} parameter specifies which frontendscript record to update.")
+PUT "https://{{baseUrl}}/3dCartWebAPI/v1/FrontendScripts/:frontendscriptid"
+
+
+// Get a Frontend Script
+
+@name("Get a Frontend Script")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/FrontendScripts/:id"
+
+
+

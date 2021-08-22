@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aae3264c-1b30-4227-9429-291e0bd8acbe.postman_collection.json
+
+@name("Delete Parameter")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Name":"string"}')
+
+
+@name("Delete Parameters")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Names":["string"]}')
+
+
+@name("Describe Parameters")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Filters":[{"Key":"string","Values":["string"]}],"MaxResults":1,"NextToken":"string","ParameterFilters":[{"Key":"string","Option":"string","Values":["string"]}]}')
+
+
+@name("Get Parameter")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Name":"string","WithDecryption":1}')
+
+
+@name("Get Parameters")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Names":["string"],"WithDecryption":1}')
+
+
+@name("Put Parameter")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"AllowedPattern":"string","Description":"string","KeyId":"string","Name":"string","Overwrite":1,"Policies":"string","Tags":[{"Key":"string","Value":"string"}],"Tier":"string","Type":"string","Value":"string"}')
+
+
+

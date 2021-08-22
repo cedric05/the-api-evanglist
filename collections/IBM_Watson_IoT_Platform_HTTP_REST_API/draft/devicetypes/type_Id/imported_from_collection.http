@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Performs the specified operation against the draft device type. The
+// following values can be specified for the operation property:
+// 
+//   - validate-configuration
+//   - activate-configuration
+//   - list-differences
+// 
+// The **validate-configuration** operation will analyze all of the 
+// configuration associated with the draft device type to determine if it
+// is valid.  If the configuration is invalid, a list of the issues will
+// be returned in the body of the response.  
+//  
+// The **activate-configuration** operation 
+
+@name("Perform an operation against a draft device type")
+PATCH "https://{{baseUrl}}/draft/device/types/:typeId"
+
+
+// Retrieve the draft physical interface that has been associated with the
+// device type.  At least one active physical interface must be associated
+// with the device type before any mappings can be defined that will
+// generate state for the device.
+
+@name("Get the draft physical interface associated with the device type
+")
+GET "https://{{baseUrl}}/draft/device/types/:typeId/physicalinterface"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns UsageRecords for all usage categories for a specified period.
+
+@name("/Accounts/:AccountSid/Usage/Records/{{Subresource}}{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Usage/Records/{{Subresource}}{{mediaTypeExtension}}"
+
+
+// Returns UsageRecords for all usage categories for a specified period.
+
+@name("Accounts.Account Sid.Usage.Records.Subresource.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Usage/Records/{{Subresource}}.json"
+
+
+

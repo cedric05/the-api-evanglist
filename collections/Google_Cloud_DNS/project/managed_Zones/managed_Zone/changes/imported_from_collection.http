@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04144c4b-1296-424d-8a98-b2ae6373c414.postman_collection.json
+
+// Enumerate Changes to a ResourceRecordSet collection.
+
+@name("List Managed Zone Changes")
+GET "https://{{baseUrl}}/:project/managedZones/:managedZone/changes"
+? "maxResults"= "<>"
+? "pageToken"= "<>"
+? "sortBy"= "<>"
+? "sortOrder"= "<>"
+
+
+// Fetch the representation of an existing Change.
+
+@name("Get Managed Zone Change")
+GET "https://{{baseUrl}}/:project/managedZones/:managedZone/changes/:changeId"
+
+
+

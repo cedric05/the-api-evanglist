@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b30fdb4-df71-430c-bca5-582cc0c9e09b.postman_collection.json
+
+@name("Associate Elastic Ip")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"ElasticIp":"string","InstanceId":"string"}')
+
+
+@name("Deregister Elastic Ip")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"ElasticIp":"string"}')
+
+
+@name("Describe Elastic Ips")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"InstanceId":"string","Ips":["string"],"StackId":"string"}')
+
+
+@name("Disassociate Elastic Ip")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"ElasticIp":"string"}')
+
+
+@name("Register Elastic Ip")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"ElasticIp":"string","StackId":"string"}')
+
+
+@name("Update Elastic Ip")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"ElasticIp":"string","Name":"string"}')
+
+
+

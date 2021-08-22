@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve a list of all of the IP addresses that recently attempted to access your account either through the User Interface or the API.**
+// 
+// IP Access Management allows you to control which IP addresses can be used to access your account, either through the User Interface or the API. There is no limit to the number of IP addresses that you can add to your whitelist. It is possible to remove your own IP address from the whitelist, thus preventing yourself from accessin
+
+@name("Retrieve all recent access attempts")
+GET "https://{{baseUrl}}/access_settings/activity"
+? "limit"= "<string>"
+
+
+// **This endpoint allows you to remove one or more IPs from your IP whitelist.**
+// 
+// You can remove one IP at a time, or you can remove multiple IP addresses.
+// 
+// IP Access Management allows you to control which IP addresses can be used to access your account, either through the User Interface or the API. There is no limit to the number of IP addresses that you can add to your whitelist. It is possible to remove your own IP address from the whitelist, thus preventing yourself from accessing your account
+
+@name("Remove one or more IPs from the whitelist")
+DELETE "https://{{baseUrl}}/access_settings/whitelist"
+
+
+

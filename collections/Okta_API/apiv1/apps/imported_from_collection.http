@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9a62c01e-3db2-4f66-b90d-a4df9dd9bd07.postman_collection.json
+
+// Enumerates apps added to your organization with pagination. A subset of apps can be returned that match a supported filter expression or query.
+
+@name("List Applications")
+GET "https://{{baseUrl}}/api/v1/apps"
+? "q"= "<string>"
+? "after"= "<string>"
+? "limit"= "<integer>"
+? "filter"= "<string>"
+? "expand"= "<string>"
+? "includeNonDeleted"= "<boolean>"
+
+
+

@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b30fdb4-df71-430c-bca5-582cc0c9e09b.postman_collection.json
+
+@name("Deregister Rds Db Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"RdsDbInstanceArn":"string"}')
+
+
+@name("Describe Rds Db Instances")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"RdsDbInstanceArns":["string"],"StackId":"string"}')
+
+
+@name("Register Rds Db Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"DbPassword":"string","DbUser":"string","RdsDbInstanceArn":"string","StackId":"string"}')
+
+
+@name("Update Rds Db Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"DbPassword":"string","DbUser":"string","RdsDbInstanceArn":"string"}')
+
+
+

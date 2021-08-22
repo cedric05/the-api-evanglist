@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+// Fetch the logs drains for a given application
+
+@name("/logs/:appId/drains")
+GET "https://{{baseUrl}}/logs/:appId/drains"
+
+
+// Delete the logs drain by id or url for a given application
+
+@name("/logs/:appId/drains/:idOrUrl")
+DELETE "https://{{baseUrl}}/logs/:appId/drains/:idOrUrl"
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-06beb3cb-4f39-40cc-ab55-114f4f94f4b4.postman_collection.json
+
+@name("Get Stack Policy")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "StackName"= ""
+? "Action"= "GetStackPolicy"
+
+
+@name("Set Stack Policy")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "StackName"= ""
+? "StackPolicyBody"= ""
+? "StackPolicyURL"= ""
+? "Action"= "SetStackPolicy"
+
+
+

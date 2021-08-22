@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-44a69619-6168-45bc-9420-85958f4a9d7c.postman_collection.json
+
+@name("List Resources For Web ACL")
+POST "https://{{aws_waf_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_waf_service}}", region="{{aws_waf_region}}")
+? "Version"= "2019-07-29"
+data('{"ResourceType":"string","WebACLArn":"string"}')
+
+
+

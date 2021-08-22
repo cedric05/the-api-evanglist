@@ -1,0 +1,63 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Returns an inventory configuration (identified by the inventory configuration ID) from the bucket. 
+
+@name("Bucket Inventory Configuration")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "inventory"= ""
+
+
+// Deletes an inventory configuration (identified by the inventory ID) from the bucket.
+
+@name("Delete Bucket Inventory Configuration")
+DELETE "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+? "inventory"= ""
+? "Id"= "test-inventory"
+
+
+
+// This implementation of the PUT operation adds an inventory configuration (identified by the inventory ID) to the bucket. You can have up to 1,000 inventory configurations per bucket. 
+
+@name("Bucket Inventory Configuration")
+PUT "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+? "inventory"= ""
+? "Id"= "{{Id}}"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<InventoryConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <Destination>
+      <S3BucketDestination>
+         <AccountId>string</AccountId>
+         <Bucket>string</Bucket>
+         <Encryption>
+            <SSE-KMS>
+               <KeyId>string</KeyId>
+            </SSE-KMS>
+            <SSE-S3>
+            </SSE-S3>
+         </Encryption>
+         <Format>string</Format>
+         <Prefix>string</Prefix>
+      </S3BucketDestination>
+   </Destination>
+   <IsEnabled>boolean</IsEnabled>
+   <Filter>
+      <Prefix>string</Prefix>
+   </Filter>
+   <Id>test-inventory</Id>
+   <IncludedObjectVersions>string</IncludedObjectVersions>
+   <OptionalFields>
+      <Field>string</Field>
+   </OptionalFields>
+   <Schedule>
+      <Frequency>string</Frequency>
+   </Schedule>
+</InventoryConfiguration>')
+
+
+

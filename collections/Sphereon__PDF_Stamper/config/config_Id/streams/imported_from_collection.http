@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cfd5624c-b930-4725-aa14-55f9a44206d1.postman_collection.json
+
+// Delete resources referenced by a configuration.
+
+@name("Delete resources")
+DELETE "https://{{baseUrl}}/config/:configId/streams"
+
+
+// Upload a resource needed by a configuration.
+
+@name("Upload resource")
+POST "https://{{baseUrl}}/config/:configId/streams/multipart"
+
+
+

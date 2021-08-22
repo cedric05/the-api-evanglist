@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes the ID format settings for your resources on a per-Region basis, for example,
+//                         to view which resource types are enabled for longer IDs.
+
+@name("Describe ID Format")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Resource"= ""
+? "Action"= "DescribeIdFormat"
+
+
+// Modifies the ID format for the specified resource on a per-Region basis.
+
+@name("Modify ID Format")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Resource"= ""
+? "UseLongIds"= ""
+? "Action"= "ModifyIdFormat"
+
+
+

@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("get Products Countries")
+GET "https://{{baseUrl}}/products/countries"
+
+
+@name("get Products Countrycodes")
+GET "https://{{baseUrl}}/products/countrycodes"
+
+
+@name("/products/mfa_kinds")
+GET "https://{{baseUrl}}/products/mfa_kinds"
+
+
+@name("get Products Packages")
+GET "https://{{baseUrl}}/products/packages"
+? "coupon"= "<string>"
+? "orgaId"= "<string>"
+? "currency"= "<string>"
+
+
+@name("get Products Prices")
+GET "https://{{baseUrl}}/products/prices"
+
+
+@name("get Products Zones")
+GET "https://{{baseUrl}}/products/zones"
+
+
+

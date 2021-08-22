@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Delete C A Certificate")
+GET "https://{{aws_internet_of_things_base_url}}/cacertificate/caCertificateId&caCertificateId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Describe C A Certificate")
+GET "https://{{aws_internet_of_things_base_url}}/cacertificate/caCertificateId&caCertificateId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List C A Certificates")
+GET "https://{{aws_internet_of_things_base_url}}/cacertificates"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Register C A Certificate")
+GET "https://{{aws_internet_of_things_base_url}}/cacertificate"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Update C A Certificate")
+GET "https://{{aws_internet_of_things_base_url}}/cacertificate/caCertificateId"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

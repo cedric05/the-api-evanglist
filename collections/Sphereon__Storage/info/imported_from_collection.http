@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-46125f15-bb1b-4d2c-bf33-03dd3d0b91fa.postman_collection.json
+
+// Returns Stream(s) information from the given Stream Location. When the path points to a file and if the file exists, a StreamInfo record of that single file will be returned. When the path points to a folder, the StreamInfo records of all files in that folder will be returned.
+
+@name("List streams from location")
+POST "https://{{baseUrl}}/info/location"
+
+
+

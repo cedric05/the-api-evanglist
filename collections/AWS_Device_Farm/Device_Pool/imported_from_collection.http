@@ -1,0 +1,73 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b8e673bd-409c-4ff2-af9c-bb3a976bd9dd.postman_collection.json
+
+@name("Create Device Pool")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "CreateDevicePool"
+data('{
+   "description": "string",
+   "maxDevices": number,
+   "name": "string",
+   "projectArn": "string",
+   "rules": [ 
+      { 
+         "attribute": "string",
+         "operator": "string",
+         "value": "string"
+      }
+   ]
+}')
+
+
+@name("Delete Device Pool")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "DeleteDevicePool"
+data('{
+   "arn": "string"
+}')
+
+
+@name("Get Device Pool")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "GetDevicePool"
+data('{
+   "arn": "string"
+}')
+
+
+@name("List Device Pools")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "ListDevicePools"
+data('{
+   "arn": "string",
+   "nextToken": "string",
+   "type": "string"
+}')
+
+
+@name("Update Device Pool")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "UpdateDevicePool"
+data('{
+   "arn": "string",
+   "clearMaxDevices": boolean,
+   "description": "string",
+   "maxDevices": number,
+   "name": "string",
+   "rules": [ 
+      { 
+         "attribute": "string",
+         "operator": "string",
+         "value": "string"
+      }
+   ]
+}')
+
+
+

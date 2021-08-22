@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9578ff80-ee49-47b6-90ea-3cb100ff29d7.postman_collection.json
+
+// Search for a specified delegate in the system.
+
+@name("Requests delegates data")
+GET "https://{{baseUrl}}/delegates"
+? "address"= "<x-swagger-pipe>"
+? "publicKey"= "<x-swagger-pipe>"
+? "secondPublicKey"= "<x-swagger-pipe>"
+? "username"= "<x-swagger-pipe>"
+? "offset"= "<>"
+? "limit"= "<x-swagger-pipe>"
+? "search"= "<>"
+? "sort"= "<>"
+
+
+// Returns a list of the next forgers in this delegate round.
+
+@name("Requests next forgers data")
+GET "https://{{baseUrl}}/delegates/forgers"
+? "offset"= "<>"
+? "limit"= "<x-swagger-pipe>"
+
+
+// By passing an existing delegate address and the desired unix timestamps, you can get its forging statistics within the specified timespan.
+// If no timestamps are provided, it will use the timestamps from Lisk epoch to current date.
+
+@name("Requests forging stats by delegate")
+GET "https://{{baseUrl}}/delegates/:address/forging_statistics"
+? "fromTimestamp"= "<x-swagger-pipe>"
+? "toTimestamp"= "<x-swagger-pipe>"
+
+
+

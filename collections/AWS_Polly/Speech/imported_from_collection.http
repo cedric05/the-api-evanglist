@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-80914009-da3a-44aa-83ea-5d6e264d6d71.postman_collection.json
+
+@name("Synthesize Speech")
+POST "https://{{aws_polly_base_url}}/v1/speech"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_polly_service}}", region="{{aws_polly_region}}")
+data('{
+   "Engine": "string",
+   "LanguageCode": "string",
+   "LexiconNames": [ "string" ],
+   "OutputFormat": "string",
+   "SampleRate": "string",
+   "SpeechMarkTypes": [ "string" ],
+   "Text": "string",
+   "TextType": "string",
+   "VoiceId": "string"
+}')
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve queue details for an organization pipeline
+
+@name("get Pipeline Queue")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/queue"
+? "No Name"= "<string>"
+
+
+// Delete queue item from an organization pipeline queue
+
+@name("delete Pipeline Queue Item")
+DELETE "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/queue/:queue"
+? "No Name"= "<string>"
+
+
+

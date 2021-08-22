@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e4a472a1-7d82-4a3c-b4e1-85e0dad2e1ca.postman_collection.json
+
+@name("Cancel Schema Extension")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.CancelSchemaExtension"
+? "Action"= "CancelSchemaExtension"
+data('{"DirectoryId":"string","SchemaExtensionId":"string"}')
+
+
+@name("List Schema Extensions")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.ListSchemaExtensions"
+? "Action"= "ListSchemaExtensions"
+data('null')
+
+
+@name("Start Schema Extension")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.StartSchemaExtension"
+? "Action"= "StartSchemaExtension"
+data('{"CreateSnapshotBeforeSchemaExtension":1,"Description":"string","DirectoryId":"string","LdifContent":"string"}')
+
+
+

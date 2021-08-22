@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// This call fetches details about the all the API Versions in the specified API.
+// 
+// The response will contain an array `versions` object which would be a list of all the API Version along with their details.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get All API Versions")
+GET "https://{{baseUrl}}/apis/:apiId/versions"
+
+
+

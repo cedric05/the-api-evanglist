@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("By Id Sdk Type")
+GET "https://{{aws_api_gateway_base_url}}/sdktypes/{sdktype_id}&sdktype_id="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "sdktype_id"= ""
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Returns a AllPeopleResponse object containing a list of all poeple.
+
+@name("Gets all People.")
+GET "https://{{baseUrl}}/People/All"
+? "Take"= "<get>"
+? "Skip"= "<get>"
+? "Includes"= "<get>"
+
+
+// Find person using name ordered by rank.
+
+@name("Find Person by Name ordered by rank.")
+GET "https://{{baseUrl}}/People/RankedSearch/"
+? "StartsWith"= "<get>"
+
+
+

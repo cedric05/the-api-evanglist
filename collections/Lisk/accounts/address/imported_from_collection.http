@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9578ff80-ee49-47b6-90ea-3cb100ff29d7.postman_collection.json
+
+// Searches for the specified account in the system and responds with a list of the multisignature groups that this account is member of.
+
+@name("Requests multisignature groups data")
+GET "https://{{baseUrl}}/accounts/:address/multisignature_groups"
+
+
+// Searches for the specified multisignature group and responds with a list of all members of this particular multisignature group.
+
+@name("Requests multisignature membership data")
+GET "https://{{baseUrl}}/accounts/:address/multisignature_memberships"
+
+
+

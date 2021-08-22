@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39359504-af25-4f48-954b-e7dd332ed9ff.postman_collection.json
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Get events for given fitlers")
+GET "https://{{baseUrl}}/api/v1/ActivityEvents"
+? "filters.from"= "<>"
+? "filters.to"= "<>"
+? "filters.linkkey"= "<>"
+? "Filters.logicbrokerKey"= "<>"
+? "Filters.documentType"= "<>"
+? "Filters.typeId"= "<>"
+? "Filters.category"= "<>"
+? "Filters.level"= "<>"
+? "filters.page"= "<>"
+? "Filters.senderId"= "<>"
+? "Filters.receiverId"= "<>"
+? "Filters.processed"= "<>"
+? "Filters.viewed"= "<>"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Gets the event with the specified id.")
+GET "https://{{baseUrl}}/api/v1/ActivityEvents/:EventId"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Gets a list of all possible event types.")
+GET "https://{{baseUrl}}/api/v1/ActivityEvents/EventTypes"
+
+
+

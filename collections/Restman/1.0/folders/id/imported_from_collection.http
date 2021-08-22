@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e67b3188-27a3-4cc3-85ac-f2a6f45a3e20.postman_collection.json
+
+// Returns a folder with the given ID.
+// Get
+
+@name("List Folders By ID")
+GET "https://{{baseUrl}}/1.0/folders/:id"
+
+
+// Returns the list of dependencies for this entity.
+// Get Dependencies
+// Get Dependencies
+
+@name("List Folders Dependencies By ID")
+GET "https://{{baseUrl}}/1.0/folders/:id/dependencies"
+? "level"= "<integer>"
+
+
+

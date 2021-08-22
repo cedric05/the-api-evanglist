@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-368303e5-e89c-4c85-9f24-89604973b34f.postman_collection.json
+
+// The detailed activity log api allows you to get detailed information from your activity log on the emails that you have sent. Information can be narrowed by email status, channel and datetime.
+
+@name("Log Activity")
+GET "https://{{baseUrl}}/mailer/status/log"
+? "api_key"= "<>"
+? "channel"= "<>"
+? "compress"= "<>"
+? "format"= "<>"
+? "from"= "<>"
+? "status"= "<>"
+? "to"= "<>"
+? "username"= "<>"
+
+
+// Get the status of an email message
+
+@name("Get Status")
+GET "https://{{baseUrl}}/mailer/status/:message_id"
+? "api_key"= "<>"
+? "showdelivered"= "<>"
+? "showdetails"= "<>"
+? "showerrors"= "<>"
+? "showfailed"= "<>"
+? "showpending"= "<>"
+? "showstats"= "<>"
+? "username"= "<>"
+
+
+

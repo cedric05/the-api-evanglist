@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0b8cbe34-0af1-44a6-992a-ffe13940e455.postman_collection.json
+
+@name("Add Application Input")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "AddApplicationInput"
+data('{"ApplicationName":"string","CurrentApplicationVersionId":42,"Input":{"InputParallelism":{"Count":42},"InputProcessingConfiguration":{"InputLambdaProcessor":{"ResourceARN":"string","RoleARN":"string"}},"InputSchema":{"RecordColumns":[{"Mapping":"string","Name":"string","SqlType":"string"}],"RecordEncoding":"string","RecordFormat":{"MappingParameters":{"CSVMappingParameters":{"RecordColumnDelimiter":"string","RecordRowDelimiter":"string"},"JSONMappingParameters":{"RecordRowPath":"string"}},"RecordFormatType":"string"}},"KinesisFirehoseInput":{"ResourceARN":"string","RoleARN":"string"},"KinesisStreamsInput":{"ResourceARN":"string","RoleARN":"string"},"NamePrefix":"string"}}')
+
+
+

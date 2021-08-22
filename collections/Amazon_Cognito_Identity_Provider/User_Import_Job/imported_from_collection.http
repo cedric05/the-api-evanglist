@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8631617c-c1ed-4e14-b0cd-77e4410753c4.postman_collection.json
+
+@name("Create User Import Job")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "CreateUserImportJob"
+data('{
+   "CloudWatchLogsRoleArn": "string",
+   "JobName": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Describe User Import Job")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DescribeUserImportJob"
+data('{
+   "JobId": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("List User Import Jobs")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "ListUserImportJobs"
+data('{
+   "MaxResults": number,
+   "PaginationToken": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Start User Import Job")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "StartUserImportJob"
+data('{
+   "JobId": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Stop User Import Job")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "StopUserImportJob"
+data('{
+   "JobId": "string",
+   "UserPoolId": "string"
+}')
+
+
+

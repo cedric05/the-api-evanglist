@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-668125e0-f223-4e7f-a04d-833cc7d43d2f.postman_collection.json
+
+@name("Meter Usage")
+POST "https://{{aws_marketplace_metering_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_marketplace_metering_service_service}}", region="{{aws_marketplace_metering_service_region}}")
+? "Action"= "MeterUsage"
+data('{
+   "DryRun": boolean,
+   "ProductCode": "string",
+   "Timestamp": number,
+   "UsageDimension": "string",
+   "UsageQuantity": number
+}')
+
+
+@name("Register Usage")
+POST "https://{{aws_marketplace_metering_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_marketplace_metering_service_service}}", region="{{aws_marketplace_metering_service_region}}")
+? "Action"= "RegisterUsage"
+data('{
+    "ProductCode" : "cqcvf9f0ugw8rkbgmf1c9dxyz",
+    "PublicKeyVersion": 1,
+    "Nonce": "2ead20e4-3e6d-42cd-8f56-24f02d1cc4e1"
+}')
+
+
+

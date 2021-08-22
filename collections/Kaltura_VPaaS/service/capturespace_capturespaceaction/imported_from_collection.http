@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Returns latest version and URL
+
+@name("Get Service Capturespace Capturespace Action Clientupdates")
+GET "https://{{baseUrl}}/service/capturespace_capturespace/action/clientUpdates"
+? "os"= "<>"
+? "version"= "<>"
+? "hashAlgorithm"= "<>"
+
+
+// Serve installation file
+
+@name("Get Service Capturespace Capturespace Action Serveinstall")
+GET "https://{{baseUrl}}/service/capturespace_capturespace/action/serveInstall"
+? "os"= "<>"
+
+
+// Serve update file
+
+@name("Get Service Capturespace Capturespace Action Serveupdate")
+GET "https://{{baseUrl}}/service/capturespace_capturespace/action/serveUpdate"
+? "os"= "<>"
+? "version"= "<>"
+
+
+

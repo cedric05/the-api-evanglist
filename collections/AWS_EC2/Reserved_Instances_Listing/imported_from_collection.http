@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.
+
+@name("Cancel Reserved Instances Listing")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ReservedInstancesListingId"= ""
+? "Action"= "CancelReservedInstancesListing"
+
+
+// Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in the Reserved
+//                         Instance
+//                         Marketplace.
+
+@name("Create Reserved Instances Listing")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "InstanceCount"= ""
+? "PriceSchedules.N"= ""
+? "ReservedInstancesId"= ""
+? "Action"= "CreateReservedInstancesListing"
+
+
+// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
+
+@name("Describe Reserved Instances Listings")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Filter.N"= ""
+? "ReservedInstancesId"= ""
+? "ReservedInstancesListingId"= ""
+? "Action"= "DescribeReservedInstancesListings"
+
+
+

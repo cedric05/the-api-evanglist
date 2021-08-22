@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c62e1baf-4a19-4992-b48d-038acd7dffea.postman_collection.json
+
+@name("Create Deployment Config")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.CreateDeploymentConfig"
+? "Action"= "CreateDeploymentConfig"
+data('{
+    "minimumHealthyHosts": {
+        "type": "HOST_COUNT",
+        "value": 1
+    },
+    "deploymentConfigName": "CustomConfig.One"
+}')
+
+
+@name("Delete Deployment Config")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.DeleteDeploymentConfig"
+? "Action"= "DeleteDeploymentConfig"
+data('{
+    "deploymentConfigName": "dep-group-ghi-789"
+}')
+
+
+@name("Get Deployment Config")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.BatchGetApplicationRevisions"
+? "Action"= "GetDeploymentConfig"
+data('{
+    "deploymentConfigName": "CodeDeployDefault.OneAtATime"
+}')
+
+
+@name("List Deployment Configs")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.BatchGetApplicationRevisions"
+? "Action"= "ListDeploymentConfigs"
+data('{
+	
+}')
+
+
+

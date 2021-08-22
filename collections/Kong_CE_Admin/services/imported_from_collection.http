@@ -1,0 +1,81 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// 
+// 
+// * Service entities, as the name implies, are abstractions of each of your own upstream services. Examples of Services would be a data transformation microservice, a billing API, etc.
+// * The main attribute of a Service is its URL (where Kong should proxy traffic to), which can be set as a single string or by specifying its protocol, host, port and path individually.
+// *Services are associated to Routes (a Service can have many Routes associated with it). Routes are entry-points in Kong and define 
+
+@name("Create Service")
+POST "https://{{baseUrl}}/services"
+
+
+// ## Retrieve Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-service-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>Service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Service to retrieve.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Service")
+GET "https://{{baseUrl}}/services/:serviceNameOrID"
+
+
+// # Create Plugin Associated to a Specific Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-plugin-associated-to-a-specific-service)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>service id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Service that should be associated to the newly-created Plugin.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table style
+
+@name("Create Plugin Associated to a Specific Service")
+POST "https://{{baseUrl}}/services/:serviceId/plugins"
+
+
+// # Create Plugin Associated to a Specific Consumer [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-plugin-associated-to-a-specific-consumer)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>consumer id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Consumer that should be associated to the newly-created Plugin.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table s
+
+@name("Create Plugin Associated to a Specific Consumer")
+POST "https://{{baseUrl}}/services/:consumerId/plugins"
+
+
+

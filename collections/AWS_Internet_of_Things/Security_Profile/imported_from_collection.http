@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Attach Security Profile")
+GET "https://{{aws_internet_of_things_base_url}}/security-profiles/securityProfileName/targets"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Create Security Profile")
+GET "https://{{aws_internet_of_things_base_url}}/security-profiles/securityProfileName&securityProfileName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Delete Security Profile")
+GET "https://{{aws_internet_of_things_base_url}}/security-profiles/securityProfileName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Describe Security Profile")
+GET "https://{{aws_internet_of_things_base_url}}/security-profiles/securityProfileName&securityProfileName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Detach Security Profile")
+GET "https://{{aws_internet_of_things_base_url}}/security-profiles/securityProfileName/targets"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List Security Profiles")
+GET "https://{{aws_internet_of_things_base_url}}/security-profiles"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Update Security Profile")
+GET "https://{{aws_internet_of_things_base_url}}/security-profiles/securityProfileName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

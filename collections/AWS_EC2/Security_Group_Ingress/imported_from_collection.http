@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Adds the specified ingress rules to a security group.
+
+@name("Authorize Security Group Ingress")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "CidrIp"= ""
+? "DryRun"= ""
+? "FromPort"= ""
+? "GroupId"= ""
+? "GroupName"= ""
+? "IpPermissions.N"= ""
+? "IpProtocol"= ""
+? "SourceSecurityGroupName"= ""
+? "SourceSecurityGroupOwnerId"= ""
+? "ToPort"= ""
+? "Action"= "AuthorizeSecurityGroupIngress"
+
+
+// Removes the specified ingress rules from a security group.
+
+@name("Revoke Security Group Ingress")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "CidrIp"= ""
+? "DryRun"= ""
+? "FromPort"= ""
+? "GroupId"= ""
+? "GroupName"= ""
+? "IpPermissions.N"= ""
+? "IpProtocol"= ""
+? "SourceSecurityGroupName"= ""
+? "SourceSecurityGroupOwnerId"= ""
+? "ToPort"= ""
+? "Action"= "RevokeSecurityGroupIngress"
+
+
+

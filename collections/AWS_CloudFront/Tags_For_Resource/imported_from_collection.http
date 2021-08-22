@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1ae65b12-94bd-40ca-acee-7a0cd4c3c799.postman_collection.json
+
+@name("List Tags For Resource")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/tagging"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Resource"= "Resource"
+
+
+

@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns a list of notifications generated for an account. The list includes
+// paging information.
+
+@name("/Accounts/:AccountSid/Calls/:CallSid/Notifications{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Calls/:CallSid/Notifications{{mediaTypeExtension}}"
+
+
+// Returns a list of Recording resource representations, each representing a
+// recording generated during the course of a phone call.
+
+@name("/Accounts/:AccountSid/Calls/:CallSid/Recordings{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Calls/:CallSid/Recordings{{mediaTypeExtension}}"
+
+
+// Returns a list of notifications generated for an account. The list includes
+// paging information.
+
+@name("Accounts.Account Sid.Calls.Call Sid.Notifications.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Calls/:CallSid/Notifications.json"
+
+
+// Returns a list of Recording resource representations, each representing a
+// recording generated during the course of a phone call.
+
+@name("Accounts.Account Sid.Calls.Call Sid.Recordings.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Calls/:CallSid/Recordings.json"
+
+
+

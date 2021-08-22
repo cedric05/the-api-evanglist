@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6e05af4d-ee68-4f32-a551-fee5ba52b262.postman_collection.json
+
+@name("Associate DRT Log Bucket")
+POST "https://{{aws_shield_advanced_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_shield_advanced_service}}", region="{{aws_shield_advanced_region}}")
+? "Version"= "2016-06-02"
+data('{"LogBucket":"string"}')
+
+
+

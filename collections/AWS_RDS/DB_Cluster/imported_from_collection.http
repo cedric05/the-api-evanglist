@@ -1,0 +1,70 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Backtrack DB Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "BacktrackTo"= "2019-10-01"
+? "Force"= "true"
+? "Action"= "BacktrackDBCluster"
+? "Version"= "2014-10-31"
+
+
+@name("Create DB Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "CreateDBCluster"
+? "Version"= "2014-10-31"
+
+
+@name("Delete DB Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "DeleteDBCluster"
+? "Version"= "2014-10-31"
+
+
+@name("Describe DB Clusters")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "DescribeDBClusters"
+? "Version"= "2014-10-31"
+
+
+@name("Failover DB Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "FailoverDBCluster"
+? "Version"= "2014-10-31"
+
+
+@name("Modify DB Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "ModifyDBCluster"
+? "Version"= "2014-10-31"
+
+
+@name("Start DB Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "StartDBCluster"
+? "Version"= "2014-10-31"
+
+
+@name("Stop DB Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_region}}", region="{{aws_rds_region}}")
+? "Action"= "StopDBCluster"
+? "Version"= "2014-10-31"
+
+
+@name("Describe DB Cluster Backtracks")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "DescribeDBClusterBacktracks"
+? "Version"= "2014-10-31"
+
+
+

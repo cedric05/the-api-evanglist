@@ -1,0 +1,158 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// activate CategoryUser
+
+@name("Get Service Categoryuser Action Activate")
+GET "https://{{baseUrl}}/service/categoryuser/action/activate"
+? "categoryId"= "<>"
+? "userId"= "<>"
+
+
+// Add new CategoryUser
+
+@name("Get Service Categoryuser Action Add")
+GET "https://{{baseUrl}}/service/categoryuser/action/add"
+? "categoryUser[categoryId]"= "<>"
+? "categoryUser[userId]"= "<>"
+? "categoryUser[permissionLevel]"= "<>"
+? "categoryUser[updateMethod]"= "<>"
+? "categoryUser[permissionNames]"= "<>"
+
+
+@name("Post Service Categoryuser Action Addfrombulkupload")
+POST "https://{{baseUrl}}/service/categoryuser/action/addFromBulkUpload"
+? "bulkUploadData[fileName]"= "<>"
+? "bulkUploadData[objectData][objectType]"= "<>"
+? "bulkUploadData[objectData][conversionProfileId]"= "<>"
+
+
+// Copy all memeber from parent category
+
+@name("Get Service Categoryuser Action Copyfromcategory")
+GET "https://{{baseUrl}}/service/categoryuser/action/copyFromCategory"
+? "categoryId"= "<>"
+
+
+// reject CategoryUser
+
+@name("Get Service Categoryuser Action Deactivate")
+GET "https://{{baseUrl}}/service/categoryuser/action/deactivate"
+? "categoryId"= "<>"
+? "userId"= "<>"
+
+
+// Delete a CategoryUser
+
+@name("Get Service Categoryuser Action Delete")
+GET "https://{{baseUrl}}/service/categoryuser/action/delete"
+? "categoryId"= "<>"
+? "userId"= "<>"
+
+
+// Get CategoryUser by id
+
+@name("Get Service Categoryuser Action Get")
+GET "https://{{baseUrl}}/service/categoryuser/action/get"
+? "categoryId"= "<>"
+? "userId"= "<>"
+
+
+// Index CategoryUser by userid and category id
+
+@name("Get Service Categoryuser Action Index")
+GET "https://{{baseUrl}}/service/categoryuser/action/index"
+? "userId"= "<>"
+? "categoryId"= "<>"
+? "shouldUpdate"= "<>"
+
+
+// List all categories
+
+@name("Get Service Categoryuser Action List")
+GET "https://{{baseUrl}}/service/categoryuser/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[categoryIdEqual]"= "<>"
+? "filter[categoryIdIn]"= "<>"
+? "filter[userIdEqual]"= "<>"
+? "filter[userIdIn]"= "<>"
+? "filter[permissionLevelEqual]"= "<>"
+? "filter[permissionLevelIn]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[updatedAtLessThanOrEqual]"= "<>"
+? "filter[updateMethodEqual]"= "<>"
+? "filter[updateMethodIn]"= "<>"
+? "filter[categoryFullIdsStartsWith]"= "<>"
+? "filter[categoryFullIdsEqual]"= "<>"
+? "filter[permissionNamesMatchAnd]"= "<>"
+? "filter[permissionNamesMatchOr]"= "<>"
+? "filter[permissionNamesNotContains]"= "<>"
+? "filter[categoryDirectMembers]"= "<>"
+? "filter[freeText]"= "<>"
+? "filter[relatedGroupsByUserId]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// Update CategoryUser by id
+
+@name("Get Service Categoryuser Action Update")
+GET "https://{{baseUrl}}/service/categoryuser/action/update"
+? "categoryId"= "<>"
+? "userId"= "<>"
+? "categoryUser[categoryId]"= "<>"
+? "categoryUser[userId]"= "<>"
+? "categoryUser[permissionLevel]"= "<>"
+? "categoryUser[updateMethod]"= "<>"
+? "categoryUser[permissionNames]"= "<>"
+? "override"= "<>"
+
+
+

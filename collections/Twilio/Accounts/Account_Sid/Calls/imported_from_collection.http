@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns the single Call resource identified by {CallSid}.
+
+@name("/Accounts/:AccountSid/Calls/{{CallSid}}{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Calls/{{CallSid}}{{mediaTypeExtension}}"
+
+
+// Returns the single Call resource identified by {CallSid}.
+
+@name("Accounts.Account Sid.Calls.Call Sid.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Calls/{{CallSid}}.json"
+
+
+

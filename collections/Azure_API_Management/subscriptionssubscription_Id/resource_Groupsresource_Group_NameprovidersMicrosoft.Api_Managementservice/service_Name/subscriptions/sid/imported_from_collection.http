@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Gets the specified Subscription entity.
+
+@name("Subscriptions Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/subscriptions/:sid"
+
+
+// Regenerates primary key of existing subscription of the API Management service instance.
+
+@name("Subscriptions RegeneratePrimaryKey")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/subscriptions/:sid/regeneratePrimaryKey"
+
+
+// Regenerates secondary key of existing subscription of the API Management service instance.
+
+@name("Subscriptions RegenerateSecondaryKey")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/subscriptions/:sid/regenerateSecondaryKey"
+
+
+

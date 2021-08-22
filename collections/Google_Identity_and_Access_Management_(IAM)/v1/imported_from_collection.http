@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4aedc076-3cdf-4f20-9168-188e87d98d36.postman_collection.json
+
+// Queries roles that can be granted on a particular resource.
+// A role is grantable if it can be used as the role in a binding for a policy
+// for that resource.
+
+@name("Query Roles")
+POST "https://{{baseUrl}}/v1/roles:queryGrantableRoles"
+
+
+// Signs a blob using a service account's system-managed private key.
+
+@name("Sign Blob")
+POST "https://{{baseUrl}}/v1/{{name}}:signBlob"
+
+
+// Signs a JWT using a service account's system-managed private key.
+// 
+// If no expiry time (`exp`) is provided in the `SignJwtRequest`, IAM sets an
+// an expiry time of one hour by default. If you request an expiry time of
+// more than one hour, the request will fail.
+
+@name("Sign JWT")
+POST "https://{{baseUrl}}/v1/{{name}}:signJwt"
+
+
+// Returns the IAM access control policy for a
+// ServiceAccount.
+
+@name("Return IAM Access Control Policy")
+POST "https://{{baseUrl}}/v1/{{resource}}:getIamPolicy"
+
+
+// Sets the IAM access control policy for a
+// ServiceAccount.
+
+@name("Set IAM Access Control Policy")
+POST "https://{{baseUrl}}/v1/{{resource}}:setIamPolicy"
+
+
+// Tests the specified permissions against the IAM access control policy
+// for a ServiceAccount.
+
+@name("Tests Permissions")
+POST "https://{{baseUrl}}/v1/{{resource}}:testIamPermissions"
+
+
+

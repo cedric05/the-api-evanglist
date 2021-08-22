@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
+
+@name("Create Spot Datafeed Subscription")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Bucket"= ""
+? "DryRun"= ""
+? "Prefix"= ""
+? "Action"= "CreateSpotDatafeedSubscription"
+
+
+// Deletes the data feed for Spot Instances.
+
+@name("Delete Spot Datafeed Subscription")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Action"= "DeleteSpotDatafeedSubscription"
+
+
+// Describes the data feed for Spot Instances.
+
+@name("Describe Spot Datafeed Subscription")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Action"= "DescribeSpotDatafeedSubscription"
+
+
+

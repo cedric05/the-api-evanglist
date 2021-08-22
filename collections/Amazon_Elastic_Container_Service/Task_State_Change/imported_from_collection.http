@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d0c02c05-054f-4e33-83bf-1c03a8c9a69e.postman_collection.json
+
+@name("Submit Task State Change")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange"
+? "Action"= "SubmitTaskStateChange"
+data('{"attachments":[{"attachmentArn":"string","status":"string"}],"cluster":"string","containers":[{"containerName":"string","exitCode":42,"imageDigest":"string","networkBindings":[{"bindIP":"string","containerPort":42,"hostPort":42,"protocol":"string"}],"reason":"string","runtimeId":"string","status":"string"}],"executionStoppedAt":42,"pullStartedAt":42,"pullStoppedAt":42,"reason":"string","status":"string","task":"string"}')
+
+
+

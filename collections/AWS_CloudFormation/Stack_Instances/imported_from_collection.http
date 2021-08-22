@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-06beb3cb-4f39-40cc-ab55-114f4f94f4b4.postman_collection.json
+
+@name("Create Stack Instances")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Accounts.member.N"= ""
+? "OperationId"= ""
+? "OperationPreferences"= ""
+? "ParameterOverrides.member.N"= ""
+? "Regions.member.N"= ""
+? "StackSetName"= ""
+? "Action"= "CreateStackInstances"
+
+
+@name("Delete Stack Instances")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Accounts.member.N"= ""
+? "OperationId"= ""
+? "OperationPreferences"= ""
+? "Regions.member.N"= ""
+? "RetainStacks"= ""
+? "StackSetName"= ""
+? "Action"= "DeleteStackInstances"
+
+
+@name("List Stack Instances")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "MaxResults"= ""
+? "NextToken"= ""
+? "StackInstanceAccount"= ""
+? "StackInstanceRegion"= ""
+? "StackSetName"= ""
+? "Action"= "ListStackInstances"
+
+
+@name("Update Stack Instances")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Action"= "UpdateStackInstances"
+
+
+

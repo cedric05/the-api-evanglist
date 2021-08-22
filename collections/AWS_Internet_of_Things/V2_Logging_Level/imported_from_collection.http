@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Delete V2 Logging Level")
+GET "https://{{aws_internet_of_things_base_url}}/v2LoggingLevel"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List V2 Logging Levels")
+GET "https://{{aws_internet_of_things_base_url}}/v2LoggingLevel"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Set V2 Logging Level")
+GET "https://{{aws_internet_of_things_base_url}}/v2LoggingLevel&logLevel=&logTarget="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

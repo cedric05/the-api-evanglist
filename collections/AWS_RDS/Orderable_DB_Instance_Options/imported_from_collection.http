@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Describe Orderable DB Instance Options")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "DBInstanceClass"= ""
+? "Engine"= ""
+? "EngineVersion"= ""
+? "Filters.Filter.N"= ""
+? "LicenseModel"= ""
+? "Marker"= ""
+? "MaxRecords"= ""
+? "Vpc"= ""
+? "Action"= "DescribeOrderableDBInstanceOptions"
+
+
+

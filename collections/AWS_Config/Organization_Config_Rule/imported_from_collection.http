@@ -1,0 +1,56 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Delete Organization Config Rule")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DeleteOrganizationConfigRule"
+data('{
+   "OrganizationConfigRuleName": "string"
+}')
+
+
+@name("Describe Organization Config Rules")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DescribeOrganizationConfigRules"
+data('{
+   "Limit": number,
+   "NextToken": "string",
+   "OrganizationConfigRuleNames": [ "string" ]
+}')
+
+
+@name("Put Organization Config Rule")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "PutOrganizationConfigRule"
+data('{
+   "ExcludedAccounts": [ "string" ],
+   "OrganizationConfigRuleName": "string",
+   "OrganizationCustomRuleMetadata": { 
+      "Description": "string",
+      "InputParameters": "string",
+      "LambdaFunctionArn": "string",
+      "MaximumExecutionFrequency": "string",
+      "OrganizationConfigRuleTriggerTypes": [ "string" ],
+      "ResourceIdScope": "string",
+      "ResourceTypesScope": [ "string" ],
+      "TagKeyScope": "string",
+      "TagValueScope": "string"
+   },
+   "OrganizationManagedRuleMetadata": { 
+      "Description": "string",
+      "InputParameters": "string",
+      "MaximumExecutionFrequency": "string",
+      "ResourceIdScope": "string",
+      "ResourceTypesScope": [ "string" ],
+      "RuleIdentifier": "string",
+      "TagKeyScope": "string",
+      "TagValueScope": "string"
+   }
+}')
+
+
+

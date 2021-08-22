@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Describe Organization Conformance Pack Statuses")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DescribeOrganizationConformancePackStatuses"
+data('{
+   "Limit": number,
+   "NextToken": "string",
+   "OrganizationConformancePackNames": [ "string" ]
+}')
+
+
+

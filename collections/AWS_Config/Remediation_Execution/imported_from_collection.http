@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Start Remediation Execution")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "StartRemediationExecution"
+data('{
+   "ConfigRuleName": "string",
+   "ResourceKeys": [ 
+      { 
+         "resourceId": "string",
+         "resourceType": "string"
+      }
+   ]
+}')
+
+
+

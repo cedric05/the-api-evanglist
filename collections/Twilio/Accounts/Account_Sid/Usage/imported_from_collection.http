@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns UsageRecords for all usage categories. The list includes paging
+// information.
+// By default, the UsageRecords resource will return one UsageRecord for
+// each Category, representing all usage accrued all-time for the account.
+// You can filter the usage Category or change the date-range over which usage
+// is counted using optional GET query parameters.
+
+@name("/Accounts/:AccountSid/Usage/Records{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Usage/Records{{mediaTypeExtension}}"
+
+
+// Returns a list of UsageTrigger resource representations. The list includes
+// paging information.
+// By default, all UsageTriggers are returned. You can filter the list by
+// specifying one or more query parameters. Note that the query parameters are
+// case-sensitive
+
+@name("/Accounts/:AccountSid/Usage/Triggers{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Usage/Triggers{{mediaTypeExtension}}"
+
+
+// Returns UsageRecords for all usage categories. The list includes paging
+// information.
+// By default, the UsageRecords resource will return one UsageRecord for
+// each Category, representing all usage accrued all-time for the account.
+// You can filter the usage Category or change the date-range over which usage
+// is counted using optional GET query parameters.
+
+@name("Accounts.Account Sid.Usage.Records.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Usage/Records.json"
+
+
+// Returns a list of UsageTrigger resource representations. The list includes
+// paging information.
+// By default, all UsageTriggers are returned. You can filter the list by
+// specifying one or more query parameters. Note that the query parameters are
+// case-sensitive
+
+@name("Accounts.Account Sid.Usage.Triggers.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Usage/Triggers.json"
+
+
+

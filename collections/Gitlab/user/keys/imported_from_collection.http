@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Get the currently authenticated user's SSH keys
+
+@name("Get User Keys")
+GET "https://{{baseUrl}}/user/keys"
+
+
+// Delete an SSH key from the currently authenticated user
+
+@name("Delete User Keys Key")
+DELETE "https://{{baseUrl}}/user/keys/:key_id"
+
+
+

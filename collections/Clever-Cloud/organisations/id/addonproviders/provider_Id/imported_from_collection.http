@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("get Organisations Id Addonproviders Provider Id")
+GET "https://{{baseUrl}}/organisations/:id/addonproviders/:providerId"
+
+
+@name("/organisations/:id/addonproviders/:providerId/sso")
+GET "https://{{baseUrl}}/organisations/:id/addonproviders/:providerId/sso"
+
+
+@name("get Organisations Id Addonproviders Provider Id Tags")
+GET "https://{{baseUrl}}/organisations/:id/addonproviders/:providerId/tags"
+
+
+@name("post Organisations Id Addonproviders Provider Id Testers")
+POST "https://{{baseUrl}}/organisations/:id/addonproviders/:providerId/testers"
+
+
+

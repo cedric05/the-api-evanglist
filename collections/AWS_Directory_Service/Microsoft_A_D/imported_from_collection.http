@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e4a472a1-7d82-4a3c-b4e1-85e0dad2e1ca.postman_collection.json
+
+@name("Create Microsoft A D")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.CreateMicrosoftAD"
+? "Action"= "CreateMicrosoftAD"
+data('{"Description":"string","Edition":"string","Name":"string","Password":"string","ShortName":"string","Tags":[{"Key":"string","Value":"string"}],"VpcSettings":{"SubnetIds":["string"],"VpcId":"string"}}')
+
+
+

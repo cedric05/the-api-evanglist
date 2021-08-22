@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-511ff114-110c-4b79-9213-f986643f80af.postman_collection.json
+
+// Translates a token symbol to a tokenId if a token exists with that symbol on the network
+
+@name("Returns the tokenId representing a token")
+GET "https://{{baseUrl}}/testnet/ntp1/tokenid/:tokensymbol"
+
+
+// Broadcasts a signed raw transaction to the network. If successful returns the txid of the broadcast trasnaction.
+
+@name("Broadcasts a signed raw transaction to the network")
+POST "https://{{baseUrl}}/testnet/ntp1/broadcast"
+
+
+// Returns both NEBL and NTP1 token UTXOs held at the given address.
+
+@name("Information On a Neblio Address")
+GET "https://{{baseUrl}}/testnet/ntp1/addressinfo/:address"
+
+
+// Returns detailed information regarding an NTP1 transaction.
+
+@name("Information On an NTP1 Transaction")
+GET "https://{{baseUrl}}/testnet/ntp1/transactioninfo/:txid"
+
+
+// Returns the the the addresses holding a token and how many tokens are held
+
+@name("Get Addresses Holding a Token")
+GET "https://{{baseUrl}}/testnet/ntp1/stakeholders/:tokenid"
+
+
+// Builds an unsigned raw transaction that issues a new NTP1 token on the Neblio blockchain.
+
+@name("Builds a transaction that issues a new NTP1 Token")
+POST "https://{{baseUrl}}/testnet/ntp1/issue"
+
+
+// Builds an unsigned raw transaction that sends an NTP1 token on the Neblio blockchain.
+
+@name("Builds a transaction that sends an NTP1 Token")
+POST "https://{{baseUrl}}/testnet/ntp1/sendtoken"
+
+
+// Builds an unsigned raw transaction that burns an NTP1 token on the Neblio blockchain.
+
+@name("Builds a transaction that burns an NTP1 Token")
+POST "https://{{baseUrl}}/testnet/ntp1/burntoken"
+
+
+

@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// .
+
+@name("Associate Transit Gateway Route Table")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "AssociateTransitGatewayRouteTable"
+
+
+// Creates a route table for the specified transit gateway.
+
+@name("Create Transit Gateway Route Table")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "TagSpecifications.N"= ""
+? "TransitGatewayId"= ""
+? "Action"= "CreateTransitGatewayRouteTable"
+
+
+// .
+
+@name("Delete Transit Gateway Route Table")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "DeleteTransitGatewayRouteTable"
+
+
+// .
+
+@name("Describe Transit Gateway Route Tables")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "DescribeTransitGatewayRouteTables"
+
+
+// .
+
+@name("Disassociate Transit Gateway Route Table")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "DisassociateTransitGatewayRouteTable"
+
+
+

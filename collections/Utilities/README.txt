@@ -1,0 +1,1 @@
+This is just a set of utilities that can be run against OpenAPI, JSON Schema, Postman Collections, and data packages.

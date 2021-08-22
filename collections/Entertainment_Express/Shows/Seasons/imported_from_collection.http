@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Some use cases find it useful to be able to pass a season number and episode number of a known show to get the data for that exact episode.  
+
+@name("Get Episode by ShowId, Season Number and Episode Number.")
+GET "https://{{baseUrl}}/Shows/Seasons/Episode/"
+? "Id"= "<get>"
+? "SeasonNumber"= "<get>"
+? "EpisodeNumber"= "<get>"
+
+
+// Returns the episode details for a specific episode ID.
+
+@name("Returns an Episode object for a requested Episode ID.")
+GET "https://{{baseUrl}}/Shows/Seasons/Episodes/:Id"
+? "Includes"= "<get>"
+
+
+// Use with a SeasonId to return details for a season including any video asset data.
+
+@name("Get Season by SeasonId.")
+GET "https://{{baseUrl}}/Shows/Seasons/:Id"
+? "Includes"= "<get>"
+
+
+

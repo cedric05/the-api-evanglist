@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9d35e865-46d6-4c1a-9a52-45849e1f2947.postman_collection.json
+
+// Use this endpoint to update the primary voice route for a phone number. You must create the route first by following "Create an Inbound Route". You can then assign the created route by specifying its value in a PATCH request.
+
+@name("Update Primary Voice Route for a Phone Number")
+PATCH "https://{{baseUrl}}/v2/numbers/:number_id/relationships/primary_route"
+
+
+// Use this endpoint to update the failover voice route for a phone number. You must create the route first by following "Create an Inbound Route". You can then assign the created route by specifying its value in a PATCH request.
+
+@name("Update Failover Voice Route for a Phone Number")
+PATCH "https://{{baseUrl}}/v2/numbers/:number_id/relationships/failover_route"
+
+
+

@@ -1,0 +1,192 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Add new Generic Distribution Provider Action
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Add")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/add"
+? "genericDistributionProviderAction[genericDistributionProviderId]"= "<>"
+? "genericDistributionProviderAction[action]"= "<>"
+? "genericDistributionProviderAction[resultsParser]"= "<>"
+? "genericDistributionProviderAction[protocol]"= "<>"
+? "genericDistributionProviderAction[serverAddress]"= "<>"
+? "genericDistributionProviderAction[remotePath]"= "<>"
+? "genericDistributionProviderAction[remoteUsername]"= "<>"
+? "genericDistributionProviderAction[remotePassword]"= "<>"
+? "genericDistributionProviderAction[editableFields]"= "<>"
+? "genericDistributionProviderAction[mandatoryFields]"= "<>"
+
+
+// Add MRSS transform file to generic distribution provider action
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Addmrsstransform")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/addMrssTransform"
+? "id"= "<>"
+? "xslData"= "<>"
+
+
+// Add MRSS transform file to generic distribution provider action
+
+@name("Post Service Contentdistribution Genericdistributionproveraction Action Addmrsstransformfromfile")
+POST "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/addMrssTransformFromFile"
+? "id"= "<>"
+
+
+// Add MRSS validate file to generic distribution provider action
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Addmrssvalate")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/addMrssValidate"
+? "id"= "<>"
+? "xsdData"= "<>"
+
+
+// Add MRSS validate file to generic distribution provider action
+
+@name("Post Service Contentdistribution Genericdistributionproveraction Action Addmrssvalatefromfile")
+POST "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/addMrssValidateFromFile"
+? "id"= "<>"
+
+
+// Add results transform file to generic distribution provider action
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Addresultstransform")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/addResultsTransform"
+? "id"= "<>"
+? "transformData"= "<>"
+
+
+// Add MRSS transform file to generic distribution provider action
+
+@name("Post Service Contentdistribution Genericdistributionproveraction Action Addresultstransformfromfile")
+POST "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/addResultsTransformFromFile"
+? "id"= "<>"
+
+
+// Delete Generic Distribution Provider Action by id
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Delete")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/delete"
+? "id"= "<>"
+
+
+// Delete Generic Distribution Provider Action by provider id
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Deletebyproverid")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/deleteByProviderId"
+? "genericDistributionProviderId"= "<>"
+? "actionType"= "<>"
+
+
+// Get Generic Distribution Provider Action by id
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Get")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/get"
+? "id"= "<>"
+
+
+// Get Generic Distribution Provider Action by provider id
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Getbyproverid")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/getByProviderId"
+? "genericDistributionProviderId"= "<>"
+? "actionType"= "<>"
+
+
+// List all distribution providers
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action List")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[updatedAtLessThanOrEqual]"= "<>"
+? "filter[genericDistributionProviderIdEqual]"= "<>"
+? "filter[genericDistributionProviderIdIn]"= "<>"
+? "filter[actionEqual]"= "<>"
+? "filter[actionIn]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// Update Generic Distribution Provider Action by id
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Update")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/update"
+? "id"= "<>"
+? "genericDistributionProviderAction[genericDistributionProviderId]"= "<>"
+? "genericDistributionProviderAction[action]"= "<>"
+? "genericDistributionProviderAction[resultsParser]"= "<>"
+? "genericDistributionProviderAction[protocol]"= "<>"
+? "genericDistributionProviderAction[serverAddress]"= "<>"
+? "genericDistributionProviderAction[remotePath]"= "<>"
+? "genericDistributionProviderAction[remoteUsername]"= "<>"
+? "genericDistributionProviderAction[remotePassword]"= "<>"
+? "genericDistributionProviderAction[editableFields]"= "<>"
+? "genericDistributionProviderAction[mandatoryFields]"= "<>"
+
+
+// Update Generic Distribution Provider Action by provider id
+
+@name("Get Service Contentdistribution Genericdistributionproveraction Action Updatebyproverid")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovideraction/action/updateByProviderId"
+? "genericDistributionProviderId"= "<>"
+? "actionType"= "<>"
+? "genericDistributionProviderAction[genericDistributionProviderId]"= "<>"
+? "genericDistributionProviderAction[action]"= "<>"
+? "genericDistributionProviderAction[resultsParser]"= "<>"
+? "genericDistributionProviderAction[protocol]"= "<>"
+? "genericDistributionProviderAction[serverAddress]"= "<>"
+? "genericDistributionProviderAction[remotePath]"= "<>"
+? "genericDistributionProviderAction[remoteUsername]"= "<>"
+? "genericDistributionProviderAction[remotePassword]"= "<>"
+? "genericDistributionProviderAction[editableFields]"= "<>"
+? "genericDistributionProviderAction[mandatoryFields]"= "<>"
+
+
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4ac82a81-aee5-4817-b1f1-deb74811605d.postman_collection.json
+
+@name("Detect Labels")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.DetectLabels"
+? "Action"= "DetectLabels"
+data('{
+   "Image": { 
+      "Bytes": "blob",
+      "S3Object": { 
+         "Bucket": "string",
+         "Name": "string",
+         "Version": "string"
+      }
+   },
+   "MaxLabels": 25,
+   "MinConfidence": 25
+}')
+
+
+

@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("get Products Instances")
+GET "https://{{baseUrl}}/products/instances"
+? "for"= "<string>"
+
+
+@name("get Products Instances Type Version")
+GET "https://{{baseUrl}}/products/instances/{{type: [^-]+}}-{{version}}"
+? "for"= "<string>"
+? "app"= "<string>"
+
+
+

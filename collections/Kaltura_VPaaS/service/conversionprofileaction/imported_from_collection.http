@@ -1,0 +1,136 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Add new Conversion Profile
+
+@name("Get Service Conversionprofile Action Add")
+GET "https://{{baseUrl}}/service/conversionprofile/action/add"
+? "conversionProfile[status]"= "<>"
+? "conversionProfile[type]"= "<>"
+? "conversionProfile[name]"= "<>"
+? "conversionProfile[systemName]"= "<>"
+? "conversionProfile[tags]"= "<>"
+? "conversionProfile[description]"= "<>"
+? "conversionProfile[defaultEntryId]"= "<>"
+? "conversionProfile[flavorParamsIds]"= "<>"
+? "conversionProfile[isDefault]"= "<>"
+? "conversionProfile[cropDimensions][left]"= "<>"
+? "conversionProfile[cropDimensions][top]"= "<>"
+? "conversionProfile[cropDimensions][width]"= "<>"
+? "conversionProfile[cropDimensions][height]"= "<>"
+
+
+// Delete Conversion Profile by ID
+
+@name("Get Service Conversionprofile Action Delete")
+GET "https://{{baseUrl}}/service/conversionprofile/action/delete"
+? "id"= "<>"
+
+
+// Get Conversion Profile by ID
+
+@name("Get Service Conversionprofile Action Get")
+GET "https://{{baseUrl}}/service/conversionprofile/action/get"
+? "id"= "<>"
+
+
+// Get the partner's default conversion profile
+
+@name("Get Service Conversionprofile Action Getdefault")
+GET "https://{{baseUrl}}/service/conversionprofile/action/getDefault"
+? "type"= "<>"
+
+
+// List Conversion Profiles by filter with paging support
+
+@name("Get Service Conversionprofile Action List")
+GET "https://{{baseUrl}}/service/conversionprofile/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "filter[typeEqual]"= "<>"
+? "filter[typeIn]"= "<>"
+? "filter[nameEqual]"= "<>"
+? "filter[systemNameEqual]"= "<>"
+? "filter[systemNameIn]"= "<>"
+? "filter[tagsMultiLikeOr]"= "<>"
+? "filter[tagsMultiLikeAnd]"= "<>"
+? "filter[defaultEntryIdEqual]"= "<>"
+? "filter[defaultEntryIdIn]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// Set Conversion Profile to be the partner default
+
+@name("Get Service Conversionprofile Action Setasdefault")
+GET "https://{{baseUrl}}/service/conversionprofile/action/setAsDefault"
+? "id"= "<>"
+
+
+// Update Conversion Profile by ID
+
+@name("Get Service Conversionprofile Action Update")
+GET "https://{{baseUrl}}/service/conversionprofile/action/update"
+? "id"= "<>"
+? "conversionProfile[status]"= "<>"
+? "conversionProfile[type]"= "<>"
+? "conversionProfile[name]"= "<>"
+? "conversionProfile[systemName]"= "<>"
+? "conversionProfile[tags]"= "<>"
+? "conversionProfile[description]"= "<>"
+? "conversionProfile[defaultEntryId]"= "<>"
+? "conversionProfile[flavorParamsIds]"= "<>"
+? "conversionProfile[isDefault]"= "<>"
+? "conversionProfile[cropDimensions][left]"= "<>"
+? "conversionProfile[cropDimensions][top]"= "<>"
+? "conversionProfile[cropDimensions][width]"= "<>"
+? "conversionProfile[cropDimensions][height]"= "<>"
+
+
+

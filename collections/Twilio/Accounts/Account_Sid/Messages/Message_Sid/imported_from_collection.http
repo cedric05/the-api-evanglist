@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns a list of media associated with your message.
+
+@name("/Accounts/:AccountSid/Messages/:MessageSid/Media{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Messages/:MessageSid/Media{{mediaTypeExtension}}"
+
+
+// Returns a list of media associated with your message.
+
+@name("Accounts.Account Sid.Messages.Message Sid.Media.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Messages/:MessageSid/Media.json"
+
+
+

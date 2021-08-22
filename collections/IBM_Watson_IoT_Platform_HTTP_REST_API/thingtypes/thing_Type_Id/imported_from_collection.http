@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Retrieve the active thing type with the specified id.
+
+@name("Get an active thing type")
+GET "https://{{baseUrl}}/thing/types/:thingTypeId"
+
+
+// Retrieve the list of active logical  interfaces that have been associated
+// with the thing type.  At least one logical interface must be associated
+// with the thing type before any mappings can be defined that will generate
+// state for the thing.
+
+@name("Get the list of active logical interfaces associated with the thing
+type
+")
+GET "https://{{baseUrl}}/thing/types/:thingTypeId/logicalinterfaces"
+
+
+

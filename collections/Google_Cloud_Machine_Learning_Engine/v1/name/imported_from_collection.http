@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9281a590-ede0-41f4-a59c-3c60f1da8cf9.postman_collection.json
+
+// Deletes a model version.
+// 
+// Each model can have multiple versions deployed and in use at any given
+// time. Use this method to remove a single version.
+// 
+// Note: You cannot delete the version that is set as the default version
+// of the model unless it is the only remaining version.
+
+@name("Delete Model Version")
+DELETE "https://{{baseUrl}}/v1/:name"
+
+
+// Lists operations that match the specified filter in the request. If the
+// server doesn't support this method, it returns `UNIMPLEMENTED`.
+// 
+// NOTE: the `name` binding below allows API services to override the binding
+// to use different resource name schemes, such as `users/*/operations`.
+
+@name("Get Operations")
+GET "https://{{baseUrl}}/v1/:name/operations"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+? "filter"= "<>"
+
+
+

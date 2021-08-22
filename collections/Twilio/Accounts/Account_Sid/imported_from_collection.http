@@ -1,0 +1,185 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns a list of Application resource representations, each representing
+// an application within your account. The list includes paging information.
+
+@name("/Accounts/:AccountSid/Applications{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Applications{{mediaTypeExtension}}"
+
+
+// Returns a list of Connect App resource representations, each representing a
+// Connect App you've authorized to access your account. The list includes
+// paging information.
+
+@name("/Accounts/:AccountSid/AuthorizedConnectApps{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AuthorizedConnectApps{{mediaTypeExtension}}"
+
+
+// Returns a list of all AvailablePhoneNumber subresources for your account by ISO Country. For full information about our phone number support, see our Phone Number CSV (http://www.twilio.com/resources/rates/international-phone-number-rates.csv).
+
+@name("/Accounts/:AccountSid/AvailablePhoneNumbers{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AvailablePhoneNumbers{{mediaTypeExtension}}"
+
+
+// Returns a list of phone calls made to and from the account identified by {AccountSid}.
+
+@name("/Accounts/:AccountSid/Calls{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Calls{{mediaTypeExtension}}"
+
+
+// Returns a list of conferences within an account. The list includes paging
+// information.
+
+@name("/Accounts/:AccountSid/Conferences{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Conferences{{mediaTypeExtension}}"
+
+
+// Returns a list of Connect App resource representations, each representing
+// a Connect App in your account. The list includes paging information.
+
+@name("/Accounts/:AccountSid/ConnectApps{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/ConnectApps{{mediaTypeExtension}}"
+
+
+// Returns a list of IncomingPhoneNumber resource representations, each
+// representing a phone number given to your account. The list includes paging
+// information.
+
+@name("/Accounts/:AccountSid/IncomingPhoneNumbers{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers{{mediaTypeExtension}}"
+
+
+// Returns a list of messages associated with your account. The list includes paging information.
+
+@name("/Accounts/:AccountSid/Messages{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Messages{{mediaTypeExtension}}"
+
+
+// Returns a list of notifications generated for an account. The list includes
+// paging information.
+
+@name("/Accounts/:AccountSid/Notifications{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Notifications{{mediaTypeExtension}}"
+
+
+// Returns a list of OutgoingCallerId resource representations, each representing
+// a Caller ID number valid for an account. The list includes paging information.
+
+@name("/Accounts/:AccountSid/OutgoingCallerIds{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/OutgoingCallerIds{{mediaTypeExtension}}"
+
+
+// Returns a list of queues within an account. The list includes paging
+// information.
+
+@name("/Accounts/:AccountSid/Queues{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Queues{{mediaTypeExtension}}"
+
+
+// Returns a list of Recording resource representations, each representing a
+// recording generated during the course of a phone call.
+
+@name("/Accounts/:AccountSid/Recordings{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Recordings{{mediaTypeExtension}}"
+
+
+// Returns a set of Transcription resource representations that includes paging
+// information.
+
+@name("/Accounts/:AccountSid/Transcriptions{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Transcriptions{{mediaTypeExtension}}"
+
+
+// Returns a list of Application resource representations, each representing
+// an application within your account. The list includes paging information.
+
+@name("Accounts.Account Sid.Applications.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Applications.json"
+
+
+// Returns a list of Connect App resource representations, each representing a
+// Connect App you've authorized to access your account. The list includes
+// paging information.
+
+@name("Accounts.Account Sid.Authorized Connect Apps.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AuthorizedConnectApps.json"
+
+
+// Returns a list of all AvailablePhoneNumber subresources for your account by ISO Country. For full information about our phone number support, see our Phone Number CSV (http://www.twilio.com/resources/rates/international-phone-number-rates.csv).
+
+@name("Accounts.Account Sid.Available Phone Numbers.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AvailablePhoneNumbers.json"
+
+
+// Returns a list of phone calls made to and from the account identified by {AccountSid}.
+
+@name("Accounts.Account Sid.Calls.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Calls.json"
+
+
+// Returns a list of conferences within an account. The list includes paging
+// information.
+
+@name("Accounts.Account Sid.Conferences.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Conferences.json"
+
+
+// Returns a list of Connect App resource representations, each representing
+// a Connect App in your account. The list includes paging information.
+
+@name("Accounts.Account Sid.Connect Apps.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/ConnectApps.json"
+
+
+// Returns a list of IncomingPhoneNumber resource representations, each
+// representing a phone number given to your account. The list includes paging
+// information.
+
+@name("Accounts.Account Sid.Incoming Phone Numbers.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers.json"
+
+
+// Returns a list of messages associated with your account. The list includes paging information.
+
+@name("Accounts.Account Sid.Messages.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Messages.json"
+
+
+// Returns a list of notifications generated for an account. The list includes
+// paging information.
+
+@name("Accounts.Account Sid.Notifications.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Notifications.json"
+
+
+// Returns a list of OutgoingCallerId resource representations, each representing
+// a Caller ID number valid for an account. The list includes paging information.
+
+@name("Accounts.Account Sid.Outgoing Caller Ids.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/OutgoingCallerIds.json"
+
+
+// Returns a list of queues within an account. The list includes paging
+// information.
+
+@name("Accounts.Account Sid.Queues.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Queues.json"
+
+
+// Returns a list of Recording resource representations, each representing a
+// recording generated during the course of a phone call.
+
+@name("Accounts.Account Sid.Recordings.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Recordings.json"
+
+
+// Returns a set of Transcription resource representations that includes paging
+// information.
+
+@name("Accounts.Account Sid.Transcriptions.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Transcriptions.json"
+
+
+

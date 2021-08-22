@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// .
+
+@name("Disable Transit Gateway Route Table Propagation")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "DisableTransitGatewayRouteTablePropagation"
+
+
+// .
+
+@name("Enable Transit Gateway Route Table Propagation")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "EnableTransitGatewayRouteTablePropagation"
+
+
+// .
+
+@name("Get Transit Gateway Route Table Propagations")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "GetTransitGatewayRouteTablePropagations"
+
+
+

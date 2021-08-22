@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Get a list of projects in this group.
+
+@name("Get Groups  Projects")
+GET "https://{{baseUrl}}/groups/:id/projects"
+? "archived"= "<get>"
+? "visibility"= "<>"
+? "search"= "<>"
+? "order_by"= "<>"
+? "sort"= "<>"
+? "simple"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Transfer a project to the group namespace. Available only for admin.
+
+@name("Add Groups  Projects Project")
+POST "https://{{baseUrl}}/groups/:id/projects/:project_id"
+
+
+

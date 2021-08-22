@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all Admin Permissions
+
+@name("Get all Admin Permissions")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/AdminPermissions"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "section"= "<string>"
+? "action"= "<string>"
+? "countonly"= "<integer>"
+
+
+// Get a Permission
+
+@name("Get a Permission")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/AdminPermissions/:id"
+
+
+

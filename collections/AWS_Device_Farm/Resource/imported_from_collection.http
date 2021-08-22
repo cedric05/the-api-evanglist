@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b8e673bd-409c-4ff2-af9c-bb3a976bd9dd.postman_collection.json
+
+@name("Tag Resource")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "TagResource"
+data('{
+   "ResourceARN": "string",
+   "Tags": [ 
+      { 
+         "Key": "string",
+         "Value": "string"
+      }
+   ]
+}')
+
+
+@name("Untag Resource")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "UntagResource"
+data('{
+   "ResourceARN": "string",
+   "TagKeys": [ "string" ]
+}')
+
+
+

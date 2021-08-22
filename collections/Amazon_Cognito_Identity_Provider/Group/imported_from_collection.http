@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8631617c-c1ed-4e14-b0cd-77e4410753c4.postman_collection.json
+
+@name("Create Group")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "CreateGroup"
+data('{
+   "Description": "string",
+   "GroupName": "string",
+   "Precedence": number,
+   "RoleArn": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Delete Group")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DeleteGroup"
+data('{
+   "GroupName": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Get Group")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "GetGroup"
+data('{
+   "GroupName": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("List Groups")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "ListGroups"
+data('{
+   "Limit": number,
+   "NextToken": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Update Group")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "UpdateGroup"
+data('{
+   "Description": "string",
+   "GroupName": "string",
+   "Precedence": number,
+   "RoleArn": "string",
+   "UserPoolId": "string"
+}')
+
+
+

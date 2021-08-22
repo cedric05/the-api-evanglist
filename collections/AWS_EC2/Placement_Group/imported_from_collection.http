@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a placement group in which to launch instances.
+
+@name("Create Placement Group")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "GroupName"= ""
+? "PartitionCount"= ""
+? "Strategy"= ""
+? "Action"= "CreatePlacementGroup"
+
+
+// Deletes the specified placement group.
+
+@name("Delete Placement Group")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "GroupName"= ""
+? "Action"= "DeletePlacementGroup"
+
+
+// Describes the specified placement groups or all of your placement groups.
+
+@name("Describe Placement Groups")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "GroupName.N"= ""
+? "Action"= "DescribePlacementGroups"
+
+
+

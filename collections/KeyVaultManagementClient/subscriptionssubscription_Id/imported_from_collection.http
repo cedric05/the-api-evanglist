@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-79264587-c5bd-49d7-aa9d-93523f8e225b.postman_collection.json
+
+// The List operation gets information about the vaults associated with the subscription.
+
+@name("Vaults List")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resources"
+? "$top"= "<>"
+? "$filter"= "<>"
+? "api"= "<>"
+
+
+

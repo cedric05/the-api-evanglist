@@ -1,0 +1,67 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c094246-719d-4054-bede-5834f64bb4b7.postman_collection.json
+
+@name("Allocate Transit Virtual Interface")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "AllocateTransitVirtualInterface"
+data('{
+   "connectionId": "string",
+   "newTransitVirtualInterfaceAllocation": { 
+      "addressFamily": "string",
+      "amazonAddress": "string",
+      "asn": number,
+      "authKey": "string",
+      "customerAddress": "string",
+      "mtu": number,
+      "tags": [ 
+         { 
+            "key": "string",
+            "value": "string"
+         }
+      ],
+      "virtualInterfaceName": "string",
+      "vlan": number
+   },
+   "ownerAccount": "string"
+}')
+
+
+@name("Confirm Transit Virtual Interface")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "ConfirmTransitVirtualInterface"
+data('{
+   "directConnectGatewayId": "string",
+   "virtualInterfaceId": "string"
+}')
+
+
+@name("Create Transit Virtual Interface")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "CreateTransitVirtualInterface"
+data('{
+   "connectionId": "string",
+   "newTransitVirtualInterface": { 
+      "addressFamily": "string",
+      "amazonAddress": "string",
+      "asn": number,
+      "authKey": "string",
+      "customerAddress": "string",
+      "directConnectGatewayId": "string",
+      "mtu": number,
+      "tags": [ 
+         { 
+            "key": "string",
+            "value": "string"
+         }
+      ],
+      "virtualInterfaceName": "string",
+      "vlan": number
+   }
+}')
+
+
+

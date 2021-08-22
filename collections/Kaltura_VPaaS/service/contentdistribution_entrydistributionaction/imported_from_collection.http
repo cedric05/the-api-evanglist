@@ -1,0 +1,178 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Add new Entry Distribution
+
+@name("Get Service Contentdistribution Entrydistribution Action Add")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/add"
+? "entryDistribution[entryId]"= "<>"
+? "entryDistribution[distributionProfileId]"= "<>"
+? "entryDistribution[thumbAssetIds]"= "<>"
+? "entryDistribution[flavorAssetIds]"= "<>"
+? "entryDistribution[assetIds]"= "<>"
+? "entryDistribution[sunrise]"= "<>"
+? "entryDistribution[sunset]"= "<>"
+? "entryDistribution[validationErrors]"= "<>"
+
+
+// Delete Entry Distribution by id
+
+@name("Get Service Contentdistribution Entrydistribution Action Delete")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/delete"
+? "id"= "<>"
+
+
+// Get Entry Distribution by id
+
+@name("Get Service Contentdistribution Entrydistribution Action Get")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/get"
+? "id"= "<>"
+
+
+// List all distribution providers
+
+@name("Get Service Contentdistribution Entrydistribution Action List")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[updatedAtLessThanOrEqual]"= "<>"
+? "filter[submittedAtGreaterThanOrEqual]"= "<>"
+? "filter[submittedAtLessThanOrEqual]"= "<>"
+? "filter[entryIdEqual]"= "<>"
+? "filter[entryIdIn]"= "<>"
+? "filter[distributionProfileIdEqual]"= "<>"
+? "filter[distributionProfileIdIn]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "filter[dirtyStatusEqual]"= "<>"
+? "filter[dirtyStatusIn]"= "<>"
+? "filter[sunriseGreaterThanOrEqual]"= "<>"
+? "filter[sunriseLessThanOrEqual]"= "<>"
+? "filter[sunsetGreaterThanOrEqual]"= "<>"
+? "filter[sunsetLessThanOrEqual]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// Retries last submit action
+
+@name("Get Service Contentdistribution Entrydistribution Action Retrysubmit")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/retrySubmit"
+? "id"= "<>"
+
+
+// Serves entry distribution returned data
+
+@name("Get Service Contentdistribution Entrydistribution Action Servereturneddata")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/serveReturnedData"
+? "id"= "<>"
+? "actionType"= "<>"
+
+
+// Serves entry distribution sent data
+
+@name("Get Service Contentdistribution Entrydistribution Action Servesentdata")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/serveSentData"
+? "id"= "<>"
+? "actionType"= "<>"
+
+
+// Submits Entry Distribution to the remote destination
+
+@name("Get Service Contentdistribution Entrydistribution Action Submitadd")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/submitAdd"
+? "id"= "<>"
+? "submitWhenReady"= "<>"
+
+
+// Deletes Entry Distribution from the remote destination
+
+@name("Get Service Contentdistribution Entrydistribution Action Submitdelete")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/submitDelete"
+? "id"= "<>"
+
+
+// Submits Entry Distribution report request
+
+@name("Get Service Contentdistribution Entrydistribution Action Submitfetchreport")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/submitFetchReport"
+? "id"= "<>"
+
+
+// Submits Entry Distribution changes to the remote destination
+
+@name("Get Service Contentdistribution Entrydistribution Action Submitupdate")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/submitUpdate"
+? "id"= "<>"
+
+
+// Update Entry Distribution by id
+
+@name("Get Service Contentdistribution Entrydistribution Action Update")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/update"
+? "id"= "<>"
+? "entryDistribution[entryId]"= "<>"
+? "entryDistribution[distributionProfileId]"= "<>"
+? "entryDistribution[thumbAssetIds]"= "<>"
+? "entryDistribution[flavorAssetIds]"= "<>"
+? "entryDistribution[assetIds]"= "<>"
+? "entryDistribution[sunrise]"= "<>"
+? "entryDistribution[sunset]"= "<>"
+? "entryDistribution[validationErrors]"= "<>"
+
+
+// Validates Entry Distribution by id for submission
+
+@name("Get Service Contentdistribution Entrydistribution Action Valate")
+GET "https://{{baseUrl}}/service/contentdistribution_entrydistribution/action/validate"
+? "id"= "<>"
+
+
+

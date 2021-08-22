@@ -1,0 +1,118 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// 
+// 
+// 
+// 
+// <table style="width:50%">  <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>username</td>
+//     <td>semi-optional</td>
+//     <td>The unique username of the consumer. You must send either this field or custom_id with the request.</td>
+//   </tr>
+//   <tr>
+//     <td>custom_id</td>
+//     <td>semi-optional</td>
+//     <td>Field for storing an existing unique ID for the consumer - useful for mapping Kong with users in your existing database. You must send either 
+
+@name("Create Consumer")
+POST "https://{{baseUrl}}/consumers"
+
+
+// ## Retrieve Consumer [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-consumer-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>consumer username or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the username of the Consumer to retrieve.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Consumer")
+GET "https://{{baseUrl}}/consumers/:consumerUsernameOrID"
+
+
+// # List Plugins Associated to a Specific Consumer [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-plugins-associated-to-a-specific-consumer)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>consumer id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Consumer whose Plugins are to be retrieved. When using this endpoint, only Plugins associated to the specified C
+
+@name("List Plugins Associated to a Specific Consumer")
+GET "https://{{baseUrl}}/consumers/:consumerId/plugins"
+
+
+// # Retrieve Plugin Associated to a Specific Consumer [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-plugin-associated-to-a-specific-consumer)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>consumer username or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the username of the Consumer to retrieve</td>
+//   </tr>
+//    <tr>
+//     <td>plugin id</td>
+//     <td>requ
+
+@name("Retrieve Plugin Associated to a Specific Consumer")
+GET "https://{{baseUrl}}/consumers/:consumerUsernameOrId/plugins/:pluginId"
+
+
+// 
+// 
+// <table style="width:50%">  <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>consumer username or id</td>
+//     <td>required</td>
+//     <td>The unique identifier or the username of the Consumer to update.</td>
+//   </tr>
+//   <tr>
+//     <td>plugin  id</td>
+//     <td>required</td>
+//     <td>The unique identifier of the Plugin to update.</td>
+//   </tr>
+// </table>
+// 
+// 
+// <table style="width:50%">  <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th
+
+@name("Update Plugin Associated to a Specific Consumer")
+PATCH "https://{{baseUrl}}/consumers/:consumerUsernameOrd/plugins/:pluginId"
+
+
+

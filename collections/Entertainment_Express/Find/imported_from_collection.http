@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Use FindMovie with a third party ID like IMDB, TMDB, Gracenote, Tivo, etc. to find the corresponding movie in the IVA database.  For a full list of supported ID types see /Movies/AlternateIdTypes. 
+// 
+// 
+// 
+// `Recommendation: Use with small data sets or for a proof of concept. `
+
+@name("Find a movie using third party ID.")
+GET "https://{{baseUrl}}/Find/Movie/"
+? "IdType"= "<get>"
+? "Id"= "<get>"
+? "Includes"= "<get>"
+
+
+// Use FindShow with a third party ID like IMDB, TMDB, Gracenote, Tivo, etc. to find the corresponding TV show in the IVA database. For a full list of supported ID types see /Shows/AlternateIdTypes. `Recommendation: Use with small data sets or for a proof of concept. `
+
+@name("Find a TV show using a third party ID.")
+GET "https://{{baseUrl}}/Find/Show/"
+? "IdType"= "<get>"
+? "Id"= "<get>"
+? "Includes"= "<get>"
+
+
+

@@ -1,0 +1,60 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-27f83bb7-4ad5-4571-80f4-1fa618a02314.postman_collection.json
+
+@name("Create Environment")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "CNAMEPrefix"= ""
+? "Description"= ""
+? "EnvironmentName"= ""
+? "GroupName"= ""
+? "OptionSettings.member.N"= ""
+? "OptionsToRemove.member.N"= ""
+? "PlatformArn"= ""
+? "SolutionStackName"= ""
+? "Tags.member.N"= ""
+? "TemplateName"= ""
+? "Tier"= ""
+? "VersionLabel"= ""
+? "Action"= "CreateEnvironment"
+
+
+@name("Rebuild Environment")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "EnvironmentId"= ""
+? "EnvironmentName"= ""
+? "Action"= "RebuildEnvironment"
+
+
+@name("Terminate Environment")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "EnvironmentId"= ""
+? "EnvironmentName"= ""
+? "ForceTerminate"= ""
+? "TerminateResources"= ""
+? "Action"= "TerminateEnvironment"
+
+
+@name("Update Environment")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "Description"= ""
+? "EnvironmentId"= ""
+? "EnvironmentName"= ""
+? "GroupName"= ""
+? "OptionSettings.member.N"= ""
+? "OptionsToRemove.member.N"= ""
+? "PlatformArn"= ""
+? "SolutionStackName"= ""
+? "TemplateName"= ""
+? "Tier"= ""
+? "VersionLabel"= ""
+? "Action"= "UpdateEnvironment"
+
+
+

@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4daf4441-eb91-41fe-b023-1dfb7909acdb.postman_collection.json
+
+@name("Create Launch Configuration")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AssociatePublicIpAddress"= ""
+? "BlockDeviceMappings.member.N"= ""
+? "ClassicLinkVPCId"= ""
+? "ClassicLinkVPCSecurityGroups.member.N"= ""
+? "EbsOptimized"= ""
+? "IamInstanceProfile"= ""
+? "ImageId"= ""
+? "InstanceId"= ""
+? "InstanceMonitoring"= ""
+? "InstanceType"= ""
+? "KernelId"= ""
+? "KeyName"= ""
+? "LaunchConfigurationName"= ""
+? "PlacementTenancy"= ""
+? "RamdiskId"= ""
+? "SecurityGroups.member.N"= ""
+? "SpotPrice"= ""
+? "UserData"= ""
+? "Action"= "CreateLaunchConfiguration"
+
+
+@name("Delete Launch Configuration")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "LaunchConfigurationName"= ""
+? "Action"= "DeleteLaunchConfiguration"
+
+
+@name("Describe Launch Configurations")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "LaunchConfigurationNames.member.N"= ""
+? "MaxRecords"= ""
+? "NextToken"= ""
+? "Action"= "DescribeLaunchConfigurations"
+
+
+

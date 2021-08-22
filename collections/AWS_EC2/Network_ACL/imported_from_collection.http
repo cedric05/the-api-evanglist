@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a network ACL in a VPC.
+
+@name("Create Network ACL")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VpcId"= ""
+? "Action"= "CreateNetworkAcl"
+
+
+// Deletes the specified network ACL.
+
+@name("Delete Network ACL")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "NetworkAclId"= ""
+? "Action"= "DeleteNetworkAcl"
+
+
+// Describes one or more of your network ACLs.
+
+@name("Describe Network ACLs")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NetworkAclId.N"= ""
+? "NextToken"= ""
+? "Action"= "DescribeNetworkAcls"
+
+
+

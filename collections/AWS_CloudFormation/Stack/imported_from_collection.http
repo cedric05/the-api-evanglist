@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-06beb3cb-4f39-40cc-ab55-114f4f94f4b4.postman_collection.json
+
+@name("Create Stack")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Action"= "CreateStack"
+
+
+@name("Delete Stack")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Action"= "DeleteStack"
+
+
+@name("Describe Stacks")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Action"= "DescribeStacks"
+
+
+@name("List Stacks")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "NextToken"= ""
+? "StackStatusFilter.member.N"= ""
+? "Action"= "ListStacks"
+
+
+@name("Update Stack")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Capabilities.member.N"= ""
+? "ClientRequestToken"= ""
+? "NotificationARNs.member.N"= ""
+? "Parameters.member.N"= ""
+? "ResourceTypes.member.N"= ""
+? "RoleARN"= ""
+? "RollbackConfiguration"= ""
+? "StackName"= ""
+? "StackPolicyBody"= ""
+? "StackPolicyDuringUpdateBody"= ""
+? "StackPolicyDuringUpdateURL"= ""
+? "StackPolicyURL"= ""
+? "Tags.member.N"= ""
+? "TemplateBody"= ""
+? "TemplateURL"= ""
+? "UsePreviousTemplate"= ""
+? "Action"= "UpdateStack"
+
+
+

@@ -1,0 +1,154 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c62e1baf-4a19-4992-b48d-038acd7dffea.postman_collection.json
+
+@name("Batch Get Deployment Groups")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.BatchGetDeploymentGroups"
+? "Action"= "BatchGetDeploymentGroups"
+data('{
+    "applicationName": "TestApp-us-east-1",
+    "deploymentGroupNames": [
+        "dep-group-def-456",
+        "dep-group-jkl-234"
+    ]
+}')
+
+
+@name("Create Deployment Group")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.CreateDeploymentGroup"
+? "Action"= "CreateDeploymentGroup"
+data('{
+    "alarmConfiguration": {
+        "alarms": [
+            {
+                "name": "project-abc-alarm"
+            }
+        ],
+        "enabled": true,
+        "ignorePollAlarmFailure": false
+    },
+    "applicationName": "TestApp-us-east-1",
+    "autoRollbackConfiguration": {
+        "enabled": true,
+        "events": [
+            "DEPLOYMENT_FAILURE"
+        ]
+    },
+    "serviceRoleArn": "arn:aws:iam::444455556666:role/AnyCompany-service-role",
+    "ec2TagFilters": [
+        {
+            "Type": "KEY_AND_VALUE",
+            "Key": "Name",
+            "Value": "Project-ABC"
+        }
+    ],
+    "deploymentGroupName": "dep-group-ghi-789-2",
+    "deploymentConfigName": "CodeDeployDefault.OneAtATime",
+    "deploymentStyle": {
+        "deploymentOption": "WITH_TRAFFIC_CONTROL",
+        "deploymentType": "IN_PLACE"
+    },
+    "loadBalancerInfo": {
+        "elbInfoList": [
+            {
+                "name": "USEastLoadBalancer"
+            }
+        ]
+    },
+    "triggerConfigurations": [
+        {
+            "triggerEvents": [
+                "DeploymentFailure"
+            ],
+            "triggerName": "Trigger-group-us-east-1-deploy-fail",
+            "triggerTargetArn": "arn:aws:sns:us-east-1:80398EXAMPLE:us-east-deploy-fail"
+        }
+    ]
+}')
+
+
+@name("Delete Deployment Group")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.DeleteDeploymentGroup"
+? "Action"= "DeleteDeploymentGroup"
+data('{
+    "applicationName": "TestApp-eu-west-1",
+    "deploymentGroupName": "dep-group-abc-123"
+}')
+
+
+@name("Get Deployment Group")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.GetDeploymentGroup"
+? "Action"= "GetDeploymentGroup"
+data('{
+	"applicationName": "TestApp-us-east-1",
+	"deploymentGroupName": "dep-group-def-456"
+}')
+
+
+@name("List Deployment Groups")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.ListDeploymentGroups"
+? "Action"= "ListDeploymentGroups"
+data('{
+	"applicationName": "TestApp-us-east-1"
+}')
+
+
+@name("Update Deployment Group")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.UpdateDeploymentGroup"
+? "Action"= "UpdateDeploymentGroup"
+data('{
+    "alarmConfiguration": {
+        "alarms": [
+            {
+                "name": "project-def-alarm"
+            }
+        ],
+        "enabled": true,
+        "ignorePollAlarmFailure": false
+    },
+    "applicationName": "TestApp-us-east-1",
+    "autoRollbackConfiguration": {
+        "enabled": true,
+        "events": [
+            "DEPLOYMENT_FAILURE"
+        ]
+    },
+    "newDeploymentGroupName": "dep-group-def-765",
+    "currentDeploymentGroupName": "dep-group-def-456",
+    "triggerConfigurations": [
+        {
+            "triggerEvents": [
+                "DeploymentFailure"
+            ],
+            "triggerName": "Trigger-group-us-east-1-deploy-fail",
+            "triggerTargetArn": "arn:aws:sns:us-east-1:80398EXAMPLE:us-east-deploy-fail"
+        }
+    ]
+}')
+
+
+

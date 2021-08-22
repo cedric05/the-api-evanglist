@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a Client VPN endpoint.
+
+@name("Create Client VPN Endpoint")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Authentication.N"= ""
+? "ClientCidrBlock"= ""
+? "ClientToken"= ""
+? "ConnectionLogOptions"= ""
+? "Description"= ""
+? "DnsServers.N"= ""
+? "DryRun"= ""
+? "ServerCertificateArn"= ""
+? "SplitTunnel"= ""
+? "TagSpecification.N"= ""
+? "TransportProtocol"= ""
+? "Action"= "CreateClientVpnEndpoint"
+
+
+// Deletes the specified Client VPN endpoint.
+
+@name("Delete Client VPN Endpoint")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientVpnEndpointId"= ""
+? "DryRun"= ""
+? "Action"= "DeleteClientVpnEndpoint"
+
+
+// Describes one or more Client VPN endpoints in the account.
+
+@name("Describe Client VPN Endpoints")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientVpnEndpointId.N"= ""
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeClientVpnEndpoints"
+
+
+// Modifies the specified Client VPN endpoint.
+
+@name("Modify Client VPN Endpoint")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientVpnEndpointId"= ""
+? "ConnectionLogOptions"= ""
+? "Description"= ""
+? "DnsServers"= ""
+? "DryRun"= ""
+? "ServerCertificateArn"= ""
+? "SplitTunnel"= ""
+? "Action"= "ModifyClientVpnEndpoint"
+
+
+

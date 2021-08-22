@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d0c02c05-054f-4e33-83bf-1c03a8c9a69e.postman_collection.json
+
+@name("Create Service")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.CreateService"
+? "Action"= "CreateService"
+data('{"clientToken":"string","cluster":"string","deploymentConfiguration":{"maximumPercent":42,"minimumHealthyPercent":42},"deploymentController":{"type":"string"},"desiredCount":42,"enableECSManagedTags":1,"healthCheckGracePeriodSeconds":42,"launchType":"string","loadBalancers":[{"containerName":"string","containerPort":42,"loadBalancerName":"string","targetGroupArn":"string"}],"networkConfiguration":{"awsvpcConfiguration":{"assignPublicIp":"string","securityGroups":["string"],"subnets":["string"]}},"placementConstraints":[{"expression":"string","type":"string"}],"placementStrategy":[{"field":"string","type":"string"}],"platformVersion":"string","propagateTags":"string","role":"string","schedulingStrategy":"string","serviceName":"string","serviceRegistries":[{"containerName":"string","containerPort":42,"port":42,"registryArn":"string"}],"tags":[{"key":"string","value":"string"}],"taskDefinition":"string"}')
+
+
+@name("Delete Service")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.DeleteService"
+? "Action"= "DeleteService"
+data('{"cluster":"string","force":1,"service":"string"}')
+
+
+@name("Describe Services")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.DescribeServices"
+? "Action"= "DescribeServices"
+data('{"cluster":"string","include":["string"],"services":["string"]}')
+
+
+@name("List Services")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.ListServices"
+? "Action"= "ListServices"
+data('{"cluster":"string","launchType":"string","maxResults":42,"nextToken":"string","schedulingStrategy":"string"}')
+
+
+@name("Update Service")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.UpdateService"
+? "Action"= "UpdateService"
+data('{"cluster":"string","deploymentConfiguration":{"maximumPercent":42,"minimumHealthyPercent":42},"desiredCount":42,"forceNewDeployment":1,"healthCheckGracePeriodSeconds":42,"networkConfiguration":{"awsvpcConfiguration":{"assignPublicIp":"string","securityGroups":["string"],"subnets":["string"]}},"platformVersion":"string","service":"string","taskDefinition":"string"}')
+
+
+

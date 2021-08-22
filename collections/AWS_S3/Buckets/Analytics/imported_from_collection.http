@@ -1,0 +1,78 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// This implementation of the GET operation returns an analytics configuration (identified by the analytics configuration ID) from the bucket. 
+
+@name("Bucket Analytics")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "analytics"= ""
+
+
+// Lists the analytics configurations for the bucket. You can have up to 1,000 analytics configurations per bucket. 
+
+@name("Bucket Analytics Configurations")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "analytics"= ""
+? "id"= "test"
+
+
+// Sets an analytics configuration for the bucket (specified by the analytics configuration ID). You can have up to 1,000 analytics configurations per bucket. 
+
+@name("Bucket Analytics Configurations")
+PUT "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "analytics"= ""
+? "Id"= "test2"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticsConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <Id>test</Id>
+   <Filter>
+      <And>
+         <Prefix>test/</Prefix>
+         <Tag>
+            <Key>string</Key>
+            <Value>string</Value>
+         </Tag>
+      </And>
+      <Prefix>string</Prefix>
+      <Tag>
+         <Key>string</Key>
+         <Value>string</Value>
+      </Tag>
+   </Filter>
+   <StorageClassAnalysis>
+      <DataExport>
+         <Destination>
+            <S3BucketDestination>
+               <Bucket>arn:aws:s3:::working-demo-2</Bucket>
+               <Format>CSV</Format>
+               <Prefix>destination-prefix</Prefix>
+            </S3BucketDestination>
+         </Destination>
+         <OutputSchemaVersion>string</OutputSchemaVersion>
+      </DataExport>
+   </StorageClassAnalysis>
+</AnalyticsConfiguration>')
+
+
+// Deletes an analytics configuration for the bucket (specified by the analytics configuration ID). 
+
+@name("Delete Bucket Analytics Configuration")
+DELETE "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "analytics"= ""
+? "id"= "test"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<CreateBucketConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <LocationConstraint>us-west-1</LocationConstraint>
+</CreateBucketConfiguration>')
+
+
+

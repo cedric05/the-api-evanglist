@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-46125f15-bb1b-4d2c-bf33-03dd3d0b91fa.postman_collection.json
+
+// Create a new backend
+
+@name("Create a new backend")
+POST "https://{{baseUrl}}/backends"
+
+
+// Get an existing backend. Please note that you can retrieve a backend both by it's ID, which is globally unique among tenants and applications, as well as by name, which is unique within an application of a tenant
+
+@name("Get backend")
+GET "https://{{baseUrl}}/backends/:backendId"
+
+
+

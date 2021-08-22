@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d28d1616-8b77-4b53-b06f-5498b00510bf.postman_collection.json
+
+// Retrieving a list of Email addresses on the suppression list
+
+@name("Retrieve Suppression Email Addresses")
+GET "https://{{baseUrl}}/suppressions"
+? "apikey"= "<>"
+? "startdate"= "<>"
+? "startindex"= "<>"
+
+
+// Retrieving the count of Email addresses on the suppression list
+
+@name("Retrieve Suppression Count")
+GET "https://{{baseUrl}}/suppressions/count"
+? "apikey"= "<>"
+? "enddate"= "<>"
+? "startdate"= "<>"
+
+
+

@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Changes which network ACL a subnet is associated with.
+
+@name("Replace Network ACL Association")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AssociationId"= ""
+? "DryRun"= ""
+? "NetworkAclId"= ""
+? "Action"= "ReplaceNetworkAclAssociation"
+
+
+

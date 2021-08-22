@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Returns the notification configuration of a bucket.
+
+@name("Bucket NotificationC onfiguration")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "notification"= ""
+
+
+// Enables notifications of specified events for a bucket. For more information about event notifications, see Configuring Event Notifications. 
+
+@name("Bucket NotificationC onfiguration")
+PUT "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+? "notification"= ""
+data('<NotificationConfiguration>
+  <CloudFunctionConfiguration>
+    <Id>ObjectCreatedEvents</Id>
+    <CloudFunction>arn:aws:lambda:us-west-2:35667example:function:CreateThumbnail</CloudFunction>
+    <Event>s3:ObjectCreated:*</Event>
+  </CloudFunctionConfiguration>
+</NotificationConfiguration>')
+
+
+

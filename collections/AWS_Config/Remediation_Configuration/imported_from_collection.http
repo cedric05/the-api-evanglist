@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Delete Remediation Configuration")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DeleteRemediationConfiguration"
+data('{
+   "ConfigRuleName": "string",
+   "ResourceType": "string"
+}')
+
+
+@name("Describe Remediation Configurations")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DescribeRemediationConfigurations"
+data('{
+   "ConfigRuleNames": [ "string" ]
+}')
+
+
+@name("Put Remediation Configurations")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "PutRemediationConfigurations"
+data('{
+   "RemediationConfigurations": [ 
+      { 
+         "Arn": "string",
+         "Automatic": boolean,
+         "ConfigRuleName": "string",
+         "CreatedByService": "string",
+         "ExecutionControls": { 
+            "SsmControls": { 
+               "ConcurrentExecutionRatePercentage": number,
+               "ErrorPercentage": number
+            }
+         },
+         "MaximumAutomaticAttempts": number,
+         "Parameters": { 
+            "string" : { 
+               "ResourceValue": { 
+                  "Value": "string"
+               },
+               "StaticValue": { 
+                  "Values": [ "string" ]
+               }
+            }
+         },
+         "ResourceType": "string",
+         "RetryAttemptSeconds": number,
+         "TargetId": "string",
+         "TargetType": "string",
+         "TargetVersion": "string"
+      }
+   ]
+}')
+
+
+

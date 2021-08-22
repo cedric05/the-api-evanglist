@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Requires Skip and Take. Maximum page size is 100.
+
+@name("Returns list of popular celebrities based on IVA data.")
+GET "https://{{baseUrl}}/Charts/People/Popular"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Requires Skip and Take. Maximum page size is 100.
+
+@name("Returns a list of shows based on popularity.")
+GET "https://{{baseUrl}}/Charts/Shows/Popular"
+? "Take"= "<get>"
+? "Skip"= "<get>"
+
+
+

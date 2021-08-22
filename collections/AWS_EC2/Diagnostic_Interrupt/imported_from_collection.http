@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Sends a diagnostic interrupt to the specified Amazon EC2 instance to trigger a 
+//                         kernel panic (on Linux instances), or a 
+//                         blue screen/stop error (on Windows 
+//                         instances).
+
+@name("Send Diagnostic Interrupt")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InstanceId"= ""
+? "Action"= "SendDiagnosticInterrupt"
+
+
+

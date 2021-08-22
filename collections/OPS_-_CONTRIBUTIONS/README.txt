@@ -1,0 +1,4 @@
+This is a collection that exists in all API Evangelist public workspaces, providing a doorway for anyone to make a contribution to the workspace. If you want to edit an existing collection you can fork the collection, make your changes, and submit a pull request. If you want to add a new collection to the workspace you can fork this collection and add your collection as a folder within this collection. Once merged, we'll drag your folder out into it's own unique collection. 
+
+## Support
+If you have any questions on how this work leave a comment on this collection, or email info@apievangelist.com for more support. This workspace is meant to be evolved and maintained by the public, while being driven by API Evangelist as part of the Postman platform.

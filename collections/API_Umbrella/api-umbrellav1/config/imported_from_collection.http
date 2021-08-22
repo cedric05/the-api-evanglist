@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ed7cee5e-e211-475d-aecd-436ce8cca5ff.postman_collection.json
+
+// Return a summary of configuration changes for API backends and website backends that have not yet been published.
+
+@name("Get a summary of pending configuration changes.")
+GET "https://{{baseUrl}}/api-umbrella/v1/config/pending_changes"
+
+
+@name("Publish API backend or website backend changes.")
+POST "https://{{baseUrl}}/api-umbrella/v1/config/publish"
+
+
+

@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Associates a subnet with a route table.
+
+@name("Associate Route Table")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "RouteTableId"= ""
+? "SubnetId"= ""
+? "Action"= "AssociateRouteTable"
+
+
+// Creates a route table for the specified VPC.
+
+@name("Create Route Table")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VpcId"= ""
+? "Action"= "CreateRouteTable"
+
+
+// Deletes the specified route table.
+
+@name("Delete Route Table")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "RouteTableId"= ""
+? "Action"= "DeleteRouteTable"
+
+
+// Describes one or more of your route tables.
+
+@name("Describe Route Tables")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "RouteTableId.N"= ""
+? "Action"= "DescribeRouteTables"
+
+
+// Disassociates a subnet from a route table.
+
+@name("Disassociate Route Table")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AssociationId"= ""
+? "DryRun"= ""
+? "Action"= "DisassociateRouteTable"
+
+
+

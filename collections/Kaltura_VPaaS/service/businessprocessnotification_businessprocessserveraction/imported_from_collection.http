@@ -1,0 +1,131 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Allows you to add a new Business-Process server object
+
+@name("Get Service Businessprocessnotification Businessprocessserver Action Add")
+GET "https://{{baseUrl}}/service/businessprocessnotification_businessprocessserver/action/add"
+? "businessProcessServer[name]"= "<>"
+? "businessProcessServer[systemName]"= "<>"
+? "businessProcessServer[description]"= "<>"
+? "businessProcessServer[dc]"= "<>"
+? "businessProcessServer[objectType]"= "<>"
+? "businessProcessServer[host]"= "<>"
+? "businessProcessServer[port]"= "<>"
+? "businessProcessServer[protocol]"= "<>"
+? "businessProcessServer[username]"= "<>"
+? "businessProcessServer[password]"= "<>"
+
+
+// Delete an Business-Process server object
+
+@name("Get Service Businessprocessnotification Businessprocessserver Action Delete")
+GET "https://{{baseUrl}}/service/businessprocessnotification_businessprocessserver/action/delete"
+? "id"= "<>"
+
+
+// Retrieve an Business-Process server object by id
+
+@name("Get Service Businessprocessnotification Businessprocessserver Action Get")
+GET "https://{{baseUrl}}/service/businessprocessnotification_businessprocessserver/action/get"
+? "id"= "<>"
+
+
+// list Business-Process server objects
+
+@name("Get Service Businessprocessnotification Businessprocessserver Action List")
+GET "https://{{baseUrl}}/service/businessprocessnotification_businessprocessserver/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[idNotIn]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[updatedAtLessThanOrEqual]"= "<>"
+? "filter[partnerIdEqual]"= "<>"
+? "filter[partnerIdIn]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusNotEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "filter[statusNotIn]"= "<>"
+? "filter[typeEqual]"= "<>"
+? "filter[typeIn]"= "<>"
+? "filter[dcEqual]"= "<>"
+? "filter[dcEqOrNull]"= "<>"
+? "filter[currentDcOrExternal]"= "<>"
+? "filter[currentDc]"= "<>"
+? "filter[objectType]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// Update an existing Business-Process server object
+
+@name("Get Service Businessprocessnotification Businessprocessserver Action Update")
+GET "https://{{baseUrl}}/service/businessprocessnotification_businessprocessserver/action/update"
+? "id"= "<>"
+? "businessProcessServer[name]"= "<>"
+? "businessProcessServer[systemName]"= "<>"
+? "businessProcessServer[description]"= "<>"
+? "businessProcessServer[dc]"= "<>"
+? "businessProcessServer[objectType]"= "<>"
+? "businessProcessServer[host]"= "<>"
+? "businessProcessServer[port]"= "<>"
+? "businessProcessServer[protocol]"= "<>"
+? "businessProcessServer[username]"= "<>"
+? "businessProcessServer[password]"= "<>"
+
+
+// Update Business-Process server status by id
+
+@name("Get Service Businessprocessnotification Businessprocessserver Action Updatestatus")
+GET "https://{{baseUrl}}/service/businessprocessnotification_businessprocessserver/action/updateStatus"
+? "id"= "<>"
+? "status"= "<>"
+
+
+

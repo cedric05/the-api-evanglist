@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8f59125-1395-4941-8451-63f60c3e21eb.postman_collection.json
+
+// Get image list
+
+@name("Get Images")
+GET "https://{{baseUrl}}/images"
+? "start"= "<string>"
+? "end"= "<string>"
+
+
+// Get metadata of one image.
+
+@name("Get Images")
+GET "https://{{baseUrl}}/images/:id"
+
+
+// Get image file
+
+@name("Get Images")
+GET "https://{{baseUrl}}/images/{{id}}.jpg"
+
+
+

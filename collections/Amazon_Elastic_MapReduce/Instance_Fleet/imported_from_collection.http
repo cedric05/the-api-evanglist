@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f15eb0b0-8456-4c8c-b7eb-e8c210aa11fb.postman_collection.json
+
+@name("Add Instance Fleet")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.AddInstanceFleet"
+? "Action"= "AddInstanceFleet"
+data('{"ClusterId":"string","InstanceFleet":{"InstanceFleetType":"string","InstanceTypeConfigs":[{"BidPrice":"string","BidPriceAsPercentageOfOnDemandPrice":42,"Configurations":[{"Classification":"string","Configurations":["Configuration"],"Properties":{"string":"string"}}],"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"Iops":42,"SizeInGB":42,"VolumeType":"string"},"VolumesPerInstance":42}],"EbsOptimized":1},"InstanceType":"string","WeightedCapacity":42}],"LaunchSpecifications":{"SpotSpecification":{"BlockDurationMinutes":42,"TimeoutAction":"string","TimeoutDurationMinutes":42}},"Name":"string","TargetOnDemandCapacity":42,"TargetSpotCapacity":42}}')
+
+
+@name("List Instance Fleets")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.ListInstanceFleets"
+? "Action"= "ListInstanceFleets"
+data('{"ClusterId":"string","Marker":"string"}')
+
+
+@name("Modify Instance Fleet")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.ModifyInstanceFleet"
+? "Action"= "ModifyInstanceFleet"
+data('{"ClusterId":"string","InstanceFleet":{"InstanceFleetId":"string","TargetOnDemandCapacity":42,"TargetSpotCapacity":42}}')
+
+
+

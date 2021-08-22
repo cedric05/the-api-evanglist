@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cd9b4406-c593-4cb5-89cb-6825b6ec9f1b.postman_collection.json
+
+// Gives a description of the Time to Live (TTL) status on the specified table.
+
+@name("Describe Time To Live")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DescribeTimeToLive"
+data('{
+   "TableName": "Thread"
+}')
+
+
+// The UpdateTimeToLive method enables or disables Time to Live (TTL) for the specified table. A successful UpdateTimeToLive call returns the current TimeToLiveSpecification. It can take up to one hour for the change to fully process. Any additional UpdateTimeToLive calls for the same table during this one hour duration result in a ValidationException.
+
+@name("Update Time To Live")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "UpdateTimeToLive"
+data('{
+   "TableName": "Thread",
+   "TimeToLiveSpecification": { 
+      "AttributeName": "string",
+      "Enabled": 1
+   }
+}')
+
+
+

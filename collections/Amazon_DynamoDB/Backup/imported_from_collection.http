@@ -1,0 +1,88 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cd9b4406-c593-4cb5-89cb-6825b6ec9f1b.postman_collection.json
+
+// Creates a backup for an existing table.
+
+@name("Create Backup")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.CreateBackup"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "CreateBackup"
+data('{
+   "BackupName": "postman-1",
+   "TableName": "postman"
+}')
+
+
+// Deletes an existing backup of a table.
+
+@name("Delete Backup")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DeleteBackup"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DeleteBackup"
+data('{
+   "BackupArn": "arn:aws:dynamodb:us-east-1:879370021840:table/postman/backup/01574827967874-e9abc394"
+}')
+
+
+// Describes an existing backup of a table.
+
+@name("Describe Backup")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DescribeBackup"
+data('{
+   "BackupArn": "arn:aws:dynamodb:us-east-1:879370021840:table/postman/backup/01574827970345-2811a628"
+}')
+
+
+// List backups associated with an AWS account. To list backups for a given table, specify TableName. ListBackups returns a paginated list of results with at most 1 MB worth of items in a page. You can also specify a limit for the maximum number of entries to be returned in a page.
+
+@name("List Backups")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.ListBackups"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "ListBackups"
+data('{
+   "Limit": 10,
+   "TableName": "postman"
+}')
+
+
+// Checks the status of continuous backups and point in time recovery on the specified table. Continuous backups are ENABLED on all tables at table creation. If point in time recovery is enabled, PointInTimeRecoveryStatus will be set to ENABLED.
+
+@name("Describe Continuous Backups")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeContinuousBackups"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DescribeContinuousBackups"
+data('{
+   "TableName": "postman"
+}')
+
+
+// UpdateContinuousBackups enables or disables point in time recovery for the specified table. A successful UpdateContinuousBackups call returns the current ContinuousBackupsDescription. Continuous backups are ENABLED on all tables at table creation. If point in time recovery is enabled, PointInTimeRecoveryStatus will be set to ENABLED.
+
+@name("Update Continuous Backups")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.UpdateContinuousBackups"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "UpdateContinuousBackups"
+data('{
+   "PointInTimeRecoverySpecification": { 
+      "PointInTimeRecoveryEnabled": boolean
+   },
+   "TableName": "postman"
+}')
+
+
+

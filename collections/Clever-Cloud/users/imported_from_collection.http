@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("post Users")
+POST "https://{{baseUrl}}/users"
+? "invitationKey"= "<string>"
+? "addonBetaInvitationKey"= "<string>"
+? "email"= "<string>"
+? "pass"= "<string>"
+? "url_next"= "<string>"
+? "terms"= "<boolean>"
+
+
+@name("get Users User Id Git Info")
+GET "https://{{baseUrl}}/users/:userId/git-info"
+
+
+

@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-da56505c-d9c4-439c-8d65-62c4dc15cbbc.postman_collection.json
+
+// Get an analytics report on one or more dimensions. Note that the fields returned in the response will vary according to the dimension(s) requested and the fields specified in the fields parameter 
+
+@name("Get Analytics Report")
+GET "https://{{baseUrl}}/data"
+? "accounts"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "sort"= "<string>"
+? "fields"= "<string>"
+? "dimensions"= "<string>"
+? "where"= "<string>"
+? "from"= "<string>"
+? "to"= "<string>"
+? "format"= "<string>"
+? "reconciled"= "<boolean>"
+
+
+// Get the date range for which reconciled data is available for any Analytics API report. All parameters are allowed, but only account, dimensions, and where affect the result &mdash; all others are ignored. Note that date range for this request must fall within the available date range for the dimensions requested &mdash; the simplest thing to do is to use from=alltime 
+
+@name("Get Available Date Range")
+GET "https://{{baseUrl}}/data/status"
+? "accounts"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "sort"= "<string>"
+? "fields"= "<string>"
+? "dimensions"= "<string>"
+? "where"= "<string>"
+? "from"= "<string>"
+? "to"= "<string>"
+? "format"= "<string>"
+? "reconciled"= "<boolean>"
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-03095177-bc1d-4534-9ca7-f4f4e0ceb484.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}" )
+
+
+@name("Alexa Top Sites") : "base-inherit-auth"
+GET "https://ats.amazonaws.com/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}" )
+"Content-Type": "application/xml"
+"Accept": "application/xml"
+? "CountryCode"= "US"
+? "Url"= "twilio.com"
+
+
+

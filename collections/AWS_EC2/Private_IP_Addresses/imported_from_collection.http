@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Assigns one or more secondary private IP addresses to the specified network interface.
+
+@name("Assign Private IP Addresses")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AllowReassignment"= ""
+? "NetworkInterfaceId"= ""
+? "PrivateIpAddress.N"= ""
+? "SecondaryPrivateIpAddressCount"= ""
+? "Action"= "AssignPrivateIpAddresses"
+
+
+// Unassigns one or more secondary private IP addresses from a network interface.
+
+@name("Unassign Private IP Addresses")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "NetworkInterfaceId"= ""
+? "PrivateIpAddress.N"= ""
+? "Action"= "UnassignPrivateIpAddresses"
+
+
+

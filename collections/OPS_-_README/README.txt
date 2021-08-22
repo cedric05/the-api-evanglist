@@ -1,0 +1,7 @@
+This is designed to be a guide to producing and consuming APIs within a workspace in a collaborative and iterative way. Providing a guide to all the moving parts of this workspace, helping educate all team members who will be working here. Providing not just documentation for how to use Postman, but also how to better use Postman to deliver consistent APIs across the API lifecycle.
+
+## Operational README
+This is a living document, leveraging a collection to define the API lifecycle that exists across this team. This collection is managed at the operational level and then shared across all of the workspaces where it will be needed. Providing a single shareable collection that introduces the team to all the moving parts of operation in a hands-on way. 
+
+## Support & Contributions
+If you find something you'd like to edit in this documentation and you are on the team, feel free to make the change. If you are viewing this from a public workspace, feel free to fork the collection, make the change, and submit a pull requests with your changes. The goal of this collection is to help inform team members and the public about how APIs are designed, developed, delivered, and supported across API operations.

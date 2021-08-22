@@ -26,12 +26,17 @@ def get_response(index, url):
 
 START_FROM = 0
 
+if len(sys.argv) == 2:
+    collections_index_root = sys.argv[1]
+else:
+    collections_index_root = package_dir.joinpath("collections.index.json")
+
 
 def main():
     index_key = 0
     collections_root = package_dir.parent.joinpath(
         "../collections")
-    with open(package_dir.joinpath("collections.index.json"), 'r') as postman_collection_index_file2:
+    with open(collections_index_root, 'r') as postman_collection_index_file2:
         data = json.load(postman_collection_index_file2)
         with tempfile.TemporaryDirectory() as tmpdirname:
             for index, collection_metadata in enumerate(data):
@@ -66,6 +71,7 @@ def main():
                 postman_info = collections_root.joinpath(clean_filename(
                     collection['info']['name']), "POSTMAN_INFO.md")
                 postman_info.parent.mkdir(parents=True, exist_ok=True)
+                print(postman_info)
                 with open(postman_info, mode='w') as f:
                     f.write(f"""imported from {referral_url}
 collectionId: {collection_id}

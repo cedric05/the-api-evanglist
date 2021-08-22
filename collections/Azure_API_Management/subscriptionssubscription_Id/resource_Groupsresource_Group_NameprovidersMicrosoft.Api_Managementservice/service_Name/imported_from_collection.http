@@ -1,0 +1,80 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Creates or updates an API Management service. This is long running operation and could take several minutes to complete.
+
+@name("ApiManagementServices CreateOrUpdate")
+PUT "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName"
+
+
+// Lists all policy snippets.
+
+@name("PolicySnippets ListByService")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/policySnippets"
+? "scope"= "<get>"
+
+
+// Lists all azure regions in which the service exists.
+
+@name("Regions ListByService")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/regions"
+
+
+// Manages deployments of an API Management service. This operation can be used to do the following: Change SKU, Change SKU Units, Change Service Tier (Developer/Standard/Premium) and Manage VPN Configuration. This is a long running operation and can take several minutes to complete.
+
+@name("ApiManagementServices ManageDeployments")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/managedeployments"
+
+
+// Restores a backup of an API Management service created using the ApiManagementServices_Backup operation on the current service. This is a long running operation and could take several minutes to complete.
+
+@name("ApiManagementServices Restore")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/restore"
+
+
+// Creates a backup of the API Management service to the given Azure Storage Account. This is long running operation and could take several minutes to complete.
+
+@name("ApiManagementServices Backup")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/backup"
+
+
+// Gets the Single-Sign-On token for the API Management Service which is valid for 5 Minutes.
+
+@name("ApiManagementServices GetSsoToken")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/getssotoken"
+
+
+// Upload Custom Domain SSL certificate for an API Management service.
+
+@name("ApiManagementServices UploadCertificate")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/uploadcertificate"
+
+
+// Creates, updates, or deletes the custom hostnames for an API Management service. The custom hostname can be applied to the Proxy and Portal endpoint. This is a long running operation and could take several minutes to complete.
+
+@name("ApiManagementServices UpdateHostname")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/updatehostname"
+
+
+// Updates the Microsoft.ApiManagement resource running in the Virtual network to pick the updated network settings.
+
+@name("ApiManagementServices ApplyNetworkConfigurationUpdates")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/applynetworkconfigurationupdates"
+
+
+// Gets the Connectivity Status to the external resources on which the Api Management service depends from inside the Cloud Service. This also returns the DNS Servers as visible to the CloudService.
+
+@name("NetworkStatus GetByService")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/networkstatus"
+
+
+// Lists report records.
+
+@name("Reports ListByService")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/reports/:aggregation"
+? "$filter"= "<>"
+? "interval"= "<get>"
+
+
+

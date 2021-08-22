@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Grants an AWS-authorized account permission to attach the specified network interface
+//                         to
+//                         an instance in their account.
+
+@name("Create Network Interface Permission")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AwsAccountId"= ""
+? "AwsService"= ""
+? "DryRun"= ""
+? "NetworkInterfaceId"= ""
+? "Permission"= ""
+? "Action"= "CreateNetworkInterfacePermission"
+
+
+// Deletes a permission for a network interface.
+
+@name("Delete Network Interface Permission")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Force"= ""
+? "NetworkInterfacePermissionId"= ""
+? "Action"= "DeleteNetworkInterfacePermission"
+
+
+// Describes the permissions for your network interfaces.
+
+@name("Describe Network Interface Permissions")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NetworkInterfacePermissionId.N"= ""
+? "NextToken"= ""
+? "Action"= "DescribeNetworkInterfacePermissions"
+
+
+

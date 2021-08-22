@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-368303e5-e89c-4c85-9f24-89604973b34f.postman_collection.json
+
+// The Account Details command is used to determine how much credit you have left.  
+
+@name("Account Details")
+GET "https://{{baseUrl}}/mailer/account-details"
+? "api_key"= "<>"
+? "username"= "<>"
+
+
+// This api will return you the list of email addresses which are currently in your block list. 
+
+@name("Unsubscribed")
+GET "https://{{baseUrl}}/mailer/lists/unsubscribed"
+? "api_key"= "<>"
+? "username"= "<>"
+
+
+// api.elasticemail.com
+
+@name("Send Email")
+GET "https://{{baseUrl}}/mailer/send/"
+? "api_key"= "<>"
+? "body_html"= "<>"
+? "body_text"= "<>"
+? "channel"= "<>"
+? "charset"= "<>"
+? "encodingtype"= "<>"
+? "from"= "<>"
+? "from_name"= "<>"
+? "lists"= "<>"
+? "merge_firstname"= "<>"
+? "merge_lastname"= "<>"
+? "reply_to"= "<>"
+? "reply_to_name"= "<>"
+? "sender"= "<>"
+? "sender_name"= "<>"
+? "subject"= "<>"
+? "template"= "<>"
+? "time_offset_minutes"= "<>"
+? "total"= "<>"
+? "username"= "<>"
+
+
+

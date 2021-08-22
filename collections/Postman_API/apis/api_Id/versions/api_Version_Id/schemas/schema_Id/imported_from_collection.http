@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// This call fetches a single schema having the specified id.
+// 
+// Response contains a `schema` object with all the details related to the schema, namely, `id`, `language`, `type`, `schema` etc. 
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get Schema")
+GET "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/schemas/:schemaId"
+
+
+// This call creates a collection and links it to an API as one or multiple relations. 
+// 
+// Request body requires two keys:
+// - `name` - Name of the collection to be created.
+// - `relations` - A list of relation(s) to be created.
+// 
+// The allowed relation types are `contracttest`, `integrationtest`, `testsuite`, and `documentation`.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Create collection from schema")
+POST "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/schemas/:schemaId/collections"
+? "workspace"= "<string>"
+
+
+

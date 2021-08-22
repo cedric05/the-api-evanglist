@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns a representation of the conference identified by {ConferenceSid}.
+
+@name("/Accounts/:AccountSid/Conferences/{{ConferenceSid}}{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Conferences/{{ConferenceSid}}{{mediaTypeExtension}}"
+
+
+// Returns a representation of the conference identified by {ConferenceSid}.
+
+@name("Accounts.Account Sid.Conferences.Conference Sid.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Conferences/{{ConferenceSid}}.json"
+
+
+

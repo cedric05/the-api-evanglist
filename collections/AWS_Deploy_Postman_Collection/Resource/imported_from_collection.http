@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d8f0a546-2bf3-4572-88c9-9190f362a7c5.postman_collection.json
+
+@name("By Id Resource")
+GET "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/resources/3kzxbg5sa2&resource_id=&embed="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "resource_id"= ""
+? "embed"= ""
+
+
+@name("Create Child Resource")
+POST "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/resources/47rxl6"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Create Resource")
+POST "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/resources/3kzxbg5sa2"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Resource")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/resources/m799ha"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Methods Resource")
+GET "https://{{aws_api_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Update Resource")
+PATCH "https://{{aws_api_gateway_base_url}}/restapis/86l3267lf6/resources/h9m85b"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Restapiauthorizers")
+GET "https://{{aws_api_gateway_base_url}}/restapis/86l3267lf6/authorizers&limit="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+
+
+

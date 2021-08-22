@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all CustomerGroups
+
+@name("Get all CustomerGroups")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/CustomerGroups"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+
+
+// Click here for more information on updating collections.
+
+@name("This method is used to update a single customer group in the database. The {id} parameter specifies which customer group to update.")
+PUT "https://{{baseUrl}}/3dCartWebAPI/v1/CustomerGroups/:customergroupid"
+
+
+

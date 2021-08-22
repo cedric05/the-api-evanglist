@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve SCM organizations details for an organization
+
+@name("get SCM Organisations")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/scm/:scm/organizations"
+? "No Name"= "<string>"
+? "credentialId"= "<string>"
+
+
+

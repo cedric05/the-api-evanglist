@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("By Name Domain Name")
+GET "https://{{aws_api_gateway_base_url}}/domainnames/a.b.c.com&domain_name="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "domain_name"= ""
+
+
+@name("Create Domain Name")
+GET "https://{{aws_api_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Domainnamedelete")
+DELETE "https://{{aws_api_gateway_base_url}}/domainnames/mon-api.com"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Domainnameupdate")
+PATCH "https://{{aws_api_gateway_base_url}}/domainnames/mon-api.com"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

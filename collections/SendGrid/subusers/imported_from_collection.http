@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// This endpoint allows you to retrieve a list of all of your subusers. You can choose to retrieve specific subusers as well as limit the results that come back from the API.
+// 
+// For more information about Subusers:
+// 
+// * [User Guide > Subusers](https://sendgrid.com/docs/User_Guide/Settings/Subusers/index.html)
+// * [Classroom > How do I add more subusers to my account?](https://sendgrid.com/docs/Classroom/Basics/Account/how_do_i_add_more_subusers_to_my_account.html)
+
+@name("Create Subuser")
+POST "https://{{baseUrl}}/subusers"
+
+
+// Subuser sender reputations give a good idea how well a sender is doing with regards to how recipients and recipient servers react to the mail that is being received. When a bounce, spam report, or other negative action happens on a sent email, it will effect your sender rating.
+// 
+// This endpoint allows you to request the reputations for your subusers.
+
+@name("Retrieve Subuser Reputations")
+GET "https://{{baseUrl}}/subusers/reputations"
+? "usernames"= "<string>"
+
+
+

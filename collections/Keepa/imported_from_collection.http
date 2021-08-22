@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1eec20ea-5d13-4f00-9527-81027f24708c.postman_collection.json
+
+// Retrieves the product object for the specified ASIN and domain. If our last update is older than one hour it will be automatically refreshed before delivered to you to ensure you get near to real-time pricing data.  You can request products via either their ASIN (preferred) or via UPC and EAN codes. You can not use both parameters, asin and code, in the same request. Keepa can not track Amazon Fresh and eBooks.
+
+@name("Retrieve the product for the specified ASIN and domain.")
+GET "https://{{baseUrl}}/product"
+? "key"= "<string>"
+? "domain"= "<string>"
+? "asin"= "<string>"
+? "code"= "<string>"
+
+
+// Retrieve category objects using their node ids and (optional) their parent tree.
+
+@name("Returns Amazon category information from Keepa API.")
+GET "https://{{baseUrl}}/category"
+? "key"= "<string>"
+? "domain"= "<string>"
+? "category"= "<object>"
+? "parents"= "<string>"
+
+
+

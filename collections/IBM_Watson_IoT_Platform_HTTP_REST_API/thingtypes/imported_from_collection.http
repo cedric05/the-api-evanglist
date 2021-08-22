@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Within the Watson IoT Platform, a Thing allows you to aggregate one or
+// more instances of a Device or Thing together to represent a more coarse
+// grained object.  For example, you might aggregrate together a temperature
+// sensor, flow sensor and power sensor together into a Boiler. 
+// 
+// Thing Types are used to model Things.  The Schema associated with a
+// Thing Type defines the type of objects that are aggregated togther to
+// make up an instance of a Thing. A Thing Type must be created in an 
+// organization b
+
+@name("Query active thing types")
+GET "https://{{baseUrl}}/thing/types"
+
+
+

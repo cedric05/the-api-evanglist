@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-46125f15-bb1b-4d2c-bf33-03dd3d0b91fa.postman_collection.json
+
+// Get stream from a container using a StreamLocation
+
+@name("Get stream")
+POST "https://{{baseUrl}}/streams/location"
+
+
+// Create a new stream within a container. Query parameter creationMode accepts values NEW_ONLY to create a new stream, REQUIRE_EXISTING to update an stream and ALLOW_EXISTING to create a new stream or overwrite an existing stream.
+
+@name("Create a new stream")
+POST "https://{{baseUrl}}/streams/path/:containerId/:path"
+? "propagationType"= "<string>"
+
+
+

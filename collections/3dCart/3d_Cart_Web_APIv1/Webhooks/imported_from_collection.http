@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all Webhooks
+
+@name("Get all Webhooks")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Webhooks"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "name"= "<string>"
+? "url"= "<string>"
+? "enabled"= "<boolean>"
+? "format"= "<string>"
+? "datecreatedstart"= "<string>"
+? "datecreatedend"= "<string>"
+? "dateupdatedstart"= "<string>"
+? "dateupdatedend"= "<string>"
+? "countonly"= "<integer>"
+
+
+// Get a Webhook
+
+@name("Get a Webhook")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Webhooks/:id"
+
+
+// Get a list of all the Events
+
+@name("Get all Events")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Webhooks/Events"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "name"= "<string>"
+? "countonly"= "<integer>"
+
+
+

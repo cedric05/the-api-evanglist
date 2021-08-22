@@ -1,0 +1,71 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8631617c-c1ed-4e14-b0cd-77e4410753c4.postman_collection.json
+
+@name("Describe Risk Configuration")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DescribeRiskConfiguration"
+data('{
+   "ClientId": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Set Risk Configuration")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "SetRiskConfiguration"
+data('{
+   "AccountTakeoverRiskConfiguration": { 
+      "Actions": { 
+         "HighAction": { 
+            "EventAction": "string",
+            "Notify": boolean
+         },
+         "LowAction": { 
+            "EventAction": "string",
+            "Notify": boolean
+         },
+         "MediumAction": { 
+            "EventAction": "string",
+            "Notify": boolean
+         }
+      },
+      "NotifyConfiguration": { 
+         "BlockEmail": { 
+            "HtmlBody": "string",
+            "Subject": "string",
+            "TextBody": "string"
+         },
+         "From": "string",
+         "MfaEmail": { 
+            "HtmlBody": "string",
+            "Subject": "string",
+            "TextBody": "string"
+         },
+         "NoActionEmail": { 
+            "HtmlBody": "string",
+            "Subject": "string",
+            "TextBody": "string"
+         },
+         "ReplyTo": "string",
+         "SourceArn": "string"
+      }
+   },
+   "ClientId": "string",
+   "CompromisedCredentialsRiskConfiguration": { 
+      "Actions": { 
+         "EventAction": "string"
+      },
+      "EventFilter": [ "string" ]
+   },
+   "RiskExceptionConfiguration": { 
+      "BlockedIPRangeList": [ "string" ],
+      "SkippedIPRangeList": [ "string" ]
+   },
+   "UserPoolId": "string"
+}')
+
+
+

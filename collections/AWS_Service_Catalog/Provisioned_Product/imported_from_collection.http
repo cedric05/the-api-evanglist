@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-88ac1dc0-36c3-4a4a-99dc-96fc8b7c0608.postman_collection.json
+
+@name("Describe Provisioned Product")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DescribeProvisionedProduct"
+data('{"AcceptLanguage":"string","Id":"string"}')
+
+
+@name("Scan Provisioned Products")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "ScanProvisionedProducts"
+data('null')
+
+
+@name("Search Provisioned Products")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "SearchProvisionedProducts"
+data('null')
+
+
+@name("Terminate Provisioned Product")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "TerminateProvisionedProduct"
+data('{"AcceptLanguage":"string","IgnoreErrors":1,"ProvisionedProductId":"string","ProvisionedProductName":"string","TerminateToken":"string"}')
+
+
+@name("Update Provisioned Product")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "UpdateProvisionedProduct"
+data('null')
+
+
+

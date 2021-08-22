@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0b8cbe34-0af1-44a6-992a-ffe13940e455.postman_collection.json
+
+@name("Create Application")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "CreateApplication"
+data('{"ApplicationCode":"string","ApplicationDescription":"string","ApplicationName":"string","CloudWatchLoggingOptions":[{"LogStreamARN":"string","RoleARN":"string"}],"Inputs":[{"InputParallelism":{"Count":42},"InputProcessingConfiguration":{"InputLambdaProcessor":{"ResourceARN":"string","RoleARN":"string"}},"InputSchema":{"RecordColumns":[{"Mapping":"string","Name":"string","SqlType":"string"}],"RecordEncoding":"string","RecordFormat":{"MappingParameters":{"CSVMappingParameters":{"RecordColumnDelimiter":"string","RecordRowDelimiter":"string"},"JSONMappingParameters":{"RecordRowPath":"string"}},"RecordFormatType":"string"}},"KinesisFirehoseInput":{"ResourceARN":"string","RoleARN":"string"},"KinesisStreamsInput":{"ResourceARN":"string","RoleARN":"string"},"NamePrefix":"string"}],"Outputs":[{"DestinationSchema":{"RecordFormatType":"string"},"KinesisFirehoseOutput":{"ResourceARN":"string","RoleARN":"string"},"KinesisStreamsOutput":{"ResourceARN":"string","RoleARN":"string"},"LambdaOutput":{"ResourceARN":"string","RoleARN":"string"},"Name":"string"}],"Tags":[{"Key":"string","Value":"string"}]}')
+
+
+@name("Delete Application")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "DeleteApplication"
+data('{"ApplicationName":"string","CreateTimestamp":42}')
+
+
+@name("Describe Application")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "DescribeApplication"
+data('{"ApplicationName":"string"}')
+
+
+@name("List Applications")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "ListApplications"
+data('{"ExclusiveStartApplicationName":"string","Limit":42}')
+
+
+@name("Start Application")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "StartApplication"
+data('{"ApplicationName":"string","InputConfigurations":[{"Id":"string","InputStartingPositionConfiguration":{"InputStartingPosition":"string"}}]}')
+
+
+@name("Stop Application")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "StopApplication"
+data('{"ApplicationName":"string"}')
+
+
+@name("Update Application")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "UpdateApplication"
+data('{"ApplicationName":"string","ApplicationUpdate":{"ApplicationCodeUpdate":"string","CloudWatchLoggingOptionUpdates":[{"CloudWatchLoggingOptionId":"string","LogStreamARNUpdate":"string","RoleARNUpdate":"string"}],"InputUpdates":[{"InputId":"string","InputParallelismUpdate":{"CountUpdate":42},"InputProcessingConfigurationUpdate":{"InputLambdaProcessorUpdate":{"ResourceARNUpdate":"string","RoleARNUpdate":"string"}},"InputSchemaUpdate":{"RecordColumnUpdates":[{"Mapping":"string","Name":"string","SqlType":"string"}],"RecordEncodingUpdate":"string","RecordFormatUpdate":{"MappingParameters":{"CSVMappingParameters":{"RecordColumnDelimiter":"string","RecordRowDelimiter":"string"},"JSONMappingParameters":{"RecordRowPath":"string"}},"RecordFormatType":"string"}},"KinesisFirehoseInputUpdate":{"ResourceARNUpdate":"string","RoleARNUpdate":"string"},"KinesisStreamsInputUpdate":{"ResourceARNUpdate":"string","RoleARNUpdate":"string"},"NamePrefixUpdate":"string"}],"OutputUpdates":[{"DestinationSchemaUpdate":{"RecordFormatType":"string"},"KinesisFirehoseOutputUpdate":{"ResourceARNUpdate":"string","RoleARNUpdate":"string"},"KinesisStreamsOutputUpdate":{"ResourceARNUpdate":"string","RoleARNUpdate":"string"},"LambdaOutputUpdate":{"ResourceARNUpdate":"string","RoleARNUpdate":"string"},"NameUpdate":"string","OutputId":"string"}],"ReferenceDataSourceUpdates":[{"ReferenceId":"string","ReferenceSchemaUpdate":{"RecordColumns":[{"Mapping":"string","Name":"string","SqlType":"string"}],"RecordEncoding":"string","RecordFormat":{"MappingParameters":{"CSVMappingParameters":{"RecordColumnDelimiter":"string","RecordRowDelimiter":"string"},"JSONMappingParameters":{"RecordRowPath":"string"}},"RecordFormatType":"string"}},"S3ReferenceDataSourceUpdate":{"BucketARNUpdate":"string","FileKeyUpdate":"string","ReferenceRoleARNUpdate":"string"},"TableNameUpdate":"string"}]},"CurrentApplicationVersionId":42}')
+
+
+

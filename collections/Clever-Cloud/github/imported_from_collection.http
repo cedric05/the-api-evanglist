@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("get Github")
+GET "https://{{baseUrl}}/github"
+
+
+@name("get Github Applications")
+GET "https://{{baseUrl}}/github/applications"
+
+
+@name("get Github Callback")
+GET "https://{{baseUrl}}/github/callback"
+? "code"= "<string>"
+? "state"= "<string>"
+? "error"= "<string>"
+? "error_description"= "<string>"
+? "error_uri"= "<string>"
+
+
+@name("get Github Emails")
+GET "https://{{baseUrl}}/github/emails"
+
+
+@name("get Github Keys")
+GET "https://{{baseUrl}}/github/keys"
+
+
+@name("delete Github Link")
+DELETE "https://{{baseUrl}}/github/link"
+
+
+@name("get Github Login")
+GET "https://{{baseUrl}}/github/login"
+? "redirectUrl"= "<string>"
+? "fromAuthorize"= "<string>"
+
+
+@name("post Github Redeploy")
+POST "https://{{baseUrl}}/github/redeploy"
+
+
+@name("get Github Signup")
+GET "https://{{baseUrl}}/github/signup"
+? "redirectUrl"= "<string>"
+? "fromAuthorize"= "<string>"
+
+
+@name("get Github Username")
+GET "https://{{baseUrl}}/github/username"
+
+
+

@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Attaches an internet gateway to a VPC, enabling connectivity between the internet
+//                         and
+//                         the VPC.
+
+@name("Attach Internet Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InternetGatewayId"= ""
+? "VpcId"= ""
+? "Action"= "AttachInternetGateway"
+
+
+// Creates an internet gateway for use with a VPC.
+
+@name("Create Internet Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Action"= "CreateInternetGateway"
+
+
+// Deletes the specified internet gateway.
+
+@name("Delete Internet Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InternetGatewayId"= ""
+? "Action"= "DeleteInternetGateway"
+
+
+// Describes one or more of your internet gateways.
+
+@name("Describe Internet Gateways")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "InternetGatewayId.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeInternetGateways"
+
+
+// Detaches an internet gateway from a VPC, disabling connectivity between the internet
+//                         and the VPC.
+
+@name("Detach Internet Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InternetGatewayId"= ""
+? "VpcId"= ""
+? "Action"= "DetachInternetGateway"
+
+
+

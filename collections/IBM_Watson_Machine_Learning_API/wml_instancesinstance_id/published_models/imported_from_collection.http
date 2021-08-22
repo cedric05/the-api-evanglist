@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1870fecb-0090-4c1a-976d-99be7baaa589.postman_collection.json
+
+// Get wml instances instance published models.
+
+@name("Get Wml Instances Instance Published Models")
+GET "https://{{baseUrl}}/wml_instances/:instance_id/published_models"
+? "limit"= "<parameters>"
+? "start"= "<parameters>"
+
+
+

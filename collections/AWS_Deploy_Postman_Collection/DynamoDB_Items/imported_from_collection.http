@@ -1,0 +1,451 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d8f0a546-2bf3-4572-88c9-9190f362a7c5.postman_collection.json
+
+// Deletes a single item in a table by primary key. You can perform a conditional delete operation that deletes the item if it exists, or if it has an expected attribute value.
+
+@name("Delete Item")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DeleteItem"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DeleteItem"
+data('{
+    "TableName": "applications",
+    "Key": {
+        "ApiKeyId": {
+            "S": "1"
+        }
+    },
+    "ConditionExpression": "attribute_not_exists(Replies)",
+    "ReturnValues": "ALL_OLD"
+}')
+
+
+// The GetItem operation returns a set of attributes for the item with the given primary key. If there is no matching item, GetItem does not return any data and there will be no Item element in the response.
+
+@name("Get Item")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "GetItem"
+data('{
+    "TableName": "Thread",
+    "Key": {
+        "ForumName": {
+            "S": "Amazon DynamoDB"
+        },
+        "Subject": {
+            "S": "How do I update multiple items?"
+        }
+    },
+    "ProjectionExpression":"LastPostDateTime, Message, Tags",
+    "ConsistentRead": true,
+    "ReturnConsumedCapacity": "TOTAL"
+}')
+
+
+// Creates a new item, or replaces an old item with a new item. If an item that has the same primary key as the new item already exists in the specified table, the new item completely replaces the existing item. You can perform a conditional put operation (add a new item if one with the specified primary key doesn't exist), or replace an existing item if it has certain attribute values. You can return the item's attribute values in the same operation, using the ReturnValues parameter.
+
+@name("Put Item")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.PutItem"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "PutItem"
+data('{
+    "TableName": "applications",
+    "Item": {
+        "LastPostDateTime": {
+            "S": "201303190422"
+        },
+        "Tags": {
+            "SS": ["Update","Multiple Items","HelpMe"]
+        },
+        "ForumName": {
+            "S": "Amazon DynamoDB"
+        },
+        "Message": {
+            "S": "I want to update multiple items in a single call. What\'s the best way to do that?"
+        },
+        "Subject": {
+            "S": "How do I update multiple items?"
+        },
+        "application_id": {
+            "S": "fred@example.com"
+        }
+    }
+}')
+
+
+// Edits an existing item's attributes, or adds a new item to the table if it does not already exist. You can put, delete, or add attribute values. You can also perform a conditional update on an existing item (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has certain expected attribute values). You can also return the item's attribute values in the same UpdateItem operation using the ReturnValues parameter
+
+@name("Update Item")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810. UpdateItem"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "UpdateItem"
+data('{
+    "TableName": "applications",
+    "Key": {
+        "ForumName": {
+            "S": "Amazon DynamoDB"
+        },
+        "Subject": {
+            "S": "Maximum number of items?"
+        }
+    },
+    "UpdateExpression": "set LastPostedBy = :val1",
+    "ConditionExpression": "LastPostedBy = :val2",
+    "ExpressionAttributeValues": {
+        ":val1": {"S": "alice@example.com"},
+        ":val2": {"S": "fred@example.com"}
+    },
+    "ReturnValues": "ALL_NEW"
+}')
+
+
+// he BatchWriteItem operation puts or deletes multiple items in one or more tables. A single call to BatchWriteItem can write up to 16 MB of data, which can comprise as many as 25 put or delete requests. Individual items to be written can be as large as 400 KB.
+
+@name("Batch Write Item")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "BatchWriteItem"
+data('{
+    "RequestItems": {
+        "Forum": [
+            {
+                "PutRequest": {
+                    "Item": {
+                        "Name": {
+                            "S": "Amazon DynamoDB"
+                        },
+                        "Category": {
+                            "S": "Amazon Web Services"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "Name": {
+                            "S": "Amazon RDS"
+                        },
+                        "Category": {
+                            "S": "Amazon Web Services"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "Name": {
+                            "S": "Amazon Redshift"
+                        },
+                        "Category": {
+                            "S": "Amazon Web Services"
+                        }
+                    }
+                }
+            },
+            {
+                "PutRequest": {
+                    "Item": {
+                        "Name": {
+                            "S": "Amazon ElastiCache"
+                        },
+                        "Category": {
+                            "S": "Amazon Web Services"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "ReturnConsumedCapacity": "TOTAL"
+}')
+
+
+// The BatchGetItem operation returns the attributes of one or more items from one or more tables. You identify requested items by primary key.
+
+@name("Batch Get Item")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.BatchGetItem"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "BatchGetItem"
+data('{
+    "RequestItems": {
+        "Forum": {
+            "Keys": [
+                {
+                    "NameTest":{"S":"Amazon DynamoDB"}
+                },
+                {
+                    "NameTest":{"S":"Amazon RDS"}
+                },
+                {
+                    "NameTest":{"S":"Amazon Redshift"}
+                }
+            ],
+            "ProjectionExpression":"NameTest, Threads, Messages"
+        },
+        "Thread": {
+            "Keys": [
+                {
+                    "ForumName":{"S":"Amazon DynamoDB"},
+                    "Subject":{"S":"Concurrent reads"}
+                }
+            ],
+            "ProjectionExpression":"Tags, Message"
+        }
+    },
+    "ReturnConsumedCapacity": "TOTAL"
+}')
+
+
+// TransactWriteItems is a synchronous write operation that groups up to 25 action requests. These actions can target items in different tables, but not in different AWS accounts or Regions, and no two actions can target the same item. For example, you cannot both ConditionCheck and Update the same item. The aggregate size of the items in the transaction cannot exceed 4 MB.
+
+@name("Transact Write Items")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "TransactWriteItems"
+data('{
+   "ClientRequestToken": "string",
+   "ReturnConsumedCapacity": "string",
+   "ReturnItemCollectionMetrics": "string",
+   "TransactItems": [ 
+      { 
+         "ConditionCheck": { 
+            "ConditionExpression": "string",
+            "ExpressionAttributeNames": { 
+               "string" : "string" 
+            },
+            "ExpressionAttributeValues": { 
+               "string" : { 
+                  "B": blob,
+                  "BOOL": boolean,
+                  "BS": [ blob ],
+                  "L": [ 
+                     "AttributeValue"
+                  ],
+                  "M": { 
+                     "string" : "AttributeValue"
+                  },
+                  "N": "string",
+                  "NS": [ "string" ],
+                  "NULL": boolean,
+                  "S": "string",
+                  "SS": [ "string" ]
+               }
+            },
+            "Key": { 
+               "string" : { 
+                  "B": blob,
+                  "BOOL": boolean,
+                  "BS": [ blob ],
+                  "L": [ 
+                     "AttributeValue"
+                  ],
+                  "M": { 
+                     "string" : "AttributeValue"
+                  },
+                  "N": "string",
+                  "NS": [ "string" ],
+                  "NULL": boolean,
+                  "S": "string",
+                  "SS": [ "string" ]
+               }
+            },
+            "ReturnValuesOnConditionCheckFailure": "string",
+            "TableName": "string"
+         },
+         "Delete": { 
+            "ConditionExpression": "string",
+            "ExpressionAttributeNames": { 
+               "string" : "string" 
+            },
+            "ExpressionAttributeValues": { 
+               "string" : { 
+                  "B": blob,
+                  "BOOL": boolean,
+                  "BS": [ blob ],
+                  "L": [ 
+                     "AttributeValue"
+                  ],
+                  "M": { 
+                     "string" : "AttributeValue"
+                  },
+                  "N": "string",
+                  "NS": [ "string" ],
+                  "NULL": boolean,
+                  "S": "string",
+                  "SS": [ "string" ]
+               }
+            },
+            "Key": { 
+               "string" : { 
+                  "B": blob,
+                  "BOOL": boolean,
+                  "BS": [ blob ],
+                  "L": [ 
+                     "AttributeValue"
+                  ],
+                  "M": { 
+                     "string" : "AttributeValue"
+                  },
+                  "N": "string",
+                  "NS": [ "string" ],
+                  "NULL": boolean,
+                  "S": "string",
+                  "SS": [ "string" ]
+               }
+            },
+            "ReturnValuesOnConditionCheckFailure": "string",
+            "TableName": "string"
+         },
+         "Put": { 
+            "ConditionExpression": "string",
+            "ExpressionAttributeNames": { 
+               "string" : "string" 
+            },
+            "ExpressionAttributeValues": { 
+               "string" : { 
+                  "B": blob,
+                  "BOOL": boolean,
+                  "BS": [ blob ],
+                  "L": [ 
+                     "AttributeValue"
+                  ],
+                  "M": { 
+                     "string" : "AttributeValue"
+                  },
+                  "N": "string",
+                  "NS": [ "string" ],
+                  "NULL": boolean,
+                  "S": "string",
+                  "SS": [ "string" ]
+               }
+            },
+            "Item": { 
+               "string" : { 
+                  "B": blob,
+                  "BOOL": boolean,
+                  "BS": [ blob ],
+                  "L": [ 
+                     "AttributeValue"
+                  ],
+                  "M": { 
+                     "string" : "AttributeValue"
+                  },
+                  "N": "string",
+                  "NS": [ "string" ],
+                  "NULL": boolean,
+                  "S": "string",
+                  "SS": [ "string" ]
+               }
+            },
+            "ReturnValuesOnConditionCheckFailure": "string",
+            "TableName": "string"
+         },
+         "Update": { 
+            "ConditionExpression": "string",
+            "ExpressionAttributeNames": { 
+               "string" : "string" 
+            },
+            "ExpressionAttributeValues": { 
+               "string" : { 
+                  "B": blob,
+                  "BOOL": boolean,
+                  "BS": [ blob ],
+                  "L": [ 
+                     "AttributeValue"
+                  ],
+                  "M": { 
+                     "string" : "AttributeValue"
+                  },
+                  "N": "string",
+                  "NS": [ "string" ],
+                  "NULL": boolean,
+                  "S": "string",
+                  "SS": [ "string" ]
+               }
+            },
+            "Key": { 
+               "string" : { 
+                  "B": blob,
+                  "BOOL": boolean,
+                  "BS": [ blob ],
+                  "L": [ 
+                     "AttributeValue"
+                  ],
+                  "M": { 
+                     "string" : "AttributeValue"
+                  },
+                  "N": "string",
+                  "NS": [ "string" ],
+                  "NULL": boolean,
+                  "S": "string",
+                  "SS": [ "string" ]
+               }
+            },
+            "ReturnValuesOnConditionCheckFailure": "string",
+            "TableName": "string",
+            "UpdateExpression": "string"
+         }
+      }
+   ]
+}')
+
+
+// TransactGetItems is a synchronous operation that atomically retrieves multiple items from one or more tables (but not from indexes) in a single account and Region. A TransactGetItems call can contain up to 25 TransactGetItem objects, each of which contains a Get structure that specifies an item to retrieve from a table in the account and Region. A call to TransactGetItems cannot retrieve items from tables in more than one AWS account or Region. The aggregate size of the items in the transaction cannot exceed 4 MB.
+
+@name("Transact Get Items")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.TransactGetItems"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "TransactGetItems"
+data('{
+   "ReturnConsumedCapacity": "string",
+   "TransactItems": [ 
+      { 
+         "Get": { 
+            "ExpressionAttributeNames": { 
+               "string" : "string" 
+            },
+            "Key": { 
+               "string" : { 
+                  "B": blob,
+                  "BOOL": boolean,
+                  "BS": [ blob ],
+                  "L": [ 
+                     "AttributeValue"
+                  ],
+                  "M": { 
+                     "string" : "AttributeValue"
+                  },
+                  "N": "string",
+                  "NS": [ "string" ],
+                  "NULL": boolean,
+                  "S": "string",
+                  "SS": [ "string" ]
+               }
+            },
+            "ProjectionExpression": "string",
+            "TableName": "postman"
+         }
+      }
+   ]
+}')
+
+
+

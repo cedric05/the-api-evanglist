@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d0c02c05-054f-4e33-83bf-1c03a8c9a69e.postman_collection.json
+
+@name("Deregister Task Definition")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.DeregisterTaskDefinition"
+? "Action"= "DeregisterTaskDefinition"
+data('{"taskDefinition":"string"}')
+
+
+@name("Describe Task Definition")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.DescribeTaskDefinition"
+? "Action"= "DescribeTaskDefinition"
+data('{"include":["string"],"taskDefinition":"string"}')
+
+
+@name("List Task Definitions")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions"
+? "Action"= "ListTaskDefinitions"
+data('{"familyPrefix":"string","maxResults":42,"nextToken":"string","sort":"string","status":"string"}')
+
+
+@name("Register Task Definition")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition"
+? "Action"= "RegisterTaskDefinition"
+data('{"containerDefinitions":[{"command":["string"],"cpu":42,"dependsOn":[{"condition":"string","containerName":"string"}],"disableNetworking":1,"dnsSearchDomains":["string"],"dnsServers":["string"],"dockerLabels":{"string":"string"},"dockerSecurityOptions":["string"],"entryPoint":["string"],"environment":[{"name":"string","value":"string"}],"essential":1,"extraHosts":[{"hostname":"string","ipAddress":"string"}],"firelensConfiguration":{"options":{"string":"string"},"type":"string"},"healthCheck":{"command":["string"],"interval":42,"retries":42,"startPeriod":42,"timeout":42},"hostname":"string","image":"string","interactive":1,"links":["string"],"linuxParameters":{"capabilities":{"add":["string"],"drop":["string"]},"devices":[{"containerPath":"string","hostPath":"string","permissions":["string"]}],"initProcessEnabled":1,"maxSwap":42,"sharedMemorySize":42,"swappiness":42,"tmpfs":[{"containerPath":"string","mountOptions":["string"],"size":42}]},"logConfiguration":{"logDriver":"string","options":{"string":"string"},"secretOptions":[{"name":"string","valueFrom":"string"}]},"memory":42,"memoryReservation":42,"mountPoints":[{"containerPath":"string","readOnly":1,"sourceVolume":"string"}],"name":"string","portMappings":[{"containerPort":42,"hostPort":42,"protocol":"string"}],"privileged":1,"pseudoTerminal":1,"readonlyRootFilesystem":1,"repositoryCredentials":{"credentialsParameter":"string"},"resourceRequirements":[{"type":"string","value":"string"}],"secrets":[{"name":"string","valueFrom":"string"}],"startTimeout":42,"stopTimeout":42,"systemControls":[{"namespace":"string","value":"string"}],"ulimits":[{"hardLimit":42,"name":"string","softLimit":42}],"user":"string","volumesFrom":[{"readOnly":1,"sourceContainer":"string"}],"workingDirectory":"string"}],"cpu":"string","executionRoleArn":"string","family":"string","inferenceAccelerators":[{"deviceName":"string","deviceType":"string"}],"ipcMode":"string","memory":"string","networkMode":"string","pidMode":"string","placementConstraints":[{"expression":"string","type":"string"}],"proxyConfiguration":{"containerName":"string","properties":[{"name":"string","value":"string"}],"type":"string"},"requiresCompatibilities":["string"],"tags":[{"key":"string","value":"string"}],"taskRoleArn":"string","volumes":[{"dockerVolumeConfiguration":{"autoprovision":1,"driver":"string","driverOpts":{"string":"string"},"labels":{"string":"string"},"scope":"string"},"host":{"sourcePath":"string"},"name":"string"}]}')
+
+
+

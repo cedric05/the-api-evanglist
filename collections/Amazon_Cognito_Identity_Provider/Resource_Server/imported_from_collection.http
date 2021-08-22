@@ -1,0 +1,70 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8631617c-c1ed-4e14-b0cd-77e4410753c4.postman_collection.json
+
+@name("Create Resource Server")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "CreateResourceServer"
+data('{
+   "Identifier": "string",
+   "Name": "string",
+   "Scopes": [ 
+      { 
+         "ScopeDescription": "string",
+         "ScopeName": "string"
+      }
+   ],
+   "UserPoolId": "string"
+}')
+
+
+@name("Delete Resource Server")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DeleteResourceServer"
+data('{
+   "Identifier": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Describe Resource Server")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DescribeResourceServer"
+data('{
+   "Identifier": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("List Resource Servers")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "ListResourceServers"
+data('{
+   "MaxResults": number,
+   "NextToken": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Update Resource Server")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "UpdateResourceServer"
+data('{
+   "Identifier": "string",
+   "Name": "string",
+   "Scopes": [ 
+      { 
+         "ScopeDescription": "string",
+         "ScopeName": "string"
+      }
+   ],
+   "UserPoolId": "string"
+}')
+
+
+

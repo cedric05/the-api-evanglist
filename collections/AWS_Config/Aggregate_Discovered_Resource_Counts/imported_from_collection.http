@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Get Aggregate Discovered Resource Counts")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "GetAggregateDiscoveredResourceCounts"
+data('{
+   "ConfigurationAggregatorName": "string",
+   "Filters": { 
+      "AccountId": "string",
+      "Region": "string",
+      "ResourceType": "string"
+   },
+   "GroupByKey": "string",
+   "Limit": number,
+   "NextToken": "string"
+}')
+
+
+

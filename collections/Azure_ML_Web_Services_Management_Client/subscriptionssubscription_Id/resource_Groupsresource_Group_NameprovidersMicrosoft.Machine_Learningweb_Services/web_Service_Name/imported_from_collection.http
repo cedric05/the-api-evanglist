@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c5c78961-31fe-4adf-9ee1-47b88c6deae7.postman_collection.json
+
+// Create or update a web service. This call will overwrite an existing web service. Note that there is no warning or confirmation. This is a nonrecoverable operation. If your intent is to create a new web service, call the Get operation first to verify that it does not exist.
+
+@name("Web Services Create Or Update")
+PUT "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.MachineLearning/webServices/:webServiceName"
+
+
+// Creates an encrypted credentials parameter blob for the specified region. To get the web service from a region other than the region in which it has been created, you must first call Create Regional Web Services Properties to create a copy of the encrypted credential parameter blob in that region. You only need to do this before the first time that you get the web service in the new region.
+
+@name("Web Services Create Regional Properties")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.MachineLearning/webServices/:webServiceName/CreateRegionalBlob"
+? "region"= "<>"
+
+
+// Gets the access keys for the specified web service.
+
+@name("Web Services List Keys")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.MachineLearning/webServices/:webServiceName/listKeys"
+
+
+

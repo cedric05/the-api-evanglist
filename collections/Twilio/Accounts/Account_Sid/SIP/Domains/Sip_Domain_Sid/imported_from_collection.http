@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Get the user lists mapped to this domain.
+
+@name("/Accounts/:AccountSid/SIP/Domains/:SipDomainSid/CredentialListMappings{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains/:SipDomainSid/CredentialListMappings{{mediaTypeExtension}}"
+
+
+// Return the IpAccessControlListMappings that are associated to this domain.
+
+@name("/Accounts/:AccountSid/SIP/Domains/:SipDomainSid/IpAccessControlListMappings{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains/:SipDomainSid/IpAccessControlListMappings{{mediaTypeExtension}}"
+
+
+// Get the user lists mapped to this domain.
+
+@name("Accounts.Account Sid.SIP.Domains.Sip Domain Sid.Credential List Mappings.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains/:SipDomainSid/CredentialListMappings.json"
+
+
+// Return the IpAccessControlListMappings that are associated to this domain.
+
+@name("Accounts.Account Sid.SIP.Domains.Sip Domain Sid.Ip Access Control List Mappings.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains/:SipDomainSid/IpAccessControlListMappings.json"
+
+
+

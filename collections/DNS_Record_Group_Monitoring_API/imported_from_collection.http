@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-752904b3-e172-404d-9a63-016f72538cc4.postman_collection.json
+
+// The DNS Check API is used to request data for either a specific record group, or all DNS record groups owned by your account.
+
+@name("Check Group")
+GET "https://{{baseUrl}}/groups/:group_uuid"
+? "api_key"= "<string>"
+? "group_uuid"= "<string>"
+
+
+

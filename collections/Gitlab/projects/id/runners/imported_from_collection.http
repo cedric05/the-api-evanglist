@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Get runners available for project
+
+@name("Get Projects  Runners")
+GET "https://{{baseUrl}}/projects/:id/runners"
+? "scope"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Delete projects  runners runner
+
+@name("Delete Projects  Runners Runner")
+DELETE "https://{{baseUrl}}/projects/:id/runners/:runner_id"
+
+
+

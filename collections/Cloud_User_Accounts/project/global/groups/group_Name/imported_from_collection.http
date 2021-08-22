@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b3423fc1-6423-4e31-9835-20949e4088f7.postman_collection.json
+
+// Deletes the specified Group resource.
+
+@name("Delete Group")
+DELETE "https://{{baseUrl}}/:project/global/groups/:groupName"
+
+
+// Adds users to the specified group.
+
+@name("Add User To Group")
+POST "https://{{baseUrl}}/:project/global/groups/:groupName/addMember"
+
+
+// Removes users from the specified group.
+
+@name("Remove Use From Group")
+POST "https://{{baseUrl}}/:project/global/groups/:groupName/removeMember"
+
+
+

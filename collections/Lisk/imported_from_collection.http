@@ -1,0 +1,102 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9578ff80-ee49-47b6-90ea-3cb100ff29d7.postman_collection.json
+
+// Search for a specified dapp in the system.
+
+@name("Requests dapps data")
+GET "https://{{baseUrl}}/dapps"
+? "transactionId"= "<x-swagger-pipe>"
+? "name"= "<x-swagger-pipe>"
+? "sort"= "<>"
+? "limit"= "<x-swagger-pipe>"
+? "offset"= "<>"
+
+
+// Search for specified peers.
+
+@name("Requests peers data")
+GET "https://{{baseUrl}}/peers"
+? "ip"= "<x-swagger-pipe>"
+? "httpPort"= "<x-swagger-pipe>"
+? "wsPort"= "<x-swagger-pipe>"
+? "os"= "<x-swagger-pipe>"
+? "version"= "<x-swagger-pipe>"
+? "state"= "<x-swagger-pipe>"
+? "height"= "<x-swagger-pipe>"
+? "broadhash"= "<x-swagger-pipe>"
+? "limit"= "<x-swagger-pipe>"
+? "offset"= "<>"
+? "sort"= "<>"
+
+
+// Search for a specified block in the system.
+
+@name("Requests blocks data")
+GET "https://{{baseUrl}}/blocks"
+? "blockId"= "<x-swagger-pipe>"
+? "height"= "<x-swagger-pipe>"
+? "limit"= "<x-swagger-pipe>"
+? "offset"= "<>"
+? "generatorPublicKey"= "<x-swagger-pipe>"
+? "sort"= "<>"
+
+
+// *Attention: At least **one of the filter parameters must be provided.***
+// Returns all votes received by a delegate.
+
+@name("Requests voters data for a delegate")
+GET "https://{{baseUrl}}/voters"
+? "username"= "<x-swagger-pipe>"
+? "address"= "<x-swagger-pipe>"
+? "publicKey"= "<x-swagger-pipe>"
+? "secondPublicKey"= "<x-swagger-pipe>"
+? "offset"= "<>"
+? "limit"= "<x-swagger-pipe>"
+? "sort"= "<>"
+
+
+// *Attention: At least **one of the filter parameters must be provided.***
+// Returns all votes placed by an account.
+
+@name("Requests votes data for an account")
+GET "https://{{baseUrl}}/votes"
+? "username"= "<x-swagger-pipe>"
+? "address"= "<x-swagger-pipe>"
+? "publicKey"= "<x-swagger-pipe>"
+? "secondPublicKey"= "<x-swagger-pipe>"
+? "offset"= "<>"
+? "limit"= "<x-swagger-pipe>"
+? "sort"= "<>"
+
+
+// Submits signature to sign a multisignature transaction.
+// Signature objects can be generated locally either by using Lisk Commander or with Lisk Elements.
+
+@name("Submits a signature object to sign multisignature transactions")
+POST "https://{{baseUrl}}/signatures"
+
+
+// Search for a specified transaction in the system.
+
+@name("Requests transactions data")
+GET "https://{{baseUrl}}/transactions"
+? "id"= "<x-swagger-pipe>"
+? "recipientId"= "<x-swagger-pipe>"
+? "recipientPublicKey"= "<x-swagger-pipe>"
+? "senderId"= "<x-swagger-pipe>"
+? "senderPublicKey"= "<x-swagger-pipe>"
+? "senderIdOrRecipientId"= "<>"
+? "type"= "<x-swagger-pipe>"
+? "height"= "<x-swagger-pipe>"
+? "minAmount"= "<>"
+? "maxAmount"= "<>"
+? "fromTimestamp"= "<x-swagger-pipe>"
+? "toTimestamp"= "<x-swagger-pipe>"
+? "blockId"= "<x-swagger-pipe>"
+? "limit"= "<x-swagger-pipe>"
+? "offset"= "<>"
+? "sort"= "<>"
+
+
+

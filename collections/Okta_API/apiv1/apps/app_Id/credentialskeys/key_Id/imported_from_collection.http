@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9a62c01e-3db2-4f66-b90d-a4df9dd9bd07.postman_collection.json
+
+// Gets a specific [application key credential](#application-key-credential-model) by `kid`
+
+@name("Get Key Credential for Application")
+GET "https://{{baseUrl}}/api/v1/apps/:appId/credentials/keys/:keyId"
+
+
+// Clones a X.509 certificate for an application key credential from a source application to target application.
+
+@name("Clone Application Key Credential")
+POST "https://{{baseUrl}}/api/v1/apps/:appId/credentials/keys/:keyId/clone"
+? "targetAid"= "<string>"
+
+
+

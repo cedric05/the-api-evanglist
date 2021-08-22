@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Requires a list of filepaths.
+
+@name("Returns a list of screen capture responses.")
+POST "https://{{baseUrl}}/Images/ScreenCaptures/Batch"
+? "FilePath"= "<get>"
+
+
+// Requires a valid filepath of a video asset screen capture.  
+// 
+// `Note: The swagger U/I does not support redirects.`
+
+@name("Redirect to a screen capture based on filepath.")
+GET "https://{{baseUrl}}/Images/ScreenCaptures/Redirect"
+? "FilePath"= "<get>"
+? "Redirect"= "<get>"
+
+
+

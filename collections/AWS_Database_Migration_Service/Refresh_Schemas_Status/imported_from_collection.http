@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5742bcb1-7df5-4c70-8656-2527a102ef1c.postman_collection.json
+
+// Returns the status of the RefreshSchemas operation.
+
+@name("Describe Refresh Schemas Status")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101. DescribeRefreshSchemasStatus"
+? "Action"= "DescribeRefreshSchemasStatus"
+data('{
+   "EndpointArn": "string"
+}')
+
+
+

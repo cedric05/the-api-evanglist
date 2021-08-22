@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d8f0a546-2bf3-4572-88c9-9190f362a7c5.postman_collection.json
+
+@name("By Key Api Key")
+GET "https://{{aws_api_gateway_base_url}}/apikeys/hzYAVO9Sg98nsNh65VfX81M84O2kyXVy6K1xwHD7&api_Key=&includeValue="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "api_Key"= ""
+? "includeValue"= ""
+
+
+@name("Create Api Key")
+POST "https://{{aws_api_gateway_base_url}}/apikeys"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Api Key")
+DELETE "https://{{aws_api_gateway_base_url}}/apikeys/a2TprUZuzf2EKbbmMUotDaHYGg8kgxFypcarGved"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("APIkeyimport")
+POST "https://{{aws_api_gateway_base_url}}/apikeys"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "format"= ""
+? "failonwarnings"= ""
+? "mode"= "import"
+
+
+@name("APIkeyupdate")
+PATCH "https://{{aws_api_gateway_base_url}}/apikeys/hzYAVO9Sg98nsNh65VfX81M84O2kyXVy6K1xwHD7"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("API Key Usage Plans")
+GET "https://{{aws_api_gateway_base_url}}/usageplans"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "keyId"= ""
+? "limit"= ""
+? "keyType"= "API_KEY"
+
+
+

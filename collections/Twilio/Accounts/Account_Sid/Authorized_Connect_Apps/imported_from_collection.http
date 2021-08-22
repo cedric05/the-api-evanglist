@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Get the properties of the authorized application.
+
+@name("/Accounts/:AccountSid/AuthorizedConnectApps/{{ConnectAppSid}}{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AuthorizedConnectApps/{{ConnectAppSid}}{{mediaTypeExtension}}"
+
+
+// Get the properties of the authorized application.
+
+@name("Accounts.Account Sid.Authorized Connect Apps.Connect App Sid.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AuthorizedConnectApps/{{ConnectAppSid}}.json"
+
+
+

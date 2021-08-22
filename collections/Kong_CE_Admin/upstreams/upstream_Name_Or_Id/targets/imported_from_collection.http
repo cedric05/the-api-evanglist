@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// # Delete Upstream [konghq](https://docs.konghq.com/2.0.x/admin-api/#delete-upstream-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>upstream name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the upstream for which to delete the target.</td>
+//   </tr>
+//   <tr>
+//     <td>host:port or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The host:port 
+
+@name("Delete Target")
+DELETE "https://{{baseUrl}}/upstreams/:upstreamNameOrId/targets/:host:portOrId"
+
+
+

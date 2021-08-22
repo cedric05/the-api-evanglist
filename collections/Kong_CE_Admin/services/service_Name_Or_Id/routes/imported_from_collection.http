@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// ## Create Route Associated to a Specific Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-route-associated-to-a-specific-service)
+// 
+// * See also [konghq](https://docs.konghq.com/2.0.x/admin-api/#route-object)
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name attribute of the Service
+
+@name("Create Route Associated to a Specific Service")
+POST "https://{{baseUrl}}/services/:serviceNameOrId/routes"
+
+
+// ## Retrieve Route Associated to a Specific Service [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-route-associated-to-a-specific-service)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>Service name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Service to retrieve</td>
+//   </tr>
+//   <tr>
+//     <td>Route name or id</td>
+//     <td>required</td
+
+@name("Retrieve Route Associated to a Specific Service")
+GET "https://{{baseUrl}}/services/:serviceNameOrId/routes/:routeNameOrId"
+
+
+

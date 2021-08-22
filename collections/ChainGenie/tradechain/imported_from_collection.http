@@ -1,0 +1,112 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4bb333d4-b073-4693-b867-8852ccb0fdef.postman_collection.json
+
+// List product on marketplace: <br/>
+// - Seller initiates sale - CreateTradeContract<br/>
+// - Escrow from seller added for value of contract<br/>
+// - End transaction state = Smart Contract Created<br/>
+
+@name("List product for sale")
+POST "https://{{baseUrl}}/tradechain/CreateTradeContract"
+"ApiKey": "<>"
+
+
+// Remove Listing (by Seller)<br/>
+// - Seller cancels the market trade after listing but before bid/buy<br/>
+// - Escrow from seller is returned back to the seller<br/>
+// - End transaction state = Smart contract is rendered inactive<br/>
+
+@name("Remove Listing (by Seller)")
+POST "https://{{baseUrl}}/tradechain/ConfirmAbort"
+"ApiKey": "<>"
+
+
+// Bid / buy the item listed on the marketplace: <br/>
+// - Buyer confirms interest in buying<br/>
+// - Escrow from buyer added to value of contract<br/>
+// - Invoice document is created with all details using invoice template<br/>
+// - Invoice is added IPFS and invoice hash into blockchain<br/>
+// - End transaction state = Trade is actively locked between the seller and buyer<br/>
+
+@name("Bid / buy listed item (by Buyer)")
+POST "https://{{baseUrl}}/tradechain/ConfirmPurchase"
+"ApiKey": "<>"
+
+
+// Seller can cancel the market trade after bid/buy by refunding the seller<br/>
+// Escrow from buyer is returned back to the buyer<br/>
+// Escrow from seller is returned back to the seller (optional: penalties can be imposed)<br/>
+// End transaction state = Escrow returned, smart contract cancelled and become inactive<br/>
+
+@name("Refund buyer and stop trade (by Seller)")
+POST "https://{{baseUrl}}/tradechain/ConfirmRefund"
+"ApiKey": "<>"
+
+
+// Delivery of item confirmed by the buyer 
+// -Escrow is fully sent to seller
+// - End transaction state = TRANSACTION COMPLETE
+
+@name("Delivery of item confirmed (by Buyer)")
+POST "https://{{baseUrl}}/tradechain/ConfirmReceived"
+"ApiKey": "<>"
+
+
+// Get contract details & state
+// - Provide full information including
+//  - Escrow amount in contract
+//  - Contract state 
+//  - Buyer & Seller information
+//  - Links to contract / invoice documents
+//  - and other contract / sale specific information
+
+@name("Get contract details & state")
+POST "https://{{baseUrl}}/tradechain/GetStateOfContract"
+"ApiKey": "<>"
+
+
+// Get contract escrow details -
+// - Retrieves full information including but not limited to
+//  - Escrow amount in contract
+//  - Contract state 
+//  - Buyer & Seller information
+//  - Links to contract / invoice documents
+//  - and other contract / sale specific information
+
+@name("Get contract escrow details")
+POST "https://{{baseUrl}}/tradechain/GetFundsLockedInContract"
+"ApiKey": "<>"
+
+
+// Get full information about the seller by providing the contract id.  Response will also include some contract details.
+
+@name("Get seller information")
+POST "https://{{baseUrl}}/tradechain/WhoIsSeller"
+"ApiKey": "<>"
+
+
+// Get full information about the seller by providing the contract id.  Response will also include some contract details.
+
+@name("Get buyer information")
+POST "https://{{baseUrl}}/tradechain/WhoIsBuyer"
+"ApiKey": "<>"
+
+
+// Use a combination of fields to get any type of report.  Ex. send specific seller name or id to get active for sale items by seller; send specific filehash to get status of a particular item/invoice; send itemPartNum to get a list of all products of that partnumber and send sort order as itemValue ascending to cheapest top list) . . . 
+// -	filterField (accepted items below, default – none)
+// o	itemSellerId
+// o	itemSellerName
+// o	itemBuyerId
+// o	itemBuyerName
+// o	itemId
+// o	itemName
+// o	itemPartNum
+// o	f
+
+@name("Report / list of marketplace transactions")
+POST "https://{{baseUrl}}/tradechain/GetItemsFilterSort"
+"ApiKey": "<>"
+
+
+

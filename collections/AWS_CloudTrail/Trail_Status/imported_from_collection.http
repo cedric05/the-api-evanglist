@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1db970f2-8e07-4d80-8a32-9295b3d30bab.postman_collection.json
+
+@name("Get Trail Status")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "Name"= ""
+? "Action"= "GetTrailStatus"
+
+
+

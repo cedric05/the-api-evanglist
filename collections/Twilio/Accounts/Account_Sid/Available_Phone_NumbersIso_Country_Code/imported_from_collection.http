@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns a list of local AvailablePhoneNumber resource representations
+// that match the specified filters, each representing a phone number tha
+// is currently available for provisioning within your account.
+
+@name("/Accounts/:AccountSid/AvailablePhoneNumbers/:IsoCountryCode/Local{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AvailablePhoneNumbers/:IsoCountryCode/Local{{mediaTypeExtension}}"
+
+
+// Returns a list of mobile AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.
+
+@name("/Accounts/:AccountSid/AvailablePhoneNumbers/:IsoCountryCode/Mobile{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AvailablePhoneNumbers/:IsoCountryCode/Mobile{{mediaTypeExtension}}"
+
+
+// Returns a list of toll-free AvailablePhoneNumber elements that match the
+// specified filters, each representing a phone number that is currently
+// available for provisioning within your account. To provision an available
+// phone number, POST the number to the IncomingPhoneNumbers resource.
+
+@name("/Accounts/:AccountSid/AvailablePhoneNumbers/:IsoCountryCode/TollFree{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AvailablePhoneNumbers/:IsoCountryCode/TollFree{{mediaTypeExtension}}"
+
+
+// Returns a list of local AvailablePhoneNumber resource representations
+// that match the specified filters, each representing a phone number tha
+// is currently available for provisioning within your account.
+
+@name("Accounts.Account Sid.Available Phone Numbers.Iso Country Code.Local.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AvailablePhoneNumbers/:IsoCountryCode/Local.json"
+
+
+// Returns a list of mobile AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.
+
+@name("Accounts.Account Sid.Available Phone Numbers.Iso Country Code.Mobile.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AvailablePhoneNumbers/:IsoCountryCode/Mobile.json"
+
+
+// Returns a list of toll-free AvailablePhoneNumber elements that match the
+// specified filters, each representing a phone number that is currently
+// available for provisioning within your account. To provision an available
+// phone number, POST the number to the IncomingPhoneNumbers resource.
+
+@name("Accounts.Account Sid.Available Phone Numbers.Iso Country Code.Toll Free.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/AvailablePhoneNumbers/:IsoCountryCode/TollFree.json"
+
+
+

@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfcb371d-a6e0-41fe-841b-f5fab0153d76.postman_collection.json
+
+@name("Create Batch Prediction")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.CreateBatchPrediction"
+? "Action"= "CreateBatchPrediction"
+data('{"BatchPredictionDataSourceId":"string","BatchPredictionId":"string","BatchPredictionName":"string","MLModelId":"string","OutputUri":"string"}')
+
+
+@name("Delete Batch Prediction")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DeleteBatchPrediction"
+? "Action"= "DeleteBatchPrediction"
+data('{"BatchPredictionId":"string"}')
+
+
+@name("Describe Batch Predictions")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DescribeBatchPredictions"
+? "Action"= "DescribeBatchPredictions"
+data('{"EQ":"string","FilterVariable":"string","GE":"string","GT":"string","LE":"string","Limit":42,"LT":"string","NE":"string","NextToken":"string","Prefix":"string","SortOrder":"string"}')
+
+
+@name("Get Batch Prediction")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.GetBatchPrediction"
+? "Action"= "GetBatchPrediction"
+data('{"BatchPredictionId":"string"}')
+
+
+@name("Update Batch Prediction")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.UpdateBatchPrediction"
+? "Action"= "UpdateBatchPrediction"
+data('{"BatchPredictionId":"string","BatchPredictionName":"string"}')
+
+
+

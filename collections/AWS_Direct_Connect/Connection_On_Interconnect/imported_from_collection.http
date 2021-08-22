@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c094246-719d-4054-bede-5834f64bb4b7.postman_collection.json
+
+@name("Allocate Connection On Interconnect")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "AllocateConnectionOnInterconnect"
+data('{
+   "bandwidth": "string",
+   "connectionName": "string",
+   "interconnectId": "string",
+   "ownerAccount": "string",
+   "vlan": number
+}')
+
+
+

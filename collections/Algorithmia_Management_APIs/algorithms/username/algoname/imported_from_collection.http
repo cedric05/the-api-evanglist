@@ -1,0 +1,66 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9844d24d-a804-4291-beee-fc6ba6a9e5ce.postman_collection.json
+
+@name("Get Algorithm")
+GET "https://{{baseUrl}}/algorithms/:username/:algoname"
+"Authorization": "<string>"
+
+
+@name("Update Algorithm")
+PUT "https://{{baseUrl}}/algorithms/:username/:algoname"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "details": {
+        "summary": "<string>",
+        "label": "<string>",
+        "tagline": "<string>"
+    },
+    "settings": {
+        "algorithm_callability": "<string>",
+        "source_visibility": "<string>",
+        "language": "<string>",
+        "environment": "<string>",
+        "package_set": "<string>",
+        "license": "<string>",
+        "royalty_microcredits": "<integer>",
+        "network_access": "<string>",
+        "pipeline_enabled": "<boolean>"
+    },
+    "version_info": {
+        "sample_input": "<string>"
+    }
+})
+
+
+@name("Publish Algorithm")
+POST "https://{{baseUrl}}/algorithms/:username/:algoname/versions"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "details": {
+        "summary": "<string>",
+        "label": "<string>",
+        "tagline": "<string>"
+    },
+    "settings": {
+        "algorithm_callability": "<string>",
+        "source_visibility": "<string>",
+        "license": "<string>",
+        "royalty_microcredits": "<integer>",
+        "network_access": "<string>",
+        "pipeline_enabled": "<boolean>"
+    },
+    "version_info": {
+        "type": "<string>",
+        "semantic_version": "<string>",
+        "git_hash": "<string>",
+        "release_notes": "<string>",
+        "sample_input": "<string>",
+        "sample_output": "<string>"
+    }
+})
+
+
+

@@ -1,0 +1,171 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1ae65b12-94bd-40ca-acee-7a0cd4c3c799.postman_collection.json
+
+@name("Create Field Level Encryption Config")
+POST "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<FieldLevelEncryptionConfig xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <CallerReference>string</CallerReference>
+   <Comment>string</Comment>
+   <ContentTypeProfileConfig>
+      <ContentTypeProfiles>
+         <Items>
+            <ContentTypeProfile>
+               <ContentType>string</ContentType>
+               <Format>string</Format>
+               <ProfileId>string</ProfileId>
+            </ContentTypeProfile>
+         </Items>
+         <Quantity>integer</Quantity>
+      </ContentTypeProfiles>
+      <ForwardWhenContentTypeIsUnknown>boolean</ForwardWhenContentTypeIsUnknown>
+   </ContentTypeProfileConfig>
+   <QueryArgProfileConfig>
+      <ForwardWhenQueryArgProfileIsUnknown>boolean</ForwardWhenQueryArgProfileIsUnknown>
+      <QueryArgProfiles>
+         <Items>
+            <QueryArgProfile>
+               <ProfileId>string</ProfileId>
+               <QueryArg>string</QueryArg>
+            </QueryArgProfile>
+         </Items>
+         <Quantity>integer</Quantity>
+      </QueryArgProfiles>
+   </QueryArgProfileConfig>
+</FieldLevelEncryptionConfig>')
+
+
+@name("Create Field Level Encryption Profile")
+POST "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption-profile"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<FieldLevelEncryptionProfileConfig xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <CallerReference>string</CallerReference>
+   <Comment>string</Comment>
+   <EncryptionEntities>
+      <Items>
+         <EncryptionEntity>
+            <FieldPatterns>
+               <Items>
+                  <FieldPattern>string</FieldPattern>
+               </Items>
+               <Quantity>integer</Quantity>
+            </FieldPatterns>
+            <ProviderId>string</ProviderId>
+            <PublicKeyId>string</PublicKeyId>
+         </EncryptionEntity>
+      </Items>
+      <Quantity>integer</Quantity>
+   </EncryptionEntities>
+   <Name>string</Name>
+</FieldLevelEncryptionProfileConfig>')
+
+
+@name("Delete Field Level Encryption Config")
+DELETE "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption/:id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Delete Field Level Encryption Profile")
+DELETE "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption-profile/:id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Get Field Level Encryption")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption/:id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Get Field Level Encryption Config")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption/Id/config"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Get Field Level Encryption Profile")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption-profile/:id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Get Field Level Encryption Profile Config")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption-profile/Id/config"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Update Field Level Encryption Config")
+PUT "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption/Id/config"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<FieldLevelEncryptionConfig xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <CallerReference>string</CallerReference>
+   <Comment>string</Comment>
+   <ContentTypeProfileConfig>
+      <ContentTypeProfiles>
+         <Items>
+            <ContentTypeProfile>
+               <ContentType>string</ContentType>
+               <Format>string</Format>
+               <ProfileId>string</ProfileId>
+            </ContentTypeProfile>
+         </Items>
+         <Quantity>integer</Quantity>
+      </ContentTypeProfiles>
+      <ForwardWhenContentTypeIsUnknown>boolean</ForwardWhenContentTypeIsUnknown>
+   </ContentTypeProfileConfig>
+   <QueryArgProfileConfig>
+      <ForwardWhenQueryArgProfileIsUnknown>boolean</ForwardWhenQueryArgProfileIsUnknown>
+      <QueryArgProfiles>
+         <Items>
+            <QueryArgProfile>
+               <ProfileId>string</ProfileId>
+               <QueryArg>string</QueryArg>
+            </QueryArgProfile>
+         </Items>
+         <Quantity>integer</Quantity>
+      </QueryArgProfiles>
+   </QueryArgProfileConfig>
+</FieldLevelEncryptionConfig>')
+
+
+@name("Update Field Level Encryption Profile")
+PUT "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption-profile/Id/config"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<FieldLevelEncryptionProfileConfig xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <CallerReference>string</CallerReference>
+   <Comment>string</Comment>
+   <EncryptionEntities>
+      <Items>
+         <EncryptionEntity>
+            <FieldPatterns>
+               <Items>
+                  <FieldPattern>string</FieldPattern>
+               </Items>
+               <Quantity>integer</Quantity>
+            </FieldPatterns>
+            <ProviderId>string</ProviderId>
+            <PublicKeyId>string</PublicKeyId>
+         </EncryptionEntity>
+      </Items>
+      <Quantity>integer</Quantity>
+   </EncryptionEntities>
+   <Name>string</Name>
+</FieldLevelEncryptionProfileConfig>')
+
+
+@name("List Field Level Encryption Configs")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Marker"= "Marker"
+? "MaxItems"= "MaxItems"
+
+
+@name("List Field Level Encryption Profiles")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/field-level-encryption-profile"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Marker"= "Marker"
+? "MaxItems"= "MaxItems"
+
+
+

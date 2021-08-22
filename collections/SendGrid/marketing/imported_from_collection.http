@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+@name("Create Segment")
+POST "https://{{baseUrl}}/marketing/segments"
+
+
+@name("Create Single Send")
+POST "https://{{baseUrl}}/marketing/singlesends"
+? "source"= "<string>"
+
+
+// Use this method to return an array of all of your contact lists.
+
+@name("Get All Lists")
+GET "https://{{baseUrl}}/marketing/lists"
+? "page_size"= "<integer>"
+? "page_token"= "<string>"
+
+
+// **This endpoint allows you to create a new sender identity.**
+// 
+// *You may create up to 100 unique sender identities.*
+// 
+// Sender Identities are required to be verified before use. If your domain has been whitelabeled it will auto verify on creation. Otherwise an email will be sent to the `from.email`.
+
+@name("Create a Sender Identity")
+GET "https://{{baseUrl}}/marketing/senders/"
+
+
+// Get all defined Custom Fields and Reserved Fields nested under their respective properties.
+
+@name("Get All Field Definitions")
+GET "https://{{baseUrl}}/marketing/field_definitions"
+
+
+

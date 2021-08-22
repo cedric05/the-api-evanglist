@@ -1,0 +1,94 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c62e1baf-4a19-4992-b48d-038acd7dffea.postman_collection.json
+
+@name("Batch Get Application Revisions")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.BatchGetApplicationRevisions"
+? "Action"= "BatchGetApplicationRevisions"
+data('{
+    "applicationName": "TestApp-us-east-1",
+    "revisions": [
+        {
+            "revisionType": "S3",
+            "s3Location": {
+                "bundleType": "zip",
+                "version": "4eQLXx7nw0iP22hxwt2_YXrUq972qkG6",
+                "bucket": "project-123",
+                "key": "North-App.zip",
+                "eTag": "3fdd7b9196697a096d5af1d649e26a4a"
+            }
+        },
+        {
+            "revisionType": "S3",
+            "s3Location": {
+                "bundleType": "zip",
+                "version": "BXrUq974e0iP22hxwt2_QLXx7nw3kjB9",
+                "bucket": "project-123",
+                "key": "North-App-2.zip",
+                "eTag": "4hfj7b911d649e26a4a45390a096d5af"
+            }
+        }
+    ]
+}')
+
+
+@name("Get Application Revision")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.GetApplicationRevision"
+? "Action"= "GetApplicationRevision"
+data('{
+    "applicationName": "TestApp-us-east-1",
+    "revision": {
+        "revisionType": "S3",
+        "s3Location": {
+            "bundleType": "zip",
+            "eTag": "fff9102ckv48b652bf903700453f7408",
+            "bucket": "project-1234",
+            "key": "North-App.zip"
+        }
+    }
+}')
+
+
+@name("List Application Revisions")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.ListApplicationRevisions"
+? "Action"= "ListApplicationRevisions"
+data('{
+	"applicationName": "TestApp-us-east-1"
+}')
+
+
+@name("Register Application Revision")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.RegisterApplicationRevision"
+? "Action"= "RegisterApplicationRevision"
+data('{
+    "applicationName": "TestApp-us-east-1",
+    "description": "New application registration",
+    "revision": {
+        "revisionType": "S3",
+        "s3Location": {
+            "bundleType": "zip",
+            "eTag": "3fdd7b9196697a044d5af1d649e26a4a",
+            "bucket": "project-1234",
+            "key": "South-App.zip"
+        }
+    }
+}')
+
+
+

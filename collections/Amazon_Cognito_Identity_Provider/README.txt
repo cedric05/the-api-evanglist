@@ -1,0 +1,1 @@
+Amazon Cognito is a service that you can use to create unique identities for your users, authenticate these identities with identity providers, and save mobile user data in the AWS Cloud.

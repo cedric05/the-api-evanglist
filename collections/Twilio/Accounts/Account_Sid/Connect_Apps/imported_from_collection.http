@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Get the properties of a Connect App.
+
+@name("/Accounts/:AccountSid/ConnectApps/{{ConnectAppSid}}{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/ConnectApps/{{ConnectAppSid}}{{mediaTypeExtension}}"
+
+
+// Get the properties of a Connect App.
+
+@name("Accounts.Account Sid.Connect Apps.Connect App Sid.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/ConnectApps/{{ConnectAppSid}}.json"
+
+
+

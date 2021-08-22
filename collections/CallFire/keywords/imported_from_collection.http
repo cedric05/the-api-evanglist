@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Searches for all keywords available for purchase on the CallFire platform. If a keyword appears in the response, it is available for purchase. List the 'keywords' in a query parameter to search for multiple keywords (at least one keyword should be sent in request)
+
+@name("Find keywords")
+GET "https://{{baseUrl}}/keywords"
+? "keywords"= "<array>"
+
+
+// Searches for the specific keyword to purchase on the CallFire platform. Returns 'true' if keyword is available.
+
+@name("Check for a specific keyword")
+GET "https://{{baseUrl}}/keywords/:keyword/available"
+
+
+

@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a VPC endpoint for a specified service.
+
+@name("Create VPC Endpoint")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "DryRun"= ""
+? "PolicyDocument"= ""
+? "PrivateDnsEnabled"= ""
+? "RouteTableId.N"= ""
+? "SecurityGroupId.N"= ""
+? "ServiceName"= ""
+? "SubnetId.N"= ""
+? "VpcEndpointType"= ""
+? "VpcId"= ""
+? "Action"= "CreateVpcEndpoint"
+
+
+// Deletes one or more specified VPC endpoints.
+
+@name("Delete VPC Endpoints")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VpcEndpointId.N"= ""
+? "Action"= "DeleteVpcEndpoints"
+
+
+// Describes one or more of your VPC endpoints.
+
+@name("Describe VPC Endpoints")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "VpcEndpointId.N"= ""
+? "Action"= "DescribeVpcEndpoints"
+
+
+// Modifies attributes of a specified VPC endpoint.
+
+@name("Modify VPC Endpoint")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AddRouteTableId.N"= ""
+? "AddSecurityGroupId.N"= ""
+? "AddSubnetId.N"= ""
+? "DryRun"= ""
+? "PolicyDocument"= ""
+? "PrivateDnsEnabled"= ""
+? "RemoveRouteTableId.N"= ""
+? "RemoveSecurityGroupId.N"= ""
+? "RemoveSubnetId.N"= ""
+? "ResetPolicy"= ""
+? "VpcEndpointId"= ""
+? "Action"= "ModifyVpcEndpoint"
+
+
+

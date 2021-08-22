@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-65976312-4837-4e6a-b30f-fd3fcee99b05.postman_collection.json
+
+@name("Delete Insight Rules")
+GET "https://{{aws_cloudwatch_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudwatch_service}}", region="{{aws_cloudwatch_region}}")
+? "Action"= "DeleteInsightRules"
+? "RuleNames.member.N"= ""
+? "Version"= "2010-08-01"
+
+
+@name("Describe Insight Rules")
+GET "https://{{aws_cloudwatch_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudwatch_service}}", region="{{aws_cloudwatch_region}}")
+? "Action"= "DescribeInsightRules"
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Version"= "2010-08-01"
+
+
+@name("Disable Insight Rules")
+GET "https://{{aws_cloudwatch_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudwatch_service}}", region="{{aws_cloudwatch_region}}")
+? "Action"= "DisableInsightRules"
+? "RuleNames.member.N"= ""
+? "Version"= "2010-08-01"
+
+
+@name("Enable Insight Rules")
+GET "https://{{aws_cloudwatch_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudwatch_service}}", region="{{aws_cloudwatch_region}}")
+? "Action"= "EnableInsightRules"
+? "RuleNames.member.N"= ""
+? "Version"= "2010-08-01"
+
+
+

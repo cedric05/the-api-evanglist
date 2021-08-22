@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4ac82a81-aee5-4817-b1f1-deb74811605d.postman_collection.json
+
+@name("Create Collection")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.CreateCollection"
+? "Action"= "CreateCollection"
+data('{"CollectionId":"string"}')
+
+
+@name("Delete Collection")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.DeleteCollection"
+? "Action"= "DeleteCollection"
+data('{"CollectionId":"string"}')
+
+
+@name("Describe Collection")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.DescribeCollection"
+? "Action"= "DescribeCollection"
+data('{"CollectionId":"string"}')
+
+
+@name("List Collections")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.ListCollections"
+? "Action"= "ListCollections"
+data('{
+   "MaxResults": 25
+}')
+
+
+

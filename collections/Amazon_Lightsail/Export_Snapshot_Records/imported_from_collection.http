@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c407db9c-7d41-4c80-aae0-5e6aa5b99d99.postman_collection.json
+
+@name("Get Export Snapshot Records")
+POST "https://{{aws_lightsail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lightsail_service}}", region="{{aws_lightsail_region}}")
+? "Version"= "2016-11-28"
+data('{"pageToken":"string"}')
+
+
+

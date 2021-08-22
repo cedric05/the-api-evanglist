@@ -1,0 +1,69 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1db970f2-8e07-4d80-8a32-9295b3d30bab.postman_collection.json
+
+@name("Create Trail")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "CloudWatchLogsLogGroupArn"= ""
+? "CloudWatchLogsRoleArn"= ""
+? "EnableLogFileValidation"= ""
+? "IncludeGlobalServiceEvents"= ""
+? "IsMultiRegionTrail"= ""
+? "IsOrganizationTrail"= ""
+? "KmsKeyId"= ""
+? "Name"= ""
+? "S3BucketName"= ""
+? "S3KeyPrefix"= ""
+? "SnsTopicName"= ""
+? "TagsList"= ""
+? "Action"= "CreateTrail"
+
+
+@name("Delete Trail")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "Name"= ""
+? "Action"= "DeleteTrail"
+
+
+@name("Describe Trails")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "includeShadowTrails"= ""
+? "trailNameList"= ""
+? "Action"= "DescribeTrails"
+
+
+@name("Get Trail")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "Name"= ""
+? "Action"= "GetTrail"
+
+
+@name("List Trails")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "NextToken"= ""
+? "Action"= "ListTrails"
+
+
+@name("Update Trail")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "CloudWatchLogsLogGroupArn"= ""
+? "CloudWatchLogsRoleArn"= ""
+? "EnableLogFileValidation"= ""
+? "IncludeGlobalServiceEvents"= ""
+? "IsMultiRegionTrail"= ""
+? "IsOrganizationTrail"= ""
+? "KmsKeyId"= ""
+? "Name"= ""
+? "S3BucketName"= ""
+? "S3KeyPrefix"= ""
+? "SnsTopicName"= ""
+? "Action"= "UpdateTrail"
+
+
+

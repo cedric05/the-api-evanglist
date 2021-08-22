@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Create Dynamic Thing Group")
+GET "https://{{aws_internet_of_things_base_url}}/dynamic-thing-groups/thingGroupName&thingGroupName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Delete Dynamic Thing Group")
+GET "https://{{aws_internet_of_things_base_url}}/dynamic-thing-groups/thingGroupName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Update Dynamic Thing Group")
+GET "https://{{aws_internet_of_things_base_url}}/dynamic-thing-groups/thingGroupName&thingGroupName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

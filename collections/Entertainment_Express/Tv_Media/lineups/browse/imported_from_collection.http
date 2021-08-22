@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Starting point for lineup browser, returns available countries.
+
+@name("Get Tv Media Countries")
+GET "https://{{baseUrl}}/TvMedia/lineups/browse"
+? "TvMediaApiKey"= "<get>"
+
+
+

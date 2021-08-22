@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint returns a list of all scopes that this user has access to.**
+// 
+// API Keys can be used to authenticate the use of [SendGrid’s v3 Web API](https://sendgrid.com/docs/API_Reference/Web_API_v3/index.html), or the [Mail API Endpoint](https://sendgrid.com/docs/API_Reference/Web_API/mail.html). API Keys may be assigned certain permissions, or scopes, that limit which API endpoints they are able to access. For a more detailed explanation of how you can use API Key permissions, please visit
+
+@name("Retrieve a list of scopes for which this user has access.")
+GET "https://{{baseUrl}}/scopes"
+
+
+// This endpoint allows you to retrieve a list of all recent access requests.
+// 
+// **Note:** The Response Header's 'link' parameter will include pagination info.ts
+
+@name("Retrieve access requests")
+GET "https://{{baseUrl}}/scopes/requests"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+

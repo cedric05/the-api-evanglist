@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9a62c01e-3db2-4f66-b90d-a4df9dd9bd07.postman_collection.json
+
+// Unenrolls an existing factor for the specified user, allowing the user to enroll a new factor.
+
+@name("delete Factor")
+DELETE "https://{{baseUrl}}/api/v1/users/:userId/factors/:factorId"
+
+
+// The `sms` and `token:software:totp` [factor types](#factor-type) require activation to complete the enrollment process.
+
+@name("Activate Factor")
+POST "https://{{baseUrl}}/api/v1/users/:userId/factors/:factorId/lifecycle/activate"
+
+
+// Verifies an OTP for a `token` or `token:hardware` factor
+
+@name("Verify MFA Factor")
+POST "https://{{baseUrl}}/api/v1/users/:userId/factors/:factorId/verify"
+? "templateId"= "<string>"
+? "tokenLifetimeSeconds"= "<integer>"
+
+
+

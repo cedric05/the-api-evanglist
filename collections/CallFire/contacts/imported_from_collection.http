@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Find user's contacts by id, contact list, or on any property name. Returns a paged list of contacts
+
+@name("Find contacts")
+GET "https://{{baseUrl}}/contacts"
+? "fields"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "id"= "<integer>"
+? "number"= "<string>"
+? "contactListId"= "<integer>"
+? "propertyName"= "<string>"
+? "propertyValue"= "<string>"
+
+
+

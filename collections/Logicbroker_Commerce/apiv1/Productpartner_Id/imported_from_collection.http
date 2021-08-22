@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39359504-af25-4f48-954b-e7dd332ed9ff.postman_collection.json
+
+// Request rate limited to 1 request per second with bursts up to 10 requests.
+
+@name("Import product from CSV.")
+POST "https://{{baseUrl}}/api/v1/Product/:partnerId"
+
+
+

@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cd9b4406-c593-4cb5-89cb-6825b6ec9f1b.postman_collection.json
+
+// The Query operation finds items based on primary key values. You can query any table or secondary index that has a composite primary key (a partition key and a sort key).
+
+@name("Query")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.Query"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "Query"
+data('{
+    "TableName": "asteroids",
+    "ProjectionExpression": "id,given_name,description",
+    "KeyConditionExpression": "id = :v1",
+    "ExpressionAttributeValues": {
+        ":v1": {
+            "S": "a0a770c7-fe51-4a8b-9cee-7ab08dbe6f6c"
+        }
+    }
+}')
+
+
+// The Scan operation returns one or more items and item attributes by accessing every item in a table or a secondary index. To have DynamoDB return fewer items, you can provide a FilterExpression operation.
+
+@name("Scan")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"Content-Type": "application/x-amz-json-1.0"
+"X-Amz-Target": "DynamoDB_20120810.Scan"
+? "Action"= "Scan"
+data('{
+    "TableName": "asteroids",
+    "ReturnConsumedCapacity": "TOTAL"
+}')
+
+
+

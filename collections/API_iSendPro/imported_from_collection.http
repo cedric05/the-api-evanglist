@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c07885fa-12c3-44e6-b435-219bfe19016b.postman_collection.json
+
+// Retourne les SMS envoyés sur une période donnée en fonction d'une date de début et d'une date de fin.
+// 
+// Les dates sont au format YYYY-MM-DD hh:mm.
+// 
+// Le fichier rapport de campagne est sous la forme d'un fichier zip + contenant un fichier csv contenant le détail des envois.
+
+@name("Retourne les SMS envoyés sur une période donnée")
+GET "https://{{baseUrl}}/campagne"
+? "keyid"= "<string>"
+? "rapportCampagne"= "<string>"
+? "date_deb"= "<string>"
+? "date_fin"= "<string>"
+
+
+// Compte le nombre de SMS necessaire à un envoi
+
+@name("Compter le nombre de caractère ")
+POST "https://{{baseUrl}}/comptage"
+
+
+

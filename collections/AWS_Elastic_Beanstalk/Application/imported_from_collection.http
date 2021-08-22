@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-27f83bb7-4ad5-4571-80f4-1fa618a02314.postman_collection.json
+
+@name("Create Application")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "Description"= ""
+? "ResourceLifecycleConfig"= ""
+? "Tags.member.N"= ""
+? "Action"= "CreateApplication"
+
+
+@name("Delete Application")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "TerminateEnvByForce"= ""
+? "Action"= "DeleteApplication"
+
+
+@name("Describe Applications")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "Action"= "DescribeApplications"
+
+
+@name("Update Application")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "Description"= ""
+? "Action"= "UpdateApplication"
+
+
+

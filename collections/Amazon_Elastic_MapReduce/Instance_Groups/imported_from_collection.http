@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f15eb0b0-8456-4c8c-b7eb-e8c210aa11fb.postman_collection.json
+
+@name("Add Instance Groups")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.AddInstanceGroups"
+? "Action"= "AddInstanceGroups"
+data('{"InstanceGroups":[{"AutoScalingPolicy":{"Constraints":{"MaxCapacity":42,"MinCapacity":42},"Rules":[{"Action":{"Market":"string","SimpleScalingPolicyConfiguration":{"AdjustmentType":"string","CoolDown":42,"ScalingAdjustment":42}},"Description":"string","Name":"string","Trigger":{"CloudWatchAlarmDefinition":{"ComparisonOperator":"string","Dimensions":[{"Key":"string","Value":"string"}],"EvaluationPeriods":42,"MetricName":"string","Namespace":"string","Period":42,"Statistic":"string","Threshold":42,"Unit":"string"}}}]},"BidPrice":"string","Configurations":[{"Classification":"string","Configurations":["Configuration"],"Properties":{"string":"string"}}],"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"Iops":42,"SizeInGB":42,"VolumeType":"string"},"VolumesPerInstance":42}],"EbsOptimized":1},"InstanceCount":42,"InstanceRole":"string","InstanceType":"string","Market":"string","Name":"string"}],"JobFlowId":"string"}')
+
+
+@name("List Instance Groups")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.ListInstanceGroups"
+? "Action"= "ListInstanceGroups"
+data('{"ClusterId":"string","Marker":"string"}')
+
+
+@name("Modify Instance Groups")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.ModifyInstanceGroups"
+? "Action"= "ModifyInstanceGroups"
+data('{"ClusterId":"string","InstanceGroups":[{"Configurations":[{"Classification":"string","Configurations":["Configuration"],"Properties":{"string":"string"}}],"EC2InstanceIdsToTerminate":["string"],"InstanceCount":42,"InstanceGroupId":"string","ShrinkPolicy":{"DecommissionTimeout":42,"InstanceResizePolicy":{"InstancesToProtect":["string"],"InstancesToTerminate":["string"],"InstanceTerminationTimeout":42}}}]}')
+
+
+

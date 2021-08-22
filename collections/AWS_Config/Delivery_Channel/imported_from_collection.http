@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Delete Delivery Channel")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DeleteDeliveryChannel"
+data('{
+   "DeliveryChannelName": "string"
+}')
+
+
+@name("Describe Delivery Channels")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DescribeDeliveryChannels"
+data('{
+   "DeliveryChannelNames": [ "string" ]
+}')
+
+
+@name("Put Delivery Channel")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "PutDeliveryChannel"
+data('{
+   "DeliveryChannel": { 
+      "configSnapshotDeliveryProperties": { 
+         "deliveryFrequency": "string"
+      },
+      "name": "string",
+      "s3BucketName": "string",
+      "s3KeyPrefix": "string",
+      "snsTopicARN": "string"
+   }
+}')
+
+
+

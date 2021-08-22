@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-51f1663f-4022-4c8f-b62e-1b4823b27806.postman_collection.json
+
+@name("Create Address")
+POST "https://{{aws_snowball_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_snowball_service}}", region="{{aws_snowball_region}}")
+data('{"Address":{"AddressId":"string","City":"string","Company":"string","Country":"string","IsRestricted":1,"Landmark":"string","Name":"string","PhoneNumber":"string","PostalCode":"string","PrefectureOrDistrict":"string","StateOrProvince":"string","Street1":"string","Street2":"string","Street3":"string"}}')
+
+
+@name("Describe Address")
+POST "https://{{aws_snowball_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_snowball_service}}", region="{{aws_snowball_region}}")
+data('{"AddressId":"string"}')
+
+
+

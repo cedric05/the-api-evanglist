@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve job's last build details
+
+@name("get Job Last Build")
+GET "https://{{baseUrl}}/job/:name/lastBuild/api/json"
+? "No Name"= "<string>"
+
+
+// Stop a job
+
+@name("post Job Last Build Stop")
+POST "https://{{baseUrl}}/job/:name/lastBuild/stop"
+? "No Name"= "<string>"
+
+
+

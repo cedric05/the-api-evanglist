@@ -1,0 +1,110 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// By default the API will only return basic title information. Additional objects can be included by passing the object in the Includes parameter.   
+// 
+// 
+// `Subscriptions with "Limited" data will only be able to include basic title information and Videos.`  
+
+@name("Returns a paged list of all movies.")
+GET "https://{{baseUrl}}/Movies/All"
+? "Take"= "<get>"
+? "Skip"= "<get>"
+? "Includes"= "<get>"
+
+
+// Movie alternate ID types refer to 3rd party IDs that IVA matches its own movie IDs.  **EX: IMDB, TMDB**.  
+// 
+// `Use to get the Id of the ID type to use with /Find/Movie.`
+
+@name("Returns all MovieAlternateIdTypes.")
+GET "https://{{baseUrl}}/Movies/AlternateIdTypes"
+
+
+// Requires Skip and Take. Maximum page size is 10.
+// 
+// By default the API will only return basic title information.
+// Additional objects can be included by passing the object in the Includes parameter in a comma separated list. 
+
+@name("Returns list of all Movies coming to US Theaters.")
+GET "https://{{baseUrl}}/Movies/ComingSoon/"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+? "Includes"= "<get>"
+
+
+// Requires Skip and Take. Maximum page size is 10.
+// 
+// By default the API will only return basic title information.
+// Additional objects can be included by passing the object in the Includes parameter in a comma separated list. 
+
+@name("Returns list of all Movies currently in US Theaters.")
+GET "https://{{baseUrl}}/Movies/InTheaters/"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+? "Includes"= "<get>"
+
+
+// Use to match IVA movie data to another data source using title, year, cast etc.
+
+@name("Perform a match to Entertainment using Title, Year, Cast and Director. Returns best match and score for the match.")
+GET "https://{{baseUrl}}/Movies/Match/"
+? "Title"= "<get>"
+? "AlternateTitles"= "<get>"
+? "Year"= "<get>"
+? "Cast"= "<get>"
+? "Directors"= "<get>"
+? "StringDistance"= "<get>"
+
+
+// Returns all Movie Certifications used in a movie response with the Releases object.
+
+@name("Returns all Movie Certifications")
+GET "https://{{baseUrl}}/Movies/MovieCertifications"
+
+
+// List of all movie genres used in the API.
+
+@name("
+Returns all Movie Genres.")
+GET "https://{{baseUrl}}/Movies/MovieGenres"
+
+
+// Release type refers to the release. **EX: Theatrical, Home Video, etc.**
+
+@name("Returns all Movie ReleaseTypes")
+GET "https://{{baseUrl}}/Movies/ReleaseTypes"
+
+
+// Searchable Fields:
+// Title, AlternateTitles, Genres, OriginalReleaseDate, UnitedStatesReleaseDate, GermanyReleaseDate, FranceReleaseDate, UnitedKingdomReleaseDate, ItalyReleaseDate, JapanReleaseDate, Tags, Cast, Directors, Descriptions, Ratings, OriginalLanguage.
+// [Syntax Ref](https://docs.microsoft.com/en-us/rest/api/searchservice/simple-query-syntax-in-azure-search)
+// 
+// Filterable Fields:
+// ID, Title, AlternateTitles, Genres, OriginalReleaseDate, UnitedStatesReleaseDate, GermanyReleaseDate, FranceRele
+
+@name("Search and discover movies.")
+GET "https://{{baseUrl}}/Movies/SearchAndDiscover"
+? "term"= "<get>"
+? "SelectFields"= "<get>"
+? "SearchFields"= "<get>"
+? "Filter"= "<get>"
+? "OrderBy"= "<get>"
+? "Top"= "<get>"
+? "Skip"= "<get>"
+? "IncludeTotalResultCount"= "<get>"
+? "SearchMode"= "<get>"
+
+
+// By default the API will only return basic title information. Additional objects can be included by passing the object in the Includes parameter.   
+// 
+// 
+// `Subscriptions with "Limited" data will only be able to include basic title information and Videos.`  
+
+@name("Returns movie data for a specific IVA MovieId.")
+GET "https://{{baseUrl}}/Movies/:Id"
+? "Includes"= "<get>"
+
+
+

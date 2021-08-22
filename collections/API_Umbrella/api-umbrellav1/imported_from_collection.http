@@ -1,0 +1,83 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ed7cee5e-e211-475d-aecd-436ce8cca5ff.postman_collection.json
+
+// Get a listing of all admin group records the currently authenticated admin user has permissions to.
+// 
+// This API's query parameters and responses are intended to be compatible with the [DataTables server-side processing API](https://datatables.net/manual/server-side).
+
+@name("Get a list of all admin groups.")
+GET "https://{{baseUrl}}/api-umbrella/v1/admin_groups"
+? "No Name"= "<string>"
+
+
+// Get a listing of all admin permission records.
+
+@name("Get a list of all admin permissions.")
+GET "https://{{baseUrl}}/api-umbrella/v1/admin_permissions"
+
+
+// Get a listing of all admin account records the currently authenticated admin user has permissions to.
+// 
+// This API's query parameters and responses are intended to be compatible with the [DataTables server-side processing API](https://datatables.net/manual/server-side).
+
+@name("Get a list of all admin accounts.")
+GET "https://{{baseUrl}}/api-umbrella/v1/admins"
+? "No Name"= "<string>"
+
+
+@name("Get a summary of pending configuration changes.")
+GET "https://{{baseUrl}}/api-umbrella/v1/analytics/drilldown"
+? "prefix"= "<string>"
+? "start_at"= "<string>"
+? "end_at"= "<string>"
+? "interval"= "<string>"
+? "query"= "<string>"
+? "search"= "<string>"
+
+
+// Get a listing of all API scope records the currently authenticated admin user has permissions to.
+// 
+// This API's query parameters and responses are intended to be compatible with the [DataTables server-side processing API](https://datatables.net/manual/server-side).
+
+@name("Get a list of all API scopes.")
+GET "https://{{baseUrl}}/api-umbrella/v1/api_scopes"
+? "No Name"= "<string>"
+
+
+// Get a listing of all API backend records the currently authenticated admin user has permissions to.
+// 
+// This API's query parameters and responses are intended to be compatible with the [DataTables server-side processing API](https://datatables.net/manual/server-side).
+
+@name("Get a list of all API backends.")
+GET "https://{{baseUrl}}/api-umbrella/v1/apis"
+? "No Name"= "<string>"
+
+
+@name("Send a support e-mail to the website administrator.")
+POST "https://{{baseUrl}}/api-umbrella/v1/contact"
+
+
+@name("Get a list of all user roles available.")
+GET "https://{{baseUrl}}/api-umbrella/v1/user_roles"
+
+
+// Get a listing of all API user/API key records the currently authenticated admin user has permissions to.
+// 
+// This API's query parameters and responses are intended to be compatible with the [DataTables server-side processing API](https://datatables.net/manual/server-side).
+
+@name("Get a list of all API users/API keys.")
+GET "https://{{baseUrl}}/api-umbrella/v1/users"
+? "No Name"= "<string>"
+
+
+// Get a listing of all website backend records the currently authenticated admin user has permissions to.
+// 
+// This API's query parameters and responses are intended to be compatible with the [DataTables server-side processing API](https://datatables.net/manual/server-side).
+
+@name("Get a list of all website backends.")
+GET "https://{{baseUrl}}/api-umbrella/v1/website_backends"
+? "No Name"= "<string>"
+
+
+

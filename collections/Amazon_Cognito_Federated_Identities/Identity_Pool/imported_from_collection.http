@@ -1,0 +1,79 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2f393c49-f959-4f18-bf04-79f6c8910daa.postman_collection.json
+
+@name("Create Identity Pool")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.CreateIdentityPool"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "CreateIdentityPool"
+data('{
+    "IdentityPoolName": "MyIdentityPool",
+    "AllowUnauthenticatedIdentities": true,
+    "SupportedLoginProviders":
+    {
+        "graph.facebook.com": "7346241598935555",
+        "accounts.google.com": "123456789012.apps.googleusercontent.com",
+        "www.amazon.com": "amzn1.application-oa2-client.188a56d827a7d6555a8b67a5d",
+        "api.twitter.com": "xvz1evFS4wEEPTGEFPHBog;kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw",
+        "www.digits.com": "xvz1evFS4wEEPTGEFPHBog;kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw"
+    }
+}')
+
+
+@name("Delete Identity Pool")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.DeleteIdentityPool"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "DeleteIdentityPool"
+data('{
+    "IdentityPoolId": "us-east-1:177a950c-2c08-43f0-9983-28727EXAMPLE"
+}')
+
+
+@name("Describe Identity Pool")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.DescribeIdentityPool"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "DescribeIdentityPool"
+data('{
+    "IdentityPoolId": "us-east-1:177a950c-2c08-43f0-9983-28727EXAMPLE"
+}')
+
+
+@name("List Identity Pools")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.ListIdentityPools"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "ListIdentityPools"
+data('{
+    "MaxResults": 3
+}')
+
+
+@name("Update Identity Pool")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.UpdateIdentityPool"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "UpdateIdentityPool"
+data('{
+    "IdentityPoolId": "us-east-1:c1731993-c776-4ae2-86c6-554aeEXAMPLE",
+    "IdentityPoolName": "MyIdentityPool",
+    "AllowUnauthenticatedIdentities": true,
+    "SupportedLoginProviders":
+    {
+        "www.amazon.com": "amzn1.application-oa2-client.188a56d827a7d6555a8b67a5d",
+        "graph.facebook.com": "7346241598935555",
+        "accounts.google.com": "123456789012.apps.googleusercontent.com",
+        "api.twitter.com": "xvz1evFS4wEEPTGEFPHBog;kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw",
+        "www.digits.com": "xvz1evFS4wEEPTGEFPHBog;kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw"
+    }
+}')
+
+
+

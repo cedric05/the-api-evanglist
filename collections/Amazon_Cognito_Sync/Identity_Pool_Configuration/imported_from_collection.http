@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9e00a78d-2317-4bed-9060-4dce0609c34f.postman_collection.json
+
+@name("Get Identity Pool Configuration")
+GET "https://{{aws_cognito_sync_base_url}}/identitypools/:IdentityPoolId/configuration"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_sync_service}}", region="{{aws_cognito_sync_region}}")
+
+
+@name("Set Identity Pool Configuration")
+POST "https://{{aws_cognito_sync_base_url}}/identitypools/:IdentityPoolId/configuration"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_sync_service}}", region="{{aws_cognito_sync_region}}")
+data('{
+   "CognitoStreams": { 
+      "DisabledReason": "string",
+      "RoleArn": "string",
+      "StreamingStatus": "string",
+      "StreamName": "string"
+   },
+   "PushSync": { 
+      "ApplicationArns": [ "string" ],
+      "RoleArn": "string"
+   }
+}')
+
+
+

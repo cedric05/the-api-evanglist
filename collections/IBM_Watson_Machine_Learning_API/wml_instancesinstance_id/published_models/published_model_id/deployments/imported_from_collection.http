@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1870fecb-0090-4c1a-976d-99be7baaa589.postman_collection.json
+
+// Creates the deployment - online, stream, batch (batch deployment only supports Cloud Object Storage as input/output for Tensorflow, Keras and Caffe models.)
+
+@name("Post Wml Instances Instance Published Models Published Model Deployments")
+POST "https://{{baseUrl}}/wml_instances/:instance_id/published_models/:published_model_id/deployments"
+? "sync"= "<>"
+
+
+

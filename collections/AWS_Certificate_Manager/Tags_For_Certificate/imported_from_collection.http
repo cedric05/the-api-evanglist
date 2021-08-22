@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-210e539f-4d05-4c1a-9d53-755f828e1683.postman_collection.json
+
+@name("List Tags For Certificate")
+POST "https://{{aws_certificate_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_certificate_manager_service}}", region="{{aws_certificate_manager_region}}")
+? "Action"= "ListTagsForCertificate"
+data('{"CertificateArn": "arn:aws:acm:us-east-1:111122223333:certificate/12345678-1234-1234-1234-123456789012"}')
+
+
+

@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a1adb5da-a0fe-4a6e-9435-7531e1b20955.postman_collection.json
+
+// Returns the system information for the Confluence Cloud tenant. This
+// information is used by Atlassian.
+// 
+// **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**:
+// Permission to access the Confluence site ('Can use' global permission).
+
+@name("Get system info")
+GET "https://{{baseUrl}}/api/settings/systemInfo"
+
+
+

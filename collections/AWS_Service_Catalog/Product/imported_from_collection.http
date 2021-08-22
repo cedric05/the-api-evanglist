@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-88ac1dc0-36c3-4a4a-99dc-96fc8b7c0608.postman_collection.json
+
+@name("Copy Product")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "CopyProduct"
+data('{"AcceptLanguage":"string","CopyOptions":["string"],"IdempotencyToken":"string","SourceProductArn":"string","SourceProvisioningArtifactIdentifiers":[{"string":"string"}],"TargetProductId":"string","TargetProductName":"string"}')
+
+
+@name("Create Product")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "CreateProduct"
+data('{"AcceptLanguage":"string","Description":"string","Distributor":"string","IdempotencyToken":"string","Name":"string","Owner":"string","ProductType":"string","ProvisioningArtifactParameters":{"Description":"string","DisableTemplateValidation":1,"Info":{"string":"string"},"Name":"string","Type":"string"},"SupportDescription":"string","SupportEmail":"string","SupportUrl":"string","Tags":[{"Key":"string","Value":"string"}]}')
+
+
+@name("Delete Product")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DeleteProduct"
+data('{"AcceptLanguage":"string","Id":"string"}')
+
+
+@name("Describe Product")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DescribeProduct"
+data('{"AcceptLanguage":"string","Id":"string"}')
+
+
+@name("Provision Product")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "ProvisionProduct"
+data('null')
+
+
+@name("Search Products")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "SearchProducts"
+data('null')
+
+
+@name("Update Product")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "UpdateProduct"
+data('{"AcceptLanguage":"string","AddTags":[{"Key":"string","Value":"string"}],"Description":"string","Distributor":"string","Id":"string","Name":"string","Owner":"string","RemoveTags":["string"],"SupportDescription":"string","SupportEmail":"string","SupportUrl":"string"}')
+
+
+

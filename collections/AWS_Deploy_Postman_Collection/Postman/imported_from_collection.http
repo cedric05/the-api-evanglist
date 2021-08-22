@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d8f0a546-2bf3-4572-88c9-9190f362a7c5.postman_collection.json
+
+// This call fetches a single API having the specified id.
+// 
+// Response contains an `api` object with all the details related to the queried API, namely, `id`, `name`, `summary`, `description` etc. 
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Pull OpenAPI From Postman")
+GET "https://{{url}}/apis/{{apiId}}"
+"x-api-key": "{{apiKey}}"
+
+
+

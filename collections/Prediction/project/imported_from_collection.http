@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7f8f6cde-6ef2-4ab0-a0e7-151dce0fa68a.postman_collection.json
+
+// Submit input and request an output against a hosted model.
+
+@name("Predict Model")
+POST "https://{{baseUrl}}/:project/hostedmodels/:hostedModelName/predict"
+
+
+

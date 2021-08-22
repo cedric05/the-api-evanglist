@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1ae65b12-94bd-40ca-acee-7a0cd4c3c799.postman_collection.json
+
+@name("Create Cloud Front Origin Access Identity")
+POST "https://{{aws_cloudfront_base_url}}/2019-03-26/origin-access-identity/cloudfront"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<CloudFrontOriginAccessIdentityConfig xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <CallerReference>string</CallerReference>
+   <Comment>string</Comment>
+</CloudFrontOriginAccessIdentityConfig>')
+
+
+@name("Delete Cloud Front Origin Access Identity")
+DELETE "https://{{aws_cloudfront_base_url}}/2019-03-26/origin-access-identity/cloudfront/:id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Get Cloud Front Origin Access Identity")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/origin-access-identity/cloudfront/:id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Get Cloud Front Origin Access Identity Config")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/origin-access-identity/cloudfront/:id/config"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("List Cloud Front Origin Access Identities")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/origin-access-identity/cloudfront"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Marker"= "Marker"
+? "MaxItems"= "MaxItems"
+
+
+@name("Update Cloud Front Origin Access Identity")
+PUT "https://{{aws_cloudfront_base_url}}/2019-03-26/origin-access-identity/cloudfront/:id/config"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<CloudFrontOriginAccessIdentityConfig xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <CallerReference>string</CallerReference>
+   <Comment>string</Comment>
+</CloudFrontOriginAccessIdentityConfig>')
+
+
+

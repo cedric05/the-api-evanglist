@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fced5fea-e845-4ddb-a1c4-08a1c4724c29.postman_collection.json
+
+// To perform a pattern search in the API, use the /search/ endpoint, append a RegEx pattern search to the API query and a start time.
+
+@name("Pattern Search")
+GET "https://{{baseUrl}}/search/"
+
+
+// This API method returns a list of co-occurences for the specified domain. A co-occurrence is when two or more domains are being accessed by the same users within a small window of time. Being a co-occurrence isn't necessarily a bad thing, legitimate sites co-occur with each other as a part of normal web activity. However, unusual or suspicious co-occurence can provide additional information regarding attacks.
+
+@name("Co-Occurrences for a Domain")
+GET "https://{{baseUrl}}/recommendations/:name/"
+
+
+// This API method returns a list of domain names that have been frequently seen requested b around the same time (up to 60 seconds before or after) as the given domain name, but that are not frequently associated with other domain names.
+
+@name("Related Domains")
+GET "https://{{baseUrl}}/links/:name/"
+
+
+// The security information API method contains multiple scores or security features, each of which can be used to determine relevant datapoints to build insight on the reputation or security risk posed by the site. No one security information feature is conclusive, instead these features should be looked at in conjunction with one another as part of your security research.
+
+@name("Security Information")
+GET "https://{{baseUrl}}/security/:name/"
+
+
+// The DNS database can be used to query the history that OpenDNS has seen for a given domain.
+
+@name("DNS RR History")
+GET "https://{{baseUrl}}/dnsdb/:name/a/"
+
+
+// To help better understand how IP addresses are related to each other and to the regional registries, the API can provide data about ASN and IP relationships. You can also find out more about the IP space associated with an AS with this endpoint and correlate BGP routing information between AS.
+
+@name("IP Address History")
+GET "https://{{baseUrl}}/bgp_routes/ip/:ip/"
+
+
+// This API method returns the WHOIS information for the specified email address(es), nameserver(s) and domains. You can also search by multiple email addresses or multiple nameservers.
+
+@name("Whois")
+GET "https://{{baseUrl}}/whois/emails/"
+
+
+// The latest_domains endpoint shows whether the IP address you???ve entered as input has any known malicious domains associated with it.
+
+@name("Latest Malicious Domains")
+GET "https://{{baseUrl}}/ips/:ip/latest_domains"
+
+
+// Posts a Malware event to the API for processing and optionally adding to a customer's domain lists.
+
+@name("Post Event")
+PUT "https://{{baseUrl}}/events"
+
+
+

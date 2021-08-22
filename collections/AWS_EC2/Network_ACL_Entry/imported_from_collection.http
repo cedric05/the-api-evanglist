@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates an entry (a rule) in a network ACL with the specified rule number.
+
+@name("Create Network ACL Entry")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "CidrBlock"= ""
+? "DryRun"= ""
+? "Egress"= ""
+? "Icmp"= ""
+? "Ipv6CidrBlock"= ""
+? "NetworkAclId"= ""
+? "PortRange"= ""
+? "Protocol"= ""
+? "RuleAction"= ""
+? "RuleNumber"= ""
+? "Action"= "CreateNetworkAclEntry"
+
+
+// Deletes the specified ingress or egress entry (rule) from the specified network ACL.
+
+@name("Delete Network ACL Entry")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Egress"= ""
+? "NetworkAclId"= ""
+? "RuleNumber"= ""
+? "Action"= "DeleteNetworkAclEntry"
+
+
+// Replaces an entry (rule) in a network ACL.
+
+@name("Replace Network ACL Entry")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "CidrBlock"= ""
+? "DryRun"= ""
+? "Egress"= ""
+? "Icmp"= ""
+? "Ipv6CidrBlock"= ""
+? "NetworkAclId"= ""
+? "PortRange"= ""
+? "Protocol"= ""
+? "RuleAction"= ""
+? "RuleNumber"= ""
+? "Action"= "ReplaceNetworkAclEntry"
+
+
+

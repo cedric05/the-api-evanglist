@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+// Retrieve logs as they come through a chunked, never-ending response
+
+@name("/logs/logs-chunked/:appId")
+GET "https://{{baseUrl}}/logs/logs-chunked/:appId"
+? "download"= "<boolean>"
+
+
+// Retrieve logs as they come through a websocket connection. To have authorization, you have to send a `{ "message_type": "oauth", "authorization": "oauth authorization string" }` message
+
+@name("/logs/logs-socket/:appId")
+GET "https://{{baseUrl}}/logs/logs-socket/:appId"
+? "since"= "<string>"
+? "filter"= "<string>"
+? "deployment_id"= "<string>"
+
+
+

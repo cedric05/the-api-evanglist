@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Associates an IAM instance profile with a running or stopped instance.
+
+@name("Associate IAM Instance Profile")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "IamInstanceProfile"= ""
+? "InstanceId"= ""
+? "Action"= "AssociateIamInstanceProfile"
+
+
+// Disassociates an IAM instance profile from a running or stopped instance.
+
+@name("Disassociate IAM Instance Profile")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AssociationId"= ""
+? "Action"= "DisassociateIamInstanceProfile"
+
+
+

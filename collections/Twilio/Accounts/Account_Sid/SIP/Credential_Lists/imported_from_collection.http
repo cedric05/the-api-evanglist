@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Delete a CredentialList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
+
+@name("/Accounts/:AccountSid/SIP/CredentialLists/{{CLSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/SIP/CredentialLists/{{CLSid}}{{mediaTypeExtension}}"
+
+
+// Delete a CredentialList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.
+
+@name("Accounts.Account Sid.SIP.Credential Lists.CL Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/SIP/CredentialLists/{{CLSid}}.json"
+
+
+

@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// # Set Target Address As Healthy [konghq](https://docs.konghq.com/2.0.x/admin-api/#set-target-address-as-healthy)
+// * Set the current health status of an individual address resolved by a target in the load balancer to “healthy” in the entire Kong cluster.
+// 
+// * This endpoint can be used to manually re-enable an address resolved by a target that was previously disabled by the upstream’s health checker. Upstreams only forward requests to healthy nodes, so this call tells Kong to start using this a
+
+@name("Set Target Address As Healthy")
+POST "https://{{baseUrl}}/upstreams/:upstreamNameOrId/targets/:targetOrID/:address/healthy"
+
+
+// # Set Target Address As Unhealthy [konghq](https://docs.konghq.com/2.0.x/admin-api/#set-target-address-as-unhealthy)
+// * Set the current health status of an individual address resolved by a target in the load balancer to “unhealthy” in the entire Kong cluster.
+// 
+// * This endpoint can be used to manually disable an address and have it stop responding to requests. Upstreams only forward requests to healthy nodes, so this call tells Kong to start skipping this address.
+// 
+// * This call resets the health
+
+@name("Set Target Address As Unhealthy")
+POST "https://{{baseUrl}}/upstreams/:upstreamNameOrId/targets/:targetOrID/:address/unhealthy"
+
+
+

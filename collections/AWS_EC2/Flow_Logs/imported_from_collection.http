@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates one or more flow logs to capture information about IP traffic for a specific
+//                         network interface,
+//                         subnet, or VPC.
+
+@name("Create Flow Logs")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "DeliverLogsPermissionArn"= ""
+? "DryRun"= ""
+? "LogDestination"= ""
+? "LogDestinationType"= ""
+? "LogFormat"= ""
+? "LogGroupName"= ""
+? "ResourceId.N"= ""
+? "ResourceType"= ""
+? "TrafficType"= ""
+? "Action"= "CreateFlowLogs"
+
+
+// Deletes one or more flow logs.
+
+@name("Delete Flow Logs")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "FlowLogId.N"= ""
+? "Action"= "DeleteFlowLogs"
+
+
+// Describes one or more flow logs.
+
+@name("Describe Flow Logs")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "FlowLogId.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeFlowLogs"
+
+
+

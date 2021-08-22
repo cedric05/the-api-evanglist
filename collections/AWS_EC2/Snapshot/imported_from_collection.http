@@ -1,0 +1,75 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
+
+@name("Copy Snapshot")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Description"= ""
+? "DestinationRegion"= ""
+? "DryRun"= ""
+? "Encrypted"= ""
+? "KmsKeyId"= ""
+? "PresignedUrl"= ""
+? "SourceRegion"= ""
+? "SourceSnapshotId"= ""
+? "Action"= "CopySnapshot"
+
+
+// Creates a snapshot of an EBS volume and stores it in Amazon S3.
+
+@name("Create Snapshot")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Description"= ""
+? "DryRun"= ""
+? "TagSpecification.N"= ""
+? "VolumeId"= ""
+? "Action"= "CreateSnapshot"
+
+
+// .
+
+@name("Create Snapshots")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "CreateSnapshots"
+
+
+// Deletes the specified snapshot.
+
+@name("Delete Snapshot")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "SnapshotId"= ""
+? "Action"= "DeleteSnapshot"
+
+
+// Describes the specified EBS snapshots available to you or all of the EBS snapshots
+//                         available to you.
+
+@name("Describe Snapshots")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Owner.N"= ""
+? "RestorableBy.N"= ""
+? "SnapshotId.N"= ""
+? "Action"= "DescribeSnapshots"
+
+
+// .
+
+@name("Import Snapshot")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "ImportSnapshot"
+
+
+

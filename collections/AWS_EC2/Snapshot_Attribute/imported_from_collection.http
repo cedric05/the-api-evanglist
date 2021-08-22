@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes the specified attribute of the specified snapshot.
+
+@name("Describe Snapshot Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "DryRun"= ""
+? "SnapshotId"= ""
+? "Action"= "DescribeSnapshotAttribute"
+
+
+// Adds or removes permission settings for the specified snapshot.
+
+@name("Modify Snapshot Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "CreateVolumePermission"= ""
+? "DryRun"= ""
+? "OperationType"= ""
+? "SnapshotId"= ""
+? "UserGroup.N"= ""
+? "UserId.N"= ""
+? "Action"= "ModifySnapshotAttribute"
+
+
+// Resets permission settings for the specified snapshot.
+
+@name("Reset Snapshot Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "DryRun"= ""
+? "SnapshotId"= ""
+? "Action"= "ResetSnapshotAttribute"
+
+
+

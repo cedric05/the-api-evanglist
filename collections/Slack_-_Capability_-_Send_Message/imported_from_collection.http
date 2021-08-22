@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ef20e43b-9535-4248-ab44-d01808c43f17.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{token}}"
+
+
+// Sends a message to a channel.
+
+@name("Send Channel Message") : "base-inherit-auth"
+POST "https://{{baseUrl}}/chat.postMessage"
+"Content-Type": "application/json"
+json({
+    "channel": "{{channel_id}}",
+    "text": "I hope the tour went well, Mr. Wonka."
+})
+
+
+

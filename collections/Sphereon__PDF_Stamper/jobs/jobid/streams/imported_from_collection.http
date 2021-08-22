@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cfd5624c-b930-4725-aa14-55f9a44206d1.postman_collection.json
+
+// Upload an image, office or pdf for conversion to PDF, embedded in a json as a base64 encoded string
+
+@name("Upload a base64 encoded file")
+POST "https://{{baseUrl}}/jobs/:jobid/streams/content"
+
+
+// Upload a pdf to stamp one or more configurations. Please note that you can upload multiple files.
+
+@name("Upload a file")
+POST "https://{{baseUrl}}/jobs/:jobid/streams/multipart"
+
+
+// Add image, office or pdf input stream location(s) from the storage API for conversion to PDF. Please note that you can upload multiple files. Conversion will not be started yet.
+
+@name("Add Input Stream Location(s)")
+POST "https://{{baseUrl}}/jobs/:jobid/streams/location"
+
+
+// Get the PDF stamper as binary stream/file.
+// Our API generation does not allow changing the media type based on the Accepted header unfortunately.
+// This means we use a separate path postfix with the value '/stream'.
+// This API only returns the PDF when the response status is DONE.
+
+@name("Get the current result stream")
+GET "https://{{baseUrl}}/jobs/:jobid/streams/result"
+
+
+

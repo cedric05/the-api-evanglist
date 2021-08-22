@@ -1,0 +1,100 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Attaches an EBS volume to a running or stopped instance and exposes it to the instance
+//                         with the specified device name.
+
+@name("Attach Volume")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Device"= ""
+? "DryRun"= ""
+? "InstanceId"= ""
+? "VolumeId"= ""
+? "Action"= "AttachVolume"
+
+
+// Creates an EBS volume that can be attached to an instance in the same Availability
+//                         Zone.
+
+@name("Create Volume")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AvailabilityZone"= ""
+? "DryRun"= ""
+? "Encrypted"= ""
+? "Iops"= ""
+? "KmsKeyId"= ""
+? "Size"= ""
+? "SnapshotId"= ""
+? "TagSpecification.N"= ""
+? "VolumeType"= ""
+? "Action"= "CreateVolume"
+
+
+// Deletes the specified EBS volume.
+
+@name("Delete Volume")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VolumeId"= ""
+? "Action"= "DeleteVolume"
+
+
+// Describes the specified EBS volumes or all of your EBS volumes.
+
+@name("Describe Volumes")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "VolumeId.N"= ""
+? "Action"= "DescribeVolumes"
+
+
+// Detaches an EBS volume from an instance.
+
+@name("Detach Volume")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Device"= ""
+? "DryRun"= ""
+? "Force"= ""
+? "InstanceId"= ""
+? "VolumeId"= ""
+? "Action"= "DetachVolume"
+
+
+// Creates an import volume task using metadata from the specified disk image.
+
+@name("Import Volume")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AvailabilityZone"= ""
+? "Description"= ""
+? "DryRun"= ""
+? "Image"= ""
+? "Volume"= ""
+? "Action"= "ImportVolume"
+
+
+// You can modify several parameters of an existing EBS volume, including volume size,
+//                         volume
+//                         type, and IOPS capacity.
+
+@name("Modify Volume")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Iops"= ""
+? "Size"= ""
+? "VolumeId"= ""
+? "VolumeType"= ""
+? "Action"= "ModifyVolume"
+
+
+

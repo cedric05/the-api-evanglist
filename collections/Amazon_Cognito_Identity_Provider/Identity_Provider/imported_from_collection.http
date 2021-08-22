@@ -1,0 +1,71 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8631617c-c1ed-4e14-b0cd-77e4410753c4.postman_collection.json
+
+@name("Create Identity Provider")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "CreateIdentityProvider"
+data('{
+   "AttributeMapping": { 
+      "string" : "string" 
+   },
+   "IdpIdentifiers": [ "string" ],
+   "ProviderDetails": { 
+      "string" : "string" 
+   },
+   "ProviderName": "string",
+   "ProviderType": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Delete Identity Provider")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DeleteIdentityProvider"
+data('{
+   "ProviderName": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Describe Identity Provider")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DescribeIdentityProvider"
+data('{
+   "ProviderName": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("List Identity Providers")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "ListIdentityProviders"
+data('{
+   "MaxResults": number,
+   "NextToken": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Update Identity Provider")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "UpdateIdentityProvider"
+data('{
+   "AttributeMapping": { 
+      "string" : "string" 
+   },
+   "IdpIdentifiers": [ "string" ],
+   "ProviderDetails": { 
+      "string" : "string" 
+   },
+   "ProviderName": "string",
+   "UserPoolId": "string"
+}')
+
+
+

@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Get media resource by id
+
+@name("Get a specific media")
+GET "https://{{baseUrl}}/media/:id"
+? "fields"= "<string>"
+
+
+// Download a MP3 media, endpoint returns application/binary content-type
+
+@name("Download a MP3 media")
+GET "https://{{baseUrl}}/media/:id/file"
+
+
+

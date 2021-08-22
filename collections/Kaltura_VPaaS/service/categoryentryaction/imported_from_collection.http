@@ -1,0 +1,164 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// activate CategoryEntry when it is pending moderation
+
+@name("Get Service Categoryentry Action Activate")
+GET "https://{{baseUrl}}/service/categoryentry/action/activate"
+? "entryId"= "<>"
+? "categoryId"= "<>"
+
+
+// Add new CategoryEntry
+
+@name("Get Service Categoryentry Action Add")
+GET "https://{{baseUrl}}/service/categoryentry/action/add"
+? "categoryEntry[categoryId]"= "<>"
+? "categoryEntry[entryId]"= "<>"
+
+
+@name("Get Service Categoryentry Action Addfrombulkupload")
+GET "https://{{baseUrl}}/service/categoryentry/action/addFromBulkUpload"
+? "bulkUploadData[objectType]"= "<>"
+? "bulkUploadData[filter][orderBy]"= "<>"
+? "bulkUploadData[filter][advancedSearch][objectType]"= "<>"
+? "bulkUploadData[filter][advancedSearch][value]"= "<>"
+? "bulkUploadData[filter][advancedSearch][categoriesMatchOr]"= "<>"
+? "bulkUploadData[filter][advancedSearch][categoryEntryStatusIn]"= "<>"
+? "bulkUploadData[filter][advancedSearch][orderBy]"= "<>"
+? "bulkUploadData[filter][advancedSearch][categoryIdEqual]"= "<>"
+? "bulkUploadData[filter][advancedSearch][memberIdEq]"= "<>"
+? "bulkUploadData[filter][advancedSearch][memberIdIn]"= "<>"
+? "bulkUploadData[filter][advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "bulkUploadData[filter][advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "bulkUploadData[filter][advancedSearch][noDistributionProfiles]"= "<>"
+? "bulkUploadData[filter][advancedSearch][distributionProfileId]"= "<>"
+? "bulkUploadData[filter][advancedSearch][distributionSunStatus]"= "<>"
+? "bulkUploadData[filter][advancedSearch][entryDistributionFlag]"= "<>"
+? "bulkUploadData[filter][advancedSearch][entryDistributionStatus]"= "<>"
+? "bulkUploadData[filter][advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "bulkUploadData[filter][advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "bulkUploadData[filter][advancedSearch][contentLike]"= "<>"
+? "bulkUploadData[filter][advancedSearch][contentMultiLikeOr]"= "<>"
+? "bulkUploadData[filter][advancedSearch][contentMultiLikeAnd]"= "<>"
+? "bulkUploadData[filter][advancedSearch][cuePointsFreeText]"= "<>"
+? "bulkUploadData[filter][advancedSearch][cuePointTypeIn]"= "<>"
+? "bulkUploadData[filter][advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "bulkUploadData[filter][advancedSearch][watermarkId]"= "<>"
+? "bulkUploadData[filter][advancedSearch][indexIdGreaterThan]"= "<>"
+? "bulkUploadData[filter][advancedSearch][depthGreaterThanEqual]"= "<>"
+? "bulkUploadData[filter][advancedSearch][isQuiz]"= "<>"
+? "bulkUploadData[filter][advancedSearch][field]"= "<>"
+? "bulkUploadData[filter][advancedSearch][type]"= "<>"
+? "bulkUploadData[filter][advancedSearch][items]"= "<>"
+? "bulkUploadData[filter][advancedSearch][idEqual]"= "<>"
+? "bulkUploadData[filter][advancedSearch][idIn]"= "<>"
+? "bulkUploadData[filter][advancedSearch][userIdEqual]"= "<>"
+? "bulkUploadData[filter][advancedSearch][userIdIn]"= "<>"
+? "bulkUploadData[filter][advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "bulkUploadData[filter][advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "bulkUploadData[filter][advancedSearch][extendedStatusEqual]"= "<>"
+? "bulkUploadData[filter][advancedSearch][extendedStatusIn]"= "<>"
+? "bulkUploadData[filter][advancedSearch][comparison]"= "<>"
+? "bulkUploadData[filter][advancedSearch][not]"= "<>"
+? "bulkUploadData[filter][advancedSearch][attribute]"= "<>"
+? "bulkUploadData[filter][advancedSearch][metadataProfileId]"= "<>"
+
+
+// Delete CategoryEntry
+
+@name("Get Service Categoryentry Action Delete")
+GET "https://{{baseUrl}}/service/categoryentry/action/delete"
+? "entryId"= "<>"
+? "categoryId"= "<>"
+
+
+// Index CategoryEntry by Id
+
+@name("Get Service Categoryentry Action Index")
+GET "https://{{baseUrl}}/service/categoryentry/action/index"
+? "entryId"= "<>"
+? "categoryId"= "<>"
+? "shouldUpdate"= "<>"
+
+
+// List all categoryEntry
+
+@name("Get Service Categoryentry Action List")
+GET "https://{{baseUrl}}/service/categoryentry/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[categoryIdEqual]"= "<>"
+? "filter[categoryIdIn]"= "<>"
+? "filter[entryIdEqual]"= "<>"
+? "filter[entryIdIn]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[categoryFullIdsStartsWith]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "filter[creatorUserIdEqual]"= "<>"
+? "filter[creatorUserIdIn]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// activate CategoryEntry when it is pending moderation
+
+@name("Get Service Categoryentry Action Reject")
+GET "https://{{baseUrl}}/service/categoryentry/action/reject"
+? "entryId"= "<>"
+? "categoryId"= "<>"
+
+
+// update privacy context from the category
+
+@name("Get Service Categoryentry Action Syncprivacycontext")
+GET "https://{{baseUrl}}/service/categoryentry/action/syncPrivacyContext"
+? "entryId"= "<>"
+? "categoryId"= "<>"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// The `/environments` endpoint returns a list of all [environments](https://www.getpostman.com/docs/environments) that belong to you..
+// 
+// The response contains an array of environments' information containing the `name`, `id`, `owner` and `uid` of each environment.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("All Environments")
+GET "https://{{baseUrl}}/environments"
+
+
+// Access the contents of an environment that is accessible to you using its unique id (`uid`).
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Single Environment")
+GET "https://{{baseUrl}}/environments/:environment_uid"
+
+
+

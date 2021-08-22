@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("By Id Deployment")
+GET "https://{{aws_api_gateway_base_url}}/restapis/:api_id/deployments/:deployment_id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Create Deployment")
+POST "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/deployments"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Deployment")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/deployments/dzacq7"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Stages Deployment")
+GET "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/stages"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Update Deployment")
+PATCH "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/deployments/dzacq7"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

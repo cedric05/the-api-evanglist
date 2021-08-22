@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e4a472a1-7d82-4a3c-b4e1-85e0dad2e1ca.postman_collection.json
+
+@name("Deregister Certificate")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.DeregisterCertificate"
+? "Action"= "DeregisterCertificate"
+data('{"CertificateId":"string","DirectoryId":"string"}')
+
+
+@name("Describe Certificate")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.DescribeCertificate"
+? "Action"= "DescribeCertificate"
+data('{"CertificateId":"string","DirectoryId":"string"}')
+
+
+@name("List Certificates")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.ListCertificates"
+? "Action"= "ListCertificates"
+data('null')
+
+
+@name("Register Certificate")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.RegisterCertificate"
+? "Action"= "RegisterCertificate"
+data('{"CertificateData":"string","DirectoryId":"string"}')
+
+
+

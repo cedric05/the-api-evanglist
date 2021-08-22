@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9281a590-ede0-41f4-a59c-3c60f1da8cf9.postman_collection.json
+
+// Starts asynchronous cancellation on a long-running operation.  The server
+// makes a best effort to cancel the operation, but success is not
+// guaranteed.  If the server doesn't support this method, it returns
+// `google.rpc.Code.UNIMPLEMENTED`.  Clients can use
+// Operations.GetOperation or
+// other methods to check whether the cancellation succeeded or whether the
+// operation completed despite cancellation. On successful cancellation,
+// the operation is not deleted; instead, it becomes an operation with
+// an Oper
+
+@name("Cancel Operation")
+POST "https://{{baseUrl}}/v1/{{name}}:cancel"
+
+
+// Get the service account information associated with your project. You need
+// this information in order to grant the service account persmissions for
+// the Google Cloud Storage location where you put your model training code
+// for training the model with Google Cloud Machine Learning.
+
+@name("Get Operation")
+GET "https://{{baseUrl}}/v1/{{name}}:getConfig"
+
+
+// Performs prediction on the data in the request.
+// 
+// **** REMOVE FROM GENERATED DOCUMENTATION
+
+@name("Predict Operation")
+POST "https://{{baseUrl}}/v1/{{name}}:predict"
+
+
+// Designates a version to be the default for the model.
+// 
+// The default version is used for prediction requests made against the model
+// that don't specify a version.
+// 
+// The first version to be created for a model is automatically set as the
+// default. You must make any subsequent changes to the default version
+// setting manually using this method.
+
+@name("Set Default Version")
+POST "https://{{baseUrl}}/v1/{{name}}:setDefault"
+
+
+

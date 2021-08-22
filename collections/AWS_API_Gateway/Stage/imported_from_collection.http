@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("By Name Stage")
+GET "https://{{aws_api_gateway_base_url}}/restapis/:api_id/stages/:stage_name"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Create Stage")
+POST "https://{{aws_api_gateway_base_url}}/restapis/uycll6xg9a/stages"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Stage")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/uycll6xg9a/stages/alpha"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Flush Authorizer Cache Stage")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/uycll6xg9a/stages/alpha/cache/authorizers"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Flush Cache Stage")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/uycll6xg9a/stages/alpha/cache/data"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Update Stage")
+PATCH "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/stages/stage1"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Tagsget")
+GET "https://{{aws_api_gateway_base_url}}/tags/{resource_arn}&resource_arn="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "resource_arn"= ""
+
+
+@name("Tagstag")
+PUT "https://{{aws_api_gateway_base_url}}/tags/<resource_arn>"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Tagsuntag")
+DELETE "https://{{aws_api_gateway_base_url}}/tags/<resource_arn>{"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "tagKeys"= ""
+? "tagKeys}"= ""
+
+
+

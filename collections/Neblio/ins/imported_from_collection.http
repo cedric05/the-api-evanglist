@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-511ff114-110c-4b79-9213-f986643f80af.postman_collection.json
+
+// Returns blockchain data for a given block based upon the block hash
+
+@name("Returns information regarding a Neblio block")
+GET "https://{{baseUrl}}/ins/block/:blockhash"
+
+
+// Returns the block hash of a block at a given block index
+
+@name("Returns block hash of block")
+GET "https://{{baseUrl}}/ins/block-index/:blockindex"
+
+
+// Returns raw transaction hex representing a NEBL transaction
+
+@name("Returns raw transaction hex")
+GET "https://{{baseUrl}}/ins/rawtx/:txid"
+
+
+// Returns all transactions by block or address
+
+@name("Get transactions by block or address")
+GET "https://{{baseUrl}}/ins/txs"
+? "address"= "<get>"
+? "block"= "<>"
+? "pageNum"= "<>"
+
+
+// Returns information on the node's sync progress
+
+@name("Get node sync status")
+GET "https://{{baseUrl}}/ins/sync"
+
+
+// Utility API for calling several blockchain node functions - getInfo, getDifficulty, getBestBlockHash, getLastBlockHash
+
+@name("Utility API for calling several blockchain node functions")
+GET "https://{{baseUrl}}/ins/status"
+? "q"= "<>"
+
+
+

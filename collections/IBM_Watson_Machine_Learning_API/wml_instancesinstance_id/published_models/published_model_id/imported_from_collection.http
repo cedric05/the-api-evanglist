@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1870fecb-0090-4c1a-976d-99be7baaa589.postman_collection.json
+
+// Get wml instances instance published models published model.
+
+@name("Get Wml Instances Instance Published Models Published Model")
+GET "https://{{baseUrl}}/wml_instances/:instance_id/published_models/:published_model_id"
+
+
+// Get wml instances instance published models published model evaluation metrics.
+
+@name("Get Wml Instances Instance Published Models Published Model Evaluation Metrics")
+GET "https://{{baseUrl}}/wml_instances/:instance_id/published_models/:published_model_id/evaluation_metrics"
+
+
+// Put wml instances instance published models published model learning configuration.
+
+@name("Put Wml Instances Instance Published Models Published Model Learning Configuration")
+PUT "https://{{baseUrl}}/wml_instances/:instance_id/published_models/:published_model_id/learning_configuration"
+
+
+// Receives the feedback data and stores it in the feedback store
+// defined in learning configuration
+
+@name("Post Wml Instances Instance Published Models Published Model Feedback")
+POST "https://{{baseUrl}}/wml_instances/:instance_id/published_models/:published_model_id/feedback"
+
+
+

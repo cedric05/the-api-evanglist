@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfcb371d-a6e0-41fe-841b-f5fab0153d76.postman_collection.json
+
+@name("Add Tags")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.AddTags"
+? "Action"= "AddTags"
+data('{"ResourceId":"string","ResourceType":"string","Tags":[{"Key":"string","Value":"string"}]}')
+
+
+@name("Delete Tags")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DeleteTags"
+? "Action"= "DeleteTags"
+data('{"ResourceId":"string","ResourceType":"string","TagKeys":["string"]}')
+
+
+@name("Describe Tags")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DescribeTags"
+? "Action"= "DescribeTags"
+data('{"ResourceId":"string","ResourceType":"string"}')
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8f59125-1395-4941-8451-63f60c3e21eb.postman_collection.json
+
+// Get all numbers allocated in the API
+
+@name("Get Numbers")
+GET "https://{{baseUrl}}/numbers"
+
+
+// Get information about one number.
+
+@name("Get Numbers")
+GET "https://{{baseUrl}}/numbers/:id"
+
+
+

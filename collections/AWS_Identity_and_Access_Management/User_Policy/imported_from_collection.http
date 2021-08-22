@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-afbc2083-42c9-4108-83db-0b859aa69233.postman_collection.json
+
+@name("Attach User Policy")
+GET "https://{{aws_identtity_and_access_management_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_identtity_and_access_management_service}}", region="{{aws_identtity_and_access_management_region}}")
+? "Version"= "2010-05-08"
+
+
+@name("Delete User Policy")
+GET "https://{{aws_identtity_and_access_management_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_identtity_and_access_management_service}}", region="{{aws_identtity_and_access_management_region}}")
+? "Version"= "2010-05-08"
+
+
+@name("Detach User Policy")
+GET "https://{{aws_identtity_and_access_management_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_identtity_and_access_management_service}}", region="{{aws_identtity_and_access_management_region}}")
+? "Version"= "2010-05-08"
+
+
+@name("Get User Policy")
+GET "https://{{aws_identtity_and_access_management_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_identtity_and_access_management_service}}", region="{{aws_identtity_and_access_management_region}}")
+? "Version"= "2010-05-08"
+
+
+@name("Put User Policy")
+GET "https://{{aws_identtity_and_access_management_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_identtity_and_access_management_service}}", region="{{aws_identtity_and_access_management_region}}")
+? "Version"= "2010-05-08"
+
+
+

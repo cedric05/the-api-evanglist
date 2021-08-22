@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9281a590-ede0-41f4-a59c-3c60f1da8cf9.postman_collection.json
+
+// Lists the jobs in the project.
+
+@name("List Jobs")
+GET "https://{{baseUrl}}/v1/:parent/jobs"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+? "filter"= "<>"
+
+
+// Lists the models in a project.
+// 
+// Each project can contain multiple models, and each model can have multiple
+// versions.
+
+@name("List Models")
+GET "https://{{baseUrl}}/v1/:parent/models"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+
+
+// Gets basic information about all the versions of a model.
+// 
+// If you expect that a model has a lot of versions, or if you need to handle
+// only a limited number of results at a time, you can request that the list
+// be retrieved in batches (called pages):
+
+@name("Get Version")
+GET "https://{{baseUrl}}/v1/:parent/versions"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+
+
+

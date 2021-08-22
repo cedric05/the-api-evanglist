@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7f8f6cde-6ef2-4ab0-a0e7-151dce0fa68a.postman_collection.json
+
+// Train a Prediction API model.
+
+@name("Train Model")
+POST "https://{{baseUrl}}/:project/trainedmodels"
+
+
+// List available models.
+
+@name("List Models")
+GET "https://{{baseUrl}}/:project/trainedmodels/list"
+? "maxResults"= "<>"
+? "pageToken"= "<>"
+
+
+

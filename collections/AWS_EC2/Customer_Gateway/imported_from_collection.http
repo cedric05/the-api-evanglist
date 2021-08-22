@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Provides information to AWS about your VPN customer gateway device.
+
+@name("Create Customer Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "BgpAsn"= ""
+? "CertificateArn"= ""
+? "DryRun"= ""
+? "IpAddress"= ""
+? "Type"= ""
+? "Action"= "CreateCustomerGateway"
+
+
+// Deletes the specified customer gateway.
+
+@name("Delete Customer Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "CustomerGatewayId"= ""
+? "DryRun"= ""
+? "Action"= "DeleteCustomerGateway"
+
+
+// Describes one or more of your VPN customer gateways.
+
+@name("Describe Customer Gateways")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "CustomerGatewayId.N"= ""
+? "DryRun"= ""
+? "Filter.N"= ""
+? "Action"= "DescribeCustomerGateways"
+
+
+

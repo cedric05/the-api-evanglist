@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// To find all campaign sounds which were created by user. Returns all sounds available to be used in campaigns
+
+@name("Find sounds")
+GET "https://{{baseUrl}}/campaigns/sounds"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "filter"= "<string>"
+? "includeArchived"= "<boolean>"
+? "includePending"= "<boolean>"
+? "includeScrubbed"= "<boolean>"
+? "fields"= "<string>"
+
+
+// Use this API to create a sound via a phone call. Provide the required phone number in the CallCreateSound object inside the request, and user will receive a call shortly after with instructions on how to record a sound over the phone.
+
+@name("Add sound via call")
+POST "https://{{baseUrl}}/campaigns/sounds/calls"
+? "fields"= "<string>"
+
+
+// Create a campaign sound file via a supplied .mp3 or .wav file
+
+@name("Add sound via file")
+POST "https://{{baseUrl}}/campaigns/sounds/files"
+? "fields"= "<string>"
+
+
+// Use this API to create a sound file via a supplied string of text. Add a text in the TextToSpeech.message field, and pick a voice in the TextToSpeech.voice field. Available voices are: MALE1, FEMALE1, FEMALE2, SPANISH1, FRENCHCANADIAN1
+
+@name("Add sound via text-to-speech")
+POST "https://{{baseUrl}}/campaigns/sounds/tts"
+? "fields"= "<string>"
+
+
+// Deletes a single campaign sound instance for a specific campaign sound id, this operation does not delete sound completely, it sets sound status to ARCHIVED which means that sound will no longer appear in 'find' operation results, but still accessible via 'get' operation
+
+@name("Delete a specific sound")
+DELETE "https://{{baseUrl}}/campaigns/sounds/:id"
+
+
+// Download the MP3 version of a hosted file. This is an audio data endpoint. Returns binary response of the 'audio/mpeg' content type
+
+@name("Download a MP3 sound")
+GET "https://{{baseUrl}}/campaigns/sounds/{{id}}.mp3"
+
+
+// Download the WAV version of the hosted file. This is an audio data endpoint. Returns binary response of the 'audio/mpeg' content type
+
+@name("Download a WAV sound")
+GET "https://{{baseUrl}}/campaigns/sounds/{{id}}.wav"
+
+
+

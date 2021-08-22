@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("delete Organisations Id Applications App Id")
+DELETE "https://{{baseUrl}}/organisations/:id/applications/:appId"
+
+
+@name("/organisations/:id/applications/:appId/branch")
+PUT "https://{{baseUrl}}/organisations/:id/applications/:appId/branch"
+
+
+@name("/organisations/:id/applications/:appId/branches")
+GET "https://{{baseUrl}}/organisations/:id/applications/:appId/branches"
+
+
+@name("get Organisations Id Applications App Id Dependents")
+GET "https://{{baseUrl}}/organisations/:id/applications/:appId/dependents"
+
+
+@name("/organisations/:id/applications/:appId/exposed_env")
+GET "https://{{baseUrl}}/organisations/:id/applications/:appId/exposed_env"
+
+
+

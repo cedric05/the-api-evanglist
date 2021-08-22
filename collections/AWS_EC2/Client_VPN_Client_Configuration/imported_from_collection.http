@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Downloads the contents of the Client VPN endpoint configuration file for the specified
+//                         Client VPN endpoint.
+
+@name("Export Client VPN Client Configuration")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientVpnEndpointId"= ""
+? "DryRun"= ""
+? "Action"= "ExportClientVpnClientConfiguration"
+
+
+

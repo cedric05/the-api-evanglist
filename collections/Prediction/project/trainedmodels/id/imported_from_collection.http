@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7f8f6cde-6ef2-4ab0-a0e7-151dce0fa68a.postman_collection.json
+
+// Delete a trained model.
+
+@name("Delete Model")
+DELETE "https://{{baseUrl}}/:project/trainedmodels/:id"
+
+
+// Get analysis of the model and the data the model was trained on.
+
+@name("Analyze")
+GET "https://{{baseUrl}}/:project/trainedmodels/:id/analyze"
+
+
+// Submit model id and request a prediction.
+
+@name("Predict")
+POST "https://{{baseUrl}}/:project/trainedmodels/:id/predict"
+
+
+

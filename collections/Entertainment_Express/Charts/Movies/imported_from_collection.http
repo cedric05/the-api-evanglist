@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Returns top 10 box office movies.
+
+@name("Returns list of movies based on the weekend box office revenue.")
+GET "https://{{baseUrl}}/Charts/Movies/Boxoffice"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Requires Skip and Take. Maximum page size is 100.
+
+@name("Returns list of Most Anticipated movies based on IVA data.")
+GET "https://{{baseUrl}}/Charts/Movies/MostAnticipated"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Requires Skip and Take. Maximum page size is 100.
+
+@name("Returns list of popular movies.")
+GET "https://{{baseUrl}}/Charts/Movies/Popular"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+

@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// Up to fifty of the most recent contacts uploaded or attached to a list will be returned. 
+// 
+// This list will then be sorted by email address.
+// 
+// The full contact count is also returned.
+// 
+// Pagination of the contacts has been deprecated
+
+@name("Get All Contacts")
+GET "https://{{baseUrl}}/marketing/contacts"
+
+
+// When creating the export via POST, the reference is returned as a URL within the `_metadata.self` property. Performing a GET on this URL will allow the user to poll for the export status.
+
+@name("Export Contacts")
+POST "https://{{baseUrl}}/marketing/contacts/exports"
+
+
+// This endpoint returns a URL and HTTP headers which can be used to PUT a file of contacts.
+// 
+// `field_mappings` is a respective list of field_definition IDs to map the uploaded CSV columns to. 
+// 
+// eg: `field_mappings` = `[null, "w1", "_rf1"]` means to skip Col[0], map Col[1] => CustomField `w1`, map Col[2] => ReservedField `_rf1` .  See CustomFields "Get All Field Definitions" endpoint to fetch the IDs.
+// 
+// This call requires a **second** API call where you use the URL and HTTP header given to upload you
+
+@name("Import Contacts")
+PUT "https://{{baseUrl}}/marketing/contacts/imports"
+
+
+// This method returns the total number of contacts you have stored.
+
+@name("Get Total Contact Count")
+GET "https://{{baseUrl}}/marketing/contacts/count"
+
+
+// The query field accepts valid SGQL for searching for a contact.
+// 
+// Only the first 50 contacts will be returned
+// 
+// If the query takes longer than 20 seconds a 408 Request Timeout will be returned.
+// 
+// `created_at` and `updated_at` as a number(unix) is a deprecated format, but now it is in string format(ISO)
+
+@name("Search Contacts")
+POST "https://{{baseUrl}}/marketing/contacts/search"
+
+
+

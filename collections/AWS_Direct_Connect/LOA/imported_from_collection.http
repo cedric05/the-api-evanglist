@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c094246-719d-4054-bede-5834f64bb4b7.postman_collection.json
+
+@name("Describe LOA")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "DescribeLoa"
+data('{
+   "connectionId": "string",
+   "loaContentType": "string",
+   "providerName": "string"
+}')
+
+
+

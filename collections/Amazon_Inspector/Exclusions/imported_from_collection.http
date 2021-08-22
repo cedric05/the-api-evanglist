@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-46004eee-d776-4226-9cc0-a4f178c7a0e1.postman_collection.json
+
+@name("Describe Exclusions")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.DescribeExclusions"
+? "Action"= "DescribeExclusions"
+data('{"exclusionArns":["string"],"locale":"string"}')
+
+
+@name("List Exclusions")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.ListExclusions"
+? "Action"= "ListExclusions"
+data('{"assessmentRunArn":"string","maxResults":42,"nextToken":"string"}')
+
+
+

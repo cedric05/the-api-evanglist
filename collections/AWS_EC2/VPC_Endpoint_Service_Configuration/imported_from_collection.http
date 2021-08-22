@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a VPC endpoint service configuration to which service consumers (AWS accounts,
+//                         IAM users, and IAM roles) can connect.
+
+@name("Create VPC Endpoint Service Configuration")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AcceptanceRequired"= ""
+? "ClientToken"= ""
+? "DryRun"= ""
+? "NetworkLoadBalancerArn.N"= ""
+? "Action"= "CreateVpcEndpointServiceConfiguration"
+
+
+// Deletes one or more VPC endpoint service configurations in your account.
+
+@name("Delete VPC Endpoint Service Configurations")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "ServiceId.N"= ""
+? "Action"= "DeleteVpcEndpointServiceConfigurations"
+
+
+// Describes the VPC endpoint service configurations in your account (your services).
+
+@name("Describe VPC Endpoint Service Configurations")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "ServiceId.N"= ""
+? "Action"= "DescribeVpcEndpointServiceConfigurations"
+
+
+// Modifies the attributes of your VPC endpoint service configuration.
+
+@name("Modify VPC Endpoint Service Configuration")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AcceptanceRequired"= ""
+? "AddNetworkLoadBalancerArn.N"= ""
+? "DryRun"= ""
+? "RemoveNetworkLoadBalancerArn.N"= ""
+? "ServiceId"= ""
+? "Action"= "ModifyVpcEndpointServiceConfiguration"
+
+
+

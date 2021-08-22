@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+@name("Adds a new item to a cart")
+POST "https://{{baseUrl}}/3dCartWebAPI/v1/Cart/:orderkey/Item"
+
+
+@name("Updates a specific item from a specific Cart")
+PUT "https://{{baseUrl}}/3dCartWebAPI/v1/Cart/:orderkey/Item/:cartitemid"
+
+
+

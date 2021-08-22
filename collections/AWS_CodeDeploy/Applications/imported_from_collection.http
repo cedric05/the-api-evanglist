@@ -1,0 +1,79 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c62e1baf-4a19-4992-b48d-038acd7dffea.postman_collection.json
+
+@name("Batch Get Applications")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.BatchGetApplications"
+? "Action"= "BatchGetApplications"
+data('{
+    "applicationNames": [
+        "ProductionApp-us-east-1",
+        "ProductionApp-us-west-2"
+    ]
+}')
+
+
+@name("Create Application")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.CreateApplication"
+? "Action"= "CreateApplication"
+data('{
+    "applicationName": "TestApp-ap-southeast-2"
+}')
+
+
+@name("Delete Application")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.DeleteApplication"
+? "Action"= "DeleteApplication"
+data('{
+    "applicationName": "TestApp-ap-southeast-2"
+}')
+
+
+@name("Get Application")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.GetApplication"
+? "Action"= "GetApplication"
+data('{
+    "applicationName": "TestApp-us-east-1"
+}')
+
+
+@name("List Applications")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.ListApplications"
+? "Action"= "ListApplications"
+
+
+
+@name("Update Application")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.UpdateApplication"
+? "Action"= "UpdateApplication"
+data('{
+	"applicationName": "TestApp-us-east-1",
+	"newApplicationName": "TestApp-us-west-2"
+}')
+
+
+

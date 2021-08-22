@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f15eb0b0-8456-4c8c-b7eb-e8c210aa11fb.postman_collection.json
+
+@name("Cancel Steps")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.CancelSteps"
+? "Action"= "CancelSteps"
+data('{"ClusterId":"string","StepCancellationOption":"string","StepIds":["string"]}')
+
+
+@name("Describe Step")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.DescribeStep"
+? "Action"= "DescribeStep"
+data('{"ClusterId":"string","StepId":"string"}')
+
+
+@name("List Steps")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.ListSteps"
+? "Action"= "ListSteps"
+data('{"ClusterId":"string","Marker":"string","StepIds":["string"],"StepStates":["string"]}')
+
+
+

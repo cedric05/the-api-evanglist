@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2f393c49-f959-4f18-bf04-79f6c8910daa.postman_collection.json
+
+@name("Get Open Id Token For Developer Identity")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "GetOpenIdTokenForDeveloperIdentity"
+data('{
+   "IdentityId": "string",
+   "IdentityPoolId": "string",
+   "Logins": { 
+      "string" : "string" 
+   },
+   "TokenDuration": number
+}')
+
+
+

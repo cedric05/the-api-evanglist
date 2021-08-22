@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Assigns one or more IPv6 addresses to the specified network interface.
+
+@name("Assign IPV6 Addresses")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Ipv6AddressCount"= ""
+? "Ipv6Addresses.N"= ""
+? "NetworkInterfaceId"= ""
+? "Action"= "AssignIpv6Addresses"
+
+
+// Unassigns one or more IPv6 addresses from a network interface.
+
+@name("Unassign IPV6 Addresses")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Ipv6Addresses.N"= ""
+? "NetworkInterfaceId"= ""
+? "Action"= "UnassignIpv6Addresses"
+
+
+

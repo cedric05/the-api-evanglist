@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve run node steps details for an organization pipeline
+
+@name("get Pipeline Run Node Steps")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/runs/:run/nodes/:node/steps"
+? "No Name"= "<string>"
+
+
+

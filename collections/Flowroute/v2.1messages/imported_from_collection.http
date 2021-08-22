@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9d35e865-46d6-4c1a-9a52-45849e1f2947.postman_collection.json
+
+// Sends an SMS or MMS from a Flowroute long code or toll-free phone number to another valid phone number.
+
+@name("Send a Message")
+POST "https://{{baseUrl}}/v2.1/messages"
+
+
+// Searches for a specific message record ID and returns a Message Detail Record (in MDR2 format).
+
+@name("Look Up a Message Detail Record")
+GET "https://{{baseUrl}}/v2.1/messages/:id"
+
+
+

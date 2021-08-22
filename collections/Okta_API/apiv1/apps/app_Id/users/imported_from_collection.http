@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9a62c01e-3db2-4f66-b90d-a4df9dd9bd07.postman_collection.json
+
+// Enumerates all assigned [application users](#application-user-model) for an application.
+
+@name("List Users Assigned to Application")
+GET "https://{{baseUrl}}/api/v1/apps/:appId/users"
+? "q"= "<string>"
+? "query_scope"= "<string>"
+? "after"= "<string>"
+? "limit"= "<integer>"
+? "filter"= "<string>"
+? "expand"= "<string>"
+
+
+// Removes an assignment for a user from an application.
+
+@name("Remove User from Application")
+DELETE "https://{{baseUrl}}/api/v1/apps/:appId/users/:userId"
+
+
+

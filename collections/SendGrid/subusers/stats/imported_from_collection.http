@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve the email statistics for the given subusers.**
+// 
+// You may retrieve statistics for up to 10 different subusers by including an additional _subusers_ parameter for each additional subuser.
+// 
+// While you can always view the statistics for all email activity on your account, subuser statistics enable you to view specific segments of your stats. Emails sent, bounces, and spam reports are always tracked for subusers. Unsubscribes, clicks, and opens are tracked if you
+
+@name("Retrieve email statistics for your subusers.")
+GET "https://{{baseUrl}}/subusers/stats"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "aggregated_by"= "<string>"
+? "subusers"= "<string>"
+? "start_date"= "<string>"
+? "end_date"= "<string>"
+
+
+// **This endpoint allows you to retrieve the monthly email statistics for all subusers over the given date range.**
+// 
+// While you can always view the statistics for all email activity on your account, subuser statistics enable you to view specific segments of your stats for your subusers. Emails sent, bounces, and spam reports are always tracked for subusers. Unsubscribes, clicks, and opens are tracked if you have enabled the required settings.
+// 
+// When using the `sort_by_metric` to sort your stats by a
+
+@name("Retrieve monthly stats for all subusers")
+GET "https://{{baseUrl}}/subusers/stats/monthly"
+? "date"= "<string>"
+? "subuser"= "<string>"
+? "sort_by_metric"= "<string>"
+? "sort_by_direction"= "<string>"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+// **This endpoint allows you to retrieve the total sums of each email statistic metric for all subusers over the given date range.**
+// 
+// 
+// While you can always view the statistics for all email activity on your account, subuser statistics enable you to view specific segments of your stats. Emails sent, bounces, and spam reports are always tracked for subusers. Unsubscribes, clicks, and opens are tracked if you have enabled the required settings.
+// 
+// For more information, see our [User Guide](https://send
+
+@name("Retrieve the totals for each email statistic metric for all subusers.")
+GET "https://{{baseUrl}}/subusers/stats/sums"
+? "sort_by_direction"= "<string>"
+? "start_date"= "<string>"
+? "end_date"= "<string>"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "aggregated_by"= "<string>"
+? "sort_by_metric"= "<string>"
+
+
+

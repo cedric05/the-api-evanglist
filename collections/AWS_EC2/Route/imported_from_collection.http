@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a route in a route table within a VPC.
+
+@name("Create Route")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DestinationCidrBlock"= ""
+? "DestinationIpv6CidrBlock"= ""
+? "DryRun"= ""
+? "EgressOnlyInternetGatewayId"= ""
+? "GatewayId"= ""
+? "InstanceId"= ""
+? "NatGatewayId"= ""
+? "NetworkInterfaceId"= ""
+? "RouteTableId"= ""
+? "TransitGatewayId"= ""
+? "VpcPeeringConnectionId"= ""
+? "Action"= "CreateRoute"
+
+
+// Deletes the specified route from the specified route table.
+
+@name("Delete Route")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DestinationCidrBlock"= ""
+? "DestinationIpv6CidrBlock"= ""
+? "DryRun"= ""
+? "RouteTableId"= ""
+? "Action"= "DeleteRoute"
+
+
+// Replaces an existing route within a route table in a VPC.
+
+@name("Replace Route")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DestinationCidrBlock"= ""
+? "DestinationIpv6CidrBlock"= ""
+? "DryRun"= ""
+? "EgressOnlyInternetGatewayId"= ""
+? "GatewayId"= ""
+? "InstanceId"= ""
+? "NatGatewayId"= ""
+? "NetworkInterfaceId"= ""
+? "RouteTableId"= ""
+? "TransitGatewayId"= ""
+? "VpcPeeringConnectionId"= ""
+? "Action"= "ReplaceRoute"
+
+
+

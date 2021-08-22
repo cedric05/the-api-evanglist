@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// This endpoint fetches you basic information about the monitor using its `uid`.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Single Monitor")
+GET "https://{{baseUrl}}/monitors/:monitor_uid"
+
+
+// This endpoint will run the monitor instantly and wait for the monitor to run completely. It responds with the run results.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Run a Monitor")
+POST "https://{{baseUrl}}/monitors/:monitor_uid/run"
+
+
+

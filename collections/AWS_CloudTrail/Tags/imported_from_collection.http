@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1db970f2-8e07-4d80-8a32-9295b3d30bab.postman_collection.json
+
+@name("Add Tags")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "ResourceId"= ""
+? "TagsList"= ""
+? "Action"= "AddTags"
+
+
+@name("List Tags")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "NextToken"= ""
+? "ResourceIdList"= ""
+? "Action"= "ListTags"
+
+
+@name("Remove Tags")
+GET "https://{{aws_cloudtrail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudtrail_service}}", region="{{aws_cloudtrail_region}}")
+? "Action"= "RemoveTags"
+
+
+

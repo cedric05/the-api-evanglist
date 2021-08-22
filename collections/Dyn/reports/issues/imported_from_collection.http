@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d28d1616-8b77-4b53-b06f-5498b00510bf.postman_collection.json
+
+// Retrieve Email Issues
+
+@name("Retrieve Email Issues")
+GET "https://{{baseUrl}}/reports/issues"
+? "apikey"= "<>"
+? "emailaddress"= "<>"
+? "endtime"= "<>"
+? "sender"= "<>"
+? "sender_id"= "<>"
+? "startindex"= "<>"
+? "starttime"= "<>"
+? "[X"= "<>"
+
+
+// Retrieving a total count of Email issues
+
+@name("Retrieve Count of Email Issues")
+GET "https://{{baseUrl}}/reports/issues/count"
+? "apikey"= "<>"
+? "endtime"= "<>"
+? "starttime"= "<>"
+
+
+

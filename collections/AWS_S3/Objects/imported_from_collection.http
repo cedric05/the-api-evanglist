@@ -1,0 +1,100 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// The HEAD operation retrieves metadata from an object without returning the object itself. This operation is useful if you're only interested in an object's metadata. To use HEAD, you must have READ access to the object. 
+
+@name("Object")
+HEAD "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "PartNumber"= "PartNumber"
+? "VersionId"= "VersionId"
+
+
+// Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket. A 200 OK response can contain valid or invalid XML. Be sure to design your application to parse the contents of the response and handle it appropriately. 
+
+@name("Objects V1")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+"Accept-Encoding": "application/json"
+? "Delimiter"= "{{Delimiter}}"
+? "EncodingType"= "{{EncodingType}}"
+? "Marker"= "{{Marker}}"
+? "MaxKeys"= "{{MaxKeys}}"
+? "Prefix"= "{{Prefix}}"
+
+
+// Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket. A 200 OK response can contain valid or invalid XML. Be sure to design your application to parse the contents of the response and handle it appropriately. 
+
+@name("Objects V2")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "list-type"= "2"
+? "ContinuationToken"= "{{ContinuationToken}}"
+? "Delimiter"= "{{Delimiter}}"
+? "EncodingType"= "{{EncodingType}}"
+? "FetchOwner"= "{{FetchOwner}}"
+? "MaxKeys"= "{{MaxKeys}}"
+? "Prefix"= "{{Prefix}}"
+? "StartAfter"= "{{StartAfter}}"
+
+
+// Retrieves objects from Amazon S3. To use GET, you must have READ access to the object. If you grant READ access to the anonymous user, you can return the object without using an authorization header. 
+
+@name("Object")
+GET "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+
+
+// Lists the parts that have been uploaded for a specific multipart upload. This operation must include the upload ID, which you obtain by sending the initiate multipart upload request (see CreateMultipartUpload). This request returns a maximum of 1,000 uploaded parts. The default number of parts returned is 1,000 parts. You can restrict the number of parts returned by specifying the max-parts request parameter. If your multipart upload consists of more than 1,000 parts, the response returns an IsTruncated field with the value of true, and a NextPartNumberMarker element. In subsequent ListParts requests you can include the part-number-marker query string parameter and set its value to the NextPartNumberMarker field value from the previous response. 
+
+@name("Parts")
+GET "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "MaxParts"= "{{MaxParts}}"
+? "PartNumberMarker"= "{{PartNumberMarker}}"
+? "UploadId"= "{{UploadId}}"
+
+
+// Creates a copy of an object that is already stored in Amazon S3.
+
+@name("Copy Object")
+PUT "https://s3.amazonaws.com/{{bucket}}/{{key}}/"
+awsauth(access_id="{{aws_key}}", secret_key="{{aws_secret}}", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+data('hello')
+
+
+// Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects. 
+
+@name("Delete Object")
+DELETE "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "VersionId"= "VersionId"
+
+
+// This operation enables you to delete multiple objects from a bucket using a single HTTP request. If you know the object keys that you want to delete, then this operation provides a suitable alternative to sending individual delete requests, reducing per-request overhead. 
+
+@name("Delete Objects")
+DELETE "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "delete"= ""
+data('<?xml version="1.0" encoding="UTF-8"?>
+<Delete xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <Object>
+      <Key>string</Key>
+      <VersionId>string</VersionId>
+   </Object>
+   ...
+   <Quiet>boolean</Quiet>
+</Delete>')
+
+
+

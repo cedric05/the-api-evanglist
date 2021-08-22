@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("By Type Gateway Response")
+GET "https://{{aws_api_gateway_base_url}}/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN&response_type=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "response_type"= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+
+
+@name("Delete Gateway Response")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Put Gateway Response")
+PUT "https://{{aws_api_gateway_base_url}}/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN&response_type=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&=&="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "response_type"= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+? ""= ""
+
+
+@name("Update Gateway Response")
+PATCH "https://{{aws_api_gateway_base_url}}/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

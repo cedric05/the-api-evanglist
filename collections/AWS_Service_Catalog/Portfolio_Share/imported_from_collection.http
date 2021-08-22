@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-88ac1dc0-36c3-4a4a-99dc-96fc8b7c0608.postman_collection.json
+
+@name("Accept Portfolio Share")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "AcceptPortfolioShare"
+data('{"AcceptLanguage":"string","PortfolioId":"string","PortfolioShareType":"string"}')
+
+
+@name("Create Portfolio Share")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "CreatePortfolioShare"
+data('{"AcceptLanguage":"string","AccountId":"string","OrganizationNode":{"Type":"string","Value":"string"},"PortfolioId":"string"}')
+
+
+@name("Delete Portfolio Share")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DeletePortfolioShare"
+data('{"AcceptLanguage":"string","AccountId":"string","OrganizationNode":{"Type":"string","Value":"string"},"PortfolioId":"string"}')
+
+
+@name("Reject Portfolio Share")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "RejectPortfolioShare"
+data('{"AcceptLanguage":"string","PortfolioId":"string","PortfolioShareType":"string"}')
+
+
+

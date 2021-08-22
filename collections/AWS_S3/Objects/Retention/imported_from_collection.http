@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Retrieves an object's retention settings. For more information, see Locking Objects. 
+
+@name("Retention")
+GET "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "retention"= ""
+
+
+// Retrieves an object's retention settings. For more information, see Locking Objects. 
+
+@name("Retention")
+PUT "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "retention"= ""
+
+
+

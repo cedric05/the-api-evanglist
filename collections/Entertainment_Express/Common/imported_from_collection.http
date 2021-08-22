@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Companies are listed in a movie, show, or game response as those whom are involved with the program.  EX: Universal Pictures.
+
+@name("Paged list of companies.")
+GET "https://{{baseUrl}}/Common/Companies/"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// List of Countries, ISO codes and Country IDs used throughout the API.
+
+@name("Returns a list of countries.")
+GET "https://{{baseUrl}}/Common/Countries/"
+
+
+// A list of image types available in the IVA database. **EX: Poster**
+
+@name("List of image types contained in the database.")
+GET "https://{{baseUrl}}/Common/ImageTypes/"
+
+
+// Returns a list of languages used in the API as well as the ISO code and language ID.
+
+@name("Gets all languages.")
+GET "https://{{baseUrl}}/Common/Languages/"
+
+
+// Paged list of all tags used in the API.
+
+@name("Gets all tags.")
+GET "https://{{baseUrl}}/Common/Tags/"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Returns a list of the types of videos that can be associated to a title.
+
+@name("Gets all VideoTypes.")
+GET "https://{{baseUrl}}/Common/VideoTypes/"
+
+
+

@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get an Admin User
+
+@name("Get an Admin User")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Admins/:id"
+
+
+@name("Get the LoginToken from a specific Admin User")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Admins/:id/LoginToken"
+? "targetpage"= "<string>"
+
+
+

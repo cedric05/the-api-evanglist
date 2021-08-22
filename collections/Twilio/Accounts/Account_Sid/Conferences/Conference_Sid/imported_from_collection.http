@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns the list of participants in the conference identified by
+// {ConferenceSid}.
+
+@name("/Accounts/:AccountSid/Conferences/:ConferenceSid/Participants{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Conferences/:ConferenceSid/Participants{{mediaTypeExtension}}"
+
+
+// Returns the list of participants in the conference identified by
+// {ConferenceSid}.
+
+@name("Accounts.Account Sid.Conferences.Conference Sid.Participants.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Conferences/:ConferenceSid/Participants.json"
+
+
+

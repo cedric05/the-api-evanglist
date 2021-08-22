@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92163795-090f-4322-a9fd-7e9b26bedf17.postman_collection.json
+
+@name("Create Hsm")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "CreateHsm"
+
+
+@name("Delete Hsm")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "DeleteHsm"
+
+
+@name("Describe Hsm")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "DescribeHsm"
+
+
+@name("List Hsms")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "ListHsms"
+
+
+@name("Modify Hsm")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "ModifyHsm"
+
+
+

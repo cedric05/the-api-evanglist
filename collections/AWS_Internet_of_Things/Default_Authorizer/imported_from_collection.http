@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Clear Default Authorizer")
+GET "https://{{aws_internet_of_things_base_url}}/default-authorizer"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Describe Default Authorizer")
+GET "https://{{aws_internet_of_things_base_url}}/default-authorizer&authorizerDescription="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Set Default Authorizer")
+GET "https://{{aws_internet_of_things_base_url}}/default-authorizer&authorizerName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

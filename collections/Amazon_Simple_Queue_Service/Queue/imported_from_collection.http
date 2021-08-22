@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cbf22eeb-0afb-4b88-bbe1-9983af7d99fe.postman_collection.json
+
+@name("Create Queue")
+GET "https://{{aws_simple_queue_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_queue_service_service}}", region="{{aws_simple_queue_service_region}}")
+
+
+@name("Delete Queue")
+GET "https://{{aws_simple_queue_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_queue_service_service}}", region="{{aws_simple_queue_service_region}}")
+
+
+@name("List Queues")
+GET "https://{{aws_simple_queue_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_queue_service_service}}", region="{{aws_simple_queue_service_region}}")
+? "Action"= "ListQueues"
+? "QueueNamePrefix"= ""
+
+
+@name("Purge Queue")
+GET "https://{{aws_simple_queue_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_queue_service_service}}", region="{{aws_simple_queue_service_region}}")
+
+
+@name("Tag Queue")
+GET "https://{{aws_simple_queue_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_queue_service_service}}", region="{{aws_simple_queue_service_region}}")
+
+
+@name("Untag Queue")
+GET "https://{{aws_simple_queue_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_queue_service_service}}", region="{{aws_simple_queue_service_region}}")
+
+
+

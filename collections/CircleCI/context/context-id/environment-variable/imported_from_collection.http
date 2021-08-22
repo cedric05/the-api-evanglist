@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-497c1579-7153-42d7-9ae4-62094712cd15.postman_collection.json
+
+// List information about environment variables in a context, not including their values.
+
+@name("List environment variables")
+GET "https://{{baseUrl}}/context/:context-id/environment-variable"
+
+
+// Create or update an environment variable within a context. Returns information about the environment variable, not including its value.
+
+@name("Add or update an environment variable")
+PUT "https://{{baseUrl}}/context/:context-id/environment-variable/:env-var-name"
+
+
+

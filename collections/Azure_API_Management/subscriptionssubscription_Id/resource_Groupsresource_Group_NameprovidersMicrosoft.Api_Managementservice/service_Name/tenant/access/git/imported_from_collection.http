@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Gets the Git access configuration for the tenant.
+
+@name("TenantAccessGit Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/access/git"
+
+
+// Regenerate primary access key for GIT.
+
+@name("TenantAccessGit RegeneratePrimaryKey")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/access/git/regeneratePrimaryKey"
+
+
+// Regenerate secondary access key for GIT.
+
+@name("TenantAccessGit RegenerateSecondaryKey")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/access/git/regenerateSecondaryKey"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// Lists the transactions for a connected blockchain network.
+
+@name("Get Ledgers Connections Transactions")
+GET "https://{{baseUrl}}/api/v1/ledgers/connections/:connectionId/transactions"
+? "top"= "<>"
+? "skip"= "<>"
+
+
+// Gets the transaction matching a specific transaction ID.
+
+@name("Get Ledgers Connections Transactions Transactionid")
+GET "https://{{baseUrl}}/api/v1/ledgers/connections/:connectionId/transactions/:transactionId"
+
+
+

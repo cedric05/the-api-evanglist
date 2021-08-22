@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Create Global Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "DatabaseName"= ""
+? "DeletionProtection"= ""
+? "Engine"= ""
+? "EngineVersion"= ""
+? "GlobalClusterIdentifier"= ""
+? "SourceDBClusterIdentifier"= ""
+? "StorageEncrypted"= ""
+? "Action"= "CreateGlobalCluster"
+
+
+@name("Delete Global Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "GlobalClusterIdentifier"= ""
+? "Action"= "DeleteGlobalCluster"
+
+
+@name("Describe Global Clusters")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Filters.Filter.N"= ""
+? "GlobalClusterIdentifier"= ""
+? "Marker"= ""
+? "MaxRecords"= ""
+? "Action"= "DescribeGlobalClusters"
+
+
+@name("Modify Global Cluster")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "DeletionProtection"= ""
+? "GlobalClusterIdentifier"= ""
+? "NewGlobalClusterIdentifier"= ""
+? "Action"= "ModifyGlobalCluster"
+
+
+

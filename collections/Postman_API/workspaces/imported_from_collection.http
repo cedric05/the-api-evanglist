@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// The `/workspaces` endpoint returns a list of all [workspaces](https://www.getpostman.com/docs/v6/postman/workspaces/intro_to_workspaces) that is accessible by you. The list includes your own workspaces and the workspaces that you have access to.
+// 
+// The response contains an array of collection information containing the `name`, `id`, and `type` of each workspace.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("All workspaces")
+GET "https://{{baseUrl}}/workspaces"
+
+
+// Access the contents of a workspace that is accessible to you using its id (`id`). Includes the collections, environments, mocks and monitors of that workspace.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Single workspace")
+GET "https://{{baseUrl}}/workspaces/:workspace_id"
+
+
+

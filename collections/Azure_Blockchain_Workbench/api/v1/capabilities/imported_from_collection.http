@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// List all capabilities the user can perform within Workbench.
+//              Checked capabilities include ability to add blockchain applications, add smart contract implementations,
+//              add or edit user role assignments, and add new users.
+
+@name("Get Capabilities")
+GET "https://{{baseUrl}}/api/v1/capabilities"
+
+
+// Checks if user has capability to create new smart contract instance for a specific workflow ID.
+
+@name("Get Capabilities Can Create Contract")
+GET "https://{{baseUrl}}/api/v1/capabilities/canCreateContract/:workflowId"
+
+
+

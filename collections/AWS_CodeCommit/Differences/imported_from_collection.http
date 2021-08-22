@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d3f42c27-6156-4402-8a00-60fea46ec01e.postman_collection.json
+
+@name("Get Differences")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.GetDifferences"
+? "Action"= "GetDifferences"
+data('{
+  "repositoryName": "MyDemoRepo", 
+  "beforeCommitSpecifier": "16d097f03EXAMPLE",
+  "afterCommitSpecifier": "fac04518EXAMPLE"
+  "beforePath": "tmp/example-folder"
+  "afterPath": "tmp/renamed-folder",
+  
+}')
+
+
+

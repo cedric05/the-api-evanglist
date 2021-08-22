@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Logical interfaces are used to model the interfaces exposed by a
+// device or thing in the Watson IoT Platform. A logical interface must
+// reference a schema definition that defines the structure of the
+// state that will be stored for the device or thing.
+// 
+// The **logicalinterfaces** endpoint returns the list of all of the
+// draft logical interfaces that have been defined for the organization
+// in the Watson IoT Platform.  Various query parameters can be used to
+// filter, sort and page through the list of draf
+
+@name("Query draft logical interfaces")
+GET "https://{{baseUrl}}/draft/logicalinterfaces"
+
+
+

@@ -1,0 +1,82 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b30fdb4-df71-430c-bca5-582cc0c9e09b.postman_collection.json
+
+@name("Assign Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"InstanceId":"string","LayerIds":["string"]}')
+
+
+@name("Create Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"AgentVersion":"string","AmiId":"string","Architecture":"string","AutoScalingType":"string","AvailabilityZone":"string","BlockDeviceMappings":[{"DeviceName":"string","Ebs":{"DeleteOnTermination":1,"Iops":42,"SnapshotId":"string","VolumeSize":42,"VolumeType":"string"},"NoDevice":"string","VirtualName":"string"}],"EbsOptimized":1,"Hostname":"string","InstallUpdatesOnBoot":1,"InstanceType":"string","LayerIds":["string"],"Os":"string","RootDeviceType":"string","SshKeyName":"string","StackId":"string","SubnetId":"string","Tenancy":"string","VirtualizationType":"string"}')
+
+
+@name("Delete Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"DeleteElasticIp":1,"DeleteVolumes":1,"InstanceId":"string"}')
+
+
+@name("Deregister Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"InstanceId":"string"}')
+
+
+@name("Describe Instances")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"InstanceIds":["string"],"LayerId":"string","StackId":"string"}')
+
+
+@name("Reboot Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"InstanceId":"string"}')
+
+
+@name("Register Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"Hostname":"string","InstanceIdentity":{"Document":"string","Signature":"string"},"PrivateIp":"string","PublicIp":"string","RsaPublicKey":"string","RsaPublicKeyFingerprint":"string","StackId":"string"}')
+
+
+@name("Start Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"InstanceId":"string"}')
+
+
+@name("Stop Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"Force":1,"InstanceId":"string"}')
+
+
+@name("Unassign Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"InstanceId":"string"}')
+
+
+@name("Update Instance")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"AgentVersion":"string","AmiId":"string","Architecture":"string","AutoScalingType":"string","EbsOptimized":1,"Hostname":"string","InstallUpdatesOnBoot":1,"InstanceId":"string","InstanceType":"string","LayerIds":["string"],"Os":"string","SshKeyName":"string"}')
+
+
+

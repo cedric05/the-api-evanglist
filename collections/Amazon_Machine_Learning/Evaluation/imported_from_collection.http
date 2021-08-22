@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfcb371d-a6e0-41fe-841b-f5fab0153d76.postman_collection.json
+
+@name("Create Evaluation")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.CreateEvaluation"
+? "Action"= "CreateEvaluation"
+data('{"EvaluationDataSourceId":"string","EvaluationId":"string","EvaluationName":"string","MLModelId":"string"}')
+
+
+@name("Delete Evaluation")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DeleteEvaluation"
+? "Action"= "DeleteEvaluation"
+data('{"EvaluationId":"string"}')
+
+
+@name("Describe Evaluations")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DescribeEvaluations"
+? "Action"= "DescribeEvaluations"
+data('{"EQ":"string","FilterVariable":"string","GE":"string","GT":"string","LE":"string","Limit":42,"LT":"string","NE":"string","NextToken":"string","Prefix":"string","SortOrder":"string"}')
+
+
+@name("Get Evaluation")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.GetEvaluation"
+? "Action"= "GetEvaluation"
+data('{"EvaluationId":"string"}')
+
+
+@name("Update Evaluation")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.UpdateEvaluation"
+? "Action"= "UpdateEvaluation"
+data('{"EvaluationId":"string","EvaluationName":"string"}')
+
+
+

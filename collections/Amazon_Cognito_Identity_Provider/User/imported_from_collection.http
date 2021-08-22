@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8631617c-c1ed-4e14-b0cd-77e4410753c4.postman_collection.json
+
+@name("Delete User")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DeleteUser"
+data('{
+   "AccessToken": "string"
+}')
+
+
+@name("Get User")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "GetUser"
+data('{
+   "AccessToken": "string"
+}')
+
+
+@name("List Users")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "ListUsers"
+data('{
+   "AttributesToGet": [ "string" ],
+   "Filter": "string",
+   "Limit": number,
+   "PaginationToken": "string",
+   "UserPoolId": "string"
+}')
+
+
+

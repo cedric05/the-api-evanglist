@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-44bffed7-d71d-462c-a6ed-91200ba99367.postman_collection.json
+
+// Lists the record sets of a specified type in a DNS zone.
+
+@name("Record Sets List By Type")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/dnsZones/:zoneName/:recordType"
+? "$top"= "<>"
+
+
+// Updates a record set within a DNS zone.
+
+@name("Record Sets Update")
+PATCH "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/dnsZones/:zoneName/:recordType/:relativeRecordSetName"
+"If": "<>"
+
+
+

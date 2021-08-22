@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Replaces an IAM instance profile for the specified running instance.
+
+@name("Replace IAM Instance Profile Association")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AssociationId"= ""
+? "IamInstanceProfile"= ""
+? "Action"= "ReplaceIamInstanceProfileAssociation"
+
+
+

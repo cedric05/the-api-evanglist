@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-06beb3cb-4f39-40cc-ab55-114f4f94f4b4.postman_collection.json
+
+@name("Create Stack Set")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "AdministrationRoleARN"= ""
+? "Capabilities.member.N"= ""
+? "ClientRequestToken"= ""
+? "Description"= ""
+? "ExecutionRoleName"= ""
+? "Parameters.member.N"= ""
+? "StackSetName"= ""
+? "Tags.member.N"= ""
+? "TemplateBody"= ""
+? "TemplateURL"= ""
+? "Action"= "CreateStackSet"
+
+
+@name("Delete Stack Set")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "StackSetName"= ""
+? "Action"= "DeleteStackSet"
+
+
+@name("Describe Stack Set")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "StackSetName"= ""
+? "Action"= "DescribeStackSet"
+
+
+@name("List Stack Sets")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Status"= ""
+? "Action"= "ListStackSets"
+
+
+@name("Update Stack Set")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Accounts.member.N"= ""
+? "AdministrationRoleARN"= ""
+? "Capabilities.member.N"= ""
+? "Description"= ""
+? "ExecutionRoleName"= ""
+? "OperationId"= ""
+? "OperationPreferences"= ""
+? "Parameters.member.N"= ""
+? "Regions.member.N"= ""
+? "StackSetName"= ""
+? "Tags.member.N"= ""
+? "TemplateBody"= ""
+? "TemplateURL"= ""
+? "UsePreviousTemplate"= ""
+? "Action"= "UpdateStackSet"
+
+
+

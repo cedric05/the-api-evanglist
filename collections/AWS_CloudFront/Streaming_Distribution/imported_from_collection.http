@@ -1,0 +1,139 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1ae65b12-94bd-40ca-acee-7a0cd4c3c799.postman_collection.json
+
+@name("Create Streaming Distribution")
+POST "https://{{aws_cloudfront_base_url}}/2019-03-26/streaming-distribution"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<StreamingDistributionConfig xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <Aliases>
+      <Items>
+         <CNAME>string</CNAME>
+      </Items>
+      <Quantity>integer</Quantity>
+   </Aliases>
+   <CallerReference>string</CallerReference>
+   <Comment>string</Comment>
+   <Enabled>boolean</Enabled>
+   <Logging>
+      <Bucket>string</Bucket>
+      <Enabled>boolean</Enabled>
+      <Prefix>string</Prefix>
+   </Logging>
+   <PriceClass>string</PriceClass>
+   <S3Origin>
+      <DomainName>string</DomainName>
+      <OriginAccessIdentity>string</OriginAccessIdentity>
+   </S3Origin>
+   <TrustedSigners>
+      <Enabled>boolean</Enabled>
+      <Items>
+         <AwsAccountNumber>string</AwsAccountNumber>
+      </Items>
+      <Quantity>integer</Quantity>
+   </TrustedSigners>
+</StreamingDistributionConfig>')
+
+
+@name("Create Streaming Distribution With Tags")
+POST "https://{{aws_cloudfront_base_url}}/2019-03-26/streaming-distribution"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<StreamingDistributionConfigWithTags xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <StreamingDistributionConfig>
+      <Aliases>
+         <Items>
+            <CNAME>string</CNAME>
+         </Items>
+         <Quantity>integer</Quantity>
+      </Aliases>
+      <CallerReference>string</CallerReference>
+      <Comment>string</Comment>
+      <Enabled>boolean</Enabled>
+      <Logging>
+         <Bucket>string</Bucket>
+         <Enabled>boolean</Enabled>
+         <Prefix>string</Prefix>
+      </Logging>
+      <PriceClass>string</PriceClass>
+      <S3Origin>
+         <DomainName>string</DomainName>
+         <OriginAccessIdentity>string</OriginAccessIdentity>
+      </S3Origin>
+      <TrustedSigners>
+         <Enabled>boolean</Enabled>
+         <Items>
+            <AwsAccountNumber>string</AwsAccountNumber>
+         </Items>
+         <Quantity>integer</Quantity>
+      </TrustedSigners>
+   </StreamingDistributionConfig>
+   <Tags>
+      <Items>
+         <Tag>
+            <Key>string</Key>
+            <Value>string</Value>
+         </Tag>
+      </Items>
+   </Tags>
+</StreamingDistributionConfigWithTags>')
+
+
+@name("Delete Streaming Distribution")
+DELETE "https://{{aws_cloudfront_base_url}}/2019-03-26/streaming-distribution/:Id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Get Streaming Distribution")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/streaming-distribution/:Id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("Get Streaming Distribution Config")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/streaming-distribution/Id/config"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("List Streaming Distributions")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/streaming-distribution"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Marker"= "Marker"
+? "MaxItems"= "MaxItems"
+
+
+@name("Update Streaming Distribution")
+PUT "https://{{aws_cloudfront_base_url}}/2019-03-26/streaming-distribution/Id/config"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<StreamingDistributionConfig xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <Aliases>
+      <Items>
+         <CNAME>string</CNAME>
+      </Items>
+      <Quantity>integer</Quantity>
+   </Aliases>
+   <CallerReference>string</CallerReference>
+   <Comment>string</Comment>
+   <Enabled>boolean</Enabled>
+   <Logging>
+      <Bucket>string</Bucket>
+      <Enabled>boolean</Enabled>
+      <Prefix>string</Prefix>
+   </Logging>
+   <PriceClass>string</PriceClass>
+   <S3Origin>
+      <DomainName>string</DomainName>
+      <OriginAccessIdentity>string</OriginAccessIdentity>
+   </S3Origin>
+   <TrustedSigners>
+      <Enabled>boolean</Enabled>
+      <Items>
+         <AwsAccountNumber>string</AwsAccountNumber>
+      </Items>
+      <Quantity>integer</Quantity>
+   </TrustedSigners>
+</StreamingDistributionConfig>')
+
+
+

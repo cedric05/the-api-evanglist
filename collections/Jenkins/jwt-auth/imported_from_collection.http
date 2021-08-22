@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve JSON Web Token
+
+@name("get Json Web Token")
+GET "https://{{baseUrl}}/jwt-auth/token"
+? "expiryTimeInMins"= "<string>"
+? "maxExpiryTimeInMins"= "<string>"
+
+
+// Retrieve JSON Web Key
+
+@name("get Json Web Key")
+GET "https://{{baseUrl}}/jwt-auth/jwks/:key"
+
+
+

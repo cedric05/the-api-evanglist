@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Deletes contacts from a contact list. List the contact ids in request to delete multiple contacts with one request.
+
+@name("Delete contacts from a contact list")
+DELETE "https://{{baseUrl}}/contacts/lists/:id/items"
+? "contactId"= "<integer>"
+
+
+// Deletes a single contact from a contact list
+
+@name("Delete a contact from a contact list")
+DELETE "https://{{baseUrl}}/contacts/lists/:id/items/:contactId"
+
+
+

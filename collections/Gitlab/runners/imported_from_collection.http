@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Get runners available for user
+
+@name("Get Runners")
+GET "https://{{baseUrl}}/runners"
+? "scope"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Get all runners - shared and specific
+
+@name("Get Runners All")
+GET "https://{{baseUrl}}/runners/all"
+? "scope"= "<>"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Remove a runner
+
+@name("Delete Runners")
+DELETE "https://{{baseUrl}}/runners/:id"
+
+
+

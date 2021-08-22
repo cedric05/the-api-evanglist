@@ -1,0 +1,103 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a9c11357-1dea-445b-ab86-8a31e21ccce0.postman_collection.json
+
+// Returns a list of the television service offerings for an area. Fields in bold are required.
+
+@name("Returns a list of the television service offerings...")
+GET "https://{{baseUrl}}/services/postalcode/:postalCode/info"
+? "locale"= "<string>"
+? "countrycode"= "<string>"
+? "msoid"= "<integer>"
+? "format"= "<string>"
+
+
+// Returns the channel lineup offered by a television service, plus information about the source of programming on a channel. Fields in bold are required.
+
+@name("Returns the channel lineup offered by a television...")
+GET "https://{{baseUrl}}/servicedetails/serviceid/:serviceId/info"
+? "locale"= "<string>"
+? "includechannelimages"= "<boolean>"
+? "imageformatid"= "<integer>"
+? "imagehorizontalresolution"= "<integer>"
+? "imageverticalresolution"= "<integer>"
+? "format"= "<string>"
+
+
+// Returns up to four hours of TV listings with information appropriate for the space limitations of a grid. Fields in bold are required.
+
+@name("Returns up to four hours of TV listings with infor...")
+GET "https://{{baseUrl}}/gridschedule/:serviceId/info"
+? "locale"= "<string>"
+? "duration"= "<integer>"
+? "includechannelimages"= "<boolean>"
+? "imageformatid"= "<integer>"
+? "sourceid"= "<string>"
+? "sourcefilterexclude"= "<string>"
+? "sourcefilterinclude"= "<string>"
+? "startdate"= "<string>"
+? "titletype"= "<integer>"
+? "format"= "<string>"
+
+
+// Returns up to four hours of TV listings with detailed program information. Fields in bold are required.
+
+@name("Returns up to four hours of TV listings with detai...")
+GET "https://{{baseUrl}}/linearschedule/:serviceId/info"
+? "locale"= "<string>"
+? "duration"= "<integer>"
+? "inprogress"= "<boolean>"
+? "oneairingpersourceid"= "<boolean>"
+? "sourceid"= "<string>"
+? "startdate"= "<string>"
+? "format"= "<string>"
+
+
+// Returns information about a series, movie, episode, or program, and can optionally include a schedule of upcoming broadcasts of the show. Fields in bold are required.
+
+@name("Returns information about a series, movie, episode...")
+GET "https://{{baseUrl}}/programdetails/:serviceId/:programId/info"
+? "locale"= "<string>"
+? "copytextformat"= "<string>"
+? "copytype"= "<integer>"
+? "include"= "<string>"
+? "imagecount"= "<integer>"
+? "imageformat"= "<string>"
+? "imageformatid"= "<integer>"
+? "imagetype"= "<string>"
+? "imagehorizontalresolution"= "<integer>"
+? "imageverticalresolution"= "<integer>"
+? "duration"= "<integer>"
+? "inprogress"= "<boolean>"
+? "sourceid"= "<string>"
+? "startdate"= "<string>"
+? "pagesize"= "<integer>"
+? "startindex"= "<string>"
+? "format"= "<string>"
+
+
+// Returns information about a celebrity and can optionally include a schedule of upcoming broadcasts the celebrity appears in. Fields in bold are required.
+
+@name("Returns information about a celebrity and can opti...")
+GET "https://{{baseUrl}}/celebritydetails/info"
+? "include"= "<string>"
+? "locale"= "<string>"
+? "nameid"= "<integer>"
+? "copytextformat"= "<string>"
+? "copytype"= "<integer>"
+? "includecreditsforepisodes"= "<boolean>"
+? "imagecount"= "<integer>"
+? "imageformat"= "<string>"
+? "imageformatid"= "<integer>"
+? "imagetype"= "<string>"
+? "imagehorizontalresolution"= "<integer>"
+? "imageverticalresolution"= "<integer>"
+? "serviceid"= "<integer>"
+? "duration"= "<integer>"
+? "inprogress"= "<boolean>"
+? "sourceid"= "<string>"
+? "startdate"= "<string>"
+? "format"= "<string>"
+
+
+

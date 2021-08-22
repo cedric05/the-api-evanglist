@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d0c02c05-054f-4e33-83bf-1c03a8c9a69e.postman_collection.json
+
+@name("Deregister Container Instance")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance"
+? "Action"= "DeregisterContainerInstance"
+data('{"cluster":"string","containerInstance":"string","force":1}')
+
+
+@name("Describe Container Instances")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.DescribeContainerInstances"
+? "Action"= "DescribeContainerInstances"
+data('{"cluster":"string","containerInstances":["string"],"include":["string"]}')
+
+
+@name("List Container Instances")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.ListContainerInstances"
+? "Action"= "ListContainerInstances"
+data('{"cluster":"string","filter":"string","maxResults":42,"nextToken":"string","status":"string"}')
+
+
+@name("Register Container Instance")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.RegisterContainerInstance"
+? "Action"= "RegisterContainerInstance"
+data('{"attributes":[{"name":"string","targetId":"string","targetType":"string","value":"string"}],"cluster":"string","containerInstanceArn":"string","instanceIdentityDocument":"string","instanceIdentityDocumentSignature":"string","platformDevices":[{"id":"string","type":"string"}],"tags":[{"key":"string","value":"string"}],"totalResources":[{"doubleValue":42,"integerValue":42,"longValue":42,"name":"string","stringSetValue":["string"],"type":"string"}],"versionInfo":{"agentHash":"string","agentVersion":"string","dockerVersion":"string"}}')
+
+
+

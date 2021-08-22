@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Deletes the notification identified by {NotificationSid} from an account's log.
+
+@name("/Accounts/:AccountSid/Notifications/{{NotificationSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Notifications/{{NotificationSid}}{{mediaTypeExtension}}"
+
+
+// Deletes the notification identified by {NotificationSid} from an account's log.
+
+@name("Accounts.Account Sid.Notifications.Notification Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Notifications/{{NotificationSid}}.json"
+
+
+

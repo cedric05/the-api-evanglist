@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-511ff114-110c-4b79-9213-f986643f80af.postman_collection.json
+
+// Returns the metadata associated with a token at time of issuance.
+
+@name("Get Issuance Metadata of Token")
+GET "https://{{baseUrl}}/testnet/ntp1/tokenmetadata/:tokenid"
+
+
+// Returns the metadata associated with a token for that specific utxo instead of the issuance transaction.
+
+@name("Get UTXO Metadata of Token")
+GET "https://{{baseUrl}}/testnet/ntp1/tokenmetadata/:tokenid/:utxo"
+
+
+

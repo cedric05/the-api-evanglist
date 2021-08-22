@@ -1,0 +1,91 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Aborts the bulk upload and all its child jobs
+
+@name("Get Service Bulkupload Bulk Action Abort")
+GET "https://{{baseUrl}}/service/bulkupload_bulk/action/abort"
+? "id"= "<>"
+
+
+// Get bulk upload batch job by id
+
+@name("Get Service Bulkupload Bulk Action Get")
+GET "https://{{baseUrl}}/service/bulkupload_bulk/action/get"
+? "id"= "<>"
+
+
+// List bulk upload batch jobs
+
+@name("Get Service Bulkupload Bulk Action List")
+GET "https://{{baseUrl}}/service/bulkupload_bulk/action/list"
+? "bulkUploadFilter[orderBy]"= "<>"
+? "bulkUploadFilter[advancedSearch][objectType]"= "<>"
+? "bulkUploadFilter[advancedSearch][value]"= "<>"
+? "bulkUploadFilter[advancedSearch][categoriesMatchOr]"= "<>"
+? "bulkUploadFilter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "bulkUploadFilter[advancedSearch][orderBy]"= "<>"
+? "bulkUploadFilter[advancedSearch][categoryIdEqual]"= "<>"
+? "bulkUploadFilter[advancedSearch][memberIdEq]"= "<>"
+? "bulkUploadFilter[advancedSearch][memberIdIn]"= "<>"
+? "bulkUploadFilter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "bulkUploadFilter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "bulkUploadFilter[advancedSearch][noDistributionProfiles]"= "<>"
+? "bulkUploadFilter[advancedSearch][distributionProfileId]"= "<>"
+? "bulkUploadFilter[advancedSearch][distributionSunStatus]"= "<>"
+? "bulkUploadFilter[advancedSearch][entryDistributionFlag]"= "<>"
+? "bulkUploadFilter[advancedSearch][entryDistributionStatus]"= "<>"
+? "bulkUploadFilter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "bulkUploadFilter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "bulkUploadFilter[advancedSearch][contentLike]"= "<>"
+? "bulkUploadFilter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "bulkUploadFilter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "bulkUploadFilter[advancedSearch][cuePointsFreeText]"= "<>"
+? "bulkUploadFilter[advancedSearch][cuePointTypeIn]"= "<>"
+? "bulkUploadFilter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "bulkUploadFilter[advancedSearch][watermarkId]"= "<>"
+? "bulkUploadFilter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "bulkUploadFilter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "bulkUploadFilter[advancedSearch][isQuiz]"= "<>"
+? "bulkUploadFilter[advancedSearch][field]"= "<>"
+? "bulkUploadFilter[advancedSearch][type]"= "<>"
+? "bulkUploadFilter[advancedSearch][items]"= "<>"
+? "bulkUploadFilter[advancedSearch][idEqual]"= "<>"
+? "bulkUploadFilter[advancedSearch][idIn]"= "<>"
+? "bulkUploadFilter[advancedSearch][userIdEqual]"= "<>"
+? "bulkUploadFilter[advancedSearch][userIdIn]"= "<>"
+? "bulkUploadFilter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "bulkUploadFilter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "bulkUploadFilter[advancedSearch][extendedStatusEqual]"= "<>"
+? "bulkUploadFilter[advancedSearch][extendedStatusIn]"= "<>"
+? "bulkUploadFilter[advancedSearch][comparison]"= "<>"
+? "bulkUploadFilter[advancedSearch][not]"= "<>"
+? "bulkUploadFilter[advancedSearch][attribute]"= "<>"
+? "bulkUploadFilter[advancedSearch][metadataProfileId]"= "<>"
+? "bulkUploadFilter[uploadedOnGreaterThanOrEqual]"= "<>"
+? "bulkUploadFilter[uploadedOnLessThanOrEqual]"= "<>"
+? "bulkUploadFilter[uploadedOnEqual]"= "<>"
+? "bulkUploadFilter[statusIn]"= "<>"
+? "bulkUploadFilter[statusEqual]"= "<>"
+? "bulkUploadFilter[bulkUploadObjectTypeEqual]"= "<>"
+? "bulkUploadFilter[bulkUploadObjectTypeIn]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// serve action returns the original file.
+
+@name("Get Service Bulkupload Bulk Action Serve")
+GET "https://{{baseUrl}}/service/bulkupload_bulk/action/serve"
+? "id"= "<>"
+
+
+// serveLog action returns the log file for the bulk-upload job.
+
+@name("Get Service Bulkupload Bulk Action Servelog")
+GET "https://{{baseUrl}}/service/bulkupload_bulk/action/serveLog"
+? "id"= "<>"
+
+
+

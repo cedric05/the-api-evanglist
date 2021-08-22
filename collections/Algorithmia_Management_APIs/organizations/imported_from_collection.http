@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9844d24d-a804-4291-beee-fc6ba6a9e5ce.postman_collection.json
+
+@name("Lists all organizations")
+GET "https://{{baseUrl}}/organizations"
+"Authorization": "<string>"
+? "limit"= "<integer>"
+? "marker"= "<string>"
+
+
+@name("Creates an Organization owned by the caller")
+POST "https://{{baseUrl}}/organizations"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "org_contact_name": "<string>",
+    "org_email": "<string>",
+    "org_label": "<string>",
+    "org_name": "<string>",
+    "resource_type": "<string>",
+    "org_url": "<string>",
+    "self_link": "<string>"
+})
+
+
+

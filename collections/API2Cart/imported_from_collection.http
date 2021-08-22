@@ -1,0 +1,1593 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4bfd50ee-25b2-408c-8e38-a49a34f93867.postman_collection.json
+
+// Create webhook on the store and subscribe to it.
+
+@name("Post Webhook Create")
+POST "https://{{baseUrl}}/webhook.create.json"
+? "entity"= "<string>"
+? "action"= "<string>"
+? "callback"= "<string>"
+? "label"= "<string>"
+? "fields"= "<string>"
+? "active"= "<boolean>"
+? "store_id"= "<string>"
+
+
+// List registered webhook on the store.
+
+@name("Get Webhook List")
+GET "https://{{baseUrl}}/webhook.list.json"
+? "params"= "<string>"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "entity"= "<string>"
+? "action"= "<string>"
+? "active"= "<boolean>"
+? "ids"= "<string>"
+
+
+// Count registered webhooks on the store.
+
+@name("Get Webhook Count")
+GET "https://{{baseUrl}}/webhook.count.json"
+? "entity"= "<string>"
+? "action"= "<string>"
+? "active"= "<boolean>"
+
+
+// List all Webhooks that are available on this store.
+
+@name("Get Webhook Events")
+GET "https://{{baseUrl}}/webhook.events.json"
+
+
+// Delete registered webhook on the store.
+
+@name("Delete Webhook Delete")
+DELETE "https://{{baseUrl}}/webhook.delete.json"
+? "id"= "<integer>"
+
+
+// Update Webhooks parameters.
+
+@name("Put Webhook Update")
+PUT "https://{{baseUrl}}/webhook.update.json"
+? "id"= "<integer>"
+? "callback"= "<string>"
+? "label"= "<string>"
+? "fields"= "<string>"
+? "active"= "<boolean>"
+
+
+// Add store to the account
+
+@name("Post Cart Create")
+POST "https://{{baseUrl}}/cart.create.json"
+? "cart_id"= "<string>"
+? "store_url"= "<string>"
+? "bridge_url"= "<string>"
+? "store_root"= "<string>"
+? "store_key"= "<string>"
+? "shared_secret"= "<string>"
+? "validate_version"= "<boolean>"
+? "verify"= "<boolean>"
+? "db_tables_prefix"= "<string>"
+? "ftp_host"= "<string>"
+? "ftp_user"= "<string>"
+? "ftp_password"= "<string>"
+? "ftp_port"= "<integer>"
+? "ftp_store_dir"= "<string>"
+? "apiKey_3dcart"= "<string>"
+? "AdminAccount"= "<string>"
+? "ApiPath"= "<string>"
+? "ApiKey"= "<string>"
+? "client_id"= "<string>"
+? "accessToken"= "<string>"
+? "context"= "<string>"
+? "access_token"= "<string>"
+? "apiKey_shopify"= "<string>"
+? "apiPassword"= "<string>"
+? "accessToken_shopify"= "<string>"
+? "apiUsername"= "<string>"
+? "EncryptedPassword"= "<string>"
+? "Login"= "<string>"
+? "apiUser_adnsf"= "<string>"
+? "apiPass"= "<string>"
+? "accessKey_scelite"= "<string>"
+? "apiKey_scelite"= "<string>"
+? "apiSecretKey_scelite"= "<string>"
+? "privateKey"= "<string>"
+? "appToken"= "<string>"
+? "etsy_keystring"= "<string>"
+? "etsy_shared_secret"= "<string>"
+? "tokenSecret"= "<string>"
+? "ebay_client_id"= "<string>"
+? "ebay_client_secret"= "<string>"
+? "ebay_runame"= "<string>"
+? "ebay_access_token"= "<string>"
+? "ebay_refresh_token"= "<string>"
+? "ebay_environment"= "<string>"
+? "ebay_site_id"= "<integer>"
+? "dw_client_id"= "<string>"
+? "dw_api_pass"= "<string>"
+? "demandware_user_name"= "<string>"
+? "demandware_user_password"= "<string>"
+? "store_id"= "<string>"
+? "seller_id"= "<string>"
+? "amazon_secret_key"= "<string>"
+? "amazon_access_key_id"= "<string>"
+? "marketplaces_ids"= "<string>"
+? "environment"= "<string>"
+? "hybris_client_id"= "<string>"
+? "hybris_client_secret"= "<string>"
+? "walmart_client_id"= "<string>"
+? "walmart_client_secret"= "<string>"
+
+
+// Check store availability, bridge connection for the downloadable carts, identify DB prefix, validate API accesses for API carts.
+
+@name("Get Cart Validate")
+GET "https://{{baseUrl}}/cart.validate.json"
+? "validate_version"= "<boolean>"
+
+
+// Get list of supported carts
+
+@name("Get Cart List")
+GET "https://{{baseUrl}}/cart.list.json"
+
+
+// Get bridge key and store key
+
+@name("Get Cart Bridge")
+GET "https://{{baseUrl}}/cart.bridge.json"
+
+
+// Remove store from API2Cart
+
+@name("Delete Cart Delete")
+DELETE "https://{{baseUrl}}/cart.delete.json"
+
+
+// Disconnect with the store and clear store session data.
+
+@name("Get Cart Disconnect")
+GET "https://{{baseUrl}}/cart.disconnect.json"
+? "delete_bridge"= "<boolean>"
+
+
+// Get list of cart methods
+
+@name("Get Cart Methods")
+GET "https://{{baseUrl}}/cart.methods.json"
+
+
+// Get list of cart configs
+
+@name("Get Cart Config")
+GET "https://{{baseUrl}}/cart.config.json"
+? "params"= "<string>"
+? "exclude"= "<string>"
+
+
+// Use this API method to update custom data in client database.
+
+@name("Put Cart Config Update")
+PUT "https://{{baseUrl}}/cart.config.update.json"
+
+
+// Get cart coupons count.
+
+@name("Get Cart Coupon Count")
+GET "https://{{baseUrl}}/cart.coupon.count.json"
+? "store_id"= "<string>"
+? "date_start_from"= "<string>"
+? "date_start_to"= "<string>"
+? "date_end_from"= "<string>"
+? "date_end_to"= "<string>"
+? "avail"= "<boolean>"
+
+
+// Get cart coupon discounts.
+
+@name("Get Cart Coupon List")
+GET "https://{{baseUrl}}/cart.coupon.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "coupons_ids"= "<string>"
+? "store_id"= "<string>"
+? "date_start_from"= "<string>"
+? "date_start_to"= "<string>"
+? "date_end_from"= "<string>"
+? "date_end_to"= "<string>"
+? "avail"= "<boolean>"
+? "lang_id"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+
+
+// Get gift cards count.
+
+@name("Get Cart Giftcard Count")
+GET "https://{{baseUrl}}/cart.giftcard.count.json"
+? "store_id"= "<string>"
+
+
+// Get gift cards list.
+
+@name("Get Cart Giftcard List")
+GET "https://{{baseUrl}}/cart.giftcard.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "store_id"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+
+
+// Create new gift card
+
+@name("Post Cart Giftcard Add")
+POST "https://{{baseUrl}}/cart.giftcard.add.json"
+? "amount"= "<number>"
+? "code"= "<string>"
+? "owner_email"= "<string>"
+
+
+// Create new coupon
+
+@name("Post Cart Coupon Add")
+POST "https://{{baseUrl}}/cart.coupon.add.json"
+? "store_id"= "<string>"
+? "code"= "<string>"
+? "name"= "<string>"
+? "codes"= "<array>"
+? "action_type"= "<string>"
+? "action_apply_to"= "<string>"
+? "action_scope"= "<string>"
+? "action_amount"= "<number>"
+? "date_start"= "<object>"
+? "date_end"= "<object>"
+? "usage_limit"= "<integer>"
+? "usage_limit_per_customer"= "<integer>"
+? "action_condition_entity"= "<string>"
+? "action_condition_key"= "<string>"
+? "action_condition_operator"= "<string>"
+? "action_condition_value"= "<string>"
+
+
+// Create new coupon condition
+
+@name("Post Cart Coupon Condition Add")
+POST "https://{{baseUrl}}/cart.coupon.condition.add.json"
+? "store_id"= "<string>"
+? "coupon_id"= "<string>"
+? "target"= "<string>"
+? "entity"= "<string>"
+? "key"= "<string>"
+? "operator"= "<string>"
+? "value"= "<string>"
+
+
+// Delete coupon
+
+@name("Delete Cart Coupon Delete")
+DELETE "https://{{baseUrl}}/cart.coupon.delete.json"
+? "id"= "<integer>"
+? "store_id"= "<string>"
+
+
+// Get scripts installed to the storefront
+
+@name("Get Cart Script List")
+GET "https://{{baseUrl}}/cart.script.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "modified_from"= "<string>"
+? "modified_to"= "<string>"
+? "script_ids"= "<string>"
+
+
+// Add new script to the storefront
+
+@name("Post Cart Script Add")
+POST "https://{{baseUrl}}/cart.script.add.json"
+? "name"= "<string>"
+? "description"= "<string>"
+? "html"= "<string>"
+? "src"= "<string>"
+? "load_method"= "<string>"
+? "scope"= "<string>"
+
+
+// Remove script from the storefront
+
+@name("Delete Cart Script Delete")
+DELETE "https://{{baseUrl}}/cart.script.delete.json"
+? "id"= "<integer>"
+
+
+// Get cart information
+
+@name("Get Cart Info")
+GET "https://{{baseUrl}}/cart.info.json"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "store_id"= "<string>"
+
+
+// Clear cache on store.
+
+@name("Post Cart Clear Cache")
+POST "https://{{baseUrl}}/cart.clear_cache.json"
+? "cache_type"= "<string>"
+
+
+// Get list of installed plugins
+
+@name("Get Cart Plugin List")
+GET "https://{{baseUrl}}/cart.plugin.list.json"
+? "store_key"= "<string>"
+? "store_id"= "<string>"
+? "start"= "<integer>"
+? "count"= "<integer>"
+
+
+// Get list of shipping zones
+
+@name("Get Cart Shipping Zones List")
+GET "https://{{baseUrl}}/cart.shipping_zones.list.json"
+? "store_id"= "<string>"
+
+
+// Get list of carts.
+
+@name("Get Account Cart List")
+GET "https://{{baseUrl}}/account.cart.list.json"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "request_from_date"= "<string>"
+? "request_to_date"= "<string>"
+? "store_url"= "<string>"
+? "store_key"= "<string>"
+
+
+// Add store to the account
+
+@name("Post Account Cart Add")
+POST "https://{{baseUrl}}/account.cart.add.json"
+? "cart_id"= "<string>"
+? "store_url"= "<string>"
+? "bridge_url"= "<string>"
+? "store_root"= "<string>"
+? "store_key"= "<string>"
+? "validate_version"= "<boolean>"
+? "verify"= "<boolean>"
+? "db_tables_prefix"= "<string>"
+? "ftp_host"= "<string>"
+? "ftp_user"= "<string>"
+? "ftp_password"= "<string>"
+? "ftp_port"= "<integer>"
+? "ftp_store_dir"= "<string>"
+? "3dcartapi_api_key"= "<string>"
+? "amazon_access_token"= "<string>"
+? "amazon_seller_id"= "<string>"
+? "amazon_marketplaces_ids"= "<string>"
+? "amazon_secret_key"= "<string>"
+? "amazon_access_key_id"= "<string>"
+? "aspdotnetstorefront_api_user"= "<string>"
+? "aspdotnetstorefront_api_pass"= "<string>"
+? "bigcommerceapi_admin_account"= "<string>"
+? "bigcommerceapi_api_path"= "<string>"
+? "bigcommerceapi_api_key"= "<string>"
+? "bigcommerceapi_client_id"= "<string>"
+? "bigcommerceapi_access_token"= "<string>"
+? "bigcommerceapi_context"= "<string>"
+? "demandware_client_id"= "<string>"
+? "demandware_api_password"= "<string>"
+? "demandware_user_name"= "<string>"
+? "demandware_user_password"= "<string>"
+? "demandware_env_type"= "<string>"
+? "ebay_client_id"= "<string>"
+? "ebay_client_secret"= "<string>"
+? "ebay_runame"= "<string>"
+? "ebay_access_token"= "<string>"
+? "ebay_refresh_token"= "<string>"
+? "ebay_environment"= "<string>"
+? "ebay_site_id"= "<integer>"
+? "walmart_client_id"= "<string>"
+? "walmart_client_secret"= "<string>"
+? "ecwid_acess_token"= "<string>"
+? "ecwid_store_id"= "<string>"
+? "etsy_keystring"= "<string>"
+? "etsy_shared_secret"= "<string>"
+? "etsy_access_token"= "<string>"
+? "etsy_token_secret"= "<string>"
+? "neto_api_key"= "<string>"
+? "neto_api_username"= "<string>"
+? "shopify_api_key"= "<string>"
+? "shopify_api_password"= "<string>"
+? "shopify_shared_secret"= "<string>"
+? "shopify_access_token"= "<string>"
+? "volusion_login"= "<string>"
+? "volusion_password"= "<string>"
+? "hybris_client_id"= "<string>"
+? "hybris_client_secret"= "<string>"
+
+
+// Update configs in the API2Cart database.
+
+@name("Put Account Config Update")
+PUT "https://{{baseUrl}}/account.config.update.json"
+? "new_store_key"= "<string>"
+? "bridge_url"= "<string>"
+? "store_root"= "<string>"
+? "db_tables_prefix"= "<string>"
+? "3dcartapi_api_key"= "<string>"
+? "amazon_access_token"= "<string>"
+? "amazon_seller_id"= "<string>"
+? "amazon_marketplaces_ids"= "<string>"
+? "amazon_secret_key"= "<string>"
+? "amazon_access_key_id"= "<string>"
+? "aspdotnetstorefront_api_user"= "<string>"
+? "aspdotnetstorefront_api_pass"= "<string>"
+? "bigcommerceapi_admin_account"= "<string>"
+? "bigcommerceapi_api_path"= "<string>"
+? "bigcommerceapi_api_key"= "<string>"
+? "bigcommerceapi_client_id"= "<string>"
+? "bigcommerceapi_access_token"= "<string>"
+? "bigcommerceapi_context"= "<string>"
+? "demandware_client_id"= "<string>"
+? "demandware_api_password"= "<string>"
+? "demandware_user_name"= "<string>"
+? "demandware_user_password"= "<string>"
+? "demandware_env_type"= "<string>"
+? "ebay_client_id"= "<string>"
+? "ebay_client_secret"= "<string>"
+? "ebay_runame"= "<string>"
+? "ebay_access_token"= "<string>"
+? "ebay_refresh_token"= "<string>"
+? "ebay_environment"= "<string>"
+? "ebay_site_id"= "<integer>"
+? "ecwid_acess_token"= "<string>"
+? "ecwid_store_id"= "<string>"
+? "etsy_keystring"= "<string>"
+? "etsy_shared_secret"= "<string>"
+? "etsy_access_token"= "<string>"
+? "etsy_token_secret"= "<string>"
+? "neto_api_key"= "<string>"
+? "neto_api_username"= "<string>"
+? "shopify_api_key"= "<string>"
+? "shopify_api_password"= "<string>"
+? "shopify_shared_secret"= "<string>"
+? "shopify_access_token"= "<string>"
+? "volusion_login"= "<string>"
+? "volusion_password"= "<string>"
+? "walmart_client_id"= "<string>"
+? "walmart_client_secret"= "<string>"
+? "client_id"= "<string>"
+? "shared_secret"= "<string>"
+
+
+// List webhooks that was not delivered to the callback.
+
+@name("Get Account Failed Webhooks")
+GET "https://{{baseUrl}}/account.failed_webhooks.json"
+? "count"= "<integer>"
+? "start"= "<integer>"
+? "ids"= "<string>"
+
+
+// Get list of supported platforms
+
+@name("Get Account Supported Platforms")
+GET "https://{{baseUrl}}/account.supported_platforms.json"
+
+
+// Download bridge for store
+
+@name("Get Bridge Download File")
+GET "https://{{baseUrl}}/bridge.download.file"
+? "whitelabel"= "<boolean>"
+
+
+// Update bridge in the store.
+
+@name("Post Bridge Update")
+POST "https://{{baseUrl}}/bridge.update.json"
+
+
+// Delete bridge from the store.
+
+@name("Post Bridge Delete")
+POST "https://{{baseUrl}}/bridge.delete.json"
+
+
+// Get list of products from your store. Returns 10 products by default.
+
+@name("Get Product List")
+GET "https://{{baseUrl}}/product.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "category_id"= "<string>"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "modified_from"= "<string>"
+? "modified_to"= "<string>"
+? "avail_view"= "<boolean>"
+? "avail_sale"= "<boolean>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "currency_id"= "<string>"
+? "product_ids"= "<string>"
+? "product_variant_params"= "<string>"
+? "since_id"= "<integer>"
+? "report_request_id"= "<string>"
+? "disable_report_cache"= "<boolean>"
+? "sort_by"= "<string>"
+? "sort_direction"= "<string>"
+? "sku"= "<string>"
+? "disable_cache"= "<boolean>"
+
+
+// Count products in store.
+
+@name("Get Product Count")
+GET "https://{{baseUrl}}/product.count.json"
+? "category_id"= "<string>"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "modified_from"= "<string>"
+? "modified_to"= "<string>"
+? "avail_view"= "<boolean>"
+? "avail_sale"= "<boolean>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "product_ids"= "<string>"
+? "report_request_id"= "<string>"
+? "disable_report_cache"= "<boolean>"
+
+
+// Get product info about product ID *** or specify other product ID.
+
+@name("Get Product Info")
+GET "https://{{baseUrl}}/product.info.json"
+? "id"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "currency_id"= "<string>"
+? "product_variant_params"= "<string>"
+? "report_request_id"= "<string>"
+? "disable_report_cache"= "<boolean>"
+
+
+// Search product in store catalog. "Apple" is specified here by default.
+
+@name("Get Product Find")
+GET "https://{{baseUrl}}/product.find.json"
+? "find_value"= "<string>"
+? "find_where"= "<string>"
+? "find_params"= "<string>"
+? "find_what"= "<string>"
+
+
+// Retrieve all available fields for product item in store.
+
+@name("Get Product Fields")
+GET "https://{{baseUrl}}/product.fields.json"
+
+
+// Add new product to store.
+
+@name("Post Product Add")
+POST "https://{{baseUrl}}/product.add.json"
+
+
+// Update price and quantity for a specific product
+
+@name("Put Product Update")
+PUT "https://{{baseUrl}}/product.update.json"
+? "id"= "<integer>"
+? "model"= "<string>"
+? "price"= "<number>"
+? "special_price"= "<object>"
+? "sprice_create"= "<string>"
+? "sprice_expire"= "<string>"
+? "cost_price"= "<number>"
+? "retail_price"= "<number>"
+? "quantity"= "<number>"
+? "weight"= "<number>"
+? "increase_quantity"= "<number>"
+? "reduce_quantity"= "<number>"
+? "warehouse_id"= "<string>"
+? "reserve_quantity"= "<number>"
+? "manage_stock"= "<string>"
+? "name"= "<string>"
+? "sku"= "<string>"
+? "visible"= "<boolean>"
+? "manufacturer"= "<string>"
+? "manufacturer_id"= "<string>"
+? "description"= "<string>"
+? "short_description"= "<string>"
+? "meta_title"= "<string>"
+? "meta_keywords"= "<string>"
+? "meta_description"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "in_stock"= "<boolean>"
+? "status"= "<string>"
+? "seo_url"= "<string>"
+? "report_request_id"= "<string>"
+? "disable_report_cache"= "<boolean>"
+
+
+// Product delete
+
+@name("Delete Product Delete")
+DELETE "https://{{baseUrl}}/product.delete.json"
+? "id"= "<integer>"
+
+
+// Add some prices to the product.
+
+@name("Post Product Price Add")
+POST "https://{{baseUrl}}/product.price.add.json"
+
+
+// Update some prices of the product.
+
+@name("Put Product Price Update")
+PUT "https://{{baseUrl}}/product.price.update.json"
+
+
+// Delete some prices of the product
+
+@name("Delete Product Price Delete")
+DELETE "https://{{baseUrl}}/product.price.delete.json"
+? "product_id"= "<string>"
+? "group_prices"= "<array>"
+
+
+// Add image to product
+
+@name("Post Product Image Add")
+POST "https://{{baseUrl}}/product.image.add.json"
+? "product_id"= "<string>"
+? "image_name"= "<string>"
+? "type"= "<string>"
+? "url"= "<string>"
+? "label"= "<string>"
+? "mime"= "<string>"
+? "position"= "<integer>"
+? "content"= "<string>"
+? "product_variant_id"= "<integer>"
+? "variant_ids"= "<string>"
+? "store_id"= "<string>"
+
+
+// Update details of image
+
+@name("Put Product Image Update")
+PUT "https://{{baseUrl}}/product.image.update.json"
+? "product_id"= "<string>"
+? "image_name"= "<string>"
+? "type"= "<string>"
+? "label"= "<string>"
+? "position"= "<integer>"
+? "id"= "<integer>"
+? "store_id"= "<string>"
+? "hidden"= "<boolean>"
+
+
+// Delete image
+
+@name("Delete Product Image Delete")
+DELETE "https://{{baseUrl}}/product.image.delete.json"
+? "product_id"= "<string>"
+? "id"= "<integer>"
+? "store_id"= "<string>"
+
+
+// Get list of categories from store. Returns 4 categories by default.
+
+@name("Get Category List")
+GET "https://{{baseUrl}}/category.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "parent_id"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+
+
+// Count categories in store.
+
+@name("Get Category Count")
+GET "https://{{baseUrl}}/category.count.json"
+? "parent_id"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+
+
+// Get category info about category ID*** or specify other category ID.
+
+@name("Get Category Info")
+GET "https://{{baseUrl}}/category.info.json"
+? "id"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+
+
+// Search category in store. "Laptop" is specified here by default.
+
+@name("Get Category Find")
+GET "https://{{baseUrl}}/category.find.json"
+? "find_value"= "<string>"
+? "find_where"= "<string>"
+? "find_params"= "<string>"
+
+
+// Add new category in store
+
+@name("Post Category Add")
+POST "https://{{baseUrl}}/category.add.json"
+? "name"= "<string>"
+? "parent_id"= "<string>"
+? "stores_ids"= "<array>"
+? "store_id"= "<string>"
+? "avail"= "<boolean>"
+? "sort_order"= "<integer>"
+? "created_time"= "<>"
+? "modified_time"= "<>"
+? "description"= "<string>"
+? "meta_title"= "<string>"
+? "meta_description"= "<string>"
+? "meta_keywords"= "<string>"
+? "seo_url"= "<string>"
+
+
+// Update category in store
+
+@name("Put Category Update")
+PUT "https://{{baseUrl}}/category.update.json"
+? "id"= "<integer>"
+? "name"= "<string>"
+? "parent_id"= "<string>"
+? "stores_ids"= "<array>"
+? "avail"= "<boolean>"
+? "sort_order"= "<integer>"
+? "modified_time"= "<>"
+? "description"= "<string>"
+? "meta_title"= "<string>"
+? "meta_description"= "<string>"
+? "meta_keywords"= "<string>"
+? "seo_url"= "<string>"
+
+
+// Delete category in store
+
+@name("Delete Category Delete")
+DELETE "https://{{baseUrl}}/category.delete.json"
+? "id"= "<integer>"
+
+
+// Assign category to product
+
+@name("Post Category Assign")
+POST "https://{{baseUrl}}/category.assign.json"
+? "product_id"= "<string>"
+? "category_id"= "<string>"
+
+
+// Unassign category to product
+
+@name("Post Category Unassign")
+POST "https://{{baseUrl}}/category.unassign.json"
+? "category_id"= "<string>"
+? "product_id"= "<string>"
+
+
+// Add image to category
+
+@name("Post Category Image Add")
+POST "https://{{baseUrl}}/category.image.add.json"
+? "category_id"= "<string>"
+? "image_name"= "<string>"
+? "url"= "<string>"
+? "label"= "<string>"
+? "mime"= "<string>"
+? "type"= "<string>"
+? "position"= "<integer>"
+? "store_id"= "<string>"
+
+
+// Delete image
+
+@name("Delete Category Image Delete")
+DELETE "https://{{baseUrl}}/category.image.delete.json"
+? "category_id"= "<string>"
+? "image_id"= "<string>"
+? "store_id"= "<string>"
+
+
+// Count orders in store
+
+@name("Get Order Count")
+GET "https://{{baseUrl}}/order.count.json"
+? "customer_id"= "<string>"
+? "customer_email"= "<string>"
+? "order_status"= "<object>"
+? "created_to"= "<string>"
+? "created_from"= "<string>"
+? "modified_to"= "<string>"
+? "modified_from"= "<string>"
+? "store_id"= "<string>"
+? "ids"= "<string>"
+? "order_ids"= "<string>"
+? "financial_status"= "<string>"
+? "fulfillment_status"= "<string>"
+? "shipping_method"= "<>"
+
+
+// Get list of orders from store. Returns 4 orders by default.
+
+@name("Get Order List")
+GET "https://{{baseUrl}}/order.list.json"
+? "customer_id"= "<string>"
+? "customer_email"= "<string>"
+? "order_status"= "<object>"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "sort_by"= "<string>"
+? "sort_direction"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "created_to"= "<string>"
+? "created_from"= "<string>"
+? "modified_to"= "<string>"
+? "modified_from"= "<string>"
+? "store_id"= "<string>"
+? "ids"= "<string>"
+? "order_ids"= "<string>"
+? "basket_id"= "<string>"
+? "financial_status"= "<string>"
+? "fulfillment_status"= "<string>"
+? "shipping_method"= "<>"
+? "skip_order_ids"= "<string>"
+
+
+// Info about a specific order by ID
+
+@name("Get Order Info")
+GET "https://{{baseUrl}}/order.info.json"
+? "order_id"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "store_id"= "<string>"
+
+
+// Find orders
+
+@name("Get Order Find")
+GET "https://{{baseUrl}}/order.find.json"
+? "customer_id"= "<string>"
+? "customer_email"= "<string>"
+? "order_status"= "<object>"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "created_to"= "<string>"
+? "created_from"= "<string>"
+? "modified_to"= "<string>"
+? "modified_from"= "<string>"
+? "financial_status"= "<string>"
+
+
+// Add a new order to the cart.
+
+@name("Post Order Add")
+POST "https://{{baseUrl}}/order.add.json"
+
+
+// Update existing order.
+
+@name("Put Order Update")
+PUT "https://{{baseUrl}}/order.update.json"
+? "order_id"= "<string>"
+? "store_id"= "<string>"
+? "order_status"= "<object>"
+? "comment"= "<string>"
+? "date_modified"= "<string>"
+? "date_finished"= "<string>"
+? "financial_status"= "<string>"
+? "order_payment_method"= "<string>"
+? "send_notifications"= "<boolean>"
+
+
+// Retrieve list of statuses
+
+@name("Get Order Status List")
+GET "https://{{baseUrl}}/order.status.list.json"
+
+
+// Retrieve list of financial statuses
+
+@name("Get Order Financial Status List")
+GET "https://{{baseUrl}}/order.financial_status.list.json"
+
+
+// Get list of orders that were left by customers before completing the order.
+
+@name("Get Order Abandoned List")
+GET "https://{{baseUrl}}/order.abandoned.list.json"
+? "store_id"= "<string>"
+? "customer_id"= "<string>"
+? "customer_email"= "<string>"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "created_to"= "<string>"
+? "created_from"= "<string>"
+? "modified_to"= "<string>"
+? "modified_from"= "<string>"
+? "skip_empty_email"= "<boolean>"
+
+
+// Get list of shipments by orders.
+
+@name("Get Order Shipment List")
+GET "https://{{baseUrl}}/order.shipment.list.json"
+? "order_id"= "<string>"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "store_id"= "<string>"
+
+
+// Add a shipment to the order.
+
+@name("Post Order Shipment Add")
+POST "https://{{baseUrl}}/order.shipment.add.json"
+
+
+// Update order's shipment information.
+
+@name("Put Order Shipment Update")
+PUT "https://{{baseUrl}}/order.shipment.update.json"
+
+
+// Add order shipment's tracking info.
+
+@name("Post Order Shipment Tracking Add")
+POST "https://{{baseUrl}}/order.shipment.tracking.add.json"
+
+
+// Add a refund to the order.
+
+@name("Post Order Refund Add")
+POST "https://{{baseUrl}}/order.refund.add.json"
+
+
+// Retrieve a list of live shipping rate services. (Beta)
+
+@name("Get Basket Live Shipping Service List")
+GET "https://{{baseUrl}}/basket.live_shipping_service.list.json"
+? "store_id"= "<string>"
+? "start"= "<integer>"
+? "count"= "<integer>"
+
+
+// Retrieve basket information.
+
+@name("Get Basket Info")
+GET "https://{{baseUrl}}/basket.info.json"
+? "id"= "<integer>"
+? "store_id"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+
+
+// Create live shipping rate service. (Beta)
+
+@name("Post Basket Live Shipping Service Create")
+POST "https://{{baseUrl}}/basket.live_shipping_service.create.json"
+? "store_id"= "<string>"
+? "name"= "<string>"
+? "callback"= "<string>"
+
+
+// Delete live shipping rate service. (Beta)
+
+@name("Delete Basket Live Shipping Service Delete")
+DELETE "https://{{baseUrl}}/basket.live_shipping_service.delete.json"
+? "id"= "<integer>"
+
+
+// Get list of customers from store.
+
+@name("Get Customer List")
+GET "https://{{baseUrl}}/customer.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "modified_from"= "<string>"
+? "modified_to"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "group_id"= "<string>"
+? "store_id"= "<string>"
+? "customer_list_id"= "<string>"
+
+
+// Get number of customers from store.
+
+@name("Get Customer Count")
+GET "https://{{baseUrl}}/customer.count.json"
+? "group_id"= "<string>"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "modified_from"= "<string>"
+? "modified_to"= "<string>"
+? "store_id"= "<string>"
+? "customer_list_id"= "<string>"
+
+
+// Get customers' details from store.
+
+@name("Get Customer Info")
+GET "https://{{baseUrl}}/customer.info.json"
+? "id"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "store_id"= "<string>"
+
+
+// Find customers in store.
+
+@name("Get Customer Find")
+GET "https://{{baseUrl}}/customer.find.json"
+? "find_value"= "<string>"
+? "find_where"= "<string>"
+? "find_params"= "<string>"
+? "store_id"= "<string>"
+
+
+// Add customer into store.
+
+@name("Post Customer Add")
+POST "https://{{baseUrl}}/customer.add.json"
+
+
+// Get attributes list
+
+@name("Get Attribute List")
+GET "https://{{baseUrl}}/attribute.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "type"= "<string>"
+? "attribute_ids"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "visible"= "<boolean>"
+? "required"= "<boolean>"
+? "system"= "<boolean>"
+
+
+// Get attribute info
+
+@name("Get Attribute Info")
+GET "https://{{baseUrl}}/attribute.info.json"
+? "id"= "<integer>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+
+
+// Get attributes count
+
+@name("Get Attribute Count")
+GET "https://{{baseUrl}}/attribute.count.json"
+? "type"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "visible"= "<boolean>"
+? "required"= "<boolean>"
+
+
+// Get list of supported attributes types
+
+@name("Get Attribute Type List")
+GET "https://{{baseUrl}}/attribute.type.list.json"
+
+
+// Delete attribute from store
+
+@name("Delete Attribute Delete")
+DELETE "https://{{baseUrl}}/attribute.delete.json"
+? "store_id"= "<string>"
+? "id"= "<integer>"
+
+
+// Add new attribute
+
+@name("Post Attribute Add")
+POST "https://{{baseUrl}}/attribute.add.json"
+? "type"= "<string>"
+? "name"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "visible"= "<boolean>"
+? "required"= "<boolean>"
+? "position"= "<integer>"
+? "is_global"= "<string>"
+? "is_searchable"= "<boolean>"
+? "is_filterable"= "<string>"
+? "is_comparable"= "<boolean>"
+? "is_html_allowed_on_front"= "<boolean>"
+? "is_filterable_in_search"= "<boolean>"
+? "is_configurable"= "<boolean>"
+? "is_visible_in_advanced_search"= "<boolean>"
+? "is_used_for_promo_rules"= "<boolean>"
+? "used_in_product_listing"= "<boolean>"
+? "used_for_sort_by"= "<boolean>"
+? "apply_to"= "<string>"
+
+
+// Assign attribute to the group
+
+@name("Post Attribute Assign Group")
+POST "https://{{baseUrl}}/attribute.assign.group.json"
+? "id"= "<integer>"
+? "group_id"= "<string>"
+? "attribute_set_id"= "<string>"
+
+
+// Assign attribute to the attribute set
+
+@name("Post Attribute Assign Set")
+POST "https://{{baseUrl}}/attribute.assign.set.json"
+? "id"= "<integer>"
+? "group_id"= "<string>"
+? "attribute_set_id"= "<string>"
+
+
+// Unassign attribute from group
+
+@name("Post Attribute Unassign Group")
+POST "https://{{baseUrl}}/attribute.unassign.group.json"
+? "id"= "<integer>"
+? "group_id"= "<string>"
+
+
+// Unassign attribute from attribute set
+
+@name("Post Attribute Unassign Set")
+POST "https://{{baseUrl}}/attribute.unassign.set.json"
+? "id"= "<integer>"
+? "attribute_set_id"= "<string>"
+
+
+// Get attribute group list
+
+@name("Get Attribute Group List")
+GET "https://{{baseUrl}}/attribute.group.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "attribute_set_id"= "<string>"
+
+
+// Get attribute_set list
+
+@name("Get Attribute Attributeset List")
+GET "https://{{baseUrl}}/attribute.attributeset.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+
+
+// Get list of attributes.
+
+@name("Get Product Attribute List")
+GET "https://{{baseUrl}}/product.attribute.list.json"
+? "product_id"= "<string>"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "sort_by"= "<string>"
+? "sort_direction"= "<string>"
+? "lang_id"= "<string>"
+? "store_id"= "<string>"
+? "attribute_id"= "<string>"
+? "attribute_group_id"= "<string>"
+? "set_name"= "<string>"
+
+
+// Set attribute value to product.
+
+@name("Post Product Attribute Value Set")
+POST "https://{{baseUrl}}/product.attribute.value.set.json"
+? "product_id"= "<string>"
+? "attribute_id"= "<string>"
+? "attribute_group_id"= "<string>"
+? "attribute_name"= "<string>"
+? "value"= "<string>"
+? "value_id"= "<string>"
+? "lang_id"= "<string>"
+? "store_id"= "<string>"
+
+
+// Add product option from store.
+
+@name("Post Product Option Add")
+POST "https://{{baseUrl}}/product.option.add.json"
+? "name"= "<string>"
+? "type"= "<string>"
+? "product_id"= "<string>"
+? "option_values"= "<string>"
+? "description"= "<string>"
+? "avail"= "<boolean>"
+? "sort_order"= "<integer>"
+? "required"= "<boolean>"
+
+
+// Get list of options.
+
+@name("Get Product Option List")
+GET "https://{{baseUrl}}/product.option.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "product_id"= "<string>"
+? "lang_id"= "<string>"
+? "store_id"= "<string>"
+
+
+// Assign option from product.
+
+@name("Post Product Option Assign")
+POST "https://{{baseUrl}}/product.option.assign.json"
+? "product_id"= "<string>"
+? "option_id"= "<string>"
+
+
+// Add product option item from option.
+
+@name("Post Product Option Value Add")
+POST "https://{{baseUrl}}/product.option.value.add.json"
+? "option_id"= "<string>"
+? "option_value"= "<string>"
+? "sort_order"= "<integer>"
+
+
+// Assign product option item from product.
+
+@name("Post Product Option Value Assign")
+POST "https://{{baseUrl}}/product.option.value.assign.json"
+? "product_option_id"= "<string>"
+? "option_value_id"= "<integer>"
+
+
+// Update product option item from option.
+
+@name("Put Product Option Value Update")
+PUT "https://{{baseUrl}}/product.option.value.update.json"
+? "option_value_id"= "<integer>"
+? "price"= "<number>"
+? "quantity"= "<number>"
+
+
+// Get reviews of a specific product.
+
+@name("Get Product Review List")
+GET "https://{{baseUrl}}/product.review.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "product_id"= "<string>"
+? "ids"= "<string>"
+? "store_id"= "<string>"
+? "status"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+
+
+// Add variant to product.
+
+@name("Post Product Variant Add")
+POST "https://{{baseUrl}}/product.variant.add.json"
+? "product_id"= "<string>"
+? "name"= "<string>"
+? "model"= "<string>"
+? "price"= "<number>"
+? "attributes"= "<array>"
+? "description"= "<string>"
+? "special_price"= "<object>"
+? "sprice_create"= "<string>"
+? "sprice_modified"= "<string>"
+? "sprice_expire"= "<string>"
+? "available_for_view"= "<boolean>"
+? "available_for_sale"= "<boolean>"
+? "weight"= "<number>"
+? "short_description"= "<string>"
+? "warehouse_id"= "<string>"
+? "quantity"= "<number>"
+? "created_at"= "<string>"
+? "manufacturer"= "<string>"
+? "tax_class_id"= "<string>"
+? "meta_title"= "<string>"
+? "meta_keywords"= "<string>"
+? "meta_description"= "<string>"
+? "url"= "<string>"
+? "store_id"= "<string>"
+
+
+// Get child for specific product.
+
+@name("Get Product Child Item Info")
+GET "https://{{baseUrl}}/product.child_item.info.json"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "product_id"= "<string>"
+? "id"= "<integer>"
+? "store_id"= "<string>"
+
+
+// Get child items list of specific product(s).
+
+@name("Get Product Child Item List")
+GET "https://{{baseUrl}}/product.child_item.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "modified_from"= "<string>"
+? "modified_to"= "<string>"
+? "product_id"= "<string>"
+? "product_ids"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "currency_id"= "<string>"
+? "avail_sale"= "<boolean>"
+? "report_request_id"= "<string>"
+? "disable_report_cache"= "<boolean>"
+
+
+// Search product child item (bundled item or configurable product variant) in store catalog.
+
+@name("Get Product Child Item Find")
+GET "https://{{baseUrl}}/product.child_item.find.json"
+? "find_value"= "<string>"
+? "find_where"= "<string>"
+? "find_params"= "<string>"
+? "store_id"= "<string>"
+
+
+// Get list variants.
+
+@name("Get Product Variant List")
+GET "https://{{baseUrl}}/product.variant.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "modified_from"= "<string>"
+? "modified_to"= "<string>"
+? "category_id"= "<string>"
+? "product_id"= "<string>"
+? "store_id"= "<string>"
+
+
+// Get variant info.
+
+@name("Get Product Variant Info")
+GET "https://{{baseUrl}}/product.variant.info.json"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "id"= "<integer>"
+? "store_id"= "<string>"
+
+
+// Get count variants.
+
+@name("Get Product Variant Count")
+GET "https://{{baseUrl}}/product.variant.count.json"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "modified_from"= "<string>"
+? "modified_to"= "<string>"
+? "category_id"= "<string>"
+? "product_id"= "<string>"
+? "store_id"= "<string>"
+
+
+// Update variant.
+
+@name("Put Product Variant Update")
+PUT "https://{{baseUrl}}/product.variant.update.json"
+? "store_id"= "<string>"
+? "id"= "<integer>"
+? "product_id"= "<string>"
+? "warehouse_id"= "<string>"
+? "reserve_quantity"= "<number>"
+? "quantity"= "<number>"
+? "increase_quantity"= "<number>"
+? "reduce_quantity"= "<number>"
+? "price"= "<number>"
+? "special_price"= "<object>"
+? "sprice_create"= "<string>"
+? "sprice_expire"= "<string>"
+? "manage_stock"= "<string>"
+? "in_stock"= "<boolean>"
+? "name"= "<string>"
+? "description"= "<string>"
+? "sku"= "<string>"
+? "meta_title"= "<string>"
+? "meta_description"= "<string>"
+? "meta_keywords"= "<string>"
+? "short_description"= "<string>"
+? "visible"= "<boolean>"
+? "status"= "<string>"
+? "weight"= "<number>"
+
+
+// Delete variant.
+
+@name("Delete Product Variant Delete")
+DELETE "https://{{baseUrl}}/product.variant.delete.json"
+? "id"= "<integer>"
+? "product_id"= "<string>"
+
+
+// Add some prices to the product variant.
+
+@name("Post Product Variant Price Add")
+POST "https://{{baseUrl}}/product.variant.price.add.json"
+
+
+// Update some prices of the product variant.
+
+@name("Put Product Variant Price Update")
+PUT "https://{{baseUrl}}/product.variant.price.update.json"
+
+
+// Delete some prices of the product variant.
+
+@name("Delete Product Variant Price Delete")
+DELETE "https://{{baseUrl}}/product.variant.price.delete.json"
+? "id"= "<integer>"
+? "group_prices"= "<array>"
+
+
+// Add tax class and tax rate to store and assign to product.
+
+@name("Post Product Tax Add")
+POST "https://{{baseUrl}}/product.tax.add.json"
+
+
+// Add manufacturer to store and assign to product
+
+@name("Post Product Manufacturer Add")
+POST "https://{{baseUrl}}/product.manufacturer.add.json"
+? "product_id"= "<string>"
+? "manufacturer"= "<string>"
+
+
+// Get list of brands from your store.
+
+@name("Get Product Brand List")
+GET "https://{{baseUrl}}/product.brand.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "brand_ids"= "<string>"
+? "exclude"= "<string>"
+? "store_id"= "<string>"
+? "lang_id"= "<string>"
+? "created_from"= "<string>"
+? "created_to"= "<string>"
+? "modified_from"= "<string>"
+? "modified_to"= "<string>"
+
+
+// Add currency and/or set default in store
+
+@name("Post Product Currency Add")
+POST "https://{{baseUrl}}/product.currency.add.json"
+? "iso3"= "<string>"
+? "rate"= "<number>"
+? "name"= "<string>"
+? "avail"= "<boolean>"
+? "symbol_left"= "<string>"
+? "symbol_right"= "<string>"
+? "default"= "<boolean>"
+
+
+// Get list of currencies
+
+@name("Get Product Currency List")
+GET "https://{{baseUrl}}/product.currency.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+? "default"= "<boolean>"
+? "avail"= "<boolean>"
+
+
+// Assign product to store
+
+@name("Post Product Store Assign")
+POST "https://{{baseUrl}}/product.store.assign.json"
+? "product_id"= "<string>"
+? "store_id"= "<string>"
+
+
+// Get info about tax
+
+@name("Get Tax Class Info")
+GET "https://{{baseUrl}}/tax.class.info.json"
+? "tax_class_id"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+
+
+// Add item to basket
+
+@name("Post Basket Item Add")
+POST "https://{{baseUrl}}/basket.item.add.json"
+? "customer_id"= "<string>"
+? "product_id"= "<string>"
+? "variant_id"= "<string>"
+? "quantity"= "<number>"
+? "store_id"= "<string>"
+
+
+// Get subscribers list
+
+@name("Get Subscriber List")
+GET "https://{{baseUrl}}/subscriber.list.json"
+? "start"= "<integer>"
+? "count"= "<integer>"
+? "subscribed"= "<boolean>"
+? "store_id"= "<string>"
+? "email"= "<string>"
+? "params"= "<string>"
+? "exclude"= "<string>"
+
+
+// Download bridge for store
+
+@name("Get Bridge Download")
+GET "https://{{baseUrl}}/bridge.download.json"
+
+
+

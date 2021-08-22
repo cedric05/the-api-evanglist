@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// All new and updated shows from requested date and time.  When a record gets updated, use the ID to get the full show object and replace the data in your cache.
+
+@name("Returns list of unique ShowId changes greater than or equal to date (UTC).")
+GET "https://{{baseUrl}}/Changes/Shows/History/"
+? "Date"= "<get>"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Returns a list of ShowId and entity of any show that has been updated.
+
+@name("Returns list of unique ShowId and Entity changes greater than or equal to date (UTC).")
+GET "https://{{baseUrl}}/Changes/Shows/HistoryWithEntity/"
+? "Date"= "<get>"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Gets the Object Lock configuration for a bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see Locking Objects. 
+
+@name("Object Lock Configuration")
+GET "https://s3.amazonaws.com/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "object-lock"= ""
+
+
+// Gets the Object Lock configuration for a bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see Locking Objects. 
+
+@name("Object Lock Configuration Copy")
+PUT "https://s3.amazonaws.com/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "object-lock"= ""
+
+
+

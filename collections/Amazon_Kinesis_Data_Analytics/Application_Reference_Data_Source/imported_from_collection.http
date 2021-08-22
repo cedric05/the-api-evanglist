@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0b8cbe34-0af1-44a6-992a-ffe13940e455.postman_collection.json
+
+@name("Add Application Reference Data Source")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "AddApplicationReferenceDataSource"
+data('{"ApplicationName":"string","CurrentApplicationVersionId":42,"ReferenceDataSource":{"ReferenceSchema":{"RecordColumns":[{"Mapping":"string","Name":"string","SqlType":"string"}],"RecordEncoding":"string","RecordFormat":{"MappingParameters":{"CSVMappingParameters":{"RecordColumnDelimiter":"string","RecordRowDelimiter":"string"},"JSONMappingParameters":{"RecordRowPath":"string"}},"RecordFormatType":"string"}},"S3ReferenceDataSource":{"BucketARN":"string","FileKey":"string","ReferenceRoleARN":"string"},"TableName":"string"}}')
+
+
+@name("Delete Application Reference Data Source")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "DeleteApplicationReferenceDataSource"
+data('{"ApplicationName":"string","CurrentApplicationVersionId":42,"ReferenceId":"string"}')
+
+
+

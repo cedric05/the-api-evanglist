@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9d35e865-46d6-4c1a-9a52-45849e1f2947.postman_collection.json
+
+// Returns a list of all phone numbers currently on your Flowroute account. The response includes details such as the phone number's rate center, state, number type, and whether CNAM Lookup is enabled for that number.
+
+@name("Account Phone Numbers")
+GET "https://{{baseUrl}}/v2/numbers"
+? "starts_with"= "<>"
+? "ends_with"= "<>"
+? "contains"= "<>"
+? "limit"= "<>"
+? "offset"= "<>"
+
+
+// Lists all of the information associated with any of the phone numbers in your account, including billing method, primary voice route, and failover voice route.
+
+@name("Phone Number Details")
+GET "https://{{baseUrl}}/v2/numbers/:id"
+
+
+

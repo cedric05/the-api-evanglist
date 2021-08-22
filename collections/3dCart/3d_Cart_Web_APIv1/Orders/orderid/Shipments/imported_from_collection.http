@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+@name("Gets the shipments from a specific Order")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Orders/:orderid/Shipments"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+
+
+@name("Updates a specific shipment from a specific Order")
+PUT "https://{{baseUrl}}/3dCartWebAPI/v1/Orders/:orderid/Shipments/:shipmentid"
+
+
+

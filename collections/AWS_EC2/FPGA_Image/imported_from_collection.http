@@ -1,0 +1,58 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Copies the specified Amazon FPGA Image (AFI) to the current Region.
+
+@name("Copy FPGA Image")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "Description"= ""
+? "DryRun"= ""
+? "Name"= ""
+? "SourceFpgaImageId"= ""
+? "SourceRegion"= ""
+? "Action"= "CopyFpgaImage"
+
+
+// Creates an Amazon FPGA Image (AFI) from the specified design checkpoint (DCP).
+
+@name("Create FPGA Image")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "Description"= ""
+? "DryRun"= ""
+? "InputStorageLocation"= ""
+? "LogsStorageLocation"= ""
+? "Name"= ""
+? "TagSpecification.N"= ""
+? "Action"= "CreateFpgaImage"
+
+
+// Deletes the specified Amazon FPGA Image (AFI).
+
+@name("Delete FPGA Image")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "FpgaImageId"= ""
+? "Action"= "DeleteFpgaImage"
+
+
+// Describes the Amazon FPGA Images (AFIs) available to you.
+
+@name("Describe FPGA Images")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "FpgaImageId.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Owner.N"= ""
+? "Action"= "DescribeFpgaImages"
+
+
+

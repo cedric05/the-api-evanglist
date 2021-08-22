@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2f393c49-f959-4f18-bf04-79f6c8910daa.postman_collection.json
+
+@name("Delete Identities")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.DeleteIdentities"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "DeleteIdentities"
+data('{
+   "IdentityIdsToDelete": [ "string" ]
+}')
+
+
+@name("List Identities")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.ListIdentities"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "ListIdentities"
+data('{
+    "IdentityPoolId": "us-east-1:509f9747-5b5d-484e-a2d7-74fcba108147",
+    "MaxResults": 10
+}')
+
+
+

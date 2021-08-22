@@ -1,0 +1,101 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8ac21e87-05aa-47ce-95fc-4c15e631b3da.postman_collection.json
+
+// Query to get BlockCount on a channel
+
+@name("Query to get BlockCount on a channel")
+GET "https://{{baseUrl}}/status/:channelName"
+
+
+// get Current channel
+
+@name("get Current channel")
+GET "https://{{baseUrl}}/curChannel"
+
+
+// Query to get Change Channel on a channel
+
+@name("Query to get Change Channel on a channel")
+GET "https://{{baseUrl}}/changeChannel/:channelName"
+
+
+// Query to fetch all Installed/instantiated chaincodes
+
+@name("Query to fetch all Installed/instantiated chaincodes")
+GET "https://{{baseUrl}}/chaincode/:channelName"
+
+
+// Create New channel on target peers
+
+@name("Create New channel on target peers  ")
+POST "https://{{baseUrl}}/channel"
+
+
+// join  channel 
+
+@name("join channel ")
+POST "https://{{baseUrl}}/joinChannel"
+
+
+// Query to Get Transaction by Txid
+
+@name("Query to Get Transaction by Txid")
+GET "https://{{baseUrl}}/transaction/:channelName/:txid"
+
+
+// Query to Get Trasaction List
+
+@name("Query to Get Trasaction List")
+GET "https://{{baseUrl}}/txList/:channelName/:number/:txid"
+
+
+// Peers
+
+@name("Peers")
+GET "https://{{baseUrl}}/peers/:channelName"
+
+
+// Query Get PeersStatus
+
+@name("Query Get PeersStatus")
+GET "https://{{baseUrl}}/peersStatus/:channelName"
+
+
+// Query to Get Block And Transaction List
+
+@name("Query to Get Block And Transaction List")
+GET "https://{{baseUrl}}/blockAndTxList/:channelName/:number"
+
+
+// Query to Get Trasaction By Minute
+
+@name("Query to Get Trasaction BY Minute")
+GET "https://{{baseUrl}}/txByMinute/:channelName/:hours"
+
+
+// Queryto  Get Trasaction BY Hour
+
+@name("Query to Get Trasaction By Hour")
+GET "https://{{baseUrl}}/txByHour/:channelName/:days"
+
+
+// Query to Get Blocks By Minute
+
+@name("Query to Get Blocks BY Minute")
+GET "https://{{baseUrl}}/blocksByMinute/:channelName/:hours"
+
+
+// Query to Get Blocks By Hour
+
+@name("Query to Get Blocks By Hour")
+GET "https://{{baseUrl}}/blocksByHour/:channelName/:days"
+
+
+// Query Get Trasaction BY Org
+
+@name("Query Get Trasaction By Org")
+GET "https://{{baseUrl}}/txByOrg/:channelName"
+
+
+

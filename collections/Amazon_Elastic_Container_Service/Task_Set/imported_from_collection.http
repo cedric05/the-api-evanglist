@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d0c02c05-054f-4e33-83bf-1c03a8c9a69e.postman_collection.json
+
+@name("Create Task Set")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.CreateTaskSet"
+? "Action"= "CreateTaskSet"
+data('{"clientToken":"string","cluster":"string","externalId":"string","launchType":"string","loadBalancers":[{"containerName":"string","containerPort":42,"loadBalancerName":"string","targetGroupArn":"string"}],"networkConfiguration":{"awsvpcConfiguration":{"assignPublicIp":"string","securityGroups":["string"],"subnets":["string"]}},"platformVersion":"string","scale":{"unit":"string","value":42},"service":"string","serviceRegistries":[{"containerName":"string","containerPort":42,"port":42,"registryArn":"string"}],"taskDefinition":"string"}')
+
+
+@name("Delete Task Set")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.DeleteTaskSet"
+? "Action"= "DeleteTaskSet"
+data('{"cluster":"string","force":1,"service":"string","taskSet":"string"}')
+
+
+@name("Describe Task Sets")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.DescribeTaskSets"
+? "Action"= "DescribeTaskSets"
+data('{"cluster":"string","service":"string","taskSets":["string"]}')
+
+
+@name("Update Task Set")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.UpdateTaskSet"
+? "Action"= "UpdateTaskSet"
+data('{"cluster":"string","scale":{"unit":"string","value":42},"service":"string","taskSet":"string"}')
+
+
+

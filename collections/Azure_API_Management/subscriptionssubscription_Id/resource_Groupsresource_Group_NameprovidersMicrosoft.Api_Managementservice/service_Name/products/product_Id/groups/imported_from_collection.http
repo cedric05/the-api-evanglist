@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Lists the collection of developer groups associated with the specified product.
+
+@name("ProductGroups ListByProducts")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/products/:productId/groups"
+? "$filter"= "<>"
+
+
+// Adds the association between the specified developer group with the specified product.
+
+@name("ProductGroups Create")
+PUT "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/products/:productId/groups/:groupId"
+
+
+

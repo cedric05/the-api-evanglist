@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all OrderStatus
+
+@name("Get all OrderStatus")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/OrderStatus"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+
+
+// Get an OrderStatus
+
+@name("Get an OrderStatus")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/OrderStatus/:id"
+
+
+

@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9578ff80-ee49-47b6-90ea-3cb100ff29d7.postman_collection.json
+
+// Returns all current status data of the node, e.g. height and broadhash.
+
+@name("Requests status data")
+GET "https://{{baseUrl}}/node/status"
+
+
+// *Attention! This is a **private endpoint only authorized to whitelisted IPs.**
+// To edit the whitelist, please edit the `forging.access.whitelist` section in `config.json`*<br>
+// Responds with the forging status of a delegate on a node.
+
+@name("Requests forging status of a delegate")
+GET "https://{{baseUrl}}/node/status/forging"
+? "publicKey"= "<x-swagger-pipe>"
+
+
+

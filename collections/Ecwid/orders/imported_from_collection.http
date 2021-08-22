@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Search orders by keywords.
+
+@name("Search orders by keywords")
+GET "https://{{baseUrl}}/orders"
+"Content": "<>"
+? "keywords"= "<>"
+? "token"= "<>"
+
+
+// Get deleted orders.
+
+@name("Get deleted orders")
+GET "https://{{baseUrl}}/orders/deleted"
+"Content": "<>"
+? "token"= "<>"
+
+
+

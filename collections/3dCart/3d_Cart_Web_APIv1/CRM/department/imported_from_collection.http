@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all CRM Departments
+
+@name("Get all CRM Departments")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/CRM/department"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+
+
+@name("This method is used to update a single CRM Department record in the database. The {id} parameter specifies which CRM Department record to update.")
+PUT "https://{{baseUrl}}/3dCartWebAPI/v1/CRM/department/:id"
+
+
+

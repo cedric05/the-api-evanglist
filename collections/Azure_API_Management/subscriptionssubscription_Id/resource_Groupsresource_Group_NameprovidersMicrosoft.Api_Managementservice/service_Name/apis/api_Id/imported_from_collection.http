@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Gets the details of the API specified by its identifier.
+
+@name("Apis Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/apis/:apiId"
+
+
+// Lists all API associated products.
+
+@name("ApiProducts ListByApis")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/apis/:apiId/products"
+? "$filter"= "<>"
+
+
+// Get the policy configuration at the API level.
+
+@name("ApiPolicy Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/apis/:apiId/policy"
+
+
+

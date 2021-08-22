@@ -1,0 +1,69 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c094246-719d-4054-bede-5834f64bb4b7.postman_collection.json
+
+@name("Allocate Private Virtual Interface")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "AllocatePrivateVirtualInterface"
+data('{
+   "connectionId": "string",
+   "newPrivateVirtualInterfaceAllocation": { 
+      "addressFamily": "string",
+      "amazonAddress": "string",
+      "asn": number,
+      "authKey": "string",
+      "customerAddress": "string",
+      "mtu": number,
+      "tags": [ 
+         { 
+            "key": "string",
+            "value": "string"
+         }
+      ],
+      "virtualInterfaceName": "string",
+      "vlan": number
+   },
+   "ownerAccount": "string"
+}')
+
+
+@name("Confirm Private Virtual Interface")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "ConfirmPrivateVirtualInterface"
+data('{
+   "directConnectGatewayId": "string",
+   "virtualGatewayId": "string",
+   "virtualInterfaceId": "string"
+}')
+
+
+@name("Create Private Virtual Interface")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "CreatePrivateVirtualInterface"
+data('{
+   "connectionId": "string",
+   "newPrivateVirtualInterface": { 
+      "addressFamily": "string",
+      "amazonAddress": "string",
+      "asn": number,
+      "authKey": "string",
+      "customerAddress": "string",
+      "directConnectGatewayId": "string",
+      "mtu": number,
+      "tags": [ 
+         { 
+            "key": "string",
+            "value": "string"
+         }
+      ],
+      "virtualGatewayId": "string",
+      "virtualInterfaceName": "string",
+      "vlan": number
+   }
+}')
+
+
+

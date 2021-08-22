@@ -1,0 +1,74 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5742bcb1-7df5-4c70-8656-2527a102ef1c.postman_collection.json
+
+// Creates a replication subnet group given a list of the subnet IDs in a VPC.
+
+@name("Create Replication Subnet Group")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.CreateReplicationSubnetGroup"
+? "Action"= "CreateReplicationSubnetGroup"
+data('{
+   "ReplicationSubnetGroupDescription": "string",
+   "ReplicationSubnetGroupIdentifier": "string",
+   "SubnetIds": [ "string" ],
+   "Tags": [ 
+      { 
+         "Key": "string",
+         "Value": "string"
+      }
+   ]
+}')
+
+
+// Deletes a subnet group.
+
+@name("Delete Replication Subnet Group")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DeleteReplicationSubnetGroup"
+? "Action"= "DeleteReplicationSubnetGroup"
+data('{
+   "ReplicationSubnetGroupIdentifier": "string"
+}')
+
+
+// Returns information about the replication subnet groups.
+
+@name("Describe Replication Subnet Groups")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DescribeReplicationSubnetGroups"
+? "Action"= "DescribeReplicationSubnetGroups"
+data('{
+   "Filters": [ 
+      { 
+         "Name": "string",
+         "Values": [ "string" ]
+      }
+   ],
+   "Marker": "string",
+   "MaxRecords": number
+}')
+
+
+// Modifies the settings for the specified replication subnet group.
+
+@name("Modify Replication Subnet Group")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.ModifyReplicationSubnetGroup"
+? "Action"= "ModifyReplicationSubnetGroup"
+data('{
+   "ReplicationSubnetGroupDescription": "string",
+   "ReplicationSubnetGroupIdentifier": "string",
+   "SubnetIds": [ "string" ]
+}')
+
+
+

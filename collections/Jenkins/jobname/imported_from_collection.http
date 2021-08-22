@@ -1,0 +1,57 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve job details
+
+@name("get Job")
+GET "https://{{baseUrl}}/job/:name/api/json"
+? "No Name"= "<string>"
+
+
+// Build a job
+
+@name("post Job Build")
+POST "https://{{baseUrl}}/job/:name/build"
+? "No Name"= "<string>"
+? "json"= "<string>"
+? "token"= "<string>"
+
+
+// Retrieve job configuration
+
+@name("get Job Config")
+GET "https://{{baseUrl}}/job/:name/config.xml"
+? "No Name"= "<string>"
+
+
+// Delete a job
+
+@name("post Job Delete")
+POST "https://{{baseUrl}}/job/:name/doDelete"
+? "No Name"= "<string>"
+
+
+// Disable a job
+
+@name("post Job Disable")
+POST "https://{{baseUrl}}/job/:name/disable"
+? "No Name"= "<string>"
+
+
+// Enable a job
+
+@name("post Job Enable")
+POST "https://{{baseUrl}}/job/:name/enable"
+? "No Name"= "<string>"
+
+
+// Retrieve job's build progressive text output
+
+@name("get Job Progressive Text")
+GET "https://{{baseUrl}}/job/:name/:number/logText/progressiveText"
+? "No Name"= "<string>"
+? "start"= "<boolean>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("get Self Applications App Id Vhosts")
+GET "https://{{baseUrl}}/self/applications/:appId/vhosts"
+
+
+@name("delete Self Applications App Id Vhosts Favourite")
+DELETE "https://{{baseUrl}}/self/applications/:appId/vhosts/favourite"
+
+
+@name("delete Self Applications App Id Vhosts Domain")
+DELETE "https://{{baseUrl}}/self/applications/:appId/vhosts/:domain"
+
+
+

@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve Jenkins headers
+
+@name("head Jenkins")
+HEAD "https://{{baseUrl}}/api/json"
+
+
+// Retrieve computer details
+
+@name("get Computer")
+GET "https://{{baseUrl}}/computer/api/json"
+? "depth"= "<string>"
+
+
+// Create a new job using job configuration, or copied from an existing job
+
+@name("post Create Item")
+POST "https://{{baseUrl}}/createItem"
+? "name"= "<string>"
+? "from"= "<string>"
+? "mode"= "<string>"
+? "No Name"= "<string>"
+
+
+// Create a new view using view configuration
+
+@name("post Create View")
+POST "https://{{baseUrl}}/createView"
+? "name"= "<string>"
+? "No Name"= "<string>"
+
+
+// Retrieve CSRF protection token
+
+@name("get Crumb")
+GET "https://{{baseUrl}}/crumbIssuer/api/json"
+
+
+

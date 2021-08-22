@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Adds a route to a network to a Client VPN endpoint.
+
+@name("Create Client VPN Route")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "ClientVpnEndpointId"= ""
+? "Description"= ""
+? "DestinationCidrBlock"= ""
+? "DryRun"= ""
+? "TargetVpcSubnetId"= ""
+? "Action"= "CreateClientVpnRoute"
+
+
+// Deletes a route from a Client VPN endpoint.
+
+@name("Delete Client VPN Route")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientVpnEndpointId"= ""
+? "DestinationCidrBlock"= ""
+? "DryRun"= ""
+? "TargetVpcSubnetId"= ""
+? "Action"= "DeleteClientVpnRoute"
+
+
+// Describes the routes for the specified Client VPN endpoint.
+
+@name("Describe Client VPN Routes")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientVpnEndpointId"= ""
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeClientVpnRoutes"
+
+
+

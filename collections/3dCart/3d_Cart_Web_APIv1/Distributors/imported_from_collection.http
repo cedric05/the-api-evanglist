@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get all Distributors
+
+@name("Get all Distributors")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Distributors"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "company"= "<string>"
+? "email"= "<string>"
+? "country"= "<string>"
+? "state"= "<string>"
+? "city"= "<string>"
+? "phone"= "<string>"
+? "countonly"= "<integer>"
+
+
+// Get a Distributor
+
+@name("Get a Distributor")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Distributors/:id"
+
+
+

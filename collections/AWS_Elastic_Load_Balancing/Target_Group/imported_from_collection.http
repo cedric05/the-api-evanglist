@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f36ec15d-77e5-4ff0-a015-df5de66428d7.postman_collection.json
+
+@name("Create Target Group")
+GET "https://{{aws_elastic_load_balancing_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_load_balancing_service}}", region="{{aws_elastic_load_balancing_region}}")
+? "HealthCheckEnabled"= ""
+? "HealthCheckIntervalSeconds"= ""
+? "HealthCheckPath"= ""
+? "HealthCheckPort"= ""
+? "HealthCheckProtocol"= ""
+? "HealthCheckTimeoutSeconds"= ""
+? "HealthyThresholdCount"= ""
+? "Matcher"= ""
+? "Name"= ""
+? "Port"= ""
+? "Protocol"= ""
+? "TargetType"= ""
+? "UnhealthyThresholdCount"= ""
+? "VpcId"= ""
+? "Action"= "CreateTargetGroup"
+
+
+@name("Delete Target Group")
+GET "https://{{aws_elastic_load_balancing_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_load_balancing_service}}", region="{{aws_elastic_load_balancing_region}}")
+? "TargetGroupArn"= ""
+? "Action"= "DeleteTargetGroup"
+
+
+@name("Describe Target Groups")
+GET "https://{{aws_elastic_load_balancing_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_load_balancing_service}}", region="{{aws_elastic_load_balancing_region}}")
+? "LoadBalancerArn"= ""
+? "Marker"= ""
+? "Names.member.N"= ""
+? "PageSize"= ""
+? "TargetGroupArns.member.N"= ""
+? "Action"= "DescribeTargetGroups"
+
+
+@name("Modify Target Group")
+GET "https://{{aws_elastic_load_balancing_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_load_balancing_service}}", region="{{aws_elastic_load_balancing_region}}")
+? "HealthCheckEnabled"= ""
+? "HealthCheckIntervalSeconds"= ""
+? "HealthCheckPath"= ""
+? "HealthCheckPort"= ""
+? "HealthCheckProtocol"= ""
+? "HealthCheckTimeoutSeconds"= ""
+? "HealthyThresholdCount"= ""
+? "Matcher"= ""
+? "TargetGroupArn"= ""
+? "UnhealthyThresholdCount"= ""
+? "Action"= "ModifyTargetGroup"
+
+
+

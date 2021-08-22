@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f36ec15d-77e5-4ff0-a015-df5de66428d7.postman_collection.json
+
+@name("Create Rule")
+GET "https://{{aws_elastic_load_balancing_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_load_balancing_service}}", region="{{aws_elastic_load_balancing_region}}")
+? "Actions.member.N"= ""
+? "Conditions.member.N"= ""
+? "ListenerArn"= ""
+? "Priority"= ""
+? "Action"= "CreateRule"
+
+
+@name("Delete Rule")
+GET "https://{{aws_elastic_load_balancing_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_load_balancing_service}}", region="{{aws_elastic_load_balancing_region}}")
+? "RuleArn"= ""
+? "Action"= "DeleteRule"
+
+
+@name("Describe Rules")
+GET "https://{{aws_elastic_load_balancing_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_load_balancing_service}}", region="{{aws_elastic_load_balancing_region}}")
+? "ListenerArn"= ""
+? "Marker"= ""
+? "PageSize"= ""
+? "RuleArns.member.N"= ""
+? "Action"= "DescribeRules"
+
+
+@name("Modify Rule")
+GET "https://{{aws_elastic_load_balancing_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_load_balancing_service}}", region="{{aws_elastic_load_balancing_region}}")
+? "Actions.member.N"= ""
+? "Conditions.member.N"= ""
+? "RuleArn"= ""
+? "Action"= "ModifyRule"
+
+
+

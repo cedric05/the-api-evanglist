@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Retrieve the list of event mappings for the draft physical interface.
+// Event mappings are keyed off of the event id specified in the MQTT topic
+// that the inbound events are published to.
+
+@name("Get the list of event mappings")
+GET "https://{{baseUrl}}/draft/physicalinterfaces/:physicalInterfaceId/events"
+
+
+// Removes the event mapping with the specified id from the draft physical
+// interface.
+
+@name("Remove an event mapping from the draft physical interface")
+DELETE "https://{{baseUrl}}/draft/physicalinterfaces/:physicalInterfaceId/events/:eventId"
+
+
+

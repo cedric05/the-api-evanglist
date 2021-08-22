@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0b8cbe34-0af1-44a6-992a-ffe13940e455.postman_collection.json
+
+@name("Discover Input Schema")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "DiscoverInputSchema"
+data('{"InputProcessingConfiguration":{"InputLambdaProcessor":{"ResourceARN":"string","RoleARN":"string"}},"InputStartingPositionConfiguration":{"InputStartingPosition":"string"},"ResourceARN":"string","RoleARN":"string","S3Configuration":{"BucketARN":"string","FileKey":"string","RoleARN":"string"}}')
+
+
+

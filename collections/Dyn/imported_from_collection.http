@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d28d1616-8b77-4b53-b06f-5498b00510bf.postman_collection.json
+
+// Returns total number of opens for the specified account for the specified date range. Including a date range is highly recommended.
+
+@name("Email Open Count")
+GET "https://{{baseUrl}}/opens/count"
+? "apikey"= "<>"
+? "emailaddress"= "<>"
+? "endtime"= "<>"
+? "sender"= "<>"
+? "starttime"= "<>"
+? "[X"= "<>"
+
+
+// Sending Email
+
+@name("Send Email")
+POST "https://{{baseUrl}}/send"
+? "apikey"= "<>"
+? "bcc"= "<>"
+? "bodyhtml"= "<>"
+? "bodytext"= "<>"
+? "cc"= "<>"
+? "comments"= "<>"
+? "from"= "<>"
+? "importance"= "<>"
+? "inreplyto"= "<>"
+? "keywords"= "<>"
+? "messageid"= "<>"
+? "priority"= "<>"
+? "references"= "<>"
+? "replyby"= "<>"
+? "replyto"= "<>"
+? "resent"= "<>"
+? "sender"= "<>"
+? "sensitivity"= "<>"
+? "subject"= "<>"
+? "to"= "<>"
+? "xheaders"= "<>"
+
+
+// Retrieving a list of custom X-header field names
+
+@name("Retrieving a list of custom X-header field names")
+GET "https://{{baseUrl}}/xheaders"
+? "apikey"= "<>"
+
+
+

@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Returns metadata of recording of a particular call. Metadata contains a link to a MP3 recording
+
+@name("Get call recording by id")
+GET "https://{{baseUrl}}/calls/recordings/:id"
+? "fields"= "<string>"
+
+
+// Returns an MP3 recording of particular call, response contains binary data, content type is 'audio/mpeg'
+
+@name("Get call recording in mp3 format")
+GET "https://{{baseUrl}}/calls/recordings/{{id}}.mp3"
+
+
+

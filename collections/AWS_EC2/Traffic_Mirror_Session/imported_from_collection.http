@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// .
+
+@name("Create Traffic Mirror Session")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "CreateTrafficMirrorSession"
+
+
+// .
+
+@name("Delete Traffic Mirror Session")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "DeleteTrafficMirrorSession"
+
+
+// .
+
+@name("Describe Traffic Mirror Sessions")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "DescribeTrafficMirrorSessions"
+
+
+// .
+
+@name("Modify Traffic Mirror Session")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "ModifyTrafficMirrorSession"
+
+
+

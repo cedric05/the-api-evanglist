@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2e2501d-8339-4a48-97c8-c5ab15e26155.postman_collection.json
+
+// Search for a location by geographic coordinate.
+
+@name("Search for a location by geographic coordinate.")
+GET "https://{{baseUrl}}/locations/search"
+? "distance"= "<integer>"
+? "facebook_places_id"= "<string>"
+? "foursquare_id"= "<string>"
+? "lat"= "<number>"
+? "lng"= "<number>"
+? "foursquare_v2_id"= "<string>"
+
+
+

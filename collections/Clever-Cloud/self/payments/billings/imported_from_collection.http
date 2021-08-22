@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("get Self Payments Billings")
+GET "https://{{baseUrl}}/self/payments/billings"
+
+
+@name("delete Self Payments Billings Bid")
+DELETE "https://{{baseUrl}}/self/payments/billings/:bid"
+
+
+@name("get Self Payments Billings Bid Pdf")
+GET "https://{{baseUrl}}/self/payments/billings/{{bid}}.pdf"
+? "token"= "<string>"
+
+
+

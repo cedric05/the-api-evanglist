@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Enables I/O operations for a volume that had I/O operations disabled because the data
+//                         on
+//                         the volume was potentially inconsistent.
+
+@name("Enable Volume IO")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VolumeId"= ""
+? "Action"= "EnableVolumeIO"
+
+
+

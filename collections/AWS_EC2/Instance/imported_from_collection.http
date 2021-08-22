@@ -1,0 +1,149 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Bundles an Amazon instance store-backed Windows instance.
+
+@name("Bundle Instance")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InstanceId"= ""
+? "Storage"= ""
+? "Action"= "BundleInstance"
+
+
+// Describes the specified instances or all of AWS account's instances.
+
+@name("Describe Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "InstanceId.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeInstances"
+
+
+// Creates an import instance task using metadata from the specified disk image.
+
+@name("Import Instance")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Description"= ""
+? "DiskImage.N"= ""
+? "DryRun"= ""
+? "LaunchSpecification"= ""
+? "Platform"= ""
+? "Action"= "ImportInstance"
+
+
+// Enables detailed monitoring for a running instance.
+
+@name("Monitor Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InstanceId.N"= ""
+? "Action"= "MonitorInstances"
+
+
+// Requests a reboot of the specified instances.
+
+@name("Reboot Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InstanceId.N"= ""
+? "Action"= "RebootInstances"
+
+
+// Launches the specified number of instances using an AMI for which you have
+//                         permissions.
+
+@name("Run Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AdditionalInfo"= ""
+? "BlockDeviceMapping.N"= ""
+? "CapacityReservationSpecification"= ""
+? "ClientToken"= ""
+? "CpuOptions"= ""
+? "CreditSpecification"= ""
+? "DisableApiTermination"= ""
+? "DryRun"= ""
+? "EbsOptimized"= ""
+? "ElasticGpuSpecification.N"= ""
+? "ElasticInferenceAccelerator.N"= ""
+? "HibernationOptions"= ""
+? "IamInstanceProfile"= ""
+? "ImageId"= ""
+? "InstanceInitiatedShutdownBehavior"= ""
+? "InstanceMarketOptions"= ""
+? "InstanceType"= ""
+? "Ipv6Address.N"= ""
+? "Ipv6AddressCount"= ""
+? "KernelId"= ""
+? "KeyName"= ""
+? "LaunchTemplate"= ""
+? "LicenseSpecification.N"= ""
+? "MaxCount"= ""
+? "MinCount"= ""
+? "Monitoring"= ""
+? "NetworkInterface.N"= ""
+? "Placement"= ""
+? "PrivateIpAddress"= ""
+? "RamdiskId"= ""
+? "SecurityGroup.N"= ""
+? "SecurityGroupId.N"= ""
+? "SubnetId"= ""
+? "TagSpecification.N"= ""
+? "UserData"= ""
+? "Action"= "RunInstances"
+
+
+// Starts an Amazon EBS-backed instance that you've previously stopped.
+
+@name("Start Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AdditionalInfo"= ""
+? "DryRun"= ""
+? "InstanceId.N"= ""
+? "Action"= "StartInstances"
+
+
+// Stops an Amazon EBS-backed instance.
+
+@name("Stop Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Force"= ""
+? "Hibernate"= ""
+? "InstanceId.N"= ""
+? "Action"= "StopInstances"
+
+
+// Shuts down the specified instances.
+
+@name("Terminate Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InstanceId.N"= ""
+? "Action"= "TerminateInstances"
+
+
+// Disables detailed monitoring for a running instance.
+
+@name("Unmonitor Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InstanceId.N"= ""
+? "Action"= "UnmonitorInstances"
+
+
+

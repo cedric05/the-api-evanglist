@@ -1,0 +1,77 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Not accessible with a Demo account.  **Special permissions needed** for access to this operation.  Contact [Sales](mailto:sales@internetvideoarchive.com).
+
+@name("Returns list of all MovieId, Gracenote Id pairs.")
+GET "https://{{baseUrl}}/ExternalIds/GracenoteMovie"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Not accessible with a Demo account. **Special permissions needed** for access to this operation. Contact [Sales](mailto:sales@internetvideoarchive.com).
+
+@name("Returns list of all ShowId, Gracenote Id pairs.")
+GET "https://{{baseUrl}}/ExternalIds/GracenoteShow"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Ingest this ID map to create connections between the objects in your existing database with an IMDB ID to the IVA Movie objects.
+
+@name("Returns list of all MovieId, IMDB Id pairs.")
+GET "https://{{baseUrl}}/ExternalIds/ImdbMovie"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// ngest this ID map to create connections between the objects in your existing database with an IMDB ID to the IVA Show objects.
+
+@name("Returns list of all MovieId, Tmdb Id pairs.")
+GET "https://{{baseUrl}}/ExternalIds/ImdbShow"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Not accessible with a Demo account. **Special permissions needed** for access to this operation. Contact [Sales](mailto:sales@internetvideoarchive.com).
+
+@name("Returns list of all MovieId, Tivo Id pairs.")
+GET "https://{{baseUrl}}/ExternalIds/RoviMovie"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Not accessible with a Demo account. **Special permissions needed** for access to this operation. Contact [Sales](mailto:sales@internetvideoarchive.com).
+
+@name("Returns list of all ShowId, Tivo Id pairs.")
+GET "https://{{baseUrl}}/ExternalIds/RoviShow"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Use to link a TMDB ID to an IVA Movie ID.
+
+@name("Returns list of all MovieId, Tmdb Id pairs.")
+GET "https://{{baseUrl}}/ExternalIds/TmdbMovie"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Use to link a TMDB ID to an IVA Show ID.
+
+@name("Returns list of all ShowId, TMDB Id pairs.")
+GET "https://{{baseUrl}}/ExternalIds/TmdbShow"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Not accessible with a Demo account. **Special permissions needed** for access to this operation. Contact [Sales](mailto:sales@internetvideoarchive.com).
+
+@name("Returns list of all MovieId, Webedia Id pairs.")
+GET "https://{{baseUrl}}/ExternalIds/Webedia"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+

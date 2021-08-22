@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4bb333d4-b073-4693-b867-8852ccb0fdef.postman_collection.json
+
+// Deposit crypto currency into the bank.  In sandbox mode, the account used is the demo account on the blockchain server. 
+
+@name("Deposit into bank account")
+POST "https://{{baseUrl}}/ethbank/deposit"
+"ApiKey": "<>"
+
+
+// Withdraw crypto currency into the bank.  In sandbox mode, the account used is the demo account on the blockchain server. Of course, you can only withdraw if there is money in the account!
+
+@name("Withdraw from bank account")
+POST "https://{{baseUrl}}/ethbank/withdraw"
+"ApiKey": "<>"
+
+
+// Displays all transactions made by the user 
+
+@name("Bank passbook (user)")
+GET "https://{{baseUrl}}/ethbank/passbook"
+"ApiKey": "<>"
+
+
+// Displays user bank balance information
+
+@name("Bank balance (user)")
+GET "https://{{baseUrl}}/ethbank/balance"
+"ApiKey": "<>"
+
+
+

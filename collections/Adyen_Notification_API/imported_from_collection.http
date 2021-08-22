@@ -1,0 +1,89 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1062d59b-4412-4309-80ac-d9f42bba37f6.postman_collection.json
+
+// This notification is sent when an account has been closed.
+
+@name("Triggered upon the closure of an account.")
+POST "https://{{baseUrl}}/ACCOUNT_CLOSED"
+
+
+// This notification is sent when an account has been created.
+
+@name("Triggered upon the creation of an account.")
+POST "https://{{baseUrl}}/ACCOUNT_CREATED"
+
+
+// This notification is sent when an account holder has been created.
+
+@name("Triggered upon the creation of an account holder.")
+POST "https://{{baseUrl}}/ACCOUNT_HOLDER_CREATED"
+
+
+// This notification is sent when a payout request to an account holder has been processed and the payout has been scheduled.
+
+@name("Triggered upon a payout to an account holder.")
+POST "https://{{baseUrl}}/ACCOUNT_HOLDER_PAYOUT"
+
+
+// This notification is sent when the status of an account holder has been changed.
+
+@name("Triggered upon the status change of an account holder.")
+POST "https://{{baseUrl}}/ACCOUNT_HOLDER_STATUS_CHANGE"
+
+
+// This notification is sent when an account holder has been updated.
+
+@name("Triggered upon the update of an account holder.")
+POST "https://{{baseUrl}}/ACCOUNT_HOLDER_UPDATED"
+
+
+// This notification is sent when KYC Verification results are made available.
+
+@name("Triggered upon the receipt of KYC Verification results.")
+POST "https://{{baseUrl}}/ACCOUNT_HOLDER_VERIFICATION"
+
+
+// This notification is sent when an account has been updated.
+
+@name("Triggered upon the update of an account.")
+POST "https://{{baseUrl}}/ACCOUNT_UPDATED"
+
+
+// This notification is sent when a benefactor/beneficiary relationship between accounts has been set up.
+
+@name("Triggered upon the setup of a beneficiary.")
+POST "https://{{baseUrl}}/BENEFICIARY_SETUP"
+
+
+// This notification is sent when funds have been transferred from the Marketplace's liable account to an overdrawn account in order to compensate for the overdraft.
+
+@name("Triggered upon the compensation of negative account balances.")
+POST "https://{{baseUrl}}/COMPENSATE_NEGATIVE_BALANCE"
+
+
+// This notification is sent when a payment to an account has failed. In these cases, the funds which were meant for the account are redirected to the Marketplace's liable account.
+
+@name("Triggered upon an account payment failure.")
+POST "https://{{baseUrl}}/PAYMENT_FAILURE"
+
+
+// This notification is sent when a report has been made available.
+
+@name("Triggered when a report is made available.")
+POST "https://{{baseUrl}}/REPORT_AVAILABLE"
+
+
+// This notification is sent when a 'Refund Transfers Not Paid Out' call has been processed and the associated refunds have been scheduled.
+
+@name("Triggered upon the scheduling of refunds requested by a 'Refund Transfers Not Paid Out' call.")
+POST "https://{{baseUrl}}/SCHEDULED_REFUNDS"
+
+
+// This notification is sent when the funds from an account have been transferred to another account.
+
+@name("Triggered upon the transfer of funds between accounts.")
+POST "https://{{baseUrl}}/TRANSFER_FUNDS"
+
+
+

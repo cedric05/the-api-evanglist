@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve all branded links**
+// 
+// Email link branding allows all of the click-tracked links you send in your emails to include the URL of your domain instead of sendgrid.net.
+// 
+// For more information, please see our [User Guide](https://sendgrid.com/docs/API_Reference/Web_API_v3/Whitelabel/links.html).
+
+@name("Retrieve all branded links")
+GET "https://{{baseUrl}}/whitelabel/links"
+? "limit"= "<string>"
+
+
+// **This endpoint allows you to retrieve the default branded link.**
+// 
+// The default branded link is the actual URL to be used when sending messages. If there are multiple branded links, the default is determined by the following order:
+// 
+//   Validated branded links marked as "default"
+//   Legacy branded links (migrated from the whitelabel wizard)
+//   Default SendGrid branded links (i.e. 100.ct.sendgrid.net)
+// 
+// 
+// Email branded links allow all of the click-tracked links you s
+
+@name("Retrieve the default branded link")
+GET "https://{{baseUrl}}/whitelabel/links/default"
+? "domain"= "<string>"
+
+
+// **This endpoint allows you to disassociate a branded link from a subuser.**
+// 
+// Link branding can be associated with subusers from the parent account. This functionality allows
+// subusers to send mail using their parent's link branding. To associate link branding, the parent account
+// must first create a branded link and validate it. The parent may then associate that branded link with a subuser via the API or the Subuser Management page in the user interface.
+// 
+// Link branding allow all of the click-trac
+
+@name("Disassociate link branding from a subuser")
+DELETE "https://{{baseUrl}}/whitelabel/links/subuser"
+? "username"= "<string>"
+
+
+

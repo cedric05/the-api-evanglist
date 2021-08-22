@@ -1,0 +1,145 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5742bcb1-7df5-4c70-8656-2527a102ef1c.postman_collection.json
+
+// Creates a replication task using the specified parameters.
+
+@name("Create Replication Task")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.CreateReplicationTask"
+? "Action"= "CreateReplicationTask"
+data('{
+   "CdcStartPosition": "string",
+   "CdcStartTime": number,
+   "CdcStopPosition": "string",
+   "MigrationType": "string",
+   "ReplicationInstanceArn": "string",
+   "ReplicationTaskIdentifier": "string",
+   "ReplicationTaskSettings": "string",
+   "SourceEndpointArn": "string",
+   "TableMappings": "string",
+   "Tags": [ 
+      { 
+         "Key": "string",
+         "Value": "string"
+      }
+   ],
+   "TargetEndpointArn": "string"
+}')
+
+
+// Deletes the specified replication task.
+
+@name("Delete Replication Task")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101. DeleteReplicationTask"
+? "Action"= "DeleteReplicationTask"
+data('{
+   "ReplicationTaskArn": "string"
+}')
+
+
+// Returns information about replication tasks for your account in the current region.
+
+@name("Describe Replication Tasks")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DescribeReplicationTasks"
+? "Action"= "DescribeReplicationTasks"
+data('{
+   "Filters": [ 
+      { 
+         "Name": "string",
+         "Values": [ "string" ]
+      }
+   ],
+   "Marker": "string",
+   "MaxRecords": number,
+   "WithoutSettings": boolean
+}')
+
+
+// Modifies the specified replication task.
+
+@name("Modify Replication Task")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.ModifyReplicationTask"
+? "Action"= "ModifyReplicationTask"
+data('{
+   "CdcStartPosition": "string",
+   "CdcStartTime": number,
+   "CdcStopPosition": "string",
+   "MigrationType": "string",
+   "ReplicationTaskArn": "string",
+   "ReplicationTaskIdentifier": "string",
+   "ReplicationTaskSettings": "string",
+   "TableMappings": "string"
+}')
+
+
+// Starts the replication task.
+
+@name("Start Replication Task")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.StartReplicationTask"
+? "Action"= "StartReplicationTask"
+data('{
+   "CdcStartPosition": "string",
+   "CdcStartTime": number,
+   "CdcStopPosition": "string",
+   "ReplicationTaskArn": "string",
+   "StartReplicationTaskType": "string"
+}')
+
+
+// Stops the replication task.
+
+@name("Stop Replication Task")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.StopReplicationTask"
+? "Action"= "StopReplicationTask"
+data('{
+   "ReplicationTaskArn": "string"
+}')
+
+
+// Starts the replication task assessment for unsupported data types in the source database.
+
+@name("Start Replication Task Assessment")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.StartReplicationTaskAssessment"
+? "Action"= "StartReplicationTaskAssessment"
+data('{
+   "ReplicationTaskArn": "string"
+}')
+
+
+// Returns the task assessment results from Amazon S3. This action always returns the latest results.
+
+@name("Describe Replication Task Assessment Results")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults"
+? "Action"= "DescribeReplicationTaskAssessmentResults"
+data('{
+   "Marker": "string",
+   "MaxRecords": number,
+   "ReplicationTaskArn": "string"
+}')
+
+
+

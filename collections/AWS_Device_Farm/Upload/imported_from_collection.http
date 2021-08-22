@@ -1,0 +1,58 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b8e673bd-409c-4ff2-af9c-bb3a976bd9dd.postman_collection.json
+
+@name("Create Upload")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "CreateUpload"
+data('{
+   "contentType": "string",
+   "name": "string",
+   "projectArn": "string",
+   "type": "string"
+}')
+
+
+@name("Delete Upload")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "DeleteUpload"
+data('{
+   "arn": "string"
+}')
+
+
+@name("Get Upload")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "GetUpload"
+data('{
+   "arn": "string"
+}')
+
+
+@name("List Uploads")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "ListUploads"
+data('{
+   "arn": "string",
+   "nextToken": "string",
+   "type": "string"
+}')
+
+
+@name("Update Upload")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "UpdateUpload"
+data('{
+   "arn": "string",
+   "contentType": "string",
+   "editContent": boolean,
+   "name": "string"
+}')
+
+
+

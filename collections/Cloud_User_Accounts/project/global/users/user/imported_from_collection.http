@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b3423fc1-6423-4e31-9835-20949e4088f7.postman_collection.json
+
+// Deletes the specified User resource.
+
+@name("Delete User")
+DELETE "https://{{baseUrl}}/:project/global/users/:user"
+
+
+// Adds a public key to the specified User resource with the data included in the request.
+
+@name("Add Public Key")
+POST "https://{{baseUrl}}/:project/global/users/:user/addPublicKey"
+
+
+// Removes the specified public key from the user.
+
+@name("Remove Public Key")
+POST "https://{{baseUrl}}/:project/global/users/:user/removePublicKey"
+? "fingerprint"= "<post>"
+
+
+

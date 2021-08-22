@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to set up reverse DNS.**
+// 
+// When setting up reverse DNS, use the same subdomain that you used when you authenticated your domain.
+// 
+// Reverse DNS consists of a subdomain and domain that will be used to generate a reverse DNS record for a given IP. Once SendGrid has verified that the appropriate A record for the IP has been created, the appropriate reverse DNS record for the IP is generated.
+// 
+// For more information, please see our [User Guide](https://sendgrid.com/docs/API_Ref
+
+@name("Set up reverse DNS")
+POST "https://{{baseUrl}}/whitelabel/ips"
+
+
+

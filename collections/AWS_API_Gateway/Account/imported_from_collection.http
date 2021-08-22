@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("Update Account")
+PATCH "https://{{aws_api_gateway_base_url}}/account"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Api Keys")
+GET "https://{{aws_api_gateway_base_url}}/apikeys&includeValues="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "includeValues"= ""
+
+
+@name("Client Certificates")
+GET "https://{{aws_api_gateway_base_url}}/clientcertificates"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Domain Names")
+GET "https://{{aws_api_gateway_base_url}}/domainnames"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+
+
+@name("Rest APIs")
+GET "https://{{aws_api_gateway_base_url}}/restapis"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+
+
+@name("Usage Plans")
+GET "https://{{aws_api_gateway_base_url}}/usageplans&limit=&keyId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+? "keyId"= ""
+
+
+@name("Vpc Links")
+GET "https://{{aws_api_gateway_base_url}}/vpclinks{"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+? "position"= ""
+? "position,limit}"= ""
+
+
+

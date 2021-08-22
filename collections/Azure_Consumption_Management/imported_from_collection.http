@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ade22d6e-5dde-48ba-8d9a-57f7514de513.postman_collection.json
+
+// Lists the usage details for a scope in reverse chronological order by billing period. Usage details are available via this API only for January 1, 2017 or later.
+
+@name("Usage Details List")
+GET "https://{{baseUrl}}/:scope/providers/Microsoft.Consumption/usageDetails"
+? "$expand"= "<>"
+? "$filter"= "<>"
+? "$skiptoken"= "<>"
+? "$top"= "<>"
+
+
+

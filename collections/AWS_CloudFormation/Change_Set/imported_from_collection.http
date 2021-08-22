@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-06beb3cb-4f39-40cc-ab55-114f4f94f4b4.postman_collection.json
+
+@name("Create Change Set")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Capabilities.member.N"= ""
+? "ChangeSetName"= ""
+? "ChangeSetType"= ""
+? "ClientToken"= ""
+? "Description"= ""
+? "NotificationARNs.member.N"= ""
+? "Parameters.member.N"= ""
+? "ResourcesToImport.member.N"= ""
+? "ResourceTypes.member.N"= ""
+? "RoleARN"= ""
+? "RollbackConfiguration"= ""
+? "StackName"= ""
+? "Tags.member.N"= ""
+? "TemplateBody"= ""
+? "TemplateURL"= ""
+? "UsePreviousTemplate"= ""
+? "Action"= "CreateChangeSet"
+
+
+@name("Delete Change Set")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Action"= "DeleteChangeSet"
+
+
+@name("Describe Change Set")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Action"= "DescribeChangeSet"
+
+
+@name("Execute Change Set")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Action"= "ExecuteChangeSet"
+
+
+@name("List Change Sets")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Action"= "ListChangeSets"
+
+
+

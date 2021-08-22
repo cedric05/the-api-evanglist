@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve run details for an organization pipeline
+
+@name("get Pipeline Run")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/runs/:run"
+? "No Name"= "<string>"
+
+
+// Get log for a pipeline run
+
+@name("get Pipeline Run Log")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/runs/:run/log"
+? "No Name"= "<string>"
+? "start"= "<boolean>"
+? "download"= "<string>"
+
+
+// Replay an organization pipeline run
+
+@name("post Pipeline Run")
+POST "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/runs/:run/replay"
+? "No Name"= "<string>"
+
+
+// Stop a build of an organization pipeline
+
+@name("put Pipeline Run")
+PUT "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/runs/:run/stop"
+? "No Name"= "<string>"
+? "blocking"= "<string>"
+? "timeOutInSecs"= "<string>"
+
+
+

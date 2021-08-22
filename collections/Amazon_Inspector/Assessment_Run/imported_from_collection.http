@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-46004eee-d776-4226-9cc0-a4f178c7a0e1.postman_collection.json
+
+@name("Delete Assessment Run")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.DeleteAssessmentRun"
+? "Action"= "DeleteAssessmentRun"
+data('{"assessmentRunArn":"string"}')
+
+
+@name("Describe Assessment Runs")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.DescribeAssessmentRuns"
+? "Action"= "DescribeAssessmentRuns"
+data('{"assessmentRunArns":["string"]}')
+
+
+@name("List Assessment Runs")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.ListAssessmentRuns"
+? "Action"= "ListAssessmentRuns"
+data('{"assessmentTemplateArns":["string"],"filter":{"completionTimeRange":{"beginDate":42,"endDate":42},"durationRange":{"maxSeconds":42,"minSeconds":42},"namePattern":"string","rulesPackageArns":["string"],"startTimeRange":{"beginDate":42,"endDate":42},"stateChangeTimeRange":{"beginDate":42,"endDate":42},"states":["string"]},"maxResults":42,"nextToken":"string"}')
+
+
+@name("Start Assessment Run")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.StartAssessmentRun"
+? "Action"= "StartAssessmentRun"
+data('{"assessmentRunName":"string","assessmentTemplateArn":"string"}')
+
+
+@name("Stop Assessment Run")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.StopAssessmentRun"
+? "Action"= "StopAssessmentRun"
+data('{"assessmentRunArn":"string","stopAction":"string"}')
+
+
+

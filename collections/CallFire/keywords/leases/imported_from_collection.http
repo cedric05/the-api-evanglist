@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Searches for all keywords owned by user. A keyword lease is the ownership information involving a keyword
+
+@name("Find keyword leases")
+GET "https://{{baseUrl}}/keywords/leases"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "fields"= "<string>"
+
+
+// Searches for all keywords owned by user
+
+@name("Find a specific lease")
+GET "https://{{baseUrl}}/keywords/leases/:keyword"
+? "fields"= "<string>"
+
+
+

@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8631617c-c1ed-4e14-b0cd-77e4410753c4.postman_collection.json
+
+@name("Set User MFA Preference")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "SetUserMFAPreference"
+data('{
+   "AccessToken": "string",
+   "SMSMfaSettings": { 
+      "Enabled": boolean,
+      "PreferredMfa": boolean
+   },
+   "SoftwareTokenMfaSettings": { 
+      "Enabled": boolean,
+      "PreferredMfa": boolean
+   }
+}')
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// Lists the smart contract instances of the specified workflow. Users who are Workbench administrators get all
+//              smart contract instances. Non-Workbench administrators get all smart contract instances for which they have at least
+//              one associated application role or is associated with a smart contract instance role.
+
+@name("Get Contracts")
+GET "https://{{baseUrl}}/api/v1/contracts"
+? "top"= "<>"
+? "skip"= "<>"
+? "workflowId"= "<get>"
+? "sortBy"= "<>"
+
+
+

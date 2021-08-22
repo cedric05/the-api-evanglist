@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Uploads media file to account, acceptable media formats: bmp, gif, jpg, m4a, mp3, mp4, png, wav
+
+@name("Create media")
+POST "https://{{baseUrl}}/media"
+
+
+// Download a media file. Available types of files: bmp, gif, jpg, m4a, mp3, mp4, png, wav. Content type in response depends on 'extension' parameter, e.g. image/jpeg, image/png, audio/mp3, etc
+
+@name("Download media by extension")
+GET "https://{{baseUrl}}/media/public/{{key}}.{{extension}}"
+
+
+// Download a media file. Available types of files: bmp, gif, jpg, m4a, mp3, mp4, png, wav. Content type in response depends on 'extension' parameter, e.g. image/jpeg, image/png, audio/mp3, etc
+
+@name("Download media by extension")
+GET "https://{{baseUrl}}/media/{{id}}.{{extension}}"
+
+
+

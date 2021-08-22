@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Share the project with a group
+
+@name("Add Projects  Share")
+POST "https://{{baseUrl}}/projects/:id/share"
+
+
+// Delete projects  share group
+
+@name("Delete Projects  Share Group")
+DELETE "https://{{baseUrl}}/projects/:id/share/:group_id"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Get a single message.
+
+@name("/Accounts/:AccountSid/SMS/ShortCodes/{{ShortCodeSid}}{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SMS/ShortCodes/{{ShortCodeSid}}{{mediaTypeExtension}}"
+
+
+// Get a single message.
+
+@name("Accounts.Account Sid.SMS.Short Codes.Short Code Sid.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SMS/ShortCodes/{{ShortCodeSid}}.json"
+
+
+

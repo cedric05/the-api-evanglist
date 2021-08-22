@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Purchase keywords. Send a list of available keywords into this API to purchase them using CallFire credits. Make sure the account has enough credits before trying to purchase the keywords
+
+@name("Purchase keywords")
+POST "https://{{baseUrl}}/orders/keywords"
+
+
+// Purchase numbers. There are many ways to purchase a number. Set either 'tollFreeCount' or 'localCount' along with some querying fields to purchase numbers by bulk query. Set the list of numbers to purchase by list. Available numbers will be purchased using CallFire credits owned by the user. Make sure the account has enough credits before trying to purchase
+
+@name("Purchase numbers")
+POST "https://{{baseUrl}}/orders/numbers"
+
+
+// Returns a single NumberOrder instance for a given order id. Order contains information about purchased keywords, local, toll-free numbers
+
+@name("Find a specific order")
+GET "https://{{baseUrl}}/orders/:id"
+? "fields"= "<string>"
+
+
+

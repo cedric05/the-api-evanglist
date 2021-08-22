@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39359504-af25-4f48-954b-e7dd332ed9ff.postman_collection.json
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Get invoices based on provided filters")
+GET "https://{{baseUrl}}/api/v1/Invoices"
+? "filters.partnerPO"= "<>"
+? "filters.sourceKey"= "<>"
+? "filters.status"= "<>"
+? "filters.from"= "<>"
+? "filters.to"= "<>"
+? "filters.page"= "<>"
+? "filters.pageSize"= "<>"
+? "filters.receiverCompanyId"= "<>"
+? "filters.senderCompanyId"= "<>"
+? "filters.linkkey"= "<>"
+? "filters.advanced"= "<>"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Create invoice(s) based on custom XML.")
+POST "https://{{baseUrl}}/api/v1/Invoices/CustomXML"
+? "xmlType"= "<>"
+
+
+// Request rate limited to 1 request per second with bursts up to 10 requests.
+
+@name("Import from flat file.")
+POST "https://{{baseUrl}}/api/v1/Invoices/Import"
+? "fileType"= "<>"
+? "aliases"= "<>"
+? "delimiter"= "<>"
+? "dryRun"= "<>"
+? "custom"= "<>"
+
+
+// The 'fields' parameter accepts a comma delimited list of JSON paths, for example: 'Identifier.LogicbrokerKey, BillToAddress.FirstName'. It is also possible to rename these fields using syntax like 'DocumentDate as Date' or 'DocumentDate Date'.
+//             You must specify a value for either the 'LogicbrokerKeys' parameter or the 'filter' parameter.
+
+@name("Export to CSV/XLSX")
+GET "https://{{baseUrl}}/api/v1/Invoices/Export"
+? "fields"= "<get>"
+? "fileType"= "<>"
+? "LogicbrokerKeys"= "<>"
+? "delimiter"= "<>"
+? "filter.partnerPO"= "<>"
+? "filter.sourceKey"= "<>"
+? "filter.status"= "<>"
+? "filter.from"= "<>"
+? "filter.to"= "<>"
+? "filter.page"= "<>"
+? "filter.pageSize"= "<>"
+? "filter.receiverCompanyId"= "<>"
+? "filter.senderCompanyId"= "<>"
+? "filter.linkkey"= "<>"
+? "filter.advanced"= "<>"
+
+
+

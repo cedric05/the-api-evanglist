@@ -1,0 +1,117 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4ac82a81-aee5-4817-b1f1-deb74811605d.postman_collection.json
+
+@name("Compare Faces")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.CompareFaces"
+? "Action"= "CompareFaces"
+data('{
+   "QualityFilter": "string",
+   "SimilarityThreshold": 25,
+   "SourceImage": { 
+      "Bytes": "blob",
+      "S3Object": { 
+         "Bucket": "string",
+         "Name": "string",
+         "Version": "string"
+      }
+   },
+   "TargetImage": { 
+      "Bytes": "blob",
+      "S3Object": { 
+         "Bucket": "string",
+         "Name": "string",
+         "Version": "string"
+      }
+   }
+}')
+
+
+@name("Delete Faces")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.DeleteFaces"
+? "Action"= "DeleteFaces"
+data('{"CollectionId":"string","FaceIds":["string"]}')
+
+
+@name("Detect Faces")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.DetectFaces"
+? "Action"= "DetectFaces"
+data('{
+   "Attributes": [ "string" ],
+   "Image": { 
+      "Bytes": "blob",
+      "S3Object": { 
+         "Bucket": "string",
+         "Name": "string",
+         "Version": "string"
+      }
+   }
+}')
+
+
+@name("Index Faces")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.IndexFaces"
+? "Action"= "IndexFaces"
+data('{
+   "CollectionId": "string",
+   "DetectionAttributes": [ "string" ],
+   "ExternalImageId": "string",
+   "Image": { 
+      "Bytes": "blob",
+      "S3Object": { 
+         "Bucket": "string",
+         "Name": "string",
+         "Version": "string"
+      }
+   },
+   "MaxFaces": 25,
+   "QualityFilter": "string"
+}')
+
+
+@name("List Faces")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.ListFaces"
+? "Action"= "ListFaces"
+data('{
+   "CollectionId": "string",
+   "MaxResults": 25,
+   "NextToken": "string"
+}')
+
+
+@name("Search Faces")
+POST "https://{{aws_rekognition_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rekognition_service}}", region="{{aws_rekognition_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "RekognitionService.SearchFaces"
+? "Action"= "SearchFaces"
+data('{
+   "CollectionId": "string",
+   "FaceId": "string",
+   "FaceMatchThreshold": 25,
+   "MaxFaces": 25
+}')
+
+
+

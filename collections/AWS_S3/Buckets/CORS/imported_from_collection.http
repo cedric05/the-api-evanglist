@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Sets the cors configuration for your bucket. If the configuration exists, Amazon S3 replaces it. 
+
+@name("CORS")
+PUT "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="n7c8pc1DLpO4451iVSAWmZXfntrZnOv5g8/VWSiX", service="s3", region="us-east-1")
+"Content-MD5": "{{contentMD5}}"
+? "cors"= ""
+data('<CORSConfiguration>
+ <CORSRule>
+   <AllowedOrigin>http://www.example.com</AllowedOrigin>
+   <AllowedMethod>PUT</AllowedMethod>
+   <AllowedMethod>POST</AllowedMethod>
+   <AllowedMethod>DELETE</AllowedMethod>
+   <AllowedHeader>*</AllowedHeader>
+ </CORSRule>
+ <CORSRule>
+   <AllowedOrigin>*</AllowedOrigin>
+   <AllowedMethod>GET</AllowedMethod>
+ </CORSRule>
+</CORSConfiguration>')
+
+
+// Deletes the cors configuration information set for the bucket. 
+
+@name("CORS")
+DELETE "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "cors"= ""
+
+
+
+@name("CORS")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "cors"= ""
+
+
+

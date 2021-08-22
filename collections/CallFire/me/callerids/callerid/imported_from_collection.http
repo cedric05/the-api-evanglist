@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Generates and sends a verification code to the phone number provided in the path. The verification code is delivered via a phone call. This code needs to be submitted to the verify caller id API endpoint to complete verification. For authentication use api credentials.
+
+@name("Create a caller id")
+POST "https://{{baseUrl}}/me/callerids/:callerid"
+
+
+// With the verification code received from the Create caller id endpoint, a call to this endpoint is required to finish verification. For authentication use api credentials.
+
+@name("Verify a caller id")
+POST "https://{{baseUrl}}/me/callerids/:callerid/verification-code"
+
+
+

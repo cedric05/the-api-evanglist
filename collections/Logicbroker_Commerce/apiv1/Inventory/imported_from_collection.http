@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39359504-af25-4f48-954b-e7dd332ed9ff.postman_collection.json
+
+// Request rate limited to 1 request every 60 seconds with bursts up to 2 requests.
+
+@name("Import inventory from CSV.")
+POST "https://{{baseUrl}}/api/v1/Inventory/Broadcast"
+? "transform"= "<>"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Get the availability of an item across all suppliers.")
+GET "https://{{baseUrl}}/api/v1/Inventory/Availability/:sku"
+
+
+

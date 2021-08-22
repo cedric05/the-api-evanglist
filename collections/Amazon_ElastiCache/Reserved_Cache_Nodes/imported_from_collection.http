@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1860c5b8-3ef6-4615-ae5f-ce99ba147d12.postman_collection.json
+
+@name("Describe Reserved Cache Nodes")
+GET "https://{{aws_elasticache_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elasticache_service}}", region="{{aws_elasticache_region}}")
+? "Version"= "2015-02-02"
+
+
+

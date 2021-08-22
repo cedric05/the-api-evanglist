@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// Represents a proxy method to the Azure Active Directory Graph API for users.
+//              See https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_list for more details.
+
+@name("Get Graph Proxy Version Users")
+GET "https://{{baseUrl}}/api/v1/graphProxy/:version/users"
+
+
+

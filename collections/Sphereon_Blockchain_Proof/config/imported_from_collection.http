@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-20909047-00c3-478c-8e02-1c3f510f50c3.postman_collection.json
+
+// Create a new configuration
+
+@name("Create a new configuration")
+POST "https://{{baseUrl}}/config"
+
+
+// Update a configuration for registration/verification. Does not allow changing the context, access mode or context name. If, and only if, content-extraction-settings are provided, they will be updated. If, and only if, initial-settings are provided, they will be updated.
+
+@name("Partially update a configuration")
+POST "https://{{baseUrl}}/config/:configName"
+
+
+

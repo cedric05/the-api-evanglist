@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d8f0a546-2bf3-4572-88c9-9190f362a7c5.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Create New API Using OpenAPI") : "base-inherit-auth"
+POST "https://{{aws_api_gateway_base_url}}/restapis"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Get Details Of New API") : "base-inherit-auth"
+GET "https://{{aws_api_gateway_base_url}}/restapis/0n1anifwvf&restapi_id="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "restapi_id"= ""
+
+
+

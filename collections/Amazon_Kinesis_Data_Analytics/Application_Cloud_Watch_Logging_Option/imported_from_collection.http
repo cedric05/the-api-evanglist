@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-0b8cbe34-0af1-44a6-992a-ffe13940e455.postman_collection.json
+
+@name("Add Application Cloud Watch Logging Option")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "AddApplicationCloudWatchLoggingOption"
+data('{"ApplicationName":"string","CloudWatchLoggingOption":{"LogStreamARN":"string","RoleARN":"string"},"CurrentApplicationVersionId":42}')
+
+
+@name("Delete Application Cloud Watch Logging Option")
+POST "https://{{aws_kinesis_data_analytics_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_analytics_service}}", region="{{aws_kinesis_data_analytics_region}}")
+? "Action"= "DeleteApplicationCloudWatchLoggingOption"
+data('{"ApplicationName":"string","CloudWatchLoggingOptionId":"string","CurrentApplicationVersionId":42}')
+
+
+

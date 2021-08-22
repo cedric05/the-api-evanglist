@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-262b2933-58c8-4c4d-94e7-745ca3083a61.postman_collection.json
+
+@name("Add Tags")
+GET "https://{{aws_data_pipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "pipelineId"= ""
+? "tags"= ""
+? "Action"= "AddTags"
+
+
+@name("Remove Tags")
+GET "https://{{aws_data_pipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "pipelineId"= ""
+? "tagKeys"= ""
+? "Action"= "RemoveTags"
+
+
+

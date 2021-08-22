@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// This endpoint allows you to retrieve a list of all current teammates.
+// 
+// **Note:** The Response Header will include pagination info.
+
+@name("Retrieve all teammates")
+GET "https://{{baseUrl}}/teammates"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+// This endpoint allows you to retrieve a list of all pending teammate invitations.
+// 
+// **Note:** Each teammate invitation is valid for 7 days. Users may resend the invite to refresh the expiration date.
+
+@name("Retrieve all pending teammates")
+GET "https://{{baseUrl}}/teammates/pending"
+
+
+

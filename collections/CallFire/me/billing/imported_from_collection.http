@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Find credit usage for the user. Returns credits usage for time period specified or if unspecified then total for all time. For authentication use api credentials.
+
+@name("Find credit usage")
+GET "https://{{baseUrl}}/me/billing/credit-usage"
+? "intervalBegin"= "<integer>"
+? "intervalEnd"= "<integer>"
+
+
+// Searches for the data of a billing plan usage for the user. Returns the data of a billing plan usage for the current month. For authentication use api credentials.
+
+@name("Find plan usage")
+GET "https://{{baseUrl}}/me/billing/plan-usage"
+
+
+

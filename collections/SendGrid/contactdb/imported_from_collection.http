@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve all of your recipient lists. If you don't have any lists, an empty array will be returned.**
+// 
+// The Contacts API helps you manage your [Marketing Campaigns](https://sendgrid.com/docs/User_Guide/Marketing_Campaigns/index.html) recipients.
+
+@name("Retrieve all lists")
+GET "https://{{baseUrl}}/contactdb/lists"
+
+
+// **This endpoint allows you to create a custom field.**
+// 
+// **You can create up to 120 custom fields.**
+// 
+// The contactdb is a database of your contacts for [SendGrid Marketing Campaigns](https://sendgrid.com/docs/User_Guide/Marketing_Campaigns/index.html).
+
+@name("Create a Custom Field")
+POST "https://{{baseUrl}}/contactdb/custom_fields"
+
+
+// **This endpoint allows you to retrieve all of your segments.**
+// 
+// The Contacts API helps you manage your [Marketing Campaigns](https://sendgrid.com/docs/User_Guide/Marketing_Campaigns/index.html) recipients.
+// 
+// For more information about segments in Marketing Campaigns, please see our [User Guide](https://sendgrid.com/docs/User_Guide/Marketing_Campaigns/lists.html#-Create-a-Segment).
+
+@name("Retrieve all segments")
+GET "https://{{baseUrl}}/contactdb/segments"
+
+
+// **This endpoint allows you to list all fields that are reserved and can't be used for custom field names.**
+// 
+// The contactdb is a database of your contacts for [SendGrid Marketing Campaigns](https://sendgrid.com/docs/User_Guide/Marketing_Campaigns/index.html).
+
+@name("Retrieve reserved fields")
+GET "https://{{baseUrl}}/contactdb/reserved_fields"
+
+
+// This endpoint allows you to check the upload status of a Marketing Campaigns recipient.
+// 
+// The Contacts API helps you manage your [Marketing Campaigns](https://sendgrid.com/docs/User_Guide/Marketing_Campaigns/index.html) recipients.
+
+@name("Get Recipient Upload Status")
+GET "https://{{baseUrl}}/contactdb/status"
+
+
+

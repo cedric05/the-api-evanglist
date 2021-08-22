@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve a list of all of your categories.**
+// 
+// Categories can help organize your email analytics by enabling you to “tag” emails by type or broad topic. You can define your own custom categories. For more information, please see our [User Guide](https://sendgrid.com/docs/User_Guide/Statistics/categories.html).
+
+@name("Retrieve all categories")
+GET "https://{{baseUrl}}/categories"
+? "limit"= "<string>"
+? "category"= "<string>"
+? "offset"= "<string>"
+
+
+

@@ -1,0 +1,191 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// batch configLoaded action saves the configuration as loaded by a remote scheduler
+
+@name("Get Service Batchcontrol Action Configloaded")
+GET "https://{{baseUrl}}/service/batchcontrol/action/configLoaded"
+? "scheduler[configuredId]"= "<>"
+? "scheduler[name]"= "<>"
+? "scheduler[host]"= "<>"
+? "scheduler[statuses]"= "<>"
+? "scheduler[configs]"= "<>"
+? "scheduler[workers]"= "<>"
+? "configParam"= "<>"
+? "configValue"= "<>"
+? "configParamPart"= "<>"
+? "workerConfigId"= "<>"
+? "workerName"= "<>"
+
+
+// batch getCommand action returns the command with its current status
+
+@name("Get Service Batchcontrol Action Getcommand")
+GET "https://{{baseUrl}}/service/batchcontrol/action/getCommand"
+? "commandId"= "<>"
+
+
+// batch getFullStatus action returns the status of all schedulers and queues
+
+@name("Get Service Batchcontrol Action Getfullstatus")
+GET "https://{{baseUrl}}/service/batchcontrol/action/getFullStatus"
+
+
+// batch kill action forces stop og a batch on a remote scheduler
+
+@name("Get Service Batchcontrol Action Kill")
+GET "https://{{baseUrl}}/service/batchcontrol/action/kill"
+? "workerId"= "<>"
+? "batchIndex"= "<>"
+? "adminId"= "<>"
+? "cause"= "<>"
+
+
+// list batch control commands
+
+@name("Get Service Batchcontrol Action Listcommands")
+GET "https://{{baseUrl}}/service/batchcontrol/action/listCommands"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[createdByIdEqual]"= "<>"
+? "filter[typeEqual]"= "<>"
+? "filter[typeIn]"= "<>"
+? "filter[targetTypeEqual]"= "<>"
+? "filter[targetTypeIn]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// list all Schedulers
+
+@name("Get Service Batchcontrol Action Listschedulers")
+GET "https://{{baseUrl}}/service/batchcontrol/action/listSchedulers"
+
+
+// list all Workers
+
+@name("Get Service Batchcontrol Action Listworkers")
+GET "https://{{baseUrl}}/service/batchcontrol/action/listWorkers"
+
+
+// batch reportStatus action saves the a status attribute from a remote scheduler and returns pending commands for the scheduler
+
+@name("Get Service Batchcontrol Action Reportstatus")
+GET "https://{{baseUrl}}/service/batchcontrol/action/reportStatus"
+? "scheduler[configuredId]"= "<>"
+? "scheduler[name]"= "<>"
+? "scheduler[host]"= "<>"
+? "scheduler[statuses]"= "<>"
+? "scheduler[configs]"= "<>"
+? "scheduler[workers]"= "<>"
+
+
+// batch setCommandResult action saves the results of a command as recieved from a remote scheduler
+
+@name("Get Service Batchcontrol Action Setcommandresult")
+GET "https://{{baseUrl}}/service/batchcontrol/action/setCommandResult"
+? "commandId"= "<>"
+? "status"= "<>"
+? "errorDescription"= "<>"
+
+
+// batch sets a configuration parameter to be loaded by a scheduler
+
+@name("Get Service Batchcontrol Action Setschedulerconfig")
+GET "https://{{baseUrl}}/service/batchcontrol/action/setSchedulerConfig"
+? "schedulerId"= "<>"
+? "adminId"= "<>"
+? "configParam"= "<>"
+? "configValue"= "<>"
+? "configParamPart"= "<>"
+? "cause"= "<>"
+
+
+// batch sets a configuration parameter to be loaded by a worker
+
+@name("Get Service Batchcontrol Action Setworkerconfig")
+GET "https://{{baseUrl}}/service/batchcontrol/action/setWorkerConfig"
+? "workerId"= "<>"
+? "adminId"= "<>"
+? "configParam"= "<>"
+? "configValue"= "<>"
+? "configParamPart"= "<>"
+? "cause"= "<>"
+
+
+// batch start action starts a job
+
+@name("Get Service Batchcontrol Action Startworker")
+GET "https://{{baseUrl}}/service/batchcontrol/action/startWorker"
+? "workerId"= "<>"
+? "adminId"= "<>"
+? "cause"= "<>"
+
+
+// batch stop action stops a scheduler
+
+@name("Get Service Batchcontrol Action Stopscheduler")
+GET "https://{{baseUrl}}/service/batchcontrol/action/stopScheduler"
+? "schedulerId"= "<>"
+? "adminId"= "<>"
+? "cause"= "<>"
+
+
+// batch stop action stops a worker
+
+@name("Get Service Batchcontrol Action Stopworker")
+GET "https://{{baseUrl}}/service/batchcontrol/action/stopWorker"
+? "workerId"= "<>"
+? "adminId"= "<>"
+? "cause"= "<>"
+
+
+

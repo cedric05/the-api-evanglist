@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-51f1663f-4022-4c8f-b62e-1b4823b27806.postman_collection.json
+
+@name("List Cluster Jobs")
+POST "https://{{aws_snowball_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_snowball_service}}", region="{{aws_snowball_region}}")
+data('null')
+
+
+

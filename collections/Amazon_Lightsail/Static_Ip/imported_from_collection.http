@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c407db9c-7d41-4c80-aae0-5e6aa5b99d99.postman_collection.json
+
+@name("Allocate Static Ip")
+POST "https://{{aws_lightsail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lightsail_service}}", region="{{aws_lightsail_region}}")
+? "Version"= "2016-11-28"
+data('{"staticIpName":"string"}')
+
+
+@name("Attach Static Ip")
+POST "https://{{aws_lightsail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lightsail_service}}", region="{{aws_lightsail_region}}")
+? "Version"= "2016-11-28"
+data('{"instanceName":"string","staticIpName":"string"}')
+
+
+@name("Detach Static Ip")
+POST "https://{{aws_lightsail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lightsail_service}}", region="{{aws_lightsail_region}}")
+? "Version"= "2016-11-28"
+data('{"staticIpName":"string"}')
+
+
+@name("Get Static Ip")
+POST "https://{{aws_lightsail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lightsail_service}}", region="{{aws_lightsail_region}}")
+? "Version"= "2016-11-28"
+data('{"staticIpName":"string"}')
+
+
+@name("Get Static Ips")
+POST "https://{{aws_lightsail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lightsail_service}}", region="{{aws_lightsail_region}}")
+? "Version"= "2016-11-28"
+data('{"pageToken":"string"}')
+
+
+@name("Release Static Ip")
+POST "https://{{aws_lightsail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lightsail_service}}", region="{{aws_lightsail_region}}")
+? "Version"= "2016-11-28"
+data('{"staticIpName":"string"}')
+
+
+

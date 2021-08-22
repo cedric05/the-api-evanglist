@@ -1,0 +1,69 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Attaches a network interface to an instance.
+
+@name("Attach Network Interface")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DeviceIndex"= ""
+? "DryRun"= ""
+? "InstanceId"= ""
+? "NetworkInterfaceId"= ""
+? "Action"= "AttachNetworkInterface"
+
+
+// Creates a network interface in the specified subnet.
+
+@name("Create Network Interface")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Description"= ""
+? "DryRun"= ""
+? "InterfaceType"= ""
+? "Ipv6AddressCount"= ""
+? "Ipv6Addresses.N"= ""
+? "PrivateIpAddress"= ""
+? "PrivateIpAddresses.N"= ""
+? "SecondaryPrivateIpAddressCount"= ""
+? "SecurityGroupId.N"= ""
+? "SubnetId"= ""
+? "Action"= "CreateNetworkInterface"
+
+
+// Deletes the specified network interface.
+
+@name("Delete Network Interface")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "NetworkInterfaceId"= ""
+? "Action"= "DeleteNetworkInterface"
+
+
+// Describes one or more of your network interfaces.
+
+@name("Describe Network Interfaces")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NetworkInterfaceId.N"= ""
+? "NextToken"= ""
+? "Action"= "DescribeNetworkInterfaces"
+
+
+// Detaches a network interface from an instance.
+
+@name("Detach Network Interface")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AttachmentId"= ""
+? "DryRun"= ""
+? "Force"= ""
+? "Action"= "DetachNetworkInterface"
+
+
+

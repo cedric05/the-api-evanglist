@@ -1,0 +1,218 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8631617c-c1ed-4e14-b0cd-77e4410753c4.postman_collection.json
+
+@name("Create User Pool")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "CreateUserPool"
+data('{
+   "AccountRecoverySetting": { 
+      "RecoveryMechanisms": [ 
+         { 
+            "Name": "string",
+            "Priority": number
+         }
+      ]
+   },
+   "AdminCreateUserConfig": { 
+      "AllowAdminCreateUserOnly": boolean,
+      "InviteMessageTemplate": { 
+         "EmailMessage": "string",
+         "EmailSubject": "string",
+         "SMSMessage": "string"
+      },
+      "UnusedAccountValidityDays": number
+   },
+   "AliasAttributes": [ "string" ],
+   "AutoVerifiedAttributes": [ "string" ],
+   "DeviceConfiguration": { 
+      "ChallengeRequiredOnNewDevice": boolean,
+      "DeviceOnlyRememberedOnUserPrompt": boolean
+   },
+   "EmailConfiguration": { 
+      "ConfigurationSet": "string",
+      "EmailSendingAccount": "string",
+      "From": "string",
+      "ReplyToEmailAddress": "string",
+      "SourceArn": "string"
+   },
+   "EmailVerificationMessage": "string",
+   "EmailVerificationSubject": "string",
+   "LambdaConfig": { 
+      "CreateAuthChallenge": "string",
+      "CustomMessage": "string",
+      "DefineAuthChallenge": "string",
+      "PostAuthentication": "string",
+      "PostConfirmation": "string",
+      "PreAuthentication": "string",
+      "PreSignUp": "string",
+      "PreTokenGeneration": "string",
+      "UserMigration": "string",
+      "VerifyAuthChallengeResponse": "string"
+   },
+   "MfaConfiguration": "string",
+   "Policies": { 
+      "PasswordPolicy": { 
+         "MinimumLength": number,
+         "RequireLowercase": boolean,
+         "RequireNumbers": boolean,
+         "RequireSymbols": boolean,
+         "RequireUppercase": boolean,
+         "TemporaryPasswordValidityDays": number
+      }
+   },
+   "PoolName": "string",
+   "Schema": [ 
+      { 
+         "AttributeDataType": "string",
+         "DeveloperOnlyAttribute": boolean,
+         "Mutable": boolean,
+         "Name": "string",
+         "NumberAttributeConstraints": { 
+            "MaxValue": "string",
+            "MinValue": "string"
+         },
+         "Required": boolean,
+         "StringAttributeConstraints": { 
+            "MaxLength": "string",
+            "MinLength": "string"
+         }
+      }
+   ],
+   "SmsAuthenticationMessage": "string",
+   "SmsConfiguration": { 
+      "ExternalId": "string",
+      "SnsCallerArn": "string"
+   },
+   "SmsVerificationMessage": "string",
+   "UsernameAttributes": [ "string" ],
+   "UserPoolAddOns": { 
+      "AdvancedSecurityMode": "string"
+   },
+   "UserPoolTags": { 
+      "string" : "string" 
+   },
+   "VerificationMessageTemplate": { 
+      "DefaultEmailOption": "string",
+      "EmailMessage": "string",
+      "EmailMessageByLink": "string",
+      "EmailSubject": "string",
+      "EmailSubjectByLink": "string",
+      "SmsMessage": "string"
+   }
+}')
+
+
+@name("Delete User Pool")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DeleteUserPool"
+data('{
+   "UserPoolId": "string"
+}')
+
+
+@name("Describe User Pool")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DescribeUserPool"
+data('{
+   "UserPoolId": "string"
+}')
+
+
+@name("List User Pools")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "ListUserPools"
+data('{
+   "MaxResults": number,
+   "NextToken": "string"
+}')
+
+
+@name("Update User Pool")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "UpdateUserPool"
+data('{
+   "AccountRecoverySetting": { 
+      "RecoveryMechanisms": [ 
+         { 
+            "Name": "string",
+            "Priority": number
+         }
+      ]
+   },
+   "AdminCreateUserConfig": { 
+      "AllowAdminCreateUserOnly": boolean,
+      "InviteMessageTemplate": { 
+         "EmailMessage": "string",
+         "EmailSubject": "string",
+         "SMSMessage": "string"
+      },
+      "UnusedAccountValidityDays": number
+   },
+   "AutoVerifiedAttributes": [ "string" ],
+   "DeviceConfiguration": { 
+      "ChallengeRequiredOnNewDevice": boolean,
+      "DeviceOnlyRememberedOnUserPrompt": boolean
+   },
+   "EmailConfiguration": { 
+      "ConfigurationSet": "string",
+      "EmailSendingAccount": "string",
+      "From": "string",
+      "ReplyToEmailAddress": "string",
+      "SourceArn": "string"
+   },
+   "EmailVerificationMessage": "string",
+   "EmailVerificationSubject": "string",
+   "LambdaConfig": { 
+      "CreateAuthChallenge": "string",
+      "CustomMessage": "string",
+      "DefineAuthChallenge": "string",
+      "PostAuthentication": "string",
+      "PostConfirmation": "string",
+      "PreAuthentication": "string",
+      "PreSignUp": "string",
+      "PreTokenGeneration": "string",
+      "UserMigration": "string",
+      "VerifyAuthChallengeResponse": "string"
+   },
+   "MfaConfiguration": "string",
+   "Policies": { 
+      "PasswordPolicy": { 
+         "MinimumLength": number,
+         "RequireLowercase": boolean,
+         "RequireNumbers": boolean,
+         "RequireSymbols": boolean,
+         "RequireUppercase": boolean,
+         "TemporaryPasswordValidityDays": number
+      }
+   },
+   "SmsAuthenticationMessage": "string",
+   "SmsConfiguration": { 
+      "ExternalId": "string",
+      "SnsCallerArn": "string"
+   },
+   "SmsVerificationMessage": "string",
+   "UserPoolAddOns": { 
+      "AdvancedSecurityMode": "string"
+   },
+   "UserPoolId": "string",
+   "UserPoolTags": { 
+      "string" : "string" 
+   },
+   "VerificationMessageTemplate": { 
+      "DefaultEmailOption": "string",
+      "EmailMessage": "string",
+      "EmailMessageByLink": "string",
+      "EmailSubject": "string",
+      "EmailSubjectByLink": "string",
+      "SmsMessage": "string"
+   }
+}')
+
+
+

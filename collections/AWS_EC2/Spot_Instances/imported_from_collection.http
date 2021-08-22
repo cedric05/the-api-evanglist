@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a Spot Instance request.
+
+@name("Request Spot Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AvailabilityZoneGroup"= ""
+? "BlockDurationMinutes"= ""
+? "ClientToken"= ""
+? "DryRun"= ""
+? "InstanceCount"= ""
+? "InstanceInterruptionBehavior"= ""
+? "LaunchGroup"= ""
+? "LaunchSpecification"= ""
+? "SpotPrice"= ""
+? "Type"= ""
+? "ValidFrom"= ""
+? "ValidUntil"= ""
+? "Action"= "RequestSpotInstances"
+
+
+

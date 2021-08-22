@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// .
+
+@name("Accept Transit Gateway VPC Attachment")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "AcceptTransitGatewayVpcAttachment"
+
+
+// Attaches the specified VPC to the specified transit gateway.
+
+@name("Create Transit Gateway VPC Attachment")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Options"= ""
+? "SubnetIds.N"= ""
+? "TagSpecifications.N"= ""
+? "TransitGatewayId"= ""
+? "VpcId"= ""
+? "Action"= "CreateTransitGatewayVpcAttachment"
+
+
+// .
+
+@name("Delete Transit Gateway VPC Attachment")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "DeleteTransitGatewayVpcAttachment"
+
+
+// Describes one or more VPC attachments.
+
+@name("Describe Transit Gateway VPC Attachments")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "TransitGatewayAttachmentIds.N"= ""
+? "Action"= "DescribeTransitGatewayVpcAttachments"
+
+
+// .
+
+@name("Modify Transit Gateway VPC Attachment")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "ModifyTransitGatewayVpcAttachment"
+
+
+// .
+
+@name("Reject Transit Gateway VPC Attachment")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "RejectTransitGatewayVpcAttachment"
+
+
+

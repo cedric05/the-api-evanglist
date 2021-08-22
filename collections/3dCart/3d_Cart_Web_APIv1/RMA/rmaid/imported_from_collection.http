@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a specific RMA
+
+@name("Get a specific RMA")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/RMA/:rmaid"
+
+
+@name("Gets the items from a specific RMA")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/RMA/:rmaid/Items"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+
+
+

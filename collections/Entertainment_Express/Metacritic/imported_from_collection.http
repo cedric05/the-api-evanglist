@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Returns Metacritic Movie information by Entertainment Movie ID.
+
+@name("Get Metacritic Movie information.")
+GET "https://{{baseUrl}}/Metacritic/Movie/:Id"
+
+
+// Returns Metacritic TV information by Entertainment Show ID.
+
+@name("Get Metacritic TV information.")
+GET "https://{{baseUrl}}/Metacritic/TV/:Id"
+? "SeasonNumber"= "<get>"
+
+
+

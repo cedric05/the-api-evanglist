@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ade22d6e-5dde-48ba-8d9a-57f7514de513.postman_collection.json
+
+// Lists the available invoices for a subscription in reverse chronological order beginning with the most recent invoice. In preview, invoices are available via this API only for invoice periods which end December 1, 2016 or later.
+
+@name("Invoices List")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.Billing/invoices"
+? "$expand"= "<>"
+? "$filter"= "<>"
+? "$skiptoken"= "<>"
+? "$top"= "<>"
+
+
+// Gets a named invoice resource. When getting a single invoice, the downloadUrl property is expanded automatically.
+
+@name("Invoices Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.Billing/invoices/:invoiceName"
+
+
+// Gets the most recent invoice. When getting a single invoice, the downloadUrl property is expanded automatically.
+
+@name("Invoices Get Latest")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.Billing/invoices/latest"
+
+
+

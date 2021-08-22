@@ -1,0 +1,84 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-df62df38-e081-4c58-9344-206f4c0ac57d.postman_collection.json
+
+// Detect text language from a given url.
+
+@name("/language")
+GET "https://{{baseUrl}}/language"
+? "apiKey"= "<>"
+? "url"= "<>"
+
+
+// Summarize file from a given url.
+
+@name("/summarize")
+GET "https://{{baseUrl}}/summarize"
+? "apiKey"= "<>"
+? "url"= "<>"
+? "size"= "<>"
+? "keywords"= "<post>"
+? "fragments"= "<post>"
+? "language"= "<post>"
+
+
+// Image recognition from a given url.
+
+@name("/images")
+GET "https://{{baseUrl}}/images"
+? "apiKey"= "<>"
+? "url"= "<>"
+? "tags"= "<post>"
+
+
+// Detect faces from a given image url.
+
+@name("/faces")
+GET "https://{{baseUrl}}/faces"
+? "apiKey"= "<>"
+? "url"= "<>"
+
+
+// Extract keywords from a given url.
+
+@name("/keywords")
+GET "https://{{baseUrl}}/keywords"
+? "apiKey"= "<>"
+? "url"= "<>"
+? "keywords"= "<post>"
+? "language"= "<post>"
+
+
+// Extract video information from a given url.
+
+@name("/video")
+GET "https://{{baseUrl}}/video"
+? "apiKey"= "<>"
+? "url"= "<>"
+
+
+// Extract comments from a given url.
+
+@name("/comments")
+GET "https://{{baseUrl}}/comments"
+? "apiKey"= "<>"
+? "url"= "<>"
+
+
+// Extract article text and metadata from a given url.
+
+@name("/extract")
+GET "https://{{baseUrl}}/extract"
+? "apiKey"= "<>"
+? "url"= "<>"
+
+
+// Analyze text for positive or negative sentiment from a given url.
+
+@name("/sentiment")
+GET "https://{{baseUrl}}/sentiment"
+? "apiKey"= "<>"
+? "url"= "<>"
+
+
+

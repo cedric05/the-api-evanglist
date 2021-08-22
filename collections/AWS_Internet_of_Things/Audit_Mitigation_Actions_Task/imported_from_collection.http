@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Cancel Audit Mitigation Actions Task")
+GET "https://{{aws_internet_of_things_base_url}}/audit/mitigationactions/tasks/taskId/cancel&taskId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Describe Audit Mitigation Actions Task")
+GET "https://{{aws_internet_of_things_base_url}}/audit/mitigationactions/tasks/taskId&taskId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List Audit Mitigation Actions Tasks")
+GET "https://{{aws_internet_of_things_base_url}}/audit/mitigationactions/tasks"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Start Audit Mitigation Actions Task")
+GET "https://{{aws_internet_of_things_base_url}}/audit/mitigationactions/tasks/taskId&taskId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

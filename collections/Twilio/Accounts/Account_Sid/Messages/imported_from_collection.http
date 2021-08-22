@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns a single message specified by the provided {MessageSid}.
+
+@name("/Accounts/:AccountSid/Messages/{{MessageSid}}{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Messages/{{MessageSid}}{{mediaTypeExtension}}"
+
+
+// Returns a single message specified by the provided {MessageSid}.
+
+@name("Accounts.Account Sid.Messages.Message Sid.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Messages/{{MessageSid}}.json"
+
+
+

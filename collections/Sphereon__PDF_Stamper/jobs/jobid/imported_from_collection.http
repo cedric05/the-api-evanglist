@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cfd5624c-b930-4725-aa14-55f9a44206d1.postman_collection.json
+
+// Get the PDF stamper job definition and current state. Please note that you can differentiate based on http response status.
+
+@name("Job definition and state")
+GET "https://{{baseUrl}}/jobs/:jobid"
+
+
+

@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-88ac1dc0-36c3-4a4a-99dc-96fc8b7c0608.postman_collection.json
+
+@name("Create Provisioned Product Plan")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "CreateProvisionedProductPlan"
+data('{"AcceptLanguage":"string","IdempotencyToken":"string","NotificationArns":["string"],"PathId":"string","PlanName":"string","PlanType":"string","ProductId":"string","ProvisionedProductName":"string","ProvisioningArtifactId":"string","ProvisioningParameters":[{"Key":"string","UsePreviousValue":1,"Value":"string"}],"Tags":[{"Key":"string","Value":"string"}]}')
+
+
+@name("Delete Provisioned Product Plan")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DeleteProvisionedProductPlan"
+data('{"AcceptLanguage":"string","IgnoreErrors":1,"PlanId":"string"}')
+
+
+@name("Describe Provisioned Product Plan")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DescribeProvisionedProductPlan"
+data('null')
+
+
+@name("Execute Provisioned Product Plan")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "ExecuteProvisionedProductPlan"
+data('{"AcceptLanguage":"string","IdempotencyToken":"string","PlanId":"string"}')
+
+
+@name("List Provisioned Product Plans")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "ListProvisionedProductPlans"
+data('null')
+
+
+

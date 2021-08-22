@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Generate and download SDK's for using the API.  Requires a subscription key for authorization and a valid client.
+
+@name("Returns a zip file of client SDK.")
+GET "https://{{baseUrl}}/SDKs/:Client"
+? "RedirectToFile"= "<get>"
+
+
+// Entertainment Express APIs use date time format ISO 8601.  Use this API to test your date time format to see if it translates to a valid time on our server.
+
+@name("Returns translated time from IVA or an error if invalid.")
+GET "https://{{baseUrl}}/Tests/TestDateTime/"
+? "DateTime"= "<get>"
+
+
+// Deprecated. Use /Movies/InTheaters or /Movies/ComingSoon instead. Returns all movies with a US Theatrical Release Date > today - 60 days.  Use the includes parameter to include additional objects related to the movie.  The includes parameter takes a comma separated list of objects.  **EX: Genres,Descriptions,Videos**    
+// 
+// 
+// 
+
+@name("Returns list of all US Theatrical Movie objects.")
+GET "https://{{baseUrl}}/TheatricalMovies/"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+? "Includes"= "<get>"
+
+
+// Returns a URL to the requested video. [Video Format Specs](https://developer.iva-api.com/docs/v1/video-formats)
+// 
+// **Formats:** MP4 = 4, HLS = 11, Dash = 14, HSS = 12, HDS = 13
+// 
+// **MP4 KbRate:** 80, 212, 450, 750, 1500, 2500(HD sources only), 5000 (sources >=  1080p)  
+// 
+// **Adaptive Min/Max rate:** 212000, 350000, 600000, 1200000, 2000000, 2500000, 3500000  
+// 
+//  `URLs requested with a Demo account will always return max 750 kbps video.  Full commercial account required for higher bitrates.`
+
+@name("Returns a URL to a requested video.")
+GET "https://{{baseUrl}}/Videos/GetVideo/:Id"
+? "Format"= "<get>"
+? "KbRate"= "<get>"
+? "Expires"= "<get>"
+? "ReportTag"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "MinRate"= "<get>"
+? "MaxRate"= "<get>"
+
+
+// Get recommendations for movie or show.
+
+@name("Returns a list of recommendations from XRoadMedia for a movie or show.")
+GET "https://{{baseUrl}}/XroadMedia/recommendations"
+? "MovieId"= "<get>"
+? "ShowId"= "<get>"
+? "Type"= "<get>"
+
+
+

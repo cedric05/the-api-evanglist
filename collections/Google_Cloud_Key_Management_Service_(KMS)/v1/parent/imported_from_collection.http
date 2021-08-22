@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e1616fb6-640d-4b64-8b03-5b2dddc0491a.postman_collection.json
+
+// Lists CryptoKeyVersions.
+
+@name("List Key Versions")
+GET "https://{{baseUrl}}/v1/:parent/cryptoKeyVersions"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+
+
+// Lists CryptoKeys.
+
+@name("List Keys")
+GET "https://{{baseUrl}}/v1/:parent/cryptoKeys"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+
+
+// Lists KeyRings.
+
+@name("List Key Rings")
+GET "https://{{baseUrl}}/v1/:parent/keyRings"
+? "pageSize"= "<>"
+? "pageToken"= "<>"
+
+
+

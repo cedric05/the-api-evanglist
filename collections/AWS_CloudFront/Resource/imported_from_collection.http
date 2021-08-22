@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1ae65b12-94bd-40ca-acee-7a0cd4c3c799.postman_collection.json
+
+@name("Tag Resource")
+POST "https://{{aws_cloudfront_base_url}}/2019-03-26/tagging"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Operation"= "Tag"
+data('<Tags xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <Items>
+      <Tag>
+         <Key>string</Key>
+         <Value>string</Value>
+      </Tag>
+   </Items>
+</Tags>')
+
+
+@name("Untag Resource")
+POST "https://{{aws_cloudfront_base_url}}/2019-03-26/tagging"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Operation"= "Untag"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<TagKeys xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <Items>
+      <Key>string</Key>
+   </Items>
+</TagKeys>')
+
+
+

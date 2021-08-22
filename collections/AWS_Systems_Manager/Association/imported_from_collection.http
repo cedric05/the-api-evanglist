@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aae3264c-1b30-4227-9429-291e0bd8acbe.postman_collection.json
+
+@name("Create Association")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"AssociationName":"string","AutomationTargetParameterName":"string","ComplianceSeverity":"string","DocumentVersion":"string","InstanceId":"string","MaxConcurrency":"string","MaxErrors":"string","Name":"string","OutputLocation":{"S3Location":{"OutputS3BucketName":"string","OutputS3KeyPrefix":"string","OutputS3Region":"string"}},"Parameters":{"string":["string"]},"ScheduleExpression":"string","Targets":[{"Key":"string","Values":["string"]}]}')
+
+
+@name("Delete Association")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"AssociationId":"string","InstanceId":"string","Name":"string"}')
+
+
+@name("Describe Association")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"AssociationId":"string","AssociationVersion":"string","InstanceId":"string","Name":"string"}')
+
+
+@name("List Associations")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"AssociationFilterList":[{"key":"string","value":"string"}],"MaxResults":1,"NextToken":"string"}')
+
+
+@name("Update Association")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"AssociationId":"string","AssociationName":"string","AssociationVersion":"string","AutomationTargetParameterName":"string","ComplianceSeverity":"string","DocumentVersion":"string","MaxConcurrency":"string","MaxErrors":"string","Name":"string","OutputLocation":{"S3Location":{"OutputS3BucketName":"string","OutputS3KeyPrefix":"string","OutputS3Region":"string"}},"Parameters":{"string":["string"]},"ScheduleExpression":"string","Targets":[{"Key":"string","Values":["string"]}]}')
+
+
+

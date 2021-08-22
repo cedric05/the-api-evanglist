@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve all branches details for an organization pipeline
+
+@name("get Pipeline Branches")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/branches"
+? "No Name"= "<string>"
+
+
+

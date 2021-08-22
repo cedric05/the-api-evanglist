@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-27f83bb7-4ad5-4571-80f4-1fa618a02314.postman_collection.json
+
+@name("Create Platform Version")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "EnvironmentName"= ""
+? "OptionSettings.member.N"= ""
+? "PlatformDefinitionBundle"= ""
+? "PlatformName"= ""
+? "PlatformVersion"= ""
+? "Tags.member.N"= ""
+? "Action"= "CreatePlatformVersion"
+
+
+@name("Delete Platform Version")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "PlatformArn"= ""
+? "Action"= "DeletePlatformVersion"
+
+
+@name("Describe Platform Version")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "PlatformArn"= ""
+? "Action"= "DescribePlatformVersion"
+
+
+@name("List Platform Versions")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "Filters.member.N"= ""
+? "MaxRecords"= ""
+? "NextToken"= ""
+? "Action"= "ListPlatformVersions"
+
+
+

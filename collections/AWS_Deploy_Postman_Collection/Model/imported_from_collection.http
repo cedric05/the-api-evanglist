@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d8f0a546-2bf3-4572-88c9-9190f362a7c5.postman_collection.json
+
+@name("By Name Model")
+GET "https://{{aws_api_gateway_base_url}}/restapis/uojnr9hd57/models/output&model_name=&flatten="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "model_name"= ""
+? "flatten"= ""
+
+
+@name("Create Model")
+POST "https://{{aws_api_gateway_base_url}}/restapis/uojnr9hd57/models"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Model")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/uojnr9hd57/models/CalcOutput"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Generate Template Model")
+GET "https://{{aws_api_gateway_base_url}}/restapis/uojnr9hd57/models/output/default_template"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Update Model")
+PATCH "https://{{aws_api_gateway_base_url}}/restapis/uojnr9hd57/models/output"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

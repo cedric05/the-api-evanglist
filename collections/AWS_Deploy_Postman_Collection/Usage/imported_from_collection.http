@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d8f0a546-2bf3-4572-88c9-9190f362a7c5.postman_collection.json
+
+@name("Get Usage")
+GET "https://{{aws_api_gateway_base_url}}/usageplans/q2hrol/usage"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "keyId"= ""
+? "startDate"= ""
+? "endDate"= ""
+? "limit"= ""
+
+
+@name("Update Usage")
+PATCH "https://{{aws_api_gateway_base_url}}/usageplans/ywbqww/keys/3JX4ISs7Ik23cDsgiaJdu6SiLffQpIsU7AyTMALs/usage&keyId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "keyId"= ""
+
+
+@name("Usageplanby Id")
+GET "https://{{aws_api_gateway_base_url}}&usageplanId=/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "usageplanId"= ""
+
+
+@name("Usageplancreate")
+GET "https://{{aws_api_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Usageplandelete")
+GET "https://{{aws_api_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Usageplanupdate")
+PATCH "https://{{aws_api_gateway_base_url}}/usageplans/w0mvrr"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

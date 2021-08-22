@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Lists a collection of products in the specified service instance.
+
+@name("Products ListByService")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/products"
+? "$filter"= "<>"
+? "expandGroups"= "<>"
+
+
+

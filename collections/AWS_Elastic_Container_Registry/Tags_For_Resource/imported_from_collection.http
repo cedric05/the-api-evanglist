@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d42478be-3ee7-4433-a9b6-5d6e7886855d.postman_collection.json
+
+@name("List Tags For Resource")
+POST "https://{{aws_elastic_container_registry_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_registry_service}}", region="{{aws_elastic_container_registry_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerRegistry_V20150921.ListTagsForResource"
+? "Action"= "ListTagsForResource"
+data('{"resourceArn":"string"}')
+
+
+

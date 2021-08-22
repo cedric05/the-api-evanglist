@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Delete deploy key for a project
+
+@name("Delete Projects  Keys Key")
+DELETE "https://{{baseUrl}}/projects/:id/keys/:key_id"
+
+
+// This feature was added in GitLab 8.11
+
+@name("Delete Projects  Keys Key  Disable")
+DELETE "https://{{baseUrl}}/projects/:id/keys/:key_id/disable"
+
+
+// This feature was added in GitLab 8.11
+
+@name("Add Projects  Keys Key  Enable")
+POST "https://{{baseUrl}}/projects/:id/keys/:key_id/enable"
+
+
+

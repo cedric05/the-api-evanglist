@@ -1,0 +1,60 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c094246-719d-4054-bede-5834f64bb4b7.postman_collection.json
+
+@name("Create LAG")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "CreateLag"
+data('{
+   "childConnectionTags": [ 
+      { 
+         "key": "string",
+         "value": "string"
+      }
+   ],
+   "connectionId": "string",
+   "connectionsBandwidth": "string",
+   "lagName": "string",
+   "location": "string",
+   "numberOfConnections": number,
+   "providerName": "string",
+   "tags": [ 
+      { 
+         "key": "string",
+         "value": "string"
+      }
+   ]
+}')
+
+
+@name("Delete LAG")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "DeleteLag"
+data('{
+   "lagId": "string"
+}')
+
+
+@name("Describe LAGs")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "DescribeLags"
+data('{
+   "lagId": "string"
+}')
+
+
+@name("Update LAG")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "UpdateLag"
+data('{
+   "lagId": "string",
+   "lagName": "string",
+   "minimumLinks": number
+}')
+
+
+

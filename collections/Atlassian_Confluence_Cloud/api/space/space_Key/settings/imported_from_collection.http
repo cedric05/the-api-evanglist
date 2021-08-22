@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a1adb5da-a0fe-4a6e-9435-7531e1b20955.postman_collection.json
+
+// Returns the settings of a space. Currently only the
+// `routeOverrideEnabled` setting can be returned.
+// 
+// **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**:
+// 'View' permission for the space.
+
+@name("Get space settings")
+GET "https://{{baseUrl}}/api/space/:spaceKey/settings"
+
+
+// Updates the settings for a space. Currently only the
+// `routeOverrideEnabled` setting can be updated.
+// 
+// **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**:
+// 'Admin' permission for the space.
+
+@name("Update space settings")
+PUT "https://{{baseUrl}}/api/space/:spaceKey/settings"
+"Content-Type": "application/json"
+json({
+    "routeOverrideEnabled": "<boolean>"
+})
+
+
+

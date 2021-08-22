@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d1558e58-fe26-4cd3-9c99-0411fa0967e1.postman_collection.json
+
+// Create Cognitive Services Account. Accounts is a resource group wide resource type. It holds the keys for developer to access intelligent APIs. It's also the resource type for billing.
+
+@name("Cognitive Services Accounts Create")
+PUT "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.CognitiveServices/accounts/:accountName"
+
+
+// Lists the account keys for the specified Cognitive Services account.
+
+@name("Cognitive Services Accounts List Keys")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.CognitiveServices/accounts/:accountName/listKeys"
+
+
+// Regenerates the specified account key for the specified Cognitive Services account.
+
+@name("Cognitive Services Accounts Regenerate Key")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.CognitiveServices/accounts/:accountName/regenerateKey"
+
+
+// List available SKUs for the requested Cognitive Services account
+
+@name("Cognitive Services Accounts List Skus")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.CognitiveServices/accounts/:accountName/skus"
+
+
+

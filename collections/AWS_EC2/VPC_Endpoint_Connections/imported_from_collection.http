@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Accepts one or more interface VPC endpoint connection requests to your VPC endpoint
+//                         service.
+
+@name("Accept VPC Endpoint Connections")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "ServiceId"= ""
+? "VpcEndpointId.N"= ""
+? "Action"= "AcceptVpcEndpointConnections"
+
+
+// Describes the VPC endpoint connections to your VPC endpoint services, including any
+//                         endpoints that are pending your acceptance.
+
+@name("Describe VPC Endpoint Connections")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeVpcEndpointConnections"
+
+
+// Rejects one or more VPC endpoint connection requests to your VPC endpoint
+//                         service.
+
+@name("Reject VPC Endpoint Connections")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "ServiceId"= ""
+? "VpcEndpointId.N"= ""
+? "Action"= "RejectVpcEndpointConnections"
+
+
+

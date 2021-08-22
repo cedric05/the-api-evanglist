@@ -1,0 +1,118 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5742bcb1-7df5-4c70-8656-2527a102ef1c.postman_collection.json
+
+// Creates the replication instance using the specified parameters.
+
+@name("Create Replication Instance")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.CreateReplicationInstance"
+? "Action"= "CreateReplicationInstance"
+data('{
+   "ReplicationInstanceIdentifier":"test-rep-1",
+   "AllocatedStorage":5,
+   "ReplicationInstanceClass":"dms.t2.micro",
+   "AvailabilityZone":"",
+   "ReplicationSubnetGroupIdentifier":"default",
+   "PreferredMaintenanceWindow":"",
+   "EngineVersion":"1.5.0",
+   "AutoMinorVersionUpgrade":true,
+   "Tags":[
+      {
+         "Key":"",
+         "Value":""
+      }
+   ],
+   "KmsKeyId":"",
+   "PubliclyAccessible":true
+}')
+
+
+// Deletes the specified replication instance.
+
+@name("Delete Replication Instance")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DeleteReplicationInstance"
+? "Action"= "DeleteReplicationInstance"
+data('{
+   "ReplicationInstanceArn": "string"
+}')
+
+
+// Returns information about replication instances for your account in the current region.
+
+@name("Describe Replication Instances")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DescribeReplicationInstances"
+? "Action"= "DescribeReplicationInstances"
+data('{
+   "Filters": [ 
+      { 
+         "Name": "string",
+         "Values": [ "string" ]
+      }
+   ],
+   "Marker": "string",
+   "MaxRecords": number
+}')
+
+
+// Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request.
+
+@name("Modify Replication Instance")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.ModifyReplicationInstance"
+? "Action"= "ModifyReplicationInstance"
+data('{
+   "AllocatedStorage": number,
+   "AllowMajorVersionUpgrade": boolean,
+   "ApplyImmediately": boolean,
+   "AutoMinorVersionUpgrade": boolean,
+   "EngineVersion": "string",
+   "MultiAZ": boolean,
+   "PreferredMaintenanceWindow": "string",
+   "ReplicationInstanceArn": "string",
+   "ReplicationInstanceClass": "string",
+   "ReplicationInstanceIdentifier": "string",
+   "VpcSecurityGroupIds": [ "string" ]
+}')
+
+
+// Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again.
+
+@name("Reboot Replication Instance")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.RebootReplicationInstance"
+? "Action"= "RebootReplicationInstance"
+data('{
+   "ForceFailover": boolean,
+   "ReplicationInstanceArn": "string"
+}')
+
+
+// Returns information about the task logs for the specified task.
+
+@name("Describe Replication Instance Task Logs")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs"
+? "Action"= "DescribeReplicationInstanceTaskLogs"
+data('{
+   "Marker": "string",
+   "MaxRecords": number,
+   "ReplicationInstanceArn": "string"
+}')
+
+
+

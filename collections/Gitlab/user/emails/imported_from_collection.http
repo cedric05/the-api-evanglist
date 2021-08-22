@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Get the currently authenticated user's email addresses
+
+@name("Get User Emails")
+GET "https://{{baseUrl}}/user/emails"
+
+
+// Delete an email address from the currently authenticated user
+
+@name("Delete User Emails Email")
+DELETE "https://{{baseUrl}}/user/emails/:email_id"
+
+
+

@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5742bcb1-7df5-4c70-8656-2527a102ef1c.postman_collection.json
+
+// Deletes the connection between a replication instance and an endpoint.
+
+@name("Delete Connection")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DeleteConnection"
+? "Action"= "DeleteConnection"
+data('{
+   "EndpointArn": "string",
+   "ReplicationInstanceArn": "string"
+}')
+
+
+// Describes the status of the connections that have been made between the replication instance and an endpoint. Connections are created when you test an endpoint.
+
+@name("Describe Connections")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DescribeConnections"
+? "Action"= "DescribeConnections"
+data('{
+   "Filters": [ 
+      { 
+         "Name": "string",
+         "Values": [ "string" ]
+      }
+   ],
+   "Marker": "string",
+   "MaxRecords": number
+}')
+
+
+// Tests the connection between the replication instance and the endpoint.
+
+@name("Test Connection")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101. TestConnection"
+? "Action"= "TestConnection"
+data('{
+   "EndpointArn": "string",
+   "ReplicationInstanceArn": "string"
+}')
+
+
+

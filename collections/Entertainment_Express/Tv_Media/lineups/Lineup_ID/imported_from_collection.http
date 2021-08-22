@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Get lineups by specific LineupID.
+
+@name("Get Tv Media Lineup By ID")
+GET "https://{{baseUrl}}/TvMedia/lineups/:LineupID"
+? "TvMediaApiKey"= "<get>"
+? "Detail"= "<get>"
+
+
+

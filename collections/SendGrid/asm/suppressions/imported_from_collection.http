@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve a list of all suppressions.**
+// 
+// Suppressions are a list of email addresses that will not receive content sent under a given [group](https://sendgrid.com/docs/API_Reference/Web_API_v3/Suppression_Management/groups.html).
+
+@name("Retrieve all suppressions")
+GET "https://{{baseUrl}}/asm/suppressions"
+
+
+// **This endpoint allows you to add one or more email addresses to the global suppressions group.**
+// 
+// A global suppression (or global unsubscribe) is an email address of a recipient who does not want to receive any of your messages. A globally suppressed recipient will be removed from any email you send. For more information, please see our [User Guide](https://sendgrid.com/docs/User_Guide/Suppressions/global_unsubscribes.html).
+
+@name("Add recipient addresses to the global suppression group.")
+POST "https://{{baseUrl}}/asm/suppressions/global"
+
+
+

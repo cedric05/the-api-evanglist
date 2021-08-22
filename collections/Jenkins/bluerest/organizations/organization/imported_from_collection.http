@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve organization details
+
+@name("get Organisation")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization"
+? "No Name"= "<string>"
+
+
+// Retrieve authenticated user details for an organization
+
+@name("get Authenticated User")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/user/"
+? "No Name"= "<string>"
+
+
+

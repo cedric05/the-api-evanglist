@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b30fdb4-df71-430c-bca5-582cc0c9e09b.postman_collection.json
+
+@name("Clone Stack")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"AgentVersion":"string","Attributes":{"string":"string"},"ChefConfiguration":{"BerkshelfVersion":"string","ManageBerkshelf":1},"CloneAppIds":["string"],"ClonePermissions":1,"ConfigurationManager":{"Name":"string","Version":"string"},"CustomCookbooksSource":{"Password":"string","Revision":"string","SshKey":"string","Type":"string","Url":"string","Username":"string"},"CustomJson":"string","DefaultAvailabilityZone":"string","DefaultInstanceProfileArn":"string","DefaultOs":"string","DefaultRootDeviceType":"string","DefaultSshKeyName":"string","DefaultSubnetId":"string","HostnameTheme":"string","Name":"string","Region":"string","ServiceRoleArn":"string","SourceStackId":"string","UseCustomCookbooks":1,"UseOpsworksSecurityGroups":1,"VpcId":"string"}')
+
+
+@name("Create Stack")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"AgentVersion":"string","Attributes":{"string":"string"},"ChefConfiguration":{"BerkshelfVersion":"string","ManageBerkshelf":1},"ConfigurationManager":{"Name":"string","Version":"string"},"CustomCookbooksSource":{"Password":"string","Revision":"string","SshKey":"string","Type":"string","Url":"string","Username":"string"},"CustomJson":"string","DefaultAvailabilityZone":"string","DefaultInstanceProfileArn":"string","DefaultOs":"string","DefaultRootDeviceType":"string","DefaultSshKeyName":"string","DefaultSubnetId":"string","HostnameTheme":"string","Name":"string","Region":"string","ServiceRoleArn":"string","UseCustomCookbooks":1,"UseOpsworksSecurityGroups":1,"VpcId":"string"}')
+
+
+@name("Delete Stack")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"StackId":"string"}')
+
+
+@name("Describe Stacks")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"StackIds":["string"]}')
+
+
+@name("Start Stack")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"StackId":"string"}')
+
+
+@name("Stop Stack")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"StackId":"string"}')
+
+
+@name("Update Stack")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"AgentVersion":"string","Attributes":{"string":"string"},"ChefConfiguration":{"BerkshelfVersion":"string","ManageBerkshelf":1},"ConfigurationManager":{"Name":"string","Version":"string"},"CustomCookbooksSource":{"Password":"string","Revision":"string","SshKey":"string","Type":"string","Url":"string","Username":"string"},"CustomJson":"string","DefaultAvailabilityZone":"string","DefaultInstanceProfileArn":"string","DefaultOs":"string","DefaultRootDeviceType":"string","DefaultSshKeyName":"string","DefaultSubnetId":"string","HostnameTheme":"string","Name":"string","ServiceRoleArn":"string","StackId":"string","UseCustomCookbooks":1,"UseOpsworksSecurityGroups":1}')
+
+
+

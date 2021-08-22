@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a default subnet with a size /20 IPv4 CIDR block in the
+//                         specified Availability Zone in your default VPC.
+
+@name("Create Default Subnet")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AvailabilityZone"= ""
+? "DryRun"= ""
+? "Action"= "CreateDefaultSubnet"
+
+
+// Creates a subnet in an existing VPC.
+
+@name("Create Subnet")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AvailabilityZone"= ""
+? "AvailabilityZoneId"= ""
+? "CidrBlock"= ""
+? "DryRun"= ""
+? "Ipv6CidrBlock"= ""
+? "VpcId"= ""
+? "Action"= "CreateSubnet"
+
+
+// Deletes the specified subnet.
+
+@name("Delete Subnet")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "SubnetId"= ""
+? "Action"= "DeleteSubnet"
+
+
+// Describes one or more of your subnets.
+
+@name("Describe Subnets")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "SubnetId.N"= ""
+? "Action"= "DescribeSubnets"
+
+
+

@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d42478be-3ee7-4433-a9b6-5d6e7886855d.postman_collection.json
+
+@name("Delete Lifecycle Policy")
+POST "https://{{aws_elastic_container_registry_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_registry_service}}", region="{{aws_elastic_container_registry_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerRegistry_V20150921.DeleteLifecyclePolicy"
+? "Action"= "DeleteLifecyclePolicy"
+data('{"registryId":"string","repositoryName":"string"}')
+
+
+@name("Get Lifecycle Policy")
+POST "https://{{aws_elastic_container_registry_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_registry_service}}", region="{{aws_elastic_container_registry_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicy"
+? "Action"= "GetLifecyclePolicy"
+data('{"registryId":"string","repositoryName":"string"}')
+
+
+@name("Put Lifecycle Policy")
+POST "https://{{aws_elastic_container_registry_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_registry_service}}", region="{{aws_elastic_container_registry_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerRegistry_V20150921.PutLifecyclePolicy"
+? "Action"= "PutLifecyclePolicy"
+data('{"lifecyclePolicyText":"string","registryId":"string","repositoryName":"string"}')
+
+
+

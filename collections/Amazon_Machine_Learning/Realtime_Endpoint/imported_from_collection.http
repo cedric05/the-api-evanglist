@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfcb371d-a6e0-41fe-841b-f5fab0153d76.postman_collection.json
+
+@name("Create Realtime Endpoint")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.CreateRealtimeEndpoint"
+? "Action"= "CreateRealtimeEndpoint"
+data('{"MLModelId":"string"}')
+
+
+@name("Delete Realtime Endpoint")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DeleteRealtimeEndpoint"
+? "Action"= "DeleteRealtimeEndpoint"
+data('{"MLModelId":"string"}')
+
+
+

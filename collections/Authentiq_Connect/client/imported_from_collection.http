@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-86fe7f5b-7677-4dc6-a893-08115ca6b6fa.postman_collection.json
+
+// Retrieve a list of clients.
+
+@name("List clients")
+GET "https://{{baseUrl}}/client"
+
+
+// Delete a previously registered client.
+
+@name("Delete a client")
+DELETE "https://{{baseUrl}}/client/:client_id"
+
+
+

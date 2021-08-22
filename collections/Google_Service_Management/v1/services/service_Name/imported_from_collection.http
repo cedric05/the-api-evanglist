@@ -1,0 +1,38 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8d99c2b-2fe6-4f91-a503-ec7d0d7da490.postman_collection.json
+
+// Deletes a managed service. This method will change the service to the
+// `Soft-Delete` state for 30 days. Within this period, service producers may
+// call UndeleteService to restore the service.
+// After 30 days, the service will be permanently deleted.
+// 
+// Operation<response: google.protobuf.Empty>
+
+@name("Delete Service")
+DELETE "https://{{baseUrl}}/v1/services/:serviceName"
+
+
+// Gets a service configuration (version) for a managed service.
+
+@name("Create Service Configuration")
+GET "https://{{baseUrl}}/v1/services/:serviceName/config"
+? "configId"= "<>"
+? "view"= "<>"
+
+
+// Creates a new service configuration (version) for a managed service based
+// on
+// user-supplied configuration source files (for example: OpenAPI
+// Specification). This method stores the source configurations as well as the
+// generated service configuration. To rollout the service configuration to
+// other services,
+// please call CreateServiceRollout.
+// 
+// Operation<response: SubmitConfigSourceResponse>
+
+@name("Create Service Configuration")
+POST "https://{{baseUrl}}/v1/services/:serviceName/configs:submit"
+
+
+

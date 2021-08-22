@@ -1,0 +1,56 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4295a9be-5ee4-4ee8-bfc7-54202492a909.postman_collection.json
+
+@name("Create Custom Action Type")
+POST "https://{{aws_codepipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codepipeline_service}}", region="{{aws_codepipeline_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodePipeline_20150709.CreateCustomActionType"
+? "Action"= "CreateCustomActionType"
+data('{
+  "category": "Build",
+  "settings": {
+    "entityUrlTemplate": "https://192.0.2.4/job/{Config:ProjectName}/",
+    "executionUrlTemplate": "https://192.0.2.4/job/{Config:ProjectName}/lastSuccessfulBuild/{ExternalExecutionId}/"
+  },
+  "configurationProperties": [
+    {
+      "description": "The name of the build project must be provided when this action is added to the pipeline.",
+      "required": true,
+      "secret": false,
+      "key": true,
+      "type": "String",
+      "queryable": false,
+      "name": "ProjectName"
+    }
+  ],
+  "version": "1",
+  "provider": "JenkinsProviderName",
+  "inputArtifactDetails": {
+    "maximumCount": 1,
+    "minimumCount": 0
+  },
+  "outputArtifactDetails": {
+    "maximumCount": 1,com.amazonaws.codepipeline.common.frontend.service#ActionContext$actionExecutionId
+    "minimumCount": 0
+  }
+}')
+
+
+@name("Delete Custom Action Type")
+POST "https://{{aws_codepipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codepipeline_service}}", region="{{aws_codepipeline_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodePipeline_20150709.DeleteCustomActionType"
+? "Action"= "DeleteCustomActionType"
+data('{
+  "category": "Build",
+  "version": "1",
+  "provider": "JenkinsProviderName"
+}')
+
+
+

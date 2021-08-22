@@ -1,0 +1,314 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6b7b8f2d-f9d6-4e28-ab49-93ce71a360f3.postman_collection.json
+
+// This method is used for testing purposes only. Simply call this method to make sure the API is responding fine.
+
+@name("Api Echo")
+GET "https://{{baseUrl}}/viddler.api.echo"
+? "message"= "<>"
+
+
+// Cancel encoding a specific video file.
+
+@name("Encoding Cancel")
+POST "https://{{baseUrl}}/viddler.encoding.cancel"
+? "file_id"= "<>"
+? "sessionid"= "<>"
+
+
+// Returns the current encoding options for an account.
+
+@name("Encoding GetSettings")
+GET "https://{{baseUrl}}/viddler.encoding.getSettings"
+? "sessionid"= "<>"
+
+
+// This method is the same as viddler.encoding.getStatus except that it groups files better for users to easily find what they are looking for. We could not easily update the previous method without causing complications with external applications.
+
+@name("Encoding GetStatus2")
+GET "https://{{baseUrl}}/viddler.encoding.getStatus2"
+? "sessionid"= "<>"
+? "video_id"= "<>"
+
+
+// Adds a new login to user account when the main account has multi-user sign-on enabled. You must have this feature enabled for your account. Please call us at 1-888-444-1119 to enable for you account.
+
+@name("Logins Add")
+POST "https://{{baseUrl}}/viddler.logins.add"
+? "analytics_permissions"= "<>"
+? "api_access_permissions"= "<>"
+? "api_settings_permissions"= "<>"
+? "billing_settings_permissions"= "<>"
+? "branding_settings_permissions"= "<>"
+? "email"= "<>"
+? "encoding_settings_permissions"= "<>"
+? "interaction_settings_permissions"= "<>"
+? "invoices_permissions"= "<>"
+? "itunes_settings_permissions"= "<>"
+? "login"= "<>"
+? "logins_permissions"= "<>"
+? "name"= "<>"
+? "password"= "<>"
+? "player_settings_permissions"= "<>"
+? "playlists_permissions"= "<>"
+? "playlist_ids"= "<>"
+? "privacy_settings_permissions"= "<>"
+? "profile_permissions"= "<>"
+? "recorder_permissions"= "<>"
+? "sessionid"= "<>"
+? "subaccounts_permissions"= "<>"
+? "support_permissions"= "<>"
+? "videos_permissions"= "<>"
+? "vidgets_permissions"= "<>"
+
+
+// Return the current permissions for a specific user.
+
+@name("Logins Get")
+GET "https://{{baseUrl}}/viddler.logins.get"
+? "login"= "<>"
+? "sessionid"= "<>"
+
+
+// Updates a current login.
+
+@name("Logins Update")
+POST "https://{{baseUrl}}/viddler.logins.update"
+? "analytics_permissions"= "<>"
+? "api_access_permissions"= "<>"
+? "api_settings_permissions"= "<>"
+? "billing_settings_permissions"= "<>"
+? "branding_settings_permissions"= "<>"
+? "email"= "<>"
+? "encoding_settings_permissions"= "<>"
+? "interaction_settings_permissions"= "<>"
+? "invoices_permissions"= "<>"
+? "itunes_settings_permissions"= "<>"
+? "login"= "<>"
+? "logins_permissions"= "<>"
+? "name"= "<>"
+? "password"= "<>"
+? "player_settings_permissions"= "<>"
+? "playlists_permissions"= "<>"
+? "playlist_ids"= "<>"
+? "privacy_settings_permissions"= "<>"
+? "profile_permissions"= "<>"
+? "recorder_permissions"= "<>"
+? "sessionid"= "<>"
+? "subaccounts_permissions"= "<>"
+? "support_permissions"= "<>"
+? "videos_permissions"= "<>"
+? "vidgets_permissions"= "<>"
+
+
+// Create a playlist. Regular playlist represents user defined videos. Smart playlist updates in realtime returning videos matching selected filtering rules.
+
+@name("Playlists Create")
+POST "https://{{baseUrl}}/viddler.playlists.create"
+? "max_age"= "<>"
+? "max_update_date"= "<>"
+? "max_views"= "<>"
+? "min_update_date"= "<>"
+? "min_views"= "<>"
+? "name"= "<>"
+? "playlist_visibility"= "<>"
+? "Regular Playlist Params (all optional)nnvideo_ids"= "<>"
+? "sessionid"= "<>"
+? "Smart Playlist Params (all optional)nnusers"= "<>"
+? "sort"= "<>"
+? "tags"= "<>"
+? "type"= "<>"
+? "visibility"= "<>"
+
+
+// Delete a playlist.u00a0Caution: This operation cannot be undone.
+
+@name("Playlists Delete")
+POST "https://{{baseUrl}}/viddler.playlists.delete"
+? "playlist_id"= "<>"
+? "sessionid"= "<>"
+
+
+// List all playlists for an account.
+
+@name("Playlists List")
+GET "https://{{baseUrl}}/viddler.playlists.list"
+? "page"= "<>"
+? "per_page"= "<>"
+? "sessionid"= "<>"
+
+
+// Reorder videos in regular playlist.
+
+@name("Playlists MoveVideo")
+GET "https://{{baseUrl}}/viddler.playlists.moveVideo"
+? "from"= "<>"
+? "playlist_id"= "<>"
+? "sessionid"= "<>"
+? "to"= "<>"
+
+
+// List all subaccounts under your account. Only applies to reseller accounts. Other accounts do not have access to this method.
+
+@name("Resellers GetSubaccounts")
+GET "https://{{baseUrl}}/viddler.resellers.getSubaccounts"
+? "page"= "<>"
+? "per_page"= "<>"
+? "sessionid"= "<>"
+? "sort"= "<>"
+
+
+// Returns your player branding configuration.
+
+@name("Users GetPlayerBranding")
+GET "https://{{baseUrl}}/viddler.users.getPlayerBranding"
+? "sessionid"= "<>"
+
+
+// Get the public information for a profile. Can only get profile information for public profiles.
+
+@name("Users GetProfile")
+GET "https://{{baseUrl}}/viddler.users.getProfile"
+? "sessionid"= "<>"
+? "user"= "<>"
+
+
+// Return account settings.
+
+@name("Users GetSettings")
+GET "https://{{baseUrl}}/viddler.users.getSettings"
+? "sessionid"= "<>"
+
+
+// Sets your player branding options. All options are optional other than your sessionid. Color formats are inu00a0hexadecimalu00a0format with preceding pound sign (IE: #rrggbb)
+
+@name("Users SetPlayerBranding")
+POST "https://{{baseUrl}}/viddler.users.setPlayerBranding"
+? "bclicked"= "<>"
+? "bhover"= "<>"
+? "bidle"= "<>"
+? "control_bar"= "<>"
+? "enable_stripes"= "<>"
+? "logo_align"= "<>"
+? "logo_click_url"= "<>"
+? "logo_offset_x"= "<>"
+? "logo_offset_y"= "<>"
+? "logo_url"= "<>"
+? "logo_visible"= "<>"
+? "pclicked"= "<>"
+? "phover"= "<>"
+? "pidle"= "<>"
+? "sessionid"= "<>"
+? "shade_dark"= "<>"
+? "simple_color"= "<>"
+? "timebackground"= "<>"
+? "timeloaded"= "<>"
+? "timeplayed"= "<>"
+
+
+// Update your profile information.
+
+@name("Users SetProfile")
+GET "https://{{baseUrl}}/viddler.users.setProfile"
+? "avatar_url"= "<>"
+? "homepage"= "<>"
+? "sessionid"= "<>"
+
+
+// Add new closed captioning file for a specific video. All uploaded closed captioning files are enabled by default. The first uploaded file is default for a video.
+
+@name("Videos AddClosedCaptioning")
+POST "https://{{baseUrl}}/viddler.videos.addClosedCaptioning"
+? "closed_captioning_url"= "<>"
+? "default"= "<>"
+? "language"= "<>"
+? "sessionid"= "<>"
+? "video_id"= "<>"
+
+
+// Get comments for a video. If logged in and querying comments for own video &#8211; all comments with any moderation status will be returned. If quering comments as logged out or for not owned video &#8211; only approved comments will be returned if the video itself is public.
+
+@name("Videos Comments Get")
+GET "https://{{baseUrl}}/viddler.videos.comments.get"
+? "page"= "<>"
+? "parent_id"= "<>"
+? "per_page"= "<>"
+? "sessionid"= "<>"
+? "video_id"= "<>"
+
+
+// Remove an existing closed captioning file.
+
+@name("Videos DelClosedCaptioning")
+POST "https://{{baseUrl}}/viddler.videos.delClosedCaptioning"
+? "closed_captioning_id"= "<>"
+? "sessionid"= "<>"
+
+
+// Delete a video.
+
+@name("Videos Delete")
+POST "https://{{baseUrl}}/viddler.videos.delete"
+? "sessionid"= "<>"
+? "video_id"= "<>"
+
+
+// Turn ads off for specified videos.
+
+@name("Videos EnableAds")
+POST "https://{{baseUrl}}/viddler.videos.enableAds"
+? "sessionid"= "<>"
+? "video_ids"= "<>"
+
+
+// viddler.videos.getAdsStatusnGET
+
+@name("Videos GetAdsStatus")
+GET "https://{{baseUrl}}/viddler.videos.getAdsStatus"
+? "sessionid"= "<>"
+? "video_id"= "<>"
+
+
+// Return a list of the embed code types for your account.
+
+@name("Videos GetEmbedCodeTypes")
+GET "https://{{baseUrl}}/viddler.videos.getEmbedCodeTypes"
+? "sessionid"= "<>"
+
+
+// Return a record token to use with Viddler&#8217;s Flash video recorder.
+
+@name("Videos GetRecordToken")
+GET "https://{{baseUrl}}/viddler.videos.getRecordToken"
+? "sessionid"= "<>"
+
+
+// Returns the end-point and token for a new upload session.
+
+@name("Videos PrepareUpload")
+GET "https://{{baseUrl}}/viddler.videos.prepareUpload"
+? "allow_replace"= "<>"
+? "sessionid"= "<>"
+
+
+// Update closed captioning details on a previously uploaded file.
+
+@name("Videos SetClosedCaptioning")
+POST "https://{{baseUrl}}/viddler.videos.setClosedCaptioning"
+? "closed_captioning_id"= "<>"
+? "default"= "<>"
+? "enabled"= "<>"
+? "language"= "<>"
+? "sessionid"= "<>"
+
+
+// Return the status of an upload.
+
+@name("Videos UploadProgress")
+GET "https://{{baseUrl}}/viddler.videos.uploadProgress"
+? "sessionid"= "<>"
+? "token"= "<>"
+
+
+

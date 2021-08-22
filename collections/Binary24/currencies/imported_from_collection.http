@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-832be805-d556-44ec-b62d-44afa80eb78b.postman_collection.json
+
+// Displays all currencies available in which users have their wallets
+
+@name("Get all currencies")
+GET "https://{{baseUrl}}/currencies"
+"X": "<>"
+
+
+// Lists current conversion rates used by an application to calculate value of currencies (rates are calculated in accordance to `base_currency`)
+
+@name("Get conversion rates")
+GET "https://{{baseUrl}}/currencies/conversion_rates"
+"X": "<>"
+
+
+

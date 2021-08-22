@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-57b8bd73-4de0-40d6-a897-419d0ea5b8dd.postman_collection.json
+
+// Get exchanges.
+
+@name("Get Exchanges")
+GET "https://{{baseUrl}}/exchanges"
+? "applicationId"= "<>"
+
+
+// Post sessions.
+
+@name("Post Sessions")
+POST "https://{{baseUrl}}/sessions"
+? "Content"= "<>"
+
+
+

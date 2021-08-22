@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c3d25b31-7e45-4c5d-bcfb-f030bd598da1.postman_collection.json
+
+// Makes sure all of the parameters are camel case -- still working on this one.
+
+@name("Are all parameters valid?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// Checks to see if there is a description for each parameter.
+
+@name("Do all parameters have a description?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// Checks to see if there is a schema object for each parameter.
+
+@name("Do all parameters have a schema?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+

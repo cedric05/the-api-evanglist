@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve view details
+
+@name("get View")
+GET "https://{{baseUrl}}/view/:name/api/json"
+? "No Name"= "<string>"
+
+
+// Retrieve view configuration
+
+@name("get View Config")
+GET "https://{{baseUrl}}/view/:name/config.xml"
+? "No Name"= "<string>"
+
+
+

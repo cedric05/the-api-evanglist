@@ -1,0 +1,121 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Add new Caption Params
+
+@name("Get Service Caption Captionparams Action Add")
+GET "https://{{baseUrl}}/service/caption_captionparams/action/add"
+? "captionParams[partnerId]"= "<>"
+? "captionParams[name]"= "<>"
+? "captionParams[systemName]"= "<>"
+? "captionParams[description]"= "<>"
+? "captionParams[tags]"= "<>"
+? "captionParams[requiredPermissions]"= "<>"
+? "captionParams[sourceRemoteStorageProfileId]"= "<>"
+? "captionParams[remoteStorageProfileIds]"= "<>"
+? "captionParams[mediaParserType]"= "<>"
+? "captionParams[sourceAssetParamsIds]"= "<>"
+? "captionParams[language]"= "<>"
+? "captionParams[isDefault]"= "<>"
+? "captionParams[label]"= "<>"
+? "captionParams[format]"= "<>"
+? "captionParams[sourceParamsId]"= "<>"
+
+
+// Delete Caption Params by ID
+
+@name("Get Service Caption Captionparams Action Delete")
+GET "https://{{baseUrl}}/service/caption_captionparams/action/delete"
+? "id"= "<>"
+
+
+// Get Caption Params by ID
+
+@name("Get Service Caption Captionparams Action Get")
+GET "https://{{baseUrl}}/service/caption_captionparams/action/get"
+? "id"= "<>"
+
+
+// List Caption Params by filter with paging support (By default - all system default params will be listed too)
+
+@name("Get Service Caption Captionparams Action List")
+GET "https://{{baseUrl}}/service/caption_captionparams/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[systemNameEqual]"= "<>"
+? "filter[systemNameIn]"= "<>"
+? "filter[isSystemDefaultEqual]"= "<>"
+? "filter[tagsEqual]"= "<>"
+? "filter[formatEqual]"= "<>"
+? "filter[formatIn]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// Update Caption Params by ID
+
+@name("Get Service Caption Captionparams Action Update")
+GET "https://{{baseUrl}}/service/caption_captionparams/action/update"
+? "id"= "<>"
+? "captionParams[partnerId]"= "<>"
+? "captionParams[name]"= "<>"
+? "captionParams[systemName]"= "<>"
+? "captionParams[description]"= "<>"
+? "captionParams[tags]"= "<>"
+? "captionParams[requiredPermissions]"= "<>"
+? "captionParams[sourceRemoteStorageProfileId]"= "<>"
+? "captionParams[remoteStorageProfileIds]"= "<>"
+? "captionParams[mediaParserType]"= "<>"
+? "captionParams[sourceAssetParamsIds]"= "<>"
+? "captionParams[language]"= "<>"
+? "captionParams[isDefault]"= "<>"
+? "captionParams[label]"= "<>"
+? "captionParams[format]"= "<>"
+? "captionParams[sourceParamsId]"= "<>"
+
+
+

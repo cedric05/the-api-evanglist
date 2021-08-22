@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("delete Self Addons Addon Id")
+DELETE "https://{{baseUrl}}/self/addons/:addonId"
+
+
+@name("get Self Addons Addon Id Applications")
+GET "https://{{baseUrl}}/self/addons/:addonId/applications"
+
+
+@name("get Self Addons Addon Id Env")
+GET "https://{{baseUrl}}/self/addons/:addonId/env"
+
+
+@name("put Self Addons Addon Id Plan")
+PUT "https://{{baseUrl}}/self/addons/:addonId/plan"
+
+
+@name("get Self Addons Addon Id Sso")
+GET "https://{{baseUrl}}/self/addons/:addonId/sso"
+
+
+

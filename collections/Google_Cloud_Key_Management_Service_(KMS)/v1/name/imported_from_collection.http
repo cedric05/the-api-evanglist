@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e1616fb6-640d-4b64-8b03-5b2dddc0491a.postman_collection.json
+
+// Returns metadata for a given CryptoKeyVersion.
+
+@name("Get Key")
+GET "https://{{baseUrl}}/v1/:name"
+
+
+// Lists information about the supported locations for this service.
+
+@name("Get Locations")
+GET "https://{{baseUrl}}/v1/:name/locations"
+? "filter"= "<>"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+
+
+

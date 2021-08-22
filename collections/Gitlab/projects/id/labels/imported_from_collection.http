@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Delete an existing label
+
+@name("Delete Projects  Labels")
+DELETE "https://{{baseUrl}}/projects/:id/labels"
+? "name"= "<get>"
+
+
+// Delete projects  labels subscribable  subscription
+
+@name("Delete Projects  Labels Subscribable  Subscription")
+DELETE "https://{{baseUrl}}/projects/:id/labels/:subscribable_id/subscription"
+
+
+

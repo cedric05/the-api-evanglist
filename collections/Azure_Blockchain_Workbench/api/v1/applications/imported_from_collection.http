@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// Lists all blockchain applications to which a user has access in Workbench. Users who are Workbench administrators get
+//              all blockchain applications. Non-Workbench administrators get all blockchain applications for which they have at least one
+//              associated application role or an associated smart contract instance role.
+
+@name("Get Applications")
+GET "https://{{baseUrl}}/api/v1/applications"
+? "top"= "<>"
+? "skip"= "<>"
+? "enabled"= "<get>"
+? "sortBy"= "<>"
+
+
+// Get a workflow matching a specific workflow ID.
+//              Users who are Workbench administrators get the workflow. Non-Workbench administrators get the workflow if they
+//              have at least one associated application role or is associated with a smart contract instance role.
+
+@name("Get Applications Workflows")
+GET "https://{{baseUrl}}/api/v1/applications/workflows/:workflowId"
+
+
+// Get the blockchain smart contract implementation matching a specific
+//              contract code id. Users who are Workbench administrators get the specified smart contract implementation.
+//              Non-Workbench administrators get the smart contract implementation if they have at least one associated application
+//              role or is associated with a smart contract instance role.
+
+@name("Get Applications Contract Code")
+GET "https://{{baseUrl}}/api/v1/applications/contractCode/:contractCodeId"
+
+
+

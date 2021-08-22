@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-497c1579-7153-42d7-9ae4-62094712cd15.postman_collection.json
+
+// Get summary metrics for a project workflow's jobs. Job runs going back at most 90 days are included in the aggregation window. Metrics are refreshed daily, and thus may not include executions from the last 24 hours. Please note that Insights is not a real time financial reporting tool and should not be used for credit reporting. The most up to date credit information can be found in Plan Overview in the CircleCI UI.
+
+@name("Get summary metrics for a project workflow's jobs.")
+GET "https://{{baseUrl}}/insights/:project-slug/workflows/:workflow-name/jobs"
+? "page-token"= "<string>"
+? "branch"= "<string>"
+? "reporting-window"= "<string>"
+
+
+// Get recent runs of a job within a workflow. Runs going back at most 90 days are returned. Please note that Insights is not a real time financial reporting tool and should not be used for credit reporting. The most up to date credit information can be found in Plan Overview in the CircleCI UI.
+
+@name("Get recent runs of a workflow job")
+GET "https://{{baseUrl}}/insights/:project-slug/workflows/:workflow-name/jobs/:job-name"
+? "branch"= "<string>"
+? "page-token"= "<string>"
+? "start-date"= "<string>"
+? "end-date"= "<string>"
+
+
+

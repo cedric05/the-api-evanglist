@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-95c79ece-4a26-4cb3-b39a-08ef802111c4.postman_collection.json
+
+// Deletes the story.
+
+@name("Delete Blogs")
+DELETE "https://{{baseUrl}}/blogs/:id"
+? "id (required)"= "<>"
+
+
+// Returns a listing of twenty comments for a specific Story.
+
+@name("Get Blogs Comments")
+GET "https://{{baseUrl}}/blogs/:id/comments"
+? "id (required)"= "<>"
+? "page"= "<>"
+
+
+

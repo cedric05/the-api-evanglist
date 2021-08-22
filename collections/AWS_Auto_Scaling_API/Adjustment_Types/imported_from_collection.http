@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4daf4441-eb91-41fe-b023-1dfb7909acdb.postman_collection.json
+
+@name("Describe Adjustment Types")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AdjustmentTypes.member.N"= ""
+? "Action"= "DescribeAdjustmentTypes"
+
+
+

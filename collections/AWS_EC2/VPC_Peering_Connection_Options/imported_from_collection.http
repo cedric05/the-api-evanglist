@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Modifies the VPC peering connection options on one side of a VPC peering connection.
+
+@name("Modify VPC Peering Connection Options")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AccepterPeeringConnectionOptions"= ""
+? "DryRun"= ""
+? "RequesterPeeringConnectionOptions"= ""
+? "VpcPeeringConnectionId"= ""
+? "Action"= "ModifyVpcPeeringConnectionOptions"
+
+
+

@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Get all product classes.
+
+@name("Get all product classes")
+GET "https://{{baseUrl}}/classes"
+"Content": "<>"
+? "token"= "<>"
+
+
+// Get product class details.
+
+@name("Get product class details")
+GET "https://{{baseUrl}}/classes/0"
+"Content": "<>"
+? "token"= "<>"
+
+
+// Delete custom product class.
+
+@name("Delete custom product class")
+DELETE "https://{{baseUrl}}/classes/SET-PRODUCT-CLASS-iD"
+"Content": "<>"
+? "token"= "<>"
+
+
+

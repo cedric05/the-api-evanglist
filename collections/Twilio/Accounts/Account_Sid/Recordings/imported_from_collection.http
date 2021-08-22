@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Deletes a recording  from your account.
+
+@name("/Accounts/:AccountSid/Recordings/{{RecordingSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Recordings/{{RecordingSid}}{{mediaTypeExtension}}"
+
+
+// Deletes a recording  from your account.
+
+@name("Accounts.Account Sid.Recordings.Recording Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Recordings/{{RecordingSid}}.json"
+
+
+

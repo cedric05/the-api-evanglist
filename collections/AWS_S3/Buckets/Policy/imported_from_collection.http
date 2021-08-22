@@ -1,0 +1,66 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Returns the policy of a specified bucket. If you are using an identity other than the root user of the AWS account that owns the bucket, the calling identity must have the GetBucketPolicy permissions on the specified bucket and belong to the bucket owner's account in order to use this operation. 
+
+@name("Bucket Policy")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "policy"= ""
+
+
+// Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity other than the root user of the AWS account that owns the bucket, the calling identity must have the PutBucketPolicy permissions on the specified bucket and belong to the bucket owner's account in order to use this operation. 
+
+@name("Bucket Policy")
+PUT "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"Content-MD5": "{{contentMD5}}"
+"x-amz-confirm-remove-self-bucket-access": "ConfirmRemoveSelfBucketAccess"
+? "policy"= ""
+data('{
+    "Version": "2012-10-17",
+    "Id": "S3-Console-Auto-Gen-Policy-1573968487385",
+    "Statement": [
+        {
+            "Sid": "S3PolicyStmt-DO-NOT-MODIFY-1573968487385",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "s3.amazonaws.com"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::working-demo-2/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:SourceAccount": "879370021840",
+                    "s3:x-amz-acl": "bucket-owner-full-control"
+                },
+                "ArnLike": {
+                    "aws:SourceArn": "arn:aws:s3:::working-demo-2"
+                }
+            }
+        }
+    ]
+}')
+
+
+// Retrieves the policy status for an Amazon S3 bucket, indicating whether the bucket is public. In order to use this operation, you must have the s3:GetBucketPolicyStatus permission. For more information about Amazon S3 permissions, see Specifying Permissions in a Policy. 
+
+@name("Bucket Policy Status")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "policyStatus"= ""
+
+
+// This implementation of the DELETE operation uses the policysubresource to delete the policy of a specified bucket. If you are using an identity other than the root user of the AWS account that owns the bucket, the calling identity must have the DeleteBucketPolicy permissions on the specified bucket and belong to the bucket owner's account in order to use this operation. 
+
+@name("Delete Bucket Policy")
+DELETE "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+? "policy"= ""
+
+
+
+

@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// > In order to gain access to the Email Activity Feed API, you must purchase [additional email activity history](https://app.sendgrid.com/settings/billing/addons/email_activity). 
+// 
+// Filter all messages to search your Email Activity. 
+// 
+// Queries may need to be [URL encoded](https://meyerweb.com/eric/tools/dencoder/). URL encoding depends on how you're using the API - if you are trying it out here, or using one of the Libraries, we handle the encoding for you. If you are using cURL, or your own implem
+
+@name("Filter all messages")
+GET "https://{{baseUrl}}/messages"
+? "query"= "<string>"
+? "limit"= "<string>"
+
+
+// > In order to gain access to the Email Activity Feed API, you must purchase [additional email activity history](https://app.sendgrid.com/settings/billing/addons/email_activity).
+// 
+// This request kicks of a process to generate a CSV file. When the file is generated, the email that is listed as the account owner gets an email that links out to the file that is ready for download. The link expires in 3 days.
+// 
+// The CSV fill contain the last 1 million messages. This endpoint will be rate limited to 1 req
+
+@name("Request a CSV")
+POST "https://{{baseUrl}}/messages/download"
+
+
+

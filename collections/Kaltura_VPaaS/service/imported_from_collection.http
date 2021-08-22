@@ -1,0 +1,109 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// report query action allows to get a analytics data for specific query dimensions, metrics and filters.
+
+@name("Get Service Analytics Action Query")
+GET "https://{{baseUrl}}/service/analytics/action/query"
+? "filter[from_time]"= "<>"
+? "filter[to_time]"= "<>"
+? "filter[metrics]"= "<>"
+? "filter[utcOffset]"= "<>"
+? "filter[dimensions]"= "<>"
+? "filter[filters]"= "<>"
+? "filter[orderBy]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+@name("Get Service Aspera Aspera Action Getfaspurl")
+GET "https://{{baseUrl}}/service/aspera_aspera/action/getFaspUrl"
+? "flavorAssetId"= "<>"
+
+
+@name("Get Service Attuversedistribution Attuverse Action Getfeed")
+GET "https://{{baseUrl}}/service/attuversedistribution_attuverse/action/getFeed"
+? "distributionProfileId"= "<>"
+? "hash"= "<>"
+
+
+@name("Get Service Avndistribution Avn Action Getfeed")
+GET "https://{{baseUrl}}/service/avndistribution_avn/action/getFeed"
+? "distributionProfileId"= "<>"
+? "hash"= "<>"
+
+
+@name("Get Service Comcastmrssdistribution Comcastmrss Action Getfeed")
+GET "https://{{baseUrl}}/service/comcastmrssdistribution_comcastmrss/action/getFeed"
+? "distributionProfileId"= "<>"
+? "hash"= "<>"
+
+
+// List all distribution providers
+
+@name("Get Service Contentdistribution Distributionprover Action List")
+GET "https://{{baseUrl}}/service/contentdistribution_distributionprovider/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[typeEqual]"= "<>"
+? "filter[typeIn]"= "<>"
+? "filter[objectType]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[updatedAtLessThanOrEqual]"= "<>"
+? "filter[partnerIdEqual]"= "<>"
+? "filter[partnerIdIn]"= "<>"
+? "filter[isDefaultEqual]"= "<>"
+? "filter[isDefaultIn]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+

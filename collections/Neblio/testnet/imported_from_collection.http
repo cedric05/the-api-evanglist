@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-511ff114-110c-4b79-9213-f986643f80af.postman_collection.json
+
+// Withdraw testnet NEBL to your Neblio Testnet address. By default amount is 1500000000 or 15 NEBL and has a max of 50 NEBL. Only 2 withdrawals allowed per 24 hour period.
+
+@name("Withdraws testnet NEBL to the specified address")
+GET "https://{{baseUrl}}/testnet/faucet"
+? "address"= "<get>"
+? "amount"= "<get>"
+
+
+

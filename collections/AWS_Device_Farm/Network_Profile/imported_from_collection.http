@@ -1,0 +1,74 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b8e673bd-409c-4ff2-af9c-bb3a976bd9dd.postman_collection.json
+
+@name("Create Network Profile")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "CreateNetworkProfile"
+data('{
+   "description": "string",
+   "downlinkBandwidthBits": number,
+   "downlinkDelayMs": number,
+   "downlinkJitterMs": number,
+   "downlinkLossPercent": number,
+   "name": "string",
+   "projectArn": "string",
+   "type": "string",
+   "uplinkBandwidthBits": number,
+   "uplinkDelayMs": number,
+   "uplinkJitterMs": number,
+   "uplinkLossPercent": number
+}')
+
+
+@name("Delete Network Profile")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "DeleteNetworkProfile"
+data('{
+   "arn": "string"
+}')
+
+
+@name("Get Network Profile")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "GetNetworkProfile"
+data('{
+   "arn": "string"
+}')
+
+
+@name("List Network Profiles")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "ListNetworkProfiles"
+data('{
+   "arn": "string",
+   "nextToken": "string",
+   "type": "string"
+}')
+
+
+@name("Update Network Profile")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "UpdateNetworkProfile"
+data('{
+   "arn": "string",
+   "description": "string",
+   "downlinkBandwidthBits": number,
+   "downlinkDelayMs": number,
+   "downlinkJitterMs": number,
+   "downlinkLossPercent": number,
+   "name": "string",
+   "type": "string",
+   "uplinkBandwidthBits": number,
+   "uplinkDelayMs": number,
+   "uplinkJitterMs": number,
+   "uplinkLossPercent": number
+}')
+
+
+

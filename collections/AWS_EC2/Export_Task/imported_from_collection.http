@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Cancels an active export task.
+
+@name("Cancel Export Task")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ExportTaskId"= ""
+? "Action"= "CancelExportTask"
+
+
+// Describes the specified export instance tasks or all your export instance tasks.
+
+@name("Describe Export Tasks")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ExportTaskId.N"= ""
+? "Action"= "DescribeExportTasks"
+
+
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Returns a list of verified caller ids. If the number is not shown in the list, then it is not verified. In this case sending of a verification code is required. For authentication use api credentials.
+
+@name("Find caller ids")
+GET "https://{{baseUrl}}/me/callerids"
+
+
+

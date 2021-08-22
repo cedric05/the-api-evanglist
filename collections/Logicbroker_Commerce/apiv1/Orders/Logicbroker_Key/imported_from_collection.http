@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39359504-af25-4f48-954b-e7dd332ed9ff.postman_collection.json
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Retrieve an order")
+GET "https://{{baseUrl}}/api/v1/Orders/:LogicbrokerKey"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Retrieve a list of invoices for an order")
+GET "https://{{baseUrl}}/api/v1/Orders/:LogicbrokerKey/Invoices"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Retrieve a list of shipments for an order")
+GET "https://{{baseUrl}}/api/v1/Orders/:LogicbrokerKey/Shipments"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Retrieve related events")
+GET "https://{{baseUrl}}/api/v1/Orders/:LogicbrokerKey/Events"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Retrieve a list of returns for an order")
+GET "https://{{baseUrl}}/api/v1/Orders/:LogicbrokerKey/Returns"
+
+
+// Returns the latest EDI related to this document that was either sent or received by Logicbroker. The EDI output may also contain other documents that were in the same batch.
+
+@name("Retrieve EDI")
+GET "https://{{baseUrl}}/api/v1/Orders/:LogicbrokerKey/EDI"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Get pick list for one order")
+GET "https://{{baseUrl}}/api/v1/Orders/:LogicbrokerKey/PickList"
+? "fileType"= "<>"
+? "ViewInBrowser"= "<>"
+
+
+// Request rate limited to 2 requests per second with bursts up to 25 requests.
+
+@name("Get shipping/tracking label options.")
+GET "https://{{baseUrl}}/api/v1/Orders/:LogicbrokerKey/ShippingOptions"
+
+
+// Request rate limited to 2 requests per second with bursts up to 25 requests.
+
+@name("Generate a tracking label for a given package")
+POST "https://{{baseUrl}}/api/v1/Orders/:LogicbrokerKey/TrackingLabel"
+? "useSenderAccount"= "<>"
+
+
+

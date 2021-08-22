@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-792dfe43-4b9e-4102-95e0-ea6b0d991301.postman_collection.json
+
+@name("Create Tags")
+GET "https://{{aws_redshift_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_redshift_service}}", region="{{aws_redshift_region}}")
+
+
+@name("Delete Tags")
+GET "https://{{aws_redshift_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_redshift_service}}", region="{{aws_redshift_region}}")
+
+
+@name("Describe Tags")
+GET "https://{{aws_redshift_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_redshift_service}}", region="{{aws_redshift_region}}")
+
+
+

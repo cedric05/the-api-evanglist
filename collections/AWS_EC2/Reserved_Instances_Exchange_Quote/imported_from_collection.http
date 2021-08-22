@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// .
+
+@name("Accept Reserved Instances Exchange Quote")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "AcceptReservedInstancesExchangeQuote"
+
+
+// Returns a quote and exchange information for exchanging one or more specified
+//                         Convertible Reserved Instances for a new Convertible Reserved Instance.
+
+@name("Get Reserved Instances Exchange Quote")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "ReservedInstanceId.N"= ""
+? "TargetConfiguration.N"= ""
+? "Action"= "GetReservedInstancesExchangeQuote"
+
+
+

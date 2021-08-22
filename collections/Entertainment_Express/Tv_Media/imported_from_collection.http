@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Get list of generic lineup IDs that can be used.  A 'generic' lineup is not a real lineup, but a collection of stations defined by TV Media.  Any listing retrieved using a generic lineup will not return any channel number information, as it is irrelevant.
+
+@name("Get Tv Media Generic Lineups")
+GET "https://{{baseUrl}}/TvMedia/reference/lineups"
+? "TvMediaApiKey"= "<get>"
+? "Detail"= "<get>"
+
+
+

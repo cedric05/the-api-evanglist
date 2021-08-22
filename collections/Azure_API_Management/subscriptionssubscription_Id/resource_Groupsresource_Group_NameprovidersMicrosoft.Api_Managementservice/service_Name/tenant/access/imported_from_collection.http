@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Get tenant access information details.
+
+@name("TenantAccess Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/access"
+
+
+// Regenerate primary access key.
+
+@name("TenantAccess RegeneratePrimaryKey")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/access/regeneratePrimaryKey"
+
+
+// Regenerate secondary access key.
+
+@name("TenantAccess RegenerateSecondaryKey")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/access/regenerateSecondaryKey"
+
+
+

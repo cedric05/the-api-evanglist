@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Searches for webhook resources. Available resources include 'CccCampaign': ['started', 'stopped', 'finished'], 'CallBroadcast': ['started', 'stopped', 'finished'], 'TextBroadcast': ['started', 'stopped', 'finished'], 'OutboundCall': ['finished'], 'InboundCall': ['finished'], 'OutboundText': ['finished'], 'InboundText': ['finished'], 'ContactList': ['validationFinished', 'validationFailed']
+
+@name("Find webhook resources")
+GET "https://{{baseUrl}}/webhooks/resources"
+? "fields"= "<string>"
+
+
+// Returns information about supported events for a given webhook resource
+
+@name("Find specific webhook resource")
+GET "https://{{baseUrl}}/webhooks/resources/:resource"
+? "fields"= "<string>"
+
+
+

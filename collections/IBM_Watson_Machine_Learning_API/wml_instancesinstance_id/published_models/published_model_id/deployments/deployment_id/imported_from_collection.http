@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1870fecb-0090-4c1a-976d-99be7baaa589.postman_collection.json
+
+// Get wml instances instance published models published model deployments deployment.
+
+@name("Get Wml Instances Instance Published Models Published Model Deployments Deployment")
+GET "https://{{baseUrl}}/wml_instances/:instance_id/published_models/:published_model_id/deployments/:deployment_id"
+
+
+// Post wml instances instance published models published model deployments deployment online.
+
+@name("Post Wml Instances Instance Published Models Published Model Deployments Deployment Online")
+POST "https://{{baseUrl}}/wml_instances/:instance_id/published_models/:published_model_id/deployments/:deployment_id/online"
+
+
+

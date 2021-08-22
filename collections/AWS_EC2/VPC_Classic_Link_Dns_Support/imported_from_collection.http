@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes the ClassicLink DNS support status of one or more VPCs.
+
+@name("Describe VPC Classic Link Dns Support")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "MaxResults"= ""
+? "NextToken"= ""
+? "VpcIds.N"= ""
+? "Action"= "DescribeVpcClassicLinkDnsSupport"
+
+
+// Disables ClassicLink DNS support for a VPC.
+
+@name("Disable VPC Classic Link Dns Support")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "VpcId"= ""
+? "Action"= "DisableVpcClassicLinkDnsSupport"
+
+
+// Enables a VPC to support DNS hostname resolution for ClassicLink.
+
+@name("Enable VPC Classic Link Dns Support")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "VpcId"= ""
+? "Action"= "EnableVpcClassicLinkDnsSupport"
+
+
+

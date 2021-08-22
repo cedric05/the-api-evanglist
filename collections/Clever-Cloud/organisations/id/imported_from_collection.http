@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("delete Organisations Id")
+DELETE "https://{{baseUrl}}/organisations/:id"
+
+
+// If you want to upload an image from your computer, send the image in the body of the request without anything else.
+
+@name("put Organisations Id Avatar")
+PUT "https://{{baseUrl}}/organisations/:id/avatar"
+
+
+@name("get Organisations Id Consumptions")
+GET "https://{{baseUrl}}/organisations/:id/consumptions"
+? "appId"= "<string>"
+? "from"= "<string>"
+? "to"= "<string>"
+
+
+@name("get Organisations Id Credits")
+GET "https://{{baseUrl}}/organisations/:id/credits"
+
+
+@name("get Organisations Id Instances")
+GET "https://{{baseUrl}}/organisations/:id/instances"
+
+
+@name("get Organisations Id Payment Info")
+GET "https://{{baseUrl}}/organisations/:id/payment-info"
+
+
+

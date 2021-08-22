@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-603068d7-d854-4df0-b326-be978f214a5e.postman_collection.json
+
+@name("Remove Tags From Resource")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.RemoveTagsFromResource"
+? "Action"= "RemoveTagsFromResource"
+data('{"ResourceARN":"string","TagKeys":["string"]}')
+
+
+

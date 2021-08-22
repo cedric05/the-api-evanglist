@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92163795-090f-4322-a9fd-7e9b26bedf17.postman_collection.json
+
+@name("Create Hapg")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "CreateHapg"
+
+
+@name("Delete Hapg")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "DeleteHapg"
+
+
+@name("Describe Hapg")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "DescribeHapg"
+
+
+@name("List Hapgs")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "ListHapgs"
+
+
+@name("Modify Hapg")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "ModifyHapg"
+
+
+

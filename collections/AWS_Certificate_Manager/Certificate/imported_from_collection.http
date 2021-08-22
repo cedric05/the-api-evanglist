@@ -1,0 +1,90 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-210e539f-4d05-4c1a-9d53-755f828e1683.postman_collection.json
+
+@name("Delete Certificate")
+POST "https://{{aws_certificate_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_certificate_manager_service}}", region="{{aws_certificate_manager_region}}")
+? "Action"= "DeleteCertificate"
+data('{
+  "CertificateArn": "arn:aws:acm:us-east-1:111122223333:certificate/12345678-1234-1234-1234-123456789012"
+}')
+
+
+@name("Describe Certificate")
+POST "https://{{aws_certificate_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_certificate_manager_service}}", region="{{aws_certificate_manager_region}}")
+? "Action"= "DescribeCertificate"
+data('{
+  "CertificateArn": "arn:aws:acm:us-east-1:111122223333:certificate/12345678-1234-1234-1234-123456789012"
+}')
+
+
+@name("Export Certificate")
+POST "https://{{aws_certificate_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_certificate_manager_service}}", region="{{aws_certificate_manager_region}}")
+? "Action"= "ExportCertificate"
+data('{
+  "CertificateArn": "arn:aws:acm:us-east-1:account:certificate/12345678-1234-1234-1234-1234556789012",
+  "Passphrase": "cGFzc3dvcmQ="
+}')
+
+
+@name("Get Certificate")
+POST "https://{{aws_certificate_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_certificate_manager_service}}", region="{{aws_certificate_manager_region}}")
+? "Action"= "GetCertificate"
+data('{
+  "CertificateArn": "arn:aws:acm:us-east-1:111122223333:certificate/12345678-1234-1234-1234-123456789012"
+}')
+
+
+@name("Import Certificate")
+POST "https://{{aws_certificate_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_certificate_manager_service}}", region="{{aws_certificate_manager_region}}")
+? "Action"= "ImportCertificate"
+data('{
+    "CertificateChain": "Base64-encoded blob",
+    "PrivateKey": "Base64-encoded blob",
+    "Certificate": "Base64-encoded blob"	
+}')
+
+
+@name("List Certificates")
+POST "https://{{aws_certificate_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_certificate_manager_service}}", region="{{aws_certificate_manager_region}}")
+? "Action"= "ListCertificates"
+data('{
+	"MaxItems": 10,
+	"Includes": {
+		"keyUsage": ["DIGITAL_SIGNATURE"],
+		"keyTypes": ["RSA_2048"],
+		"extendedKeyUsage": ["CODE_SIGNING"]
+	}
+}')
+
+
+@name("Renew Certificate")
+POST "https://{{aws_certificate_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_certificate_manager_service}}", region="{{aws_certificate_manager_region}}")
+? "Action"= "RenewCertificate"
+data('{
+  "CertificateArn": "arn:aws:acm:us-east-1:111122223333:certificate/12345678-1234-1234-1234-123456789012"
+}')
+
+
+@name("Request Certificate")
+POST "https://{{aws_certificate_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_certificate_manager_service}}", region="{{aws_certificate_manager_region}}")
+? "Action"= "RequestCertificate"
+data('{
+  "IdempotencyToken": "184627",
+  "CertificateOptions": {
+    "CertificateTransparencyLoggingPreference": "DISABLED"
+  },
+  "ValidationMethod": "DNS",
+  "DomainName": "www.example.com"
+}')
+
+
+

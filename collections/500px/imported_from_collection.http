@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-95c79ece-4a26-4cb3-b39a-08ef802111c4.postman_collection.json
+
+// Creates a reply to an existing comment. Comments can only be nested one level deep, you cannot reply to a reply of a comment. If a comment has a non-null parent_id value then it cannot be replied to.
+
+@name("Post Comments Comments")
+POST "https://{{baseUrl}}/comments/:id/comments"
+? "body (required)"= "<>"
+
+
+

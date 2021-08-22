@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e4a472a1-7d82-4a3c-b4e1-85e0dad2e1ca.postman_collection.json
+
+@name("Connect Directory")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.ConnectDirectory"
+? "Action"= "ConnectDirectory"
+data('{"ConnectSettings":{"CustomerDnsIps":["string"],"CustomerUserName":"string","SubnetIds":["string"],"VpcId":"string"},"Description":"string","Name":"string","Password":"string","ShortName":"string","Size":"string","Tags":[{"Key":"string","Value":"string"}]}')
+
+
+@name("Create Directory")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.CreateDirectory"
+? "Action"= "CreateDirectory"
+data('{"Description":"string","Name":"string","Password":"string","ShortName":"string","Size":"string","Tags":[{"Key":"string","Value":"string"}],"VpcSettings":{"SubnetIds":["string"],"VpcId":"string"}}')
+
+
+@name("Delete Directory")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.DeleteDirectory"
+? "Action"= "DeleteDirectory"
+data('{"DirectoryId":"string"}')
+
+
+@name("Share Directory")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.ShareDirectory"
+? "Action"= "ShareDirectory"
+data('{"DirectoryId":"string","ShareMethod":"string","ShareNotes":"string","ShareTarget":{"Id":"string","Type":"string"}}')
+
+
+@name("Unshare Directory")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.UnshareDirectory"
+? "Action"= "UnshareDirectory"
+data('{"DirectoryId":"string","UnshareTarget":{"Id":"string","Type":"string"}}')
+
+
+

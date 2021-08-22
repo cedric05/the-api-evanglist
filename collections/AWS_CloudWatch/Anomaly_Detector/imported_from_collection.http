@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-65976312-4837-4e6a-b30f-fd3fcee99b05.postman_collection.json
+
+@name("Delete Anomaly Detector")
+GET "https://{{aws_cloudwatch_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudwatch_service}}", region="{{aws_cloudwatch_region}}")
+? "Action"= "DeleteAnomalyDetector"
+? "Dimensions.member.N"= ""
+? "MetricName"= ""
+? "Namespace"= ""
+? "Stat"= ""
+? "Version"= "2010-08-01"
+
+
+@name("Describe Anomaly Detectors")
+GET "https://{{aws_cloudwatch_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudwatch_service}}", region="{{aws_cloudwatch_region}}")
+? "Action"= "DescribeAnomalyDetectors"
+? "Dimensions.member.N"= ""
+? "MaxResults"= ""
+? "MetricName"= ""
+? "Namespace"= ""
+? "NextToken"= ""
+? "Version"= "2010-08-01"
+
+
+@name("Put Anomaly Detector")
+GET "https://{{aws_cloudwatch_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudwatch_service}}", region="{{aws_cloudwatch_region}}")
+? "Action"= "PutAnomalyDetector"
+? "Configuration"= ""
+? "Dimensions.member.N"= ""
+? "MetricName"= ""
+? "Namespace"= ""
+? "Stat"= ""
+? "Version"= "2010-08-01"
+
+
+

@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b30fdb4-df71-430c-bca5-582cc0c9e09b.postman_collection.json
+
+@name("Create User Profile")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"AllowSelfManagement":1,"IamUserArn":"string","SshPublicKey":"string","SshUsername":"string"}')
+
+
+@name("Delete User Profile")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"IamUserArn":"string"}')
+
+
+@name("Describe User Profiles")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"IamUserArns":["string"]}')
+
+
+@name("Update User Profile")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"AllowSelfManagement":1,"IamUserArn":"string","SshPublicKey":"string","SshUsername":"string"}')
+
+
+

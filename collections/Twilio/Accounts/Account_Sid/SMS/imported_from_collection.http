@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns a list of ShortCode resource representations, each representing a
+// short code within your account. The list includes paging information.
+
+@name("/Accounts/:AccountSid/SMS/ShortCodes{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SMS/ShortCodes{{mediaTypeExtension}}"
+
+
+// Returns a list of ShortCode resource representations, each representing a
+// short code within your account. The list includes paging information.
+
+@name("Accounts.Account Sid.SMS.Short Codes.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SMS/ShortCodes.json"
+
+
+

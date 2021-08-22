@@ -1,0 +1,74 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("post Oauth Access Token")
+POST "https://{{baseUrl}}/oauth/access_token"
+? "oauth_consumer_key"= "<string>"
+? "oauth_token"= "<string>"
+? "oauth_signature_method"= "<string>"
+? "oauth_signature"= "<string>"
+? "oauth_timestamp"= "<string>"
+? "oauth_nonce"= "<string>"
+? "oauth_version"= "<string>"
+? "oauth_verifier"= "<string>"
+? "oauth_callback"= "<string>"
+? "oauth_token_secret"= "<string>"
+? "oauth_callback_confirmed"= "<string>"
+
+
+@name("/oauth/access_token_query")
+POST "https://{{baseUrl}}/oauth/access_token_query"
+? "oauth_consumer_key"= "<string>"
+? "oauth_token"= "<string>"
+? "oauth_signature_method"= "<string>"
+? "oauth_signature"= "<string>"
+? "oauth_timestamp"= "<string>"
+? "oauth_nonce"= "<string>"
+? "oauth_version"= "<string>"
+? "oauth_verifier"= "<string>"
+? "oauth_callback"= "<string>"
+? "oauth_token_secret"= "<string>"
+? "oauth_callback_confirmed"= "<string>"
+
+
+@name("get Oauth Authorize")
+GET "https://{{baseUrl}}/oauth/authorize"
+? "oauth_token"= "<string>"
+
+
+@name("post Oauth Request Token")
+POST "https://{{baseUrl}}/oauth/request_token"
+? "oauth_consumer_key"= "<string>"
+? "oauth_token"= "<string>"
+? "oauth_signature_method"= "<string>"
+? "oauth_signature"= "<string>"
+? "oauth_timestamp"= "<string>"
+? "oauth_nonce"= "<string>"
+? "oauth_version"= "<string>"
+? "oauth_verifier"= "<string>"
+? "oauth_callback"= "<string>"
+? "oauth_token_secret"= "<string>"
+? "oauth_callback_confirmed"= "<string>"
+
+
+@name("/oauth/request_token_query")
+POST "https://{{baseUrl}}/oauth/request_token_query"
+? "oauth_consumer_key"= "<string>"
+? "oauth_token"= "<string>"
+? "oauth_signature_method"= "<string>"
+? "oauth_signature"= "<string>"
+? "oauth_timestamp"= "<string>"
+? "oauth_nonce"= "<string>"
+? "oauth_version"= "<string>"
+? "oauth_verifier"= "<string>"
+? "oauth_callback"= "<string>"
+? "oauth_token_secret"= "<string>"
+? "oauth_callback_confirmed"= "<string>"
+
+
+@name("get Oauth Rights")
+GET "https://{{baseUrl}}/oauth/rights"
+
+
+

@@ -1,0 +1,67 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Allocates an Elastic IP address to your AWS account.
+
+@name("Allocate Address")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Address"= ""
+? "Domain"= ""
+? "DryRun"= ""
+? "PublicIpv4Pool"= ""
+? "Action"= "AllocateAddress"
+
+
+// Associates an Elastic IP address with an instance or a network interface.
+
+@name("Associate Address")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AllocationId"= ""
+? "AllowReassociation"= ""
+? "DryRun"= ""
+? "InstanceId"= ""
+? "NetworkInterfaceId"= ""
+? "PrivateIpAddress"= ""
+? "PublicIp"= ""
+? "Action"= "AssociateAddress"
+
+
+// Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
+
+@name("Describe Addresses")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AllocationId.N"= ""
+? "DryRun"= ""
+? "Filter.N"= ""
+? "PublicIp.N"= ""
+? "Action"= "DescribeAddresses"
+
+
+// Disassociates an Elastic IP address from the instance or network interface it's associated
+//                         with.
+
+@name("Disassociate Address")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AssociationId"= ""
+? "DryRun"= ""
+? "PublicIp"= ""
+? "Action"= "DisassociateAddress"
+
+
+// Releases the specified Elastic IP address.
+
+@name("Release Address")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AllocationId"= ""
+? "DryRun"= ""
+? "PublicIp"= ""
+? "Action"= "ReleaseAddress"
+
+
+

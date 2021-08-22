@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8d99c2b-2fe6-4f91-a503-ec7d0d7da490.postman_collection.json
+
+// Lists the history of the service configuration for a managed service,
+// from the newest to the oldest.
+
+@name("Create Service Configurations")
+GET "https://{{baseUrl}}/v1/services/:serviceName/configs"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+
+
+// Gets a service configuration (version) for a managed service.
+
+@name("Get Service Configuration")
+GET "https://{{baseUrl}}/v1/services/:serviceName/configs/:configId"
+? "view"= "<>"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b3423fc1-6423-4e31-9835-20949e4088f7.postman_collection.json
+
+// Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+
+@name("Get IAM Policy")
+GET "https://{{baseUrl}}/:project/global/groups/:resource/getIamPolicy"
+
+
+// Sets the access control policy on the specified resource. Replaces any existing policy.
+
+@name("Set IAM Policy")
+POST "https://{{baseUrl}}/:project/global/groups/:resource/setIamPolicy"
+
+
+// Returns permissions that a caller has on the specified resource.
+
+@name("Test IAM Permissions")
+POST "https://{{baseUrl}}/:project/global/groups/:resource/testIamPermissions"
+
+
+

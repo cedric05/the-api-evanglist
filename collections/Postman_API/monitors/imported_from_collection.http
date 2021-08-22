@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// The `/monitors` endpoint returns a list of all [monitors](https://monitor.getpostman.com/) that are accessible by you.
+// 
+// The response contains an array of monitors information containing the `name`, `id`, `owner` and `uid` of each monitor.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("All Monitors")
+GET "https://{{baseUrl}}/monitors"
+
+
+

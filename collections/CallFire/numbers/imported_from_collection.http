@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Searches for numbers available for purchase in CallFire local numbers catalog . At least one additional parameter is required. User may filter local numbers by their region information.
+
+@name("Find local numbers")
+GET "https://{{baseUrl}}/numbers/local"
+? "limit"= "<integer>"
+? "prefix"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zipcode"= "<string>"
+? "lata"= "<string>"
+? "rateCenter"= "<string>"
+? "fields"= "<string>"
+
+
+// Searches for region information. Use this API to obtain detailed region information that can be used to query for more specific phone numbers than a general query.
+
+@name("Find number regions")
+GET "https://{{baseUrl}}/numbers/regions"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "prefix"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zipcode"= "<string>"
+? "lata"= "<string>"
+? "rateCenter"= "<string>"
+? "fields"= "<string>"
+
+
+// Searches for the toll free numbers which are available for purchase in the CallFire catalog
+
+@name("Find tollfree numbers")
+GET "https://{{baseUrl}}/numbers/tollfree"
+? "pattern"= "<string>"
+? "limit"= "<integer>"
+? "fields"= "<string>"
+
+
+

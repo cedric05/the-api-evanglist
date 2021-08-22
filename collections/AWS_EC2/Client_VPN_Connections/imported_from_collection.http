@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes active client connections and connections that have been terminated within
+//                         the last 60 
+//                         minutes for the specified Client VPN endpoint.
+
+@name("Describe Client VPN Connections")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientVpnEndpointId"= ""
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeClientVpnConnections"
+
+
+// Terminates active Client VPN endpoint connections.
+
+@name("Terminate Client VPN Connections")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientVpnEndpointId"= ""
+? "ConnectionId"= ""
+? "DryRun"= ""
+? "Username"= ""
+? "Action"= "TerminateClientVpnConnections"
+
+
+

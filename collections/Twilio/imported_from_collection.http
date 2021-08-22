@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Retrieve a list of the Account resources belonging to the account used to make the
+// API request. This list will include that Account as well.
+
+@name("/Accounts{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts{{mediaTypeExtension}}"
+
+
+// Retrieve a list of the Account resources belonging to the account used to make the
+// API request. This list will include that Account as well.
+
+@name("Accounts.json.get")
+GET "https://{{baseUrl}}/Accounts.json"
+
+
+

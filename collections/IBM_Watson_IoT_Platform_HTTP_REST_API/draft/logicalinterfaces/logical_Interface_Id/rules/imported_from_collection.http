@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Rules allow you to specify conditions that can be used to trigger
+// actions. For example, you might create a rule that sends an email if
+// the temperature of a device exceeds a certain value.
+// 
+// Rules are defined against a specific logical interface schema.  At
+// runtime, a rule will be evaluated whenever the state for a Device that
+// exposes the logical interface changes.
+// 
+// The **/draft/logicalinterfaces/{logicalInterfaceId}/rules** endpoint
+// returns the list of all of the draft rules that have been associ
+
+@name("Query draft rules")
+GET "https://{{baseUrl}}/draft/logicalinterfaces/:logicalInterfaceId/rules"
+
+
+// Retrieve the draft rule with the specified id that has been associated
+// with the specified logical interface.
+
+@name("Get a draft rule")
+GET "https://{{baseUrl}}/draft/logicalinterfaces/:logicalInterfaceId/rules/:ruleId"
+
+
+

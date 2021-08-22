@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// This endpoint allows you to import your exported Postman data.
+// For more information about how you can export your data, refer <a href="https://go.postman.co/me/export">Export your Postman data.</a>
+// 
+// On successful imports, the response will be an array with Each element contaning `id`, `name` and `uid` of entities created.
+// 
+// **Note**: Refer to examples for different scenarios.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header.
+
+@name("Import exported data")
+POST "https://{{baseUrl}}/import/exported"
+
+
+// This endpoint allows you to import external API specifications into Postman.
+// 
+// Currently, this endpoint only supports the <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md">OpenAPI</a> specification, for which the `importType` will be `openapi`.
+// 
+// On a successful import, the response will be an array with each element contaning `id`, `name` and `uid` of entities created.
+// 
+// Supported `type`s:
+// 
+// - string
+// - json
+// - file
+// 
+// The `input` parameter should be defined based on 
+
+@name("Import external API specification")
+POST "https://{{baseUrl}}/import/openapi"
+
+
+

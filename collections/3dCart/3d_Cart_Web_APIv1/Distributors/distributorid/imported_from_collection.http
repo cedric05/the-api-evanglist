@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+@name("This method is used to update a single distributor record in the database. The {distributorid} parameter specifies which distributor to update.")
+PUT "https://{{baseUrl}}/3dCartWebAPI/v1/Distributors/:distributorid"
+
+
+// Get a list of all products from a specific distributor
+
+@name("Get all products from a specific distributor")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Distributors/:distributorid/Products"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+? "sku"= "<string>"
+? "name"= "<string>"
+? "costfrom"= "<number>"
+? "costto"= "<number>"
+? "pricefrom"= "<number>"
+? "priceto"= "<number>"
+? "stockfrom"= "<number>"
+? "stockto"= "<number>"
+? "hide"= "<boolean>"
+? "freeshipping"= "<boolean>"
+? "onsale"= "<boolean>"
+? "nontax"= "<integer>"
+? "notforsale"= "<boolean>"
+? "giftcertificate"= "<boolean>"
+? "homespecial"= "<boolean>"
+? "categoryspecial"= "<boolean>"
+? "nonsearchable"= "<boolean>"
+? "selfship"= "<boolean>"
+? "rewarddisable"= "<integer>"
+? "lastupdatestart"= "<string>"
+? "lastupdateend"= "<string>"
+
+
+

@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9a62c01e-3db2-4f66-b90d-a4df9dd9bd07.postman_collection.json
+
+// Lists users in your organization with pagination in most cases.  A subset of users can be returned that match a supported filter expression or search criteria.
+
+@name("List Users")
+GET "https://{{baseUrl}}/api/v1/users"
+? "q"= "<string>"
+? "after"= "<string>"
+? "limit"= "<integer>"
+? "filter"= "<string>"
+? "format"= "<string>"
+? "search"= "<string>"
+? "expand"= "<string>"
+
+
+

@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Searches all webhooks available for a current user. Searches by name, resource, event, callback URL, or whether they are enabled. Returns a paged list of Webhooks
+
+@name("Find webhooks")
+GET "https://{{baseUrl}}/webhooks"
+? "fields"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "name"= "<string>"
+? "resource"= "<string>"
+? "event"= "<string>"
+? "callback"= "<string>"
+? "enabled"= "<boolean>"
+
+
+// Deletes a webhook instance. Will be removed permanently
+
+@name("Delete a webhook")
+DELETE "https://{{baseUrl}}/webhooks/:id"
+
+
+

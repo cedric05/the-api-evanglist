@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e67b3188-27a3-4cc3-85ac-f2a6f45a3e20.postman_collection.json
+
+// <p>Returns a list of the single audit configuration.<p>
+// List
+
+@name("List All Audit Configuration")
+GET "https://{{baseUrl}}/1.0/auditConfiguration"
+
+
+// Returns a template, which is an example AuditConfiguration that can be used as a reference for what AuditConfiguration objects should
+//  look like.
+// Template
+
+@name("Audit Configuration Template")
+GET "https://{{baseUrl}}/1.0/auditConfiguration/template"
+
+
+

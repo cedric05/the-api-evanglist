@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a new version for a launch template.
+
+@name("Create Launch Template Version")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "DryRun"= ""
+? "LaunchTemplateData"= ""
+? "LaunchTemplateId"= ""
+? "LaunchTemplateName"= ""
+? "SourceVersion"= ""
+? "VersionDescription"= ""
+? "Action"= "CreateLaunchTemplateVersion"
+
+
+// Deletes one or more versions of a launch template.
+
+@name("Delete Launch Template Versions")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "LaunchTemplateId"= ""
+? "LaunchTemplateName"= ""
+? "LaunchTemplateVersion.N"= ""
+? "Action"= "DeleteLaunchTemplateVersions"
+
+
+// Describes one or more versions of a specified launch template.
+
+@name("Describe Launch Template Versions")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "LaunchTemplateId"= ""
+? "LaunchTemplateName"= ""
+? "LaunchTemplateVersion.N"= ""
+? "MaxResults"= ""
+? "MaxVersion"= ""
+? "MinVersion"= ""
+? "NextToken"= ""
+? "Action"= "DescribeLaunchTemplateVersions"
+
+
+

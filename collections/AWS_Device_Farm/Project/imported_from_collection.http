@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b8e673bd-409c-4ff2-af9c-bb3a976bd9dd.postman_collection.json
+
+@name("Create Project")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "CreateProject"
+data('{
+   "defaultJobTimeoutMinutes": number,
+   "name": "string"
+}')
+
+
+@name("Delete Project")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "DeleteProject"
+data('{
+   "arn": "string"
+}')
+
+
+@name("Get Project")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "GetProject"
+data('{
+   "arn": "string"
+}')
+
+
+@name("List Projects")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "ListProjects"
+data('{
+   "arn": "string",
+   "nextToken": "string"
+}')
+
+
+@name("Update Project")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "UpdateProject"
+data('{
+   "arn": "string",
+   "defaultJobTimeoutMinutes": number,
+   "name": "string"
+}')
+
+
+

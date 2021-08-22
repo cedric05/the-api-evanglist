@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-497c1579-7153-42d7-9ae4-62094712cd15.postman_collection.json
+
+// Returns summary fields of a workflow by ID.
+
+@name("Get a workflow")
+GET "https://{{baseUrl}}/workflow/:id"
+
+
+// Approves a pending approval job in a workflow.
+
+@name("Approve a job")
+POST "https://{{baseUrl}}/workflow/:id/approve/:approval_request_id"
+
+
+// Cancels a running workflow.
+
+@name("Cancel a workflow")
+POST "https://{{baseUrl}}/workflow/:id/cancel"
+
+
+// Returns a sequence of jobs for a workflow.
+
+@name("Get a workflow's jobs")
+GET "https://{{baseUrl}}/workflow/:id/job"
+
+
+// Reruns a workflow.
+
+@name("Rerun a workflow")
+POST "https://{{baseUrl}}/workflow/:id/rerun"
+
+
+

@@ -1,0 +1,72 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// 
+// 
+// * See also [konghq](https://docs.konghq.com/2.0.x/admin-api/#route-object)
+// 
+// 
+// <table style="width:50%">  <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>optional</td>
+//     <td>The Route name</td>
+//   </tr>
+//   <tr>
+//     <td>protocols</td>
+//     <td>required</td>
+//     <td>A list of the protocols this Route should allow. When set to ["https"], HTTP requests are answered with a request to upgrade to HTTPS. Defaults to ["http", "https"]</
+
+@name("Create Route")
+POST "https://{{baseUrl}}/routes"
+
+
+// ## Retrieve Route [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-route-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>Route name or id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier or the name of the Route to retrieve.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Route")
+GET "https://{{baseUrl}}/routes/:routeNameOrID"
+
+
+// # Create Plugin Associated to a Specific Route [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-plugin-associated-to-a-specific-route)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>route id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the Route that should be associated to the newly-created Plugin.</td>
+//   </tr>
+// </table>
+// 
+// # Request Body
+// <table style="width:
+
+@name("Create Plugin Associated to a Specific Route")
+POST "https://{{baseUrl}}/routes/:routeId/plugins"
+
+
+

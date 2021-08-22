@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-95c79ece-4a26-4cb3-b39a-08ef802111c4.postman_collection.json
+
+// Returns a listing of twenty (up to one hundred) photos for a specified photo stream.
+
+@name("Get Photos")
+GET "https://{{baseUrl}}/photos"
+? "exclude"= "<>"
+? "feature"= "<>"
+? "image_size"= "<>"
+? "include_states"= "<>"
+? "include_store"= "<>"
+? "only"= "<>"
+? "page"= "<>"
+? "rpp"= "<>"
+? "sort"= "<>"
+? "sort_direction"= "<>"
+? "tags"= "<>"
+? "user_id"= "<>"
+? "username"= "<>"
+
+
+// Deletes the photo from the Users library.
+
+@name("Delete Photos")
+DELETE "https://{{baseUrl}}/photos/:id"
+? "id (required)"= "<>"
+
+
+

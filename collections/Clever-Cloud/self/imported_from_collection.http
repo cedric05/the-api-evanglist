@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("delete Self")
+DELETE "https://{{baseUrl}}/self"
+
+
+@name("put Self Avatar")
+PUT "https://{{baseUrl}}/self/avatar"
+
+
+@name("put Self Change Password")
+PUT "https://{{baseUrl}}/self/change_password"
+
+
+@name("get Self Confirmation Email")
+GET "https://{{baseUrl}}/self/confirmation_email"
+
+
+@name("get Self Consumptions")
+GET "https://{{baseUrl}}/self/consumptions"
+? "appId"= "<string>"
+? "from"= "<string>"
+? "to"= "<string>"
+
+
+@name("get Self Credits")
+GET "https://{{baseUrl}}/self/credits"
+
+
+@name("get Self Id")
+GET "https://{{baseUrl}}/self/id"
+
+
+@name("get Self Instances")
+GET "https://{{baseUrl}}/self/instances"
+
+
+@name("get Self Payment Info")
+GET "https://{{baseUrl}}/self/payment-info"
+
+
+@name("get Self Validate Email")
+GET "https://{{baseUrl}}/self/validate_email"
+? "validationKey"= "<string>"
+
+
+

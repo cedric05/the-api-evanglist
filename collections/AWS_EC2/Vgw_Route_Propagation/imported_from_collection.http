@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Disables a virtual private gateway (VGW) from propagating routes to a specified route
+//                         table of a VPC.
+
+@name("Disable Vgw Route Propagation")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "GatewayId"= ""
+? "RouteTableId"= ""
+? "Action"= "DisableVgwRoutePropagation"
+
+
+// Enables a virtual private gateway (VGW) to propagate routes to the specified route
+//                         table of a VPC.
+
+@name("Enable Vgw Route Propagation")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "GatewayId"= ""
+? "RouteTableId"= ""
+? "Action"= "EnableVgwRoutePropagation"
+
+
+

@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all orders
+
+@name("Get all orders")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Orders"
+? "invoicenumber"= "<integer>"
+? "invoicenumberstart"= "<integer>"
+? "invoicenumberend"= "<integer>"
+? "invoiceprefix"= "<string>"
+? "orderstatus"= "<object>"
+? "datestart"= "<string>"
+? "dateend"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+? "lastupdatestart"= "<string>"
+? "lastupdateend"= "<string>"
+? "billingemail"= "<string>"
+
+
+

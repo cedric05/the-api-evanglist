@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a1adb5da-a0fe-4a6e-9435-7531e1b20955.postman_collection.json
+
+// Adds a user as a member in a group represented by its groupId
+// 
+// **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**:
+// User must be a site admin.
+
+@name("Add member to group by groupId")
+POST "https://{{baseUrl}}/api/group/userByGroupId"
+"Content-Type": "application/json"
+? "groupId"= "<string>"
+json({
+    "accountId": "<string>"
+})
+
+
+// Remove user as a member from a group.
+// 
+// **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**:
+// User must be a site admin.
+
+@name("Remove member from group using group id")
+DELETE "https://{{baseUrl}}/api/group/userByGroupId"
+? "groupId"= "<string>"
+? "accountId"= "<string>"
+
+
+

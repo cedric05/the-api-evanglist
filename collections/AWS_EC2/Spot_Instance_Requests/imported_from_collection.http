@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Cancels one or more Spot Instance requests.
+
+@name("Cancel Spot Instance Requests")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "SpotInstanceRequestId.N"= ""
+? "Action"= "CancelSpotInstanceRequests"
+
+
+// Describes the specified Spot Instance requests.
+
+@name("Describe Spot Instance Requests")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "SpotInstanceRequestId.N"= ""
+? "Action"= "DescribeSpotInstanceRequests"
+
+
+

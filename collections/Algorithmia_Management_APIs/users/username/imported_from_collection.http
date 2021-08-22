@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9844d24d-a804-4291-beee-fc6ba6a9e5ce.postman_collection.json
+
+@name("Get a user represented by the provided username")
+GET "https://{{baseUrl}}/users/:username"
+"Authorization": "<string>"
+
+
+@name("Update a user represented by the provided username")
+PUT "https://{{baseUrl}}/users/:username"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "email": "<string>",
+    "resource_type": "<string>",
+    "username": "<string>",
+    "fullname": "<string>",
+    "avatar_url": "<string>",
+    "company_name": "<string>",
+    "company_role": "<string>",
+    "self_link": "<string>"
+})
+
+
+@name("Delete a user represented by the provided username")
+DELETE "https://{{baseUrl}}/users/:username"
+"Authorization": "<string>"
+
+
+
+

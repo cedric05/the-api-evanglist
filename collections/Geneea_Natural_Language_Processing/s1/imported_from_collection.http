@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-679760f4-a39a-489e-84bd-ecb683352bf3.postman_collection.json
+
+// <br/><strong>Possible options:</strong><p class="markdown">An optional parameter <code>diacritize</code> with values <code>yes</code>, <code>no</code> or <code>auto</code> indicate whether the text diacritization will be performed. The default value is <code>auto</code>.</p>
+
+@name("Performs text correction (diacritization) on the given document")
+GET "https://{{baseUrl}}/s1/correction"
+? "id"= "<string>"
+? "text"= "<string>"
+? "url"= "<string>"
+? "extractor"= "<string>"
+? "language"= "<string>"
+? "returnTextInfo"= "<boolean>"
+
+
+// entitiesGet
+
+@name("Performs named-entity recognition on the given document")
+GET "https://{{baseUrl}}/s1/entities"
+? "id"= "<string>"
+? "text"= "<string>"
+? "url"= "<string>"
+? "extractor"= "<string>"
+? "language"= "<string>"
+? "returnTextInfo"= "<boolean>"
+
+
+// lemmatizeGet
+
+@name("Performs lemmatization on the given document")
+GET "https://{{baseUrl}}/s1/lemmatize"
+? "id"= "<string>"
+? "text"= "<string>"
+? "url"= "<string>"
+? "extractor"= "<string>"
+? "language"= "<string>"
+? "returnTextInfo"= "<boolean>"
+
+
+// sentimentGet
+
+@name("Performs sentiment analysis on the given document")
+GET "https://{{baseUrl}}/s1/sentiment"
+? "id"= "<string>"
+? "text"= "<string>"
+? "url"= "<string>"
+? "extractor"= "<string>"
+? "language"= "<string>"
+? "returnTextInfo"= "<boolean>"
+
+
+// topicGet
+
+@name("Performs topic detection on the given document")
+GET "https://{{baseUrl}}/s1/topic"
+? "id"= "<string>"
+? "text"= "<string>"
+? "url"= "<string>"
+? "extractor"= "<string>"
+? "language"= "<string>"
+? "returnTextInfo"= "<boolean>"
+
+
+

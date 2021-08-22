@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d414d168-67be-4032-acf4-92b1b278f5f2.postman_collection.json
+
+@name("Batch Delete Builds")
+GET "https://{{aws_codebuild_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codebuild_service}}", region="{{aws_codebuild_region}}")
+
+
+@name("Batch Get Builds")
+GET "https://{{aws_codebuild_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codebuild_service}}", region="{{aws_codebuild_region}}")
+
+
+@name("List Builds")
+GET "https://{{aws_codebuild_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codebuild_service}}", region="{{aws_codebuild_region}}")
+
+
+@name("Start Build")
+GET "https://{{aws_codebuild_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codebuild_service}}", region="{{aws_codebuild_region}}")
+
+
+@name("Stop Build")
+GET "https://{{aws_codebuild_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codebuild_service}}", region="{{aws_codebuild_region}}")
+
+
+

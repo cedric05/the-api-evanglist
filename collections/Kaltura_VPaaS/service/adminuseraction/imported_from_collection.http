@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Get an admin session using admin email and password (Used for login to the KMC application)
+
+@name("Get Service Adminuser Action Login")
+GET "https://{{baseUrl}}/service/adminuser/action/login"
+? "email"= "<>"
+? "password"= "<>"
+? "partnerId"= "<>"
+
+
+// Reset admin user password and send it to the users email address
+
+@name("Get Service Adminuser Action Resetpassword")
+GET "https://{{baseUrl}}/service/adminuser/action/resetPassword"
+? "email"= "<>"
+
+
+// Set initial users password
+
+@name("Get Service Adminuser Action Setinitialpassword")
+GET "https://{{baseUrl}}/service/adminuser/action/setInitialPassword"
+? "hashKey"= "<>"
+? "newPassword"= "<>"
+
+
+// Update admin user password and email
+
+@name("Get Service Adminuser Action Updatepassword")
+GET "https://{{baseUrl}}/service/adminuser/action/updatePassword"
+? "email"= "<>"
+? "password"= "<>"
+? "newEmail"= "<>"
+? "newPassword"= "<>"
+
+
+

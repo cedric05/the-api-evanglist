@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Delete Configuration Aggregator")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DeleteConfigurationAggregator"
+data('{
+   "ConfigurationAggregatorName": "string"
+}')
+
+
+@name("Describe Configuration Aggregators")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DescribeConfigurationAggregators"
+data('{
+   "ConfigurationAggregatorNames": [ "string" ],
+   "Limit": number,
+   "NextToken": "string"
+}')
+
+
+@name("Put Configuration Aggregator")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "PutConfigurationAggregator"
+data('{
+   "AccountAggregationSources": [ 
+      { 
+         "AccountIds": [ "string" ],
+         "AllAwsRegions": boolean,
+         "AwsRegions": [ "string" ]
+      }
+   ],
+   "ConfigurationAggregatorName": "string",
+   "OrganizationAggregationSource": { 
+      "AllAwsRegions": boolean,
+      "AwsRegions": [ "string" ],
+      "RoleArn": "string"
+   },
+   "Tags": [ 
+      { 
+         "Key": "string",
+         "Value": "string"
+      }
+   ]
+}')
+
+
+

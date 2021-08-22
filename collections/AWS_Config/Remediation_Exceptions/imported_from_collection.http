@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Delete Remediation Exceptions")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DeleteRemediationExceptions"
+data('{
+   "ConfigRuleName": "string",
+   "ResourceKeys": [ 
+      { 
+         "ResourceId": "string",
+         "ResourceType": "string"
+      }
+   ]
+}')
+
+
+@name("Describe Remediation Exceptions")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DescribeRemediationExceptions"
+data('{
+   "ConfigRuleName": "string",
+   "Limit": number,
+   "NextToken": "string",
+   "ResourceKeys": [ 
+      { 
+         "ResourceId": "string",
+         "ResourceType": "string"
+      }
+   ]
+}')
+
+
+@name("Put Remediation Exceptions")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "PutRemediationExceptions"
+data('{
+   "ConfigRuleName": "string",
+   "ExpirationTime": number,
+   "Message": "string",
+   "ResourceKeys": [ 
+      { 
+         "ResourceId": "string",
+         "ResourceType": "string"
+      }
+   ]
+}')
+
+
+

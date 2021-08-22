@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// # Create CA Certificate [konghq](https://docs.konghq.com/2.0.x/admin-api/#create-ca-certificate)
+// 
+// # Request Body
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>cert</td>
+//     <td>required</td>
+//     <td>body</td>
+//     <td>PEM-encoded public certificate of the CA.</td>
+//   </tr>
+//   <tr>
+//     <td>tags</td>
+//     <td>optional</td>
+//     <td>body</td>
+//     <td>An optional set of strings associated with the Certifi
+
+@name("Create CA Certificate")
+POST "https://{{baseUrl}}/ca_certificates"
+
+
+// # Retrieve CA Certificate [konghq](https://docs.konghq.com/2.0.x/admin-api/#retrieve-ca-certificate-1)
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>ca_certificate id</td>
+//     <td>required</td>
+//     <td>path</td>
+//     <td>The unique identifier of the CA Certificate to retrieve.</td>
+//   </tr>
+// </table>
+
+@name("Retrieve CA Certificate")
+GET "https://{{baseUrl}}/ca_certificates/:ca_certificateId"
+
+
+

@@ -1,0 +1,36 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d28d1616-8b77-4b53-b06f-5498b00510bf.postman_collection.json
+
+// Retrieving the Email SPAM Complaints
+
+@name("Retrieve Email Bounces")
+GET "https://{{baseUrl}}/reports/bounces"
+? "apikey"= "<>"
+? "bounce_code "= "<>"
+? "bounce_code_id "= "<>"
+? "bounce_rule "= "<>"
+? "bounce_type"= "<>"
+? "bounce_type_id "= "<>"
+? "emailaddress"= "<>"
+? "endtime"= "<>"
+? "noheaders"= "<>"
+? "sender"= "<>"
+? "sender_id"= "<>"
+? "startindex"= "<>"
+? "starttime"= "<>"
+? "[X"= "<>"
+
+
+// Retrieving a total count of Email bounces using the API requires specific syntax for the REST API.
+
+@name("Retrieve Count of Email Bounces")
+GET "https://{{baseUrl}}/reports/bounces/count"
+? "apikey"= "<>"
+? "endtime"= "<>"
+? "sender"= "<>"
+? "starttime"= "<>"
+? "[X"= "<>"
+
+
+

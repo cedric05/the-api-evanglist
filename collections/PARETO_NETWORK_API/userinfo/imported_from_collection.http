@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-43eb9207-90f7-4ed9-bbd9-b4326bd099b8.postman_collection.json
+
+// Get the information of the current user. The current user is fetched using the auth cookie.
+
+@name("Get the information of the profile user")
+GET "https://{{baseUrl}}/userinfo"
+? "latest"= "<>"
+
+
+// Get the profile of a specific user.
+
+@name("Get the profile of a specific user")
+GET "https://{{baseUrl}}/userinfo/:address"
+
+
+

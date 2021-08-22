@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Adds an ingress authorization rule to a Client VPN endpoint.
+
+@name("Authorize Client VPN Ingress")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AccessGroupId"= ""
+? "AuthorizeAllGroups"= ""
+? "ClientToken"= ""
+? "ClientVpnEndpointId"= ""
+? "Description"= ""
+? "DryRun"= ""
+? "TargetNetworkCidr"= ""
+? "Action"= "AuthorizeClientVpnIngress"
+
+
+// Removes an ingress authorization rule from a Client VPN endpoint.
+
+@name("Revoke Client VPN Ingress")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AccessGroupId"= ""
+? "ClientVpnEndpointId"= ""
+? "DryRun"= ""
+? "RevokeAllGroups"= ""
+? "TargetNetworkCidr"= ""
+? "Action"= "RevokeClientVpnIngress"
+
+
+

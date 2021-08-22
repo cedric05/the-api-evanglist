@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-832be805-d556-44ec-b62d-44afa80eb78b.postman_collection.json
+
+// Lists symbol settings. Symbols are the market instruments on which you are able to make orders.
+
+@name("Get all symbols")
+GET "https://{{baseUrl}}/symbols"
+"X": "<>"
+
+
+// Displays trading holidays for symbol. During the holidays the trading is closed.
+// 
+// From/To - how many seconds since 00:00 UTC
+
+@name("Get trading holidays for symbol")
+GET "https://{{baseUrl}}/symbols/trading_holidays/:symbol"
+"X": "<>"
+
+
+// Displays symbol trading hours<br>
+// <br>
+// From/To - how many seconds since 00:00
+
+@name("Get trading hours for symbol")
+GET "https://{{baseUrl}}/symbols/trading_hours/:symbol"
+"X": "<>"
+
+
+

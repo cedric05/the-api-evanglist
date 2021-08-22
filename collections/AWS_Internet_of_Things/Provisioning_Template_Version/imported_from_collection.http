@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Create Provisioning Template Version")
+GET "https://{{aws_internet_of_things_base_url}}/provisioning-templates/templateName/versions"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Delete Provisioning Template Version")
+GET "https://{{aws_internet_of_things_base_url}}/provisioning-templates/templateName/versions/versionId&templateName=&versionId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Describe Provisioning Template Version")
+GET "https://{{aws_internet_of_things_base_url}}/provisioning-templates/templateName/versions/versionId&templateName=&versionId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List Provisioning Template Versions")
+GET "https://{{aws_internet_of_things_base_url}}/provisioning-templates/templateName/versions"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

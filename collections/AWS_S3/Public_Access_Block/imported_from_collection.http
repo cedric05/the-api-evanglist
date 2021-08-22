@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Retrieves the PublicAccessBlock configuration for an Amazon S3 bucket. In order to use this operation, you must have the s3:GetBucketPublicAccessBlock permission. For more information about Amazon S3 permissions, see Specifying Permissions in a Policy. 
+
+@name("Public Access Block")
+GET "https://s3.amazonaws.com/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "publicAccessBlock"= ""
+
+
+// Retrieves the PublicAccessBlock configuration for an Amazon S3 bucket. In order to use this operation, you must have the s3:GetBucketPublicAccessBlock permission. For more information about Amazon S3 permissions, see Specifying Permissions in a Policy. 
+
+@name("Public Access Block")
+PUT "https://s3.amazonaws.com/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "publicAccessBlock"= ""
+
+
+// Removes the PublicAccessBlock configuration for an Amazon S3 bucket. In order to use this operation, you must have the s3:PutBucketPublicAccessBlock permission.
+
+@name("Public Access Block")
+DELETE "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "publicAccessBlock"= ""
+
+
+

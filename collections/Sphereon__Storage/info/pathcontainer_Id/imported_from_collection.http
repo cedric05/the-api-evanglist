@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-46125f15-bb1b-4d2c-bf33-03dd3d0b91fa.postman_collection.json
+
+// Returns Stream(s) information from the root. When the path points to a file and if the file exists, a StreamInfo record of that single file will be returned. When the path points to a folder, the StreamInfo records of all files in that folder will be returned.
+
+@name("List streams in root path")
+GET "https://{{baseUrl}}/info/path/:containerId/"
+
+
+// Returns Stream(s) information on the given path. When the path points to a file and if the file exists, a StreamInfo record of that single file will be returned. When the path points to a folder, the StreamInfo records of all files in that folder will be returned.
+
+@name("List streams in path")
+GET "https://{{baseUrl}}/info/path/:containerId/:path"
+
+
+

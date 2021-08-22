@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-636878cf-858a-49ff-a702-23d094c066ea.postman_collection.json
+
+// Gets general metadata about the current state of the blockchain network.
+// Useful for building dashboards.
+
+@name("Get Status")
+GET "https://{{baseUrl}}/status"
+
+
+// Information about an application referenced by the `id` parameter. If
+// you are permissioned to that application, this will also return the
+// message definitions you will need to comply with to issue valid transaction
+// entries for that application.
+
+@name("Get App")
+GET "https://{{baseUrl}}/app/:id"
+
+
+

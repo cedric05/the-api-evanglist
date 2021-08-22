@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9a62c01e-3db2-4f66-b90d-a4df9dd9bd07.postman_collection.json
+
+// Activates a specific group rule by id from your organization
+
+@name("Activate a group Rule")
+POST "https://{{baseUrl}}/api/v1/groups/rules/:ruleId/lifecycle/activate"
+
+
+// Deactivates a specific group rule by id from your organization
+
+@name("Deactivate a group Rule")
+POST "https://{{baseUrl}}/api/v1/groups/rules/:ruleId/lifecycle/deactivate"
+
+
+

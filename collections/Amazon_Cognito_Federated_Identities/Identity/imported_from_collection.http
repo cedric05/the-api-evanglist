@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2f393c49-f959-4f18-bf04-79f6c8910daa.postman_collection.json
+
+@name("Describe Identity")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.DescribeIdentity"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "DescribeIdentity"
+data('{
+   "IdentityId": "string"
+}')
+
+
+@name("Unlink Identity")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.UnlinkIdentity"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "UnlinkIdentity"
+data('{
+    "IdentityId": "us-east-1:6820d0d3-3c95-4d9f-8813-c4448fca995f",
+    "Logins":
+    {
+        "accounts.google.com": "<PROVIDER_TOKEN>"
+    },
+    "LoginsToRemove": ["accounts.google.com"]
+}')
+
+
+

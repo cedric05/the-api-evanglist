@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Returns MovieTickets Cultures.
+
+@name("Get MovieTickets Cultures.")
+GET "https://{{baseUrl}}/MovieTickets/Cultures"
+
+
+// Returns MovieTickets Performances by MovieTickets Theater ID, Entertainment Movie ID, and ScheduleDate.
+
+@name("Get MovieTickets Performances.")
+GET "https://{{baseUrl}}/MovieTickets/Performances"
+? "Culture"= "<get>"
+? "ScheduleDate"= "<get>"
+? "TheaterIds"= "<get>"
+? "EntertainmentMovieIds"= "<get>"
+
+
+// Returns MovieTickets Theaters by postal code.
+
+@name("Get MovieTickets Theaters.")
+GET "https://{{baseUrl}}/MovieTickets/Theaters"
+? "Culture"= "<get>"
+? "PostalCode"= "<get>"
+? "Longitude"= "<get>"
+? "Latitude"= "<get>"
+? "Distance"= "<get>"
+? "PageNumber"= "<get>"
+? "PageSize"= "<get>"
+
+
+

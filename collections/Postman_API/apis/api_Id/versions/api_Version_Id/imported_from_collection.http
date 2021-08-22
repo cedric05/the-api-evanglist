@@ -1,0 +1,85 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// This call fetches details about the specified API Version.
+// 
+// The response will contain a `version` object which would contain all the details of the API Version.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get an API Version")
+GET "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId"
+
+
+// This call fetches all the relations by type which are linked to the specified API version along with their details.
+// 
+// The response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get contract test relations")
+GET "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/contracttest"
+
+
+// This call fetches all the relations by type which are linked to the specified API version along with their details.
+// 
+// The response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get  documentation relations")
+GET "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/documentation"
+
+
+// This call fetches all the relations by type which are linked to the specified API version along with their details.
+// 
+// The response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get environment relations")
+GET "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/environment"
+
+
+// This call fetches all the relations by type which are linked to the specified API version along with their details.
+// 
+// The response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get integration test relations")
+GET "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/integrationtest"
+
+
+// This call fetches all the relations by type which are linked to the specified API version along with their details.
+// 
+// The response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get monitor relations")
+GET "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/monitor"
+
+
+// This call fetches all the relations which are linked to the specified API version along with their details.
+// 
+// The response will contain a `relations` object which lists all the relation types which are linked to the API version. Each of the relation type will be an object which details the relations of this type. 
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get linked relations")
+GET "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/relations"
+
+
+// This call fetches all the relations by type which are linked to the specified API version along with their details.
+// 
+// The response will contain an array with key `{{relationType}}`. Each of the item will consist of all the details related each of the relation.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Get test suite relations")
+GET "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/testsuite"
+
+
+

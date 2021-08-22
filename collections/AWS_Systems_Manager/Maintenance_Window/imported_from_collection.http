@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aae3264c-1b30-4227-9429-291e0bd8acbe.postman_collection.json
+
+@name("Create Maintenance Window")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"AllowUnassociatedTargets":1,"ClientToken":"string","Cutoff":1,"Description":"string","Duration":1,"EndDate":"string","Name":"string","Schedule":"string","ScheduleTimezone":"string","StartDate":"string","Tags":[{"Key":"string","Value":"string"}]}')
+
+
+@name("Delete Maintenance Window")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"WindowId":"string"}')
+
+
+@name("Describe Maintenance Windows")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Filters":[{"Key":"string","Values":["string"]}],"MaxResults":1,"NextToken":"string"}')
+
+
+@name("Get Maintenance Window")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"WindowId":"string"}')
+
+
+@name("Update Maintenance Window")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"AllowUnassociatedTargets":1,"Cutoff":1,"Description":"string","Duration":1,"Enabled":1,"EndDate":"string","Name":"string","Replace":1,"Schedule":"string","ScheduleTimezone":"string","StartDate":"string","WindowId":"string"}')
+
+
+

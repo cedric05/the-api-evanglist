@@ -1,0 +1,60 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Attaches a virtual private gateway to a VPC.
+
+@name("Attach VPN Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VpcId"= ""
+? "VpnGatewayId"= ""
+? "Action"= "AttachVpnGateway"
+
+
+// Creates a virtual private gateway.
+
+@name("Create VPN Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AmazonSideAsn"= ""
+? "AvailabilityZone"= ""
+? "DryRun"= ""
+? "Type"= ""
+? "Action"= "CreateVpnGateway"
+
+
+// Deletes the specified virtual private gateway.
+
+@name("Delete VPN Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VpnGatewayId"= ""
+? "Action"= "DeleteVpnGateway"
+
+
+// Describes one or more of your virtual private gateways.
+
+@name("Describe VPN Gateways")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "VpnGatewayId.N"= ""
+? "Action"= "DescribeVpnGateways"
+
+
+// Detaches a virtual private gateway from a VPC.
+
+@name("Detach VPN Gateway")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VpcId"= ""
+? "VpnGatewayId"= ""
+? "Action"= "DetachVpnGateway"
+
+
+

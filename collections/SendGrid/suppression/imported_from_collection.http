@@ -1,0 +1,72 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve a list of all email addresses that are currently on your blocks list.**
+// 
+// There are several causes for [blocked](https://sendgrid.com/docs/Glossary/blocks.html) emails: for example, your mail server IP address is on an ISP blacklist, or blocked by an ISP, or if the receiving server flags the message content.
+// 
+// For more information, please see our [User Guide](https://sendgrid.com/docs/User_Guide/Suppressions/blocks.html).
+
+@name("Retrieve all blocks")
+GET "https://{{baseUrl}}/suppression/blocks"
+? "start_time"= "<integer>"
+? "end_time"= "<integer>"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+// **This endpoint allows you to delete all of your bounces. You can also use this endpoint to remove a specific email address from your bounce list.**
+// 
+// A bounced email is when the message is undeliverable and then returned to the server that sent it.
+// 
+// For more information see: 
+// 
+// * [User Guide > Bounces](https://sendgrid.com/docs/User_Guide/Suppressions/bounces.html) for more information
+// * [Glossary > Bounces](https://sendgrid.com/docs/Glossary/Bounces.html)
+// * [Classroom > List Scrubbing Guide](htt
+
+@name("Delete bounces")
+DELETE "https://{{baseUrl}}/suppression/bounces"
+
+
+// **This endpoint allows you to remove email addresses from your invalid email address list.**
+// 
+// There are two options for deleting invalid email addresses: 
+// 
+// 1) You can delete all invalid email addresses by setting `delete_all` to true in the request body.
+// 2) You can delete some invalid email addresses by specifying certain addresses in an array in the request body.
+// 
+// An invalid email occurs when you attempt to send email to an address that is formatted in a manner that does not meet internet email
+
+@name("Delete invalid emails")
+DELETE "https://{{baseUrl}}/suppression/invalid_emails"
+
+
+// **This endpoint allows you to retrieve all spam reports.**
+// 
+// [Spam reports](https://sendgrid.com/docs/Glossary/spam_reports.html) happen when a recipient indicates that they think your email is [spam](https://sendgrid.com/docs/Glossary/spam.html) and then their email provider reports this to SendGrid.
+// 
+// For more information, please see our [User Guide](https://sendgrid.com/docs/User_Guide/Suppressions/spam_reports.html).
+
+@name("Retrieve all spam reports")
+GET "https://{{baseUrl}}/suppression/spam_reports"
+? "start_time"= "<integer>"
+? "end_time"= "<integer>"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+// **This endpoint allows you to retrieve a list of all email address that are globally suppressed.**
+// 
+// A global suppression (or global unsubscribe) is an email address of a recipient who does not want to receive any of your messages. A globally suppressed recipient will be removed from any email you send. For more information, please see our [User Guide](https://sendgrid.com/docs/User_Guide/Suppressions/global_unsubscribes.html).
+
+@name("Retrieve all global suppressions")
+GET "https://{{baseUrl}}/suppression/unsubscribes"
+? "start_time"= "<integer>"
+? "end_time"= "<integer>"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+

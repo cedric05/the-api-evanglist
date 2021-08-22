@@ -1,0 +1,52 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Allocates a Dedicated Host to your account.
+
+@name("Allocate Hosts")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AutoPlacement"= ""
+? "AvailabilityZone"= ""
+? "ClientToken"= ""
+? "HostRecovery"= ""
+? "InstanceType"= ""
+? "Quantity"= ""
+? "TagSpecification.N"= ""
+? "Action"= "AllocateHosts"
+
+
+// Describes the specified Dedicated Hosts or all your Dedicated Hosts.
+
+@name("Describe Hosts")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Filter.N"= ""
+? "HostId.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeHosts"
+
+
+// Modify the auto-placement setting of a Dedicated Host.
+
+@name("Modify Hosts")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AutoPlacement"= ""
+? "HostId.N"= ""
+? "HostRecovery"= ""
+? "Action"= "ModifyHosts"
+
+
+// When you no longer want to use an On-Demand Dedicated Host it can be released.
+
+@name("Release Hosts")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "HostId.N"= ""
+? "Action"= "ReleaseHosts"
+
+
+

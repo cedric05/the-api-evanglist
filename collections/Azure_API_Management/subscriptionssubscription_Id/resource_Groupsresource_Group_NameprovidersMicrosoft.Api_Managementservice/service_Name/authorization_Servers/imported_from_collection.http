@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Lists a collection of authorization servers defined within a service instance.
+
+@name("AuthorizationServers ListByService")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/authorizationServers"
+? "$filter"= "<>"
+
+
+// Gets the details of the authorization server specified by its identifier.
+
+@name("AuthorizationServers Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/authorizationServers/:authsid"
+
+
+

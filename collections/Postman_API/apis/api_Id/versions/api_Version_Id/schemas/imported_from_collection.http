@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// This call creates a new schema.
+// 
+// Request body should contain a `schema` object which should atleast have these properties with `string` values:
+// 
+// - **`type`**: Allowed types are `openapi3`, `openapi2`, `openapi1`, `raml` and `graphql`.
+// - **`language`** : Allowed languages are `json` and `yaml` for OpenAPI and RAML schema types. GraphQL schema type accepts only `graphql` language.
+// - **`schema`**: Optional. If passed, must be the content of the schema as a `string`.
+// 
+// Response contains a `schema` ob
+
+@name("Create Schema")
+POST "https://{{baseUrl}}/apis/:apiId/versions/:apiVersionId/schemas"
+
+
+

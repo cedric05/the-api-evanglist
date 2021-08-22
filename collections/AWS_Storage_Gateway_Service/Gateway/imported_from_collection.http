@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-603068d7-d854-4df0-b326-be978f214a5e.postman_collection.json
+
+@name("Activate Gateway")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.ActivateGateway"
+? "Action"= "ActivateGateway"
+data('{"ActivationKey":"string","GatewayName":"string","GatewayRegion":"string","GatewayTimezone":"string","GatewayType":"string","MediumChangerType":"string","Tags":[{"Key":"string","Value":"string"}],"TapeDriveType":"string"}')
+
+
+@name("Delete Gateway")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.DeleteGateway"
+? "Action"= "DeleteGateway"
+data('{"GatewayARN":"string"}')
+
+
+@name("Disable Gateway")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.DisableGateway"
+? "Action"= "DisableGateway"
+data('{"GatewayARN":"string"}')
+
+
+@name("List Gateways")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.ListGateways"
+? "Action"= "ListGateways"
+data('{"Limit":1,"Marker":"string"}')
+
+
+@name("Shutdown Gateway")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.ShutdownGateway"
+? "Action"= "ShutdownGateway"
+data('{"GatewayARN":"string"}')
+
+
+@name("Start Gateway")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.StartGateway"
+? "Action"= "StartGateway"
+data('{"GatewayARN":"string"}')
+
+
+

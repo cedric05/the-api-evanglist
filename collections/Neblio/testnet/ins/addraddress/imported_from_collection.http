@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-511ff114-110c-4b79-9213-f986643f80af.postman_collection.json
+
+// Returns NEBL address object containing information on a specific address
+
+@name("Returns address object")
+GET "https://{{baseUrl}}/testnet/ins/addr/:address"
+
+
+// Returns NEBL address balance in satoshis
+
+@name("Returns address balance in sats")
+GET "https://{{baseUrl}}/testnet/ins/addr/:address/balance"
+
+
+// Returns NEBL address unconfirmed balance in satoshis
+
+@name("Returns address unconfirmed balance in sats")
+GET "https://{{baseUrl}}/testnet/ins/addr/:address/unconfirmedBalance"
+
+
+// Returns total NEBL received by address in satoshis
+
+@name("Returns total received by address in sats")
+GET "https://{{baseUrl}}/testnet/ins/addr/:address/totalReceived"
+
+
+// Returns information on each Unspent Transaction Output contained at an address
+
+@name("Returns all UTXOs at a given address")
+GET "https://{{baseUrl}}/testnet/ins/addr/:address/utxo"
+
+
+// Returns total NEBL sent by address in satoshis
+
+@name("Returns total sent by address in sats")
+GET "https://{{baseUrl}}/testnet/ins/addr/:address/totalSent"
+
+
+

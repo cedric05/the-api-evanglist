@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Gets list of movie genres.
+
+@name("Get Tv Media Movie Genres")
+GET "https://{{baseUrl}}/TvMedia/genres/movies"
+? "TvMediaApiKey"= "<get>"
+
+
+// Gets list of show genres.
+
+@name("Get Tv Media Show Genres")
+GET "https://{{baseUrl}}/TvMedia/genres/shows"
+? "TvMediaApiKey"= "<get>"
+
+
+// Gets list of sports genres.
+
+@name("Get Tv Media Sport Genres")
+GET "https://{{baseUrl}}/TvMedia/genres/sports"
+? "TvMediaApiKey"= "<get>"
+
+
+

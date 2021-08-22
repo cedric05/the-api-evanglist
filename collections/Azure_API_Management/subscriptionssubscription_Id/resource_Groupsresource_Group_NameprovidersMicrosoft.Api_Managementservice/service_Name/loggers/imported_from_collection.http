@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Lists a collection of loggers in the specified service instance.
+
+@name("Loggers ListByService")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/loggers"
+? "$filter"= "<>"
+
+
+// Gets the details of the logger specified by its identifier.
+
+@name("Loggers Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/loggers/:loggerid"
+
+
+

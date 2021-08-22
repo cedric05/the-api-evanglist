@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Get category details.
+
+@name("Get category details")
+GET "https://{{baseUrl}}/categories/SET-CATEGORY-ID"
+"Content": "<>"
+? "token"= "<>"
+
+
+// Upload / add category icon.
+
+@name("Upload / add category icon")
+POST "https://{{baseUrl}}/categories/SET-CATEGORY-ID/image"
+"Content": "<>"
+? "token"= "<>"
+
+
+

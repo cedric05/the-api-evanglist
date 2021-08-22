@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Search customers.
+
+@name("Search customers")
+GET "https://{{baseUrl}}/customers"
+"Content": "<>"
+? "token"= "<>"
+? "maxOrderCount"= "<>"
+
+
+// Get customer details.
+
+@name("Get customer details")
+GET "https://{{baseUrl}}/customers/SET-CUSTOMER-ID"
+"Content": "<>"
+? "token"= "<>"
+
+
+// Get deleted customers.
+
+@name("Get deleted customers")
+GET "https://{{baseUrl}}/customers/deleted"
+"Content": "<>"
+? "token"= "<>"
+
+
+

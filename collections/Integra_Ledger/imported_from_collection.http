@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3d486f5d-86bf-46e2-ba38-aa9d6866fb21.postman_collection.json
+
+// Check for the existence of a identityId on the Integra Ledger.
+
+@name("IdentityExists (GET)")
+GET "https://{{baseUrl}}/IdentityExists"
+? "identityId"= "<get>"
+
+
+// Register a PKI Public Key on the Integra Ledger.
+
+@name("KeyForOwner (GET)")
+GET "https://{{baseUrl}}/KeyForOwner"
+? "owner"= "<get>"
+? "nameSpace"= "<>"
+
+
+// Register a new identity on the Integra Ledger passing in
+
+@name("RegisterIdentity (POST)")
+POST "https://{{baseUrl}}/RegisterIdentity"
+
+
+// Register a PKI Public Key on the Integra Ledger passing in
+
+@name("RegisterKey (POST)")
+POST "https://{{baseUrl}}/RegisterKey"
+
+
+// Check for the existence of a value on the Integra Ledger.
+
+@name("ValueExists (GET)")
+GET "https://{{baseUrl}}/ValueExists"
+? "value"= "<get>"
+
+
+

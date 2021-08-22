@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Without an extension, the media is returned using the mime-type provided when the media was generated.
+
+@name("/Accounts/:AccountSid/Messages/:MessageSid/Media/{{MediaSid}}{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Messages/:MessageSid/Media/{{MediaSid}}{{mediaTypeExtension}}"
+
+
+// Without an extension, the media is returned using the mime-type provided when the media was generated.
+
+@name("Accounts.Account Sid.Messages.Message Sid.Media.Media Sid.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Messages/:MessageSid/Media/{{MediaSid}}.json"
+
+
+

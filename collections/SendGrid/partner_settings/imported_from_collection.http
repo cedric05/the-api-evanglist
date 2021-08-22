@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve a list of all partner settings that you can enable.**
+// 
+// Our partner settings allow you to integrate your SendGrid account with our partners to increase your SendGrid experience and functionality. For more information about our partners, and how you can begin integrating with them, please visit our [User Guide](https://sendgrid.com/docs/User_Guide/Settings/partners.html).
+
+@name("Returns a list of all partner settings.")
+GET "https://{{baseUrl}}/partner_settings"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+// **This endpoint allows you to update or change your New Relic partner settings.**
+// 
+// Our partner settings allow you to integrate your SendGrid account with our partners to increase your SendGrid experience and functionality. For more information about our partners, and how you can begin integrating with them, please visit our [User Guide](https://sendgrid.com/docs/User_Guide/Settings/partners.html).
+// 
+// By integrating with New Relic, you can send your SendGrid email statistics to your New Relic Dashb
+
+@name("Updates New Relic partner settings.")
+PATCH "https://{{baseUrl}}/partner_settings/new_relic"
+
+
+

@@ -1,0 +1,98 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Retrieve individual listings for a given lineup ordered by start time (listDateTime) and channel number; unless using the search parameter, in which case they will be ordered by search term relevance.
+
+@name("Get Tv Media Lineup Listings")
+GET "https://{{baseUrl}}/TvMedia/lineups/:LineupID/listings"
+? "TvMediaApiKey"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "TimeZone"= "<get>"
+? "Channel"= "<get>"
+? "ExcludeChan"= "<get>"
+? "StartChan"= "<get>"
+? "EndChan"= "<get>"
+? "Station"= "<get>"
+? "ExcludeStation"= "<get>"
+? "Search"= "<get>"
+? "ShowType"= "<get>"
+? "ExcludeShowType"= "<get>"
+? "Id"= "<get>"
+? "SportType"= "<get>"
+? "League"= "<get>"
+? "Team"= "<get>"
+? "NotYetStarted"= "<get>"
+? "SportEventsOnly"= "<get>"
+? "DescriptiveVideoOnly"= "<get>"
+? "LiveOnly"= "<get>"
+? "NewShowsOnly"= "<get>"
+? "AdultContent"= "<get>"
+? "DisplayArtwork"= "<get>"
+? "Detail"= "<get>"
+
+
+// A collection of listings grouped by channel and ordered by listDateTime. The grid dimensions ( time x channels ) can be modified by using the start, end, startchan and maxchan parameters. Channels without any listings will be returned with an empty listings collection.
+
+@name("Get Tv Media Lineup Listings Grid")
+GET "https://{{baseUrl}}/TvMedia/lineups/:LineupID/listings/grid"
+? "TvMediaApiKey"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "TimeZone"= "<get>"
+? "Channel"= "<get>"
+? "ExcludeChan"= "<get>"
+? "StartChan"= "<get>"
+? "EndChan"= "<get>"
+? "Station"= "<get>"
+? "ExcludeStation"= "<get>"
+? "Search"= "<get>"
+? "ShowType"= "<get>"
+? "ExcludeShowType"= "<get>"
+? "Id"= "<get>"
+? "SportType"= "<get>"
+? "League"= "<get>"
+? "Team"= "<get>"
+? "NotYetStarted"= "<get>"
+? "SportEventsOnly"= "<get>"
+? "DescriptiveVideoOnly"= "<get>"
+? "LiveOnly"= "<get>"
+? "NewShowsOnly"= "<get>"
+? "AdultContent"= "<get>"
+? "DisplayArtwork"= "<get>"
+? "Detail"= "<get>"
+
+
+// Retrieves featured listings. setting a start and/or end time for every request is a highly recommended.
+
+@name("Get Tv Media Lineup Listings Highlights")
+GET "https://{{baseUrl}}/TvMedia/lineups/:LineupID/listings/highlights"
+? "TvMediaApiKey"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "TimeZone"= "<get>"
+? "Channel"= "<get>"
+? "ExcludeChan"= "<get>"
+? "StartChan"= "<get>"
+? "EndChan"= "<get>"
+? "Station"= "<get>"
+? "ExcludeStation"= "<get>"
+? "Search"= "<get>"
+? "ShowType"= "<get>"
+? "ExcludeShowType"= "<get>"
+? "Id"= "<get>"
+? "SportType"= "<get>"
+? "League"= "<get>"
+? "Team"= "<get>"
+? "NotYetStarted"= "<get>"
+? "SportEventsOnly"= "<get>"
+? "DescriptiveVideoOnly"= "<get>"
+? "LiveOnly"= "<get>"
+? "NewShowsOnly"= "<get>"
+? "AdultContent"= "<get>"
+? "DisplayArtwork"= "<get>"
+? "Detail"= "<get>"
+
+
+

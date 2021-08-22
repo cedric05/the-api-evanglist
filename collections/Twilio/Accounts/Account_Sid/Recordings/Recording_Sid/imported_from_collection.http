@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns a set of Transcription resource representations that includes paging
+// information.
+
+@name("/Accounts/:AccountSid/Recordings/:RecordingSid/Transcriptions{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Recordings/:RecordingSid/Transcriptions{{mediaTypeExtension}}"
+
+
+// Returns a set of Transcription resource representations that includes paging
+// information.
+
+@name("Accounts.Account Sid.Recordings.Recording Sid.Transcriptions.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Recordings/:RecordingSid/Transcriptions.json"
+
+
+

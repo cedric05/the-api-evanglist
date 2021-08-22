@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfcb371d-a6e0-41fe-841b-f5fab0153d76.postman_collection.json
+
+@name("Delete Data Source")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DeleteDataSource"
+? "Action"= "DeleteDataSource"
+data('{"DataSourceId":"string"}')
+
+
+@name("Describe Data Sources")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DescribeDataSources"
+? "Action"= "DescribeDataSources"
+data('{"EQ":"string","FilterVariable":"string","GE":"string","GT":"string","LE":"string","Limit":42,"LT":"string","NE":"string","NextToken":"string","Prefix":"string","SortOrder":"string"}')
+
+
+@name("Get Data Source")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.GetDataSource"
+? "Action"= "GetDataSource"
+data('{"DataSourceId":"string","Verbose":1}')
+
+
+@name("Update Data Source")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.UpdateDataSource"
+? "Action"= "UpdateDataSource"
+data('{"DataSourceId":"string","DataSourceName":"string"}')
+
+
+

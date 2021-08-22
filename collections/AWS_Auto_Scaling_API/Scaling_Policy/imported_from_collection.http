@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4daf4441-eb91-41fe-b023-1dfb7909acdb.postman_collection.json
+
+@name("Put Scaling Policy")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AdjustmentType"= ""
+? "AutoScalingGroupName"= ""
+? "Cooldown"= ""
+? "EstimatedInstanceWarmup"= ""
+? "MetricAggregationType"= ""
+? "MinAdjustmentMagnitude"= ""
+? "MinAdjustmentStep"= ""
+? "PolicyName"= ""
+? "PolicyType"= ""
+? "ScalingAdjustment"= ""
+? "StepAdjustments.member.N"= ""
+? "TargetTrackingConfiguration"= ""
+? "Action"= "PutScalingPolicy"
+
+
+

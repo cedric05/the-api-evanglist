@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-497c1579-7153-42d7-9ae4-62094712cd15.postman_collection.json
+
+// Returns job details.
+
+@name("Get job details")
+GET "https://{{baseUrl}}/project/:project-slug/job/:job-number"
+
+
+// Cancel job with a given job number.
+
+@name("Cancel job")
+POST "https://{{baseUrl}}/project/:project-slug/job/:job-number/cancel"
+
+
+

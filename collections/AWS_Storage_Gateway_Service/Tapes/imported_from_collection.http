@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-603068d7-d854-4df0-b326-be978f214a5e.postman_collection.json
+
+@name("Create Tapes")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.CreateTapes"
+? "Action"= "CreateTapes"
+data('{"ClientToken":"string","GatewayARN":"string","KMSEncrypted":1,"KMSKey":"string","NumTapesToCreate":1,"PoolId":"string","Tags":[{"Key":"string","Value":"string"}],"TapeBarcodePrefix":"string","TapeSizeInBytes":1}')
+
+
+@name("Describe Tapes")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.DescribeTapes"
+? "Action"= "DescribeTapes"
+data('{"GatewayARN":"string","Limit":1,"Marker":"string","TapeARNs":["string"]}')
+
+
+@name("List Tapes")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.ListTapes"
+? "Action"= "ListTapes"
+data('{"Limit":1,"Marker":"string","TapeARNs":["string"]}')
+
+
+

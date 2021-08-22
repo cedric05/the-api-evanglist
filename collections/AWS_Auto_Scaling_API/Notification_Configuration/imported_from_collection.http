@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4daf4441-eb91-41fe-b023-1dfb7909acdb.postman_collection.json
+
+@name("Delete Notification Configuration")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AutoScalingGroupName"= ""
+? "TopicARN"= ""
+? "Action"= "DeleteNotificationConfiguration"
+
+
+@name("Describe Notification Configurations")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AutoScalingGroupNames.member.N"= ""
+? "MaxRecords"= ""
+? "NextToken"= ""
+? "Action"= "DescribeNotificationConfigurations"
+
+
+@name("Put Notification Configuration")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AutoScalingGroupName"= ""
+? "NotificationTypes.member.N"= ""
+? "TopicARN"= ""
+? "Action"= "PutNotificationConfiguration"
+
+
+

@@ -1,0 +1,127 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Add new Generic Distribution Provider
+
+@name("Get Service Contentdistribution Genericdistributionprover Action Add")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovider/action/add"
+? "genericDistributionProvider[name]"= "<>"
+? "genericDistributionProvider[scheduleUpdateEnabled]"= "<>"
+? "genericDistributionProvider[availabilityUpdateEnabled]"= "<>"
+? "genericDistributionProvider[deleteInsteadUpdate]"= "<>"
+? "genericDistributionProvider[intervalBeforeSunrise]"= "<>"
+? "genericDistributionProvider[intervalBeforeSunset]"= "<>"
+? "genericDistributionProvider[updateRequiredEntryFields]"= "<>"
+? "genericDistributionProvider[updateRequiredMetadataXPaths]"= "<>"
+? "genericDistributionProvider[isDefault]"= "<>"
+? "genericDistributionProvider[optionalFlavorParamsIds]"= "<>"
+? "genericDistributionProvider[requiredFlavorParamsIds]"= "<>"
+? "genericDistributionProvider[optionalThumbDimensions]"= "<>"
+? "genericDistributionProvider[requiredThumbDimensions]"= "<>"
+? "genericDistributionProvider[editableFields]"= "<>"
+? "genericDistributionProvider[mandatoryFields]"= "<>"
+
+
+// Delete Generic Distribution Provider by id
+
+@name("Get Service Contentdistribution Genericdistributionprover Action Delete")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovider/action/delete"
+? "id"= "<>"
+
+
+// Get Generic Distribution Provider by id
+
+@name("Get Service Contentdistribution Genericdistributionprover Action Get")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovider/action/get"
+? "id"= "<>"
+
+
+// List all distribution providers
+
+@name("Get Service Contentdistribution Genericdistributionprover Action List")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovider/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[typeEqual]"= "<>"
+? "filter[typeIn]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[updatedAtLessThanOrEqual]"= "<>"
+? "filter[partnerIdEqual]"= "<>"
+? "filter[partnerIdIn]"= "<>"
+? "filter[isDefaultEqual]"= "<>"
+? "filter[isDefaultIn]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// Update Generic Distribution Provider by id
+
+@name("Get Service Contentdistribution Genericdistributionprover Action Update")
+GET "https://{{baseUrl}}/service/contentdistribution_genericdistributionprovider/action/update"
+? "id"= "<>"
+? "genericDistributionProvider[name]"= "<>"
+? "genericDistributionProvider[scheduleUpdateEnabled]"= "<>"
+? "genericDistributionProvider[availabilityUpdateEnabled]"= "<>"
+? "genericDistributionProvider[deleteInsteadUpdate]"= "<>"
+? "genericDistributionProvider[intervalBeforeSunrise]"= "<>"
+? "genericDistributionProvider[intervalBeforeSunset]"= "<>"
+? "genericDistributionProvider[updateRequiredEntryFields]"= "<>"
+? "genericDistributionProvider[updateRequiredMetadataXPaths]"= "<>"
+? "genericDistributionProvider[isDefault]"= "<>"
+? "genericDistributionProvider[optionalFlavorParamsIds]"= "<>"
+? "genericDistributionProvider[requiredFlavorParamsIds]"= "<>"
+? "genericDistributionProvider[optionalThumbDimensions]"= "<>"
+? "genericDistributionProvider[requiredThumbDimensions]"= "<>"
+? "genericDistributionProvider[editableFields]"= "<>"
+? "genericDistributionProvider[mandatoryFields]"= "<>"
+
+
+

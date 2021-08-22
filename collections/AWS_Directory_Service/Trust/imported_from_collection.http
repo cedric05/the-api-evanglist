@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e4a472a1-7d82-4a3c-b4e1-85e0dad2e1ca.postman_collection.json
+
+@name("Create Trust")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.CreateTrust"
+? "Action"= "CreateTrust"
+data('{"ConditionalForwarderIpAddrs":["string"],"DirectoryId":"string","RemoteDomainName":"string","SelectiveAuth":"string","TrustDirection":"string","TrustPassword":"string","TrustType":"string"}')
+
+
+@name("Delete Trust")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.DeleteTrust"
+? "Action"= "DeleteTrust"
+data('{"DeleteAssociatedConditionalForwarder":1,"TrustId":"string"}')
+
+
+@name("Describe Trusts")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.DescribeTrusts"
+? "Action"= "DescribeTrusts"
+data('null')
+
+
+@name("Update Trust")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.UpdateTrust"
+? "Action"= "UpdateTrust"
+data('{"SelectiveAuth":"string","TrustId":"string"}')
+
+
+@name("Verify Trust")
+POST "https://{{aws_directory_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_directory_service_service}}", region="{{aws_directory_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "DirectoryService_20150416.VerifyTrust"
+? "Action"= "VerifyTrust"
+data('{"TrustId":"string"}')
+
+
+

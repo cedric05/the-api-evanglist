@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Returns the tag set associated with the bucket.
+
+@name("Bucket Tagging")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "tagging"= ""
+
+
+// Sets the tags for a bucket.
+
+@name("Bucket Tagging")
+PUT "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"Content-MD5": "{{contentMD5}}"
+? "tagging"= ""
+data('<?xml version="1.0" encoding="UTF-8"?>
+<Tagging xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <TagSet>
+      <Tag>
+         <Key>Test 123</Key>
+         <Value>Test 123</Value>
+      </Tag>
+   </TagSet>
+</Tagging>')
+
+
+// Deletes the tags from the bucket.
+
+@name("Delete Bucket Tagging")
+DELETE "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+? "tagging"= ""
+
+
+
+

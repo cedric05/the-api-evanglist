@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Copy DB Cluster Parameter Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "CopyDBClusterParameterGroup"
+? "Version"= "2014-10-31"
+
+
+@name("Create DB Cluster Parameter Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "CreateDBClusterParameterGroup"
+? "Version"= "2014-10-31"
+
+
+@name("Delete DB Cluster Parameter Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "DeleteDBClusterParameterGroup"
+? "Version"= "2014-10-31"
+
+
+@name("Describe DB Cluster Parameter Groups")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "DescribeDBClusterParameterGroups"
+? "Version"= "2014-10-31"
+
+
+@name("Modify DB Cluster Parameter Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "ModifyDBClusterParameterGroup"
+? "Version"= "2014-10-31"
+
+
+@name("Reset DB Cluster Parameter Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "ResetDBClusterParameterGroup"
+? "Version"= "2014-10-31"
+
+
+

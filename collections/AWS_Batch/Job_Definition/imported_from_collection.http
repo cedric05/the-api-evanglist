@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cce29272-f17c-4915-8010-c6daf69e1eae.postman_collection.json
+
+@name("Deregister Job Definition")
+POST "https://{{aws_batch_base_url}}/v1/deregisterjobdefinition"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_batch_service}}", region="{{aws_batch_region}}")
+data('{
+  "jobDefinition": "sleep10"
+}')
+
+
+@name("Describe Job Definitions")
+POST "https://{{aws_batch_base_url}}/v1/describejobdefinitions"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_batch_service}}", region="{{aws_batch_region}}")
+data('{
+  "status": "ACTIVE"
+}')
+
+
+@name("Register Job Definition")
+POST "https://{{aws_batch_base_url}}/v1/registerjobdefinition"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_batch_service}}", region="{{aws_batch_region}}")
+data('{
+  "containerProperties": {
+    "image": "busybox",
+    "command": [
+      "sleep",
+      "10"
+    ],
+    "vcpus": 1,
+    "memory": 128
+  },
+  "type": "container",
+  "jobDefinitionName": "sleep10"
+}')
+
+
+

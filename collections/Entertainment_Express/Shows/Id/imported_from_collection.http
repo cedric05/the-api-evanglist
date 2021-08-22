@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// By default the API will only return basic title information. Additional objects can be included by passing the object in the Includes parameter.  
+// 
+// 
+// `Subscriptions with "Limited" data will only be able to include basic title information, Videos, EpisodicVideos, and SeasonVideos.`
+
+@name("Get Show by Show ID.")
+GET "https://{{baseUrl}}/Shows/:Id"
+? "Includes"= "<get>"
+
+
+

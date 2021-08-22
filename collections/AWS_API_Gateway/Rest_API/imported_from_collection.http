@@ -1,0 +1,100 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("By Id Rest Api")
+GET "https://{{aws_api_gateway_base_url}}/restapis/0n1anifwvf&restapi_id="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "restapi_id"= ""
+
+
+@name("List")
+GET "https://{{aws_api_gateway_base_url}}/restapis/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Create Rest Api")
+POST "https://{{aws_api_gateway_base_url}}/restapis"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Restapidelete")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/wklpc8beyl"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Restapideployments")
+GET "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/deployments"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+
+
+@name("Restapidocumentation Parts")
+GET "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/parts{"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+? "type"= ""
+? "path"= ""
+? "type,path,limit}"= ""
+
+
+@name("Restapidocumentation Versions")
+GET "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/versions{"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+? "limit}"= ""
+
+
+@name("Gateway Responses Rest Api")
+GET "https://{{aws_api_gateway_base_url}}/restapis/o81lxisefl/gatewayresponses"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Restapiimport")
+POST "https://{{aws_api_gateway_base_url}}/restapis"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "failonwarnings"= ""
+? "mode"= "import"
+? "failonwarning"= "true"
+? "basepath"= "ignore"
+
+
+@name("Restapimodels")
+GET "https://{{aws_api_gateway_base_url}}/restapis/l9kujxkzq2/models&limit="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+
+
+@name("Restapiput")
+PUT "https://{{aws_api_gateway_base_url}}/restapis/wn611yeyp3"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "restapi_id"= ""
+? "mode"= ""
+? "failonwarnings"= ""
+
+
+@name("Request Validators Rest Api")
+GET "https://{{aws_api_gateway_base_url}}/restapis/mkhqppt4e4/requestvalidators"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Restapiresources")
+GET "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/resources&limit=&embed="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+? "embed"= ""
+
+
+@name("Restapistages")
+GET "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/stages{"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "deployment_id"= ""
+? "deployment_id}"= ""
+
+
+@name("Update Rest Api")
+PATCH "https://{{aws_api_gateway_base_url}}/restapis/fugvjdxtri/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes the status of the specified instances or all of your instances.
+
+@name("Describe Instance Status")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "IncludeAllInstances"= ""
+? "InstanceId.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeInstanceStatus"
+
+
+// Submits feedback about the status of an instance.
+
+@name("Report Instance Status")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Description"= ""
+? "DryRun"= ""
+? "EndTime"= ""
+? "InstanceId.N"= ""
+? "ReasonCode.N"= ""
+? "StartTime"= ""
+? "Status"= ""
+? "Action"= "ReportInstanceStatus"
+
+
+

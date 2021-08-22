@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Sorting can be performed on any of the following properties (sort
+// order can be reversed by prefixing the property name with '-'):
+// - id
+// - description
+// - deviceInfo.description
+// - deviceInfo.descriptiveLocation
+// - deviceInfo.serialNumber
+// - deviceInfo.deviceClass
+// - deviceInfo.fwVersion
+// - deviceInfo.hwVersion
+// - deviceInfo.manufacturer
+// - deviceInfo.model
+// 
+// The following facets are supported:
+// - deviceInfo.deviceClass
+// - deviceInfo.fwVersion
+// - deviceInfo.hwVersion
+// - deviceInfo.manufacturer
+// - deviceInfo.mode
+
+@name("List device types")
+GET "https://{{baseUrl}}/device/types"
+? "id"= "<patch>"
+? "description"= "<patch>"
+
+
+

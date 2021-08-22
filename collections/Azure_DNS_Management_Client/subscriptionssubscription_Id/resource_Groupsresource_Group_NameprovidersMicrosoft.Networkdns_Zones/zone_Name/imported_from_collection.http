@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-44bffed7-d71d-462c-a6ed-91200ba99367.postman_collection.json
+
+// Creates or updates a DNS zone. Does not modify DNS records within the zone.
+
+@name("Zones Create Or Update")
+PUT "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/dnsZones/:zoneName"
+"If": "<>"
+
+
+// Lists all record sets in a DNS zone.
+
+@name("Record Sets List By Dns Zone")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/dnsZones/:zoneName/recordsets"
+? "$top"= "<>"
+
+
+

@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39359504-af25-4f48-954b-e7dd332ed9ff.postman_collection.json
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Download inventory as CSV.")
+GET "https://{{baseUrl}}/api/v1/Inventory/:partnerId"
+? "modifiedAfter"= "<>"
+? "mapped"= "<>"
+? "transform"= "<>"
+? "includeNullQuantity"= "<>"
+? "fileType"= "<>"
+
+
+// Request rate limited to 1 request per second with bursts up to 2 requests.
+
+@name("Match items with CSV.")
+POST "https://{{baseUrl}}/api/v1/Inventory/:partnerId/Matching"
+
+
+// Request rate limited to 1 request every 5 minutes with bursts up to 2 requests.
+
+@name("Resend all inventory items.")
+PUT "https://{{baseUrl}}/api/v1/Inventory/:partnerId/Resend"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Get a single item by SKU")
+GET "https://{{baseUrl}}/api/v1/Inventory/:partnerId/Item/:sku"
+
+
+

@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes the specified attribute of the specified instance.
+
+@name("Describe Instance Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "DryRun"= ""
+? "InstanceId"= ""
+? "Action"= "DescribeInstanceAttribute"
+
+
+// Modifies the specified attribute of the specified instance.
+
+@name("Modify Instance Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "BlockDeviceMapping.N"= ""
+? "DisableApiTermination"= ""
+? "DryRun"= ""
+? "EbsOptimized"= ""
+? "EnaSupport"= ""
+? "GroupId.N"= ""
+? "InstanceId"= ""
+? "InstanceInitiatedShutdownBehavior"= ""
+? "InstanceType"= ""
+? "Kernel"= ""
+? "Ramdisk"= ""
+? "SourceDestCheck"= ""
+? "SriovNetSupport"= ""
+? "UserData"= ""
+? "Value"= ""
+? "Action"= "ModifyInstanceAttribute"
+
+
+// Resets an attribute of an instance to its default value.
+
+@name("Reset Instance Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "DryRun"= ""
+? "InstanceId"= ""
+? "Action"= "ResetInstanceAttribute"
+
+
+

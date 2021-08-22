@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Returns a list of local <IncomingPhoneNumber> elements, each representing a local (not toll-free) phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out toll-free numbers.
+
+@name("/Accounts/:AccountSid/IncomingPhoneNumbers/Local{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers/Local{{mediaTypeExtension}}"
+
+
+// Returns a list of local <IncomingPhoneNumber> elements, each representing a mobile phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out local and toll free numbers.
+
+@name("/Accounts/:AccountSid/IncomingPhoneNumbers/Mobile{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers/Mobile{{mediaTypeExtension}}"
+
+
+// Returns a list of local <IncomingPhoneNumber> elements, each representing a toll-free phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out all numbers that aren't toll-free.
+
+@name("/Accounts/:AccountSid/IncomingPhoneNumbers/TollFree{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers/TollFree{{mediaTypeExtension}}"
+
+
+// Release this phone number from your account. Twilio will no longer answer
+// calls to this number, and you will stop being billed the monthly phone
+// number fee. The phone number will eventually be recycled and potentially
+// given to another customer, so use with care. If you make a mistake, contac
+// us. We may be able to give you the number back.
+
+@name("/Accounts/:AccountSid/IncomingPhoneNumbers/{{IncomingPhoneNumberSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers/{{IncomingPhoneNumberSid}}{{mediaTypeExtension}}"
+
+
+// Returns a list of local <IncomingPhoneNumber> elements, each representing a local (not toll-free) phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out toll-free numbers.
+
+@name("Accounts.Account Sid.Incoming Phone Numbers.Local.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers/Local.json"
+
+
+// Returns a list of local <IncomingPhoneNumber> elements, each representing a mobile phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out local and toll free numbers.
+
+@name("Accounts.Account Sid.Incoming Phone Numbers.Mobile.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers/Mobile.json"
+
+
+// Returns a list of local <IncomingPhoneNumber> elements, each representing a toll-free phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out all numbers that aren't toll-free.
+
+@name("Accounts.Account Sid.Incoming Phone Numbers.Toll Free.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers/TollFree.json"
+
+
+// Release this phone number from your account. Twilio will no longer answer
+// calls to this number, and you will stop being billed the monthly phone
+// number fee. The phone number will eventually be recycled and potentially
+// given to another customer, so use with care. If you make a mistake, contac
+// us. We may be able to give you the number back.
+
+@name("Accounts.Account Sid.Incoming Phone Numbers.Incoming Phone Number Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/IncomingPhoneNumbers/{{IncomingPhoneNumberSid}}.json"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Retrieve the thing with the specified id.
+
+@name("Get a thing")
+GET "https://{{baseUrl}}/thing/types/:thingTypeId/things/:thingId"
+
+
+// Retrieve the current state of the thing with the specified id.
+
+@name("Get the state for the thing with the specified id")
+GET "https://{{baseUrl}}/thing/types/:thingTypeId/things/:thingId/state/:logicalInterfaceId"
+
+
+

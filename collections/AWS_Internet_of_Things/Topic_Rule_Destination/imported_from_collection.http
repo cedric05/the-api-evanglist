@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Confirm Topic Rule Destination")
+GET "https://{{aws_internet_of_things_base_url}}/confirmdestination/confirmationToken+&confirmationToken="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Create Topic Rule Destination")
+GET "https://{{aws_internet_of_things_base_url}}/destinations&destinationConfiguration="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Delete Topic Rule Destination")
+GET "https://{{aws_internet_of_things_base_url}}/destinations/arn+&arn="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Get Topic Rule Destination")
+GET "https://{{aws_internet_of_things_base_url}}/destinations/arn+&arn="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List Topic Rule Destinations")
+GET "https://{{aws_internet_of_things_base_url}}/destinations"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Update Topic Rule Destination")
+GET "https://{{aws_internet_of_things_base_url}}/destinations&arn=&status=&IN_PROGRESS=&ENABLED=&DISABLED=&ERROR="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-832be805-d556-44ec-b62d-44afa80eb78b.postman_collection.json
+
+// Quotes for symbol
+
+@name("Get quotes for symbol")
+GET "https://{{baseUrl}}/quotes/:symbol"
+"X": "<>"
+? "time_from"= "<get>"
+? "time_to"= "<get>"
+
+
+// Candles (aggregating quotes)
+
+@name("Get candles for symbol")
+GET "https://{{baseUrl}}/quotes/candles/:symbol"
+"X": "<>"
+? "time_from"= "<get>"
+? "time_to"= "<get>"
+? "period"= "<>"
+
+
+

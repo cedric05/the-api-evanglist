@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d414d168-67be-4032-acf4-92b1b278f5f2.postman_collection.json
+
+@name("Create Webhook")
+GET "https://{{aws_codebuild_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codebuild_service}}", region="{{aws_codebuild_region}}")
+
+
+@name("Delete Webhook")
+GET "https://{{aws_codebuild_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codebuild_service}}", region="{{aws_codebuild_region}}")
+
+
+@name("Update Webhook")
+GET "https://{{aws_codebuild_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codebuild_service}}", region="{{aws_codebuild_region}}")
+
+
+

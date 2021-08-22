@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+// list created e-mail hooks
+
+@name("/notifications/emailhooks/:ownerId")
+GET "https://{{baseUrl}}/notifications/emailhooks/:ownerId"
+
+
+// delete an e-mail hook
+
+@name("/notifications/emailhooks/:ownerId/:id")
+DELETE "https://{{baseUrl}}/notifications/emailhooks/:ownerId/:id"
+
+
+

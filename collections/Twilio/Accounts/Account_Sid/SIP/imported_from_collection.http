@@ -1,0 +1,41 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Gets a list of Credential Lists for an account
+
+@name("/Accounts/:AccountSid/SIP/CredentialLists{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/CredentialLists{{mediaTypeExtension}}"
+
+
+// Returns a paged list of the domains for an account.
+
+@name("/Accounts/:AccountSid/SIP/Domains{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains{{mediaTypeExtension}}"
+
+
+// Return a paged list of all IpAccessControlLists under this account.
+
+@name("/Accounts/:AccountSid/SIP/IpAccessControlLists{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/IpAccessControlLists{{mediaTypeExtension}}"
+
+
+// Gets a list of Credential Lists for an account
+
+@name("Accounts.Account Sid.SIP.Credential Lists.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/CredentialLists.json"
+
+
+// Returns a paged list of the domains for an account.
+
+@name("Accounts.Account Sid.SIP.Domains.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains.json"
+
+
+// Return a paged list of all IpAccessControlLists under this account.
+
+@name("Accounts.Account Sid.SIP.Ip Access Control Lists.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/IpAccessControlLists.json"
+
+
+

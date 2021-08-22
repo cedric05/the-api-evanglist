@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Retrieves the encrypted administrator password for a running Windows instance.
+
+@name("Get Password Data")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "InstanceId"= ""
+? "Action"= "GetPasswordData"
+
+
+

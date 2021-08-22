@@ -1,0 +1,278 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cd9b4406-c593-4cb5-89cb-6825b6ec9f1b.postman_collection.json
+
+// Creates a global table from an existing table. A global table creates a replication relationship between two or more DynamoDB tables with the same table name in the provided Regions.
+
+@name("Create Global Table")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.CreateGlobalTable"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "CreateGlobalTable"
+data('{
+   "GlobalTableName": "postman",
+   "ReplicationGroup": [ 
+      { 
+         "RegionName": "us-east-1"
+      }
+   ]
+}')
+
+
+// Returns information about the specified global table.
+
+@name("Describe Global Table")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.TransactGetItems"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DescribeGlobalTable"
+data('{
+   "GlobalTableName": "postman"
+}')
+
+
+// Lists all global tables that have a replica in the specified Region.
+
+@name("List Global Tables")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.ListGlobalTables"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "ListGlobalTables"
+data('{
+   "ExclusiveStartGlobalTableName": "postman",
+   "Limit": 2,
+   "RegionName": "us-east-1"
+}')
+
+
+// Adds or removes replicas in the specified global table. The global table must already exist to be able to use this operation. Any replica to be added must be empty, have the same name as the global table, have the same key schema, have DynamoDB Streams enabled, and have the same provisioned and maximum write capacity units.
+
+@name("Update Global Table")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.UpdateGlobalTable"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "UpdateGlobalTable"
+data('{
+   "GlobalTableName": "postman",
+   "ReplicaUpdates": [ 
+      { 
+         "Create": { 
+            "RegionName": "us-east-1"
+         }
+      }
+   ]
+}')
+
+
+// Describes Region-specific settings for a global table.
+
+@name("Describe Global Table Settings")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DescribeGlobalTableSettings"
+data('{
+   "GlobalTableName": "string"
+}')
+
+
+// Updates settings for a global table.
+
+@name("Update Global Table Settings")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.UpdateGlobalTableSettings"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "UpdateGlobalTableSettings"
+data('{
+   "GlobalTableBillingMode": "string",
+   "GlobalTableGlobalSecondaryIndexSettingsUpdate": [ 
+      { 
+         "IndexName": "string",
+         "ProvisionedWriteCapacityAutoScalingSettingsUpdate": { 
+            "AutoScalingDisabled": boolean,
+            "AutoScalingRoleArn": "string",
+            "MaximumUnits": number,
+            "MinimumUnits": number,
+            "ScalingPolicyUpdate": { 
+               "PolicyName": "string",
+               "TargetTrackingScalingPolicyConfiguration": { 
+                  "DisableScaleIn": boolean,
+                  "ScaleInCooldown": number,
+                  "ScaleOutCooldown": number,
+                  "TargetValue": number
+               }
+            }
+         },
+         "ProvisionedWriteCapacityUnits": number
+      }
+   ],
+   "GlobalTableName": "string",
+   "GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate": { 
+      "AutoScalingDisabled": boolean,
+      "AutoScalingRoleArn": "string",
+      "MaximumUnits": number,
+      "MinimumUnits": number,
+      "ScalingPolicyUpdate": { 
+         "PolicyName": "string",
+         "TargetTrackingScalingPolicyConfiguration": { 
+            "DisableScaleIn": boolean,
+            "ScaleInCooldown": number,
+            "ScaleOutCooldown": number,
+            "TargetValue": number
+         }
+      }
+   },
+   "GlobalTableProvisionedWriteCapacityUnits": number,
+   "ReplicaSettingsUpdate": [ 
+      { 
+         "RegionName": "string",
+         "ReplicaGlobalSecondaryIndexSettingsUpdate": [ 
+            { 
+               "IndexName": "string",
+               "ProvisionedReadCapacityAutoScalingSettingsUpdate": { 
+                  "AutoScalingDisabled": boolean,
+                  "AutoScalingRoleArn": "string",
+                  "MaximumUnits": number,
+                  "MinimumUnits": number,
+                  "ScalingPolicyUpdate": { 
+                     "PolicyName": "string",
+                     "TargetTrackingScalingPolicyConfiguration": { 
+                        "DisableScaleIn": boolean,
+                        "ScaleInCooldown": number,
+                        "ScaleOutCooldown": number,
+                        "TargetValue": number
+                     }
+                  }
+               },
+               "ProvisionedReadCapacityUnits": number
+            }
+         ],
+         "ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate": { 
+            "AutoScalingDisabled": boolean,
+            "AutoScalingRoleArn": "string",
+            "MaximumUnits": number,
+            "MinimumUnits": number,
+            "ScalingPolicyUpdate": { 
+               "PolicyName": "string",
+               "TargetTrackingScalingPolicyConfiguration": { 
+                  "DisableScaleIn": boolean,
+                  "ScaleInCooldown": number,
+                  "ScaleOutCooldown": number,
+                  "TargetValue": number
+               }
+            }
+         },
+         "ReplicaProvisionedReadCapacityUnits": number
+      }
+   ]
+}')
+
+
+// Describes auto scaling settings across replicas of the global table at once.
+
+@name("Describe Table Replica Auto Scaling")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeTableReplicaAutoScaling"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DescribeTableReplicaAutoScaling"
+data('{
+   "TableName": "postman"
+}')
+
+
+// Updates auto scaling settings on your global tables at once.
+
+@name("Update Table Replica Auto Scaling")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.UpdateTableReplicaAutoScaling"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "UpdateTableReplicaAutoScaling"
+data('{
+   "GlobalSecondaryIndexUpdates": [ 
+      { 
+         "IndexName": "string",
+         "ProvisionedWriteCapacityAutoScalingUpdate": { 
+            "AutoScalingDisabled": boolean,
+            "AutoScalingRoleArn": "string",
+            "MaximumUnits": number,
+            "MinimumUnits": number,
+            "ScalingPolicyUpdate": { 
+               "PolicyName": "string",
+               "TargetTrackingScalingPolicyConfiguration": { 
+                  "DisableScaleIn": boolean,
+                  "ScaleInCooldown": number,
+                  "ScaleOutCooldown": number,
+                  "TargetValue": number
+               }
+            }
+         }
+      }
+   ],
+   "ProvisionedWriteCapacityAutoScalingUpdate": { 
+      "AutoScalingDisabled": boolean,
+      "AutoScalingRoleArn": "string",
+      "MaximumUnits": number,
+      "MinimumUnits": number,
+      "ScalingPolicyUpdate": { 
+         "PolicyName": "string",
+         "TargetTrackingScalingPolicyConfiguration": { 
+            "DisableScaleIn": boolean,
+            "ScaleInCooldown": number,
+            "ScaleOutCooldown": number,
+            "TargetValue": number
+         }
+      }
+   },
+   "ReplicaUpdates": [ 
+      { 
+         "RegionName": "string",
+         "ReplicaGlobalSecondaryIndexUpdates": [ 
+            { 
+               "IndexName": "string",
+               "ProvisionedReadCapacityAutoScalingUpdate": { 
+                  "AutoScalingDisabled": boolean,
+                  "AutoScalingRoleArn": "string",
+                  "MaximumUnits": number,
+                  "MinimumUnits": number,
+                  "ScalingPolicyUpdate": { 
+                     "PolicyName": "string",
+                     "TargetTrackingScalingPolicyConfiguration": { 
+                        "DisableScaleIn": boolean,
+                        "ScaleInCooldown": number,
+                        "ScaleOutCooldown": number,
+                        "TargetValue": number
+                     }
+                  }
+               }
+            }
+         ],
+         "ReplicaProvisionedReadCapacityAutoScalingUpdate": { 
+            "AutoScalingDisabled": boolean,
+            "AutoScalingRoleArn": "string",
+            "MaximumUnits": number,
+            "MinimumUnits": number,
+            "ScalingPolicyUpdate": { 
+               "PolicyName": "string",
+               "TargetTrackingScalingPolicyConfiguration": { 
+                  "DisableScaleIn": boolean,
+                  "ScaleInCooldown": number,
+                  "ScaleOutCooldown": number,
+                  "TargetValue": number
+               }
+            }
+         }
+      }
+   ],
+   "TableName": "postman"
+}')
+
+
+

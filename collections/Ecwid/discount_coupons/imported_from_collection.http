@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Get all discount coupons.
+
+@name("Get all discount coupons")
+GET "https://{{baseUrl}}/discount_coupons"
+? "code"= "<get>"
+? "discount_type"= "<>"
+? "availability"= "<>"
+? "token"= "<>"
+
+
+// Get a discount coupon.
+
+@name("Get a discount coupon")
+GET "https://{{baseUrl}}/discount_coupons/SET-COUPON-CODE"
+"Content": "<>"
+? "token"= "<>"
+
+
+// Get deleted coupons.
+
+@name("Get deleted coupons")
+GET "https://{{baseUrl}}/discount_coupons/deleted"
+? "token"= "<>"
+
+
+

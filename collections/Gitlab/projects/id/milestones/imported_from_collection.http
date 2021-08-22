@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Get a list of project milestones
+
+@name("Get Projects  Milestones")
+GET "https://{{baseUrl}}/projects/:id/milestones"
+? "state"= "<get>"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+

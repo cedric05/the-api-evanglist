@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Delete Conformance Pack")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DeleteConformancePack"
+data('{
+   "ConformancePackName": "string"
+}')
+
+
+@name("Describe Conformance Packs")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DescribeConformancePacks"
+data('{
+   "ConformancePackNames": [ "string" ],
+   "Limit": number,
+   "NextToken": "string"
+}')
+
+
+@name("Put Conformance Pack")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "PutConformancePack"
+data('{
+   "ConformancePackInputParameters": [ 
+      { 
+         "ParameterName": "string",
+         "ParameterValue": "string"
+      }
+   ],
+   "ConformancePackName": "string",
+   "DeliveryS3Bucket": "string",
+   "DeliveryS3KeyPrefix": "string",
+   "TemplateBody": "string",
+   "TemplateS3Uri": "string"
+}')
+
+
+

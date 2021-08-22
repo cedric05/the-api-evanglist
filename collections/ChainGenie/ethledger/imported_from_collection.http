@@ -1,0 +1,126 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4bb333d4-b073-4693-b867-8852ccb0fdef.postman_collection.json
+
+// This API is the generic version of the "Generate document from template" API. Any template file can be uploaded (sample available as link for testing).  If you just want to see how this would work - use the other call and just run it without any uploaded certificate. 
+// Upload a templated pdf with editable / filable fields and generate a document with automated sign and routing to a recipient.  Every attribute that needs to be filled will need to be passed in the format - ex. course field to be su
+
+@name("Generate, Sign & Route Document (Advanced)")
+POST "https://{{baseUrl}}/ethledger/invokecontract"
+"ApiKey": "<>"
+
+
+// This is an over simplified version for testing this API for its powers a template - uses an inbuilt into ChainGenie template and values are preconfigured - just running this will work and provide you an IPFS handle to retrieve the document you generated with your variables / values from the template.
+// Use an existing document on our server and generate a document with automated sign and routing to a recipient.  Ex. this configured api will generate a certificate for a student name (name) with the
+
+@name("Generate and Manage Document (Basic)")
+POST "https://{{baseUrl}}/ethledger/docert"
+"ApiKey": "<>"
+
+
+// Route the document for signature.  The document history and status is updated for querying. 
+
+@name("Send document")
+POST "https://{{baseUrl}}/ethledger/sendforsign"
+"ApiKey": "<>"
+
+
+// Cryptographically sign the document and add the record to blockchain.  The document history and status is updated for querying. 
+
+@name("Sign document")
+POST "https://{{baseUrl}}/ethledger/sign"
+"ApiKey": "<>"
+
+
+// Review the document status - existence, hash, block info, signatories, routing to users and details
+
+@name("Get document status with file")
+POST "https://{{baseUrl}}/ethledger/docstatus"
+"ApiKey": "<>"
+
+
+// Check if your documents exists in the eth blockchain
+
+@name("Check document exists on blockchain")
+POST "https://{{baseUrl}}/ethledger/existsdoc"
+"ApiKey": "<>"
+
+
+// Post document hash into eth chain for POE (proof of existence) and post the document into ipfs for safekeep!
+
+@name("Post document to IPFS + blockchain")
+POST "https://{{baseUrl}}/ethledger/postdoc"
+"ApiKey": "<>"
+
+
+// Route the document to a recipient.  The document history and status is updated for querying.  The API call does not return any document properties.  This is a <b>minimalistic function</b> for stringing with other functions
+
+@name("Send document using hash (min fn; no return)")
+POST "https://{{baseUrl}}/ethledger/sendcert"
+"ApiKey": "<>"
+
+
+// Cryptographically sign the document and add the record to blockchain.  The document history and status is updated for querying.  The API call does not return any document properties.  This is a <b>minimalistic function</b> for stringing with other functions
+
+@name("Sign document using hash (min fn; no return)")
+POST "https://{{baseUrl}}/ethledger/signcert"
+"ApiKey": "<>"
+
+
+// Review the document status - existence, hash, block info, signatories, routing to users and details
+
+@name("Get document status using hash")
+POST "https://{{baseUrl}}/ethledger/getdocstate"
+"ApiKey": "<>"
+
+
+// Post string hash into eth chain for POE (proof of existence) 
+
+@name("Write hash to blockchain")
+POST "https://{{baseUrl}}/ethledger/posthash"
+"ApiKey": "<>"
+
+
+// Check if your hash exists in the eth blockchain
+
+@name("Check hash exists on blockchain")
+POST "https://{{baseUrl}}/ethledger/existshash"
+"ApiKey": "<>"
+
+
+// Post string hash into eth chain for POE (proof of existence) 
+
+@name("Write message to blockchain")
+POST "https://{{baseUrl}}/ethledger/poststr"
+"ApiKey": "<>"
+
+
+// Check if your string exists in the eth blockchain
+
+@name("Check message exists on blockchain")
+POST "https://{{baseUrl}}/ethledger/existsstr"
+"ApiKey": "<>"
+
+
+// Displays all transactions connected to this project / smart contract
+
+@name("Document transactions")
+GET "https://{{baseUrl}}/ethledger/gettrans"
+"ApiKey": "<>"
+
+
+// Post the document into ipfs for safekeep!
+
+@name("Write document to IPFS")
+POST "https://{{baseUrl}}/ethledger/ipfsadd"
+"ApiKey": "<>"
+
+
+// Retrieve the document stream from IPFS node
+
+@name("Retrieve document from IPFS")
+POST "https://{{baseUrl}}/ethledger/ipfsget"
+"ApiKey": "<>"
+
+
+

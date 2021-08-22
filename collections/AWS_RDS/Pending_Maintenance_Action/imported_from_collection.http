@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Apply Pending Maintenance Action")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "ApplyAction"= ""
+? "OptInType"= ""
+? "ResourceIdentifier"= ""
+? "Action"= "ApplyPendingMaintenanceAction"
+
+
+@name("Describe Pending Maintenance Actions")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Filters.Filter.N"= ""
+? "Marker"= ""
+? "MaxRecords"= ""
+? "ResourceIdentifier"= ""
+? "Action"= "DescribePendingMaintenanceActions"
+
+
+

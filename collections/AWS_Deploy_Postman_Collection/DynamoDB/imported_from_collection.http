@@ -1,0 +1,162 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d8f0a546-2bf3-4572-88c9-9190f362a7c5.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+
+
+// The CreateTable operation adds a new table to your account. In an AWS account, table names must be unique within each Region. That is, you can have two tables with same name if you create the tables in different Regions.
+
+@name("Create Table") : "base-inherit-auth"
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.CreateTable"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "CreateTable"
+data('{
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "ForumName",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "Subject",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "LastPostDateTime",
+            "AttributeType": "S"
+        }
+    ],
+    "TableName": "Thread",
+    "KeySchema": [
+        {
+            "AttributeName": "ForumName",
+            "KeyType": "HASH"
+        },
+        {
+            "AttributeName": "Subject",
+            "KeyType": "RANGE"
+        }
+    ],
+    "LocalSecondaryIndexes": [
+        {
+            "IndexName": "LastPostIndex",
+            "KeySchema": [
+                {
+                    "AttributeName": "ForumName",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "LastPostDateTime",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "Projection": {
+                "ProjectionType": "KEYS_ONLY"
+            }
+        }
+    ],
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
+    },
+    "Tags": [ 
+      { 
+         "Key": "Owner",
+         "Value": "BlueTeam"
+      }
+   ]
+}')
+
+
+// The DeleteTable operation deletes a table and all of its items. After a DeleteTable request, the specified table is in the DELETING state until DynamoDB completes the deletion. If the table is in the ACTIVE state, you can delete it. If a table is in CREATING or UPDATING states, then DynamoDB returns a ResourceInUseException. If the specified table does not exist, DynamoDB returns a ResourceNotFoundException. If table is already in the DELETING state, no error is returned.
+
+@name("Delete Table") : "base-inherit-auth"
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DeleteTable"
+data('{
+   "TableName": "Thread"
+}')
+
+
+// Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any indexes on the table.
+
+@name("Describe Table") : "base-inherit-auth"
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DescribeTable"
+data('{
+   "TableName": "Thread"
+}')
+
+
+// Returns an array of table names associated with the current account and endpoint. The output from ListTables is paginated, with each page returning a maximum of 100 table names.
+
+@name("List Tables") : "base-inherit-auth"
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "ListTables"
+data('{
+   "ExclusiveStartTableName": "Thread",
+   "Limit": 1
+}')
+
+
+// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.
+
+@name("Update Table") : "base-inherit-auth"
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.UpdateTable"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "UpdateTable"
+data('{
+    "TableName": "Thread",
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 10,
+        "WriteCapacityUnits": 10
+    }
+}')
+
+
+// Creates a new table from an existing backup. Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.
+
+@name("Restore Table From Backup") : "base-inherit-auth"
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "RestoreTableFromBackup"
+data('{
+   "BackupArn": "arn:aws:dynamodb:us-east-1:879370021840:table/postman/backup/01574827970345-2811a628",
+   "TargetTableName": "Thread"
+}')
+
+
+// Restores the specified table to the specified point in time within EarliestRestorableDateTime and LatestRestorableDateTime. You can restore your table to any point in time during the last 35 days. Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.
+
+@name("Restore Table To Point In Time") : "base-inherit-auth"
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "RestoreTableToPointInTime"
+data('{
+   "TargetTableName": "Thread",
+   "UseLatestRestorableTime": 1
+}')
+
+
+

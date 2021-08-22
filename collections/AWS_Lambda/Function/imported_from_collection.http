@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7b763a55-c09a-4c3b-b91a-fdd1eca868a2.postman_collection.json
+
+@name("Create Function")
+GET "https://{{aws_lambda_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Code"= ""
+? "DeadLetterConfig"= ""
+? "Description"= ""
+? "Environment"= ""
+? "FunctionName"= ""
+? "Handler"= ""
+? "KMSKeyArn"= ""
+? "Layers"= ""
+? "MemorySize"= ""
+? "Publish"= ""
+? "Role"= ""
+? "Runtime"= ""
+? "Tags"= ""
+? "Timeout"= ""
+? "TracingConfig"= ""
+? "VpcConfig"= ""
+? "Action"= "CreateFunction"
+
+
+@name("Delete Function")
+GET "https://{{aws_lambda_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "FunctionName"= ""
+? "Qualifier"= ""
+? "Action"= "DeleteFunction"
+
+
+@name("Get Function")
+GET "https://{{aws_lambda_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "FunctionName"= ""
+? "Qualifier"= ""
+? "Action"= "GetFunction"
+
+
+@name("List Functions")
+GET "https://{{aws_lambda_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "FunctionVersion"= ""
+? "Marker"= ""
+? "MasterRegion"= ""
+? "MaxItems"= ""
+? "Action"= "ListFunctions"
+
+
+

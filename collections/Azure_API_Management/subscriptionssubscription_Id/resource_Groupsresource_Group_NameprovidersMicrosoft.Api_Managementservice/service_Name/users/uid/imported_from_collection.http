@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// Gets the details of the user specified by its identifier.
+
+@name("Users Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/users/:uid"
+
+
+// Retrieves a redirection URL containing an authentication token for signing a given user into the developer portal.
+
+@name("Users GenerateSsoUrl")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/users/:uid/generateSsoUrl"
+
+
+// Lists all user groups.
+
+@name("UserGroups ListByUsers")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/users/:uid/groups"
+? "$filter"= "<>"
+
+
+// Lists the collection of subscriptions of the specified user.
+
+@name("UserSubscriptions ListByUsers")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/users/:uid/subscriptions"
+? "$filter"= "<>"
+
+
+// Lists all user identities.
+
+@name("UserIdentities ListByUsers")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/users/:uid/identities"
+
+
+

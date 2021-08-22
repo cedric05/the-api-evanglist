@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9844d24d-a804-4291-beee-fc6ba6a9e5ce.postman_collection.json
+
+@name("Get an organization represented by the provided orgName")
+GET "https://{{baseUrl}}/organizations/:orgName"
+"Authorization": "<string>"
+
+
+@name("Delete an organization")
+DELETE "https://{{baseUrl}}/organizations/:orgName"
+"Authorization": "<string>"
+
+
+
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("/application/:appId/environment")
+GET "https://{{baseUrl}}/application/:appId/environment"
+? "token"= "<string>"
+
+
+// Handled by our API.
+
+@name("post Authorize")
+POST "https://{{baseUrl}}/authorize"
+
+
+// Retrieve events as they come through a websocket connection. To have authorization, you have to send a `{ "message_type": "oauth", "authorization": "oauth authorization string" }` message
+
+@name("/events/event-socket")
+GET "https://{{baseUrl}}/events/event-socket"
+
+
+@name("get Summary")
+GET "https://{{baseUrl}}/summary"
+
+
+

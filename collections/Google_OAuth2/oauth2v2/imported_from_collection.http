@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-715d5ba5-e077-4267-9070-ac53d777f6d4.postman_collection.json
+
+// Get the certification for this session.
+
+@name("Get Certificate")
+GET "https://{{baseUrl}}/oauth2/v2/certs"
+
+
+// Get the token information for this session.
+
+@name("Get Token Info")
+POST "https://{{baseUrl}}/oauth2/v2/tokeninfo"
+? "access_token"= "<>"
+? "id_token"= "<>"
+? "token_handle"= "<parameters>"
+
+
+// Get the user information for this session.
+
+@name("Get User Info")
+GET "https://{{baseUrl}}/oauth2/v2/userinfo"
+
+
+

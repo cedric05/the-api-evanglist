@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f7210373-de2f-4259-aec5-4d8fab19ca46.postman_collection.json
+
+// This operation applies changes from the specified Git branch to the configuration database. This is a long running operation and could take several minutes to complete.
+
+@name("TenantConfiguration Deploy")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/configuration/deploy"
+
+
+// This operation creates a commit with the current configuration snapshot to the specified branch in the repository. This is a long running operation and could take several minutes to complete.
+
+@name("TenantConfiguration Save")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/configuration/save"
+
+
+// This operation validates the changes in the specified Git branch. This is a long running operation and could take several minutes to complete.
+
+@name("TenantConfiguration Validate")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/configuration/validate"
+
+
+// Gets the status of the most recent synchronization between the configuration database and the Git repository.
+
+@name("TenantConfigurationSyncState Get")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.ApiManagement/service/:serviceName/tenant/configuration/syncState"
+
+
+

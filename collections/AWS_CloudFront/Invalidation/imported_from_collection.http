@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1ae65b12-94bd-40ca-acee-7a0cd4c3c799.postman_collection.json
+
+@name("Create Invalidation")
+POST "https://{{aws_cloudfront_base_url}}/2019-03-26/distribution/DistributionId/invalidation"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+data('<?xml version="1.0" encoding="UTF-8"?>
+<InvalidationBatch xmlns="http://cloudfront.amazonaws.com/doc/2019-03-26/">
+   <CallerReference>string</CallerReference>
+   <Paths>
+      <Items>
+         <Path>string</Path>
+      </Items>
+      <Quantity>integer</Quantity>
+   </Paths>
+</InvalidationBatch>')
+
+
+@name("Get Invalidation")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/distribution/:DistributionId/invalidation/:id"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+
+
+@name("List Invalidations")
+GET "https://{{aws_cloudfront_base_url}}/2019-03-26/distribution/:DistributionId/invalidation"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Marker"= "Marker"
+? "MaxItems"= "MaxItems"
+
+
+

@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aae3264c-1b30-4227-9429-291e0bd8acbe.postman_collection.json
+
+@name("Create Patch Baseline")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"ApprovalRules":{"PatchRules":[{"ApproveAfterDays":1,"ComplianceLevel":"string","EnableNonSecurity":1,"PatchFilterGroup":{"PatchFilters":[{"Key":"string","Values":["string"]}]}}]},"ApprovedPatches":["string"],"ApprovedPatchesComplianceLevel":"string","ApprovedPatchesEnableNonSecurity":1,"ClientToken":"string","Description":"string","GlobalFilters":{"PatchFilters":[{"Key":"string","Values":["string"]}]},"Name":"string","OperatingSystem":"string","RejectedPatches":["string"],"RejectedPatchesAction":"string","Sources":[{"Configuration":"string","Name":"string","Products":["string"]}],"Tags":[{"Key":"string","Value":"string"}]}')
+
+
+@name("Delete Patch Baseline")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"BaselineId":"string"}')
+
+
+@name("Describe Patch Baselines")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Filters":[{"Key":"string","Values":["string"]}],"MaxResults":1,"NextToken":"string"}')
+
+
+@name("Get Patch Baseline")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"BaselineId":"string"}')
+
+
+@name("Update Patch Baseline")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"ApprovalRules":{"PatchRules":[{"ApproveAfterDays":1,"ComplianceLevel":"string","EnableNonSecurity":1,"PatchFilterGroup":{"PatchFilters":[{"Key":"string","Values":["string"]}]}}]},"ApprovedPatches":["string"],"ApprovedPatchesComplianceLevel":"string","ApprovedPatchesEnableNonSecurity":1,"BaselineId":"string","Description":"string","GlobalFilters":{"PatchFilters":[{"Key":"string","Values":["string"]}]},"Name":"string","RejectedPatches":["string"],"RejectedPatchesAction":"string","Replace":1,"Sources":[{"Configuration":"string","Name":"string","Products":["string"]}]}')
+
+
+

@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// 
+// 
+// 
+// 
+// <table style="width:50%">  <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>name</td>
+//     <td>required</td>
+//     <td>The name of the Plugin that’s going to be added. Currently the Plugin must be installed in every Kong instance separately.</td>
+//   </tr>
+//   <tr>
+//     <td>route</td>
+//     <td>optional</td>
+//     <td>If set, the plugin will only activate when receiving requests via the specified route. Leave unset for the plugin to activate regardles
+
+@name("Create Plugin")
+POST "https://{{baseUrl}}/plugins"
+
+
+// 
+// 
+// Retrieve a list of all installed plugins on the Kong node
+
+@name("Retrieve Enabled Plugins")
+GET "https://{{baseUrl}}/plugins/enabled"
+
+
+// 
+// * Retrieve the schema of a plugin’s configuration. This is useful to understand what fields a plugin accepts, and can be used for building third-party integrations to the Kong’s plugin system.
+// 
+// <table style="width:50%">  <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Description</th>
+//   </tr>
+//   <tr>
+//     <td>plugin name</td>
+//     <td>required</td>
+//     <td>The Plugin name to retrieve</td>
+//   </tr>
+// </table>
+
+@name("Retrieve Plugin Schema")
+GET "https://{{baseUrl}}/plugins/schema/:pluginName"
+
+
+

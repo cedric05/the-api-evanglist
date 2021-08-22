@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a CustomerGroup
+
+@name("Get a CustomerGroup")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/CustomerGroups/:id"
+
+
+// Get a list of all Customers from a Customer Group
+
+@name("Get Customers from a Customer Group")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/CustomerGroups/:id/Customers"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "email"= "<string>"
+? "firstname"= "<string>"
+? "lastname"= "<string>"
+? "country"= "<string>"
+? "state"= "<string>"
+? "city"= "<string>"
+? "phone"= "<string>"
+? "countonly"= "<integer>"
+? "lastupdatestart"= "<string>"
+? "lastupdateend"= "<string>"
+
+
+

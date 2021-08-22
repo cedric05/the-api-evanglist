@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfcb371d-a6e0-41fe-841b-f5fab0153d76.postman_collection.json
+
+@name("Create Data Source From R D S")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.CreateDataSourceFromRDS"
+? "Action"= "CreateDataSourceFromRDS"
+data('{"ComputeStatistics":1,"DataSourceId":"string","DataSourceName":"string","RDSData":{"DatabaseCredentials":{"Password":"string","Username":"string"},"DatabaseInformation":{"DatabaseName":"string","InstanceIdentifier":"string"},"DataRearrangement":"string","DataSchema":"string","DataSchemaUri":"string","ResourceRole":"string","S3StagingLocation":"string","SecurityGroupIds":["string"],"SelectSqlQuery":"string","ServiceRole":"string","SubnetId":"string"},"RoleARN":"string"}')
+
+
+

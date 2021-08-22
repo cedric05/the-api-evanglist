@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-20909047-00c3-478c-8e02-1c3f510f50c3.postman_collection.json
+
+// Verify a hash of content by supplying a file or some other binary data. Hashing will be done on the server side. Please note that the binary data itself will not be stored, only the hash. Use the registerUsingContent endpoint if you'd like to store content
+
+@name("Verify bytestream/file hash")
+POST "https://{{baseUrl}}/existence/:configName/streams/multipart"
+? "fileName"= "<string>"
+
+
+// Verify a hash of file/blob by supplying a Stream location of the Storage API. This Stream Location maps to a location of a file/blob on some remote cloud storage. Hashing will be done on the server side Please note that the binary data itself will not be stored, only the hash. Use the registerUsingContent endpoint if you'd like to store content
+
+@name("Verify hash using the Storage API")
+POST "https://{{baseUrl}}/existence/:configName/streams/location"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// For each updated episode ID, pull the full episode data for that ID and update.
+
+@name("Returns list of unique EpisodeId changes greater than or equal to date (UTC)")
+GET "https://{{baseUrl}}/Changes/Episodes/History/"
+? "Date"= "<get>"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Lists each episode ID that has changed as well as the entity in the object that changed.
+
+@name("Returns list of unique EpisodeId and Entity changes greater than or equal to date (UTC).")
+GET "https://{{baseUrl}}/Changes/Episodes/HistoryWithEntity/"
+? "Date"= "<get>"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+

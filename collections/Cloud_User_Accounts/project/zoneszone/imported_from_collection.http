@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b3423fc1-6423-4e31-9835-20949e4088f7.postman_collection.json
+
+// Returns a list of authorized public keys for a specific user account.
+
+@name("Get Public Keys")
+POST "https://{{baseUrl}}/:project/zones/:zone/authorizedKeysView/:user"
+? "instance"= "<>"
+? "login"= "<>"
+
+
+// Retrieves a list of user accounts for an instance within a specific project.
+
+@name("Get Linux Account Views")
+POST "https://{{baseUrl}}/:project/zones/:zone/linuxAccountViews"
+? "instance"= "<>"
+? "filter"= "<>"
+? "maxResults"= "<>"
+? "orderBy"= "<>"
+? "pageToken"= "<>"
+
+
+

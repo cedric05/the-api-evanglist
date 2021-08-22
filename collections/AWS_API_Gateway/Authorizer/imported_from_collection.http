@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("By Id Authorizer")
+GET "https://{{aws_api_gateway_base_url}}/restapis/mxsmn867vb/authorizers/40j2n8&authorizer_id="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "authorizer_id"= ""
+
+
+@name("Create Authorizer")
+POST "https://{{aws_api_gateway_base_url}}/restapis/mxsmn867vb/authorizers"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Authorizer")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/mxsmn867vb/authorizers/4unj71"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Update Authorizer")
+PATCH "https://{{aws_api_gateway_base_url}}/restapis/mxsmn867vb/authorizers/4unj71"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

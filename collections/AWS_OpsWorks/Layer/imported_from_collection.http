@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2b30fdb4-df71-430c-bca5-582cc0c9e09b.postman_collection.json
+
+@name("Create Layer")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"Attributes":{"string":"string"},"AutoAssignElasticIps":1,"AutoAssignPublicIps":1,"CloudWatchLogsConfiguration":{"Enabled":1,"LogStreams":[{"BatchCount":42,"BatchSize":42,"BufferDuration":42,"DatetimeFormat":"string","Encoding":"string","File":"string","FileFingerprintLines":"string","InitialPosition":"string","LogGroupName":"string","MultiLineStartPattern":"string","TimeZone":"string"}]},"CustomInstanceProfileArn":"string","CustomJson":"string","CustomRecipes":{"Configure":["string"],"Deploy":["string"],"Setup":["string"],"Shutdown":["string"],"Undeploy":["string"]},"CustomSecurityGroupIds":["string"],"EnableAutoHealing":1,"InstallUpdatesOnBoot":1,"LifecycleEventConfiguration":{"Shutdown":{"DelayUntilElbConnectionsDrained":1,"ExecutionTimeout":42}},"Name":"string","Packages":["string"],"Shortname":"string","StackId":"string","Type":"string","UseEbsOptimizedInstances":1,"VolumeConfigurations":[{"Encrypted":1,"Iops":42,"MountPoint":"string","NumberOfDisks":42,"RaidLevel":42,"Size":42,"VolumeType":"string"}]}')
+
+
+@name("Delete Layer")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"LayerId":"string"}')
+
+
+@name("Describe Layers")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"LayerIds":["string"],"StackId":"string"}')
+
+
+@name("Update Layer")
+POST "https://{{aws_opsworks_cm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_opsworks_cm_service}}", region="{{aws_opsworks_cm_region}}")
+? "Version"= "2013-02-18"
+data('{"Attributes":{"string":"string"},"AutoAssignElasticIps":1,"AutoAssignPublicIps":1,"CloudWatchLogsConfiguration":{"Enabled":1,"LogStreams":[{"BatchCount":42,"BatchSize":42,"BufferDuration":42,"DatetimeFormat":"string","Encoding":"string","File":"string","FileFingerprintLines":"string","InitialPosition":"string","LogGroupName":"string","MultiLineStartPattern":"string","TimeZone":"string"}]},"CustomInstanceProfileArn":"string","CustomJson":"string","CustomRecipes":{"Configure":["string"],"Deploy":["string"],"Setup":["string"],"Shutdown":["string"],"Undeploy":["string"]},"CustomSecurityGroupIds":["string"],"EnableAutoHealing":1,"InstallUpdatesOnBoot":1,"LayerId":"string","LifecycleEventConfiguration":{"Shutdown":{"DelayUntilElbConnectionsDrained":1,"ExecutionTimeout":42}},"Name":"string","Packages":["string"],"Shortname":"string","UseEbsOptimizedInstances":1,"VolumeConfigurations":[{"Encrypted":1,"Iops":42,"MountPoint":"string","NumberOfDisks":42,"RaidLevel":42,"Size":42,"VolumeType":"string"}]}')
+
+
+

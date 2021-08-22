@@ -1,0 +1,109 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5742bcb1-7df5-4c70-8656-2527a102ef1c.postman_collection.json
+
+// Creates an endpoint using the provided settings.
+
+@name("Create Endpoint")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.CreateEndpoint"
+? "Action"= "CreateEndpoint"
+data('{
+   "EndpointIdentifier":"test-endpoint-1”, 
+           "   EndpointType":"source”, 
+           "   EngineName":"mysql",
+   "Username":"username",
+   "Password":"password",
+   "ServerName":"test-source.cxln7iyxx1lo.us-west-2.rds.amazonaws.com”, 
+           "   Port":3306,
+   "DatabaseName":"test",
+   "ExtraConnectionAttributes":"test",
+   "KmsKeyId":"",
+   "Tags":[
+      {
+         "Key":"testing",
+         "Value":“123"
+      }
+   ]
+} ')
+
+
+// Deletes the specified endpoint.
+
+@name("Delete Endpoint")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DeleteEndpoint"
+? "Action"= "DeleteEndpoint"
+data('{
+   "EndpointArn": "string"
+}')
+
+
+// Returns information about the type of endpoints available.
+
+@name("Describe Endpoints")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DescribeSchemas"
+? "Action"= "DescribeEndpoints"
+data('{
+   "Filters":[
+      {
+         "Name":"endpoint-type",
+         "Values":[
+            "source"
+         ]
+      }
+   ],
+   "MaxRecords":50,
+   "Marker":""
+}
+ ')
+
+
+// Modifies the specified endpoint.
+
+@name("Modify Endpoint")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101. ModifyEndpoint"
+? "Action"= "ModifyEndpoint"
+data('{
+   "EndpointArn":"arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM",
+   "EndpointIdentifier":"",
+   "EndpointType":"target",
+   "EngineName":"",
+   "Username":"",
+   "Password":"",
+   "ServerName":"",
+   "Port":0,
+   "DatabaseName":"",
+   "ExtraConnectionAttributes":""
+}')
+
+
+@name("Describe Endpoint Types")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DescribeEndpointTypes"
+? "Action"= "DescribeEndpointTypes"
+data('{
+   "Filters": [ 
+      { 
+         "Name": "string",
+         "Values": [ "string" ]
+      }
+   ],
+   "Marker": "string",
+   "MaxRecords": number
+}')
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+@name("Get all the messages from a specific CRM")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/CRM/:crmid/message"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+
+
+// Get a specific Message
+
+@name("Get a specific Message")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/CRM/:crmid/message/:msgid"
+
+
+

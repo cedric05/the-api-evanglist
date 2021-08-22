@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Event types are used to model the events that are published to the
+// Watson IoT Platform.  An event type must be created in an organization
+// before more complex processing can be performed on the native event.
+// 
+// The **/event/types** endpoint returns the list of all of the active
+// event types that have been defined for the organization in the Watson
+// IoT Platform.  Various query parameters can be used to filter, sort and
+// page through the list of active event types that are returned.
+
+@name("Query active event types")
+GET "https://{{baseUrl}}/event/types"
+
+
+// Retrieve the active event type with the specified id.
+
+@name("Get an active event type")
+GET "https://{{baseUrl}}/event/types/:eventTypeId"
+
+
+

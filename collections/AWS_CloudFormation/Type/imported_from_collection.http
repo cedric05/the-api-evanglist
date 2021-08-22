@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-06beb3cb-4f39-40cc-ab55-114f4f94f4b4.postman_collection.json
+
+@name("Deregister Type")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Arn"= ""
+? "Type"= ""
+? "TypeName"= ""
+? "VersionId"= ""
+? "Action"= "DeregisterType"
+
+
+@name("Describe Type")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Arn"= ""
+? "Type"= ""
+? "TypeName"= ""
+? "VersionId"= ""
+? "Action"= "DescribeType"
+
+
+@name("List Types")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "Action"= "ListTypes"
+
+
+@name("Register Type")
+GET "https://{{aws_cloudformation_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudformation_service}}", region="{{aws_cloudformation_region}}")
+? "ClientRequestToken"= ""
+? "ExecutionRoleArn"= ""
+? "LoggingConfig"= ""
+? "SchemaHandlerPackage"= ""
+? "Type"= ""
+? "TypeName"= ""
+? "Action"= "RegisterType"
+
+
+

@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-65976312-4837-4e6a-b30f-fd3fcee99b05.postman_collection.json
+
+@name("Set Alarm State")
+GET "https://{{aws_cloudwatch_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudwatch_service}}", region="{{aws_cloudwatch_region}}")
+? "Action"= "SetAlarmState"
+? "AlarmName"= ""
+? "StateReason"= ""
+? "StateReasonData"= ""
+? "StateValue"= ""
+? "Version"= "2010-08-01"
+
+
+

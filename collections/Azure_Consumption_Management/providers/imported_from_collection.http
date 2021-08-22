@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ade22d6e-5dde-48ba-8d9a-57f7514de513.postman_collection.json
+
+// Lists all of the available billing REST API operations.
+
+@name("Operations List")
+GET "https://{{baseUrl}}/providers/Microsoft.Billing/operations"
+
+
+// Lists all of the available consumption REST API operations.
+
+@name("Operations List")
+GET "https://{{baseUrl}}/providers/Microsoft.Consumption/operations"
+
+
+

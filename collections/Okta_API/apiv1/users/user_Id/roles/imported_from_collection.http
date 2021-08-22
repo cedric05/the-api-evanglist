@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9a62c01e-3db2-4f66-b90d-a4df9dd9bd07.postman_collection.json
+
+// Lists all roles assigned to a user.
+
+@name("list Assigned Roles")
+GET "https://{{baseUrl}}/api/v1/users/:userId/roles"
+? "expand"= "<string>"
+
+
+

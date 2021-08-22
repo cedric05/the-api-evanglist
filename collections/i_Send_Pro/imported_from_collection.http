@@ -1,0 +1,67 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-af7306f3-23f2-4c59-8de8-80ffb6f45d2b.postman_collection.json
+
+@name("get Campagne")
+GET "https://{{baseUrl}}/campagne"
+? "keyid"= "<post>"
+? "rapportCampagne"= "<>"
+? "date_deb"= "<>"
+? "date_fin"= "<>"
+
+
+@name("comptage")
+POST "https://{{baseUrl}}/comptage"
+
+
+// Retourne le credit existant associe au compte.
+
+@name("Interrogation credit")
+GET "https://{{baseUrl}}/credit"
+? "keyid"= "<post>"
+? "credit"= "<post>"
+
+
+// Supprime un numero en liste noire
+
+@name("Ajoute un numero en liste noire")
+POST "https://{{baseUrl}}/dellistenoire"
+? "keyid"= "<post>"
+? "dellisteNoire"= "<>"
+? "num"= "<post>"
+
+
+@name("Retourne le liste noire")
+POST "https://{{baseUrl}}/getlistenoire"
+? "keyid"= "<post>"
+? "getListeNoire"= "<>"
+
+
+@name("get Hlr")
+POST "https://{{baseUrl}}/hlr"
+
+
+@name("Gestion repertoire (creation)")
+POST "https://{{baseUrl}}/repertoire"
+
+
+@name("Ajoute un numero en liste noire")
+POST "https://{{baseUrl}}/setlistenoire"
+? "keyid"= "<post>"
+? "setlisteNoire"= "<>"
+? "num"= "<post>"
+
+
+// Envoi un sms vers un unique destinataire
+
+@name("Envoyer un sms")
+POST "https://{{baseUrl}}/sms"
+
+
+// Envoi de SMS vers 1 ou plusieurs destinataires
+
+@name("Envoyer des SMS")
+POST "https://{{baseUrl}}/smsmulti"
+
+
+

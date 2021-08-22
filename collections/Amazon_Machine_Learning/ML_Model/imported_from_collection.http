@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-bfcb371d-a6e0-41fe-841b-f5fab0153d76.postman_collection.json
+
+@name("Create M L Model")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.CreateMLModel"
+? "Action"= "CreateMLModel"
+data('{"MLModelId":"string","MLModelName":"string","MLModelType":"string","Parameters":{"string":"string"},"Recipe":"string","RecipeUri":"string","TrainingDataSourceId":"string"}')
+
+
+@name("Delete M L Model")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DeleteMLModel"
+? "Action"= "DeleteMLModel"
+data('{"MLModelId":"string"}')
+
+
+@name("Describe M L Models")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.DescribeMLModels"
+? "Action"= "DescribeMLModels"
+data('{"EQ":"string","FilterVariable":"string","GE":"string","GT":"string","LE":"string","Limit":42,"LT":"string","NE":"string","NextToken":"string","Prefix":"string","SortOrder":"string"}')
+
+
+@name("Get M L Model")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.GetMLModel"
+? "Action"= "GetMLModel"
+data('{"MLModelId":"string","Verbose":1}')
+
+
+@name("Update M L Model")
+POST "https://{{aws_machine_learning_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_machine_learning_service}}", region="{{aws_machine_learning_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonML_20141212.UpdateMLModel"
+? "Action"= "UpdateMLModel"
+data('{"MLModelId":"string","MLModelName":"string","ScoreThreshold":42}')
+
+
+

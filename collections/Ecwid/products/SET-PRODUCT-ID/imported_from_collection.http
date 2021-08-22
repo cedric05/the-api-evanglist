@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Get product details.
+
+@name("Get product details")
+GET "https://{{baseUrl}}/products/SET-PRODUCT-ID"
+"Content": "<>"
+? "token"= "<>"
+
+
+// Add / update product image.
+
+@name("Add / Update product image")
+POST "https://{{baseUrl}}/products/SET-PRODUCT-ID/image"
+"Content": "<>"
+? "token"= "<>"
+
+
+

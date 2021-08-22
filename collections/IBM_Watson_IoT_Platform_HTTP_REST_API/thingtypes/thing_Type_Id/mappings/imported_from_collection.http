@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Retrieve the list of active property mappings for the specified thing
+// type.  A property mapping defines how properties from state update events
+// on aggregated devices or things are mapped to properties defined on a
+// logical interface associated with the thing type.
+
+@name("Get the list of active property mappings for the thing type")
+GET "https://{{baseUrl}}/thing/types/:thingTypeId/mappings"
+
+
+// Retrieves the active property mappings for a specific logical interface
+// for the thing type.
+
+@name("Get the active property mappings for a specific logical interface for
+a thing type.
+")
+GET "https://{{baseUrl}}/thing/types/:thingTypeId/mappings/:logicalInterfaceId"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Retrieve the active physical interface with the specified id.
+
+@name("Get an active physical interface")
+GET "https://{{baseUrl}}/physicalinterfaces/:physicalInterfaceId"
+
+
+// Retrieve the list of event mappings for the active physical interface.
+// Event mappings are keyed off of the event id specified in the MQTT topic
+// that the inbound events are published to.
+
+@name("Get the list of event mappings")
+GET "https://{{baseUrl}}/physicalinterfaces/:physicalInterfaceId/events"
+
+
+

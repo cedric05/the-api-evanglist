@@ -1,0 +1,78 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("Get Usage")
+GET "https://{{aws_api_gateway_base_url}}/usageplans/q2hrol/usage"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "keyId"= ""
+? "startDate"= ""
+? "endDate"= ""
+? "limit"= ""
+
+
+@name("Usage")
+PATCH "https://{{aws_api_gateway_base_url}}/usageplans/ywbqww/keys/3JX4ISs7Ik23cDsgiaJdu6SiLffQpIsU7AyTMALs/usage&keyId="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "keyId"= ""
+
+
+@name("Usageplanby Id")
+GET "https://{{aws_api_gateway_base_url}}&usageplanId=/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "usageplanId"= ""
+
+
+@name("Usageplancreate")
+GET "https://{{aws_api_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Usage Plans")
+GET "https://{{aws_api_gateway_base_url}}/usageplans"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Usage Plan")
+PATCH "https://{{aws_api_gateway_base_url}}/usageplans/w0mvrr"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+data('{
+    "patchOperations" : [ {
+       "op": "add",
+       "path": "/apiStages",
+       "value": "o81lxisefl:Stage_A"
+    },
+    {
+       "op": "replace",
+       "path": "/name",
+       "value": "new-plan-name"
+    },
+    {
+       "op": "replace",
+       "path": "/description",
+       "value": "new-plan-description"
+    },
+    {
+        "op": "replace",
+        "path": "/quota/period",
+        "value": "MONTH"
+    },
+    {
+        "op": "replace",
+        "path": "/quota/limit",
+        "value": "1300"
+    },
+    {
+        "op": "replace",
+        "path": "/quota/offset",
+        "value": "5"
+    }]
+}')
+
+
+@name("Usageplankeys Usage Plan")
+GET "https://{{aws_api_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

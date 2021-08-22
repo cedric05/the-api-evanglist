@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all CRMs
+
+@name("Get all CRMs")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/CRM"
+? "subject"= "<string>"
+? "departmentid"= "<integer>"
+? "statusid"= "<integer>"
+? "openedstartdate"= "<string>"
+? "openedenddate"= "<string>"
+? "lastactionstartdate"= "<string>"
+? "lastactionenddate"= "<string>"
+? "customername"= "<string>"
+? "customeremail"= "<string>"
+? "customerphone"= "<string>"
+? "customeripaddress"= "<string>"
+? "orderid"= "<integer>"
+? "custid"= "<integer>"
+? "productid"= "<integer>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+
+
+

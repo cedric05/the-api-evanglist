@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Abort business-process case
+
+@name("Get Service Businessprocessnotification Businessprocesscase Action Abort")
+GET "https://{{baseUrl}}/service/businessprocessnotification_businessprocesscase/action/abort"
+? "objectType"= "<>"
+? "objectId"= "<>"
+? "businessProcessStartNotificationTemplateId"= "<>"
+
+
+// list business-process cases
+
+@name("Get Service Businessprocessnotification Businessprocesscase Action List")
+GET "https://{{baseUrl}}/service/businessprocessnotification_businessprocesscase/action/list"
+? "objectType"= "<>"
+? "objectId"= "<>"
+
+
+// Server business-process case diagram
+
+@name("Get Service Businessprocessnotification Businessprocesscase Action Servediagram")
+GET "https://{{baseUrl}}/service/businessprocessnotification_businessprocesscase/action/serveDiagram"
+? "objectType"= "<>"
+? "objectId"= "<>"
+? "businessProcessStartNotificationTemplateId"= "<>"
+
+
+

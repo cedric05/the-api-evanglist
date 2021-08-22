@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Get the emails addresses of a specified user. Available only for admins.
+
+@name("Get Users  Emails")
+GET "https://{{baseUrl}}/users/:id/emails"
+
+
+// Delete an email address of a specified user. Available only for admins.
+
+@name("Delete Users  Emails Email")
+DELETE "https://{{baseUrl}}/users/:id/emails/:email_id"
+
+
+

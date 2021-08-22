@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3ffb8310-f809-482f-a8b3-3615d885b1b1.postman_collection.json
+
+// Delete users.
+
+@name("Delete Users")
+DELETE "https://{{baseUrl}}/users/:id"
+
+
+// Delete users multifactor prover.
+
+@name("Delete Users Multifactor Prover")
+DELETE "https://{{baseUrl}}/users/:id/multifactor/:provider"
+
+
+

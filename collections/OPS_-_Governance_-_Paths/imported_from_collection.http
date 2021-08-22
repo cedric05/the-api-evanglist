@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-09274946-2374-41c6-835d-82073e6ae6c3.postman_collection.json
+
+// This loops through each segment of each API path and checks to see if it is a word. It ignores variables.
+
+@name("Is there a trailing slash?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// Loops through each of paths and looks for valid characters.
+
+@name("Does path contain valid characters?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+

@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7c11bdd4-db6e-4fd6-94d3-7db4d0b2bb25.postman_collection.json
+
+@name("User")
+GET "https://{{baseUrl}}/users/:userId"
+? "client_id"= "<string>"
+
+
+@name("Users Following")
+GET "https://{{baseUrl}}/users/:userId/following"
+? "client_id"= "<string>"
+
+
+@name("User Appreciations")
+GET "https://{{baseUrl}}/users/:userId//appreciations"
+
+
+@name("User Followers")
+GET "https://{{baseUrl}}/users/:userId/followers"
+? "client_id"= "<string>"
+
+
+@name("User Stats")
+GET "https://{{baseUrl}}/users/:userId/stats"
+? "client_id"= "<string>"
+
+
+@name("User WIPS")
+GET "https://{{baseUrl}}/users/:userId/wips"
+? "client_id"= "<string>"
+
+
+@name("User Work Experience")
+GET "https://{{baseUrl}}/users/:userId/work_experience"
+? "client_id"= "<string>"
+
+
+@name("User Projects")
+GET "https://{{baseUrl}}/users/:userId/projects"
+? "client_id"= "<string>"
+
+
+@name("User Collections")
+GET "https://{{baseUrl}}/users/:userId/collections"
+? "api_key"= "<integer>"
+
+
+

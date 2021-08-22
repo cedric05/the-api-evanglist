@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all GiftRegistries
+
+@name("Get all GiftRegistries")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/GiftRegistries"
+? "catalogid"= "<integer>"
+? "sku"= "<string>"
+? "datestartcreated"= "<string>"
+? "dateendcreated"= "<string>"
+? "datestartevent"= "<string>"
+? "dateendevent"= "<string>"
+? "datestartexpiration"= "<string>"
+? "dateendexpiration"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+
+
+

@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Deletes the caller ID from the account. Returns an HTTP 204 response if
+// successful, with no body.
+
+@name("/Accounts/:AccountSid/OutgoingCallerIds/{{OutgoingCallerIdSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/OutgoingCallerIds/{{OutgoingCallerIdSid}}{{mediaTypeExtension}}"
+
+
+// Deletes the caller ID from the account. Returns an HTTP 204 response if
+// successful, with no body.
+
+@name("Accounts.Account Sid.Outgoing Caller Ids.Outgoing Caller Id Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/OutgoingCallerIds/{{OutgoingCallerIdSid}}.json"
+
+
+

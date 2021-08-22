@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8769b524-1f28-4d9b-9eb3-108001adf2ad.postman_collection.json
+
+@name("Create Topic")
+GET "https://{{aws_simple_notification_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_notification_service_service}}", region="{{aws_simple_notification_service_region}}")
+
+
+@name("Delete Topic")
+GET "https://{{aws_simple_notification_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_notification_service_service}}", region="{{aws_simple_notification_service_region}}")
+
+
+@name("List Topics")
+GET "https://{{aws_simple_notification_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_notification_service_service}}", region="{{aws_simple_notification_service_region}}")
+
+
+

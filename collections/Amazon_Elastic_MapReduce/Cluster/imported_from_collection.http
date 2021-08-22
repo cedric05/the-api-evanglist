@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f15eb0b0-8456-4c8c-b7eb-e8c210aa11fb.postman_collection.json
+
+@name("Describe Cluster")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.DescribeCluster"
+? "Action"= "DescribeCluster"
+data('{"ClusterId":"string"}')
+
+
+@name("List Clusters")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.ListClusters"
+? "Action"= "ListClusters"
+data('{"ClusterStates":["string"],"CreatedAfter":42,"CreatedBefore":42,"Marker":"string"}')
+
+
+@name("Modify Cluster")
+POST "https://{{aws_emr_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_emr_service}}", region="{{aws_emr_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "ElasticMapReduce.ModifyCluster"
+? "Action"= "ModifyCluster"
+data('{"ClusterId":"string","StepConcurrencyLevel":42}')
+
+
+

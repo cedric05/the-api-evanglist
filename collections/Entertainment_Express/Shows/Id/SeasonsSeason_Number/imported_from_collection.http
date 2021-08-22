@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Depreciated. Use GetSeasonBySeasonNumber instead.  Requires a valid ShowId and Season Number.
+
+@name("Get Season by ShowId and Season Number.")
+GET "https://{{baseUrl}}/Shows/:Id/Seasons/:SeasonNumber"
+? "Includes"= "<get>"
+
+
+// Requires a valid ShowId, Season Number and Episode Number.
+
+@name("Get Episode by ShowId, Season Number and Episode Number.")
+GET "https://{{baseUrl}}/Shows/:Id/Seasons/:SeasonNumber/Episodes/:EpisodeNumber"
+? "Includes"= "<get>"
+
+
+

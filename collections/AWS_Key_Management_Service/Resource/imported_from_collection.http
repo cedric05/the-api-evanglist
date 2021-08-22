@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3df65b62-a809-4d01-884b-b673ce0b5a70.postman_collection.json
+
+@name("Tag Resource")
+POST "https://{{aws_key_management_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_key_management_service_service}}", region="{{aws_key_management_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "TrentService.TagResource"
+? "Version"= "2014-11-01"
+data('{"KeyId":"string","Tags":[{"TagKey":"string","TagValue":"string"}]}')
+
+
+@name("Untag Resource")
+POST "https://{{aws_key_management_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_key_management_service_service}}", region="{{aws_key_management_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "TrentService.UntagResource"
+? "Version"= "2014-11-01"
+data('{"KeyId":"string","TagKeys":["string"]}')
+
+
+

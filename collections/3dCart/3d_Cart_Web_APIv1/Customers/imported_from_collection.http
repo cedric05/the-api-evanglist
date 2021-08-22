@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all Customers
+
+@name("Get all Customers")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Customers"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "email"= "<string>"
+? "firstname"= "<string>"
+? "lastname"= "<string>"
+? "country"= "<string>"
+? "state"= "<string>"
+? "city"= "<string>"
+? "phone"= "<string>"
+? "countonly"= "<integer>"
+? "lastupdatestart"= "<string>"
+? "lastupdateend"= "<string>"
+
+
+@name("This method is used to update a single customer record in the database. The {id} parameter specifies which customer record to update.")
+PUT "https://{{baseUrl}}/3dCartWebAPI/v1/Customers/:customerid"
+
+
+// Get a Customer
+
+@name("Get a Customer")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Customers/:id"
+
+
+

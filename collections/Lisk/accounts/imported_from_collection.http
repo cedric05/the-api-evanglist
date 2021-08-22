@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9578ff80-ee49-47b6-90ea-3cb100ff29d7.postman_collection.json
+
+// Search for matching accounts in the system.
+
+@name("Requests account data")
+GET "https://{{baseUrl}}/accounts"
+? "address"= "<x-swagger-pipe>"
+? "publicKey"= "<x-swagger-pipe>"
+? "secondPublicKey"= "<x-swagger-pipe>"
+? "username"= "<x-swagger-pipe>"
+? "limit"= "<x-swagger-pipe>"
+? "offset"= "<>"
+? "sort"= "<>"
+
+
+

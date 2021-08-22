@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("get Payments Coupons Name")
+GET "https://{{baseUrl}}/payments/coupons/:name"
+
+
+@name("get Payments Providers")
+GET "https://{{baseUrl}}/payments/providers"
+
+
+@name("get Payments Tokens Bt")
+GET "https://{{baseUrl}}/payments/tokens/bt"
+
+
+@name("get Payments Webhooks Bt")
+GET "https://{{baseUrl}}/payments/webhooks/bt"
+? "bt_challenge"= "<string>"
+
+
+@name("post Payments Bid End Bt")
+POST "https://{{baseUrl}}/payments/:bid/end/bt"
+
+
+

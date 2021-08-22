@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// This call fetches a single API having the specified id.
+// 
+// Response contains an `api` object with all the details related to the queried API, namely, `id`, `name`, `summary`, `description` etc. 
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Single API")
+GET "https://{{baseUrl}}/apis/:apiId"
+
+
+

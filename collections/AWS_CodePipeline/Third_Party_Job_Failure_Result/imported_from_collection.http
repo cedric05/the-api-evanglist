@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4295a9be-5ee4-4ee8-bfc7-54202492a909.postman_collection.json
+
+@name("Put Third Party Job Failure Result")
+POST "https://{{aws_codepipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codepipeline_service}}", region="{{aws_codepipeline_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodePipeline_20150709.PutThirdPartyJobFailureResult"
+? "Action"= "PutThirdPartyJobFailureResult"
+data('{
+   "clientToken": "string",
+   "failureDetails": { 
+      "externalExecutionId": "string",
+      "message": "string",
+      "type": "string"
+   },
+   "jobId": "string"
+}')
+
+
+

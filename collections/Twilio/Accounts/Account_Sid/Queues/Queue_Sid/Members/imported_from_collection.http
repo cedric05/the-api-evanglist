@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Get a front member.
+
+@name("/Accounts/:AccountSid/Queues/:QueueSid/Members/Front{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Queues/:QueueSid/Members/Front{{mediaTypeExtension}}"
+
+
+// Get a specific member.
+
+@name("/Accounts/:AccountSid/Queues/:QueueSid/Members/{{CallSid}}{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Queues/:QueueSid/Members/{{CallSid}}{{mediaTypeExtension}}"
+
+
+// Get a front member.
+
+@name("Accounts.Account Sid.Queues.Queue Sid.Members.Front.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Queues/:QueueSid/Members/Front.json"
+
+
+// Get a specific member.
+
+@name("Accounts.Account Sid.Queues.Queue Sid.Members.Call Sid.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/Queues/:QueueSid/Members/{{CallSid}}.json"
+
+
+

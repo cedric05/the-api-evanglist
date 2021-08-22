@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("get Self Applications App Id Deployments")
+GET "https://{{baseUrl}}/self/applications/:appId/deployments"
+? "limit"= "<integer>"
+? "offset"= "<string>"
+? "action"= "<string>"
+
+
+@name("delete Self Applications App Id Deployments Deployment Id Instances")
+DELETE "https://{{baseUrl}}/self/applications/:appId/deployments/:deploymentId/instances"
+
+
+

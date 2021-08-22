@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Returns GoWatchit episode availability by Entertainment Episode ID. Special permission is required to access this endpoint. 
+
+@name("Get GoWatchIt Episode Availability.")
+GET "https://{{baseUrl}}/GoWatchIt/Episodes/:Id/Availabilities"
+? "ApiKey"= "<get>"
+
+
+// Returns GoWatchIt movie availability by Entertainment Movie ID.  Special permission is required to access this endpoint.  Contact [Sales](mailto:Sales@InternetVideoArchive.com) for more information.
+
+@name("Get GoWatchIt Movie Availability.")
+GET "https://{{baseUrl}}/GoWatchIt/Movies/:Id/Availabilities"
+? "ApiKey"= "<get>"
+
+
+// Returns GoWatchIt season availability by Entertainment Season ID.  Special permission is required to access this endpoint.  Contact [Sales](mailto:Sales@InternetVideoArchive.com) for more information.
+
+@name("Get GoWatchIt Season Availability.")
+GET "https://{{baseUrl}}/GoWatchIt/Seasons/:Id/Availabilities"
+? "ApiKey"= "<get>"
+
+
+// Returns GoWatchIt show availability by Entertainment Show ID.  Special permission is required to access this endpoint. Please contact [Sales](mailto:Sales@InternetVideoArchive.com) for more information.
+
+@name("Get GoWatchItShow Availability.")
+GET "https://{{baseUrl}}/GoWatchIt/Shows/:Id/Availabilities"
+? "ApiKey"= "<get>"
+
+
+

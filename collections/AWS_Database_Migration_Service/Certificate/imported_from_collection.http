@@ -1,0 +1,59 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5742bcb1-7df5-4c70-8656-2527a102ef1c.postman_collection.json
+
+// Deletes the specified certificate.
+
+@name("Delete Certificate")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DeleteCertificate"
+? "Action"= "DeleteCertificate"
+data('{
+   "CertificateArn": "string"
+}')
+
+
+// Provides a description of the certificate.
+
+@name("Describe Certificates")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.DescribeCertificates"
+? "Action"= "DescribeCertificates"
+data('{
+   "Filters": [ 
+      { 
+         "Name": "string",
+         "Values": [ "string" ]
+      }
+   ],
+   "Marker": "string",
+   "MaxRecords": number
+}')
+
+
+// Uploads the specified certificate.
+
+@name("Import Certificate")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101. ImportCertificate"
+? "Action"= "ImportCertificate"
+data('{
+   "CertificateIdentifier": "string",
+   "CertificatePem": "string",
+   "CertificateWallet": blob,
+   "Tags": [ 
+      { 
+         "Key": "string",
+         "Value": "string"
+      }
+   ]
+}')
+
+
+

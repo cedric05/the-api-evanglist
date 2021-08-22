@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39359504-af25-4f48-954b-e7dd332ed9ff.postman_collection.json
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Returns the invoice with the specified key.")
+GET "https://{{baseUrl}}/api/v1/Invoices/:LogicbrokerKey"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Retrieve related events")
+GET "https://{{baseUrl}}/api/v1/Invoices/:LogicbrokerKey/Events"
+
+
+// Returns the latest EDI related to this document that was either sent or received by Logicbroker. The EDI output may also contain other documents that were in the same batch.
+
+@name("Retrieve EDI")
+GET "https://{{baseUrl}}/api/v1/Invoices/:LogicbrokerKey/EDI"
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// This feature was introduced in GitLab 8.15.
+
+@name("Get Snippets")
+GET "https://{{baseUrl}}/snippets"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// This feature was introduced in GitLab 8.15.
+
+@name("Get Snippets Public")
+GET "https://{{baseUrl}}/snippets/public"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+

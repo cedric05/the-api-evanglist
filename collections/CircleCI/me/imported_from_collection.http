@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-497c1579-7153-42d7-9ae4-62094712cd15.postman_collection.json
+
+// Provides information about the user that is currently signed in.
+
+@name("User Information")
+GET "https://{{baseUrl}}/me"
+
+
+// Provides the set of organizations of which a user is a member or a collaborator.
+// 
+// The set of organizations that a user can collaborate on is composed of:
+// 
+// * Organizations that the current user belongs to across VCS types (e.g. BitBucket, GitHub)
+// * The parent organization of repository that the user can collaborate on, but is not necessarily a member of
+// * The organization of the current user's account
+
+@name("Collaborations")
+GET "https://{{baseUrl}}/me/collaborations"
+
+
+

@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Create Mitigation Action")
+GET "https://{{aws_internet_of_things_base_url}}/mitigationactions/actions/actionName&actionName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Delete Mitigation Action")
+GET "https://{{aws_internet_of_things_base_url}}/mitigationactions/actions/actionName&actionName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Describe Mitigation Action")
+GET "https://{{aws_internet_of_things_base_url}}/mitigationactions/actions/actionName&actionName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List Mitigation Actions")
+GET "https://{{aws_internet_of_things_base_url}}/mitigationactions/actions"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Update Mitigation Action")
+GET "https://{{aws_internet_of_things_base_url}}/mitigationactions/actions/actionName&actionName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

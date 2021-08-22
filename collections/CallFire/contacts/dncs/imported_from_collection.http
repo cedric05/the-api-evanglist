@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Searches for all Do Not Contact (DNC) objects created by user. These DoNotContact entries only affect calls/texts/campaigns on this account. Returns a paged list of DoNotContact objects
+
+@name("Find do not contact (dnc) items")
+GET "https://{{baseUrl}}/contacts/dncs"
+? "fields"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "prefix"= "<string>"
+? "campaignId"= "<integer>"
+? "source"= "<string>"
+? "call"= "<boolean>"
+? "text"= "<boolean>"
+? "number"= "<string>"
+
+
+// Delete Do Not Contact (DNC) contact entries contained in source.
+
+@name("Delete do not contact (dnc) numbers contained in source.")
+DELETE "https://{{baseUrl}}/contacts/dncs/sources/:source"
+
+
+// Searches for a UniversalDoNotContact object for a given phone number. Shows whether inbound/outbound actions are allowed for a given number
+
+@name("Find universal do not contacts (udnc) associated with toNumber")
+GET "https://{{baseUrl}}/contacts/dncs/universals/:toNumber"
+? "fromNumber"= "<string>"
+? "fields"= "<string>"
+
+
+// Delete a Do Not Contact (DNC) contact entry.
+
+@name("Delete do not contact (dnc) number. If number contains commas treat as list of numbers")
+DELETE "https://{{baseUrl}}/contacts/dncs/:number"
+
+
+

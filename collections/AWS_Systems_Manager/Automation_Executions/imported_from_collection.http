@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aae3264c-1b30-4227-9429-291e0bd8acbe.postman_collection.json
+
+@name("Describe Automation Executions")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Filters":[{"Key":"string","Values":["string"]}],"MaxResults":1,"NextToken":"string"}')
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Get projects  merge requests merge request  versions
+
+@name("Get Projects  Merge Requests Merge Request  Versions")
+GET "https://{{baseUrl}}/projects/:id/merge_requests/:merge_request_id/versions"
+
+
+// Get projects  merge requests merge request  versions version
+
+@name("Get Projects  Merge Requests Merge Request  Versions Version")
+GET "https://{{baseUrl}}/projects/:id/merge_requests/:merge_request_id/versions/:version_id"
+
+
+

@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Returns the tag-set of an object. You send the GET request against the tagging subresource associated with the object. 
+
+@name("Object Tagging")
+GET "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "tagging"= ""
+
+
+// Returns the tag-set of an object. You send the GET request against the tagging subresource associated with the object. 
+
+@name("Tagging")
+PUT "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "tagging"= ""
+data('<?xml version="1.0" encoding="UTF-8"?>
+<Tagging xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <TagSet>
+      <Tag>
+         <Key>Test</Key>
+         <Value>Test</Value>
+      </Tag>
+   </TagSet>
+</Tagging>')
+
+
+// Removes the entire tag set from the specified object. For more information about managing object tags, see Object Tagging. 
+
+@name("Delete Object Tagging")
+DELETE "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "tagging"= ""
+? "VersionId"= "VersionId"
+
+
+

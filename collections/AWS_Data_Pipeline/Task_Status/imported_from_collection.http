@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-262b2933-58c8-4c4d-94e7-745ca3083a61.postman_collection.json
+
+@name("Set Task Status")
+GET "https://{{aws_data_pipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "errorId"= ""
+? "errorMessage"= ""
+? "errorStackTrace"= ""
+? "taskId"= ""
+? "taskStatus"= ""
+? "Action"= "SetTaskStatus"
+
+
+

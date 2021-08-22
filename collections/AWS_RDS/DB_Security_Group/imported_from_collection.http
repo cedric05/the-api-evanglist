@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Create DB Security Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "CreateDBSecurityGroup"
+? "Version"= "2014-10-31"
+
+
+@name("Delete DB Security Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "DeleteDBSecurityGroup"
+? "Version"= "2014-10-31"
+
+
+@name("Describe DB Security Groups")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "DescribeDBSecurityGroups"
+? "Version"= "2014-10-31"
+
+
+

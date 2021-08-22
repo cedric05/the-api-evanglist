@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// 
+// 
+// 
+// * Returns a paginated list of all the tags in the system.
+// * The list of entities will not be restricted to a single entity type: all the entities tagged with tags will be present on this list.
+// * If an entity is tagged with more than one tag, the entity_id for that entity will appear more than once in the resulting list. Similarly, if several entities have been tagged with the same tag, the tag will appear in several items of this list.
+
+@name("List All Tags")
+GET "https://{{baseUrl}}/tags"
+
+
+// 
+// 
+// * Returns the entities that have been tagged with the specified tag.
+// * The list of entities will not be restricted to a single entity type: all the entities tagged with tags will be present on this list.
+
+@name("List Entity Ids by Tag")
+GET "https://{{baseUrl}}/tags/:tags"
+
+
+

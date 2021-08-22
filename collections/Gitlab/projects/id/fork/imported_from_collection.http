@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Remove a forked_from relationship
+
+@name("Delete Projects  Fork")
+DELETE "https://{{baseUrl}}/projects/:id/fork"
+
+
+// Mark this project as forked from another
+
+@name("Add Projects  Fork Forked From")
+POST "https://{{baseUrl}}/projects/:id/fork/:forked_from_id"
+
+
+

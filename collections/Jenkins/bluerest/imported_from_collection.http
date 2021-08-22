@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Search for any resource details
+
+@name("search")
+GET "https://{{baseUrl}}/blue/rest/search/"
+? "q"= "<string>"
+
+
+// Retrieve user favorites details for an organization
+
+@name("get User Favorites")
+GET "https://{{baseUrl}}/blue/rest/users/:user/favorites"
+? "No Name"= "<string>"
+
+
+

@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-356dabf4-362f-4cbf-ab4e-4945c8de6175.postman_collection.json
+
+// Deletes the topic with the given name. Returns `NOT_FOUND` if the topic
+// does not exist. After a topic is deleted, a new topic may be created with
+// the same name; this is an entirely new topic with none of the old
+// configuration or subscriptions. Existing subscriptions to this topic are
+// not deleted, but their `topic` field is set to `_deleted-topic_`.
+
+@name("Delete Topic")
+DELETE "https://{{baseUrl}}/v1/:topic"
+
+
+// Lists the name of the subscriptions for this topic.
+
+@name("Get Topic Subscription")
+GET "https://{{baseUrl}}/v1/:topic/subscriptions"
+? "pageSize"= "<>"
+? "pageToken"= "<>"
+
+
+

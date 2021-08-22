@@ -1,0 +1,197 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Add new Category
+
+@name("Get Service Category Action Add")
+GET "https://{{baseUrl}}/service/category/action/add"
+? "category[parentId]"= "<>"
+? "category[name]"= "<>"
+? "category[description]"= "<>"
+? "category[tags]"= "<>"
+? "category[appearInList]"= "<>"
+? "category[privacy]"= "<>"
+? "category[inheritanceType]"= "<>"
+? "category[defaultPermissionLevel]"= "<>"
+? "category[owner]"= "<>"
+? "category[referenceId]"= "<>"
+? "category[contributionPolicy]"= "<>"
+? "category[privacyContext]"= "<>"
+? "category[partnerSortValue]"= "<>"
+? "category[partnerData]"= "<>"
+? "category[defaultOrderBy]"= "<>"
+? "category[moderation]"= "<>"
+? "category[isAggregationCategory]"= "<>"
+? "category[aggregationCategories]"= "<>"
+
+
+@name("Post Service Category Action Addfrombulkupload")
+POST "https://{{baseUrl}}/service/category/action/addFromBulkUpload"
+? "bulkUploadData[fileName]"= "<>"
+? "bulkUploadData[objectData][objectType]"= "<>"
+? "bulkUploadData[objectData][conversionProfileId]"= "<>"
+
+
+// Delete a Category
+
+@name("Get Service Category Action Delete")
+GET "https://{{baseUrl}}/service/category/action/delete"
+? "id"= "<>"
+? "moveEntriesToParentCategory"= "<>"
+
+
+// Get Category by id
+
+@name("Get Service Category Action Get")
+GET "https://{{baseUrl}}/service/category/action/get"
+? "id"= "<>"
+
+
+// Index Category by id
+
+@name("Get Service Category Action Index")
+GET "https://{{baseUrl}}/service/category/action/index"
+? "id"= "<>"
+? "shouldUpdate"= "<>"
+
+
+// List all categories
+
+@name("Get Service Category Action List")
+GET "https://{{baseUrl}}/service/category/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[idNotIn]"= "<>"
+? "filter[parentIdEqual]"= "<>"
+? "filter[parentIdIn]"= "<>"
+? "filter[depthEqual]"= "<>"
+? "filter[fullNameEqual]"= "<>"
+? "filter[fullNameStartsWith]"= "<>"
+? "filter[fullNameIn]"= "<>"
+? "filter[fullIdsEqual]"= "<>"
+? "filter[fullIdsStartsWith]"= "<>"
+? "filter[fullIdsMatchOr]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[updatedAtLessThanOrEqual]"= "<>"
+? "filter[tagsLike]"= "<>"
+? "filter[tagsMultiLikeOr]"= "<>"
+? "filter[tagsMultiLikeAnd]"= "<>"
+? "filter[appearInListEqual]"= "<>"
+? "filter[privacyEqual]"= "<>"
+? "filter[privacyIn]"= "<>"
+? "filter[inheritanceTypeEqual]"= "<>"
+? "filter[inheritanceTypeIn]"= "<>"
+? "filter[referenceIdEqual]"= "<>"
+? "filter[referenceIdEmpty]"= "<>"
+? "filter[contributionPolicyEqual]"= "<>"
+? "filter[membersCountGreaterThanOrEqual]"= "<>"
+? "filter[membersCountLessThanOrEqual]"= "<>"
+? "filter[pendingMembersCountGreaterThanOrEqual]"= "<>"
+? "filter[pendingMembersCountLessThanOrEqual]"= "<>"
+? "filter[privacyContextEqual]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "filter[inheritedParentIdEqual]"= "<>"
+? "filter[inheritedParentIdIn]"= "<>"
+? "filter[partnerSortValueGreaterThanOrEqual]"= "<>"
+? "filter[partnerSortValueLessThanOrEqual]"= "<>"
+? "filter[aggregationCategoriesMultiLikeOr]"= "<>"
+? "filter[aggregationCategoriesMultiLikeAnd]"= "<>"
+? "filter[freeText]"= "<>"
+? "filter[membersIn]"= "<>"
+? "filter[nameOrReferenceIdStartsWith]"= "<>"
+? "filter[managerEqual]"= "<>"
+? "filter[memberEqual]"= "<>"
+? "filter[fullNameStartsWithIn]"= "<>"
+? "filter[ancestorIdIn]"= "<>"
+? "filter[idOrInheritedParentIdIn]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// Move categories that belong to the same parent category to a target categroy - enabled only for ks with disable entitlement
+
+@name("Get Service Category Action Move")
+GET "https://{{baseUrl}}/service/category/action/move"
+? "categoryIds"= "<>"
+? "targetCategoryParentId"= "<>"
+
+
+// Unlock categories
+
+@name("Get Service Category Action Unlockcategories")
+GET "https://{{baseUrl}}/service/category/action/unlockCategories"
+
+
+// Update Category
+
+@name("Get Service Category Action Update")
+GET "https://{{baseUrl}}/service/category/action/update"
+? "id"= "<>"
+? "category[parentId]"= "<>"
+? "category[name]"= "<>"
+? "category[description]"= "<>"
+? "category[tags]"= "<>"
+? "category[appearInList]"= "<>"
+? "category[privacy]"= "<>"
+? "category[inheritanceType]"= "<>"
+? "category[defaultPermissionLevel]"= "<>"
+? "category[owner]"= "<>"
+? "category[referenceId]"= "<>"
+? "category[contributionPolicy]"= "<>"
+? "category[privacyContext]"= "<>"
+? "category[partnerSortValue]"= "<>"
+? "category[partnerData]"= "<>"
+? "category[defaultOrderBy]"= "<>"
+? "category[moderation]"= "<>"
+? "category[isAggregationCategory]"= "<>"
+? "category[aggregationCategories]"= "<>"
+
+
+

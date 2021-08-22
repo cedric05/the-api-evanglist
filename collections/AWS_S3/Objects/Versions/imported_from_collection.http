@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Returns metadata about all of the versions of objects in a bucket. You can also use request parameters as selection criteria to return metadata about a subset of all the object versions. 
+
+@name("Object Versions")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "versions"= ""
+? "Delimiter"= "{{Delimiter}}"
+? "EncodingType"= "{{EncodingType}}"
+? "KeyMarker"= "{{KeyMarker}}"
+? "MaxKeys"= "{{MaxKeys}}"
+? "Prefix"= "{{Prefix}}"
+? "VersionIdMarker"= "{{VersionIdMarker}}"
+
+
+

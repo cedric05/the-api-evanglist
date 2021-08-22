@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Delete a domain. If you have created subdomains of a domain, you will not be able to delete the domain until you first delete all subdomains of it.
+
+@name("/Accounts/:AccountSid/SIP/Domains/{{SipDomainSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains/{{SipDomainSid}}{{mediaTypeExtension}}"
+
+
+// Delete a domain. If you have created subdomains of a domain, you will not be able to delete the domain until you first delete all subdomains of it.
+
+@name("Accounts.Account Sid.SIP.Domains.Sip Domain Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains/{{SipDomainSid}}.json"
+
+
+

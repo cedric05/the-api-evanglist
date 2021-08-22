@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Add  product file (e-goods).
+
+@name("Add  product file (e-goods)")
+POST "https://{{baseUrl}}/products/SET-PRODUCT-ID/files"
+"Content": "<>"
+? "token"= "<>"
+
+
+// Delete product file.
+
+@name("Delete product file")
+DELETE "https://{{baseUrl}}/products/SET-PRODUCT-ID/files/SET-FILE-ID"
+"Content": "<>"
+? "token"= "<>"
+
+
+

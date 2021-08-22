@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
+//                         to the EC2-Classic platform.
+
+@name("Restore Address To Classic")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "PublicIp"= ""
+? "Action"= "RestoreAddressToClassic"
+
+
+

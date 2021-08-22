@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-7b763a55-c09a-4c3b-b91a-fdd1eca868a2.postman_collection.json
+
+@name("Create Event Source Mapping")
+GET "https://{{aws_lambda_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "BatchSize"= ""
+? "Enabled"= ""
+? "EventSourceArn"= ""
+? "FunctionName"= ""
+? "MaximumBatchingWindowInSeconds"= ""
+? "StartingPosition"= ""
+? "StartingPositionTimestamp"= ""
+? "Action"= "CreateEventSourceMapping"
+
+
+@name("Delete Event Source Mapping")
+GET "https://{{aws_lambda_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "UUID"= ""
+? "Action"= "DeleteEventSourceMapping"
+
+
+@name("Get Event Source Mapping")
+GET "https://{{aws_lambda_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "UUID"= ""
+? "Action"= "GetEventSourceMapping"
+
+
+@name("List Event Source Mappings")
+GET "https://{{aws_lambda_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "EventSourceArn"= ""
+? "FunctionName"= ""
+? "Marker"= ""
+? "MaxItems"= ""
+? "Action"= "ListEventSourceMappings"
+
+
+@name("Update Event Source Mapping")
+GET "https://{{aws_lambda_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "UUID"= ""
+? "Action"= "UpdateEventSourceMapping"
+
+
+

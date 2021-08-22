@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Create Thing Type")
+GET "https://{{aws_internet_of_things_base_url}}/thing-types/thingTypeName&thingTypeName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Delete Thing Type")
+GET "https://{{aws_internet_of_things_base_url}}/thing-types/thingTypeName&thingTypeName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Deprecate Thing Type")
+GET "https://{{aws_internet_of_things_base_url}}/thing-types/thingTypeName/deprecate&thingTypeName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Describe Thing Type")
+GET "https://{{aws_internet_of_things_base_url}}/thing-types/thingTypeName&thingTypeName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List Thing Types")
+GET "https://{{aws_internet_of_things_base_url}}/thing-types"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

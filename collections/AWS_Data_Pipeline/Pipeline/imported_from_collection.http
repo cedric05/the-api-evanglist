@@ -1,0 +1,53 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-262b2933-58c8-4c4d-94e7-745ca3083a61.postman_collection.json
+
+@name("Activate Pipeline")
+GET "https://{{aws_data_pipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "parameterValues"= ""
+? "pipelineId"= ""
+? "startTimestamp"= ""
+? "Action"= "ActivatePipeline¶meterValues="
+
+
+@name("Create Pipeline")
+GET "https://{{aws_data_pipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "description"= ""
+? "name"= ""
+? "tags"= ""
+? "uniqueId"= ""
+? "Action"= "CreatePipeline"
+
+
+@name("Deactivate Pipeline")
+GET "https://{{aws_data_pipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "cancelActive"= ""
+? "pipelineId"= ""
+? "Action"= "DeactivatePipeline"
+
+
+@name("Delete Pipeline")
+GET "https://{{aws_data_pipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "pipelineId"= ""
+? "Action"= "DeletePipeline"
+
+
+@name("Describe Pipelines")
+GET "https://{{aws_data_pipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "pipelineIds"= ""
+? "Action"= "DescribePipelines"
+
+
+@name("List Pipelines")
+GET "https://{{aws_data_pipeline_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "marker"= ""
+? "Action"= "ListPipelines"
+
+
+

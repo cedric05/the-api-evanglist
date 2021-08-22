@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Cancels the specified Spot Fleet requests.
+
+@name("Cancel Spot Fleet Requests")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "SpotFleetRequestId.N"= ""
+? "TerminateInstances"= ""
+? "Action"= "CancelSpotFleetRequests"
+
+
+// Describes your Spot Fleet requests.
+
+@name("Describe Spot Fleet Requests")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "SpotFleetRequestId.N"= ""
+? "Action"= "DescribeSpotFleetRequests"
+
+
+

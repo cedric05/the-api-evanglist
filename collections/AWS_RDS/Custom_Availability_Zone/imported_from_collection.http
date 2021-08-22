@@ -1,0 +1,31 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Create Custom Availability Zone")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "CustomAvailabilityZoneName"= "ZoneName"
+? "NewVpnTunnelName"= "VPNTunnelName"
+? "VpnTunnelOriginatorIP"= "10.1.1.1"
+? "Action"= "CreateCustomAvailabilityZone"
+? "Version"= "2014-10-31"
+
+
+@name("Delete Custom Availability Zone")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "CustomAvailabilityZoneId"= "rds-caz-PxI7J0nN"
+? "Action"= "DeleteCustomAvailabilityZone"
+? "Version"= "2014-10-31"
+
+
+@name("Describe Custom Availability Zones")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "MaxRecords"= "30"
+? "Action"= "DescribeCustomAvailabilityZones"
+? "Version"= "2014-10-31"
+
+
+

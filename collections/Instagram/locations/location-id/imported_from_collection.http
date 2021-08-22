@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2e2501d-8339-4a48-97c8-c5ab15e26155.postman_collection.json
+
+// Get information about a location.
+
+@name("Get information about a location.")
+GET "https://{{baseUrl}}/locations/:location-id"
+
+
+// Get a list of recent media objects from a given location.
+
+@name("Get a list of recent media objects from a given location.")
+GET "https://{{baseUrl}}/locations/:location-id/media/recent"
+? "min_timestamp"= "<integer>"
+? "max_timestamp"= "<integer>"
+? "min_id"= "<string>"
+? "max_id"= "<string>"
+
+
+

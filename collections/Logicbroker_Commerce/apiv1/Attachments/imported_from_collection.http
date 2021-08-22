@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39359504-af25-4f48-954b-e7dd332ed9ff.postman_collection.json
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Get a list of all attachments matching a given filter.")
+GET "https://{{baseUrl}}/api/v1/Attachments"
+? "type"= "<get>"
+? "receiverId"= "<get>"
+? "logicbrokerKey"= "<get>"
+? "acknowledged"= "<get>"
+? "page"= "<>"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Retrieve a file from Logicbroker storage.")
+GET "https://{{baseUrl}}/api/v1/Attachments/:container/:name"
+
+
+

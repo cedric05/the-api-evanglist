@@ -1,0 +1,132 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d3f42c27-6156-4402-8a00-60fea46ec01e.postman_collection.json
+
+@name("Delete Comment Content")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.DeleteCommentContent"
+? "Action"= "DeleteCommentContent"
+data('{
+   "commentId": "ff30b348EXAMPLEb9aa670f"
+} ')
+
+
+@name("Get Comment")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.GetComment"
+? "Action"= "GetComment"
+data('{
+   "commentId": "ff30b348EXAMPLEb9aa670f"
+}')
+
+
+@name("Get Comments For Compared Commit")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.GetCommentsForComparedCommit"
+? "Action"= "GetCommentsForComparedCommit"
+data('{
+   "afterCommitId": "317f8570EXAMPLE",
+   "beforeCommitId": "6e147360EXAMPLE",
+   "maxResults": 250,
+   "nextToken": "exampleToken",
+   "repositoryName": "MyDemoRepo"
+}')
+
+
+@name("Get Comments For Pull Request")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.GetCommentsForPullRequest"
+? "Action"= "GetCommentsForPullRequest"
+data('{
+   "afterCommitId": "5d036259EXAMPLE",
+   "beforeCommitId": "317f8570EXAMPLE",
+   "maxResults": 250,
+   "nextToken": "exampleToken",
+   "pullRequestId": 42,
+   "repositoryName": "MyDemoRepo"
+}')
+
+
+@name("Post Comment For Compared Commit")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.PostCommentForComparedCommit"
+? "Action"= "PostCommentForComparedCommit"
+data('{
+   "afterCommitId": "317f8570EXAMPLE",
+   "beforeCommitId": "6e147360EXAMPLE",
+   "clientRequestToken": "123Example",
+   "content": "Can you add a test case for this?",
+   "location": { 
+            "filePath": "cl_sample.js",
+            "filePosition": 1232,
+            "relativeFileVersion": "AFTER"
+         },
+   "repositoryName": "MyDemoRepo"    
+}')
+
+
+@name("Post Comment For Pull Request")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.PostCommentForPullRequest"
+? "Action"= "PostCommentForPullRequest"
+data('{
+   "afterCommitId": "5d036259EXAMPLE",
+   "beforeCommitId": "317f8570EXAMPLE",
+   "clientRequestToken": "123Example",
+   "content": "These don\'t appear to be used anywhere. Can we remove them?",
+   "location": { 
+            "filePath": "ahs_count.py",
+            "filePosition": 367,
+            "relativeFileVersion": "AFTER"
+         },
+   "pullRequestId": 47,      
+   "repositoryName": "MyDemoRepo"    
+}')
+
+
+@name("Post Comment Reply")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.PostCommentReply"
+? "Action"= "PostCommentReply"
+data('{
+   "clientRequestToken": "123Example",
+   "content": "Good catch. I\'ll remove them.",
+   "commentId": "abcd1234EXAMPLEb5678efgh"   
+}')
+
+
+@name("Update Comment")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.UpdateComment"
+? "Action"= "UpdateComment"
+data('{
+   "commentId": "442b498bEXAMPLE5756813",
+   "content": "Fixed as requested. I\'ll update the pull request."
+}')
+
+
+

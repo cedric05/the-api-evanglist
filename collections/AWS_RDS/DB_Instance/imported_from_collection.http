@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Create DB Instance")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "CreateDBInstance"
+? "Version"= "2014-10-31"
+
+
+@name("Delete DB Instance")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "DeleteDBInstance"
+? "Version"= "2014-10-31"
+
+
+@name("Describe DB Instances")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "DescribeDBInstances"
+? "Version"= "2014-10-31"
+
+
+@name("Modify DB Instance")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "ModifyDBInstance"
+? "Version"= "2014-10-31"
+
+
+@name("Reboot DB Instance")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "RebootDBInstance"
+? "Version"= "2014-10-31"
+
+
+@name("Start DB Instance")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "StartDBInstance"
+? "Version"= "2014-10-31"
+
+
+@name("Stop DB Instance")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "Action"= "StopDBInstance"
+? "Version"= "2014-10-31"
+
+
+

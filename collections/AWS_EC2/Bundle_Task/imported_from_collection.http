@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Cancels a bundling operation for an instance store-backed Windows instance.
+
+@name("Cancel Bundle Task")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "BundleId"= ""
+? "DryRun"= ""
+? "Action"= "CancelBundleTask"
+
+
+// Describes the specified bundle tasks or all of your bundle tasks.
+
+@name("Describe Bundle Tasks")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "BundleId.N"= ""
+? "DryRun"= ""
+? "Filter.N"= ""
+? "Action"= "DescribeBundleTasks"
+
+
+

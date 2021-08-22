@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-30e1be77-9844-4b74-bf90-bfab68be417c.postman_collection.json
+
+@name("By Id Documentation Part")
+GET "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/parts/{part_id}&part_id="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "part_id"= ""
+
+
+@name("Documentationpartcreate")
+POST "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/parts"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Documentation Part")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/parts/<part_id>"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Documentationpartimport")
+PUT "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/parts{"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "failonwarnings"= ""
+? "mode"= ""
+? "mode,failonwarnings}"= ""
+
+
+@name("Update Documentation Part")
+PATCH "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/parts/<part_id>"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Documentationversionby Version")
+GET "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/versions/{doc_version}&doc_version="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "doc_version"= ""
+
+
+@name("Documentationversioncreate")
+POST "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/versions"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Documentationversiondelete")
+DELETE "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/versions/<doc_version>"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Documentationversionupdate")
+PATCH "https://{{aws_api_gateway_base_url}}/restapis/<restapi_id>/documentation/versions/<doc_version>"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Domainnamebasepathmappings")
+GET "https://{{aws_api_gateway_base_url}}/domainnames/a.b.c.com/basepathmappings&limit="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "limit"= ""
+
+
+

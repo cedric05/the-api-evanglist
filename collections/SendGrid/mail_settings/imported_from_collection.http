@@ -1,0 +1,105 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve a list of all mail settings.**
+// 
+// Mail settings allow you to tell SendGrid specific things to do to every email that you send to your recipients over SendGrid’s [Web API](https://sendgrid.com/docs/API_Reference/Web_API/mail.html) or [SMTP Relay](https://sendgrid.com/docs/API_Reference/SMTP_API/index.html).
+
+@name("Retrieve all mail settings")
+GET "https://{{baseUrl}}/mail_settings"
+? "limit"= "<string>"
+? "offset"= "<string>"
+
+
+// **This endpoint allows you to retrieve your current Plain Content mail settings.**
+// 
+// The plain content setting will automatically convert any plain text emails that you send to HTML before sending.
+// 
+// Mail settings allow you to tell SendGrid specific things to do to every email that you send to your recipients over SendGrid’s [Web API](https://sendgrid.com/docs/API_Reference/Web_API/mail.html) or [SMTP Relay](https://sendgrid.com/docs/API_Reference/SMTP_API/index.html).
+
+@name("Retrieve plain content mail settings")
+GET "https://{{baseUrl}}/mail_settings/plain_content"
+
+
+// **This endpoint allows you to retrieve your current legacy email template settings.**
+// 
+// This setting refers to our original email templates. We currently support more fully featured [transactional templates](https://sendgrid.com/docs/User_Guide/Transactional_Templates/index.html). 
+// 
+// The legacy email template setting wraps an HTML template around your email content. This can be useful for sending out marketing email and/or other HTML formatted messages.
+// 
+// Mail settings allow you to tell SendGrid sp
+
+@name("Retrieve legacy template mail settings")
+GET "https://{{baseUrl}}/mail_settings/template"
+
+
+// **This endpoint allows you to retrieve your current Forward Spam mail settings.**
+// 
+// Enabling the forward spam setting allows you to specify an email address to which spam reports will be forwarded.
+// 
+// Mail settings allow you to tell SendGrid specific things to do to every email that you send to your recipients over SendGrid’s [Web API](https://sendgrid.com/docs/API_Reference/Web_API/mail.html) or [SMTP Relay](https://sendgrid.com/docs/API_Reference/SMTP_API/index.html).
+
+@name("Retrieve forward spam mail settings")
+GET "https://{{baseUrl}}/mail_settings/forward_spam"
+
+
+// **This endpoint allows you to update your current bounce forwarding mail settings.**
+// 
+// Activating this setting allows you to specify an email address to which bounce reports are forwarded.
+// 
+// Mail settings allow you to tell SendGrid specific things to do to every email that you send to your recipients over SendGrid’s [Web API](https://sendgrid.com/docs/API_Reference/Web_API/mail.html) or [SMTP Relay](https://sendgrid.com/docs/API_Reference/SMTP_API/index.html).
+
+@name("Update forward bounce mail settings")
+PATCH "https://{{baseUrl}}/mail_settings/forward_bounce"
+
+
+// **This endpoint allows you to update your current Footer mail settings.**
+// 
+// The footer setting will insert a custom footer at the bottom of the text and HTML bodies. Use the embedded HTML editor and plain text entry fields to create the content of the footers to be inserted into your emails.
+// 
+// Mail settings allow you to tell SendGrid specific things to do to every email that you send to your recipients over SendGrid’s [Web API](https://sendgrid.com/docs/API_Reference/Web_API/mail.html) or [SMTP
+
+@name("Update footer mail settings")
+PATCH "https://{{baseUrl}}/mail_settings/footer"
+
+
+// **This endpoint allows you to retrieve your current email address whitelist settings.**
+// 
+// The address whitelist setting whitelists a specified email address or domain for which mail should never be suppressed. For example, you own the domain “example.com,” and one or more of your recipients use email@example.com addresses, by placing example.com in the address whitelist setting, all bounces, blocks, and unsubscribes logged for that domain will be ignored and sent as if under normal sending co
+
+@name("Retrieve address whitelist mail settings")
+GET "https://{{baseUrl}}/mail_settings/address_whitelist"
+
+
+// **This endpoint allows you to update your current spam checker mail settings.**
+// 
+// The spam checker filter notifies you when emails are detected that exceed a predefined spam threshold.
+// 
+// Mail settings allow you to tell SendGrid specific things to do to every email that you send to your recipients over SendGrid’s [Web API](https://sendgrid.com/docs/API_Reference/Web_API/mail.html) or [SMTP Relay](https://sendgrid.com/docs/API_Reference/SMTP_API/index.html).
+
+@name("Update spam check mail settings")
+PATCH "https://{{baseUrl}}/mail_settings/spam_check"
+
+
+// **This endpoint allows you to update your current bounce purge settings.**
+// 
+// This setting allows you to set a schedule for SendGrid to automatically delete contacts from your soft and hard bounce suppression lists.
+// 
+// Mail settings allow you to tell SendGrid specific things to do to every email that you send to your recipients over SendGrid’s [Web API](https://sendgrid.com/docs/API_Reference/Web_API/mail.html) or [SMTP Relay](https://sendgrid.com/docs/API_Reference/SMTP_API/index.html).
+
+@name("Update bounce purge mail settings")
+PATCH "https://{{baseUrl}}/mail_settings/bounce_purge"
+
+
+// **This endpoint allows you to retrieve your current BCC mail settings.**
+// 
+// When the BCC mail setting is enabled, SendGrid will automatically send a blind carbon copy (BCC) to an address for every email sent without adding that address to the header. Please note that only one email address may be entered in this field, if you wish to distribute BCCs to multiple addresses you will need to create a distribution group or use forwarding rules.
+// 
+// Mail settings allow you to tell SendGrid specific things
+
+@name("Retrieve all BCC mail settings")
+GET "https://{{baseUrl}}/mail_settings/bcc"
+
+
+

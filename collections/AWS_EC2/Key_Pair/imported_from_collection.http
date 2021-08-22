@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a 2048-bit RSA key pair with the specified name.
+
+@name("Create Key Pair")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "KeyName"= ""
+? "Action"= "CreateKeyPair"
+
+
+// Deletes the specified key pair, by removing the public key from Amazon EC2.
+
+@name("Delete Key Pair")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "KeyName"= ""
+? "Action"= "DeleteKeyPair"
+
+
+// Describes the specified key pairs or all of your key pairs.
+
+@name("Describe Key Pairs")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "KeyName.N"= ""
+? "Action"= "DescribeKeyPairs"
+
+
+// Imports the public key from an RSA key pair that you created with a third-party tool.
+
+@name("Import Key Pair")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "KeyName"= ""
+? "PublicKeyMaterial"= ""
+? "Action"= "ImportKeyPair"
+
+
+

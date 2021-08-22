@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b3423fc1-6423-4e31-9835-20949e4088f7.postman_collection.json
+
+// Retrieves the list of groups contained within the specified project.
+
+@name("Get Groups")
+GET "https://{{baseUrl}}/:project/global/groups"
+? "filter"= "<>"
+? "maxResults"= "<>"
+? "orderBy"= "<>"
+? "pageToken"= "<>"
+
+
+

@@ -1,0 +1,58 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b8e673bd-409c-4ff2-af9c-bb3a976bd9dd.postman_collection.json
+
+@name("Create VPCE Configuration")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "CreateVPCEConfiguration"
+data('{
+   "serviceDnsName": "string",
+   "vpceConfigurationDescription": "string",
+   "vpceConfigurationName": "string",
+   "vpceServiceName": "string"
+}')
+
+
+@name("Delete VPCE Configuration")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "DeleteVPCEConfiguration"
+data('{
+   "arn": "string"
+}')
+
+
+@name("Get VPCE Configuration")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "GetVPCEConfiguration"
+data('{
+   "arn": "string"
+}')
+
+
+@name("List VPCE Configurations")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "ListVPCEConfigurations"
+data('{
+   "maxResults": number,
+   "nextToken": "string"
+}')
+
+
+@name("Update VPCE Configuration")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "UpdateVPCEConfiguration"
+data('{
+   "arn": "string",
+   "serviceDnsName": "string",
+   "vpceConfigurationDescription": "string",
+   "vpceConfigurationName": "string",
+   "vpceServiceName": "string"
+}')
+
+
+

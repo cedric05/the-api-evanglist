@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Create Topic Rule")
+GET "https://{{aws_internet_of_things_base_url}}/rules/ruleName&ruleName=&tags="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Delete Topic Rule")
+GET "https://{{aws_internet_of_things_base_url}}/rules/ruleName&ruleName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Disable Topic Rule")
+GET "https://{{aws_internet_of_things_base_url}}/rules/ruleName/disable&ruleName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Enable Topic Rule")
+GET "https://{{aws_internet_of_things_base_url}}/rules/ruleName/enable&ruleName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Get Topic Rule")
+GET "https://{{aws_internet_of_things_base_url}}/rules/ruleName&ruleName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List Topic Rules")
+GET "https://{{aws_internet_of_things_base_url}}/rules"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Replace Topic Rule")
+GET "https://{{aws_internet_of_things_base_url}}/rules/ruleName&ruleName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

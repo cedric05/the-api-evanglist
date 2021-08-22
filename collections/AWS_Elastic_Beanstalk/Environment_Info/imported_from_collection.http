@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-27f83bb7-4ad5-4571-80f4-1fa618a02314.postman_collection.json
+
+@name("Request Environment Info")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "EnvironmentId"= ""
+? "EnvironmentName"= ""
+? "InfoType"= ""
+? "Action"= "RequestEnvironmentInfo"
+
+
+@name("Retrieve Environment Info")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "EnvironmentId"= ""
+? "EnvironmentName"= ""
+? "InfoType"= ""
+? "Action"= "RetrieveEnvironmentInfo"
+
+
+

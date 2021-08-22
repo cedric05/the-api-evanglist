@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all Manufacturers
+
+@name("Get all Manufacturers")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Manufacturers"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "manufacturer"= "<object>"
+? "countonly"= "<integer>"
+
+
+// Get a Manufacturer
+
+@name("Get a Manufacturer")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Manufacturers/:id"
+
+
+

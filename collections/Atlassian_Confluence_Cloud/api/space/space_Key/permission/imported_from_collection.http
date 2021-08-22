@@ -1,0 +1,37 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-a1adb5da-a0fe-4a6e-9435-7531e1b20955.postman_collection.json
+
+// Adds new permission to space.
+// 
+// **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**:
+// 'Admin' permission for the space.
+
+@name("Add new permission to space")
+POST "https://{{baseUrl}}/api/space/:spaceKey/permission"
+"Content-Type": "application/json"
+json({
+    "subject": {
+        "type": "<string>",
+        "identifier": "<string>"
+    },
+    "operation": {
+        "key": "<string>",
+        "target": "<string>"
+    },
+    "id": "<long>",
+    "_links": {}
+})
+
+
+// Removes a space permission. Note that removing Read Space permission for a user or group will remove all
+// the space permissions for that user or group.
+// 
+// **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**:
+// 'Admin' permission for the space.
+
+@name("Remove a space permission")
+DELETE "https://{{baseUrl}}/api/space/:spaceKey/permission/:id"
+
+
+

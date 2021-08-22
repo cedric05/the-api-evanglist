@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes the ID format settings for the root user and all IAM roles and IAM users
+//                         that have explicitly specified a longer ID (17-character ID) preference.
+
+@name("Describe Principal ID Format")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Resource.N"= ""
+? "Action"= "DescribePrincipalIdFormat"
+
+
+

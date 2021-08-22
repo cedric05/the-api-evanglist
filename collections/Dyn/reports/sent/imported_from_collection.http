@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d28d1616-8b77-4b53-b06f-5498b00510bf.postman_collection.json
+
+// Retrieve Emails Sent
+
+@name("Retrieve Emails Sent")
+GET "https://{{baseUrl}}/reports/sent"
+? "apikey"= "<>"
+? "endtime"= "<>"
+? "sender"= "<>"
+? "startindex"= "<>"
+? "starttime"= "<>"
+? "[X"= "<>"
+
+
+// Retrieve Count of Emails Sent
+
+@name("Retrieve Count of Emails Sent")
+GET "https://{{baseUrl}}/reports/sent/count"
+? "apikey"= "<>"
+? "endtime"= "<>"
+? "sender"= "<>"
+? "starttime"= "<>"
+? "[X"= "<>"
+
+
+

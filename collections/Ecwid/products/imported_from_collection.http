@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Show "out of stock" products.
+
+@name('Show "out of stock" products')
+GET "https://{{baseUrl}}/products"
+"Content": "<>"
+? "inStock"= "<get>"
+? "token"= "<>"
+
+
+// Update product options.
+
+@name("Update product options")
+PUT "https://{{baseUrl}}/products/39622291"
+"Content": "<>"
+? "token"= "<>"
+
+
+// Get deleted products.
+
+@name("Get deleted products")
+GET "https://{{baseUrl}}/products/deleted"
+"Content": "<>"
+? "token"= "<>"
+
+
+

@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-46004eee-d776-4226-9cc0-a4f178c7a0e1.postman_collection.json
+
+@name("Create Assessment Target")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.CreateAssessmentTarget"
+? "Action"= "CreateAssessmentTarget"
+data('{"assessmentTargetName":"string","resourceGroupArn":"string"}')
+
+
+@name("Delete Assessment Target")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.DeleteAssessmentTarget"
+? "Action"= "DeleteAssessmentTarget"
+data('{"assessmentTargetArn":"string"}')
+
+
+@name("Describe Assessment Targets")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.DescribeAssessmentTargets"
+? "Action"= "DescribeAssessmentTargets"
+data('{"assessmentTargetArns":["string"]}')
+
+
+@name("List Assessment Targets")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.ListAssessmentTargets"
+? "Action"= "ListAssessmentTargets"
+data('{"filter":{"assessmentTargetNamePattern":"string"},"maxResults":42,"nextToken":"string"}')
+
+
+@name("Update Assessment Target")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.UpdateAssessmentTarget"
+? "Action"= "UpdateAssessmentTarget"
+data('{"assessmentTargetArn":"string","assessmentTargetName":"string","resourceGroupArn":"string"}')
+
+
+

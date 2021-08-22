@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-93fd74cb-b0d9-445a-9fbd-c501e4b449d3.postman_collection.json
+
+// This endpoint fetches you the basic information about a single mock using its `uid`.
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter.
+
+@name("Single Mock")
+GET "https://{{baseUrl}}/mocks/:mock_uid"
+
+
+// This endpoint publishes the mock you have created using its `uid`
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key ` request header or `apikey` URL query parameter.
+
+@name("Publish Mock")
+POST "https://{{baseUrl}}/mocks/:mock_uid/publish"
+
+
+// This endpoint unpublishes the mock you have created using its `uid`
+// 
+// > Requires <a href="#authentication">API Key</a> as `X-Api-Key ` request header or `apikey` URL query parameter.
+
+@name("Unpublish Mock")
+DELETE "https://{{baseUrl}}/mocks/:mock_uid/unpublish"
+
+
+

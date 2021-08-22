@@ -1,0 +1,16 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-95c79ece-4a26-4cb3-b39a-08ef802111c4.postman_collection.json
+
+// Returns a listing of five recent stories (maximum 100 per page).
+
+@name("Get Blogs")
+GET "https://{{baseUrl}}/blogs/"
+? "feature"= "<>"
+? "feature (required)"= "<>"
+? "page"= "<>"
+? "rpp"= "<>"
+? "user"= "<>"
+
+
+

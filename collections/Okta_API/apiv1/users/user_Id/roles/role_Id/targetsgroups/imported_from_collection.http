@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9a62c01e-3db2-4f66-b90d-a4df9dd9bd07.postman_collection.json
+
+@name("list Group Targets For Role")
+GET "https://{{baseUrl}}/api/v1/users/:userId/roles/:roleId/targets/groups"
+? "after"= "<string>"
+? "limit"= "<integer>"
+
+
+@name("remove Group Target From Role")
+DELETE "https://{{baseUrl}}/api/v1/users/:userId/roles/:roleId/targets/groups/:groupId"
+
+
+

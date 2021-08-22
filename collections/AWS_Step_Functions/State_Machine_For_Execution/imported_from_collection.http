@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-75dc5019-4457-4971-b34c-32c5158df031.postman_collection.json
+
+@name("Describe State Machine For Execution")
+POST "https://{{aws_step_functions_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_step_functions_service}}", region="{{aws_step_functions_region}}")
+? "Version"= "2016-11-23"
+data('{"executionArn":"string"}')
+
+
+

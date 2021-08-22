@@ -1,0 +1,103 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b8e673bd-409c-4ff2-af9c-bb3a976bd9dd.postman_collection.json
+
+@name("Delete Run")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "DeleteRun"
+data('{
+   "arn": "string"
+}')
+
+
+@name("Get Run")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "GetRun"
+data('{
+   "arn": "string"
+}')
+
+
+@name("List Runs")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "ListRuns"
+data('{
+   "arn": "string",
+   "nextToken": "string"
+}')
+
+
+@name("Schedule Run")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "ScheduleRun"
+data('{
+   "appArn": "string",
+   "configuration": { 
+      "auxiliaryApps": [ "string" ],
+      "billingMethod": "string",
+      "customerArtifactPaths": { 
+         "androidPaths": [ "string" ],
+         "deviceHostPaths": [ "string" ],
+         "iosPaths": [ "string" ]
+      },
+      "extraDataPackageArn": "string",
+      "locale": "string",
+      "location": { 
+         "latitude": number,
+         "longitude": number
+      },
+      "networkProfileArn": "string",
+      "radios": { 
+         "bluetooth": boolean,
+         "gps": boolean,
+         "nfc": boolean,
+         "wifi": boolean
+      },
+      "vpceConfigurationArns": [ "string" ]
+   },
+   "devicePoolArn": "string",
+   "deviceSelectionConfiguration": { 
+      "filters": [ 
+         { 
+            "attribute": "string",
+            "operator": "string",
+            "values": [ "string" ]
+         }
+      ],
+      "maxDevices": number
+   },
+   "executionConfiguration": { 
+      "accountsCleanup": boolean,
+      "appPackagesCleanup": boolean,
+      "jobTimeoutMinutes": number,
+      "skipAppResign": boolean,
+      "videoCapture": boolean
+   },
+   "name": "string",
+   "projectArn": "string",
+   "test": { 
+      "filter": "string",
+      "parameters": { 
+         "string" : "string" 
+      },
+      "testPackageArn": "string",
+      "testSpecArn": "string",
+      "type": "string"
+   }
+}')
+
+
+@name("Stop Run")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "StopRun"
+data('{
+   "arn": "string"
+}')
+
+
+

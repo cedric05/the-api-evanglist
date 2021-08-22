@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Searches for all contact lists which are available for the current user. Returns a paged list of contact lists
+
+@name("Find contact lists")
+GET "https://{{baseUrl}}/contacts/lists"
+? "fields"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "name"= "<string>"
+
+
+// Creates a contact list to be used with campaigns through uploading a .csv file. Returns the id of created list
+
+@name("Create contact list from file")
+POST "https://{{baseUrl}}/contacts/lists/upload"
+
+
+

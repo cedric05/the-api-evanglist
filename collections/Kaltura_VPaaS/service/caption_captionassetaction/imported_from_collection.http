@@ -1,0 +1,282 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Add caption asset
+
+@name("Get Service Caption Captionasset Action Add")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/add"
+? "entryId"= "<>"
+? "captionAsset[tags]"= "<>"
+? "captionAsset[fileExt]"= "<>"
+? "captionAsset[partnerData]"= "<>"
+? "captionAsset[partnerDescription]"= "<>"
+? "captionAsset[actualSourceAssetParamsIds]"= "<>"
+? "captionAsset[captionParamsId]"= "<>"
+? "captionAsset[language]"= "<>"
+? "captionAsset[isDefault]"= "<>"
+? "captionAsset[label]"= "<>"
+? "captionAsset[format]"= "<>"
+? "captionAsset[parentId]"= "<>"
+? "captionAsset[accuracy]"= "<>"
+
+
+@name("Get Service Caption Captionasset Action Delete")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/delete"
+? "captionAssetId"= "<>"
+
+
+@name("Get Service Caption Captionasset Action Get")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/get"
+? "captionAssetId"= "<>"
+
+
+// Get remote storage existing paths for the asset
+
+@name("Get Service Caption Captionasset Action Getremotepaths")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/getRemotePaths"
+? "id"= "<>"
+
+
+// Get download URL for the asset
+
+@name("Get Service Caption Captionasset Action Geturl")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/getUrl"
+? "id"= "<>"
+? "storageId"= "<>"
+
+
+// List caption Assets by filter and pager
+
+@name("Get Service Caption Captionasset Action List")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/list"
+? "filter[orderBy]"= "<>"
+? "filter[advancedSearch][objectType]"= "<>"
+? "filter[advancedSearch][value]"= "<>"
+? "filter[advancedSearch][categoriesMatchOr]"= "<>"
+? "filter[advancedSearch][categoryEntryStatusIn]"= "<>"
+? "filter[advancedSearch][orderBy]"= "<>"
+? "filter[advancedSearch][categoryIdEqual]"= "<>"
+? "filter[advancedSearch][memberIdEq]"= "<>"
+? "filter[advancedSearch][memberIdIn]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchOr]"= "<>"
+? "filter[advancedSearch][memberPermissionsMatchAnd]"= "<>"
+? "filter[advancedSearch][noDistributionProfiles]"= "<>"
+? "filter[advancedSearch][distributionProfileId]"= "<>"
+? "filter[advancedSearch][distributionSunStatus]"= "<>"
+? "filter[advancedSearch][entryDistributionFlag]"= "<>"
+? "filter[advancedSearch][entryDistributionStatus]"= "<>"
+? "filter[advancedSearch][hasEntryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][entryDistributionValidationErrors]"= "<>"
+? "filter[advancedSearch][contentLike]"= "<>"
+? "filter[advancedSearch][contentMultiLikeOr]"= "<>"
+? "filter[advancedSearch][contentMultiLikeAnd]"= "<>"
+? "filter[advancedSearch][cuePointsFreeText]"= "<>"
+? "filter[advancedSearch][cuePointTypeIn]"= "<>"
+? "filter[advancedSearch][cuePointSubTypeEqual]"= "<>"
+? "filter[advancedSearch][watermarkId]"= "<>"
+? "filter[advancedSearch][indexIdGreaterThan]"= "<>"
+? "filter[advancedSearch][depthGreaterThanEqual]"= "<>"
+? "filter[advancedSearch][isQuiz]"= "<>"
+? "filter[advancedSearch][field]"= "<>"
+? "filter[advancedSearch][type]"= "<>"
+? "filter[advancedSearch][items]"= "<>"
+? "filter[advancedSearch][idEqual]"= "<>"
+? "filter[advancedSearch][idIn]"= "<>"
+? "filter[advancedSearch][userIdEqual]"= "<>"
+? "filter[advancedSearch][userIdIn]"= "<>"
+? "filter[advancedSearch][updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[advancedSearch][updatedAtLessThanOrEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusEqual]"= "<>"
+? "filter[advancedSearch][extendedStatusIn]"= "<>"
+? "filter[advancedSearch][comparison]"= "<>"
+? "filter[advancedSearch][not]"= "<>"
+? "filter[advancedSearch][attribute]"= "<>"
+? "filter[advancedSearch][metadataProfileId]"= "<>"
+? "filter[idEqual]"= "<>"
+? "filter[idIn]"= "<>"
+? "filter[entryIdEqual]"= "<>"
+? "filter[entryIdIn]"= "<>"
+? "filter[partnerIdEqual]"= "<>"
+? "filter[partnerIdIn]"= "<>"
+? "filter[sizeGreaterThanOrEqual]"= "<>"
+? "filter[sizeLessThanOrEqual]"= "<>"
+? "filter[tagsLike]"= "<>"
+? "filter[tagsMultiLikeOr]"= "<>"
+? "filter[tagsMultiLikeAnd]"= "<>"
+? "filter[createdAtGreaterThanOrEqual]"= "<>"
+? "filter[createdAtLessThanOrEqual]"= "<>"
+? "filter[updatedAtGreaterThanOrEqual]"= "<>"
+? "filter[updatedAtLessThanOrEqual]"= "<>"
+? "filter[deletedAtGreaterThanOrEqual]"= "<>"
+? "filter[deletedAtLessThanOrEqual]"= "<>"
+? "filter[typeIn]"= "<>"
+? "filter[objectType]"= "<>"
+? "filter[formatEqual]"= "<>"
+? "filter[formatIn]"= "<>"
+? "filter[statusEqual]"= "<>"
+? "filter[statusIn]"= "<>"
+? "filter[statusNotIn]"= "<>"
+? "filter[captionParamsIdEqual]"= "<>"
+? "filter[captionParamsIdIn]"= "<>"
+? "filter[flavorParamsIdEqual]"= "<>"
+? "filter[flavorParamsIdIn]"= "<>"
+? "filter[thumbParamsIdEqual]"= "<>"
+? "filter[thumbParamsIdIn]"= "<>"
+? "filter[contentLike]"= "<>"
+? "filter[contentMultiLikeOr]"= "<>"
+? "filter[contentMultiLikeAnd]"= "<>"
+? "filter[partnerDescriptionLike]"= "<>"
+? "filter[partnerDescriptionMultiLikeOr]"= "<>"
+? "filter[partnerDescriptionMultiLikeAnd]"= "<>"
+? "filter[languageEqual]"= "<>"
+? "filter[languageIn]"= "<>"
+? "filter[labelEqual]"= "<>"
+? "filter[labelIn]"= "<>"
+? "filter[startTimeGreaterThanOrEqual]"= "<>"
+? "filter[startTimeLessThanOrEqual]"= "<>"
+? "filter[endTimeGreaterThanOrEqual]"= "<>"
+? "filter[endTimeLessThanOrEqual]"= "<>"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// Serves caption by its id
+
+@name("Get Service Caption Captionasset Action Serve")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/serve"
+? "captionAssetId"= "<>"
+
+
+// Serves caption by entry id and thumnail params id
+
+@name("Get Service Caption Captionasset Action Servebyentryid")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/serveByEntryId"
+? "entryId"= "<>"
+? "captionParamId"= "<>"
+
+
+// Serves caption by its id converting it to segmented WebVTT
+
+@name("Get Service Caption Captionasset Action Servewebvtt")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/serveWebVTT"
+? "captionAssetId"= "<>"
+? "segmentDuration"= "<>"
+? "segmentIndex"= "<>"
+? "localTimestamp"= "<>"
+
+
+// Markss the caption as default and removes that mark from all other caption assets of the entry.
+
+@name("Get Service Caption Captionasset Action Setasdefault")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/setAsDefault"
+? "captionAssetId"= "<>"
+
+
+// Update content of caption asset
+
+@name("Post Service Caption Captionasset Action Setcontent")
+POST "https://{{baseUrl}}/service/caption_captionasset/action/setContent"
+? "id"= "<>"
+? "contentResource[objectType]"= "<>"
+? "contentResource[url]"= "<>"
+? "contentResource[forceAsyncDownload]"= "<>"
+? "contentResource[assetId]"= "<>"
+? "contentResource[entryId]"= "<>"
+? "contentResource[flavorParamsId]"= "<>"
+? "contentResource[fileSyncObjectType]"= "<>"
+? "contentResource[objectSubType]"= "<>"
+? "contentResource[objectId]"= "<>"
+? "contentResource[version]"= "<>"
+? "contentResource[resource][objectType]"= "<>"
+? "contentResource[resource][url]"= "<>"
+? "contentResource[resource][forceAsyncDownload]"= "<>"
+? "contentResource[resource][assetId]"= "<>"
+? "contentResource[resource][entryId]"= "<>"
+? "contentResource[resource][flavorParamsId]"= "<>"
+? "contentResource[resource][fileSyncObjectType]"= "<>"
+? "contentResource[resource][objectSubType]"= "<>"
+? "contentResource[resource][objectId]"= "<>"
+? "contentResource[resource][version]"= "<>"
+? "contentResource[resource][resource][objectType]"= "<>"
+? "contentResource[resource][resource][url]"= "<>"
+? "contentResource[resource][resource][forceAsyncDownload]"= "<>"
+? "contentResource[resource][resource][assetId]"= "<>"
+? "contentResource[resource][resource][entryId]"= "<>"
+? "contentResource[resource][resource][flavorParamsId]"= "<>"
+? "contentResource[resource][resource][fileSyncObjectType]"= "<>"
+? "contentResource[resource][resource][objectSubType]"= "<>"
+? "contentResource[resource][resource][objectId]"= "<>"
+? "contentResource[resource][resource][version]"= "<>"
+? "contentResource[resource][resource][resource][objectType]"= "<>"
+? "contentResource[resource][resource][resource][url]"= "<>"
+? "contentResource[resource][resource][resource][forceAsyncDownload]"= "<>"
+? "contentResource[resource][resource][resource][assetId]"= "<>"
+? "contentResource[resource][resource][resource][entryId]"= "<>"
+? "contentResource[resource][resource][resource][flavorParamsId]"= "<>"
+? "contentResource[resource][resource][resource][fileSyncObjectType]"= "<>"
+? "contentResource[resource][resource][resource][objectSubType]"= "<>"
+? "contentResource[resource][resource][resource][objectId]"= "<>"
+? "contentResource[resource][resource][resource][version]"= "<>"
+? "contentResource[resource][resource][resource][resources]"= "<>"
+? "contentResource[resource][resource][resource][content]"= "<>"
+? "contentResource[resource][resource][resource][storageProfileId]"= "<>"
+? "contentResource[resource][resource][resource][privateKey]"= "<>"
+? "contentResource[resource][resource][resource][publicKey]"= "<>"
+? "contentResource[resource][resource][resource][keyPassphrase]"= "<>"
+? "contentResource[resource][resource][resource][dropFolderFileId]"= "<>"
+? "contentResource[resource][resource][resource][localFilePath]"= "<>"
+? "contentResource[resource][resource][resource][keepOriginalFile]"= "<>"
+? "contentResource[resource][resource][resource][token]"= "<>"
+? "contentResource[resource][resource][resources]"= "<>"
+? "contentResource[resource][resource][content]"= "<>"
+? "contentResource[resource][resource][storageProfileId]"= "<>"
+? "contentResource[resource][resource][privateKey]"= "<>"
+? "contentResource[resource][resource][publicKey]"= "<>"
+? "contentResource[resource][resource][keyPassphrase]"= "<>"
+? "contentResource[resource][resource][dropFolderFileId]"= "<>"
+? "contentResource[resource][resource][localFilePath]"= "<>"
+? "contentResource[resource][resource][keepOriginalFile]"= "<>"
+? "contentResource[resource][resource][token]"= "<>"
+? "contentResource[resource][resources]"= "<>"
+? "contentResource[resource][content]"= "<>"
+? "contentResource[resource][storageProfileId]"= "<>"
+? "contentResource[resource][privateKey]"= "<>"
+? "contentResource[resource][publicKey]"= "<>"
+? "contentResource[resource][keyPassphrase]"= "<>"
+? "contentResource[resource][dropFolderFileId]"= "<>"
+? "contentResource[resource][localFilePath]"= "<>"
+? "contentResource[resource][keepOriginalFile]"= "<>"
+? "contentResource[resource][token]"= "<>"
+? "contentResource[resources]"= "<>"
+? "contentResource[content]"= "<>"
+? "contentResource[storageProfileId]"= "<>"
+? "contentResource[privateKey]"= "<>"
+? "contentResource[publicKey]"= "<>"
+? "contentResource[keyPassphrase]"= "<>"
+? "contentResource[dropFolderFileId]"= "<>"
+? "contentResource[localFilePath]"= "<>"
+? "contentResource[keepOriginalFile]"= "<>"
+? "contentResource[token]"= "<>"
+
+
+// Update caption asset
+
+@name("Get Service Caption Captionasset Action Update")
+GET "https://{{baseUrl}}/service/caption_captionasset/action/update"
+? "id"= "<>"
+? "captionAsset[tags]"= "<>"
+? "captionAsset[fileExt]"= "<>"
+? "captionAsset[partnerData]"= "<>"
+? "captionAsset[partnerDescription]"= "<>"
+? "captionAsset[actualSourceAssetParamsIds]"= "<>"
+? "captionAsset[captionParamsId]"= "<>"
+? "captionAsset[language]"= "<>"
+? "captionAsset[isDefault]"= "<>"
+? "captionAsset[label]"= "<>"
+? "captionAsset[format]"= "<>"
+? "captionAsset[parentId]"= "<>"
+? "captionAsset[accuracy]"= "<>"
+
+
+

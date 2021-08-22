@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-511ff114-110c-4b79-9213-f986643f80af.postman_collection.json
+
+// Broadcasts a signed raw transaction to the network. If successful returns the txid of the broadcast trasnaction.
+
+@name("Broadcasts a signed raw transaction to the network (not NTP1 specific)")
+POST "https://{{baseUrl}}/ins/tx/send"
+
+
+// Returns NEBL transaction object representing a NEBL transaction
+
+@name("Returns transaction object")
+GET "https://{{baseUrl}}/ins/tx/:txid"
+
+
+

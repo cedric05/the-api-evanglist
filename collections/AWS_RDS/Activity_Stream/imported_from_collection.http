@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Start Activity Stream")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}")
+? "ApplyImmediately"= "1"
+? "Action"= "StartActivityStream"
+? "Version"= "2014-10-31"
+
+
+@name("Stop Activity Stream")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}")
+? "ApplyImmediately"= "1"
+? "Action"= "StopActivityStream"
+? "Version"= "2014-10-31"
+
+
+

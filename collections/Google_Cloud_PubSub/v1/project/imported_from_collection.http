@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-356dabf4-362f-4cbf-ab4e-4945c8de6175.postman_collection.json
+
+// Lists matching subscriptions.
+
+@name("List Matching Subscription")
+GET "https://{{baseUrl}}/v1/:project/subscriptions"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+
+
+// Lists matching topics.
+
+@name("List Matching Topics")
+GET "https://{{baseUrl}}/v1/:project/topics"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+
+
+

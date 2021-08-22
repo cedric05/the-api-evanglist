@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-46125f15-bb1b-4d2c-bf33-03dd3d0b91fa.postman_collection.json
+
+// Create a new container
+
+@name("Create container")
+POST "https://{{baseUrl}}/containers"
+
+
+// Get an existing container. Please note that you can retrieve a container both by it's ID, which is globally unique among tenants and applications, as well as by name, which is unique within an application of a tenant
+
+@name("Get container")
+GET "https://{{baseUrl}}/containers/:containerId"
+
+
+

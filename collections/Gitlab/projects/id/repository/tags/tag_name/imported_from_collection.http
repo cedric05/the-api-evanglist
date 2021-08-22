@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Delete projects  repository tags tag name
+
+@name("Delete Projects  Repository Tags Tag Name")
+DELETE "https://{{baseUrl}}/projects/:id/repository/tags/:tag_name"
+
+
+// Post projects  repository tags tag name release
+
+@name("Add Projects  Repository Tags Tag Name Release")
+POST "https://{{baseUrl}}/projects/:id/repository/tags/:tag_name/release"
+
+
+

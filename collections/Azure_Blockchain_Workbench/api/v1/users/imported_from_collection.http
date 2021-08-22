@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// Lists all users within the connected blockchain consortium.
+
+@name("Get Users")
+GET "https://{{baseUrl}}/api/v1/users"
+? "top"= "<>"
+? "skip"= "<>"
+? "externalId"= "<get>"
+? "userChainIdentifier"= "<>"
+? "sortBy"= "<>"
+
+
+// Gets the user matching a specific user ID.
+
+@name("Get Users Userid")
+GET "https://{{baseUrl}}/api/v1/users/:userId"
+
+
+// Returns the current user.
+
+@name("Get Users Me")
+GET "https://{{baseUrl}}/api/v1/users/me"
+
+
+

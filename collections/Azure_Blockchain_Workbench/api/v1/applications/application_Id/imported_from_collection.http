@@ -1,0 +1,49 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// Gets the blockchain application matching a specific application ID. Users who are Workbench administrators get
+//              the blockchain application. Non-Workbench administrators get the blockchain application if they have at least one associated
+//              application role or is associated with a smart contract instance role.
+
+@name("Get Applications")
+GET "https://{{baseUrl}}/api/v1/applications/:applicationId"
+
+
+// Enables the specified blockchain application. This method can only be performed by users who are
+//              Workbench administrators.
+
+@name("Patch Applications Enable")
+PATCH "https://{{baseUrl}}/api/v1/applications/:applicationId/enable"
+
+
+// Disables the specified blockchain application. This method can only be performed by users who are
+//              Workbench administrators.
+
+@name("Patch Applications Disable")
+PATCH "https://{{baseUrl}}/api/v1/applications/:applicationId/disable"
+
+
+// List all workflows of the specified blockchain application. Users who are Workbench administrators get all
+//              workflows. Non-Workbench administrators get all workflows for which they have at least one associated application role
+//              or are associated with a smart contract instance role.
+
+@name("Get Applications Workflows")
+GET "https://{{baseUrl}}/api/v1/applications/:applicationId/workflows"
+? "top"= "<>"
+? "skip"= "<>"
+
+
+// List all blockchain smart contract implementations of the specified blockchain application.
+//              Users who are Workbench administrators get all smart contract implementations. Non-Workbench administrators get all
+//              smart contract implementations for which they have at least one associated application role or is associated with a
+//              smart contract instance role.
+
+@name("Get Applications Contract Code")
+GET "https://{{baseUrl}}/api/v1/applications/:applicationId/contractCode"
+? "ledgerId"= "<get>"
+? "top"= "<>"
+? "skip"= "<>"
+
+
+

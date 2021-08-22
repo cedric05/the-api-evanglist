@@ -1,0 +1,47 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-aae3264c-1b30-4227-9429-291e0bd8acbe.postman_collection.json
+
+@name("Create Document")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Attachments":[{"Key":"string","Name":"string","Values":["string"]}],"Content":"string","DocumentFormat":"string","DocumentType":"string","Name":"string","Requires":[{"Name":"string","Version":"string"}],"Tags":[{"Key":"string","Value":"string"}],"TargetType":"string","VersionName":"string"}')
+
+
+@name("Delete Document")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"DocumentVersion":"string","Force":1,"Name":"string","VersionName":"string"}')
+
+
+@name("Describe Document")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"DocumentVersion":"string","Name":"string","VersionName":"string"}')
+
+
+@name("Get Document")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"DocumentFormat":"string","DocumentVersion":"string","Name":"string","VersionName":"string"}')
+
+
+@name("List Documents")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"DocumentFilterList":[{"key":"string","value":"string"}],"Filters":[{"Key":"string","Values":["string"]}],"MaxResults":1,"NextToken":"string"}')
+
+
+@name("Update Document")
+POST "https://{{aws_systems_manager_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_systems_manager_service}}", region="{{aws_systems_manager_region}}")
+? "Version"= "2014-11-06"
+data('{"Attachments":[{"Key":"string","Name":"string","Values":["string"]}],"Content":"string","DocumentFormat":"string","DocumentVersion":"string","Name":"string","TargetType":"string","VersionName":"string"}')
+
+
+

@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-51f1663f-4022-4c8f-b62e-1b4823b27806.postman_collection.json
+
+@name("Cancel Cluster")
+POST "https://{{aws_snowball_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_snowball_service}}", region="{{aws_snowball_region}}")
+data('{"ClusterId":"string"}')
+
+
+@name("Create Cluster")
+POST "https://{{aws_snowball_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_snowball_service}}", region="{{aws_snowball_region}}")
+data('{"AddressId":"string","Description":"string","ForwardingAddressId":"string","JobType":"string","KmsKeyARN":"string","Notification":{"JobStatesToNotify":["string"],"NotifyAll":1,"SnsTopicARN":"string"},"Resources":{"Ec2AmiResources":[{"AmiId":"string","SnowballAmiId":"string"}],"LambdaResources":[{"EventTriggers":[{"EventResourceARN":"string"}],"LambdaArn":"string"}],"S3Resources":[{"BucketArn":"string","KeyRange":{"BeginMarker":"string","EndMarker":"string"}}]},"RoleARN":"string","ShippingOption":"string","SnowballType":"string"}')
+
+
+@name("Describe Cluster")
+POST "https://{{aws_snowball_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_snowball_service}}", region="{{aws_snowball_region}}")
+data('{"ClusterId":"string"}')
+
+
+@name("List Clusters")
+POST "https://{{aws_snowball_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_snowball_service}}", region="{{aws_snowball_region}}")
+data('null')
+
+
+@name("Update Cluster")
+POST "https://{{aws_snowball_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_snowball_service}}", region="{{aws_snowball_region}}")
+data('{"AddressId":"string","ClusterId":"string","Description":"string","ForwardingAddressId":"string","Notification":{"JobStatesToNotify":["string"],"NotifyAll":1,"SnsTopicARN":"string"},"Resources":{"Ec2AmiResources":[{"AmiId":"string","SnowballAmiId":"string"}],"LambdaResources":[{"EventTriggers":[{"EventResourceARN":"string"}],"LambdaArn":"string"}],"S3Resources":[{"BucketArn":"string","KeyRange":{"BeginMarker":"string","EndMarker":"string"}}]},"RoleARN":"string","ShippingOption":"string"}')
+
+
+

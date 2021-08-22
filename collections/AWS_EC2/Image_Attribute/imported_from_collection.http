@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes the specified attribute of the specified AMI.
+
+@name("Describe Image Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "DryRun"= ""
+? "ImageId"= ""
+? "Action"= "DescribeImageAttribute"
+
+
+// Modifies the specified attribute of the specified AMI.
+
+@name("Modify Image Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "Description"= ""
+? "DryRun"= ""
+? "ImageId"= ""
+? "LaunchPermission"= ""
+? "OperationType"= ""
+? "ProductCode.N"= ""
+? "UserGroup.N"= ""
+? "UserId.N"= ""
+? "Value"= ""
+? "Action"= "ModifyImageAttribute"
+
+
+// Resets an attribute of an AMI to its default value.
+
+@name("Reset Image Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "DryRun"= ""
+? "ImageId"= ""
+? "Action"= "ResetImageAttribute"
+
+
+

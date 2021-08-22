@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c407db9c-7d41-4c80-aae0-5e6aa5b99d99.postman_collection.json
+
+@name("Create Instances")
+POST "https://{{aws_lightsail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lightsail_service}}", region="{{aws_lightsail_region}}")
+? "Version"= "2016-11-28"
+data('{"addOns":[{"addOnType":"string","autoSnapshotAddOnRequest":{"snapshotTimeOfDay":"string"}}],"availabilityZone":"string","blueprintId":"string","bundleId":"string","customImageName":"string","instanceNames":["string"],"keyPairName":"string","tags":[{"key":"string","value":"string"}],"userData":"string"}')
+
+
+@name("Get Instances")
+POST "https://{{aws_lightsail_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_lightsail_service}}", region="{{aws_lightsail_region}}")
+? "Version"= "2016-11-28"
+data('{"pageToken":"string"}')
+
+
+

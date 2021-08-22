@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-603068d7-d854-4df0-b326-be978f214a5e.postman_collection.json
+
+@name("Delete Snapshot Schedule")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.DeleteSnapshotSchedule"
+? "Action"= "DeleteSnapshotSchedule"
+data('{"VolumeARN":"string"}')
+
+
+@name("Describe Snapshot Schedule")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.DescribeSnapshotSchedule"
+? "Action"= "DescribeSnapshotSchedule"
+data('{"VolumeARN":"string"}')
+
+
+@name("Update Snapshot Schedule")
+POST "https://{{aws_storage_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_storage_gateway_service}}", region="{{aws_storage_gateway_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "StorageGateway_20120630.UpdateSnapshotSchedule"
+? "Action"= "UpdateSnapshotSchedule"
+data('{"Description":"string","RecurrenceInHours":1,"StartAt":1,"Tags":[{"Key":"string","Value":"string"}],"VolumeARN":"string"}')
+
+
+

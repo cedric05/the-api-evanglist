@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Delete Resource Config")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DeleteResourceConfig"
+data('{
+   "ResourceId": "string",
+   "ResourceType": "string"
+}')
+
+
+@name("Put Resource Config")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "PutResourceConfig"
+data('{
+   "Configuration": "string",
+   "ResourceId": "string",
+   "ResourceName": "string",
+   "ResourceType": "string",
+   "SchemaVersionId": "string",
+   "Tags": { 
+      "string" : "string" 
+   }
+}')
+
+
+@name("Select Resource Config")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "SelectResourceConfig"
+data('{
+   "Expression": "string",
+   "Limit": number,
+   "NextToken": "string"
+}')
+
+
+

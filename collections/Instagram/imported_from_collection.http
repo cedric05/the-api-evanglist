@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e2e2501d-8339-4a48-97c8-c5ab15e26155.postman_collection.json
+
+// Get recent media from a geography subscription that you created.
+// 
+// **Note:** You can only access Geographies that were explicitly created by your OAuth client. Check the
+// Geography Subscriptions section of the [real-time updates page](https://instagram.com/developer/realtime/).
+// When you create a subscription to some geography that you define, you will be returned a unique `geo-id` that
+// can be used in this query. To backfill photos from the location covered by this geography, use the
+// [media search 
+
+@name("Get recent media from a custom geo-id.")
+GET "https://{{baseUrl}}/geographies/:geo-id/media/recent"
+? "count"= "<integer>"
+? "min_id"= "<string>"
+
+
+

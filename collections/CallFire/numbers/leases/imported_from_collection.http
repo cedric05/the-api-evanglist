@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Searches for all numbers leased by account user. This API is useful for finding all numbers currently owned by the user. Returns a paged list of number leases.
+
+@name("Find leases")
+GET "https://{{baseUrl}}/numbers/leases"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "prefix"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zipcode"= "<string>"
+? "lata"= "<string>"
+? "rateCenter"= "<string>"
+? "labelName"= "<string>"
+? "fields"= "<string>"
+
+
+// Returns a single NumberLease instance for a given number
+
+@name("Find a specific lease")
+GET "https://{{baseUrl}}/numbers/leases/:number"
+? "fields"= "<string>"
+
+
+

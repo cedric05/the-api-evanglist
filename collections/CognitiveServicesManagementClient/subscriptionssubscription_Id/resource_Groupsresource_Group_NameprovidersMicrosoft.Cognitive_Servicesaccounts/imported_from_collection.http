@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d1558e58-fe26-4cd3-9c99-0411fa0967e1.postman_collection.json
+
+// Returns all the resources of a particular type belonging to a resource group
+
+@name("Accounts List By Resource Group")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.CognitiveServices/accounts"
+
+
+

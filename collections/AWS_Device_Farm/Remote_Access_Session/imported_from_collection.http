@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b8e673bd-409c-4ff2-af9c-bb3a976bd9dd.postman_collection.json
+
+@name("Create Remote Access Session")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "CreateRemoteAccessSession"
+data('{
+   "clientId": "string",
+   "configuration": { 
+      "billingMethod": "string",
+      "vpceConfigurationArns": [ "string" ]
+   },
+   "deviceArn": "string",
+   "instanceArn": "string",
+   "interactionMode": "string",
+   "name": "string",
+   "projectArn": "string",
+   "remoteDebugEnabled": boolean,
+   "remoteRecordAppArn": "string",
+   "remoteRecordEnabled": boolean,
+   "skipAppResign": boolean,
+   "sshPublicKey": "string"
+}')
+
+
+@name("Delete Remote Access Session")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "DeleteRemoteAccessSession"
+data('{
+   "arn": "string"
+}')
+
+
+@name("Get Remote Access Session")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "GetRemoteAccessSession"
+data('{
+   "arn": "string"
+}')
+
+
+@name("List Remote Access Sessions")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "ListRemoteAccessSessions"
+data('{
+   "arn": "string",
+   "nextToken": "string"
+}')
+
+
+@name("Stop Remote Access Session")
+POST "https://{{aws_device_farm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_device_farm_service}}", region="{{aws_device_farm_region}}")
+? "Action"= "StopRemoteAccessSession"
+data('{
+   "arn": "string"
+}')
+
+
+

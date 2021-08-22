@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-71a845a5-6fd5-469c-a4ca-2a9a181e8641.postman_collection.json
+
+// Checks to see if all responses have an example.
+
+@name("Do all request bodies have examples?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// Checks to see if all responses have an example.
+
+@name("Do all parameters have examples?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// Checks to see if all responses have an example.
+
+@name("Do all responses have examples?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+

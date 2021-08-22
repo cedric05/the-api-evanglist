@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cd9b4406-c593-4cb5-89cb-6825b6ec9f1b.postman_collection.json
+
+// Returns information about contributor insights, for a given table or global secondary index.
+
+@name("Describe Contributor Insights")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeContributorInsights"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "DescribeContributorInsights"
+data('{
+   "TableName": "Thread"
+}')
+
+
+// Returns a list of ContributorInsightsSummary for a table and all its global secondary indexes.
+
+@name("List Contributor Insights")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.ListContributorInsights"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "ListContributorInsights"
+data('{
+   "TableName": "Thread"
+}')
+
+
+// Updates the status for contributor insights for a specific table or index.
+
+@name("Update Contributor Insights")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.UpdateContributorInsights"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "UpdateContributorInsights"
+data('{
+   "ContributorInsightsAction": "string",
+   "IndexName": "string",
+   "TableName": "postman"
+}')
+
+
+

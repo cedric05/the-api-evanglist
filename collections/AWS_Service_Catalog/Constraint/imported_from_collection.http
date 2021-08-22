@@ -1,0 +1,33 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-88ac1dc0-36c3-4a4a-99dc-96fc8b7c0608.postman_collection.json
+
+@name("Create Constraint")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "CreateConstraint"
+data('{"AcceptLanguage":"string","Description":"string","IdempotencyToken":"string","Parameters":"string","PortfolioId":"string","ProductId":"string","Type":"string"}')
+
+
+@name("Delete Constraint")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DeleteConstraint"
+data('{"AcceptLanguage":"string","Id":"string"}')
+
+
+@name("Describe Constraint")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DescribeConstraint"
+data('{"AcceptLanguage":"string","Id":"string"}')
+
+
+@name("Update Constraint")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "UpdateConstraint"
+data('{"AcceptLanguage":"string","Description":"string","Id":"string","Parameters":"string"}')
+
+
+

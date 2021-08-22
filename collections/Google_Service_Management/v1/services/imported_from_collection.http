@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8d99c2b-2fe6-4f91-a503-ec7d0d7da490.postman_collection.json
+
+// Lists managed services.
+// 
+// Returns all public services. For authenticated users, also returns all
+// services the calling user has "servicemanagement.services.get" permission
+// for.
+// 
+// **BETA:** If the caller specifies the `consumer_id`, it returns only the
+// services enabled on the consumer. The `consumer_id` must have the format
+// of "project:{PROJECT-ID}".
+
+@name("Get Services")
+GET "https://{{baseUrl}}/v1/services"
+? "consumerId"= "<post>"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+? "producerProjectId"= "<post>"
+
+
+// Disables a service for a project, so it can no longer be
+// be used for the project. It prevents accidental usage that may cause
+// unexpected billing charges or security leaks.
+// 
+// Operation<response: DisableServiceResponse>
+
+@name("Disable Service")
+POST "https://{{baseUrl}}/v1/services/{{serviceName}}:disable"
+
+
+// Enables a service for a project, so it can be used
+// for the project. See
+// [Cloud Auth Guide](https://cloud.google.com/docs/authentication) for
+// more information.
+// 
+// Operation<response: EnableServiceResponse>
+
+@name("Enable Service")
+POST "https://{{baseUrl}}/v1/services/{{serviceName}}:enable"
+
+
+// Revives a previously deleted managed service. The method restores the
+// service using the configuration at the time the service was deleted.
+// The target service must exist and must have been deleted within the
+// last 30 days.
+// 
+// Operation<response: UndeleteServiceResponse>
+
+@name("Undelete Service")
+POST "https://{{baseUrl}}/v1/services/{{serviceName}}:undelete"
+
+
+

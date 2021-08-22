@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8d99c2b-2fe6-4f91-a503-ec7d0d7da490.postman_collection.json
+
+// Generates and returns a report (errors, warnings and changes from
+// existing configurations) associated with
+// GenerateConfigReportRequest.new_value
+// 
+// If GenerateConfigReportRequest.old_value is specified,
+// GenerateConfigReportRequest will contain a single ChangeReport based on the
+// comparison between GenerateConfigReportRequest.new_value and
+// GenerateConfigReportRequest.old_value.
+// If GenerateConfigReportRequest.old_value is not specified, this method
+// will compare GenerateConfigReportRequest.new_value w
+
+@name("Generate Configuration Report")
+POST "https://{{baseUrl}}/v1/services:generateConfigReport"
+
+
+// Gets the latest state of a long-running operation.  Clients can use this
+// method to poll the operation result at intervals as recommended by the API
+// service.
+
+@name("Get Service State")
+GET "https://{{baseUrl}}/v1/:name"
+
+
+// Gets the access control policy for a resource.
+// Returns an empty policy if the resource exists and does not have a policy
+// set.
+
+@name("Get IAM Policy")
+POST "https://{{baseUrl}}/v1/{{resource}}:getIamPolicy"
+
+
+// Sets the access control policy on the specified resource. Replaces any
+// existing policy.
+
+@name("Set IAM Policy")
+POST "https://{{baseUrl}}/v1/{{resource}}:setIamPolicy"
+
+
+// Returns permissions that a caller has on the specified resource.
+// If the resource does not exist, this will return an empty set of
+// permissions, not a NOT_FOUND error.
+// 
+// Note: This operation is designed to be used for building permission-aware
+// UIs and command-line tools, not for authorization checking. This operation
+// may "fail open" without warning.
+
+@name("Test Permissions")
+POST "https://{{baseUrl}}/v1/{{resource}}:testIamPermissions"
+
+
+

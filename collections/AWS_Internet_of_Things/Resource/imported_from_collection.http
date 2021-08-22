@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Tag Resource")
+GET "https://{{aws_internet_of_things_base_url}}/tags&resourceArn=&tags="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Untag Resource")
+GET "https://{{aws_internet_of_things_base_url}}/untag&resourceArn=&tagKeys="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

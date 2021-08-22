@@ -1,0 +1,44 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Gets details for a specific team.
+
+@name("Get Tv Media Team By Id")
+GET "https://{{baseUrl}}/TvMedia/teams/:TeamID"
+? "TvMediaApiKey"= "<get>"
+
+
+// Retrieve listings for a given TeamID.
+
+@name("Get Tv Media Team Listings")
+GET "https://{{baseUrl}}/TvMedia/teams/:TeamID/listings"
+? "TvMediaApiKey"= "<get>"
+? "LineupID"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "TimeZone"= "<get>"
+? "Channel"= "<get>"
+? "ExcludeChan"= "<get>"
+? "StartChan"= "<get>"
+? "EndChan"= "<get>"
+? "Station"= "<get>"
+? "ExcludeStation"= "<get>"
+? "Search"= "<get>"
+? "ShowType"= "<get>"
+? "ExcludeShowType"= "<get>"
+? "Id"= "<get>"
+? "SportType"= "<get>"
+? "League"= "<get>"
+? "Team"= "<get>"
+? "NotYetStarted"= "<get>"
+? "SportEventsOnly"= "<get>"
+? "DescriptiveVideoOnly"= "<get>"
+? "LiveOnly"= "<get>"
+? "NewShowsOnly"= "<get>"
+? "AdultContent"= "<get>"
+? "DisplayArtwork"= "<get>"
+? "Detail"= "<get>"
+
+
+

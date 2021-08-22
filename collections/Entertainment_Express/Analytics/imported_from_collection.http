@@ -1,0 +1,152 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// No required parameters, DateValue defaults to Today..
+
+@name("Get Viewers by City.")
+GET "https://{{baseUrl}}/Analytics/City/"
+? "ReportTag"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "DateValue"= "<get>"
+? "Limit"= "<get>"
+
+
+// No required parameters, DateValue defaults to Today.
+
+@name("Get Viewers by Country.")
+GET "https://{{baseUrl}}/Analytics/Country/"
+? "ReportTag"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "DateValue"= "<get>"
+? "Limit"= "<get>"
+
+
+// No required parameters, DateValue defaults to Today.
+
+@name("GetAnalyticEngagementActions")
+GET "https://{{baseUrl}}/Analytics/EngagementActions/"
+? "ReportTag"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "DateValue"= "<get>"
+? "Limit"= "<get>"
+
+
+// No required parameters, DateValue defaults to Today.
+
+@name("Get View count by Frequency.")
+GET "https://{{baseUrl}}/Analytics/EngagementTimes/"
+? "ReportTag"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "DateValue"= "<get>"
+? "Limit"= "<get>"
+
+
+// Requires a valid Customer ID.
+
+@name("Get GBUsage by Customer ID.")
+GET "https://{{baseUrl}}/Analytics/GBUsage/"
+? "ReportTag"= "<get>"
+? "Month"= "<get>"
+? "Year"= "<get>"
+
+
+// No required parameters, DateValue defaults to Today.
+
+@name("Get Most Active Visitors by IP.")
+GET "https://{{baseUrl}}/Analytics/MostActive/"
+? "ReportTag"= "<get>"
+? "DateValue"= "<get>"
+? "Limit"= "<get>"
+
+
+// No required parameters, DateValue defaults to Today.
+
+@name("Get Viewers by Platform Hardware.")
+GET "https://{{baseUrl}}/Analytics/PlatformHardware/"
+? "ReportTag"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "DateValue"= "<get>"
+? "Limit"= "<get>"
+
+
+// No required parameters, DateValue defaults to Today.
+
+@name("Get Viewers by Platform OS.")
+GET "https://{{baseUrl}}/Analytics/PlatformOS/"
+? "ReportTag"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "DateValue"= "<get>"
+? "Limit"= "<get>"
+
+
+// No required parameters, DateValue defaults to Today.
+
+@name("Get Most Recent Visitors by Time.")
+GET "https://{{baseUrl}}/Analytics/RecentVisitors/"
+? "ReportTag"= "<get>"
+? "Limit"= "<get>"
+
+
+// Requires a valid Customer ID.
+
+@name("Get Summary by Customer ID.")
+GET "https://{{baseUrl}}/Analytics/Summary/"
+? "ReportTag"= "<get>"
+? "DateValue"= "<get>"
+
+
+// Requires a valid published ID.
+
+@name("Get Title Report by PublishedID.")
+GET "https://{{baseUrl}}/Analytics/TitleReport/"
+? "PublishedId"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+
+
+// No required parameters, DateValue defaults to Today.
+
+@name("Get Views by Video.")
+GET "https://{{baseUrl}}/Analytics/VideoLog/"
+? "ReportTag"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "DateValue"= "<get>"
+? "Limit"= "<get>"
+
+
+// Optional DateValue for length of report.
+
+@name("Get viewers by Day.")
+GET "https://{{baseUrl}}/Analytics/Viewers/"
+? "ReportTag"= "<get>"
+? "DateValue"= "<get>"
+
+
+// Optional DateValue for length of report.
+
+@name("Get views by Day.")
+GET "https://{{baseUrl}}/Analytics/Views/"
+? "ReportTag"= "<get>"
+? "DateValue"= "<get>"
+
+
+// No required parameters, DateValue defaults to Today.
+
+@name("Get Viewers by Web Browser.")
+GET "https://{{baseUrl}}/Analytics/WebBrowsers/"
+? "ReportTag"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "DateValue"= "<get>"
+? "Limit"= "<get>"
+
+
+

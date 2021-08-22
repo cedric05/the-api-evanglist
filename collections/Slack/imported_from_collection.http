@@ -1,0 +1,1116 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-36f50e66-985d-4944-a86f-b119202ebb88.postman_collection.json
+
+// base-inherit-auth
+
+@name("base-inherit-auth")
+GET "https://"
+"Authorization": "Bearer {{token}}"
+
+
+// Deletes a message.
+
+@name("Delete Message") : "base-inherit-auth"
+POST "https://{{baseUrl}}/chat.delete"
+"token": "<>"
+
+
+// Edit an existing file comment.
+
+@name("Edit File Comments") : "base-inherit-auth"
+POST "https://{{baseUrl}}/files.comments.edit"
+"token": "<>"
+
+
+// Close a direct message channel.
+
+@name("Close Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/im.close"
+"token": "<>"
+
+
+// Retrieve a thread of messages posted to a private channel
+
+@name("Get Group Thread") : "base-inherit-auth"
+GET "https://{{baseUrl}}/groups.replies"
+? "thread_ts"= "<>"
+? "token"= "<>"
+? "channel"= "<>"
+
+
+// Gets information about a bot user.
+
+@name("Get Bot Info") : "base-inherit-auth"
+GET "https://{{baseUrl}}/bots.info"
+? "token"= "<>"
+? "bot"= "<>"
+
+
+// Renames a private channel.
+
+@name("Rename Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.rename"
+"token": "<>"
+
+
+// Set the profile information for a user.
+
+@name("Set User Profile") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users.profile.set"
+"token": "<>"
+
+
+// Manually sets user presence.
+
+@name("Set User Presence") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users.setPresence"
+"token": "<>"
+
+
+// Closes a direct message or multi-person direct message.
+
+@name("Close Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.close"
+"token": "<>"
+
+
+// Opens a direct message channel.
+
+@name("Open Messages") : "base-inherit-auth"
+POST "https://{{baseUrl}}/im.open"
+"token": "<>"
+
+
+// Lists private channels that the calling user has access to.
+
+@name("Get Group") : "base-inherit-auth"
+GET "https://{{baseUrl}}/groups.list"
+? "exclude_members"= "<>"
+? "token"= "<>"
+? "exclude_archived"= "<>"
+
+
+// Gets the integration logs for the current team.
+
+@name("Get Team Logs") : "base-inherit-auth"
+GET "https://{{baseUrl}}/team.integrationLogs"
+? "count"= "<post>"
+? "change_type"= "<>"
+? "app_id"= "<>"
+? "token"= "<>"
+? "user"= "<post>"
+? "service_id"= "<>"
+? "page"= "<post>"
+
+
+// Removes a user from a private channel.
+
+@name("Remove User From Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.kick"
+"token": "<>"
+
+
+// Retrieves a user's current Do Not Disturb status.
+
+@name("Get Do Not Disturb") : "base-inherit-auth"
+GET "https://{{baseUrl}}/dnd.info"
+? "token"= "<>"
+? "user"= "<post>"
+
+
+// Archives a channel.
+
+@name("Archive Channel") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.archive"
+"token": "<>"
+
+
+// Gets information about a reminder.
+
+@name("Get Reminder") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reminders.info"
+? "token"= "<>"
+? "reminder"= "<>"
+
+
+// Gets information about a channel.
+
+@name("Get Channel") : "base-inherit-auth"
+GET "https://{{baseUrl}}/channels.info"
+? "token"= "<>"
+? "include_locale"= "<>"
+? "channel"= "collection"
+
+
+// Removes a user from a channel.
+
+@name("Remove User From Channel") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.kick"
+"token": "<>"
+
+
+// Sets the read cursor in a private channel.
+
+@name("Mark Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.mark"
+"token": "<>"
+
+
+// Closes a multiparty direct message channel.
+
+@name("Close Multiparty Direct Message") : "base-inherit-auth"
+POST "https://{{baseUrl}}/mpim.close"
+"token": "<>"
+
+
+// Joins an existing conversation.
+
+@name("Join Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.join"
+"token": "<>"
+
+
+// Fetches history of messages and events from a channel.
+
+@name("Get Channel History") : "base-inherit-auth"
+GET "https://{{baseUrl}}/channels.history"
+? "count"= "<post>"
+? "unreads"= "<>"
+? "inclusive"= "<>"
+? "token"= "<>"
+? "oldest"= "<>"
+? "channel"= "<>"
+? "latest"= "<>"
+
+
+// Sets the read cursor in a direct message channel.
+
+@name("Mark Messages") : "base-inherit-auth"
+POST "https://{{baseUrl}}/im.mark"
+"token": "<>"
+
+
+// Exchanges a temporary OAuth verifier code for a workspace token.
+
+@name("Oauth Token") : "base-inherit-auth"
+GET "https://{{baseUrl}}/oauth.token"
+? "client_secret"= "<>"
+? "code"= "<>"
+? "single_channel"= "<>"
+? "client_id"= "<>"
+? "redirect_uri"= "<>"
+
+
+// Uploads or creates a file.
+
+@name("Upload File") : "base-inherit-auth"
+POST "https://{{baseUrl}}/files.upload"
+
+
+// List all users in a User Group
+
+@name("List Group Users") : "base-inherit-auth"
+GET "https://{{baseUrl}}/usergroups.users.list"
+? "token"= "<>"
+? "include_disabled"= "<>"
+? "usergroup"= "<>"
+
+
+// Gets information about a user.
+
+@name("Get User Info") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users.info"
+? "include_locale"= "<>"
+? "token"= "<>"
+? "user"= "<post>"
+
+
+// Find a user with an email address.
+
+@name("Find User") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users.lookupByEmail"
+? "token"= "<>"
+? "email"= "<post>"
+
+
+// Lists reactions made by a user.
+
+@name("List Reactions") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reactions.list"
+? "count"= "<post>"
+? "token"= "<>"
+? "full"= "<>"
+? "user"= "<post>"
+? "page"= "<post>"
+
+
+// Initiates a public or private channel-based conversation
+
+@name("Create Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.create"
+"token": "<>"
+
+
+// Gets billable users information for the current team.
+
+@name("Get Billable Info") : "base-inherit-auth"
+GET "https://{{baseUrl}}/team.billableInfo"
+? "token"= "<>"
+? "user"= "<post>"
+
+
+// Ends the current user's Do Not Disturb session immediately.
+
+@name("End Do Not Disturb") : "base-inherit-auth"
+POST "https://{{baseUrl}}/dnd.endDnd"
+"token": "<>"
+
+
+// Searches for messages and files matching a query.
+
+@name("Search Real Time Messaging") : "base-inherit-auth"
+GET "https://{{baseUrl}}/search.all"
+? "sort_dir"= "<>"
+? "query"= "<>"
+? "sort"= "<>"
+? "count"= "<post>"
+? "token"= "<>"
+? "highlight"= "<>"
+? "page"= "<post>"
+
+
+// Deletes an existing comment on a file.
+
+@name("Delete File Comments") : "base-inherit-auth"
+POST "https://{{baseUrl}}/files.comments.delete"
+"token": "<>"
+
+
+// Revokes a token.
+
+@name("Revoke Auth") : "base-inherit-auth"
+GET "https://{{baseUrl}}/auth.revoke"
+? "test"= "<>"
+? "token"= "<>"
+
+
+// Adds a reaction to an item.
+
+@name("Add Reaction") : "base-inherit-auth"
+POST "https://{{baseUrl}}/reactions.add"
+"token": "<>"
+
+
+// Adds a star to an item.
+
+@name("Star Item") : "base-inherit-auth"
+POST "https://{{baseUrl}}/stars.add"
+"token": "<>"
+
+
+// Marks a reminder as complete.
+
+@name("Mark Reminders Complete") : "base-inherit-auth"
+POST "https://{{baseUrl}}/reminders.complete"
+"token": "<>"
+
+
+// Provide custom unfurl behavior for user-posted URLs
+
+@name("Unfurl Message") : "base-inherit-auth"
+POST "https://{{baseUrl}}/chat.unfurl"
+"token": "<>"
+
+
+// Reverses conversation archival.
+
+@name("Unarchve Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.unarchive"
+"token": "<>"
+
+
+// Gets information about a private channel.
+
+@name("Get Group") : "base-inherit-auth"
+GET "https://{{baseUrl}}/groups.info"
+? "token"= "<>"
+? "include_locale"= "<>"
+? "channel"= "<>"
+
+
+// Revokes public/external sharing access for a file
+
+@name("Revoke Public URL") : "base-inherit-auth"
+POST "https://{{baseUrl}}/files.revokePublicURL"
+"token": "<>"
+
+
+// Lists all channels in a Slack team.
+
+@name("List Conversations") : "base-inherit-auth"
+GET "https://{{baseUrl}}/conversations.list"
+? "cursor"= "<>"
+? "token"= "<>"
+? "limit"= "<>"
+? "exclude_archived"= "<>"
+? "types"= "<>"
+
+
+// Lists stars for a user.
+
+@name("List Stars") : "base-inherit-auth"
+GET "https://{{baseUrl}}/stars.list"
+? "count"= "<post>"
+? "token"= "<>"
+? "page"= "<post>"
+
+
+// Gets reactions for an item.
+
+@name("Get Reaction") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reactions.get"
+? "full"= "<>"
+? "file_comment"= "<>"
+? "timestamp"= "<post>"
+? "token"= "<>"
+? "file"= "<>"
+? "channel"= "<>"
+
+
+// Fetches history of messages and events from direct message channel.
+
+@name("Get Messages History") : "base-inherit-auth"
+GET "https://{{baseUrl}}/im.history"
+? "count"= "<post>"
+? "unreads"= "<>"
+? "inclusive"= "<>"
+? "token"= "<>"
+? "oldest"= "<>"
+? "channel"= "<>"
+? "latest"= "<>"
+
+
+// Pins an item to a channel.
+
+@name("Pin Item") : "base-inherit-auth"
+POST "https://{{baseUrl}}/pins.add"
+"token": "<>"
+
+
+// Leaves a channel.
+
+@name("Leave Channel") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.leave"
+"token": "<>"
+
+
+// Retrieve a permalink URL for a specific extant message
+
+@name("Get Permalink") : "base-inherit-auth"
+GET "https://{{baseUrl}}/chat.getPermalink"
+? "token"= "<>"
+? "message_ts"= "<>"
+? "channel"= "<>"
+
+
+// Renames a channel.
+
+@name("Rename Channel") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.rename"
+"token": "<>"
+
+
+// Lists & filters team files.
+
+@name("List Files") : "base-inherit-auth"
+GET "https://{{baseUrl}}/files.list"
+? "count"= "<post>"
+? "channel"= "<>"
+? "ts_to"= "<>"
+? "ts_from"= "<>"
+? "token"= "<>"
+? "user"= "<post>"
+? "page"= "<post>"
+? "types"= "<>"
+
+
+// Sets the read cursor in a multiparty direct message channel.
+
+@name("Mark Multiparty Direct Messages") : "base-inherit-auth"
+POST "https://{{baseUrl}}/mpim.mark"
+"token": "<>"
+
+
+// Update the list of users for a User Group
+
+@name("Update Group Users") : "base-inherit-auth"
+POST "https://{{baseUrl}}/usergroups.users.update"
+"token": "<>"
+
+
+// Sets the topic for a conversation.
+
+@name("Set Conversation Topic") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.setTopic"
+"token": "<>"
+
+
+// Retrieve members of a conversation.
+
+@name("Get Conversation Members") : "base-inherit-auth"
+GET "https://{{baseUrl}}/conversations.members"
+? "cursor"= "<>"
+? "token"= "<>"
+? "limit"= "<>"
+? "channel"= "<>"
+
+
+// Opens or resumes a direct message or multi-person direct message.
+
+@name("Open Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.open"
+"token": "<>"
+
+
+// Un-pins an item from a channel.
+
+@name("Unpin Item") : "base-inherit-auth"
+POST "https://{{baseUrl}}/pins.remove"
+"token": "<>"
+
+
+// Deletes a file.
+
+@name("Delete File") : "base-inherit-auth"
+POST "https://{{baseUrl}}/files.delete"
+"token": "<>"
+
+
+// Lists items pinned to a channel.
+
+@name("List Pins") : "base-inherit-auth"
+GET "https://{{baseUrl}}/pins.list"
+? "token"= "<>"
+? "channel"= "<>"
+
+
+// Checks API calling code.
+
+@name("Test API") : "base-inherit-auth"
+GET "https://{{baseUrl}}/api.test"
+? "foo"= "<>"
+? "error"= "<>"
+
+
+// Lists all reminders created by or for a given user.
+
+@name("List Reminders") : "base-inherit-auth"
+GET "https://{{baseUrl}}/reminders.list"
+? "token"= "<>"
+
+
+// Gets user presence information.
+
+@name("Get Presence") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users.getPresence"
+? "token"= "<>"
+? "user"= "<post>"
+
+
+// Update an existing User Group
+
+@name("Update Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/usergroups.update"
+"token": "<>"
+
+
+// Leaves a conversation.
+
+@name("Leave Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.leave"
+"token": "<>"
+
+
+// Gets information about a team file.
+
+@name("Get File") : "base-inherit-auth"
+GET "https://{{baseUrl}}/files.info"
+? "count"= "<post>"
+? "token"= "<>"
+? "file"= "<>"
+? "page"= "<post>"
+
+
+// Leaves a private channel.
+
+@name("Leave Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.leave"
+"token": "<>"
+
+
+// Returns list of permissions this app has on a team.
+
+@name("App Permissions") : "base-inherit-auth"
+GET "https://{{baseUrl}}/apps.permissions.info"
+? "token"= "<>"
+
+
+// Create a User Group
+
+@name("Create Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/usergroups.create"
+"token": "<>"
+
+
+// Clones and archives a private channel.
+
+@name("Create Child Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.createChild"
+
+
+// Sets the read cursor in a channel.
+
+@name("Mark Channel") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.mark"
+"token": "<>"
+
+
+// Delete the user profile photo
+
+@name("Delete Photo") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users.deletePhoto"
+
+
+// Set the user profile photo
+
+@name("Set User Profile Photo") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users.setPhoto"
+
+
+// Enables a file for public/external sharing.
+
+@name("Share Public URL") : "base-inherit-auth"
+POST "https://{{baseUrl}}/files.sharedPublicURL"
+"token": "<>"
+
+
+// Removes a user from a conversation.
+
+@name("Remove User From Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.kick"
+"token": "<>"
+
+
+// Sends an ephemeral message to a user in a channel.
+
+@name("Sent Ephemeral lMessage") : "base-inherit-auth"
+POST "https://{{baseUrl}}/chat.postEphemeral"
+"token": "<>"
+
+
+// Renames a conversation.
+
+@name("Rename Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.rename"
+"token": "<>"
+
+
+// For Enterprise Grid workspaces, map local user IDs to global user IDs
+
+@name("Migration Exchange") : "base-inherit-auth"
+GET "https://{{baseUrl}}/migration.exchange"
+? "token"= "<>"
+? "to_old"= "<>"
+? "users"= "<>"
+
+
+// Enable a User Group
+
+@name("Enable Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/usergroups.enable"
+"token": "<>"
+
+
+// Turns on Do Not Disturb mode for the current user, or changes its duration.
+
+@name("End Do Not Disturb Snooze") : "base-inherit-auth"
+POST "https://{{baseUrl}}/dnd.setSnooze"
+
+
+// Updates a message.
+
+@name("Update Message") : "base-inherit-auth"
+POST "https://{{baseUrl}}/chat.update"
+"token": "<>"
+
+
+// Fetches history of messages and events from a multiparty direct message.
+
+@name("Get Multiparty Direct Message History") : "base-inherit-auth"
+GET "https://{{baseUrl}}/mpim.history"
+? "count"= "<post>"
+? "unreads"= "<>"
+? "inclusive"= "<>"
+? "token"= "<>"
+? "oldest"= "<>"
+? "channel"= "<>"
+? "latest"= "<>"
+
+
+// Allows an app to request additional scopes
+
+@name("Request App Permissions") : "base-inherit-auth"
+GET "https://{{baseUrl}}/apps.permissions.request"
+? "scopes"= "<>"
+? "token"= "<>"
+? "trigger_id"= "<>"
+
+
+// Searches for files matching a query.
+
+@name("Start Real Time Messaging Files") : "base-inherit-auth"
+GET "https://{{baseUrl}}/search.files"
+? "sort_dir"= "<>"
+? "query"= "<>"
+? "sort"= "<>"
+? "highlight"= "<>"
+? "count"= "<post>"
+? "token"= "<>"
+? "page"= "<post>"
+
+
+// Get a user's identity.
+
+@name("Get User Identity") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users.identity"
+? "token"= "<>"
+
+
+// Gets the access logs for the current team.
+
+@name("Get Logs") : "base-inherit-auth"
+GET "https://{{baseUrl}}/team.accessLogs"
+? "count"= "<post>"
+? "token"= "<>"
+? "page"= "<post>"
+? "before"= "<>"
+
+
+// Invites a user to a private channel.
+
+@name("Invite User To Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.invite"
+"token": "<>"
+
+
+// Unarchives a channel.
+
+@name("Unarchive Channel") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.unarchive"
+"token": "<>"
+
+
+// Starts a Real Time Messaging session.
+
+@name("Connect Real Time Messaging") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rtm.connect"
+? "token"= "<>"
+? "batch_presence_aware"= "<>"
+
+
+// Gets information about the current team.
+
+@name("Get Team") : "base-inherit-auth"
+GET "https://{{baseUrl}}/team.info"
+? "token"= "<>"
+
+
+// Fetches a conversation's history of messages and events.
+
+@name("Get Conversation History") : "base-inherit-auth"
+GET "https://{{baseUrl}}/conversations.history"
+? "inclusive"= "<>"
+? "cursor"= "<>"
+? "token"= "<>"
+? "limit"= "<>"
+? "oldest"= "<>"
+? "channel"= "<>"
+? "latest"= "<>"
+
+
+// Creates a channel.
+
+@name("Create Channel") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.create"
+"token": "<>"
+
+
+// Retrieve a thread of messages posted to a direct message conversation
+
+@name("Reply to Messages") : "base-inherit-auth"
+GET "https://{{baseUrl}}/im.replies"
+? "thread_ts"= "<>"
+? "token"= "<>"
+? "channel"= "<>"
+
+
+// Creates a private channel.
+
+@name("Create Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.create"
+"token": "<>"
+
+
+// Creates a reminder.
+
+@name("Add Reminders") : "base-inherit-auth"
+POST "https://{{baseUrl}}/reminders.add"
+"token": "<>"
+
+
+// Sets the purpose for a conversation.
+
+@name("Set Conversation Purpose") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.setPurpose"
+"token": "<>"
+
+
+// Joins a channel, creating it if needed.
+
+@name("Join Channel") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.join"
+"token": "<>"
+
+
+// List all User Groups for a team
+
+@name("List Groups") : "base-inherit-auth"
+GET "https://{{baseUrl}}/usergroups.list"
+? "include_users"= "<>"
+? "token"= "<>"
+? "include_count"= "<>"
+? "include_disabled"= "<>"
+
+
+// Retrieves a user's profile information.
+
+@name("Get User Profile") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users.profile.get"
+? "token"= "<>"
+? "include_labels"= "<>"
+? "user"= "<post>"
+
+
+// Opens a private channel.
+
+@name("Open Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.open"
+"token": "<>"
+
+
+// Lists custom emoji for a team.
+
+@name("List Emojis") : "base-inherit-auth"
+GET "https://{{baseUrl}}/emoji.list"
+? "token"= "<>"
+
+
+// Retrieve information about a conversation.
+
+@name("Get Conversation") : "base-inherit-auth"
+GET "https://{{baseUrl}}/conversations.info"
+? "token"= "<>"
+? "channel"= "<>"
+? "include_locale"= "<>"
+
+
+// Share a me message into a channel.
+
+@name("Share Message") : "base-inherit-auth"
+POST "https://{{baseUrl}}/chat.meMessage"
+"token": "<>"
+
+
+// Ends the current user's snooze mode immediately.
+
+@name("End Do Not Disturb Snooze") : "base-inherit-auth"
+POST "https://{{baseUrl}}/dnd.endSnooze"
+"token": "<>"
+
+
+// Fetches history of messages and events from a private channel.
+
+@name("Group History") : "base-inherit-auth"
+GET "https://{{baseUrl}}/groups.history"
+? "count"= "<post>"
+? "unreads"= "<>"
+? "inclusive"= "<>"
+? "token"= "<>"
+? "oldest"= "<>"
+? "channel"= "<>"
+? "latest"= "<>"
+
+
+// Searches for messages matching a query.
+
+@name("Search Real Time Messaging") : "base-inherit-auth"
+GET "https://{{baseUrl}}/search.messages"
+? "sort_dir"= "<>"
+? "query"= "<>"
+? "sort"= "<>"
+? "count"= "<post>"
+? "token"= "<>"
+? "highlight"= "<>"
+? "page"= "<post>"
+
+
+// Starts a Real Time Messaging session.
+
+@name("Start Real Time Messaging") : "base-inherit-auth"
+GET "https://{{baseUrl}}/rtm.start"
+? "no_latest"= "<>"
+? "simple_latest"= "<>"
+? "include_locale"= "<>"
+? "no_unreads"= "<>"
+? "batch_presence_aware"= "<>"
+? "mpim_aware"= "<>"
+? "token"= "<>"
+
+
+// Sets the topic for a channel.
+
+@name("Set Channel Topic") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.setTopic"
+"token": "<>"
+
+
+// Sets the topic for a private channel.
+
+@name("Set Group Topic") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.setTopic"
+"token": "<>"
+
+
+// This method opens a multiparty direct message.
+
+@name("Open Multiparty Direct Messages") : "base-inherit-auth"
+POST "https://{{baseUrl}}/mpim.open"
+"token": "<>"
+
+
+// Removes a reaction from an item.
+
+@name("Remove Reaction") : "base-inherit-auth"
+POST "https://{{baseUrl}}/reactions.remove"
+"token": "<>"
+
+
+// Deletes a reminder.
+
+@name("Delete Reminders") : "base-inherit-auth"
+POST "https://{{baseUrl}}/reminders.delete"
+"token": "<>"
+
+
+// Disable an existing User Group
+
+@name("Disable Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/usergroups.disable"
+"token": "<>"
+
+
+// Add a comment to an existing file.
+
+@name("Add File Comments") : "base-inherit-auth"
+POST "https://{{baseUrl}}/files.comments.add"
+"token": "<>"
+
+
+// Lists direct message channels for the calling user.
+
+@name("List Messages") : "base-inherit-auth"
+GET "https://{{baseUrl}}/im.list"
+? "cursor"= "<>"
+? "token"= "<>"
+? "limit"= "<>"
+
+
+// Sets the purpose for a channel.
+
+@name("Set Channel Purpose") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.setPurpose"
+"token": "<>"
+
+
+// Retrieve a thread of messages posted to a direct message conversation from a multiparty direct message.
+
+@name("Reply to Multiparty Direct Messages") : "base-inherit-auth"
+GET "https://{{baseUrl}}/mpim.replies"
+? "thread_ts"= "<>"
+? "token"= "<>"
+? "channel"= "<>"
+
+
+// Open a dialog with a user
+
+@name("Open Dialog") : "base-inherit-auth"
+GET "https://{{baseUrl}}/dialog.open"
+"token": "<>"
+? "dialog"= "<>"
+? "trigger_id"= "<>"
+
+
+// Retrieves the Do Not Disturb status for users on a team.
+
+@name("Get Do Not Disturb Status") : "base-inherit-auth"
+GET "https://{{baseUrl}}/dnd.teamInfo"
+? "token"= "<>"
+? "users"= "<>"
+
+
+// Lists all users in a Slack team.
+
+@name("List Team Users") : "base-inherit-auth"
+GET "https://{{baseUrl}}/users.list"
+? "presence"= "<>"
+? "cursor"= "<>"
+? "token"= "<>"
+? "limit"= "<>"
+? "include_locale"= "<>"
+
+
+// Invites users to a channel.
+
+@name("Invite User To Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.invite"
+"token": "<>"
+
+
+// Checks authentication & identity.
+
+@name("Test Auth") : "base-inherit-auth"
+GET "https://{{baseUrl}}/auth.test"
+"token": "<>"
+
+
+// Lists all channels in a Slack team.
+
+@name("List Channels") : "base-inherit-auth"
+GET "https://{{baseUrl}}/channels.list"
+? "exclude_members"= "<>"
+? "cursor"= "<>"
+? "token"= "<>"
+? "limit"= "<>"
+? "exclude_archived"= "<>"
+
+
+// Sets the purpose for a private channel.
+
+@name("Set Group Purpose") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.setPurpose"
+"token": "<>"
+
+
+// Invites a user to a channel.
+
+@name("Invite Channel User") : "base-inherit-auth"
+POST "https://{{baseUrl}}/channels.invite"
+"token": "<>"
+
+
+// Exchanges a temporary OAuth code for an API token.
+
+@name("Oauth Access") : "base-inherit-auth"
+GET "https://{{baseUrl}}/oauth.access"
+? "client_secret"= "<>"
+? "code"= "<>"
+? "client_id"= "<>"
+? "redirect_uri"= "<>"
+
+
+// Lists multiparty direct message channels for the calling user.
+
+@name("List Multiparty Direct Messages") : "base-inherit-auth"
+GET "https://{{baseUrl}}/mpim.list"
+? "token"= "<>"
+
+
+// Unarchives a private channel.
+
+@name("Unarchive Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.unarchive"
+"token": "<>"
+
+
+// Retrieve a thread of messages posted to a channel
+
+@name("Get Channel Thread") : "base-inherit-auth"
+GET "https://{{baseUrl}}/channels.replies"
+? "thread_ts"= "<>"
+? "token"= "<>"
+? "channel"= "<>"
+
+
+// Sends a message to a channel.
+
+@name("Send Channel Message") : "base-inherit-auth"
+POST "https://{{baseUrl}}/chat.postMessage"
+"Content-Type": "application/json"
+json({
+    "channel": "{{channel_id}}",
+    "text": "I hope the tour went well, Mr. Wonka."
+})
+
+
+// Marks a user as active.
+
+@name("Make User Inactive") : "base-inherit-auth"
+POST "https://{{baseUrl}}/users.setActive"
+"token": "<>"
+
+
+// Archives a conversation.
+
+@name("Archive Conversation") : "base-inherit-auth"
+POST "https://{{baseUrl}}/conversations.archive"
+"token": "<>"
+
+
+// Retrieve a team's profile.
+
+@name("Get Team Profile") : "base-inherit-auth"
+GET "https://{{baseUrl}}/team.profile.get"
+? "token"= "<>"
+? "visibility"= "<>"
+
+
+// Archives a private channel.
+
+@name("Archive Group") : "base-inherit-auth"
+POST "https://{{baseUrl}}/groups.archive"
+"token": "<>"
+
+
+// Retrieve a thread of messages posted to a conversation
+
+@name("Reply Conversation") : "base-inherit-auth"
+GET "https://{{baseUrl}}/conversations.replies"
+? "inclusive"= "<>"
+? "ts"= "<>"
+? "cursor"= "<>"
+? "token"= "<>"
+? "limit"= "<>"
+? "oldest"= "<>"
+? "channel"= "<>"
+? "latest"= "<>"
+
+
+// Removes a star from an item.
+
+@name("Remove Star from Item") : "base-inherit-auth"
+POST "https://{{baseUrl}}/stars.remove"
+"token": "<>"
+
+
+

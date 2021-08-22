@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Returns the versioning state of a bucket.
+
+@name("Bucket Versioning")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "versioning"= ""
+
+
+// Sets the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner. 
+
+@name("Bucket Versioning")
+PUT "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"Content-MD5": "{{contentMD5}}"
+"x-amz-mfa": "MFA"
+? "versioning"= ""
+data('<?xml version="1.0" encoding="UTF-8"?>
+<VersioningConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Status>Enabled</Status></VersioningConfiguration>')
+
+
+

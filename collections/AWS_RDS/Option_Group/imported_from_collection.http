@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9b526cd3-0f35-4ef8-ad1e-b13d97933210.postman_collection.json
+
+@name("Copy Option Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "SourceOptionGroupIdentifier"= ""
+? "Tags.Tag.N"= ""
+? "TargetOptionGroupDescription"= ""
+? "TargetOptionGroupIdentifier"= ""
+? "Action"= "CopyOptionGroup"
+
+
+@name("Create Option Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "EngineName"= ""
+? "MajorEngineVersion"= ""
+? "OptionGroupDescription"= ""
+? "OptionGroupName"= ""
+? "Tags.Tag.N"= ""
+? "Action"= "CreateOptionGroup"
+
+
+@name("Delete Option Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "OptionGroupName"= ""
+? "Action"= "DeleteOptionGroup"
+
+
+@name("Describe Option Groups")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "EngineName"= ""
+? "Filters.Filter.N"= ""
+? "MajorEngineVersion"= ""
+? "Marker"= ""
+? "MaxRecords"= ""
+? "OptionGroupName"= ""
+? "Action"= "DescribeOptionGroups"
+
+
+@name("Modify Option Group")
+GET "https://{{aws_rds_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_rds_service}}", region="{{aws_rds_region}}")
+? "ApplyImmediately"= ""
+? "OptionGroupName"= ""
+? "OptionsToInclude.OptionConfiguration.N"= ""
+? "OptionsToRemove.member.N"= ""
+? "Action"= "ModifyOptionGroup"
+
+
+

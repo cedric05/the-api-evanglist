@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d8f0a546-2bf3-4572-88c9-9190f362a7c5.postman_collection.json
+
+@name("By Id Usage Plan Key")
+GET "https://{{aws_api_gateway_base_url}}&keyId=/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "keyId"= ""
+
+
+@name("Create Usage Plan Key")
+GET "https://{{aws_api_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Delete Usage Plan Key")
+GET "https://{{aws_api_gateway_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+@name("Vpclinkby Id")
+GET "https://{{aws_api_gateway_base_url}}/vpclinks/{vpclink_id}&vpclink_id="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+? "vpclink_id"= ""
+
+
+@name("Vpclinkcreate")
+POST "https://{{aws_api_gateway_base_url}}/vpclinks"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_api_gateway_control_plane_service}}", region="{{aws_api_gateway_control_plane_region}}")
+
+
+

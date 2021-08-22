@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-497c1579-7153-42d7-9ae4-62094712cd15.postman_collection.json
+
+// Returns all pipelines for the most recently built projects (max 250) you follow in an organization.
+
+@name("Get a list of pipelines")
+GET "https://{{baseUrl}}/pipeline"
+? "org-slug"= "<string>"
+? "page-token"= "<string>"
+? "mine"= "<string>"
+
+
+

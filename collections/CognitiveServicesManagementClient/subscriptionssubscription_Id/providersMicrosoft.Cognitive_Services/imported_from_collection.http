@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d1558e58-fe26-4cd3-9c99-0411fa0967e1.postman_collection.json
+
+// Returns all the resources of a particular type belonging to a subscription.
+
+@name("Accounts List")
+GET "https://{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.CognitiveServices/accounts"
+
+
+// Check available SKUs.
+
+@name("Check Sku Availability List")
+POST "https://{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.CognitiveServices/locations/:location/checkSkuAvailability"
+
+
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all categories
+
+@name("Get all Categories")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Categories"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "category"= "<object>"
+? "countonly"= "<integer>"
+
+
+// Get a category
+
+@name("Get a Category")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Categories/:id"
+
+
+

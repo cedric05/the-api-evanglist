@@ -1,0 +1,94 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8631617c-c1ed-4e14-b0cd-77e4410753c4.postman_collection.json
+
+@name("Create User Pool Client")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "CreateUserPoolClient"
+data('{
+   "AllowedOAuthFlows": [ "string" ],
+   "AllowedOAuthFlowsUserPoolClient": boolean,
+   "AllowedOAuthScopes": [ "string" ],
+   "AnalyticsConfiguration": { 
+      "ApplicationId": "string",
+      "ExternalId": "string",
+      "RoleArn": "string",
+      "UserDataShared": boolean
+   },
+   "CallbackURLs": [ "string" ],
+   "ClientName": "string",
+   "DefaultRedirectURI": "string",
+   "ExplicitAuthFlows": [ "string" ],
+   "GenerateSecret": boolean,
+   "LogoutURLs": [ "string" ],
+   "PreventUserExistenceErrors": "string",
+   "ReadAttributes": [ "string" ],
+   "RefreshTokenValidity": number,
+   "SupportedIdentityProviders": [ "string" ],
+   "UserPoolId": "string",
+   "WriteAttributes": [ "string" ]
+}')
+
+
+@name("Delete User Pool Client")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DeleteUserPoolClient"
+data('{
+   "ClientId": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Describe User Pool Client")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "DescribeUserPoolClient"
+data('{
+   "ClientId": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("List User Pool Clients")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "ListUserPoolClients"
+data('{
+   "MaxResults": number,
+   "NextToken": "string",
+   "UserPoolId": "string"
+}')
+
+
+@name("Update User Pool Client")
+POST "https://{{aws_cognito_identity_provider_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_identity_service}}", region="{{aws_cognito_identity_region}}")
+? "Action"= "UpdateUserPoolClient"
+data('{
+   "AllowedOAuthFlows": [ "string" ],
+   "AllowedOAuthFlowsUserPoolClient": boolean,
+   "AllowedOAuthScopes": [ "string" ],
+   "AnalyticsConfiguration": { 
+      "ApplicationId": "string",
+      "ExternalId": "string",
+      "RoleArn": "string",
+      "UserDataShared": boolean
+   },
+   "CallbackURLs": [ "string" ],
+   "ClientId": "string",
+   "ClientName": "string",
+   "DefaultRedirectURI": "string",
+   "ExplicitAuthFlows": [ "string" ],
+   "LogoutURLs": [ "string" ],
+   "PreventUserExistenceErrors": "string",
+   "ReadAttributes": [ "string" ],
+   "RefreshTokenValidity": number,
+   "SupportedIdentityProviders": [ "string" ],
+   "UserPoolId": "string",
+   "WriteAttributes": [ "string" ]
+}')
+
+
+

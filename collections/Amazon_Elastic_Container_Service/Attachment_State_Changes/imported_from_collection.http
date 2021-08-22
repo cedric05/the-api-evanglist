@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d0c02c05-054f-4e33-83bf-1c03a8c9a69e.postman_collection.json
+
+@name("Submit Attachment State Changes")
+POST "https://{{aws_elastic_container_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_container_service_service}}", region="{{aws_elastic_container_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "AmazonEC2ContainerServiceV20141113.SubmitAttachmentStateChanges"
+? "Action"= "SubmitAttachmentStateChanges"
+data('{"attachments":[{"attachmentArn":"string","status":"string"}],"cluster":"string"}')
+
+
+

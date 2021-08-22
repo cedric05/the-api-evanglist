@@ -1,0 +1,34 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c62e1baf-4a19-4992-b48d-038acd7dffea.postman_collection.json
+
+@name("Batch Get Deployment Instances")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.BatchGetDeploymentInstances"
+? "Action"= "BatchGetDeploymentInstances"
+data('{
+    "deploymentId": "d-DXT57CS2G",
+    "instanceIds": [
+        "i-2b4a36ad00EXAMPLE",
+        "i-384a57d300EXAMPLE",
+        "i-623g53b300EXAMPLE"
+    ]
+}')
+
+
+@name("List Deployment Instances")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.ListDeploymentInstances"
+? "Action"= "ListDeploymentInstances"
+data('{
+	"deploymentId": "d-74D25NS7C"
+}')
+
+
+

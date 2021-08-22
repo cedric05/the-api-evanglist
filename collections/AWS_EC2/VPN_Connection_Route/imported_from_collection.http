@@ -1,0 +1,27 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a static route associated with a VPN connection between an existing virtual
+//                         private gateway and a VPN customer gateway.
+
+@name("Create VPN Connection Route")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DestinationCidrBlock"= ""
+? "VpnConnectionId"= ""
+? "Action"= "CreateVpnConnectionRoute"
+
+
+// Deletes the specified static route associated with a VPN connection between an existing
+//                         virtual private gateway and a VPN customer gateway.
+
+@name("Delete VPN Connection Route")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DestinationCidrBlock"= ""
+? "VpnConnectionId"= ""
+? "Action"= "DeleteVpnConnectionRoute"
+
+
+

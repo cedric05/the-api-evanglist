@@ -1,0 +1,14 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4daf4441-eb91-41fe-b023-1dfb7909acdb.postman_collection.json
+
+@name("Describe Auto Scaling Instances")
+GET "https://{{aws_auto_scaling_api_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "InstanceIds.member.N"= ""
+? "MaxRecords"= ""
+? "NextToken"= ""
+? "Action"= "DescribeAutoScalingInstances"
+
+
+

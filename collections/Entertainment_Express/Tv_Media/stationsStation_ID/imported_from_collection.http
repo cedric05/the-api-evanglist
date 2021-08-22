@@ -1,0 +1,43 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Gets station details by ID.
+
+@name("Get Tv Media Station")
+GET "https://{{baseUrl}}/TvMedia/stations/:StationID"
+? "TvMediaApiKey"= "<get>"
+
+
+// Get listings for a given station.
+
+@name("Stations are not tied to lineups, therefore no channel numbers will be present in the response, unlike most other listing operations.")
+GET "https://{{baseUrl}}/TvMedia/stations/:StationID/listings"
+? "TvMediaApiKey"= "<get>"
+? "Start"= "<get>"
+? "End"= "<get>"
+? "TimeZone"= "<get>"
+? "Channel"= "<get>"
+? "ExcludeChan"= "<get>"
+? "StartChan"= "<get>"
+? "EndChan"= "<get>"
+? "Station"= "<get>"
+? "ExcludeStation"= "<get>"
+? "Search"= "<get>"
+? "ShowType"= "<get>"
+? "ExcludeShowType"= "<get>"
+? "Id"= "<get>"
+? "SportType"= "<get>"
+? "League"= "<get>"
+? "Team"= "<get>"
+? "NotYetStarted"= "<get>"
+? "SportEventsOnly"= "<get>"
+? "DescriptiveVideoOnly"= "<get>"
+? "LiveOnly"= "<get>"
+? "NewShowsOnly"= "<get>"
+? "AdultContent"= "<get>"
+? "DisplayArtwork"= "<get>"
+? "Detail"= "<get>"
+
+
+

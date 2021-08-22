@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Upload additional (gallery) product image.
+
+@name("Upload additional (gallery) product image")
+POST "https://{{baseUrl}}/products/SET-PRODUCT-ID/gallery"
+"Content": "<>"
+? "token"= "<>"
+
+
+// Delete one additional (gallery) product image.
+
+@name("Delete one additional (gallery) product image")
+DELETE "https://{{baseUrl}}/products/SET-PRODUCT-ID/gallery/SET-GALLERY-IMAGE-ID"
+"Content": "<>"
+? "token"= "<>"
+
+
+

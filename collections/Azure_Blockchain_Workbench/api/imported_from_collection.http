@@ -1,0 +1,12 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// Returns the health of the system. See https://docs.microsoft.com/en-us/azure/architecture/patterns/health-endpoint-monitoring
+//              for more details.
+
+@name("Get Api Health")
+GET "https://{{baseUrl}}/api/health"
+
+
+

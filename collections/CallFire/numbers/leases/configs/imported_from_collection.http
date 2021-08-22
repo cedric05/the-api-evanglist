@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Searches for all number lease configs for the user. Returns a paged list of NumberConfig
+
+@name("Find lease configs")
+GET "https://{{baseUrl}}/numbers/leases/configs"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "prefix"= "<string>"
+? "city"= "<string>"
+? "state"= "<string>"
+? "zipcode"= "<string>"
+? "lata"= "<string>"
+? "rateCenter"= "<string>"
+? "labelName"= "<string>"
+? "fields"= "<string>"
+
+
+// Returns a single NumberConfig instance for a given number lease
+
+@name("Find a specific lease config")
+GET "https://{{baseUrl}}/numbers/leases/configs/:number"
+? "fields"= "<string>"
+
+
+

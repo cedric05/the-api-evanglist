@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Returns the access control list (ACL) of an object. To use this operation, you must have READ_ACP access to the object. 
+
+@name("ACL")
+GET "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "acl"= ""
+
+
+// Returns the access control list (ACL) of an object. To use this operation, you must have READ_ACP access to the object. 
+
+@name("ACL")
+PUT "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "acl"= ""
+data('<?xml version="1.0" encoding="UTF-8"?>
+<AccessControlPolicy xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <Owner>
+        <ID>94aebaef4c4fbbe84a36f076a1adbf6208742d219ac1cecb29939e262efabf56</ID>
+        <DisplayName>kinlane</DisplayName>
+    </Owner>
+    <AccessControlList>
+        <Grant>
+            <Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CanonicalUser">
+                <ID>94aebaef4c4fbbe84a36f076a1adbf6208742d219ac1cecb29939e262efabf56</ID>
+                <DisplayName>kinlane</DisplayName>
+            </Grantee>
+            <Permission>FULL_CONTROL</Permission>
+        </Grant>
+    </AccessControlList>
+</AccessControlPolicy>')
+
+
+

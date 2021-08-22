@@ -1,0 +1,35 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-92163795-090f-4322-a9fd-7e9b26bedf17.postman_collection.json
+
+@name("Create Luna Client")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "CreateLunaClient"
+
+
+@name("Delete Luna Client")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "DeleteLunaClient"
+
+
+@name("Describe Luna Client")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "DescribeLunaClient"
+
+
+@name("List Luna Clients")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "ListLunaClients"
+
+
+@name("Modify Luna Client")
+GET "https://{{aws_cloudhsm_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cloudhsm_service}}", region="{{aws_cloudhsm_region}}")
+? "Action"= "ModifyLunaClient"
+
+
+

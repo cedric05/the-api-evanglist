@@ -1,0 +1,32 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-66d8dc5a-504e-4f74-b3df-9ef8c95ff2fd.postman_collection.json
+
+// # List All Upstreams [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-all-upstreams)
+// * Displays the health status for all Targets of a given Upstream, or for the whole Upstream, according to the perspective of a specific Kong node. Note that, being node-specific information, making this same request to different nodes of the Kong cluster may produce different results. For example, one specific node of the Kong cluster may be experiencing network issues, causing it to fail to connect to som
+
+@name("List All Upstreams")
+GET "https://{{baseUrl}}/upstreams/:nameOrId/health"
+? "balancer_health"= "<string>"
+
+
+// # List All Targets [konghq](https://docs.konghq.com/2.0.x/admin-api/#list-all-targets)
+// * Lists all targets of the upstream. Multiple target objects for the same target may be returned, showing the history of changes for a specific target. The target object with the latest created_at is the current definition.
+// 
+// <table style="width:50%">
+//   <tr>
+//     <th>Attributes</th>
+//     <th>Mandatory</th>
+//     <th>Type</th>
+//     <th>Description</th> 
+//   </tr>
+//   <tr>
+//     <td>name or id</td>
+//     <td>required</td>
+//    
+
+@name("List All Targets")
+GET "https://{{baseUrl}}/upstreams/:nameOrId/targets/all"
+
+
+

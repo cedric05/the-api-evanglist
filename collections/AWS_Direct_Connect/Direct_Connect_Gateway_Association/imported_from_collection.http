@@ -1,0 +1,65 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c094246-719d-4054-bede-5834f64bb4b7.postman_collection.json
+
+@name("Create Direct Connect Gateway Association")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "CreateDirectConnectGatewayAssociation"
+data('{
+   "addAllowedPrefixesToDirectConnectGateway": [ 
+      { 
+         "cidr": "string"
+      }
+   ],
+   "directConnectGatewayId": "string",
+   "gatewayId": "string",
+   "virtualGatewayId": "string"
+}')
+
+
+@name("Delete Direct Connect Gateway Association")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "DeleteDirectConnectGatewayAssociation"
+data('{
+   "associationId": "string",
+   "directConnectGatewayId": "string",
+   "virtualGatewayId": "string"
+}')
+
+
+@name("Describe Direct Connect Gateway Associations")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "DescribeDirectConnectGatewayAssociations"
+data('{
+   "associatedGatewayId": "string",
+   "associationId": "string",
+   "directConnectGatewayId": "string",
+   "maxResults": number,
+   "nextToken": "string",
+   "virtualGatewayId": "string"
+}')
+
+
+@name("Update Direct Connect Gateway Association")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "UpdateDirectConnectGatewayAssociation"
+data('{
+   "addAllowedPrefixesToDirectConnectGateway": [ 
+      { 
+         "cidr": "string"
+      }
+   ],
+   "associationId": "string",
+   "removeAllowedPrefixesToDirectConnectGateway": [ 
+      { 
+         "cidr": "string"
+      }
+   ]
+}')
+
+
+

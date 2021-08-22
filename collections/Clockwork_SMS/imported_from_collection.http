@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-510c3880-9b31-4561-acd8-9de9b0972372.postman_collection.json
+
+// Check how much credit you have left on your account.
+
+@name("Check Balance")
+GET "https://{{baseUrl}}/balance"
+? "Key"= "<>"
+
+
+// The HTTP interface to send text messages can be accessed using GET or POST. All parameters must be URL Encoded and sent as UTF-8 text.
+
+@name("Send SMS Via HTTP")
+GET "https://{{baseUrl}}/send.aspx"
+? "Key"= "<>"
+? "Content"= "<>"
+? "From"= "<>"
+? "Long"= "<>"
+? "total"= "<>"
+
+
+

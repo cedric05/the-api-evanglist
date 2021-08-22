@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes the specified attribute of the specified Amazon FPGA Image (AFI).
+
+@name("Describe FPGA Image Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "DryRun"= ""
+? "FpgaImageId"= ""
+? "Action"= "DescribeFpgaImageAttribute"
+
+
+// Modifies the specified attribute of the specified Amazon FPGA Image (AFI).
+
+@name("Modify FPGA Image Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "Description"= ""
+? "DryRun"= ""
+? "FpgaImageId"= ""
+? "LoadPermission"= ""
+? "Name"= ""
+? "OperationType"= ""
+? "ProductCode.N"= ""
+? "UserGroup.N"= ""
+? "UserId.N"= ""
+? "Action"= "ModifyFpgaImageAttribute"
+
+
+// Resets the specified attribute of the specified Amazon FPGA Image (AFI) to its default
+//                         value.
+
+@name("Reset FPGA Image Attribute")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Attribute"= ""
+? "DryRun"= ""
+? "FpgaImageId"= ""
+? "Action"= "ResetFpgaImageAttribute"
+
+
+

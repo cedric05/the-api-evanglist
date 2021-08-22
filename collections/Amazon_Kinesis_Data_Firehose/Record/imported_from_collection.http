@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f6762203-e3f7-4201-adba-de7e3f5dcdf8.postman_collection.json
+
+@name("Put Record")
+POST "https://{{aws_kinesis_data_firehose_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_kinesis_data_firehose_service}}", region="{{aws_kinesis_data_firehose_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "Firehose_20150804.PutRecord"
+? "Action"= "PutRecord"
+data('{"DeliveryStreamName":"string","Record":{"Data":"blob"}}')
+
+
+

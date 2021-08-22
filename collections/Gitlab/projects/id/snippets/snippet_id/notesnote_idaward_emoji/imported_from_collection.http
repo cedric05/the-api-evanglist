@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// Get projects  snippets snippet  notes note  award emoji
+
+@name("Get Projects  Snippets Snippet  Notes Note  Award Emoji")
+GET "https://{{baseUrl}}/projects/:id/snippets/:snippet_id/notes/:note_id/award_emoji"
+? "page"= "<>"
+? "per_page"= "<>"
+
+
+// Delete projects  snippets snippet  notes note  award emoji award
+
+@name("Delete Projects  Snippets Snippet  Notes Note  Award Emoji Award")
+DELETE "https://{{baseUrl}}/projects/:id/snippets/:snippet_id/notes/:note_id/award_emoji/:award_id"
+
+
+

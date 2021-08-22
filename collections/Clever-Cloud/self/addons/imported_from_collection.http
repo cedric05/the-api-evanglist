@@ -1,0 +1,15 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+// Get all the addons
+
+@name("Addon")
+GET "https://{{baseUrl}}/self/addons"
+
+
+@name("/self/addons/preorders")
+POST "https://{{baseUrl}}/self/addons/preorders"
+
+
+

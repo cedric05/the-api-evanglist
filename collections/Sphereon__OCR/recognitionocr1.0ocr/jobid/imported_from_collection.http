@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-ae8d3219-5d98-4ce1-a73c-5c0bdc96ce37.postman_collection.json
+
+// Get the OCR job definition and current state. Please not that you can differentiate based on http response status
+
+@name("Job definition and state")
+GET "https://{{baseUrl}}/recognition/ocr/1.0/ocr/:jobid"
+
+
+// Get the OCR result
+// This API only returns the OCR when the response status code is 200! In other cases nothing is returned or the Job JSON when it is still being executed
+
+@name("Get the current ocr result")
+GET "https://{{baseUrl}}/recognition/ocr/1.0/ocr/:jobid/result"
+
+
+

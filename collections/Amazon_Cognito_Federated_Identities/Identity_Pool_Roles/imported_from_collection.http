@@ -1,0 +1,46 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2f393c49-f959-4f18-bf04-79f6c8910daa.postman_collection.json
+
+@name("Get Identity Pool Roles")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.GetIdentityPoolRoles"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "GetIdentityPoolRoles"
+data('{
+   "IdentityPoolId": "string"
+}')
+
+
+@name("Set Identity Pool Roles")
+POST "https://{{aws_cognito_federated_identities_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_cognito_federated_identities_service}}", region="{{aws_cognito_federated_identities_region}}")
+"X-AMZ-TARGET": "com.amazonaws.cognito.identity.model.AWSCognitoIdentityService.SetIdentityPoolRoles"
+"Content-Type": "application/x-amz-json-1.1"
+? "Action"= "SetIdentityPoolRoles"
+data('{
+   "IdentityPoolId": "string",
+   "RoleMappings": { 
+      "string" : { 
+         "AmbiguousRoleResolution": "string",
+         "RulesConfiguration": { 
+            "Rules": [ 
+               { 
+                  "Claim": "string",
+                  "MatchType": "string",
+                  "RoleARN": "string",
+                  "Value": "string"
+               }
+            ]
+         },
+         "Type": "string"
+      }
+   },
+   "Roles": { 
+      "string" : "string" 
+   }
+}')
+
+
+

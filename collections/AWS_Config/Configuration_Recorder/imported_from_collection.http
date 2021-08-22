@@ -1,0 +1,58 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c91dd83d-104d-4e80-addf-681b006b972a.postman_collection.json
+
+@name("Delete Configuration Recorder")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DeleteConfigurationRecorder"
+data('{
+   "ConfigurationRecorderName": "string"
+}')
+
+
+@name("Describe Configuration Recorders")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "DescribeConfigurationRecorders"
+data('{
+   "ConfigurationRecorderNames": [ "string" ]
+}')
+
+
+@name("Put Configuration Recorder")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "PutConfigurationRecorder"
+data('{
+   "ConfigurationRecorder": { 
+      "name": "string",
+      "recordingGroup": { 
+         "allSupported": boolean,
+         "includeGlobalResourceTypes": boolean,
+         "resourceTypes": [ "string" ]
+      },
+      "roleARN": "string"
+   }
+}')
+
+
+@name("Start Configuration Recorder")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "StartConfigurationRecorder"
+data('{
+   "ConfigurationRecorderName": "string"
+}')
+
+
+@name("Stop Configuration Recorder")
+POST "https://{{aws_config_and_aws_config_rules_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_config_and_aws_config_rules_service}}", region="{{aws_config_and_aws_config_rules_region}}")
+? "Action"= "StopConfigurationRecorder"
+data('{
+   "ConfigurationRecorderName": "string"
+}')
+
+
+

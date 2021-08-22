@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-8ac21e87-05aa-47ce-95fc-4c15e631b3da.postman_collection.json
+
+// Query to Fetch Blocks
+
+@name("Query to Fetch Blocks")
+GET "https://{{baseUrl}}/block/:channelName/:number"
+
+
+// Query to Fetch Block Transactions
+
+@name("Query to Fetch Block Transactions")
+GET "https://{{baseUrl}}/block/transactions/:channelName/:number"
+
+
+

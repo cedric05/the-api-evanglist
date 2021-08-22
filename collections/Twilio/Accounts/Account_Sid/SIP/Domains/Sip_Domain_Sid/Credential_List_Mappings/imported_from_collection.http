@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Remove a CredentialListMapping from a domain
+
+@name("/Accounts/:AccountSid/SIP/Domains/:SipDomainSid/CredentialListMappings/{{CLSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains/:SipDomainSid/CredentialListMappings/{{CLSid}}{{mediaTypeExtension}}"
+
+
+// Remove a CredentialListMapping from a domain
+
+@name("Accounts.Account Sid.SIP.Domains.Sip Domain Sid.Credential List Mappings.CL Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/SIP/Domains/:SipDomainSid/CredentialListMappings/{{CLSid}}.json"
+
+
+

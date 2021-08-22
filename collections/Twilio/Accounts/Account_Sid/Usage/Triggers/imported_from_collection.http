@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Delete this UsageTrigger.
+
+@name("/Accounts/:AccountSid/Usage/Triggers/{{UsageTriggerSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Usage/Triggers/{{UsageTriggerSid}}{{mediaTypeExtension}}"
+
+
+// Delete this UsageTrigger.
+
+@name("Accounts.Account Sid.Usage.Triggers.Usage Trigger Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Usage/Triggers/{{UsageTriggerSid}}.json"
+
+
+

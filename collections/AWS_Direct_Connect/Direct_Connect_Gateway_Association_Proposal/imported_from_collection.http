@@ -1,0 +1,64 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c094246-719d-4054-bede-5834f64bb4b7.postman_collection.json
+
+@name("Accept Direct Connect Gateway Association Proposal")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "AcceptDirectConnectGatewayAssociationProposal"
+data('{
+   "associatedGatewayOwnerAccount": "string",
+   "directConnectGatewayId": "string",
+   "overrideAllowedPrefixesToDirectConnectGateway": [ 
+      { 
+         "cidr": "string"
+      }
+   ],
+   "proposalId": "string"
+}')
+
+
+@name("Create Direct Connect Gateway Association Proposal")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "CreateDirectConnectGatewayAssociationProposal"
+data('{
+   "addAllowedPrefixesToDirectConnectGateway": [ 
+      { 
+         "cidr": "string"
+      }
+   ],
+   "directConnectGatewayId": "string",
+   "directConnectGatewayOwnerAccount": "string",
+   "gatewayId": "string",
+   "removeAllowedPrefixesToDirectConnectGateway": [ 
+      { 
+         "cidr": "string"
+      }
+   ]
+}')
+
+
+@name("Delete Direct Connect Gateway Association Proposal")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "DeleteDirectConnectGatewayAssociationProposal"
+data('{
+   "proposalId": "string"
+}')
+
+
+@name("Describe Direct Connect Gateway Association Proposals")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "DescribeDirectConnectGatewayAssociationProposals"
+data('{
+   "associatedGatewayId": "string",
+   "directConnectGatewayId": "string",
+   "maxResults": number,
+   "nextToken": "string",
+   "proposalId": "string"
+}')
+
+
+

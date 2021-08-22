@@ -1,0 +1,39 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-27f83bb7-4ad5-4571-80f4-1fa618a02314.postman_collection.json
+
+@name("Create Configuration Template")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "Description"= ""
+? "EnvironmentId"= ""
+? "OptionSettings.member.N"= ""
+? "PlatformArn"= ""
+? "SolutionStackName"= ""
+? "SourceConfiguration"= ""
+? "Tags.member.N"= ""
+? "TemplateName"= ""
+? "Action"= "CreateConfigurationTemplate"
+
+
+@name("Delete Configuration Template")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "TemplateName"= ""
+? "Action"= "DeleteConfigurationTemplate"
+
+
+@name("Update Configuration Template")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "Description"= ""
+? "OptionSettings.member.N"= ""
+? "OptionsToRemove.member.N"= ""
+? "TemplateName"= ""
+? "Action"= "UpdateConfigurationTemplate"
+
+
+

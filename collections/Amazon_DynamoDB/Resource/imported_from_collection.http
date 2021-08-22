@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cd9b4406-c593-4cb5-89cb-6825b6ec9f1b.postman_collection.json
+
+// Associate a set of tags with an Amazon DynamoDB resource. You can then activate these user-defined tags so that they appear on the Billing and Cost Management console for cost allocation tracking. You can call TagResource up to five times per second, per account.
+
+@name("Tag Resource")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "TagResource"
+data('{
+   "ResourceArn": "arn:aws:dynamodb:us-east-1:879370021840:table/postman",
+   "Tags": [ 
+      { 
+         "Key": "Test1",
+         "Value": "Test1"
+      }
+   ]
+}')
+
+
+// Removes the association of tags from an Amazon DynamoDB resource. You can call UntagResource up to five times per second, per account.
+
+@name("Untag Resource")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.DescribeLimits"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "UntagResource"
+data('{
+   "ResourceArn": "arn:aws:dynamodb:us-east-1:879370021840:table/postman",
+   "TagKeys": [ "string" ]
+}')
+
+
+// List all tags on an Amazon DynamoDB resource. You can call ListTagsOfResource up to 10 times per second, per account.
+
+@name("List Tags Of Resource")
+POST "https://{{aws_dynamodb_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_dynamodb_service}}", region="{{aws_dynamodb_region}}")
+"X-Amz-Target": "DynamoDB_20120810.ListTagsOfResource"
+"Content-Type": "application/x-amz-json-1.0"
+? "Action"= "ListTagsOfResource"
+data('{
+   "ResourceArn": "arn:aws:dynamodb:us-east-1:879370021840:table/DevPortalCustomers"
+}')
+
+
+

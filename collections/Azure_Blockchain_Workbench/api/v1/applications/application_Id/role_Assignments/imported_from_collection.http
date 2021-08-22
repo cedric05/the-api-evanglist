@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// List all role assignments of the specified blockchain application. Users who are Workbench administrators
+//              get all role assignments. Non-Workbench administrators get all their role assignments. Roles are specified
+//              in the Workbench application configuration and can be retrieved from GET /applications/{applicationID}.
+//              Also, user information can be retrieved from GET /users/{userID}.
+
+@name("Get Applications Roleassignments")
+GET "https://{{baseUrl}}/api/v1/applications/:applicationId/roleAssignments"
+? "applicationRoleId"= "<get>"
+? "top"= "<>"
+? "skip"= "<>"
+? "sortBy"= "<>"
+
+
+// Get a role assignment of the specified blockchain application matching a specific user role assignment ID.
+//              Users who are Workbench administrators get the role assignment. Non-Workbench administrators get the role assignment
+//              if they are associated in the application.
+
+@name("Get Applications Roleassignments Roleassignmentid")
+GET "https://{{baseUrl}}/api/v1/applications/:applicationId/roleAssignments/:roleAssignmentId"
+
+
+

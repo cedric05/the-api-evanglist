@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-88ac1dc0-36c3-4a4a-99dc-96fc8b7c0608.postman_collection.json
+
+@name("Create Portfolio")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "CreatePortfolio"
+data('{"AcceptLanguage":"string","Description":"string","DisplayName":"string","IdempotencyToken":"string","ProviderName":"string","Tags":[{"Key":"string","Value":"string"}]}')
+
+
+@name("Delete Portfolio")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DeletePortfolio"
+data('{"AcceptLanguage":"string","Id":"string"}')
+
+
+@name("Describe Portfolio")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DescribePortfolio"
+data('{"AcceptLanguage":"string","Id":"string"}')
+
+
+@name("List Portfolios")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "ListPortfolios"
+data('null')
+
+
+@name("Update Portfolio")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "UpdatePortfolio"
+data('{"AcceptLanguage":"string","AddTags":[{"Key":"string","Value":"string"}],"Description":"string","DisplayName":"string","Id":"string","ProviderName":"string","RemoveTags":["string"]}')
+
+
+

@@ -1,0 +1,50 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Associates a set of DHCP options (that you've previously created) with the specified
+//                         VPC, or associates no DHCP options with the VPC.
+
+@name("Associate DHCP Options")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DhcpOptionsId"= ""
+? "DryRun"= ""
+? "VpcId"= ""
+? "Action"= "AssociateDhcpOptions"
+
+
+// Creates a set of DHCP options for your VPC.
+
+@name("Create DHCP Options")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DhcpConfiguration.N"= ""
+? "DryRun"= ""
+? "Action"= "CreateDhcpOptions"
+
+
+// Deletes the specified set of DHCP options.
+
+@name("Delete DHCP Options")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DhcpOptionsId"= ""
+? "DryRun"= ""
+? "Action"= "DeleteDhcpOptions"
+
+
+// Describes one or more of your DHCP options sets.
+
+@name("Describe DHCP Options")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DhcpOptionsId.N"= ""
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeDhcpOptions"
+
+
+

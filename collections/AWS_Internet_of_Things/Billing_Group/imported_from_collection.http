@@ -1,0 +1,30 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-396d9363-dad9-4f4b-8418-119dc20d1211.postman_collection.json
+
+@name("Create Billing Group")
+GET "https://{{aws_internet_of_things_base_url}}/billing-groups/billingGroupName&billingGroupName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Delete Billing Group")
+GET "https://{{aws_internet_of_things_base_url}}/billing-groups/billingGroupName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Describe Billing Group")
+GET "https://{{aws_internet_of_things_base_url}}/billing-groups/billingGroupName&billingGroupName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("List Billing Groups")
+GET "https://{{aws_internet_of_things_base_url}}/billing-groups"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+@name("Update Billing Group")
+GET "https://{{aws_internet_of_things_base_url}}/billing-groups/billingGroupName&billingGroupName="
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_internet_of_things_service}}", region="{{aws_internet_of_things_region}}")
+
+
+

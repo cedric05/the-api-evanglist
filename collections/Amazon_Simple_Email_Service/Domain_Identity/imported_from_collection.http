@@ -1,0 +1,10 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-553416a4-8450-4e81-a6ac-b0e48ca5c195.postman_collection.json
+
+@name("Verify Domain Identity")
+GET "https://{{aws_simple_email_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_simple_email_service_service}}", region="{{aws_simple_email_service_region}}")
+
+
+

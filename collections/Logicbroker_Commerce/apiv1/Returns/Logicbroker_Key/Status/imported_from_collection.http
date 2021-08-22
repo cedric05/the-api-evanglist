@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-39359504-af25-4f48-954b-e7dd332ed9ff.postman_collection.json
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Retrieve return status")
+GET "https://{{baseUrl}}/api/v1/Returns/:LogicbrokerKey/Status"
+
+
+// Request rate limited to 10 requests per second with bursts up to 100 requests.
+
+@name("Update return status")
+PUT "https://{{baseUrl}}/api/v1/Returns/:LogicbrokerKey/Status/:Status"
+
+
+

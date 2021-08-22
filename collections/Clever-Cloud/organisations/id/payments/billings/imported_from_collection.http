@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("get Organisations Id Payments Billings")
+GET "https://{{baseUrl}}/organisations/:id/payments/billings"
+
+
+@name("/organisations/:id/payments/billings/unpaid")
+GET "https://{{baseUrl}}/organisations/:id/payments/billings/unpaid"
+
+
+@name("delete Organisations Id Payments Billings Bid")
+DELETE "https://{{baseUrl}}/organisations/:id/payments/billings/:bid"
+
+
+@name("get Organisations Id Payments Billings Bid Pdf")
+GET "https://{{baseUrl}}/organisations/:id/payments/billings/{{bid}}.pdf"
+? "token"= "<string>"
+
+
+

@@ -1,0 +1,55 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// Aborts the bulk upload and all its child jobs
+
+@name("Get Service Bulkupload Action Abort")
+GET "https://{{baseUrl}}/service/bulkupload/action/abort"
+? "id"= "<>"
+
+
+// Add new bulk upload batch job
+// 
+// Conversion profile id can be specified in the API or in the CSV file, the one in the CSV file will be stronger.
+// 
+// If no conversion profile was specified, partner's default will be used
+
+@name("Post Service Bulkupload Action Add")
+POST "https://{{baseUrl}}/service/bulkupload/action/add"
+? "conversionProfileId"= "<>"
+? "bulkUploadType"= "<>"
+? "uploadedBy"= "<>"
+? "fileName"= "<>"
+
+
+// Get bulk upload batch job by id
+
+@name("Get Service Bulkupload Action Get")
+GET "https://{{baseUrl}}/service/bulkupload/action/get"
+? "id"= "<>"
+
+
+// List bulk upload batch jobs
+
+@name("Get Service Bulkupload Action List")
+GET "https://{{baseUrl}}/service/bulkupload/action/list"
+? "pager[pageSize]"= "<>"
+? "pager[pageIndex]"= "<>"
+
+
+// serve action returan the original file.
+
+@name("Get Service Bulkupload Action Serve")
+GET "https://{{baseUrl}}/service/bulkupload/action/serve"
+? "id"= "<>"
+
+
+// serveLog action returan the original file.
+
+@name("Get Service Bulkupload Action Servelog")
+GET "https://{{baseUrl}}/service/bulkupload/action/serveLog"
+? "id"= "<>"
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Describes the running instances for the specified Spot Fleet.
+
+@name("Describe Spot Fleet Instances")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "SpotFleetRequestId"= ""
+? "Action"= "DescribeSpotFleetInstances"
+
+
+

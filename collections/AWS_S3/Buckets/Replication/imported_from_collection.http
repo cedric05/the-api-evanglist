@@ -1,0 +1,93 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// Returns the replication configuration of a bucket.
+
+@name("Bucket Replication")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "replication"= ""
+
+
+// Creates a replication configuration or replaces an existing one. 
+
+@name("Bucket Replication")
+PUT "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="n7c8pc1DLpO4451iVSAWmZXfntrZnOv5g8/VWSiX", service="s3", region="us-east-1")
+"Content-MD5": "{{contentMD5}}"
+"x-amz-bucket-object-lock-token": "Token"
+? "replication"= ""
+data('<?xml version="1.0" encoding="UTF-8"?>
+<ReplicationConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <Role>string</Role>
+   <Rule>
+      <DeleteMarkerReplication>
+         <Status>string</Status>
+      </DeleteMarkerReplication>
+      <Destination>
+         <AccessControlTranslation>
+            <Owner>string</Owner>
+         </AccessControlTranslation>
+         <Account>string</Account>
+         <Bucket>string</Bucket>
+         <EncryptionConfiguration>
+            <ReplicaKmsKeyID>string</ReplicaKmsKeyID>
+         </EncryptionConfiguration>
+         <Metrics>
+            <EventThreshold>
+               <Hours>integer</Hours>
+               <Minutes>integer</Minutes>
+            </EventThreshold>
+            <Status>string</Status>
+         </Metrics>
+         <ReplicationTime>
+            <Status>string</Status>
+            <Time>
+               <Hours>integer</Hours>
+               <Minutes>integer</Minutes>
+            </Time>
+         </ReplicationTime>
+         <StorageClass>string</StorageClass>
+      </Destination>
+      <ExistingObjectReplication>
+         <Status>string</Status>
+      </ExistingObjectReplication>
+      <Filter>
+         <And>
+            <Prefix>string</Prefix>
+            <Tag>
+               <Key>string</Key>
+               <Value>string</Value>
+            </Tag>
+         </And>
+         <Prefix>string</Prefix>
+         <Tag>
+            <Key>string</Key>
+            <Value>string</Value>
+         </Tag>
+      </Filter>
+      <ID>string</ID>
+      <Prefix>string</Prefix>
+      <Priority>integer</Priority>
+      <SourceSelectionCriteria>
+         <SseKmsEncryptedObjects>
+            <Status>string</Status>
+         </SseKmsEncryptedObjects>
+      </SourceSelectionCriteria>
+      <Status>string</Status>
+   </Rule>
+</ReplicationConfiguration>')
+
+
+// Deletes the replication configuration from the bucket. 
+
+@name("Delete Bucket Replication")
+DELETE "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+? "replication"= ""
+
+
+
+

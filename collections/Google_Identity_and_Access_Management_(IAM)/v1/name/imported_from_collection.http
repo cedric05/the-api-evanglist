@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-4aedc076-3cdf-4f20-9168-188e87d98d36.postman_collection.json
+
+// Deletes a ServiceAccountKey.
+
+@name("Delete Service Account Key")
+DELETE "https://{{baseUrl}}/v1/:name"
+
+
+// Lists ServiceAccountKeys.
+
+@name("Get Service Account Keys")
+GET "https://{{baseUrl}}/v1/:name/keys"
+? "keyTypes"= "<>"
+
+
+// Lists ServiceAccounts for a project.
+
+@name("Get Service Accounts")
+GET "https://{{baseUrl}}/v1/:name/serviceAccounts"
+? "pageToken"= "<>"
+? "pageSize"= "<>"
+
+
+

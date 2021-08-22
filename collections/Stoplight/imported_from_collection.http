@@ -1,0 +1,11 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-1ce61c81-8be7-4ef1-b21e-da7d64e5fdad.postman_collection.json
+
+// Anonymously publish to API Docs.  This endpoint will take a JSON spec or a URL to a swagger or raml spec.  ``` {   "specData": {...} } ```  or  ``` {   "url": "http://petstore.swagger.io/v2/swagger.json" } ```  The spec will be published to api-docs.io anonymously, which means you will not be able to update or remove this documentation.  The response will contain a url to the published documentation.  ``` {   "url": "https://swagger-petstore.api-docs.io/v1.0.0" } ```   The limitations of anonymo
+
+@name("Publish Anonymous")
+POST "https://{{baseUrl}}/versions/publish/anon"
+
+
+

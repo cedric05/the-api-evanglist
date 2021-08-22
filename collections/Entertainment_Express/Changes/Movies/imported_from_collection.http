@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-10c0a3a1-a4b5-4b4e-a83f-05d8a5e056fb.postman_collection.json
+
+// Use to get the ID's of the movies that have been added or changed and use /Movies/{ID} to get back the object with the updated data and replace in your database.
+
+@name("Returns list of unique MovieId changes greater than or equal to date (UTC).")
+GET "https://{{baseUrl}}/Changes/Movies/History/"
+? "Date"= "<get>"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+// Same as /Changes/Movies/History but with the specific entities that have changed inside the MovieResponse.
+
+@name("
+Returns list of unique MovieId and Entity changes greater than or equal to date (UTC).")
+GET "https://{{baseUrl}}/Changes/Movies/HistoryWithEntity/"
+? "Date"= "<get>"
+? "Skip"= "<get>"
+? "Take"= "<get>"
+
+
+

@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e8996367-eb05-4e8c-bb28-641af265ab9d.postman_collection.json
+
+// Gets the smart contract instance matching a specific contract ID. Users who are Workbench
+//              administrators get the smart contract instance. Non-Workbench administrators get the smart contract instance
+//              if they have at least one associated application role or is associated with the smart contract instance.
+
+@name("Get Contracts")
+GET "https://{{baseUrl}}/api/v1/contracts/:contractId"
+
+
+

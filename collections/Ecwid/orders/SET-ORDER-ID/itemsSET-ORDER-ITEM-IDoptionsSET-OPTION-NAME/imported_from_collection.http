@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-2385bc1c-0a4b-4999-b146-1ed6253f87fb.postman_collection.json
+
+// Upload a new product option file for a purchased item.
+
+@name("Upload a new product option file for a purchased item")
+POST "https://{{baseUrl}}/orders/SET-ORDER-ID/items/SET-ORDER-ITEM-ID/options/SET-OPTION-NAME"
+"Content": "<>"
+? "fileName"= "<>"
+? "token"= "<>"
+
+
+// Delete a product option file.
+
+@name("Delete a product option file")
+DELETE "https://{{baseUrl}}/orders/SET-ORDER-ID/items/SET-ORDER-ITEM-ID/options/SET-OPTION-NAME/files/SET-FILE-ID"
+"Content": "<>"
+? "token"= "<>"
+
+
+

@@ -1,0 +1,20 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-e67b3188-27a3-4cc3-85ac-f2a6f45a3e20.postman_collection.json
+
+// <p>Returns a list of private keys. Can optionally sort the resulting list in ascending or
+//  descending order. Other params given will be used as search values.</p>
+//  <p class="italicize">Examples:</p>
+//  <div class="code indent"><pre>/restman/1.0/privateKeys?alias=mykey</pre></div>
+//  <p>Returns the private key with alias "mykey"</p>
+//  <p>If a parameter is not a valid search value a bad request error will be returned.</p>
+// List
+
+@name("List All Private Keys")
+GET "https://{{baseUrl}}/1.0/privateKeys"
+? "sort"= "<string>"
+? "order"= "<string>"
+? "alias"= "<array>"
+
+
+

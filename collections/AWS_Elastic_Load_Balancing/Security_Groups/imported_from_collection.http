@@ -1,0 +1,13 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f36ec15d-77e5-4ff0-a015-df5de66428d7.postman_collection.json
+
+@name("Set Security Groups")
+GET "https://{{aws_elastic_load_balancing_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_load_balancing_service}}", region="{{aws_elastic_load_balancing_region}}")
+? "LoadBalancerArn"= ""
+? "SecurityGroups.member.N"= ""
+? "Action"= "SetSecurityGroups"
+
+
+

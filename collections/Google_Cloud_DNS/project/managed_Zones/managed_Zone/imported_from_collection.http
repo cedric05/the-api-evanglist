@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-04144c4b-1296-424d-8a98-b2ae6373c414.postman_collection.json
+
+// Delete a previously created ManagedZone.
+
+@name("Delete Managed Zone")
+DELETE "https://{{baseUrl}}/:project/managedZones/:managedZone"
+
+
+// Enumerate ResourceRecordSets that have been created but not yet deleted.
+
+@name("Get Managed Zone Resources")
+GET "https://{{baseUrl}}/:project/managedZones/:managedZone/rrsets"
+? "maxResults"= "<>"
+? "name"= "<parameters>"
+? "pageToken"= "<>"
+? "type"= "<parameters>"
+
+
+

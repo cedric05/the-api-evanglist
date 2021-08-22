@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f8f59125-1395-4941-8451-63f60c3e21eb.postman_collection.json
+
+// Get list of recordings
+
+@name("Get Recordings")
+GET "https://{{baseUrl}}/recordings"
+? "start"= "<string>"
+? "end"= "<string>"
+
+
+// Get metadata of one recording.
+
+@name("Get Recordings")
+GET "https://{{baseUrl}}/recordings/:id"
+
+
+// Get recodring soundfile.
+
+@name("Get Recordings")
+GET "https://{{baseUrl}}/recordings/{{id}}.wav"
+
+
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve pipeline details for an organization
+
+@name("get Pipeline")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline"
+? "No Name"= "<string>"
+
+
+// Retrieve all activities details for an organization pipeline
+
+@name("get Pipeline Activities")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/activities"
+? "No Name"= "<string>"
+
+
+// Favorite/unfavorite a pipeline
+
+@name("put Pipeline Favorite")
+PUT "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/favorite"
+? "No Name"= "<string>"
+
+
+

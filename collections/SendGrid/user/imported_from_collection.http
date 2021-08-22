@@ -1,0 +1,94 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// We send all emails with Opportunistic TLS. We send the email with TLS, and if the recipient's inbox provider does not accept the TLS encryption, we then send the message unencrypted.
+// 
+// Use this method to enforce TLS encryption - this means that if the recipient's inbox provider does not accept the TLS encryption, we drop the message and send a block event with “TLS required but not supported” as the description.
+// 
+// > We support TLS 1.1 and higher and do not support older versions of TLS due to
+
+@name("Update Enforced TLS settings")
+PATCH "https://{{baseUrl}}/user/settings/enforced_tls"
+
+
+// **This endpoint allows you to cancel or pause an email that has been scheduled to be sent.**
+// 
+// If the maximum number of cancellations/pauses are added, HTTP 400 will
+// be returned.
+// 
+// The Cancel Scheduled Sends feature allows the customer to cancel a scheduled send based on a Batch ID included in the SMTPAPI header. Scheduled sends cancelled less than 10 minutes before the scheduled time are not guaranteed to be cancelled.
+
+@name("Cancel or pause a scheduled send")
+POST "https://{{baseUrl}}/user/scheduled_sends"
+
+
+// Keeping your user profile up to date is important. This will help SendGrid to verify who you are as well as contact you should we need to.
+// 
+// For more information about your user profile:
+// 
+// * [SendGrid Account Settings](https://sendgrid.com/docs/User_Guide/Settings/account.html)
+
+@name("Get a user's profile")
+GET "https://{{baseUrl}}/user/profile"
+
+
+// **This endpoint allows you to retrieve the email address currently on file for your account.**
+// 
+// Keeping your user profile up to date is important. This will help SendGrid to verify who you are as well as contact you should we need to.
+// 
+// For more information about your user profile:
+// 
+// * [SendGrid Account Settings](https://sendgrid.com/docs/User_Guide/Settings/account.html)
+
+@name("Retrieve your account email address")
+GET "https://{{baseUrl}}/user/email"
+
+
+// **This endpoint allows you to update your password.**
+// 
+// Keeping your user profile up to date is important. This will help SendGrid to verify who you are as well as contact you should we need to.
+// 
+// For more information about your user profile:
+// 
+// * [SendGrid Account Settings](https://sendgrid.com/docs/User_Guide/Settings/account.html)
+
+@name("Update your password")
+PUT "https://{{baseUrl}}/user/password"
+
+
+// **This endpoint allows you to retrieve your current account username.**
+// 
+// Keeping your user profile up to date is important. This will help SendGrid to verify who you are as well as contact you should we need to.
+// 
+// For more information about your user profile:
+// 
+// * [SendGrid Account Settings](https://sendgrid.com/docs/User_Guide/Settings/account.html)
+
+@name("Retrieve your username")
+GET "https://{{baseUrl}}/user/username"
+
+
+// **This endpoint allows you to retrieve the current credit balance for your account.**
+// 
+// Your monthly credit allotment limits the number of emails you may send before incurring overage charges. For more information about credits and billing, see [Billing and Plan details information](https://sendgrid.com/docs/User_Guide/Settings/billing.html).
+
+@name("Retrieve your credit balance")
+GET "https://{{baseUrl}}/user/credits"
+
+
+// **This endpoint allows you to retrieve your user account details.**
+// 
+// Your user's account information includes the user's account type and reputation.
+// 
+// Keeping your user profile up to date is important. This will help SendGrid to verify who you are as well as contact you should we need to.
+// 
+// For more information about your user profile:
+// 
+// * [SendGrid Account Settings](https://sendgrid.com/docs/User_Guide/Settings/account.html)
+
+@name("Get a user's account information.")
+GET "https://{{baseUrl}}/user/account"
+
+
+

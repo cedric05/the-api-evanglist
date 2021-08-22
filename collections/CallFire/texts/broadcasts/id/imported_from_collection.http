@@ -1,0 +1,66 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Returns a single TextBroadcast instance for a given text broadcast id
+
+@name("Find a specific text broadcast")
+GET "https://{{baseUrl}}/texts/broadcasts/:id"
+? "fields"= "<string>"
+
+
+// Archives a text broadcast (and hides it in the search results)
+
+@name("Archive text broadcast")
+POST "https://{{baseUrl}}/texts/broadcasts/:id/archive"
+
+
+// This endpoint will enable the user to page through all of the batches for a particular text broadcast campaign
+
+@name("Find batches in a text broadcast")
+GET "https://{{baseUrl}}/texts/broadcasts/:id/batches"
+? "fields"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+
+
+// Use this API to add recipients to a text broadcast which is already created. Post a list of Recipient objects to be immediately added to the text broadcast campaign. These contacts will not go through validation process, and will be acted upon as they are added. Recipients may be added as a list of contact ids, or list of numbers
+
+@name("Add recipients to a text broadcast")
+POST "https://{{baseUrl}}/texts/broadcasts/:id/recipients"
+? "fields"= "<string>"
+? "strictValidation"= "<boolean>"
+
+
+// Starts a text broadcast
+
+@name("Start text broadcast")
+POST "https://{{baseUrl}}/texts/broadcasts/:id/start"
+
+
+// Returns the broadcast statistics. Example: total number of the sent/received actions, total cost, number of remaining outbound actions, error count, etc
+
+@name("Get statistics on text broadcast")
+GET "https://{{baseUrl}}/texts/broadcasts/:id/stats"
+? "fields"= "<string>"
+? "begin"= "<integer>"
+? "end"= "<integer>"
+
+
+// Stops a text broadcast
+
+@name("Stop text broadcast")
+POST "https://{{baseUrl}}/texts/broadcasts/:id/stop"
+
+
+// This endpoint will enable the user to page through all of the texts for a particular text broadcast campaign
+
+@name("Find texts in a text broadcast")
+GET "https://{{baseUrl}}/texts/broadcasts/:id/texts"
+? "batchId"= "<integer>"
+? "fields"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+
+
+

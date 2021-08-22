@@ -1,0 +1,54 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to update one or more recipients.**
+// 
+// The body of an API call to this endpoint must include an array of one or more recipient objects.
+// 
+// It is of note that you can add custom field data as parameters on recipient objects. We have provided an example using some of the default custom fields SendGrid provides.
+// 
+// The contactdb is a database of your contacts for [SendGrid Marketing Campaigns](https://sendgrid.com/docs/User_Guide/Marketing_Campaigns/index.html).
+
+@name("Update Recipient")
+PATCH "https://{{baseUrl}}/contactdb/recipients"
+
+
+// **This endpoint allows you to retrieve the total number of Marketing Campaigns recipients.**
+// 
+// The contactdb is a database of your contacts for [SendGrid Marketing Campaigns](https://sendgrid.com/docs/User_Guide/Marketing_Campaigns/index.html).
+
+@name("Retrieve a Count of Recipients")
+GET "https://{{baseUrl}}/contactdb/recipients/count"
+
+
+// Search using segment conditions without actually creating a segment.
+//   Body contains a JSON object with conditions, a list of conditions as described below, and an optional list_id, which is a valid list ID for a list to limit the search on.
+// 
+// 
+// 
+//   Valid operators for create and update depend on the type of the field for which you are searching.
+// 
+// 
+// 
+//   Dates:
+//     
+//       "eq", "ne", "lt" (before), "gt" (after)
+//         
+//           You m
+
+@name("Search recipients")
+POST "https://{{baseUrl}}/contactdb/recipients/search"
+
+
+// **This endpoint allows you to retrieve the number of Marketing Campaigns recipients that you will be billed for.**
+// 
+// You are billed for marketing campaigns based on the highest number of recipients you have had in your account at one time. This endpoint will allow you to know the current billable count value.
+// 
+// The Contacts API helps you manage your [Marketing Campaigns](https://sendgrid.com/docs/User_Guide/Marketing_Campaigns/index.html) recipients.
+
+@name("Retrieve the count of billable recipients")
+GET "https://{{baseUrl}}/contactdb/recipients/billable_count"
+
+
+

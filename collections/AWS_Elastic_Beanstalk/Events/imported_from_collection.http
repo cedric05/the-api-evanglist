@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-27f83bb7-4ad5-4571-80f4-1fa618a02314.postman_collection.json
+
+@name("Describe Events")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "EndTime"= ""
+? "EnvironmentId"= ""
+? "EnvironmentName"= ""
+? "MaxRecords"= ""
+? "NextToken"= ""
+? "PlatformArn"= ""
+? "RequestId"= ""
+? "Severity"= ""
+? "StartTime"= ""
+? "TemplateName"= ""
+? "VersionLabel"= ""
+? "Action"= "DescribeEvents"
+
+
+

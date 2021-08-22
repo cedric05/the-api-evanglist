@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-438c1bb3-fd17-4abc-9513-4f1edde0dc3d.postman_collection.json
+
+// creates all required jobs according to entry distribution dirty flags
+
+@name("Get Service Contentdistribution Contentdistributionbatch Action Createrequiredjobs")
+GET "https://{{baseUrl}}/service/contentdistribution_contentdistributionbatch/action/createRequiredJobs"
+
+
+// returns absolute valid url for asset file
+
+@name("Get Service Contentdistribution Contentdistributionbatch Action Getasseturl")
+GET "https://{{baseUrl}}/service/contentdistribution_contentdistributionbatch/action/getAssetUrl"
+? "assetId"= "<>"
+
+
+// updates entry distribution sun status in the search engine
+
+@name("Get Service Contentdistribution Contentdistributionbatch Action Updatesunstatus")
+GET "https://{{baseUrl}}/service/contentdistribution_contentdistributionbatch/action/updateSunStatus"
+
+
+

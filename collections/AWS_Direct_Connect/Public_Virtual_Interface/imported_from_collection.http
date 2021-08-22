@@ -1,0 +1,73 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9c094246-719d-4054-bede-5834f64bb4b7.postman_collection.json
+
+@name("Allocate Public Virtual Interface")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "AllocatePublicVirtualInterface"
+data('{
+   "connectionId": "string",
+   "newPublicVirtualInterfaceAllocation": { 
+      "addressFamily": "string",
+      "amazonAddress": "string",
+      "asn": number,
+      "authKey": "string",
+      "customerAddress": "string",
+      "routeFilterPrefixes": [ 
+         { 
+            "cidr": "string"
+         }
+      ],
+      "tags": [ 
+         { 
+            "key": "string",
+            "value": "string"
+         }
+      ],
+      "virtualInterfaceName": "string",
+      "vlan": number
+   },
+   "ownerAccount": "string"
+}')
+
+
+@name("Confirm Public Virtual Interface")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "ConfirmPublicVirtualInterface"
+data('{
+   "virtualInterfaceId": "string"
+}')
+
+
+@name("Create Public Virtual Interface")
+POST "https://{{aws_direct_connect_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_direct_connect_service}}", region="{{aws_direct_connect_region}}")
+? "Action"= "CreatePublicVirtualInterface"
+data('{
+   "connectionId": "string",
+   "newPublicVirtualInterface": { 
+      "addressFamily": "string",
+      "amazonAddress": "string",
+      "asn": number,
+      "authKey": "string",
+      "customerAddress": "string",
+      "routeFilterPrefixes": [ 
+         { 
+            "cidr": "string"
+         }
+      ],
+      "tags": [ 
+         { 
+            "key": "string",
+            "value": "string"
+         }
+      ],
+      "virtualInterfaceName": "string",
+      "vlan": number
+   }
+}')
+
+
+

@@ -1,0 +1,42 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Associates a target network with a Client VPN endpoint.
+
+@name("Associate Client VPN Target Network")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "ClientVpnEndpointId"= ""
+? "DryRun"= ""
+? "SubnetId"= ""
+? "Action"= "AssociateClientVpnTargetNetwork"
+
+
+// Describes the target networks associated with the specified Client VPN endpoint.
+
+@name("Describe Client VPN Target Networks")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AssociationIds.N"= ""
+? "ClientVpnEndpointId"= ""
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeClientVpnTargetNetworks"
+
+
+// Disassociates a target network from the specified Client VPN endpoint.
+
+@name("Disassociate Client VPN Target Network")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AssociationId"= ""
+? "ClientVpnEndpointId"= ""
+? "DryRun"= ""
+? "Action"= "DisassociateClientVpnTargetNetwork"
+
+
+

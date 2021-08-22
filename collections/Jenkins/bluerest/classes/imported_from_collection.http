@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Get classes details
+
+@name("search Classes")
+GET "https://{{baseUrl}}/blue/rest/classes/"
+? "q"= "<string>"
+
+
+// Get a list of class names supported by a given class
+
+@name("get Classes")
+GET "https://{{baseUrl}}/blue/rest/classes/:class"
+? "No Name"= "<string>"
+
+
+

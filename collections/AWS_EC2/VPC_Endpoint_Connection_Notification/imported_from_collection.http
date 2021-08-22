@@ -1,0 +1,56 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Creates a connection notification for a specified VPC endpoint or VPC endpoint
+//                         service.
+
+@name("Create VPC Endpoint Connection Notification")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "ConnectionEvents.N"= ""
+? "ConnectionNotificationArn"= ""
+? "DryRun"= ""
+? "ServiceId"= ""
+? "VpcEndpointId"= ""
+? "Action"= "CreateVpcEndpointConnectionNotification"
+
+
+// Deletes one or more VPC endpoint connection notifications.
+
+@name("Delete VPC Endpoint Connection Notifications")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ConnectionNotificationId.N"= ""
+? "DryRun"= ""
+? "Action"= "DeleteVpcEndpointConnectionNotifications"
+
+
+// Describes the connection notifications for VPC endpoints and VPC endpoint
+//                         services.
+
+@name("Describe VPC Endpoint Connection Notifications")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ConnectionNotificationId"= ""
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "Action"= "DescribeVpcEndpointConnectionNotifications"
+
+
+// Modifies a connection notification for VPC endpoint or VPC endpoint service.
+
+@name("Modify VPC Endpoint Connection Notification")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ConnectionEvents.N"= ""
+? "ConnectionNotificationArn"= ""
+? "ConnectionNotificationId"= ""
+? "DryRun"= ""
+? "Action"= "ModifyVpcEndpointConnectionNotification"
+
+
+

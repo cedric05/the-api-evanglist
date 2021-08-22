@@ -1,0 +1,66 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-fe320505-de36-47c1-9e68-70b392d9de17.postman_collection.json
+
+// Returns a single CallBroadcast instance for a given call broadcast campaign id
+
+@name("Find a specific call broadcast")
+GET "https://{{baseUrl}}/calls/broadcasts/:id"
+? "fields"= "<string>"
+
+
+// Archives a voice broadcast (voice broadcast will be hidden in search results)
+
+@name("Archive voice broadcast")
+POST "https://{{baseUrl}}/calls/broadcasts/:id/archive"
+
+
+// This endpoint will enable the user to page through all of the batches for a particular voice broadcast campaign
+
+@name("Find batches in a call broadcast")
+GET "https://{{baseUrl}}/calls/broadcasts/:id/batches"
+? "fields"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+
+
+// This endpoint will enable the user to page through all calls for a particular call broadcast campaign
+
+@name("Find calls in a call broadcast")
+GET "https://{{baseUrl}}/calls/broadcasts/:id/calls"
+? "batchId"= "<integer>"
+? "fields"= "<string>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+
+
+// Use this API to add the recipients to an existing voice broadcast. Post a list of Recipient objects to be added to the voice broadcast campaign. These contacts will not go through validation process, and will be acted upon as they are added. Recipients may be added as a list of contact ids, or list of numbers
+
+@name("Add recipients to a call broadcast")
+POST "https://{{baseUrl}}/calls/broadcasts/:id/recipients"
+? "fields"= "<string>"
+? "strictValidation"= "<boolean>"
+
+
+// Start a voice broadcast
+
+@name("Start voice broadcast")
+POST "https://{{baseUrl}}/calls/broadcasts/:id/start"
+
+
+// Returns broadcast statistics like total number of sent/received actions, total cost, number of remaining outbound actions, error count, etc
+
+@name("Get statistics on call broadcast")
+GET "https://{{baseUrl}}/calls/broadcasts/:id/stats"
+? "fields"= "<string>"
+? "begin"= "<integer>"
+? "end"= "<integer>"
+
+
+// Stop a voice broadcast
+
+@name("Stop voice broadcast")
+POST "https://{{baseUrl}}/calls/broadcasts/:id/stop"
+
+
+

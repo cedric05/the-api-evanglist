@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Get the list of Credentials in a CredentialList. The passwords for the Credentials are intentionally not returned so as to protect them.
+
+@name("/Accounts/:AccountSid/SIP/CredentialLists/:CLSid/Credentials{{mediaTypeExtension}}")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/CredentialLists/:CLSid/Credentials{{mediaTypeExtension}}"
+
+
+// Get the list of Credentials in a CredentialList. The passwords for the Credentials are intentionally not returned so as to protect them.
+
+@name("Accounts.Account Sid.SIP.Credential Lists.CL Sid.Credentials.json.get")
+GET "https://{{baseUrl}}/Accounts/:AccountSid/SIP/CredentialLists/:CLSid/Credentials.json"
+
+
+

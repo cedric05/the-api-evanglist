@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-88ac1dc0-36c3-4a4a-99dc-96fc8b7c0608.postman_collection.json
+
+@name("Create Provisioning Artifact")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "CreateProvisioningArtifact"
+data('{"AcceptLanguage":"string","IdempotencyToken":"string","Parameters":{"Description":"string","DisableTemplateValidation":1,"Info":{"string":"string"},"Name":"string","Type":"string"},"ProductId":"string"}')
+
+
+@name("Delete Provisioning Artifact")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DeleteProvisioningArtifact"
+data('{"AcceptLanguage":"string","ProductId":"string","ProvisioningArtifactId":"string"}')
+
+
+@name("Describe Provisioning Artifact")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "DescribeProvisioningArtifact"
+data('{"AcceptLanguage":"string","ProductId":"string","ProvisioningArtifactId":"string","Verbose":1}')
+
+
+@name("List Provisioning Artifacts")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "ListProvisioningArtifacts"
+data('{"AcceptLanguage":"string","ProductId":"string"}')
+
+
+@name("Update Provisioning Artifact")
+POST "https://{{aws_service_catalog_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_service_catalog_service}}", region="{{aws_service_catalog_region}}")
+? "Action"= "UpdateProvisioningArtifact"
+data('{"AcceptLanguage":"string","Active":1,"Description":"string","Guidance":"string","Name":"string","ProductId":"string","ProvisioningArtifactId":"string"}')
+
+
+

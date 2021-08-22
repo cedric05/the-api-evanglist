@@ -1,0 +1,176 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve your email statistics segmented by browser type.**
+// 
+// **We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.
+// 
+// Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about s
+
+@name("Retrieve email statistics by browser.")
+GET "https://{{baseUrl}}/browsers/stats"
+? "start_date"= "<string>"
+? "end_date"= "<string>"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "aggregated_by"= "<string>"
+? "browsers"= "<string>"
+
+
+// **This endpoint allows you to retrieve your email statistics segmented by the device type.**
+// 
+// **We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.
+// 
+// ## Available Device Types
+// | **Device** | **Description** | **Example** |
+// |---|---|---|
+// | Desktop | Email software on desktop computer. | I.E., Outlook, Sparrow, or Apple Mail. |
+// | Webmail |	A web-based email client. | I.E., Yahoo, Google, AOL, or Out
+
+@name("Retrieve email statistics by device type.")
+GET "https://{{baseUrl}}/devices/stats"
+? "end_date"= "<string>"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "aggregated_by"= "<string>"
+? "start_date"= "<string>"
+
+
+// **This endpoint allows you to retrieve all transactional templates.**
+// 
+// Each user can create up to 300 different transactional templates. Transactional templates are specific to accounts and subusers. Templates created on a parent account will not be accessible from the subuser accounts.
+// 
+// Transactional templates are templates created specifically for transactional email and are not to be confused with [Marketing Campaigns templates](https://sendgrid.com/docs/ui/sending-email/working-with-marketin
+
+@name("Retrieve paged transactional templates.")
+GET "https://{{baseUrl}}/templates"
+? "generations"= "<string>"
+? "page_size"= "<integer>"
+? "page_token"= "<string>"
+
+
+// **This endpoint allows you to create a campaign.**
+// 
+// Our Marketing Campaigns API lets you create, manage, send, and schedule campaigns.
+// 
+// Note: In order to send or schedule the campaign, you will be required to provide a subject, sender ID, content (we suggest both html and plain text), and at least one list or segment ID. This information is not required when you create a campaign.
+// 
+// For more information:
+// 
+// * [User Guide > Marketing Campaigns](https://sendgrid.com/docs/User_Guide/Marketing_Campaign
+
+@name("Create a Campaign")
+POST "https://{{baseUrl}}/campaigns"
+
+
+// **This endpoint allows you to create a new alert.**
+// 
+// Alerts allow you to specify an email address to receive notifications regarding your email usage or statistics. There are two types of alerts that can be created with this endpoint:
+// 
+// * `usage_limit` allows you to set the threshold at which an alert will be sent.
+// * `stats_notification` allows you to set how frequently you would like to receive email statistics reports. For example, "daily", "weekly", or "monthly".
+// 
+// For more information about al
+
+@name("Create a new Alert")
+POST "https://{{baseUrl}}/alerts"
+
+
+// **This endpoint allows you to create a new random API Key for the user.**
+// 
+// A JSON request body containing a "name" property is required. If number of maximum keys is reached, HTTP 403 will be returned.
+// 
+// There is a limit of 100 API Keys on your account.
+// 
+// The API Keys feature allows customers to be able to generate an API Key credential which can be used for authentication with the SendGrid v3 Web API or the [Mail API Endpoint](https://sendgrid.api-docs.io/v3.0/mail-send/v3-mail-send).
+// 
+// See the [A
+
+@name("Create API keys")
+POST "https://{{baseUrl}}/api_keys"
+
+
+// **This endpoint allows you to retrieve your email statistics segmented by client type.**
+// 
+// **We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.
+// 
+// Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about st
+
+@name("Retrieve email statistics by client type.")
+GET "https://{{baseUrl}}/clients/stats"
+? "start_date"= "<string>"
+? "end_date"= "<string>"
+? "aggregated_by"= "<string>"
+
+
+// **This endpoint allows you to retrieve your email statistics segmented by country and state/province.**
+// 
+// **We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.
+// 
+// Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more infor
+
+@name("Retrieve email statistics by country and state/province.")
+GET "https://{{baseUrl}}/geo/stats"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "aggregated_by"= "<string>"
+? "start_date"= "<string>"
+? "end_date"= "<string>"
+? "country"= "<string>"
+
+
+// **This endpoint allows you to retrieve your email statistics segmented by recipient mailbox provider.**
+// 
+// **We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.
+// 
+// Advanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more infor
+
+@name("Retrieve email statistics by mailbox provider.")
+GET "https://{{baseUrl}}/mailbox_providers/stats"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "aggregated_by"= "<string>"
+? "start_date"= "<string>"
+? "end_date"= "<string>"
+? "mailbox_providers"= "<string>"
+
+
+// **This endpoint allows you to create a new sender identity.**
+// 
+// *You may create up to 100 unique sender identities.*
+// 
+// Sender Identities are required to be verified before use. If your domain has been whitelabeled it will auto verify on creation. Otherwise an email will be sent to the `from.email`.
+
+@name("Create a Sender Identity")
+POST "https://{{baseUrl}}/senders"
+
+
+// Use this information to send the SendGrid generated DNS information to a coworker so they can enter it into your DNS providor to validate your domain or link branding. 
+// 
+// If you choose to use Automated Security, SendGrid provides you with 3 CNAME records. If you turn Automated Security off, you are given 2 TXT records and 1 MX record. This call sends this information to your coworker.
+
+@name("Email DNS records to a coworker")
+POST "https://{{baseUrl}}/v3/whitelabel/dns/email"
+
+
+// Use this method to validate an email address.
+
+@name("Validate an email")
+POST "https://{{baseUrl}}/validations/email"
+
+
+// **This endpoint allows you to retrieve all of your global email statistics between a given date range.**
+// 
+// Parent accounts will see aggregated stats for their account and all subuser accounts. Subuser accounts will only see their own stats.
+
+@name("Retrieve global email statistics")
+GET "https://{{baseUrl}}/stats"
+? "limit"= "<string>"
+? "offset"= "<string>"
+? "aggregated_by"= "<string>"
+? "start_date"= "<string>"
+? "end_date"= "<string>"
+
+
+

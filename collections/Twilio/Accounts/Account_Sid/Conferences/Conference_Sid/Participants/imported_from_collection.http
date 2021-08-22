@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Kick this participant from the conference.
+
+@name("/Accounts/:AccountSid/Conferences/:ConferenceSid/Participants/{{CallSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Conferences/:ConferenceSid/Participants/{{CallSid}}{{mediaTypeExtension}}"
+
+
+// Kick this participant from the conference.
+
+@name("Accounts.Account Sid.Conferences.Conference Sid.Participants.Call Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Conferences/:ConferenceSid/Participants/{{CallSid}}.json"
+
+
+

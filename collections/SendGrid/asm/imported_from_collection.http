@@ -1,0 +1,18 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6135048e-d8f2-4063-a921-e9f54a73ef03.postman_collection.json
+
+// **This endpoint allows you to retrieve information about multiple suppression groups.**
+// 
+// This endpoint will return information for each group ID that you include in your request. To add a group ID to your request, simply append `&id=` followed by the group ID.
+// 
+// Suppressions are a list of email addresses that will not receive content sent under a given [group](https://sendgrid.com/docs/API_Reference/Web_API_v3/Suppression_Management/groups.html).
+// 
+// Suppression groups, or [unsubscribe groups](https
+
+@name("Retrieve information about multiple suppression groups")
+GET "https://{{baseUrl}}/asm/groups"
+? "id"= "<integer>"
+
+
+

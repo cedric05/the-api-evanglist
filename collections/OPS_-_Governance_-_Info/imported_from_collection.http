@@ -1,0 +1,40 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01f81c87-c5ad-479f-ae3f-cd47b7c8b436.postman_collection.json
+
+// This looks for license information associated with the information object.
+
+@name("Is there a license for the API?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// This is for ensuring the description of the API meets all requirements.
+
+@name("Does the description of the API meet requirements?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// This will vaidate that the name of the API meets all requirements.
+
+@name("Does the name of the API meet requirements?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// This looks for contact information associated with the information object.
+
+@name("Is there contact for the API?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+// This looks for a terms of sebvice associated with the information object.
+
+@name("Is there a terms of service for the API?")
+GET "https://{{postman_base_url}}/apis/:api_id/versions/:version_id/schemas/:schema_id"
+"x-api-key": "{{postman_api_key}}"
+
+
+

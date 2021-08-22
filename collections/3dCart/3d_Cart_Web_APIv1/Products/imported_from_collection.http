@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-17a6f18b-38c5-42cb-a11e-28f755ffce28.postman_collection.json
+
+// Get a list of all products
+
+@name("Get all products")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Products"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+? "sku"= "<string>"
+? "name"= "<string>"
+? "costfrom"= "<number>"
+? "costto"= "<number>"
+? "pricefrom"= "<number>"
+? "priceto"= "<number>"
+? "stockfrom"= "<number>"
+? "stockto"= "<number>"
+? "hide"= "<boolean>"
+? "freeshipping"= "<boolean>"
+? "onsale"= "<boolean>"
+? "nontax"= "<integer>"
+? "notforsale"= "<boolean>"
+? "giftcertificate"= "<boolean>"
+? "homespecial"= "<boolean>"
+? "categoryspecial"= "<boolean>"
+? "nonsearchable"= "<boolean>"
+? "selfship"= "<boolean>"
+? "rewarddisable"= "<integer>"
+? "lastupdatestart"= "<string>"
+? "lastupdateend"= "<string>"
+
+
+@name("Get all products (SKUInfo section only)")
+GET "https://{{baseUrl}}/3dCartWebAPI/v1/Products/skuinfo"
+? "catalogid"= "<integer>"
+? "limit"= "<integer>"
+? "offset"= "<integer>"
+? "countonly"= "<integer>"
+? "sku"= "<string>"
+? "name"= "<string>"
+
+
+

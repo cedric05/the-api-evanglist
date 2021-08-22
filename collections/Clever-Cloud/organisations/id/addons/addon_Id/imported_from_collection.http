@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-01e79e8b-0f05-4fff-860a-a88d8c927eac.postman_collection.json
+
+@name("delete Organisations Id Addons Addon Id")
+DELETE "https://{{baseUrl}}/organisations/:id/addons/:addonId"
+
+
+@name("get Organisations Id Addons Addon Id Applications")
+GET "https://{{baseUrl}}/organisations/:id/addons/:addonId/applications"
+
+
+@name("get Organisations Id Addons Addon Id Env")
+GET "https://{{baseUrl}}/organisations/:id/addons/:addonId/env"
+
+
+@name("put Organisations Id Addons Addon Id Plan")
+PUT "https://{{baseUrl}}/organisations/:id/addons/:addonId/plan"
+
+
+@name("/organisations/:id/addons/:addonId/sso")
+GET "https://{{baseUrl}}/organisations/:id/addons/:addonId/sso"
+
+
+

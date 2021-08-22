@@ -1,0 +1,61 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-d3f42c27-6156-4402-8a00-60fea46ec01e.postman_collection.json
+
+@name("Create Commit")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.CreateCommit"
+? "Action"= "CreateCommit"
+data('{
+   "repositoryName": "MyDemoRepo",
+   "branchName": "MyFeatureBranch",
+   "parentCommitId": "4c925148EXAMPLE",
+   "commitMessage": "I\'m creating this commit to update a variable name in a number of files.",
+   "authorName": "Saanvi Sarkar"
+   "email": "saanvi_sarkar@example.com",
+   "keepEmptyFolders": false,
+   "putFiles": [
+     {
+       "filePath": "file1.py",
+       "fileMode": "EXECUTABLE",
+       "fileContent": "bucket_name = sys.argv[1] region = sys.argv[2]"
+     },
+     {
+       "filePath": "file2.txt",
+       "fileMode": "NORMAL",
+       "fileContent": "//Adding a comment to explain the variable changes in file1.py"
+     },
+     {
+       "filePath": "images/image1.png",
+       "fileMode": "NORMAL",
+       "sourceFile": {
+         "filePath": "pictures/picture.png",
+         "isMove": true 
+       }
+     }
+   ],
+   "deleteFiles": [
+     {
+       "filePath": "ExampleSolution.py"
+     }
+   ]
+}')
+
+
+@name("Get Commit")
+POST "https://{{aws_codecommit_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codecommit_service}}", region="{{aws_codecommit_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeCommit_20150413.GetCommit"
+? "Action"= "GetCommit"
+data('{
+  "repositoryName": "MyDemoRepo", 
+  "commitId": "12345678EXAMPLE"
+}')
+
+
+

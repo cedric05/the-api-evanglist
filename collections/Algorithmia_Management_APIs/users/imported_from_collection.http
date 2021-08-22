@@ -1,0 +1,28 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-9844d24d-a804-4291-beee-fc6ba6a9e5ce.postman_collection.json
+
+@name("Lists all managed users")
+GET "https://{{baseUrl}}/users"
+"Authorization": "<string>"
+? "limit"= "<integer>"
+? "marker"= "<string>"
+
+
+@name("Creates an Algorithmia user in the system")
+POST "https://{{baseUrl}}/users"
+"Authorization": "<string>"
+"Content-Type": "application/json"
+json({
+    "email": "<string>",
+    "resource_type": "<string>",
+    "username": "<string>",
+    "fullname": "<string>",
+    "avatar_url": "<string>",
+    "company_name": "<string>",
+    "company_role": "<string>",
+    "self_link": "<string>"
+})
+
+
+

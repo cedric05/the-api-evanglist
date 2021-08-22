@@ -1,0 +1,29 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-80914009-da3a-44aa-83ea-5d6e264d6d71.postman_collection.json
+
+@name("Delete Lexicon")
+DELETE "https://{{aws_polly_base_url}}/v1/lexicons/:LexiconName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_polly_service}}", region="{{aws_polly_region}}")
+
+
+@name("Get Lexicon")
+GET "https://{{aws_polly_base_url}}/v1/lexicons/:LexiconName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_polly_service}}", region="{{aws_polly_region}}")
+
+
+@name("List Lexicons")
+GET "https://{{aws_polly_base_url}}/v1/lexicons"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_polly_service}}", region="{{aws_polly_region}}")
+? "NextToken"= "NextToken"
+
+
+@name("Put Lexicon")
+PUT "https://{{aws_polly_base_url}}/v1/lexicons/:LexiconName"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_polly_service}}", region="{{aws_polly_region}}")
+data('{
+   "Content": "string"
+}')
+
+
+

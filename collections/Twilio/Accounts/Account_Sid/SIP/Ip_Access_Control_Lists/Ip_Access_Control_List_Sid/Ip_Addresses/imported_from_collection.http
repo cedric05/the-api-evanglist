@@ -1,0 +1,17 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// Deletes an IP address entry from the list.
+
+@name("/Accounts/:AccountSid/SIP/IpAccessControlLists/:IpAccessControlListSid/IpAddresses/{{IpAddressSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/SIP/IpAccessControlLists/:IpAccessControlListSid/IpAddresses/{{IpAddressSid}}{{mediaTypeExtension}}"
+
+
+// Deletes an IP address entry from the list.
+
+@name("Accounts.Account Sid.SIP.Ip Access Control Lists.Ip Access Control List Sid.Ip Addresses.Ip Address Sid.json.de")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/SIP/IpAccessControlLists/:IpAccessControlListSid/IpAddresses/{{IpAddressSid}}.json"
+
+
+

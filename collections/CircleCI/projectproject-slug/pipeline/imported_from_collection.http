@@ -1,0 +1,24 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-497c1579-7153-42d7-9ae4-62094712cd15.postman_collection.json
+
+// Triggers a new pipeline on the project.
+
+@name("Trigger a new pipeline")
+POST "https://{{baseUrl}}/project/:project-slug/pipeline"
+
+
+// Returns a sequence of all pipelines for this project triggered by the user.
+
+@name("Get your pipelines")
+GET "https://{{baseUrl}}/project/:project-slug/pipeline/mine"
+? "page-token"= "<string>"
+
+
+// Returns a pipeline by number.
+
+@name("Get a pipeline")
+GET "https://{{baseUrl}}/project/:project-slug/pipeline/:pipeline-number"
+
+
+

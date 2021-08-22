@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b4284fc2-719c-44f6-8790-5e73e68963c4.postman_collection.json
+
+// Within the Watson IoT Platform, a Thing allows you to aggregate one or
+// more instances of a Device or Thing together to represent a more coarse
+// grained object.  For example, you might aggregrate together a
+// temperature sensor, flow sensor and power sensor together into a Boiler. 
+// 
+// The **/thing/types/{thingTypeId}/things** endpoint returns the list of
+// all of the Thing instances of the specified type that have been created
+// for the organization in the Watson IoT Platform. Various query
+// parameters can
+
+@name("List things")
+GET "https://{{baseUrl}}/thing/types/:thingTypeId/things"
+
+
+

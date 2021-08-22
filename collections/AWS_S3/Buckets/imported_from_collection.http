@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+@name("Head")
+HEAD "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+
+
+
+// Returns a list of all buckets owned by the authenticated sender of the request.
+
+@name("List")
+GET "https://s3.amazonaws.com/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<CreateBucketConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <LocationConstraint>us-west-1</LocationConstraint>
+</CreateBucketConfiguration>')
+
+
+// Creates a new bucket. To create a bucket, you must register with Amazon S3 and have a valid AWS Access Key ID to authenticate requests. Anonymous requests are never allowed to create buckets. By creating the bucket, you become the bucket owner. 
+
+@name("Create")
+PUT "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<CreateBucketConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <LocationConstraint>us-west-1</LocationConstraint>
+</CreateBucketConfiguration>')
+
+
+// Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted. 
+
+@name("Delete")
+DELETE "https://s3.amazonaws.com/:bucket/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="us-east-1")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+
+
+
+

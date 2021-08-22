@@ -1,0 +1,98 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-c62e1baf-4a19-4992-b48d-038acd7dffea.postman_collection.json
+
+@name("Batch Get Deployments")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.BatchGetDeployments"
+? "Action"= "BatchGetDeployments"
+data('{
+    "deploymentIds": [
+        "d-5SJAOL04C",
+        "d-75H25AT3C"
+    ]
+}')
+
+
+@name("Continue Deployment")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.ContinueDeployment"
+? "Action"= "ContinueDeployment"
+data('{"deploymentId": "d-7S8EXAMPL"}')
+
+
+@name("Create Deployment")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.CreateDeployment"
+? "Action"= "CreateDeployment"
+data('{
+    "applicationName": "TestApp-ap-southeast-2",
+    "autoRollbackConfiguration": {
+        "enabled": true,
+        "events": [
+            "DEPLOYMENT_FAILURE"
+        ]
+    },
+    "deploymentGroupName": "dep-group-ghi-789",
+    "description": "Deployment for Project 1234",
+    "deploymentConfigName": "CodeDeployDefault.OneAtATime",
+    "ignoreApplicationStopFailures": true,
+    "revision": {
+        "revisionType": "S3",
+        "s3Location": {
+            "bundleType": "zip",
+            "bucket": "project-1234",
+            "key": "East-App.zip"
+        },
+        "updateOutdatedInstancesOnly": true
+    }
+}')
+
+
+@name("Get Deployment")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.GetDeployment"
+? "Action"= "GetDeployment"
+data('{
+    "deploymentId": "d-74D24AS7X"
+}')
+
+
+@name("List Deployments")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.ListDeployments"
+? "Action"= "ListDeployments"
+data('{
+	"applicationName": "TestApp-us-east-1",
+	"deploymentGroupName": "dep-group-def-456"
+}')
+
+
+@name("Stop Deployment")
+POST "https://{{aws_codedeploy_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_codedeploy_service}}", region="{{aws_codedeploy_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "aws-cli/1.7.38 Python/2.7.9 Windows/7"
+"X-Amz-Target": "CodeDeploy_20141006.StopDeployment"
+? "Action"= "StopDeployment"
+data('{
+    "deploymentId": "d-LGUMS25CC"
+}')
+
+
+

@@ -1,0 +1,97 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Initiates the copy of an AMI from the specified source Region to the current Region.
+
+@name("Copy Image")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "ClientToken"= ""
+? "Description"= ""
+? "DryRun"= ""
+? "Encrypted"= ""
+? "KmsKeyId"= ""
+? "Name"= ""
+? "SourceImageId"= ""
+? "SourceRegion"= ""
+? "Action"= "CopyImage"
+
+
+// Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either
+//                         running or stopped.
+
+@name("Create Image")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "BlockDeviceMapping.N"= ""
+? "Description"= ""
+? "DryRun"= ""
+? "InstanceId"= ""
+? "Name"= ""
+? "NoReboot"= ""
+? "Action"= "CreateImage"
+
+
+// Deregisters the specified AMI.
+
+@name("Deregister Image")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "ImageId"= ""
+? "Action"= "DeregisterImage"
+
+
+// Describes the specified images (AMIs, AKIs, and ARIs) available to you or all of the
+//                         images available to you.
+
+@name("Describe Images")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "ExecutableBy.N"= ""
+? "Filter.N"= ""
+? "ImageId.N"= ""
+? "Owner.N"= ""
+? "Action"= "DescribeImages"
+
+
+// .
+
+@name("Export Image")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "ExportImage"
+
+
+// .
+
+@name("Import Image")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Action"= "ImportImage"
+
+
+// Registers an AMI.
+
+@name("Register Image")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "Architecture"= ""
+? "BillingProduct.N"= ""
+? "BlockDeviceMapping.N"= ""
+? "Description"= ""
+? "DryRun"= ""
+? "EnaSupport"= ""
+? "ImageLocation"= ""
+? "KernelId"= ""
+? "Name"= ""
+? "RamdiskId"= ""
+? "RootDeviceName"= ""
+? "SriovNetSupport"= ""
+? "VirtualizationType"= ""
+? "Action"= "RegisterImage"
+
+
+

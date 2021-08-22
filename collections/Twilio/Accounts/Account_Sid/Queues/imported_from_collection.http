@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-6990c4c3-ec47-4850-8d11-1a18a1fbabeb.postman_collection.json
+
+// The DELETE method allows you to remove a Queue. Only empty queues are
+// deletable.
+
+@name("/Accounts/:AccountSid/Queues/{{QueueSid}}{{mediaTypeExtension}}")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Queues/{{QueueSid}}{{mediaTypeExtension}}"
+
+
+// The DELETE method allows you to remove a Queue. Only empty queues are
+// deletable.
+
+@name("Accounts.Account Sid.Queues.Queue Sid.json.delete")
+DELETE "https://{{baseUrl}}/Accounts/:AccountSid/Queues/{{QueueSid}}.json"
+
+
+

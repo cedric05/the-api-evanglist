@@ -1,0 +1,23 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-cc491087-45e6-46ba-aa93-9f2f2cc44068.postman_collection.json
+
+// This feature was introduced in GitLab 8.11
+
+@name("Get Projects  Pipelines Pipeline")
+GET "https://{{baseUrl}}/projects/:id/pipelines/:pipeline_id"
+
+
+// This feature was introduced in GitLab 8.11.
+
+@name("Add Projects  Pipelines Pipeline  Cancel")
+POST "https://{{baseUrl}}/projects/:id/pipelines/:pipeline_id/cancel"
+
+
+// This feature was introduced in GitLab 8.11.
+
+@name("Add Projects  Pipelines Pipeline  Retry")
+POST "https://{{baseUrl}}/projects/:id/pipelines/:pipeline_id/retry"
+
+
+

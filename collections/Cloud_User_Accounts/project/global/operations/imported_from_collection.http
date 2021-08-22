@@ -1,0 +1,21 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-b3423fc1-6423-4e31-9835-20949e4088f7.postman_collection.json
+
+// Retrieves the list of operation resources contained within the specified project.
+
+@name("Get Operations")
+GET "https://{{baseUrl}}/:project/global/operations"
+? "filter"= "<>"
+? "maxResults"= "<>"
+? "orderBy"= "<>"
+? "pageToken"= "<>"
+
+
+// Deletes the specified operation resource.
+
+@name("Delete Operation")
+DELETE "https://{{baseUrl}}/:project/global/operations/:operation"
+
+
+

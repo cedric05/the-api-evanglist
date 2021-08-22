@@ -1,0 +1,62 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Accept a VPC peering connection request.
+
+@name("Accept VPC Peering Connection")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VpcPeeringConnectionId"= ""
+? "Action"= "AcceptVpcPeeringConnection"
+
+
+// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
+//                         an accepter VPC with which to create the connection.
+
+@name("Create VPC Peering Connection")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "PeerOwnerId"= ""
+? "PeerRegion"= ""
+? "PeerVpcId"= ""
+? "VpcId"= ""
+? "Action"= "CreateVpcPeeringConnection"
+
+
+// Deletes a VPC peering connection.
+
+@name("Delete VPC Peering Connection")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VpcPeeringConnectionId"= ""
+? "Action"= "DeleteVpcPeeringConnection"
+
+
+// Describes one or more of your VPC peering connections.
+
+@name("Describe VPC Peering Connections")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "Filter.N"= ""
+? "MaxResults"= ""
+? "NextToken"= ""
+? "VpcPeeringConnectionId.N"= ""
+? "Action"= "DescribeVpcPeeringConnections"
+
+
+// Rejects a VPC peering connection request.
+
+@name("Reject VPC Peering Connection")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "DryRun"= ""
+? "VpcPeeringConnectionId"= ""
+? "Action"= "RejectVpcPeeringConnection"
+
+
+

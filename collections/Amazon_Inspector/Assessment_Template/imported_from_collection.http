@@ -1,0 +1,45 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-46004eee-d776-4226-9cc0-a4f178c7a0e1.postman_collection.json
+
+@name("Create Assessment Template")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.CreateAssessmentTemplate"
+? "Action"= "CreateAssessmentTemplate"
+data('{"assessmentTargetArn":"string","assessmentTemplateName":"string","durationInSeconds":42,"rulesPackageArns":["string"],"userAttributesForFindings":[{"key":"string","value":"string"}]}')
+
+
+@name("Delete Assessment Template")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.DeleteAssessmentTemplate"
+? "Action"= "DeleteAssessmentTemplate"
+data('{"assessmentTemplateArn":"string"}')
+
+
+@name("Describe Assessment Templates")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.DescribeAssessmentTemplates"
+? "Action"= "DescribeAssessmentTemplates"
+data('{"assessmentTemplateArns":["string"]}')
+
+
+@name("List Assessment Templates")
+POST "https://{{aws_inspector_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_inspector_service}}", region="{{aws_inspector_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"User-Agent": "Postman-Collection"
+"X-Amz-Target": "InspectorService.ListAssessmentTemplates"
+? "Action"= "ListAssessmentTemplates"
+data('{"assessmentTargetArns":["string"],"filter":{"durationRange":{"maxSeconds":42,"minSeconds":42},"namePattern":"string","rulesPackageArns":["string"]},"maxResults":42,"nextToken":"string"}')
+
+
+

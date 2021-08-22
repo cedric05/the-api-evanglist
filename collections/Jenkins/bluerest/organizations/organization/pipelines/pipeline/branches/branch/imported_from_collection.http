@@ -1,0 +1,19 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-3296e101-3586-4bea-89ab-7061a33a7d96.postman_collection.json
+
+// Retrieve branch details for an organization pipeline
+
+@name("get Pipeline Branch")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/branches/:branch/"
+? "No Name"= "<string>"
+
+
+// Retrieve branch run details for an organization pipeline
+
+@name("get Pipeline Branch Run")
+GET "https://{{baseUrl}}/blue/rest/organizations/:organization/pipelines/:pipeline/branches/:branch/runs/:run"
+? "No Name"= "<string>"
+
+
+

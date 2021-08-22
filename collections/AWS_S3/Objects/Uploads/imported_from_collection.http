@@ -1,0 +1,96 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5c55623d-8457-49a6-aa88-825447c3d4ee.postman_collection.json
+
+// This operation initiates a multipart upload and returns an upload ID. This upload ID is used to associate all of the parts in the specific multipart upload. You specify this upload ID in each of your subsequent upload part requests (see UploadPart). You also include this upload ID in the final request to either complete or abort the multipart upload request. 
+
+@name("Create Multipart")
+POST "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+"Content-Type": "application/x-www-form-urlencoded"
+? "uploads"= ""
+fileinput("/Users/kinlane/Downloads/APImetrics-monitoring-home-page.png",)
+
+
+// This operation lists in-progress multipart uploads. An in-progress multipart upload is a multipart upload that has been initiated using the Initiate Multipart Upload request, but has not yet been completed or aborted. 
+
+@name("Multipart")
+GET "https://s3.amazonaws.com/{{bucket}}/"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "uploads"= ""
+? "Delimiter"= "{{Delimiter}}"
+? "EncodingType"= "{{EncodingType}}"
+? "KeyMarker"= "{{KeyMarker}}"
+? "MaxUploads"= "{{MaxUploads}}"
+? "Prefix"= "{{Prefix}}"
+? "UploadIdMarker"= "{{UploadIdMarker}}"
+
+
+// Completes a multipart upload by assembling previously uploaded parts.
+
+@name("Complete Multipart")
+POST "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "UploadId"= "UploadId"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<CompleteMultipartUpload xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <Part>
+      <ETag>string</ETag>
+      <PartNumber>integer</PartNumber>
+   </Part>
+</CompleteMultipartUpload>')
+
+
+// Completes a multipart upload by assembling previously uploaded parts.
+
+@name("Part")
+PUT "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "UploadId"= "{{uploadId}}"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<CompleteMultipartUpload xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <Part>
+      <ETag>string</ETag>
+      <PartNumber>integer</PartNumber>
+   </Part>
+</CompleteMultipartUpload>')
+
+
+// Completes a multipart upload by assembling previously uploaded parts.
+
+@name("Part Copy")
+PUT "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "UploadId"= "{{uploadId}}"
+? "PartNumber"= "{{PartNumber}}"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<CompleteMultipartUpload xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <Part>
+      <ETag>string</ETag>
+      <PartNumber>integer</PartNumber>
+   </Part>
+</CompleteMultipartUpload>')
+
+
+// Completes a multipart upload by assembling previously uploaded parts.
+
+@name("Abort Multipart")
+DELETE "https://s3.amazonaws.com/{{bucket}}/{{key}}"
+awsauth(access_id="AKIAIVHZOWYJ3P3IBXNA", secret_key="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", service="s3", region="{{region}}")
+"x-amz-content-sha256": "UNSIGNED-PAYLOAD"
+? "UploadId"= "{{uploadId}}"
+data('<?xml version="1.0" encoding="UTF-8"?>
+<CompleteMultipartUpload xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+   <Part>
+      <ETag>string</ETag>
+      <PartNumber>integer</PartNumber>
+   </Part>
+</CompleteMultipartUpload>')
+
+
+

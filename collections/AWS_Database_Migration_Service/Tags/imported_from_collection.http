@@ -1,0 +1,51 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-5742bcb1-7df5-4c70-8656-2527a102ef1c.postman_collection.json
+
+// Lists all tags for an AWS DMS resource.
+
+@name("List Tags For Resource")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.ListTagsForResource"
+? "Action"= "ListTagsForResource"
+data('{
+   "ResourceArn": "string"
+}')
+
+
+// Removes metadata tags from a DMS resource.
+
+@name("Remove Tags From Resource")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.RemoveTagsFromResource"
+? "Action"= "RemoveTagsFromResource"
+data('{
+   "ResourceArn": "string",
+   "TagKeys": [ "string" ]
+}')
+
+
+// Adds metadata tags to an AWS DMS resource, including replication instance, endpoint, security group, and migration task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or used in a Condition statement in an IAM policy for DMS.
+
+@name("Add Tags To Resource")
+POST "https://{{aws_database_migration_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_database_migration_service_service}}", region="{{aws_database_migration_service_region}}")
+"Content-Type": "application/x-amz-json-1.1"
+"X-Amz-Target": "AmazonDMSv20160101.AddTagsToResource"
+? "Action"= "AddTagsToResource"
+data('{
+   "ResourceArn": "string",
+   "Tags": [ 
+      { 
+         "Key": "string",
+         "Value": "string"
+      }
+   ]
+}')
+
+
+

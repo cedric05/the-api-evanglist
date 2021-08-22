@@ -1,0 +1,48 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-27f83bb7-4ad5-4571-80f4-1fa618a02314.postman_collection.json
+
+@name("Create Application Version")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "AutoCreateApplication"= ""
+? "BuildConfiguration"= ""
+? "Description"= ""
+? "Process"= ""
+? "SourceBuildInformation"= ""
+? "SourceBundle"= ""
+? "Tags.member.N"= ""
+? "VersionLabel"= ""
+? "Action"= "CreateApplicationVersion"
+
+
+@name("Delete Application Version")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "DeleteSourceBundle"= ""
+? "VersionLabel"= ""
+? "Action"= "DeleteApplicationVersion"
+
+
+@name("Describe Application Versions")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "MaxRecords"= ""
+? "NextToken"= ""
+? "VersionLabels.member.N"= ""
+? "Action"= "DescribeApplicationVersions"
+
+
+@name("Update Application Version")
+GET "https://{{aws_elastic_beanstalk_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_elastic_beanstalk_service}}", region="{{aws_elastic_beanstalk_region}}")
+? "ApplicationName"= ""
+? "Description"= ""
+? "VersionLabel"= ""
+? "Action"= "UpdateApplicationVersion"
+
+
+

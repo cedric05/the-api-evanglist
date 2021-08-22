@@ -1,0 +1,25 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-f27f798d-07bf-410e-bc36-81f925cac47d.postman_collection.json
+
+// Associates a CIDR block with your VPC.
+
+@name("Associate VPC CIDR Block")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AmazonProvidedIpv6CidrBlock"= ""
+? "CidrBlock"= ""
+? "VpcId"= ""
+? "Action"= "AssociateVpcCidrBlock"
+
+
+// Disassociates a CIDR block from a VPC.
+
+@name("Disassociate VPC CIDR Block")
+GET "https://{{aws_ec2_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{serviceName}}", region="{{region}}")
+? "AssociationId"= ""
+? "Action"= "DisassociateVpcCidrBlock"
+
+
+

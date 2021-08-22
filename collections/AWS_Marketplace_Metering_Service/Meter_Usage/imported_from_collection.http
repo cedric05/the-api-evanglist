@@ -1,0 +1,22 @@
+#!/usr/bin/env dothttp
+
+# imported from 35240-668125e0-f223-4e7f-a04d-833cc7d43d2f.postman_collection.json
+
+@name("Batch Meter Usage")
+POST "https://{{aws_marketplace_metering_service_base_url}}/"
+awsauth(access_id="{{accessKey}}", secret_key="{{secretKey}}", service="{{aws_marketplace_metering_service_service}}", region="{{aws_marketplace_metering_service_region}}")
+? "Action"= "BatchMeterUsage"
+data('{
+   "ProductCode": "string",
+   "UsageRecords": [ 
+      { 
+         "CustomerIdentifier": "string",
+         "Dimension": "string",
+         "Quantity": number,
+         "Timestamp": number
+      }
+   ]
+}')
+
+
+
